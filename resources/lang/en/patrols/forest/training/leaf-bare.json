@@ -40,12 +40,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a romantic stroll in the frosty leaf-bare forest together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -62,12 +61,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a romantic stroll in the frosty leaf-bare forest together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -80,6 +78,7 @@
                     "MEDIATOR,1",
                     "INSIGHTFUL,1"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": [
@@ -89,12 +88,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 13,
+                        "log": {
+                            "cats_from": "s_c's social adeptness made {PRONOUN/s_c/poss} romantic leaf-bare stroll with r_c all the better."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -106,19 +104,24 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["romance"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l felt embarrassed when r_c rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "values": ["comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c felt awkward when p_l asked {PRONOUN/r_c/object} out on a romantic stroll, and r_c rejected the offer."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -138,17 +141,11 @@
         ],
         "tags": [],
         "patrol_art": "gen_med_vision",
-        "min_cats": 3,
+        "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                2,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 4],
+            "normal adult": [2, 4]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -169,24 +166,14 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "like", "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about how StarClan cats cleaning out their nests creates snowfall"
+                        }
                     }
                 ],
                 "frequency": 4
@@ -222,20 +209,26 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was a casualty in to_cat's snowball fight."
+                        }
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "app1", "app2", "app3", "app4"
                         ],
                         "cats_from": [
-                            "app2"
+                            "app1", "app2", "app3", "app4"
                         ],
                         "mutual": true,
                         "values": [
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a snowball fight on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -244,14 +237,16 @@
                 "text": "s_c, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c/object} more chores - and misses out on p_l's excellent storytelling as a result.",
                 "exp": 0,
                 "can_have_stat": [
-                    "any",
                     "app"
                 ],
                 "stat_trait": [
                     "shameless",
                     "arrogant",
                     "bold",
-                    "cold"
+                    "cold",
+                    "troublesome",
+                    "childish",
+                    "grumpy"
                 ],
                 "relationships": [
                     {
@@ -263,9 +258,28 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat avoided to_cat to get out of more work."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wanted to tell to_cat and some other apprentices a story, but to_cat ran off."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -288,14 +302,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -316,24 +324,14 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "like", "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the lake cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -369,7 +367,10 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was chilled to the bone by to_cat's story of the Underwater Panther."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -392,10 +393,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
+            "normal adult": [1, 6]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -422,22 +420,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust",
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the gifted apprentice who created leaf-bare in anger."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -455,13 +441,30 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "respect",
-                            "like",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat walked off in the middle of to_cat's boring story."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like", "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat walked off in the middle of from_cat's enthralling story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -481,18 +484,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "respect",
-                            "like",
-                            "comfort"
+                        "cats_from": [
+                            "p_l"
                         ],
-                        "amount": -5
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "Even though to_cat interrupted, from_cat was touched by to_cat's concern for a character in {PRONOUN/from_cat/poss} story."
+                        }
                     }
                 ],
                 "frequency": 4

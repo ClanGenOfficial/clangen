@@ -19,7 +19,7 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.announce_restart import RestartAnnouncementWindow
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.windows.update import UpdateWindow
-from scripts.utility import ui_scale
+from scripts.ui.scale import ui_scale
 
 
 class UpdateAvailableWindow(GameWindow):

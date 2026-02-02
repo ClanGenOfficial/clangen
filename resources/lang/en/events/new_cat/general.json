@@ -1191,7 +1191,10 @@
         "event_id": "gen_new_cat_war_lonergift_herbs1",
         "location": ["any"],
         "season": ["any"],
-        "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
         "sub_type": ["war"],
         "frequency": 2,
         "event_text": "Word of c_n's war with o_c_n has spread throughout the area. One particular loner decides to share a few of {PRONOUN/n_c:0/poss} herbs with c_n.",
@@ -1233,7 +1236,10 @@
         "event_id": "gen_new_cat_war_lonergift_herbs2",
         "location": ["any"],
         "season": ["any"],
-        "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
         "sub_type": ["war"],
         "frequency": 2,
         "event_text": "Word of c_n's war with o_c_n has spread throughout the area. Several loners pool herbs together to give to c_n.",
@@ -1242,19 +1248,19 @@
                 "loner",
                 "meeting",
                 "exists",
-                "backstory:wandering_healer1,wandering_healer2"
+                "backstory:wandering_healer2"
             ],
             [
                 "loner",
                 "meeting",
                 "exists",
-                "backstory:wandering_healer1,wandering_healer2"
+                "backstory:wandering_healer2"
             ],
             [
                 "loner",
                 "meeting",
                 "exists",
-                "backstory:wandering_healer1,wandering_healer2"
+                "backstory:wandering_healer2"
             ]
         ],
         "relationships": [
@@ -1287,7 +1293,10 @@
         "event_id": "gen_new_cat_war_lonergift_freshkill1",
         "location": ["any"],
         "season": ["any"],
-        "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
         "sub_type": ["war"],
         "frequency": 2,
         "event_text": "Word of c_n's war with o_c_n has spread throughout the area. One particular loner decides to share some of {PRONOUN/n_c:0/poss} fresh-kill with c_n.",
@@ -1329,7 +1338,10 @@
         "event_id": "gen_new_cat_war_lonergift_freshkill2",
         "location": ["any"],
         "season": ["any"],
-        "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
         "sub_type": ["war"],
         "frequency": 2,
         "event_text": "Word of c_n's war with o_c_n has spread throughout the area. Several loners decide to share their fresh-kill with c_n.",

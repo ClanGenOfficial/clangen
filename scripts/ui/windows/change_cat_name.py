@@ -12,7 +12,8 @@ from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.windows.window_base_class import GameWindow
-from scripts.utility import ui_scale, shorten_text_to_fit
+from scripts.events_module.text_adjust import shorten_text_to_fit
+from scripts.ui.scale import ui_scale
 from re import sub
 
 

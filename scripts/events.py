@@ -41,21 +41,23 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.ui.windows.save_error import SaveErrorWindow
-from scripts.utility import (
-    change_clan_relations,
-    change_clan_reputation,
-    find_alive_cats_with_rank,
-    get_living_clan_cat_count,
-    ceremony_text_adjust,
-    get_current_season,
-    adjust_list_text,
+from scripts.events_module.text_adjust import (
     ongoing_event_text_adjust,
     event_text_adjust,
-    get_other_clan,
+    ceremony_text_adjust,
+    adjust_list_text,
     history_text_adjust,
-    unpack_rel_block,
 )
-
+from scripts.events_module.consequences import unpack_rel_block
+from scripts.clan_package.cotc import (
+    change_clan_reputation,
+    change_clan_relations,
+    get_other_clan,
+)
+from scripts.clan_package.get_clan_cats import (
+    find_alive_cats_with_rank,
+    get_living_clan_cat_count,
+)
 
 all_events = {}
 new_cat_invited = False
@@ -94,7 +96,6 @@ def one_moon():
 
     # age up the clan, set current season
     game.clan.age += 1
-    get_current_season()
     update_afterlife_temper()
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()
@@ -466,7 +467,9 @@ def handle_lead_den_event():
                 additional_kits = outsider_cat.add_to_clan()
 
                 if additional_kits:
-                    event_text += i18n.t("hardcoded.event_lost_kits")
+                    event_text += i18n.t(
+                        "hardcoded.event_lost_kits", count=len(additional_kits)
+                    )
 
                     for kit_ID in additional_kits:
                         # add to involved cat list
@@ -591,11 +594,11 @@ def get_moon_freshkill():
 
     prey_amount = 0
     for cat in healthy_hunter:
-        lower_value = game.prey_config["auto_warrior_prey"][0]
-        upper_value = game.prey_config["auto_warrior_prey"][1]
+        lower_value = constants.PREY_CONFIG["auto_warrior_prey"][0]
+        upper_value = constants.PREY_CONFIG["auto_warrior_prey"][1]
         if cat.status.rank == CatRank.APPRENTICE:
-            lower_value = game.prey_config["auto_apprentice_prey"][0]
-            upper_value = game.prey_config["auto_apprentice_prey"][1]
+            lower_value = constants.PREY_CONFIG["auto_apprentice_prey"][0]
+            upper_value = constants.PREY_CONFIG["auto_apprentice_prey"][1]
 
         prey_amount += random.randint(lower_value, upper_value)
     game.freshkill_event_list.append(
@@ -818,11 +821,22 @@ def handle_lost_cats_return(predetermined_cat_IDs: list = None):
             return
 
         lost_cat = random.choice(eligible_cats)
+        if lost_cat.age in (CatAge.NEWBORN, CatAge.KITTEN):
+            return
+
         cat_IDs.append(lost_cat.ID)
+
+        if lost_cat.status.is_former_clancat:
+            text = i18n.t(f"hardcoded.event_lost{random.choice(range(1,5))}")
+        else:
+            # this would be the child of a lost cat, who inherited the lost status from the parent and was never a clancat
+            text = i18n.t(
+                "hardcoded.event_returning_child_of_lost",
+                parent_name=Cat.fetch_cat(lost_cat.parent1).name,
+            )
 
         additional_cats = lost_cat.add_to_clan()
         cat_IDs.extend(additional_cats)
-        text = i18n.t(f"hardcoded.event_lost{random.choice(range(1,5))}")
 
         if additional_cats:
             text += i18n.t("hardcoded.event_lost_kits", count=len(additional_cats))
@@ -945,7 +959,7 @@ def one_moon_cat(cat):
         return
 
     if cat.dead:
-        cat.thoughts()
+        cat.get_new_thought()
         if cat.ID in game.just_died:
             cat.moons += 1
         else:
@@ -1004,7 +1018,7 @@ def one_moon_cat(cat):
     # newborns don't do much
     if cat.status.rank == CatRank.NEWBORN:
         cat.relationship_interaction()
-        cat.thoughts()
+        cat.get_new_thought()
         return
 
     handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
@@ -1025,7 +1039,7 @@ def one_moon_cat(cat):
         return
 
     cat.relationship_interaction()
-    cat.thoughts()
+    cat.get_new_thought()
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:

@@ -40,12 +40,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a romantic stroll in the colorful leaf-fall forest together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -62,12 +61,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a romantic stroll in the colorful leaf-fall forest together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -80,6 +78,7 @@
                     "MEDIATOR,1",
                     "INSIGHTFUL,1"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": [
@@ -89,12 +88,11 @@
                             "r_c"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 13,
+                        "log": {
+                            "cats_from": "s_c's social adeptness made {PRONOUN/s_c/poss} romantic leaf-fall stroll with r_c all the better."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -106,19 +104,24 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["romance"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l felt embarrassed when r_c rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "values": ["comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c felt awkward when p_l asked {PRONOUN/r_c/object} out on a romantic stroll and r_c rejected the offer."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -141,14 +144,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                2,
-                4
-            ],
-            "normal adult": [
-                2,
-                4
-            ]
+            "apprentice": [2, 4],
+            "normal adult": [2, 4]
         },
         "frequency": 3,
         "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
@@ -171,7 +168,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had fun tussling in the piles of leaf-fall leaves."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -203,14 +203,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                2,
-                4
-            ],
-            "normal adult": [
-                2,
-                2
-            ]
+            "apprentice": [2, 4],
+            "normal adult": [2, 4]
         },
         "frequency": 3,
         "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
@@ -233,7 +227,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had fun tussling in the piles of leaf-fall leaves."
+                        }
                     },
                     {
                         "cats_to": [
@@ -246,7 +243,10 @@
                         "values": [
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got quite close when app1 knocked p_l into r_c."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -279,14 +279,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                2,
-                2
-            ],
-            "normal adult": [
-                2,
-                4
-            ]
+            "apprentice": [2, 4],
+            "normal adult": [2, 4]
         },
         "frequency": 3,
         "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, app1 gets swallowed up.",
@@ -299,30 +293,37 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
                             "app1"
                         ],
                         "cats_from": [
                             "app2"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
+                            "like",
+                            "trust",
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had fun tussling and flirting in the piles of leaf-fall leaves."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "trust", "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were amused to see app1 and app2 flirting on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -350,10 +351,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
+            "normal adult": [1, 6]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -364,7 +362,7 @@
         "decline_text": "A leaf-fall rainshower chooses that moment to break - thematic, perhaps, but wet. The cats decide to pick up the story some other time.",
         "success_outcomes": [
             {
-                "text": "At first, few but the medicine cats noticed the leaf-fall, its harshness, the snows early, the prey scarce. All noticed on the day StarClan hissed - the great sun itself blinking dark under their anger. All paid heed to the omens then, and the Clans turned back to the Stars, begging for life and sun to return. They learned a lesson not soon forgotten.",
+                "text": "At first, few but the medicine cats noticed the leaf-fall, its harshness, the snows early, the prey scarce. All noticed on the day StarClan hissed - the great sun itself blinking dark under their anger. All paid heed to the omens then, and the Clans turned back to the stars, begging for life and sun to return. They learned a lesson not soon forgotten.",
                 "exp": 40,
                 "relationships": [
                     {
@@ -379,7 +377,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story of StarClan's Anger."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -387,7 +388,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c refuses to believe their ancestors ever blotted out the sun - not that they couldn't, but that they wouldn't ever hurt the Clans, their own beloved descendants.",
+                "text": "r_c refuses to believe their ancestors ever blotted out the sun - not because they couldn't, but because they would never hurt the Clans, their own beloved descendants.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -402,7 +403,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "Even though to_cat interrupted, from_cat was touched that to_cat had such strong faith in StarClan's goodness."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -427,24 +431,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust",
                             "like"
                         ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was annoyed that to_cat interrupted {PRONOUN/from_cat/poss} story to argue with its message."
+                        }
                     }
                 ],
                 "frequency": 4

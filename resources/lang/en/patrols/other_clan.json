@@ -10,16 +10,11 @@
         "types": [
             "border"
         ],
-        "tags": [],
+        "tags": ["clan:leader"],
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 6,
-        "min_max_status": {
-            "leader": [
-                -1,
-                -1
-            ]
-        },
+        "min_max_status": {},
         "frequency": 4,
         "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
         "decline_text": "The patrol decides to avoid the other Clan cats.",
@@ -32,10 +27,84 @@
                 "frequency": 4
             },
             {
+                "min_max_status": {
+                    "leader": [-1, -1]
+                },
                 "text": "p_l approaches the other Clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks to the leader on the o_c_n cats' kindness once the patrol has returned to camp.",
                 "exp": 10,
                 "other_clan_rep": 2,
                 "frequency": 1
+            },
+            {
+                "min_max_status": {
+                    "leader": [1, 1]
+                },
+                "text": "The other patrol greets p_l respectfully, remarking on the weather and enquiring politely about the youngest members of the Clan. p_l smiles, impressed with them.",
+                "exp": 10,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. {PRONOUN/s_c/subject/CAP} {VERB/s_c/remember/remembers} some of the news that o_c_n shared at a recent Gathering and {VERB/s_c/bring/brings} it up, impressing the other patrol with {PRONOUN/s_c/poss} polite interest.",
+                "exp": 10,
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated s_c's clever conversation when they met with a o_c_n patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting. The patrols pause to converse for a little while, s_c bringing up a story that, while slightly embarrassing for {PRONOUN/s_c/self}, is entertaining and lighthearted. The patrols part in good spirits.",
+                "exp": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "daring",
+                    "shameless",
+                    "troublesome",
+                    "playful",
+                    "childish"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated s_c's ability to entertain when they met with a o_c_n patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
@@ -44,7 +113,26 @@
                     "SPEAKER,1"
                 ],
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated s_c's conversational skills when they met with a o_c_n patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
@@ -56,7 +144,26 @@
                     "wise"
                 ],
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated s_c's conversational skills when they met with a o_c_n patrol."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -77,95 +184,26 @@
                     "childish"
                 ],
                 "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "text": "The patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by the patrol's posturing.",
-                "exp": 0,
-                "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_success_outcomes": [
-            {
-                "text": "The patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how the patrol is acting.",
-                "exp": 10,
-                "other_clan_rep": -2,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_bord_otherclan2",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {
-            "leader": [
-                -1,
-                -1
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
-        "decline_text": "The patrol decides to avoid the other Clan cats.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "When the two patrols get closer to each other, the patrol leaders share a quick nod of acknowledgement. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-                "exp": 10,
-                "other_clan_rep": 2,
-                "frequency": 4
-            },
-            {
-                "text": "p_l approaches the other Clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks to the leader on the o_c_n cats' kindness once the patrol has returned to camp.",
-                "exp": 10,
-                "other_clan_rep": 2,
-                "frequency": 1
-            },
-            {
-                "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. {PRONOUN/s_c/subject/CAP} {VERB/s_c/remember/remembers} some of the news that o_c_n shared at a recent Gathering and {VERB/s_c/bring/brings} it up, impressing the other patrol with {PRONOUN/s_c/poss} polite interest.",
-                "exp": 10,
-                "stat_skill": [
-                    "CLEVER,1"
-                ],
-                "other_clan_rep": 2,
-                "frequency": 4
-            },
-            {
-                "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting. The patrols pause to converse for a little while, s_c bringing up a story that, while slightly embarrassing for {PRONOUN/s_c/self}, is entertaining and lighthearted. The patrols part in good spirits.",
-                "exp": 10,
-                "stat_trait": [
-                    "adventurous",
-                    "bold",
-                    "daring",
-                    "shameless",
-                    "troublesome",
-                    "playful",
-                    "childish"
-                ],
-                "other_clan_rep": 2,
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence. Eventually everyone involved slowly shuffles away to continue their respective patrols.",
-                "exp": 0,
-                "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was frustrated when to_cat obliviously offended another Clan's patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious - and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
@@ -178,7 +216,26 @@
                     "cold"
                 ],
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was frustrated when to_cat was openly aggressive another Clan's patrol."
+                        }
+                    }
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -186,7 +243,25 @@
                 "text": "The patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by the patrol's posturing.",
                 "exp": 0,
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's aggression toward o_c_n."
+                        }
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -194,12 +269,30 @@
                 "text": "The patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how the patrol is acting.",
                 "exp": 10,
                 "other_clan_rep": -2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's aggression toward o_c_n."
+                        }
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "gen_bord_otherclan3",
+        "patrol_id": "gen_bord_otherclan_rabbit1",
         "biome": [
             "any"
         ],
@@ -226,7 +319,26 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                        }
+                    }
+                ]
             },
             {
                 "text": "r_c leaps for the rabbit.... and promptly trips over a rock. The rabbit hops away as r_c sheepishly picks {PRONOUN/r_c/self} up. It's probably for the better that {PRONOUN/r_c/subject} {VERB/r_c/weren't/wasn't} able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
@@ -245,7 +357,42 @@
                 "prey": [
                     "small"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was grateful fo s_c's skills in preventing a fight with o_c_n."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border and nearly started a fight."
+                        }
+                    }
+                ]
             },
             {
                 "text": "r_c is about to leap for the rabbit when s_c grabs {PRONOUN/r_c/object} by the scruff and pulls {PRONOUN/r_c/object} back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan.",
@@ -260,7 +407,26 @@
                 "prey": [
                     "small"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was grateful for to_cat's sharp eyes preventing {PRONOUN/from_cat/object} from blatantly trespassing during a hunt."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -284,8 +450,28 @@
                     "shameless",
                     "troublesome"
                 ],
+                "prey": ["small"],
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                        }
+                    }
+                ]
             },
             {
                 "text": "r_c pounces with no hesitation! {PRONOUN/r_c/subject/CAP} easily {VERB/r_c/kill/kills} the rabbit before glancing up and coming face-to-face with a o_c_n cat. After a short tussle, r_c flees back over the border and limps {PRONOUN/r_c/poss} way home; that rabbit certainly wasn't worth the trouble.",
@@ -307,7 +493,27 @@
                     "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it."
                 },
                 "other_clan_rep": -1,
-                "frequency": 3
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                        }
+                    }
+                ],
+                "prey": ["small"]
             }
         ],
         "antag_fail_outcomes": [
@@ -323,206 +529,26 @@
                 "text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of {PRONOUN/r_c/poss} deed behind. That will show those o_c_n cats just how confident c_n is in their own power.",
                 "exp": 10,
                 "other_clan_rep": -2,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_bord_otherclan4",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {
-            "leader": [
-                1,
-                6
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
-        "decline_text": "The patrol decides to avoid the other Clan cats.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "When the two patrols get closer to each other, the patrol leader from o_c_n gives p_l a respectful nod, which they return. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-                "exp": 10,
-                "other_clan_rep": 2,
-                "frequency": 4
-            },
-            {
-                "text": "The other patrol greets p_l respectfully, remarking on the weather and enquiring politely about the youngest members of the Clan. p_l smiles, impressed with them.",
-                "exp": 10,
-                "other_clan_rep": 2,
-                "frequency": 1
-            },
-            {
-                "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
-                "exp": 10,
-                "stat_skill": [
-                    "SPEAKER,1"
-                ],
-                "other_clan_rep": 2,
-                "frequency": 4
-            },
-            {
-                "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks, feeling confident in their good relations with the opposite Clan.",
-                "exp": 10,
-                "stat_trait": [
-                    "calm",
-                    "charismatic",
-                    "confident",
-                    "wise"
-                ],
-                "other_clan_rep": 2,
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence. Eventually, everyone involved slowly shuffles away to continue their respective patrols.",
-                "exp": 0,
-                "other_clan_rep": -1,
-                "frequency": 4
-            },
-            {
-                "text": "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other Clan cats. Offended, the other patrol stalks away, tails whipping and ears pinned.",
-                "exp": 0,
-                "stat_trait": [
-                    "troublesome",
-                    "strange",
-                    "playful",
-                    "daring",
-                    "childish"
-                ],
-                "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "text": "The patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by the patrol's posturing.",
-                "exp": 0,
-                "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_success_outcomes": [
-            {
-                "text": "The patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how the patrol is acting.",
-                "exp": 10,
-                "other_clan_rep": -2,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_bord_otherclan5",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {
-            "leader": [
-                1,
-                6
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
-        "decline_text": "The patrol decides to avoid the other Clan cats.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "When the two patrols get closer to each other, the patrol leader from o_c_n gives p_l a respectful nod, which {PRONOUN/p_l/subject} {VERB/p_l/return/returns}. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-                "exp": 10,
-                "other_clan_rep": 2,
-                "frequency": 4
-            },
-            {
-                "text": "The other patrol greets p_l respectfully, remarking on the weather and enquiring politely about the youngest members of the Clan. p_l smiles, impressed with them.",
-                "exp": 10,
-                "other_clan_rep": 2,
-                "frequency": 1
-            },
-            {
-                "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. {PRONOUN/s_c/subject/CAP} {VERB/s_c/remember/remembers} some of the news that o_c_n shared at a recent Gathering and bring it up, impressing the other patrol with {PRONOUN/s_c/poss} polite interest.",
-                "exp": 10,
-                "stat_skill": [
-                    "CLEVER,1"
-                ],
-                "other_clan_rep": 2,
-                "frequency": 4
-            },
-            {
-                "text": "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting. The patrols pause to converse for a little while, s_c bringing up a story that, while slightly embarrassing for s_c, is entertaining and lighthearted. The patrols part in good spirits.",
-                "exp": 10,
-                "stat_trait": [
-                    "adventurous",
-                    "bold",
-                    "daring",
-                    "shameless",
-                    "troublesome",
-                    "playful",
-                    "childish"
-                ],
-                "other_clan_rep": 2,
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence. Eventually, everyone involved slowly shuffles away to continue their respective patrols.",
-                "exp": 0,
-                "other_clan_rep": -1,
-                "frequency": 4
-            },
-            {
-                "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious - and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
-                "exp": 0,
-                "stat_trait": [
-                    "vengeful",
-                    "bloodthirsty",
-                    "righteous",
-                    "vengeful",
-                    "cold"
-                ],
-                "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "text": "The patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by the patrol's posturing.",
-                "exp": 0,
-                "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_success_outcomes": [
-            {
-                "text": "The patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how the patrol is acting.",
-                "exp": 10,
-                "other_clan_rep": -2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -542,21 +568,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
             "healer cats": [
                 1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
         "frequency": 2,
@@ -640,12 +654,7 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 2,
         "max_cats": 6,
-        "min_max_status": {
-            "leader": [
-                -1,
-                -1
-            ]
-        },
+        "min_max_status": {},
         "frequency": 2,
         "intro_text": "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory.",
         "decline_text": "p_l decides that it isn't important. Maybe an apprentice simply lost their way.",
@@ -658,6 +667,9 @@
                 "frequency": 4
             },
             {
+                "min_max_status": {
+                    "leader": [-1, -1]
+                },
                 "text": "The patrol follows the scent deeper into their own territory, eventually stumbling upon the o_c_n deputy! The deputy explains that they've come bearing important news for the c_n leader. Suspicious but assured of their intentions, the patrol escorts them to the camp.",
                 "exp": 10,
                 "other_clan_rep": 2,
@@ -670,7 +682,25 @@
                     "FIGHTER,1"
                 ],
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's quick thinking during a dog attack."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists that the patrol at least escort the wounded warrior to the border.",
@@ -680,12 +710,31 @@
                     "calm"
                 ],
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat found to_cat's compassion toward a hurt o_c_n warrior admirable."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol decides to follow the scent but only end up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills. It doesn't matter now; the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
+                "text": "The patrol decides to follow the scent but only ends up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills. It doesn't matter now; the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent.",
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -701,7 +750,26 @@
                     "vengeful"
                 ],
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat harshly reprimand a stray o_c_n apprentice and couldn't help feeling like it was too much."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon the patrol. r_c is killed before they can run and the rest of the patrol scatters in fear.",
@@ -743,10 +811,32 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "How dare they trespass! The patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n deputy conversing with your leader. They tell the patrol off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
+                "min_max_status": {
+                    "leader": [-1, -1]
+                },
+                "text": "How dare they trespass! The patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n deputy conversing with your leader. {PRONOUN/lead_name/subject/CAP} {VERB/lead_name/tell/tells} the patrol off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
                 "exp": 0,
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "high_social",
+                            "low_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw how to_cat's patrol jumped to hasty conclusions about a o_c_n scent."
+                        }
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -769,16 +859,11 @@
         "types": [
             "border"
         ],
-        "tags": [],
+        "tags": ["clan:leader"],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
-            "leader": [
-                -1,
-                -1
-            ]
-        },
+        "min_max_status": {},
         "frequency": 2,
         "intro_text": "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory.",
         "decline_text": "p_l decides that it isn't important. Maybe an apprentice simply lost their way.",
@@ -791,6 +876,9 @@
                 "frequency": 4
             },
             {
+                "min_max_status": {
+                    "leader": [-1, -1]
+                },
                 "text": "p_l follows the scent deeper into their own territory, eventually stumbling upon the o_c_n deputy! The deputy explains that they've come bearing important news for the c_n leader. Suspicious but assured of their intentions, p_l escorts them to the camp.",
                 "exp": 10,
                 "other_clan_rep": 2,
@@ -867,7 +955,10 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n deputy conversing with your leader.  They tell p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
+                "min_max_status": {
+                    "leader": [-1, -1]
+                },
+                "text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n deputy conversing with lead_name.  {PRONOUN/lead_name/subject/CAP} {VERB/lead_name/tell/tells} p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -1113,7 +1204,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -1235,7 +1326,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -1582,7 +1673,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -1704,7 +1795,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -2050,7 +2141,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -2172,7 +2263,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -2519,7 +2610,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -2641,7 +2732,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -2987,7 +3078,7 @@
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
                 "relationship": {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
@@ -3109,7 +3200,7 @@
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
                 "relationship": {
-                    "cats_from": ["low_social", "low_stable"],
+                    "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
@@ -3230,10 +3321,6 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "warrior": [
-                1,
-                1
-            ],
             "apprentice": [
                 1,
                 1
@@ -3276,10 +3363,30 @@
                         "cats_from": [
                             "app1"
                         ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat gave from_cat a super special top-secret mission to cross the o_c_n border."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat couldn't help but respect to_cat's daring enthusiasm to break the rules and cross o_c_n's border."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3301,6 +3408,23 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "to_cat tried to make from_cat cross the o_c_n border and steal."
+                        }
+                    },
+                    {
+                        "cats_to": [
                             "app1"
                         ],
                         "cats_from": [
@@ -3310,20 +3434,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat couldn't help but respect to_cat's refusal of {PRONOUN/from_cat/poss} order to cross the o_c_n border."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3335,16 +3449,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "app1"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "comfort"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat gave from_cat a super special mission to race across the o_c_n border while on patrol."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -3359,16 +3476,35 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
-                        "mutual": true,
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat unwisely suggested from_cat cross into o_c_n territory and was entirely unprepared for the consequences."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard how to_cat encouraged app1 to cross into o_c_n territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3409,29 +3545,54 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "app1"
                         ],
+                        "mutual": false,
                         "values": [
+                            "comfort",
                             "like",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "to_cat suggested from_cat cross the border and steal from o_c_n, leading to horrible consequences for from_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard how to_cat encouraged app1 to cross into o_c_n territory."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat couldn't believe how gullible to_cat was to follow {PRONOUN/from_cat/poss} orders and cross the o_c_n border."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3454,11 +3615,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
+            "normal adult": [1, 5],
             "apprentice": [
-                1,
-                5
-            ],
-            "warrior": [
                 1,
                 5
             ]
@@ -3500,15 +3658,17 @@
                             "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "multi"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
-                            "trust",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat found to_cat's enthusiasm to meet an o_c_n apprentice cute."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3595,13 +3755,17 @@
                             "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "multi",
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw how to_cat was overly friendly to another Clan's apprentice."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3632,9 +3796,31 @@
                         ],
                         "mutual": true,
                         "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat had to remind to_cat not to fraternize with another Clan's apprentice."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "comfort",
                             "like"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat felt humiliated when from_cat harshly reprimanded {PRONOUN/to_cat/poss} actions in front of a o_c_n patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3697,24 +3883,15 @@
                             "app1"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "multi"
                         ],
                         "values": [
                             "like"
                         ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat didn't appreciate to_cat's sassy remark and flippant attitude in front of an o_c_n patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3749,7 +3926,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wished to_cat hadn't needlessly escalated an encounter with o_c_n."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3776,17 +3956,34 @@
                     "app1"
                 ],
                 "other_clan_rep": -2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat got a little overly-enthusiastic during an encounter with o_c_n and from_cat couldn't help feeling frustrated."
+                        }
+                    }
+                ]
             },
             {
                 "text": "app1 glances up at the other apprentice from time to time while marking the border. {PRONOUN/app1/subject/CAP} never {VERB/app1/get/gets} a chance to meow hello, because r_c spots the o_c_n apprentice peering over the border and coolly asks them to focus on their own territory. A o_c_n warrior responds that r_c should concern {PRONOUN/r_c/self} with <i>{PRONOUN/r_c/poss}</i> apprentices, not o_c_n's. Pelts bristle and ears flatten before the patrols part ways.",
                 "exp": 15,
                 "art": "gen_bord_twocat_hostile_app_warrior",
                 "other_clan_rep": -2,
-                "frequency": 1
+                "frequency": 2
             },
             {
-                "text": "app1 arches {PRONOUN/app1/poss} back and spits an insult at the o_c_n apprentice. They're as scrawny as a mouse in leaf-bare! Doesn't o_c_n bother feeding their kits? Oh, sorry, they're an <i>apprentice?</i> Wow, app1 didn't think an apprentice could even <i>be</i> that small.",
+                "text": "app1 arches {PRONOUN/app1/poss} back and spits an insult at the o_c_n apprentice. They're as scrawny as a mouse in leaf-bare! Doesn't o_c_n bother feeding their kits? Oh, sorry, they're an <i>apprentice?</i> Wow, app1 didn't think an apprentice could even <i>be</i> that small. Pelts bristle and ears flatten before the patrols part ways.",
                 "exp": 15,
                 "art": "gen_bord_twocat_hostile_app_warrior",
                 "stat_skill": [
@@ -3810,7 +4007,24 @@
                     "playful"
                 ],
                 "other_clan_rep": -2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat got a little overly-hostile during an encounter with o_c_n and from_cat couldn't help feeling frustrated."
+                        }
+                    }
+                ]
             }
         ],
         "antag_fail_outcomes": [
@@ -3842,12 +4056,31 @@
                             "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "multi"
                         ],
                         "values": [
                             "like"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat couldn't believe to_cat actually started a fight with a o_c_n apprentice."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "high_aggress"
+                        ],
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat found it hilarious when {PRONOUN/from_cat/subject} heard that to_cat started a fight with a o_c_n apprentice."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3915,7 +4148,25 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat couldn't believe to_cat actually started a fight with o_c_n."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat was there to stop a fight with o_c_n before it got too serious."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3943,7 +4194,25 @@
                     "scar": "m_c was scarred in a border skirmish.",
                     "death": "m_c died of injuries sustained in a border skirmish."
                 },
-                "frequency": 1
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wished to_cat wasn't so eager for a fight."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -3964,7 +4233,7 @@
         "max_cats": 6,
         "min_max_status": {
             "normal adult": [
-                1,
+                3,
                 6
             ]
         },
@@ -3979,7 +4248,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -3987,9 +4256,13 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                        }
                     }
                 ],
                 "other_clan_rep": 2,
@@ -3998,24 +4271,8 @@
             {
                 "text": "p_l orders the patrol except r_c back to camp. p_l and r_c grab the kits by their scruffs despite their protests, and on their journey to o_c_n they are greeted by a concerned patrol that is very happy and grateful to see the kits safe, thanking them profusely.",
                 "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 10
-                    }
-                ],
                 "other_clan_rep": 2,
-                "frequency": 1
+                "frequency": 4
             },
             {
                 "text": "p_l orders the patrol to go back to camp asking that r_c be left behind to help {PRONOUN/p_l/object}. They go up to the little kits convincing them that they are gonna give them the best badger ride ever. As they approach o_c_n's camp, with the kits squealing with joy on their back, they are greeted with relief and laughter.",
@@ -4030,17 +4287,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                        }
                     }
                 ],
                 "other_clan_rep": 2,
@@ -4060,17 +4321,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                        }
                     }
                 ],
                 "other_clan_rep": 2,
@@ -4081,22 +4346,6 @@
             {
                 "text": "As p_l goes to step over the border with r_c to retrieve the kits and bring them to their Clan, they stop as they hear a o_c_n patrol shouting for the kits. p_l is relieved to know they will be safe with their own Clan and resume {PRONOUN/p_l/poss} patrol. The patrol doesn't realize that the o_c_n cats saw them cross the border and now look upon their departing backs with fury.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "other_clan_rep": -1,
                 "frequency": 4
             },
@@ -4109,22 +4358,6 @@
                 "history_text": {
                     "death": "m_c was slain by o_c_n warriors"
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "other_clan_rep": -3,
                 "frequency": 3
             }
@@ -4197,7 +4430,26 @@
                         "backstory: otherclan5"
                     ]
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was witness to how to_cat apparently can't tell the difference between o_c_n kits and c_n kits."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -4216,15 +4468,11 @@
         "types": [
             "border"
         ],
-        "tags": [],
+        "tags": ["clan:leader"],
         "patrol_art": "bord_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "leader": [
-                -1,
-                -1
-            ],
             "normal adult": [
                 1,
                 6
@@ -4236,27 +4484,12 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "p_l is not willing to let any cat die to a badger. {PRONOUN/p_l/subject/CAP} {VERB/p_l/order/orders} the patrol to continue on while {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} on a o_c_n patrol to come by, and to give them a warning about the badger.",
-                "exp": 10,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "other_clan_rep": 2,
-                "frequency": 4
-            },
-            {
+                "min_max_status": {
+                    "leader": [
+                        -1,
+                        -1
+                    ]
+                },
                 "text": "As luck would have it, p_l smells a o_c_n patrol approaching. {PRONOUN/p_l/subject/CAP} {VERB/p_l/call/calls} out to the patrol and tells them about the badger and where {PRONOUN/p_l/subject} saw it making a den. The o_c_n patrol is grateful and return to camp immediately to report the badger to their leader.",
                 "exp": 10,
                 "relationships": [
@@ -4278,6 +4511,38 @@
                 "frequency": 1
             },
             {
+                "text": "s_c is not willing to let any cat die to a badger. {PRONOUN/s_c/subject/CAP} {VERB/s_c/order/orders} the patrol to continue on while {PRONOUN/s_c/subject} {VERB/s_c/wait/waits} on a o_c_n patrol to come by, and to give them a warning about the badger.",
+                "exp": 10,
+                "stat_trait": [
+                    "careful",
+                    "responsible",
+                    "thoughtful",
+                    "righteous",
+                    "compassionate",
+                    "loving",
+                    "sincere"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's efforts to ensure no cat gets caught unawares by a badger."
+                        }
+                    }
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },            {
                 "text": "p_l tells the patrol to continue on and hops over the border to walk to o_c_n's camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} greeted at the camp entrance with bristled fur, angry hisses and the leader demanding to know what {PRONOUN/p_l/subject} {VERB/p_l/are/is} doing there. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} the situation and with {PRONOUN/p_l/poss} smooth talking skills manage to convince the cats of {PRONOUN/p_l/poss} good intentions. The leader thanks {PRONOUN/p_l/object} and orders a patrol to escort {PRONOUN/p_l/object} back to the border.",
                 "exp": 10,
                 "stat_skill": [
@@ -4290,16 +4555,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's efforts to ensure no cat gets caught unawares by a badger."
+                        }
                     }
                 ],
                 "other_clan_rep": 2,
@@ -4313,16 +4581,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's efforts to ensure no cat gets caught unawares by a badger."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4330,10 +4601,29 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "a o_c_n patrol approaches and asks if they have seen anything odd. At the same time that p_l says no, r_c tells the o_c_n cats about the huge badger {PRONOUN/r_c/subject} saw. The o_c_n patrols thanks r_c for {PRONOUN/r_c/poss} honesty, looking angrily at p_l at the same time.",
+                "text": "A o_c_n patrol approaches and asks if they have seen anything odd. At the same time that p_l says no, r_c tells the o_c_n cats about the huge badger {PRONOUN/r_c/subject} saw. The o_c_n patrols thanks r_c for {PRONOUN/r_c/poss} honesty, looking angrily at p_l at the same time.",
                 "exp": 0,
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat had the gall to contradict p_l's words during an encounter with o_c_n."
+                        }
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -4382,6 +4672,7 @@
                 "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small - the savior of her Clan, marked with moth wings tucked behind her ear.",
                 "exp": 20,
                 "other_clan_rep": 2,
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": [
@@ -4393,40 +4684,14 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "like"
+                            "comfort"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust",
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed listening to to_cat's story on patrol."
+                        }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [

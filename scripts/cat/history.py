@@ -7,7 +7,7 @@ import ujson
 from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
-from scripts.utility import adjust_list_text
+from scripts.events_module.text_adjust import adjust_list_text
 
 
 class History:

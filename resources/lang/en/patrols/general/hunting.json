@@ -391,7 +391,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["high_lawful"],
+                        "cats_from": ["clan", "high_lawful"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -10,
@@ -489,7 +489,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["high_lawful"],
+                        "cats_from": ["clan", "high_lawful"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5,
@@ -592,7 +592,7 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["high_lawful", "patrol"],
+                        "cats_from": ["clan", "high_lawful", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5,

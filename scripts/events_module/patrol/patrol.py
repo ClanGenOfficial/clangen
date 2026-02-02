@@ -9,6 +9,7 @@ from typing import List, Tuple, Optional, Union
 
 import pygame
 
+from scripts.cat import pronouns
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
@@ -18,6 +19,9 @@ from scripts.events_module.event_filters import (
     event_for_tags,
     get_frequency,
     find_new_frequency,
+    filter_relationship_type,
+    check_relationship_value,
+    get_personality_compatibility,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
@@ -25,14 +29,11 @@ from scripts.game_structure import localization, constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
-    get_personality_compatibility,
-    check_relationship_value,
+from scripts.events_module.text_adjust import (
     process_text,
     adjust_prey_abbr,
-    find_special_list_types,
-    filter_relationship_type,
     get_special_snippet_list,
+    find_special_list_types,
     adjust_list_text,
 )
 
@@ -260,9 +261,20 @@ class Patrol:
         # DETERMINE RANDOM CAT
         # Find random cat
         if len(patrol_cats) > 1:
-            self.random_cat = choice(
-                [i for i in patrol_cats if i != self.patrol_leader]
-            )
+            # prioritize grabbing an adult as the random cat
+            if self.patrol_statuses.get("normal adult", 0) > 1:
+                self.random_cat = choice(
+                    [
+                        i
+                        for i in self.patrol_cats
+                        if i != self.patrol_leader and i not in self.patrol_apprentices
+                    ]
+                )
+            # if no adults, grab anyone
+            else:
+                self.random_cat = choice(
+                    [i for i in patrol_cats if i != self.patrol_leader]
+                )
         else:
             self.random_cat = choice(patrol_cats)
 
@@ -1138,7 +1150,7 @@ class Patrol:
                 pronoun = choice(new_cats[0].pronouns)
             else:
                 names = adjust_list_text([str(cat.name) for cat in new_cats])
-                pronoun = localization.get_new_pronouns("default plural")
+                pronoun = pronouns.get_new_pronouns("default plural")
 
             replace_dict[f"n_c:{i}"] = (names, pronoun)
 
@@ -1231,5 +1243,5 @@ class Patrol:
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
-PATROL_WEIGHT_ADAPTION = game.prey_config["patrol_weight_adaption"]
-PATROL_BALANCE = game.prey_config["patrol_balance"]
+PATROL_WEIGHT_ADAPTION = constants.PREY_CONFIG["patrol_weight_adaption"]
+PATROL_BALANCE = constants.PREY_CONFIG["patrol_balance"]
