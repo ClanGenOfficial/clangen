@@ -2222,7 +2222,7 @@ class Cat:
         elif len(switch_get_value(Switch.clan_list)) > 0:
             clanname = switch_get_value(Switch.clan_list)[0]
         elif game.clan is not None:
-            clanname = game.clan.uuid
+            clanname = game.clan.save_id
 
         condition_directory = get_save_dir() + "/" + clanname + "/conditions"
         condition_file_path = condition_directory + "/" + self.ID + "_conditions.json"
@@ -2988,7 +2988,7 @@ class Cat:
             clan = (
                 switch_get_value(Switch.clan_list)[0]
                 if game.clan is None
-                else game.clan.uuid
+                else game.clan.save_id
             )
 
             with open(
