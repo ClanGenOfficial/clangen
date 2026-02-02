@@ -32,11 +32,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove off rogues together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -45,22 +45,18 @@
                 "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "stat_skill": [
-                    "FIGHTER,3"
+                    "FIGHTER,2"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                        "cats_from": "from_cat was impressed when to_cat drove rogues off the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -82,11 +78,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                        "cats_from": "from_cat was impressed when to_cat drove rogues off the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -112,11 +108,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat failed to drive away rogues while on patrol with from_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -150,11 +146,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat failed to drive away rogues while on patrol with from_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -185,13 +181,41 @@
             {
                 "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/manage/manages} to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
                 "exp": 30,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed to hear to_cat escaped a rogue ambush."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity that the rogues are taken aback. Alarmed by the Clan cat's lack of fear and self-preservation, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
                 "exp": 30,
                 "stat_skill": [
                     "FIGHTER,3"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was amazed to hear to_cat took on a gang of rogues single-pawed."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
@@ -205,6 +229,22 @@
                     "fierce",
                     "vengeful"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat honors to_cat's heroic death in battle against a rogue ambush."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -216,6 +256,18 @@
                 "history_text": {
                     "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                 },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat honors to_cat's death in battle against a rogue ambush."
+                        }
+                    }
+                ],
                 "frequency": 3
             }
         ]
@@ -246,18 +298,14 @@
                 "exp": 30,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's victory in battle against a gang of rogues."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -268,17 +316,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "clan"
                         ],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's victory in battle against a gang of dangerous rogues."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -291,18 +339,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["some_clan", "patrol"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -316,18 +360,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["some_clan"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -344,6 +384,19 @@
                     "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
                     "death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                 },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -10,
+                        "log":
+                        {
+                            "cats_from": "from_cat heard that to_cat failed to drive off a gang of rogues."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -366,6 +419,18 @@
                     "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
                     "death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                 },
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard how to_cat put {PRONOUN/to_cat/poss} life on the line in battle against some rogues."
+                        }
+                    }
+                ],
                 "frequency": 4
             }
         ],
@@ -400,10 +465,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
+            "normal adult": [1, 1]
         },
         "frequency": 3,
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud by the short grass.",
