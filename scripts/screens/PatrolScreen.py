@@ -293,7 +293,7 @@ class PatrolScreen(Screens):
         elif event.ui_element == self.elements["clan_return"]:
             self.in_progress_data = None
             self.change_screen(GameScreen.CAMP)
-        elif event.ui_element == self.elements["rel_detail"]:
+        elif event.ui_element == self.elements.get("rel_detail"):
             RelChangeDetailWindow(self.rel_results)
 
     def screen_switches(self):

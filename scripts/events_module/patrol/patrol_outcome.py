@@ -270,6 +270,9 @@ class PatrolOutcome:
                 Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat
             )
         )
+        if self.relationship_effects:
+            results.append(i18n.t(f"screens.patrol.relationship_changed"))
+
         results.append(self._handle_rep_changes())
         results.append(self._handle_other_clan_relations(patrol))
         results.append(self._handle_prey(patrol))
@@ -285,14 +288,6 @@ class PatrolOutcome:
         print("PATROL END -----------------------------------------------------")
 
         return processed_text, " ".join(results), rel_results, self.get_outcome_art()
-
-    def _handle_relationship_changes(self, patrol) -> str:
-        unpack_rel_block(Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat)
-
-        if self.relationship_effects:
-            return i18n.t(f"screens.patrol.relationship_changed")
-        else:
-            return ""
 
     def _handle_future_event(self, patrol):
         """
