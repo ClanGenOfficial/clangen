@@ -1791,7 +1791,8 @@
                 "senior"
             ]
         },
-        "relationships": {
+        "relationships": [
+            {
             "cats_from": ["clan", "high_lawful"],
             "cats_to": ["m_c"],
             "values": ["respect"],
@@ -1801,6 +1802,7 @@
                 "cats_from": "from_cat disapproved of to_cat wearing a collar."
             }
         }
+    ]
     },
     {
         "event_id": "multi_misc_any_misc1",
@@ -10052,7 +10054,8 @@
                 "rebellious"
             ]
         },
-        "relationships": {
+        "relationships": [
+            {
             "cats_from": [
                 "some_clan"
             ],
@@ -10065,7 +10068,8 @@
                 "trust"
             ],
             "amount": -5
-        },
+        }
+    ],
         "other_clan": {
             "changed": 2
         }
@@ -10101,7 +10105,7 @@
                 "oblivious"
             ]
         },
-        "relationships": {
+        "relationships": [ {
             "cats_from": [
                 "some_clan"
             ],
@@ -10117,7 +10121,8 @@
             "log": {
                 "cats_from": "Was upset when m_c defied the Clan and maintained a friendship during war."
             }
-        },
+        }
+    ],
         "other_clan": {
             "changed": 2
         }
