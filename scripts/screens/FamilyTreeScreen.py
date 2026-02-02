@@ -11,13 +11,9 @@ from scripts.game_structure.ui_elements import (
     UISpriteButton,
     UISurfaceImageButton,
 )
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    adjust_list_text,
-)
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import adjust_list_text, shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
@@ -631,9 +627,6 @@ class FamilyTreeScreen(Screens):
             )
         }
         self.tabs["label"].disable()
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
 
     def exit_screen(self):
         for ele in self.cat_elements:

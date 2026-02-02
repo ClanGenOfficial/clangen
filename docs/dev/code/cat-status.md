@@ -19,6 +19,8 @@ We also utilize one more enum: `CatStanding`. This is, essentially, what a group
 ### Exiled or Lost
 When cats are exiled or lost from a group, their `group` will change to `None` and their `standing` with their old group will change to `EXILED` or `LOST` respectively. Their `social` will change to one of the outsider socials: `ROGUE`, `KITTYPET`, `LONER`; and their `rank` will change to match this `social`.
 
+If a cat is pregnant when lost or exiled, their kits will gain the `UNKNOWN` `standing` with their parent's group. If the parent was lost, the kittens will also be considered as such. The kits will take the same `social` as their parent.
+
 !!! tip
     Note that you can always get their past information through `all_socials`, `all_groups`, `all_ranks` and `get_standing_with_group()`
 

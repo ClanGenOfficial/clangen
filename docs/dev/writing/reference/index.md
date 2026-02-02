@@ -92,19 +92,19 @@ A list of the cats who are the target of cats_from's feelings.
 **Possible Abbreviations:**
 For `cats_from` and `cats_to` you may use any of cat abbreviations already utilized within the event format you are adding to, in addition to the following:
 
-| string         |                                                                            |
-|----------------|----------------------------------------------------------------------------|
-| `patrol`       | If this is a patrol, you can use this to affect all cats within the patrol |
-| `clan`         | The entire player Clan's feelings are affected                             |
-| `some_clan`    | This will affect a random set of cats equalling 1/8th of the player Clan   |
-| `low_lawful`   | All player Clan cats with a 0-8 lawfulness facet are affected              |
-| `high_lawful`  | All player Clan cats with a 9-16 lawfulness facet are affected             |
-| `low_social`   | All player Clan cats with a 0-8 sociable facet are affected                |
-| `high_social`  | All player Clan cats with a 9-16 sociable facet are affected               |
-| `low_stable`   | All player Clan cats with a 0-8 stability facet are affected               |
-| `high_stable`  | All player Clan cats with a 9-16 stability facet are affected              |
-| `low_aggress`  | All player Clan cats with a 0-8 aggression facet are affected              |
-| `high_aggress` | All player Clan cats with a 9-16 aggression facet are affected             |
+| string         |                                                                                                                                                                                                      |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `patrol`       | If this is a patrol, you can use this to affect all cats within the patrol                                                                                                                           |
+| `clan`         | The entire player Clan's feelings are affected                                                                                                                                                       |
+| `some_clan`    | This will affect a random set of cats equalling 1/8th of the player Clan                                                                                                                             |
+| `low_lawful`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All tagged cats with a 0-8 lawfulness facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.       |
+| `high_lawful`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 lawfulness facet are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
+| `low_social`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 sociable facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.    |
+| `high_social`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 sociable facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.   |
+| `low_stable`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 stability facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.   |
+| `high_stable`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 stability facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
+| `low_aggress`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
+| `high_aggress` | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
 
 ### mutual:bool
 Optional. Controls if the relation effect will be applied in both directions. Defaults to False.

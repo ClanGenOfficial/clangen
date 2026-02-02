@@ -118,7 +118,7 @@
                     "any"
                 ],
                 "stat_skill": [
-                    "RUNNER,0"
+                    "RUNNER,1"
                 ],
                 "relationships": [
                     {
@@ -209,8 +209,8 @@
                     "any"
                 ],
                 "stat_skill": [
-                    "CLEVER,0",
-                    "INSIGHT,1"
+                    "CLEVER,1",
+                    "INSIGHTFUL,1"
                 ],
                 "relationships": [
                     {
@@ -457,7 +457,7 @@
                 ],
                 "stat_skill": [
                     "CLEVER,0",
-                    "INSIGHT,1"
+                    "INSIGHTFUL,0"
                 ],
                 "relationships": [
                     {
@@ -4822,7 +4822,7 @@
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -6956,7 +6956,7 @@
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": 5,
-                        "log": "to_cat and from_cat reminisced on old funny memories while hunting together."
+                        "log": {"cats_from": "to_cat and from_cat reminisced on old funny memories while hunting together."}
                     }
                 ]
             },
@@ -7371,7 +7371,7 @@
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": 5,
-                        "log": "to_cat and from_cat reminisced on old funny memories while hunting together."
+                        "log": {"cats_from": "to_cat and from_cat reminisced on old funny memories while hunting together."}
                     }
                 ]
             },
