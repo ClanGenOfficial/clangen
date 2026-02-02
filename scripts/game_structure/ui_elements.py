@@ -1514,7 +1514,7 @@ class UICheckbox(UIImageButton):
     def __init__(
         self,
         position: tuple,
-        container: UIContainer,
+        container: IContainerLikeInterface,
         manager,
         visible: bool = True,
         tool_tip_text: str = None,
@@ -1556,6 +1556,39 @@ class UICheckbox(UIImageButton):
         """
         self.checked = False
         self.change_object_id("@unchecked_checkbox")
+
+    def hover_point(self, hover_x: float, hover_y: float) -> bool:
+        """
+        Test if a given point counts as 'hovering' this UI element. Normally that is a
+        straightforward matter of seeing if a point is inside the rectangle. Occasionally it
+        will also check if we are in a wider zone around a UI element once it is already active,
+        this makes it easier to move scroll bars and the like.
+
+        :param hover_x: The x (horizontal) position of the point.
+        :param hover_y: The y (vertical) position of the point.
+
+        :return: Returns True if we are hovering this element.
+
+        """
+
+        container_clip_rect = self.ui_container.get_container().get_rect().copy()
+        if self.ui_container.get_container().get_image_clipping_rect() is not None:
+            container_clip_rect.size = (
+                self.ui_container.get_container().get_image_clipping_rect().size
+            )
+            container_clip_rect.left += (
+                self.ui_container.get_container().get_image_clipping_rect().left
+            )
+            container_clip_rect.top += (
+                self.ui_container.get_container().get_image_clipping_rect().top
+            )
+
+        # ONLY CHANGE was to remove the drawable shape collide point check. for some reason, it would cause the checkbox
+        # hover to desync when inside a scrolling container
+
+        return bool(self.rect.collidepoint(hover_x, hover_y)) and bool(
+            container_clip_rect.collidepoint(hover_x, hover_y)
+        )
 
 
 class UICatListDisplay(UIContainer):
