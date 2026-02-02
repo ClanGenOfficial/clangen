@@ -201,7 +201,8 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "trust"
+                    "trust",
+                    "comfort"
                 ],
                 "amount": -30,
                 "log": {
