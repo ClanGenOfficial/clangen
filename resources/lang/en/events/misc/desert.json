@@ -973,7 +973,10 @@
     "event_id": "dst_misc_freshkill_anystolen1",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
     "frequency": 2,
     "event_text": "Hawks help themselves to the fresh-kill pile. No one intended that food to go to them, but at least there wasn't violence.",
     "supplies": [
@@ -988,7 +991,10 @@
     "event_id": "dst_misc_freshkill_anystolen2",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
     "frequency": 2,
     "event_text": "A dingo pack raids camp. Thankfully there are no injuries, the dens holding firm, but the fresh-kill pile is nearly ruined.",
     "supplies": [
@@ -1003,7 +1009,10 @@
     "event_id": "dst_misc_herb_anydestruction1",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
     "frequency": 1,
     "event_text": "A camel brazenly wanders into camp, sticks its head into the herb stores, and slobbers up half c_n's stored supplies as the Clan screeches with impotent fury.",
     "supplies": [
@@ -1018,7 +1027,10 @@
     "event_id": "dst_misc_herb_anydestruction2",
     "location": ["desert"],
     "season": ["any"],
-    "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
     "frequency": 1,
     "event_text": "A sandstorm hits camp, whipped up by towering winds. It floods the herb stores with grit and dust while c_n tries to save as many of their healing supplies as possible.",
     "supplies": [
@@ -1033,9 +1045,12 @@
     "event_id": "dst_misc_herb_newleafdestruction1",
     "location": ["desert"],
     "season": ["newleaf"],
-    "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
     "frequency": 1,
-    "event_text": "Ants, desperate to extablish a nest before the dry season fully kicks in, try to do so in c_n's herb stores. No one is pleased at the results.",
+    "event_text": "Ants, desperate to establish a nest before the dry season fully kicks in, try to do so in c_n's herb stores. No one is pleased at the results.",
     "supplies": [
       {
           "type": "all_herb",
@@ -1048,7 +1063,10 @@
     "event_id": "dst_misc_herb_greenleafdestruction1",
     "location": ["desert"],
     "season": ["greenleaf"],
-    "tags": ["clan_wide"],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
     "frequency": 1,
     "event_text": "The sun withers all it touches - and the herb stores have unfortunately caught its gaze. Many of the supplies are little more than withered kindling now.",
     "supplies": [

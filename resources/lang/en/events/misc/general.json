@@ -1048,9 +1048,6 @@
         "sub_type": [
             "hidden_murder_reveal"
         ],
-        "tags": [
-            "clan_wide"
-        ],
         "frequency": 3,
         "event_text": "m_c admits quietly to r_c that {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} temper on that terrible, fateful day... r_c's death was at {PRONOUN/m_c/poss} paws.",
         "m_c": {
@@ -1082,7 +1079,7 @@
         "relationships": [
             {
                 "cats_from": [
-                    "clan"
+                    "r_c"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1183,7 +1180,7 @@
             "clan_wide"
         ],
         "frequency": 2,
-        "event_text": "m_c stands in the water for hours on end, but the flow cannot wash away mur_c's blood, nor the guilt coiled heavy in {PRONOUN/m_c/poss} chest.",
+        "event_text": "m_c stands in the water for hours on end, but the flow cannot wash away mur_c's blood, nor the guilt coiled heavy in {PRONOUN/m_c/poss} chest. {PRONOUN/m_c/subject/CAP} {VERB/m_c/admit/admits} {PRONOUN/m_c/poss} actions to the Clan later that day.",
         "m_c": {
             "age": [
                 "any"
@@ -4620,9 +4617,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
-        ],
         "frequency": 4,
         "event_text": "c_n finds tracks crossing the border and then hurriedly backtracking, indicating the owner didn't intrude intentionally.",
         "m_c": {
@@ -4968,8 +4962,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "The thornbush might be on o_c_n's side of the border, but both Clans benefit from uprooting it before it can block the path further.",
@@ -5027,8 +5022,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "Tracks don't lie, even if o_c_n may. One of them has been traipsing across the border. It remains to be seen if that cat is a confused apprentice or a deliberate provocateur.",
@@ -5058,8 +5054,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "An area of the border looks a little too pristine. Almost like o_c_n have been covering something up there.",
@@ -6937,8 +6934,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "The Clan worked hard to gather plenty of fresh-kill, but woke up to find pawprints leading away from the fresh-kill pile, and missing prey.",
@@ -6960,8 +6958,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "The Clan gathered a stockpile of food to save, the more the better, but one night the fresh-kill pile was drastically reduced and paw prints were found on the ground.",
@@ -6983,8 +6982,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "The o_c_n medicine cat comes asking if c_n has any herbs to spare. Unfortunately, the c_n herb stocks are far too low and c_n is unable to provide any help.",
@@ -7013,8 +7013,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "A medicine cat from o_c_n comes to c_n, asking for herbs to heal their sick Clanmates. c_n quickly shoos them away, not willing to admit that they already don't have enough to support themselves.",
@@ -7043,8 +7044,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "The o_c_n medicine cat comes asking if c_n have any given_herb to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
@@ -7072,8 +7074,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "The medicine cat apprentice from o_c_n comes asking for given_herb. They refuse to say why their Clan needs them but c_n still provides them with what they need.",
@@ -7102,8 +7105,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "The o_c_n medicine cat comes asking if c_n have any given_herb to spare. However, c_n only has enough for themselves and they refuse to share.",
@@ -7131,8 +7135,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "The medicine cat apprentice from o_c_n comes asking for herbs. They refuse to say why their Clan needs them and c_n decides not to share their precious few given_herb.",
@@ -7160,8 +7165,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. c_n provides the cat with some of their extra lungwort.",
@@ -7190,8 +7196,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "A medicine cat from o_c_n comes to c_n, asking for lungwort to heal a case of yellowcough. c_n has some extra, and so decides to share with their allies.",
@@ -7220,8 +7227,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "The o_c_n medicine cat apprentice comes to c_n's camp, pleading for help with a yellowcough epidemic. However, c_n has nothing that they are willing to share.",
@@ -7249,8 +7257,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 2,
         "event_text": "A medicine cat from o_c_n comes to c_n, asking for lungwort to heal a case of yellowcough. However, c_n hardly has enough for their own Clan and so refuses.",
@@ -7457,8 +7466,9 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and attempting to destroy the rest. The Clan manages to recover some of the herbs, but the store was still badly damaged.",
@@ -7491,8 +7501,9 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and destroying the rest.",
@@ -7525,8 +7536,9 @@
         "sub_type": [
             "war"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "c_n breaks into the o_c_n camp and steals precious herbs from their medicine cat den.",
@@ -7576,8 +7588,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "Some sort of pest got into the herb stores and ruined much of the supplies. c_n will have to clean it out and start over anew.",
@@ -7601,8 +7614,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "Abnormally strong winds blew through the camp last night and scattered the herb store into a useless state. The Clan manages to recover some of the herbs, but the resulting supply is much smaller than before.",
@@ -7626,8 +7640,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "Some kind of blight has infected the herb stores. c_n has no choice but to clear out all the old herbs.",
@@ -7651,8 +7666,9 @@
         "season": [
             "leaf-bare"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "Freezing temperatures have not just affected the cats. It's also frostbitten the stored herbs. Many of them are useless now and will have to be replaced.",
@@ -7676,8 +7692,9 @@
         "season": [
             "newleaf"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to be growing mold and many herbs have to be thrown out.",
@@ -7701,8 +7718,9 @@
         "season": [
             "greenleaf"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "The persistent, dry heat managed to cause a small fire in the herb stores. While no one was injured, many of the herbs are little more than ashes now.",
@@ -7726,8 +7744,9 @@
         "season": [
             "greenleaf"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 3,
         "event_text": "As the herb stores are being inspected, it's noticed that some of the given_herb went bad. They'll need to be replaced.",
@@ -7751,8 +7770,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 4,
         "event_text": "The Clan has gathered plenty of moss recently, time to refresh the dens!",
@@ -7775,8 +7795,9 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 4,
         "event_text": "The herb stores have quite a lot of given_herb, the excess is given back to the earth.",

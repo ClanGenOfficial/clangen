@@ -10,7 +10,7 @@
     ],
     "fleas:": [
         "m_c seems to have picked up some fleas.",
-        "m_c has been scratching and itching all day, it seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} fleas."
+        "m_c has been scratching and itching all day. It seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} fleas."
     ],
     "heat exhaustion": [
         "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat exhaustion."

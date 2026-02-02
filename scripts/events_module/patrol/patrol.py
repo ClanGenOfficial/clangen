@@ -261,9 +261,20 @@ class Patrol:
         # DETERMINE RANDOM CAT
         # Find random cat
         if len(patrol_cats) > 1:
-            self.random_cat = choice(
-                [i for i in patrol_cats if i != self.patrol_leader]
-            )
+            # prioritize grabbing an adult as the random cat
+            if self.patrol_statuses.get("normal adult", 0) > 1:
+                self.random_cat = choice(
+                    [
+                        i
+                        for i in self.patrol_cats
+                        if i != self.patrol_leader and i not in self.patrol_apprentices
+                    ]
+                )
+            # if no adults, grab anyone
+            else:
+                self.random_cat = choice(
+                    [i for i in patrol_cats if i != self.patrol_leader]
+                )
         else:
             self.random_cat = choice(patrol_cats)
 
@@ -1232,5 +1243,5 @@ class Patrol:
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
-PATROL_WEIGHT_ADAPTION = game.prey_config["patrol_weight_adaption"]
-PATROL_BALANCE = game.prey_config["patrol_balance"]
+PATROL_WEIGHT_ADAPTION = constants.PREY_CONFIG["patrol_weight_adaption"]
+PATROL_BALANCE = constants.PREY_CONFIG["patrol_balance"]

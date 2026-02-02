@@ -354,7 +354,7 @@ def json_load():
 
         try:
             # initialization of thoughts
-            cat.thoughts(other_clan_cats=other_clan_cats)
+            cat.get_new_thought(other_clan_cats=other_clan_cats)
         except Exception as e:
             logger.exception(
                 f"There was an error when thoughts for cat #{cat} are created."
