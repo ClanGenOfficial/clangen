@@ -12,6 +12,8 @@
         "half_blood_kitting_thought": {
             "one": "Is glad that {PRONOUN/m_c/poss} kit is safe",
             "many": "Is glad that {PRONOUN/m_c/poss} kits are safe"
-        }
+        },
+        "keep_clan_tradition": "%{name} decided to name the litter according to Clan tradition.",
+        "reject_clan_tradition": "%{name} decided not to name the litter according to Clan tradition."
     }
 }

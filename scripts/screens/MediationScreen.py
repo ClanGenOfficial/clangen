@@ -13,12 +13,9 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIRelationDisplay,
 )
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-)
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
@@ -28,6 +25,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
+from ..ui.windows.no_mediator import NoMediatorsWindow
 
 
 class MediationScreen(Screens):
@@ -53,7 +51,7 @@ class MediationScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen(GameScreen.PROFILE)
+                self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.last_med:
                 self.selected_mediator -= 1
                 self.update_mediator_info()
@@ -139,7 +137,9 @@ class MediationScreen(Screens):
         self.page = 1
 
         if self.mediators:
-            if Cat.fetch_cat(switch_get_value(Switch.cat)) in self.mediators:
+            if not switch_get_value(Switch.cat):
+                self.selected_mediator = 0
+            elif Cat.fetch_cat(switch_get_value(Switch.cat)) in self.mediators:
                 self.selected_mediator = self.mediators.index(
                     Cat.fetch_cat(switch_get_value(Switch.cat))
                 )
@@ -284,7 +284,10 @@ class MediationScreen(Screens):
         )
 
         self.update_buttons()
-        self.update_mediator_info()
+        if self.mediators:
+            self.update_mediator_info()
+        else:
+            NoMediatorsWindow()
 
     def random_cat(self):
         if self.selected_cat_list():
@@ -842,9 +845,6 @@ class MediationScreen(Screens):
         del self.search_bar_image
         self.search_bar.kill()
         del self.search_bar
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
 
     def on_use(self):
         super().on_use()

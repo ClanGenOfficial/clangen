@@ -24,7 +24,7 @@ from scripts.cat.save_load import (
     get_faded_ids,
     load_faded_cat_ids,
 )
-from scripts.cat.sprites import sprites
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
@@ -41,11 +41,9 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
-from scripts.utility import (
-    get_current_season,
-    clan_symbol_sprite,
-    get_living_clan_cat_count,
-)  # pylint: disable=redefined-builtin
+from scripts.clan_package.clan_symbols import clan_symbol_sprite
+from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
+from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 
 class Clan:
@@ -59,7 +57,6 @@ class Clan:
     clan_cats = []
 
     age = 0
-    current_season = "Newleaf"
     all_other_clans = []
 
     def __init__(
@@ -77,6 +74,10 @@ class Clan:
         self_run_init_functions=True,
         displayname="",
     ):
+        """
+        :param name: The save file name for the Clan, this should not be used for player-facing text beyond the save file screen
+        :param displayname: The display name for the Clan, this is what should appear while the playing the game.
+        """
         if name == "":
             return
 
@@ -104,7 +105,6 @@ class Clan:
             self.med_cat_list
         )  # Must do this after the medicine cat is added to the list.
         self.age = 0
-        self.current_season = "Newleaf"
         self.starting_season = starting_season
         self.instructor = None
         # This is the first cat in starclan, to "guide" the other dead cats there.
@@ -128,6 +128,7 @@ class Clan:
         self._reputation = 80
 
         self.all_other_clans = []
+        self.other_clan_IDs = []
 
         self.starting_members = starting_members
         if game_mode in ("expanded", "cruel season"):
@@ -148,6 +149,19 @@ class Clan:
 
         if self_run_init_functions:
             self.post_initialization_functions()
+
+        rebuild_top_menu_buttons()
+
+    @property
+    def current_season(self):
+        modifiers = {"Newleaf": 0, "Greenleaf": 3, "Leaf-fall": 6, "Leaf-bare": 9}
+        return (
+            self.starting_season
+            if constants.CONFIG["lock_season"]
+            else constants.SEASON_CALENDAR[
+                (self.age + modifiers[self.starting_season]) % 12
+            ]
+        )
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
@@ -241,7 +255,7 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE)
-            the_cat.thoughts()
+            the_cat.get_new_thought()
 
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
@@ -278,10 +292,6 @@ class Clan:
             switch_set_value(Switch.game_mode, "classic")
             self.game_mode = "classic"
 
-        # set the starting season
-        season_index = constants.SEASON_CALENDAR.index(self.starting_season)
-        self.current_season = constants.SEASON_CALENDAR[season_index]
-
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
         if cat.ID in Cat.all_cats and cat.ID not in self.clan_cats:
@@ -296,7 +306,6 @@ class Clan:
             and cat.status.alive_in_player_clan
             and cat.ID in Cat.outside_cats
         ):
-            # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
 
@@ -632,10 +641,6 @@ class Clan:
             )
             game.clan.post_initialization_functions()
         game.clan.age = int(general[1])
-        if not constants.CONFIG["lock_season"]:
-            game.clan.current_season = constants.SEASON_CALENDAR[game.clan.age % 12]
-        else:
-            game.clan.current_season = game.clan.starting_season
         game.clan.leader_lives, game.clan.leader_predecessors = int(
             leader_info[1]
         ), int(leader_info[2])
@@ -759,8 +764,6 @@ class Clan:
             if "starting_season" in clan_data
             else "Newleaf"
         )
-        get_current_season()
-
         game.clan.leader_lives = leader_lives
         game.clan.leader_predecessors = clan_data["leader_predecessors"]
 
@@ -1285,6 +1288,7 @@ class OtherClan:
         self.group_ID = ID
         if not self.group_ID:
             self.group_ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
+        game.clan.other_clan_IDs.append(self.group_ID)
 
         clan_names = names.names_dict["normal_prefixes"]
         clan_names.extend(names.names_dict["clan_prefixes"])

@@ -605,7 +605,7 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_from": ["high_social"],
+                        "cats_from": ["clan", "high_social"],
                         "cats_to": ["s_c"],
                         "values": ["respect", "like"],
                         "amount": 10,
