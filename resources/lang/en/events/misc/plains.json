@@ -178,7 +178,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["high_aggress"],
+                "cats_from": ["clan", "high_aggress"],
                 "cats_to": ["m_c"],
                 "values": ["respect"],
                 "amount": 5,

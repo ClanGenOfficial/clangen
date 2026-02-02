@@ -414,7 +414,7 @@ class Sprites:
         :param Surface symbol_str: The clan symbol to convert
         :param force_light: Use to ignore dark mode and always display the light mode color
         """
-        symbol = self.sprites.get("symbol" + symbol_str)
+        symbol = self.sprites.get(symbol_str)
         if symbol is None:
             logger.warning("%s is not a known Clan symbol! Using default.", symbol_str)
             symbol = self.sprites[self.clan_symbols[0]]

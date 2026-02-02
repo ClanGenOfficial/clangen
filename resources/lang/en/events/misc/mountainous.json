@@ -152,7 +152,7 @@
                         "like"
                     ],
                     "amount": 5,
-                    "log": "r_c gave a gift to m_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has} worn on {PRONOUN/m_c/poss} pelt ever since."
+                    "log": {"cats_from": "r_c gave a gift to m_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has} worn on {PRONOUN/m_c/poss} pelt ever since."}
                 }
             ]
     },
