@@ -473,49 +473,11 @@
             {
                 "text": "While it's pretty gray up there, the promised rain never comes.",
                 "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat had a successful patrol with to_cat."
-                        }
-                    }
-                ],
                 "frequency": 4
             },
             {
                 "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
                 "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat had a successful patrol with to_cat."
-                        }
-                    }
-                ],
                 "frequency": 1
             },
             {
