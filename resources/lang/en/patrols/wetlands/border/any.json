@@ -880,7 +880,7 @@
             "border"
         ],
         "tags": [
-            "all_mentored"
+            "app1_mentored"
         ],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
@@ -1063,6 +1063,16 @@
                         "log": {
                             "cats_from": "to_cat caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
                         }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove a rogue off the territory together."
+                        }
                     }
                 ]
             },
@@ -1137,6 +1147,16 @@
                         "amount": -30,
                         "log": {
                             "cats_from": "s_c caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's plan to ambush a trespassing rogue."
                         }
                     }
                 ]
@@ -1266,7 +1286,19 @@
             {
                 "text": "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
                 "exp": 0,
-                "frequency": 1
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat mistake {PRONOUN/to_cat/poss} own pawprints for signs of trespassing."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory.",
@@ -1375,6 +1407,26 @@
                         "log": {
                             "cats_from": "from_cat approved of to_cat driving a rogue off of c_n's territory."
                         }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat drove a rogue off the territory together."
+                        }
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "to_cat caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                        }
                     }
                 ]
             },
@@ -1424,6 +1476,16 @@
                         "log": {
                             "cats_from": "from_cat approved of to_cat driving a rogue off of c_n's territory."
                         }
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "to_cat caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                        }
                     }
                 ]
             },
@@ -1468,6 +1530,16 @@
                         "log": {
                             "cats_from": "from_cat approved of to_cat driving a rogue off of c_n's territory."
                         }
+                    },
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "to_cat caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                        }
                     }
                 ]
             }
@@ -1475,15 +1547,39 @@
         "fail_outcomes": [
             {
                 "min_max_status": {"apprentice": [2, 2]},
-                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
+                "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat mistake {PRONOUN/to_cat/poss} own pawprints for signs of trespassing."
+                        }
+                    }
+                ]
             },
             {
                 "min_max_status": {"apprentice": [3, 6]},
                 "text": "It turns out they were app1's own pawprints... app1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} want to look dumb in front of other cats.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat mistake {PRONOUN/to_cat/poss} own pawprints for signs of trespassing."
+                        }
+                    }
+                ]
             },
             {
                 "min_max_status": {"apprentice": [2, 2]},
@@ -1515,6 +1611,18 @@
                     [
                         "rogue"
                     ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["s_c"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "to_cat caught n_c:0 trespassing and demanded {PRONOUN/n_c:0/subject} leave the territory, but n_c:0 ignored {PRONOUN/to_cat/object}."
+                        }
+                    }
                 ]
             }
         ]
@@ -1545,15 +1653,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c",
-                            "patrol"],
-                        "cats_from": ["patrol",
-                            "patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
                         "values": ["like",
-                            "respect",
-                            "comfort"],
-                        "amount": 5
+                            "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat telling a story on a border patrol to keep everyone's minds off their damp paws."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1562,19 +1672,20 @@
                 "text": "s_c spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
                 "exp": 20,
                 "stat_skill": [
+                    "STORY,1",
                     "SPEAKER,1"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c",
-                            "patrol"],
-                        "cats_from": ["patrol",
-                            "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like",
-                            "respect",
-                            "comfort"],
-                        "amount": 5
+                            "respect"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about an ancient war during a border patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1586,19 +1697,37 @@
                     "charismatic",
                     "childish",
                     "playful",
-                    "loving"
+                    "loving",
+                    "confident"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c",
-                            "patrol"],
-                        "cats_from": ["patrol",
-                            "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol"
+                        ],
                         "mutual": false,
-                        "values": ["like",
+                        "values": [
                             "respect",
-                            "comfort"],
-                        "amount": 5
+                            "trust"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed the story that to_cat told during a long border patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat chatted and grew closer on a border patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1608,19 +1737,6 @@
             {
                 "text": "r_c skids on mud as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} getting to an exciting part and has to stop the story to pay attention to the path. ",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": ["r_c",
-                            "patrol"],
-                        "cats_from": ["patrol",
-                            "patrol"],
-                        "mutual": false,
-                        "values": ["like",
-                            "respect",
-                            "comfort"],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -1636,15 +1752,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c",
-                            "patrol"],
-                        "cats_from": ["patrol",
-                            "patrol"],
-                        "mutual": false,
-                        "values": ["like",
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": [
                             "respect",
-                            "comfort"],
-                        "amount": -5
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "s_c told r_c to stop telling a story and focus on {PRONOUN/r_c/poss} duties during a border patrol."
+                        }
                     }
                 ],
                 "frequency": 4
