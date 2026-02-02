@@ -2573,7 +2573,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c was given acc_plural as a congratulations. r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
+        "event_text": "m_c is given acc_plural as a congratulations. r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
         "new_accessory": [
             "WILD",
             "PLANT"
