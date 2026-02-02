@@ -246,7 +246,7 @@ class ListScreen(Screens):
         self.show_mute_buttons()
         self.clan_name = game.clan.displayname + "Clan"
 
-        self.set_disabled_menu_buttons(["catlist_screen"])
+        self.set_disabled_menu_buttons(["cats"])
         self.show_menu_buttons()
 
         # SCREEN CONTAINER - everything should come back to here

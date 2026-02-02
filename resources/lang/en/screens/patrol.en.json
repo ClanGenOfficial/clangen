@@ -55,6 +55,7 @@
         "prey_small": "A small amount of prey is brought to camp.",
         "prey_medium": "A medium amount of prey is brought to camp.",
         "prey_large": "A large amount of prey is brought to camp.",
-        "prey_huge": "A huge amount of prey is brought to camp."
+        "prey_huge": "A huge amount of prey is brought to camp.",
+        "relationship_changed": "Relationships between cats in the Clan have changed."
     }
 }

@@ -103,7 +103,7 @@ def event_for_tags(tags: list, cat, other_cat=None, mentor_tags_fulfilled=None) 
             leader_lives = game.clan.leader_lives
 
             life_lookup = {
-                "some_lives": (3, 9),
+                "some_lives": (4, 9),
                 "lives_remain": (2, 9),
                 "high_lives": (7, 9),
                 "mid_lives": (4, 6),
@@ -713,6 +713,7 @@ def filter_relationship_type(
 
     # keeping this list here just for quick reference of what tags are handled here
     all_possible_tags = [
+        "strangers",
         "siblings",
         "not_siblings",
         "littermates",
@@ -729,9 +730,11 @@ def filter_relationship_type(
         "app/mentor",
         "not_app",
     ]
+
     for tier_list in rel_type_tiers.values():
         all_possible_tags.extend(tier_list)
         all_possible_tags.extend([f"{l}_only" for l in tier_list])
+
     if not set(filter_list).issubset(set(all_possible_tags)):
         print(
             f"WARNING: {[tag for tag in filter_list if tag not in all_possible_tags]} is not a valid relationship_status tag!"
@@ -742,34 +745,32 @@ def filter_relationship_type(
             group.remove(patrol_leader)
         group.insert(0, patrol_leader)
 
-    if "siblings" in filter_list:
-        test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
+    test_cat = group[0]
+    testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
+    if "strangers" in filter_types:
+        if not all(
+            [inter_cat.ID in test_cat.relationships for inter_cat in testing_cats]
+        ):
+            return False
+        filter_list.remove("strangers")
+
+    if "siblings" in filter_types:
         if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             return False
         filter_list.remove("siblings")
 
-    if "not_siblings" in filter_list:
-        test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
+    if "not_siblings" in filter_types:
         if any([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             return False
         filter_list.remove("not_siblings")
 
-    if "littermates" in filter_list:
-        test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
+    if "littermates" in filter_types:
         if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             return False
         filter_list.remove("littermates")
 
-    if "not_littermates" in filter_list:
-        test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
+    if "not_littermates" in filter_types:
         if any([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             return False
 
@@ -823,10 +824,7 @@ def filter_relationship_type(
             return False
         filter_list.remove("parent/child")
 
-    if "not_parent" in filter_list:
-        test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
+    if "not_parent" in filter_types:
         if any([test_cat.is_parent(inter_cat) for inter_cat in testing_cats]):
             return False
         filter_list.remove("not_parent")
@@ -840,10 +838,7 @@ def filter_relationship_type(
             return False
         filter_list.remove("child/parent")
 
-    if "not_child" in filter_list:
-        test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
+    if "not_child" in filter_types:
         if any([inter_cat.is_parent(test_cat) for inter_cat in testing_cats]):
             return False
         filter_list.remove("not_child")
@@ -857,10 +852,7 @@ def filter_relationship_type(
             return False
         filter_list.remove("mentor/app")
 
-    if "not_mentor" in filter_list:
-        test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
+    if "not_mentor" in filter_types:
         if any([inter_cat in test_cat.apprentice for inter_cat in testing_cats]):
             return False
         filter_list.remove("not_mentor")
@@ -874,10 +866,7 @@ def filter_relationship_type(
             return False
         filter_list.remove("app/mentor")
 
-    if "not_app" in filter_list:
-        test_cat = group[0]
-        testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
+    if "not_app" in filter_types:
         if any([inter_cat in test_cat.mentor for inter_cat in testing_cats]):
             return False
         filter_list.remove("not_app")

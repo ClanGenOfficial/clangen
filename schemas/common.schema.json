@@ -334,6 +334,7 @@
     },
     "RelationshipStatus": {
       "enum": [
+        "strangers",
         "siblings",
         "not_siblings",
         "littermates",
