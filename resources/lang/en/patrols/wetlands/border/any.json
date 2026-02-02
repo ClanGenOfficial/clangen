@@ -31,6 +31,18 @@
                     [
                         "loner"
                     ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a brief chat when they encountered each other near an abandoned Twoleg nest."
+                        }
+                    }
                 ]
             },
             {
@@ -202,6 +214,18 @@
                     [
                         "loner"
                     ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a brief chat when they encountered each other near an abandoned Twoleg nest."
+                        }
+                    }
                 ]
             },
             {
