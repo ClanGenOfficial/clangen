@@ -6,7 +6,7 @@ import pygame_gui
 from pygame_gui.core import UIContainer
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.enums import CatRank, CatGroup, CatStanding
 from scripts.clan import OtherClan
 from scripts.game_structure import game
 from scripts.clan_package.settings.clan_settings import (
@@ -24,16 +24,14 @@ from scripts.screens.Screens import Screens
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import (
-    ui_scale,
-    get_text_box_theme,
-    get_other_clan_relation,
-    get_other_clan,
-    clan_symbol_sprite,
-    shorten_text_to_fit,
+from scripts.clan_package.clan_symbols import clan_symbol_sprite
+from scripts.ui.theme import get_text_box_theme
+from scripts.events_module.text_adjust import shorten_text_to_fit
+from scripts.clan_package.cotc import get_other_clan, get_other_clan_relation
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
+from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
-    ui_scale_dimensions,
 )
 
 
@@ -997,6 +995,12 @@ class LeaderDenScreen(Screens):
             if not i.dead
             and i.status.is_outsider
             and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            and (
+                CatStanding.KNOWN
+                in i.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID)
+                or CatStanding.MEMBER
+                in i.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID)
+            )
         ]
 
         # separate them into chunks for the pages
@@ -1111,6 +1115,3 @@ class LeaderDenScreen(Screens):
                 "success": success,
             },
         )
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]

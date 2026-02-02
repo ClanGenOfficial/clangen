@@ -12,16 +12,14 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UIModifiedScrollingContainer,
 )
-from scripts.ui.windows.base_window import GameWindow
-from scripts.utility import ui_scale
+from scripts.ui.windows.window_base_class import GameWindow
+from scripts.ui.scale import ui_scale
 
 
 class SymbolFilterWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((250, 125), (300, 450))),
-            window_display_title="windows.symbol_filters",
-            object_id="#filter_window",
         )
 
         self.possible_tags = {

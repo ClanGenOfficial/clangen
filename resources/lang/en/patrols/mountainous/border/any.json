@@ -759,7 +759,7 @@
                 "exp": 0,
                 "stat_skill": [
                     "SWIMMER,3",
-                    "INSIGHT,3",
+                    "INSIGHTFUL,3",
                     "SENSE,3",
                     "CLEVER,3"
                 ],
@@ -1216,7 +1216,7 @@
                 },
                   {
                   "cats_to": ["r_c"],
-                  "cats_from": ["high_lawful", "low_aggress"],
+                  "cats_from": ["clan", "high_lawful", "low_aggress"],
                   "mutual": false,
                   "values": ["trust", "respect", "comfort"],
                   "amount": -15,

@@ -13,12 +13,11 @@ from scripts.event_class import Single_Event
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import (
+from scripts.events_module.text_adjust import process_text, event_text_adjust
+from scripts.events_module.consequences import change_relationship_values
+from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
-    event_text_adjust,
     get_personality_compatibility,
-    process_text,
-    change_relationship_values,
 )
 
 
@@ -342,7 +341,6 @@ class RomanticEvents:
         subset = random.sample(subset, max(int(len(subset) / 3), 1))
 
         for other_cat in subset:
-            relationship = cat.relationships.get(other_cat.ID)
             flag = RomanticEvents.handle_new_mates(cat, other_cat)
             if flag:
                 return
@@ -556,7 +554,7 @@ class RomanticEvents:
         if poly and not RomanticEvents.current_mates_allow_new_mate(cat_from, cat_to):
             return False
 
-        become_mate = False
+        become_mates = False
         condition = constants.CONFIG["mates"]["confession"]["accept_confession"]
         rel_to_check = highest_romantic_relation.opposite_relationship
         if not rel_to_check:
@@ -564,7 +562,7 @@ class RomanticEvents:
             rel_to_check = highest_romantic_relation.opposite_relationship
 
         if RomanticEvents.relationship_fulfill_condition(rel_to_check, condition):
-            become_mate = True
+            become_mates = True
             if (
                 cat_from.ID in cat_to.previous_mates
                 and cat_to.ID in cat_from.previous_mates
@@ -625,7 +623,7 @@ class RomanticEvents:
             )
         )
 
-        if become_mate:
+        if become_mates:
             cat_from.set_mate(cat_to)
 
         return True
@@ -660,7 +658,6 @@ class RomanticEvents:
     def check_if_new_mate(cat_from, cat_to):
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
         become_mates = False
-        young_age = ("newborn", "kitten", "adolescent")
         if cat_to.status.is_outsider != cat_from.status.is_outsider:
             return False, None
 

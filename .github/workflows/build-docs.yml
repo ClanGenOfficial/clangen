@@ -11,6 +11,7 @@ on:
       - "mkdocs.yml"
       - "pyproject.toml"
       - "uv.lock"
+      - "README.md" # Necessary because of hatchling
 
 jobs:
   build:
@@ -59,4 +60,4 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.DOCS_RESTART_KUBECONFIG }}
       - name: Restart deployment
-        run: kubectl rollout restart deployment/clangen-docs -n clangen
+        run: kubectl rollout restart deployment/clangen-docs -n clangen-docs

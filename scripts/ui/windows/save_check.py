@@ -18,19 +18,18 @@ from scripts.game_structure.ui_elements import (
 )
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.windows.base_window import GameWindow
-from scripts.utility import ui_scale, ui_scale_dimensions, quit
+from scripts.ui.windows.window_base_class import GameWindow
+from scripts.housekeeping.quit_game import quit_game
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 
-class SaveCheck(GameWindow):
+class SaveCheckWindow(GameWindow):
     def __init__(self, last_screen, is_main_menu, mm_btn):
         if game.is_close_menu_open:
             return
         game.is_close_menu_open = True
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 200))),
-            window_display_title="Save Check",
-            object_id="#save_check_window",
         )
 
         self.clan_name = "UndefinedClan"
@@ -128,7 +127,7 @@ class SaveCheck(GameWindow):
                     self.kill()
                 else:
                     game.is_close_menu_open = False
-                    quit(savesettings=False, clearevents=False)
+                    quit_game(savesettings=False, clearevents=False)
             elif event.ui_element == self.save_button:
                 if game.clan is not None:
                     self.save_button_saving_state.show()

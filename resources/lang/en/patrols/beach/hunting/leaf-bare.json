@@ -415,16 +415,29 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat successfully hunted ground squirrels together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol bring back ground squirrels from a leaf-bare hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -445,9 +458,22 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat trusted to_cat to block ground squirrels' burrows so the patrol could trap them."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol bring back ground squirrels from a leaf-bare hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -456,24 +482,36 @@
                 "text": "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, with not a single squirrel left behind.",
                 "exp": 30,
                 "stat_skill": [
-                    "HUNTER,1"
+                    "HUNTER,1",
+                    "TEACHER,1",
+                    "INSIGHTFUL,1",
+                    "CLEVER,1"
                 ],
                 "prey": [
                     "large"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to pick off ground squirrels and enjoyed a successful hunt."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol bring back ground squirrels from a leaf-bare hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -489,13 +527,16 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "multi"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat silently blamed to_cat for alerting squirrels to the patrol's presence and spoiling a hunt."
+                        }
                     }
                 ],
                 "prey": [

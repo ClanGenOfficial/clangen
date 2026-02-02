@@ -9,16 +9,14 @@ from scripts.game_structure.ui_elements import (
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import self_update, UpdateChannel
 from scripts.housekeeping.version import get_version_info
-from scripts.ui.windows.base_window import GameWindow
-from scripts.utility import ui_scale
+from scripts.ui.windows.window_base_class import GameWindow
+from scripts.ui.scale import ui_scale
 
 
 class UpdateWindow(GameWindow):
     def __init__(self, last_screen, announce_restart_callback):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 160))),
-            window_display_title="Game Over",
-            object_id="#game_over_window",
         )
         self.last_screen = last_screen
         self.update_message = pygame_gui.elements.UITextBox(
