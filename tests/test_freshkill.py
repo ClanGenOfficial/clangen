@@ -1,15 +1,22 @@
 import os
+import tomllib
 import unittest
+from uuid import uuid4
+
 import ujson
 
+from scripts.cat import save_load
 from scripts.cat.enums import CatRank
+from scripts.cat.sprites.load_sprites import sprites
+from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
+from scripts.game_structure import game
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, create_cat
 from scripts.cat.skills import Skill, SkillPath
-from scripts.clan import Clan
+from scripts.clan import Clan, Afterlife
 from scripts.clan_resources.freshkill import FreshkillPile
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
@@ -17,14 +24,66 @@ from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 class FreshkillPileTest(unittest.TestCase):
     def setUp(self) -> None:
         self.prey_config = None
-        with open("resources/prey_config.json", "r") as read_file:
-            self.prey_config = ujson.loads(read_file.read())
+        with open("resources/prey_config.toml", "r") as read_file:
+            self.prey_config = tomllib.loads(read_file.read())
         self.amount = self.prey_config["start_amount"]
         self.prey_requirement = self.prey_config["prey_requirement"]
         self.condition_increase = self.prey_config["condition_increase"]
-        Cat.all_cats = {}
+
+        # load in the spritesheets
+        # we have to do this to prevent a crash, even though we won't be displaying anything
+        sprites.load_all()
+
+        game.starclan = Afterlife()
+        game.dark_forest = Afterlife()
+
+        # set up clan members and some helpful lists for us to use later
+        self.warriors = [
+            create_cat(CatRank.WARRIOR),
+            create_cat(CatRank.WARRIOR),
+            create_cat(CatRank.WARRIOR),
+        ]
+        self.apprentices = [
+            create_cat(CatRank.APPRENTICE),
+            create_cat(CatRank.APPRENTICE),
+        ]
+        self.elder = create_cat(CatRank.ELDER)
+        self.kitten = create_cat(CatRank.KITTEN)
+
+        members = [self.elder, self.kitten]
+        members.extend(self.warriors)
+        members.extend(self.apprentices)
+
+        game.clan = Clan(
+            name=f"{'Test'}_{uuid4()}",
+            displayname="Test",
+            leader=create_cat(CatRank.LEADER),
+            deputy=create_cat(CatRank.DEPUTY),
+            medicine_cat=create_cat(CatRank.MEDICINE_CAT),
+            biome="Forest",
+            camp_bg="camp1",
+            symbol="ADDER0",
+            game_mode="expanded",
+            starting_members=members,
+            starting_season="Newleaf",
+        )
+        save_load.cat_to_fade.clear()
+        game.clan.create_clan()
+
+        # set leader as a hunter skill for later testing
+        game.clan.leader.skills.primary = Skill(SkillPath.HUNTER, 25)
+
+        # set dep as injured for later testing
+        game.clan.deputy.injuries["test_injury"] = {"severity": "major"}
+
+        self.freshkill_pile = game.clan.freshkill_pile
+        # fills all cat's nutrition so we have steady baseline
+        self.freshkill_pile.update_nutrition(Cat.all_cats_list)
 
     def test_add_freshkill(self) -> None:
+        """
+        Tests the addition of freshkill
+        """
         # given
         freshkill_pile = FreshkillPile()
         self.assertEqual(freshkill_pile.pile["expires_in_4"], self.amount)
@@ -40,6 +99,9 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(freshkill_pile.pile["expires_in_1"], 0)
 
     def test_remove_freshkill(self) -> None:
+        """
+        Tests freshkill removal
+        """
         # given
         freshkill_pile1 = FreshkillPile()
         freshkill_pile1.pile["expires_in_1"] = 10
@@ -55,6 +117,9 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(freshkill_pile2.total_amount, self.amount - 5)
 
     def test_time_skip(self) -> None:
+        """
+        Tests freshkill expiration over time
+        """
         # given
         freshkill_pile = FreshkillPile()
         self.assertEqual(freshkill_pile.pile["expires_in_4"], self.amount)
@@ -84,275 +149,260 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(freshkill_pile.pile["expires_in_2"], 0)
         self.assertEqual(freshkill_pile.pile["expires_in_1"], 0)
 
-    def test_feed_cats(self) -> None:
-        # given
-        test_clan = Clan(
-            name="Test",
-            leader=None,
-            deputy=None,
-            medicine_cat=None,
-            biome="Forest",
-            camp_bg=None,
-            game_mode="expanded",
-            starting_season="Newleaf",
-        )
-        test_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        test_clan.add_cat(test_warrior)
+    def test_tactic_low_rank(self):
+        """
+        Tests low rank first tactic. This is also the default tactic, so we'll test this first before changing any clan settings.
+        """
+        # we'll set the freshkill pile up with enough to feed the kitten and that's all
+        current_amount = self.prey_requirement["kitten"]
+        self.freshkill_pile.pile["expires_in_4"] = current_amount
+        self.freshkill_pile.total_amount = current_amount
 
-        # then
-        self.assertEqual(test_clan.freshkill_pile.total_amount, self.amount)
-        test_clan.freshkill_pile.feed_cats([test_warrior])
+        # feed them
+        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+
+        # check that kitten is full
         self.assertEqual(
-            test_clan.freshkill_pile.total_amount,
-            self.amount - self.prey_requirement["warrior"],
+            self.freshkill_pile.nutrition_info[self.kitten.ID].percentage, 100
         )
+        # check that everyone else is hungry
+        for cat in Cat.all_cats_list:
+            if cat == self.kitten:
+                continue
+            self.assertNotEqual(
+                self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
+            )
 
-    def test_tactic_younger_first(self) -> None:
-        # given
-        freshkill_pile = FreshkillPile()
-        current_amount = self.prey_requirement["warrior"] * 2
-        freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
+    def test_tactic_high_rank(self):
+        """
+        Tests high rank first tactic.
+        """
+        # first we'll reset everyone's nutrition
+        for key in self.freshkill_pile.nutrition_info.keys():
+            self.freshkill_pile.nutrition_info[key].percentage = 100
 
-        youngest_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        youngest_warrior.moons = 20
-        middle_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        middle_warrior.moons = 30
-        oldest_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        oldest_warrior.moons = 40
+        # then set up the pile with enough to feed the leader and that's all
+        current_amount = self.prey_requirement["leader"]
+        self.freshkill_pile.pile["expires_in_4"] = current_amount
+        self.freshkill_pile.total_amount = current_amount
 
-        freshkill_pile.add_cat_to_nutrition(youngest_warrior)
-        freshkill_pile.add_cat_to_nutrition(middle_warrior)
-        freshkill_pile.add_cat_to_nutrition(oldest_warrior)
+        # set the tactic to high rank
+        set_clan_setting("low_rank", False)
+        switch_clan_setting("high_rank")
+
+        # feed them
+        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+
+        # check that leader is full
         self.assertEqual(
-            freshkill_pile.nutrition_info[youngest_warrior.ID].percentage, 100
+            self.freshkill_pile.nutrition_info[game.clan.leader.ID].percentage, 100
         )
+        # check that everyone else is hungry
+        for cat in Cat.all_cats_list:
+            if cat == game.clan.leader:
+                continue
+            self.assertNotEqual(
+                self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
+            )
+
+    def test_tactic_youngest(self):
+        """
+        Tests youngest first tactic.
+        """
+        # first we'll reset everyone's nutrition
+        for key in self.freshkill_pile.nutrition_info.keys():
+            self.freshkill_pile.nutrition_info[key].percentage = 100
+
+        # then set up the pile with enough to feed the kitten and that's all
+        current_amount = self.prey_requirement["kitten"]
+        self.freshkill_pile.pile["expires_in_4"] = current_amount
+        self.freshkill_pile.total_amount = current_amount
+
+        # set the tactic to youngest
+        set_clan_setting("low_rank", False)
+        switch_clan_setting("youngest_first")
+
+        # feed them
+        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+
+        # check that kitten is full
         self.assertEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 100
+            self.freshkill_pile.nutrition_info[self.kitten.ID].percentage, 100
         )
+        # check that everyone else is hungry
+        for cat in Cat.all_cats_list:
+            if cat == self.kitten:
+                continue
+            self.assertNotEqual(
+                self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
+            )
+
+    def test_tactic_oldest(self):
+        """
+        Tests oldest first tactic.
+        """
+        # first we'll reset everyone's nutrition
+        for key in self.freshkill_pile.nutrition_info.keys():
+            self.freshkill_pile.nutrition_info[key].percentage = 100
+
+        # then set up the pile with enough to feed the oldest and that's all
+        oldest = sorted(Cat.all_cats_list, key=lambda x: x.moons, reverse=True)[0]
+        current_amount = self.prey_requirement[oldest.status.rank]
+        self.freshkill_pile.pile["expires_in_4"] = current_amount
+        self.freshkill_pile.total_amount = current_amount
+
+        # set the tactic to youngest
+        set_clan_setting("low_rank", False)
+        switch_clan_setting("oldest_first")
+
+        # feed them
+        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+
+        # check that elder is full
+        self.assertEqual(self.freshkill_pile.nutrition_info[oldest.ID].percentage, 100)
+        # check that everyone else is hungry
+        for cat in Cat.all_cats_list:
+            if cat == oldest:
+                continue
+            self.assertNotEqual(
+                self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
+            )
+
+    def test_tactic_experienced(self):
+        """
+        Tests experienced first tactic.
+        """
+        # first we'll reset everyone's nutrition
+        for key in self.freshkill_pile.nutrition_info.keys():
+            self.freshkill_pile.nutrition_info[key].percentage = 100
+
+        # sorting the cats by experience
+        list_of_cats = sorted(
+            Cat.all_cats_list, key=lambda x: x.experience, reverse=True
+        )
+        most_exp = list_of_cats[0]
+        # then set up the pile with enough to feed the most experienced and that's all
+        current_amount = self.prey_requirement[most_exp.status.rank]
+        self.freshkill_pile.pile["expires_in_4"] = current_amount
+        self.freshkill_pile.total_amount = current_amount
+
+        # set the tactic to experienced
+        set_clan_setting("low_rank", False)
+        switch_clan_setting("experience_first")
+
+        # feed them
+        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+
+        # check that experienced is full
         self.assertEqual(
-            freshkill_pile.nutrition_info[oldest_warrior.ID].percentage, 100
+            self.freshkill_pile.nutrition_info[most_exp.ID].percentage, 100
         )
+        # check that everyone else is hungry
+        for cat in Cat.all_cats_list:
+            if cat == most_exp:
+                continue
+            self.assertNotEqual(
+                self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
+            )
 
-        # when
-        freshkill_pile.tactic_younger_first(
-            [oldest_warrior, middle_warrior, youngest_warrior]
-        )
+    def test_tactic_hungry(self):
+        """
+        Tests hungry first tactic.
+        """
+        # first we'll reset everyone's nutrition
+        for key in self.freshkill_pile.nutrition_info.keys():
+            self.freshkill_pile.nutrition_info[key].percentage = 100
 
-        # then
-        self.assertEqual(
-            freshkill_pile.nutrition_info[youngest_warrior.ID].percentage, 100
-        )
-        self.assertEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 100
-        )
-        self.assertNotEqual(
-            freshkill_pile.nutrition_info[oldest_warrior.ID].percentage, 100
-        )
+        # then set certain cat's nutrition lower
+        self.freshkill_pile.nutrition_info[game.clan.deputy.ID].percentage = 90
 
-    def test_tactic_less_nutrition_first(self) -> None:
-        # given
-        freshkill_pile = FreshkillPile()
-        current_amount = self.prey_requirement["warrior"] * 2
-        freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
+        # then set up the pile with enough to feed the deputy and that's all
+        current_amount = self.prey_requirement["deputy"]
+        self.freshkill_pile.pile["expires_in_4"] = current_amount
+        self.freshkill_pile.total_amount = current_amount
 
-        lowest_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        lowest_warrior.moons = 20
-        middle_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        middle_warrior.moons = 30
-        highest_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        highest_warrior.moons = 40
+        # set the tactic to hungry
+        set_clan_setting("low_rank", False)
+        switch_clan_setting("hungriest_first")
 
-        freshkill_pile.add_cat_to_nutrition(lowest_warrior)
-        max_score = freshkill_pile.nutrition_info[lowest_warrior.ID].max_score
-        give_score = max_score - self.prey_requirement["warrior"]
-        freshkill_pile.nutrition_info[lowest_warrior.ID].current_score = give_score
+        # feed them
+        self.freshkill_pile.feed_cats(Cat.all_cats_list)
 
-        freshkill_pile.add_cat_to_nutrition(middle_warrior)
-        give_score = max_score - (self.prey_requirement["warrior"] / 2)
-        freshkill_pile.nutrition_info[middle_warrior.ID].current_score = give_score
-
-        freshkill_pile.add_cat_to_nutrition(highest_warrior)
-        self.assertLessEqual(
-            freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 70
-        )
-        self.assertLessEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 90
-        )
-        self.assertEqual(
-            freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 100
-        )
-
-        # when
-        living_cats = [highest_warrior, middle_warrior, lowest_warrior]
-        freshkill_pile.living_cats = living_cats
-        freshkill_pile.tactic_less_nutrition_first(living_cats)
-
-        # then
-        self.assertEqual(freshkill_pile.total_amount, 0)
-        self.assertGreaterEqual(
-            freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 60
-        )
-        self.assertGreaterEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 80
-        )
-        self.assertLess(
-            freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 70
-        )
-
-    def test_tactic_sick_injured_first(self) -> None:
-        # given
-        # young enough kid
-        injured_cat = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        injured_cat.injuries["test_injury"] = {"severity": "major"}
-        sick_cat = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        sick_cat.illnesses["test_illness"] = {"severity": "major"}
-        healthy_cat = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-
-        freshkill_pile = FreshkillPile()
-        # be able to feed one queen and some warriors
-        current_amount = self.prey_requirement["warrior"] * 2
-        freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
-
-        freshkill_pile.add_cat_to_nutrition(injured_cat)
-        freshkill_pile.add_cat_to_nutrition(sick_cat)
-        freshkill_pile.add_cat_to_nutrition(healthy_cat)
-        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
-
-        # when
-        freshkill_pile.tactic_sick_injured_first([healthy_cat, sick_cat, injured_cat])
-
-        # then
-        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
-        self.assertLess(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 70)
-
-    def test_more_experience_first(self) -> None:
-        # given
-        freshkill_pile = FreshkillPile()
-        current_amount = self.prey_requirement["warrior"]
-        freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
-
-        lowest_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        lowest_warrior.experience = 20
-        middle_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        middle_warrior.experience = 30
-        highest_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        highest_warrior.experience = 40
-
-        freshkill_pile.add_cat_to_nutrition(lowest_warrior)
-        freshkill_pile.add_cat_to_nutrition(middle_warrior)
-        freshkill_pile.add_cat_to_nutrition(highest_warrior)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 100
-        )
-        self.assertEqual(
-            freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 100
-        )
-        self.assertEqual(
-            freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 100
-        )
-
-        # when
-        freshkill_pile.tactic_more_experience_first(
-            [lowest_warrior, middle_warrior, highest_warrior]
-        )
-
-        # then
-        # self.assertEqual(freshkill_pile.total_amount,0)
-        self.assertLess(freshkill_pile.nutrition_info[lowest_warrior.ID].percentage, 70)
-        self.assertLess(freshkill_pile.nutrition_info[middle_warrior.ID].percentage, 90)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[highest_warrior.ID].percentage, 100
-        )
-
-    def test_hunter_first(self) -> None:
-        # check also different ranks of hunting skill
-        # given
-        freshkill_pile = FreshkillPile()
-        current_amount = self.prey_requirement["warrior"] + (
-            self.prey_requirement["warrior"] / 2
-        )
-        freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
-
-        best_hunter_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        best_hunter_warrior.skills.primary = Skill(SkillPath.HUNTER, 25)
-        self.assertEqual(best_hunter_warrior.skills.primary.tier, 3)
-        hunter_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        hunter_warrior.skills.primary = Skill(SkillPath.HUNTER, 0)
-        self.assertEqual(hunter_warrior.skills.primary.tier, 1)
-        no_hunter_warrior = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        no_hunter_warrior.skills.primary = Skill(SkillPath.MEDIATOR, 0, True)
-
-        freshkill_pile.add_cat_to_nutrition(best_hunter_warrior)
-        freshkill_pile.add_cat_to_nutrition(hunter_warrior)
-        freshkill_pile.add_cat_to_nutrition(no_hunter_warrior)
-        self.assertEqual(
-            freshkill_pile.nutrition_info[best_hunter_warrior.ID].percentage, 100
-        )
-        self.assertEqual(
-            freshkill_pile.nutrition_info[hunter_warrior.ID].percentage, 100
-        )
-        self.assertEqual(
-            freshkill_pile.nutrition_info[no_hunter_warrior.ID].percentage, 100
-        )
-
-        # when
-        living_cats = [hunter_warrior, no_hunter_warrior, best_hunter_warrior]
-        freshkill_pile.tactic_hunter_first(living_cats)
-
-        # then
-        # this hunter should be fed completely
-        self.assertEqual(
-            freshkill_pile.nutrition_info[best_hunter_warrior.ID].percentage, 100
-        )
-        # this hunter should be fed partially
-        self.assertLess(freshkill_pile.nutrition_info[hunter_warrior.ID].percentage, 90)
+        # check that deputy has eaten (it won't be 100, since we lowered the starting nutrition, but it'll still be higher than we began with
         self.assertGreater(
-            freshkill_pile.nutrition_info[hunter_warrior.ID].percentage, 70
+            self.freshkill_pile.nutrition_info[game.clan.deputy.ID].percentage, 90
         )
-        # this cat should not be fed
-        self.assertLess(
-            freshkill_pile.nutrition_info[no_hunter_warrior.ID].percentage, 70
-        )
+        # check that everyone else is hungry
+        for cat in Cat.all_cats_list:
+            if cat == game.clan.deputy:
+                continue
+            self.assertNotEqual(
+                self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
+            )
+
+    def test_priority_hunter(self):
+        """
+        Tests hunter first priority.
+        """
+        # first we'll reset everyone's nutrition
+        for key in self.freshkill_pile.nutrition_info.keys():
+            self.freshkill_pile.nutrition_info[key].percentage = 100
+
+        hunter = game.clan.leader
+
+        # then set up the pile with enough to feed the hunter and that's all
+        current_amount = self.prey_requirement["leader"]
+        self.freshkill_pile.pile["expires_in_4"] = current_amount
+        self.freshkill_pile.total_amount = current_amount
+
+        # set priority to hunter
+        switch_clan_setting("hunter_first")
+        # what we SHOULD see is the hunter being fed before the low rank (so leader before kitten)
+
+        # feed them
+        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+
+        # check that leader is full
+        self.assertEqual(self.freshkill_pile.nutrition_info[hunter.ID].percentage, 100)
+        # check that everyone else is hungry
+        for cat in Cat.all_cats_list:
+            if cat == hunter:
+                continue
+            self.assertNotEqual(
+                self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
+            )
+
+    def test_priority_injured(self):
+        """
+        Tests injured first priority.
+        """
+        # first we'll reset everyone's nutrition
+        for key in self.freshkill_pile.nutrition_info.keys():
+            self.freshkill_pile.nutrition_info[key].percentage = 100
+
+        injured = game.clan.deputy
+
+        # then set up the pile with enough to feed the injured and that's all
+        current_amount = self.prey_requirement["deputy"]
+        self.freshkill_pile.pile["expires_in_4"] = current_amount
+        self.freshkill_pile.total_amount = current_amount
+
+        # set priority to injured
+        switch_clan_setting("sick_injured_first")
+        # what we SHOULD see is the injured being fed before the low rank (so dep before kitten)
+
+        # feed them
+        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+
+        # check that injured is full
+        self.assertEqual(self.freshkill_pile.nutrition_info[injured.ID].percentage, 100)
+        # check that everyone else is hungry
+        for cat in Cat.all_cats_list:
+            if cat == injured:
+                continue
+            self.assertNotEqual(
+                self.freshkill_pile.nutrition_info[cat.ID].percentage, 100
+            )
 
     def test_queen_handling(self) -> None:
         # given
@@ -396,7 +446,7 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(
             [mother.ID], list(get_alive_clan_queens(living_cats)[0].keys())
         )
-        freshkill_pile.tactic_status(living_cats)
+        freshkill_pile.feed_cats(living_cats)
 
         # then
         self.assertEqual(freshkill_pile.nutrition_info[kid.ID].percentage, 100)
@@ -435,39 +485,3 @@ class FreshkillPileTest(unittest.TestCase):
         self.assertEqual(freshkill_pile.nutrition_info[pregnant_cat.ID].percentage, 100)
         self.assertLess(freshkill_pile.nutrition_info[cat2.ID].percentage, 70)
         self.assertLess(freshkill_pile.nutrition_info[cat3.ID].percentage, 70)
-
-    def test_sick_handling(self) -> None:
-        # given
-        # young enough kid
-        injured_cat = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        injured_cat.injuries["claw-wound"] = {"severity": "major"}
-        sick_cat = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-        sick_cat.illnesses["diarrhea"] = {"severity": "major"}
-        healthy_cat = Cat(
-            status_dict={"rank": CatRank.WARRIOR}, moons=1, disable_random=True
-        )
-
-        freshkill_pile = FreshkillPile()
-        # be able to feed one queen and some warriors
-        current_amount = self.prey_requirement["warrior"] * 2
-        freshkill_pile.pile["expires_in_4"] = current_amount
-        freshkill_pile.total_amount = current_amount
-
-        freshkill_pile.add_cat_to_nutrition(injured_cat)
-        freshkill_pile.add_cat_to_nutrition(sick_cat)
-        freshkill_pile.add_cat_to_nutrition(healthy_cat)
-        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 100)
-
-        # when
-        freshkill_pile.tactic_sick_injured_first([sick_cat, injured_cat, healthy_cat])
-
-        # then
-        self.assertEqual(freshkill_pile.nutrition_info[injured_cat.ID].percentage, 100)
-        self.assertEqual(freshkill_pile.nutrition_info[sick_cat.ID].percentage, 100)
-        self.assertLess(freshkill_pile.nutrition_info[healthy_cat.ID].percentage, 70)
