@@ -1872,7 +1872,8 @@
                 "KIT,4"
             ]
         },
-        "relationships": {
+        "relationships": [
+            {
             "cats_from": ["clan", "high_social"],
             "cats_to": ["m_c"],
             "values": ["respect", "like"],
@@ -1882,6 +1883,7 @@
                 "cats_from": "from_cat enjoyed spending an evening listening to to_cat's stories."
             }
         }
+        ]
     },
     {
         "event_id": "gen_misc_any_misc5",
