@@ -15,14 +15,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "normal adult": [
-                1,
-                1
-            ],
-            "apprentice": [
-                -1,
-                -1
-            ]
+            "normal adult": [1, 1],
+            "apprentice": [-1, -1]
         },
         "frequency": 3,
         "intro_text": "r_c looks at the small watering hole {PRONOUN/r_c/subject} {VERB/r_c/pass/passes} by on the way to mark the border and {VERB/r_c/debate/debates} if {PRONOUN/r_c/subject} should stop for a quick swim to cool off.",
@@ -67,7 +61,19 @@
                 "text": "{PRONOUN/r_c/subject/CAP} get distracted while splashing in the water. r_c swears {PRONOUN/r_c/subject} saw a fish, but it derails {PRONOUN/r_c/poss} border patrol completely, and {PRONOUN/r_c/subject} {VERB/r_c/get/gets} nothing done.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_warrior",
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect"],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat return from patrol with soggy paws and nothing to show for an afternoon of work."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -98,18 +104,16 @@
                 "art": "gen_train_talkingWW",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat scouted good hunting grounds on patrol together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -126,111 +130,67 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned about running endurance from to_cat."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains on patrol together."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c notices r_c beginning to pant as {PRONOUN/r_c/subject} {VERB/r_c/trudge/trudges} under the hot sun. {PRONOUN/s_c/subject/CAP} take the next opportunity to herd the patrol under the shade of a rock with a scrappy bush clinging to it. There's no reason to risk heat stroke here.",
+                "text": "s_c notices r_c beginning to pant as {PRONOUN/r_c/subject} {VERB/r_c/trudge/trudges} under the hot sun. {PRONOUN/s_c/subject/CAP} {VERB/s_c/take/takes} the next opportunity to herd the patrol under the shade of a rock with a scrappy bush clinging to it. There's no reason to risk heat stroke here.",
                 "exp": 20,
                 "art": "fst_hunt_heat",
                 "can_have_stat": [
                     "not_pl_rc"
                 ],
                 "stat_skill": [
-                    "HUNTER,1"
+                    "SENSE,1",
+                    "INSIGHTFUL,1"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat noticed {PRONOUN/from_cat/object} struggling in the heat and found some shade."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains on patrol together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -251,44 +211,28 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat noticed {PRONOUN/from_cat/object} struggling in the heat and found some shade."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains on patrol together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -301,9 +245,7 @@
                 "art": "fst_hunt_heat",
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "sprain",
                             "sore"
@@ -312,18 +254,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": [
                             "trust",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat noticed that from_cat was struggling on patrol and decided to take the patrol back to camp early."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -347,19 +288,17 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "death": "This cat was killed after continuing to patrol the far border while injured, by a young, inexperienced cougar."
+                    "death": "This cat was killed by a young, inexperienced cougar after continuing to patrol the far border while injured."
                 },
                 "frequency": 4
             },
             {
-                "text": "p_l really pushes them to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achievement when they come back into camp after dark, panting, but everyone who went out under the hot sun is more tired than they should be, and some have clearly gotten heat stroke.",
+                "text": "p_l really pushes them to be able to patrol all the far border in a single patrol. They make it and are congratulated on the achievement when they come back into camp after dark, panting, but everyone who went out under the hot sun is more tired than they should be, and some have clearly gotten heat stroke.",
                 "exp": 0,
                 "art": "fst_hunt_heat",
                 "injury": [
                     {
-                        "cats": [
-                            "patrol"
-                        ],
+                        "cats": ["patrol"],
                         "injuries": [
                             "dehydrated"
                         ]
@@ -375,31 +314,31 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat approved of how to_cat pushed {PRONOUN/to_cat/poss} patrol to reach the far border."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat pushed from_cat to finish a long patrol in high heat, and the patrol suffered for it."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -426,45 +365,44 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "clan"
+                            "high_social"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat advocated for {PRONOUN/to_cat/poss} Clanmates and urged p_l to end a patrol early when the heat took its toll on the cats."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat doubted to_cat's leadership when {PRONOUN/to_cat/subject} tried to force a patrol to persevere in the extreme heat."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was very grateful that to_cat spoke up on behalf of the patrol when the heat started to take its toll on them."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -493,23 +431,24 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "p_l bolts back to camp, eyes blown wide. It takes a moment for {PRONOUN/p_l/object} to catch {PRONOUN/p_l/poss} breath before {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to manage to gasp out a single word. <i>Coyote!</i>",
+                "text": "p_l bolts back to camp, eyes wide. It takes a moment for {PRONOUN/p_l/object} to catch {PRONOUN/p_l/poss} breath before {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to manage to gasp out a single word. <i>Coyote!</i>",
                 "exp": 40,
                 "art": "cat_running_solo",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "high_lawful", "clan"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warning the Clan of a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -520,18 +459,19 @@
                 "art": "cat_running_solo",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "high_lawful", "clan"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warning the Clan of a coyote."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -546,18 +486,19 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "high_lawful", "clan"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warning the Clan of a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -571,16 +512,40 @@
                     "CLEVER,2",
                     "INSIGHTFUL,2"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's daring escape from a coyote."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
-                "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping thunderbeasts, and {VERB/s_c/dart/darts} to them, yowling. As a thunderbeast slowly stands, the coyote turns tail and flees.",
+                "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping thunderbeasts and {VERB/s_c/dart/darts} to them, yowling. As a thunderbeast slowly stands, the coyote turns tail and flees.",
                 "exp": 40,
                 "art": "gen_coyote1",
                 "stat_skill": [
                     "RUNNER,2",
                     "CLEVER,2",
                     "INSIGHTFUL,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's daring escape from a coyote."
+                        }
+                    }
                 ],
                 "frequency": 4
             },
@@ -596,6 +561,18 @@
                     "CLEVER,2",
                     "INSIGHTFUL,2"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's daring escape from a coyote."
+                        }
+                    }
+                ],
                 "frequency": 3
             },
             {
@@ -607,18 +584,19 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "high_lawful", "clan"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": 20
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warning the Clan of a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -632,9 +610,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -643,7 +619,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat heard how to_cat ambushed a coyote and led it out of the territory single-pawed."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -665,18 +644,19 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's narrow escape from a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -696,18 +676,18 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
+                        "cats_to": ["r_c"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "from_cat honors to_cat's sacrifice to lead a coyote away from the Clan."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -718,9 +698,7 @@
                 "art": "gen_coyote_danger2_w2",
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -735,9 +713,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
+                        "cats_to": ["r_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -746,7 +722,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 30
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat was injured trying to lead a coyote away from the Clan on {PRONOUN/to_cat/poss} own."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -761,9 +740,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "s_c"
-                        ],
+                        "cats": ["s_c"],
                         "injuries": [
                             "mangled leg"
                         ],
@@ -778,18 +755,19 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "clan"
+                            "high_stable", "clan"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat was injured after trying to take a coyote on single-pawed."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -877,18 +855,31 @@
                 "art": "gen_coyote2",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "high_aggress", "clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol killed a coyote pup on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to kill a coyote pup on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -899,55 +890,54 @@
                 "art": "running_two_warriors",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "high_lawful", "clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated how to_cat's patrol shadowed a coyote to track its movements and keep c_n safe."
+                        }
                     }
                 ],
                 "frequency": 2
             },
             {
-                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up, and yes, there's the scrabbling of paws, the yip of frustration as the coyote reaches them far too late. Well, if they needed confirmation that the beast was both really here and really interested in cat meat, there it is. They wait for the predator to give up, so they can go warn c_n.",
+                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up, and the scrabbling of paws, the yip of frustration confirms the coyote has reached them far too late. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
                 "exp": 40,
                 "art": "gen_coyote_danger1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "high_lawful", "clan"
                         ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warning the Clan about a coyote."
+                        } 
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust",
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat gained respect for to_cat when {PRONOUN/to_cat/subject} thought fast and led the patrol up a tree to escape a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -958,18 +948,18 @@
                 "art": "running_two_warriors",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's small patrol led a coyote away from the camp."
+                        }
                     }
                 ],
                 "frequency": 2
@@ -986,38 +976,37 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol attacked a coyote to drive it out of the territory."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat ambushed a coyote on patrol and led from_cat in an effort to drive it off the territory."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything, they go to a well known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
+                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything, they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon. The coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
                 "exp": 50,
                 "art": "gen_coyote_danger1",
                 "can_have_stat": [
@@ -1028,32 +1017,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat from a coyote by finding a burrow for the patrol to hide in."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1066,36 +1040,35 @@
                     "any"
                 ],
                 "stat_skill": [
-                    "CLEVER,2"
+                    "CLEVER,2",
+                    "SENSE,2"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "high_lawful", "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warning the Clan of a coyote."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat identified the sound of a frightened coyote and warned the patrol before they encountered danger."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1116,18 +1089,33 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat led a coyote away from c_n territory on a patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat took on the brunt of the danger in leading a coyote away from c_n territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1135,7 +1123,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup.",
+                "text": "That yip seemed a little high-pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup.",
                 "exp": 0,
                 "art": "gen_coyote_danger2_w2",
                 "injury": [
@@ -1164,29 +1152,29 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c.",
+                    "scar": "m_c was scarred after a fight with two coyotes.",
                     "death": "m_c died to keep coyotes away from c_n's borders."
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat laid down {PRONOUN/to_cat/poss} life to protect c_n from coyotes."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup. It's s_c that manages to hold them off long enough for the patrol retreat.",
+                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts. Dangerous, but... manageable. What's less manageable are the parents, who come running as the patrol attacks the pup. s_c holds them off long enough for the patrol retreat.",
                 "exp": 0,
                 "art": "gen_coyote_danger2_w2",
                 "can_have_stat": [
@@ -1215,23 +1203,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1239,7 +1211,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat held off a coyote long enough to save the lives of the rest of the patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1250,18 +1225,19 @@
                 "art": "gen_patrol_dog_warrior",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "high_aggress", "clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat failed to track a coyote on patrol, leaving c_n in danger."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1278,9 +1254,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1289,7 +1263,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat failed to track a coyote on patrol, leaving c_n in danger."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1308,9 +1285,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1319,7 +1294,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was killed as a result."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1330,9 +1308,7 @@
                 "art": "gen_coyote_danger2_w2",
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -1347,9 +1323,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1358,7 +1332,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was injured as a result."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1392,9 +1369,7 @@
                 "art": "gen_coyote1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1406,9 +1381,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
+                        "cats_to": ["r_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1420,12 +1393,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -1453,9 +1422,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1467,9 +1434,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1481,12 +1446,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -1503,9 +1464,7 @@
                 "art": "gen_coyote2",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1517,12 +1476,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -1548,9 +1503,7 @@
                         "scars": []
                     },
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -1565,9 +1518,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1579,9 +1530,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1606,9 +1555,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1620,9 +1567,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1647,9 +1592,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "bite-wound"
                         ],
@@ -1658,9 +1601,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "blood loss"
                         ],
@@ -1673,9 +1614,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1687,9 +1626,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1700,12 +1637,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -1721,9 +1654,7 @@
                 "art": "gen_coyote1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1743,9 +1674,7 @@
                 "art": "gen_coyote1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1769,9 +1698,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1783,9 +1710,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1815,9 +1740,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1829,9 +1752,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1853,9 +1774,7 @@
                 "art": "gen_coyote_danger2_w3",
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -1905,9 +1824,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1951,9 +1868,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1965,9 +1880,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -2000,9 +1913,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -2030,9 +1941,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -2052,9 +1961,7 @@
                 "art": "gen_coyote_danger2_w1",
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -2069,9 +1976,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
+                        "cats_to": ["r_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -2103,14 +2008,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [-1, -1],
+            "normal adult": [1, 6]
         },
         "frequency": 2,
         "intro_text": "Patrolling the border and updating the markings, r_c calls out to the rest of the patrol, making p_l stand up on {PRONOUN/p_l/poss} hind legs to peek over the grass. r_c has found an opening to what seems to be a new set of tunnels.",
@@ -2123,12 +2022,8 @@
                 "art": "gen_train_talkingWW",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2152,12 +2047,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2166,12 +2057,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2194,12 +2081,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2208,12 +2091,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2236,12 +2115,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2250,12 +2125,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2278,12 +2149,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2292,12 +2159,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2323,12 +2186,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2344,12 +2203,8 @@
                 "art": "gen_hunt_burrow",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2366,12 +2221,8 @@
                 "art": "gen_hunt_burrow",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2393,12 +2244,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2420,12 +2267,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2455,12 +2298,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2487,9 +2326,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "s_c"
-                        ],
+                        "cats": ["s_c"],
                         "injuries": [
                             "beak_bite"
                         ],
@@ -2504,12 +2341,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2525,12 +2358,8 @@
                 "art": "gen_angry_cat_warrior",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2552,12 +2381,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2578,9 +2403,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "s_c"
-                        ],
+                        "cats": ["s_c"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -2595,12 +2418,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2625,12 +2444,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2647,9 +2462,7 @@
                 "art": "gen_scarybadger",
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -2664,12 +2477,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2698,14 +2507,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 2,
         "intro_text": "The wind rustles through the grass peacefully. As p_l checks the next border marking, that peace is broken with a squeak and a muffled thump behind {PRONOUN/p_l/object}.",
@@ -2718,12 +2521,8 @@
                 "art": "gen_train_patrolapprenticesessionfail",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2748,12 +2547,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2762,12 +2557,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2775,12 +2566,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
                             "like"
@@ -2806,12 +2593,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2820,12 +2603,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
                             "like"
@@ -2850,12 +2629,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2882,12 +2657,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2896,12 +2667,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "like"
@@ -2917,12 +2684,8 @@
                 "art": "gen_train_patrolapprenticesessionsuccess",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2931,12 +2694,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2960,12 +2719,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -2974,12 +2729,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -2987,12 +2738,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3016,12 +2763,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3030,12 +2773,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3043,12 +2782,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -3066,9 +2801,7 @@
                 "art": "gen_train_patrolapprenticesessionfail",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "beak_bite"
                         ],
@@ -3083,12 +2816,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3104,9 +2833,7 @@
                 "art": "gen_train_patrolapprenticesessionfail",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "sprain",
                             "sore"
@@ -3122,9 +2849,7 @@
                 "art": "gen_train_patrolapprenticesessionfail",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "bruises"
                         ],
@@ -3133,12 +2858,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -3155,9 +2876,7 @@
                 "art": "gen_train_patrolapprenticesessionfail",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "water in their lungs"
                         ],
@@ -3170,12 +2889,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -3198,12 +2913,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3236,10 +2947,7 @@
                 2,
                 6
             ],
-            "apprentice": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1]
         },
         "frequency": 2,
         "intro_text": "While on a dawn border patrol, with the sun still hugging the distant horizon, p_l finds an opening to what seems to be a new set of tunnels.",
@@ -3252,12 +2960,8 @@
                 "art": "gen_happy_cat",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3274,12 +2978,8 @@
                 "art": "gen_warrior_crouching",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3297,12 +2997,8 @@
                 "art": "gen_train_talkingWW",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3310,9 +3006,7 @@
                         "amount": 15
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
                             "clan"
                         ],
@@ -3331,12 +3025,8 @@
                 "art": "fst_bord_sett",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3345,9 +3035,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -3366,12 +3054,8 @@
                 "art": "gen_bord_twocat_hostile_warrior_warrior",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3380,12 +3064,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3393,9 +3073,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -3420,12 +3098,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3434,12 +3108,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3447,9 +3117,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -3474,12 +3142,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3488,12 +3152,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3501,9 +3161,7 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -3527,12 +3185,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3554,12 +3208,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3578,9 +3228,7 @@
                 "art": "gen_patrol_dog_warrior",
                 "injury": [
                     {
-                        "cats": [
-                            "patrol"
-                        ],
+                        "cats": ["patrol"],
                         "injuries": [
                             "shock"
                         ],
@@ -3608,9 +3256,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "s_c"
-                        ],
+                        "cats": ["s_c"],
                         "injuries": [
                             "claw-wound"
                         ],
@@ -3625,12 +3271,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3666,12 +3308,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3694,12 +3332,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3729,9 +3363,7 @@
                 "art": "gen_scarybadger",
                 "injury": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
+                        "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -3764,14 +3396,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ],
-            "apprentice": [
-                1,
-                6
-            ]
+            "normal adult": [1, 6],
+            "apprentice": [1, 6]
         },
         "frequency": 2,
         "intro_text": "Trotting along the track that marks the border with app1, p_l spots the entrance to an unfamiliar hole in the ground.",
@@ -3784,12 +3410,8 @@
                 "art": "gen_train_talkingWA",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -3797,12 +3419,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3818,12 +3436,8 @@
                 "art": "gen_hunt_mentor_app",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -3831,12 +3445,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3852,12 +3462,8 @@
                 "art": "gen_hunt_mentor_app",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3865,9 +3471,7 @@
                         "amount": 15
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
                             "clan"
                         ],
@@ -3895,12 +3499,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3910,12 +3510,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -3942,12 +3538,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -3957,12 +3549,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -3989,12 +3577,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -4004,12 +3588,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -4033,12 +3613,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -4048,12 +3624,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -4076,12 +3648,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -4090,12 +3658,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -4103,9 +3667,7 @@
                         "amount": 30
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4132,12 +3694,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -4162,12 +3720,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -4186,9 +3740,7 @@
                 "art": "gen_bord_scentedafox",
                 "injury": [
                     {
-                        "cats": [
-                            "patrol"
-                        ],
+                        "cats": ["patrol"],
                         "injuries": [
                             "shock"
                         ],
@@ -4216,12 +3768,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -4231,12 +3779,8 @@
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -4245,9 +3789,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4258,9 +3800,7 @@
                         "amount": -5
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4289,9 +3829,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "s_c"
-                        ],
+                        "cats": ["s_c"],
                         "injuries": [
                             "claw-wound",
                             "torn ear",
@@ -4309,12 +3847,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -4324,12 +3858,8 @@
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -4338,9 +3868,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4351,9 +3879,7 @@
                         "amount": -5
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4389,12 +3915,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
@@ -4404,12 +3926,8 @@
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -4418,9 +3936,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4431,9 +3947,7 @@
                         "amount": -5
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4481,12 +3995,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -4503,12 +4013,8 @@
                 "art_clean": "gen_scarybadger",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -4520,9 +4026,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "shock"
                         ],
@@ -4544,9 +4048,7 @@
                 "art": "gen_scarybadger",
                 "injury": [
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -4579,10 +4081,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "normal adult": [
-                1,
-                1
-            ]
+            "normal adult": [1, 1]
         },
         "frequency": 2,
         "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border - after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in a dip in the grass. Is that a burrow entrance?",
@@ -4601,9 +4100,7 @@
                 "art": "pln_hunt_gonetwolegtrap1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4626,9 +4123,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4683,9 +4178,7 @@
                 "art": "gen_bord_scentedafox",
                 "injury": [
                     {
-                        "cats": [
-                            "patrol"
-                        ],
+                        "cats": ["patrol"],
                         "injuries": [
                             "shock"
                         ],
@@ -4712,18 +4205,14 @@
                 "art": "gen_angry_cat_warrior",
                 "injury": [
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "bruises"
                         ],
                         "scars": []
                     },
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -4732,9 +4221,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "torn pelt"
                         ],
@@ -4743,9 +4230,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "mangled tail"
                         ],
@@ -4810,9 +4295,7 @@
                 "art": "gen_scarybadger",
                 "injury": [
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -4847,10 +4330,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                1,
-                1
-            ]
+            "apprentice": [1, 1]
         },
         "frequency": 2,
         "intro_text": "app1's ears swivel back and forth, pressing flat against {PRONOUN/app1/poss} head every so often as {PRONOUN/app1/poss} emotions slip through. With fur bristled out to full puff and freezing at every rustle in the grass, {PRONOUN/app1/subject} nevertheless {VERB/app1/pad/pads} the border alone. A strange mismash of shadows catches {PRONOUN/app1/poss} eye. Is that a tunnel entrance?",
@@ -4879,9 +4359,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4907,9 +4385,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4933,9 +4409,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4959,9 +4433,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "clan"
                         ],
@@ -4988,9 +4460,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "clan"
                         ],
@@ -5020,18 +4490,14 @@
                 "art": "pln_hunt_prairiedog1",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "bruises"
                         ],
                         "scars": []
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -5040,9 +4506,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "torn pelt"
                         ],
@@ -5112,18 +4576,14 @@
                 "art": "gen_scarybadger",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "bruises"
                         ],
                         "scars": []
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -5132,9 +4592,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "torn pelt"
                         ],
@@ -5143,9 +4601,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "mangled tail"
                         ],
@@ -5209,9 +4665,7 @@
                 "art": "gen_scarybadger",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "big_bite_injury"
                         ],
@@ -5244,14 +4698,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 3,
         "intro_text": "The apprentices are at the border - not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?",
@@ -5264,12 +4712,8 @@
                 "art": "pln_bord_tunnel2",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5294,12 +4738,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -5315,12 +4755,8 @@
                 "art": "gen_med_warappmedapp_herbcontest",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -5328,12 +4764,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -5350,12 +4782,8 @@
                 "art": "pln_hunt_gonetwolegtrap1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5379,12 +4807,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5393,12 +4817,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -5421,12 +4841,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -5434,12 +4850,8 @@
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -5464,12 +4876,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -5479,12 +4887,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "like"
@@ -5492,12 +4896,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -5516,12 +4916,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -5539,18 +4935,14 @@
                 "art": "pln_hunt_prairiedog1",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "bruises"
                         ],
                         "scars": []
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -5559,9 +4951,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "torn pelt"
                         ],
@@ -5594,9 +4984,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "patrol"
-                        ],
+                        "cats": ["patrol"],
                         "injuries": [
                             "shock"
                         ],
@@ -5689,9 +5077,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "patrol"
-                        ],
+                        "cats": ["patrol"],
                         "injuries": [
                             "shock",
                             "constant nightmares"
@@ -5699,9 +5085,7 @@
                         "scars": []
                     },
                     {
-                        "cats": [
-                            "patrol"
-                        ],
+                        "cats": ["patrol"],
                         "injuries": [
                             "big_bite_injury",
                             "claw-wound"
@@ -5735,14 +5119,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "First app1 takes the lead, then app2, then app3 and app4 battle for it, all of them charging through the grass. The sun shines down merrily above them as they run, energetic and determined. They don't need to be warriors to do a good job patrolling the border!",
@@ -5755,12 +5133,8 @@
                 "art": "running_two_apps",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5777,12 +5151,8 @@
                 "art": "gen_train_argueAA",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5791,12 +5161,8 @@
                         "amount": -10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5805,12 +5171,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -5830,9 +5192,7 @@
                         "cats_to": [
                             "app2"
                         ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_from": ["app1"],
                         "mutual": true,
                         "values": [
                             "like"
@@ -5840,12 +5200,8 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5874,12 +5230,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -5888,12 +5240,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -5909,12 +5257,8 @@
                 "art": "pln_hunt_gonetwolegtrap1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5938,12 +5282,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5952,12 +5292,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -5979,12 +5315,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5993,12 +5325,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -6021,12 +5349,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -6035,12 +5359,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -6070,9 +5390,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "s_c"
-                        ],
+                        "cats": ["s_c"],
                         "injuries": [
                             "blunt_force_injury"
                         ],
@@ -6087,12 +5405,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -6108,27 +5422,21 @@
                 "art": "gen_train_patrolapprenticesessionfail",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "sprain"
                         ],
                         "scars": []
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "sore"
                         ],
                         "scars": []
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "bruises"
                         ],
@@ -6153,9 +5461,7 @@
                         "cats_to": [
                             "app2"
                         ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -6178,9 +5484,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "s_c"
-                        ],
+                        "cats": ["s_c"],
                         "injuries": [
                             "claw-wound",
                             "beak_bite"
@@ -6196,12 +5500,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -6210,12 +5510,8 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -6224,9 +5520,7 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "app2"
                         ],
@@ -6239,9 +5533,7 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -6284,12 +5576,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -6299,12 +5587,8 @@
                         "amount": 15
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -6313,9 +5597,7 @@
                         "amount": 5
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "app2"
                         ],
@@ -6328,9 +5610,7 @@
                         "amount": 10
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -6349,9 +5629,7 @@
                 "art": "gen_hotapps",
                 "injury": [
                     {
-                        "cats": [
-                            "patrol"
-                        ],
+                        "cats": ["patrol"],
                         "injuries": [
                             "dehydrated"
                         ],
@@ -6363,12 +5641,8 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -6399,9 +5673,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -6421,9 +5693,7 @@
                 "art": "gen_battle_app_app",
                 "injury": [
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "battle_injury"
                         ],
@@ -6443,9 +5713,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "app1"
-                        ],
+                        "cats": ["app1"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -6471,9 +5739,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
                             "app2"
                         ],
@@ -6515,10 +5781,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "normal adult": [
-                1,
-                1
-            ]
+            "normal adult": [1, 1]
         },
         "frequency": 3,
         "intro_text": "p_l hears rustling in the grass, something leaps around, rolling. Annoyed at whatever apprentice has decided to come play in the borderlands, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shocked when the flowering grass parts to reveal an outsider, who grins at p_l. Hi cutie, the stranger meows, what'chu up to?",
@@ -6541,9 +5804,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -6553,9 +5814,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -6597,9 +5856,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -6609,9 +5866,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -6653,9 +5908,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -6665,9 +5918,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -6700,9 +5951,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -6712,9 +5961,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -6729,9 +5976,7 @@
                         "cats_from": [
                             "clan"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -6768,9 +6013,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -6780,9 +6023,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -6823,9 +6064,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -6835,9 +6074,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -6875,9 +6112,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -6903,9 +6138,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "battle_injury"
                         ],
@@ -6914,9 +6147,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -6950,9 +6181,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -6961,9 +6190,7 @@
                         "amount": 10
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -7003,9 +6230,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -7014,9 +6239,7 @@
                         "amount": -20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -7029,9 +6252,7 @@
                 ],
                 "injury": [
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "battle_injury"
                         ],
@@ -7040,9 +6261,7 @@
                         ]
                     },
                     {
-                        "cats": [
-                            "p_l"
-                        ],
+                        "cats": ["p_l"],
                         "injuries": [
                             "torn ear"
                         ],
@@ -7079,9 +6298,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -7092,9 +6309,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like"
@@ -7102,9 +6317,7 @@
                         "amount": -5
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -7143,9 +6356,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -7154,9 +6365,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -7193,9 +6402,7 @@
                         "cats_from": [
                             "n_c:0"
                         ],
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -7205,9 +6412,7 @@
                         "amount": 20
                     },
                     {
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["p_l"],
                         "cats_to": [
                             "n_c:0"
                         ],
