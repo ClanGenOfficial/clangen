@@ -3354,14 +3354,6 @@
                         }
                     }
                 ]
-            },
-            {
-                "text": "r_c is caught in a trap hidden in the sand and taken by Twolegs shortly after.",
-                "exp": 0,
-                "lost_cats": [
-                    "r_c"
-                ],
-                "frequency": 3
             }
         ],
         "fail_outcomes": [
@@ -3376,6 +3368,14 @@
                     "playful"
                 ],
                 "frequency": 4
+            },
+            {
+                "text": "r_c is caught in a trap hidden in the sand and taken by Twolegs shortly after.",
+                "exp": 0,
+                "lost_cats": [
+                    "r_c"
+                ],
+                "frequency": 3
             }
         ]
     },
