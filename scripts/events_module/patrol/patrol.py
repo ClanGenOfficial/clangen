@@ -35,7 +35,7 @@ from scripts.events_module.text_adjust import (
     get_special_snippet_list,
     find_special_list_types,
     adjust_list_text,
-    event_text_adjust
+    event_text_adjust,
 )
 
 logger = logging.getLogger(__name__)
@@ -168,17 +168,21 @@ class Patrol:
                 print(
                     f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: N/A (did not proceed)"
                 )
-                return event_text_adjust(
-                    Cat,
-                    self.patrol_event.decline_text,
-                    patrol_leader=self.patrol_leader,
-                    random_cat=self.random_cat,
-                    patrol_cats=self.patrol_cats,
-                    patrol_apprentices=self.patrol_apprentices,
-                    new_cats=self.new_cats,
-                    clan=game.clan,
-                    other_clan=self.other_clan,
-                ), "", None
+                return (
+                    event_text_adjust(
+                        Cat,
+                        self.patrol_event.decline_text,
+                        patrol_leader=self.patrol_leader,
+                        random_cat=self.random_cat,
+                        patrol_cats=self.patrol_cats,
+                        patrol_apprentices=self.patrol_apprentices,
+                        new_cats=self.new_cats,
+                        clan=game.clan,
+                        other_clan=self.other_clan,
+                    ),
+                    "",
+                    None,
+                )
             else:
                 return "Error - no event chosen", "", None
 
@@ -1113,6 +1117,7 @@ class Patrol:
             file_name = f"{file_name}_general_intro"
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
+
 
 # ---------------------------------------------------------------------------- #
 #                               PATROL CLASS END                               #
