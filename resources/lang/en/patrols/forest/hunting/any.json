@@ -5924,6 +5924,40 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
+                "text": "A gray fox is bigger than them, yes... but only just, and that carcass smells divine. The cats creep up on the fox, using the bushes for cover, and wait until the fox has its head buried in the carcass to attack. The ambush sends the competing predator fleeing and leaves the cats to claim the fawn.",
+                "exp": 20,
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a scavenging fox together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
                 "min_max_status": {
                     "normal adult": [2, 3]
                 },
