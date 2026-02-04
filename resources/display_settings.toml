@@ -43,11 +43,6 @@
             false, true
         ]
 
-# Clan settings can be nested, so there's a new "nests" key.
-# FORMAT:
-# [clan.nests]
-#   [clan.nests."section_name"."setting_name"]
-#       required_setting_name = required_value
 [clan]
     [clan.general]
         autosave = false
@@ -85,6 +80,7 @@
         ration_prey = false
         auto_feed = true
 
+    # Used to convert "clan.freshkill_tactics" keys from old saves
     [clan.save_conversion]
         by-status = "low_rank"
         "younger first" = "youngest_first"
@@ -180,6 +176,11 @@
             false, true
         ]
 
+    # Certain clan settings can be nested, so there's a new "nests" key.
+    # FORMAT:
+    # [clan.nests]
+    #   [clan.nests."section_name"."setting_name"]
+    #       required_setting_name = required_value
     [clan.nests]
             [clan.nests.relation."same sex adoption"]
                 "same sex birth" = false
