@@ -306,7 +306,6 @@ class Clan:
             and cat.status.alive_in_player_clan
             and cat.ID in Cat.outside_cats
         ):
-            # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
 

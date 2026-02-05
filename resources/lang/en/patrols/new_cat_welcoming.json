@@ -4313,7 +4313,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, it turns tail and makes a hasty getaway. At least it's off the territory now.",
+                "text": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, {PRONOUN/n_c:0/subject} {VERB/n_c:0/turn/turns} tail and makes a hasty getaway. At least {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} off the territory now.",
                 "exp": 0,
                 "outsider_rep": -1,
                 "new_cat": [
@@ -5303,7 +5303,7 @@
                 "frequency": 1
             },
             {
-                "text": "A loner? Interesting. Never one to pass up a good conversation, s_c saunters up to the outsider and begins chatting with {PRONOUN/n_c:0/object}. The two cats end up talking as though they're old friends: which, by the time they part ways, it feels like they are.",
+                "text": "A loner? Interesting. Never one to pass up a good conversation, s_c saunters up to the outsider and begins chatting with {PRONOUN/n_c:0/object}. The two cats end up talking as though they're old friends - which, by the time they part ways, it feels like they are.",
                 "exp": 10,
                 "stat_trait": [
                     "charismatic",
