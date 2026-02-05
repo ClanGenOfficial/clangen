@@ -1547,7 +1547,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 has {PRONOUN/app1/poss} view blocked by the long grass and flat ground. But the rumble {PRONOUN/app1/subject/CAP} {VERB/app1/feel/feels} through {PRONOUN/app1/poss} pawpads, the footsteps, the bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are, and {PRONOUN/app1/subject} {VERB/app1/share/shares} a wide-eyed look with app2.",
+                "text": "app1 has {PRONOUN/app1/poss} view blocked by the long grass and flat ground. But the rumble {PRONOUN/app1/subject} {VERB/app1/feel/feels} through {PRONOUN/app1/poss} pawpads, the footsteps, the bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are, and {PRONOUN/app1/subject} {VERB/app1/share/shares} a wide-eyed look with app2.",
                 "exp": 15,
                 "art": "gen_scared_cat_app",
                 "relationships": [

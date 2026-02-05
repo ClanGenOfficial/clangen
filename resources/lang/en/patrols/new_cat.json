@@ -3954,7 +3954,7 @@
         "decline_text": "Frankly, p_l has better things to do than talk to weird dog-defenders. {PRONOUN/p_l/subject/CAP} {VERB/p_l/head/heads} home early, without a second glance at whoever called out.",
         "success_outcomes": [
             {
-                "text": "Confused, p_l turns towards the source of the voice. A plump kittypet bounds forwards, saying that {PRONOUN/n_c:0/poss} name is n_c:0, and asking p_l not to hurt {PRONOUN/n_c:0/poss} friend. It takes p_l a while to realise {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} talking about the dog. Too stunned to argue, p_l watches n_c:0 walk away, {PRONOUN/n_c:0/poss} canine companion excitedly following. The other warriors were not going to believe this!",
+                "text": "Confused, p_l turns towards the source of the voice. A plump kittypet bounds forwards, saying that {PRONOUN/n_c:0/poss} name is n_c:0, and asking p_l not to hurt {PRONOUN/n_c:0/poss} friend. It takes p_l a while to realize {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} talking about the dog. Too stunned to argue, p_l watches n_c:0 walk away, {PRONOUN/n_c:0/poss} canine companion excitedly following. The other warriors were not going to believe this!",
                 "exp": 5,
                 "new_cat": [
                     [
@@ -5663,7 +5663,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, it turns tail and makes a hasty getaway. At least it's off the territory now.",
+                "text": "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, {PRONOUN/n_c:0/subject} {VERB/n_c:0/turn/turns} tail and makes a hasty getaway. At least {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} off the territory now.",
                 "exp": 0,
                 "outsider_rep": -1,
                 "new_cat": [
