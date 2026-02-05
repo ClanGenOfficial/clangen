@@ -6824,7 +6824,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say. app1 is secretly thankful not to go gathering today, as {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} believe {PRONOUN/app1/subject}{VERB/app1/'re/'s} quite ready to safely gather a herb like tansy.",
+                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the tansy leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say. app1 is secretly thankful not to go gathering today, as {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} believe {PRONOUN/app1/subject}{VERB/app1/'re/'s} quite ready to safely gather an herb like tansy.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -8685,7 +8685,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from bramble thorns on a herb gathering patrol.",
+                    "scar": "m_c was scarred from bramble thorns on an herb gathering patrol.",
                     "death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [

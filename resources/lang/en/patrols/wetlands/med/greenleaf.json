@@ -1001,7 +1001,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from bramble thorns on a herb gathering patrol.",
+                    "scar": "m_c was scarred from bramble thorns on an herb gathering patrol.",
                     "death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [
