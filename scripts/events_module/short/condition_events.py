@@ -4,6 +4,7 @@ from typing import Dict, List
 
 import i18n
 import ujson
+import logging
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank
@@ -25,7 +26,6 @@ from scripts.game_structure import constants
 from scripts.game_structure.game.switches import (
     Switch,
     switch_get_value,
-    switch_set_value,
     switch_append_list_value,
 )
 from scripts.game_structure import game
@@ -33,6 +33,7 @@ from scripts.game_structure.localization import load_lang_resource
 from scripts.events_module.text_adjust import event_text_adjust, get_leader_life_notice
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
+logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------- #
 #                             Condition Event Class                            #
@@ -144,8 +145,10 @@ class Condition_Events:
             return
 
         if cat.ID not in nutrition_info.keys():
-            print(
-                f"WARNING: Could not find cat with ID {cat.ID}({cat.name}) in the nutrition information."
+            logger.error(
+                "Could not find cat with ID %s (%s) in the nutrition information.",
+                cat.ID,
+                str(cat.name),
             )
             return
 
@@ -371,8 +374,9 @@ class Condition_Events:
         if cat.is_injured():
             for injury in cat.injuries:
                 if injury == "pregnant" and cat.ID not in game.clan.pregnancy_data:
-                    print(
-                        f"INFO: deleted pregnancy condition of {cat.ID} due no pregnancy data in the clan."
+                    logger.warning(
+                        "deleted pregnancy condition of %s due to missing pregnancy info.",
+                        cat.ID,
                     )
                     del cat.injuries[injury]
                     return triggered
@@ -504,15 +508,16 @@ class Condition_Events:
                         else:
                             return perm_condition
                 except KeyError:
-                    print(
-                        f"WARNING: {injury_name} couldn't be found in injury dict! no permanent condition is possible."
+                    logger.error(
+                        "%s couldn't be found in injury dict! No permanent condition possible.",
+                        injury_name,
                     )
                     return perm_condition
             else:
-                print(
-                    f"WARNING: {scar} for {injury_name} is either None or is not in scar_to_condition dict. This is "
-                    f"not necessarily a bug.  Only report if you feel the scar should have "
-                    f"resulted in a permanent condition."
+                logger.info(
+                    "%s for %s is either or is not in scar_to_condition dict. Only report if you feel the scar should have resulted in a permanent condition.",
+                    scar,
+                    injury_name,
                 )
 
         elif condition is not None:
@@ -574,8 +579,9 @@ class Condition_Events:
                     # first event in string lists is always appropriate for history formatting
                     history_event = possible_string_list[0]
                 except KeyError:
-                    print(
-                        f"WARNING: {illness} does not have an injury death string, placeholder used."
+                    logging.warning(
+                        "%s does not have an illness death string, placeholder used.",
+                        illness,
                     )
                     event = i18n.t("defaults.illness_death_event")
                     history_event = i18n.t("defaults.illness_death_history")
@@ -677,8 +683,9 @@ class Condition_Events:
                     # first string in the list is always appropriate for history text
                     history_text = possible_string_list[0]
                 except KeyError:
-                    print(
-                        f"WARNING: {injury} does not have an injury death string, placeholder used"
+                    logging.warning(
+                        "%s does not have an injury death string, placeholder used.",
+                        injury,
                     )
 
                     event = i18n.t("defaults.injury_death_event")
@@ -711,10 +718,11 @@ class Condition_Events:
                             Condition_Events.INJURY_HEALED_STRINGS[injury]
                         )
                     except KeyError:
-                        print(
-                            f"WARNING: {injury} couldn't be found in the healed strings dict! "
-                            f"placeholder string was used."
+                        logger.warning(
+                            "%s couldn't be found in the healed strings dict! placeholder used.",
+                            injury,
                         )
+
                         # try to translate the string
                         new_injury = i18n.t(f"conditions.injuries.{injury}")
                         new_injury.replace("conditions.injuries.", "")
@@ -746,9 +754,10 @@ class Condition_Events:
                             ]
                         )
                     except KeyError:
-                        print(
-                            f"WARNING: No entry in gain_permanent_condition_strings for injury '{injury}' causing "
-                            f"condition '{condition_got}'. Using default."
+                        logger.warning(
+                            "No string found for %s causing %s. Placeholder used.",
+                            injury,
+                            condition_got,
                         )
 
                         # try to translate the injury & condition
@@ -1137,8 +1146,9 @@ class Condition_Events:
                             random_index = 1
                     event = possible_string_list[random_index]
                 except KeyError:
-                    print(
-                        f"WARNING: {condition} couldn't be found in the risk strings! placeholder string was used"
+                    logging.warning(
+                        "%s couldn't be found in the risk strings. Placeholder used.",
+                        condition,
                     )
                     event = i18n.t(
                         "conditions.permanent_conditions.unknown_condition_risk_given"
