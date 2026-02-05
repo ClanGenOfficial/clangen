@@ -87,7 +87,7 @@ class Scar_Events:
         This function handles the scars
         """
         # Scars specified in event override standard scar pool
-        scar_pool = cat.injuries[injury_name]["potential_scars"]
+        scar_pool = cat.injuries[injury_name].get("potential_scars", [])
 
         # If the injury can't give a scar, return None, None
         if not scar_pool and injury_name not in Scar_Events.scar_allowed:
