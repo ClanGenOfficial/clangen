@@ -140,5 +140,4 @@ class TestEvents(unittest.TestCase):
                         )
 
                 if not _ % 100:
-                    # todo: why use this function? this also counts COTC, which is useless for telling if the clan is dead
                     print(f"CLANCATS ALIVE: {get_living_clan_cat_count(Cat)}")
