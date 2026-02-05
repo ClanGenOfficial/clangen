@@ -49,6 +49,12 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     inner_details = m.group(1).split("/")
     out = None
 
+    # if the cat that the pronoun is assigned to wasn't passed with the dict, then we just return
+    # it's assumed that the text is going to be processed at some other point with that cat's info
+    # (for example, this is required for rel log processing to be done correctly)
+    if inner_details[1] != "PLURAL" and inner_details[1] not in cat_pronouns_dict:
+        return m.group(0)
+
     try:
         if inner_details[1].upper() == "PLURAL":
             inner_details.pop(1)  # remove plural tag so it can be processed as normal

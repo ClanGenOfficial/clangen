@@ -32,7 +32,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l scents some prey, catching it p_l has a quick snack.",
+                "text": "p_l scents some prey and catches it. After {PRONOUN/p_l/poss} snack, {PRONOUN/p_l/subject} {VERB/p_l/mark/marks} the border.",
                 "exp": 5,
                 "frequency": 4
             },
@@ -64,7 +64,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l starts daydreaming, and ends up marking in the wrong place, at least it wasn't in o_c_n's territory.",
+                "text": "p_l starts daydreaming and ends up marking in the wrong place. At least it wasn't in o_c_n's territory.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -86,7 +86,7 @@
         ]
     },
     {
-        "patrol_id": "Gen_bord_balancing_scent",
+        "patrol_id": "gen_bord_balancing_scent",
         "biome": [
             "any"
         ],
@@ -102,7 +102,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "p_l heads out to patrol c_n's borders, but scents something along the borders.",
+        "intro_text": "p_l heads out to patrol c_n's borders and scents something mysterious.",
         "decline_text": "p_l decides to not investigate the scent.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -117,7 +117,7 @@
                 "frequency": 4
             },
             {
-                "text": "The scent leads p_l to a nearby patch of herbs, hopefully the herbs are useful to the clans healer.",
+                "text": "The scent leads p_l to a nearby patch of herbs. p_l hopes they'll be useful back at camp.",
                 "exp": 5,
                 "herbs": [
                     "tansy"
@@ -125,14 +125,14 @@
                 "frequency": 3
             },
             {
-                "text": "p_l detects the scent of a fellow Clanmate, possibly on a solo patrol of their own, but it was nothing to worry about.",
+                "text": "p_l detects the scent of a fellow Clanmate, possibly on a solo patrol of their own.",
                 "exp": 5,
                 "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
-                "text": "p_l can't identify the scent, and return back to camp to report it.",
+                "text": "p_l can't identify the scent and returns to camp to report it.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -159,7 +159,7 @@
         ]
     },
     {
-        "patrol_id": "Gen_bord_balancing_tracks",
+        "patrol_id": "gen_bord_balancing_tracks",
         "biome": [
             "any"
         ],
@@ -175,7 +175,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "p_l heads out to patrol c_n's borders, but spots some tracks.",
+        "intro_text": "p_l heads out to patrol c_n's borders and spots some mysterious tracks.",
         "decline_text": "p_l decides to not investigate the tracks.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -195,19 +195,19 @@
                 "frequency": 4
             },
             {
-                "text": "p_l identifies the tracks as belonging to two-legs, and p_l decides to head back to camp to inform the others.",
+                "text": "p_l identifies the tracks as belonging to Twolegs, and p_l decides to head back to camp to inform the others.",
                 "exp": 5,
                 "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
-                "text": "p_l can't identify the tracks, and are forced to return to camp to report it.",
+                "text": "p_l can't identify the tracks and is forced to return to camp to report it.",
                 "exp": 0,
                 "frequency": 4
             },
             {
-                "text": "Despite p_l efforts, {PRONOUN/p_l/subject} can't identify the tracks, and reports it back at camp.",
+                "text": "Despite p_l's efforts, {PRONOUN/p_l/subject} can't identify the tracks and {VERB/p_l/report/reports} it back at camp.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -224,7 +224,7 @@
         ]
     },
     {
-        "patrol_id": "Gen_bord_balancing_markings",
+        "patrol_id": "gen_bord_balancing_markings",
         "biome": [
             "any"
         ],
@@ -240,17 +240,17 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "p_l heads out to patrol c_n's borders, and notices that some of their markings had been disturbed.",
+        "intro_text": "p_l heads out to patrol c_n's borders and notices that some of their markings had been disturbed.",
         "decline_text": "p_l decides to not investigate the markings.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Upon closer inspection, it was just remarking from a Clanmate.",
+                "text": "Upon closer inspection, it's just re-marking from a Clanmate.",
                 "exp": 0,
                 "frequency": 4
             },
             {
-                "text": "The scratches didn't match any cats paws, that was for certain, and p_l returns to camp to report it, alert to any threats.",
+                "text": "The scratches don't match any cat's paws, so p_l returns to camp to report it, alert to any threats.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -262,12 +262,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Despite {PRONOUN/p_l/poss} efforts, p_l couldn't identify what had disturbed the border markings, leaving {PRONOUN/p_l/object} perplexed as {PRONOUN/p_l/subject} return to camp.",
+                "text": "Despite {PRONOUN/p_l/poss} efforts, p_l can't identify what disturbed the border markings, leaving {PRONOUN/p_l/object} perplexed as {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp.",
                 "exp": 0,
                 "frequency": 4
             },
             {
-                "text": "The disturbance in the markings remains a mystery to p_l, and when {PRONOUN/p_l/subject} reports the incident, extra patrols are assigned to monitor for any further disruptions.",
+                "text": "The disturbance in the markings remains a mystery to p_l, and when {PRONOUN/p_l/subject} {VERB/p_l/report/reports} the incident, extra patrols are assigned to monitor for any further disruptions.",
                 "exp": 0,
                 "frequency": 4
             }
