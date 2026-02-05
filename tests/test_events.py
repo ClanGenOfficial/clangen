@@ -120,6 +120,25 @@ class TestEvents(unittest.TestCase):
         ):
             for _ in range(500):
                 events.one_moon()
+
+                if not _ % 10:
+                    # every 10 moons, top up the number of cats in the Clan to at least 8
+                    # to give a good chance for event variety without bloat
+                    while get_living_clan_cat_count(Cat) < 8:
+                        game.clan.add_cat(
+                            create_cat(
+                                choice(
+                                    [
+                                        CatRank.KITTEN,
+                                        CatRank.APPRENTICE,
+                                        CatRank.WARRIOR,
+                                        CatRank.WARRIOR,
+                                        CatRank.ELDER,
+                                    ]
+                                )
+                            )
+                        )
+
                 if not _ % 100:
                     # todo: why use this function? this also counts COTC, which is useless for telling if the clan is dead
                     print(f"CLANCATS ALIVE: {get_living_clan_cat_count(Cat)}")
