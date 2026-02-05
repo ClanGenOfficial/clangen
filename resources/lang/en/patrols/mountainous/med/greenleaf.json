@@ -5616,7 +5616,7 @@
                 "frequency": 4
             },
             {
-                "text": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorise. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
+                "text": "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorize. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
                 "exp": 20,
                 "herbs": [
                     "many_herbs",
@@ -8628,7 +8628,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from bramble thorns on a herb gathering patrol.",
+                    "scar": "m_c was scarred from bramble thorns on an herb gathering patrol.",
                     "death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [

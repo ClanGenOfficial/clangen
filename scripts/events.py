@@ -821,11 +821,22 @@ def handle_lost_cats_return(predetermined_cat_IDs: list = None):
             return
 
         lost_cat = random.choice(eligible_cats)
+        if lost_cat.age in (CatAge.NEWBORN, CatAge.KITTEN):
+            return
+
         cat_IDs.append(lost_cat.ID)
+
+        if lost_cat.status.is_former_clancat:
+            text = i18n.t(f"hardcoded.event_lost{random.choice(range(1,5))}")
+        else:
+            # this would be the child of a lost cat, who inherited the lost status from the parent and was never a clancat
+            text = i18n.t(
+                "hardcoded.event_returning_child_of_lost",
+                parent_name=Cat.fetch_cat(lost_cat.parent1).name,
+            )
 
         additional_cats = lost_cat.add_to_clan()
         cat_IDs.extend(additional_cats)
-        text = i18n.t(f"hardcoded.event_lost{random.choice(range(1,5))}")
 
         if additional_cats:
             text += i18n.t("hardcoded.event_lost_kits", count=len(additional_cats))
@@ -1291,18 +1302,18 @@ def perform_ceremonies(cat):
 
                 # assign chance to become med app depending on current med cat and traits
                 chance = constants.CONFIG["roles"]["base_medicine_app_chance"]
-                if has_elder_med == med_cat_list:
+                if very_old_med == med_cat_list:
+                    # These chances apply if all the current medicine cats are very old.
+                    if has_med:
+                        chance = int(chance / 3)
+                    else:
+                        chance = int(chance / 14)
+                elif has_elder_med == med_cat_list:
                     # These chances apply if all the current medicine cats are elders.
                     if has_med:
                         chance = int(chance / 2.22)
                     else:
                         chance = int(chance / 13.67)
-                elif very_old_med == med_cat_list:
-                    # These chances apply is all the current medicine cats are very old.
-                    if has_med:
-                        chance = int(chance / 3)
-                    else:
-                        chance = int(chance / 14)
                 # These chances will only be reached if the
                 # Clan has at least one non-elder medicine cat.
                 elif not has_med:

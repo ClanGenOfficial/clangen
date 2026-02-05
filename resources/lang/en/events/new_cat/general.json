@@ -874,19 +874,19 @@
                 "loner",
                 "meeting",
                 "exists",
-                "backstory:wandering_healer1,wandering_healer2"
+                "backstory:wandering_healer2"
             ],
             [
                 "loner",
                 "meeting",
                 "exists",
-                "backstory:wandering_healer1,wandering_healer2"
+                "backstory:wandering_healer2"
             ],
             [
                 "loner",
                 "meeting",
                 "exists",
-                "backstory:wandering_healer1,wandering_healer2"
+                "backstory:wandering_healer2"
             ]
         ],
         "relationships": [

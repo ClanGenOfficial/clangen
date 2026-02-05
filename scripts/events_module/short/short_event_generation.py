@@ -497,7 +497,7 @@ def filter_events(
                     else:
                         discard = False
 
-                else:  # if supply type wasn't freshkill, then it must be a herb type
+                else:  # if supply type wasn't freshkill, then it must be an herb type
                     if not event_for_herb_supply(trigger, supply_type, clan_size):
                         discard = True
                         break
