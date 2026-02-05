@@ -86,9 +86,11 @@ class Scar_Events:
         """
         This function handles the scars
         """
+        # Scars specified in event override standard scar pool
+        scar_pool = cat.injuries[injury_name]["potential_scars"]
 
-        # If the injury can't give a scar, move return None, None
-        if injury_name not in Scar_Events.scar_allowed:
+        # If the injury can't give a scar, return None, None
+        if not scar_pool and injury_name not in Scar_Events.scar_allowed:
             return None, None
 
         moons_with = game.clan.age - cat.injuries[injury_name]["moon_start"]
@@ -101,13 +103,12 @@ class Scar_Events:
             chance += 2
 
         if len(cat.pelt.scars) < 4 and not int(random.random() * chance):
-            # move potential scar text into displayed scar text
-
-            scar_pool = [
-                i
-                for i in Scar_Events.scar_allowed[injury_name]
-                if i not in cat.pelt.scars
-            ]
+            if not scar_pool:
+                scar_pool = [
+                    i
+                    for i in Scar_Events.scar_allowed[injury_name]
+                    if i not in cat.pelt.scars
+                ]
             if "NOPAW" in cat.pelt.scars:
                 scar_pool = [
                     i for i in scar_pool if i not in ("TOETRAP", "RATBITE", "FROSTSOCK")

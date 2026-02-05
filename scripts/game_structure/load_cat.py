@@ -15,7 +15,7 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
 )
-from scripts.game_structure.localization import get_new_pronouns
+from ..cat.pronouns import get_new_pronouns
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.game_structure import constants
 from scripts.game_structure import game
@@ -354,7 +354,7 @@ def json_load():
 
         try:
             # initialization of thoughts
-            cat.thoughts(other_clan_cats=other_clan_cats)
+            cat.get_new_thought(other_clan_cats=other_clan_cats)
         except Exception as e:
             logger.exception(
                 f"There was an error when thoughts for cat #{cat} are created."
@@ -696,3 +696,18 @@ def version_convert(version_info):
         # freshkill start for older clans
         add_prey = game.clan.freshkill_pile.amount_food_needed() * 2
         game.clan.freshkill_pile.add_freshkill(add_prey)
+
+    if version < 4:
+        for c in Cat.all_cats.values():
+            if not c.status.is_leader:
+                continue
+            for death in c.history.died_by:
+                if death["text"] == "multi_lives":
+                    # skip these as changing them will break stuff
+                    continue
+                death["text"] = (
+                    "m_c lost a life when {PRONOUN/m_c/subject} " + death["text"]
+                )
+                # check if a period is present and append one if not
+                if death["text"][-1] != ".":
+                    death["text"] += "."

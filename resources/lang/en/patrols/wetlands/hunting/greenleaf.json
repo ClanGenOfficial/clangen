@@ -26,21 +26,19 @@
                 "prey": [
                     "large"
                 ],
-                "relationships": [
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust", "like"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat had a fun hunt on a hot greenleaf day."
                     }
-                ],
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -49,21 +47,19 @@
                 "prey": [
                     "large"
                 ],
-                "relationships": [
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust", "like"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "cats_from": "from_cat and to_cat had a fun hunt on a hot greenleaf day."
                     }
-                ],
+                }
+            ],
                 "frequency": 1
             }
         ],
@@ -71,21 +67,19 @@
             {
                 "text": "No way, it's too hot for this. They can try to hunt again later.",
                 "exp": 0,
-                "relationships": [
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5
+                        "cats_from": "from_cat and to_cat gave up on a hunt because of the weather."
                     }
-                ],
+                }
+            ],
                 "prey": [
                     "very_small"
                 ],

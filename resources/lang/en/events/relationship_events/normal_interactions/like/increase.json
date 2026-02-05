@@ -789,10 +789,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c and r_c heckled another Clan at the Gathering together.",
-			"m_c and r_c worked well together on a patrol.",
-			"When they return from a patrol, m_c and r_c seem more at peace with each other than usual.",
-			"m_c and r_c defended their Clan at the Gathering together.",
-			"m_c and r_c had a great time on a patrol."
+			"m_c and r_c defended their Clan at the Gathering together."
 		],
 		"reaction_random_cat": {
 			"like": "increase"
@@ -818,6 +815,34 @@
 			"medicine cat",
 			"deputy",
 			"leader"
+		]
+	},
+	{
+		"id": "dislike_de_high3",
+		"intensity": "high",
+		"interactions": [
+			"m_c and r_c worked well together on a patrol.",
+			"When they return from a patrol, m_c and r_c seem more at peace with each other than usual.",
+			"m_c and r_c had a great time on a patrol."
+		],
+		"reaction_random_cat": {
+			"like": "increase"
+		},
+		"main_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+			"leader",
+			"medicine cat apprentice",
+			"medicine cat"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+			"leader",
+			"medicine cat apprentice",
+			"medicine cat"
 		]
 	}
 ]

@@ -516,7 +516,7 @@ Please have a look at the [full biome differences list](index.md#clangen-biomes)
 ***
 
 #### relationship_constraint: List[str]
->Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
+>Optional. Only allows the patrol if the cats meet relationship constraints. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
 ***
 
@@ -545,9 +545,11 @@ This is a good starting point for writing your own outcomes.
 
 ```json
 {
+    "min_max_status": {},
     "text": "The raw displayed outcome text.",
     "exp": 0,
     "frequency": 4,
+    "relationship_constraint": [],
     "stat_skill": [],
     "stat_trait": [],
     "can_have_stat": [],
@@ -566,8 +568,7 @@ This is a good starting point for writing your own outcomes.
         }
     ],
     "history_text": {
-        "reg_death": "m_c died while on a patrol.",
-        "lead_death": "died on patrol",
+        "death": "m_c died while on a patrol.",
         "scars": "m_c was scarred on patrol"
     },
     "relationships": [
@@ -589,6 +590,14 @@ This is a good starting point for writing your own outcomes.
 ### By-Parameter - Outcome
 What each parameter does, and what the options are for outcomes.
 
+***
+
+#### min_max_status: Dict[str, List[int]]
+>Optional. Allows specification of the minimum and maximum number of specific types of cats that are allowed on this outcome. Utlizes the exact same format and options as the overall [min_max_status](#min_max_status-dictstr-listint) parameter.
+
+!!! caution
+    Use this sparingly and always ensure at least one of every outcome type is possible for *any* combination of cats allowed on this patrol. Ideally there should always be outcomes that *do not use* this parameter. If you've utilized this parameter on every outcome, it should be in a simple and easy-to-follow manner (i.e. all outcomes are either for 1-3 warriors or 4-6 warriors) rather than overly convoluted (i.e. every outcome has a different `min_max_status`: some disallow leaders, some allow medicine cats, some disallow all apps except medicine apps, others only allow medicine apps, ect.) ***If it starts to get insane, you are better off separating this patrol into multiple patrols instead of cramming all those outcomes together.***
+ 
 ***
 
 #### text: str
@@ -619,6 +628,11 @@ What each parameter does, and what the options are for outcomes.
 !!! warning
     Don't try to boost an outcome's frequency to make up for it being heavily constrained! While we used to do that with our old system, the new code automatically decides how to weight an outcome according to its constraints in a way that is completely divorced from the frequency. We decide outcome rarities and the code decides if outcomes should be prioritized in specific instances.
 
+
+***
+
+#### relationship_constraint: List[str]
+>Optional. Only allows the outcome if the cats meet relationship constraints. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
 ***
 
@@ -712,7 +726,7 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### injury: List[Dict[str, various]]
->Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the following blocks (in a list) as you want. 
+>Optional. Indicates which cats get injured, and how. You can include as many of the following blocks (in a list) as you want. 
 >
 >```json
 >{
@@ -744,7 +758,7 @@ What each parameter does, and what the options are for outcomes.
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
->Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
+>Optional. This replaces the standard scar pool for the given injury.
 >
 >[Scar List](reference/tag-lists.md#__tabbed_1_5)
 
@@ -763,16 +777,13 @@ What each parameter does, and what the options are for outcomes.
 #### history_text: Dict[str, str]
 >Optional, but it should be included if any death or injury is indicated. Controls the history-text for scars and death. 
 >
->Format:
->
->```
->{text_type}: "custom history message"
+>[History Writing Guidelines](reference/index.md#writing-histories)
+> 
 >```
 
 | text_type    | "custom history message"                            |
 |--------------|-----------------------------------------------------|
-| "reg_death"  | Death history text for non-leaders. Whole sentence. |
-| "lead_death" | Death history text for leaders. Sentence fragment.  |
+| "death"      | Death history text. Whole sentence. |
 | "scar"       | Scar history. Whole sentence.                       |
 
 >
@@ -809,7 +820,8 @@ What each parameter does, and what the options are for outcomes.
 | "old_name"                                  | Ensure the cat keeps their old (maybe loner or kittypet) name. Doesn't work for kittens or litters.                                                                                                                                                                                                                                                                 |
 | "kittypet"                                  | Gives the cat a kitty-pet type backstory. If "meeting" is also included, this tag will make the cat an kittypet outsider                                                                                                                                                                                                                                            |
 | "loner"                                     | Gives the cat a loner type backstory. If "meeting" is also included, this tag will make the cat an loner outsider                                                                                                                                                                                                                                                   |
-| "clancat"                                   | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
+| "clancat"                                   | Gives the cat a clancat type backstory. If "meeting" is also included, this tag will make an Other Clancat.                                                                                                                                                                                                                                                         |
+| "former clancat"                            | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
 | "meeting"                                   | Make the cat an outsider (the patrol just met them, but they didn't join). That cat will never take a new clan-like name.                                                                                                                                                                                                                                           |
 | "litter"                                    | Turns a single cat generation into a litter of kittens or newborns. Make sure to have a parent for them!                                                                                                                                                                                                                                                            |
 | "status:{some_status}"                      | Cats will join with this status. Include "medicine cat", "apprentice", "mediator", "kitten", "newborn", "medicine cat apprentice", etc, but not leader or deputy. Default for not-litters is warrior. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.                                                  |

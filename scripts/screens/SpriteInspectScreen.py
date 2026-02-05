@@ -7,21 +7,18 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.game_structure import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.utility import (
-    generate_sprite,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale_offset,
-    get_text_box_theme,
-)
-from scripts.utility import ui_scale
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
 from .enums import GameScreen
-from ..cat.sprites import sprites
+from ..cat.sprites.load_sprites import sprites
+from scripts.cat.sprites.display_sprites import generate_sprite
+from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.windows import SaveAsImage
+from ..ui.windows.save_as_image import SaveAsImageWindow
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 
@@ -80,7 +77,7 @@ class SpriteInspectScreen(Screens):
                 self.update_disabled_buttons()
                 self.make_cat_image()
             elif event.ui_element == self.save_image_button:
-                SaveAsImage(self.generate_image_to_save(), str(self.the_cat.name))
+                SaveAsImageWindow(self.generate_image_to_save(), str(self.the_cat.name))
             elif event.ui_element == self.previous_life_stage:
                 self.displayed_life_stage = max(self.displayed_life_stage - 1, 0)
                 self.update_disabled_buttons()

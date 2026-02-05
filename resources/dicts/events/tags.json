@@ -76,6 +76,28 @@
     
     "relationship": [
         {
+            "tag": "strangers",
+            "setting": false,
+            "conflict": [
+                "strangers",
+                "siblings",
+                "not_siblings",
+                "littermates",
+                "not_littermates",
+                "mates",
+                "mates_with_pl",
+                "not_mates",
+                "parent/child",
+                "not_parent",
+                "child/parent",
+                "not_child",
+                "mentor/app",
+                "not_mentor",
+                "app/mentor",
+                "not_app"
+            ]
+        },
+        {
             "tag": "siblings",
             "setting": false,
             "conflict": ["mates",

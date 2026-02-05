@@ -26,7 +26,8 @@ from scripts.events_module.event_filters import (
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants, game
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.utility import get_living_clan_cat_count, get_warring_clan
+from scripts.clan_package.cotc import get_warring_clan
+from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
 
 loaded_events = {}
 used_events = set()
@@ -496,7 +497,7 @@ def filter_events(
                     else:
                         discard = False
 
-                else:  # if supply type wasn't freshkill, then it must be a herb type
+                else:  # if supply type wasn't freshkill, then it must be an herb type
                     if not event_for_herb_supply(trigger, supply_type, clan_size):
                         discard = True
                         break

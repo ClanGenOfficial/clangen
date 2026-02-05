@@ -27,17 +27,13 @@ from scripts.cat_relations.enums import RelType, RelTier
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import image_cache
 from scripts.game_structure import game
-from scripts.game_structure.screen_settings import screen
+from scripts.game_structure.screen_settings import screen, MANAGER
 from scripts.game_structure.game.settings import game_setting_get
+from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import (
-    ui_scale,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale_value,
-    clamp,
-)
+from scripts.events_module.text_adjust import shorten_text_to_fit
+from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 
 
 class UISurfaceImageButton(pygame_gui.elements.UIButton):
@@ -1247,10 +1243,12 @@ class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
         # every "unit" is 1/200th of the width of the bar
         pointer_offset = int(scale_position / 200 * bar.width)
         # -15 so it doesn't go past the end of the bar
+        pointer_x = max(
+            0, min(pointer_offset + pointer_origin[0], bar.width - ui_scale_value(15))
+        )
+
         pointer_final_position = (
-            clamp(
-                pointer_offset + pointer_origin[0], 0, bar.width - ui_scale_value(15)
-            ),
+            pointer_x,
             pointer_origin[1],
         )
         pointer_size = ui_scale_dimensions((14, 12))
@@ -1516,7 +1514,7 @@ class UICheckbox(UIImageButton):
     def __init__(
         self,
         position: tuple,
-        container: UIContainer,
+        container: IContainerLikeInterface,
         manager,
         visible: bool = True,
         tool_tip_text: str = None,
@@ -1559,6 +1557,39 @@ class UICheckbox(UIImageButton):
         self.checked = False
         self.change_object_id("@unchecked_checkbox")
 
+    def hover_point(self, hover_x: float, hover_y: float) -> bool:
+        """
+        Test if a given point counts as 'hovering' this UI element. Normally that is a
+        straightforward matter of seeing if a point is inside the rectangle. Occasionally it
+        will also check if we are in a wider zone around a UI element once it is already active,
+        this makes it easier to move scroll bars and the like.
+
+        :param hover_x: The x (horizontal) position of the point.
+        :param hover_y: The y (vertical) position of the point.
+
+        :return: Returns True if we are hovering this element.
+
+        """
+
+        container_clip_rect = self.ui_container.get_container().get_rect().copy()
+        if self.ui_container.get_container().get_image_clipping_rect() is not None:
+            container_clip_rect.size = (
+                self.ui_container.get_container().get_image_clipping_rect().size
+            )
+            container_clip_rect.left += (
+                self.ui_container.get_container().get_image_clipping_rect().left
+            )
+            container_clip_rect.top += (
+                self.ui_container.get_container().get_image_clipping_rect().top
+            )
+
+        # ONLY CHANGE was to remove the drawable shape collide point check. for some reason, it would cause the checkbox
+        # hover to desync when inside a scrolling container
+
+        return bool(self.rect.collidepoint(hover_x, hover_y)) and bool(
+            container_clip_rect.collidepoint(hover_x, hover_y)
+        )
+
 
 class UICatListDisplay(UIContainer):
     def __init__(
@@ -1566,7 +1597,6 @@ class UICatListDisplay(UIContainer):
         relative_rect: RectLike,
         container: UIContainer,
         starting_height: int,
-        object_id: str,
         manager,
         cat_list: list,
         cats_displayed: int,
@@ -1575,15 +1605,18 @@ class UICatListDisplay(UIContainer):
         current_page: int,
         next_button: UIImageButton,
         prev_button: UIImageButton,
+        object_id: str = None,
         first_button: UIImageButton = None,
         last_button: UIImageButton = None,
         anchors: Optional[dict] = None,
         rows: int = None,
         show_names: bool = False,
         tool_tip_name: bool = False,
+        tool_tip_nutrition: bool = False,
         visible: bool = True,
         text_theme="#cat_list_text",
         y_px_between: int = None,
+        allow_selection: bool = False,
     ):
         """
         Creates and displays a list of click-able cat sprites.
@@ -1604,8 +1637,10 @@ class UICatListDisplay(UIContainer):
         :param prev_button: the prev_button ui_element
         :param current_page: the currently displayed page of the cat list
         :param tool_tip_name: should a tooltip displaying the cat's name be added to each cat sprite, default False
+        :param tool_tip_nutrition: should a tooltip displaying the cat's nutrition status be added to each cat sprite, default False
         :param visible: Whether the element is visible by default. Warning - container visibility
                         may override this.
+        :param allow_selection: Whether cats should be selectable.
         """
 
         super().__init__(
@@ -1630,7 +1665,9 @@ class UICatListDisplay(UIContainer):
         self.first_button = first_button
         self.last_button = last_button
         self.tool_tip_name = tool_tip_name
+        self.tool_tip_nutrition = tool_tip_nutrition
         self.text_theme = text_theme
+        self.allow_selection = allow_selection
 
         self.total_pages: int = 0
         self.favor_indicator = {}
@@ -1638,6 +1675,8 @@ class UICatListDisplay(UIContainer):
         self.cat_names = {}
         self.cat_chunks = []
         self.boxes = []
+        self.selection_boxes = {}
+        self.selected = []
 
         self.show_names = show_names
 
@@ -1668,6 +1707,13 @@ class UICatListDisplay(UIContainer):
         for box in self.boxes:
             box.set_container(self)
             box.rebuild()
+
+    def cache_clear(self):
+        """
+        Clears the cached grid. This is only necessary for cat lists being displayed on popup windows. I'm not sure *why*, but the cache starts causing crashes. I recommend that we try to keep cat list displays on popup windows to a minimum to avoid lag and, when possible, hide & show the list instead of killing and recreating.
+        """
+
+        self._generate_grid_cached.cache_clear()
 
     @staticmethod
     @lru_cache(maxsize=5)
@@ -1772,6 +1818,39 @@ class UICatListDisplay(UIContainer):
             ]
 
     def create_cat_button(self, i, kitty, container):
+        if self.tool_tip_nutrition:
+            condition_list = []
+            if kitty.illnesses:
+                if "starving" in kitty.illnesses.keys():
+                    condition_list.append(i18n.t("conditions.illnesses.starving"))
+                elif "malnourished" in kitty.illnesses.keys():
+                    condition_list.append(i18n.t("conditions.illnesses.malnourished"))
+            nutrition_info = game.clan.freshkill_pile.nutrition_info
+            if kitty.ID in nutrition_info:
+                full_text = i18n.t(
+                    "screens.profile.nutrition_text",
+                    nutrition_text=nutrition_info[kitty.ID].nutrition_text,
+                )
+                if get_clan_setting("showxp"):
+                    full_text += f" ({str(int(nutrition_info[kitty.ID].percentage))})"
+                condition_list.append(full_text)
+            tooltip_text = (
+                "<br>".join(condition_list) if len(condition_list) > 0 else None
+            )
+        elif self.tool_tip_name:
+            tooltip_text = str(kitty.name)
+        else:
+            tooltip_text = None
+        if self.allow_selection:
+            self.selection_boxes[f"sprite{i}"] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((0, 15), (56, 56))),
+                get_box(BoxStyles.SELECTION_BOX, (60, 60)),
+                container=container,
+                starting_height=1,
+                manager=MANAGER,
+                visible=False,
+                anchors={"centerx": "centerx"},
+            )
         self.cat_sprites[f"sprite{i}"] = UISpriteButton(
             ui_scale(pygame.Rect((0, 15), (50, 50))),
             kitty.sprite,
@@ -1780,7 +1859,7 @@ class UICatListDisplay(UIContainer):
             mask=None,
             container=container,
             object_id=f"#sprite{str(i)}",
-            tool_tip_text=str(kitty.name) if self.tool_tip_name else None,
+            tool_tip_text=tooltip_text,
             starting_height=1,
             anchors={"centerx": "centerx"},
         )
@@ -1835,6 +1914,49 @@ class UICatListDisplay(UIContainer):
             if self.first_button:
                 self.first_button.enable()
                 self.last_button.enable()
+
+    def process_event(self, event: pygame.event.Event) -> bool:
+        if self.allow_selection and event.type in (
+            pygame_gui.UI_BUTTON_ON_HOVERED,
+            pygame_gui.UI_BUTTON_ON_UNHOVERED,
+            pygame_gui.UI_BUTTON_START_PRESS,
+        ):
+            for sprite, button in self.cat_sprites.items():
+                cat_id = button.return_cat_id()
+                if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+                    if button != event.ui_element:
+                        continue
+                    self.selection_boxes[sprite].show()
+                elif (
+                    event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED
+                    and cat_id not in self.selected
+                ):
+                    if button != event.ui_element:
+                        continue
+                    self.selection_boxes[sprite].hide()
+                elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+                    if button != event.ui_element:
+                        continue
+                    if cat_id in self.selected:
+                        self.selected.remove(cat_id)
+                    else:
+                        self.selected.append(cat_id)
+
+        return super().process_event(event)
+
+    def reset_selection(self):
+        for box in self.selection_boxes.values():
+            box.hide()
+        self.selected.clear()
+
+    def show(self):
+        super().show()
+
+        if self.allow_selection:
+            for sprite, button in self.cat_sprites.items():
+                cat_id = button.return_cat_id()
+                if cat_id not in self.selected:
+                    self.selection_boxes[sprite].hide()
 
 
 class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
@@ -2167,6 +2289,7 @@ class UIDropDown(UIDropDownContainer):
         manager: IUIManagerInterface,
         container: UIContainer = None,
         child_dimensions: tuple = None,
+        center_children: bool = False,
         parent_style: ButtonStyles = ButtonStyles.DROPDOWN,
         parent_override=None,
         parent_reflect_selection=False,
@@ -2190,6 +2313,7 @@ class UIDropDown(UIDropDownContainer):
         :param item_list: The list of options that will become child buttons.
         :param child_dimensions: This overrides the relative_rect dimensions for the child buttons, allowing you to create
         parent and child buttons with differing dimensions
+        :param center_children: Set True if child buttons should be centered beneath the parent button, rather than anchored to the parent's left side. Only useful if child dimensions are larger than the parent's. Defaults to False.
         :param parent_style: The button style to use for the parent button, defaults to DROPDOWN
         :param parent_override: This isn't best practice to use, but it's an exception added for the filter dropdown
         :param parent_reflect_selection: When a selection is made, the parent text changes to reflect the selection.
@@ -2239,7 +2363,11 @@ class UIDropDown(UIDropDownContainer):
         else:
             self.parent_button = parent_override
 
-        dropdown_rect = ((relative_rect.x, 0), (0, 0))
+        if center_children:
+            x_pos = -int(child_dimensions[0] / 2 - relative_rect.width / 2)
+        else:
+            x_pos = relative_rect.x
+        dropdown_rect = ((x_pos, 0), (0, 0))
 
         self.child_button_container = UIAutoResizingContainer(
             ui_scale(pygame.Rect(dropdown_rect)),

@@ -13,8 +13,7 @@
         "history": [
             {
             "cats": ["m_c"],
-            "reg_death": "m_c died after getting trapped in quicksand.",
-            "lead_death": "{VERB/m_c/were/was} stuck in quicksand."
+            "death": "m_c died after getting trapped in quicksand."
             }
         ]
   },
@@ -32,8 +31,7 @@
         "history": [
             {
             "cats": ["m_c"],
-            "reg_death": "m_c was killed by a cottonmouth snake.",
-            "lead_death": "{VERB/m_c/were/was} killed by a cottonmouth snake."
+            "death": "m_c was killed by a cottonmouth snake."
             }
         ]
   }

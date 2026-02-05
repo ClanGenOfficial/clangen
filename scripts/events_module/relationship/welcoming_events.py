@@ -10,10 +10,8 @@ from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatRank
 from scripts.event_class import Single_Event
 from scripts.game_structure import game
-from scripts.utility import (
-    change_relationship_values,
-    event_text_adjust,
-)
+from scripts.events_module.text_adjust import event_text_adjust
+from scripts.events_module.consequences import change_relationship_values
 from scripts.game_structure.localization import load_lang_resource
 
 

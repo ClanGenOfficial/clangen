@@ -17,15 +17,14 @@ from scripts.game_structure.game.settings import game_setting_get
 if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
 
-from scripts.utility import (
-    change_clan_relations,
-    change_clan_reputation,
-    unpack_rel_block,
-    event_text_adjust,
+from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
+from scripts.events_module.consequences import (
     create_new_cat_block,
     gather_cat_objects,
-    adjust_list_text,
+    unpack_rel_block,
 )
+from scripts.events_module.event_filters import filter_relationship_type
+from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
 from scripts.game_structure import game
 from scripts.cat.skills import SkillPath
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES, PERMANENT
@@ -62,8 +61,7 @@ class PatrolOutcome:
         dead_cats: List[str] = None,
         lost_cats: List[str] = None,
         injury: List[Dict] = None,
-        history_reg_death: str = None,
-        history_leader_death: str = None,
+        history_death: str = None,
         history_scar: str = None,
         new_cat: List[List[str]] = None,
         herbs: List[str] = None,
@@ -76,6 +74,7 @@ class PatrolOutcome:
         outcome_art_clean: Union[str, None] = None,
         stat_cat: Cat = None,
         future_event: Dict = None,
+        min_max_status: Dict = None,
     ):
         self.weight = 1
 
@@ -84,6 +83,9 @@ class PatrolOutcome:
         self.text = text if text else ""
         self.frequency = frequency
         self.exp = exp
+
+        self.min_max_status = min_max_status if min_max_status else {}
+        self.weight += len(self.min_max_status) * 2
 
         self.relationship_constraints = (
             relationship_constraints if relationship_constraints else []
@@ -102,14 +104,7 @@ class PatrolOutcome:
         self.lost_cats = lost_cats if lost_cats else []
         self.injury = injury if injury else []
 
-        self.history_reg_death = (
-            history_reg_death if history_reg_death else "m_c died on patrol."
-        )
-        self.history_leader_death = (
-            history_leader_death
-            if history_leader_death is not None
-            else "died on patrol."
-        )
+        self.history_death = history_death if history_death else "m_c died on patrol."
         self.history_scar = (
             history_scar if history_scar is not None else "m_c was scarred on patrol."
         )
@@ -133,47 +128,53 @@ class PatrolOutcome:
 
     @staticmethod
     def prepare_allowed_outcomes(
-        outcomes: List["PatrolOutcome"], patrol: "Patrol"
+        possible_outcomes: List["PatrolOutcome"], patrol: "Patrol"
     ) -> List["PatrolOutcome"]:
-        """Takes a list of patrol outcomes, and returns those which are possible. If "special" events, gated
-        by stat cats or relationships, are possible, this function returns only those. Stat cats are also determined here.
-        """
+        """Takes a list of patrol outcomes, and returns those which are possible"""
 
         # Determine which outcomes are possible
-        reg_outcomes = []
-        special_outcomes = []
-        for out in outcomes:
-            # We want to gather special (ie, gated with stat or relationship constaints)
-            # outcomes seperatly, so we can ensure that those occur if possible.
-            special = False
-
-            if out.stat_skill or out.stat_trait:
-                special = True
-                out._get_stat_cat(patrol)
-                if not isinstance(out.stat_cat, Cat):
+        allowed_outcomes = []
+        for outcome in possible_outcomes:
+            if outcome.stat_skill or outcome.stat_trait:
+                outcome._get_stat_cat(patrol)
+                if not isinstance(outcome.stat_cat, Cat):
                     continue
 
-            # TODO: outcome relationship constraints
-            # if not patrol._satify_relationship_constaints(patrol, out.relationship_constaints):
-            #    continue
-            # elif out.relationship_constaints:
-            #    special = True
+            if not filter_relationship_type(
+                group=patrol.patrol_cats,
+                filter_types=outcome.relationship_constraints,
+                event_id=patrol.patrol_event.patrol_id,
+                patrol_leader=patrol.patrol_leader,
+            ):
+                continue
 
-            if special:
-                special_outcomes.append(out)
-            else:
-                reg_outcomes.append(out)
+            allowed = True
+            for status, allowed_range in outcome.min_max_status.items():
+                if len(allowed_range) != 2:
+                    raise Exception(
+                        f'{patrol.patrol_event.patrol_id} has an outcome with status limits that lists limit range incorrectly. Status limits should be formatted: "status_type": [min_value, max_value]'
+                    )
+
+                if not (
+                    allowed_range[0]
+                    <= patrol.patrol_statuses.get(status, -1)
+                    <= allowed_range[1]
+                ):
+                    allowed = False
+                    break
+            if not allowed:
+                continue
+
+            allowed_outcomes.append(outcome)
 
         # If there are somehow no possible outcomes, add a single default
         # outcome. Patrols should be written so this never has to occur
-        if not (special_outcomes or reg_outcomes):
-            reg_outcomes.append(
-                PatrolOutcome(
-                    text="There's nothing here, and that's a problem. Please report! ",
-                )
+        if not allowed_outcomes:
+            raise Exception(
+                f"{patrol.patrol_event.patrol_id} somehow has no possible outcomes! Ensure at least one unconstrained outcome is present."
             )
 
-        return special_outcomes if special_outcomes else reg_outcomes
+        return allowed_outcomes
 
     @staticmethod
     def generate_from_info(
@@ -200,21 +201,8 @@ class PatrolOutcome:
                     dead_cats=_d.get("dead_cats"),
                     lost_cats=_d.get("lost_cats"),
                     injury=_d.get("injury"),
-                    history_leader_death=(
-                        _d["history_text"].get("lead_death")
-                        if isinstance(_d.get("history_text"), dict)
-                        else None
-                    ),
-                    history_reg_death=(
-                        _d["history_text"].get("reg_death")
-                        if isinstance(_d.get("history_text"), dict)
-                        else None
-                    ),
-                    history_scar=(
-                        _d["history_text"].get("scar")
-                        if isinstance(_d.get("history_text"), dict)
-                        else None
-                    ),
+                    history_death=_d.get("history_text", {}).get("death"),
+                    history_scar=_d.get("history_text", {}).get("scar"),
                     new_cat=_d.get("new_cat"),
                     herbs=_d.get("herbs"),
                     prey=_d.get("prey"),
@@ -225,6 +213,7 @@ class PatrolOutcome:
                     outcome_art=_d.get("art"),
                     outcome_art_clean=_d.get("art_clean"),
                     future_event=_d.get("future_event"),
+                    min_max_status=_d.get("min_max_status"),
                 )
             )
 
@@ -232,7 +221,7 @@ class PatrolOutcome:
 
     def execute_outcome(self, patrol: "Patrol") -> Tuple[str, str, Optional[str]]:
         """
-        Excutes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
+        Executes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
         format: (Outcome text, results text, outcome art (might be None))
         """
         # This must be done before text processing so that the new cat's pronouns are generated first
@@ -274,11 +263,7 @@ class PatrolOutcome:
                         other_clan=patrol.other_clan,
                     )
 
-        results.append(
-            unpack_rel_block(
-                Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat
-            )
-        )
+        results.append(self._handle_relationship_changes(patrol))
         results.append(self._handle_rep_changes())
         results.append(self._handle_other_clan_relations(patrol))
         results.append(self._handle_prey(patrol))
@@ -294,6 +279,14 @@ class PatrolOutcome:
         print("PATROL END -----------------------------------------------------")
 
         return processed_text, " ".join(results), self.get_outcome_art()
+
+    def _handle_relationship_changes(self, patrol) -> str:
+        unpack_rel_block(Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat)
+
+        if self.relationship_effects:
+            return i18n.t(f"screens.patrol.relationship_changed")
+        else:
+            return ""
 
     def _handle_future_event(self, patrol):
         """
@@ -530,8 +523,10 @@ class PatrolOutcome:
                         )
                     )
                 elif "some_lives" in self.dead_cats:
-                    lives_lost = random.randint(1, max(1, game.clan.leader_lives - 1))
+                    lives_lost = random.randint(2, max(1, game.clan.leader_lives - 1))
                     game.clan.leader_lives -= lives_lost
+                    for i in range(lives_lost - 1):
+                        _cat.history.add_death("multi_lives")
                     results.append(
                         event_text_adjust(
                             Cat,
@@ -553,7 +548,7 @@ class PatrolOutcome:
             # Kill Cat
             self.__handle_death_history(_cat, patrol)
             _cat.die(body)
-        if catnames is not []:
+        if catnames:
             results.append(
                 i18n.t(
                     "cat.history.regular_death",
@@ -646,7 +641,7 @@ class PatrolOutcome:
                     give_injury = choice(possible_injuries)
 
                 if give_injury in INJURIES:
-                    _cat.get_injured(give_injury, lethal=lethal)
+                    _cat.get_injured(give_injury, lethal=lethal, potential_scars=scars)
                 elif give_injury in ILLNESSES:
                     _cat.get_ill(give_injury, lethal=lethal)
                 elif give_injury in PERMANENT:
@@ -678,7 +673,7 @@ class PatrolOutcome:
                 else:
                     # If no results are shown, assume the cat didn't get the patrol history. Default override.
                     self.__handle_condition_history(
-                        _cat, give_injury, patrol, default_overide=True
+                        _cat, give_injury, patrol, default_override=True
                     )
 
         return " ".join(results)
@@ -718,15 +713,13 @@ class PatrolOutcome:
             return ""
 
         list_of_herb_strs = []
+        found_herbs = {}
 
         large_bonus = False
         if "many_herbs" in self.herbs:
             large_bonus = True
 
-        if len(patrol.patrol_cats) > 2:
-            patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
-        else:
-            patrol_size_modifier = 1
+        patrol_size_modifier = int(len(patrol.patrol_cats))
 
         if "random_herbs" in self.herbs:
             # get random herbs, add to storage, and get patrol outcome msg
@@ -735,24 +728,33 @@ class PatrolOutcome:
                 general_amount_bonus=large_bonus,
                 specific_quantity_bonus=patrol_size_modifier,
             )
-        else:
-            # get the correct herbs for this patrol
-            found_herbs = {}
-            for herb in [
-                x for x in self.herbs if x not in ["many_herbs", "random_herbs"]
-            ]:
-                amount = choices([2, 3, 4], weights=[2, 1, 1], k=1)[0]
-                amount *= patrol_size_modifier
-                if large_bonus:
-                    amount *= 2
 
-                found_herbs[herb] = amount
+        # now we grab any other herbs that were tagged
+        additional_herbs = {}
+        for herb in [x for x in self.herbs if x not in ["many_herbs", "random_herbs"]]:
+            amount = choices([2, 3, 4], weights=[2, 1, 1], k=1)[0]
+            amount *= patrol_size_modifier
+            if large_bonus:
+                amount *= 2
 
-            # add found_herbs to storage and get patrol outcome msg
-            (
-                list_of_herb_strs,
-                found_herbs,
-            ) = game.clan.herb_supply.handle_found_herbs_outcomes(found_herbs)
+            additional_herbs[herb] = amount
+
+        # add found_herbs to storage and get patrol outcome msg
+        (
+            additional_strs,
+            additional_herbs,
+        ) = game.clan.herb_supply.handle_found_herbs_outcomes(additional_herbs)
+
+        # extend this list in case we already grabbed a bunch of random herbs
+        list_of_herb_strs.extend(
+            [x for x in additional_strs if x not in list_of_herb_strs]
+        )
+        # update the original found_herbs dict, again just in case we've already grabbed a bunch of random herbs
+        for _h in additional_herbs:
+            if _h not in found_herbs:
+                found_herbs[_h] = additional_herbs[_h]
+            else:
+                found_herbs[_h] += additional_herbs[_h]
 
         herb_string = adjust_list_text(list_of_herb_strs).capitalize()
 
@@ -777,9 +779,8 @@ class PatrolOutcome:
         if not self.prey or game.clan.game_mode == "classic":
             return ""
 
-        basic_amount = PREY_REQUIREMENT[CatRank.WARRIOR]
-        if game.clan.game_mode == "expanded":
-            basic_amount += ADDITIONAL_PREY
+        basic_amount = PREY_REQUIREMENT[CatRank.WARRIOR] + ADDITIONAL_PREY
+
         prey_types = {
             "very_small": basic_amount / 2,
             "small": basic_amount,
@@ -876,7 +877,7 @@ class PatrolOutcome:
             for cat in patrol.new_cats[-1]:
                 if cat.dead:
                     dead.append(str(cat.name))
-                elif cat.status.is_outsider:
+                elif cat.status.is_outsider or cat.status.is_other_clancat:
                     outside.append(str(cat.name))
                 else:
                     new.append(str(cat.name))
@@ -918,7 +919,7 @@ class PatrolOutcome:
         return " ".join(results)
 
     def _handle_mentor_app(self, patrol: "Patrol") -> str:
-        """Handles mentor inflence on apprentices"""
+        """Handles mentor influence on apprentices"""
 
         for cat in patrol.patrol_cats:
             if Cat.fetch_cat(cat.mentor) in patrol.patrol_cats:
@@ -943,12 +944,6 @@ class PatrolOutcome:
     # ---------------------------------------------------------------------------- #
     #                                   HELPERS                                    #
     # ---------------------------------------------------------------------------- #
-
-    def _add_death_history(self, cat: Cat):
-        """Adds death history for a cat"""
-
-    def _add_potential_history(self, cat: Cat, condition):
-        """Add potential history for a condition"""
 
     def __handle_scarring(self, cat: Cat, scar_list: str, patrol: "Patrol"):
         """Add scar and scar history. Returns scar given"""
@@ -992,25 +987,19 @@ class PatrolOutcome:
         return chosen_scar
 
     def __handle_condition_history(
-        self, cat: Cat, condition: str, patrol: "Patrol", default_overide=False
+        self, cat: Cat, condition: str, patrol: "Patrol", default_override=False
     ) -> None:
-        """Handles adding potentional history to a cat. default_overide will use the default text for the condition."""
+        """Handles adding potential history to a cat. default_override will use the default text for the condition."""
 
-        if not (
-            self.history_leader_death and self.history_reg_death and self.history_scar
-        ):
-            print("WARNING: Injury occured, but some death or scar history is missing.")
+        if not (self.history_death and self.history_scar):
+            print(
+                "WARNING: Injury occurred, but some death or scar history is missing."
+            )
 
-        final_death_history = None
-        if cat.status.is_leader:
-            if self.history_leader_death:
-                final_death_history = self.history_leader_death
-        else:
-            final_death_history = self.history_reg_death
-
+        final_death_history = self.history_death
         history_scar = self.history_scar
 
-        if default_overide:
+        if default_override:
             final_death_history = None
             history_scar = None
 
@@ -1035,17 +1024,12 @@ class PatrolOutcome:
         )
 
     def __handle_death_history(self, cat: Cat, patrol: "Patrol") -> None:
-        """Handles adding death history, for dead cats."""
+        """Handles adding death history for dead cats."""
 
-        if not (self.history_leader_death and self.history_reg_death):
-            print("WARNING: Death occured, but some death history is missing.")
+        if not self.history_death:
+            print("WARNING: Death occurred, but some death history is missing.")
 
-        final_death_history = None
-        if cat.status.is_leader:
-            if self.history_leader_death:
-                final_death_history = self.history_leader_death
-        else:
-            final_death_history = self.history_reg_death
+        final_death_history = self.history_death
 
         if not final_death_history:
             final_death_history = i18n.t("defaults.patrol_regular_death")

@@ -176,27 +176,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in their territory.",
         "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at app1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when app1 is more focused.",
@@ -590,27 +579,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -918,27 +896,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
@@ -1260,27 +1227,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more, and {VERB/p_l/decide/decides} to bring app1 along for assistance.",
         "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} and app1 go to leave. Moss will have to wait.",
@@ -1511,27 +1467,16 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
-                6
+                1
             ],
             "medicine cat apprentice": [
                 1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
+                1
             ]
         },
+        "relationship_constraint": ["mentor/app"],
         "frequency": 4,
         "intro_text": "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along app1 as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence.",
         "decline_text": "Just before the two can leave, a cat calls for their attention.",
@@ -3070,8 +3015,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after {PRONOUN/m_c/subject} tripped over a tree root.",
-                    "reg_death": "m_c died from injuries sustained after tripping over a tree root.",
-                    "lead_death": "died from injuries sustained after tripping over a tree root"
+                    "death": "m_c died from injuries sustained after tripping over a tree root."
                 },
                 "frequency": 1
             }
@@ -3355,7 +3299,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after {PRONOUN/m_c/subject} tripped over a tree root.",
-                    "reg_death": "m_c died from injuries sustained after tripping over a tree root."
+                    "death": "m_c died from injuries sustained after tripping over a tree root."
                 },
                 "frequency": 1
             }
@@ -3643,8 +3587,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after {PRONOUN/m_c/subject} tripped over a tree root.",
-                    "reg_death": "m_c died from injuries sustained after tripping over a tree root.",
-                    "lead_death": "died from injuries sustained after tripping over a tree root"
+                    "death": "m_c died from injuries sustained after tripping over a tree root."
                 },
                 "frequency": 1
             }

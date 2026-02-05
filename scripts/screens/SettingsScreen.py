@@ -26,9 +26,11 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIImageHorizontalSlider,
     UIModifiedScrollingContainer,
+    UICheckbox,
 )
 from scripts.housekeeping.datadir import open_data_dir
-from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure import constants
@@ -144,8 +146,8 @@ class SettingsScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
 
-            if event.ui_element == self.main_menu_button:
-                self.change_screen(GameScreen.START)
+            if event.ui_element == self.back_button:
+                self.change_screen(game.last_screen_forupdate)
                 return
             if event.ui_element == self.fullscreen_toggle:
                 game_setting_toggle("fullscreen")
@@ -205,11 +207,11 @@ class SettingsScreen(Screens):
                         game_setting_set("language", key)
                     else:
                         game_setting_toggle(key)
-                        value.change_object_id(
-                            "@checked_checkbox"
-                            if game_setting_get(key)
-                            else "@unchecked_checkbox"
-                        )
+                        if value.checked:
+                            value.uncheck()
+                        else:
+                            value.check()
+
                     self.settings_changed = True
                     self.update_save_button()
 
@@ -320,10 +322,10 @@ class SettingsScreen(Screens):
             self.open_data_directory_button.hide()
 
         self.update_save_button()
-        self.main_menu_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((25, 25), (152, 30))),
-            "buttons.main_menu",
-            get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
+        self.back_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 25), (105, 30))),
+            "buttons.back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
             starting_height=1,
@@ -363,8 +365,8 @@ class SettingsScreen(Screens):
         del self.language_button
         self.save_settings_button.kill()
         del self.save_settings_button
-        self.main_menu_button.kill()
-        del self.main_menu_button
+        self.back_button.kill()
+        del self.back_button
         self.fullscreen_toggle.kill()
         del self.fullscreen_toggle
         self.open_data_directory_button.kill()
@@ -802,14 +804,8 @@ class SettingsScreen(Screens):
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):
-                if game_setting_get(code):
-                    box_type = "@checked_checkbox"
-                else:
-                    box_type = "@unchecked_checkbox"
-                self.checkboxes[code] = UIImageButton(
-                    ui_scale(pygame.Rect((170, 34 if i < 0 else 0), (34, 34))),
-                    "",
-                    object_id=box_type,
+                self.checkboxes[code] = UICheckbox(
+                    position=(170, 34 if i < 0 else 0),
                     container=self.checkboxes_text["container_" + self.sub_menu],
                     tool_tip_text=f"settings.{code}_tooltip",
                     anchors=(
@@ -817,6 +813,8 @@ class SettingsScreen(Screens):
                         if i > 0
                         else None
                     ),
+                    check=game_setting_get(code),
+                    manager=MANAGER,
                 )
 
     def clear_sub_settings_buttons_and_text(self):

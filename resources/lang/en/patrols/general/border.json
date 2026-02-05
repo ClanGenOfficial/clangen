@@ -32,7 +32,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l scents some prey, catching it p_l has a quick snack.",
+                "text": "p_l scents some prey and catches it. After {PRONOUN/p_l/poss} snack, {PRONOUN/p_l/subject} {VERB/p_l/mark/marks} the border.",
                 "exp": 5,
                 "frequency": 4
             },
@@ -64,7 +64,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l starts daydreaming, and ends up marking in the wrong place, at least it wasn't in o_c_n's territory.",
+                "text": "p_l starts daydreaming and ends up marking in the wrong place. At least it wasn't in o_c_n's territory.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -86,7 +86,7 @@
         ]
     },
     {
-        "patrol_id": "Gen_bord_balancing_scent",
+        "patrol_id": "gen_bord_balancing_scent",
         "biome": [
             "any"
         ],
@@ -102,7 +102,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "p_l heads out to patrol c_n's borders, but scents something along the borders.",
+        "intro_text": "p_l heads out to patrol c_n's borders and scents something mysterious.",
         "decline_text": "p_l decides to not investigate the scent.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -117,7 +117,7 @@
                 "frequency": 4
             },
             {
-                "text": "The scent leads p_l to a nearby patch of herbs, hopefully the herbs are useful to the clans healer.",
+                "text": "The scent leads p_l to a nearby patch of herbs. p_l hopes they'll be useful back at camp.",
                 "exp": 5,
                 "herbs": [
                     "tansy"
@@ -125,14 +125,14 @@
                 "frequency": 3
             },
             {
-                "text": "p_l detects the scent of a fellow Clanmate, possibly on a solo patrol of their own, but it was nothing to worry about.",
+                "text": "p_l detects the scent of a fellow Clanmate, possibly on a solo patrol of their own.",
                 "exp": 5,
                 "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
-                "text": "p_l can't identify the scent, and return back to camp to report it.",
+                "text": "p_l can't identify the scent and returns to camp to report it.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -159,7 +159,7 @@
         ]
     },
     {
-        "patrol_id": "Gen_bord_balancing_tracks",
+        "patrol_id": "gen_bord_balancing_tracks",
         "biome": [
             "any"
         ],
@@ -175,7 +175,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "p_l heads out to patrol c_n's borders, but spots some tracks.",
+        "intro_text": "p_l heads out to patrol c_n's borders and spots some mysterious tracks.",
         "decline_text": "p_l decides to not investigate the tracks.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -195,19 +195,19 @@
                 "frequency": 4
             },
             {
-                "text": "p_l identifies the tracks as belonging to two-legs, and p_l decides to head back to camp to inform the others.",
+                "text": "p_l identifies the tracks as belonging to Twolegs, and p_l decides to head back to camp to inform the others.",
                 "exp": 5,
                 "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
-                "text": "p_l can't identify the tracks, and are forced to return to camp to report it.",
+                "text": "p_l can't identify the tracks and is forced to return to camp to report it.",
                 "exp": 0,
                 "frequency": 4
             },
             {
-                "text": "Despite p_l efforts, {PRONOUN/p_l/subject} can't identify the tracks, and reports it back at camp.",
+                "text": "Despite p_l's efforts, {PRONOUN/p_l/subject} can't identify the tracks and {VERB/p_l/report/reports} it back at camp.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -224,7 +224,7 @@
         ]
     },
     {
-        "patrol_id": "Gen_bord_balancing_markings",
+        "patrol_id": "gen_bord_balancing_markings",
         "biome": [
             "any"
         ],
@@ -240,17 +240,17 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "p_l heads out to patrol c_n's borders, and notices that some of their markings had been disturbed.",
+        "intro_text": "p_l heads out to patrol c_n's borders and notices that some of their markings had been disturbed.",
         "decline_text": "p_l decides to not investigate the markings.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Upon closer inspection, it was just remarking from a Clanmate.",
+                "text": "Upon closer inspection, it's just re-marking from a Clanmate.",
                 "exp": 0,
                 "frequency": 4
             },
             {
-                "text": "The scratches didn't match any cats paws, that was for certain, and p_l returns to camp to report it, alert to any threats.",
+                "text": "The scratches don't match any cat's paws, so p_l returns to camp to report it, alert to any threats.",
                 "exp": 0,
                 "frequency": 4
             },
@@ -262,12 +262,12 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Despite {PRONOUN/p_l/poss} efforts, p_l couldn't identify what had disturbed the border markings, leaving {PRONOUN/p_l/object} perplexed as {PRONOUN/p_l/subject} return to camp.",
+                "text": "Despite {PRONOUN/p_l/poss} efforts, p_l can't identify what disturbed the border markings, leaving {PRONOUN/p_l/object} perplexed as {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp.",
                 "exp": 0,
                 "frequency": 4
             },
             {
-                "text": "The disturbance in the markings remains a mystery to p_l, and when {PRONOUN/p_l/subject} reports the incident, extra patrols are assigned to monitor for any further disruptions.",
+                "text": "The disturbance in the markings remains a mystery to p_l, and when {PRONOUN/p_l/subject} {VERB/p_l/report/reports} the incident, extra patrols are assigned to monitor for any further disruptions.",
                 "exp": 0,
                 "frequency": 4
             }
@@ -621,7 +621,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died from {PRONOUN/r_c/poss} injuries after a fight with a rogue.",
+                    "death": "m_c died from {PRONOUN/r_c/poss} injuries after a fight with a rogue.",
                     "scar": "m_c was scarred in a fight with a rogue."
                 },
                 "relationships": [
@@ -769,8 +769,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c succumbed to injury after being ambushed by a rogue and abandoned on patrol.",
-                    "lead_death": "succumbed to injury after being ambushed and abandoned"
+                    "death": "m_c succumbed to injury after being ambushed by a rogue and abandoned on patrol."
                 },
                 "frequency": 2
             },
@@ -843,5 +842,269 @@
                 "frequency": 4
             }
         ]
+    },
+    {
+        "patrol_id": "gen_bord_greenleaf_puddles",
+        "biome": ["beach", "forest", "mountainous", "plains", "wetlands"],
+        "season": ["greenleaf"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "running_two_apps",
+        "min_cats": 4,
+        "max_cats": 4,
+        "min_max_status": {
+            "all apprentices": [2, 2],
+            "normal adult": [2, 2]
+        },
+        "frequency": 4,
+        "chance_of_success": 40,
+        "intro_text": "After a night-long greenleaf thunderstorm, p_l takes a patrol out to check the o_c_n border. Along the way, app1 and app2 hop through puddles, splashing each other.",
+        "decline_text": "If app1 and app2 aren't going to take this seriously, p_l will turn this patrol around and go straight back to camp.",
+        "success_outcomes": [
+            {
+                "text": "app1 and app2 are thoroughly soggy by the time they reach the border. When p_l and r_c ask how the apprentices got so drenched on a clear day, neither apprentice tells on the other.",
+                "exp": 30,
+                "frequency": 2,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "trust"],
+                        "amount": 10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had fun splashing each other on a soggy border patrol."
+                        }
+                    }
+                ],
+                "art": "gen_train_soggykitty_happy_app"
+            },
+            {
+                "text": "The splash-fight quickly escalates into an actual tussle. r_c wants to break it up, but p_l holds {PRONOUN/r_c/object} back, noting how app1 is incorporating a tricky move from {PRONOUN/app1/poss} most recent battle-training.",
+                "exp": 30,
+                "frequency": 2,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "trust"],
+                        "amount": 10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had fun splashing each other on a soggy border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "values": ["like", "respect"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat noticed to_cat practicing a tricky battle move in a play-fight with app2."
+                        }
+                    }
+                ],
+                "art": "gen_train_playbite_2apps"
+            },
+            {
+                "text": "app2 has dared to challenge the splash-master, and s_c will not allow such a transgression to go by unpunished. Fortunately, p_l and r_c are in a good mood and allow the apprentices to get out all their energy on the way to the border.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_trait": ["competitive", "ambitious", "playful", "childish"],
+                "can_have_stat": ["app1"],
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "trust"],
+                        "amount": 15,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had lots of fun splashing each other on a soggy border patrol."
+                        }
+                    }
+                ],
+                "art": "gen_train_soggykitty_happy_app"
+            },
+            {
+                "text": "app1 sends a shower of droplets onto s_c's pelt, but {PRONOUN/app1/subject} didn't realize how comfortable s_c is in the water. s_c trots along, water dripping off {PRONOUN/s_c/poss} pelt, perfectly content on the way to the o_c_n border.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_skill": ["SWIMMER,0"],
+                "can_have_stat": ["app2"],
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "trust"],
+                        "amount": 15,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had lots of fun splashing each other on a soggy border patrol."
+                        }
+                    }
+                ],
+                "art": "gen_train_soggykitty_happy_app"
+            },
+            {
+                "text": "Watching app1 and app2 splash each other, s_c shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN/p_l/poss} head, but it's too late. SPLASH! It's a very wet border patrol.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_trait": ["playful", "childish", "competitive", "flamboyant", "rebellious", "shameless", "troublesome", "sneaky"],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "trust"],
+                        "amount": 8,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had lots of fun splashing each other on a soggy border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["like"],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat enjoyed splashing to_cat on a border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect"],
+                        "amount": -3,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat felt mildly annoyed that to_cat derailed a border patrol by getting into a splash-fight."
+                        }
+                    }
+                ],
+                "art": "gen_train_soggykitty_mad_warrior"
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 waits until p_l is up ahead, checking a scent, then pounces in the water and sends a huge wave over app2. app2 yowls a battle cry and slams {PRONOUN/app2/poss} front paws down into another puddle, splashing app1 right back. r_c spots the squabbling apprentices and breaks up their argument.",
+                "exp": 0,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "trust"],
+                        "amount": -5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got annoyed with each other while having a splash-fight on a border patrol."
+                        }
+                    }
+                ],
+                "art": "gen_train_soggykitty_mad_app"
+            },
+            {
+                "text": "app2 whines for p_l to make app1 stop splashing {PRONOUN/app2/object}. app1 rolls {PRONOUN/app1/poss} eyes and thinks app2 is acting like a kit.",
+                "exp": 0,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like"],
+                        "amount": -10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got annoyed with each other while having a splash-fight on a border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["respect"],
+                        "amount": -10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "to_cat wanted p_l to intervene when from_cat was splashing {PRONOUN/to_cat/object}, and from_cat thought {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} acting like a kit."
+                        }
+                    }
+                ],
+                "art": "app_cat_looking_up"
+            },
+            {
+                "text": "app2 has dared to challenge the splash-master, and s_c will not allow such a transgression to go by unpunished. Unfortunately, p_l and r_c aren't in a good mood and scold the apprentices to take this patrol seriously.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_trait": ["competitive", "ambitious", "playful", "childish"],
+                "can_have_stat": ["app1"],
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "values": ["like", "trust"],
+                        "amount": 8,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had lots of fun splashing each other despite p_l and r_c's bad moods."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app2", "app1"],
+                        "values": ["respect"],
+                        "amount": -3,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat was annoyed when app1 and app2 goofed off during a border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["app2", "app1"],
+                        "values": ["respect"],
+                        "amount": -3,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "from_cat was annoyed when app1 and app2 goofed off during a border patrol."
+                        }
+                    }
+                ],
+                "art": "gen_cat_looking_up3"
+            },
+            {
+                "text": "s_c isn't going to lose, even in a playful fight, and pounces on app2. Before p_l and r_c can intervene, s_c thrusts app2's head into a rather deep puddle. When app2 resurfaces, {PRONOUN/app2/subject}{VERB/app2/'re/'s} choking and spluttering. s_c is rebuked for taking the game too far.",
+                "exp": 0,
+                "frequency": 4,
+                "stat_trait": ["bold", "fierce", "daring", "competitive", "vengeful", "troublesome", "shameless"],
+                "can_have_stat": ["app1"],
+                "relationships": [
+                    {
+                        "cats_from": ["app2"],
+                        "cats_to": ["s_c"],
+                        "values": ["like", "trust"],
+                        "amount": -15,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "to_cat took a game way too far and from_cat got hurt."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["app2"],
+                        "injuries": ["water in their lungs"],
+                        "no_results": false
+                    }
+                ],
+                "history_text": {
+                    "death": "m_c died from water in {PRONOUN/m_c/poss} lungs after s_c took a game way too far on patrol."
+                },
+                "art": "gen_train_waterdive_app"
+            }
+        ]
     }
-]
+] 
