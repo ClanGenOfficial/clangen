@@ -184,6 +184,7 @@ class Injury:
         cause_permanent=None,
         herbs=None,
         event_triggered=False,
+        potential_scars=None,
     ):
         self.name = name
         self.severity = severity
@@ -196,6 +197,7 @@ class Injury:
         self.cause_permanent = cause_permanent
         self.herbs = herbs if herbs else []
         self.new = event_triggered
+        self.potential_scars = potential_scars
 
         self.current_duration = duration
         self.current_mortality = mortality
