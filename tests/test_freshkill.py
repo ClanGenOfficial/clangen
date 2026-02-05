@@ -70,8 +70,12 @@ class FreshkillPileTest(unittest.TestCase):
         save_load.cat_to_fade.clear()
         game.clan.create_clan()
 
-        # set leader as a hunter skill for later testing
-        game.clan.leader.skills.primary = Skill(SkillPath.HUNTER, 25)
+        for _c in Cat.all_cats_list:
+            if _c == game.clan.leader:
+                # set leader as a hunter skill for later testing
+                game.clan.leader.skills.primary = Skill(SkillPath.HUNTER, 25)
+            else:
+                _c.skills.primary = Skill(SkillPath.CLIMBER, 20)
 
         # set dep as injured for later testing
         game.clan.deputy.injuries["test_injury"] = {"severity": "major"}

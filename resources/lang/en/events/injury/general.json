@@ -826,7 +826,7 @@
                 "injuries": [
                     "claw-wound"
                 ],
-                "scar": [
+                "scars": [
                     "TWO"
                 ]
             }
@@ -935,7 +935,7 @@
                 "injuries": [
                     "bite-wound"
                 ],
-                "scar": [
+                "scars": [
                     "LEGBITE"
                 ]
             }

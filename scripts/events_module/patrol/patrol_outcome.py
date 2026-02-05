@@ -641,7 +641,7 @@ class PatrolOutcome:
                     give_injury = choice(possible_injuries)
 
                 if give_injury in INJURIES:
-                    _cat.get_injured(give_injury, lethal=lethal)
+                    _cat.get_injured(give_injury, lethal=lethal, potential_scars=scars)
                 elif give_injury in ILLNESSES:
                     _cat.get_ill(give_injury, lethal=lethal)
                 elif give_injury in PERMANENT:
