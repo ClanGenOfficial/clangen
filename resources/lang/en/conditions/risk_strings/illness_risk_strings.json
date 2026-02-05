@@ -44,7 +44,7 @@
     "heat exhaustion": {
         "heat stroke": [
             "r_c presses the damp moss onto m_c's forehead as {PRONOUN/m_c/subject} {VERB/m_c/lie/lies} completely drained and panting. This is more than heat exhaustion now, m_c will need time to recover from this heat stroke.",
-            "m_c rolls around dazedly in {PRONOUN/m_c/poss} nest, searching for a cooler spot. {PRONOUN/m_c/poss/CAP} exhaustion is beyond just a little thing and {PRONOUN/m_c/poss} confused brain still has enough observational power to recognise full heat stroke."
+            "m_c rolls around dazedly in {PRONOUN/m_c/poss} nest, searching for a cooler spot. {PRONOUN/m_c/poss/CAP} exhaustion is beyond just a little thing and {PRONOUN/m_c/poss} confused brain still has enough observational power to recognize full heat stroke."
 
         ]
     },

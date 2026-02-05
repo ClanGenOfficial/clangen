@@ -5547,7 +5547,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for {PRONOUN/r_c/object}, and as soon as r_c steps fully into o_c_n territory, it's all over.",
+                "text": "It's too good of an opportunity to pass up - too good to be true. The o_c_n patrol is waiting for {PRONOUN/r_c/object}, and as soon as r_c steps fully into o_c_n territory, it's all over.",
                 "exp": 0,
                 "dead_cats": [
                     "patrol",
@@ -5653,7 +5653,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, it's all over for the entire patrol.",
+                "text": "It's too good of an opportunity to pass up - too good to be true. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, it's all over for the entire patrol.",
                 "exp": 0,
                 "dead_cats": [
                     "patrol",

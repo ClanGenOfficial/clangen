@@ -52,7 +52,7 @@
     },
     "broken jaw": {
         "an infected wound": [
-            "A meat paste for getting food and water into m_c's stomach, a herb paste to fight the infection growing in {PRONOUN/m_c/poss} broken jaw... r_c wracks {PRONOUN/r_c/poss} brain for anything else that might help {PRONOUN/r_c/poss} patient.",
+            "A meat paste for getting food and water into m_c's stomach, an herb paste to fight the infection growing in {PRONOUN/m_c/poss} broken jaw... r_c wracks {PRONOUN/r_c/poss} brain for anything else that might help {PRONOUN/r_c/poss} patient.",
             "m_c drifts in and out of consciousness as an infection grows in {PRONOUN/m_c/poss} broken jaw."
         ]
     },
@@ -131,7 +131,7 @@
     "burn": {
         "an infected wound": [
             "The flesh of m_c's burn is far too warm. r_c applies a salve to try and help fight off the developing infection.",
-            "m_c has been feeling feverish. {PRONOUN/m_c/poss/CAP} burn looks a bit discolored, it must be developing an infection."
+            "m_c has been feeling feverish, and {PRONOUN/m_c/poss} burn looks a bit discolored. It must be developing an infection."
         ]
     },
     "severe burn": {

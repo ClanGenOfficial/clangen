@@ -499,7 +499,7 @@ class HerbSupply:
             ):
                 continue
 
-            # chance to find a herb is based on it's rarity
+            # chance to find an herb is based on it's rarity
             if (
                 randint(
                     1,
