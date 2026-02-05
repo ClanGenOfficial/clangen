@@ -79,16 +79,6 @@
 
         ration_prey = false
         auto_feed = true
-
-    # Used to convert "clan.freshkill_tactics" keys from old saves
-    [clan.save_conversion]
-        by-status = "low_rank"
-        "younger first" = "youngest_first"
-        "less nutrition first" = "hungriest_first"
-        "hunter first" = "hunter_first"
-        "sick/injured first" = "sick_injured_first"
-        "more experience first" = "experienced_first"
-        "ration prey" = "ration_prey"
     
     [clan.clan_focus]
         "business as usual" = [
