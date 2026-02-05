@@ -37,8 +37,7 @@
                 "prey": ["medium"],
                 "relationships": [
                 {
-                    "cats_from": [ "some_clan"
-                    ],
+                    "cats_from": [ "some_clan" ],
                     "cats_to": ["r_c"],
                     "values": [ "respect" ],
                     "mutual": false,
@@ -116,8 +115,7 @@
                 "prey": ["medium"],
                 "relationships": [
                 {
-                    "cats_from": [ "some_clan"
-                    ],
+                    "cats_from": [ "some_clan" ],
                     "cats_to": ["app1"],
                     "values": [ "respect" ],
                     "mutual": false,
@@ -463,7 +461,7 @@
                         "mutual": false,
                         "values": ["comfort"],
                         "amount": -5,
-                        "log": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."
+                        "log": {"cats_from": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."}
                     }
                 ],
                 "prey": [
@@ -1074,7 +1072,7 @@
                 "prey": ["medium"],
             "relationships": [
                 {
-                    "cats_from": ["low_stable"],
+                    "cats_from": ["clan", "low_stable"],
                     "cats_to": ["p_l"],
                     "values": ["trust"],
                     "mutual": false,
@@ -1519,7 +1517,7 @@
                     }
                 },
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["p_l"],
                     "values": ["respect"],
                     "mutual": false,
@@ -1607,7 +1605,7 @@
                 "exp": 30,
                 "stat_skill": [
                     "HUNTER,2",
-                    "INSIGHT,2"
+                    "INSIGHTFUL,2"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -1839,7 +1837,7 @@
                 },
             "relationships": [
                 {
-                    "cats_from": ["high_aggress"],
+                    "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["s_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -2285,7 +2283,7 @@
                     }
                 },
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["s_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -2529,7 +2527,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -2552,7 +2550,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -2749,7 +2747,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -2975,7 +2973,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -3101,7 +3099,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_stable"],
+                        "cats_from": ["clan", "high_stable"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": -5,
@@ -3910,7 +3908,7 @@
                 ],
             "relationships": [
                 {
-                    "cats_from": ["high_stable"],
+                    "cats_from": ["clan", "high_stable"],
                     "cats_to": ["app1"],
                     "values": ["respect"],
                     "mutual": false,

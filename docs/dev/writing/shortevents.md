@@ -183,15 +183,15 @@ lowercase season names + "any"
 ### tags:list[str]
 >Tags are used for some filtering purposes.
 
-| string               | use                                                                                                                                     |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| classic              | event only occurs in classic mode                                                                                                       |
-| cruel_season         | event only occurs in cruel_season mode                                                                                                  |
-| no_body              | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events                |
-| skill_trait_required | normally there is a small chance to bypass skill and trait requirements, this tag will make that chance nonexistent.                    |
-| clan_wide            | if the event text does not mention the main or random cat, but is instead an event occurring towards the Clan as a whole, use this tag. |
-| romance              | marks event as being between two cats who are allowed romantic relations                                                                |
-| adoption             | marks event as being an adoption                                                                                                        |
+| string               | use                                                                                                                      |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------|
+| classic              | event only occurs in classic mode                                                                                        |
+| cruel_season         | event only occurs in cruel_season mode                                                                                   |
+| no_body              | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events |
+| skill_trait_required | normally there is a small chance to bypass skill and trait requirements, this tag will make that chance nonexistent.     |
+| clan_wide            | if this is a murder reveal, use this tag to denote this event as informing the ENTIRE Clan of the murder.                |
+| romance              | marks event as being between two cats who are allowed romantic relations                                                 |
+| adoption             | marks event as being an adoption                                                                                         |
 
 > **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
 
@@ -327,7 +327,8 @@ lowercase season names + "any"
 | "kittypet"                                  | Gives the cat a kitty-pet type backstory. If "meeting" is also included, this tag will make the cat a kittypet outsider.                                                                                                                                                                                                                                            |
 | "loner"                                     | Gives the cat a loner type backstory. If "meeting" is also included, this tag will make the cat a loner outsider.                                                                                                                                                                                                                                                   |
 | "rogue"                                     | Gives the cat a rogue type backstory. If "meeting" is also included, this tag will make the cat a rogue outsider.                                                                                                                                                                                                                                                   |
-| "clancat"                                   | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
+| "clancat"                                   | Gives the cat a clancat type backstory. If "meeting" is also included, this tag will make an Other Clancat.                                                                                                                                                                                                                                                         |
+| "former clancat"                            | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
 | "meeting"                                   | Make the cat an outsider (the patrol just met them, but they didn't join). That cat will never take a new Clan-like name.                                                                                                                                                                                                                                           |
 | "exists"                                    | Will attempt to find an existing outsider to utilize instead of creating a new one. Keep in mind that this ONLY checks if the existing outsider matches indicated status, age, and backstory.  DO NOT use this tag in conjunction with creating litters or assigning parentage.                                                                                     |
 | "unknown"                                   | Prevents the inclusion of "notifying" text such as "The Clan has met `name`". Best used for situations in which a cat needs to be created, but the Clan didn't actually interact with them (i.e. creating abandoned litters).                                                                                                                                       |
@@ -342,7 +343,7 @@ lowercase season names + "any"
 ***
 
 ### injury:list[dict[str, various]]
->Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the blocks as you like within the list. 
+>Optional. Indicates which cats get injured, and how. You can include as many of the blocks as you like within the list. 
 >
 >```json
 >    {
@@ -369,7 +370,7 @@ lowercase season names + "any"
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
->Optional. A scar is chosen from this pool to possibly be given upon healing their injury.
+>Optional. This replaces the standard scar pool for the given injury.
 >
 >[Scar List](reference/tag-lists.md#__tabbed_1_5)
 

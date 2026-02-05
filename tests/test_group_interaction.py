@@ -125,6 +125,7 @@ class MainCatFiltering(unittest.TestCase):
         group_events = GroupEvents()
         main_cat = Cat(moons=40)
         main_cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
+        main_cat.skills.secondary = Skill(SkillPath.SWIMMER, points=9)
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")

@@ -101,8 +101,9 @@
         "season": [
             "leaf-bare"
         ],
-        "tags": [
-            "clan_wide"
+        "exclude_involved": [
+            "m_c",
+            "r_c"
         ],
         "frequency": 1,
         "event_text": "A huge wave crashes into camp, leaving everyone soaked and the herb stores quite damaged.",
