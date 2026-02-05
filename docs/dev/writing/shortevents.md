@@ -343,7 +343,7 @@ lowercase season names + "any"
 ***
 
 ### injury:list[dict[str, various]]
->Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the blocks as you like within the list. 
+>Optional. Indicates which cats get injured, and how. You can include as many of the blocks as you like within the list. 
 >
 >```json
 >    {
@@ -370,7 +370,7 @@ lowercase season names + "any"
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
->Optional. A scar is chosen from this pool to possibly be given upon healing their injury.
+>Optional. This replaces the standard scar pool for the given injury.
 >
 >[Scar List](reference/tag-lists.md#__tabbed_1_5)
 

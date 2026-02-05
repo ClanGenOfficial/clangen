@@ -6,7 +6,7 @@
             "m_c couldn't even treat a thorn in a paw with so little supplies. The herb stores need replenishing.",
             "Seeing the empty herb stores makes m_c shiver slightly and puff out {PRONOUN/m_c/poss} fur.",
             "Without any herbs m_c feels helpless.",
-            "c_n needs a herb gathering patrol <i>yesterday</i>, the herb stores are entirely empty and m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to vibrate out of {PRONOUN/m_c/poss} skin."
+            "c_n needs an herb gathering patrol <i>yesterday</i>, the herb stores are entirely empty and m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to vibrate out of {PRONOUN/m_c/poss} skin."
         ],
         "low": [
             "m_c worries over the herb stores, there isn't nearly enough for the whole Clan.",
@@ -29,7 +29,7 @@
             "Though the supply is decent, m_c knows there aren't enough herbs to face an outbreak if one occurs.",
             "The herb stores aren't critically low, but m_c would feel safer if {PRONOUN/m_c/subject} had a little more.",
             "The herb stores could be better stocked. Could be worse though, this isn't too bad.",
-            "Hmm. Time to go on a herb gathering patrol, m_c thinks. A pawful of prevention is worth a cat's weight of cure.",
+            "Hmm. Time to go on an herb gathering patrol, m_c thinks. A pawful of prevention is worth a cat's weight of cure.",
             "As m_c mentally reviews the day's tasks, {PRONOUN/m_c/subject} {VERB/m_c/put/puts} herb gathering on the list, though it's not the most important.",
             "Maybe m_c should search for some of the rarer herbs, just to round out c_n's supplies fully."
         ],
