@@ -62,7 +62,7 @@ class FreshkillPileTest(unittest.TestCase):
             medicine_cat=create_cat(CatRank.MEDICINE_CAT),
             biome="Forest",
             camp_bg="camp1",
-            symbol="ADDER0",
+            symbol="symbolADDER0",
             game_mode="expanded",
             starting_members=members,
             starting_season="Newleaf",
