@@ -303,25 +303,25 @@ class Condition_Events:
                 # if a non-kitten got kittencough, switch it to whitecough instead
                 if chosen_illness == "kittencough" and not cat.status.rank.is_baby():
                     chosen_illness = "whitecough"
-                # make em sick
-                cat.get_ill(chosen_illness)
 
                 # create event text
-                if i18n.config.get("locale") == "en" and chosen_illness in (
-                    "running nose",
-                    "stomachache",
-                ):
-                    illness = f"a {chosen_illness}"
+                try:
+                    event_string = random.choice(
+                        Condition_Events.ILLNESS_GOT_STRINGS[chosen_illness]
+                    )
+                except KeyError:
+                    # try to translate the illness
+                    chosen_illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
 
-                # try to translate the illness
-                illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
+                    event_string = i18n.t(
+                        "defaults.illness_get_event",
+                        illness=chosen_illness,
+                    )
+                    # just in case we couldn't translate it
+                    event_string.replace("conditions.illnesses.", "")
 
-                illness.replace("conditions.illnesses.", "")
-
-                event_string = i18n.t(
-                    "defaults.illness_get_event",
-                    illness=illness,
-                )
+                # make em sick
+                cat.get_ill(chosen_illness)
 
                 event_string = event_text_adjust(Cat, text=event_string, main_cat=cat)
 
