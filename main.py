@@ -43,6 +43,9 @@ game.rpc.start_rpc.set()
 # LOAD cats & clan
 finished_loading = False
 
+def doooodle(                   ):
+    print(                  "Hello")
+
 
 def load_data():
     global finished_loading
