@@ -275,17 +275,7 @@ class Screens:
 
         # VIEW EVENTS
         if event.ui_element == Screens.menu_buttons["events"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.EVENTS)
-        # SUPPLY DROPDOWN
-        elif (
-            Screens.menu_buttons.get("supplies")
-            and event.ui_element == Screens.menu_buttons["supplies"].parent_button
-        ):
-            if Screens.menu_buttons["dens"].is_open:
-                Screens.menu_buttons["dens"].close()
         # OPEN FRESHKILL
         elif (
             Screens.menu_buttons.get("supplies")
@@ -302,16 +292,6 @@ class Screens:
             == Screens.menu_buttons["supplies"].child_button_dicts["screens.core.herbs"]
         ):
             HerbManagementWindow()
-        # DEN DROPDOWN
-        elif (
-            Screens.menu_buttons.get("supplies")
-            and event.ui_element == Screens.menu_buttons["dens"].parent_button
-        ):
-            if (
-                Screens.menu_buttons.get("supplies")
-                and Screens.menu_buttons["supplies"].is_open
-            ):
-                Screens.menu_buttons["supplies"].close()
         # OPEN LEADER
         elif (
             event.ui_element
@@ -319,7 +299,6 @@ class Screens:
                 "screens.core.leader_den"
             ]
         ):
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.LEADER_DEN)
         # OPEN MEDICINE
         elif (
@@ -328,7 +307,6 @@ class Screens:
                 "screens.core.medicine_cat_den"
             ]
         ):
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.MED_DEN)
         # OPEN WARRIOR
         elif (
@@ -337,35 +315,24 @@ class Screens:
                 "screens.core.warriors_den"
             ]
         ):
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.WARRIOR_DEN)
         # OPEN CLEARING/MEDIATOR
         elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts["screens.core.clearing"]
         ):
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.MEDIATION)
         # GO TO CAMP
         elif event.ui_element in (
             Screens.menu_buttons["back_to_camp"],
             Screens.menu_buttons["heading"],
         ):
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-                Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.CAMP)
         # VIEW CATS
         elif event.ui_element == Screens.menu_buttons["cats"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.LIST)
         # PATROL
         elif event.ui_element == Screens.menu_buttons["patrols"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.PATROL)
         # MAIN MENU
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
@@ -376,15 +343,9 @@ class Screens:
             )
         # ALLEGIANCES
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.ALLEGIANCES)
         # CLAN SETTINGS
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.CLAN_SETTINGS)
 
     @classmethod

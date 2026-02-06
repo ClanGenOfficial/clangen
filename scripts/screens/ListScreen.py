@@ -133,13 +133,6 @@ class ListScreen(Screens):
         self.clan_name = None
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            if event.ui_element == self.cat_list_bar_elements["sort_by_label"]:
-                self.cat_list_bar_elements["sort_by_button"].on_hovered()
-
-        elif event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED:
-            if event.ui_element == self.cat_list_bar_elements["sort_by_label"]:
-                self.cat_list_bar_elements["sort_by_button"].on_unhovered()
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             element = event.ui_element
 
@@ -349,35 +342,31 @@ class ListScreen(Screens):
         )
 
         # SORT BY
+        button_dict = get_button_dict(ButtonStyles.DROPDOWN, (75, 34))
+        button_dict["disabled"] = button_dict["normal"]
         self.cat_list_bar_elements["sort_by_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((-2, 0), (75, 34))),
             f"screens.list.filter_label",
-            {
-                "normal": get_button_dict(ButtonStyles.DROPDOWN, (77, 34))[
-                    "normal"
-                ].subsurface(
-                    (0, 0), (75, 34)
-                )  # this horrific thing gets rid of the double-thick line
-            },
+            button_dict,
             object_id="@buttonstyles_dropdown",
             container=self.cat_list_bar,
             starting_height=1,
             manager=MANAGER,
             anchors={"left_target": self.choose_group_dropdown},
         )
+        self.cat_list_bar_elements["sort_by_label"].disable()
 
         self.cat_list_bar_elements["sort_by_button"] = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (63, 34))),
             f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
             object_id=ObjectID("#filter_by_button", "@buttonstyles_dropdown"),
-            container=self.cat_list_bar,
             starting_height=1,
             manager=MANAGER,
             anchors={"left_target": self.cat_list_bar_elements["sort_by_label"]},
         )
 
         self.sort_by_dropdown = UIDropDown(
-            pygame.Rect((-2, 0), (63, 34)),
+            pygame.Rect((0, 0), (63, 34)),
             f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
             item_list=self.living_filter_names,
             manager=MANAGER,

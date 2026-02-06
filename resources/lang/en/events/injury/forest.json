@@ -425,8 +425,8 @@
                 "medicine cat apprentice",
                 "mediator apprentice"
             ],
-            "not_skill": [
-                "SWIMMER,1"
+            "skill": [
+                "-SWIMMER,1"
             ],
             "trait": [
                 "daring",

@@ -285,6 +285,17 @@ def get_free_group_ID(group_type: CatGroup) -> str:
     return new_ID
 
 
+def reset_used_group_IDs():
+    for ID, group_type in used_group_IDs.copy().items():
+        if group_type not in (
+            CatGroup.PLAYER_CLAN,
+            CatGroup.STARCLAN,
+            CatGroup.DARK_FOREST,
+            CatGroup.UNKNOWN_RESIDENCE,
+        ):
+            used_group_IDs.pop(ID)
+
+
 pygame.display.set_caption("Clan Generator")
 
 toggle_fullscreen(
