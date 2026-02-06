@@ -70,7 +70,6 @@ class AgeCatsCommand(Command):
                         cat.moons = int(args[1])
                     add_output_line_to_log(f"{cat.name} is now {cat.moons} moons old")
 
-
 class CatsCommand(Command):
     name = "cats"
     description = "Manage Cats"
@@ -80,7 +79,7 @@ class CatsCommand(Command):
         AddCatCommand(),
         RemoveCatCommand(),
         ListCatsCommand(),
-        AgeCatsCommand(),
+        AgeCatsCommand()
     ]
 
     def callback(self, args: List[str]):
