@@ -89,9 +89,9 @@ class SetRelationshipCommand(Command):
 
 
 class RelationshipsCommand(Command):
-    name = "relationship"
+    name = "relationships"
     description = "Manage cats' relationships"
-    aliases = ["relation", "rel", "r"]
+    aliases = ["relationship", "relation", "rel", "r"]
 
     sub_commands = [
         SetRelationshipCommand(),
