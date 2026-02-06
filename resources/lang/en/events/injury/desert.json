@@ -2335,7 +2335,7 @@
                     "torn pelt"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             }
         ]
@@ -2507,7 +2507,7 @@
                     "torn pelt"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
                 ]
             },
             {
@@ -2518,7 +2518,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             },
             {
@@ -3090,7 +3090,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             },
             {
@@ -3101,7 +3101,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             },
             {
@@ -3128,7 +3128,7 @@
                     "torn pelt"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
                 ]
             },
             {
@@ -3563,7 +3563,7 @@
                     "torn pelt"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
                 ]
             }
         ],
@@ -3779,7 +3779,7 @@
                     "torn pelt"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             }
         ],
@@ -3977,7 +3977,7 @@
                     "torn pelt"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
                 ]
             }
         ],
@@ -4800,7 +4800,7 @@
                     "torn pelt"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
                 ]
             },
             {
@@ -4811,7 +4811,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             },
             {
@@ -4822,7 +4822,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             },
             {
@@ -4833,7 +4833,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             },
             {
@@ -4844,7 +4844,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE", "TOE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
                 ]
             },
             {

@@ -49,7 +49,7 @@
                 "cats": ["m_c"],
                 "injuries": ["small cut"],
                 "scars": [
-                    "QUILLCHEEK", "QUILLSIDE", "SCRATCHSIDE"
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
                 ]
             }
         ]
