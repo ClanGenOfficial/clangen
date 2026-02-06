@@ -294,11 +294,11 @@
     },
     "wise": {
         "body": [
-            "r_c mourns the loss of m_c deeply, yet finds comfort in knowing {PRONOUN/r_c/subject} will meet {PRONOUN/r_c/object} again in StarClan.",
+            "r_c mourns the loss of m_c deeply, yet finds comfort in knowing {PRONOUN/r_c/subject} will meet {PRONOUN/m_c/object} again in StarClan.",
             "After the loss of m_c, r_c begins planning on how to avoid similar tragedies in the future."
         ],
         "no_body": [
-            "r_c mourns the loss of m_c deeply, yet finds comfort in knowing {PRONOUN/r_c/subject} will meet {PRONOUN/r_c/object} again in StarClan.",
+            "r_c mourns the loss of m_c deeply, yet finds comfort in knowing {PRONOUN/r_c/subject} will meet {PRONOUN/m_c/object} again in StarClan.",
             "After the loss of m_c, r_c begins planning on how to avoid similar tragedies in the future."
         ]
     },
