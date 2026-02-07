@@ -1,14 +1,27 @@
+from msilib.schema import UIText
+
 import pygame
+import pygame_gui
+from scripts.game_structure import game
+from scripts.screens.enums import GameScreen
+
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale, ui_scale_offset, ui_scale_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UICatListDisplay,
+    UITextBoxTweaked,
 )
 from scripts.cat.cats import Cat
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
+from typing import Union
+from scripts.game_structure.game.switches import (
+    switch_get_value,
+    Switch,
+    switch_set_value,
+)
 
 
 class RelChangeDetailWindow(GameWindow):
@@ -16,13 +29,17 @@ class RelChangeDetailWindow(GameWindow):
     This window displays given rel logs.
     """
 
-    def __init__(self, rel_logs: dict[Cat, str]):
+    def __init__(self, rel_logs: dict[Union[Cat, str], str]):
         super().__init__(ui_scale(pygame.Rect((100, 200), (600, 400))))
         # this needs to be here to prevent a crash
         # don't ask me WHY it crashes, i couldn't figure it out. i think it's a pygui issue.
         # setting this to false has no adverse consequences, it just prevents the crash
         self.bring_to_front_on_focused = False
-        self.rel_logs = rel_logs
+        self.clan_reaction = None
+        self.rel_logs = rel_logs.copy()
+        if "clan" in rel_logs:
+            self.clan_reaction = self.rel_logs["clan"]
+            self.rel_logs.pop("clan")
         self.current_page = 1
         self.window_element = {}
 
@@ -47,19 +64,28 @@ class RelChangeDetailWindow(GameWindow):
         )
         self.update_cats_list()
 
+        if self.clan_reaction:
+            self.window_element["clan_reaction"] = UITextBoxTweaked(
+                self.clan_reaction,
+                ui_scale(pygame.Rect((0, 0), (600, 100))),
+                object_id="#text_box_30_horizcenter",
+                anchors={"top_target": self.window_element["cat_list"]},
+                container=self,
+            )
+
     def update_cats_list(self):
         """
         Updates the cat list display.
         """
 
-        self.cat_list = UICatListDisplay(
-            ui_scale(pygame.Rect((45, 40), (500, 300))),
+        self.window_element["cat_list"] = UICatListDisplay(
+            ui_scale(pygame.Rect((50, 20), (500, 300))),
             container=self,
             manager=MANAGER,
             cat_list=list(self.rel_logs.keys()),
             cats_displayed=12,
             x_px_between=ui_scale_value(5),
-            y_px_between=ui_scale_value(10),
+            y_px_between=ui_scale_value(0),
             columns=4,
             rows=3,
             show_names=True,
@@ -69,10 +95,20 @@ class RelChangeDetailWindow(GameWindow):
             text_theme="#text_box_30_horizcenter",
             starting_height=1,
             allow_selection=True,
-            tool_tip_text=list(self.rel_logs.values()),
+            tool_tip_text_list=list(self.rel_logs.values()),
+            custom_sprites_object_id="#rel_log_cat_sprite",
         )
 
     def kill(self):
-        self.cat_list.cache_clear()
+        self.window_element["cat_list"].cache_clear()
 
         super().kill()
+
+    def process_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_PRESSED:
+            if event.ui_element in self.window_element["cat_list"].cat_sprites.values():
+                switch_set_value(Switch.cat, event.ui_element.return_cat_id())
+                game.last_screen_forupdate = switch_get_value(Switch.cur_screen)
+                switch_set_value(Switch.cur_screen, GameScreen.PROFILE)
+                game.switch_screens = True
+                self.kill()

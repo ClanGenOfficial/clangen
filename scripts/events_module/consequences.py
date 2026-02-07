@@ -11,7 +11,7 @@ from scripts.cat_relations.enums import RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
-from scripts.events_module.text_adjust import process_text
+from scripts.events_module.text_adjust import process_text, adjust_list_text
 
 
 def create_new_cat_block(
@@ -837,11 +837,19 @@ def unpack_rel_block(
 
     created_rel_logs: dict = {}
 
+    is_clan_reaction: bool = False
+
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])
         cats_to = block.get("cats_to", [])
         amount = block.get("amount")
         values = [x for x in block.get("values", ()) if x in possible_values]
+
+        # if this is a reaction from the entire clan, we need to know for later
+        if cats_from == ["clan"] or (
+            len(cats_from) == 2 and "clan" in cats_from and "patrol" in cats_from
+        ):
+            is_clan_reaction = True
 
         # Gather actual cat objects:
         cats_from_ob = gather_cat_objects(Cat, cats_from, event, stat_cat, extra_cat)
@@ -886,14 +894,29 @@ def unpack_rel_block(
             if not to_log and not from_log:
                 print(f"something is wrong with relationship log: {block['log']}")
 
-        created_rel_logs.update(
-            change_relationship_values(
-                cats_to_ob,
-                cats_from_ob,
-                **value_changes,
-                log=from_log,
+        if is_clan_reaction:
+            value_list = adjust_list_text(
+                [i18n.t(f"relationships.{x}_word") for x in values]
             )
-        )
+            name_list = adjust_list_text([str(x.name) for x in cats_to_ob])
+            if positive:
+                effect = "pos"
+            else:
+                effect = "neg"
+            created_rel_logs["clan"] = i18n.t(
+                f"windows.{effect}_clan_rel_log",
+                value_list=value_list,
+                name_list=name_list,
+            )
+        else:
+            created_rel_logs.update(
+                change_relationship_values(
+                    cats_to_ob,
+                    cats_from_ob,
+                    **value_changes,
+                    log=from_log,
+                )
+            )
 
         if block.get("mutual"):
             # we'll default to the other log if no unique log was written
@@ -997,6 +1020,13 @@ def change_relationship_values(
                 else:
                     processed_log = log
 
+                if single_cat_from in created_rel_logs:
+                    created_rel_logs[single_cat_from] = "<br><br>".join(
+                        [created_rel_logs[single_cat_from], processed_log]
+                    )
+                else:
+                    created_rel_logs.update({single_cat_from: processed_log})
+
                 log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
                     name=str(single_cat_to.name),
@@ -1004,6 +1034,5 @@ def change_relationship_values(
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)
-                    created_rel_logs.update({single_cat_from: log_text})
 
     return created_rel_logs
