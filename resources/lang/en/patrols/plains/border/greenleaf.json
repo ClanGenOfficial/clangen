@@ -872,7 +872,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts, more play than true intent, and half the weight of an adult. Dangerous, but... manageable. The patrol leaves the area quickly afterwards, before the pup's parents realise it's missing.",
+                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts, more play than true intent, and half the weight of an adult. Dangerous, but... manageable. The patrol leaves the area quickly afterwards, before the pup's parents realize it's missing.",
                 "exp": 60,
                 "art": "gen_coyote2",
                 "relationships": [
@@ -1498,7 +1498,7 @@
                 "frequency": 4
             },
             {
-                "text": "The marking doesn't smell like a grown adult. On the other side of the border, a juvenile hunts, more play than true intent, and half the weight of an adult. Dangerous, but... manageable. The patrol leaves the area quickly afterwards, before the pup's parents realise it's missing.",
+                "text": "The marking doesn't smell like a grown adult. On the other side of the border, a juvenile hunts, more play than true intent, and half the weight of an adult. Dangerous, but... manageable. The patrol leaves the area quickly afterwards, before the pup's parents realize it's missing.",
                 "exp": 70,
                 "art": "gen_coyote2",
                 "relationships": [

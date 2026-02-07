@@ -54,11 +54,6 @@
             "Enable Clan page background",
             "Even with this off, the camp you choose will still affect the events you encounter.",
             true
-        ],
-        "moons and seasons": [
-            "Show moons and seasons widget",
-            "Displays Clan age and current Clan season on several pages.",
-            false
         ]
     },
     "role": {
@@ -120,40 +115,55 @@
         ]
     },
     "freshkill_tactics":{
-        "by-status":[
-            "by-status",
-            "The Clan will be fed according their status and within the status by age.",
+        "low_rank":[
+            "lowest rank first",
+            "The Clan is fed from lowest rank to highest rank. Rank order can be found in the Help button on the top left corner of this window.",
             true
         ],
-        "younger first":[
-            "younger first",
-            "The Clan will be fed according to their age only.",
+        "high_rank": [
+            "highest rank first",
+            "The Clan is fed from highest rank to lowest rank. Rank order can be found in the Help button on the top left corner of this window.",
             false
         ],
-        "less nutrition first":[
-            "less nutrition first",
-            "First the cats with the lowest nutrition will be fed, afterwards the Clan will be fed according to their status.",
+        "youngest_first":[
+            "youngest first",
+            "The Clan is fed from youngest to oldest.",
             false
         ],
-        "hunter first":[
-            "hunter first",
-            "Firstly the cats with a hunter skill will be fed, afterwards the Clan will be fed according to their status.",
+        "oldest_first": [
+            "oldest first",
+            "The Clan is fed from oldest to youngest.",
             false
         ],
-        "sick/injured first":[
+        "hungriest_first":[
+            "hungriest first",
+            "The Clan is fed from most to least hungry.",
+            false
+        ],
+        "hunter_first":[
+            "hunters first",
+            "Proficient hunters are fed first, then the rest are fed according to chosen order.",
+            false
+        ],
+        "sick_injured_first":[
             "sick/injured first",
-            "Firstly the sick and injured cats will be fed, afterwards the Clan will be fed according to their status.",
+            "Any injured or sick (this includes starving and malnourished) cats are fed first to help them regain their strength, then the rest are fed according to chosen order.",
             false
         ],
-        "more experience first":[
-            "high EXP first",
-            "The Clan will be fed according their experience, highest one first.",
+        "experience_first":[
+            "highest experience first",
+            "The Clan is fed from most experienced to least experienced.",
             false
         ],
-        "ration prey":[
+        "ration_prey":[
             "ration prey",
             "Healthy warriors will only eat half of the food they need, even if there is enough for the Clan.",
             false
+        ],
+        "auto_feed":[
+            "auto feed",
+            "Cats are automatically fed during timeskip in the order chosen via Tactics.",
+            true
         ]
     },
     "clan_focus":{

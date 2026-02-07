@@ -12,6 +12,7 @@ from scripts.ui.scale import ui_scale_dimensions
 
 class ButtonStyles(Enum):
     MAINMENU = "mainmenu"
+    CLAN_HEADER = "clan_header"
     SQUOVAL = "squoval"
     MENU_LEFT = "menu_left"
     MENU_MIDDLE = "menu_middle"
@@ -48,6 +49,22 @@ buttonstyles = {
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/mainmenu_disabled.png"
+        ).convert_alpha(),
+        "ninetile": False,
+        "scale_only": False,
+    },
+    "clan_header": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/clan_header_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/clan_header_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/clan_header_hovered.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/clan_header_hovered.png"
         ).convert_alpha(),
         "ninetile": False,
         "scale_only": False,

@@ -26,6 +26,7 @@ from scripts.game_structure.ui_elements import (
     UISurfaceImageButton,
     UIImageHorizontalSlider,
     UIModifiedScrollingContainer,
+    UICheckbox,
 )
 from scripts.housekeeping.datadir import open_data_dir
 from ..ui.theme import get_text_box_theme
@@ -206,11 +207,11 @@ class SettingsScreen(Screens):
                         game_setting_set("language", key)
                     else:
                         game_setting_toggle(key)
-                        value.change_object_id(
-                            "@checked_checkbox"
-                            if game_setting_get(key)
-                            else "@unchecked_checkbox"
-                        )
+                        if value.checked:
+                            value.uncheck()
+                        else:
+                            value.check()
+
                     self.settings_changed = True
                     self.update_save_button()
 
@@ -803,14 +804,8 @@ class SettingsScreen(Screens):
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):
-                if game_setting_get(code):
-                    box_type = "@checked_checkbox"
-                else:
-                    box_type = "@unchecked_checkbox"
-                self.checkboxes[code] = UIImageButton(
-                    ui_scale(pygame.Rect((170, 34 if i < 0 else 0), (34, 34))),
-                    "",
-                    object_id=box_type,
+                self.checkboxes[code] = UICheckbox(
+                    position=(170, 34 if i < 0 else 0),
                     container=self.checkboxes_text["container_" + self.sub_menu],
                     tool_tip_text=f"settings.{code}_tooltip",
                     anchors=(
@@ -818,6 +813,8 @@ class SettingsScreen(Screens):
                         if i > 0
                         else None
                     ),
+                    check=game_setting_get(code),
+                    manager=MANAGER,
                 )
 
     def clear_sub_settings_buttons_and_text(self):

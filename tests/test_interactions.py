@@ -29,7 +29,7 @@ class RelationshipConstraints(unittest.TestCase):
             cats_fulfill_single_interaction_constraints(rel, ["sibling"], "test")
         )
         self.assertTrue(
-            cats_fulfill_single_interaction_constraints(rel, ["not_mates"], "test")
+            cats_fulfill_single_interaction_constraints(rel, ["-mates"], "test")
         )
 
     def test_mates(self):
@@ -45,7 +45,7 @@ class RelationshipConstraints(unittest.TestCase):
             cats_fulfill_single_interaction_constraints(rel, ["mates"], "test")
         )
         self.assertFalse(
-            cats_fulfill_single_interaction_constraints(rel, ["not_mates"], "test")
+            cats_fulfill_single_interaction_constraints(rel, ["-mates"], "test")
         )
 
     def test_parent_child_combo(self):

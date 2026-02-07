@@ -1856,7 +1856,7 @@
                 "frequency": 4,
             "relationships": [
                 {
-                    "cats_from": ["high_stable"],
+                    "cats_from": ["clan", "high_stable"],
                     "cats_to": ["s_c"],
                     "values": ["comfort"],
                     "mutual": false,
@@ -2049,7 +2049,7 @@
                 "frequency": 4,
             "relationships": [
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["s_c"],
                     "values": ["respect"],
                     "mutual": false,
@@ -2639,7 +2639,7 @@
                 "frequency": 1,
             "relationships": [
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["s_c"],
                     "values": ["like", "respect"],
                     "mutual": false,
@@ -2663,7 +2663,7 @@
                 "frequency": 4,
             "relationships": [
                 {
-                    "cats_from": ["high_social"],
+                    "cats_from": ["clan", "high_social"],
                     "cats_to": ["s_c"],
                     "values": ["like", "respect"],
                     "mutual": false,
@@ -2750,14 +2750,14 @@
                 "frequency": 3,
             "relationships": [
                 {
-                    "cats_from": ["low_lawful"],
+                    "cats_from": ["clan", "low_lawful"],
                     "cats_to": ["r_c"],
                     "values": ["respect", "like"],
                     "mutual": false,
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat hears about to_cat's daring escape from a Twoleg nest."
+                        "cats_from": "from_cat heard about to_cat's daring escape from a Twoleg nest."
                     }
                 }
             ]
@@ -2807,7 +2807,7 @@
                 "frequency": 1,
             "relationships": [
                 {
-                    "cats_from": ["high_lawful"],
+                    "cats_from": ["clan", "high_lawful"],
                     "cats_to": ["app1"],
                     "values": ["respect"],
                     "mutual": false,
@@ -3368,6 +3368,14 @@
                     "playful"
                 ],
                 "frequency": 4
+            },
+            {
+                "text": "r_c is caught in a trap hidden in the sand and taken by Twolegs shortly after.",
+                "exp": 0,
+                "lost_cats": [
+                    "r_c"
+                ],
+                "frequency": 3
             }
         ]
     },
@@ -5471,7 +5479,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": -5,
@@ -5541,7 +5549,7 @@
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["app1"],
-                            "mutual": true,
+                            "mutual": false,
                             "values": ["comfort", "like"],
                             "amount": -10,
                             "log": {
@@ -5551,7 +5559,7 @@
                         {
                             "cats_to": ["app1"],
                             "cats_from": ["p_l"],
-                            "mutual": true,
+                            "mutual": false,
                             "values": ["respect"],
                             "amount": -10,
                             "log": {
@@ -5797,7 +5805,7 @@
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -5915,6 +5923,40 @@
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 70,
         "success_outcomes": [
+            {
+                "text": "A gray fox is bigger than them, yes... but only just, and that carcass smells divine. The cats creep up on the fox, using the bushes for cover, and wait until the fox has its head buried in the carcass to attack. The ambush sends the competing predator fleeing and leaves the cats to claim the fawn.",
+                "exp": 20,
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a scavenging fox together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a scavenging fox."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
             {
                 "min_max_status": {
                     "normal adult": [2, 3]
@@ -6089,7 +6131,7 @@
                     },
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_aggress"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
@@ -7272,7 +7314,7 @@
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": 5,
-                        "log": "to_cat and from_cat reminisced on old funny memories while hunting together."
+                        "log": {"cats_from": "to_cat and from_cat reminisced on old funny memories while hunting together."}
                     }
                 ]
             },
@@ -7687,7 +7729,7 @@
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": 5,
-                        "log": "to_cat and from_cat reminisced on old funny memories while hunting together."
+                        "log": {"cats_from": "to_cat and from_cat reminisced on old funny memories while hunting together."}
                     }
                 ]
             },

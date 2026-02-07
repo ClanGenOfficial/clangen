@@ -467,7 +467,9 @@ def handle_lead_den_event():
                 additional_kits = outsider_cat.add_to_clan()
 
                 if additional_kits:
-                    event_text += i18n.t("hardcoded.event_lost_kits")
+                    event_text += i18n.t(
+                        "hardcoded.event_lost_kits", count=len(additional_kits)
+                    )
 
                     for kit_ID in additional_kits:
                         # add to involved cat list
@@ -592,11 +594,11 @@ def get_moon_freshkill():
 
     prey_amount = 0
     for cat in healthy_hunter:
-        lower_value = game.prey_config["auto_warrior_prey"][0]
-        upper_value = game.prey_config["auto_warrior_prey"][1]
+        lower_value = constants.PREY_CONFIG["auto_warrior_prey"][0]
+        upper_value = constants.PREY_CONFIG["auto_warrior_prey"][1]
         if cat.status.rank == CatRank.APPRENTICE:
-            lower_value = game.prey_config["auto_apprentice_prey"][0]
-            upper_value = game.prey_config["auto_apprentice_prey"][1]
+            lower_value = constants.PREY_CONFIG["auto_apprentice_prey"][0]
+            upper_value = constants.PREY_CONFIG["auto_apprentice_prey"][1]
 
         prey_amount += random.randint(lower_value, upper_value)
     game.freshkill_event_list.append(
@@ -819,11 +821,22 @@ def handle_lost_cats_return(predetermined_cat_IDs: list = None):
             return
 
         lost_cat = random.choice(eligible_cats)
+        if lost_cat.age in (CatAge.NEWBORN, CatAge.KITTEN):
+            return
+
         cat_IDs.append(lost_cat.ID)
+
+        if lost_cat.status.is_former_clancat:
+            text = i18n.t(f"hardcoded.event_lost{random.choice(range(1,5))}")
+        else:
+            # this would be the child of a lost cat, who inherited the lost status from the parent and was never a clancat
+            text = i18n.t(
+                "hardcoded.event_returning_child_of_lost",
+                parent_name=Cat.fetch_cat(lost_cat.parent1).name,
+            )
 
         additional_cats = lost_cat.add_to_clan()
         cat_IDs.extend(additional_cats)
-        text = i18n.t(f"hardcoded.event_lost{random.choice(range(1,5))}")
 
         if additional_cats:
             text += i18n.t("hardcoded.event_lost_kits", count=len(additional_cats))
@@ -946,7 +959,7 @@ def one_moon_cat(cat):
         return
 
     if cat.dead:
-        cat.thoughts()
+        cat.get_new_thought()
         if cat.ID in game.just_died:
             cat.moons += 1
         else:
@@ -1005,7 +1018,7 @@ def one_moon_cat(cat):
     # newborns don't do much
     if cat.status.rank == CatRank.NEWBORN:
         cat.relationship_interaction()
-        cat.thoughts()
+        cat.get_new_thought()
         return
 
     handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
@@ -1026,7 +1039,7 @@ def one_moon_cat(cat):
         return
 
     cat.relationship_interaction()
-    cat.thoughts()
+    cat.get_new_thought()
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:
@@ -1094,7 +1107,7 @@ def check_war():
         game.clan.war["duration"] = 0
 
     # check if war in progress
-    war_events = None
+    war_events: list = []
     enemy_clan = None
     if game.clan.war["at_war"]:
         # Grab the enemy clan object
@@ -1155,7 +1168,7 @@ def check_war():
 
     available_med = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
 
-    for event in war_events:
+    for event in war_events.copy():
         if not game.clan.leader and "lead_name" in event:
             war_events.remove(event)
             continue
@@ -1289,18 +1302,18 @@ def perform_ceremonies(cat):
 
                 # assign chance to become med app depending on current med cat and traits
                 chance = constants.CONFIG["roles"]["base_medicine_app_chance"]
-                if has_elder_med == med_cat_list:
+                if very_old_med == med_cat_list:
+                    # These chances apply if all the current medicine cats are very old.
+                    if has_med:
+                        chance = int(chance / 3)
+                    else:
+                        chance = int(chance / 14)
+                elif has_elder_med == med_cat_list:
                     # These chances apply if all the current medicine cats are elders.
                     if has_med:
                         chance = int(chance / 2.22)
                     else:
                         chance = int(chance / 13.67)
-                elif very_old_med == med_cat_list:
-                    # These chances apply is all the current medicine cats are very old.
-                    if has_med:
-                        chance = int(chance / 3)
-                    else:
-                        chance = int(chance / 14)
                 # These chances will only be reached if the
                 # Clan has at least one non-elder medicine cat.
                 elif not has_med:
