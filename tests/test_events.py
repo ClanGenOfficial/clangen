@@ -1,6 +1,10 @@
+import os
 import unittest
 from random import choice
 from uuid import uuid4
+
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat import save_load
 from scripts.cat.cats import create_cat, Cat
