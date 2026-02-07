@@ -4,37 +4,37 @@
             "tortie_base": "single",
             "tortie_color": "BLACK",
             "tortie_pattern": "tortiesolid",
-            "pattern": "GOLDONE"
+            "tortie_marking": "GOLDONE"
         },
         "TWO": {
             "tortie_base": "single",
             "tortie_color": "BLACK",
             "tortie_pattern": "tortiesolid",
-            "pattern": "GOLDTWO"
+            "tortie_marking": "GOLDTWO"
         },
         "FADEDONE": {
             "tortie_base": "single",
             "tortie_color": "BROWN",
             "tortie_pattern": "tortiesolid",
-            "pattern": "GOLDONE"
+            "tortie_marking": "GOLDONE"
         },
         "FADEDTWO": {
             "tortie_base": "single",
             "tortie_color": "BROWN",
             "tortie_pattern": "tortiesolid",
-            "pattern": "GOLDTWO"
+            "tortie_marking": "GOLDTWO"
         },
         "BLUEONE": {
             "tortie_base": "single",
             "tortie_color": "SILVER",
             "tortie_pattern": "tortiesolid",
-            "pattern": "PALEONE"
+            "tortie_marking": "PALEONE"
         },
         "BLUETWO": {
             "tortie_base": "single",
             "tortie_color": "SILVER",
             "tortie_pattern": "tortiesolid",
-            "pattern": "PALETWO"
+            "tortie_marking": "PALETWO"
         }
     },
     "calico_map":{
@@ -42,73 +42,73 @@
             "tortie_base": "single",
             "tortie_color": "BLACK",
             "tortie_pattern": "tortiesolid",
-            "pattern": "GOLDTHREE"
+            "tortie_marking": "GOLDTHREE"
         },
         "TWO": {
             "tortie_base": "single",
             "tortie_color": "BLACK",
             "tortie_pattern": "tortiesolid",
-            "pattern": "GOLDFOUR"
+            "tortie_marking": "GOLDFOUR"
         },
         "THREE": {
             "tortie_base": "single",
             "tortie_color": "BLACK",
             "tortie_pattern": "tortietabby",
-            "pattern": "GOLDTHREE"
+            "tortie_marking": "GOLDTHREE"
         },
         "FOUR": {
             "tortie_base": "single",
             "tortie_color": "BLACK",
             "tortie_pattern": "tortietabby",
-            "pattern": "GOLDFOUR"
+            "tortie_marking": "GOLDFOUR"
         },
         "FADEDONE": {
             "tortie_base": "single",
             "tortie_color": "BROWN",
             "tortie_pattern": "tortiesolid",
-            "pattern": "GOLDTHREE"
+            "tortie_marking": "GOLDTHREE"
         },
         "FADEDTWO": {
             "tortie_base": "single",
             "tortie_color": "BROWN",
             "tortie_pattern": "tortiesolid",
-            "pattern": "GOLDFOUR"
+            "tortie_marking": "GOLDFOUR"
         },
         "FADEDTHREE": {
             "tortie_base": "tabby",
             "tortie_color": "BROWN",
             "tortie_pattern": "tortietabby",
-            "pattern": "GOLDTHREE"
+            "tortie_marking": "GOLDTHREE"
         },
         "FADEDFOUR": {
             "tortie_base": "tabby",
             "tortie_color": "BROWN",
             "tortie_pattern": "tortietabby",
-            "pattern": "GOLDFOUR"
+            "tortie_marking": "GOLDFOUR"
         },
         "BLUEONE": {
             "tortie_base": "single",
             "tortie_color": "SILVER",
             "tortie_pattern": "tortiesolid",
-            "pattern": "PALETHREE"
+            "tortie_marking": "PALETHREE"
         },
         "BLUETWO": {
             "tortie_base": "single",
             "tortie_color": "SILVER",
             "tortie_pattern": "tortiesolid",
-            "pattern": "PALEFOUR"
+            "tortie_marking": "PALEFOUR"
         },
         "BLUETHREE": {
             "tortie_base": "tabby",
             "tortie_color": "SILVER",
             "tortie_pattern": "tortietabby",
-            "pattern": "PALETHREE"
+            "tortie_marking": "PALETHREE"
         },
         "BLUEFOUR": {
             "tortie_base": "tabby",
             "tortie_color": "SILVER",
             "tortie_pattern": "tortietabby",
-            "pattern": "PALEFOUR"
+            "tortie_marking": "PALEFOUR"
         }
 },
     "old_tortie_patches": {
@@ -140,5 +140,67 @@
         "LITTLECREAMY": "LITTLE",
         "VANCREAMY": "VAN",
         "TUXEDOCREAMY": "TUXEDO"
-}
+},
+    "collar_map": {
+        "CRIMSON": "LEATHER_crimson",
+        "BLUE": "LEATHER_blue",
+        "YELLOW": "LEATHER_yellow",
+        "CYAN": "LEATHER_cyan",
+        "RED": "LEATHER_orange",
+        "LIME": "LEATHER_lime",
+        "GREEN": "LEATHER_green",
+        "WHITE": "LEATHER_white",
+        "BLACK": "LEATHER_black",
+        "SPIKES": "LEATHER_SPIKE_black_gold",
+        "PINK": "LEATHER_pink",
+        "PURPLE": "LEATHER_purple",
+        "MULTI": "LEATHER_rose",
+        "INDIGO": "LEATHER_indigo",
+        "RAINBOW": "LEATHER_GRADIENT_rainbow",
+        "CRIMSONBELL": "LEATHER_BELL_crimson",
+        "BLUEBELL": "LEATHER_BELL_blue",
+        "YELLOWBELL": "LEATHER_BELL_yellow",
+        "CYANBELL": "LEATHER_BELL_cyan",
+        "REDBELL": "LEATHER_BELL_orange",
+        "LIMEBELL": "LEATHER_BELL_lime",
+        "GREENBELL": "LEATHER_BELL_green",
+        "WHITEBELL": "LEATHER_BELL_white",
+        "BLACKBELL": "LEATHER_BELL_black",
+        "SPIKESBELL": "LEATHER_BELL_SPIKE_black_gold",
+        "PINKBELL": "LEATHER_BELL_pink",
+        "PURPLEBELL": "LEATHER_BELL_purple",
+        "MULTIBELL": "LEATHER_BELL_rose",
+        "INDIGOBELL": "LEATHER_BELL_indigo",
+        "RAINBOWBELL": "LEATHER_BELL_GRADIENT_rainbow",
+        "CRIMSONBOW": "BOW_crimson",
+        "BLUEBOW": "BOW_blue",
+        "YELLOWBOW": "BOW_yellow",
+        "CYANBOW": "BOW_cyan",
+        "REDBOW": "BOW_orange",
+        "LIMEBOW": "BOW_lime",
+        "GREENBOW": "BOW_green",
+        "WHITEBOW": "BOW_white",
+        "BLACKBOW": "BOW_black",
+        "SPIKESBOW": "BOW_FOIL_black_gold",
+        "PINKBOW": "BOW_pink",
+        "PURPLEBOW": "BOW_purple",
+        "MULTIBOW": "BOW_rose",
+        "INDIGOBOW": "BOW_indigo",
+        "RAINBOWBOW": "BOW_GRADIENT_rainbow",
+        "CRIMSONNYLON": "NYLON_BELL_crimson",
+        "BLUENYLON": "NYLON_BELL_blue",
+        "YELLOWNYLON": "NYLON_BELL_yellow",
+        "CYANNYLON": "NYLON_BELL_cyan",
+        "REDNYLON": "NYLON_BELL_orange",
+        "LIMENYLON": "NYLON_BELL_lime",
+        "GREENNYLON": "NYLON_BELL_green",
+        "WHITENYLON": "NYLON_BELL_white",
+        "BLACKNYLON": "NYLON_BELL_black",
+        "SPIKESNYLON": "NYLON_BELL_black_gold",
+        "PINKNYLON": "NYLON_BELL_pink",
+        "PURPLENYLON": "NYLON_BELL_purple",
+        "MULTINYLON": "NYLON_BELL_rose",
+        "INDIGONYLON": "NYLON_BELL_indigo",
+        "RAINBOWNYLON": "NYLON_BELL_GRADIENT_rainbow"
+    }
 }

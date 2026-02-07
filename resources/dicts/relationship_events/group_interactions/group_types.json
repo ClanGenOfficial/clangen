@@ -6,24 +6,24 @@
 	"friends": {
 		"frequency": 1,
 		"constraint": [
-			"platonic_20",
-			"dislike_20_lower",
-			"jealousy_20_lower"
+			"likes",
+			"praises"
 		]
 	},
 	"best_friends": {
 		"frequency": 1,
 		"constraint": [
-			"platonic_40",
-			"dislike_20_lower",
-			"jealousy_20_lower"
+			"enjoys",
+			"praises",
+			"trusts",
+			"understands"
 		]
 	},
 	"love_interests": {
 		"frequency": 1,
 		"constraint": [
-			"romantic_10",
-			"platonic_20"
+			"fancies",
+			"likes"
 		]
 	}
 }

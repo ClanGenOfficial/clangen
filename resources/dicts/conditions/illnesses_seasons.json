@@ -7,13 +7,15 @@
         "fleas": 2,
         "stomachache":1,
         "heat exhaustion":3,
-        "heat stroke":1
+        "heat stroke":1,
+        "tick fever":2
     },
     "Leaf-fall":{
         "stomachache":1,
         "greencough": 1,
         "kittencough": 4,
-        "running nose": 3
+        "running nose": 3,
+        "tick fever":1
     },
     "Leaf-bare":{
         "stomachache":1,

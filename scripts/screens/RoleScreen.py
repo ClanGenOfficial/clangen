@@ -7,20 +7,16 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import image_cache, game
 from scripts.game_structure.ui_elements import (
     UITextBoxTweaked,
     UISurfaceImageButton,
 )
-from scripts.utility import (
-    get_text_box_theme,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale,
-    adjust_list_text,
-)
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import adjust_list_text, shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..cat.enums import CatRank
@@ -41,7 +37,7 @@ class RoleScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     switch_set_value(Switch.cat, self.next_cat)
@@ -91,7 +87,7 @@ class RoleScreen(Screens):
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.key == pygame.K_RIGHT:
                 switch_set_value(Switch.cat, self.next_cat)
                 self.update_selected_cat()
@@ -533,7 +529,7 @@ class RoleScreen(Screens):
         else:
             output = "screens.role.blurb_unknown"
 
-        return i18n.t(output, name=self.the_cat.name, clan=game.clan.name)
+        return i18n.t(output, name=self.the_cat.name, clan=game.clan.displayname)
 
     def exit_screen(self):
         self.back_button.kill()

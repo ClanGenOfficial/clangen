@@ -37,8 +37,7 @@
         {
         "cats": ["n_c:0"],
         "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "lead_death": "died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle"
+        "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
         }
         ],
 	"relationships": [
@@ -46,7 +45,7 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
             "mutual": true,
-            "values": ["comfort", "platonic"],
+            "values": ["comfort", "like"],
             "amount": 5
           },
           {
@@ -54,16 +53,7 @@
             "cats_to": ["m_c"],
             "values": ["trust"],
             "amount": 10
-          },
-	  {
-            "cats_from": ["n_c:0"],
-            "cats_to": ["m_c"],
-	    "mutual": true,
-            "values": ["dislike"],
-            "amount": -10
           }
-
-
         ],
         "outsider": {
             "current_rep": [
@@ -107,7 +97,7 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:1"],
             "mutual": true,
-            "values": ["comfort", "platonic"],
+            "values": ["comfort", "like"],
             "amount": 5
           }
         ],
