@@ -821,7 +821,7 @@ def gather_cat_objects(
 
 def unpack_rel_block(
     Cat, relationship_effects: List[dict], event=None, stat_cat=None, extra_cat=None
-) -> list:
+) -> dict:
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
     accordingly.
@@ -835,7 +835,7 @@ def unpack_rel_block(
     """
     possible_values = [*RelType]
 
-    created_rel_logs: list = []
+    created_rel_logs: dict = {}
 
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])
@@ -886,7 +886,7 @@ def unpack_rel_block(
             if not to_log and not from_log:
                 print(f"something is wrong with relationship log: {block['log']}")
 
-        created_rel_logs.extend(
+        created_rel_logs.update(
             change_relationship_values(
                 cats_to_ob,
                 cats_from_ob,
@@ -897,7 +897,7 @@ def unpack_rel_block(
 
         if block.get("mutual"):
             # we'll default to the other log if no unique log was written
-            created_rel_logs.extend(
+            created_rel_logs.update(
                 change_relationship_values(
                     cats_from_ob,
                     cats_to_ob,
@@ -918,7 +918,7 @@ def change_relationship_values(
     comfort: int = 0,
     trust: int = 0,
     log: str = None,
-) -> list:
+) -> dict:
     """
     changes relationship values according to the parameters.
 
@@ -942,7 +942,7 @@ def change_relationship_values(
     else:
         changed = True"""
 
-    created_rel_logs = []
+    created_rel_logs = {}
     # pick out the correct cats
     for single_cat_from in cats_from:
         for single_cat_to in cats_to:
@@ -1004,6 +1004,6 @@ def change_relationship_values(
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)
-                    created_rel_logs.append(log_text)
+                    created_rel_logs.update({single_cat_from: log_text})
 
     return created_rel_logs

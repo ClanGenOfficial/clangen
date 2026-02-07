@@ -224,7 +224,7 @@ class PatrolOutcome:
         Executes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
         :returns: Outcome text, results text, list of created rel logs (might be empty), outcome art (might be None)
         """
-        rel_results = []
+        rel_results = {}
 
         # This must be done before text processing so that the new cat's pronouns are generated first
         results = [self._handle_new_cats(patrol)]
@@ -265,7 +265,7 @@ class PatrolOutcome:
                         other_clan=patrol.other_clan,
                     )
 
-        rel_results.extend(
+        rel_results.update(
             unpack_rel_block(
                 Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat
             )

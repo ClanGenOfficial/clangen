@@ -1631,6 +1631,7 @@ class UICatListDisplay(UIContainer):
         anchors: Optional[dict] = None,
         rows: int = None,
         show_names: bool = False,
+        tool_tip_text: list = None,
         tool_tip_name: bool = False,
         tool_tip_nutrition: bool = False,
         visible: bool = True,
@@ -1684,6 +1685,7 @@ class UICatListDisplay(UIContainer):
         self.prev_button = prev_button
         self.first_button = first_button
         self.last_button = last_button
+        self.tool_tip_text = tool_tip_text
         self.tool_tip_name = tool_tip_name
         self.tool_tip_nutrition = tool_tip_nutrition
         self.text_theme = text_theme
@@ -1859,6 +1861,8 @@ class UICatListDisplay(UIContainer):
             )
         elif self.tool_tip_name:
             tooltip_text = str(kitty.name)
+        elif self.tool_tip_text:
+            tooltip_text = self.tool_tip_text[i]
         else:
             tooltip_text = None
         if self.allow_selection:

@@ -67,7 +67,7 @@ class PatrolScreen(Screens):
         self.current_patrol = None
         self.display_text = ""
         self.results_text = ""
-        self.rel_results = []
+        self.rel_results = {}
         self.start_patrol_thread: Optional[PropagatingThread] = None
         self.proceed_patrol_thread: Optional[PropagatingThread] = None
         self.outcome_art = None
