@@ -32,7 +32,7 @@ class OutsiderEvents:
         # killing outside cats
         if random.getrandbits(6) == 1 and not cat.dead:
             death_history = "events.death.outsider_deaths.history.default"
-      
+
             if cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
                 text = random.choice(deaths["exiled"])
             elif cat.status.is_lost():
@@ -40,7 +40,9 @@ class OutsiderEvents:
                 death_history = "events.death.outsider_deaths.history.lost"
             else:
                 text = random.choice(deaths[cat.status.social.value])
-                death_history = f"events.death.outsider_deaths.history.{cat.status.social.value}"
+                death_history = (
+                    f"events.death.outsider_deaths.history.{cat.status.social.value}"
+                )
 
             death_history = i18n.t(death_history)
             cat.history.add_death(death_text=death_history)
