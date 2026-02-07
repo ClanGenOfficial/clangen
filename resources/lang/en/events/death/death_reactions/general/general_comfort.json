@@ -84,10 +84,10 @@
     },
     "childish": {
         "body": [
-            "At the news of m_c's death, r_c wails and bolts out of camp, trying to outrun reality... only to realise later that {PRONOUN/r_c/subject} missed most of the vigil. Devastated, r_c grieves in {PRONOUN/r_c/poss} own way, hidden from judgemental eyes."
+            "At the news of m_c's death, r_c wails and bolts out of camp, trying to outrun reality... only to realize later that {PRONOUN/r_c/subject} missed most of the vigil. Devastated, r_c grieves in {PRONOUN/r_c/poss} own way, hidden from judgmental eyes."
         ],
         "no_body": [
-            "At the news of m_c's death, r_c wails and bolts out of camp, trying to outrun reality... only to realise later that {PRONOUN/r_c/subject} missed most of the vigil. Devastated, r_c grieves in {PRONOUN/r_c/poss} own way, hidden from judgemental eyes."
+            "At the news of m_c's death, r_c wails and bolts out of camp, trying to outrun reality... only to realize later that {PRONOUN/r_c/subject} missed most of the vigil. Devastated, r_c grieves in {PRONOUN/r_c/poss} own way, hidden from judgmental eyes."
         ]
     },
     "cold": {
