@@ -77,6 +77,9 @@ class RelChangeDetailWindow(GameWindow):
         """
         Updates the cat list display.
         """
+        if "cat_list" in self.window_element:
+            self.window_element["cat_list"].kill()
+            self.window_element.pop("cat_list")
 
         self.window_element["cat_list"] = UICatListDisplay(
             ui_scale(pygame.Rect((50, 20), (500, 300))),
@@ -112,5 +115,11 @@ class RelChangeDetailWindow(GameWindow):
                 switch_set_value(Switch.cur_screen, GameScreen.RELATIONSHIP)
                 game.switch_screens = True
                 self.kill()
+            elif event.ui_element == self.window_element["next_page_button"]:
+                self.current_page += 1
+                self.update_cats_list()
+            elif event.ui_element == self.window_element["previous_page_button"]:
+                self.current_page -= 1
+                self.update_cats_list()
 
         super().process_event(event)

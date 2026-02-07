@@ -908,6 +908,12 @@ def unpack_rel_block(
                 value_list=value_list,
                 name_list=name_list,
             )
+            change_relationship_values(
+                cats_to_ob,
+                cats_from_ob,
+                **value_changes,
+                log=from_log,
+            )
         else:
             created_rel_logs.update(
                 change_relationship_values(
