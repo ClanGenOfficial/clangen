@@ -337,6 +337,7 @@ class PatrolScreen(Screens):
 
         variable_dict["display_text"] = self.display_text
         variable_dict["results_text"] = self.results_text
+        variable_dict["rel_results"] = self.rel_results.copy()
         variable_dict["outcome_art"] = self.outcome_art
 
         variable_dict["current_moon"] = game.clan.age
@@ -1408,7 +1409,6 @@ class PatrolScreen(Screens):
         for ele in self.elements:
             self.elements[ele].kill()
         self.elements = {}
-        self.rel_results.clear()
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:

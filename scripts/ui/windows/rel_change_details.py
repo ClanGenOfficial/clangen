@@ -109,6 +109,8 @@ class RelChangeDetailWindow(GameWindow):
             if event.ui_element in self.window_element["cat_list"].cat_sprites.values():
                 switch_set_value(Switch.cat, event.ui_element.return_cat_id())
                 game.last_screen_forupdate = switch_get_value(Switch.cur_screen)
-                switch_set_value(Switch.cur_screen, GameScreen.PROFILE)
+                switch_set_value(Switch.cur_screen, GameScreen.RELATIONSHIP)
                 game.switch_screens = True
                 self.kill()
+
+        super().process_event(event)
