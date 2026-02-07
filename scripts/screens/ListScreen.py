@@ -356,9 +356,11 @@ class ListScreen(Screens):
         )
         self.cat_list_bar_elements["sort_by_label"].disable()
 
+        sort_by_text = f"screens.list.filter_{switch_get_value(Switch.sort_type)}"
+
         self.cat_list_bar_elements["sort_by_button"] = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (63, 34))),
-            f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
+            sort_by_text,
             object_id=ObjectID("#filter_by_button", "@buttonstyles_dropdown"),
             starting_height=1,
             manager=MANAGER,
@@ -367,12 +369,14 @@ class ListScreen(Screens):
 
         self.sort_by_dropdown = UIDropDown(
             pygame.Rect((0, 0), (63, 34)),
-            f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
-            item_list=self.living_filter_names,
+            sort_by_text,
+            item_list=self.living_filter_names
+            if self.death_status == "living"
+            else self.dead_filter_names,
             manager=MANAGER,
             container=self.cat_list_bar,
             parent_override=self.cat_list_bar_elements["sort_by_button"],
-            starting_selection=["screens.list.filter_rank"],
+            starting_selection=[sort_by_text],
             anchors={"left_target": self.cat_list_bar_elements["sort_by_label"]},
         )
 
