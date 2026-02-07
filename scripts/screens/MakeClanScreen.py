@@ -269,7 +269,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
-            self.open_choose_leader()
+            self.open_()
         elif event.ui_element == self.elements["previous_step"]:
             self.clan_name = ""
             self.open_game_mode()
@@ -291,7 +291,7 @@ class MakeClanScreen(Screens):
                     self.elements["error"].show()
                     return
                 self.clan_name = new_name
-                self.open_choose_leader()
+                self.open_()
         elif event.key == pygame.K_RETURN:
             new_name = sub(
                 r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
@@ -301,9 +301,9 @@ class MakeClanScreen(Screens):
                 self.elements["error"].show()
                 return
             self.clan_name = new_name
-            self.open_choose_leader()
+            self.open_()
 
-    def handle_choose_leader_event(self, event):
+    def handle__event(self, event):
         if event.ui_element in (
             self.elements["roll1"],
             self.elements["roll2"],
@@ -349,7 +349,7 @@ class MakeClanScreen(Screens):
         if event.ui_element == self.elements["previous_step"]:
             self.leader = None
             self.selected_cat = None
-            self.open_choose_leader()
+            self.open_()
         elif event.ui_element in (self.elements[f"cat{u}"] for u in range(0, 12)):
             if pygame.key.get_mods() & pygame.KMOD_SHIFT:
                 clicked_cat = event.ui_element.return_cat_object()
@@ -1477,7 +1477,7 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
 
-    def open_choose_leader(self):
+    def open_(self):
         """Set up the screen for the choose leader phase."""
         self.clear_all_page()
         self.sub_screen = "choose leader"
@@ -1568,7 +1568,7 @@ class MakeClanScreen(Screens):
         self.create_cat_info()
 
         self.elements["select_cat"] = UIImageButton(
-            ui_scale(pygame.Rect((234, 348), (332, 52))),
+            ui_scale(pygame.Rect((232, 348), (338, 52))), #moved 2 pixels to left to fix centering
             "screens.make_clan.choose_leader",
             object_id="#nine_lives_button",
             starting_height=2,
