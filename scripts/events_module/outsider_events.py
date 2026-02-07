@@ -31,23 +31,49 @@ class OutsiderEvents:
 
         # killing outside cats
         if random.getrandbits(6) == 1 and not cat.dead:
-            death_history = "events.death.outsider_deaths.history.default"
+            death_history = i18n.t("events.death.outsider_deaths.history.default")
 
             if cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
                 text = random.choice(deaths["exiled"])
-            elif cat.status.is_lost():
+                death_history = i18n.t("events.death.outsider_deaths.history.exiled")
+            elif cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
                 text = random.choice(deaths["lost"])
-                death_history = "events.death.outsider_deaths.history.lost"
-            else:
-                if not cat.status.is_outsider:
-                    print("WARNING: clancat in outsider deaths?")
-                    return
+                death_history = i18n.t("events.death.outsider_deaths.history.lost")
+            elif not cat.status.is_outsider:
                 text = random.choice(deaths[cat.status.social.value])
-                death_history = (
+                death_history = i18n.t(
                     f"events.death.outsider_deaths.history.{cat.status.social.value}"
                 )
+            elif cat.status.is_other_clancat:
+                group_id = cat.status.group_ID
+                if cat.status.is_exiled(group_id):
+                    text = random.choice(deaths["other_clan_exiled"])
+                    death_history = i18n.t(
+                        "events.death.outsider_deaths.history.other_clan_exiled"
+                    )
+                elif cat.status.is_lost(group_id):
+                    text = random.choice(deaths["other_clan_lost"])
+                    death_history = i18n.t(
+                        "events.death.outsider_deaths.history.other_clan_lost"
+                    )
+                else:
+                    text = random.choice(deaths["other_clan"])
+                    death_history = i18n.t(
+                        "events.death.outsider_deaths.history.other_clan"
+                    )
 
-            death_history = i18n.t(death_history)
+                name = [
+                    c
+                    for c in game.clan.all_other_clans
+                    if c.group_ID == cat.status.group_ID
+                ][0].name
+                name = i18n.t("general.clan", name=name)
+
+                text.replace("o_c_n", name)
+                death_history.replace("o_c_n", name)
+            else:
+                text = random.choice(deaths["other_clan"])
+
             cat.history.add_death(death_text=death_history)
             cat.die()
             game.cur_events_list.append(
