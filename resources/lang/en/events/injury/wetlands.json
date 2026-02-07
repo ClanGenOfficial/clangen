@@ -23,7 +23,7 @@
         "event_text": "m_c ate some red berries out in the territory and was rushed back to camp by r_c.",
         "m_c": {
             "age": ["adolescent"],
-            "not_skill": ["HEALER,1"]
+            "skill": ["-HEALER,1"]
         },
         "r_c": {
           "age": ["young adult", "adult", "senior adult"]

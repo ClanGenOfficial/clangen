@@ -1,5 +1,10 @@
 import os
-import tomllib
+
+try:
+    import tomllib
+except ImportError:
+    import tomli as tomllib
+
 import unittest
 from uuid import uuid4
 
@@ -62,7 +67,7 @@ class FreshkillPileTest(unittest.TestCase):
             medicine_cat=create_cat(CatRank.MEDICINE_CAT),
             biome="Forest",
             camp_bg="camp1",
-            symbol="ADDER0",
+            symbol="symbolADDER0",
             game_mode="expanded",
             starting_members=members,
             starting_season="Newleaf",
@@ -70,8 +75,12 @@ class FreshkillPileTest(unittest.TestCase):
         save_load.cat_to_fade.clear()
         game.clan.create_clan()
 
-        # set leader as a hunter skill for later testing
-        game.clan.leader.skills.primary = Skill(SkillPath.HUNTER, 25)
+        for _c in Cat.all_cats_list:
+            if _c == game.clan.leader:
+                # set leader as a hunter skill for later testing
+                game.clan.leader.skills.primary = Skill(SkillPath.HUNTER, 25)
+            else:
+                _c.skills.primary = Skill(SkillPath.CLIMBER, 20)
 
         # set dep as injured for later testing
         game.clan.deputy.injuries["test_injury"] = {"severity": "major"}

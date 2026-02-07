@@ -1972,7 +1972,7 @@
         "decline_text": "r_c declines gently, explaining that {PRONOUN/r_c/subject} {VERB/r_c/have/has} too much work to do.",
         "chance_of_success": 60,
         "relationship_constraint": [
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -2137,7 +2137,7 @@
         "chance_of_success": 60,
         "relationship_constraint": [
             "dislikes",
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {

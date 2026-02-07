@@ -74,19 +74,6 @@ def find_alive_cats_with_rank(
     return alive_cats
 
 
-def get_living_cat_count(Cat):
-    """
-    Returns the int of all living cats, both in and out of the Clan
-    :param Cat: Cat class
-    """
-    count = 0
-    for the_cat in Cat.all_cats.values():
-        if the_cat.dead:
-            continue
-        count += 1
-    return count
-
-
 def get_living_clan_cat_count(Cat):
     """
     Returns the int of all living cats within the Clan
