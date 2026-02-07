@@ -39,13 +39,8 @@ class OutsiderEvents:
             elif cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
                 text = random.choice(deaths["lost"])
                 death_history = i18n.t("events.death.outsider_deaths.history.lost")
-            elif not cat.status.is_outsider:
-                text = random.choice(deaths[cat.status.social.value])
-                death_history = i18n.t(
-                    f"events.death.outsider_deaths.history.{cat.status.social.value}"
-                )
-            elif cat.status.is_other_clancat:
-                group_id = cat.status.group_ID
+            elif cat.status.is_other_clancat or cat.status.is_former_clancat:
+                group_id = cat.status.get_last_valid_group_id()
                 if cat.status.is_exiled(group_id):
                     text = random.choice(deaths["other_clan_exiled"])
                     death_history = i18n.t(
@@ -62,17 +57,21 @@ class OutsiderEvents:
                         "events.death.outsider_deaths.history.other_clan"
                     )
 
-                name = [
+                clanname = [
                     c
                     for c in game.clan.all_other_clans
                     if c.group_ID == cat.status.group_ID
                 ][0].name
-                name = i18n.t("general.clan", name=name)
-
-                text.replace("o_c_n", name)
-                death_history.replace("o_c_n", name)
+                clanname = i18n.t("general.clan", name=clanname)
+                text = text.replace("o_c_n", clanname)
+                death_history = death_history.replace("o_c_n", clanname)
+            elif not cat.status.is_outsider:
+                text = random.choice(deaths[cat.status.social.value])
+                death_history = i18n.t(
+                    f"events.death.outsider_deaths.history.{cat.status.social.value}"
+                )
             else:
-                text = random.choice(deaths["other_clan"])
+                text = random.choice(deaths["default"])
 
             cat.history.add_death(death_text=death_history)
             cat.die()

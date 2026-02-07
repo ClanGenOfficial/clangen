@@ -669,6 +669,21 @@ class Status:
 
         return None
 
+    def get_last_valid_group_id(self) -> Optional[str]:
+        """
+        Returns the last group that this cat was part of. If they have never been affiliated with a group, returns None.
+        :return:
+        """
+        history = self.group_history.copy()
+        history.reverse()
+
+        for entry in history:
+            group_type = game.used_group_IDs.get(entry["group"])
+            if group_type is not None:
+                return entry["group"]
+
+        return None
+
     def is_lost(self, group_ID: str = CatGroup.PLAYER_CLAN_ID) -> bool:
         """
         Returns True if the cat is considered "lost" by a group.
