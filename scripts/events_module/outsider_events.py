@@ -39,6 +39,9 @@ class OutsiderEvents:
                 text = random.choice(deaths["lost"])
                 death_history = "events.death.outsider_deaths.history.lost"
             else:
+                if not cat.status.is_outsider:
+                    print("WARNING: clancat in outsider deaths?")
+                    return
                 text = random.choice(deaths[cat.status.social.value])
                 death_history = (
                     f"events.death.outsider_deaths.history.{cat.status.social.value}"
