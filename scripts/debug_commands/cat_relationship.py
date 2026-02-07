@@ -5,9 +5,10 @@ from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
 
+
 def set_cat_relationship_to_cat(cat_a: Cat, rel_type: str, cat_b: Cat, rel_value: int):
     """
-    Sets the specified relationship type (rel_type) 
+    Sets the specified relationship type (rel_type)
     of cat_a towards cat_b to a specified value (rel_value)
     """
     from_cat_relationship: Relationship = cat_a.relationships.get(cat_b.ID)
@@ -29,6 +30,7 @@ def set_cat_relationship_to_cat(cat_a: Cat, rel_type: str, cat_b: Cat, rel_value
         f"Successfully set {str(cat_a.name)}'s {rel_type} towards {str(cat_b.name)} to {rel_value}"
     )
 
+
 class SetRelationshipCommand(Command):
     name = "set"
     description = "Set the relationship values of a cat towards another cat."
@@ -39,7 +41,7 @@ class SetRelationshipCommand(Command):
         if len(args) == 0:
             add_output_line_to_log("Please specify a cat name or ID")
             return
-        
+
         if len(args) < 4:
             add_output_line_to_log("Missing required arguments")
             return
@@ -51,7 +53,7 @@ class SetRelationshipCommand(Command):
         if not args[3].isdigit():
             add_output_line_to_log("rel_value is not an integer")
             return
-        
+
         rel_value = int(args[3])
 
         if (

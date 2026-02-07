@@ -21,7 +21,7 @@ commandList: List[Command] = [
     CatsCommand(),
     ClanCommand(),
     PregnanciesCommand(),
-    RelationshipsCommand()
+    RelationshipsCommand(),
 ]
 
 helpCommand = HelpCommand(commandList)

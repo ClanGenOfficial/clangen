@@ -64,10 +64,7 @@ class DebugMenu(UIWindow):
             manager=MANAGER,
             container=self,
             object_id="#submit_command",
-            anchors={
-                "top": "bottom",
-                "left": "right"
-            }
+            anchors={"top": "bottom", "left": "right"},
         )
 
         self.previous_command = ""
@@ -133,10 +130,11 @@ class DebugMenu(UIWindow):
 
     def process_event(self, event: pygame.Event):
         if (
-            (event.type == pygame_gui.UI_TEXT_ENTRY_FINISHED
-            and event.ui_element == self.command_line)
-            or (event.type == pygame_gui.UI_BUTTON_PRESSED
-            and event.ui_element == self.submit_command)
+            event.type == pygame_gui.UI_TEXT_ENTRY_FINISHED
+            and event.ui_element == self.command_line
+        ) or (
+            event.type == pygame_gui.UI_BUTTON_PRESSED
+            and event.ui_element == self.submit_command
         ):
             add_output_line_to_log(f"> {self.command_line.get_text()}")
             pygame.event.post(
@@ -147,7 +145,7 @@ class DebugMenu(UIWindow):
             )
             self.previous_command = self.command_line.get_text()
             self.command_line.clear()
-        
+
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 self.command_line.set_text(self.previous_command)
@@ -285,5 +283,6 @@ class DebugMode:
                     pygame.draw.rect(screen, (0, 255, 0), rect, 1)
                 else:
                     pygame.draw.rect(screen, (255, 0, 0), rect, 1)
+
 
 debug_mode = DebugMode()
