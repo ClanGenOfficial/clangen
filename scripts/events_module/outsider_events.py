@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 import i18n
 
-from scripts.cat.enums import CatGroup, CatStanding, CatRank
+from scripts.cat.enums import CatGroup
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.game_structure import game
@@ -39,7 +39,10 @@ class OutsiderEvents:
             elif cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
                 text = random.choice(deaths["lost"])
                 death_history = i18n.t("events.death.outsider_deaths.history.lost")
-            elif cat.status.is_other_clancat or cat.status.is_former_clancat:
+            elif cat.status.is_other_clancat or (
+                cat.status.is_former_clancat
+                and not cat.status.get_last_valid_group_id() == CatGroup.PLAYER_CLAN_ID
+            ):
                 group_id = cat.status.get_last_valid_group_id()
                 if cat.status.is_exiled(group_id):
                     text = random.choice(deaths["other_clan_exiled"])
@@ -58,9 +61,7 @@ class OutsiderEvents:
                     )
 
                 clanname = [
-                    c
-                    for c in game.clan.all_other_clans
-                    if c.group_ID == cat.status.group_ID
+                    c for c in game.clan.all_other_clans if c.group_ID == group_id
                 ][0].name
                 clanname = i18n.t("general.clan", name=clanname)
                 text = text.replace("o_c_n", clanname)
