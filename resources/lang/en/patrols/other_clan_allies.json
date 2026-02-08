@@ -2771,7 +2771,8 @@
                             "cats_from": "from_cat enjoyed listening to to_cat's story on patrol."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             }
         ],
         "fail_outcomes": [
