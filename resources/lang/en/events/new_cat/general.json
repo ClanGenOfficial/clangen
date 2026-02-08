@@ -1310,7 +1310,7 @@
         ],
         "relationships": [
             {
-                "cats_from": ["high_stable"],
+                "cats_from": ["clan", "high_stable"],
                 "cats_to": ["n_c:0"],
                 "mutual": false,
                 "values": ["trust", "like"],
