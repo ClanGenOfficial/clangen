@@ -1096,7 +1096,7 @@
                 }
             },
             {
-                "cats_from": ["high_social"],
+                "cats_from": ["clan", "high_social"],
                 "cats_to": ["n_c:0"],
                 "values": ["like", "respect"],
                 "amount": 10,
