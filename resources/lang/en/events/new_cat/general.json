@@ -1048,7 +1048,7 @@
                 }
             },
             {
-                "cats_from": ["high_lawful"],
+                "cats_from": ["clan", "high_lawful"],
                 "cats_to": ["n_c:0"],
                 "values": ["trust"],
                 "amount": -15,
