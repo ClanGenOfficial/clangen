@@ -1868,7 +1868,7 @@
                 "KIT,1",
                 "STORY,1"
             ],
-            "skill": [
+            "not_skill": [
                 "-KIT,2",
                 "-KIT,3",
                 "-KIT,4"
@@ -5848,6 +5848,7 @@
             },
             {
                 "cats_from": [
+                    "clan",
                     "high_lawful"
                 ],
                 "cats_to": [
@@ -5919,6 +5920,7 @@
             },
             {
                 "cats_from": [
+                    "clan",
                     "high_lawful"
                 ],
                 "cats_to": [
@@ -5961,6 +5963,7 @@
         "relationships": [
             {
                 "cats_from": [
+                    "clan",
                     "high_lawful"
                 ],
                 "cats_to": [
@@ -6026,6 +6029,7 @@
             },
             {
                 "cats_from": [
+                    "clan",
                     "high_lawful"
                 ],
                 "cats_to": [
@@ -6092,6 +6096,7 @@
             },
             {
                 "cats_from": [
+                    "clan",
                     "high_lawful"
                 ],
                 "cats_to": [
@@ -6175,6 +6180,7 @@
             },
             {
                 "cats_from": [
+                    "clan",
                     "high_lawful"
                 ],
                 "cats_to": [
@@ -10477,7 +10483,7 @@
             "values": [
                 "respect", "like"
             ],
-            "amount": -10,
+            "amount": 10,
             "log": {
                 "cats_from": "from_cat was touched that to_cat kept {PRONOUN/to_cat/poss} friendship with a o_c_n apprentice during the war."
             }
