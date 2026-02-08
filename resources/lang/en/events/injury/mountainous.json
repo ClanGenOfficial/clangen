@@ -38,8 +38,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain.",
-                "lead_death": "died after falling down the mountain"
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain."
             }
         ]
     },
@@ -81,8 +80,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred by falling rocks.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}.",
-                "lead_death": "died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}"
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -130,7 +128,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred after falling from a tall cliff.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
             }
         ]
     }

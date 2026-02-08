@@ -16,15 +16,13 @@ from scripts.cat.enums import CatRank
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.game_structure.windows import SelectFocusClans
+from scripts.ui.windows.select_focus_clans import SelectFocusClansWindow
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
-from scripts.utility import (
-    ui_scale,
-    find_alive_cats_with_rank,
-    get_text_box_theme,
-    adjust_list_text,
-)
+from scripts.ui.theme import get_text_box_theme
+from scripts.events_module.text_adjust import adjust_list_text
+from scripts.ui.scale import ui_scale
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 with open("resources/clansettings.json", "r", encoding="utf-8") as f:
     settings_dict = ujson.load(f)
@@ -69,16 +67,8 @@ class WarriorDenScreen(Screens):
                     if value == event.ui_element:
                         description = settings_dict["clan_focus"][code][1]
 
-                        # TODO why is this here twice?
-                        switch_clan_setting(self.active_code)
-                        switch_clan_setting(code)
                         self.active_code = code
 
-                        # un-switch the old checkbox
-                        switch_clan_setting(self.active_code)
-                        # switch the new checkbox
-                        switch_clan_setting(code)
-                        self.active_code = code
                         # only enable the save button if a focus switch is possible
                         if (
                             game.clan.last_focus_change is None
@@ -122,10 +112,14 @@ class WarriorDenScreen(Screens):
 
             elif event.ui_element == self.save_button:
                 if self.active_code in self.other_clan_settings:
-                    SelectFocusClans()
+                    SelectFocusClansWindow()
                 else:
+                    # change the setting
+                    switch_clan_setting(self.original_focus_code)
+                    switch_clan_setting(self.active_code)
                     game.clan.last_focus_change = game.clan.age
                     self.original_focus_code = self.active_code
+
                     self.save_button.disable()
                     self.update_buttons()
                     self.create_top_info()

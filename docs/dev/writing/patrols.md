@@ -568,8 +568,7 @@ This is a good starting point for writing your own outcomes.
         }
     ],
     "history_text": {
-        "reg_death": "m_c died while on a patrol.",
-        "lead_death": "died on patrol",
+        "death": "m_c died while on a patrol.",
         "scars": "m_c was scarred on patrol"
     },
     "relationships": [
@@ -638,13 +637,13 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### stat_skill: List[str]
->Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have at least one of these skills. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. See elsewhere for skill formatting. 
+>Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have at least one of these skills. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. See elsewhere for skill formatting. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
 
 ***
 
 #### stat_trait: List[str]
->Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have one of these traits. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included.
+>Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have one of these traits. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
 
 ***
@@ -727,7 +726,7 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### injury: List[Dict[str, various]]
->Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the following blocks (in a list) as you want. 
+>Optional. Indicates which cats get injured, and how. You can include as many of the following blocks (in a list) as you want. 
 >
 >```json
 >{
@@ -759,7 +758,7 @@ What each parameter does, and what the options are for outcomes.
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
->Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
+>Optional. This replaces the standard scar pool for the given injury.
 >
 >[Scar List](reference/tag-lists.md#__tabbed_1_5)
 
@@ -778,16 +777,13 @@ What each parameter does, and what the options are for outcomes.
 #### history_text: Dict[str, str]
 >Optional, but it should be included if any death or injury is indicated. Controls the history-text for scars and death. 
 >
->Format:
->
->```
->{text_type}: "custom history message"
+>[History Writing Guidelines](reference/index.md#writing-histories)
+> 
 >```
 
 | text_type    | "custom history message"                            |
 |--------------|-----------------------------------------------------|
-| "reg_death"  | Death history text for non-leaders. Whole sentence. |
-| "lead_death" | Death history text for leaders. Sentence fragment.  |
+| "death"      | Death history text. Whole sentence. |
 | "scar"       | Scar history. Whole sentence.                       |
 
 >
@@ -824,7 +820,8 @@ What each parameter does, and what the options are for outcomes.
 | "old_name"                                  | Ensure the cat keeps their old (maybe loner or kittypet) name. Doesn't work for kittens or litters.                                                                                                                                                                                                                                                                 |
 | "kittypet"                                  | Gives the cat a kitty-pet type backstory. If "meeting" is also included, this tag will make the cat an kittypet outsider                                                                                                                                                                                                                                            |
 | "loner"                                     | Gives the cat a loner type backstory. If "meeting" is also included, this tag will make the cat an loner outsider                                                                                                                                                                                                                                                   |
-| "clancat"                                   | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
+| "clancat"                                   | Gives the cat a clancat type backstory. If "meeting" is also included, this tag will make an Other Clancat.                                                                                                                                                                                                                                                         |
+| "former clancat"                            | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
 | "meeting"                                   | Make the cat an outsider (the patrol just met them, but they didn't join). That cat will never take a new clan-like name.                                                                                                                                                                                                                                           |
 | "litter"                                    | Turns a single cat generation into a litter of kittens or newborns. Make sure to have a parent for them!                                                                                                                                                                                                                                                            |
 | "status:{some_status}"                      | Cats will join with this status. Include "medicine cat", "apprentice", "mediator", "kitten", "newborn", "medicine cat apprentice", etc, but not leader or deputy. Default for not-litters is warrior. Be very careful specifying both age and status-  there is no extra check to ensure they make sense together.                                                  |

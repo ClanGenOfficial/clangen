@@ -849,17 +849,10 @@
                         ]
                     }
                 ],
-                "history": [
-                    {
-                        "reg_death": "m_c succumbed to a broken bone after falling out of a tree."
+                "history_text": {
+                    "death": "m_c succumbed to a broken bone after falling out of a tree.",
+                    "scar": "m_c carries a scar after falling out of a tree and breaking a bone."
                     },
-                    {
-                        "lead_death": "fell out of a tree and died of a broken bone"
-                    },
-                    {
-                        "scar": "m_c carries a scar after falling out of a tree and breaking a bone."
-                    }
-                ],
                 "relationships": [
                     {
                         "cats_to": [
@@ -871,7 +864,7 @@
                         "mutual": false,
                         "values": ["comfort"],
                         "amount": -5,
-                        "log": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."
+                        "log": {"cats_from": "from_cat and to_cat avoided each other after a disastrous squirrel hunting patrol."}
                     }
                 ],
                 "prey": [

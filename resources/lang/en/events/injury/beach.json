@@ -51,8 +51,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died from water-inhalation after nearly drowning.",
-                "lead_death": "died from water-inhalation after nearly drowning"
+                "death": "m_c died from water-inhalation after nearly drowning."
             }
         ],
         "relationships": [
@@ -65,12 +64,13 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat saved from_cat from drowning."
+                }
             }
         ]
     },
@@ -220,7 +220,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died after swimming through freezing water when dared by r_c."
+                "death": "m_c died after swimming through freezing water when dared by r_c."
             }
         ],
         "relationships": [
@@ -235,7 +235,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat dared to_cat to swim in freezing water alone, and to_cat actually did."
+                }
             }
         ]
     },
@@ -284,7 +287,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died of dehydration after drinking salt water."
+                "death": "m_c died of dehydration after drinking salt water."
             }
         ],
         "relationships": [
@@ -296,11 +299,12 @@
                     "m_c"
                 ],
                 "values": [
-                    "trust",
-                    "respect",
-                    "like"
+                    "respect"
                 ],
-                "amount": -5
+                "amount": -10,
+                "log": {
+                    "cats_from": "to_cat ignored from_cat's warnings about salt water and became dehydrated."
+                }
             }
         ]
     },
@@ -350,7 +354,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred as a kit, when a seagull tried to carry {PRONOUN/m_c/object} off.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
             }
         ],
         "relationships": [
@@ -362,22 +366,13 @@
                     "r_c"
                 ],
                 "values": [
-                    "comfort",
+                    "trust",
                     "respect"
                 ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": 5
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat saved from_cat's life when a seagull tried to carry {PRONOUN/from_cat/object} off."
+                }
             }
         ]
     },
@@ -427,7 +422,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred as a kit when a pelican tried to carry {PRONOUN/m_c/object} off.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a pelican tried to carry {PRONOUN/m_c/object} off."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a pelican tried to carry {PRONOUN/m_c/object} off."
             }
         ],
         "relationships": [
@@ -439,22 +434,13 @@
                     "r_c"
                 ],
                 "values": [
-                    "comfort",
+                    "trust",
                     "respect"
                 ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "like"
-                ],
-                "amount": 5
+                "amount": 30,
+                "log": {
+                    "cats_from": "to_cat saved from_cat's life when a pelican tried to carry {PRONOUN/from_cat/object} off."
+                }
             }
         ]
     },
@@ -471,7 +457,7 @@
             "clan:warrior"
         ],
         "frequency": 2,
-        "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} make it far, however, before {PRONOUN/m_c/poss} meager swimming skills fail {PRONOUN/m_c/object} and {PRONOUN/m_c/subject} nearly {VERB/m_c/drown/drowns} before an adult spots {PRONOUN/m_c/object} and comes to the rescue.",
+        "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. m_c nearly drowns and needs to be rescued by a warrior.",
         "m_c": {
             "status": [
                 "kitten"
@@ -509,7 +495,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died of water-inhalation, after trying to swim out of camp."
+                "death": "m_c died of water-inhalation, after trying to swim out of camp."
             }
         ],
         "relationships": [
@@ -523,7 +509,25 @@
                 "values": [
                     "respect"
                 ],
-                "amount": -5
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat dared to_cat to swim out of camp and was impressed when {PRONOUN/to_cat/subject} actually tried."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "trust", "comfort"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "to_cat dared from_cat to swim out of camp, and from_cat almost drowned."
+                }
             }
         ]
     },
@@ -540,7 +544,7 @@
             "clan:warrior"
         ],
         "frequency": 2,
-        "event_text": "r_c dares m_c to try and swim out of camp. m_c can't possibly refuse the challenge, but the water is freezing when {PRONOUN/m_c/subject} {VERB/m_c/jump/jumps} in. Though an adult quickly notices and scoops {PRONOUN/m_c/object} out, m_c is still shivering violently from the cold.",
+        "event_text": "r_c dares m_c to try and swim out of camp and m_c can't possibly refuse the challenge. m_c nearly drowns in the freezing and needs to be rescued by a warrior, still shaking violently.",
         "m_c": {
             "status": [
                 "kitten"
@@ -578,7 +582,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died after swimming through freezing water when dared by r_c."
+                "death": "m_c died after swimming through freezing water when dared by r_c."
             }
         ],
         "relationships": [
@@ -592,7 +596,25 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat dared to_cat to swim out of camp and was impressed when {PRONOUN/to_cat/subject} actually tried."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "trust", "comfort"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "to_cat dared from_cat to swim out of camp, and from_cat almost drowned."
+                }
             }
         ]
     },
@@ -673,7 +695,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still sporting some new bruises.",
+        "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still bruised.",
         "m_c": {
             "status": [
                 "kitten"
@@ -741,7 +763,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred as a kit when a snake bit {PRONOUN/m_c/object}.",
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -808,7 +830,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died from water-inhalation after being dragged out to sea."
+                "death": "m_c died from water-inhalation after being dragged out to sea."
             }
         ]
     },
@@ -867,9 +889,20 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died from {PRONOUN/m_c/poss} injuries after saving a drowning enemy warrior.",
-                "lead_death": "died from {PRONOUN/m_c/poss} injuries after saving a drowning enemy warrior",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after saving a drowning enemy warrior.",
                 "scar": "m_c got a scar from a battle with a warring Clan"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress", "low_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "from_cat heard that to_cat saved an enemy warrior during a fight."
+                }
             }
         ]
     }

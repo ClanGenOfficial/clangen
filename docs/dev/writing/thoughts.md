@@ -118,29 +118,29 @@ Constrains the thought to only occur if m_c and r_c fulfill the tags requirement
 
 
 BACKSTORY_CONSTRAINT:
-Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to resources, dicts, then the backstories.json (thank you Tiri and Ryos!)
+Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to resources, dicts, then the backstories.json (thank you Tiri and Ryos!)  You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Backstory Tag List](reference/tag-lists.md#backstories)
 
 STATUS_CONSTRAINT:
-Constrains the thought to only happen if m_c or r_c are in a certain role. 
+Constrains the thought to only happen if m_c or r_c are in a certain role. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
 > 
 > You can also use the tag "any" to allow the thought to occur for all roles except "newborns", who shouldn't get any general thoughts, just the ones placed in their specific JSON.
 
 AGE_CONSTRAINT:
-Constrains the thought to only occur if m_c or r_c are within a certain age group.
+Constrains the thought to only occur if m_c or r_c are within a certain age group. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Age Tag List](reference/tag-lists.md#__tabbed_2_1)
 
 TRAIT_CONSTRAINT:
-Constrains the thought to only occur if m_c or r_c has a specific trait.
+Constrains the thought to only occur if m_c or r_c has a specific trait. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Trait Tag List](reference/tag-lists.md#__tabbed_3_2)
 
 **SKILL_CONSTRAINT:**
-Constrains the thought to occur only if m_c or r_c has a specific skill.
+Constrains the thought to occur only if m_c or r_c has a specific skill. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Skill Tag List](reference/tag-lists.md#__tabbed_3_1)
 
@@ -195,14 +195,14 @@ _Found in the alive folder > deputy.json_
 ## Common Errors
 ### In-Game Text
 
-If, while editing or adding new thoughts to any of the jsons, you boot up the game and notice all of the cats share the same bug message ("Prrp! You shouldn't see this! Report as a bug."), then you've either left an extra comma somewhere within the additions or alterations (also referred to as a trailing comma), removed a comma that was needed, or used a non-ASCII character.
+If, while editing or adding new thoughts to any of the jsons, you boot up the game and notice all the cats share the same bug message ("Prrp! You shouldn't see this! Report as a bug."), then you've either left an extra comma somewhere within the additions or alterations (also referred to as a trailing comma), removed a comma that was needed, or used a non-ASCII character.
 
 ![Screenshot 2024-04-17 082047](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/053f58e4-7b2b-4fb7-b2dd-94a2a19cda28)
 
 ### Thought not occurring at all
-If, while editing or adding thoughts, you notice the thought hasn't appeared once while testing it in game, it could either be really terrible luck or you mis-spelled a constraint tag. If a thought is more 'complex' (IE has more constraints it must meet to appear), then there is less of a chance it will appear. However, if you have a 'simple' thought and it hasn't appeared once, then it could indicate there is a tag misspelling.
+If, while editing or adding thoughts, you notice the thought hasn't appeared once while testing it in game, it could either be really terrible luck or you misspelled a constraint tag. If a thought is more 'complex' (IE has more constraints it must meet to appear), then there is less of a chance it will appear. However, if you have a 'simple' thought, and it hasn't appeared once, then it could indicate there is a tag misspelling.
 
 ![image](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/fe6cafee-5204-4c6a-8091-0167a78239b0)
-In a quick 10 moon study with a "simple" thought (this one had one constraints), the thought appeared for most moons. However, when I did the same clan within the same amount of cats and with the same thought just having a single misspelled tag, it didn't occur once.
+In a quick 10 moon study with a "simple" thought (this one had one constraint), the thought appeared for most moons. However, when I did the same clan within the same amount of cats and with the same thought just having a single misspelled tag, it didn't occur once.
 
-If you think there is an error with the thought not occuring, you best bet is to thoroughly check all the tags over, as even just a simple misspelling (IE any to ny) can cause the thought to glitch out.
+If you think there is an error with the thought not occurring, you best bet is to thoroughly check all the tags over, as even just a simple misspelling (IE any to ny) can cause the thought to glitch out.

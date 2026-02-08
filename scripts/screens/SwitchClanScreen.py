@@ -10,16 +10,12 @@ import scripts.game_structure.screen_settings
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.game_structure.windows import DeleteCheck
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    ui_scale_dimensions,
-    ui_scale_value,
-    ui_scale_offset,
-)
+from scripts.ui.windows.delete_check import CheckDeletionWindow
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_value
 from .Screens import Screens
 from .enums import GameScreen
+from .screens_core.screens_core import rebuild_top_menu_buttons, rebuild_core
 from ..game_structure.game.save_load import read_clans
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.screen_settings import MANAGER
@@ -52,7 +48,7 @@ class SwitchClanScreen(Screens):
             else:
                 for page in self.delete_buttons:
                     if event.ui_element in page:
-                        DeleteCheck(
+                        CheckDeletionWindow(
                             self.change_screen,
                             self.clan_name[self.page][page.index(event.ui_element)],
                         )
@@ -66,6 +62,8 @@ class SwitchClanScreen(Screens):
                             self.clan_name[self.page][page.index(event.ui_element)],
                             False,
                         )
+                        # rebuild to update menu scheme differences between game modes
+                        rebuild_core()
 
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:

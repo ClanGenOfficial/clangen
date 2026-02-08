@@ -101,8 +101,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
                 "relationships": [
                     {
@@ -140,8 +139,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
                 "relationships": [
                     {
@@ -216,8 +214,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                 },
                 "frequency": 3
             }
@@ -345,8 +342,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue attack"
+                    "death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                 },
                 "frequency": 4
             },
@@ -368,8 +364,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue attack"
+                    "death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                 },
                 "frequency": 4
             }
@@ -479,8 +474,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             },
@@ -502,8 +496,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -599,8 +592,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             },
@@ -622,8 +614,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -708,8 +699,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             },
@@ -731,8 +721,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
-                    "lead_death": "died from an injury inflicted by an invading rogue"
+                    "death": "m_c died from an injury inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -931,8 +920,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
-                    "lead_death": "died from an injury inflicted by an invading rogue"
+                    "death": "m_c died from an injury inflicted by an invading rogue."
                 },
                 "relationships": [
                     {
@@ -1147,8 +1135,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
-                    "lead_death": "died from an injury inflicted by an invading rogue"
+                    "death": "m_c died from an injury inflicted by an invading rogue."
                 },
                 "relationships": [
                     {
@@ -1259,8 +1246,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
-                    "lead_death": "died from an injury inflicted by an invading rogue"
+                    "death": "m_c died from an injury inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -2195,6 +2181,324 @@
                     }
                 ],
                 "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_bord_redvixen1",
+        "biome": ["plains"],
+        "season": ["newleaf", "greenleaf"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [2, 6],
+            "apprentice": [-1, 2]
+        },
+        "frequency": 4,
+        "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
+        "decline_text": "The patrol decides not to pursue the fox.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive a vixen out of their territory."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove a vixen out of their territory."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "The patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
+                "exp": 30,
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive off a vixen and kill her cubs."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "s_c displays incredible skill, driving the mother red vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_skill": ["FIGHTER,3"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was extremely impressed by to_cat's skill in battle against a vixen."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "righteous",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat's bravery in a fight against a vixen greatly impressed from_cat."
+                        }
+                    }
+                ]
+            },
+            {
+                "min_max_status": {
+                    "normal adult": [4, 6]
+                },
+                "text": "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away a red fox vixen, seeking out her den and killing her young cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've posed to c_n in the seasons to come.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive a vixen out of their territory."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol drove a vixen out of their territory."
+                        }
+                    }
+                ]
+            },
+            {
+                "min_max_status": {
+                    "normal adult": [4, 6]
+                },
+                "text": "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, finding and killing a mother red vixen and ending the threat to the Clan that she and her cubs pose.",
+                "exp": 30,
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to kill a vixen and her cubs."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol killed a vixen and her cubs."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "min_max_status": {
+                    "normal adult": [2, 3]
+                },
+                "text": "The mother red fox is vicious and determined, and the small patrol is beaten back. But these plains belong to c_n, and they haven't given up. They may have lost this battle, but c_n will win this war.",
+                "exp": 0,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to drive off a vixen together."
+                        }
+                    }
+                ]
+            },
+            {
+                "min_max_status": {
+                    "normal adult": [4, 6]
+                },
+                "text": "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
+                "exp": 0,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c", "patrol", "r_c"],
+                        "cats_from": ["clan", "clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+                "exp": 0,
+                "frequency": 2,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c fell in battle with a fox."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat was unable to save r_c in a fight with a red vixen."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "This is intended to balance the negative value associated with this cat's death. Report this text as a bug if you see it."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "The mother red fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
+                "exp": 0,
+                "frequency": 2,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c fell in battle with a fox."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat were unable to drive off a vixen together."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight.",
+                "exp": 0,
+                "frequency": 2,
+                "stat_skill": ["FIGHTER,1"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["big_bite_injury"],
+                        "scars": ["NECKBITE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c fell in battle with a fox."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                        }
+                    }
+                ]
             }
         ]
     }

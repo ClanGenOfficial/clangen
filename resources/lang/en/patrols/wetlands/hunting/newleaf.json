@@ -21,7 +21,7 @@
         "tags": [],
         "success_outcomes": [
             {
-                "text": "p_l carefully traipses along the water's edge, making sure to avoid wading in too far whenever {PRONOUN/p_l/subject} <i>{VERB/p_l/do/does}</i> enter the water. And {PRONOUN/p_l/poss} tenacity pays off! It's not the haul to end all hauls, but it'll surely be enough to fill a hungry belly or two.",
+                "text": "p_l slinks along the water's edge, avoiding wading in too far whenever {PRONOUN/p_l/subject} <i>{VERB/p_l/do/does}</i> enter the water. And {PRONOUN/p_l/poss} tenacity pays off! It's not the haul to end all hauls, but it'll surely be enough to fill a hungry belly or two.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -29,10 +29,22 @@
                 "frequency": 4
             },
             {
-                "text": "p_l carefully traipses along the water's edge, making sure to avoid wading in too far whenever {PRONOUN/p_l/subject} <i>{VERB/p_l/do/does}</i> enter the water. And p_l's tenacity pays off with a catch so big that {PRONOUN/p_l/subject} almost can't haul it back to camp!",
+                "text": "p_l slinks along the water's edge, avoiding wading in too far whenever {PRONOUN/p_l/subject} <i>{VERB/p_l/do/does}</i> enter the water. And p_l's tenacity pays off with a catch so big that {PRONOUN/p_l/subject} almost can't haul it back to camp!",
                 "exp": 20,
                 "prey": [
                     "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat bring back a huge haul of prey from a solo-hunt."
+                        }
+                    }
                 ],
                 "frequency": 1
             },
@@ -45,6 +57,18 @@
                 "prey": [
                     "large"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect"],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat bring back a huge haul of prey from a solo-hunt."
+                        }
+                    }
+                ],
                 "frequency": 4
             }
         ],
@@ -55,7 +79,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l eventually decides to continue on and... it doesn't go well. By the time {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to cut {PRONOUN/p_l/poss} losses and head back to camp, p_l's tired, cranky, and soaked to the bone with absolutely nothing to show for it. Even worse, {PRONOUN/p_l/subject} fell in earlier and now {PRONOUN/p_l/subject} can't stop hacking up water no matter what {PRONOUN/p_l/subject} {VERB/p_l/do/does}.",
+                "text": "p_l eventually decides to continue on and... it doesn't go well. By the time {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to cut {PRONOUN/p_l/poss} losses and head back to camp, p_l's tired, cranky, and soaked to the bone with absolutely nothing to show for it. Even worse, {PRONOUN/p_l/subject} fell in earlier and now {PRONOUN/p_l/subject} can't stop hacking up water.",
                 "exp": 0,
                 "injury": [
                     {
@@ -71,7 +95,7 @@
                 "frequency": 1
             },
             {
-                "text": "<i>Pfft,</i> what's a little extra water to a cat like p_l? Nothing, that's what! With a boastful swagger, p_l continues on {PRONOUN/p_l/poss} way... only to slip on a patch of mud and fall into a (thankfully) shallow part of the water. Thank StarClan nobody saw that.",
+                "text": "<i>Pfft,</i> what's a little extra water to a cat like p_l? Nothing, that's what! p_l swaggers on {PRONOUN/p_l/poss} way... only to slip on a patch of mud and fall into a (thankfully) shallow part of the water. Thank StarClan nobody saw that.",
                 "exp": 0,
                 "stat_trait": [
                     "arrogant",
@@ -81,7 +105,7 @@
                 "frequency": 4
             },
             {
-                "text": "<i>Pfft,</i> what's a little extra water to a cat like p_l? Nothing, that's what! With a boastful swagger, p_l continues on {PRONOUN/p_l/poss} way... only to slip on a patch of mud and fall into the water. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} eventually able to pull {PRONOUN/p_l/self} out of the water, but not without inhaling quite a bit.",
+                "text": "<i>Pfft,</i> what's a little extra water to a cat like p_l? Nothing, that's what! p_l swaggers on {PRONOUN/p_l/poss} way... only to slip on a patch of mud and fall into the water. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} eventually able to pull {PRONOUN/p_l/self} out of the water, but not without inhaling quite a bit.",
                 "exp": 0,
                 "stat_trait": [
                     "arrogant",

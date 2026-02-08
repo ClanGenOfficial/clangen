@@ -140,6 +140,9 @@
         "outside_alone": [
             "Rumors reach the Clan that m_c gave birth to a {insert}."
         ],
+        "outside_lost": [
+            "Far from the Clan, m_c gave birth to a {insert}."
+        ],
         "outside_in_clan": [
             "r_c heard a rumor that m_c had a litter.",
             "r_c thinks that m_c should have had {PRONOUN/m_c/poss} litter by now."
