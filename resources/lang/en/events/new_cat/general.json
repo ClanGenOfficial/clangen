@@ -1176,11 +1176,29 @@
         },
         "new_cat": [
             [
+                "can_birth",
+                "age:has_kits",
+                "clancat",
+                "meeting"
+            ],
+            [
                 "new_name",
                 "backstory:stolenkit1",
                 "adoptive:m_c",
                 "age:newborn"
             ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust", "like"],
+                "amount": -60,
+                "log": {
+                    "cats_from": "to_cat stole from_cat's kits, and from_cat will do anything to get them back."
+                }
+            }
         ],
         "other_clan": {
             "current_rep": ["any"],
