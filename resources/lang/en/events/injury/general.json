@@ -1118,11 +1118,7 @@
         "event_text": "On a border patrol near the o_c_n border, m_c could no longer take o_c_n's jeers and smirks. {PRONOUN/m_c/subject/CAP} lashed out at the first jeering cat {PRONOUN/m_c/subject} saw, although the hotheaded move wasn't smart as m_c couldn't escape the skirmish without injury.",
         "m_c": {
             "age": [
-                "adolescent",
-                "adult",
-                "young adult",
-                "senior adult",
-                "senior"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -1201,10 +1197,7 @@
         "event_text": "While o_c_n attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery. However, it didn't end with m_c unscathed.",
         "m_c": {
             "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -1334,15 +1327,7 @@
         },
         "r_c": {
             "status": [
-                "apprentice",
-                "mediator apprentice",
-                "medicine cat apprentice",
-                "warrior",
-                "mediator",
-                "medicine cat",
-                "deputy",
-                "leader",
-                "elder"
+                "-kitten"
             ]
         },
         "injury": [
@@ -1664,11 +1649,7 @@
         "event_text": "m_c had a bad fall while taking a walk through the territory and comes back to camp quite sore.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -1699,11 +1680,7 @@
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -2131,11 +2108,7 @@
         },
         "r_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -2473,8 +2446,8 @@
                 "deputy",
                 "leader"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ],
             "trait": [
                 "adventurous",
@@ -2526,8 +2499,8 @@
                 "deputy",
                 "leader"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ],
             "trait": [
                 "compassionate",
@@ -2613,8 +2586,8 @@
                 "deputy",
                 "leader"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ],
             "trait": [
                 "compassionate",
@@ -2706,8 +2679,8 @@
                 "warrior",
                 "deputy"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ],
             "trait": [
                 "compassionate",
@@ -2821,8 +2794,8 @@
                 "deputy",
                 "leader"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ],
             "trait": [
                 "adventurous",
@@ -2899,8 +2872,8 @@
                 "deputy",
                 "leader"
             ],
-            "not_skill": [
-                "FIGHTER,3"
+            "skill": [
+                "-FIGHTER,3"
             ],
             "trait": [
                 "adventurous",
@@ -2952,8 +2925,8 @@
                 "deputy",
                 "leader"
             ],
-            "not_skill": [
-                "FIGHTER,3"
+            "skill": [
+                "-FIGHTER,3"
             ],
             "trait": [
                 "compassionate",
@@ -3042,8 +3015,8 @@
                 "deputy",
                 "leader"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ],
             "trait": [
                 "adventurous",
@@ -3095,8 +3068,8 @@
                 "deputy",
                 "leader"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ],
             "trait": [
                 "compassionate",
@@ -3177,8 +3150,8 @@
                 "apprentice",
                 "warrior"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ]
         },
         "r_c": {
@@ -3252,8 +3225,8 @@
                 "apprentice",
                 "warrior"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ]
         },
         "r_c": {
@@ -3344,8 +3317,8 @@
             "status": [
                 "any"
             ],
-            "not_skill": [
-                "FIGHTER,3"
+            "skill": [
+                "-FIGHTER,3"
             ]
         },
         "r_c": {
@@ -3432,8 +3405,8 @@
             "status": [
                 "any"
             ],
-            "not_skill": [
-                "FIGHTER,3"
+            "skill": [
+                "-FIGHTER,3"
             ]
         },
         "r_c": {
@@ -3512,8 +3485,8 @@
                 "apprentice",
                 "warrior"
             ],
-            "not_skill": [
-                "FIGHTER,3"
+            "skill": [
+                "-FIGHTER,3"
             ]
         },
         "r_c": {
@@ -4919,11 +4892,7 @@
         },
         "r_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5008,11 +4977,8 @@
         },
         "r_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten",
+                "-adolescent"
             ],
             "status": [
                 "any"
@@ -5089,11 +5055,8 @@
         },
         "r_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten",
+                "-adolescent"
             ],
             "status": [
                 "any"
@@ -5186,11 +5149,8 @@
         },
         "r_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten",
+                "-adolescent"
             ],
             "status": [
                 "any"
@@ -5265,11 +5225,8 @@
         },
         "r_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten",
+                "-adolescent"
             ],
             "status": [
                 "any"
@@ -5335,11 +5292,7 @@
         "event_text": "m_c stepped on some sharp stones while walking along the shoreline.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5368,11 +5321,7 @@
         "event_text": "m_c was bitten by a snake, and miraculously survived!",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5413,11 +5362,7 @@
         "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, gaining a few bruises.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5446,11 +5391,7 @@
         "event_text": "m_c misstepped and slipped from a rock, dislocating a joint.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5479,11 +5420,7 @@
         "event_text": "m_c slipped on some rocks and dislocated {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5512,11 +5449,7 @@
         "event_text": "m_c slipped on some rocks and twisted {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5545,11 +5478,7 @@
         "event_text": "m_c leapt from a rock, but {PRONOUN/m_c/subject} didn't land quite right.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5578,11 +5507,7 @@
         "event_text": "m_c misstepped and slipped from a rock, spraining {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5611,11 +5536,7 @@
         "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, spraining {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5644,11 +5565,7 @@
         "event_text": "m_c got {PRONOUN/m_c/poss} paw stuck in a Twoleg trap, but luckily escaped with only a sprain.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5735,11 +5652,7 @@
         "event_text": "m_c helped to strengthen the camp walls but scraped up {PRONOUN/m_c/poss} paw pads in the process.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5779,11 +5692,7 @@
         "event_text": "m_c overexerted {PRONOUN/m_c/self} and is feeling extremely sore.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5812,11 +5721,7 @@
         "event_text": "m_c was out on a walk alone when {PRONOUN/m_c/subject} heard a dog approaching! {PRONOUN/m_c/subject/CAP} crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5859,11 +5764,7 @@
         "event_text": "m_c was out on a walk alone when {PRONOUN/m_c/subject} heard a fox approaching! {PRONOUN/m_c/subject/CAP} crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5906,11 +5807,7 @@
         "event_text": "m_c fought a rogue and, while {PRONOUN/m_c/subject} drove the trespasser away, {PRONOUN/m_c/subject} needed to be rushed to the medicine cat den afterwards.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -5976,11 +5873,7 @@
         "event_text": "m_c got {PRONOUN/m_c/poss} paw stuck in a Twoleg trap, and while {PRONOUN/m_c/subject} eventually escaped, {PRONOUN/m_c/poss} leg is heavily injured.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -6021,18 +5914,14 @@
         "event_text": "m_c was maimed by r_c for questioning {PRONOUN/r_c/poss} leadership.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
             ],
-            "not_trait": [
-                "loyal",
-                "ambitious"
+            "trait": [
+                "-loyal",
+                "-ambitious"
             ]
         },
         "r_c": {
@@ -6107,17 +5996,13 @@
         "event_text": "m_c's tail was badly injured by a dog.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ]
         },
         "injury": [
@@ -6161,8 +6046,8 @@
                 "adult",
                 "senior adult"
             ],
-            "not_skill": [
-                "FIGHTER,2"
+            "skill": [
+                "-FIGHTER,2"
             ]
         },
         "injury": [
@@ -6200,18 +6085,14 @@
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "m_c": {
             "status": [
-                "apprentice",
-                "warrior",
-                "mediator",
-                "mediator apprentice",
-                "medicine cat",
-                "medicine cat apprentice"
+                "-kitten",
+                "-leader"
             ],
-            "not_trait": [
-                "loyal",
-                "ambitious",
-                "faithful",
-                "careful"
+            "trait": [
+                "-loyal",
+                "-ambitious",
+                "-faithful",
+                "-careful"
             ]
         },
         "r_c": {
@@ -6284,15 +6165,11 @@
         "event_text": "m_c was hurt by r_c for speaking out against {PRONOUN/r_c/object}.",
         "m_c": {
             "status": [
-                "apprentice",
-                "warrior",
-                "mediator",
-                "mediator apprentice",
-                "medicine cat",
-                "medicine cat apprentice"
+                "-kitten",
+                "-leader"
             ],
-            "not_trait": [
-                "loyal"
+            "trait": [
+                "-loyal"
             ]
         },
         "r_c": {
@@ -6368,7 +6245,7 @@
                 "any"
             ],
             "status": [
-                "any"
+                "-leader"
             ]
         },
         "r_c": {
@@ -6444,11 +6321,7 @@
         "event_text": "m_c was helping reinforce the camp walls when {PRONOUN/m_c/subject} got a thorn stuck in {PRONOUN/m_c/poss} paw.",
         "m_c": {
             "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
+                "-kitten"
             ],
             "status": [
                 "any"
@@ -6551,12 +6424,7 @@
                 "any"
             ],
             "status": [
-                "apprentice",
-                "deputy",
-                "leader",
-                "warrior",
-                "medicine cat",
-                "medicine cat apprentice"
+                "-kitten"
             ]
         },
         "injury": [
@@ -6604,12 +6472,8 @@
                 "any"
             ],
             "status": [
-                "apprentice",
-                "warrior",
-                "leader",
-                "deputy",
-                "medicine cat",
-                "medicine cat apprentice"
+                "-kitten",
+                "-elder"
             ]
         },
         "injury": [
@@ -6654,12 +6518,8 @@
         "event_text": "m_c was attacked by a group of rats! {PRONOUN/m_c/subject/CAP} managed to fight them off, but didn't escape unscathed.",
         "m_c": {
             "status": [
-                "apprentice",
-                "warrior",
-                "mediator",
-                "mediator apprentice",
-                "medicine cat",
-                "medicine cat apprentice"
+                "-kitten",
+                "-elder"
             ]
         },
         "injury": [
@@ -6842,15 +6702,13 @@
                 "any"
             ],
             "status": [
-                "apprentice",
-                "warrior",
-                "medicine cat",
-                "medicine cat apprentice",
-                "leader",
-                "deputy"
+                "-kitten",
+                "-elder",
+                "-mediator",
+                "-mediator apprentice"
             ],
-            "not_trait": [
-                "careful"
+            "trait": [
+                "-careful"
             ]
         },
         "injury": [
@@ -7391,12 +7249,8 @@
         "event_text": "m_c acts without thinking, saving the life of a o_c_n warrior by chasing off the predator attempting to make them their lunch.",
         "m_c": {
             "status": [
-                "warrior",
-                "deputy",
-                "leader",
-                "medicine cat",
-                "medicine cat apprentice",
-                "apprentice"
+                "-kitten",
+                "-elder"
             ],
             "trait": [
                 "fierce",

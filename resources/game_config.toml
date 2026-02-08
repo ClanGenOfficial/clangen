@@ -161,6 +161,8 @@ dev_tools = false
   # number of welcoming events to add when a new cat joins
   cat_amount_welcoming = 3
 
+  # this is the amount to divide a relative's relation toward the parent when deciding on a relative's initial relationship toward a kit
+  ext_relative_modifier = 4
   # relationship buffs represent "default" relationship values that are then lightly randomized
   # in order to create initial relationship values for cats
 

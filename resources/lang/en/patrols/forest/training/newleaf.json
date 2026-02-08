@@ -25,7 +25,7 @@
         "chance_of_success": 60,
         "relationship_constraint": [
             "fancies",
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
