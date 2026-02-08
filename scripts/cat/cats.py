@@ -3149,7 +3149,9 @@ class Cat:
             elif sort_type == "name":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.name.prefix))
             elif sort_type == "reverse_name":
-                bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.name.prefix))
+                bisect.insort(
+                    Cat.all_cats_list, c, key=lambda x: -1 * int(x.name.prefix)
+                )
         except (TypeError, NameError):
             # If you are using python 3.8, key is not a supported parameter into insort. Therefore, we'll need to
             # do the slower option of adding the cat, then resorting
