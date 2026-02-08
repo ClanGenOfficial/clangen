@@ -6936,7 +6936,7 @@
                 "cats_from": ["r_c"],
                 "cats_to": ["m_c"],
                 "values": ["like", "comfort"],
-                "amount": 20,
+                "amount": 10,
                 "mutual": false,
                 "log": {
                     "cats_from": "from_cat appreciated that to_cat took the time to sit with {PRONOUN/from_cat/object} and listen to {PRONOUN/to_cat/poss} experiences."
