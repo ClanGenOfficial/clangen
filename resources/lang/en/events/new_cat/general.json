@@ -1138,7 +1138,8 @@
                 "litter",
                 "new_name",
                 "backstory:stolenkit1",
-                "age:newborn"
+                "age:newborn",
+                "parent:0"
             ]
         ],
         "relationships": [
@@ -1185,7 +1186,8 @@
                 "new_name",
                 "backstory:stolenkit1",
                 "adoptive:m_c",
-                "age:newborn"
+                "age:newborn",
+                "parent:0"
             ]
         ],
         "relationships": [
