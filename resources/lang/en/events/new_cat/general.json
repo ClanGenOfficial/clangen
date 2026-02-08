@@ -956,7 +956,7 @@
                 }
             },
             {
-                "cats_from": ["high_lawful"],
+                "cats_from": ["clan", "high_lawful"],
                 "cats_to": ["n_c:0"],
                 "values": ["trust"],
                 "amount": -10,
@@ -1002,7 +1002,7 @@
                 }
             },
             {
-                "cats_from": ["high_lawful"],
+                "cats_from": ["clan", "high_lawful"],
                 "cats_to": ["n_c:0"],
                 "values": ["trust"],
                 "amount": -15,
@@ -1048,7 +1048,7 @@
                 }
             },
             {
-                "cats_from": ["high_lawful"],
+                "cats_from": ["clan", "high_lawful"],
                 "cats_to": ["n_c:0"],
                 "values": ["trust"],
                 "amount": -15,
@@ -1096,7 +1096,7 @@
                 }
             },
             {
-                "cats_from": ["high_social"],
+                "cats_from": ["clan", "high_social"],
                 "cats_to": ["n_c:0"],
                 "values": ["like", "respect"],
                 "amount": 10,
@@ -1130,7 +1130,7 @@
             [
                 "can_birth",
                 "age:has_kits",
-                "rogue",
+                "former clancat",
                 "meeting",
                 "new_name"
             ],
@@ -1226,7 +1226,7 @@
         ],
         "relationships": [
             {
-                "cats_from": ["high_stable"],
+                "cats_from": ["clan", "high_stable"],
                 "cats_to": ["n_c:0"],
                 "mutual": false,
                 "values": ["trust", "like"],
@@ -1283,7 +1283,7 @@
         ],
         "relationships": [
             {
-                "cats_from": ["high_stable"],
+                "cats_from": ["clan", "high_stable"],
                 "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
                 "mutual": false,
                 "values": ["trust", "like"],
@@ -1328,7 +1328,7 @@
         ],
         "relationships": [
             {
-                "cats_from": ["high_stable"],
+                "cats_from": ["clan", "high_stable"],
                 "cats_to": ["n_c:0"],
                 "mutual": false,
                 "values": ["trust", "like"],
@@ -1385,7 +1385,7 @@
         ],
         "relationships": [
             {
-                "cats_from": ["high_stable"],
+                "cats_from": ["clan", "high_stable"],
                 "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
                 "mutual": false,
                 "values": ["trust", "like"],
