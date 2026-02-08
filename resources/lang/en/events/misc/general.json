@@ -9592,7 +9592,7 @@
                 "cats_from": ["m_c"],
                 "cats_to": ["r_c"],
                 "values": ["trust", "like", "comfort", "romance"],
-                "amount": 15,
+                "amount": 10,
                 "log": {
                     "cats_from": "m_c presented r_c with a flower, and r_c has worn it on {PRONOUN/r_c/poss} pelt ever since."
                 }
