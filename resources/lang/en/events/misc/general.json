@@ -6867,7 +6867,7 @@
                 "cats_from": ["r_c"],
                 "cats_to": ["m_c"],
                 "values": ["like", "respect"],
-                "amount": 30,
+                "amount": 20,
                 "mutual": false,
                 "log": {
                     "cats_from": "to_cat's clairvoyance saved from_cat from an ambush."
