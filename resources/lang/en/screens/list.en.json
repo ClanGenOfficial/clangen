@@ -16,5 +16,6 @@
         "filter_rank": "rank",
         "filter_name": "name",
         "filter_reverse_name": "name \u2193"
+        
     }
 }
