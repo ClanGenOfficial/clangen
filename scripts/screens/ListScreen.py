@@ -46,6 +46,8 @@ class ListScreen(Screens):
         "screens.list.filter_id",
         "screens.list.filter_exp",
         "screens.list.filter_death",
+        "screens.list.filter_name",
+        "screens.list.filter_reverse_name",
     )
     living_filter_names = (
         "screens.list.filter_rank",
@@ -53,6 +55,8 @@ class ListScreen(Screens):
         "screens.list.filter_reverse_age",
         "screens.list.filter_id",
         "screens.list.filter_exp",
+        "screens.list.filter_name",
+        "screens.list.filter_reverse_name",
     )
 
     living_group_names = ("general.your_clan", "general.cotc")
