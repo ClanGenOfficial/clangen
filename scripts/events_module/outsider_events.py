@@ -66,7 +66,7 @@ class OutsiderEvents:
                 clanname = i18n.t("general.clan", name=clanname)
                 text = text.replace("o_c_n", clanname)
                 death_history = death_history.replace("o_c_n", clanname)
-            elif not cat.status.is_outsider:
+            elif cat.status.is_outsider:
                 text = random.choice(deaths[cat.status.social.value])
                 death_history = i18n.t(
                     f"events.death.outsider_deaths.history.{cat.status.social.value}"
