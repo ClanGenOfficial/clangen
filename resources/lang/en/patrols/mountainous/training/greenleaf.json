@@ -174,7 +174,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/subject/to_cat} refused to go near an eagle nest."
+                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/to_cat/subject} refused to go near an eagle nest."
                         }
                     }
                 ],
