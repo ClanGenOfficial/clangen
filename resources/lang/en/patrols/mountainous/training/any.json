@@ -32,12 +32,46 @@
             {
                 "text": "app1 listens carefully as p_l explains how to find paw holds and take advantage of the cliff's craggy surface.",
                 "exp": 20,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat learned about rock-climbing from to_cat."
+                        }
+                    }
+                ]
             },
             {
                 "text": "app1 picks up the instruction quickly and is soon able to make {PRONOUN/app1/poss} way up the cliff.",
                 "exp": 20,
-                "frequency": 1
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat learned about rock-climbing from to_cat."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing rock-climbing, from_cat discovered to_cat is a quick study."
+                        }
+                    }
+                ]
             },
             {
                 "text": "By the end of the patrol s_c is hopping nimbly from crack to crag, easily scaling the cliff walls.",
@@ -46,7 +80,29 @@
                 ],
                 "can_have_stat": ["app1"],
                 "exp": 20,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat learned about rock-climbing from to_cat."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing rock-climbing, from_cat discovered to_cat is a quick study."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -60,12 +116,25 @@
                 "exp": 0,
                 "stat_trait": [
                     "troublesome",
+                    "childish",
                     "playful"
                 ],
                 "can_have_stat": [
                     "app"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["app1"],
+                        "values": ["respect", "like"],
+                        "amount": -3,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat's afternoon was ruined by to_cat goofing off during climbing training."
+                        }
+                    }
+                ]
             },
             {
                 "text": "app1 begins making {PRONOUN/app1/poss} way up the cliff, but a loose paw hold gives way as soon as {PRONOUN/app1/subject} {VERB/app1/step/steps} on it! The apprentice tumbles back down the cliff, hurting {PRONOUN/app1/poss} leg in the process.",
@@ -1026,7 +1095,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [ 1, 1 ]
+            "apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "r_c heads out into the mountains alone, but maybe an apprentice shouldn't try to do a solo patrol.",
@@ -1240,14 +1309,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ]
+            "apprentice": [2, 2]
         },
         "frequency": 3,
         "intro_text": "On top of a rocky outlook, watching over the rolling surface of the foothills below, app1 waits for app2, the dark night cloaking the steep mountain. The tip of {PRONOUN/app1/poss} tail keeps twitching in excitement.",
@@ -1412,14 +1474,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                5
-            ],
-            "normal adult": [
-                1,
-                5
-            ]
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
         },
         "frequency": 3,
         "intro_text": "While scrambling down the mountain slope, app1 is suddenly brought to a halt by p_l's tail swung out in front of {PRONOUN/app1/poss} chest. Not a step further - there's a mushroom circle, right in front of {PRONOUN/app1/object}, and no cat should tempt the moss cats unless they truly need their help.",
@@ -1440,39 +1496,15 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a training patrol together in which p_l told a story of the moss cats."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1488,25 +1520,15 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a training patrol together in which p_l told a story of the moss cats."
+                        }
                     },
                     {
                         "cats_to": [
@@ -1515,12 +1537,14 @@
                         "cats_from": [
                             "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "trust",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": -16,
+                        "log": {
+                            "cats_from": "from_cat was frightened by to_cat's story of the moss cats."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -1528,7 +1552,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Scoffing, app1 steps straight into the circle of mushroom - these aren't even poisonous, app1 doesn't know what p_l is on about. But something about this place makes {PRONOUN/app1/poss} pelt prickle and stand on end, for all {PRONOUN/app1/poss} bravado.",
+                "text": "Scoffing, app1 steps straight into the circle of mushrooms - these aren't even poisonous, app1 doesn't know what p_l is on about. But something about this place makes {PRONOUN/app1/poss} pelt prickle and stand on end, for all {PRONOUN/app1/poss} bravado.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -1541,22 +1565,12 @@
                         "mutual": false,
                         "values": [
                             "trust",
-                            "respect"
+                            "like"
                         ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": -10
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wasn't happy that to_cat disregarded {PRONOUN/from_cat/poss} warning about the circle of mushrooms."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1587,9 +1601,12 @@
                         "mutual": false,
                         "values": [
                             "trust",
-                            "respect"
+                            "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wasn't happy that to_cat disregarded {PRONOUN/from_cat/poss} warning about the circle of mushrooms."
+                        }
                     },
                     {
                         "cats_to": [
@@ -1602,7 +1619,10 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat had terrible nightmares after to_cat told a story of the moss cats."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1810,17 +1830,36 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "p_l tested app1 on {PRONOUN/app1/poss} bird-hunting, and app1 was proud to perform well."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l tested app1 on {PRONOUN/app1/poss} bird-hunting and was proud that app1 did well."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1831,17 +1870,36 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "p_l tested app1 on {PRONOUN/app1/poss} bird-hunting, and app1 was proud to perform well."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l tested app1 on {PRONOUN/app1/poss} bird-hunting and was proud that app1 did well."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1850,7 +1908,20 @@
                 "text": "s_c stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although s_c can't quite remember how the story goes...",
                 "exp": 15,
                 "stat_skill": [
-                    "SPEAKER,1"
+                    "SPEAKER,1",
+                    "LORE,1",
+                    "STORY,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c nods as app1 keeps listing idea after idea after idea. Eventually, app1 asks which one was right - but that wasn't the point of the lesson.",
+                "exp": 15,
+                "stat_skill": [
+                    "TEACHER,1"
                 ],
                 "can_have_stat": [
                     "adult"
@@ -1858,17 +1929,36 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat learned a lot about hunting birds while training with to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat a lot about hunting birds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1888,10 +1978,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "like",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat squabbled during a training session when app1 wanted to actually hunt instead of practice stalking."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1911,145 +2004,11 @@
         ],
         "tags": [],
         "patrol_art": "mtn_train_thrush",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz app1 on what the best strategy is for catching it.",
-        "decline_text": "Thinking better of it, the cats try to hunt instead.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "app1 tests the wind. {PRONOUN/app1/subject/CAP} correctly {VERB/app1/identify/identifies} that, because of the wind, {PRONOUN/app1/subject}'d need to approach the thrush from the side. p_l purrs, complimenting {PRONOUN/app1/object} on how much {PRONOUN/app1/subject}{VERB/app1/'ve/'s} learned.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "There's a wooded valley just below where the thrush is foraging - app1 would approach from there!",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c nods as app1 keeps listing idea after idea after idea. Eventually, app1 asks which one was right - but that wasn't the point of the lesson.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
-                ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 rolls {PRONOUN/app1/poss} eyes and asks why {PRONOUN/app1/subject} can't just try catching it. Irritably, p_l replies that {PRONOUN/app1/subject}{VERB/app1/'re/'s} welcome to try, and the bird spots app1 coming immediately.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_train_thrush3",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "mtn_train_thrush",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 5],
+            "normal adult": [1, 4]
         },
         "frequency": 4,
         "intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz the apprentices on what the best strategy is for catching it.",
@@ -2062,17 +2021,46 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat tested from_cat on {PRONOUN/from_cat/poss} bird-hunting, and from_cat was proud to perform well."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat tested to_cat on {PRONOUN/to_cat/poss} bird-hunting and was proud that to_cat did well."
+                        }
+                    },
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat trained together to learn how best to catch birds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2083,17 +2071,46 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat tested from_cat on {PRONOUN/from_cat/poss} bird-hunting, and from_cat was proud to perform well."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat tested to_cat on {PRONOUN/to_cat/poss} bird-hunting and was proud that to_cat did well."
+                        }
+                    },
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat argued about how best to catch a bird while training together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2102,129 +2119,14 @@
                 "text": "s_c stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes...",
                 "exp": 20,
                 "stat_skill": [
-                    "SPEAKER,1"
+                    "SPEAKER,1",
+                    "LORE,1",
+                    "STORY,1"
                 ],
                 "can_have_stat": [
                     "adult"
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
                 "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 rolls {PRONOUN/app1/poss} eyes and asks why {PRONOUN/app1/subject} can't just try catching it. Irritably, p_l replies that {PRONOUN/app1/subject}{VERB/app1/'re/'s} welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_train_thrush4",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "mtn_train_thrush",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz the apprentices on what the best strategy is for catching it.",
-        "decline_text": "Thinking better of it, the cats try to hunt instead.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "app1 tests the wind. {PRONOUN/app1/subject/CAP} correctly {VERB/app1/identify/identifies} that because of the wind {PRONOUN/app1/subject}'d need to approach the thrush from the side, but app2 counters by pointing out a great vantage point to pounce from, if the wind wasn't against them. p_l purrs, complimenting them both on how much they've learned.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "There's a wooded valley just below where the thrush is foraging - app1 would approach from there! app2 argues for approaching from above and pouncing from on high instead. p_l praises them both for solid plans of attack.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
             },
             {
                 "text": "s_c nods as the young apprentices list idea after idea after idea. Eventually, app1 asks which one was right - but that wasn't the point of the lesson.",
@@ -2238,17 +2140,36 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat learned a lot about hunting birds while training with to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat a lot about hunting birds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2261,17 +2182,36 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "like",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat squabbled during a training session when app1 wanted to actually hunt instead of practice stalking."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was peeved that to_cat's hasty pounce ruined {PRONOUN/from_cat/poss} chance to learn about bird-hunting."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2296,7 +2236,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "As p_l hops up on a fallen log to sharpen {PRONOUN/p_l/poss} claws for a training session, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c/object}. While Clanmates will do better training together, r_c just rubs {PRONOUN/p_l/object} the wrong way.",
@@ -2388,14 +2328,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 2,
         "intro_text": "As app1 follows p_l on a training patrol to learn the territory, there's a muffled thump behind {PRONOUN/app1/object}. {PRONOUN/app1/subject/CAP} {VERB/app1/whirl/whirls} around, finding a beady black eye and huge beak far too close to {PRONOUN/app1/object}.",
@@ -2408,17 +2342,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned about kea birds while training with to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2429,26 +2366,29 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned about kea birds while training with to_cat."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "app1 freezes in fear, but s_c comes up next to {PRONOUN/app1/object}, and bats a stone down the slope. The bird shrieks, startlingly loud, and waves its wings around. s_c offers it a branch from a shrub, dangling it like playing with a kit in the nursery, and the kea merrily hops after it. Later, app1 apologizes for being scared, and is shocked when s_c tells them that no, kea are very dangerous. ",
+                "text": "app1 freezes in fear, but s_c comes up next to {PRONOUN/app1/object} and bats a stone down the slope. The bird shrieks, startlingly loud, and waves its wings around. s_c offers it a branch from a shrub, dangling it like playing with a kit in the nursery, and the kea merrily hops after it. Later, app1 apologizes for being scared and is shocked when s_c tells them that no, kea are very dangerous. ",
                 "exp": 15,
                 "stat_skill": [
-                    "SPEAKER,1",
+                    "CLEVER,1",
                     "TEACHER,1"
                 ],
                 "can_have_stat": [
@@ -2457,17 +2397,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat from a kea bird during a training session."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2475,7 +2418,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 screeches, and the kea shrieks back, a huge explosion of noise and feathers. Later, p_l tells app1 they're lucky the bird was entertained rather than scared or offended. Entertained?!?",
+                "text": "app1 screeches, and the kea shrieks back, a huge explosion of noise and feathers. Later, p_l tells app1 they're lucky the bird was entertained rather than scared or offended. Entertained?!",
                 "exp": 0,
                 "frequency": 4
             }
@@ -2499,10 +2442,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                1,
-                1
-            ]
+            "apprentice": [1, 1]
         },
         "frequency": 2,
         "chance_of_success": 50,
@@ -2513,7 +2453,7 @@
         "success_outcomes": [
             {
                 "text": "Well it's not like they can do better, app1 shouts back at the crows! Humph. Birdbrains.",
-                "exp": 0,
+                "exp": 15,
                 "frequency": 4
             }
         ],
@@ -2541,14 +2481,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ],
-            "apprentice": [
-                2,
-                6
-            ]
+            "normal adult": [1, 4],
+            "apprentice": [2, 5]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -2573,9 +2507,12 @@
                         "mutual": true,
                         "values": [
                             "respect",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about Sharptooth's origins."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2583,7 +2520,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Long ago there lived - app1 interrupts p_l, trying to ask where {PRONOUN/app1/subject} might find a Sharptooth to fight it. That is <i>not</i> the lesson here, and p_l stares down {PRONOUN/p_l/poss} muzzle, highly disapproving.",
+                "text": "Long ago there lived - app1 interrupts p_l, trying to ask where {PRONOUN/app1/subject} might find a Sharptooth to fight. That is <i>not</i> the lesson here, and p_l stares down {PRONOUN/p_l/poss} muzzle, highly disapproving.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -2597,8 +2534,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
-                    }
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was not happy with to_cat when {PRONOUN/to_cat/subject} interrupted from_cat's story about Sharptooth."
+                        }                    }
                 ],
                 "frequency": 4
             }
