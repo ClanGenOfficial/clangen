@@ -407,7 +407,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/subject/to_cat} wouldn't take a training session seriously."
+                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/to_cat/subject} wouldn't take a training session seriously."
                         }
                     }
                 ],
@@ -713,7 +713,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat told to_cat about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
+                            "cats_from": "from_cat told to_cat about how the mark of a great c_n hunter is to catch a hummingbird with sheathed claws."
                         }
                     }
                 ],
@@ -1098,7 +1098,7 @@
                     },
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["low_lawful", "patrol"],
+                        "cats_from": [ "patrol", "low_lawful"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 15,
