@@ -9,7 +9,7 @@
 			"m_c can't help but smile seeing r_c smile."
 		],
 		"relationship_constraint": [
-			"not_mates",
+			"-mates",
 			"fancies_only"
 		]
 	},
@@ -44,7 +44,7 @@
 			"m_c can't help but admire r_c's pelt."
 		],
 		"relationship_constraint": [
-			"not_mates"
+			"-mates"
 		]
 	},
 	{
@@ -102,7 +102,7 @@
 			"m_c hopes r_c likes {PRONOUN/m_c/object} as much as {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c."
 		],
 		"relationship_constraint": [
-			"not_mates",
+			"-mates",
 			"fancies_only"
 		],
 		"reaction_random_cat": {
@@ -139,7 +139,7 @@
 		],
 		"relationship_constraint": [
 			"fancies",
-			"not_mates"
+			"-mates"
 		]
 	},
 	{
@@ -175,7 +175,7 @@
 		],
 		"relationship_constraint": [
 			"adores",
-			"not_mates"
+			"-mates"
 		]
 	},
 	{

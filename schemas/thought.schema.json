@@ -1,13 +1,39 @@
 {
   "$defs": {
+    "Age": {
+      "enum": [
+        "newborn",
+        "-newborn",
+        "kitten",
+        "-kitten",
+        "adolescent",
+        "-adolescent",
+        "young adult",
+        "-young adult",
+        "adult",
+        "-adult",
+        "senior adult",
+        "-senior adult",
+        "senior",
+        "-senior"
+      ],
+      "title": "Age",
+      "type": "string"
+    },
     "Biome": {
       "enum": [
         "mountainous",
+        "-mountainous",
         "plains",
+        "-plains",
         "forest",
+        "-forest",
         "beach",
+        "-beach",
         "wetlands",
-        "desert"
+        "-wetlands",
+        "desert",
+        "-desert"
       ],
       "title": "Biome",
       "type": "string"
@@ -34,19 +60,6 @@
         "camp4"
       ],
       "title": "Camp",
-      "type": "string"
-    },
-    "CatAge": {
-      "enum": [
-        "newborn",
-        "kitten",
-        "adolescent",
-        "young adult",
-        "adult",
-        "senior adult",
-        "senior"
-      ],
-      "title": "CatAge",
       "type": "string"
     },
     "HasInjuries": {
@@ -140,28 +153,6 @@
       "title": "RandomOutsideStatus",
       "type": "string"
     },
-    "RelationshipConstraint": {
-      "enum": [
-        "siblings",
-        "not_siblings",
-        "littermates",
-        "not_littermates",
-        "mates",
-        "mates_with_pl",
-        "not_mates",
-        "parent/child",
-        "not_parent",
-        "child/parent",
-        "not_child",
-        "mentor/app",
-        "not_mentor",
-        "app/mentor",
-        "not_app",
-        "strangers"
-      ],
-      "title": "RelationshipConstraint",
-      "type": "string"
-    },
     "StatusAny": {
       "anyOf": [
         {
@@ -223,12 +214,12 @@
           "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use \"any\" to allow the thought to occur if the cat has any permanent condition.",
           "title": "Perm Conditions"
         },
-        "relationship_constraint": {
+        "relationship_status": {
           "description": "Constrains the thought to only occur if m_c and r_c fulfill the tag requirements.",
           "items": {
-            "$ref": "#/$defs/RelationshipConstraint"
+            "$ref": "common.schema.json#/$defs/RelationshipStatus"
           },
-          "title": "Relationship Constraint",
+          "title": "Relationship Status",
           "type": "array"
         },
         "main_backstory_constraint": {
@@ -266,7 +257,7 @@
         "main_age_constraint": {
           "description": "Constrains the thought to only happen if m_c is within a certain age group.",
           "items": {
-            "$ref": "#/$defs/CatAge"
+            "$ref": "#/$defs/Age"
           },
           "title": "Main Age Constraint",
           "type": "array"
@@ -274,7 +265,7 @@
         "random_age_constraint": {
           "description": "Constrains the thought to only happen if r_c is within a certain age group.",
           "items": {
-            "$ref": "#/$defs/CatAge"
+            "$ref": "#/$defs/Age"
           },
           "title": "Random Age Constraint",
           "type": "array"

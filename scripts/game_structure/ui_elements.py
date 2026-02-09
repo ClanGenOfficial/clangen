@@ -1401,20 +1401,6 @@ class IDImageButton(UISurfaceImageButton):
 
 
 class UIDropDownContainer(UIAutoResizingContainer):
-    """
-    Holds all the elements of a dropdown and coordinates its basic responses.
-    :param relative_rect: The starting size and relative position of the container.
-    :param container: The container this container is within. Defaults to None (which is the root
-                      container for the UI)
-    :param starting_height: The starting layer height of this container above its container.
-                            Defaults to 1.
-    :param object_id: An object ID for this element.
-    :param manager: The UI manager for this element. If not provided or set to None,
-                    it will try to use the first UIManager that was created by your application.
-    :param visible: Whether the element is visible by default. Warning - container visibility
-                    may override this.
-    """
-
     def __init__(
         self,
         relative_rect: RectLike,
@@ -1426,7 +1412,25 @@ class UIDropDownContainer(UIAutoResizingContainer):
         anchors: dict = None,
         child_trigger_close: bool = False,
         starting_selection: list = None,
+        open_on_hover: bool = False,
     ):
+        """
+        Holds all the elements of a dropdown and coordinates its basic responses.
+        :param relative_rect: The starting size and relative position of the container.
+        :param container: The container this container is within. Defaults to None (which is the root
+                          container for the UI)
+        :param starting_height: The starting layer height of this container above its container.
+                                Defaults to 1.
+        :param object_id: An object ID for this element.
+        :param manager: The UI manager for this element. If not provided or set to None,
+                        it will try to use the first UIManager that was created by your application.
+        :param visible: Whether the element is visible by default. Warning - container visibility
+                        may override this.
+        :param open_on_hover: Dropdown will open while being hovered and close once unhovered
+
+        """
+        self.open_on_hover = open_on_hover
+
         super().__init__(
             relative_rect=relative_rect,
             container=container,
@@ -1486,12 +1490,28 @@ class UIDropDownContainer(UIAutoResizingContainer):
                 continue
             child.enable()
 
+    def check_if_hovering(self):
+        mouse_x, mouse_y = self.ui_manager.get_mouse_position()
+        if self.hover_point(mouse_x, mouse_y):
+            return True
+        else:
+            return False
+
     def update(self, time_delta: float):
-        if self.parent_button.pressed:
-            if self.is_open:
-                self.close()
+        # hover
+        if self.open_on_hover:
+            if self.check_if_hovering():
+                if not self.is_open and self.parent_button.hovered:
+                    self.open()
             else:
-                self.open()
+                self.close()
+        # press
+        else:
+            if self.parent_button.pressed:
+                if self.is_open:
+                    self.close()
+                else:
+                    self.open()
 
         super().update(time_delta)
 
@@ -2302,6 +2322,7 @@ class UIDropDown(UIDropDownContainer):
         anchors: dict = None,
         child_trigger_close: bool = True,
         starting_selection: list = None,
+        open_on_hover: bool = False,
     ):
         """
         Class to handle the creation and management of non-scrolling dropdowns. It's recommended to use the on_use()
@@ -2322,6 +2343,7 @@ class UIDropDown(UIDropDownContainer):
         :param disable_selection: If the clicked child_button should be disabled, defaults to True
         :param child_trigger_close: If clicking a child_button should close the dropdown, defaults to True
         :param starting_selection: Items from item_list that should begin selected.
+        :param open_on_hover: Dropdown will open while being hovered and close once unhovered
         """
         self.selected_list = (
             [item for item in starting_selection if starting_selection]
@@ -2343,6 +2365,7 @@ class UIDropDown(UIDropDownContainer):
             anchors=anchors,
             child_trigger_close=child_trigger_close,
             starting_selection=starting_selection,
+            open_on_hover=open_on_hover,
         )
 
         rect = pygame.Rect(
@@ -2362,6 +2385,7 @@ class UIDropDown(UIDropDownContainer):
             )
         else:
             self.parent_button = parent_override
+            self.parent_button.set_container(self)
 
         if center_children:
             x_pos = -int(child_dimensions[0] / 2 - relative_rect.width / 2)
@@ -2478,6 +2502,7 @@ class UIDropDown(UIDropDownContainer):
                     button.disable()
 
                 break
+
             # single choice
             elif not self.multiple_choice:
                 if self.selected_list and self.selected_list[0] == name:
