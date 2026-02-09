@@ -1866,9 +1866,7 @@
             "skill": [
                 "LORE,1",
                 "KIT,1",
-                "STORY,1"
-            ],
-            "skill": [
+                "STORY,1",
                 "-KIT,2",
                 "-KIT,3",
                 "-KIT,4"
