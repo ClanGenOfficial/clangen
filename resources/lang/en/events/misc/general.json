@@ -2029,7 +2029,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["high_lawful", "high_stable", "r_c"],
+                "cats_from": ["r_c", "high_lawful", "high_stable"],
                 "cats_to": ["m_c"],
                 "values": ["comfort", "respect"],
                 "amount": -15,
@@ -2039,7 +2039,7 @@
                 }
             },
             {
-                "cats_from": ["high_lawful", "low_stable", "r_c"],
+                "cats_from": ["r_c", "high_lawful", "low_stable"],
                 "cats_to": ["m_c"],
                 "values": ["comfort", "respect"],
                 "amount": -8,
@@ -2049,7 +2049,7 @@
                 }
             },
             {
-                "cats_from": ["low_lawful", "high_stable", "r_c"],
+                "cats_from": ["r_c", "low_lawful", "high_stable"],
                 "cats_to": ["m_c"],
                 "values": ["comfort", "trust"],
                 "amount": 8,
@@ -2059,7 +2059,7 @@
                 }
             },
             {
-                "cats_from": ["low_lawful", "low_stable", "r_c"],
+                "cats_from": ["r_c", "low_lawful", "low_stable"],
                 "cats_to": ["m_c"],
                 "values": ["comfort", "trust"],
                 "amount": 15,
