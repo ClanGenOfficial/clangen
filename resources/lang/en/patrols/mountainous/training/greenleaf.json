@@ -998,7 +998,7 @@
                     },
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["low_lawful", "patrol"],
+                        "cats_from": [ "patrol", "low_lawful"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 15,
