@@ -145,6 +145,7 @@ def rebuild_top_menu_buttons():
             manager=MANAGER,
             starting_height=6,
             anchors={"left": "left", "left_target": menu_buttons["events"]},
+            open_on_hover=True,
         )
         prev_element = menu_buttons["supplies"]
     else:
@@ -178,6 +179,7 @@ def rebuild_top_menu_buttons():
         starting_height=6,
         anchors={"left": "left", "left_target": menu_buttons["cats"]},
         disable_selection=False,
+        open_on_hover=True,
     )
     # menu_buttons["events"].change_layer(menu_buttons["dens"].get_starting_height() + 5)
 

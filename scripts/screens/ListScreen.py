@@ -46,6 +46,8 @@ class ListScreen(Screens):
         "screens.list.filter_id",
         "screens.list.filter_exp",
         "screens.list.filter_death",
+        "screens.list.filter_name",
+        "screens.list.filter_reverse_name",
     )
     living_filter_names = (
         "screens.list.filter_rank",
@@ -53,6 +55,8 @@ class ListScreen(Screens):
         "screens.list.filter_reverse_age",
         "screens.list.filter_id",
         "screens.list.filter_exp",
+        "screens.list.filter_name",
+        "screens.list.filter_reverse_name",
     )
 
     living_group_names = ("general.your_clan", "general.cotc")
@@ -133,13 +137,6 @@ class ListScreen(Screens):
         self.clan_name = None
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            if event.ui_element == self.cat_list_bar_elements["sort_by_label"]:
-                self.cat_list_bar_elements["sort_by_button"].on_hovered()
-
-        elif event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED:
-            if event.ui_element == self.cat_list_bar_elements["sort_by_label"]:
-                self.cat_list_bar_elements["sort_by_button"].on_unhovered()
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             element = event.ui_element
 
@@ -349,41 +346,41 @@ class ListScreen(Screens):
         )
 
         # SORT BY
+        button_dict = get_button_dict(ButtonStyles.DROPDOWN, (75, 34))
+        button_dict["disabled"] = button_dict["normal"]
         self.cat_list_bar_elements["sort_by_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((-2, 0), (75, 34))),
             f"screens.list.filter_label",
-            {
-                "normal": get_button_dict(ButtonStyles.DROPDOWN, (77, 34))[
-                    "normal"
-                ].subsurface(
-                    (0, 0), (75, 34)
-                )  # this horrific thing gets rid of the double-thick line
-            },
+            button_dict,
             object_id="@buttonstyles_dropdown",
             container=self.cat_list_bar,
             starting_height=1,
             manager=MANAGER,
             anchors={"left_target": self.choose_group_dropdown},
         )
+        self.cat_list_bar_elements["sort_by_label"].disable()
+
+        sort_by_text = f"screens.list.filter_{switch_get_value(Switch.sort_type)}"
 
         self.cat_list_bar_elements["sort_by_button"] = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (63, 34))),
-            f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
+            sort_by_text,
             object_id=ObjectID("#filter_by_button", "@buttonstyles_dropdown"),
-            container=self.cat_list_bar,
             starting_height=1,
             manager=MANAGER,
             anchors={"left_target": self.cat_list_bar_elements["sort_by_label"]},
         )
 
         self.sort_by_dropdown = UIDropDown(
-            pygame.Rect((-2, 0), (63, 34)),
-            f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
-            item_list=self.living_filter_names,
+            pygame.Rect((0, 0), (63, 34)),
+            sort_by_text,
+            item_list=self.living_filter_names
+            if self.death_status == "living"
+            else self.dead_filter_names,
             manager=MANAGER,
             container=self.cat_list_bar,
             parent_override=self.cat_list_bar_elements["sort_by_button"],
-            starting_selection=["screens.list.filter_rank"],
+            starting_selection=[sort_by_text],
             anchors={"left_target": self.cat_list_bar_elements["sort_by_label"]},
         )
 

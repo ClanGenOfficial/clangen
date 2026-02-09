@@ -8975,7 +8975,7 @@
         "decline_text": "Both of them are interrupted by a request from a Clanmate - this conversation will have to wait.",
         "chance_of_success": 70,
         "relationship_constraint": [
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -9081,7 +9081,7 @@
         "decline_text": "They are interrupted by some Clanmates who need help and go off to attend to their duties.",
         "chance_of_success": 70,
         "relationship_constraint": [
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -9670,7 +9670,7 @@
         "relationship_constraint": [
             "dislikes",
             "fancies",
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -9838,7 +9838,7 @@
         "relationship_constraint": [
             "dislikes",
             "fancies",
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -9897,7 +9897,7 @@
         "relationship_constraint": [
             "dislikes",
             "fancies",
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -10485,7 +10485,7 @@
         "relationship_constraint": [
             "dislikes",
             "fancies",
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -10867,7 +10867,7 @@
         "decline_text": "p_l comments offhandedly that, seeing they seem to have so much energy, both apprentices can help around the camp when they get back instead of resting. The rest of the patrol is spent in sullen silence.",
         "chance_of_success": 60,
         "relationship_constraint": [
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -11204,7 +11204,7 @@
         "chance_of_success": 60,
         "relationship_constraint": [
             "cherishes",
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {

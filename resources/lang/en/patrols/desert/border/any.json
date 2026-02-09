@@ -23,7 +23,7 @@
             {
                 "text": "r_c bolts back to camp, yowling a warning!",
                 "exp": 40,
-                "relationships": [
+               "relationships": [
                     {
                         "cats_to": [
                             "r_c"
@@ -36,7 +36,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was thankful for to_cat's warning about a large dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -60,7 +63,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard how to_cat took on a huge dog single-pawed!"
+                        }
                     }
                 ],
                 "frequency": 4
@@ -92,7 +98,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard how to_cat risked {PRONOUN/to_cat/poss} life to lead a huge dog away from the Clan's territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -122,7 +131,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's noble sacrifice to save the Clan from a large dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -160,7 +172,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat was nearly killed leading a large dog away from the Clan's territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -210,7 +225,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat and {PRONOUN/to_cat/poss} patrol tracked a large dog on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -234,7 +252,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat and {PRONOUN/to_cat/poss} patrol tried to lead a large dog away from the territory."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -251,17 +272,29 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat ambushed a large dog on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat ambushed and drove off a huge dog before from_cat's eyes."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -285,17 +318,29 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat led a large dog off Clan territory on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat led a big dog off Clan territory on patrol with from_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -316,10 +361,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat was on the patrol that saved the Clan from a large dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -340,10 +387,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat was on the patrol that bravely drove a large dog off the territory."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -367,10 +416,28 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol drove off a large dog."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's battle tactics in a fight against a large dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -401,10 +468,28 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol drove off a large dog."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's bravery in a fight against a large dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -430,7 +515,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol failed to drive off a dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -450,6 +538,22 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat was the reason from_cat and {PRONOUN/from_cat/poss} patrol were unable to lead a dog off Clan territory."
+                        }
+                    },
+                    {
+                        "cats_to": [
                             "patrol"
                         ],
                         "cats_from": [
@@ -457,10 +561,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol failed to lead a dog off the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -488,10 +594,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat failed to save r_c on a patrol with a dog."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -529,10 +637,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol failed to lead a dog away from the Clan's territory."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -553,10 +663,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol weren't able to drive off a dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -583,10 +695,24 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol weren't able to drive off a dog."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect", "trust", "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat's excessive caution caused from_cat and {PRONOUN/from_cat/poss} patrol to lose a fight."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -614,10 +740,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol weren't able to drive off a dog."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -655,10 +783,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol weren't able to drive off a dog."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -695,14 +825,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat scared off a small dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -716,14 +849,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat scared off a small dog."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -737,17 +873,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat fought off a small dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -757,22 +896,6 @@
             {
                 "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement until the only thing to do is wait, miserable and humiliated, in a safe spot for the beast to calm down.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -785,22 +908,6 @@
                     "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
                     "death": "This cat was killed in a fight with a small dog, but they took the dog out with them."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -829,14 +936,16 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was baffled that to_cat allowed {PRONOUN/to_cat/self} to get injured by a small dog."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -878,10 +987,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a small dog on patrol together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -900,10 +1011,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a small dog on patrol together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -917,7 +1030,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -925,10 +1038,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's battle tactics in a fight with a small dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -938,6 +1053,26 @@
             {
                 "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait, exasperated, in a safe spot for the beast to calm down.",
                 "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed to_cat made chasing out a small dog harder."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -998,10 +1133,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a small dog on patrol together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1020,10 +1157,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat drove off a small dog on patrol together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1037,7 +1176,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -1045,10 +1184,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's battle tactics in a fight with a small dog."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1058,6 +1199,26 @@
             {
                 "text": "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait, exasperated, in a safe spot for the beast to calm down.",
                 "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed to_cat made chasing out a small dog harder."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -1118,9 +1279,13 @@
                         "mutual": false,
                         "values": [
                             "trust",
+                            "comfort",
                             "respect"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "to_cat questions from_cat's judgment after leading {PRONOUN/from_cat/poss} patrol towards a dog pack."
+                        }
                     }
                 ],
                 "frequency": 4
