@@ -407,7 +407,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/subject/to_cat} wouldn't take a training session seriously."
+                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/to_cat/subject} wouldn't take a training session seriously."
                         }
                     }
                 ],
