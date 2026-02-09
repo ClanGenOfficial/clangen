@@ -754,64 +754,101 @@ def gather_cat_objects(
     out_set = set()
 
     for abbr in abbr_list:
+        is_exclusionary = False
+        if "-" in abbr:
+            is_exclusionary = True
+            abbr = abbr.replace("-", "")
+
+        found_cat = None
         if abbr == "m_c":
-            if extra_cat:
-                out_set.add(extra_cat)
-            else:
-                out_set.add(event.main_cat)
+            found_cat = extra_cat if extra_cat else event.main_cat
         elif abbr == "r_c":
-            out_set.add(event.random_cat)
-        elif re.match(r"n_c:[0-9]+", abbr):
+            found_cat = event.random_cat
+        # PATROL SPECIFIC
+        elif abbr == "p_l":
+            found_cat = event.patrol_leader
+        elif abbr == "s_c":
+            found_cat = stat_cat
+        elif abbr == "app1" and len(event.patrol_apprentices) >= 1:
+            found_cat = event.patrol_apprentices[0]
+        elif abbr == "app2" and len(event.patrol_apprentices) >= 2:
+            found_cat = event.patrol_apprentices[1]
+        elif abbr == "app3" and len(event.patrol_apprentices) >= 3:
+            found_cat = event.patrol_apprentices[2]
+        elif abbr == "app4" and len(event.patrol_apprentices) >= 4:
+            found_cat = event.patrol_apprentices[3]
+        elif abbr == "app5" and len(event.patrol_apprentices) >= 5:
+            found_cat = event.patrol_apprentices[4]
+        elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
+            found_cat = event.patrol_apprentices[5]
+
+        # add/remove cat if found and then continue for loop
+        if is_exclusionary and found_cat:
+            if found_cat not in out_set:
+                # continue to avoid KeyError
+                continue
+            out_set.remove(found_cat)
+            continue
+        if not is_exclusionary and found_cat:
+            out_set.add(found_cat)
+            continue
+
+        # SMALL CAT GROUPS
+        found_cat_list = set()
+        if abbr == "patrol":
+            found_cat_list.update(event.patrol_cats)
+        elif re.match(r"n_c:[0-9]+", abbr):  # new_cats
             index = re.match(r"n_c:([0-9]+)", abbr).group(1)
             index = int(index)
             if index < len(event.new_cats):
-                out_set.update(event.new_cats[index])
-        # PATROL SPECIFIC
-        elif abbr == "p_l":
-            out_set.add(event.patrol_leader)
-        elif abbr == "s_c":
-            out_set.add(stat_cat)
-        elif abbr == "app1" and len(event.patrol_apprentices) >= 1:
-            out_set.add(event.patrol_apprentices[0])
-        elif abbr == "app2" and len(event.patrol_apprentices) >= 2:
-            out_set.add(event.patrol_apprentices[1])
-        elif abbr == "app3" and len(event.patrol_apprentices) >= 3:
-            out_set.add(event.patrol_apprentices[2])
-        elif abbr == "app4" and len(event.patrol_apprentices) >= 4:
-            out_set.add(event.patrol_apprentices[3])
-        elif abbr == "app5" and len(event.patrol_apprentices) >= 5:
-            out_set.add(event.patrol_apprentices[4])
-        elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
-            out_set.add(event.patrol_apprentices[5])
-        elif abbr == "patrol":
-            out_set.update(event.patrol_cats)
+                found_cat_list.update(event.new_cats[index])
         elif abbr == "multi":
             cat_num = randint(1, max(1, len(event.patrol_cats) - 1))
-            out_set.update(sample(event.patrol_cats, cat_num))
+            found_cat_list.update(sample(event.patrol_cats, cat_num))
         # OVERALL CLAN CATS
         elif abbr == "clan":
-            out_set.update(clan_cats)
+            found_cat_list.update(clan_cats)
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
-            out_set.update(
+            found_cat_list.update(
                 sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
             )
+
+        # add/remove cats if found and then continue for loop
+        if is_exclusionary and found_cat_list:
+            # removes found_cat_list items from out_set if they are present in out_set
+            out_set -= found_cat_list
+            continue
+        if not is_exclusionary and found_cat_list:
+            out_set.update(found_cat_list)
+            continue
+
         # FACET CATS IN CLAN
-        elif abbr == "high_social":
-            out_set = {c for c in out_set if c.personality.sociability > 8}
+        if abbr == "high_social":
+            found_cat_list = {c for c in out_set if c.personality.sociability > 8}
         elif abbr == "low_social":
-            out_set = {c for c in out_set if c.personality.sociability <= 8}
+            found_cat_list = {c for c in out_set if c.personality.sociability <= 8}
         elif abbr == "high_lawful":
-            out_set = {c for c in out_set if c.personality.lawfulness > 8}
+            found_cat_list = {c for c in out_set if c.personality.lawfulness > 8}
         elif abbr == "low_lawful":
-            out_set = {c for c in out_set if c.personality.lawfulness <= 8}
+            found_cat_list = {c for c in out_set if c.personality.lawfulness <= 8}
         elif abbr == "high_stable":
-            out_set = {c for c in out_set if c.personality.stability > 8}
+            found_cat_list = {c for c in out_set if c.personality.stability > 8}
         elif abbr == "low_stable":
-            out_set = {c for c in out_set if c.personality.stability <= 8}
+            found_cat_list = {c for c in out_set if c.personality.stability <= 8}
         elif abbr == "high_aggress":
-            out_set = {c for c in out_set if c.personality.aggression > 8}
+            found_cat_list = {c for c in out_set if c.personality.aggression > 8}
         elif abbr == "low_aggress":
-            out_set = {c for c in out_set if c.personality.aggression <= 8}
+            found_cat_list = {c for c in out_set if c.personality.aggression <= 8}
+
+        # add/remove cats if found and then continue for loop
+        if is_exclusionary and found_cat_list:
+            # removes found_cat_list items from out_set if they are present in out_set
+            out_set -= found_cat_list
+            continue
+        if not is_exclusionary and found_cat_list:
+            # found_cat_list includes all qualifying cats!
+            out_set = found_cat_list
+            continue
 
         else:
             print(f"WARNING: Unsupported abbreviation {abbr}")

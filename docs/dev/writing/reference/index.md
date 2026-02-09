@@ -106,6 +106,9 @@ For `cats_from` and `cats_to` you may use any of cat abbreviations already utili
 | `low_aggress`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
 | `high_aggress` | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
 
+!!! tip
+    To *exclude* certain cats from the relationship change, you can utilize any of these abbreviations as an [exclusionary value](#exclusionary-values)! So, for example, you could write `["patrol", "-p_l", "-app1"]` to affect the entire patrol *except* `p_l` and `app1`. Keep in mind that the order of abbreviations matters here! You can only *remove* cats from previously stated groups. So if we were to reverse the previous example like this: `["-p_l", "-app1", "patrol"]`, then it wouldn't work correctly, as `patrol` is being stated last and the code didn't know what group to remove `p_l` and `app1` from. 
+
 ### mutual:bool
 Optional. Controls if the relation effect will be applied in both directions. Defaults to False.
 
@@ -162,5 +165,7 @@ This would allow any cat with a trait that *isn't* `calm`.
 
 As this is allowed in some but *not all* values, parameters that allow exclusionary values will be linked to this section. If a parameter *doesn't* link here, then exclusionary values are not allowed.
 
-!!! warning
-    You cannot mix exclusionary values and inclusionary values in one parameter. You must use one or the other and, frankly, there is no reason to mix them. 
+!!! caution
+    For most parameters, there's no use in including both exclusionary and non-exclusionary values. Such as in our example, where we exclude `calm`. All other traits are automatically available, since they aren't `calm`, so we don't need to tag any non-exclusionary values. If we were to use two tags like this: `"trait": ["-calm", "arrogant"]` to specify that `arrogant` is required and `calm` is disqualifying, then we might as well just remove `-calm`. The `arrogant` tag on its own will automatically disqualify `calm` cats.
+
+    Where you can expect to utilize both types of values are in parameters with more intermixed tagging. For example, relationship constraints. Here, we may wish to specify that a pair of cats must NOT be child/parent as well as have the `dislikes` tier. As such we would tag: `["-child/parent", "dislikes"]`. This mixes exclusionary and non-exclusionary in a logical manner. 

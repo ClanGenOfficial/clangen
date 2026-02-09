@@ -707,7 +707,8 @@
                         ],
                         "cats_from": [
                             "clan",
-                            "patrol"
+                            "patrol",
+                            "-p_l"
                         ],
                         "mutual": false,
                         "values": ["respect", "trust"],
