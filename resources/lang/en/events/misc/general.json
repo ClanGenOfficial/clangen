@@ -1868,7 +1868,7 @@
                 "KIT,1",
                 "STORY,1"
             ],
-            "not_skill": [
+            "skill": [
                 "-KIT,2",
                 "-KIT,3",
                 "-KIT,4"
