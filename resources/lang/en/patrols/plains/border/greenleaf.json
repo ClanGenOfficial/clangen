@@ -2620,7 +2620,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l turns and finds app1 clawing {PRONOUN/app1/poss} way out of a teenie tiny sinkhole. {PRONOUN/app1/poss/CAP} weight has collapsed the roof of a burrow underneath {PRONOUN/app1/object}. It's worth cleaning up and checking out, c_n can always use more boltholes near the border.",
+                "text": "p_l turns and finds app1 clawing {PRONOUN/app1/poss} way out of a tiny sinkhole. {PRONOUN/app1/poss/CAP} weight has collapsed the roof of a burrow underneath {PRONOUN/app1/object}. It's worth cleaning up and checking out; c_n can always use more boltholes near the border.",
                 "exp": 30,
                 "art": "gen_train_patrolapprenticesessionfail",
                 "relationships": [
@@ -2642,7 +2642,6 @@
                 "exp": 40,
                 "art": "gen_train_patrolapprenticesessionsuccess",
                 "can_have_stat": [
-                    "any",
                     "app"
                 ],
                 "stat_skill": [
@@ -2682,11 +2681,10 @@
                 "frequency": 4
             },
             {
-                "text": "Oh hey cool! s_c didn't know this old badger sett was here, and the patrol halts to allow the apprentice to explore. It's valuable to know where all the hideyholes are within the grasslands, just in case of danger. So p_l doesn't mind taking the time to let s_c discover the tunnels, which are known and safe.",
+                "text": "s_c didn't know this old badger sett was here, and the patrol halts to allow the apprentice to explore. It's valuable to know where all the hideyholes are within the grasslands, just in case of danger. So p_l doesn't mind taking the time to let s_c discover the tunnels, which are known and safe.",
                 "exp": 40,
                 "art": "pln_train_sett",
                 "can_have_stat": [
-                    "any",
                     "app"
                 ],
                 "stat_trait": [
@@ -2723,7 +2721,6 @@
                 "exp": 40,
                 "art": "gen_train_patrolapprenticesessionfail",
                 "can_have_stat": [
-                    "any",
                     "app"
                 ],
                 "stat_skill": [
@@ -2746,7 +2743,7 @@
                 "frequency": 4
             },
             {
-                "text": "Whoops! s_c grins up at the rest of the patrol, remarkably good natured about falling into a random hole, all things considered.",
+                "text": "Whoops! s_c grins up at the rest of the patrol, remarkably good-natured about falling into a random hole, all things considered.",
                 "exp": 40,
                 "art": "gen_train_patrolapprenticesessionsuccess",
                 "can_have_stat": [
@@ -2783,7 +2780,7 @@
                 "frequency": 4
             },
             {
-                "text": "Uh, p_l would've told s_c about any known tunnels near here. Is this a new one? It turns out no, but it's a (newly collapsed) entrance to a known network, and the patrol makes sure to particularly praise s_c for discovering it, even if accidentally.",
+                "text": "p_l would've told s_c about any known tunnels near here. Is this a new one? It turns out no, but it's a (newly collapsed) entrance to a known network, and the patrol makes sure to particularly praise s_c for discovering it, even if accidentally.",
                 "exp": 40,
                 "art": "gen_train_patrolapprenticesessionsuccess",
                 "relationships": [
@@ -2810,7 +2807,7 @@
                 "frequency": 1
             },
             {
-                "text": "The apprentice has made an accidental discovery, tripping into a well hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
+                "text": "The apprentice has made an accidental discovery, tripping into a well-hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
                 "exp": 40,
                 "art": "pln_bord_tunnel",
                 "can_have_stat": [
@@ -2988,7 +2985,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c's lungs haven't been the same since {PRONOUN/m_c/subject} fell into a sinkhole and were buried as an apprentice.",
+                    "scar": "m_c's lungs were never the same after falling into a sinkhole as an apprentice.",
                     "death": "m_c died after from complications from falling into a sinkhole and being buried as an apprentice."
                 },
                 "relationships": [
