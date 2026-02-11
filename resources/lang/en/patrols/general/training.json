@@ -2977,29 +2977,70 @@
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "trust", "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat explained the importance of good form while training from_cat."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat explained the importance of good form to to_cat when {PRONOUN/to_cat/subject} started an argument and appreciated that to_cat apologized."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Tired of hearing about how {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} understand, p_l swings around, performing a flawless rendition of the technique. Chastened, app1 lowers {PRONOUN/app1/poss} gaze. {PRONOUN/app1/subject/CAP}'ll follow p_l's way of doing things then.",
+                "text": "Tired of hearing about how {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} understand, p_l swings around and performs a flawless rendition of the technique. Chastened, app1 lowers {PRONOUN/app1/poss} gaze. {PRONOUN/app1/subject/CAP}'ll follow p_l's way of doing things then.",
                 "exp": 20,
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "...but was impressed by how flawlessly to_cat executed the move they were working on."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was embarrassed to be scolded by to_cat for starting an argument about a technique while training..."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat wasn't happy when to_cat started an argument over a technique while from_cat was training {PRONOUN/to_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3016,13 +3057,27 @@
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat argued about a technique while p_l was training app1."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat's casual advice on a technique really made from_cat rethink things."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3044,13 +3099,30 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat confided {PRONOUN/from_cat/poss} insecurities in to_cat when to_cat pressed {PRONOUN/from_cat/object} during training."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat confiding in {PRONOUN/from_cat/object}, even though it took a little prodding to get there."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3904,7 +3976,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 1,
         "intro_text": "The patrol devolves into ghost stories, putting everyone on edge.",
@@ -3998,8 +4070,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2]
+            "apprentice": [2, 2],
+            "normal adult": [1, 4]
         },
         "frequency": 1,
         "intro_text": "The patrol devolves into ghost stories, putting everyone on edge.",
@@ -4137,7 +4209,7 @@
             "apprentice": [1, 6]
         },
         "frequency": 1,
-        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically</i> {PRONOUN/app1/inposs}, right...?",
+        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practice hunting, right? And since it's <i>technically</i> not a <i>real</i> hunting patrol, it's <i>technically</i> {PRONOUN/app1/inposs}, right...?",
         "decline_text": "app1 decides against breaking the Warrior Code, resisting the temptation.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -4322,7 +4394,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
@@ -4656,7 +4728,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "normal adult": [2, 2]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
@@ -4935,8 +5007,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "normal adult": [1, 6]
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
@@ -5142,8 +5214,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "normal adult": [1, 6]
+            "apprentice": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with app1.",
@@ -5336,9 +5408,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [2, 2],
-            "normal adult": [1, 6]
+            "apprentice": [2, 2],
+            "normal adult": [2, 4]
         },
         "frequency": 3,
         "intro_text": "As p_l sets the cats up to practice together, app1 and app2 sit in the back, hiding their lashing tails as they plan their prank.",
@@ -5445,7 +5516,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "normal adult": [2, 2]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
@@ -5661,7 +5732,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "normal adult": [2, 2]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mate.",
@@ -5875,7 +5946,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
@@ -6066,7 +6137,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
@@ -6254,7 +6325,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
@@ -6454,7 +6525,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "normal adult": [2, 2]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
@@ -6722,15 +6793,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                5
-            ],
-            "all apprentices": [
-                1,
-                5
-            ],
-            "normal adult": [1, 6]
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
@@ -7022,8 +7086,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "normal adult": [1, 6]
+            "apprentice": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with app1.",
