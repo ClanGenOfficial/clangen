@@ -2425,6 +2425,128 @@
         ]
     },
     {
+        "patrol_id": "gen_train_gllf_eagle_dappledfeather1",
+        "biome": [ "mountainous", "beach" ],
+        "season": [ "greenleaf", "leaf-fall" ],
+        "types": [ "training" ],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [2, 2]
+        },
+        "frequency": 2,
+        "intro_text": "app1 notices app2's absence and follows {PRONOUN/app2/poss} unobscured trail to the cliff's edge. What in StarClan's name is app2 doing out here? There's an eagle nest, app2 explains, {PRONOUN/app2/poss} tail swooping up over {PRONOUN/app2/poss} back to point, here, look. The chicks are trying to fly!",
+        "decline_text": "That's lovely, but, like, can app2 watch from a place that isn't a damned cliff edge?",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Wait, like, eagle apprentices? Intrigued, app1 sticks {PRONOUN/app1/poss} head out. Down below, two dappled juveniles squabble, beating their wings frantically, gearing up for something. app2 bets on the lighter colored one, but app1 thinks that the smaller dark patterned one has the heart for it. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} to {PRONOUN/app1/poss} paws when the darker chick takes to the wing first, throwing {PRONOUN/app1/poss} head back and yowling cheers to the sky as the eaglet makes it to the next tree over.",
+                "exp": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat bet on which eaglet would take to the wing first."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
+                "exp": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat cheered on eaglets together."
+                        }
+                    }
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "It's not app1's thing, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} happy to bask a couple tail lengths away until app2 is done eagle watching.",
+                "exp": 0,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["app2"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat learned that to_cat enjoys eagle-watching."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices reel backward, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/lose/loses} {PRONOUN/s_c/poss} grip. Sudden pain sparks down {PRONOUN/s_c/poss} flank when the other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, though not {PRONOUN/s_c/poss} pelt.",
+                "exp": 0,
+                "stat_trait": [
+                    "bold",
+                    "daring",
+                    "confident",
+                    "adventurous",
+                    "arrogant",
+                    "competitive"
+                ],
+                "can_have_stat": [
+                    "app"
+                ],
+                "injury": [
+                    {
+                        "cats": [
+                            "s_c"
+                        ],
+                        "injuries": [
+                            "cat bite"
+                        ],
+                        "scars": [
+                            "TAILBASE"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "r_c was scarred when another apprentice (violently) saved {PRONOUN/r_c/poss} life from a cliff fall during a youthful adventure."
+                },
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat when {PRONOUN/from_cat/subject} almost fell off a cliff."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "patrol_id": "mtn_train_crows1",
         "biome": [
             "mountainous"
