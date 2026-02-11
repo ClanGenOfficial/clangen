@@ -292,6 +292,77 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             )
         )
 
+    def test_mixed_value_type_patrol(self):
+        # given
+        parent = Cat(disable_random=True)
+        cat1 = Cat(parent1=parent.ID, disable_random=True)
+        cat2 = Cat(parent1=parent.ID, disable_random=True)
+
+        cat1.mentor = parent.ID
+        parent.apprentice = [cat1.ID]
+
+        # when
+        con_patrol_event = PatrolEvent(patrol_id="test1")
+        con_patrol_event.relationship_constraints = ["parent/child"]
+        opp_con_patrol_event = PatrolEvent(patrol_id="test2")
+        opp_con_patrol_event.relationship_constraints = ["-mentor/app"]
+        two_con_patrol_event = PatrolEvent(patrol_id="test2")
+        two_con_patrol_event.relationship_constraints = ["parent/child", "-mentor/app"]
+
+        test_clan = Clan(name="test")
+
+        # then
+        patrol = Patrol()
+        patrol.add_patrol_cats([parent, cat1], test_clan)
+        patrol.patrol_leader = parent
+        patrol.random_cat = cat1
+        self.assertTrue(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        self.assertFalse(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                opp_con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        self.assertFalse(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                two_con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        patrol = Patrol()
+        patrol.add_patrol_cats([parent, cat2], test_clan)
+        patrol.patrol_leader = parent
+        patrol.random_cat = cat2
+        self.assertTrue(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        self.assertTrue(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                opp_con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        self.assertTrue(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                two_con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+
     def test_romantic_constraint_patrol(self):
         # given
         cat1 = Cat(disable_random=True)
