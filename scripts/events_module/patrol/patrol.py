@@ -35,6 +35,7 @@ from scripts.events_module.text_adjust import (
     get_special_snippet_list,
     find_special_list_types,
     adjust_list_text,
+    event_text_adjust,
 )
 
 logger = logging.getLogger(__name__)
@@ -146,7 +147,17 @@ class Patrol:
 
         Patrol.used_patrols.append(self.patrol_event.patrol_id)
 
-        return self.process_text(self.patrol_event.intro_text, None)
+        return event_text_adjust(
+            Cat,
+            self.patrol_event.intro_text,
+            patrol_leader=self.patrol_leader,
+            random_cat=self.random_cat,
+            patrol_cats=self.patrol_cats,
+            patrol_apprentices=self.patrol_apprentices,
+            new_cats=self.new_cats,
+            clan=game.clan,
+            other_clan=self.other_clan,
+        )
 
     def proceed_patrol(self, path: str = "proceed") -> Tuple[str, str, Optional[str]]:
         """Proceed the patrol to the next step.
@@ -157,7 +168,21 @@ class Patrol:
                 print(
                     f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: N/A (did not proceed)"
                 )
-                return self.process_text(self.patrol_event.decline_text, None), "", None
+                return (
+                    event_text_adjust(
+                        Cat,
+                        self.patrol_event.decline_text,
+                        patrol_leader=self.patrol_leader,
+                        random_cat=self.random_cat,
+                        patrol_cats=self.patrol_cats,
+                        patrol_apprentices=self.patrol_apprentices,
+                        new_cats=self.new_cats,
+                        clan=game.clan,
+                        other_clan=self.other_clan,
+                    ),
+                    "",
+                    None,
+                )
             else:
                 return "Error - no event chosen", "", None
 
@@ -1092,151 +1117,6 @@ class Patrol:
             file_name = f"{file_name}_general_intro"
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
-
-    def process_text(self, text, stat_cat: Optional[Cat]) -> str:
-        """Processes text"""
-
-        vowels = ["A", "E", "I", "O", "U"]
-        if not text:
-            text = "This should not appear, report as a bug please!"
-
-        replace_dict = {
-            "p_l": (str(self.patrol_leader.name), choice(self.patrol_leader.pronouns)),
-            "r_c": (
-                str(self.random_cat.name),
-                choice(self.random_cat.pronouns),
-            ),
-        }
-
-        text, senses, list_type, cat_tag = find_special_list_types(text)
-        if list_type:
-            sign_list = get_special_snippet_list(
-                list_type, amount=randint(1, 3), sense_groups=senses
-            )
-            text = text.replace(list_type, str(sign_list))
-            if cat_tag:
-                text = text.replace("cat_tag", cat_tag)
-
-        other_cats = [
-            i
-            for i in self.patrol_cats
-            if i not in [self.patrol_leader, self.random_cat]
-        ]
-        if len(other_cats) >= 1:
-            replace_dict["o_c1"] = (
-                str(other_cats[0].name),
-                choice(other_cats[0].pronouns),
-            )
-        if len(other_cats) >= 2:
-            replace_dict["o_c2"] = (
-                str(other_cats[1].name),
-                choice(other_cats[1].pronouns),
-            )
-        if len(other_cats) >= 3:
-            replace_dict["o_c3"] = (
-                str(other_cats[2].name),
-                choice(other_cats[2].pronouns),
-            )
-        if len(other_cats) == 4:
-            replace_dict["o_c4"] = (
-                str(other_cats[3].name),
-                choice(other_cats[3].pronouns),
-            )
-
-        # New Cats
-        for i, new_cats in enumerate(self.new_cats):
-            if len(new_cats) == 1:
-                names = str(new_cats[0].name)
-                pronoun = choice(new_cats[0].pronouns)
-            else:
-                names = adjust_list_text([str(cat.name) for cat in new_cats])
-                pronoun = pronouns.get_new_pronouns("default plural")
-
-            replace_dict[f"n_c:{i}"] = (names, pronoun)
-
-        if len(self.patrol_apprentices) > 0:
-            replace_dict["app1"] = (
-                str(self.patrol_apprentices[0].name),
-                choice(self.patrol_apprentices[0].pronouns),
-            )
-        if len(self.patrol_apprentices) > 1:
-            replace_dict["app2"] = (
-                str(self.patrol_apprentices[1].name),
-                choice(self.patrol_apprentices[1].pronouns),
-            )
-        if len(self.patrol_apprentices) > 2:
-            replace_dict["app3"] = (
-                str(self.patrol_apprentices[2].name),
-                choice(self.patrol_apprentices[2].pronouns),
-            )
-        if len(self.patrol_apprentices) > 3:
-            replace_dict["app4"] = (
-                str(self.patrol_apprentices[3].name),
-                choice(self.patrol_apprentices[3].pronouns),
-            )
-        if len(self.patrol_apprentices) > 4:
-            replace_dict["app5"] = (
-                str(self.patrol_apprentices[4].name),
-                choice(self.patrol_apprentices[4].pronouns),
-            )
-        if len(self.patrol_apprentices) > 5:
-            replace_dict["app6"] = (
-                str(self.patrol_apprentices[5].name),
-                choice(self.patrol_apprentices[5].pronouns),
-            )
-
-        if stat_cat:
-            replace_dict["s_c"] = (str(stat_cat.name), choice(stat_cat.pronouns))
-
-        text = process_text(text, replace_dict)
-        text = adjust_prey_abbr(text)
-
-        other_clan_name = self.other_clan.name
-        s = 0
-        for x in range(text.count("o_c_n")):
-            if "o_c_n" in text:
-                for y in vowels:
-                    if str(other_clan_name).startswith(y):
-                        modify = text.split()
-                        pos = 0
-                        if "o_c_n" in modify:
-                            pos = modify.index("o_c_n")
-                        if "o_c_n's" in modify:
-                            pos = modify.index("o_c_n's")
-                        if "o_c_n." in modify:
-                            pos = modify.index("o_c_n.")
-                        if modify[pos - 1] == "a":
-                            modify.remove("a")
-                            modify.insert(pos - 1, "an")
-                        text = " ".join(modify)
-                        break
-
-        text = text.replace("o_c_n", str(other_clan_name) + "Clan")
-
-        clan_name = game.clan.displayname
-        s = 0
-        pos = 0
-        for x in range(text.count("c_n")):
-            if "c_n" in text:
-                for y in vowels:
-                    if str(clan_name).startswith(y):
-                        modify = text.split()
-                        if "c_n" in modify:
-                            pos = modify.index("c_n")
-                        if "c_n's" in modify:
-                            pos = modify.index("c_n's")
-                        if "c_n." in modify:
-                            pos = modify.index("c_n.")
-                        if modify[pos - 1] == "a":
-                            modify.remove("a")
-                            modify.insert(pos - 1, "an")
-                        text = " ".join(modify)
-                        break
-
-        text = text.replace("c_n", str(game.clan.displayname) + "Clan")
-
-        # TODO: check if this can be handled in event_text_adjust
-        return text
 
 
 # ---------------------------------------------------------------------------- #

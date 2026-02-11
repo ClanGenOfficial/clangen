@@ -481,7 +481,7 @@ class Status:
         Removes from previous group and sets standing with that group to Lost.
         :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
         Twolegs and are now a kittypet)
-        :param specific_group: If you want to make this cat "lost" from a group they aren't currently part of, include the group here
+        :param specific_group: If you want to make this cat "lost" from a group they aren't currently part of, include the group ID here
         """
         # find matching rank enum
         rank = CatRank(new_social_status)
@@ -501,6 +501,15 @@ class Status:
         self._modify_group(
             new_rank=CatRank.LONER, standing_with_past_group=CatStanding.EXILED
         )
+
+    def leave_group(self, new_social_status: CatSocial):
+        """
+        Removes cat from previous group and sets standing with that group to Known.
+        :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
+        Twolegs and are now a kittypet)
+        """
+        rank = CatRank(new_social_status)
+        self._modify_group(rank, standing_with_past_group=CatStanding.KNOWN)
 
     def add_to_group(
         self,
@@ -660,11 +669,27 @@ class Status:
 
         return None
 
-    def is_lost(self, group_ID: str = None) -> bool:
+    def get_last_valid_group_id(self) -> Optional[str]:
+        """
+        Returns the last group that this cat was part of. If they have never been affiliated with a group, returns None.
+        :return:
+        """
+        history = self.group_history.copy()
+        history.reverse()
+
+        for entry in history:
+            group_type = game.used_group_IDs.get(entry["group"])
+            if group_type is not None:
+                return entry["group"]
+
+        return None
+
+    def is_lost(self, group_ID: str = CatGroup.PLAYER_CLAN_ID) -> bool:
         """
         Returns True if the cat is considered "lost" by a group.
         :param group_ID: use this to specify a certain group to check lost status against
         """
+
         for entry in self.standing_history:
             if group_ID and entry["group"] != group_ID:
                 continue

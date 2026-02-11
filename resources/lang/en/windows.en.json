@@ -108,6 +108,7 @@
         "nutrition_text": "nutrition: %{nutrition_text}",
         "freshkill_pile_tooltip": "<b>Current amount:</b> %{current_prey_amount} pieces  -  <b>Needed amount:</b> %{needed_amount} pieces",
         "herb_help_tooltip": "The medicine cats will gather herbs each timeskip and treat their patients. Older herbs may expire during timeskip and will be cleared out of the supply. <br><br>Gathered, used, and expired herbs will be reported in this log. To see more information about the Clan's herb supply and sick/injured cats, check the medicine cat den.",
-        "no_mediators": "The Clan has no mediators!"
+        "no_mediators": "The Clan has no mediators!",
+        "leave_clan": "What should this cat become?"
     }
 }

@@ -188,7 +188,10 @@ def create_new_cat_block(
         else:
             cat_group = choice([x.group_ID for x in game.clan.all_other_clans])
     else:
-        cat_social = choice([CatSocial.KITTYPET, CatSocial.LONER, "former clancat"])
+        if parent1:
+            cat_social = parent1.status.social
+        else:
+            cat_social = choice([CatSocial.KITTYPET, CatSocial.LONER, "former clancat"])
 
     # LITTER
     litter = False
@@ -285,7 +288,9 @@ def create_new_cat_block(
     chosen_cat: Optional["Cat"] = None
     if "exists" in attribute_list:
         existing_outsiders = [
-            i for i in Cat.all_cats.values() if i.status.is_outsider and not i.dead
+            i
+            for i in Cat.all_cats.values()
+            if i.status.is_outsider and not i.dead and i not in in_event_cats.values()
         ]
         possible_outsiders = []
         for cat in existing_outsiders:
@@ -590,7 +595,9 @@ def create_new_cat(
         new_cat.status.change_current_moons_as(moons)
 
         if original_social == "former clancat":
-            new_cat.status.become_lost(CatSocial.LONER)
+            new_cat.status.leave_group(
+                choice([CatSocial.KITTYPET, CatSocial.LONER, CatSocial.ROGUE])
+            )
         # now we actually add them to the clan, if they should be joining
         if not outside and alive:
             new_cat.add_to_clan()

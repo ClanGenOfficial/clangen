@@ -201,6 +201,7 @@ class Clan:
         created in the 'clan created' screen, not every time
         the program starts
         """
+        game.reset_used_group_IDs()
         switch_set_value(Switch.clan_name, self.name)
         reset_loaded_clan_settings()
         instructor_rank = choice(
@@ -306,7 +307,6 @@ class Clan:
             and cat.status.alive_in_player_clan
             and cat.ID in Cat.outside_cats
         ):
-            # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
 
