@@ -665,7 +665,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed listening to stories from to_cat."
+                            "cats_from": "from_cat enjoyed listening to to_cat's stories."
                         }
                     }
                 ],
@@ -691,7 +691,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed listening to stories from to_cat."
+                            "cats_from": "from_cat enjoyed listening to to_cat's stories."
                         }
                     }
                 ],
@@ -745,7 +745,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat walked in to_cat's dreams and wasn't sure about their meaning; regardless, from_cat feels that {PRONOUN/to_cat/subject} better understands to_cat after the experience."
+                            "cats_from": "from_cat walked in to_cat's dreams and wasn't sure about their meaning; regardless, from_cat feels that {PRONOUN/from_cat/subject} better {VERB/from_cat/understand/understands} to_cat after the experience."
                         }
                     },
                     {
@@ -1030,7 +1030,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat walked in to_cat's dreams and wasn't sure about their meaning; regardless, from_cat feels that {PRONOUN/to_cat/subject} better understands to_cat after the experience."
+                            "cats_from": "from_cat walked in to_cat's dreams and wasn't sure about their meaning; regardless, from_cat feels that {PRONOUN/from_cat/subject} better {VERB/from_cat/understand/understands} to_cat after the experience."
                         }
                     },
                     {
@@ -1276,7 +1276,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat walked in to_cat's dreams and wasn't sure about their meaning; regardless, from_cat feels that {PRONOUN/to_cat/subject} better understands to_cat after the experience."
+                            "cats_from": "from_cat walked in to_cat's dreams and wasn't sure about their meaning; regardless, from_cat feels that {PRONOUN/from_cat/subject} better {VERB/from_cat/understand/understands} to_cat after the experience."
                         }
                     },
                     {
@@ -1392,7 +1392,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed hearing a funny story from to_cat's youth, it make {PRONOUN/to_cat/object} feel far more approachable."
+                            "cats_from": "from_cat enjoyed hearing a funny story from to_cat's youth, as it makes {PRONOUN/to_cat/object} feel far more approachable."
                         }
                     }
                 ],
@@ -1549,7 +1549,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a hard time bonding together while sunbathing."
+                            "cats_from": "from_cat and to_cat had a hard time bonding while sunbathing together."
                         }
                     }
                 ],
@@ -1576,7 +1576,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a hard time bonding together while sunbathing."
+                            "cats_from": "from_cat and to_cat had a hard time bonding while sunbathing together."
                         }
                     }
                 ],
@@ -1610,7 +1610,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a hard time bonding together while sunbathing."
+                            "cats_from": "from_cat and to_cat had a hard time bonding while sunbathing together."
                         }
                     }
                 ],
