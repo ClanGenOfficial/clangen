@@ -316,7 +316,7 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": [
-                            "high_aggress"
+                            "clan", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
@@ -367,7 +367,7 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": [
-                            "high_social"
+                            "clan", "high_social"
                         ],
                         "mutual": false,
                         "values": [
