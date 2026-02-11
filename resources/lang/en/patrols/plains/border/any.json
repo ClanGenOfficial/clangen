@@ -4244,7 +4244,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wasn't happy with to_cat when {PRONOUN/to_cat/subject} rushed into a tunnel without pausing to think"
+                            "cats_from": "from_cat wasn't happy with to_cat when {PRONOUN/to_cat/subject} rushed into a tunnel without pausing to think."
                         }
                     }
                 ],
