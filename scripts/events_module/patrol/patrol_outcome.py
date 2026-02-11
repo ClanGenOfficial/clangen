@@ -143,7 +143,6 @@ class PatrolOutcome:
             if not filter_relationship_type(
                 group=patrol.patrol_cats,
                 filter_types=outcome.relationship_constraints,
-                event_id=patrol.patrol_event.patrol_id,
                 patrol_leader=patrol.patrol_leader,
             ):
                 continue

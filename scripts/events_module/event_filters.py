@@ -376,7 +376,6 @@ def event_for_cat(
         if cat_group and not filter_relationship_type(
             group=cat_group,
             filter_types=cat_info["relationship_status"],
-            event_id=event_id,
             patrol_leader=p_l,
         ):
             return False
@@ -764,7 +763,7 @@ def _check_for_exclusionary_value(possible_values) -> bool:
 
 
 def filter_relationship_type(
-    group: list, filter_types: List[str], event_id: str = None, patrol_leader=None
+    group: list, filter_types: List[str], patrol_leader=None
 ):
     """
     filters for specific types of relationships between groups of cat objects, returns bool

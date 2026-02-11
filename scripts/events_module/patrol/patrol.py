@@ -523,7 +523,6 @@ class Patrol:
         if not filter_relationship_type(
             group=self.patrol_cats,
             filter_types=patrol.relationship_constraints,
-            event_id=patrol.patrol_id,
             patrol_leader=self.patrol_leader,
         ):
             if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
