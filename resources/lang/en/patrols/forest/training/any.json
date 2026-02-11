@@ -1718,7 +1718,6 @@
                         "amount": -8,
                         "log": {
                             "cats_from": "from_cat and to_cat got into an argument when p_l tried to teach app1 about how dangerous porcupines can be."
-
                         }
                     },
                     {
@@ -1733,7 +1732,6 @@
                         "amount": -8,
                         "log": {
                             "cats_from": "app2 sided with p_l when app1 argued with {PRONOUN/p_l/object} about how dangerous porcupines can be."
-
                         }
                     }
                 ],
