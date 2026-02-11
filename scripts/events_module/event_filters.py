@@ -738,6 +738,9 @@ def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
     if not backstories:
         return cat_list
 
+    is_exclusionary = _check_for_exclusionary_value(backstories)
+    backstories = [x.replace("-", "") for x in backstories]
+
     # now we look for backstory categories
     allowed_stories = []
     for story in backstories:
@@ -746,10 +749,7 @@ def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
         else:
             allowed_stories.append(story)
 
-    is_exclusionary = _check_for_exclusionary_value(backstories)
-
     if is_exclusionary:
-        backstories = [x.replace("-", "") for x in backstories]
         return [kitty for kitty in cat_list if kitty.backstory not in allowed_stories]
     else:
         return [kitty for kitty in cat_list if kitty.backstory in allowed_stories]
