@@ -440,8 +440,8 @@ def _check_cat_status_history(cat, statuses: list) -> bool:
     if is_exclusionary:
         statuses = [x.replace("-", "") for x in statuses]
 
-    for i in cat.status.group_history:
-        if i["rank"] in statuses and i["rank"] != cat.status.rank:
+    for _rank in cat.status.all_ranks.keys():
+        if _rank in statuses and _rank != cat.status.rank:
             if is_exclusionary:
                 return False
             else:
