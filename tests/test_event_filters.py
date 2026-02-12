@@ -7,6 +7,7 @@ from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     event_for_tags,
+    event_for_cat,
 )
 from scripts.game_structure import game
 
@@ -20,10 +21,18 @@ class TestEventFilters(unittest.TestCase):
         game.clan.starting_season = "Newleaf"
         game.clan.game_mode = "classic"
 
-        self.test_cat = create_cat(CatRank.LEADER)
+        self.test_cat = create_cat(CatRank.LEADER, moons=50)
         game.clan.leader = self.test_cat
 
-        self.cat_constraint_dict = {}
+        self.cat_constraint_dict = {
+            "age": [],
+            "status": [],
+            "status_history": [],
+            "trait": [],
+            "skill": [],
+            "backstory": [],
+            "gender": [],
+        }
 
     def test_location(self):
         """
@@ -169,4 +178,78 @@ class TestEventFilters(unittest.TestCase):
         self.assertFalse(
             event_for_tags(["high_lives", "low_lives", "some_lives"], self.test_cat),
             "Assert 1-life leader does not pass mixed tag list where they qualify for 1 tag, but not others.",
+        )
+
+    def test_cat_age(self):
+        self.cat_constraint_dict["age"] = ["adult"]
+        self.assertTrue(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert single age match failed.",
+        )
+
+        self.cat_constraint_dict["age"] = ["young adult"]
+        self.assertFalse(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert single age mismatch failed.",
+        )
+
+        self.cat_constraint_dict["age"] = ["young adult", "adult"]
+        self.assertTrue(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert mixed age match failed.",
+        )
+
+        self.cat_constraint_dict["age"] = ["young adult", "senior adult"]
+        self.assertFalse(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert mixed age mismatch failed.",
+        )
+
+        self.cat_constraint_dict["age"] = ["-newborn"]
+        self.assertTrue(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert single age excluded failed.",
+        )
+
+        self.cat_constraint_dict["age"] = ["-newborn", "-adult"]
+        self.assertFalse(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert mixed age excluded, including current, failed.",
+        )
+
+    def test_cat_status(self):
+        self.cat_constraint_dict["status"] = ["leader"]
+        self.assertTrue(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert single status match failed.",
+        )
+
+        self.cat_constraint_dict["status"] = ["warrior"]
+        self.assertFalse(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert single status mismatch failed.",
+        )
+
+        self.cat_constraint_dict["status"] = ["leader", "warrior"]
+        self.assertTrue(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert mixed status match failed.",
+        )
+
+        self.cat_constraint_dict["status"] = ["warrior", "medicine cat"]
+        self.assertFalse(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert mixed status mismatch failed.",
+        )
+
+        self.cat_constraint_dict["status"] = ["-warrior"]
+        self.assertTrue(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert single status excluded failed.",
+        )
+
+        self.cat_constraint_dict["status"] = ["-leader", "-warrior"]
+        self.assertFalse(
+            event_for_cat(self.cat_constraint_dict, self.test_cat),
+            "Assert mixed status excluded, including current, failed.",
         )
