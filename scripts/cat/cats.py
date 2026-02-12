@@ -924,7 +924,7 @@ class Cat:
                 and child.moons < 12
             ):
                 child.status.add_to_group(
-                    new_group_ID=CatGroup.PLAYER_CLAN_ID, age=self.age
+                    new_group_ID=CatGroup.PLAYER_CLAN_ID, age=child.age
                 )
                 child.add_to_clan()
                 child.history.add_beginning()
