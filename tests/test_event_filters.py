@@ -114,7 +114,8 @@ class TestEventFilters(unittest.TestCase):
 
     def test_game_mode_tags(self):
         self.assertTrue(
-            event_for_tags(["classic"], self.test_cat), "Assert correct game mode tag failed."
+            event_for_tags(["classic"], self.test_cat),
+            "Assert correct game mode tag failed.",
         )
         self.assertFalse(
             event_for_tags(["expanded"], self.test_cat),
