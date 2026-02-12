@@ -378,7 +378,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_lawful", "high_stable", "clan"],
+                        "cats_from": ["clan", "high_lawful", "high_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "respect"],
@@ -1401,7 +1401,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat decided not to tell to_cat about a vision."
+                            "cats_from": "from_cat didn't trust to_cat with {PRONOUN/from_cat/poss} vision."
                         }
                     }
                 ]
@@ -1712,7 +1712,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "low_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
@@ -1882,7 +1882,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "low_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
@@ -1948,7 +1948,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat apprentice": [1, 6]
+            "medicine cat apprentice": [1, 1]
         },
         "frequency": 1,
         "intro_text": "As app1 pads through c_n territory, {PRONOUN/app1/subject} {VERB/app1/feel/feels} a presence join {PRONOUN/app1/object}.",
@@ -1999,7 +1999,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "low_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
@@ -2168,7 +2168,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "low_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
@@ -2653,7 +2653,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_lawful", "clan"],
+                        "cats_from": ["clan", "high_lawful"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3978,7 +3978,7 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": [
-                            "low_social", "low_stable"
+                            "clan", "low_social", "low_stable"
                         ],
                         "mutual": false,
                         "values": [
