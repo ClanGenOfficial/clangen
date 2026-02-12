@@ -875,6 +875,8 @@ class PatrolOutcome:
             outside = []
             new = []
             for cat in patrol.new_cats[-1]:
+                if "unknown" in attribute_list:
+                    continue
                 if cat.dead:
                     dead.append(str(cat.name))
                 elif cat.status.is_outsider or cat.status.is_other_clancat:
