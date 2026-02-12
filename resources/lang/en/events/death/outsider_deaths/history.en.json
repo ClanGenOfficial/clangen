@@ -1,0 +1,13 @@
+{
+    "en": {
+        "default": "m_c died outside of the Clan.",
+        "exile": "m_c died in exile from the Clan.",
+        "lost": "m_c died while being lost and trying to get back to the Clan.",
+        "loner": "m_c died while roaming around.",
+        "rogue": "m_c died while roaming around.",
+        "kittypet": "m_c died while roaming around.",
+        "other_clan": "m_c died in o_c_n.",
+        "other_clan_exiled": "m_c died in exile from o_c_n.",
+        "other_clan_lost": "m_c died while lost and trying to get back to o_c_n."
+    }
+}

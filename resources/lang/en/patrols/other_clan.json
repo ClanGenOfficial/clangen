@@ -4362,7 +4362,7 @@
                         "injuries": [
                             "small_bite_injury"
                         ],
-                        "scar": [
+                        "scars": [
                             "LEGBITE"
                         ]
                     }
@@ -4418,7 +4418,7 @@
                         "injuries": [
                             "battle_injury"
                         ],
-                        "scar": [
+                        "scars": [
                             "NECKBITE",
                             "SNOUT"
                         ]

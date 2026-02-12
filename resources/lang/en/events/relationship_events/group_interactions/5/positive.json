@@ -20,7 +20,7 @@
         "r_c1_to_r_c4": ["enjoys"],
         "r_c2_to_r_c3": ["enjoys"],
         "r_c2_to_r_c4": ["enjoys"],
-		"r_c3_to_r_c4": ["not_mates", "fancies"]
+		"r_c3_to_r_c4": ["-mates", "fancies"]
 	},
 	"specific_reaction": {
 		"r_c3_to_r_c4": {
