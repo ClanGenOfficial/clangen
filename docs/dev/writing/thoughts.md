@@ -70,6 +70,8 @@ Within the game, all cats take a new thought each timeskip. However, there are a
     },
     "main_status_constraint": [],
     "random_status_constraint": [],
+    "main_status_history": [],
+    "random_status_history": [],
     "main_age_constraint": [],
     "random_age_constraint": [],
     "main_trait_constraint": [],
@@ -170,9 +172,17 @@ Constrains the thought to only happen if m_c or r_c are in a certain role. You c
 > 
 > You can also use the tag "any" to allow the thought to occur for all roles except "newborns", who shouldn't get any general thoughts, just the ones placed in their specific JSON.
 
+STATUS_HISTORY:
+Constrains the thought to only happen if m_c or r_c used to have a certain role. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
+
+> [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
+
 ***
 
 ### main_age_constraint: list[str] & random_age_constraint: list[str]:
+
+
+AGE_CONSTRAINT:
 Constrains the thought to only occur if m_c or r_c are within a certain age group. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Age Tag List](reference/tag-lists.md#__tabbed_2_1)

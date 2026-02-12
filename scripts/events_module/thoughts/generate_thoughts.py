@@ -299,6 +299,12 @@ def _constraints_fulfilled(
     if "random_status_constraint" in thought and random_cat:
         random_info_dict["status"] = thought["random_status_constraint"]
 
+    if "main_status_history" in thought:
+        main_info_dict["status_history"] = thought["main_status_history"]
+
+    if "random_status_history" in thought and random_cat:
+        random_info_dict["status_history"] = thought["random_status_history"]
+
     if "main_age_constraint" in thought:
         main_info_dict["age"] = thought["main_age_constraint"]
 
