@@ -5549,7 +5549,7 @@
                         {
                             "cats_to": ["p_l"],
                             "cats_from": ["app1"],
-                            "mutual": true,
+                            "mutual": false,
                             "values": ["comfort", "like"],
                             "amount": -10,
                             "log": {
@@ -5559,7 +5559,7 @@
                         {
                             "cats_to": ["app1"],
                             "cats_from": ["p_l"],
-                            "mutual": true,
+                            "mutual": false,
                             "values": ["respect"],
                             "amount": -10,
                             "log": {

@@ -14,6 +14,7 @@ class NewCatTag(Enum):
     loner = "loner"
     rogue = "rogue"
     clancat = "clancat"
+    former_clancat = "former clancat"
     meeting = "meeting"
     exists = "exists"
     unknown = "unknown"
