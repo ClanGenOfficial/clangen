@@ -183,6 +183,7 @@ class Patrol:
                         other_clan=self.other_clan,
                     ),
                     "",
+                    [],
                     None,
                 )
             else:
