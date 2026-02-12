@@ -3614,7 +3614,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat felt threatened by the idea that StarClan would send a vision to to_cat instead of {PRONOUN/from_cat/object."
+                            "cats_from": "from_cat felt threatened by the idea that StarClan would send a vision to to_cat instead of {PRONOUN/from_cat/object}."
                         }
                     }
                 ],
