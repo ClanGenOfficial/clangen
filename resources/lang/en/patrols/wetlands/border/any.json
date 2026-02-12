@@ -754,7 +754,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the marshy terrain to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c:0}{VERB/n_c:0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c:0}{VERB/n_c:0/'re/'s} escorted to the border with the lesson firmly learned.",
+                "text": "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the marshy terrain to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} escorted to the border with the lesson firmly learned.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
