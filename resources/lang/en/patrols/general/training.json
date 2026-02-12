@@ -4849,7 +4849,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat looking out for {PRONOUN/from_cat/object} when {PRONOUN/from_cat/subjected} got hurt during training."
+                            "cats_from": "from_cat appreciated to_cat looking out for {PRONOUN/from_cat/object} when {PRONOUN/from_cat/subject} got hurt during training."
                         }
                     }
                 ],
