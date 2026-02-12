@@ -60,7 +60,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat and to_cat built a snow den together"
+                            "cats_from": "from_cat and to_cat built a snow den together."
                         }
                     }
                 ],
@@ -768,7 +768,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat felt uneasy about how fascinated to_cat was by the story of the Dark Forest's creation.."
+                            "cats_from": "from_cat felt uneasy about how fascinated to_cat was by the story of the Dark Forest's creation."
                         }
                     }
                 ],
@@ -1299,7 +1299,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -30,
                         "log": {
                             "cats_from": "from_cat led the patrol into an avalanche that killed multiple Clanmates."
                         }
