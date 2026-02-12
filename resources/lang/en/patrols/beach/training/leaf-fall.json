@@ -249,7 +249,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "high_lawful", "high_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "high_lawful", "high_stable"],
                         "cats_to": ["s_c"],
                         "mutual": false,
                         "values": ["respect"],
