@@ -63,7 +63,7 @@
 		},
 		"relationship_constraint": {
 			"m_c_to_r_c1": ["listens_to"],
-			"m_c_to_r_c2": ["fancies","not_mates"]
+			"m_c_to_r_c2": ["fancies","-mates"]
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {

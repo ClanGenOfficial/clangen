@@ -26,9 +26,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         "status": [],
         "relationship_status": [],
         "skill": [],
-        "not_skill": [],
         "trait": [],
-        "not_trait": [],
         "backstory": [],
         "dies": false
     },
@@ -37,9 +35,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         "status": [],
         "relationship_status": [],
         "skill": [],
-        "not_skill": [],
         "trait": [],
-        "not_trait": [],
         "backstory": [],
         "dies": false
     },
@@ -128,7 +124,7 @@ How to make sure your event_id is unique:
 
 ***
 ### location:list[str]
->This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  
+>This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 | string        | use                              |
 |---------------|----------------------------------|
@@ -146,7 +142,7 @@ How to make sure your event_id is unique:
 Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols. 
 
 ### season:list[str]
->List of seasons in which the event may occur.
+>List of seasons in which the event may occur. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 lowercase season names + "any"
 
@@ -246,9 +242,9 @@ lowercase season names + "any"
 ### m_c:dict[str, various]
 >Specifies the requirements for the main cat (m_c) of the event. 
 >
->**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](reference/tag-lists.md#__tabbed_2_1)
+>**age:[list]** : a list of ages m_c can be. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values). [Possible Ages](reference/tag-lists.md#__tabbed_2_1)
 >
->**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](reference/tag-lists.md#__tabbed_2_2)
+>**status:[list]** : a list of statuses m_c can b. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values). [Possible Statuses](reference/tag-lists.md#__tabbed_2_2)
 
 !!! tip
     Keep in mind that the status and ages you input can limit each other! For example, if you add "kitten" to `age`, remember that kitten age cats can only ever have the kitten status.  This means that you *could* leave `status` as "any" and be secure in the knowledge that kitten status cats will be the only ones chosen.  
@@ -259,17 +255,11 @@ lowercase season names + "any"
 
 >**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
->**skill[list]** : m_c must possess at least one skill from this list. if they can be anything, use "any"
+>**skill[list]** : m_c must possess at least one skill from this list. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
->**not_skill[list]** : m_c cannot possess any of the skills on this list. 
->This is mostly useful in cases where a cat can have any skill except one or two, in which case you would need to list those few skills here, but would not have to list all the other skills in the skill parameter.  Cats are also capable of having multiple skills, so it can be valuable to specify if a cat with an allowed skill should still be prevented from this event due to possessing a second, un-allowed skill.  Also useful for stopping a cat with a certain skill (like FIGHTER,3) from getting an event incongruent with their skill (dying in a fight to an apprentice)
+>**trait[list]** : m_c must possess at least one trait from this list. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
->**trait[list]** : m_c must possess at least one trait from this list. if they can be anything, use "any"
->
->**not_trait[list]** : m_c cannot possess any of the traits on this list. 
->This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.  
->
->**backstory[list]** : m_c must possess a backstory from this list. if they can be anything, use "any"
+>**backstory[list]** : m_c must possess a backstory from this list. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
 >**dies[bool]** : the m_c will die due to this event. default is False
 
@@ -278,23 +268,18 @@ lowercase season names + "any"
 ### r_c:dict[str, various]
 >Specifies the requirements for r_c of the event.  If there is no r_c in the event, then do not include this parameter. 
 >
->**age:[list]** : a list of ages r_c can be. if they can be anything, use "any"
+>**age:[list]** : a list of ages r_c can be. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
->**status:[list]** : a list of statuses r_c can be. if they can be anything, use "any"
+>**status:[list]** : a list of statuses r_c can be. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
 >**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers).
 > 
->**skill[list]** : r_c must possess at least one skill from this list. if they can be anything, remove parameter or leave list empty.
+>**skill[list]** : r_c must possess at least one skill from this list. If they can be anything, remove parameter or leave list empty. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
->**not_skill[list]** : r_c cannot possess any of the skills on this list
->This is mostly useful in cases where a cat can have any skill except one or two, in which case you would need to list those few skills here, but would not have to list all the other skills in the skill parameter.  Cats are also capable of having multiple skills, so it can be valuable to specify if a cat with an allowed skill should still be prevented from this event due to possessing a second, un-allowed skill.
 >
->**trait[list]** : r_c must possess at least one trait from this list. if they can be anything, use "any"
+>**trait[list]** : r_c must possess at least one trait from this list. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
->**not_trait[list]** : r_c cannot possess any of the traits on this list
->This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.  
->
->**backstory[list]** : r_c must possess a backstory from this list. if they can be anything, use "any"
+>**backstory[list]** : r_c must possess a backstory from this list. If they can be anything, use "any". You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
 >**dies[bool]** : r_c will die due to this event, default is False
 
