@@ -1255,6 +1255,18 @@
                         "log": {
                             "cats_from": "from_cat was disappointed in to_cat when {PRONOUN/to_cat/subject} messed around during a lesson in avalanche safety."
                         }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1", "app2"],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was annoyed when to_cat assigned {PRONOUN/from_cat/object} to cleaning the dirtplace as a punishment for messing around during a lesson."
+                        }
                     }
                 ],
                 "frequency": 4
