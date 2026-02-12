@@ -4982,7 +4982,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked on their skills together on a training patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4997,9 +5000,12 @@
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed working on their skills together on a training patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -5008,7 +5014,8 @@
                 "text": "s_c screws up a move and mutters about mouse-dung, but r_c helps {PRONOUN/s_c/object} back onto {PRONOUN/s_c/poss} paws with an easy smile.",
                 "exp": 20,
                 "stat_trait": [
-                    "grumpy"
+                    "grumpy",
+                    "gloomy"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -5022,7 +5029,10 @@
                             "comfort",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "r_c was unaffected by s_c's pessimism, and they enjoyed working on their skills together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5032,21 +5042,26 @@
                 "exp": 20,
                 "stat_trait": [
                     "nervous",
-                    "insecure"
+                    "insecure",
+                    "careful"
                 ],
                 "can_have_stat": [
                     "p_l"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": [
                             "comfort",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "r_c enjoyed working on {PRONOUN/r_c/poss} skills with s_c.",
+                            "cats_to": "s_c realized how nice it was to work on {PRONOUN/s_c/poss} skills with a cat like r_c."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5070,13 +5085,16 @@
                             "comfort",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got playful on a training patrol."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "And by 'teamwork,' s_c means 'working together to find the ideal place to nap the afternoon away.' Who wants to do work when instead they can just cover for each other and find a glorious spot to waste time?",
+                "text": "And by \"teamwork,\" s_c means \"working together to find the ideal place to nap the afternoon away.\" Who wants to do work when instead they can just cover for each other and find a glorious spot to waste time?",
                 "exp": 20,
                 "stat_trait": [
                     "shameless",
@@ -5095,7 +5113,10 @@
                             "comfort",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed lazing around when they were supposed to be training."
+                        }
                     },
                     {
                         "cats_to": ["p_l"],
@@ -5104,7 +5125,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat wasn't impressed that to_cat preferred to sun {PRONOUN/to_cat/self} than train."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5127,7 +5151,22 @@
                             "comfort",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed training together on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": [
+                            "trust", "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was flattered that to_cat had noticed the work {PRONOUN/from_cat/subject} put into {PRONOUN/from_cat/poss} skills."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5149,7 +5188,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a "
+                        }
                     }
                 ],
                 "frequency": 4
