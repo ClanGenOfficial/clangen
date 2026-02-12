@@ -4147,25 +4147,44 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "comfort", "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed telling ghost stories on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat made up hare-brained stories on patrol to make each other laugh."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "app1 wonders aloud if one of the ghost stories is true... The other cats gather close and comfort {PRONOUN/app1/object}. Time for the silly game to end, before someone actually gets upset.",
+                "text": "app2 wonders aloud if one of the ghost stories is true... The other cats gather close and comfort {PRONOUN/app2/object}. Time for the silly game to end, before someone actually gets upset.",
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["app2"],
                         "cats_from": ["patrol"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat reassured to_cat when {PRONOUN/to_cat/subject} was frightened by a ghost story on patrol.",
+                            "cats_to": "app2 was comforted by the patrol when {PRONOUN/app2/subject} {VERB/app2/were/was} frightened by a ghost story on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4182,7 +4201,6 @@
                     "strange"
                 ],
                 "can_have_stat": [
-                    "app1",
                     "app"
                 ],
                 "relationships": [
@@ -4191,9 +4209,24 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "like", "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed telling ghost stories on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was amused by the ridiculous stories to_cat told on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4205,13 +4238,16 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat thought it was mouse-hearted of to_cat to be so frightened by a ghost story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4230,18 +4266,32 @@
                     "troublesome"
                 ],
                 "can_have_stat": [
-                    "app1",
-                    "app"
+                    "app1"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "like", "comfort"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was upset when to_cat made fun of {PRONOUN/from_cat/object} for being frightened of a ghost story."
+                        }
+                    },
+                    {
+                        "cats_to": ["app2"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "like", "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat thought it was mouse-hearted of to_cat to be so frightened by a ghost story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4356,6 +4406,18 @@
                 ],
                 "can_have_stat": [
                     "app"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["clan", "high_social", "low_aggress"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c brought back some prey from an assessment and shared it with to_cat."
+                        }
+                    }
                 ],
                 "frequency": 4
             }
