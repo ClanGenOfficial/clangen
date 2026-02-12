@@ -16,7 +16,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "p_l takes the patrol down to the beach to train, but wait, something's odd here...",
+        "intro_text": "p_l takes the patrol down to the beach to train, but the patrol pauses when they encounter something odd.",
         "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -36,7 +36,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat speculated about the origin of a mysterious ginger cat statue on the beach."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -57,13 +60,16 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat speculated about the origin of a mysterious ginger cat statue on the beach."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c laughs! The ginger cat statues are Twoleg objects; {PRONOUN/s_c/subject} {VERB/s_c/spin/spins} a tale almost unbelievable, but {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} it's true! The ginger cat statues used to live on something called a 'boat.'",
+                "text": "s_c laughs! The ginger cat statues are Twoleg objects; {PRONOUN/s_c/subject} {VERB/s_c/spin/spins} a tale almost unbelievable, but {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} it's true! The ginger cat statues used to live on something called a \"boat.\"",
                 "exp": 5,
                 "stat_skill": [
                     "STORY,1",
@@ -72,7 +78,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -80,9 +86,13 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "trust"
+                            "trust",
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat was very impressed that to_cat knew the origin of the mysterious ginger cat statue on the beach."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -104,9 +114,13 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "trust"
+                            "trust",
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat was very impressed that to_cat knew the origin of the mysterious ginger cat statue on the beach."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -120,7 +134,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -128,9 +142,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wasn't impressed that to_cat got so freaked out by a ginger cat statue {PRONOUN/to_cat/subject} ran back to camp and spoiled a training patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -155,7 +172,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat speculated that to_cat had something to do with the strange ginger cat statues washing up on the beach."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -206,15 +226,39 @@
                     "troublesome"
                 ],
                 "exp": 5,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["some_clan"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat fell victim to to_cat's fake lizard prank."
+                        }
+                    }
+                ]
             },
             {
-                "text": "s_c remembers seeing these green and black lizards being shown to {PRONOUN/s_c/object} by a kittypet before, who called them 'lego dragons'. s_c wonders if Legodragon would be a proper name for a warrior.",
+                "text": "s_c remembers seeing these green and black lizards being shown to {PRONOUN/s_c/object} by a kittypet before, who called them \"lego dragons.\" s_c wonders if Legodragon would be a proper name for a warrior.",
                 "exp": 5,
                 "stat_skill": [
                     "LORE,1"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social", "high_lawful", "high_stable"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard to_cat contemplate naming a kit Legokit and thought it was a ridiculous name."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -242,14 +286,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -258,7 +296,7 @@
             "LORE,1",
             "SWIMMER,1"
         ],
-        "intro_text": "The large patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rock pool. app1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/app1/subject} practice this on a hot sunny day?",
+        "intro_text": "The large patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rockpool. app1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/app1/subject} practice this on a hot sunny day?",
         "decline_text": "Taking a break turns into ending the patrol early.",
         "success_outcomes": [
             {
@@ -281,12 +319,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "like",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat both cheered and warmed from_cat up on a training patrol during a lesson about rescuing other cats from the water."
+                        }
                     },
                     {
                         "cats_to": [
@@ -300,7 +339,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat practiced rescuing cats from the water."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -326,11 +368,12 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "like",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat listened intently to to_cat's story of how a c_n warrior rescued a kitten from the water."
+                        }
                     },
                     {
                         "cats_to": [
@@ -344,7 +387,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat practiced rescuing cats from the water."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -369,12 +415,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "like",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was convinced of the importance of learning to rescue cats from the water by to_cat's stories of ocean dancers."
+                        }
                     },
                     {
                         "cats_to": [
@@ -388,7 +435,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat practiced rescuing cats from the water."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -410,34 +460,21 @@
                         "mutual": false,
                         "values": [
                             "trust",
-                            "comfort"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat appreciated that to_cat was willing to cut a training session short to warm {PRONOUN/from_cat/object} up."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "app1 is right - this is far, far too cold of a pool to train in, and they're shivering too badly to continue. Time to go home, and p_l apologizes for bringing the patrol out here.",
+                "text": "app1 is right - this is far, far too cold of a pool to train in, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_app",
                 "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    },
                     {
                         "cats_to": [
                             "p_l"
@@ -450,7 +487,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat thought to_cat's choice of freezing cold water for lifeguarding training was at fault for app1's shivering."
+                        }
                     }
                 ],
                 "injury": [
