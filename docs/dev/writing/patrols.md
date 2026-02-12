@@ -637,13 +637,13 @@ What each parameter does, and what the options are for outcomes.
 ***
 
 #### stat_skill: List[str]
->Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have at least one of these skills. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. See elsewhere for skill formatting. 
+>Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have at least one of these skills. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. See elsewhere for skill formatting. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
 
 ***
 
 #### stat_trait: List[str]
->Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have one of these traits. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included.
+>Optional. Including this "stat_skill" or "stat_trait" makes this a stat outcome, which can only occur if a stat cat can be found. Requires stat cats to have one of these traits. For s_c to be used anywhere in the outcome, "stat_skill" or "stat_trait" must be included. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 >
 
 ***

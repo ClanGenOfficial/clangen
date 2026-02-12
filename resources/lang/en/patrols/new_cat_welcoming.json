@@ -5953,4 +5953,795 @@
             }
         ]
     }
+    ,
+    {
+        "patrol_id": "pln_bord_greenleaf_hitherecutie_solo1",
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [],
+        "patrol_art": "gen_med_gatheringgoldenrod_loner_greenleaf1_v3",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "normal adult": [1, 1]
+        },
+        "frequency": 3,
+        "intro_text": "p_l hears rustling in the grass. Initially annoyed at whatever apprentice has decided to come play in the borderlands, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shocked when the flowering grass parts to reveal an outsider, who grins flirtatiously at p_l and offers a cocksure greeting.",
+        "decline_text": "Nope, p_l is going back home. Right now.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The loner tells p_l that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just as refreshing as the stream the loner was looking for. p_l is sure the loner has scented the border markings but directs {PRONOUN/n_c:0/object} to a river anyway. A river <i>outside</i> of c_n's territory.",
+                "exp": 15,
+                "art": "gen_happy_cat3",
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat had a pleasant chat with to_cat while looking for a stream or river."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was amused by how confidently to_cat trespassed to ask for directions to a stream or river."
+                        }
+                    }
+                ],
+                "outsider_rep": 1,
+                "frequency": 1
+            },
+            {
+                "text": "s_c is unimpressed by the loner's poor attempt to conceal a piece of fresh-kill behind {PRONOUN/n_c:0/self}. The loner tries to play it off, but p_l escorts {PRONOUN/n_c:0/object} to the border without a word and confiscates the stolen prey.",
+                "exp": 15,
+                "art": "gen_train_talkingWL",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "careful",
+                    "calm",
+                    "cold",
+                    "wise"
+                ],
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust",
+                            "romance"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat flirted with to_cat when {PRONOUN/to_cat/subject} found {PRONOUN/from_cat/object} trespassing and stealing prey."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was amused by to_cat's audacity in crossing the border to steal prey and then flirting with from_cat."
+                        }
+                    }
+                ],
+                "outsider_rep": 1,
+                "frequency": 4
+            },
+            {
+                "text": "s_c banters with the cocky loner as {PRONOUN/s_c/subject} {VERB/s_c/escort/escorts} {PRONOUN/n_c:0/object} to the border. The loner seems impressed and disappointed that a clever and attractive cat like s_c is a Clan cat. When it comes time to part at the border, both cats linger an extra heartbeat.",
+                "exp": 15,
+                "art": "gen_train_talkingWL",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "flamboyant",
+                    "charismatic",
+                    "playful"
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust",
+                            "romance"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat flirted with to_cat when to_cat caught {PRONOUN/from_cat/object} trespassing."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "romance"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was flattered by to_cat's flirtatious attention, even though to_cat was trespassing."
+                        }
+                    }
+                ],
+                "outsider_rep": 0,
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l is stunned into silence by the loner's suave charm. That gives the loner a chance to pick up the dead rabbit {PRONOUN/n_c:0/subject} stole from c_n territory and run off. p_l curses and yowls after {PRONOUn/n_c:0/object} to no avail.",
+                "exp": 0,
+                "art": "gen_happy_cat3",
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "romance",
+                            "comfort"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat enjoyed flirting with to_cat to get away with {PRONOUN/from_cat/poss} trespassing and poaching."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Despite {PRONOUN/from_cat/self}, from_cat was charmed by an audacious loner who trespassed and stole from c_n."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "clan", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat let a loner get away with stealing prey from c_n."
+                        }
+                    }
+                ],
+                "outsider_rep": 0,
+                "frequency": 1
+            },
+            {
+                "text": "s_c is easily swayed by the playful loner, and the two cats spend sun-high romping around the territory together. When they bid each other farewell and s_c returns to where {PRONOUN/s_c/subject} first found {PRONOUN/n_c:0/object}, s_c scents the prey-blood. The loner was poaching.",
+                "exp": 0,
+                "art": "gen_train_talkingWL",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "insecure",
+                    "playful",
+                    "childish",
+                    "shameless",
+                    "lonesome"
+                ],
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "romance"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat enjoyed spending a sun-high romping around with to_cat, and enjoyed stealing prey from c_n even more."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "...but from_cat admittedly had fun being distracted and tricked."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "to_cat fooled from_cat while stealing prey from c_n's territory..."
+                        }
+                    }
+                ],
+                "outsider_rep": 0,
+                "frequency": 4
+            },
+            {
+                "text": "s_c doesn't hesitate to flirt back, and though the loner is doing a poor job of concealing a piece of stolen fresh-kill, s_c decides the loner is more interesting than getting back a scrap of food.",
+                "exp": 0,
+                "art": "gen_flower_date_warrior_loner",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "rebellious",
+                    "troublesome",
+                    "bold",
+                    "shameless",
+                    "adventurous"
+                ],
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "romance"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "p_l let n_c:0 get away with stealing prey, and the two cats spent the day flirting and getting to know each other."
+                        }
+                    }
+                ],
+                "outsider_rep": 0,
+                "frequency": 4
+            },
+            {
+                "text": "The charming loner explains that {PRONOUN/n_c:0/poss} kittens need food. s_c is touched and approaches to offer help - when the loner suddenly attacks. s_c fights {PRONOUN/n_c:0/object} off, newly wary of smooth-talking strangers.",
+                "exp": 0,
+                "art": "gen_battle_warrior_loner",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "compassionate",
+                    "loving",
+                    "oblivious",
+                    "sincere"
+                ],
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "to_cat tricked from_cat with a story about needing to feed {PRONOUN/to_cat/poss} kits and then attacked {PRONOUN/from_cat/object}."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat attacked p_l."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SCRATCHSIDE"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "torn ear"
+                        ],
+                        "scars": [
+                            "RIGHTEAR"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had with a treacherous, flirtatious rogue.",
+                    "reg_death": "The wounds obtained fighting a treacherous, flirtatious rogue eventually killed m_c.",
+                    "lead_death": "wounds obtained fighting a treacherous, flirtatious rogue eventually killed m_c"
+                },
+                "outsider_rep": -1,
+                "frequency": 4
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "As p_l explains that the loner is on c_n territory, the loner asks question after question about what c_n is, what a Clan is, what a warrior is? p_l is just getting to an explanation of the Code when the loner whips around and sprints away.",
+                "exp": 0,
+                "art": "gen_bord_newcat",
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat caught to_cat trespassing on c_n territory."
+                        }
+                    }
+                ],
+                "outsider_rep": -1,
+                "frequency": 1
+            },
+            {
+                "text": "s_c demands that the loner leave, and the loner refuses. s_c unsheathes {PRONOUN/s_c/poss} claws and repeats the order. The loner unsheathes {PRONOUN/n_c:0/poss} claws and repeats {PRONOUN/n_c:0/poss} refusal. Neither cat gets home unscathed that day.",
+                "exp": 0,
+                "art": "gen_battle_warrior_loner",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "grumpy",
+                    "arrogant",
+                    "confident",
+                    "responsible",
+                    "bloodthirsty"
+                ],
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "p_l caught n_c:0 trespassing and attacked {PRONOUn/n_c:0/object}."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SCRATCHSIDE"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "torn ear"
+                        ],
+                        "scars": [
+                            "RIGHTEAR"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "n_c:0"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ],
+                        "scars": [
+                            "SCRATCHSIDE"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred in a fight with another cat.",
+                    "death": "m_c died of wounds sustained from a fight with another cat."
+                },
+                "outsider_rep": -1,
+                "frequency": 4
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "Eyeing the piece of stolen fresh-kill hiding behind the grinning loner, p_l thanks {PRONOUN/n_c:0/object} for {PRONOUN/n_c:0/poss} contribution to the fresh-kill pile and escorts {PRONOUN/n_c:0/object} to the border. n_c:0 doesn't think p_l's much fun.",
+                "exp": 15,
+                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "...but from_cat respected to_cat's authority."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was annoyed to be caught stealing by to_cat..."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat caught to_cat stealing from c_n."
+                        }
+                    }
+                ],
+                "outsider_rep": -2,
+                "frequency": 1
+            },
+            {
+                "text": "s_c demands that the loner leave. The loner suggests that s_c only wants to watch {PRONOUN/n_c:0/object} leave, {PRONOUN/n_c:0/poss} tail flicking flirtatiously. s_c's temper flares, and {PRONOUN/s_c/subject} {VERB/s_c/chase/chases} this audacious loner out of c_n's territory.",
+                "exp": 15,
+                "art": "gen_angry_cat_warrior",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_trait": [
+                    "fierce",
+                    "righteous",
+                    "strict",
+                    "loyal"
+                ],
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "romance"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat enjoyed flirting with to_cat when to_cat caught {PRONOUN/from_cat/object} trespassing."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "...though from_cat wasn't entirely immune to {PRONOUN/to_cat/poss} charms."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat caught to_cat trespassing on c_n territory..."
+                        }
+                    }
+                ],
+                "outsider_rep": -2,
+                "frequency": 4
+            },
+            {
+                "text": "As the loner flirts and swaggers in front of s_c, s_c interrupts to demand that the loner leave c_n territory immediately. The loner turns as if to leave, then whips around and leaps at s_c with unsheathed claws. s_c easily sidesteps the attack and knocks the loner off {PRONOUN/n_c:0/poss} paws. The loner hisses, but it's clear who's won.",
+                "exp": 15,
+                "art": "gen_angry_cat_loner",
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "stat_skill": [
+                    "FIGHTER,2"
+                ],
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner",
+                        "meeting"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "romance",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat flirted with to_cat when {PRONOUN/to_cat/subject} caught {PRONOUN/from_cat/object} trespassing. Though to_cat drove {PRONOUN/from_cat/object} off, from_cat was impressed by to_cat's strength."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat caught to_cat trespassing on c_n territory and chased {PRONOUN/to_cat/object} off."
+                        }
+                    }
+                ],
+                "outsider_rep": -2,
+                "frequency": 4
+            }
+        ]
+    }
 ]

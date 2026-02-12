@@ -5,7 +5,7 @@ from typing import List, Union, Literal
 from pydantic import BaseModel, Field
 from pydantic_core import MISSING
 
-from scripts.cat.enums import CatAge
+from scripts.models.common.age import Age
 from scripts.models.common.all_trait import AllTrait
 from scripts.models.common.backstory import Backstory
 from scripts.models.common.relationship_status import (
@@ -16,7 +16,7 @@ from scripts.models.common.status import Status
 
 
 class MC(BaseModel):
-    age: Union[List[Union[CatAge, Literal["any"]]], MISSING] = Field(
+    age: Union[List[Union[Age, Literal["any"]]], MISSING] = Field(
         MISSING,
         description='List of ages m_c can be. If they can be anything, use "any".',
     )
@@ -32,15 +32,9 @@ class MC(BaseModel):
         MISSING,
         description='m_c must possess at least one skill from this list. If they can be anything, use "any".',
     )
-    not_skill: Union[List[Skill], MISSING] = Field(
-        MISSING, description="m_c cannot possess any of the skills on this list."
-    )
     trait: Union[List[Union[AllTrait, Literal["any"]]], MISSING] = Field(
         MISSING,
         description='m_c must possess at least one trait from this list. If they can be anything, use "any".',
-    )
-    not_trait: Union[List[AllTrait], MISSING] = Field(
-        MISSING, description="m_c cannot possess any of the traits on this list."
     )
     backstory: Union[List[Backstory], MISSING] = Field(
         MISSING, description="m_c must possess a backstory from this list."

@@ -3,11 +3,17 @@
     "Biome": {
       "enum": [
         "mountainous",
+        "-mountainous",
         "plains",
+        "-plains",
         "forest",
+        "-forest",
         "beach",
+        "-beach",
         "wetlands",
-        "desert"
+        "-wetlands",
+        "desert",
+        "-desert"
       ],
       "title": "Biome",
       "type": "string"
