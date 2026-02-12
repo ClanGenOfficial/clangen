@@ -1,124 +1,5 @@
 [
     {
-        "patrol_id": "bch_train_romantic_oceanswim1",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [
-            "romance"
-        ],
-        "patrol_art": "train_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "all apprentices": [ -1, -1 ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
-        "decline_text": "r_c isn't convinced and suggests they should probably focus on the patrol instead.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and {VERB/r_c/plunge/plunges} in after {PRONOUN/p_l/object}.",
-                "exp": 5,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter and the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
-                "exp": 5,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with {PRONOUN/r_c/object} instead.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c tries {PRONOUN/s_c/poss} best to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/r_c/poss} own swimming to notice. Eventually, s_c gives up for now, discouraged.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "childish",
-                    "insecure",
-                    "lonesome"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
         "patrol_id": "bch_train_greenleaf_twolegmigration_lorelocked1",
         "biome": [
             "beach"
@@ -134,10 +15,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
+            "normal adult": [1, 6]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -162,22 +40,12 @@
                         "mutual": true,
                         "values": [
                             "like",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat learned from to_cat about how the Twolegs occupy a particular beach throughout greenleaf."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -185,23 +53,9 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The monsters unnerve the patrol, who don't want to stick around to hear p_l's lesson. p_l disapproves, but lets the patrol end early.",
+                "text": "The monsters unnerve the patrol, who don't want to stick around to hear p_l's lesson. p_l disapproves but lets the patrol end early.",
                 "exp": 0,
                 "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -2
-                    },
                     {
                         "cats_to": [
                             "patrol"
@@ -211,10 +65,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed that from_cat and the patrol were too nervous at the sight of monsters to listen to {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -239,10 +95,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                2,
-                6
-            ]
+            "normal adult": [4, 6]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -257,7 +110,7 @@
                 "exp": 20,
                 "art": "gen_train_soggykitty_happy_warrior",
                 "relationships": [
-                    {
+                    {   
                         "cats_to": [
                             "patrol"
                         ],
@@ -269,13 +122,16 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed cooling off in a rockpool on a hot greenleaf day."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor, batting back in mock splashy fight as the rest of the patrol fades away, just the two of them in their own little world",
+                "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, welcoming it and returning the favor, batting back in mock splash-fight as the rest of the patrol fades away, just the two of them in their own little world.",
                 "exp": 20,
                 "art": "fst_train_newleafmatesonadates_70locked1",
                 "relationships": [
@@ -292,7 +148,10 @@
                             "comfort",
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were so involved in splashing each other while cooling down on patrol that they forgot any other cat was there."
+                        }
                     }
                 ],
                 "frequency": 4
