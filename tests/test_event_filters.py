@@ -114,70 +114,70 @@ class TestEventFilters(unittest.TestCase):
 
     def test_game_mode_tags(self):
         self.assertTrue(
-            event_for_tags(["classic"], self.test_cat), "Assert correct game mode tag."
+            event_for_tags(["classic"], self.test_cat), "Assert correct game mode tag failed."
         )
         self.assertFalse(
             event_for_tags(["expanded"], self.test_cat),
-            "Assert incorrect game mode tag",
+            "Assert incorrect game mode tag failed",
         )
 
     def test_leader_life_tags(self):
         game.clan.leader_lives = 9
         self.assertTrue(
             event_for_tags(["some_lives", "lives_remain", "high_lives"], self.test_cat),
-            "Assert 9-life leader passes some_lives, lives_remain, and high_lives tagging.",
+            "Assert 9-life leader passes some_lives, lives_remain, and high_lives failed.",
         )
         self.assertFalse(
             event_for_tags(["mid_lives", "low_lives"], self.test_cat),
-            "Assert 9-lives leader does not pass mid_lives and low_lives tagging.",
+            "Assert 9-lives leader does not pass mid_lives and low_lives failed.",
         )
         self.assertFalse(
             event_for_tags(["mid_lives", "low_lives", "some_lives"], self.test_cat),
-            "Assert 9-lives leader does not pass mixed tag list where they qualify for 1 tag, but not others.",
+            "Assert 9-lives leader does not pass mixed tag list where they qualify for 1 tag, but not others failed.",
         )
 
         game.clan.leader_lives = 5
         self.assertTrue(
             event_for_tags(["some_lives", "mid_lives", "lives_remain"], self.test_cat),
-            "Assert 5-lives leader passes some_lives, mid_lives, and lives_remain tagging.",
+            "Assert 5-lives leader passes some_lives, mid_lives, and lives_remain failed.",
         )
         self.assertFalse(
             event_for_tags(["high_lives", "low_lives"], self.test_cat),
-            "Assert 5-lives leader does not pass mid_lives and low_lives tagging.",
+            "Assert 5-lives leader does not pass mid_lives and low_lives failed.",
         )
         self.assertFalse(
             event_for_tags(["high_lives", "low_lives", "some_lives"], self.test_cat),
-            "Assert 5-lives leader does not pass mixed tag list where they qualify for 1 tag, but not others.",
+            "Assert 5-lives leader does not pass mixed tag list where they qualify for 1 tag, but not others failed.",
         )
 
         game.clan.leader_lives = 3
         self.assertTrue(
             event_for_tags(["low_lives", "lives_remain"], self.test_cat),
-            "Assert 3-lives leader passes low_lives and lives_remain tagging.",
+            "Assert 3-lives leader passes low_lives and lives_remain failed.",
         )
         self.assertFalse(
             event_for_tags(["high_lives", "mid_lives", "some_lives"], self.test_cat),
-            "Assert 3-lives leader does not pass mid_lives, high_lives, and some_lives tagging.",
+            "Assert 3-lives leader does not pass mid_lives, high_lives, and some_lives failed.",
         )
         self.assertFalse(
             event_for_tags(["high_lives", "low_lives", "some_lives"], self.test_cat),
-            "Assert 3-lives leader does not pass mixed tag list where they qualify for 1 tag, but not others.",
+            "Assert 3-lives leader does not pass mixed tag list where they qualify for 1 tag, but not others failed.",
         )
 
         game.clan.leader_lives = 1
         self.assertTrue(
             event_for_tags(["low_lives"], self.test_cat),
-            "Assert 1-life leader passes low_lives tagging.",
+            "Assert 1-life leader passes low_lives failed.",
         )
         self.assertFalse(
             event_for_tags(
                 ["high_lives", "mid_lives", "some_lives", "lives_remain"], self.test_cat
             ),
-            "Assert 1-life leader does not pass mid_lives, high_lives, some_lives, and lives_remain tagging.",
+            "Assert 1-life leader does not pass mid_lives, high_lives, some_lives, and lives_remain failed.",
         )
         self.assertFalse(
             event_for_tags(["high_lives", "low_lives", "some_lives"], self.test_cat),
-            "Assert 1-life leader does not pass mixed tag list where they qualify for 1 tag, but not others.",
+            "Assert 1-life leader does not pass mixed tag list where they qualify for 1 tag, but not others failed.",
         )
 
     def test_cat_age(self):
