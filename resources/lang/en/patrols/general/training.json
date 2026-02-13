@@ -2510,7 +2510,7 @@
                         "values": [
                             "trust", "comfort"
                         ],
-                        "amount": 20,
+                        "amount": 15,
                         "log": {
                             "cats_from": "from_cat learned about to_cat's opinions on a piece of disputed territory."
                         }
