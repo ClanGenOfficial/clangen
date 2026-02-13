@@ -5121,7 +5121,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5,
+                        "amount": -10,
                         "log": {
                             "cats_from": "from_cat and to_cat were unable to rescue app1 from a sinkhole."
                         }
