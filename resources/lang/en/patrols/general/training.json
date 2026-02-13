@@ -3961,6 +3961,19 @@
                         "log": {
                             "cats_from": "from_cat tried to confide in to_cat about {PRONOUN/from_cat/poss} dreams, but to_cat didn't take {PRONOUN/from_cat/poss} concerns seriously."
                         }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wasn't pleased that to_cat let silly dreams distract {PRONOUN/to_cat/object} from {PRONOUN/to_cat/poss} training."
+                        }
                     }
                 ],
                 "frequency": 4
