@@ -35,7 +35,7 @@ class Ambiance:
         self.season_overlay_playlist: list = []
         self.camp_overlay_playlist: list = []
 
-        self.volume: int = game_setting_get("ambiance_volume") / 100
+        self.volume: int = int(game_setting_get("ambiance_volume") / 100)
         self.number_of_tracks: int = len(self.current_playlist)
         self.current_track = None
         self.queued_track = None
@@ -91,9 +91,10 @@ class Ambiance:
             self.ready_playlist(playlist)
             self.fade_out()
 
-    def ready_playlist(self, playlist):
+    def ready_playlist(self, playlist: list):
         """
         loads and plays random file from playlist, queues up next track
+        :param playlist: List of track filepaths to choose from. This will become the self.current_playlist and queuing process will begin.
         """
         self.current_playlist = playlist
         self.queued_track = None  # clear queue
@@ -119,17 +120,14 @@ class Ambiance:
         Stops any overlay sounds from playing
         :param fadeout: set True if playing sounds should fade, False if they should stop immediately
         """
-        if fadeout:
-            fade = 300
-        else:
-            fade = 0
+        fade_ms = 300 if fadeout else 0
         if self.camp_timer and self.camp_timer.is_alive():
-            self.camp_sound.fadeout(fade)
+            self.camp_sound.fadeout(fade_ms)
             self.camp_timer.cancel()
         elif self.camp_silence_timer:
             self.camp_silence_timer.cancel()
         if self.season_timer and self.season_timer.is_alive():
-            self.season_sound.fadeout(fade)
+            self.season_sound.fadeout(fade_ms)
             self.season_timer.cancel()
         elif self.camp_silence_timer:
             self.season_silence_timer.cancel()
@@ -137,6 +135,8 @@ class Ambiance:
     def play(self, track, fade_ms=1000):
         """
         plays the given track and sets volume
+        :param track: The filepath for the track to play
+        :param fade_ms: Fade-in time in milliseconds
         """
         self.current_track = track
         pygame.mixer.music.load(self.current_track)
@@ -166,7 +166,7 @@ class Ambiance:
             self.queued_track = random.choice(options)
 
         except IndexError:
-            print("WARNING: playlist is empty")
+            logger.warning("Playlist is empty")
             self.queued_track = None
 
     def play_queued(self):
@@ -180,12 +180,13 @@ class Ambiance:
         self.set_queued()
 
     @staticmethod
-    def fade_out(fadeout=2000):
+    def fade_out(fade_ms=2000):
         """
         fades the ambiance out, by default the fade is 2 seconds
+        :param fade_ms: Fade-out time in milliseconds
         """
         if pygame.mixer.music.get_busy():
-            pygame.mixer.music.fadeout(fadeout)
+            pygame.mixer.music.fadeout(fade_ms)
 
     def mute(self):
         """
@@ -202,8 +203,11 @@ class Ambiance:
         pygame.mixer.music.unpause()
         self.check()
 
-    def change_volume(self, new_volume):
-        """changes the volume, int given should be between 0 and 100"""
+    def change_volume(self, new_volume: int):
+        """
+        changes the volume of the ambiance
+        :param new_volume: New volume to change to, int given should be between 0 and 100
+        """
         # make sure given volume is between 0 and 100
         if new_volume > 100:
             new_volume = 100
@@ -277,6 +281,9 @@ class Ambiance:
 
     @property
     def overlay_volume(self):
+        """
+        Handles the volume for the ambiance overlay (not the base ambiance, but the short sounds relating to season/camp which we play intermittently). This just allows us to fine-tune the volume relationship between the two types of ambiance. This volume will still be affected by the overall ambiance volume assigned by the player.
+        """
         return int((self.volume * 100) / 2.5) / 100
 
     def _start_season_overlay_timer(self, duration):
@@ -306,12 +313,12 @@ class Ambiance:
 
     def play_season_overlay(self):
         """
-        Plays the season overlay and beings its timer.
+        Plays the season overlay and begins its timer.
         """
         self.season_sound = random.choice(self.season_overlay_playlist)
         self.season_sound.set_volume(self.overlay_volume)
         if pygame.mixer.find_channel():
-            print("played season overlay")
+            logger.info("played season overlay")
             self.season_sound.play(fade_ms=4000)
             self._start_season_overlay_timer(self.season_sound.get_length())
         # TODO: what happens if no channel found?
@@ -341,12 +348,13 @@ class Ambiance:
 
     def play_camp_overlay(self):
         """
-        Plays the camp overlay and beings its timer.
+        Plays the camp overlay and begins its timer.
         """
         self.camp_sound = random.choice(self.camp_overlay_playlist)
         self.camp_sound.set_volume(self.overlay_volume)
         if pygame.mixer.find_channel():
-            print("played camp overlay")
+            logger.info("played camp overlay")
             self.camp_sound.play(fade_ms=4000)
             self._start_camp_overlay_timer(self.camp_sound.get_length())
+
         # TODO: what happens if no channel found?

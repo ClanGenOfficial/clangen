@@ -1,12 +1,18 @@
 import logging
 import random
+from typing import Union
 
 import pygame
 import pygame_gui
 import ujson
 
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
-from scripts.game_structure.ui_elements import CatButton, UISpriteButton
+from scripts.game_structure.ui_elements import (
+    CatButton,
+    UISpriteButton,
+    UISurfaceImageButton,
+    UIImageButton,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -49,14 +55,11 @@ class Sound:
         :param event: the event that is taking place
         """
         # This makes sounds play using UI_BUTTON_PRESSED, instead of UI_BUTTON_START_PRESS
-        try:
-            if event.ui_element.sound_id in ["timeskip"]:
-                if event.type == pygame_gui.UI_BUTTON_PRESSED:
-                    self.play("button_press", event.ui_element)
-                else:
-                    return
-        except:
-            pass
+        if event.ui_element.sound_id in ["timeskip"]:
+            if event.type == pygame_gui.UI_BUTTON_PRESSED:
+                self.play("button_press", event.ui_element)
+            else:
+                return
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.pressed = event.ui_element
@@ -67,9 +70,13 @@ class Sound:
                     self.play("button_hover")
             self.pressed = None
 
-    def play(self, sound, button=None):
-        """plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
-        used instead"""
+    def play(self, sound, button: Union[UISurfaceImageButton, UIImageButton] = None):
+        """
+        Plays the given sound, if an ImageButton is passed through then the sound_id of the ImageButton will be
+        used instead
+        :param sound: The sound to play
+        :param button: If included, sound played will be the sound_id of the button
+        """
         if self.muted:
             return
 
@@ -87,8 +94,11 @@ class Sound:
         except KeyError:
             logger.exception(f"Could not find sound {sound}")
 
-    def change_volume(self, new_volume):
-        """changes the volume, int given should be between 0 and 100"""
+    def change_volume(self, new_volume: int):
+        """
+        changes the volume
+        :param new_volume: The new volume to set music to, int given should be between 0 and 100
+        """
         # make sure given volume is between 0 and 100
         if new_volume > 100:
             new_volume = 100

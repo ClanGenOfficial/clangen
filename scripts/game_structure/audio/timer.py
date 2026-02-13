@@ -13,8 +13,10 @@ class AudioTimer(Timer):
         self.started_at = time.time()
         super().start()
 
+    @property
     def elapsed(self):
         return time.time() - self.started_at
 
+    @property
     def remaining(self):
-        return self.interval - self.elapsed()
+        return self.interval - self.elapsed

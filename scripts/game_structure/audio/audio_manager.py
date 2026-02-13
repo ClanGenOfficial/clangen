@@ -31,14 +31,15 @@ class AudioManager:
         if not self.music.get_busy():
             self.music.check()
 
-    def check(self, fade_out: bool = False):
+    def check(self, should_fade_out: bool = False):
         """
         Checks that background audio is appropriate for the current screen
+        :param should_fade_out: Set True if audio should fade out, if False, audio will stop abruptly
         """
         if self.muted:
             return
 
-        self.music.check(fade_out)
+        self.music.check(should_fade_out)
         self.ambiance.check()
 
     def mute(self):

@@ -1,5 +1,4 @@
 from random import choice, randint
-from threading import Timer
 
 import ujson
 import logging
@@ -82,20 +81,23 @@ class Music:
         self.find_playlist()
 
         if not self.current_playlist:
-            logger.error("Music track list is empty, check the music.json!")
-            chosen_track = "resources/audio/music/Generations.mp3"  # making this default just in case
+            raise Exception("Music track list is empty, check the music.json!")
         elif len(self.current_playlist) == 1:
             chosen_track = self.current_playlist[0]
         else:
+            possible_tracks = self.current_playlist.copy()
             if self.last_track_name in self.current_playlist:
-                self.current_playlist.remove(self.last_track_name)
-            chosen_track = choice(self.current_playlist)
+                possible_tracks.remove(self.last_track_name)
+            chosen_track = choice(possible_tracks)
 
         self.loaded_track = pygame.mixer.Sound(chosen_track)
         self.current_track_name = chosen_track
         print(chosen_track)
 
     def find_playlist(self):
+        """
+        Sets `self.current_playlist` to an appropriate playlist for the season and biome.
+        """
         screen = switch_get_value(Switch.cur_screen)
         self.current_playlist = []
         if screen in constants.MENU_SCREENS:
@@ -126,9 +128,10 @@ class Music:
                     self.available_music.get(f"{biome.casefold()}_playlist")
                 )
 
-    def check(self, fade_out: bool = False):
+    def check(self, should_fade_out: bool = False):
         """
         checks if loaded music is appropriate for the given screen and stops playback if needed
+        :param should_fade_out: Set True if music should fade out, if False, music will stop abruptly
         """
         screen = switch_get_value(Switch.cur_screen)
         # updates our current playlist
@@ -145,14 +148,20 @@ class Music:
             and self.current_track_name not in self.current_playlist
         ):
             self._stop_timers()
-            self.fade_out()
+            if should_fade_out:
+                self.fade_out()
+            else:
+                self.fade_out(fadeout=0)
 
-        elif fade_out:
+        else:
             self._stop_timers()
-            self.fade_out()
+            if should_fade_out:
+                self.fade_out()
+            else:
+                self.fade_out(fadeout=0)
 
     def play(self):
-        """plays the loaded track"""
+        """Finds and plays appropriate track"""
         self.choose()
         self.loaded_track.set_volume(self.volume)
         if not self.channel:
@@ -176,7 +185,7 @@ class Music:
         """
         self.channel.pause()
         if self.music_timer.is_alive():
-            self.remaining_time_of_paused_track = self.music_timer.remaining()
+            self.remaining_time_of_paused_track = self.music_timer.remaining
             self.music_timer.cancel()
         elif self.silence_timer and self.silence_timer.is_alive():
             self.silence_timer.cancel()
@@ -199,18 +208,17 @@ class Music:
         """
         fades the music out and begins the silence timer to count down to next track play
         :param fadeout: length of fadeout in milliseconds
-        :param delay: this is used to dictate the length of the silence timer that begins when the music starts to fade.
-        If a new music track is going to play immediately after the initial track fades, then you need a small delay
-        between the two, otherwise the fade will get cut off or weird duplication will occur.
+        :param delay: Dictates the seconds of silence between this track and the next one, including fade time
         """
         if self.channel and self.channel.get_busy():
             self.channel.fadeout(fadeout)
-            self._start_silence_timer(delay)
+            self._start_silence_timer(max(fadeout, delay))
             self.music_timer.cancel()
 
-    def change_volume(self, new_volume):
+    def change_volume(self, new_volume: int):
         """
-        changes the voume, int given should be between 0 and 100
+        changes the volume
+        :param new_volume: The new volume to set music to, int given should be between 0 and 100
         """
         if new_volume > 100:
             new_volume = 100
@@ -224,6 +232,7 @@ class Music:
     def _start_music_timer(self, duration=None):
         """
         sets a timer for the length of the track.  When the timer ends, silence timer is activated.
+        :param duration: The duration, in seconds, that the music timer will count down. By default, this will be the length of the track.
         """
         if self.music_timer and self.music_timer.is_alive():
             return

@@ -182,7 +182,7 @@ class Screens:
             or switch_get_value(Switch.cur_screen) == GameScreen.START
         ):
             game.audio.check(
-                fade_out=game.last_screen_forupdate == GameScreen.START
+                should_fade_out=game.last_screen_forupdate == GameScreen.START
                 and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
             )
 
