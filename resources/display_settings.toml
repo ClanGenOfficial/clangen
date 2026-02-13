@@ -1,0 +1,176 @@
+# WARNING: This file is NOT where your settings are stored.
+# This file is used only to display the settings in the game.
+# The files you may be looking for are "settings.json" in your saves folder,
+# or "clan_settings.json" in your clan's save folder.
+
+# FORMAT:
+# [group]:
+#   setting_name = default_value
+
+[game]
+    [game.general]
+        "dark mode" = false
+        "fullscreen scaling" = false
+        "no sprite antialiasing" = false
+        "custom cursor" = false
+        keybinds = false
+        shaders = false
+        gore = false
+        discord = false
+        check_for_updates = true
+        show_changelog = true
+        special_dates = true
+        "random relation" = true
+        "they them default" = false
+
+    [game.other]
+        language = [
+            "en", "es", "de"
+        ]
+        text_size = [
+            0, 1, 2
+        ]
+        fullscreen = [
+            false, true
+        ]
+        music_volume = [
+            100
+        ]
+        sound_volume = [
+            100
+        ]
+        audio_mute = [
+            false, true
+        ]
+
+[clan]
+    [clan.general]
+        autosave = false
+        disasters = false
+        showxp = false
+        "random med cat" = true
+        fading = true
+        save_faded_copy = false
+        backgrounds = true
+    
+    [clan.role]
+        deputy = false
+        12_moon_graduation = false
+        retirement = false
+        become_mediator = false
+    
+    [clan.relation]
+        affair = false
+        "same sex birth" = false
+        "same sex adoption" = false
+        "single parentage" = false
+        "romantic with former mentor" = true
+        "first cousin mates" = false
+    
+    [clan.freshkill_tactics]
+        low_rank = true
+        high_rank = false
+        youngest_first = false
+        oldest_first = false
+        hungriest_first = false
+        hunter_first = false
+        sick_injured_first = false
+        experience_first = false
+
+        ration_prey = false
+        auto_feed = true
+    
+    [clan.clan_focus]
+        "business as usual" = [
+            "Business As Usual",
+            "The Clan has no specific focus and won't get any bonuses.",
+            true,
+            "usual_focus",
+            "#usual_focus_button"
+        ]
+        "hunting" = [
+            "Feeding the Clan",
+            "The Clan will focus on hunting, each working warrior (including deputy and leader) and each working apprentice will gather additional prey on each moonskip.",
+            false,
+            "hunting_focus",
+            "#hunting_focus_button"
+        ]
+        "herb gathering" = [
+            "Assisting with Herb Gathering",
+            "The Clan will focus on herb gathering, each medicine cat and medicine cat apprentice will gather additional herbs on each moonskip due to extra help from the warriors.",
+            false,
+            "herb_focus",
+            "#herb_focus_button"
+        ]
+        "threaten outsiders" = [
+            "Threatening Outsiders",
+            "The relationship with cats outside of the Clan decreases due to intentionally threatening behavior from your warriors.",
+            false,
+            "threaten_focus",
+            "#threaten_focus_button"
+        ]
+        "seek outsiders" = [
+            "Entreating with Outsiders",
+            "The relationship with cats outside of the Clan increases as your warriors make efforts to sow seeds of friendship.",
+            false,
+            "entreat_focus",
+            "#entreat_focus_button"
+        ]
+        "rest and recover" = [
+            "Resting and Recovering",
+            "The Clan will take more care and time in their tasks and therefore the rate of injuries, illnesses and outbreaks will be reduced.",
+            false,
+            "rest_focus",
+            "#rest_focus_button"
+        ]
+        "sabotage other clans" = [
+            "Sabotaging Other Clans",
+            "Your mediators and warriors work together to undermine the other Clans. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.",
+            false,
+            "sabotage_focus",
+            "#sabotage_focus_button"
+        ]
+        "aid other clans" = [
+            "Helping Other Clans",
+            "Your mediator and warriors work together to help the other Clans with whatever they need. Only available if you have a working mediator. Selecting this will also allow you to choose which Clans you target.",
+            false,
+            "help_focus",
+            "#help_focus_button"
+        ]
+        "raid other clans" = [
+            "Raiding Other Clans",
+            "Your warriors begin crossing borders for resources. Prey and herbs will greatly increase each moonskip, but injuries and illnesses will increase and the relationship with other Clans decrease. You will be able to choose which Clans you target.",
+            false,
+            "raid_focus",
+            "#raid_focus_button"
+        ]
+        "hoarding" = [
+            "Hoarding Resources",
+            "Your warriors begin stockpiling as many resources as they can get their paws on, regardless of their own safety. Prey and herbs will increase each moonskip, but injuries and illnesses will also increase.",
+            false,
+            "hoard_focus",
+            "#hoard_focus_button"
+        ]
+    
+    [clan.other]
+        "show dead relation" = [
+            false, true
+        ]
+        "show_empty relation" = [
+            false, true
+        ]
+        "den labels" = [
+            true, false
+        ]
+        "show fav" = [
+            false, true
+        ]
+
+    # Certain clan settings can be nested, so there's a new "nests" key.
+    # FORMAT:
+    # [clan.nests]
+    #   [clan.nests."section_name"."setting_name"]
+    #       required_setting_name = required_value
+    [clan.nests]
+            [clan.nests.relation."same sex adoption"]
+                "same sex birth" = false

@@ -344,7 +344,7 @@
                     "claw-wound"
                 ],
                 "scars": [
-                    "TWO"
+                    "BACK", "TWO"
                 ]
             }
         ],
@@ -412,7 +412,7 @@
                     "claw-wound"
                 ],
                 "scars": [
-                    "TWO"
+                    "BACK", "TWO"
                 ]
             }
         ],
@@ -751,9 +751,6 @@
                 ],
                 "injuries": [
                     "snake bite"
-                ],
-                "scars": [
-                    "SNAKE"
                 ]
             }
         ],
@@ -880,8 +877,7 @@
                 ],
                 "injuries": [
                     "battle_injury"
-                ],
-                "scars": []
+                ]
             }
         ],
         "history": [

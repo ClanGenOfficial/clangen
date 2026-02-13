@@ -44,8 +44,7 @@ from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 logger = logging.getLogger(__name__)
-with open("resources/gamesettings.json", "r", encoding="utf-8") as f:
-    settings_dict = ujson.load(f)
+settings_dict = constants.DISPLAY_SETTINGS["game"]
 
 
 class SettingsScreen(Screens):

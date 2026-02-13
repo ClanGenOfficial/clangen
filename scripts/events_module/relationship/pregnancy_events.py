@@ -5,7 +5,14 @@ from typing import Dict, List, Union, Optional
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatGroup, CatRank, CatSocial, CatCompatibility
+from scripts.cat.enums import (
+    CatAge,
+    CatGroup,
+    CatRank,
+    CatSocial,
+    CatCompatibility,
+    CatThought,
+)
 from scripts.cat.names import names, Name
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.relationship import Relationship, RelType
@@ -32,6 +39,7 @@ class Pregnancy_Events:
 
     biggest_family = {}
     PREGNANT_STRINGS: Optional[Dict[str, Union[List, Dict[str, List]]]] = {}
+    NEWBORN_REL_REACTIONS: Dict = {}
     currently_loaded_lang: str = None
 
     @staticmethod
@@ -41,6 +49,11 @@ class Pregnancy_Events:
         Pregnancy_Events.PREGNANT_STRINGS = load_lang_resource(
             "conditions/pregnancy.json"
         )
+
+        Pregnancy_Events.NEWBORN_REL_REACTIONS = load_lang_resource(
+            "events/relationship_events/newborn_relative_logs.json"
+        )
+
         Pregnancy_Events.currently_loaded_lang = i18n.config.get("locale")
 
     @staticmethod
@@ -190,11 +203,13 @@ class Pregnancy_Events:
         )
 
         cats_involved = {"m_c": cat}
+        cat.get_new_thought(CatThought.ON_BIRTH)
         if other_cat:
             cats_involved["r_c"] = other_cat
+            other_cat.get_new_thought(CatThought.ON_BIRTH)
+
         for kit in kits:
-            kit.thought = "hardcoded.new_kit_thought"
-            kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
+            kit.get_new_thought()
 
         # Normally, birth cooldown is only applied to cat who gave birth
         # However, if we don't apply birth cooldown to adoption, we get
@@ -788,6 +803,7 @@ class Pregnancy_Events:
         No parents are specified, it will create a blood parents for all the
         kits to be related to. They may be dead or alive, but will always be outside
         the clan."""
+        Pregnancy_Events.rebuild_strings()
         all_kitten = []
         if not adoptive_parents:
             adoptive_parents = []
@@ -859,10 +875,12 @@ class Pregnancy_Events:
                             (CatSocial.LONER, CatSocial.KITTYPET)
                         ),
                         alive=False,
-                        thought=thought,
                         moons=randint(15, 120),
                         outside=True,
                     )[0]
+                    thought = event_text_adjust(
+                        Cat, text=thought, main_cat=blood_parent
+                    )
                     blood_parent.thought = thought
 
                 kitten_status: StatusDict = {
@@ -887,8 +905,6 @@ class Pregnancy_Events:
                     moons=0,
                     status_dict=kitten_status,
                 )
-                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
-                kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
@@ -897,8 +913,8 @@ class Pregnancy_Events:
                     backstory=backstory,
                     status_dict=kitten_status,
                 )
-                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
-                kit.thought = event_text_adjust(Cat, kit.thought, random_cat=cat)
+
+            kit.get_new_thought()
 
             # make lost status match parent
             if cat and cat.status.is_lost():
@@ -1002,8 +1018,13 @@ class Pregnancy_Events:
         # add them as adoptive parents if not
         final_adoptive_parents = []
         for adoptive_p in all_adoptive_parents:
+            Cat.fetch_cat(adoptive_p).get_new_thought(CatThought.ON_BIRTH)
             if adoptive_p not in all_kitten[0].inheritance.all_involved:
                 final_adoptive_parents.append(adoptive_p)
+        if not adoptive_parents:
+            cat.get_new_thought(CatThought.ON_BIRTH)
+            if other_cat:
+                cat.get_new_thought(CatThought.ON_BIRTH)
 
         # Add the adoptive parents.
         if final_adoptive_parents:
@@ -1032,6 +1053,100 @@ class Pregnancy_Events:
                             cats_to=[kit],
                             **parent_to_kit,
                         )
+
+        # check for more extended family members to create relationships with
+        all_relatives: list = all_kitten[
+            0
+        ].get_relatives()  # we only need this for one kit, since they all share relatives
+        parents = all_kitten[0].get_parents()
+        # getting the cat objects
+        all_relatives = [
+            Cat.fetch_cat(c)
+            for c in all_relatives
+            if c not in parents and c not in all_kitten
+        ]
+        all_relatives = [c for c in all_relatives if c.status.alive_in_player_clan]
+
+        for kit in all_kitten:
+            for c in all_relatives:
+                rel_reflection = constants.CONFIG["new_cat"]["ext_relative_modifier"]
+                y = random.randrange(-10, 10)
+
+                # this finds what the relative's relationship is toward each parent and applies a reflection of that
+                # relationship to the kit. reflection values will be divided by 4 by default and then modified
+                # by the random y value
+                new_relationship = {
+                    "cats_to": [kit],
+                    "cats_from": [c],
+                    "like": 0,
+                    "comfort": 0,
+                    "respect": 0,
+                    "trust": 0,
+                }
+                for parent_id in parents:
+                    try:
+                        relation_toward_parent: Relationship = c.relationships[
+                            parent_id
+                        ]
+                    except KeyError:
+                        # cat had no relationship toward parent
+                        continue
+
+                    new_relationship["like"] += (
+                        int(relation_toward_parent.like / rel_reflection) + y
+                        if relation_toward_parent.like
+                        else 5
+                    )
+                    new_relationship["comfort"] += (
+                        int(relation_toward_parent.comfort / rel_reflection) + y
+                        if relation_toward_parent.comfort
+                        else 0
+                    )
+                    new_relationship["respect"] += (
+                        int(relation_toward_parent.respect / rel_reflection) + y
+                        if relation_toward_parent.respect
+                        else 0
+                    )
+                    new_relationship["trust"] += (
+                        int(relation_toward_parent.trust / rel_reflection) + y
+                        if relation_toward_parent.trust
+                        else 0
+                    )
+
+                # determine what sort of relationship we've ended up with
+                rel_amounts = [
+                    new_relationship["like"],
+                    new_relationship["comfort"],
+                    new_relationship["respect"],
+                    new_relationship["trust"],
+                ]
+                neg = False
+                pos = False
+                for digit in rel_amounts:
+                    if digit < 0:
+                        neg = True
+                    else:
+                        pos = True
+                    if neg and pos:
+                        break
+
+                if pos and neg:
+                    rel_type = "neutral"
+                elif pos:
+                    rel_type = "positive"
+                else:
+                    rel_type = "negative"
+
+                # adds reaction text to type postscript and age postscript
+                new_relationship["log"] = event_text_adjust(
+                    cat,
+                    choice(Pregnancy_Events.NEWBORN_REL_REACTIONS[f"{rel_type}_log"]),
+                    main_cat=c,
+                    random_cat=kit,
+                    clan=game.clan,
+                ) + i18n.t(f"relationships.{rel_type}_postscript")
+
+                change_relationship_values(**new_relationship)
 
         return all_kitten
 
