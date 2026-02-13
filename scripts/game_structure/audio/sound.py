@@ -55,11 +55,14 @@ class Sound:
         :param event: the event that is taking place
         """
         # This makes sounds play using UI_BUTTON_PRESSED, instead of UI_BUTTON_START_PRESS
-        if event.ui_element.sound_id in ["timeskip"]:
-            if event.type == pygame_gui.UI_BUTTON_PRESSED:
-                self.play("button_press", event.ui_element)
-            else:
-                return
+        try:
+            if event.ui_element.sound_id in ["timeskip"]:
+                if event.type == pygame_gui.UI_BUTTON_PRESSED:
+                    self.play("button_press", event.ui_element)
+                else:
+                    return
+        except AttributeError:
+            pass
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.pressed = event.ui_element
