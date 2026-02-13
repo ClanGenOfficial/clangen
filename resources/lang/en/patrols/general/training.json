@@ -3142,7 +3142,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "When an argument started on patrol, to_cat was unable to settle"
+                            "cats_from": "When an argument started on patrol, to_cat was unable to settle it."
                         }
                     },
                     {
