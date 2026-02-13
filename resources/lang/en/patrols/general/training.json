@@ -3666,7 +3666,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat felt uncomfortable around to_cat's obvious jealousy when from_cat shared on patrol about a vision from StarClan."
+                            "cats_from": "from_cat felt uncomfortable around to_cat's obvious jealousy when from_cat shared about {PRONOUN/from_cat/poss} vision from StarClan."
                         }
                     }
                 ],
