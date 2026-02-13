@@ -681,7 +681,7 @@
     "rel_change": 4,
     "m_c": {
       "trait": ["bloodthirsty"],
-      "skill": ["PROPHET,1", "INSIGHTFUL,1"]
+      "skill": ["PROPHET,1", "INSIGHTFUL,1", "STAR,2"]
     },
     "player_clan_temper": [ "any" ],
     "other_clan_temper": [ "any" ]
