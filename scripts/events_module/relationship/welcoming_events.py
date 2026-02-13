@@ -82,23 +82,13 @@ class Welcoming_Events:
         change_relationship_values(
             cats_to=[clan_cat],
             cats_from=[new_cat],
-            log=interaction_str
-            + i18n.t(
-                "relationships.age_postscript",
-                name=str(new_cat.name),
-                count=new_cat.moons,
-            ),
+            log=interaction_str,
             **new_to_clan_cat,
         )
         change_relationship_values(
             cats_to=[new_cat],
             cats_from=[clan_cat],
-            log=interaction_str
-            + i18n.t(
-                "relationships.age_postscript",
-                name=str(clan_cat.name),
-                count=clan_cat.moons,
-            ),
+            log=interaction_str,
             **clan_cat_to_new,
         )
 
