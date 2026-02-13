@@ -3435,7 +3435,7 @@
                     }
                 ],
                 "history_text": {
-                    "death": "This cat was killed by the complications after being shocked by a fox on patrol."
+                    "death": "This cat was killed by complications after being shocked by a fox on patrol."
                 },
                 "frequency": 2
             },
@@ -3490,7 +3490,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "This cat died to {PRONOUN/m_c/poss} injuries after an unfortunate meeting with a badger."
                 },
                 "frequency": 4
             },
@@ -4012,7 +4012,7 @@
                     }
                 ],
                 "history_text": {
-                    "death": "m_c was killed by the complications after being shocked by a fox."
+                    "death": "m_c was killed by complications after being shocked by a fox."
                 },
                 "frequency": 2
             },
@@ -4284,7 +4284,7 @@
                     "app1"
                 ],
                 "history_text": {
-                    "death": "m_c was killed saving an older warrior from a badger as an apprentice."
+                    "death": "m_c was killed saving an older warrior from a badger."
                 },
                 "frequency": 4
             },
@@ -4465,7 +4465,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "log": {
                             "cats_from": "to_cat took on most of the risk when from_cat and to_cat battled a badger."
                         }
@@ -4583,7 +4583,7 @@
                     }
                 ],
                 "history_text": {
-                    "death": "This cat was killed by the complications following a shocking discovery on patrol."
+                    "death": "This cat was killed by complications following a shocking discovery on patrol."
                 },
                 "frequency": 2
             },
@@ -5121,7 +5121,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5,
+                        "amount": -10,
                         "log": {
                             "cats_from": "from_cat and to_cat were unable to rescue app1 from a sinkhole."
                         }
@@ -5467,7 +5467,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were surprised by a fox on patrol."
+                            "cats_from": "from_cat and to_cat were surprised by a fox on patrol and lost faith in each other's ability."
                         }
                     }
                 ],
@@ -5881,7 +5881,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's sacrifice to lead a coyote away from the Clan."
+                            "cats_from": "from_cat honored to_cat's sacrifice to lead a coyote away from the Clan."
                         }
                     }
                 ],
