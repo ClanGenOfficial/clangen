@@ -24,7 +24,6 @@ class Sound:
         self.muted = False
 
         self.sound_dict = {}
-        self.load_sounds()
 
     def load_sounds(self):
         # open up the sound dictionary

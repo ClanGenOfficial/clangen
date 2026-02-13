@@ -47,6 +47,19 @@ finished_loading = False
 def load_data():
     global finished_loading
 
+    # load audio
+    try:
+        game.audio = AudioManager()
+        pygame.mixer.pre_init(buffer=44100)
+        pygame.mixer.init()
+
+        # loading sounds here bc they depend on mixer being initialized
+        game.audio.sound.load_sounds()
+    except pygame.error:
+        print("Failed to initialize audio. Audio will be disabled.")
+        game.audio.disabled = True
+        game.audio.muted = True
+
     # load in the spritesheets
     sprites.load_all()
 
@@ -154,15 +167,7 @@ def load_game():
 
 
 load_game()
-game.audio = AudioManager()
 
-pygame.mixer.pre_init(buffer=44100)
-try:
-    pygame.mixer.init()
-except pygame.error:
-    print("Failed to initialize sound. Sound will be disabled.")
-    game.audio.disabled = True
-    game.audio.muted = True
 all_screens.get_screen(GameScreen.START).screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
@@ -197,7 +202,8 @@ while 1:
                 event
             )
 
-        game.audio.sound.handle_sound_events(event)
+        if not game.audio.disabled and not game.audio.muted:
+            game.audio.sound.handle_sound_events(event)
 
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.

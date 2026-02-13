@@ -123,7 +123,9 @@ class SettingsScreen(Screens):
         """
         if event.type == pygame_gui.UI_HORIZONTAL_SLIDER_MOVED:
             if hasattr(event, "ui_element"):
-                if event.ui_element == self.volume_elements["music_volume_slider"]:
+                if game.audio.disabled:
+                    pass
+                elif event.ui_element == self.volume_elements["music_volume_slider"]:
                     self.update_music_volume_indicator()
                     game.audio.music.change_volume(event.value)
                     self.settings_changed = True
