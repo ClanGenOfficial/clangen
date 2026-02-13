@@ -3211,7 +3211,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat explained the importance of good form to to_cat when {PRONOUN/to_cat/subject} started an argument and appreciated that to_cat apologized."
+                            "cats_from": "from_cat explained the importance of good form to to_cat when {PRONOUN/to_cat/subject} started an argument, and appreciated that to_cat apologized."
                         }
                     }
                 ],
