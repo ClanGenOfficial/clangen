@@ -2021,7 +2021,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 20,
+                        "amount": 15,
                         "log": {
                             "cats_from": "from_cat appreciated how to_cat de-escalated the conflict between p_l and r_c."
                         }
