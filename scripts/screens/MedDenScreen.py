@@ -563,7 +563,9 @@ class MedDenScreen(Screens):
                         )
             conditions = ",<br>".join(condition_list)
 
-            conditions = process_text(conditions, {"m_c": (str(cat.name), choice(cat.pronouns))})
+            conditions = process_text(
+                conditions, {"m_c": (str(cat.name), choice(cat.pronouns))}
+            )
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
