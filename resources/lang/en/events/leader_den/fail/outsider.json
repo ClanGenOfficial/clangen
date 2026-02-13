@@ -248,7 +248,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was looking for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n wants {PRONOUN/from_cat/object} off their territory."
           }
         }
       ]
