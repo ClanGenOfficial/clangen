@@ -3528,7 +3528,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [1, 6]
+            "normal adult": [3, 6]
         },
         "frequency": 1,
         "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject} had a vision from StarClan last night.",
