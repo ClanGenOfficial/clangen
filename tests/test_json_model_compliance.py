@@ -1,8 +1,13 @@
+import os
+
 from itertools import chain
 
 from pathlib import Path
 
 import pytest
+
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.models.patrol.patrol_schema import PatrolSchema
 from scripts.models.shortevent.short_event_schema import ShortEventSchema

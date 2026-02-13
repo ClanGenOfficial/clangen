@@ -149,3 +149,4 @@ class CatThought(StrEnum):
     ON_EXILE = "on_exile"
     ON_LOST = "on_lost"
     ON_AFTERLIFE_CHANGE = "on_afterlife_change"
+    ON_RANK_CHANGE = "on_rank_change"
