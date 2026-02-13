@@ -2444,7 +2444,7 @@
                         "values": [
                             "trust", "respect"
                         ],
-                        "amount": 30,
+                        "amount": 15,
                         "log": {
                             "cats_from": "from_cat worked hard to impress to_cat when to_cat assessed the fitness of the warriors on a training patrol."
                         }
