@@ -4465,7 +4465,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "log": {
                             "cats_from": "to_cat took on most of the risk when from_cat and to_cat battled a badger."
                         }
