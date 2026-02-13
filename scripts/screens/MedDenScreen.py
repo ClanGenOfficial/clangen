@@ -15,7 +15,11 @@ from scripts.game_structure.ui_elements import (
     UIModifiedImage,
 )
 from ..ui.theme import get_text_box_theme
-from ..events_module.text_adjust import event_text_adjust, shorten_text_to_fit
+from ..events_module.text_adjust import (
+    event_text_adjust,
+    shorten_text_to_fit,
+    process_text,
+)
 from ..ui.scale import ui_scale, ui_scale_offset
 from ..clan_package.get_clan_cats import find_alive_cats_with_rank
 from .Screens import Screens
@@ -558,6 +562,8 @@ class MedDenScreen(Screens):
                             ]
                         )
             conditions = ",<br>".join(condition_list)
+
+            conditions = process_text(conditions, {"m_c": (str(cat.name), choice(cat.pronouns))})
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
