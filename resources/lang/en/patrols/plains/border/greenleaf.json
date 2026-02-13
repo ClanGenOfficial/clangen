@@ -746,7 +746,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 25,
                         "log": {
                             "cats_from": "to_cat laid down {PRONOUN/to_cat/poss} life to protect c_n from coyotes."
                         }
