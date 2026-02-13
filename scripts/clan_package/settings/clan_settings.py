@@ -85,7 +85,9 @@ def reset_loaded_clan_settings():
 # Init Settings
 clan_settings = {}
 _clan_settings = DISPLAY_SETTINGS["clan"]
-with open("resources/clansettings_conversion.json", "r", encoding="utf-8") as conversion_file:
+with open(
+    "resources/clansettings_conversion.json", "r", encoding="utf-8"
+) as conversion_file:
     _old_save_conversion = ujson.loads(conversion_file.read())
 
 all_settings = [
