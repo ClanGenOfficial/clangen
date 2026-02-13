@@ -3548,7 +3548,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When r_c claimed to have a StarClan vision, from_cat and to_cat discussed it."
+                            "cats_from": "from_cat and to_cat discussed the vision r_c claimed to have."
                         }
                     }
                 ],
