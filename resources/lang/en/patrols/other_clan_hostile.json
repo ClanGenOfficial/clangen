@@ -24,7 +24,25 @@
                 "text": "p_l remains calm and collected, ignoring the aggression. Eventually the o_c_n patrol gives up on their taunting and leaves the area, deflated by the lack of reaction.",
                 "exp": 10,
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated p_l's calm demeanor when confronted with a hostile o_c_n patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c is quick to strike up conversation with the other patrol, trying to get to the root of their rudeness. Eventually the problem is smoothed over, nothing but a misunderstanding and unfounded assumptions.",
@@ -33,7 +51,26 @@
                     "SPEAKER,1"
                 ],
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated s_c's smooth conversation when they met with a o_c_n patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c is quick to strike up conversation with the other patrol, trying to get to the root of their rudeness. Eventually the problem is smoothed over, nothing but a misunderstanding and unfounded assumptions.",
@@ -45,7 +82,26 @@
                     "confident"
                 ],
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated s_c's smooth conversation when they met with a o_c_n patrol."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -63,7 +119,25 @@
                     "nervous"
                 ],
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed with s_c's cowardly reaction to a hostile o_c_n patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The two patrols begin throwing insults back and forth, the tension ratcheting higher and higher until suddenly a fight breaks out! The tussle quickly becomes deadly, r_c lying motionless on the ground when the enemy patrol backs off.",
@@ -107,7 +181,25 @@
                 "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. Despite {PRONOUN/p_l/poss} righteous fury, the o_c_n patrol quickly overpowers {PRONOUN/p_l/object} and sends p_l back onto {PRONOUN/p_l/poss} own side of the border.",
                 "exp": 0,
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed with how easily to_cat was rebuffed by a o_c_n patrol, it seems to_cat is all yowl and no bite."
+                        }
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -115,7 +207,25 @@
                 "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drive/drives} the o_c_n patrol away from the border.",
                 "exp": 10,
                 "other_clan_rep": -2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed at to_cat's fighting prowess against a o_c_n patrol."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -169,7 +279,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -183,20 +296,27 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "n_c:0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "trust"
+                            "comfort",
+                            "respect"
                         ],
-                        "amount": -6
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat begged to_cat to join c_n, but to_cat refused and left Clan-life altogether."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -227,7 +347,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -241,20 +364,26 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat couldn't believe it when to_cat brought a <i>o_c_n</i> cat back to camp as a <i>mate</i>."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -284,7 +413,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -298,20 +430,27 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "n_c:0"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "trust"
+                            "comfort",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat begged to_cat to join c_n, but to_cat refused and left Clan-life altogether."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -347,7 +486,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -361,20 +503,28 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "n_c:0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "trust"
+                            "comfort",
+                            "like",
+                            "respect"
                         ],
-                        "amount": -15
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat decided to leave Clan-life and travel together, free from the confines of their old lives."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -386,7 +536,7 @@
                     ]
                 ],
                 "art": "gen_flower_date_warrior_other_clan",
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "p_l and n_c:0 spend one last night together - and though p_l tries to convince {PRONOUN/n_c:0/object} that the birdsong is the nightingale and not the lark, n_c:0 knows better. {PRONOUN/n_c:0/subject/CAP} can't bear to live in this fantasy any longer. Though p_l calls after n_c:0, {PRONOUN/n_c:0/subject} {VERB/n_c:0/do/does}n't look back as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees} into the rosy dawn.",
@@ -416,7 +566,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 24
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -430,20 +583,28 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 12
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "n_c:0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "comfort",
+                            "trust",
+                            "romance"
                         ],
-                        "amount": -15
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat had lost faith in their love's resilience and, despite from_cat's pleading, ran from {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -455,7 +616,7 @@
                     ]
                 ],
                 "art": "gen_flower_date_warrior_other_clan",
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged and, despite n_c:0's wails of protest, pounce on p_l, clawing {PRONOUN/p_l/object} within a mouse-length of {PRONOUN/p_l/poss} life. n_c:0, horrified by {PRONOUN/n_c:0/poss} Clanmates' actions, flees the territory.",
@@ -499,7 +660,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -513,20 +677,27 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "n_c:0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
+                            "comfort",
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "While the two were meeting, to_cat's Clanmates attacked and nearly killed from_cat. to_cat ran from the territories altogether."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -577,7 +748,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -591,20 +765,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -15
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other until from_cat's Clan killed to_cat."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -619,12 +783,12 @@
                 "frequency": 1
             },
             {
-                "text": "p_l and n_c:0 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c:0 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c:0 wails that p_l has killed {PRONOUN/n_c:0/poss} littermate, then flees, leaving p_l and the remaining o_c_n warriors staring at each other.",
+                "text": "p_l and n_c:2 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c:2 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c:2 wails that p_l has killed {PRONOUN/n_c:2/poss} sibling, then flees, leaving p_l and the remaining o_c_n warriors staring at each other.",
                 "exp": 0,
                 "injury": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c:2"
                         ],
                         "injuries": [
                             "grief stricken"
@@ -638,53 +802,76 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c:2"
                         ],
                         "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c:2"
                         ],
                         "mutual": true,
                         "values": [
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "n_c:2"
                         ],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "When to_cat killed from_cat's sibling, from_cat fled, {PRONOUN/from_cat/poss} heart torn."
+                        }
                     }
                 ],
                 "new_cat": [
                     [
                         "meeting",
                         "clancat",
+                        "age:senior",
+                        "unknown"
+                    ],
+                    [
+                        "meeting",
+                        "clancat",
+                        "age:adult",
+                        "parent:0",
+                        "dead"
+                    ],
+                    [
+                        "meeting",
+                        "former clancat",
                         "mate:p_l",
-                        "age:mate"
+                        "age:mate",
+                        "parent:0"
                     ]
                 ],
                 "art": "gen_battle_warrior_other_clan",
-                "frequency": 1
+                "frequency": 4
             }
         ],
         "antag_success_outcomes": [
@@ -724,7 +911,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -738,47 +928,61 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "clan"
                         ],
-                        "mutual": true,
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
                         "values": [
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "The death of {PRONOUN/from_cat/poss} mate at the paws of {PRONOUN/from_cat/poss} own Clan left from_cat embittered and wary."
+                        }
                     },
                     {
                         "cats_to": [
-                            "clan"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "like"
+                            "respect",
+                            "trust"
                         ],
-                        "amount": -10
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                        }
                     },
                     {
                         "cats_to": [
-                            "clan"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "clan", "low_lawful", "high_social"
                         ],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "respect"
                         ],
-                        "amount": -10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -809,7 +1013,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 22
+                        "amount": 22,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -823,20 +1030,44 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 14
+                        "amount": 14,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
+                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -18
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_social"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -866,41 +1097,34 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 48
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "n_c:0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 36
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
+                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_social"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
+                        }
                     }
                 ],
                 "history_text": {

@@ -15,18 +15,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 2],
+            "normal adult": [1, 6]
         },
         "frequency": 2,
         "intro_text": "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten.",
@@ -39,18 +29,37 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat learned about elephant seals from to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about elephant seals."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -61,24 +70,43 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat learned about elephant seals from to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about elephant seals."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "As the 'rocks' wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk versus the comparatively smaller females.",
+                "text": "As the \"rocks\" wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk versus the comparatively smaller females.",
                 "exp": 20,
                 "stat_skill": [
                     "TEACHER,1"
@@ -89,18 +117,37 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how to distinguish dangerous bull seals from the female elephant seals."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how to distinguish dangerous bull seals from the female elephant seals."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -122,18 +169,37 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat reassured from_cat when elephant seals startled {PRONOUN/from_cat/object} on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat reassured to_cat when elephant seals startled {PRONOUN/to_cat/object} on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -143,126 +209,19 @@
             {
                 "text": "When one of the boulders abruptly starts roaring, app1 shrieks and bolts. It takes the rest of the patrol to find {PRONOUN/app1/object}, and the teaching moment is forgotten as the cats gather to comfort {PRONOUN/app1/object}.",
                 "exp": 0,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_train_romantic_oceanswim2",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [
-            "romance"
-        ],
-        "patrol_art": "train_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "all apprentices": [ -1, -1 ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "p_l suggests to r_c that the weather's perfect for a swim in the ocean together.",
-        "decline_text": "r_c isn't convinced and suggests they should probably focus on the patrol instead.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and {VERB/r_c/plunge/plunges} in after {PRONOUN/p_l/object}.",
-                "exp": 5,
+                "frequency": 4,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_from": ["app1"],
+                        "cats_to": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "romance"
-                        ],
-                        "amount": 5
+                        "values": ["like", "trust"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "to_cat comforted from_cat when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} startled by a elephant seal on patrol."
+                        }
                     }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l can't keep a scowl on {PRONOUN/p_l/poss} face, captivated by the sound of r_c's joyous laughter and the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
-                "exp": 5,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "r_c dips one paw in the water and hisses, announcing that it's much too cold and urging p_l to come back to camp with {PRONOUN/r_c/object} instead.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c tries to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/r_c/poss} own swimming to notice. s_c gives up, discouraged.",
-                "exp": 0,
-                "stat_trait": [
-                    "ambitious",
-                    "childish",
-                    "insecure",
-                    "lonesome"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     },
@@ -282,14 +241,8 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ],
-            "apprentice": [
-                1,
-                6
-            ]
+            "normal adult": [1, 2],
+            "apprentice": [1, 2]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -299,7 +252,7 @@
             "SWIMMER,1",
             "RUNNER,1"
         ],
-        "intro_text": "app1 doesn't understand what 'footing' training is supposed to mean. {PRONOUN/app1/subject/CAP} {VERB/app1/know/knows} how to <i>walk</i>. What're they <i>really</i> here to train?",
+        "intro_text": "app1 doesn't understand what \"footing\" training is supposed to mean. {PRONOUN/app1/subject/CAP} {VERB/app1/know/knows} how to <i>walk</i>. What're they <i>really</i> here to train?",
         "decline_text": "Unable to convince app1 of the importance of training to keep {PRONOUN/app1/poss} footing, p_l gives up and takes the patrol home.",
         "success_outcomes": [
             {
@@ -329,27 +282,34 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
+                            "app1", "app2"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect",
+                            "trust"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned the importance of being able to keep one's footing on slippery rocks from to_cat's story of the daring rescue of a kit during a storm."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat the importance of keeping one's footing with a story about rescuing a kit."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -370,33 +330,40 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
+                            "app1", "app2"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect",
+                            "trust"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned the importance of being able to keep one's footing on slippery rocks from to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat the importance of keeping one's footing on slippery rocks."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rock pools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
+                "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rockpools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
                 "exp": 30,
                 "art": "gen_train_soggykitty_happy_app",
                 "stat_skill": [
@@ -411,27 +378,34 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
+                            "app1", "app2"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect",
+                            "trust"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned how to judge the depths of rockpools from to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1", "app2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat to judge the depths of rockpools."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -452,27 +426,34 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "app1", "app2"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned the importance of being able to keep one's footing on slippery rocks from to_cat when {PRONOUN/to_cat/subject} challenged {PRONOUN/from_cat/object} to a race."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "app1", "app2"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort",
+                            "like"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat the importance of keeping one's footing on slippery rocks by challenging {PRONOUN/to_cat/object} to a race."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -515,21 +496,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "app1"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
                         ],
                         "cats_from": [
                             "p_l"
@@ -539,7 +506,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat thought to_cat was a mouse-brain for racing around on slippery rocks before learning to keep {PRONOUN/to_cat/poss} footing."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -592,21 +562,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "app1"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
                         ],
                         "cats_from": [
                             "p_l"
@@ -616,7 +572,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat thought to_cat was a mouse-brain for racing around on slippery rocks before learning to keep {PRONOUN/to_cat/poss} footing."
+                        }
                     }
                 ],
                 "frequency": 4

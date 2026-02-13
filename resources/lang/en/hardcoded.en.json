@@ -45,7 +45,6 @@
             "one": "%{names} found a %{insert} and decide to adopt it.",
             "many": "%{names} found a %{insert} and decide to adopt them."
         },
-        "new_kit_thought": "Snuggles up to the belly of r_c",
         "event_mediator_app": "m_c has chosen to use {PRONOUN/m_c/poss} skills and experience to help solve the Clan's disagreements. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} the Clan's newest mediator.",
         "herbs_found": {
             "zero": "med_name could not find any herbs this moon.",
@@ -97,10 +96,6 @@
             "many": "Fleas have been hopping from pelt to pelt and now %{cats} are all infested."
         },
         "illness_spread": "%{illness} has spread around the camp. %{cats} have been infected.",
-        "thought_new_cat": "Is looking around the camp with wonder",
-        "thought_new_kitten": "Is snuggled safe in the nursery",
-        "thought_meeting": "Is wondering about those new cats",
-        "thought_new_dead": "Explores a new, starry world",
         "scar_event0": "m_c's %{injury} has healed, but {PRONOUN/m_c/subject}'ll always carry evidence of it on {PRONOUN/m_c/poss} pelt.",
         "scar_event1": "m_c healed from {PRONOUN/m_c/poss} %{injury} but will forever be marked by a scar.",
         "scar_event2": "m_c's %{injury} has healed, but the injury left {PRONOUN/m_c/object} scarred.",

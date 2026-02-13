@@ -81,7 +81,19 @@
             {
                 "text": "p_l marks the wrong area, making more work for others to fix {PRONOUN/p_l/poss} mistake.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_lawful"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat noticed to_cat's half-hearted job on a border patrol caused more work for others."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -197,7 +209,19 @@
             {
                 "text": "p_l identifies the tracks as belonging to Twolegs, and p_l decides to head back to camp to inform the others.",
                 "exp": 5,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_lawful"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat appreciated that to_cat warned the Clan of Twoleg tracks."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -306,7 +330,19 @@
                 "text": "Frankly, extra limbs or not (bat wings, at that - this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them.",
                 "exp": 15,
                 "outsider_rep": 1,
-                "frequency": 3
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story of a kittypet with bat wings who got stuck."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -330,7 +366,19 @@
                 "text": "Hissing, p_l bowls the kittypet over, and with a ripping sound, the bat wing detaches from their back. The plump cat's crying increases in volume as they flee. p_l brings the trophy back to camp to boast.",
                 "exp": 15,
                 "outsider_rep": -2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_aggress"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was amused by to_cat's trophy of bat wings ripped from a strange kittypet."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -394,7 +442,19 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's knowledge of Twolegs' strange pumpkin-based rituals."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c begins to bristle with unease. {PRONOUN/s_c/subject/CAP} can see strange, mist-like Twolegs floating around the glowing, unblinking face of a... pumpkin? The figures approach s_c, and run their cold, fur-less paws through {PRONOUN/s_c/subject} fur. s_c can hardly hear r_c asking {PRONOUN/s_c/object} why {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} frozen in place.",
@@ -421,7 +481,29 @@
                     "grumpy",
                     "fierce"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was embarrassed when to_cat called {PRONOUN/from_cat/object} a mouse-heart for being freaked out by a mysterious smoking pumpkin."
+                        }
+                    },
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was contemptuous of to_cat's fear of a pumpkin."
+                        }
+                    }
+                ]
             },
             {
                 "text": "As r_c slowly creeps towards the disturbing face, s_c recklessly darts forward to get a closer look! {PRONOUN/s_c/subject/CAP} {VERB/s_c/crash/crashes} into some strange pumpkin, knocking it over and obscuring its eerie face. The patrol heads home without much left to investigate thanks to s_c's antics.",
@@ -432,7 +514,19 @@
                     "playful",
                     "shameless"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was irritated when to_cat knocked over the mysterious pumpkin the patrol was investigating."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -467,12 +561,36 @@
             {
                 "text": "r_c cautiously approaches the Twoleg kits, intrigued by their colorful pelts. To r_c's surprise, one of the tiny Twolegs offers {PRONOUN/r_c/object} a strange, shiny object. It doesn't smell exactly like prey, but r_c decides to take it back to the camp for further investigation.",
                 "exp": 10,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social", "low_stable"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was interested in the shiny Twoleg object to_cat brought back to camp."
+                        }
+                    }
+                ]
             },
             {
                 "text": "r_c decides to mimic the small Twolegs. Approaching a larger Twoleg den, {PRONOUN/r_c/subject} {VERB/r_c/meow/meows} softly at the entrance. The Twoleg that opens the entrance seems amused and hands r_c a morsel of food. The patrol brings it back to camp for further investigation.",
                 "exp": 10,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social", "low_stable"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was interested in the morsel of Twoleg food to_cat brought back to camp."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -522,16 +640,50 @@
                 "stat_skill": [
                     "FIGHTER,0"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_aggress", "low_stable"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was very impressed to hear that to_cat took down a Twoleg."
+                        }
+                    },
+                    {
+                        "cats_from": ["clan", "high_social", "high_stable"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["like", "respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat thought to_cat's story of taking down a Twoleg is utter fox-dung."
+                        }
+                    }
+                ]
             },
             {
-                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject/CAP} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
+                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject/CAP} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a \"scarecrow,\" {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
                 "exp": 10,
                 "stat_skill": [
                     "ROGUE,0",
                     "LONER,0"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's knowledge of how Twolegs use \"scarecrows\" to keep their fields safe."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -566,10 +718,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "warrior": [
-                2,
-                2
-            ]
+            "warrior": [2, 2]
         },
         "frequency": 2,
         "chance_of_success": 50,
@@ -600,13 +749,16 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 3
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat gained a bit of respect for each other despite their bickering on a border patrol."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "p_l and r_c have been bickering the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rogue falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
+                "text": "p_l and r_c have been bickering the entire morning. But when p_l spots the shadow of a rogue falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
                 "exp": 10,
                 "art": "gen_battle_rogue_warrior",
                 "injury": [
@@ -632,18 +784,21 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 3
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "Despite their arguing, to_cat saved from_cat from a rogue on a border patrol."
+                        }
                     }
                 ],
                 "frequency": 2
             },
             {
-                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly apologize.",
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame and {PRONOUN/s_c/subject} awkwardly {VERB/s_c/apologize/apologizes}.",
                 "exp": 10,
                 "can_have_stat": [
                     "p_l"
@@ -673,10 +828,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "trust",
-                            "comfort"
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "...though {PRONOUN/s_c/subject} did apologize."
+                        }
                     },
                     {
                         "cats_to": [
@@ -689,13 +846,16 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat hurt from_cat's feelings on patrol..."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an impromptu contest to see who can catch the most bugs.",
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} {VERB/r_c/dislike/dislikes} about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an impromptu contest to see who can catch the most bugs.",
                 "exp": 10,
                 "art": "fst_hunt_fun3",
                 "can_have_stat": [
@@ -719,7 +879,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "After a dispute on patrol, from_cat and to_cat enjoyed a bug-catching contest with each other."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -729,7 +892,19 @@
             {
                 "text": "The bickering gets to be too much, and r_c storms back to camp irritated.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got so frustrated with each other during a patrol that r_c stormed off, cutting it short."
+                        }
+                    }
+                ]
             },
             {
                 "text": "While they are bickering, r_c trips, and p_l snickers, earning r_c's ire.",
@@ -756,7 +931,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat snickered at from_cat when {PRONOUN/from_cat/subject} fell over on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -774,7 +952,7 @@
                 "frequency": 2
             },
             {
-                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when a verbal barb sinks too deep and r_c starts crying, s_c lashes their tail, snapping at r_c to focus on patrolling. r_c runs off, leaving s_c to finish the patrol alone.",
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when a verbal barb sinks too deep and r_c starts crying, s_c lashes {PRONOUN/s_c/poss} tail, snapping at r_c to focus on patrolling. r_c runs off, leaving s_c to finish the patrol alone.",
                 "exp": 0,
                 "can_have_stat": [
                     "p_l"
@@ -790,14 +968,13 @@
                     "arrogant",
                     "competitive",
                     "grumpy",
-                    "cunning",
                     "oblivious",
                     "rebellious"
                 ],
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
                             "r_c"
@@ -805,9 +982,29 @@
                         "mutual": false,
                         "values": [
                             "like",
+                            "comfort"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "to_cat hurt from_cat's feelings on patrol and wouldn't apologize when from_cat began to cry."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "to_cat ran off on patrol, claiming from_cat hurt {PRONOUN/to_cat/poss} feelings."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -836,7 +1033,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got into an argument on patrol about bugs and having fun."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -948,7 +1148,7 @@
                 "art": "gen_train_soggykitty_happy_app"
             },
             {
-                "text": "Watching app1 and app2 splash each other, s_c shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN/p_l/poss} head, but it's too late. SPLASH! It's a very wet border patrol.",
+                "text": "Watching app1 and app2 splash each other, s_c shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN/p_l/poss} head, but it's too late. <i>Splash!</i> It's a very wet border patrol.",
                 "exp": 30,
                 "frequency": 4,
                 "stat_trait": ["playful", "childish", "competitive", "flamboyant", "rebellious", "shameless", "troublesome", "sneaky"],
