@@ -335,6 +335,7 @@ def event_for_cat(
     func_lookup = {
         "age": _check_cat_age,
         "status": _check_cat_status,
+        "status_history": _check_cat_status_history,
         "trait": _check_cat_trait,
         "skill": _check_cat_skills,
         "backstory": _check_cat_backstory,
@@ -423,6 +424,28 @@ def _check_cat_status(cat, statuses: list) -> bool:
 
     if (cat.status.rank in statuses) or ("lost" in statuses and cat.status.is_lost()):
         return False
+
+    return is_exclusionary
+
+
+def _check_cat_status_history(cat, statuses: list) -> bool:
+    """
+    Checks if cat's group_history contains any status within statuses list.
+    """
+    if not statuses or "any" in statuses:
+        return True
+
+    is_exclusionary = _check_for_exclusionary_value(statuses)
+
+    if is_exclusionary:
+        statuses = [x.replace("-", "") for x in statuses]
+
+    for _rank in cat.status.all_ranks.keys():
+        if _rank in statuses and _rank != cat.status.rank:
+            if is_exclusionary:
+                return False
+            else:
+                return True
 
     return is_exclusionary
 

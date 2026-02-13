@@ -16,7 +16,14 @@ import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
 from scripts.cat import save_load, pronouns
-from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup, CatCompatibility
+from scripts.cat.enums import (
+    CatAge,
+    CatRank,
+    CatSocial,
+    CatGroup,
+    CatCompatibility,
+    CatThought,
+)
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -672,18 +679,19 @@ class Cat:
         # Deal with leader death
         if self.status.is_leader:
             if game.clan.leader_lives > 0:
-                lives_left = game.clan.leader_lives
-                self.get_new_thought(just_died=True, lives_left=lives_left)
+                self.get_new_thought(CatThought.ON_DEATH)
                 return
-            elif game.clan.leader_lives <= 0:
+
+            if game.clan.leader_lives <= 0:
                 self.dead = True
                 game.just_died.append(self.ID)
                 game.clan.leader_lives = 0
-                self.get_new_thought(just_died=True, lives_left=0)
+
         else:
             self.dead = True
             game.just_died.append(self.ID)
-            self.get_new_thought(just_died=True)
+
+        self.get_new_thought(CatThought.ON_DEATH)
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -704,11 +712,8 @@ class Cat:
         """This is used to send a cat into exile."""
 
         self.status.exile_from_group()
+        self.get_new_thought(CatThought.ON_EXILE)
 
-        if self.personality.trait == "vengeful":
-            self.thought = "Swears their revenge for being exiled"
-        else:
-            self.thought = "Is shocked that they have been exiled"
         for app in self.apprentice:
             fetched_cat = Cat.fetch_cat(app)
             if fetched_cat:
@@ -811,54 +816,10 @@ class Cat:
             ):
                 grief_type = "minor"
 
-                # These minor grief message will be applied as thoughts.
-                minor_grief_messages = (
-                    "Told a fond story at r_c's vigil",
-                    "Bargains with StarClan, begging them to send r_c back",
-                    "Sat all night at r_c's vigil",
-                    "Will never forget r_c",
-                    "Prays that r_c is safe in StarClan",
-                    "Misses the warmth that r_c brought to {PRONOUN/m_c/poss} life",
-                    "Is mourning r_c",
-                    "Can't stop coming to tears each time r_c is mentioned",
-                    "Stayed the longest at r_c's vigil",
-                    "Left r_c's vigil early due to grief",
-                    "Lashes out at any cat who checks on {PRONOUN/m_c/object} after r_c's death",
-                    "Took a long walk on {PRONOUN/m_c/poss} own to mourn r_c in private",
-                    "Is busying {PRONOUN/m_c/self} with too much work to forget about r_c's death",
-                    "Does {PRONOUN/m_c/poss} best to console {PRONOUN/m_c/poss} clanmates about r_c's death",
-                    "Takes a part of r_c's nest to put with {PRONOUN/m_c/poss} own, clinging to the fading scent",
-                    "Sleeps in r_c's nest tonight",
-                    "Defensively states that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need any comfort about r_c's death",
-                    "Wonders why StarClan had to take r_c so soon",
-                    "Still needs r_c even though they're gone",
-                    "Doesn't think {PRONOUN/m_c/subject} will ever be the same without r_c",
-                    "Was seen crying in {PRONOUN/m_c/poss} nest after r_c's vigil",
-                    "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/m_c/comfort/comforts} the others about r_c's passing",
-                )
+                text = CatThought.ON_GRIEF_NO_BODY
 
                 if body:
-                    minor_grief_messages += (
-                        "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
-                        "Slips out of camp to visit r_c's grave",
-                        "Clung so desperately to r_c's body that {PRONOUN/m_c/subject} had to be dragged away",
-                        "Hides a scrap of r_c's fur under {PRONOUN/m_c/poss} nest to cling to",
-                        "Can't stand the sight of r_c's body in camp",
-                        "Hissed at anyone who got too close to r_c's body, refusing to let go",
-                        "Spent a long time grooming r_c's fur for their vigil",
-                        "Arranged the flowers for r_c's vigil",
-                        "Picked the best spot in the burial grounds for r_c",
-                        "Keeps thinking that r_c is only sleeping",
-                        "Is in denial of r_c's death, despite the ongoing vigil",
-                        "Insists that r_c isn't gone",
-                        "Begs r_c not to leave them all",
-                        "Sleeps next to r_c for the entire vigil one last time",
-                        "Ran out of camp the moment {PRONOUN/m_c/subject} saw r_c's body",
-                        "Sang a song in memory of r_c at the vigil",
-                        "Stares at r_c's vigil longingly, but doesn't feel the right to join in",
-                    )
-
-                text = choice(minor_grief_messages)
+                    text = CatThought.ON_GRIEF_TOWARD_BODY
 
             if grief_type:
                 # Generate the event:
@@ -936,6 +897,8 @@ class Cat:
 
         self.update_mentor()
 
+        self.get_new_thought(CatThought.ON_LOST)
+
         for x in self.apprentice:
             Cat.fetch_cat(x).update_mentor()
 
@@ -969,11 +932,13 @@ class Cat:
 
         return ids
 
-    def rank_change(self, new_rank: CatRank, resort=False):
+    def rank_change(self, new_rank: CatRank, resort=False, new_thought=True):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
         :param new_rank: CatRank that the cat is becoming
         :param resort: If sorting type is 'rank', and resort is True, it will resort the cat list. This should
-                only be true for non-timeskip status changes."""
+                only be true for non-timeskip status changes.
+        :param new_thought: If true, cat will receive a special rank change thought. Default is True
+        """
 
         old_rank = self.status.rank
 
@@ -1027,6 +992,17 @@ class Cat:
             if game.clan.deputy and game.clan.deputy.ID == self.ID:
                 game.clan.deputy = None
                 game.clan.deputy_predecessors += 1
+
+        # update thought
+        if new_thought and new_rank not in (
+            CatRank.NEWBORN,
+            CatRank.KITTEN,
+        ):  # newborn and kitten aren't really "ranks" to be promoted to
+            self.get_new_thought(CatThought.ON_RANK_CHANGE)
+        # however we don't want kittens to somehow have a newborn thought, so we'll have them reset to a normal kitten thought
+        # just in case
+        if new_thought and new_rank == CatRank.KITTEN:
+            self.get_new_thought()
 
         # update class dictionary
         self.all_cats[self.ID] = self
@@ -1564,8 +1540,9 @@ class Cat:
             return
 
         if self.dead and not self.faded:
-            self.get_new_thought()
+            self.get_new_thought(CatThought.WHILE_DEAD)
             return
+        self.get_new_thought(CatThought.WHILE_ALIVE)
 
         # Set personality to correct type
         self.personality.set_kit(self.age.is_baby())
@@ -1575,22 +1552,33 @@ class Cat:
             self.update_mentor()
 
     def get_new_thought(
-        self, just_died=False, lives_left: int = 0, other_clan_cats: list = None
+        self,
+        thought_type: CatThought = None,
+        other_clan_cats: list = None,
+        other_cat: Cat = None,
     ):
         """
         Generates a thought for the cat, which displays on their profile.
-        :param just_died: Set True if the cat is generating a death thought
-        :param lives_left: If a leader is generating a death thought, include their lives left here
+        :param thought_type: Indicate what type of thought should be generated
+        :param other_clan_cats: If cat is in a different clan, pass the list of their clanmates
+        :param other_cat: If a specific other cat should be included, include their object here.
         """
+        # default thought type
+        if not thought_type:
+            thought_type = (
+                CatThought.WHILE_DEAD if self.dead else CatThought.WHILE_ALIVE
+            )
+
         if self.status.is_other_clancat and not self.dead:
             cat_list = other_clan_cats.copy() if other_clan_cats else []
         else:
             cat_list = self.all_cats_list.copy()
 
-        other_cat = get_other_cat_for_thought(
-            cat_list=cat_list,
-            main_cat=self,
-        )
+        if not other_cat:
+            other_cat = get_other_cat_for_thought(
+                cat_list=cat_list,
+                main_cat=self,
+            )
 
         biome = switch_get_value(Switch.biome)
         camp = switch_get_value(Switch.camp_bg)
@@ -1600,17 +1588,7 @@ class Cat:
             season = None
 
         # get chosen thought
-        if just_died:
-            afterlife = (
-                self.status.group
-                if self.status.group.is_afterlife()
-                else game.clan.instructor.status.group
-            )
-            chosen_thought = new_death_thought(
-                self, other_cat, biome, season, camp, afterlife, lives_left
-            )
-        else:
-            chosen_thought = new_thought(self, other_cat, biome, season, camp)
+        chosen_thought = new_thought(thought_type, self, other_cat, biome, season, camp)
 
         chosen_thought = event_text_adjust(
             self.__class__,

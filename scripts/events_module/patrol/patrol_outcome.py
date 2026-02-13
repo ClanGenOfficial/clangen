@@ -85,19 +85,30 @@ class PatrolOutcome:
         self.exp = exp
 
         self.min_max_status = min_max_status if min_max_status else {}
-        self.weight += len(self.min_max_status) * 2
+        self.weight += len(self.min_max_status) * 4
 
         self.relationship_constraints = (
             relationship_constraints if relationship_constraints else []
         )
         if relationship_constraints:
-            self.weight += len(relationship_constraints) * 2
+            self.weight += len(relationship_constraints) * 8
         self.stat_trait = stat_trait if stat_trait else []
         if self.stat_trait:
-            self.weight += int((self.NUM_OF_TRAITS - len(self.stat_trait)) / 10)
+            # exclusionary values!
+            if "-" in self.stat_trait[0]:
+                self.weight += len(self.stat_trait)
+            else:
+                # inclusionary values get inverse weighting
+                self.weight += int((self.NUM_OF_TRAITS - len(self.stat_trait)))
         self.stat_skill = stat_skill if stat_skill else []
         if self.stat_skill:
-            self.weight += int((self.NUM_OF_SKILLS - len(self.stat_skill)) / 5)
+            # exclusionary values!
+            if "-" in self.stat_skill[0]:
+                self.weight += len(self.stat_skill)
+            else:
+                # inclusionary values get inverse weighting
+                self.weight += int((self.NUM_OF_SKILLS - len(self.stat_skill)))
+
         self.can_have_stat = can_have_stat if can_have_stat else []
 
         self.dead_cats = dead_cats if dead_cats else []
