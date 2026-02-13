@@ -315,7 +315,9 @@ def create_new_cat_block(
                     rank = chosen_cat.status.get_rank_from_age(chosen_cat.age)
                 chosen_cat.add_to_clan()
                 if chosen_cat.status.rank != rank:
-                    chosen_cat.rank_change(new_rank=CatRank(rank), resort=True)
+                    chosen_cat.rank_change(
+                        new_rank=CatRank(rank), resort=True, new_thought=False
+                    )
             elif outside:
                 # updates so that the clan is marked as knowing of this cat
                 current_standing = chosen_cat.status.get_standing_with_group(

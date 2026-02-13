@@ -254,6 +254,22 @@
           "title": "Random Status Constraint",
           "type": "array"
         },
+        "main_status_history": {
+          "description": "Constrains the thought to only happen if m_c had a certain role, but no longer does.",
+          "items": {
+            "$ref": "#/$defs/StatusAny"
+          },
+          "title": "Main Status History",
+          "type": "array"
+        },
+        "random_status_history": {
+          "description": "Constrains the thought to only happen if r_c had a certain role, but no longer does.",
+          "items": {
+            "$ref": "#/$defs/StatusAny"
+          },
+          "title": "Random Status History",
+          "type": "array"
+        },
         "main_age_constraint": {
           "description": "Constrains the thought to only happen if m_c is within a certain age group.",
           "items": {

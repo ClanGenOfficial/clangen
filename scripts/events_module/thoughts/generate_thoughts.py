@@ -113,6 +113,11 @@ def _load_group(
         thoughts.extend(_load_exiled_and_former(main_cat, new_path))
         thoughts.extend(_load_general(main_cat, new_path))
 
+    # CATS WHO JUST CHANGED RANK
+    elif thought_type == CatThought.ON_RANK_CHANGE:
+        thoughts = load_lang_resource(f"{new_path}/{rank}.json")
+        thoughts.extend(_load_general(main_cat, new_path))
+
     # CATS WHO JUST DIED
     elif thought_type == CatThought.ON_DEATH:
         is_leader = main_cat.status.is_leader

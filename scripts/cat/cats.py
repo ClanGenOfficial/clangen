@@ -932,11 +932,13 @@ class Cat:
 
         return ids
 
-    def rank_change(self, new_rank: CatRank, resort=False):
+    def rank_change(self, new_rank: CatRank, resort=False, new_thought=True):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
         :param new_rank: CatRank that the cat is becoming
         :param resort: If sorting type is 'rank', and resort is True, it will resort the cat list. This should
-                only be true for non-timeskip status changes."""
+                only be true for non-timeskip status changes.
+        :param new_thought: If true, cat will receive a special rank change thought. Default is True
+        """
 
         old_rank = self.status.rank
 
@@ -990,6 +992,17 @@ class Cat:
             if game.clan.deputy and game.clan.deputy.ID == self.ID:
                 game.clan.deputy = None
                 game.clan.deputy_predecessors += 1
+
+        # update thought
+        if new_thought and new_rank not in (
+            CatRank.NEWBORN,
+            CatRank.KITTEN,
+        ):  # newborn and kitten aren't really "ranks" to be promoted to
+            self.get_new_thought(CatThought.ON_RANK_CHANGE)
+        # however we don't want kittens to somehow have a newborn thought, so we'll have them reset to a normal kitten thought
+        # just in case
+        if new_thought and new_rank == CatRank.KITTEN:
+            self.get_new_thought()
 
         # update class dictionary
         self.all_cats[self.ID] = self
@@ -1547,6 +1560,8 @@ class Cat:
         """
         Generates a thought for the cat, which displays on their profile.
         :param thought_type: Indicate what type of thought should be generated
+        :param other_clan_cats: If cat is in a different clan, pass the list of their clanmates
+        :param other_cat: If a specific other cat should be included, include their object here.
         """
         # default thought type
         if not thought_type:

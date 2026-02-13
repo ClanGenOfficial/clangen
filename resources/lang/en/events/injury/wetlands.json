@@ -47,7 +47,10 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["small cut"]
+                "injuries": ["small cut"],
+                "scars": [
+                    "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
+                ]
             }
         ]
     },
