@@ -7717,7 +7717,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was comforted to realize that even to_cat failed sometimes."
+                            "cats_from": "from_cat was comforted to realize that even to_cat fails sometimes."
                         }
                     }
                 ],
