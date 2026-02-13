@@ -875,7 +875,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5,
+                        "amount": -15,
                         "log": {
                             "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was killed as a result."
                         }
