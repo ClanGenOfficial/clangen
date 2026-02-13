@@ -205,7 +205,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat had to talk a c_n patrol into letting {PRONOUN/from_cat/object} go."
+            "cats_from": "from_cat was confronted by a c_n patrol but persuaded them letting {PRONOUN/from_cat/object} go."
           }
         }
       ]
@@ -239,8 +239,8 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}"
-    },
+      "new_thought": "Heard rumors that a Clan wants {PRONOUN/m_c/object} out of their territory"
+        },
       "relationships": [
         {
           "cats_to": [ "some_clan" ],
@@ -302,7 +302,7 @@
     "rep_change": -1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}"
+      "new_thought": "Heard rumors that a Clan wants {PRONOUN/m_c/object} out of their territory"
     },
       "relationships": [
         {
@@ -323,7 +323,7 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "former Clancat"],
-      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}"
+      "new_thought": "Heard rumors that a Clan wants {PRONOUN/m_c/object} out of their territory"
     },
       "relationships": [
         {
@@ -344,7 +344,7 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "former Clancat"],
-      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}"
+      "new_thought": "Heard rumors that a Clan wants {PRONOUN/m_c/object} out of their territory"
     },
       "relationships": [
         {
