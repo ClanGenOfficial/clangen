@@ -39,19 +39,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "respect"],
+                        "amount": 5,
+                        "log":
+                    {
+                        "cats_from": "from_cat eagerly listened to to_cat talk about herbs."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -70,19 +66,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "respect"],
+                        "amount": 5,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat spent the day talking together."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -94,19 +86,15 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "like", "respect"],
+                        "amount": -5,
+                        "log":
+                    {
+                        "cats_from": "from_cat refused to talk about herbs with to_cat."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -123,19 +111,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "like", "respect"],
+                        "amount": -5,
+                        "log":
+                    {
+                        "cats_from": "from_cat annoyed to_cat instead of being helpful while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -190,19 +174,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "respect"],
+                        "amount": 5,
+                        "log":
+                    {
+                        "cats_from": "from_cat caught to_cat before {PRONOUN/to_cat/subject} slipped."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -215,19 +195,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "respect"],
+                        "amount": 5,
+                        "log":
+                    {
+                        "cats_from": "from_cat gave to_cat a flower while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 1
@@ -247,19 +223,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like", "respect"],
+                        "amount": 5,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat spent the day talking together."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -271,19 +243,15 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "like", "respect"],
+                        "amount": -5,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat couldn't find anything to talk about while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -300,19 +268,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "like", "respect"],
+                        "amount": -5,
+                        "log":
+                    {
+                        "cats_from": "from_cat annoyed to_cat instead of being helpful while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -418,7 +382,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs app1 to follow their industrious example as {PRONOUN/app1/subject} {VERB/app1/gather/gathers}. app1/subject/CAP prune back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
+                "text": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs app1 to follow their industrious example as {PRONOUN/app1/subject} {VERB/app1/gather/gathers}. {PRONOUN/app1/subject/CAP} {VERB/app1/prune/prunes} back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
                 "exp": 20,
                 "herbs": [
                     "goldenrod",
@@ -426,20 +390,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat found a hidden goldenrod plant while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -454,26 +413,21 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat found a hidden goldenrod plant while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants. {PRONOUN/s_c/subject/CAP} point it out to app1 and the two cats bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
+                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} it out to app1 and the two cats bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
                 "exp": 20,
                 "stat_skill": [
                     "SENSE,2"
@@ -485,20 +439,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat found a lot of betony together."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -510,20 +459,15 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": -10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat struggled to find any betony together."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -573,18 +517,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat was impressed by to_cat's herb finding skill."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -599,18 +540,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat was impressed by to_cat's herb finding skill."
+                    }
                     }
                 ],
                 "frequency": 1
@@ -628,18 +566,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat was impressed by to_cat's herb finding skill."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -651,18 +586,15 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10
+                        "values": ["like", "respect"],
+                        "amount": -10,
+                        "log":
+                    {
+                        "cats_from": "from_cat was disappointed that to_cat struggled to find any betony."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -776,20 +708,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat had a good conversation about pruning plants."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -804,20 +731,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked in tandem to harvest a good haul of herbs."
+                    }
                     }
                 ],
                 "frequency": 1
@@ -835,20 +757,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together in peaceful silence while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -860,20 +777,15 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": -10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat didn't have much luck getting through blackberry thorns."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -919,18 +831,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat helped to_cat bring home a big haul of herbs."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -945,18 +854,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat helped to_cat get a small break while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 1
@@ -974,18 +880,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat assisted to_cat in peaceful silence while gathering herbs."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -997,18 +900,15 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10
+                        "values": ["like", "respect"],
+                        "amount": -10,
+                        "log":
+                    {
+                        "cats_from": "from_cat couldn't help to_cat gather herbs due to a large amount of thorns."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -1122,20 +1022,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat brought a big haul of burdock and plantain back from patrol."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -1150,20 +1045,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat found a big haul of burdock and plantain together."
+                    }
                     }
                 ],
                 "frequency": 1
@@ -1181,20 +1071,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat found a lot of burdock and plantain together."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -1206,20 +1091,15 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -10
+                        "values": ["like", "respect", "comfort", "trust"],
+                        "amount": -10,
+                        "log":
+                    {
+                        "cats_from": "from_cat and to_cat both failed to find any burdock on patrol."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -1265,18 +1145,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat helped to_cat bring home a big haul of burdock."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -1291,18 +1168,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat helped to_cat bring home a big haul of burdock."
+                    }
                     }
                 ],
                 "frequency": 1
@@ -1323,18 +1197,15 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
+                        "values": ["like", "respect"],
+                        "amount": 10,
+                        "log":
+                    {
+                        "cats_from": "from_cat helped to_cat bring home a big haul of burdock and plantain."
+                    }
                     }
                 ],
                 "frequency": 4
@@ -1346,18 +1217,15 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10
+                        "values": ["like", "respect"],
+                        "amount": -10,
+                        "log":
+                    {
+                        "cats_from": "from_cat watched to_cat fail to find burdock and returned home empty-pawed."
+                    }
                     }
                 ],
                 "frequency": 4
