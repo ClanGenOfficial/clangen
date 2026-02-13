@@ -2101,7 +2101,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat thought that despite to_cat's fighting abilities, {PRONOUN/to_cat/subject} {VERB/to_cat/make/makes} a poor teacher."
+                            "cats_from": "from_cat thought that, despite to_cat's fighting abilities, {PRONOUN/to_cat/subject} {VERB/to_cat/make/makes} a poor teacher."
                         }
                     }
                 ],
