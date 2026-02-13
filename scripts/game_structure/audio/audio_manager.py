@@ -3,6 +3,7 @@ import pygame.mixer
 from scripts.game_structure.audio.ambiance import Ambiance
 from scripts.game_structure.audio.music import Music
 from scripts.game_structure.audio.sound import Sound
+from scripts.game_structure.game import game_setting_get
 
 
 class AudioManager:
@@ -21,6 +22,9 @@ class AudioManager:
         """
         Begins background audio playback if necessary.
         """
+        if game_setting_get("audio_mute") == True and not self.muted:
+            self.mute()
+
         if self.muted:
             return
 

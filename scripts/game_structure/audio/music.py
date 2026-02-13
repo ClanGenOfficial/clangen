@@ -153,13 +153,6 @@ class Music:
             else:
                 self.fade_out(fadeout=0)
 
-        else:
-            self._stop_timers()
-            if should_fade_out:
-                self.fade_out()
-            else:
-                self.fade_out(fadeout=0)
-
     def play(self):
         """Finds and plays appropriate track"""
         self.choose()
@@ -183,6 +176,8 @@ class Music:
         """
         pauses the playing track
         """
+        if not self.channel:
+            return
         self.channel.pause()
         if self.music_timer.is_alive():
             self.remaining_time_of_paused_track = self.music_timer.remaining
