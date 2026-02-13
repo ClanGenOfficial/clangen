@@ -222,6 +222,20 @@
                     },
                     {
                         "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan", "high_social", "low_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat disapproved of how to_cat pushed {PRONOUN/to_cat/poss} patrol to reach the far border."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
@@ -268,6 +282,20 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "from_cat heard that to_cat advocated for {PRONOUN/to_cat/poss} Clanmates and urged p_l to end a patrol early when the cold took its toll on the cats."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan", "low_social", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat disapproved of to_cat ending a patrol early just because it was cold that day."
                         }
                     },
                     {
