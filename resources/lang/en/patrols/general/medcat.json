@@ -378,7 +378,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_lawful", "high_stable", "clan"],
+                        "cats_from": ["clan", "high_lawful", "high_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "respect"],
@@ -1712,7 +1712,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "low_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
@@ -1882,7 +1882,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "low_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
@@ -1999,7 +1999,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "low_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
@@ -2168,7 +2168,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["high_social", "low_stable", "clan"],
+                        "cats_from": ["clan", "high_social", "low_stable"],
                         "cats_to": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
@@ -2653,7 +2653,7 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["high_lawful", "clan"],
+                        "cats_from": ["clan", "high_lawful"],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -3978,7 +3978,7 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": [
-                            "low_social", "low_stable"
+                            "clan", "low_social", "low_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -4107,7 +4107,7 @@
                         }
                     },
                     {
-                        "cats_from": ["high_stable", "high_lawful"],
+                        "cats_from": ["clan", "high_stable", "high_lawful"],
                         "cats_to": ["patrol"],
                         "mutual": true,
                         "values": ["respect"],
