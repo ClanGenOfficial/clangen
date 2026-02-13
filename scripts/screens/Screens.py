@@ -176,15 +176,15 @@ class Screens:
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
+        # flipping between menu screens and not menu screens
         if (
-            game.last_screen_forupdate
-            in (GameScreen.START, GameScreen.EVENTS, GameScreen.MAKE_CLAN)
-            or switch_get_value(Switch.cur_screen) == GameScreen.START
+            switch_get_value(Switch.cur_screen) in constants.MENU_SCREENS
+            and game.last_screen_forupdate not in constants.MENU_SCREENS
+        ) or (
+            switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
+            and game.last_screen_forupdate in constants.MENU_SCREENS
         ):
-            game.audio.check(
-                should_fade_out=game.last_screen_forupdate == GameScreen.START
-                and switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
-            )
+            game.audio.check(should_fade_out=True)
 
         Screens.hide_mute_buttons()
         Screens.hide_menu_buttons()
