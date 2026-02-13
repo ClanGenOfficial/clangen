@@ -110,7 +110,7 @@ class Welcoming_Events:
             new_cat.relationships[clan_cat.ID].link_relationship()
 
         if clan_cat.ID in new_cat.relationships:
-            clan_cat.relationships[new_cat.ID].log.append(
+            new_cat.relationships[clan_cat.ID].log.append(
                 interaction_str
                 + i18n.t(
                     "relationships.age_postscript",
