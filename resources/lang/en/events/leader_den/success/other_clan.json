@@ -1508,7 +1508,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "m_c sidles up to the o_c_n leader during the Gathering, and {PRONOUN/m_c/poss} charming nature makes friendship a simple matter.",
+    "event_text": "m_c sidles up to the o_c_n leader during the Gathering. {PRONOUN/m_c/poss/CAP} charming nature makes friendship a simple matter.",
     "rel_change": 5,
     "m_c": {
       "trait": ["charismatic", "compassionate", "playful", "confident"]
