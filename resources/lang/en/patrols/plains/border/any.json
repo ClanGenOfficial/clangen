@@ -3490,7 +3490,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "This cat died to {PRONOUN/m_c/poss} injuries after an unfortunate meeting with a badger."
                 },
                 "frequency": 4
             },
