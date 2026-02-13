@@ -103,7 +103,7 @@
   },
   {
     "interaction_type": "invite",
-    "event_text": "There's one specific cat, m_c, that keeps regularly upstaging c_n's hunting patrols. However, instead of trying to drive {PRONOUN/m_c/object} out, c_n welcomes m_c with open paws.",
+    "event_text": "There's one specific cat, m_c, that regularly upstages c_n's hunting patrols. However, instead of trying to drive {PRONOUN/m_c/object} out, c_n welcomes m_c with open paws.",
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
