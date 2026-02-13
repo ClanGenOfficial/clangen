@@ -30,7 +30,8 @@
                 "new_cat": [
                     [
                         "loner",
-                        "meeting"
+                        "meeting",
+                        "exists"
                     ]
                 ],
                 "relationships": [
@@ -96,7 +97,8 @@
                     ],
                     [
                         "rogue",
-                        "meeting"
+                        "meeting",
+                        "exists"
                     ]
                 ],
                 "relationships": [
@@ -181,7 +183,8 @@
                     ],
                     [
                         "rogue",
-                        "meeting"
+                        "meeting",
+                        "exists"
                     ]
                 ],
                 "relationships": [
@@ -296,7 +299,8 @@
                     ],
                     [
                         "rogue",
-                        "meeting"
+                        "meeting",
+                        "exists"
                     ]
                 ],
                 "relationships": [
@@ -359,7 +363,8 @@
                     ],
                     [
                         "rogue",
-                        "meeting"
+                        "meeting",
+                        "exists"
                     ]
                 ],
                 "relationships": [
