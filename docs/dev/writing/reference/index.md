@@ -151,3 +151,16 @@ The string that will display within the relationship logs. A string can be speci
 !!! warning "If no logs are given..."
     If no logs are provided at all, then the event's text will be used. In the case of patrols, a default "These cats interacted" string will be used.
 
+***
+
+## Exclusionary Values
+Some values can be made exclusionary by prefixing them with `-`. For example:
+```json
+"trait": ["-calm"]
+```
+This would allow any cat with a trait that *isn't* `calm`.
+
+As this is allowed in some but *not all* values, parameters that allow exclusionary values will be linked to this section. If a parameter *doesn't* link here, then exclusionary values are not allowed.
+
+!!! warning
+    You cannot mix exclusionary values and inclusionary values in one parameter. You must use one or the other and, frankly, there is no reason to mix them. 

@@ -14,7 +14,14 @@ import traceback
 import i18n
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
-from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
+from scripts.cat.enums import (
+    CatAge,
+    CatRank,
+    CatGroup,
+    CatStanding,
+    CatSocial,
+    CatThought,
+)
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
@@ -153,21 +160,20 @@ def one_moon():
 
         # Generate events
 
-        for cat_id, values in Cat.grief_strings.items():
-            for _val in values:
-                if _val[2] == "minor":
-                    # Apply the grief message as a thought to the cat
-                    text = event_text_adjust(
-                        Cat,
-                        _val[0],
-                        main_cat=Cat.fetch_cat(cat_id),
-                        random_cat=Cat.fetch_cat(_val[1][0]),
+        for cat_id, details in Cat.grief_strings.items():
+            for _info in details:
+                text = _info[0]
+                cats = _info[1]
+                grief_type = _info[2]
+
+                if grief_type == "minor":
+                    Cat.fetch_cat(cat_id).get_new_thought(
+                        text, other_cat=Cat.fetch_cat(cats[0])
                     )
 
-                    Cat.fetch_cat(cat_id).thought = text
                 else:
                     game.cur_events_list.append(
-                        Single_Event(_val[0], ["birth_death", "relation"], _val[1])
+                        Single_Event(text, ["birth_death", "relation"], cats)
                     )
 
         Cat.grief_strings.clear()
@@ -369,7 +375,7 @@ def trigger_future_events():
                 main_cat=Cat.fetch_cat(event.involved_cats.get("m_c")),
                 random_cat=Cat.fetch_cat(event.involved_cats.get("r_c")),
                 victim_cat=Cat.fetch_cat(event.involved_cats.get("mur_c")),
-                sub_type=event.pool.get("subtype"),
+                sub_type=event.pool.get("sub_type"),
                 future_event=event,
             )
             if event.triggered:
@@ -966,7 +972,7 @@ def one_moon_cat(cat):
         return
 
     if cat.dead:
-        cat.get_new_thought()
+        cat.get_new_thought(CatThought.WHILE_DEAD)
         if cat.ID in game.just_died:
             cat.moons += 1
         else:
@@ -1025,7 +1031,6 @@ def one_moon_cat(cat):
     # newborns don't do much
     if cat.status.rank == CatRank.NEWBORN:
         cat.relationship_interaction()
-        cat.get_new_thought()
         return
 
     handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
@@ -1046,7 +1051,6 @@ def one_moon_cat(cat):
         return
 
     cat.relationship_interaction()
-    cat.get_new_thought()
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:
@@ -1114,7 +1118,7 @@ def check_war():
         game.clan.war["duration"] = 0
 
     # check if war in progress
-    war_events = None
+    war_events: list = []
     enemy_clan = None
     if game.clan.war["at_war"]:
         # Grab the enemy clan object
@@ -1175,7 +1179,7 @@ def check_war():
 
     available_med = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
 
-    for event in war_events:
+    for event in war_events.copy():
         if not game.clan.leader and "lead_name" in event:
             war_events.remove(event)
             continue
@@ -1309,18 +1313,18 @@ def perform_ceremonies(cat):
 
                 # assign chance to become med app depending on current med cat and traits
                 chance = constants.CONFIG["roles"]["base_medicine_app_chance"]
-                if has_elder_med == med_cat_list:
+                if very_old_med == med_cat_list:
+                    # These chances apply if all the current medicine cats are very old.
+                    if has_med:
+                        chance = int(chance / 3)
+                    else:
+                        chance = int(chance / 14)
+                elif has_elder_med == med_cat_list:
                     # These chances apply if all the current medicine cats are elders.
                     if has_med:
                         chance = int(chance / 2.22)
                     else:
                         chance = int(chance / 13.67)
-                elif very_old_med == med_cat_list:
-                    # These chances apply is all the current medicine cats are very old.
-                    if has_med:
-                        chance = int(chance / 3)
-                    else:
-                        chance = int(chance / 14)
                 # These chances will only be reached if the
                 # Clan has at least one non-elder medicine cat.
                 elif not has_med:

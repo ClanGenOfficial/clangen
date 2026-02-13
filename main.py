@@ -236,10 +236,9 @@ while 1:
                 # debugmode.toggle_console()
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
-                    source_screen=getattr(
-                        all_screens,
-                        switch_get_value(Switch.cur_screen).replace(" ", "_"),
-                    ),
+                    source_screen=all_screens.screen_dict[
+                        switch_get_value(Switch.cur_screen).replace(" ", "_")
+                    ],
                     show_confirm_dialog=False,
                 )
 

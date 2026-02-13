@@ -219,7 +219,7 @@ def set_display_mode(
 def determine_screen_scale(x, y):
     global screen_scale, screen_x, screen_y, offset, game_screen_size
 
-    if game_setting_get("fullscreen_scaling"):
+    if game_setting_get("fullscreen scaling"):
         scalex = (x - 20) // 80
         scaley = (y - 20) // 70
 

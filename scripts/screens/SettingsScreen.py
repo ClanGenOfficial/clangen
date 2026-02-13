@@ -43,8 +43,7 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.game_structure import constants
 
 logger = logging.getLogger(__name__)
-with open("resources/gamesettings.json", "r", encoding="utf-8") as f:
-    settings_dict = ujson.load(f)
+settings_dict = constants.DISPLAY_SETTINGS["game"]
 
 
 class SettingsScreen(Screens):

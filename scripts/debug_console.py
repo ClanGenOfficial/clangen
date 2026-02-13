@@ -6,10 +6,10 @@ import pygame
 import pygame_gui
 import html
 
-from pygame_gui.elements import UIWindow, UITextBox, UITextEntryLine
+from pygame_gui.elements import UIWindow, UITextBox, UITextEntryLine, UIButton
 from scripts.ui.scale import ui_scale
 from scripts.debug_commands import commandList
-from scripts.debug_commands.utils import set_debug_class
+from scripts.debug_commands.utils import set_debug_class, add_output_line_to_log
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER, offset, screen_scale
 from scripts.ui.theme import get_text_box_theme
@@ -51,15 +51,23 @@ class DebugMenu(UIWindow):
 
         self.command_line = UITextEntryLine(
             relative_rect=ui_scale(
-                pygame.Rect((2, -32), (self.get_container().get_size()[0] - 4, 30))
+                pygame.Rect((2, -32), (self.get_container().get_size()[0] - 32, 30))
             ),
             container=self,
+            object_id="#command_line",
             anchors={"top": "bottom"},
         )
 
-        # self.submit_command = UIButton(
+        self.submit_command = UIButton(
+            ui_scale(pygame.Rect((-32, -32), (30, 30))),
+            ">>",
+            manager=MANAGER,
+            container=self,
+            object_id="#submit_command",
+            anchors={"top": "bottom", "left": "right"},
+        )
 
-        # )
+        self.previous_command = ""
 
         self.change_layer(1000)
 
@@ -124,14 +132,24 @@ class DebugMenu(UIWindow):
         if (
             event.type == pygame_gui.UI_TEXT_ENTRY_FINISHED
             and event.ui_element == self.command_line
+        ) or (
+            event.type == pygame_gui.UI_BUTTON_PRESSED
+            and event.ui_element == self.submit_command
         ):
+            add_output_line_to_log(f"> {self.command_line.get_text()}")
             pygame.event.post(
                 pygame.Event(
                     pygame_gui.UI_CONSOLE_COMMAND_ENTERED,
                     {"command": self.command_line.get_text()},
                 )
             )
+            self.previous_command = self.command_line.get_text()
             self.command_line.clear()
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                self.command_line.set_text(self.previous_command)
+
         if event.type == pygame_gui.UI_CONSOLE_COMMAND_ENTERED:
             self.process_command(event.command)
         return super().process_event(event)
@@ -148,6 +166,9 @@ class DebugMenu(UIWindow):
         """
         for line in lines.split("\n"):
             self.push_line(line)
+
+    def on_close_window_button_pressed(self):
+        self.hide()
 
 
 class DebugMode:
