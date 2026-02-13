@@ -2213,7 +2213,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -20,
+                        "amount": -15,
                         "log": {
                             "cats_from": "r_c ended up snapping at s_c on a training patrol over {PRONOUN/s_c/poss} bad mood."
                         }
