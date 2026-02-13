@@ -15,16 +15,7 @@ def set_cat_relationship_to_cat(cat_a: Cat, rel_type: str, cat_b: Cat, rel_value
     if not from_cat_relationship:
         return
 
-    if rel_type == RelType.ROMANCE:
-        from_cat_relationship.romance = rel_value
-    elif rel_type == RelType.COMFORT:
-        from_cat_relationship.comfort = rel_value
-    elif rel_type == RelType.LIKE:
-        from_cat_relationship.like = rel_value
-    elif rel_type == RelType.RESPECT:
-        from_cat_relationship.respect = rel_value
-    elif rel_type == RelType.TRUST:
-        from_cat_relationship.trust = rel_value
+    setattr(from_cat_relationship, rel_type, rel_value)
 
     add_output_line_to_log(
         f"Successfully set {str(cat_a.name)}'s {rel_type} towards {str(cat_b.name)} to {rel_value}"
@@ -43,7 +34,7 @@ class SetRelationshipCommand(Command):
             return
 
         if len(args) < 4:
-            add_output_line_to_log("Missing required arguments")
+            add_output_line_to_log("Missing more than one required argument")
             return
 
         from_cat = None
