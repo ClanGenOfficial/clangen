@@ -6,7 +6,7 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}"
+      "new_thought": "Heard rumors that a Clan was hunting {PRONOUN/m_c/object} down"
     },
       "relationships": [
         {
@@ -15,7 +15,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
           }
         }
       ]
@@ -69,7 +69,7 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}"
+      "new_thought": "Heard rumors that a Clan was hunting {PRONOUN/m_c/object} down"
     },
       "relationships": [
         {
@@ -78,7 +78,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
           }
         }
       ]
@@ -90,7 +90,7 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "former Clancat"],
-      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}"
+      "new_thought": "Heard rumors that a Clan was hunting {PRONOUN/m_c/object} down"
     },
       "relationships": [
         {
@@ -99,7 +99,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
           }
         }
       ]
@@ -111,7 +111,7 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "former Clancat"],
-      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}"
+      "new_thought": "Heard rumors that a Clan was hunting {PRONOUN/m_c/object} down"
     },
       "relationships": [
         {
@@ -120,7 +120,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
           }
         }
       ]
@@ -141,7 +141,7 @@
           "values": ["like"],
           "amount": -20,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
           }
         }
       ]
@@ -590,7 +590,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
           }
         }
       ]
@@ -612,7 +612,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
           }
         }
       ]
@@ -755,7 +755,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting for {PRONOUN/from_cat/object}."
+            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
           }
         }
       ]
