@@ -1276,7 +1276,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "The night before the Gathering, one of m_c's friends visits {PRONOUN/m_c/object} from StarClan and gives {PRONOUN/m_c/object} a pep talk, reminding {PRONOUN/m_c/object} what a good friend {PRONOUN/m_c/subject} {VERB/m_c/are/is}. m_c arrives at the Gathering with steeled nerves and strikes up conversation with o_c_n's leader",
+    "event_text": "The night before the Gathering, one of m_c's friends visits {PRONOUN/m_c/object} from StarClan and gives {PRONOUN/m_c/object} a pep talk, reminding {PRONOUN/m_c/object} what a good friend {PRONOUN/m_c/subject} {VERB/m_c/are/is}. m_c arrives at the Gathering with steeled nerves and strikes up conversation with o_c_n's leader.",
     "rel_change": 6,
     "m_c": {
       "trait": [ "lonesome", "nervous", "insecure" ],
