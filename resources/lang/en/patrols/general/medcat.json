@@ -5807,7 +5807,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -10,
+                        "amount": -20,
                         "log": {
                             "cats_from": "p_l felt extremely uneasy when s_c showed a strong interest in deathberries."
                         }
@@ -6894,7 +6894,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was comforted to realize that even to_cat failed sometimes."
+                            "cats_from": "from_cat was comforted to realize that even to_cat fails sometimes."
                         }
                     }
                 ],
@@ -6908,7 +6908,7 @@
                     {
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect",
                             "like"
@@ -7498,7 +7498,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat discussed what might be an omen together while gathering herbs."
+                            "cats_from": "While gathering herbs, from_cat and to_cat discussed what might be an omen together."
                         }
                     }
                 ],
@@ -7528,7 +7528,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat discussed what might have been a sign together while gathering herbs."
+                            "cats_from": "While gathering herbs, from_cat and to_cat discussed what might have been a sign."
                         }
                     }
                 ],
@@ -7717,7 +7717,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was comforted to realize that even to_cat failed sometimes."
+                            "cats_from": "from_cat was comforted to realize that even to_cat fails sometimes."
                         }
                     }
                 ],
