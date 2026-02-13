@@ -3123,7 +3123,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "When an argument started on patrol, from_cat wished that to_cat had put {PRONOUN/to_cat/poss} foot down sooner."
+                            "cats_from": "When an argument started on patrol, from_cat wished that to_cat had put {PRONOUN/to_cat/poss} paw down sooner."
                         }
                     }
                 ],
