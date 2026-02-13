@@ -241,7 +241,7 @@
                         "values": ["trust", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's heroic death in battle against a rogue ambush."
+                            "cats_from": "from_cat honored to_cat's heroic death in battle against a rogue ambush."
                         }
                     }
                 ],
@@ -264,7 +264,7 @@
                         "values": ["trust", "respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's death in battle against a rogue ambush."
+                            "cats_from": "from_cat honored to_cat's death in battle against a rogue ambush."
                         }
                     }
                 ],
@@ -345,7 +345,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                            "cats_from": "from_cat was impressed that to_cat convinced rogues to leave the territory."
                         }
                     }
                 ],
@@ -366,7 +366,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                            "cats_from": "from_cat was impressed that to_cat convinced rogues to leave the territory."
                         }
                     }
                 ],
@@ -427,7 +427,7 @@
                         "values": ["trust", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard how to_cat put {PRONOUN/to_cat/poss} life on the line in battle against some rogues."
+                            "cats_from": "from_cat saw how to_cat put {PRONOUN/to_cat/poss} life on the line in battle against some rogues."
                         }
                     }
                 ],
@@ -477,7 +477,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -518,7 +518,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -553,7 +553,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -605,7 +605,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -647,7 +647,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "frequency": 4
@@ -665,7 +665,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "frequency": 3,
@@ -691,7 +691,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "frequency": 4,
@@ -742,7 +742,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -808,7 +808,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -838,7 +838,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -886,7 +886,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -937,7 +937,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -973,7 +973,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -1035,7 +1035,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -1087,7 +1087,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -1160,7 +1160,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -1186,7 +1186,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -1247,7 +1247,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -1317,7 +1317,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -1372,7 +1372,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
@@ -1465,7 +1465,7 @@
                 "new_cat": [
                     [
                         "rogue",
-                        "meeting"
+                        "meeting", "exists"
                     ]
                 ],
                 "relationships": [
