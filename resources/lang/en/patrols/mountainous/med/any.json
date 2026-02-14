@@ -519,7 +519,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l knows the conditions are miserable, but {PRONOUN/p_l/poss} group is even more insufferable. Not only {VERB/p_l/do/does} {PRONOUN/p_l/subject} {VERB/p_l/have/has} to put up with these cats for an entire afternoon, there's also nothing to show for it.",
+                "text": "p_l knows the conditions are miserable, but {PRONOUN/p_l/poss} group is even more insufferable. Not only {VERB/p_l/do/does} {PRONOUN/p_l/subject} have to put up with these cats for an entire afternoon, there's also nothing to show for it.",
                 "exp": 0,
                 "relationships": [
                     {
