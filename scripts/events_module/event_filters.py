@@ -816,7 +816,7 @@ def filter_relationship_type(
 
     qualifies = False
 
-    if "strangers" in filter_types:
+    if "strangers" in filter_list:
         if not all(
             [inter_cat.ID in test_cat.relationships for inter_cat in testing_cats]
         ):
@@ -828,7 +828,7 @@ def filter_relationship_type(
             return False
         filter_list.remove("strangers")
 
-    if "siblings" in filter_types:
+    if "siblings" in filter_list:
         if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             if is_exclusionary:
                 qualifies = True
@@ -838,7 +838,7 @@ def filter_relationship_type(
             return False
         filter_list.remove("siblings")
 
-    if "littermates" in filter_types:
+    if "littermates" in filter_list:
         if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             if is_exclusionary:
                 qualifies = True
@@ -982,7 +982,7 @@ def filter_relationship_type(
 
                 # if it's limited to *just* the given tier
                 if "_only" in tier:
-                    tier.replace("_only", "")
+                    tier = tier.replace("_only", "")
                     if tier not in tier_list:
                         return False
                 # otherwise we allow both the given tier and any greater tiers
