@@ -920,7 +920,8 @@ class Cat:
 
         self.status.add_to_group(new_group_ID=CatGroup.PLAYER_CLAN_ID, age=self.age)
 
-        game.clan.add_to_clan(self)
+        if game.clan:
+            game.clan.add_to_clan(self)
 
         # check if there are kits under 12 moons with this cat and also add them to the clan
         children = self.get_children()
@@ -963,7 +964,7 @@ class Cat:
                 fetched_cat.update_mentor()
 
         # If they have any apprentices, make sure they are still valid:
-        if old_rank == CatRank.MEDICINE_CAT:
+        if old_rank == CatRank.MEDICINE_CAT and game.clan:
             game.clan.remove_med_cat(self)
 
         # updates mentors
@@ -975,32 +976,21 @@ class Cat:
         ]:
             pass
 
-        elif self.status.rank == CatRank.WARRIOR:
-            if old_rank == CatRank.LEADER and (
+        elif self.status.rank in [CatRank.WARRIOR, CatRank.ELDER]:
+            if not game.clan:
+                pass
+            elif old_rank == CatRank.LEADER and (
                 game.clan.leader and game.clan.leader.ID == self.ID
             ):
                 game.clan.leader = None
                 game.clan.leader_predecessors += 1
-            if game.clan and game.clan.deputy and game.clan.deputy.ID == self.ID:
+            elif game.clan.deputy and game.clan.deputy.ID == self.ID:
                 game.clan.deputy = None
                 game.clan.deputy_predecessors += 1
 
         elif self.status.rank == CatRank.MEDICINE_CAT:
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
-
-        elif self.status.rank == CatRank.ELDER:
-            if (
-                old_rank == CatRank.LEADER
-                and game.clan.leader
-                and game.clan.leader.ID == self.ID
-            ):
-                game.clan.leader = None
-                game.clan.leader_predecessors += 1
-
-            if game.clan.deputy and game.clan.deputy.ID == self.ID:
-                game.clan.deputy = None
-                game.clan.deputy_predecessors += 1
 
         # update thought
         if new_thought and new_rank not in (
@@ -1112,7 +1102,18 @@ class Cat:
             else:
                 clanname = switch_get_value(Switch.clan_list)[0]
         except IndexError:
-            print("WARNING: History failed to load, no Clan in switches?")
+            print("History failed to load, no Clan in switches?")
+            self._history = History(
+                beginning={},
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_history={},
+                died_by=[],
+                scar_events=[],
+                murder={},
+                cat=self,
+            )
             return
 
         history_directory = f"{get_save_dir()}/{clanname}/history/"
