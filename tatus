@@ -1,0 +1,113 @@
+*   [33m77ee985fd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mthought-pools[m[33m, [m[1;31mupstream/development[m[33m, [m[1;31mupstream/HEAD[m[33m, [m[1;31morigin/thought-pools[m[33m, [m[1;32mclean-base[m[33m)[m Merge pull request #4412 from scribblecrumb/freshkill-test-updates
+[31m|[m[32m\[m  
+[31m|[m *   [33m0f678597f[m Merge remote-tracking branch 'upstream/development' into freshkill-test-updates
+[31m|[m [33m|[m[31m\[m  
+[31m|[m [33m|[m[31m/[m  
+[31m|[m[31m/[m[33m|[m   
+* [33m|[m [33m09bab8211[m[33m ([m[1;31morigin/development[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelopment[m[33m)[m badger patrol (#4418)
+* [33m|[m [33m30246fd87[m [REL LOGS] Plains Border Greenleaf (#4400)
+* [33m|[m [33mf8f255af6[m [REL LOGS] General Training Part 1 (#4404)
+* [33m|[m [33mf36273067[m [ENHANCEMENT] Relationship debug command and debug console QOL (#4348)
+* [33m|[m [33mb1642bd0b[m [ENHANCEMENT] Improve how settings information is stored (#4330)
+* [33m|[m [33m46326d1c9[m [REL LOGS] Plains Border Any (#4324)
+* [33m|[m [33md6ef13bd8[m [REL LOGS] Wetlands Border Any (#4323)
+* [33m|[m [33mffb1d9bfe[m [REL LOGS] General Medcat Part 2 (#4304)
+* [33m|[m   [33m5e8f8a85b[m Merge pull request #4417 from scribblecrumb/rank-change-thoughts
+[35m|[m[36m\[m [33m\[m  
+[35m|[m * [33m|[m [33m50df0546a[m add kitten rank change catch
+[35m|[m * [33m|[m [33m082c150a3[m add on_rank_change documentation
+[35m|[m * [33m|[m [33m4c808929c[m add on_rank_change thought category
+* [36m|[m [33m|[m   [33m25613c784[m Merge pull request #4415 from scribblecrumb/patrol-weighting
+[36m|[m[1;32m\[m [36m\[m [33m\[m  
+[36m|[m [1;32m|[m[36m/[m [33m/[m  
+[36m|[m[36m/[m[1;32m|[m [33m|[m   
+[36m|[m * [33m|[m [33m840c81aba[m Update patrol_outcome.py
+[36m|[m * [33m|[m [33m387c0b14d[m updating patrol weights
+[36m|[m * [33m|[m [33m43fa68a60[m freq fix
+* [1;32m|[m [33m|[m [33m483e649ca[m [REL LOGS] Mountainous Training Leaf-fall (#4313)
+[1;32m|[m[1;32m/[m [33m/[m  
+* [33m|[m [33mbd44d76f6[m fix: stop unit tests from opening window (#4375)
+* [33m|[m [33mf8c1c5c22[m [ENHANCEMENT] Scar pools: injury events (#4350)
+* [33m|[m [33m1bb91f324[m [REL LOGS] Mountainous Training Newleaf (#4314)
+[1;32m|[m * [33m554cb9a0f[m adding debug message
+[1;32m|[m * [33m4925111eb[m add tear downs
+[1;32m|[m[1;32m/[m  
+*   [33m791914b74[m Merge pull request #4410 from scribblecrumb/subtype-fix
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m667e4884d[m Update general.json
+[1;33m|[m[1;33m/[m  
+*   [33m233db2e28[m Merge pull request #4409 from scribblecrumb/fix-thought-directory-name
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33mbedf45a77[m rename dark_forest
+[1;35m|[m[1;35m/[m  
+* [33m35b696434[m [REL LOGS] Beach Training Greenleaf/Newleaf/Leaf-fall (#4316)
+* [33maad056672[m [REL LOGS] Mountainous Training Leaf-bare (#4310)
+* [33m73783f462[m [REL LOGS] General Medcat Part 1 (#4296)
+* [33m63e722909[m [DOCS] Thoughts (#4406)
+* [33mec7f5a740[m [REL LOGS] Plains Training Greenleaf/Newleaf/Leaf-fall/Leaf-bare (#4315)
+* [33m626770154[m [FEATURE] Add status history constraint for thoughts (#4368)
+* [33m74a5db170[m [ENHANCEMENT] Better thought creation (#4301)
+* [33m42c2c070c[m outcomes and logs (#4398)
+* [33m0dad464d4[m [REL LOGS] Partial other clan and training (#4384)
+*   [33mebda7d71a[m Merge pull request #4392 from tobes03/bugfix-rel-log
+[31m|[m[32m\[m  
+[31m|[m * [33m6d826ac16[m editing
+[31m|[m[31m/[m  
+* [33m7c788c548[m [REL LOGS] General Border (#4292)
+* [33m804a6718f[m [REL LOGS] Mountainous Training Greenleaf (#4271)
+* [33mfe47612e7[m [REL LOGS] General Misc Events (Part 2) (#4240)
+* [33m78e3d69b2[m reordering (#4390)
+* [33mb1d5d0468[m [REL LOGS] Mountainous Training Any (#4249)
+* [33m070affc43[m [REL LOGS] Beach Training Any (#4248)
+* [33m87afb5ccc[m [REL LOGS] New Cats (#4242)
+*   [33mbf8cd7a4c[m Merge pull request #3534 from scribblecrumb/newborn-extended-family-relationships
+[33m|[m[34m\[m  
+[33m|[m * [33mf5e33b975[m updating to new rel system
+[33m|[m *   [33m17d89bf43[m Merge remote-tracking branch 'upstream/development' into newborn-extended-family-relationships
+[33m|[m [35m|[m[36m\[m  
+[33m|[m * [36m|[m [33ma69ecc6b8[m fix type test
+[33m|[m * [36m|[m   [33mc2696b8d9[m Merge remote-tracking branch 'upstream/development' into newborn-extended-family-relationships
+[33m|[m [1;31m|[m[1;32m\[m [36m\[m  
+[33m|[m * [1;32m\[m [36m\[m   [33mb072434e9[m Merge remote-tracking branch 'upstream/development' into newborn-extended-family-relationships
+[33m|[m [1;33m|[m[1;34m\[m [1;32m\[m [36m\[m  
+[33m|[m * [1;34m|[m [1;32m|[m [36m|[m [33maa0872d04[m little text change
+[33m|[m * [1;34m|[m [1;32m|[m [36m|[m [33mcd4eaa3be[m change dislike threshold
+[33m|[m * [1;34m|[m [1;32m|[m [36m|[m [33ma6c5fdefc[m fallback for no rel changes
+[33m|[m * [1;34m|[m [1;32m|[m [36m|[m [33m10e7683f3[m log additions
+[33m|[m * [1;34m|[m [1;32m|[m [36m|[m   [33mc51d77757[m Merge remote-tracking branch 'upstream/development' into newborn-extended-family-relationships
+[33m|[m [1;35m|[m[1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[33m|[m * [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m   [33m804b54114[m Merge remote-tracking branch 'upstream/development' into newborn-extended-family-relationships
+[33m|[m [31m|[m[32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[33m|[m * [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m54013d8a3[m extended relation mirroring
+* [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33mc39f2190e[m chore(schema): add former clancat to schema (#4381)
+* [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33mb84b73c20[m sort by alphabetical (#4382)
+* [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m   [33mb9a6f9a27[m Merge pull request #4263 from tobes03/desert-training-any
+[33m|[m[34m\[m [32m\[m [32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[33m|[m * [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33mbec2cc57d[m scorpions
+[33m|[m * [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m313be2084[m edits and corrections
+[33m|[m * [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m   [33m8beb88a70[m Merge remote-tracking branch 'upstream/development' into desert-training-any
+[33m|[m [35m|[m[36m\[m [32m\[m [32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[33m|[m * [36m\[m [32m\[m [32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m   [33m1bfe33821[m Merge remote-tracking branch 'upstream/development' into desert-training-any
+[33m|[m [1;31m|[m[1;32m\[m [36m\[m [32m\[m [32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[33m|[m * [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m84454898f[m round two tobes vs lead death
+[33m|[m * [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m9149b576b[m fixing deaths
+[33m|[m * [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m85dff105e[m logs and pronoun tagging
+* [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m1db8045c2[m pronounify outsider_events.py (#3838)
+* [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m91aa899c0[m [REL LOGS] Beach Hunting Leaffall & Newleaf & Leafbare (#4246)
+* [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33me648ef34c[m [BUGFIX] fix murder reveal picking random misc event (#4367)
+* [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m   [33m90c0d7290[m Merge pull request #4321 from scribblecrumb/change-profile-to-den-buttons
+[1;33m|[m[1;34m\[m [1;32m\[m [1;32m\[m [36m\[m [32m\[m [32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[1;33m|[m * [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m4fc256c13[m update profile den buttons to only match rank
+* [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m8a7e2d69f[m allows filter list to stay on sort by dead when returning to that page (fixes clangen#4115) (#4363)
+* [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m   [33mfc5c49260[m Merge pull request #4357 from tobes03/medicine-den-text-edits
+[1;35m|[m[1;36m\[m [1;34m\[m [1;32m\[m [1;32m\[m [36m\[m [32m\[m [32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[1;35m|[m * [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m9cf502114[m more of
+[1;35m|[m * [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33ma8bba3c8a[m more corrections sponsored by gynn
+[1;35m|[m * [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m   [33m807a1d864[m Merge remote-tracking branch 'upstream/development' into medicine-den-text-edits
+[1;35m|[m [31m|[m[1;35m\[m [1;34m\[m [1;32m\[m [1;32m\[m [36m\[m [32m\[m [32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[1;35m|[m [31m|[m[1;35m/[m [1;34m/[m [1;32m/[m [1;32m/[m [36m/[m [32m/[m [32m/[m [1;36m/[m [1;34m/[m [1;32m/[m [36m/[m  
+[1;35m|[m[1;35m/[m[31m|[m [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m   
+* [31m|[m [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m   [33m456a8ba2d[m Merge pull request #4362 from scribblecrumb/rel-log-softblock
+[33m|[m[34m\[m [31m\[m [1;34m\[m [1;32m\[m [1;32m\[m [36m\[m [32m\[m [32m\[m [1;36m\[m [1;34m\[m [1;32m\[m [36m\[m  
+[33m|[m * [31m|[m [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33mad6f1f270[m oops
+[33m|[m * [31m|[m [1;34m|[m [1;32m|[m [1;32m|[m [36m|[m [32m|[m [32m|[m [1;36m|[m [1;34m|[m [1;32m|[m [36m|[m [33m435db9b70[m fix: #4361
