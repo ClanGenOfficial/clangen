@@ -724,9 +724,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
         for i, tier in enumerate(tiers):
             offset = i + 3  # to account for the lack of negative romance
             with self.subTest("normal pass", tier=tier.value):
-                if tier.is_extreme_neg:
-                    points = (-100 + self.thresholds[offset]) / 2
-                elif tier.is_extreme_pos:
+                if tier.is_extreme_pos:
                     points = (100 + self.thresholds[offset - 1]) / 2
                 else:
                     points = (self.thresholds[offset - 1] + self.thresholds[offset]) / 2
@@ -791,27 +789,6 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
 
 
 class TestCatConstraint(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        # cls.test_clan_name = f"Test_{uuid4()}"
-        #
-        # cls.clanlist = read_clans()
-        # cls.previously_loaded_clan = cls.clanlist[0] if cls.clanlist else None
-        #
-        # game.clan = Clan(
-        #     name=cls.test_clan_name,
-        #     displayname="Test",
-        #     leader=create_cat(CatRank.LEADER),
-        #     deputy=create_cat(CatRank.DEPUTY),
-        #     medicine_cat=create_cat(CatRank.MEDICINE_CAT),
-        #     biome="Forest",
-        #     camp_bg="camp1",
-        #     symbol="symbolADDER0",
-        #     game_mode="expanded",
-        #     starting_season="Newleaf",
-        # )
-        pass
-
     def test_ages(self):
         ages = [*CatAge]
         cat = Cat(disable_random=True)
@@ -880,9 +857,11 @@ class TestCatConstraint(unittest.TestCase):
                 cat.add_to_clan()
                 cat.rank_change(new_rank=new_rank)
             else:
-                cat.rank_change(new_rank=new_rank)
-                raise Exception("poop")
+                raise Exception(
+                    f"Impossible ranks found: old = {old_rank}, new = {new_rank}"
+                )
             other_rank = [r for r in ranks if r != old_rank and r != new_rank][-1]
+
             with self.subTest(
                 "current rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
@@ -896,6 +875,10 @@ class TestCatConstraint(unittest.TestCase):
                     event_filters._check_cat_status_history(cat, [old_rank])
                 )
             with self.subTest(
+                '"any"', old_rank=old_rank.value, new_rank=new_rank.value
+            ):
+                self.assertTrue(event_filters._check_cat_status_history(cat, ["any"]))
+            with self.subTest(
                 "other rank",
                 old_rank=old_rank.value,
                 new_rank=new_rank.value,
@@ -903,4 +886,26 @@ class TestCatConstraint(unittest.TestCase):
             ):
                 self.assertFalse(
                     event_filters._check_cat_status_history(cat, [other_rank])
+                )
+
+            with self.subTest(
+                "not current rank", old_rank=old_rank.value, new_rank=new_rank.value
+            ):
+                self.assertTrue(
+                    event_filters._check_cat_status_history(cat, [f"-{new_rank}"])
+                )
+            with self.subTest(
+                "not former rank", old_rank=old_rank.value, new_rank=new_rank.value
+            ):
+                self.assertFalse(
+                    event_filters._check_cat_status_history(cat, [f"-{old_rank}"])
+                )
+            with self.subTest(
+                "not other rank",
+                old_rank=old_rank.value,
+                new_rank=new_rank.value,
+                other_rank=other_rank,
+            ):
+                self.assertTrue(
+                    event_filters._check_cat_status_history(cat, [f"-{other_rank}"])
                 )
