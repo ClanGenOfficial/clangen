@@ -1016,5 +1016,21 @@
         "random_living_status": [
             "starclan"
         ]
+    },
+    {
+        "id": "warrior_apprentice_to_alive_crush",
+        "thoughts": [
+            "Shows off to r_c with an amazing pounce",
+            "Gives r_c a piece of freshkill {PRONOUN/m_c/subject} hunted {PRONOUN/m_c/self}"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "fancies_only"
+        ]
     }
 ]
