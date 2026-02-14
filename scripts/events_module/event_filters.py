@@ -229,7 +229,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     """
     checks if the clan has clan relations matching required_rel
     """
-    if "any" in required_rel:
+    if not required_rel or "any" in required_rel:
         return True
 
     current_rel = other_clan.relations
