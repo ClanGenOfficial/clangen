@@ -12,12 +12,12 @@ except ImportError:
     import tomli as tomllib
 
 from scripts.cat_relations.relationship import Relationship
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatAge, CatSocial
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.enums import RelTier, rel_type_tiers, RelType
 
 from scripts.cat.cats import Cat
-from scripts.events_module.event_filters import filter_relationship_type
+import scripts.events_module.event_filters as event_filters
 
 
 class TestInterpersonalRelationshipConstraints(unittest.TestCase):
@@ -35,21 +35,25 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
 
         with self.subTest("are siblings, expected siblings"):
             self.assertTrue(
-                filter_relationship_type(group=[cat1, cat2], filter_types=["siblings"])
+                event_filters.filter_relationship_type(
+                    group=[cat1, cat2], filter_types=["siblings"]
+                )
             )
         with self.subTest("are siblings, expected not siblings"):
             self.assertFalse(
-                filter_relationship_type(group=[cat1, cat2], filter_types=["-siblings"])
+                event_filters.filter_relationship_type(
+                    group=[cat1, cat2], filter_types=["-siblings"]
+                )
             )
         with self.subTest("are not siblings, expected siblings"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, parent], filter_types=["siblings"]
                 )
             )
         with self.subTest("are not siblings, expected not siblings"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, parent], filter_types=["-siblings"]
                 )
             )
@@ -64,25 +68,25 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
 
         with self.subTest("are littermates, expected littermates"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, cat2], filter_types=["littermates"]
                 )
             )
         with self.subTest("are littermates, expected not littermates"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, cat2], filter_types=["-littermates"]
                 )
             )
         with self.subTest("are not littermates, expected littermates"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, parent], filter_types=["littermates"]
                 )
             )
         with self.subTest("are not littermates, expected not littermates"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, parent], filter_types=["-littermates"]
                 )
             )
@@ -98,19 +102,27 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
 
         with self.subTest("are mates, expected mates"):
             self.assertTrue(
-                filter_relationship_type(group=[mate1, mate2], filter_types=["mates"])
+                event_filters.filter_relationship_type(
+                    group=[mate1, mate2], filter_types=["mates"]
+                )
             )
         with self.subTest("are mates, expected not mates"):
             self.assertFalse(
-                filter_relationship_type(group=[mate1, mate2], filter_types=["-mates"])
+                event_filters.filter_relationship_type(
+                    group=[mate1, mate2], filter_types=["-mates"]
+                )
             )
         with self.subTest("are not mates, expected mates"):
             self.assertFalse(
-                filter_relationship_type(group=[mate1, other], filter_types=["mates"])
+                event_filters.filter_relationship_type(
+                    group=[mate1, other], filter_types=["mates"]
+                )
             )
         with self.subTest("are not mates, expected not mates"):
             self.assertTrue(
-                filter_relationship_type(group=[mate1, other], filter_types=["-mates"])
+                event_filters.filter_relationship_type(
+                    group=[mate1, other], filter_types=["-mates"]
+                )
             )
 
     def test_parent_child(self):
@@ -121,25 +133,25 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
 
         with self.subTest("are parent/child, expected parent/child"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[parent, cat1], filter_types=["parent/child"]
                 )
             )
         with self.subTest("are parent/child, expected not parent/child"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[parent, cat1], filter_types=["-parent/child"]
                 )
             )
         with self.subTest("are not parent/child, expected parent/child"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, parent], filter_types=["parent/child"]
                 )
             )
         with self.subTest("are not parent/child, expected not parent/child"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, parent], filter_types=["-parent/child"]
                 )
             )
@@ -152,25 +164,25 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
 
         with self.subTest("are child/parent, expected child/parent"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, parent], filter_types=["child/parent"]
                 )
             )
         with self.subTest("are child/parent, expected not child/parent"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[cat1, parent], filter_types=["-child/parent"]
                 )
             )
         with self.subTest("are not child/parent, expected child/parent"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[parent, cat1], filter_types=["child/parent"]
                 )
             )
         with self.subTest("are not child/parent, expected not child/parent"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[parent, cat1], filter_types=["-child/parent"]
                 )
             )
@@ -183,25 +195,25 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
 
         with self.subTest("are app/mentor, expected app/mentor"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[app, mentor], filter_types=["app/mentor"]
                 )
             )
         with self.subTest("are app/mentor, expected not app/mentor"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[app, mentor], filter_types=["-app/mentor"]
                 )
             )
         with self.subTest("are not app/mentor, expected app/mentor"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[mentor, app], filter_types=["app/mentor"]
                 )
             )
         with self.subTest("are not app/mentor, expected not app/mentor"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[mentor, app], filter_types=["-app/mentor"]
                 )
             )
@@ -214,25 +226,25 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
 
         with self.subTest("are mentor/app, expected mentor/app"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[mentor, app], filter_types=["mentor/app"]
                 )
             )
         with self.subTest("are mentor/app, expected not mentor/app"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[mentor, app], filter_types=["-mentor/app"]
                 )
             )
         with self.subTest("are not mentor/app, expected mentor/app"):
             self.assertFalse(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[app, mentor], filter_types=["mentor/app"]
                 )
             )
         with self.subTest("are not mentor/app, expected not mentor/app"):
             self.assertTrue(
-                filter_relationship_type(
+                event_filters.filter_relationship_type(
                     group=[app, mentor], filter_types=["-mentor/app"]
                 )
             )
@@ -276,7 +288,7 @@ class TestRelationshipTiers(unittest.TestCase):
                     self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                     self.assertTrue(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2], filter_types=[tier.value]
                         )
                     )
@@ -290,7 +302,7 @@ class TestRelationshipTiers(unittest.TestCase):
                     self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                     self.assertTrue(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2], filter_types=[tier.value]
                         )
                     )
@@ -304,7 +316,7 @@ class TestRelationshipTiers(unittest.TestCase):
                     self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                     self.assertFalse(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2], filter_types=[tier.value]
                         )
                     )
@@ -312,7 +324,6 @@ class TestRelationshipTiers(unittest.TestCase):
                 # teardown for individual subtests
                 if self.cat1.ID in self.cat2.relationships:
                     self.cat2.relationships.pop(self.cat1.ID)
-                    self.cat2.relationships.pop(self.cat3.ID)
 
     def test_full_only_tiers(self):
         reltypes = deepcopy(rel_type_tiers)
@@ -336,7 +347,7 @@ class TestRelationshipTiers(unittest.TestCase):
                     self.cat1.relationships = {self.cat2.ID: Relationship(**rel)}
 
                     self.assertTrue(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2],
                             filter_types=[f"{tier.value}_only"],
                         )
@@ -351,7 +362,7 @@ class TestRelationshipTiers(unittest.TestCase):
                     self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                     self.assertTrue(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2],
                             filter_types=[f"{tier.value}_only"],
                         )
@@ -366,7 +377,7 @@ class TestRelationshipTiers(unittest.TestCase):
                     self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                     self.assertFalse(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2],
                             filter_types=[f"{tier.value}_only"],
                         )
@@ -392,7 +403,7 @@ class TestRelationshipTiers(unittest.TestCase):
                 self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                 self.assertTrue(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2], filter_types=[tier.value]
                     )
                 )
@@ -406,7 +417,7 @@ class TestRelationshipTiers(unittest.TestCase):
                 self.cat1.relationships = {self.cat2.ID: Relationship(**rel)}
 
                 self.assertTrue(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2], filter_types=[tier.value]
                     )
                 )
@@ -420,7 +431,7 @@ class TestRelationshipTiers(unittest.TestCase):
                 self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                 self.assertFalse(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2], filter_types=[tier.value]
                     )
                 )
@@ -447,7 +458,7 @@ class TestRelationshipTiers(unittest.TestCase):
                 self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                 self.assertTrue(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2],
                         filter_types=[f"{tier.value}_only"],
                     )
@@ -462,7 +473,7 @@ class TestRelationshipTiers(unittest.TestCase):
                 self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                 self.assertTrue(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2],
                         filter_types=[f"{tier.value}_only"],
                     )
@@ -482,7 +493,7 @@ class TestRelationshipTiers(unittest.TestCase):
                 self.cat1.relationships[self.cat2.ID] = Relationship(**rel)
 
                 self.assertFalse(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2],
                         filter_types=[f"{tier.value}_only"],
                     )
@@ -532,7 +543,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                         cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                     self.assertTrue(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2, self.cat3],
                             filter_types=[tier.value],
                         )
@@ -550,7 +561,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                         cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                     self.assertTrue(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2, self.cat3],
                             filter_types=[tier.value],
                         )
@@ -568,7 +579,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                         cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                     self.assertFalse(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2, self.cat3],
                             filter_types=[tier.value],
                         )
@@ -599,7 +610,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                         cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                     self.assertTrue(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2, self.cat3],
                             filter_types=[f"{tier.value}_only"],
                         )
@@ -617,7 +628,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                         cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                     self.assertTrue(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2, self.cat3],
                             filter_types=[f"{tier.value}_only"],
                         )
@@ -635,7 +646,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                         cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                     self.assertFalse(
-                        filter_relationship_type(
+                        event_filters.filter_relationship_type(
                             group=[self.cat1, self.cat2, self.cat3],
                             filter_types=[f"{tier.value}_only"],
                         )
@@ -664,7 +675,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                     cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                 self.assertTrue(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2, self.cat3],
                         filter_types=[tier.value],
                     )
@@ -682,7 +693,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                     cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                 self.assertTrue(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2, self.cat3],
                         filter_types=[tier.value],
                     )
@@ -700,7 +711,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                     cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                 self.assertFalse(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2, self.cat3],
                         filter_types=[tier.value],
                     )
@@ -731,7 +742,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                     cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                 self.assertTrue(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2],
                         filter_types=[f"{tier.value}_only"],
                     )
@@ -749,7 +760,7 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                     cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                 self.assertTrue(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2],
                         filter_types=[f"{tier.value}_only"],
                     )
@@ -772,8 +783,124 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
                     cat_from.relationships[cat_to.ID] = Relationship(**rel)
 
                 self.assertFalse(
-                    filter_relationship_type(
+                    event_filters.filter_relationship_type(
                         group=[self.cat1, self.cat2],
                         filter_types=[f"{tier.value}_only"],
                     )
+                )
+
+
+class TestCatConstraint(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # cls.test_clan_name = f"Test_{uuid4()}"
+        #
+        # cls.clanlist = read_clans()
+        # cls.previously_loaded_clan = cls.clanlist[0] if cls.clanlist else None
+        #
+        # game.clan = Clan(
+        #     name=cls.test_clan_name,
+        #     displayname="Test",
+        #     leader=create_cat(CatRank.LEADER),
+        #     deputy=create_cat(CatRank.DEPUTY),
+        #     medicine_cat=create_cat(CatRank.MEDICINE_CAT),
+        #     biome="Forest",
+        #     camp_bg="camp1",
+        #     symbol="symbolADDER0",
+        #     game_mode="expanded",
+        #     starting_season="Newleaf",
+        # )
+        pass
+
+    def test_ages(self):
+        ages = [*CatAge]
+        cat = Cat(disable_random=True)
+
+        for i, age in enumerate(ages):
+            cat.age = age
+            with self.subTest("age-constrained", age=age.value):
+                self.assertTrue(event_filters._check_cat_age(cat, [age]))
+            with self.subTest('"any"', age=age.value):
+                if age == CatAge.NEWBORN:
+                    self.assertFalse(event_filters._check_cat_age(cat, ["any"]))
+                else:
+                    self.assertTrue(event_filters._check_cat_age(cat, ["any"]))
+            with self.subTest("unmatched", age=age.value):
+                self.assertFalse(event_filters._check_cat_age(cat, [ages[i - 1]]))
+            with self.subTest("exclusionary", age=age.value):
+                self.assertFalse(event_filters._check_cat_age(cat, [f"-{age.value}"]))
+
+    def test_statuses(self):
+        statuses = [s for s in [*CatRank] if s.is_any_clancat_rank()]
+        cat = Cat(disable_random=True)
+        for i, status in enumerate(statuses):
+            cat.status.generate_new_status(rank=status)
+
+            with self.subTest("rank-constrained", rank=status.value):
+                self.assertTrue(event_filters._check_cat_status(cat, [status]))
+            with self.subTest('"any"', age=status.value):
+                self.assertTrue(event_filters._check_cat_status(cat, ["any"]))
+            with self.subTest("unmatched", age=status.value):
+                self.assertFalse(
+                    event_filters._check_cat_status(cat, [statuses[i - 1]])
+                )
+            with self.subTest("exclusionary", age=status.value):
+                self.assertFalse(
+                    event_filters._check_cat_status(cat, [f"-{status.value}"])
+                )
+
+    def test_statuses_lost(self):
+        cat = Cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
+        cat.become_lost()
+
+        with self.subTest("rank-constrained", rank="lost"):
+            self.assertTrue(event_filters._check_cat_status(cat, ["lost"]))
+        with self.subTest('"any"', age="lost"):
+            self.assertTrue(event_filters._check_cat_status(cat, ["any"]))
+        with self.subTest("unmatched - different Clan rank", age="lost"):
+            self.assertFalse(event_filters._check_cat_status(cat, [CatRank.LEADER]))
+        with self.subTest("unmatched - same as former rank", age="lost"):
+            self.assertFalse(event_filters._check_cat_status(cat, [CatRank.WARRIOR]))
+        with self.subTest("exclusionary", age="lost"):
+            self.assertFalse(event_filters._check_cat_status(cat, [f"-lost"]))
+
+    def test_status_history(self):
+        ranks = [*CatRank]
+
+        cat = Cat()
+        for old_rank, new_rank in permutations(ranks, 2):
+            cat.status.generate_new_status(rank=old_rank)
+
+            # this is an xnor in python. good god.
+            if not (old_rank.is_any_clancat_rank() ^ new_rank.is_any_clancat_rank()):
+                cat.rank_change(new_rank=new_rank)
+            elif old_rank.is_any_clancat_rank():
+                cat.leave_clan(new_social_status=CatSocial(new_rank.value))
+            elif new_rank.is_any_clancat_rank():
+                cat.add_to_clan()
+                cat.rank_change(new_rank=new_rank)
+            else:
+                cat.rank_change(new_rank=new_rank)
+                raise Exception("poop")
+            other_rank = [r for r in ranks if r != old_rank and r != new_rank][-1]
+            with self.subTest(
+                "current rank", old_rank=old_rank.value, new_rank=new_rank.value
+            ):
+                self.assertFalse(
+                    event_filters._check_cat_status_history(cat, [new_rank])
+                )
+            with self.subTest(
+                "former rank", old_rank=old_rank.value, new_rank=new_rank.value
+            ):
+                self.assertTrue(
+                    event_filters._check_cat_status_history(cat, [old_rank])
+                )
+            with self.subTest(
+                "other rank",
+                old_rank=old_rank.value,
+                new_rank=new_rank.value,
+                other_rank=other_rank,
+            ):
+                self.assertFalse(
+                    event_filters._check_cat_status_history(cat, [other_rank])
                 )
