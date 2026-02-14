@@ -982,7 +982,7 @@ def filter_relationship_type(
 
                 # if it's limited to *just* the given tier
                 if "_only" in tier:
-                    tier.replace("_only", "")
+                    tier = tier.replace("_only", "")
                     if tier not in tier_list:
                         return False
                 # otherwise we allow both the given tier and any greater tiers
