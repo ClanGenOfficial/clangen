@@ -1,1 +1,33 @@
-[]
+[
+  {
+    "id": "warrior_gen"
+    "thoughts": [
+    "Fell asleep at {PRONOUN/m_c/poss} vigil!"
+    "Adores {PRONOUN/m_c/poss} new name"
+    "Wishes {PRONOUN/m_c/poss} warrior name was different"
+    "Bounds over to r_c, eyes full of a million thank-you's"
+    ],
+    "relationship_constraint": [
+      "app/mentor",
+      "child/parent"
+    ],
+    "random_living_status": [
+      "living"
+    ]
+  },
+  {
+    "id": "warrior_to_littermate"
+    "thoughts": [
+    "Beams at r_c, excited that they graduated together!"
+    "Is happy that {PRONOUN/m_c/subject} can do {PRONOUN/m_c/poss} silent vigil with r_c"
+    ],
+    "random_status_constraint": [
+      "warrior",
+      "medicine cat",
+      "mediator"
+    ],
+    "relationship_constraint": [
+      "littermates"
+    ]
+  }
+]
