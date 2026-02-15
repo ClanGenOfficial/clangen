@@ -7268,9 +7268,11 @@
             "Practices pick-up lines in private",
             "Hopes r_c likes {PRONOUN/m_c/object} back",
             "Daydreams about r_c",
+            "Daydreams about forbidden romance",
             "Brags about {PRONOUN/m_c/poss} skills in earshot of r_c",
             "Has a spring to {PRONOUN/m_c/poss} step",
-            "Is in an unusually good mood after a chat with r_c"
+            "Is in an unusually good mood after a chat with r_c",
+            "Fantasizes clandestine meetings with r_c under the stars"
         ],
         "random_living_status": [
             "living"
@@ -7336,10 +7338,8 @@
     {
         "id": "med_cats_to_alive_crush",
         "thoughts": [
-            "Daydreams about forbidden romance",
             "Hums as {PRONOUN/m_c/subject} {VERB/m_c/sort/sorts} herbs, thinking of r_c",
-            "Imagines dramatically saving r_c's life and earning {PRONOUN/r_c/poss} gratitude",
-            "Fantasizes clandestine meetings with r_c under the stars"
+            "Imagines dramatically saving r_c's life and earning {PRONOUN/r_c/poss} gratitude"
         ],
         "main_status_constraint": [
             "medicine cat",
