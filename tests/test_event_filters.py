@@ -863,6 +863,9 @@ class TestCatConstraint(unittest.TestCase):
     def test_statuses(self):
         statuses = [s for s in [*CatRank] if s.is_any_clancat_rank()]
         cat = Cat(disable_random=True)
+
+        with self.subTest("empty"):
+            self.assertTrue(event_filters._check_cat_status(cat, []))
         for i, status in enumerate(statuses):
             cat.status.generate_new_status(rank=status)
 
@@ -915,6 +918,10 @@ class TestCatConstraint(unittest.TestCase):
                 )
             other_rank = [r for r in ranks if r != old_rank and r != new_rank][-1]
 
+            with self.subTest(
+                "empty", old_rank=old_rank.value, new_rank=new_rank.value
+            ):
+                self.assertTrue(event_filters._check_cat_status_history(cat, []))
             with self.subTest(
                 "current rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
@@ -971,12 +978,19 @@ class TestCatConstraint(unittest.TestCase):
         cat = Cat()
         cat.personality = Personality(trait="adventurous")
 
-        with self.subTest("explicit constraint"):
-            self.assertTrue(event_filters._check_cat_trait(cat, ["adventurous"]))
+        # general
         with self.subTest('"any"'):
             self.assertTrue(event_filters._check_cat_trait(cat, ["any"]))
+        with self.subTest("empty"):
+            self.assertTrue(event_filters._check_cat_trait(cat, []))
+
+        # inclusive
+        with self.subTest("explicit constraint"):
+            self.assertTrue(event_filters._check_cat_trait(cat, ["adventurous"]))
         with self.subTest("unmatched"):
             self.assertFalse(event_filters._check_cat_trait(cat, ["bold"]))
+
+        # exclusive
         with self.subTest("explicit exclusionary"):
             self.assertFalse(event_filters._check_cat_trait(cat, ["-adventurous"]))
         with self.subTest("unmatched exclusionary"):
