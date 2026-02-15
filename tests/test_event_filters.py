@@ -810,23 +810,55 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
 
 
 class TestCatConstraint(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        Cat.disable_random = True
+
     def test_ages(self):
         ages = [*CatAge]
         cat = Cat(disable_random=True)
 
-        for i, age in enumerate(ages):
-            cat.age = age
-            with self.subTest("age-constrained", age=age.value):
-                self.assertTrue(event_filters._check_cat_age(cat, [age]))
-            with self.subTest('"any"', age=age.value):
-                if age == CatAge.NEWBORN:
-                    self.assertFalse(event_filters._check_cat_age(cat, ["any"]))
-                else:
-                    self.assertTrue(event_filters._check_cat_age(cat, ["any"]))
-            with self.subTest("unmatched", age=age.value):
-                self.assertFalse(event_filters._check_cat_age(cat, [ages[i - 1]]))
-            with self.subTest("exclusionary", age=age.value):
-                self.assertFalse(event_filters._check_cat_age(cat, [f"-{age.value}"]))
+        # ages used
+        newborn = CatAge.NEWBORN
+        age = CatAge.ADULT
+        unmatched_age = CatAge.SENIOR
+
+        # newborn-specific
+        cat.age = CatAge.NEWBORN
+        with self.subTest("empty newborn"):
+            self.assertFalse(event_filters._check_cat_age(cat, []))
+        with self.subTest('"any" newborn'):
+            self.assertFalse(event_filters._check_cat_age(cat, ["any"]))
+        with self.subTest("unmatched newborn"):
+            self.assertFalse(event_filters._check_cat_age(cat, [unmatched_age]))
+        with self.subTest("explicit newborn"):
+            self.assertTrue(event_filters._check_cat_age(cat, [newborn]))
+
+        # set cat age to the general testing age
+        cat.age = age
+
+        # general
+        with self.subTest("empty"):
+            self.assertTrue(event_filters._check_cat_age(cat, []))
+        with self.subTest('"any"'):
+            self.assertTrue(event_filters._check_cat_age(cat, ["any"]))
+        with self.subTest("invalid"):
+            self.assertRaises(ValueError)
+            self.assertFalse(event_filters._check_cat_age(cat, ["elder"]))
+
+        # inclusive
+        with self.subTest("explicit constraint"):
+            self.assertTrue(event_filters._check_cat_age(cat, [age]))
+        with self.subTest("unmatched", age=age.value):
+            self.assertFalse(event_filters._check_cat_age(cat, [unmatched_age]))
+
+        # exclusive
+        with self.subTest("explicit exclusionary"):
+            self.assertFalse(event_filters._check_cat_age(cat, [f"-{age.value}"]))
+        with self.subTest("unmatched exclusionary"):
+            self.assertTrue(
+                event_filters._check_cat_age(cat, [f"-{unmatched_age.value}"])
+            )
 
     def test_statuses(self):
         statuses = [s for s in [*CatRank] if s.is_any_clancat_rank()]
