@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "med_gen"
+    "thoughts": [
+    "Knows {PRONOUN/m_c/poss} Clanmates are in good paws"
+    "Can name every herb in the den!"
+    "Still doesn't know why lungwort is so rare"
+    "Wonders if StarClan will visit {PRONOUN/m_c/poss} dreams tonight"
+    ]
+  },
+  {
+    "id": "med_to_med_app"
+    "thoughts": [
+    "Reassures r_c that {PRONOUN/r_c/subject}'ll get {PRONOUN/r_c/poss} name soon, too"
+    "Celebrates with r_c"
+    ],
+    "random_status_constraint": [
+      "medicine cat apprentice"
+    ]
+  }
+]
