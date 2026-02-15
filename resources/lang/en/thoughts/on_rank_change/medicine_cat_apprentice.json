@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "med_app_gen"
+    "thoughts": [
+    "Wonders if StarClan will visit {PRONOUN/m_c/poss} dreams tonight"
+    "Is disgusted by all the horrible smells in the medicine den"
+    "Moves {PRONOUN/m_c/poss} nest to the medicine den, as far away from the garlic as possible!"
+    "Tries to guess the usage of different herbs..with minimal success"
+    ]
+  },
+  {
+    "id": "skilled_med_app"
+    "thoughts": [
+    "Already knows the basic herbs"
+    "Deftly roots out a thorn without any help"
+    "Correctly recognizes catmint!"
+    ]
+    "main_skill_constraint": [
+      "HEALER,2"
+    ]
+  }
+]
