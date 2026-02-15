@@ -4,14 +4,17 @@ from random import choice, randint
 from typing import List, Optional
 
 from scripts.cat.constants import BACKSTORIES
+from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
 
-
-ALL_BACKSTORIES_LIST = [story for story in BACKSTORIES["backstory_categories"].values()]
+ALL_BACKSTORIES_LIST = set(
+    [story for s in BACKSTORIES["backstory_categories"].values() for story in s]
+)
+ALL_TRAITS_LIST = set([trait for t in Personality.trait_ranges.values() for trait in t])
 
 
 def get_frequency() -> int:
@@ -476,6 +479,10 @@ def _check_cat_trait(cat, traits: list) -> bool:
 
     if is_exclusionary:
         traits = [x.replace("-", "") for x in traits]
+
+    for trait in traits:
+        if trait not in ALL_TRAITS_LIST:
+            raise ValueError(f"Unrecognized trait: {trait}")
 
     if cat.personality.trait in traits:
         return not is_exclusionary

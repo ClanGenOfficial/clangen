@@ -843,8 +843,7 @@ class TestCatConstraint(unittest.TestCase):
         with self.subTest('"any"'):
             self.assertTrue(event_filters._check_cat_age(cat, ["any"]))
         with self.subTest("invalid"):
-            self.assertRaises(ValueError)
-            self.assertFalse(event_filters._check_cat_age(cat, ["elder"]))
+            self.assertRaises(ValueError, event_filters._check_cat_age, cat, ["elder"])
 
         # inclusive
         with self.subTest("explicit constraint"):
@@ -972,29 +971,39 @@ class TestCatConstraint(unittest.TestCase):
 
     def test_trait(self):
         """
-        I have made this run just the one as they should all be functionally identical.
+        Runs adult & kit traits.
         :return:
         """
         cat = Cat()
-        cat.personality = Personality(trait="adventurous")
 
         # general
         with self.subTest('"any"'):
             self.assertTrue(event_filters._check_cat_trait(cat, ["any"]))
         with self.subTest("empty"):
             self.assertTrue(event_filters._check_cat_trait(cat, []))
+        with self.subTest("invalid value"):
+            self.assertRaises(
+                ValueError,
+                event_filters._check_cat_trait,
+                cat,
+                ["inimitablyspiffinglyunique"],
+            )
 
-        # inclusive
-        with self.subTest("explicit constraint"):
-            self.assertTrue(event_filters._check_cat_trait(cat, ["adventurous"]))
-        with self.subTest("unmatched"):
-            self.assertFalse(event_filters._check_cat_trait(cat, ["bold"]))
+        for age, trait in [("adult", "adventurous"), ("kit", "noisy")]:
+            cat.personality = Personality(trait=trait, kit_trait=age == "kit")
+            self.assertEqual(cat.personality.trait, trait)
 
-        # exclusive
-        with self.subTest("explicit exclusionary"):
-            self.assertFalse(event_filters._check_cat_trait(cat, ["-adventurous"]))
-        with self.subTest("unmatched exclusionary"):
-            self.assertTrue(event_filters._check_cat_trait(cat, ["-bold"]))
+            # inclusive
+            with self.subTest("explicit constraint", age=age):
+                self.assertTrue(event_filters._check_cat_trait(cat, [trait]))
+            with self.subTest("unmatched", age=age):
+                self.assertFalse(event_filters._check_cat_trait(cat, ["bold"]))
+
+            # exclusive
+            with self.subTest("explicit exclusionary", age=age):
+                self.assertFalse(event_filters._check_cat_trait(cat, [f"-{trait}"]))
+            with self.subTest("unmatched exclusionary", age=age):
+                self.assertTrue(event_filters._check_cat_trait(cat, ["-bold"]))
 
     def test_skill(self):
         cat = Cat()
@@ -1036,23 +1045,23 @@ class TestCatConstraint(unittest.TestCase):
             with self.subTest("explicit exclusionary"):
                 self.assertFalse(event_filters._check_cat_skills(cat, [f"-HUNTER,{i}"]))
             with self.subTest("explicit exclusionary lower"):
-                self.assertTrue(
+                self.assertFalse(
                     event_filters._check_cat_skills(cat, [f"-HUNTER,{i-1}"])
                 )
             with self.subTest("explicit exclusionary higher"):
-                self.assertFalse(
+                self.assertTrue(
                     event_filters._check_cat_skills(cat, [f"-HUNTER,{i+1}"])
                 )
 
             with self.subTest("unmatched exclusionary"):
-                self.assertTrue(event_filters._check_cat_skills(cat, [f"SWIMMER,{i}"]))
+                self.assertTrue(event_filters._check_cat_skills(cat, [f"-SWIMMER,{i}"]))
             with self.subTest("unmatched exclusionary lower"):
                 self.assertTrue(
-                    event_filters._check_cat_skills(cat, [f"SWIMMER,{i-1}"])
+                    event_filters._check_cat_skills(cat, [f"-SWIMMER,{i-1}"])
                 )
             with self.subTest("unmatched exclusionary higher"):
                 self.assertTrue(
-                    event_filters._check_cat_skills(cat, [f"SWIMMER,{i+1}"])
+                    event_filters._check_cat_skills(cat, [f"-SWIMMER,{i+1}"])
                 )
 
     def test_backstory(self):
@@ -1060,7 +1069,9 @@ class TestCatConstraint(unittest.TestCase):
 
         # general
         with self.subTest('"any"'):
-            self.assertTrue(event_filters._check_cat_backstory(cat, ["any"]))
+            self.assertRaises(
+                ValueError, event_filters._check_cat_backstory, cat, ["any"]
+            )
         with self.subTest("empty"):
             self.assertTrue(event_filters._check_cat_backstory(cat, []))
         with self.subTest("invalid value"):
