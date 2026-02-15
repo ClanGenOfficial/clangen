@@ -227,15 +227,14 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.feed_cats(Cat.all_cats_list)
 
         nutrition_status = {
-            Cat.fetch_cat(x).status.rank: y.percentage
+            f"{Cat.fetch_cat(x).status.rank}, ID: {x}": y.percentage
             for x, y in self.freshkill_pile.nutrition_info.items()
         }
-
         # check that leader is full
         self.assertEqual(
             self.freshkill_pile.nutrition_info[game.clan.leader.ID].percentage,
             100,
-            f"nutrition status: {nutrition_status}",
+            f"nutrition status: {nutrition_status}, game.clan.leader = {game.clan.leader.ID}",
         )
         # check that everyone else is hungry
         for cat in Cat.all_cats_list:
