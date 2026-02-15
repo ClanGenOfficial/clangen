@@ -3,6 +3,18 @@
         "id": "gen_guide_sc",
         "thoughts": [
             "Hello. I am here to guide the dead cats of c_n into StarClan."
+            "Tells stories of StarClan's creation"
+            "Wonders what'll happen if {PRONOUN/m_c/subject} fades"
+        ]
+    },
+    {
+        "id": "campkeeper_sc_guide",
+        "thoughts": [
+            "Tries to reinforce the Dark Forest border"
+            "Is glad that the Dark Forest border was made stronger by {PRONOUN/m_c/poss} additions"
+        ],
+        "main_skill_constraint": [
+            "CAMP,2"
         ]
     }
 ]
