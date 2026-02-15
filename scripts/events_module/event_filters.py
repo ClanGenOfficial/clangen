@@ -570,6 +570,10 @@ def _check_cat_gender(cat, genders: list) -> bool:
     if not genders:
         return True
 
+    for gender in genders:
+        if gender not in ["male", "female"]:
+            raise ValueError(f"Gender must be one of 'male', 'female'. Got {gender}")
+
     if cat.gender in genders:
         return True
 
@@ -861,14 +865,15 @@ def filter_relationship_type(
     qualifies = False
 
     if "strangers" in filter_list:
-        if not all(
-            [inter_cat.ID in test_cat.relationships for inter_cat in testing_cats]
-        ):
+        if any([inter_cat.ID in test_cat.relationships for inter_cat in testing_cats]):
             if is_exclusionary:
                 qualifies = True
             else:
+                # if a relationship is found & it's not exclusionary
                 return False
-        if is_exclusionary and not qualifies:
+        elif is_exclusionary:
+            # to get here, it must have not found any relationships,
+            # so they are strangers and should be excluded
             return False
         filter_list.remove("strangers")
 

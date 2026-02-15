@@ -30,6 +30,55 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
     def setUpClass(cls):
         Cat.disable_random = True
 
+    def test_strangers(self):
+        cat1 = Cat()
+        cat2 = Cat()
+
+        cat1.relationships = {}
+        cat2.relationships = {}
+
+        with self.subTest("are strangers, expected strangers"):
+            self.assertTrue(
+                event_filters.filter_relationship_type(
+                    group=[cat1, cat2],
+                    filter_types=["strangers"],
+                )
+            )
+
+        with self.subTest("are strangers, expected not strangers"):
+            self.assertFalse(
+                event_filters.filter_relationship_type(
+                    group=[cat1, cat2],
+                    filter_types=["-strangers"],
+                )
+            )
+
+        cat1.relationships[cat2.ID] = Relationship(
+            **{
+                "cat_from": cat1,
+                "cat_to": cat2,
+                "like": 20,
+                "romance": 10,
+                "respect": 67,
+            }
+        )
+
+        with self.subTest("are not strangers, expected strangers"):
+            self.assertFalse(
+                event_filters.filter_relationship_type(
+                    group=[cat1, cat2],
+                    filter_types=["strangers"],
+                )
+            )
+
+        with self.subTest("are not strangers, expected not strangers"):
+            self.assertTrue(
+                event_filters.filter_relationship_type(
+                    group=[cat1, cat2],
+                    filter_types=["-strangers"],
+                )
+            )
+
     def test_siblings(self):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
@@ -270,6 +319,34 @@ class TestRelationshipTiers(unittest.TestCase):
     def tearDown(self):
         self.cat1.relationships = {}
         self.cat2.relationships = {}
+
+    def test_empty_filter(self):
+        self.assertTrue(
+            event_filters.filter_relationship_type(
+                group=[self.cat1, self.cat2],
+                filter_types=[],
+            )
+        )
+
+    def test_patrol_leader_arg(self):
+        """
+        Asserts that the relationship tested is cat1 -> cat2 when cat1 is the patrol leader
+        :return:
+        """
+        self.cat1.relationships[self.cat2.ID] = Relationship(
+            cat_from=self.cat1, cat_to=self.cat2, like=5
+        )
+        self.cat2.relationships[self.cat1.ID] = Relationship(
+            cat_from=self.cat2, cat_to=self.cat1, like=5
+        )
+
+        self.assertTrue(
+            event_filters.filter_relationship_type(
+                group=[self.cat2, self.cat1],
+                filter_types=["knows_of"],
+                patrol_leader=self.cat1,
+            )
+        )
 
     def test_full_tiers(self):
         reltypes = deepcopy(rel_type_tiers)
@@ -815,7 +892,6 @@ class TestCatConstraint(unittest.TestCase):
         Cat.disable_random = True
 
     def test_ages(self):
-        ages = [*CatAge]
         cat = Cat(disable_random=True)
 
         # ages used
@@ -1157,3 +1233,27 @@ class TestCatConstraint(unittest.TestCase):
             self.assertTrue(
                 event_filters._check_cat_backstory(cat, ["-loner_backstories"])
             )
+
+    def test_gender(self):
+        male = Cat(gender="male")
+        female = Cat(gender="female")
+
+        with self.subTest("empty"):
+            self.assertTrue(event_filters._check_cat_gender(male, []))
+
+        with self.subTest("invalid input"):
+            self.assertRaises(
+                ValueError, event_filters._check_cat_gender, male, ["isosceles"]
+            )
+
+        with self.subTest("expected male, was male"):
+            self.assertTrue(event_filters._check_cat_gender(male, ["male"]))
+
+        with self.subTest("expected female, was male"):
+            self.assertFalse(event_filters._check_cat_gender(male, ["female"]))
+
+        with self.subTest("expected female, was female"):
+            self.assertTrue(event_filters._check_cat_gender(female, ["female"]))
+
+        with self.subTest("expected male, was female"):
+            self.assertFalse(event_filters._check_cat_gender(female, ["male"]))
