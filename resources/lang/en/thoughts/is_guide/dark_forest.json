@@ -4,6 +4,20 @@
         "id": "gen_guide_df",
         "thoughts": [
             "Hello. I am here to drag the dead cats of c_n into the Dark Forest."
+            "Greets a wayward apprentice, lying that it is StarClan"
+            "Wonders if {PRONOUN/m_c/subject} can send a fake prophecy"
+            "Scowls up at c_n"
+        ]
+    },
+    {
+        "id": "df_guide_to_starclan",
+        "thoughts": [
+            "Swears that r_c deserves to rot with {PRONOUN/m_c/object}"
+            "Wishes that {PRONOUN/m_c/subject} was with r_c"
+            "Eerily promises that {PRONOUN/m_c/subject} and the rest of the Dark Forest will soon replace StarClan, leaving r_c to suffer"
+        ],
+        "random_living_status": [
+            "starclan"
         ]
     }
 ]
