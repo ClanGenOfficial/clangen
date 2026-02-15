@@ -2,6 +2,18 @@
 # Tag Lists
 Our events generally require writers to "tag" certain attributes.  These "tags" are fairly universal across all events, so the lists are held here to serve as quick reference.
 
+## Exclusionary Tags
+Some tags can be made exclusionary by prefixing them with `-`. For example:
+```json
+"trait": ["-calm"]
+```
+This would allow any cat with a trait that *isn't* `calm`.
+
+As this is allowed in some but *not all* tags, parameters that allow exclusionary tags will be linked to this section. If a parameter *doesn't* link here, then exclusionary tags are not allowed.
+
+!!! warning
+    You cannot mix exclusionary tags and inclusionary tags in one parameter. You must use one or the other and, frankly, there is no reason to mix them. 
+
 ## Conditions and Scars
 
 === "Taggable Injury Pools"
@@ -182,7 +194,9 @@ Our events generally require writers to "tag" certain attributes.  These "tags" 
 
 
 ## Backstories
-You can use either the backstory pool name, or an individual backstory name.  When using a backstory pool, please be sure to check that all the backstories contained within will have text suitable for your needs.  You can find the backstory text within `resources/dicts/backstories.json`.
+You can use either the backstory pool name, or an individual backstory name.  When using a backstory pool, please be sure to check that all the backstories contained within will have text suitable for your needs.  You can find the backstory text within `resources/dicts/lang/en/cat/backstories.json`.
+
+You can utilize [#exclusionary tags](#exclusionary-tags).
 
 | **BACKSTORY POOL NAMES**     | **BACKSTORIES**                                                                                                                                                                                    |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -211,6 +225,9 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
     * `senior adult`
     * `senior`
 
+    > You can utilize [#exclusionary tags](#exclusionary-tags).
+
+
 === "Basic Statuses"
 
     > * `newborn`
@@ -225,6 +242,9 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
     * `leader`
     * `elder`
     * `any`
+
+    > You can utilize [#exclusionary tags](#exclusionary-tags).
+
 
 === "Life/Death Statuses"
 
@@ -251,6 +271,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
 
 ## Traits and Skills
+You can utilize [#exclusionary tags](#exclusionary-tags).
 
 === "Skills"
 
@@ -327,6 +348,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
     * `sincere`
     * `flamboyant`
     * `rebellious`
+
 
 
 ## Snippet Lists
@@ -428,7 +450,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 | `app/mentor`      | cat1 is the apprentice of cat2     | only for use in 2-cat patrols          |
 | `mentor/app`      | cat1 is the mentor of cat2         | only for use in 2-cat patrols          |
 
-You can utilize [exclusionary values](index.md#exclusionary-values).
+You can utilize [#exclusionary tags](#exclusionary-tags).
 
 !!! warning
     Within ShortEvents, these should only be used in m_c's relationship constraints.

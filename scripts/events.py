@@ -2080,10 +2080,13 @@ def handle_murder(cat):
         and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
     ]
     targets.extend(negative_relation)
+    # sort by total relationship, this way we know who has the worst relationship
+    targets.sort(key=lambda x: x.total_relationship_value)
 
     # if we have some, then we need to decide if this cat will kill
     if targets:
-        chosen_target = random.choice(targets)
+        # chosen target is the cat with the worst relationship
+        chosen_target = targets[0]
 
         kill_chance = constants.CONFIG["death_related"]["base_murder_kill_chance"]
 
@@ -2091,9 +2094,8 @@ def handle_murder(cat):
             [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg]
         )
         mid_neg = len([t for t in chosen_target.get_reltype_tiers() if t.is_mid_neg])
-        neg = len([t for t in chosen_target.get_reltype_tiers() if t.is_low_neg])
 
-        relation_modifier = (extreme_neg * 20) + (mid_neg * 10) + (neg * 5)
+        relation_modifier = (extreme_neg * 15) + (mid_neg * 5)
 
         kill_chance -= relation_modifier
 
@@ -2101,7 +2103,7 @@ def handle_murder(cat):
             len(chosen_target.log) > 0
             and "(high negative effect)" in chosen_target.log[-1]
         ):
-            kill_chance -= 20
+            kill_chance -= 15
 
         if (
             len(chosen_target.log) > 0
@@ -2110,11 +2112,13 @@ def handle_murder(cat):
             kill_chance -= 10
 
         # little easter egg just for fun
-        if (
-            cat.personality.trait == "ambitious"
-            and Cat.fetch_cat(chosen_target.cat_to).status.is_leader
+        if cat.personality.trait in ("ambitious", "arrogant", "rebellious") and (
+            Cat.fetch_cat(chosen_target.cat_to).status.is_leader
+            or Cat.fetch_cat(chosen_target.cat_to).status.rank == CatRank.DEPUTY
         ):
             kill_chance -= 10
+            if cat.status.rank == CatRank.DEPUTY:
+                kill_chance -= 15
 
         kill_chance -= cat.personality.aggression
         kill_chance -= 16 - cat.personality.stability
@@ -2132,7 +2136,7 @@ def handle_murder(cat):
                 sub_type=["murder"],
             )
 
-        elif kill_chance <= 20:
+        elif kill_chance <= 15:
             create_short_event(
                 event_type="misc",
                 main_cat=cat,
