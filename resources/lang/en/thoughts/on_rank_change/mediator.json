@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "mediator_gen"
+    "thoughts": [
+    "Knows {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need to be trained anymore"
+    "Is confident in {PRONOUN/m_c/poss} abilities to mediate arguments"
+    "Mediates {PRONOUN/m_c/poss} first argument without any help"
+    ]
+  },
+  {
+    "id": "unhelpful_mediator"
+    "thoughts": [
+    "Plans on secretly undermining c_n relationships"
+    "Wants to destroy o_c_n relations"
+    "Sparked an argument between two Clanmates"
+    "Gives the leader horrible advice"
+    ],
+    "main_trait_constraint": [
+      "troublesome",
+      "oblivious",
+      "bloodthirsty",
+      "fierce",
+      "childish",
+      "shameless",
+      "sneaky",
+      "vengeful",
+      "cunning",
+      "rebellious"
+    ]
+  }
+    
+]
