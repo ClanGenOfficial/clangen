@@ -11,6 +11,9 @@ from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
 
 
+ALL_BACKSTORIES_LIST = [story for story in BACKSTORIES["backstory_categories"].values()]
+
+
 def get_frequency() -> int:
     """
     Chooses an event frequency and returns it as an int. This is used by short and patrol events to determine what frequency of event to pull.
@@ -518,15 +521,18 @@ def _check_cat_backstory(cat, backstories: list) -> bool:
 
     # do the real simple test first
     if cat.backstory in backstories:
-        return False if is_exclusionary else True
+        return not is_exclusionary
 
-    # now we look for backstory categories
     allowed_stories = []
     for story in backstories:
-        if story in BACKSTORIES["backstory_categories"].keys():
+        if (
+            story in BACKSTORIES["backstory_categories"].keys()
+        ):  # if it's a recognised category
             allowed_stories.extend(BACKSTORIES["backstory_categories"][story])
-        else:
+        elif story in ALL_BACKSTORIES_LIST:  # if it's a recognised backstory
             allowed_stories.append(story)
+        else:  # otherwise, it's invalid
+            raise ValueError(f"Unknown backstory/category: {story}")
 
     if cat.backstory in allowed_stories:
         return not is_exclusionary

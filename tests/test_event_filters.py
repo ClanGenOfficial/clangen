@@ -1054,3 +1054,49 @@ class TestCatConstraint(unittest.TestCase):
                 self.assertTrue(
                     event_filters._check_cat_skills(cat, [f"SWIMMER,{i+1}"])
                 )
+
+    def test_backstory(self):
+        cat = Cat(backstory="clan_founder")
+
+        # general
+        with self.subTest('"any"'):
+            self.assertTrue(event_filters._check_cat_backstory(cat, ["any"]))
+        with self.subTest("empty"):
+            self.assertTrue(event_filters._check_cat_backstory(cat, []))
+        with self.subTest("invalid value"):
+            self.assertRaises(
+                ValueError,
+                event_filters._check_cat_backstory,
+                cat,
+                ["definitelynotabackstory_asdf"],
+            )
+
+        # inclusive
+        with self.subTest("explicit"):
+            self.assertTrue(event_filters._check_cat_backstory(cat, ["clan_founder"]))
+        with self.subTest("explicit within category"):
+            self.assertTrue(
+                event_filters._check_cat_backstory(cat, ["clan_founder_backstories"])
+            )
+
+        with self.subTest("unmatched"):
+            self.assertFalse(event_filters._check_cat_backstory(cat, ["loner1"]))
+        with self.subTest("unmatched within category"):
+            self.assertFalse(
+                event_filters._check_cat_backstory(cat, ["loner_backstories"])
+            )
+
+        # exclusive
+        with self.subTest("explicit exclusionary"):
+            self.assertFalse(event_filters._check_cat_backstory(cat, ["-clan_founder"]))
+        with self.subTest("explicit exclusionary within category"):
+            self.assertFalse(
+                event_filters._check_cat_backstory(cat, ["-clan_founder_backstories"])
+            )
+
+        with self.subTest("unmatched exclusionary"):
+            self.assertTrue(event_filters._check_cat_backstory(cat, ["-loner1"]))
+        with self.subTest("unmatched exclusionary within category"):
+            self.assertTrue(
+                event_filters._check_cat_backstory(cat, ["-loner_backstories"])
+            )
