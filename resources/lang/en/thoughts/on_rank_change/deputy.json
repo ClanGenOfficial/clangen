@@ -1,3 +1,25 @@
 [
+  {
+    "id": "deputy_gen"
+    "thoughts": [
+      "Hopes the leader made the right choice in choosing {PRONOUN/m_c/object}"
+      "Is shocked that the leader chose {PRONOUN/m_c/object}"
+      "Is determined to be the best deputy c_n has ever seen"
+      "Celebrates with {PRONOUN/m_c/poss} Clanmates"
+    ]
+  },
+  {
+    "id": "deputy_had_app"
+    "thoughts": [
+      "Shoots r_c a happy look"
+      "Is being barrelled over by r_c, who is super excited for {PRONOUN/r_c/poss} mentor"
+    ],
+    "relationship_constraint": [
+      "mentor/app"
+    ],
+    "random_living_status" : [
+      "living"
+    ]
+  }
 
 ]
