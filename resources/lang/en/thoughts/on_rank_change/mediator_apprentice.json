@@ -1,2 +1,33 @@
 [
+  {
+    "id": "gen_mediator_app"
+    "thoughts": [
+    "Worries about {PRONOUN/m_c/poss} first mediation"
+    "Is excited for {PRONOUN/m_c/poss} first mediation"
+    "Doesn't know what to do..."
+    "Already knows what to do!"
+    ]
+  },
+  {
+    "id": "mediator_skill"
+    "thoughts": [
+    "Mediated perfectly the first time!"
+    "Makes a relationship better without even trying"
+    "Knows r_c is proud of them"
+    "Is confident in {PRONOUN/m_c/poss} abilities"
+    ],
+    "main_skill_constraint": [
+      "SPEAKER,3",
+      "MEDIATOR,1"
+    ],
+    "main_trait_constraint": [
+      "charismatic",
+      "thoughtful",
+      "responsible",
+      "wise"
+    ],
+    "relationship_constraint": [
+      app/mentor
+    ]
+  }
 ]
