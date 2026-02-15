@@ -1005,17 +1005,15 @@ class TestCatConstraint(unittest.TestCase):
             with self.subTest("unmatched exclusionary", age=age):
                 self.assertTrue(event_filters._check_cat_trait(cat, ["-bold"]))
 
+    # noinspection PyUnresolvedReferences
     def test_skill(self):
         cat = Cat()
         cat.personality = Personality(trait="adventurous")
         cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
         cat.skills.secondary = None
 
-        for skill, skill_label in [
-            [cat.skills.primary, "primary"],
-            [cat.skills.secondary, "secondary"],
-        ]:
-            cat.skills.primary = Skill(SkillPath.CAMP, points=9)
+        for skill_label in ["primary", "secondary"]:
+            cat.skills.primary = Skill(SkillPath.CAMP, points=0)
             cat.skills.secondary = None
 
             # general
@@ -1042,9 +1040,21 @@ class TestCatConstraint(unittest.TestCase):
                 )
 
             for i in range(1, 4):
-                skill.set_points_to_tier(i)
+                setattr(cat.skills, skill_label, Skill(SkillPath.HUNTER, points=0))
+                getattr(cat.skills, skill_label).set_points_to_tier(i)
 
-                self.assertEqual(skill.tier, i)
+                # confirm the test is set up appropriately
+                if skill_label == "primary":
+                    self.assertEqual(cat.skills.primary.path, SkillPath.HUNTER)
+                    self.assertEqual(cat.skills.primary.tier, i)
+
+                    self.assertIsNone(cat.skills.secondary)
+                else:
+                    self.assertEqual(cat.skills.primary.path, SkillPath.CAMP)
+                    self.assertEqual(cat.skills.primary.tier, 1)
+
+                    self.assertEqual(cat.skills.secondary.path, SkillPath.HUNTER)
+                    self.assertEqual(cat.skills.secondary.tier, i)
 
                 # inclusives
                 with self.subTest("explicit constraint", skill=skill_label):
