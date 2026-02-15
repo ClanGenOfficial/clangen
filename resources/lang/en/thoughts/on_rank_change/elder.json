@@ -3,6 +3,20 @@
         "id": "becoming_elder",
         "thoughts": [
             "Looks forward to day-to-day life as an elder"
+            "Moves {PRONOUN/m_c/poss} nest to the elder's den"
+            "Hopes that {PRONOUN/m_c/subject} will live many more moons"
+        ]
+    },
+    {
+        "id": "former_med"
+        "thoughts": [
+        "Hopes that c_n can thrive without {PRONOUN/m_c/poss} help"
+        "Wonders if {PRONOUN/m_c/poss} skills are useless now"
+        "Misses the scent of herbs"
+        ],
+        "main_status_history": [
+            "medicine cat"
+            "medicine cat apprentice"
         ]
     }
 ]
