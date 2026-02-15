@@ -356,6 +356,14 @@ def event_for_cat(
             raise ValueError(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
+        except KeyError as e:
+            raise KeyError(
+                f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
+            ) from e
+        except TypeError as e:
+            raise TypeError(
+                f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
+            ) from e
 
     # checking injuries
     if injuries:
@@ -490,12 +498,21 @@ def _check_cat_trait(cat, traits: list) -> bool:
     return is_exclusionary
 
 
-def _check_cat_skills(cat, skills: list) -> bool:
+def _check_cat_skills(cat, skills: list[str]) -> bool:
     """
     Checks if the cat has all required skills.
+    :param cat: Cat to check
+    :param skills: List of skills to check against
+
+    :raises TypeError: Inputs must be strings
+    :raises ValueError: Inputs must be split by one comma
     """
     if not skills or "any" in skills:
         return True
+
+    for s in skills:
+        if not isinstance(s, str):
+            raise TypeError(f"Skill malformed: expected str, got {type(s)}")
 
     is_exclusionary = _check_for_exclusionary_value(skills)
     if is_exclusionary:
@@ -504,9 +521,8 @@ def _check_cat_skills(cat, skills: list) -> bool:
     for _skill in skills:
         skill_info = _skill.split(",")
 
-        if len(skill_info) < 2:
-            print("Cat skill incorrectly formatted", _skill)
-            continue
+        if len(skill_info) != 2:
+            raise ValueError(f"Incorrectly formatted skill: {_skill}")
 
         if cat.skills.meets_skill_requirement(skill_info[0], int(skill_info[1])):
             return not is_exclusionary

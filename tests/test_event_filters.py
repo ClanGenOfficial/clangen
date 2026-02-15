@@ -1011,58 +1011,94 @@ class TestCatConstraint(unittest.TestCase):
         cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
         cat.skills.secondary = None
 
-        for i in range(1, 4):
-            cat.skills.primary.set_points_to_tier(i)
+        for skill, skill_label in [
+            [cat.skills.primary, "primary"],
+            [cat.skills.secondary, "secondary"],
+        ]:
+            cat.skills.primary = Skill(SkillPath.CAMP, points=9)
+            cat.skills.secondary = None
 
             # general
             with self.subTest('"any"'):
                 self.assertTrue(event_filters._check_cat_skills(cat, ["any"]))
             with self.subTest("empty"):
                 self.assertTrue(event_filters._check_cat_skills(cat, []))
-
-            # inclusives
-            with self.subTest("explicit constraint"):
-                self.assertTrue(event_filters._check_cat_skills(cat, [f"HUNTER,{i}"]))
-            with self.subTest("explicit lower"):
-                self.assertTrue(event_filters._check_cat_skills(cat, [f"HUNTER,{i-1}"]))
-            with self.subTest("explicit higher"):
-                self.assertFalse(
-                    event_filters._check_cat_skills(cat, [f"HUNTER,{i+1}"])
+            with self.subTest("invalid format"):
+                self.assertRaises(
+                    TypeError, event_filters._check_cat_skills, cat, ["SWIMMER", 1]
+                )
+                self.assertRaises(
+                    ValueError, event_filters._check_cat_skills, cat, ["SWIMMER", "1"]
+                )
+                self.assertRaises(
+                    ValueError, event_filters._check_cat_skills, cat, ["SWIMMER1"]
+                )
+                self.assertRaises(
+                    ValueError, event_filters._check_cat_skills, cat, ["SWIMMER,1,2"]
+                )
+            with self.subTest("invalid skill"):
+                self.assertRaises(
+                    KeyError, event_filters._check_cat_skills, cat, ["SKIMBLING,1"]
                 )
 
-            with self.subTest("unmatched"):
-                self.assertFalse(event_filters._check_cat_skills(cat, [f"SWIMMER,{i}"]))
-            with self.subTest("unmatched lower"):
-                self.assertFalse(
-                    event_filters._check_cat_skills(cat, [f"SWIMMER,{i-1}"])
-                )
-            with self.subTest("unmatched higher"):
-                self.assertFalse(
-                    event_filters._check_cat_skills(cat, [f"SWIMMER,{i+1}"])
-                )
+            for i in range(1, 4):
+                skill.set_points_to_tier(i)
 
-            # exclusives
-            with self.subTest("explicit exclusionary"):
-                self.assertFalse(event_filters._check_cat_skills(cat, [f"-HUNTER,{i}"]))
-            with self.subTest("explicit exclusionary lower"):
-                self.assertFalse(
-                    event_filters._check_cat_skills(cat, [f"-HUNTER,{i-1}"])
-                )
-            with self.subTest("explicit exclusionary higher"):
-                self.assertTrue(
-                    event_filters._check_cat_skills(cat, [f"-HUNTER,{i+1}"])
-                )
+                self.assertEqual(skill.tier, i)
 
-            with self.subTest("unmatched exclusionary"):
-                self.assertTrue(event_filters._check_cat_skills(cat, [f"-SWIMMER,{i}"]))
-            with self.subTest("unmatched exclusionary lower"):
-                self.assertTrue(
-                    event_filters._check_cat_skills(cat, [f"-SWIMMER,{i-1}"])
-                )
-            with self.subTest("unmatched exclusionary higher"):
-                self.assertTrue(
-                    event_filters._check_cat_skills(cat, [f"-SWIMMER,{i+1}"])
-                )
+                # inclusives
+                with self.subTest("explicit constraint", skill=skill_label):
+                    self.assertTrue(
+                        event_filters._check_cat_skills(cat, [f"HUNTER,{i}"])
+                    )
+                with self.subTest("explicit lower", skill=skill_label):
+                    self.assertTrue(
+                        event_filters._check_cat_skills(cat, [f"HUNTER,{i-1}"])
+                    )
+                with self.subTest("explicit higher", skill=skill_label):
+                    self.assertFalse(
+                        event_filters._check_cat_skills(cat, [f"HUNTER,{i+1}"])
+                    )
+
+                with self.subTest("unmatched", skill=skill_label):
+                    self.assertFalse(
+                        event_filters._check_cat_skills(cat, [f"SWIMMER,{i}"])
+                    )
+                with self.subTest("unmatched lower", skill=skill_label):
+                    self.assertFalse(
+                        event_filters._check_cat_skills(cat, [f"SWIMMER,{i-1}"])
+                    )
+                with self.subTest("unmatched higher", skill=skill_label):
+                    self.assertFalse(
+                        event_filters._check_cat_skills(cat, [f"SWIMMER,{i+1}"])
+                    )
+
+                # exclusives
+                with self.subTest("explicit exclusionary", skill=skill_label):
+                    self.assertFalse(
+                        event_filters._check_cat_skills(cat, [f"-HUNTER,{i}"])
+                    )
+                with self.subTest("explicit exclusionary lower", skill=skill_label):
+                    self.assertFalse(
+                        event_filters._check_cat_skills(cat, [f"-HUNTER,{i-1}"])
+                    )
+                with self.subTest("explicit exclusionary higher", skill=skill_label):
+                    self.assertTrue(
+                        event_filters._check_cat_skills(cat, [f"-HUNTER,{i+1}"])
+                    )
+
+                with self.subTest("unmatched exclusionary", skill=skill_label):
+                    self.assertTrue(
+                        event_filters._check_cat_skills(cat, [f"-SWIMMER,{i}"])
+                    )
+                with self.subTest("unmatched exclusionary lower", skill=skill_label):
+                    self.assertTrue(
+                        event_filters._check_cat_skills(cat, [f"-SWIMMER,{i-1}"])
+                    )
+                with self.subTest("unmatched exclusionary higher", skill=skill_label):
+                    self.assertTrue(
+                        event_filters._check_cat_skills(cat, [f"-SWIMMER,{i+1}"])
+                    )
 
     def test_backstory(self):
         cat = Cat(backstory="clan_founder")

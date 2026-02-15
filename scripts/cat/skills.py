@@ -619,8 +619,7 @@ class CatSkills:
                 try:
                     path = HiddenSkillEnum[path]
                 except KeyError:
-                    print(f"{path} is not a real skill path")
-                    return False
+                    raise KeyError(f"{path} is not a real skill path")
 
         if isinstance(path, HiddenSkillEnum):
             if path == self.hidden:
