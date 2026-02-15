@@ -1,3 +1,28 @@
 [
+  {
+    "id": "lead_gen"
+    "thoughts": [
+    "Is still exhausted from {PRONOUN/m_c/poss} nine lives ceremony"
+    "Is determined to be the best leader c_n has seen!"
+    "Tries to think of possible new deputies"
+    "Wonders what the Dark Forest thinks of {PRONOUN/m_c/object}"
+    "Wonders what StarClan thinks of {PRONOUN/m_c/object}"
+    ]
+  },
+  {
+    "id": "new_lead_evil"
+    "thoughts": [
+    "Is determined to root out c_n weaklings"
+    "Plans to use {PRONOUN/m_c/poss} new power to exert dominance"
+    "Glares scornfully at some of {PRONOUN/m_c/poss} Clanmates"
+    ],
+    "main_trait_constraint": [
+      "bloodthirsty",
+      "vengeful",
+      "fierce",
+      "ambitious",
+      "cunning"
+    ]
+  }
 
 ]
