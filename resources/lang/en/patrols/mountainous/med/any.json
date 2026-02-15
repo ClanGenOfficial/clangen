@@ -55,7 +55,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "p_l shared an important vision with this cat and the rest of c_n."
+                            "cats_from": "p_l shared an important vision with from_cat and the rest of c_n."
                         }
                     }
                 ],
@@ -80,7 +80,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "This cat noticed p_l's attitude change for the better."
+                            "cats_from": "from_cat noticed p_l's attitude change for the better."
                         }
                     }
                 ],
