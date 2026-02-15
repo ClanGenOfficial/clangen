@@ -4,6 +4,30 @@
         "id": "gen_new_sc",
         "thoughts": [
             "Is relieved to once again hunt in StarClan"
+            "Purrs as {PRONOUN/m_c/poss} pain fades"
+            "Stares wide-eyed at the stardust swirling around {PRONOUN/m_c/object}"
+        ]
+    },
+    {
+        "id": "exiled_sc_cat"
+        "thoughts": [
+        "Cries with relief at seeing the cats of Silverpelt"
+        "Runs to {PRONOUN/m_c/poss} old Clanmates"
+        ],
+        "main_outside_status": [
+            "exiled"
+        ]
+    },
+    {
+        "id": "sc_affiliation"
+        "thoughts": [
+        "Breathes a sigh of relief, relaxed at the sight of {PRONOUN/m_c/poss} ancestors"
+        ],
+        "main_skill_constraint": [
+            "LORE,1",
+            "STAR,3",
+            "OMEN,1",
+            "DREAM,1"
         ]
     }
 ]
