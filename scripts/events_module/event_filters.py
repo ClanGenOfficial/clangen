@@ -343,8 +343,13 @@ def event_for_cat(
     }
 
     for param, func in func_lookup.items():
-        if param in cat_info and not func(cat, cat_info[param]):
-            return False
+        try:
+            if param in cat_info and not func(cat, cat_info[param]):
+                return False
+        except ValueError as e:
+            raise ValueError(
+                f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
+            ) from e
 
     # checking injuries
     if injuries:
@@ -401,7 +406,14 @@ def _check_cat_age(cat, ages: list) -> bool:
     if is_exclusionary:
         ages = [x.replace("-", "") for x in ages]
 
-    if cat.age.value in ages:
+    try:
+        enum_ages = [CatAge(age) for age in ages]
+    except ValueError as e:
+        raise ValueError(
+            "One or more ages provided are invalid CatAges - double-check spelling"
+        ) from e
+
+    if cat.age.value in enum_ages:
         return not is_exclusionary
 
     return is_exclusionary
