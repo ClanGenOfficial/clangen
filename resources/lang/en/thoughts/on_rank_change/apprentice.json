@@ -1,2 +1,22 @@
 [
+  {
+    "id": "gen_app"
+    "thoughts": [
+    "Purrs, hearing {PRONOUN/m_c/poss} new name being cheered by c_n"
+    "Wonders what {PRONOUN/m_c/poss} mentor will be like"
+    "Shakes in disbelief that r_c is {PRONOUN/m_c/poss} mentor"
+    ]
+  },
+  {
+    "id": "app_to_parent"
+    "thoughts": [
+    "Rubs up against r_c, purring"
+    "Wishes r_c was {PRONOUN/m_c/poss} mentor"
+    "Awkwardly bats away r_c as {PRONOUN/r_c/subject} licks {PRONOUN/m_c/object} fierociously"
+    "Heard r_c cheering the loudest"
+    ],
+    "relationship_constraint": [
+      "child/parent"
+    ]
+  }
 ]
