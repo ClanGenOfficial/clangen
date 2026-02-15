@@ -862,7 +862,7 @@
     "loud_kit": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["bouncy", "impulsive", "noisy", "troublesome", "attention-seeker", "daring"],
+      "star_trait": ["impulsive", "noisy", "troublesome", "attention-seeker", "daring"],
       "rank": ["kitten"],
       "life_giving": [
         {
