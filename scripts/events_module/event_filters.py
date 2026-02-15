@@ -802,6 +802,9 @@ def filter_relationship_type(
 
     filter_list = filter_types.copy()
 
+    if len(group) == 1:
+        raise ValueError("Relationship constraints provided but only one cat in group!")
+
     is_exclusionary = _check_for_exclusionary_value(filter_list)
     if is_exclusionary:
         filter_list = [x.replace("-", "") for x in filter_list]
@@ -991,13 +994,14 @@ def filter_relationship_type(
                     rel_tier: RelTier = RelTier(tier)
 
                     # find the matching rel_type enum
+
                     rel_type: Optional[RelType] = None
-                    for rel_type in rel_type_tiers:
-                        if rel_tier in rel_type_tiers[rel_type]:
-                            rel_type = rel_type
+                    for rel_type_label in rel_type_tiers:
+                        if rel_tier in rel_type_tiers[rel_type_label]:
+                            rel_type = rel_type_label
                             break
                     if not rel_type:
-                        continue
+                        continue  # this code can never be reached :(
 
                     # get the tier's index within the rel_types's list
                     index = rel_type_tiers[rel_type].index(rel_tier)

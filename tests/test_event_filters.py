@@ -3,6 +3,9 @@ import os
 from copy import deepcopy
 from itertools import permutations
 
+from scripts.cat.personality import Personality
+from scripts.cat.skills import SkillPath, Skill
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -18,6 +21,8 @@ from scripts.cat_relations.enums import RelTier, rel_type_tiers, RelType
 
 from scripts.cat.cats import Cat
 import scripts.events_module.event_filters as event_filters
+
+Cat.disable_random = True
 
 
 class TestInterpersonalRelationshipConstraints(unittest.TestCase):
@@ -324,6 +329,22 @@ class TestRelationshipTiers(unittest.TestCase):
                 # teardown for individual subtests
                 if self.cat1.ID in self.cat2.relationships:
                     self.cat2.relationships.pop(self.cat1.ID)
+
+        with self.subTest("invalid rel type"):
+            self.assertRaises(
+                ValueError,
+                event_filters.filter_relationship_type,
+                group=[self.cat1, self.cat2],
+                filter_types=["bagagwa"],
+            )
+
+        with self.subTest("only one cat"):
+            self.assertRaises(
+                ValueError,
+                event_filters.filter_relationship_type,
+                group=[self.cat1],
+                filter_types=["loathes"],
+            )
 
     def test_full_only_tiers(self):
         reltypes = deepcopy(rel_type_tiers)
@@ -909,3 +930,42 @@ class TestCatConstraint(unittest.TestCase):
                 self.assertTrue(
                     event_filters._check_cat_status_history(cat, [f"-{other_rank}"])
                 )
+
+    def test_trait(self):
+        """
+        I have made this run just the one as they should all be functionally identical.
+        :return:
+        """
+        cat = Cat()
+        cat.personality = Personality(trait="adventurous")
+
+        with self.subTest("explicit constraint"):
+            self.assertTrue(event_filters._check_cat_trait(cat, ["adventurous"]))
+        with self.subTest('"any"'):
+            self.assertTrue(event_filters._check_cat_trait(cat, ["any"]))
+        with self.subTest("unmatched"):
+            self.assertFalse(event_filters._check_cat_trait(cat, ["bold"]))
+        with self.subTest("explicit exclusionary"):
+            self.assertFalse(event_filters._check_cat_trait(cat, ["-adventurous"]))
+        with self.subTest("unmatched exclusionary"):
+            self.assertTrue(event_filters._check_cat_trait(cat, ["-bold"]))
+
+    def test_skill(self):
+        cat = Cat()
+        cat.personality = Personality(trait="adventurous")
+        cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
+        cat.skills.secondary = None
+
+        for i in range(1, 4):
+            cat.skills.primary.set_points_to_tier(i)
+
+            with self.subTest("explicit constraint"):
+                self.assertTrue(event_filters._check_cat_skills(cat, [f"HUNTER,{i}"]))
+            with self.subTest('"any"'):
+                self.assertTrue(event_filters._check_cat_skills(cat, ["any"]))
+            with self.subTest("unmatched"):
+                self.assertFalse(event_filters._check_cat_skills(cat, ["SWIMMER,3"]))
+            with self.subTest("explicit exclusionary"):
+                self.assertFalse(event_filters._check_cat_skills(cat, [f"-HUNTER,{i}"]))
+            with self.subTest("unmatched exclusionary"):
+                self.assertTrue(event_filters._check_cat_skills(cat, [f"-SWIMMER,3"]))
