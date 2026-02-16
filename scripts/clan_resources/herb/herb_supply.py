@@ -1,4 +1,6 @@
+import statistics
 from random import choice, randint, choices
+from typing import Optional
 
 import i18n
 
@@ -154,7 +156,7 @@ class HerbSupply:
         """
         takes given clan_size and multiplies it by the required_herbs_per_cat from constants.CONFIG
         """
-        self.required_herb_count = (
+        self.required_herb_count = int(
             clan_size
             * constants.CONFIG["clan_resources"]["herbs"]["required_herbs_per_cat"]
         )
@@ -381,13 +383,12 @@ class HerbSupply:
 
         # get herbs found
         herb_list = []
-        list_of_herb_strs = []
         for med in med_cats:
             if assistants:
                 list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
                     med,
                     general_amount_bonus=True,
-                    specific_quantity_bonus=len(assistants),
+                    specific_quantity_bonus=2,
                 )
             else:
                 list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
@@ -430,8 +431,8 @@ class HerbSupply:
         :param specific_quantity_bonus: a specific float to multiply the gathered herb amount by
         """
         # meds with relevant skills will get a boost to the herbs they find
-        # SENSE finds larger amount of herbs
-        # CLEVER finds greater quantity of herbs
+        # SENSE finds wider types of herbs (3 moss, 1 lungwort, 2 catmint)
+        # CLEVER finds greater quantity of herbs (5 moss, 6 lungwort)
         primary = med_cat.skills.primary.path
         secondary = None
         if med_cat.skills.secondary:
@@ -491,36 +492,33 @@ class HerbSupply:
                 break
 
             # rarity is set to 0 if the herb can't be found in the current season
-            if not self.herb[herb].get_rarity(
+            rarity = self.herb[herb].get_rarity(
                 game.clan.biome
                 if not game.clan.override_biome
                 else game.clan.override_biome,
                 game.clan.current_season,
-            ):
+            )
+            if not rarity:
                 continue
 
-            # chance to find a herb is based on it's rarity
-            if (
-                randint(
+            # chance to find an herb is based on its rarity
+            if randint(1, rarity) == 1:
+                if rarity in (5, 6):
+                    quantity_modifier = quantity_modifier / 2
+                elif rarity in (1, 2):
+                    quantity_modifier += 1
+                found_herbs[herb] = max(
                     1,
-                    self.herb[herb].get_rarity(
-                        game.clan.biome
-                        if not game.clan.override_biome
-                        else game.clan.override_biome,
-                        game.clan.current_season,
+                    int(
+                        choices(population=[2, 3, 4], weights=weight, k=1)[0]
+                        * quantity_modifier
                     ),
-                )
-                == 1
-            ):
-                found_herbs[herb] = int(
-                    choices(population=[3, 4, 5], weights=weight, k=1)[0]
-                    * quantity_modifier
                 )
                 amount_of_herbs -= 1
 
         return self.handle_found_herbs_outcomes(found_herbs)
 
-    def handle_found_herbs_outcomes(self, found_herbs: dict = {}):
+    def handle_found_herbs_outcomes(self, found_herbs: dict = None):
         """
         Handles adding herbs to the collection and preparing outcome for patrols
         """
@@ -633,7 +631,12 @@ class HerbSupply:
                 return
 
             self.in_need_of.extend(
-                [x for x in required_herbs if x not in self.in_need_of]
+                [
+                    x
+                    for x in required_herbs
+                    if x not in self.in_need_of
+                    and self.get_herb_rating(x) in (Supply.EMPTY, Supply.LOW)
+                ]
             )
 
             # find the possible effects of herb for the condition
@@ -834,7 +837,7 @@ class HerbSupply:
                 con_info[effect] = 2
 
 
-MESSAGES = None
+MESSAGES: Optional[dict] = None
 message_lang = None
 
 

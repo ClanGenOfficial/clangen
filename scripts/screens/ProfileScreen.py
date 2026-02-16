@@ -8,6 +8,7 @@ import i18n
 import pygame
 import pygame_gui
 import ujson
+from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
@@ -16,6 +17,7 @@ from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
     UISurfaceImageButton,
+    UIModifiedImage,
 )
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import (
@@ -28,7 +30,7 @@ from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from scripts.cat.pelts import Pelt
 from .Screens import Screens
 from .enums import GameScreen
-from ..cat.enums import CatAge, CatRank, CatGroup
+from ..cat.enums import CatAge, CatRank, CatGroup, CatThought
 from ..cat.sprites.load_sprites import sprites
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.save_load import safe_save
@@ -43,6 +45,7 @@ from ..housekeeping.datadir import get_save_dir
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.icon import Icon
+from ..ui.windows.leave_clan import LeaveClanWindow
 
 
 # ---------------------------------------------------------------------------- #
@@ -189,13 +192,14 @@ class ProfileScreen(Screens):
                 and event.ui_element == self.profile_elements["leader_ceremony"]
             ):
                 self.change_screen(GameScreen.CEREMONY)
-            elif event.ui_element == self.profile_elements["med_den"]:
+            elif event.ui_element == self.profile_elements.get("med_den"):
                 self.change_screen(GameScreen.MED_DEN)
-            elif (
-                "mediation" in self.profile_elements
-                and event.ui_element == self.profile_elements["mediation"]
-            ):
+            elif event.ui_element == self.profile_elements.get("mediation"):
                 self.change_screen(GameScreen.MEDIATION)
+            elif event.ui_element == self.profile_elements.get("warriors_den"):
+                self.change_screen(GameScreen.WARRIOR_DEN)
+            elif event.ui_element == self.profile_elements.get("leader_den"):
+                self.change_screen(GameScreen.LEADER_DEN)
             elif event.ui_element == self.profile_elements["favourite_button"]:
                 self.the_cat.favourite = not self.the_cat.favourite
                 self.profile_elements["favourite_button"].change_object_id(
@@ -315,20 +319,13 @@ class ProfileScreen(Screens):
                             self.the_cat.status.add_to_group(
                                 new_group_ID=CatGroup.STARCLAN_ID
                             )
-                            self.the_cat.thought = i18n.t(
-                                "screens.profile.guide_thought_sc",
-                                clan=game.clan.displayname,
-                            )
                         # SC -> DF
                         else:
                             self.the_cat.status.add_to_group(
                                 new_group_ID=CatGroup.DARK_FOREST_ID
                             )
 
-                            self.the_cat.thought = i18n.t(
-                                "screens.profile.guide_thought_df",
-                                clan=game.clan.displayname,
-                            )
+                        self.the_cat.get_new_thought(CatThought.IS_GUIDE)
                         self.the_cat.pelt.rebuild_sprite = True
                     else:
                         # DF -> UR
@@ -336,26 +333,24 @@ class ProfileScreen(Screens):
                             self.the_cat.status.add_to_group(
                                 new_group_ID=CatGroup.UNKNOWN_RESIDENCE_ID
                             )
-                            self.the_cat.thought = "Is surprised to find themself walking among a foreign land"
                         # UR -> SC
                         elif self.the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                             self.the_cat.status.add_to_group(
                                 new_group_ID=CatGroup.STARCLAN_ID
-                            )
-                            self.the_cat.thought = (
-                                "Is relieved to once again hunt in StarClan"
                             )
                         # SC -> DF
                         else:
                             self.the_cat.status.add_to_group(
                                 new_group_ID=CatGroup.DARK_FOREST_ID
                             )
-                            self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
+                        self.the_cat.get_new_thought(CatThought.ON_AFTERLIFE_CHANGE)
                         self.the_cat.pelt.rebuild_sprite = True
 
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.leave_clan_button:
+                LeaveClanWindow(self.the_cat)
             elif event.ui_element == self.destroy_accessory_button:
                 self.the_cat.pelt.accessory = []
                 self.clear_profile()
@@ -567,14 +562,7 @@ class ProfileScreen(Screens):
 
         # Instructor thoughts
         if self.the_cat.dead and game.clan.instructor is self.the_cat:
-            if self.the_cat.status.group == CatGroup.STARCLAN:  # StarClan
-                self.the_cat.thought = i18n.t(
-                    "screens.profile.guide_thought_sc", clan=game.clan.displayname
-                )
-            elif self.the_cat.status.group == CatGroup.DARK_FOREST:  # Dark Forest
-                self.the_cat.thought = i18n.t(
-                    "screens.profile.guide_thought_df", clan=game.clan.displayname
-                )
+            self.the_cat.get_new_thought(CatThought.IS_GUIDE)
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
@@ -644,24 +632,50 @@ class ProfileScreen(Screens):
         )
         self.profile_elements["cat_image"].disable()
 
-        # if cat is a med or med app, show button for their den
-        self.profile_elements["med_den"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((100, 380), (151, 28))),
-            "screens.core.medicine_cat_den",
-            get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
-            object_id="@buttonstyles_rounded_rect",
-            manager=MANAGER,
-            starting_height=2,
-        )
-        if not self.the_cat.status.alive_in_player_clan and (
+        if self.the_cat.status.alive_in_player_clan and (
             self.the_cat.status.rank.is_any_medicine_rank()
-            or self.the_cat.is_ill()
-            or self.the_cat.is_injured()
         ):
-            self.profile_elements["med_den"].show()
-        else:
-            self.profile_elements["med_den"].hide()
-
+            self.profile_elements["med_den"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((100, 380), (151, 28))),
+                "screens.core.medicine_cat_den",
+                get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
+                object_id="@buttonstyles_rounded_rect",
+                manager=MANAGER,
+                starting_height=2,
+            )
+        elif (
+            self.the_cat.status.alive_in_player_clan
+            and self.the_cat.status.rank.is_any_mediator_rank()
+        ):
+            self.profile_elements["mediation"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((133, 380), (81, 28))),
+                "screens.core.clearing",
+                get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
+                object_id="@buttonstyles_rounded_rect",
+                manager=MANAGER,
+                starting_height=2,
+            )
+        elif self.the_cat.status.alive_in_player_clan and self.the_cat.status.rank in (
+            CatRank.DEPUTY,
+            CatRank.WARRIOR,
+        ):
+            self.profile_elements["warriors_den"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((113, 380), (121, 28))),
+                "screens.core.warriors_den",
+                get_button_dict(ButtonStyles.ROUNDED_RECT, (121, 28)),
+                object_id="@buttonstyles_rounded_rect",
+                manager=MANAGER,
+                starting_height=2,
+            )
+        elif self.the_cat.status.alive_in_player_clan and self.the_cat.status.is_leader:
+            self.profile_elements["leader_den"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((118, 380), (112, 28))),
+                "screens.core.leader_den",
+                get_button_dict(ButtonStyles.ROUNDED_RECT, (112, 28)),
+                object_id="@buttonstyles_rounded_rect",
+                manager=MANAGER,
+                starting_height=2,
+            )
         favorite_button_rect = ui_scale(pygame.Rect((0, 0), (28, 28)))
         favorite_button_rect.topright = ui_scale_offset((-5, 146))
         self.profile_elements["favourite_button"] = UIImageButton(
@@ -703,15 +717,6 @@ class ProfileScreen(Screens):
                 tool_tip_text="screens.profile.leader_ceremony",
                 manager=MANAGER,
             )
-        elif self.the_cat.status.rank.is_any_mediator_rank():
-            self.profile_elements["mediation"] = UIImageButton(
-                ui_scale(pygame.Rect((383, 110), (34, 34))),
-                "",
-                object_id="#mediation_button",
-                manager=MANAGER,
-            )
-            if not self.the_cat.status.alive_in_player_clan:
-                self.profile_elements["mediation"].disable()
 
     def generate_column1(self, the_cat):
         """Generate the left column information"""
@@ -859,7 +864,7 @@ class ProfileScreen(Screens):
         if the_cat.dead:
             old_clan = the_cat.status.get_last_living_group()
             if old_clan == CatGroup.PLAYER_CLAN_ID:
-                name = game.clan.name
+                name = game.clan.displayname
             # if they had an old clan that wasn't the player's, find it!
             elif old_clan:
                 name = [
@@ -881,7 +886,7 @@ class ProfileScreen(Screens):
         # otherwise, assume the cat takes the player clan's name
         # it's okay if this is an outsider, if they don't actually have a group to refer to then they won't use this variable
         else:
-            name = game.clan.name
+            name = game.clan.displayname
 
         if the_cat.status.is_exiled():
             if not name:
@@ -891,7 +896,7 @@ class ProfileScreen(Screens):
                     if c.group_ID == the_cat.status.get_last_living_group()
                 ]
             if not name:
-                name = game.clan.name
+                name = game.clan.displayname
 
         cat_clan = i18n.t(f"general.clan", name=f"{name}")
 
@@ -1044,7 +1049,7 @@ class ProfileScreen(Screens):
                     game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
                 output += i18n.t(
-                    "screens.clearing.nutrition_text",
+                    "screens.profile.nutrition_text",
                     nutrition_text=nutr.nutrition_text,
                 )
                 if get_clan_setting("showxp"):
@@ -1281,7 +1286,7 @@ class ProfileScreen(Screens):
                 body_history.append(death_history)
             # separate scar and death
             if body_history:
-                life_history.append("\n".join(body_history))
+                life_history.append("<br>".join(body_history))
 
             murder = self.get_murder_text()
             if murder:
@@ -1292,7 +1297,7 @@ class ProfileScreen(Screens):
                 life_history.append(afterlife_acceptance)
 
             # join together history list with line breaks
-            output = "\n\n".join(life_history)
+            output = "<br><br>".join(life_history)
         return output
 
     def get_afterlife_acceptance_text(self):
@@ -2120,13 +2125,14 @@ class ProfileScreen(Screens):
                 starting_height=2,
                 manager=MANAGER,
             )
-            self.exile_layer = pygame_gui.elements.UIImage(
+            self.exile_layer = UIModifiedImage(
                 ui_scale(pygame.Rect((578, 450), (172, 36))),
                 pygame.transform.scale(
                     self.df,
                     ui_scale_dimensions((172, 36)),
                 ),
             )
+            self.exile_layer.disable()
             self.kill_cat_button = UIImageButton(
                 ui_scale(pygame.Rect((578, 486), (172, 36))),
                 "screens.profile.kill_cat",
@@ -2135,14 +2141,25 @@ class ProfileScreen(Screens):
                 starting_height=2,
                 manager=MANAGER,
             )
+            self.leave_clan_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((578, 0), (172, 36))),
+                "screens.profile.leave_clan",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
+                tool_tip_text="screens.profile.leave_clan_tooltip",
+                starting_height=2,
+                manager=MANAGER,
+                anchors={"top_target": self.kill_cat_button},
+            )
             self.destroy_accessory_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((578, 0), (172, 36))),
                 "screens.profile.destroy_accessory",
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
+                tool_tip_text="screens.profile.destroy_accessory_tooltip",
                 starting_height=2,
                 manager=MANAGER,
-                anchors={"top_target": self.kill_cat_button},
+                anchors={"top_target": self.leave_clan_button},
             )
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
@@ -2162,11 +2179,12 @@ class ProfileScreen(Screens):
                 self.see_relationships_button.enable()
                 self.change_adoptive_parent_button.enable()
 
-            if (
-                self.the_cat.age
-                not in ["young adult", "adult", "senior adult", "senior"]
-                or not self.the_cat.status.alive_in_player_clan
-            ):
+            if self.the_cat.age not in [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior",
+            ]:
                 self.choose_mate_button.disable()
             else:
                 self.choose_mate_button.enable()
@@ -2220,7 +2238,7 @@ class ProfileScreen(Screens):
 
         # Dangerous Tab
         elif self.open_tab == "dangerous":
-            # Button to exile cat
+            # EXILE BUTTON RESET
             if self.exile_cat_button:
                 self.exile_cat_button.kill()
                 self.exile_layer.kill()
@@ -2243,7 +2261,10 @@ class ProfileScreen(Screens):
                 manager=MANAGER,
             )
             text = "screens.profile.exile"
+
+            # SET ACCORDING TO DEATH STATE
             if self.the_cat.dead:
+                # EXILE LAYER
                 if self.the_cat == game.clan.instructor:
                     text = "screens.profile.exile_df"
                     layer = self.df
@@ -2260,7 +2281,7 @@ class ProfileScreen(Screens):
                         text = "screens.profile.guide_sc"
                         layer = self.sc
 
-                self.exile_layer = pygame_gui.elements.UIImage(
+                self.exile_layer = UIModifiedImage(
                     ui_scale(pygame.Rect((578, 450), (172, 46))),
                     pygame.transform.scale(
                         layer,
@@ -2268,23 +2289,49 @@ class ProfileScreen(Screens):
                     ),
                     starting_height=2,
                 )
-            self.exile_cat_button.set_text(text)
-            if not self.the_cat.status.alive_in_player_clan:
-                self.exile_cat_button.disable()
-
-            if self.the_cat.dead:
+                self.exile_layer.disable()
                 self.exile_cat_button.enable()
                 self.exile_cat_button.join_focus_sets(self.exile_layer)
 
-            if not self.the_cat.dead:
-                self.kill_cat_button.enable()
-            else:
+                # OTHER BUTTON STATES
+                self.leave_clan_button.hide()
                 self.kill_cat_button.disable()
 
+                # if the cat is dead, then we remove the leave_clan button and change the destroy_acc button's anchor
+                if self.leave_clan_button:
+                    self.leave_clan_button.kill()
+                if self.destroy_accessory_button:
+                    self.destroy_accessory_button.kill()
+
+                self.destroy_accessory_button = UISurfaceImageButton(
+                    ui_scale(pygame.Rect((578, 0), (172, 36))),
+                    "screens.profile.destroy_accessory",
+                    get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
+                    object_id="@buttonstyles_ladder_bottom",
+                    tool_tip_text="screens.profile.destroy_accessory_tooltip",
+                    starting_height=2,
+                    manager=MANAGER,
+                    anchors={"top_target": self.kill_cat_button},
+                )
+
+            else:
+                # killing allowed if alive
+                self.kill_cat_button.enable()
+
+                # no exile allowed if not in a clan
+                if not self.the_cat.status.is_clancat:
+                    self.exile_cat_button.disable()
+                    self.leave_clan_button.disable()
+
+            # SET EXILE BUTTON TEXT
+            self.exile_cat_button.set_text(text)
+
+            # SET ACC STATE
             if self.the_cat.pelt.accessory:
                 self.destroy_accessory_button.enable()
             else:
                 self.destroy_accessory_button.disable()
+
         # History Tab:
         elif self.open_tab == "history":
             # show/hide fav tab star
@@ -2409,6 +2456,7 @@ class ProfileScreen(Screens):
         elif self.open_tab == "dangerous":
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
+            self.leave_clan_button.kill()
             if hasattr(self, "exile_layer"):
                 self.exile_layer.kill()
             self.destroy_accessory_button.kill()

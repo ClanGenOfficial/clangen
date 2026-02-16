@@ -1,25 +1,53 @@
 # Thoughts
-_by summoner (clownthoughts)_
 
-This is a very simple guide to adding or editing thoughts within the developmental version of ClanGen.
+"Thoughts" are the line of text below a cat's name on their profile. They're meant to signify a current action or line of thinking that the cat is "currently" taking, essentially a snapshot into a cat's day-to-day life.
 
-## Accessing Thoughts
-![image](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/da21f222-952d-45e8-af74-a2349c16001c)
+As such, these can be very personal, silly, or specific! It's a chance to add a lot of additional character to each cat.
 
-Thoughts are accessed by going to the resources, dict, and the thought folder. The thought folder contains two separate folders based on whether the cat thinks the thought is alive or dead.
+However, we also don't give thoughts a ton of room on the profile. 
 
-The alive folder contains all thoughts regarding being alive (whether the thinker is inside or outside the clan, like lost cats, kittypets, or rogues). Additionally, the dead folder contains all thoughts regarding being dead in the Dark Forest, StarClan, and the Unknown Residence.
+* Thoughts should be short and sweet, **less than 150 characters**.
+* They are sentence fragments, with the cat's name on its profile assumed as the beginning of the sentence.
+* They must begin with a capital letter and should have no punctuation at the end.
 
-![Screenshot 2024-04-20 060949](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/1d57924a-b64f-4b05-821a-06694798c1e2)
-![Screenshot 2024-04-20 061018](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/7fbe2365-4c8c-4a6c-8aa9-7c94ed86eba9)
+A valid thought:
+`Is giving badger-rides to a kit`
+
+An invalid thought:
+`ExampleCat is giving badger-rides to a kit!`
+
+!!! tip
+    Within this doc you'll see references to a "main_cat" (`m_c`) and a "random_cat" (`r_c`). The thought will be appearing on the `m_c`'s profile, while the `r_c` will be a randomly chosen cat whom you can optionally include in the thought.
+
+## Directory Structure
+The thoughts directory is found in `resources/lang/en/thoughts`. Within this folder, you'll see multiple folders, each one containing a different category of thought.
+
+Within the game, all cats take a new thought each timeskip. However, there are also special events within the game that may "replace" the cat's thought, such as death or exile. Typical timeskip thoughts are found in `while_alive` and `while_dead` (`is_guide` is also timeskip thoughts, but for a specific cat.) The rest of the folders are for those special event thoughts. Each folder contains `json` files of their associated thoughts.
+
+| Directory              | Usage                                                                                                                                                                            | `json` Structure                                                                                                                                                                                                                                                                           |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `is_guide`             | Thoughts that appear for the "guide cat"                                                                                                                                         | Guides can either be in the Dark Forest or StarClan, the guide's current location dictates which of these files their thought is pulled from                                                                                                                                               |
+| `on_afterlife_change`  | Thoughts that appear when a dead cat is moved to a different afterlife                                                                                                           | The cat will pull a thought from the file matching their new afterlife                                                                                                                                                                                                                     |
+| `on_birth`             | Thoughts that appear after a cat is born                                                                                                                                         | Currently only houses `parent.json`. New parents will pull a thought from this file. If you'd like to add thoughts for the newborn, head to `while_alive/newborn.json`.                                                                                                                    |
+| `on_death`             | Thoughts that appear after a cat dies                                                                                                                                            | The cat will pull a thought from the folder matching the afterlife they join. If they're a leader and are only losing a life, they take a thought from `leader_life.json`. If they're *fully* dying, they take a thought from `leader_death.json`. All other cats pull from `general.json` |
+| `on_exile`             | Thoughts that appear after a cat is exiled                                                                                                                                       | All cats pull from `general.json`                                                                                                                                                                                                                                                          |
+| `on_grief_no_body`     | Thoughts that appear for grieving cats after a cat dies and has no retrievable body                                                                                              | All cats pull from `general.json`                                                                                                                                                                                                                                                          |
+| `on_grief_toward_body` | Thoughts that appear for grieving cats after a cat dies and *has* a retreivable body                                                                                             | All cats pull from `general.json`                                                                                                                                                                                                                                                          |
+| `on_join`              | Thoughts that appear for a cat who has just joined the Clan                                                                                                                      | All cats pull from `general.json`                                                                                                                                                                                                                                                          |
+| `on_lost`              | Thoughts that appear for a cat who has just been lost from the Clan                                                                                                              | All cats pull from `general.json`                                                                                                                                                                                                                                                          |
+| `on_meeting`           | Thoughts that appear for a cat who has just met, but not joined, the Clan                                                                                                        | If the cat is part of another Clan, they pull from `clancat.json`, otherwise they pull from `outsider.json`                                                                                                                                                                                |
+| `on_rank_change`       | Thoughts that appear for a cat whose rank has just changed. Note that rank changes can happen OUTSIDE of ceremonies, so these thoughts should not reference a ceremony outright. | Cats will pull from the file matching their *current* status. Remember you can use `status_history` constraints to constrain the pool to cats who used to be certain ranks.  All cats will pull from `general.json`                                                                        |
+| `while_alive`          | Thoughts that living cats will choose from upon timeskip                                                                                                                         | Cats will pull from the file matching their current status, if a cat is currently lost, they'll pull from the file in `while_lost` which matches with the status they had upon becoming lost. All cats (except newborns) will pull from `general.json`                                     |
+| `while_dead`           | Thoughts that dead cats will choose from upon timeskip                                                                                                                           | Cats will pull from the folder matching their current afterlife, and the file matching the status they had upon death. All cats (except newborns) will pull from `general.json`                                                                                                            |
+
+!!! tip
+    Within `while_alive` and `while_dead`, thoughts should be placed in `general.json` if they apply to multiple statuses.
 
 ## Thought Format
 
-It's essential to know how thoughts are formatted when adding or altering them so that you don't cause errors. The thought format is:
-
 ```json
 {
-    "id": " ",
+    "id": "",
     "biome": [],
     "season": [],
     "camp": [],
@@ -32,8 +60,8 @@ It's essential to know how thoughts are formatted when adding or altering them s
         "m_c": [],
         "r_c": [],
         "born_with": {
-            "m_c": bool,
-            "r_c": bool
+            "m_c": false,
+            "r_c": false
         }
     },
     "relationship_constraint": [],
@@ -43,6 +71,8 @@ It's essential to know how thoughts are formatted when adding or altering them s
     },
     "main_status_constraint": [],
     "random_status_constraint": [],
+    "main_status_history": [],
+    "random_status_history": [],
     "main_age_constraint": [],
     "random_age_constraint": [],
     "main_trait_constraint": [],
@@ -56,42 +86,50 @@ It's essential to know how thoughts are formatted when adding or altering them s
 !!! note "Important"
     If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable.
 
-### Tags
-Each constraint within a thought has specific tags that limit the thought to occurring only when that constraint is fulfilled (IE, if the tag used is "leaf-bare," then the thought will only have a chance of occurring once the player Clan is in leaf-bare).
 ***
 
-**ID:**
-Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.
+### id: str
+A unique string used to identify the thought block. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.
 
-* paralyzed_gen_to_alive_gen
-* insecure_apprentice
-* general_formerclancat_dead_thoughts
+* `paralyzed_gen_to_alive_gen`
+* `insecure_apprentice`
+* `general_formerclancat_dead_thoughts`
 
+***
 
-**BIOME:**
+### biome: list[str]
 Constrains the thought to only occur if a player chooses a specific biome.
 > "plains", "beach", "mountainous", "forest",
 
+***
 
-**SEASON:**
+### season: list[str]
 Constrains the thought to only occur once the Clan is in a specific season.
 > "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare",
 
+***
 
-**CAMP:**
+### camp: list[str]
 Constrains the thought to only occur if a specific camp type is chosen (IE “camp4”, which is the lake camp in the forest). Furthermore, you can check the image file names of the camps to find the which number they are.
 > "camp1", "camp2", "camp3","camp4",
 
+***
 
-**THOUGHTS:**
-This is where the text that will be displayed in-game is placed, current abbreviations that work are r_c (for random_cat) and c_n (for player clan name).
+### thoughts: list[str]
+This is a list of thoughts applicable to the constraints on this thought block. You may include as many or as few thoughts here as you wish, but remember that the constraints will apply to *all* of them. 
 
-* "Mewls pitifully for milk" (gen_dead_newborn)
-* "Wonders if {PRONOUN/m_c/subject} would have gotten the chance to do r_c's first check-up" (general_med_cat_app_to_dead_starclan_newborn1)
-* "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend" (kit_dead_kit)
+Examples:
 
+* "Mewls pitifully for milk" (`gen_dead_newborn`)
+* "Wonders if {PRONOUN/m_c/subject} would have gotten the chance to do r_c's first check-up" (`general_med_cat_app_to_dead_starclan_newborn1`)
+* "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend" (`kit_dead_kit`)
 
-**HAS_INJURIES:**            
+!!! caution
+    Be careful about referencing actions only specific types of cats take! For example, if a thought refers to patrolling, consider if you've adequately constrained the thought to only allow cats who *can* go on a patrol. We don't want kittens talking about their trip to the Gathering!
+
+ ***
+
+### has_injuries: dict[str: list]
 Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury).
 
 > [Illness Tag List](reference/tag-lists.md#__tabbed_1_3)
@@ -100,8 +138,9 @@ Constraints the thought to only occur if m_c (the cat that is thinking the thoug
 
 You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any illness or injury.
 
+***
 
-**PERM_CONDITIONS:**
+### perm_conditions: dict[str: var]
 Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
 
 > [Permanent Conditions Tag List](reference/tag-lists.md#__tabbed_1_4)
@@ -113,52 +152,63 @@ The additional constraint `born_with` allows you to constrain whether this thoug
 !!! note Important
     Be careful when specifying `born_with`. If you force a condition to be congenital when it can never generate as such, the thought will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
 
-**RELATIONSHIP_CONSTRAINT:**
+***
+
+### relationship_constraint: list
 Constrains the thought to only occur if m_c and r_c fulfill the tags requirements. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
+***
 
-BACKSTORY_CONSTRAINT:
-Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to resources, dicts, then the backstories.json (thank you Tiri and Ryos!)
+### backstory_constraint: dict[str: list]
+Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 > [Backstory Tag List](reference/tag-lists.md#backstories)
 
-STATUS_CONSTRAINT:
-Constrains the thought to only happen if m_c or r_c are in a certain role. 
+***
+
+### main_status_constraint: list[str] & random_status_constraint: list[str]
+Constrains the thought to only happen if m_c or r_c are in a certain role. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 > [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
 > 
 > You can also use the tag "any" to allow the thought to occur for all roles except "newborns", who shouldn't get any general thoughts, just the ones placed in their specific JSON.
 
-AGE_CONSTRAINT:
-Constrains the thought to only occur if m_c or r_c are within a certain age group.
+***
+
+### main_status_history: list[str] & random_status_history: list[str]::
+Constrains the thought to only happen if m_c or r_c used to have a certain role, but are no longer that role. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
+
+> [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
+
+***
+
+### main_age_constraint: list[str] & random_age_constraint: list[str]:
+Constrains the thought to only occur if m_c or r_c are within a certain age group. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Age Tag List](reference/tag-lists.md#__tabbed_2_1)
 
-TRAIT_CONSTRAINT:
-Constrains the thought to only occur if m_c or r_c has a specific trait.
+***
+
+### main_trait_constraint: list[str] & random_trait_constraint: list[str]:
+Constrains the thought to only occur if m_c or r_c has a specific trait. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Trait Tag List](reference/tag-lists.md#__tabbed_3_2)
 
-**SKILL_CONSTRAINT:**
-Constrains the thought to occur only if m_c or r_c has a specific skill.
+***
+
+### main_skill_constraint: list[str] & random_skill_constraint: list[str]:
+Constrains the thought to occur only if m_c or r_c has a specific skill. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
 
 > [Skill Tag List](reference/tag-lists.md#__tabbed_3_1)
 
-**RANDOM_LIVING/OUTSIDE_STATUS:**
+***
+
+### random_living_status: list[str] & random_outside_status: list[str]:
 Constrains the thought if r_c has a specific place of death (first set of tags) or outside role (second set of tags).
 
 > [Other Status Tag List](reference/tag-lists.md#__tabbed_2_3)
 
-## Examples and Notes
-Some general notes for thoughts:
-
-* Make sure everything is pronoun tagged before they go into a PR (if PR-ing to the official branch)
-* Try to keep the thoughts short, roughly around a 20-25 max word count
-* Do not include the name of the "thinker" (or the cat who is experiencing the thought)
-* Do not include the "main_status_constraint" unless the thought can apply to multiple roles. If this does occur, the thought will need to be placed in the applicable general.json
-* If the thought is unique to one status, put it into its respective .json without the "main_status_constraint" (we only use it, as stated above, if it can apply to multiple roles)
-* Try and avoid adding punctuation to the end of a thought (however, this is one of those rules that is "know it before you break it")
-
+## Examples
 Some examples of thoughts include:
 
     {
@@ -176,7 +226,7 @@ Some examples of thoughts include:
         ]
     }
 
-_Found in the dead folder > Unknown Residence folder > exiled.json_
+_Found in `while_dead/unknown_residence/exiled.json`_
 
     {
         "id": "fierce_deputy",
@@ -190,19 +240,6 @@ _Found in the dead folder > Unknown Residence folder > exiled.json_
         ]
     }
 
-_Found in the alive folder > deputy.json_
+_Found in `while_alive/deputy.json`_
 
-## Common Errors
-### In-Game Text
 
-If, while editing or adding new thoughts to any of the jsons, you boot up the game and notice all of the cats share the same bug message ("Prrp! You shouldn't see this! Report as a bug."), then you've either left an extra comma somewhere within the additions or alterations (also referred to as a trailing comma), removed a comma that was needed, or used a non-ASCII character.
-
-![Screenshot 2024-04-17 082047](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/053f58e4-7b2b-4fb7-b2dd-94a2a19cda28)
-
-### Thought not occurring at all
-If, while editing or adding thoughts, you notice the thought hasn't appeared once while testing it in game, it could either be really terrible luck or you mis-spelled a constraint tag. If a thought is more 'complex' (IE has more constraints it must meet to appear), then there is less of a chance it will appear. However, if you have a 'simple' thought and it hasn't appeared once, then it could indicate there is a tag misspelling.
-
-![image](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/fe6cafee-5204-4c6a-8091-0167a78239b0)
-In a quick 10 moon study with a "simple" thought (this one had one constraints), the thought appeared for most moons. However, when I did the same clan within the same amount of cats and with the same thought just having a single misspelled tag, it didn't occur once.
-
-If you think there is an error with the thought not occuring, you best bet is to thoroughly check all the tags over, as even just a simple misspelling (IE any to ny) can cause the thought to glitch out.

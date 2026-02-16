@@ -47,7 +47,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                {
+                    "cats_from": [ "some_clan" ],
+                    "cats_to": ["r_c"],
+                    "values": [ "respect" ],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                    }
+                }
+            ]
             }
         ],
         "fail_outcomes": [
@@ -93,7 +106,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                {
+                    "cats_from": [ "some_clan" ],
+                    "cats_to": ["app1"],
+                    "values": [ "respect" ],
+                    "mutual": false,
+                    "amount": 8,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                    }
+                }
+            ]
             },
             {
                 "text": "app1 hears a quiet snuffling nearby and slides into a hunting crouch. Slinking forward, {PRONOUN/app1/subject} {VERB/app1/find/finds} the source is a squirrel, foraging for newleaf food! {PRONOUN/app1/subject/CAP} {VERB/app1/stalk/stalks} carefully and {VERB/app1/catch/catches} it while it's distracted, heading home with {PRONOUN/app1/poss} head held high.",
@@ -101,7 +127,20 @@
                 "prey": [
                     "medium"
                 ],
-                "frequency": 1
+                "frequency": 1,
+                "relationships": [
+                {
+                    "cats_from": [ "some_clan" ],
+                    "cats_to": ["app1"],
+                    "values": [ "respect" ],
+                    "mutual": false,
+                    "amount": 8,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                    }
+                }
+            ]
             }
         ],
         "fail_outcomes": [
@@ -153,18 +192,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat's hunting improve under {PRONOUN/from_cat/poss} tutelage."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat got great hunting advice from to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -177,18 +222,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat witnessed first-paw how to_cat's hunting training has paid off."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat felt great when to_cat praised {PRONOUN/from_cat/poss} hunting."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -200,18 +251,14 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat avoided to_cat for a bit after messing up in a hunt in front of {PRONOUN/to_cat/object}."
+                        }
                     }
                 ],
                 "prey": [
@@ -251,18 +298,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how to_cat caught a squirrel fighting with a rattlesnake."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -276,18 +324,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how to_cat caught a squirrel fighting with a rattlesnake."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -304,18 +353,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was highly impressed by how to_cat used a squirrel and rattlesnake's fight to sneakily kill both pieces of prey."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -335,11 +385,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat stood around watching a squirrel and a rattlesnake fight instead of catching any prey."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -374,12 +425,11 @@
                             "patrol"
                         ],
                         "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to stop a rattlesnake from biting m_c."
+                        }
                     }
                 ],
                 "frequency": 3

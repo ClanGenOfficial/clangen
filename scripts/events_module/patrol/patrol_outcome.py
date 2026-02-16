@@ -85,19 +85,30 @@ class PatrolOutcome:
         self.exp = exp
 
         self.min_max_status = min_max_status if min_max_status else {}
-        self.weight += len(self.min_max_status) * 2
+        self.weight += len(self.min_max_status) * 4
 
         self.relationship_constraints = (
             relationship_constraints if relationship_constraints else []
         )
         if relationship_constraints:
-            self.weight += len(relationship_constraints) * 2
+            self.weight += len(relationship_constraints) * 8
         self.stat_trait = stat_trait if stat_trait else []
         if self.stat_trait:
-            self.weight += int((self.NUM_OF_TRAITS - len(self.stat_trait)) / 10)
+            # exclusionary values!
+            if "-" in self.stat_trait[0]:
+                self.weight += len(self.stat_trait)
+            else:
+                # inclusionary values get inverse weighting
+                self.weight += int((self.NUM_OF_TRAITS - len(self.stat_trait)))
         self.stat_skill = stat_skill if stat_skill else []
         if self.stat_skill:
-            self.weight += int((self.NUM_OF_SKILLS - len(self.stat_skill)) / 5)
+            # exclusionary values!
+            if "-" in self.stat_skill[0]:
+                self.weight += len(self.stat_skill)
+            else:
+                # inclusionary values get inverse weighting
+                self.weight += int((self.NUM_OF_SKILLS - len(self.stat_skill)))
+
         self.can_have_stat = can_have_stat if can_have_stat else []
 
         self.dead_cats = dead_cats if dead_cats else []
@@ -263,11 +274,7 @@ class PatrolOutcome:
                         other_clan=patrol.other_clan,
                     )
 
-        results.append(
-            unpack_rel_block(
-                Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat
-            )
-        )
+        results.append(self._handle_relationship_changes(patrol))
         results.append(self._handle_rep_changes())
         results.append(self._handle_other_clan_relations(patrol))
         results.append(self._handle_prey(patrol))
@@ -283,6 +290,14 @@ class PatrolOutcome:
         print("PATROL END -----------------------------------------------------")
 
         return processed_text, " ".join(results), self.get_outcome_art()
+
+    def _handle_relationship_changes(self, patrol) -> str:
+        unpack_rel_block(Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat)
+
+        if self.relationship_effects:
+            return i18n.t(f"screens.patrol.relationship_changed")
+        else:
+            return ""
 
     def _handle_future_event(self, patrol):
         """
@@ -519,8 +534,10 @@ class PatrolOutcome:
                         )
                     )
                 elif "some_lives" in self.dead_cats:
-                    lives_lost = random.randint(1, max(1, game.clan.leader_lives - 1))
+                    lives_lost = random.randint(2, max(1, game.clan.leader_lives - 1))
                     game.clan.leader_lives -= lives_lost
+                    for i in range(lives_lost - 1):
+                        _cat.history.add_death("multi_lives")
                     results.append(
                         event_text_adjust(
                             Cat,
@@ -542,7 +559,7 @@ class PatrolOutcome:
             # Kill Cat
             self.__handle_death_history(_cat, patrol)
             _cat.die(body)
-        if catnames is not []:
+        if catnames:
             results.append(
                 i18n.t(
                     "cat.history.regular_death",
@@ -635,7 +652,7 @@ class PatrolOutcome:
                     give_injury = choice(possible_injuries)
 
                 if give_injury in INJURIES:
-                    _cat.get_injured(give_injury, lethal=lethal)
+                    _cat.get_injured(give_injury, lethal=lethal, potential_scars=scars)
                 elif give_injury in ILLNESSES:
                     _cat.get_ill(give_injury, lethal=lethal)
                 elif give_injury in PERMANENT:
@@ -707,15 +724,13 @@ class PatrolOutcome:
             return ""
 
         list_of_herb_strs = []
+        found_herbs = {}
 
         large_bonus = False
         if "many_herbs" in self.herbs:
             large_bonus = True
 
-        if len(patrol.patrol_cats) > 2:
-            patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
-        else:
-            patrol_size_modifier = 1
+        patrol_size_modifier = int(len(patrol.patrol_cats))
 
         if "random_herbs" in self.herbs:
             # get random herbs, add to storage, and get patrol outcome msg
@@ -724,24 +739,33 @@ class PatrolOutcome:
                 general_amount_bonus=large_bonus,
                 specific_quantity_bonus=patrol_size_modifier,
             )
-        else:
-            # get the correct herbs for this patrol
-            found_herbs = {}
-            for herb in [
-                x for x in self.herbs if x not in ["many_herbs", "random_herbs"]
-            ]:
-                amount = choices([2, 3, 4], weights=[2, 1, 1], k=1)[0]
-                amount *= patrol_size_modifier
-                if large_bonus:
-                    amount *= 2
 
-                found_herbs[herb] = amount
+        # now we grab any other herbs that were tagged
+        additional_herbs = {}
+        for herb in [x for x in self.herbs if x not in ["many_herbs", "random_herbs"]]:
+            amount = choices([2, 3, 4], weights=[2, 1, 1], k=1)[0]
+            amount *= patrol_size_modifier
+            if large_bonus:
+                amount *= 2
 
-            # add found_herbs to storage and get patrol outcome msg
-            (
-                list_of_herb_strs,
-                found_herbs,
-            ) = game.clan.herb_supply.handle_found_herbs_outcomes(found_herbs)
+            additional_herbs[herb] = amount
+
+        # add found_herbs to storage and get patrol outcome msg
+        (
+            additional_strs,
+            additional_herbs,
+        ) = game.clan.herb_supply.handle_found_herbs_outcomes(additional_herbs)
+
+        # extend this list in case we already grabbed a bunch of random herbs
+        list_of_herb_strs.extend(
+            [x for x in additional_strs if x not in list_of_herb_strs]
+        )
+        # update the original found_herbs dict, again just in case we've already grabbed a bunch of random herbs
+        for _h in additional_herbs:
+            if _h not in found_herbs:
+                found_herbs[_h] = additional_herbs[_h]
+            else:
+                found_herbs[_h] += additional_herbs[_h]
 
         herb_string = adjust_list_text(list_of_herb_strs).capitalize()
 
@@ -766,9 +790,8 @@ class PatrolOutcome:
         if not self.prey or game.clan.game_mode == "classic":
             return ""
 
-        basic_amount = PREY_REQUIREMENT[CatRank.WARRIOR]
-        if game.clan.game_mode == "expanded":
-            basic_amount += ADDITIONAL_PREY
+        basic_amount = PREY_REQUIREMENT[CatRank.WARRIOR] + ADDITIONAL_PREY
+
         prey_types = {
             "very_small": basic_amount / 2,
             "small": basic_amount,
@@ -863,9 +886,11 @@ class PatrolOutcome:
             outside = []
             new = []
             for cat in patrol.new_cats[-1]:
+                if "unknown" in attribute_list:
+                    continue
                 if cat.dead:
                     dead.append(str(cat.name))
-                elif cat.status.is_outsider:
+                elif cat.status.is_outsider or cat.status.is_other_clancat:
                     outside.append(str(cat.name))
                 else:
                     new.append(str(cat.name))
