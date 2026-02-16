@@ -71,9 +71,7 @@ class TestEventFilters(unittest.TestCase):
         )
 
     def test_season(self):
-        self.assertTrue(
-            event_for_season(["newleaf"]), "Assert single season match."
-        )
+        self.assertTrue(event_for_season(["newleaf"]), "Assert single season match.")
         self.assertFalse(
             event_for_season(["greenleaf"]), "Assert single season mismatch."
         )
@@ -170,5 +168,3 @@ class TestEventFilters(unittest.TestCase):
             event_for_tags(["high_lives", "low_lives", "some_lives"], self.test_cat),
             "Assert 1-life leader does not pass mixed tag list where they qualify for 1 tag, but not others.",
         )
-
-
