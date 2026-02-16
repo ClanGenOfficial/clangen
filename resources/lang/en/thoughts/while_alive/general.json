@@ -251,28 +251,6 @@
         ]
     },
     {
-        "id": "gen_parent_to_newborn",
-        "thoughts": [
-            "Can't believe the new litter is finally here",
-            "Stops r_c from falling out of the nest",
-            "Makes sure r_c has fed enough",
-            "Grooms the new litter",
-            "Hasn't stopped purring since the litter arrived",
-            "Hasn't left the nursery since the litter arrived",
-            "Hissed at a Clanmate who got too close to r_c",
-            "Won't let anyone look at the new litter just yet",
-            "Wants to show every cat the new litter",
-            "Is still indecisive on names",
-            "Considers renaming r_c",
-            "Fondly remembers sleeping through the night",
-            "Hopes the new litter's crying isn't keeping everyone up",
-            "Is proud of r_c for sleeping through the night",
-            "Has never been so exhausted in all {PRONOUN/m_c/poss} life"
-        ],
-        "random_age_constraint": ["newborn"],
-        "relationship_constraint": ["parent/child"]
-    },
-    {
         "id": "gen_to_deputy",
         "thoughts": [
             "Thinks r_c is doing a great job as deputy",
