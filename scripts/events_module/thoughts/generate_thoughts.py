@@ -189,8 +189,8 @@ def _load_general(main_cat: "Cat", path) -> list:
     """
     Returns general thoughts if the cat is not a newborn
     """
-    if main_cat.status.rank != CatRank.NEWBORN and main_cat.status.is_clancat:
-        # newborns and outsiders don't receive general thoughts
+    if main_cat.status.rank != CatRank.NEWBORN:
+        # newborns don't receive general thoughts
         return load_lang_resource(f"{path}/general.json")
 
     return []
