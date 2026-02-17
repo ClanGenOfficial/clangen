@@ -141,6 +141,7 @@ class Cat:
         faded=False,
         skill_dict=None,
         pelt: Pelt = None,
+        init_params: dict = None,
         loading_cat=False,  # Set to true if you are loading a cat at start-up.
         *,
         disable_random=False,
@@ -163,7 +164,7 @@ class Cat:
         :param skill_dict: TODO find a good definition for this
         :param pelt: Body details, default None
         :param loading_cat: If loading a cat rather than generating a new one, default False
-        :param disable_random: If True, disables as much random generation junk as possible
+        :param init_params: If generating a new cat, extra RNG-based information is provided here
         :param kwargs: TODO what are the possible args here? ["biome", ]
         """
 
@@ -182,7 +183,12 @@ class Cat:
         self._moons = None
 
         # Public attributes
-        self.gender = gender
+        if isinstance(gender, dict):
+            self.gender = gender["sex"]
+            self.genderalign = gender["genderalign"]
+        else:
+            self.gender = gender
+            self.genderalign = gender
         self.status: Status = Status(**status_dict) if status_dict else Status()
         self.backstory = backstory
         self.age: Optional[CatAge] = None
@@ -236,68 +242,7 @@ class Cat:
         self.specsuffix_hidden = specsuffix_hidden
         self.inheritance = None
 
-        # setting ID
-        if ID is None:
-            potential_id = str(next(Cat.id_iter))
-
-            if game.clan:
-                faded_cats = save_load.get_faded_ids()
-            else:
-                faded_cats = []
-
-            while potential_id in self.all_cats or potential_id in faded_cats:
-                potential_id = str(next(Cat.id_iter))
-            self.ID = potential_id
-        else:
-            self.ID = ID
-
-        # age and status
-        if status_dict is None and moons is None:
-            self.age = CatAge.NEWBORN if disable_random else choice([*CatAge])
-            self.status.generate_new_status(age=self.age, disable_random=disable_random)
-        elif moons is not None:
-            self.moons = moons
-            if moons > 300:
-                # Out of range, always elder
-                self.age = CatAge.SENIOR
-            elif moons == 0:
-                self.age = CatAge.NEWBORN
-            else:
-                # In range
-                for key_age in self.age_moons.keys():
-                    if moons in range(
-                        self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
-                    ):
-                        self.age = key_age
-            if status_dict is None:
-                self.status.generate_new_status(
-                    age=self.age, disable_random=disable_random
-                )
-        else:
-            if disable_random or self.status.rank == CatRank.NEWBORN:
-                self.age = CatAge.NEWBORN
-            elif self.status.rank == CatRank.KITTEN:
-                self.age = CatAge.KITTEN
-            elif self.status.rank == CatRank.ELDER:
-                self.age = CatAge.SENIOR
-            elif self.status.rank.is_any_apprentice_rank():
-                self.age = CatAge.ADOLESCENT
-            else:
-                self.age = choice(
-                    [
-                        CatAge.YOUNG_ADULT,
-                        CatAge.ADULT,
-                        CatAge.ADULT,
-                        CatAge.SENIOR_ADULT,
-                    ]
-                )
-        if moons is None:
-            if disable_random:
-                self.moons = 0
-            else:
-                self.moons = randint(
-                    self.age_moons[self.age][0], self.age_moons[self.age][1]
-                )
+        self.ID = ID
 
         # backstory
         if self.backstory is None:
@@ -305,19 +250,11 @@ class Cat:
         else:
             self.backstory = self.backstory  # fixme why does this exist
 
-        # sex!?!??!?!?!??!?!?!?!??
-        if self.gender is None:
-            self.gender = "female" if disable_random else choice(["female", "male"])
-
-        """if self.genderalign == "":
-            self.genderalign = self.gender"""
-
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            self.init_generate_cat(skill_dict, disable_random)
+            self.personality = init_params["personality"]
+            self.experience = init_params["experience"]
 
-        # In camp status
-        self.in_camp = 1
         if "biome" in kwargs:
             biome = kwargs["biome"]
         elif game.clan is not None:
@@ -330,7 +267,10 @@ class Cat:
             biome = None
         # NAME
         # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
-        if self.pelt is not None:
+        if init_params:
+            self.name = init_params["name"]
+        elif self.pelt is not None:
+            # todo consider whether this can be removed when factory for loading cats is created
             self.name = Name(
                 prefix,
                 suffix,
@@ -408,82 +348,6 @@ class Cat:
                     self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
                 ):
                     self.age = key_age
-
-    def init_generate_cat(self, skill_dict, disable_random):
-        """
-        Used to roll a new cat
-        :param skill_dict: TODO what is a skill dict exactly
-        :param disable_random: If true, disable randomisation code
-        :return: None
-        """
-        # trans cat chances
-        self.genderalign = self.gender
-        trans_chance = randint(0, 50)
-        nb_chance = randint(0, 75)
-
-        # GENDER IDENTITY
-        if self.age.is_baby() or disable_random:
-            # newborns can't be trans, sorry babies
-            pass
-        elif nb_chance == 1:
-            self.genderalign = "nonbinary"
-        elif trans_chance == 1:
-            if self.gender == "female":
-                self.genderalign = "trans male"
-            else:
-                self.genderalign = "trans female"
-
-        # PRONOUNS AUTO-GENERATE WHEN REQUIRED
-
-        # APPEARANCE
-        self.pelt = Pelt.generate_new_pelt(
-            self.gender,
-            [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i],
-            self.age,
-        )
-
-        # Personality
-        if disable_random:
-            self.personality = Personality(
-                lawful=8, social=8, aggress=8, stable=8, kit_trait=self.age.is_baby()
-            )
-        else:
-            self.personality = Personality(kit_trait=self.age.is_baby())
-
-        # experience and current patrol status
-        if self.age.is_baby() or disable_random:
-            self.experience = 0
-        elif self.age == CatAge.ADOLESCENT:
-            m = self.moons
-            self.experience = 0
-            while m > Cat.age_moons[CatAge.ADOLESCENT][0]:
-                ran = constants.CONFIG["graduation"]["base_app_timeskip_ex"]
-                exp = choice(
-                    list(range(ran[0][0], ran[0][1] + 1))
-                    + list(range(ran[1][0], ran[1][1] + 1))
-                )
-                self.experience += exp + 3
-                m -= 1
-        elif self.age in (CatAge.YOUNG_ADULT, CatAge.ADULT):
-            self.experience = randint(
-                Cat.experience_levels_range["prepared"][0],
-                Cat.experience_levels_range["proficient"][1],
-            )
-        elif self.age == CatAge.SENIOR_ADULT:
-            self.experience = randint(
-                Cat.experience_levels_range["competent"][0],
-                Cat.experience_levels_range["expert"][1],
-            )
-        elif self.age == CatAge.SENIOR:
-            self.experience = randint(
-                Cat.experience_levels_range["competent"][0],
-                Cat.experience_levels_range["master"][1],
-            )
-        else:
-            self.experience = 0
-
-        if not skill_dict:
-            self.skills = CatSkills.generate_new_catskills(self.status.rank, self.age)
 
     def __repr__(self):
         return "CAT OBJECT:" + self.ID
@@ -1525,7 +1389,6 @@ class Cat:
         self.moons += 1
         if self.moons == 1 and self.status.rank == CatRank.NEWBORN:
             self.status._change_rank(CatRank.KITTEN)
-        self.in_camp = 1
 
         if old_age != self.age:
             # Things to do if the age changes
