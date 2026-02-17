@@ -169,9 +169,8 @@ class Cat:
 
         self._history = None
 
-        if (
-            faded
-        ):  # This must be at the top. It's a smaller list of things to init, which is only for faded cats
+        # This must be at the top. It's a smaller list of things to init, which is only for faded cats
+        if faded:
             self.init_faded(ID, status_dict, prefix, suffix, moons, **kwargs)
             return
 
