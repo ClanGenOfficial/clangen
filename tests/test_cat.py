@@ -3,6 +3,9 @@ import unittest
 from unittest.mock import patch
 from copy import deepcopy
 
+from scripts.cat.factories.cat_factory import CatFactory
+from scripts.cat.factories.enums import CatType
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -719,3 +722,10 @@ class TestSocialAssignment(unittest.TestCase):
             with self.subTest("outsider social assignment"):
                 cat = Cat(status_dict={"rank": rank}, disable_random=True)
                 self.assertTrue(cat.status.social == social)
+
+
+class TestCatFactory(unittest.TestCase):
+    def test_new_cat(self):
+        cat = CatFactory.create_cat(CatType.NEW)
+
+        print("success?")

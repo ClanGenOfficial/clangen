@@ -28,15 +28,15 @@ logger = logging.getLogger(__name__)
 
 
 def load_cats():
-    try:
-        json_load()
-    except FileNotFoundError:
-        try:
-            csv_load(Cat.all_cats)
-        except FileNotFoundError as e:
-            switch_set_value(Switch.error_message, "Can't find clan_cats.json!")
-            switch_set_value(Switch.traceback, e)
-            raise
+    # try:
+    json_load()
+    # except FileNotFoundError:
+    #     try:
+    #         csv_load(Cat.all_cats)
+    #     except FileNotFoundError as e:
+    #         switch_set_value(Switch.error_message, "Can't find clan_cats.json!")
+    #         switch_set_value(Switch.traceback, e)
+    #         raise
 
 
 def json_load():

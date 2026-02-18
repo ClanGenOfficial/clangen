@@ -192,7 +192,8 @@ class Cat:
             self.gender = gender
             self.genderalign = gender
 
-        self.moons = moons
+        self.age = CatAge.NEWBORN
+        self.moons = moons if moons else 0
         self.status: Status = Status(**status_dict) if status_dict else Status()
         self.backstory = backstory
         self.age: Optional[CatAge] = None
@@ -3061,19 +3062,7 @@ class Cat:
     @moons.setter
     def moons(self, value: int):
         self._moons = value
-
-        updated_age = False
-        for key_age in self.age_moons.keys():
-            if self._moons in range(
-                self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
-            ):
-                updated_age = True
-                self.age = key_age
-        try:
-            if not updated_age and self.age is not None:
-                self.age = CatAge.SENIOR
-        except AttributeError:
-            print(f"ERROR: cat has no age attribute! Cat ID: {self.ID}")
+        self.age = CatAge.get_from_moons(value)
 
     @property
     def sprite(self):
@@ -3385,8 +3374,8 @@ def create_option_preview_cat(scar: str = None, acc: str = None):
 
 
 # CAT CLASS ITEMS
-cat_class = Cat(example=True)
-game.cat_class = cat_class
+cat_class = Cat
+game.cat_class = Cat
 
 # ---------------------------------------------------------------------------- #
 #                                load json files                               #

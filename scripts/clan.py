@@ -11,20 +11,19 @@ TODO: Docs
 import os
 import statistics
 from random import choice, randint
-from typing import Optional
 
-import pygame
 import ujson
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.factories.cat_factory import CatFactory
+from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names
 from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
     load_faded_cat_ids,
 )
-from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
@@ -220,7 +219,8 @@ class Clan:
             )
         )
 
-        self.instructor = Cat(
+        self.instructor = CatFactory.create_cat(
+            CatType.NEW,
             status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
             backstory=choice(
                 BACKSTORIES["backstory_categories"]["clan_guide_backstories"]
@@ -659,11 +659,12 @@ class Clan:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(
+            game.clan.instructor = CatFactory.create_cat(
+                cat_type=CatType.NEW,
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
                     "group": CatGroup.STARCLAN,
-                }
+                },
             )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
@@ -787,11 +788,12 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(
+            game.clan.instructor = CatFactory.create_cat(
+                CatType.NEW,
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
                     "group": CatGroup.STARCLAN,
-                }
+                },
             )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
@@ -1471,4 +1473,4 @@ def get_temper_alignment(sociability: int, aggression: int) -> str:
 
 
 clan_class = Clan()
-clan_class.remove_cat(cat_class.ID)
+# clan_class.remove_cat(cat_class.ID)

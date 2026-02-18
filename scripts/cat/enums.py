@@ -34,6 +34,9 @@ class CatAge(StrEnum):
             CatAge.SENIOR_ADULT: constants.CONFIG["cat_ages"]["senior adult"],
             CatAge.SENIOR: constants.CONFIG["cat_ages"]["senior"],
         }
+        if moons > lookup[CatAge.SENIOR][1]:
+            return CatAge.SENIOR
+
         return next(
             (
                 key
