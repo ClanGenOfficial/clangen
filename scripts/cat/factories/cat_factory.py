@@ -12,7 +12,7 @@ class CatFactory:
         CatType.NEW: NewCatFactory,
         CatType.LOAD_JSON: LoadCatFactory,
         CatType.LOAD_CSV: LoadCatFactory,
-        CatType.FADED: print,
+        CatType.FADED: LoadCatFactory,
     }
 
     @classmethod

@@ -91,7 +91,10 @@ class NewCatFactory(BaseCatFactory):
             "specsuffix_hidden": False,
         }
 
-        return Cat(**cat_params)
+        cat = Cat(**cat_params)
+        Cat.all_cats[cat.ID] = cat
+
+        return cat
 
     def _random_age(self):
         return self.rng.choice([*CatAge])

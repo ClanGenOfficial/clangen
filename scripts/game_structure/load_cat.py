@@ -70,7 +70,7 @@ def json_load():
     for i, cat_dict in enumerate(cat_data):
         try:
             cat = CatFactory.create_cat(cat_type=CatType.LOAD_JSON, **cat_dict)
-
+            Cat.all_cats[cat.ID] = cat
             all_cats.append(cat)
 
         except KeyError as e:

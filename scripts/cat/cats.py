@@ -29,6 +29,7 @@ from scripts.cat.factories.typed_dicts import (
     CatTogglesDict,
     InheritanceDict,
     AfterlifeAffinityDict,
+    GenderDict,
 )
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -148,12 +149,8 @@ class Cat:
         birth_cooldown: int,
         specsuffix_hidden=False,  # to delete once Name is decoupled from Cat
         *,
-        status_dict: StatusDict = None,
         example=False,
         faded=False,
-        skill_dict=None,
-        loading_cat=False,  # Set to true if you are loading a cat at start-up.
-        disable_random=False,
         **kwargs,
     ):
         """Initialise the cat.
@@ -181,7 +178,7 @@ class Cat:
 
         # This must be at the top. It's a smaller list of things to init, which is only for faded cats
         if faded:
-            # self.init_faded(ID, status_dict, prefix, suffix, moons, **kwargs)
+            self.init_faded(ID, moons, status, inheritance)
             return
 
         self.generate_events = GenerateEvents()
@@ -264,9 +261,6 @@ class Cat:
         self._sprite_working: bool = self.not_working()
         """used to store whether we should be displaying sick sprite or not"""
 
-        # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
-        self.all_cats[self.ID] = self
-
         if self.ID is not None and self.ID != "0":
             Cat.insert_cat(self)
 
@@ -274,30 +268,28 @@ class Cat:
     def age(self):
         return CatAge.get_from_moons(self.moons)
 
-    def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
-        """Perform faded-specific initialization
-
+    def init_faded(
+        self, ID: str, moons: int, status: Status, inheritance: InheritanceDict
+    ):
+        """
+        Perform faded-specific initialization
         :param ID: Cat ID
-        :param status: Cat status
-        :param prefix: Cat's prefix
-        :param suffix: Cat's suffix
-        :param moons: Age in moons
-        :param kwargs:
-
-        :return: None
+        :param moons: age in moons
+        :param status: last known status
+        :param inheritance: family data
+        :return: bool
         """
         self.ID = ID
-        self.parent1 = None
-        self.parent2 = None
-        self.adoptive_parents = []
-        self.mate = []
-        self.status = Status(**status) if status else Status()
+        self.parent1 = inheritance["parent1"]
+        self.parent2 = inheritance["parent2"]
+        self.adoptive_parents = inheritance["adoptive_parents"]
+        self.faded_offspring = inheritance["faded_offspring"]
+        self.mate = inheritance["mate"]
+        self.status = status
         self._pronouns = {}  # Needs to be set as a dict
         self.moons = moons
         self.inheritance = None  # This should never be used, but just for safety
-        self.name = Name(prefix=prefix, suffix=suffix, cat=self)
-
-        self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
+        # name is assigned by FadedCatFactory
         return True
 
     def __repr__(self):
@@ -2841,34 +2833,49 @@ class Cat:
             return False
 
         if isinstance(cat_info["status"], str):
-            status_dict = {"rank": cat_info["status"]}
+            status = Status(rank=cat_info["status"])
+            # they are definitely dead
+            status.send_to_afterlife(
+                CatGroup.DARK_FOREST_ID
+                if cat_info.get("df", False)
+                else CatGroup.STARCLAN_ID
+            )
         else:
-            status_dict = cat_info["status"]
+            status = Status(**cat_info["status"])
 
         cat_ob = Cat(
             ID=cat_info["ID"],
-            prefix=cat_info["name_prefix"],
-            suffix=cat_info["name_suffix"],
-            status_dict=status_dict,
+            gender_dict=GenderDict(sex=None, genderalign=None),
+            pelt=None,
             moons=cat_info["moons"],
+            status=status,
+            backstory="",
+            catskills=None,
+            personality=None,
+            mentorship={},
+            inheritance=InheritanceDict(
+                parent1=cat_info["parent1"],
+                parent2=cat_info["parent2"],
+                adoptive_parents=cat_info["adoptive_parents"],
+                mate=[],
+                previous_mates=[],
+                faded_offspring=cat_info["faded_offspring"],
+            ),
+            affinity={},
+            toggles={},
+            experience=0,
+            birth_cooldown=0,
+            specsuffix_hidden=False,
             faded=True,
         )
-        if cat_info["parent1"]:
-            cat_ob.parent1 = cat_info["parent1"]
-        if cat_info["parent2"]:
-            cat_ob.parent2 = cat_info["parent2"]
-        cat_ob.faded_offspring = cat_info["faded_offspring"]
-        cat_ob.adoptive_parents = (
-            cat_info["adoptive_parents"] if "adoptive_parents" in cat_info else []
+
+        cat_ob.name = Name(
+            prefix=cat_info["name_prefix"],
+            suffix=cat_info["name_suffix"],
+            specsuffix_hidden=False,
+            load_existing_name=True,
+            cat=cat_ob,
         )
-        cat_ob.faded = True
-
-        if cat_info.get("df"):
-            cat_ob.status.send_to_afterlife(target_ID=CatGroup.DARK_FOREST_ID)
-        elif isinstance(cat_info["status"], str):
-            cat_ob.status.send_to_afterlife(target_ID=CatGroup.STARCLAN_ID)
-
-        cat_ob.dead_for = cat_info["dead_for"] if "dead_for" in cat_info else 1
 
         return cat_ob
 
