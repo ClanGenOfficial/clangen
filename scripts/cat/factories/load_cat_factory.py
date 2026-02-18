@@ -1,15 +1,33 @@
-from typing import Dict, Tuple, Optional
+from typing import Dict, Tuple, Optional, Union, List
+
+import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from scripts.cat.enums import CatAge
+from scripts.cat.enums import CatAge, CatGroup, CatRank
 from scripts.cat.factories.base_factory import BaseCatFactory
+from scripts.cat.factories.typed_dicts import (
+    MentorshipDict,
+    CatTogglesDict,
+    GenderDict,
+    InheritanceDict,
+    AfterlifeAffinityDict,
+)
+from scripts.cat.history import History
+from scripts.cat.names import Name
+from scripts.cat.pelts import Pelt
+from scripts.cat.personality import Personality
+from scripts.cat.skills import CatSkills
+from scripts.cat.status import Status
+
+with open(f"resources/dicts/conversion_dict.json", "r", encoding="utf-8") as read_file:
+    CONVERT = ujson.loads(read_file.read())
 
 
 class LoadCatFactory(BaseCatFactory):
     cat_id = None
 
     def __init__(self, rng):
-        pass  # no need for RNG in cat loading
+        self.rng = rng  # turns out we do need rng.
 
     def create_cat(self, **kwargs) -> Cat:
         """
@@ -21,53 +39,152 @@ class LoadCatFactory(BaseCatFactory):
             raise KeyError("Cat ID missing!")
         self.cat_id = kwargs["ID"]
 
-        pelt_params = self._build_pelt_dict(kwargs)
+        pelt = self._build_pelt(kwargs)
 
-        gender = {
-            "sex": kwargs["gender"],
-            "genderalign": kwargs.get("gender_align", kwargs["gender"]),
-            "pronouns": kwargs.get("pronouns")
-        }
+        gender = GenderDict(
+            sex=kwargs["gender"],
+            genderalign=kwargs.get("gender_align", kwargs["gender"]),
+            pronouns=kwargs.get("pronouns"),
+        )
 
-        inheritance = {
-            "parent1": kwargs["parent1"],
-            "parent2": kwargs["parent2"],
-            "adoptive_parents": kwargs.get("adoptive_parents", [])
-        }
+        # todo do I want to do this this way
+        mate = kwargs.get("mate")
+        mate = mate if isinstance(mate, list) else [mate]
+        inheritance = InheritanceDict(
+            parent1=kwargs["parent1"],
+            parent2=kwargs["parent2"],
+            adoptive_parents=kwargs.get("adoptive_parents", []),
+            faded_offspring=kwargs.get("faded_offsprings", []),
+            mate=mate,
+            previous_mates=kwargs.get("previous_mates", []),
+        )
+
+        mentorship = MentorshipDict(
+            mentor=kwargs["mentor"],
+            former_mentor=kwargs.get("former_mentor", []),
+            patrol_with_mentor=kwargs.get("patrol_with_mentor", 0),
+            apprentice=kwargs["current_apprentice"],
+            former_apprentices=kwargs["former_apprentices"],
+        )
+
+        toggles = CatTogglesDict(
+            no_kits=kwargs["no_kits"],
+            no_mates=kwargs.get("no_mates", False),
+            no_retire=kwargs.get("no_retire", False),
+            prevent_fading=kwargs.get("prevent_fading", False),
+            favourite=kwargs.get("favourite", False),
+        )
+
+        status = self._convert_status(
+            kwargs.get("status"),
+            kwargs.get("moons"),
+            old_bools=[
+                kwargs.get("dead"),
+                kwargs.get("df"),
+                kwargs.get("driven_out"),
+                kwargs.get("exiled"),
+                kwargs.get("outside"),
+            ],
+        )
+
+        backstory = self._convert_backstory(kwargs.get("backstory"))
+        cat_skill, backstory = self._convert_skill(
+            kwargs.get("skill_dict"),
+            kwargs.get("skill"),
+            backstory,
+            status.rank,
+            CatAge.get_from_moons(kwargs["moons"]),
+        )
+
+        affinity = AfterlifeAffinityDict(
+            starclan=kwargs.get("starclan_affinity", 0),
+            dark_forest=kwargs.get("dark_forest_affinity", 0),
+        )
 
         cat_params = {
             "ID": self.cat_id,
-            "prefix": kwargs["name_prefix"],
-            "suffix": kwargs["name_suffix"],
-            "specsuffix_hidden": kwargs.get("specsuffix_hidden", False),
-            "gender": gender,
-            "status": self._convert_status(kwargs.get("status"), kwargs.get("moons")),
-            "parent1": kwargs["parent1"],
-            "parent2": kwargs["parent2"],
+            "gender_dict": gender,
+            "pelt": pelt,
             "moons": kwargs["moons"],
-            "eye_colour": pelt_params["eye_colour"],
-            "loading_cat": True,
-            "backstory": self._convert_backstory(kwargs.get("backstory"))
+            "status": status,
+            "backstory": backstory,
+            "catskills": cat_skill,
+            "personality": self._build_personality(
+                kwargs.get("facets"),
+                kwargs["trait"],
+                CatAge.get_from_moons(kwargs["moons"]).is_baby(),
+            ),
+            "mentorship": mentorship,
+            "inheritance": inheritance,
+            "affinity": affinity,
+            "toggles": toggles,
+            "experience": kwargs.get("experience"),
+            "birth_cooldown": kwargs.get("birth_cooldown", 0),
+            "specsuffix_hidden": kwargs.get("specsuffix_hidden", False),
         }
 
-    def _convert_status(self, status, moons) -> Dict:
+        cat = Cat(**cat_params)
+        cat.history = self._convert_history(
+            kwargs.get("died_by", []), kwargs.get("scar_event", []), cat=cat
+        )
+        cat.name = Name(
+            prefix=kwargs["name_prefix"],
+            suffix=kwargs["name_suffix"],
+            specsuffix_hidden=kwargs.get("specsuffix_hidden", False),
+            load_existing_name=True,
+            cat=cat,
+        )
+        return cat
+
+    def _convert_status(
+        self,
+        status_dict: Optional[Union[Dict, str]],
+        moons: int,
+        old_bools: List[Optional[bool]],
+    ) -> Status:
         """
-        Check & convert status
-        :param status: Possible status
+        Check & convert status to new Status
+        :param status_dict: Possible status_dict
+        :param moons: age in moons
+        :param old_bools: old-style status bools in a tuple
         :return: valid status
         """
-        if status is None:
+        if status_dict is None:
             raise TypeError(f"Status is None for cat ID: {self.cat_id}")
         if moons is None:
             raise TypeError(f"Moons is None for cat ID: {self.cat_id}")
 
-        if isinstance(status, str):
+        if isinstance(status_dict, str):
             age = CatAge.get_from_moons(moons)
-            return {"rank": status, "age": age}
+            status = Status(rank=status_dict, age=age)
+        else:
+            status = Status(**status_dict)
+
+        if not any(old_bools):
+            # either they're not present or all False
+            return status
+
+        dead, df, driven_out, exiled, outside = old_bools
+
+        if dead and not status.group.is_afterlife():
+            if df:
+                status.send_to_afterlife(target_ID=CatGroup.DARK_FOREST_ID)
+            elif outside:
+                status.send_to_afterlife(target_ID=CatGroup.UNKNOWN_RESIDENCE_ID)
+            else:
+                status.send_to_afterlife(target_ID=CatGroup.STARCLAN_ID)
+        elif exiled:
+            status.exile_from_group()
+        elif outside and not status.is_outsider:
+            status.become_lost()
+
+        if driven_out:
+            status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
 
         return status
 
-    def _convert_eye_color(self, eye_color, eye_color2) -> Tuple[str, Optional[str]]:
+    @staticmethod
+    def _convert_eye_color(eye_color, eye_color2) -> Tuple[str, Optional[str]]:
         """
         Convert old eye colors to new format
         :param eye_color: Primary eye color
@@ -84,7 +201,7 @@ class LoadCatFactory(BaseCatFactory):
 
         return eye_color, eye_color2
 
-    def _build_pelt_dict(self, kwargs):
+    def _build_pelt(self, kwargs):
         """
         Handles some check & convert functionality for pelts
         :param kwargs: Everything we've ever passed into the factory
@@ -100,8 +217,9 @@ class LoadCatFactory(BaseCatFactory):
             kwargs["white_patches_tint"] = None
             # this then gets set to "offwhite" later
 
-        if pattern:= kwargs.get("pattern"):
-            kwargs["tortie_pattern"] = pattern
+        if "pattern" in kwargs:
+            kwargs["tortie_marking"] = kwargs["pattern"]
+            del kwargs["pattern"]
 
         # just to be sure that scars exists as a list
         kwargs["scars"] = kwargs.get("scars", [])
@@ -110,34 +228,45 @@ class LoadCatFactory(BaseCatFactory):
             if old_scars := kwargs.get(specialty):
                 kwargs["scars"] = [*kwargs["scars"], old_scars]
 
-        return {
-            "name": kwargs["pelt_name"],
-            "length": kwargs["pelt_length"],
-            "colour": kwargs["pelt_colour"],
-            "eye_colour": eye_colour,
-            "eye_colour2": eye_colour2,
-            "paralyzed": kwargs["paralyzed"],
-            "newborn_sprite": kwargs.get("sprite_newborn"),
-            "kitten_sprite": kwargs.get("sprite_kitten", kwargs["spirit_kitten"]),
-            "adol_sprite": kwargs.get("sprite_adolescent", kwargs["spirit_adolescent"]),
-            "adult_sprite": kwargs.get("sprite_adult", kwargs["spirit_adult"]),
-            "senior_sprite": kwargs.get("sprite_senior", kwargs["spirit_senior"]),
-            "para_adult_sprite": kwargs.get("sprite_para_adult"),
-            "reverse": kwargs["reverse"],
-            "vitiligo": kwargs.get("vitiligo"),
-            "points": kwargs.get("points"),
-            "white_patches_tint": kwargs.get("white_patches_tint", "offwhite"),
-            "white_patches": kwargs.get("white_patches"),
-            "tortie_base": kwargs.get("tortie_base"),
-            "tortie_colour": kwargs.get("tortie_colour"),
-            "tortie_pattern": kwargs.get("tortie_pattern"),
-            "tortie_marking": kwargs.get("tortie_marking"),
-            "skin": kwargs.get("skin"),
-            "tint": kwargs.get("tint"),
-            "scars": kwargs["scars"],
-            "accessory": kwargs.get("accessory", []),
-            "opacity": kwargs.get("opacity", 100),
-        }
+        pelt = Pelt(
+            **{
+                "name": kwargs["pelt_name"],
+                "length": kwargs["pelt_length"],
+                "colour": kwargs.get("pelt_color"),
+                "eye_color": eye_colour,
+                "eye_colour2": eye_colour2,
+                "paralyzed": kwargs["paralyzed"],
+                "newborn_sprite": kwargs.get("sprite_newborn"),
+                "kitten_sprite": kwargs.get(
+                    "sprite_kitten", kwargs.get("spirit_kitten")
+                ),
+                "adol_sprite": kwargs.get(
+                    "sprite_adolescent", kwargs.get("spirit_adolescent")
+                ),
+                "adult_sprite": kwargs.get("sprite_adult", kwargs.get("spirit_adult")),
+                "senior_sprite": kwargs.get(
+                    "sprite_senior", kwargs.get("spirit_senior")
+                ),
+                "para_adult_sprite": kwargs.get("sprite_para_adult"),
+                "reverse": kwargs["reverse"],
+                "vitiligo": kwargs.get("vitiligo"),
+                "points": kwargs.get("points"),
+                "white_patches_tint": kwargs.get("white_patches_tint", "offwhite"),
+                "white_patches": kwargs["white_patches"],
+                "tortie_base": kwargs["tortie_base"],
+                "tortie_colour": kwargs["tortie_color"],
+                "tortie_pattern": kwargs["tortie_pattern"],
+                "tortie_marking": kwargs["tortie_marking"],
+                "skin": kwargs.get("skin"),
+                "tint": kwargs.get("tint"),
+                "scars": kwargs["scars"],
+                "accessory": kwargs.get("accessory", []),
+                "opacity": kwargs.get("opacity", 100),
+            }
+        )
+        pelt.check_and_convert(convert_dict=CONVERT)
+
+        return pelt
 
     @staticmethod
     def _convert_backstory(backstory) -> str:
@@ -148,3 +277,65 @@ class LoadCatFactory(BaseCatFactory):
         """
         # if the key isn't found, return it as the value (no need to convert
         return BACKSTORIES["conversion"].get(backstory, backstory)
+
+    def _build_personality(self, facets, trait, is_kit_trait):
+        if facets is not None:
+            facets = [int(i) for i in facets.split(",")]
+            return Personality(
+                trait=trait,
+                kit_trait=is_kit_trait,
+                lawful=facets[0],
+                social=facets[1],
+                aggress=facets[2],
+                stable=facets[3],
+            )
+        else:
+            print(f"WARNING: no facets found for cat ID: {self.cat_id}")
+            return Personality(trait=trait, kit_trait=is_kit_trait)
+
+    def _convert_skill(
+        self, skill_dict, skill, backstory, rank, age
+    ) -> Tuple[CatSkills, str]:
+        """
+        Handle conversion of some *very old* skills & backstories
+        :param skill_dict: modern skill dict
+        :param skill: skill string
+        :param backstory: backstory string
+        :param rank: needed to generate new skills
+        :param age: needed to generate new skills
+        :return:
+        """
+        if skill_dict:
+            return CatSkills(skill_dict), backstory
+        if skill:
+            if backstory is not None:
+                if skill == "formerly a loner":
+                    backstory = self.rng.choice(BACKSTORIES["loner_backstories"])
+                elif skill == "formerly a kittypet":
+                    backstory = self.rng.choice(BACKSTORIES["kittypet_backstories"])
+                else:
+                    backstory = "clanborn"
+            return CatSkills.get_skills_from_old(skill, rank, age), backstory
+        else:
+            raise Exception(f"No skill data provided for cat ID: {self.cat_id}")
+
+    def _convert_history(self, died_by, scar_events, cat) -> History:
+        """
+        Unfortunately, this has to be handled *after* the creation of the cat
+        because of the horrible nested cat. fixme.
+        :param died_by:
+        :param scar_events:
+        :param cat:
+        :return:
+        """
+        deaths = []
+        if died_by:
+            deaths.extend(
+                {"involved": None, "text": death, "moon": "?"} for death in died_by
+            )
+        scars = []
+        if scar_events:
+            scars.extend(
+                {"involved": None, "text": scar, "moon": "?"} for scar in scar_events
+            )
+        return History(died_by=deaths, scar_events=scars, cat=cat)

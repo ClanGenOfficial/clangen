@@ -1,6 +1,7 @@
 import random
 
 from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.load_cat_factory import LoadCatFactory
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 
 
@@ -9,8 +10,9 @@ class CatFactory:
 
     __factories = {
         CatType.NEW: NewCatFactory,
-        CatType.LOAD: NewCatFactory,
-        CatType.FADED: NewCatFactory,
+        CatType.LOAD_JSON: LoadCatFactory,
+        CatType.LOAD_CSV: LoadCatFactory,
+        CatType.FADED: print,
     }
 
     @classmethod

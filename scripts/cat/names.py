@@ -267,6 +267,10 @@ class Name:
             else:
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
+    def change_name(self, prefix, suffix):
+        self.prefix = prefix
+        self.suffix = suffix
+
     def __repr__(self):
         # Handles predefined suffixes (such as newborns being kit),
         # then suffixes based on ages (fixes #2004, just trust me)

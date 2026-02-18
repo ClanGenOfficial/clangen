@@ -5,6 +5,12 @@ from scripts.cat import save_load
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.factories.base_factory import BaseCatFactory
+from scripts.cat.factories.typed_dicts import (
+    MentorshipDict,
+    CatTogglesDict,
+    InheritanceDict,
+    AfterlifeAffinityDict,
+)
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
@@ -24,57 +30,66 @@ class NewCatFactory(BaseCatFactory):
         overrides = {k: v for k, v in overrides.items() if v}
 
         # the worst combined dependency ever
-        age, moons, status_dict = self._determine_moons_and_status(
+        age, moons, status = self._determine_moons_and_status(
             moons=overrides.get("moons"), status_dict=overrides.get("status_dict", {})
         )
 
-        gender_dict = self._random_gender(age)
+        gender_dict = self._random_gender_and_genderalign(age)
+        # if specified, override the randomizer
+        gender_dict["sex"] = overrides.get("gender", gender_dict["sex"])
+        gender_dict["genderalign"] = overrides.get(
+            "genderalign", gender_dict["genderalign"]
+        )
 
-        init_params: Dict[str, Any] = {
-            "personality": self._random_personality(age),
-            "experience": self._random_experience(age, moons),
-        }
+        if pelt := overrides.get("pelt"):
+            pelt = Pelt(pelt)
+        else:
+            pelt = self._random_skills_dict(status.rank, age)
+
+        skills = overrides.get("skill_dict", self._random_skills_dict(status.rank, age))
+        if not isinstance(skills, CatSkills):
+            skills = CatSkills(skill_dict=skills)
+
+        mate = overrides.get("mate", [])
+        if isinstance(mate, str):
+            mate = [mate]
 
         cat_params = {
             "ID": self.get_free_id(),
-            "gender": overrides.get("gender", self._random_gender_and_genderalign(age)),
-            "status_dict": status_dict,
+            "gender_dict": gender_dict,
+            "pelt": pelt,
             "moons": moons,
+            "status": status,
             "backstory": overrides.get("backstory", "clanborn"),
-            "parent1": overrides.get("parent1"),
-            "parent2": overrides.get("parent2"),
-            "adoptive_parents": overrides.get("adoptive_parents", []),
-            "mate": overrides.get("mate", []),
-            "skill_dict": overrides.get(
-                "skill_dict", self._random_skills_dict(status_dict["rank"], age)
+            "catskills": skills,
+            "personality": self._random_personality(age),
+            "mentorship": MentorshipDict(
+                mentor=None,
+                former_mentor=[],
+                patrol_with_mentor=0,
+                apprentice=[],
+                former_apprentices=[],
             ),
-            "pelt": overrides.get(
-                "pelt",
-                self._random_pelt(
-                    gender_dict["sex"],
-                    (overrides.get("parent1"), overrides.get("parent2")),
-                    age,
-                ),
+            "inheritance": InheritanceDict(
+                parent1=overrides.get("parent1"),
+                parent2=overrides.get("parent2"),
+                adoptive_parents=overrides.get("adoptive_parents", []),
+                faded_offspring=[],
+                mate=mate,
+                previous_mates=[],
             ),
+            "affinity": AfterlifeAffinityDict(starclan=0, dark_forest=0),
+            "toggles": CatTogglesDict(
+                no_kits=False,
+                no_mates=False,
+                no_retire=False,
+                prevent_fading=False,
+                favourite=False,
+            ),
+            "experience": overrides.get("experience", 0),
+            "birth_cooldown": overrides.get("birth_cooldown", 0),
+            "specsuffix_hidden": False,
         }
-
-        if game.clan is not None:
-            biome = (
-                game.clan.biome
-                if not game.clan.override_biome
-                else game.clan.override_biome
-            )
-        else:
-            biome = None
-
-        init_params["name"] = Name(
-            prefix=overrides.get("prefix"),
-            suffix=overrides.get("suffix"),
-            specsuffix_hidden=overrides.get("specsuffix_hidden"),
-            biome=biome,
-        )
-
-        cat_params["init_params"] = init_params
 
         return Cat(**cat_params)
 
@@ -112,9 +127,7 @@ class NewCatFactory(BaseCatFactory):
         status = Status()
         status.generate_new_status(age, disable_random=type(self.rng) != BASE_RNG)
 
-        return StatusDict(
-            social=status.social, group_ID=status.group_ID, rank=status.rank
-        )
+        return status
 
     def _random_moons(self, age: CatAge) -> int:
         """
@@ -126,7 +139,7 @@ class NewCatFactory(BaseCatFactory):
 
     def _determine_moons_and_status(
         self, moons, status_dict
-    ) -> Tuple[CatAge, int, dict]:
+    ) -> Tuple[CatAge, int, Status]:
         """
 
         :param moons:
@@ -134,21 +147,26 @@ class NewCatFactory(BaseCatFactory):
         :return: moons and status_dict
         """
         age = None
+        if status_dict and moons:
+            return CatAge.get_from_moons(moons), moons, Status(**status_dict)
         if not status_dict and not moons:
             age = self._random_age()
-            status_dict = self._random_status_from_age(age)
+            status = self._random_status_from_age(age)
             moons = self._random_moons(age)
         elif not status_dict and moons:
             age = CatAge.get_from_moons(moons)
-            status_dict = self._random_status_from_age(age)
+            status = self._random_status_from_age(age)
         elif status_dict and "rank" in status_dict and not moons:
             age = self._random_age_from_rank(status_dict["rank"])
+            status = Status(**status_dict)
             moons = self._random_moons(age)
+        else:
+            status = None
 
-        if not isinstance(moons, int) or not status_dict or not age:
+        if not isinstance(moons, int) or not status or not age:
             raise Exception("Something went wrong generating age, moons or status_dict")
 
-        return age, moons, status_dict
+        return age, moons, status
 
     def _random_gender_and_genderalign(self, age) -> dict:
         gender = {
@@ -220,7 +238,7 @@ class NewCatFactory(BaseCatFactory):
 
     def _random_skills_dict(self, rank, age):
         skills = CatSkills.generate_new_catskills(rank, age, rng=self.rng)
-        return skills.get_skill_dict()
+        return skills
 
     @staticmethod
     def get_free_id():

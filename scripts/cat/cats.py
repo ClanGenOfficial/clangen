@@ -24,6 +24,12 @@ from scripts.cat.enums import (
     CatCompatibility,
     CatThought,
 )
+from scripts.cat.factories.typed_dicts import (
+    MentorshipDict,
+    CatTogglesDict,
+    InheritanceDict,
+    AfterlifeAffinityDict,
+)
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -126,24 +132,27 @@ class Cat:
 
     def __init__(
         self,
-        prefix=None,
-        gender=None,
+        ID: str,
+        gender_dict: dict,
+        pelt: Pelt,
+        moons: int,
+        status: Status,
+        backstory: str,
+        catskills: CatSkills,
+        personality: Personality,
+        mentorship: MentorshipDict,
+        inheritance: InheritanceDict,
+        affinity: AfterlifeAffinityDict,
+        toggles: CatTogglesDict,
+        experience: int,
+        birth_cooldown: int,
+        specsuffix_hidden=False,  # to delete once Name is decoupled from Cat
+        *,
         status_dict: StatusDict = None,
-        backstory="clanborn",
-        parent1=None,
-        parent2=None,
-        adoptive_parents=None,
-        suffix=None,
-        specsuffix_hidden=False,
-        ID=None,
-        moons=None,
         example=False,
         faded=False,
         skill_dict=None,
-        pelt: Pelt = None,
-        init_params: dict = None,
         loading_cat=False,  # Set to true if you are loading a cat at start-up.
-        *,
         disable_random=False,
         **kwargs,
     ):
@@ -172,7 +181,7 @@ class Cat:
 
         # This must be at the top. It's a smaller list of things to init, which is only for faded cats
         if faded:
-            self.init_faded(ID, status_dict, prefix, suffix, moons, **kwargs)
+            # self.init_faded(ID, status_dict, prefix, suffix, moons, **kwargs)
             return
 
         self.generate_events = GenerateEvents()
@@ -181,122 +190,73 @@ class Cat:
         self._mentor = None  # plz
         self._experience = None
         self._moons = None
+        self._pronouns: Dict[str, List[Dict[str, Union[str, int]]]] = {}
 
         # Public attributes
         self.ID = ID
 
-        if isinstance(gender, dict):
-            self.gender = gender["sex"]
-            self.genderalign = gender["genderalign"]
-            if gender.get("pronouns"):  # pronouns are lazy-loaded for new cats
-                self.pronouns = gender.get("pronouns")
-        else:
-            self.gender = gender
-            self.genderalign = gender
+        self.gender = gender_dict["sex"]
+        self.genderalign = gender_dict["genderalign"]
+        if gender_dict.get("pronouns"):  # pronouns are lazy-loaded for new cats
+            self.pronouns = gender_dict.get("pronouns")
 
-        self.age = CatAge.NEWBORN
-        self.moons = moons if moons else 0
-        self.status: Status = Status(**status_dict) if status_dict else Status()
+        self.pelt: Pelt = pelt
+        self.moons: int = moons
+        self.status: Status = status
         self.backstory = backstory
-        self.age: Optional[CatAge] = None
-        self.skills = CatSkills(skill_dict=skill_dict)
-        self.personality = Personality(
-            trait="troublesome", lawful=0, aggress=0, stable=0, social=0
-        )
-        self.parent1 = parent1
-        self.parent2 = parent2
-        self.adoptive_parents = adoptive_parents if adoptive_parents else []
-        self.pelt = pelt if pelt else Pelt()
-        self.former_mentor = []
-        self.patrol_with_mentor = 0
-        self.apprentice = []
-        self.former_apprentices = []
-        self.relationships = {}
+        self.skills = catskills
+        self.personality = personality
+
+        # mentorship
+        self.mentor = mentorship["mentor"]
+        self.former_mentor = mentorship["former_mentor"]
+        self.patrol_with_mentor = mentorship["patrol_with_mentor"]
+        self.apprentice = mentorship["apprentice"]
+        self.former_apprentices = mentorship["former_apprentices"]
+
+        # inheritance
+        self.parent1 = inheritance["parent1"]
+        self.parent2 = inheritance["parent2"]
+        self.adoptive_parents = inheritance["adoptive_parents"]
+        self.faded_offspring = inheritance["faded_offspring"]
+        """Stores of a list of faded offspring, for relation tracking purposes"""
         self.mate = []
         self.previous_mates = []
-        self._pronouns: Dict[str, List[Dict[str, Union[str, int]]]] = {}
+        self.inheritance = None
+
+        # afterlife affinity
+        self.dark_forest_affinity = affinity["dark_forest"]
+        self.starclan_affinity = affinity["starclan"]
+
+        # toggles
+        self.no_kits = toggles["no_kits"]
+        self.no_mates = toggles["no_mates"]
+        self.no_retire = toggles["no_retire"]
+        self.prevent_fading = toggles["prevent_fading"]  # Prevents a cat from fading
+        self.favourite = toggles["favourite"]
+
+        # misc
+        self.experience = experience
+        self.birth_cooldown = birth_cooldown
+        self.specsuffix_hidden = specsuffix_hidden  # kill this ASAP
+
+        # other misc
+        self.name: Optional[Name] = None
+        self.relationships = {}
         self.placement = None
         self.example = example
         self.thought = ""
-        self.genderalign = None
-        self.birth_cooldown = 0
+
+        # conditions setup
         self.illnesses = {}
         self.injuries = {}
         self.healed_condition = None
         self.leader_death_heal = None
         self.also_got = False
         self.permanent_condition = {}
-        self.experience_level = None
-        self.dark_forest_affinity = 0
-        self.starclan_affinity = 0
-
-        # Various behavior toggles
-        self.no_kits = False
-        self.no_mates = False
-        self.no_retire = False
-
-        self.prevent_fading = False  # Prevents a cat from fading
-
-        self.faded_offspring = (
-            []
-        )  # Stores of a list of faded offspring, for relation tracking purposes
 
         self.faded = faded  # This is only used to flag cats that are faded, but won't be added to the faded list until
         # the next save.
-
-        self.favourite = False
-
-        self.specsuffix_hidden = specsuffix_hidden
-        self.inheritance = None
-
-        # backstory
-        if self.backstory is None:
-            self.backstory = "clanborn"
-        else:
-            self.backstory = self.backstory  # fixme why does this exist
-
-        # These things should only run when generating a new cat, rather than loading one in.
-        if not loading_cat:
-            if init_params is None:
-                init_params = {}
-            self.personality = init_params.get(
-                "personality", Personality(lawful=6, social=6, aggress=6, stable=6)
-            )
-            self.experience = init_params.get("experience", 0)
-
-        if "biome" in kwargs:
-            biome = kwargs["biome"]
-        elif game.clan is not None:
-            biome = (
-                game.clan.biome
-                if not game.clan.override_biome
-                else game.clan.override_biome
-            )
-        else:
-            biome = None
-        # NAME
-        # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
-        if init_params:
-            self.name = init_params["name"]
-        elif self.pelt is not None:
-            # todo consider whether this can be removed when factory for loading cats is created
-            self.name = Name(
-                prefix,
-                suffix,
-                biome=biome,
-                specsuffix_hidden=self.specsuffix_hidden,
-                load_existing_name=loading_cat,
-                cat=self,
-            )
-        else:
-            self.name = Name(
-                self.status.rank,
-                prefix,
-                suffix,
-                specsuffix_hidden=self.specsuffix_hidden,
-                load_existing_name=loading_cat,
-                cat=self,
-            )
 
         # Private Sprite
         self._sprite: Optional["pygame.Surface"] = None
@@ -309,6 +269,10 @@ class Cat:
 
         if self.ID is not None and self.ID != "0":
             Cat.insert_cat(self)
+
+    @property
+    def age(self):
+        return CatAge.get_from_moons(self.moons)
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
         """Perform faded-specific initialization
@@ -333,30 +297,8 @@ class Cat:
         self.inheritance = None  # This should never be used, but just for safety
         self.name = Name(prefix=prefix, suffix=suffix, cat=self)
 
-        self.init_moons_age(moons)
-
         self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
         return True
-
-    def init_moons_age(self, moons):
-        """
-        Gets the correct life stage for associated moons
-
-        :param moons: Age in moons
-        :return: None
-        """
-        if moons > 300:
-            # Out of range, always elder
-            self.age = CatAge.SENIOR
-        elif moons == 0:
-            self.age = CatAge.NEWBORN
-        else:
-            # In range
-            for key_age in self.age_moons.keys():
-                if moons in range(
-                    self.age_moons[key_age][0], self.age_moons[key_age][1] + 1
-                ):
-                    self.age = key_age
 
     def __repr__(self):
         return "CAT OBJECT:" + self.ID
@@ -3043,19 +2985,18 @@ class Cat:
     def experience(self):
         return self._experience
 
+    @property
+    def experience_level(self):
+        return next(
+            key
+            for key, (min_exp, max_exp) in self.experience_levels_range.items()
+            if min_exp <= self.experience <= max_exp
+        )
+
     @experience.setter
     def experience(self, exp: int):
         exp = min(exp, self.experience_levels_range["master"][1])
         self._experience = int(exp)
-
-        for x in self.experience_levels_range:
-            if (
-                self.experience_levels_range[x][0]
-                <= exp
-                <= self.experience_levels_range[x][1]
-            ):
-                self.experience_level = x
-                break
 
     @property
     def moons(self):
@@ -3064,7 +3005,6 @@ class Cat:
     @moons.setter
     def moons(self, value: int):
         self._moons = value
-        self.age = CatAge.get_from_moons(value)
 
     @property
     def sprite(self):

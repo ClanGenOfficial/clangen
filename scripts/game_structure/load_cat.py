@@ -15,6 +15,8 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
 )
+from ..cat.factories.cat_factory import CatFactory
+from ..cat.factories.enums import CatType
 from ..cat.pronouns import get_new_pronouns
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.game_structure import constants
@@ -65,234 +67,15 @@ def json_load():
     old_tortie_patches = convert["old_tortie_patches"]
 
     # create new cat objects
-    for i, cat in enumerate(cat_data):
+    for i, cat_dict in enumerate(cat_data):
         try:
-            # accounting for old saves
-            # checks first if status is in the old format
-            # if it is then we use the old info to provide an initial status dict
-            if isinstance(cat["status"], str):
-                # this sucks, but we need to get the actual str age to make sure nothing goes wonky
-                age = None
-                for key_age in Cat.age_moons.keys():
-                    if cat["moons"] in range(
-                        Cat.age_moons[key_age][0], Cat.age_moons[key_age][1] + 1
-                    ):
-                        age = key_age
-                status_dict = {"rank": cat["status"], "age": age}
-            else:
-                status_dict = cat["status"]
+            cat = CatFactory.create_cat(cat_type=CatType.LOAD_JSON, **cat_dict)
 
-            new_cat = Cat(
-                ID=cat["ID"],
-                prefix=cat["name_prefix"],
-                suffix=cat["name_suffix"],
-                specsuffix_hidden=(
-                    cat["specsuffix_hidden"] if "specsuffix_hidden" in cat else False
-                ),
-                gender=cat["gender"],
-                status_dict=status_dict,
-                parent1=cat["parent1"],
-                parent2=cat["parent2"],
-                moons=cat["moons"],
-                eye_colour=cat["eye_colour"],
-                loading_cat=True,
-            )
-
-            if cat["eye_colour"] == "BLUE2":
-                cat["eye_colour"] = "COBALT"
-            if cat["eye_colour"] in ["BLUEYELLOW", "BLUEGREEN"]:
-                if cat["eye_colour"] == "BLUEYELLOW":
-                    cat["eye_colour2"] = "YELLOW"
-                elif cat["eye_colour"] == "BLUEGREEN":
-                    cat["eye_colour2"] = "GREEN"
-                cat["eye_colour"] = "BLUE"
-            if "eye_colour2" in cat:
-                if cat["eye_colour2"] == "BLUE2":
-                    cat["eye_colour2"] = "COBALT"
-
-            if "tint" in cat:
-                if cat["tint"] == "none":
-                    cat["tint"] = None
-            if "white_patches_tint" in cat:
-                if cat["white_patches_tint"] == "none":
-                    cat["white_patches_tint"] = None
-
-            if "pattern" in cat:
-                cat["tortie_marking"] = cat["pattern"]
-                del cat["pattern"]
-
-            new_cat.pelt = Pelt(
-                name=cat["pelt_name"],
-                length=cat["pelt_length"],
-                colour=cat["pelt_color"],
-                eye_color=cat["eye_colour"],
-                eye_colour2=cat["eye_colour2"] if "eye_colour2" in cat else None,
-                paralyzed=cat["paralyzed"],
-                newborn_sprite=cat.get("sprite_newborn"),
-                kitten_sprite=(
-                    cat["sprite_kitten"]
-                    if "sprite_kitten" in cat
-                    else cat["spirit_kitten"]
-                ),
-                adol_sprite=(
-                    cat["sprite_adolescent"]
-                    if "sprite_adolescent" in cat
-                    else cat["spirit_adolescent"]
-                ),
-                adult_sprite=(
-                    cat["sprite_adult"]
-                    if "sprite_adult" in cat
-                    else cat["spirit_adult"]
-                ),
-                senior_sprite=(
-                    cat["sprite_senior"]
-                    if "sprite_senior" in cat
-                    else cat["spirit_elder"]
-                ),
-                para_adult_sprite=(
-                    cat["sprite_para_adult"] if "sprite_para_adult" in cat else None
-                ),
-                reverse=cat["reverse"],
-                vitiligo=cat["vitiligo"] if "vitiligo" in cat else None,
-                points=cat["points"] if "points" in cat else None,
-                white_patches_tint=(
-                    cat["white_patches_tint"]
-                    if "white_patches_tint" in cat
-                    else "offwhite"
-                ),
-                white_patches=cat["white_patches"],
-                tortie_base=cat["tortie_base"],
-                tortie_colour=cat["tortie_color"],
-                tortie_pattern=cat["tortie_pattern"],
-                tortie_marking=cat["tortie_marking"],
-                skin=cat["skin"],
-                tint=cat["tint"] if "tint" in cat else None,
-                scars=cat["scars"] if "scars" in cat else [],
-                accessory=cat["accessory"],
-                opacity=cat["opacity"] if "opacity" in cat else 100,
-            )
-
-            # Runs a bunch of appearance-related conversion of old stuff.
-            new_cat.pelt.check_and_convert(convert)
-
-            new_cat.adoptive_parents = (
-                cat["adoptive_parents"] if "adoptive_parents" in cat else []
-            )
-
-            new_cat.backstory = cat["backstory"] if "backstory" in cat else None
-            if new_cat.backstory in BACKSTORIES["conversion"]:
-                new_cat.backstory = BACKSTORIES["conversion"][new_cat.backstory]
-            new_cat.birth_cooldown = (
-                cat["birth_cooldown"] if "birth_cooldown" in cat else 0
-            )
-            new_cat.moons = cat["moons"]
-
-            if "facets" in cat and cat["facets"] is not None:
-                facets = [int(i) for i in cat["facets"].split(",")]
-                new_cat.personality = Personality(
-                    trait=cat["trait"],
-                    kit_trait=new_cat.age in ["newborn", "kitten"],
-                    lawful=facets[0],
-                    social=facets[1],
-                    aggress=facets[2],
-                    stable=facets[3],
-                )
-            else:
-                new_cat.personality = Personality(
-                    trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten"]
-                )
-
-            new_cat.mentor = cat["mentor"]
-            new_cat.former_mentor = (
-                cat["former_mentor"] if "former_mentor" in cat else []
-            )
-            new_cat.patrol_with_mentor = (
-                cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
-            )
-            new_cat.no_kits = cat["no_kits"]
-            new_cat.no_mates = cat["no_mates"] if "no_mates" in cat else False
-            new_cat.no_retire = cat["no_retire"] if "no_retire" in cat else False
-
-            if "skill_dict" in cat:
-                new_cat.skills = CatSkills(cat["skill_dict"])
-            elif "skill" in cat:
-                if new_cat.backstory is None:
-                    if "skill" == "formerly a loner":
-                        backstory = choice(["loner1", "loner2", "rogue1", "rogue2"])
-                        new_cat.backstory = backstory
-                    elif "skill" == "formerly a kittypet":
-                        backstory = choice(["kittypet1", "kittypet2"])
-                        new_cat.backstory = backstory
-                    else:
-                        new_cat.backstory = "clanborn"
-                new_cat.skills = CatSkills.get_skills_from_old(
-                    cat["skill"], new_cat.status.rank, new_cat.age
-                )
-
-            new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
-            if None in new_cat.mate:
-                new_cat.mate = [i for i in new_cat.mate if i is not None]
-            new_cat.previous_mates = (
-                cat["previous_mates"] if "previous_mates" in cat else []
-            )
-
-            # checking for old dead
-            if (
-                cat.get("dead")
-                or cat.get("df")
-                or cat.get("driven_out")
-                or cat.get("exiled")
-                or cat.get("outside")
-            ):
-                if cat.get("dead") and not new_cat.status.group.is_afterlife():
-                    if cat.get("df"):
-                        new_cat.status.send_to_afterlife(
-                            target_ID=CatGroup.DARK_FOREST_ID
-                        )
-                    elif cat.get("outside"):
-                        new_cat.status.send_to_afterlife(
-                            target_ID=CatGroup.UNKNOWN_RESIDENCE_ID
-                        )
-                    else:
-                        new_cat.status.send_to_afterlife(target_ID=CatGroup.STARCLAN_ID)
-
-                else:
-                    # these should properly change the cat's status to align with old bool info
-                    if cat.get("exiled"):
-                        new_cat.status.exile_from_group()
-                    elif cat.get("outside") and not new_cat.status.is_outsider:
-                        new_cat.status.become_lost()
-
-                    if cat.get("driven_out"):
-                        new_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
-
-            new_cat.dead_for = cat["dead_moons"]
-            new_cat.experience = cat["experience"]
-            new_cat.apprentice = cat["current_apprentice"]
-            new_cat.former_apprentices = cat["former_apprentices"]
-
-            new_cat.faded_offspring = (
-                cat["faded_offspring"] if "faded_offspring" in cat else []
-            )
-            new_cat.prevent_fading = (
-                cat["prevent_fading"] if "prevent_fading" in cat else False
-            )
-            new_cat.favourite = cat["favourite"] if "favourite" in cat else False
-
-            if "died_by" in cat or "scar_event" in cat or "mentor_influence" in cat:
-                new_cat.convert_history(
-                    cat["died_by"] if "died_by" in cat else [],
-                    cat["scar_event"] if "scar_event" in cat else [],
-                )
-
-            new_cat.starclan_affinity = cat.get("starclan_affinity", 0)
-            new_cat.dark_forest_affinity = cat.get("dark_forest_affinity", 0)
-
-            all_cats.append(new_cat)
+            all_cats.append(cat)
 
         except KeyError as e:
-            if "ID" in cat:
-                key = f" ID #{cat['ID']} "
+            if "ID" in cat_dict:
+                key = f" ID #{cat_dict['ID']} "
             else:
                 key = f" at index {i} "
             switch_set_value(
