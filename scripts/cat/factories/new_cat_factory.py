@@ -1,9 +1,10 @@
 import random
-from typing import Tuple
+from typing import Tuple, Dict, Any
 
 from scripts.cat import save_load
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank
+from scripts.cat.factories.base_factory import BaseCatFactory
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
@@ -14,11 +15,11 @@ from scripts.game_structure import game, constants
 BASE_RNG = random.Random
 
 
-class NewCatFactory:
+class NewCatFactory(BaseCatFactory):
     def __init__(self, rng):
         self.rng = rng if rng else BASE_RNG()
 
-    def __call__(self, **overrides):
+    def create_cat(self, **overrides):
         # remove all values that are empty
         overrides = {k: v for k, v in overrides.items() if v}
 
@@ -29,7 +30,7 @@ class NewCatFactory:
 
         gender_dict = self._random_gender(age)
 
-        init_params: dict = {
+        init_params: Dict[str, Any] = {
             "personality": self._random_personality(age),
             "experience": self._random_experience(age, moons),
         }
@@ -72,6 +73,8 @@ class NewCatFactory:
             specsuffix_hidden=overrides.get("specsuffix_hidden"),
             biome=biome,
         )
+
+        cat_params["init_params"] = init_params
 
         return Cat(**cat_params)
 
@@ -142,8 +145,8 @@ class NewCatFactory:
             age = self._random_age_from_rank(status_dict["rank"])
             moons = self._random_moons(age)
 
-        if not moons or not status_dict or not age:
-            raise Exception("Something went wrong generating moons or status_dict")
+        if not isinstance(moons, int) or not status_dict or not age:
+            raise Exception("Something went wrong generating age, moons or status_dict")
 
         return age, moons, status_dict
 
@@ -177,14 +180,14 @@ class NewCatFactory:
         )
 
     def _random_personality(self, age: CatAge):
-        if self.rng != BASE_RNG:
+        if type(self.rng) != BASE_RNG:
             return Personality(
                 lawful=8, social=8, aggress=8, stable=8, kit_trait=age.is_baby()
             )
         return Personality(kit_trait=age.is_baby())
 
     def _random_experience(self, age, moons: int) -> int:
-        if age.is_baby() or self.rng != BASE_RNG:
+        if age.is_baby() or type(self.rng) != BASE_RNG:
             return 0
 
         if age == CatAge.ADOLESCENT:
@@ -216,7 +219,8 @@ class NewCatFactory:
             return 0
 
     def _random_skills_dict(self, rank, age):
-        return CatSkills.generate_new_catskills(rank, age, rng=self.rng)
+        skills = CatSkills.generate_new_catskills(rank, age, rng=self.rng)
+        return skills.get_skill_dict()
 
     @staticmethod
     def get_free_id():

@@ -5,14 +5,18 @@ from scripts.cat.factories.new_cat_factory import NewCatFactory
 
 
 class CatFactory:
-    def __init__(self, rng=None):
-        self.rng = rng if rng else random.Random()
+    rng = random.Random()
 
-        self.__factories = {
-            CatType.NEW: NewCatFactory(rng=self.rng),
-            CatType.LOAD: "TODO ADD",
-            CatType.FADED: "TODO ADD",
-        }
+    __factories = {
+        CatType.NEW: NewCatFactory,
+        CatType.LOAD: NewCatFactory,
+        CatType.FADED: NewCatFactory,
+    }
 
-    def create_cat(self, cat_type: CatType, **kwargs):
-        return self.__factories[cat_type](**kwargs)
+    @classmethod
+    def set_rng(cls, rng):
+        cls.rng = rng
+
+    @classmethod
+    def create_cat(cls, cat_type: CatType, **kwargs):
+        return cls.__factories[cat_type](rng=cls.rng).create_cat(**kwargs)

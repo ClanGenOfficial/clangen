@@ -183,12 +183,16 @@ class Cat:
         self._moons = None
 
         # Public attributes
+        self.ID = ID
+
         if isinstance(gender, dict):
             self.gender = gender["sex"]
             self.genderalign = gender["genderalign"]
         else:
             self.gender = gender
             self.genderalign = gender
+
+        self.moons = moons
         self.status: Status = Status(**status_dict) if status_dict else Status()
         self.backstory = backstory
         self.age: Optional[CatAge] = None
@@ -242,8 +246,6 @@ class Cat:
         self.specsuffix_hidden = specsuffix_hidden
         self.inheritance = None
 
-        self.ID = ID
-
         # backstory
         if self.backstory is None:
             self.backstory = "clanborn"
@@ -252,8 +254,12 @@ class Cat:
 
         # These things should only run when generating a new cat, rather than loading one in.
         if not loading_cat:
-            self.personality = init_params["personality"]
-            self.experience = init_params["experience"]
+            if init_params is None:
+                init_params = {}
+            self.personality = init_params.get(
+                "personality", Personality(lawful=6, social=6, aggress=6, stable=6)
+            )
+            self.experience = init_params.get("experience", 0)
 
         if "biome" in kwargs:
             biome = kwargs["biome"]
