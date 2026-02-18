@@ -175,23 +175,10 @@ def json_load():
             # Runs a bunch of appearance-related conversion of old stuff.
             new_cat.pelt.check_and_convert(convert)
 
-            # converting old specialty saves into new scar parameter
-            if "specialty" in cat or "specialty2" in cat:
-                if cat["specialty"] is not None:
-                    new_cat.pelt.scars = (*new_cat.pelt.scars, cat["specialty"])
-                if cat["specialty2"] is not None:
-                    new_cat.pelt.scars = (*new_cat.pelt.scars, cat["specialty2"])
-
             new_cat.adoptive_parents = (
                 cat["adoptive_parents"] if "adoptive_parents" in cat else []
             )
 
-            new_cat.genderalign = cat["gender_align"]
-            new_cat.pronouns = (
-                cat["pronouns"]
-                if "pronouns" in cat
-                else {i18n.config.get("locale"): get_new_pronouns(new_cat.genderalign)}
-            )
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             if new_cat.backstory in BACKSTORIES["conversion"]:
                 new_cat.backstory = BACKSTORIES["conversion"][new_cat.backstory]

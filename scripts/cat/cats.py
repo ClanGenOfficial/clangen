@@ -188,6 +188,8 @@ class Cat:
         if isinstance(gender, dict):
             self.gender = gender["sex"]
             self.genderalign = gender["genderalign"]
+            if gender.get("pronouns"):  # pronouns are lazy-loaded for new cats
+                self.pronouns = gender.get("pronouns")
         else:
             self.gender = gender
             self.genderalign = gender

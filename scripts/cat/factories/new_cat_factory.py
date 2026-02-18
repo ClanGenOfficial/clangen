@@ -37,7 +37,7 @@ class NewCatFactory(BaseCatFactory):
 
         cat_params = {
             "ID": self.get_free_id(),
-            "gender": overrides.get("gender", self._random_gender(age)),
+            "gender": overrides.get("gender", self._random_gender_and_genderalign(age)),
             "status_dict": status_dict,
             "moons": moons,
             "backstory": overrides.get("backstory", "clanborn"),
@@ -150,7 +150,7 @@ class NewCatFactory(BaseCatFactory):
 
         return age, moons, status_dict
 
-    def _random_gender(self, age) -> dict:
+    def _random_gender_and_genderalign(self, age) -> dict:
         gender = {
             "sex": self.rng.choice(("male", "female")),
         }
