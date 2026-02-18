@@ -15,7 +15,7 @@ import i18n
 import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
-from scripts.cat import save_load, pronouns
+from scripts.cat import pronouns
 from scripts.cat.enums import (
     CatAge,
     CatRank,
@@ -36,9 +36,8 @@ from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
-from scripts.cat.status import Status, StatusDict
+from scripts.cat.status import Status
 from scripts.events_module.thoughts.generate_thoughts import (
-    new_death_thought,
     new_thought,
     get_other_cat_for_thought,
 )
@@ -3235,60 +3234,6 @@ class Cat:
 # ---------------------------------------------------------------------------- #
 #                               END OF CAT CLASS                               #
 # ---------------------------------------------------------------------------- #
-
-
-# Creates a random cat
-def create_cat(rank, moons=None, biome=None):
-    status_dict = {"rank": rank}
-
-    new_cat = Cat(status_dict=status_dict, biome=biome)
-
-    if moons is not None:
-        new_cat.moons = moons
-    elif new_cat.moons >= 160:
-        new_cat.moons = randint(120, 155)
-    elif new_cat.moons == 0:
-        new_cat.moons = randint(1, 5)
-
-    not_allowed_scars = [
-        "NOPAW",
-        "NOTAIL",
-        "HALFTAIL",
-        "NOEAR",
-        "BOTHBLIND",
-        "RIGHTBLIND",
-        "LEFTBLIND",
-        "BRIGHTHEART",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "MANLEG",
-    ]
-
-    new_cat.pelt.scars = tuple(
-        scar for scar in new_cat.pelt.scars if scar not in not_allowed_scars
-    )
-
-    return new_cat
-
-
-# Twelve example cats
-def create_example_cats():
-    warrior_indices = sample(range(12), 3)
-
-    for cat_index in range(12):
-        if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(rank=CatRank.WARRIOR)
-        else:
-            random_rank = choice(
-                [
-                    CatRank.KITTEN,
-                    CatRank.APPRENTICE,
-                    CatRank.WARRIOR,
-                    CatRank.WARRIOR,
-                    CatRank.ELDER,
-                ]
-            )
-            game.choose_cats[cat_index] = create_cat(rank=random_rank)
 
 
 def create_option_preview_cat(scar: str = None, acc: str = None):

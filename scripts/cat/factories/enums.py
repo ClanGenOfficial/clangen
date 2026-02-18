@@ -6,3 +6,4 @@ class CatType(Enum):
     LOAD_JSON = 1
     LOAD_CSV = 2
     FADED = 3
+    TEST = 999

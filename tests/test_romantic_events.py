@@ -1,6 +1,9 @@
 import os
 import unittest
 
+from scripts.cat.factories.cat_factory import CatFactory
+from scripts.cat.factories.enums import CatType
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -11,8 +14,8 @@ from scripts.events_module.relationship.romantic_events import RomanticEvents
 class RelationshipConditions(unittest.TestCase):
     def test_main_cat_status_one(self):
         # given
-        cat1 = Cat(disable_random=True)
-        cat2 = Cat(disable_random=True)
+        cat1 = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        cat2 = CatFactory.create_cat(CatType.TEST, disable_random=True)
 
         condition = {
             "romance": 0,

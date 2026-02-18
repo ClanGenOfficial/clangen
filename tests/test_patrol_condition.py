@@ -2,6 +2,8 @@ import os
 import unittest
 
 from scripts.cat.enums import CatRank
+from scripts.cat.factories.cat_factory import CatFactory
+from scripts.cat.factories.enums import CatType
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -117,8 +119,11 @@ class TestCondition(unittest.TestCase):
     def test_cold_injury(self):
         # GIVEN
         clan = Clan()
-        patrol_cat = Cat(
-            moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        patrol_cat = CatFactory.create_cat(
+            CatType.TEST,
+            moons=20,
+            status_dict={"rank": CatRank.WARRIOR},
+            disable_random=True,
         )
         patrol_cat.history = History(cat=patrol_cat)
         patrol = Patrol()

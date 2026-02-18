@@ -7,7 +7,8 @@ import shutil
 import os
 
 from scripts.cat import save_load
-from scripts.cat.cats import create_cat, Cat
+from scripts.cat.cats import Cat
+from scripts.cat.factories.create_cat import create_cat
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, Afterlife

@@ -1,6 +1,7 @@
 import unittest
 
-from scripts.cat.cats import Cat, create_cat
+from scripts.cat.cats import Cat
+from scripts.cat.factories.create_cat import create_cat
 from scripts.cat.enums import CatRank
 from scripts.clan import Clan
 from scripts.events_module.event_filters import (

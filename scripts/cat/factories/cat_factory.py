@@ -1,8 +1,11 @@
+from __future__ import annotations
+
 import random
 
 from scripts.cat.factories.enums import CatType
 from scripts.cat.factories.load_cat_factory import LoadCatFactory
 from scripts.cat.factories.new_cat_factory import NewCatFactory
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 
 class CatFactory:
@@ -13,6 +16,7 @@ class CatFactory:
         CatType.LOAD_JSON: LoadCatFactory,
         CatType.LOAD_CSV: LoadCatFactory,
         CatType.FADED: LoadCatFactory,
+        CatType.TEST: TestCatFactory,
     }
 
     @classmethod

@@ -2,6 +2,9 @@ import os
 import unittest
 from unittest.mock import patch
 
+from scripts.cat.factories.cat_factory import CatFactory
+from scripts.cat.factories.enums import CatType
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -15,7 +18,7 @@ from scripts.events_module.relationship.romantic_events import RomanticEvents
 class CanHaveKits(unittest.TestCase):
     def test_prevent_kits(self):
         # given
-        cat = Cat(disable_random=True)
+        cat = CatFactory.create_cat(CatType.TEST, disable_random=True)
         cat.no_kits = True
 
         # then
@@ -32,9 +35,9 @@ class CanHaveKits(unittest.TestCase):
         # given
         test_clan = Clan(name="clan")
         test_clan.pregnancy_data = {}
-        cat1 = Cat(gender="female", disable_random=True)
+        cat1 = CatFactory.create_cat(CatType.TEST, gender="female", disable_random=True)
         cat1.no_kits = True
-        cat2 = Cat(gender="male", disable_random=True)
+        cat2 = CatFactory.create_cat(CatType.TEST, gender="male", disable_random=True)
 
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
@@ -55,8 +58,12 @@ class SameSexAdoptions(unittest.TestCase):
     def test_kits_are_adopted(self):
         # given
 
-        cat1 = Cat(gender="female", age="adult", moons=40, disable_random=True)
-        cat2 = Cat(gender="female", age="adult", moons=40, disable_random=True)
+        cat1 = CatFactory.create_cat(
+            CatType.TEST, gender="female", age="adult", moons=40, disable_random=True
+        )
+        cat2 = CatFactory.create_cat(
+            CatType.TEST, gender="female", age="adult", moons=40, disable_random=True
+        )
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
 
@@ -93,7 +100,9 @@ class Pregnancy(unittest.TestCase):
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
-        cat = Cat(gender="female", age="adult", moons=40, disable_random=True)
+        cat = CatFactory.create_cat(
+            CatType.TEST, gender="female", age="adult", moons=40, disable_random=True
+        )
         clan.pregnancy_data = {}
 
         # when
@@ -109,8 +118,12 @@ class Pregnancy(unittest.TestCase):
     def test_pair(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
-        cat1 = Cat(gender="female", age="adult", moons=40, disable_random=True)
-        cat2 = Cat(gender="male", age="adult", moons=40, disable_random=True)
+        cat1 = CatFactory.create_cat(
+            CatType.TEST, gender="female", age="adult", moons=40, disable_random=True
+        )
+        cat2 = CatFactory.create_cat(
+            CatType.TEST, gender="male", age="adult", moons=40, disable_random=True
+        )
 
         clan.pregnancy_data = {}
 
@@ -126,8 +139,8 @@ class Pregnancy(unittest.TestCase):
 class Mates(unittest.TestCase):
     def test_platonic_kitten_mating(self):
         # given
-        cat1 = Cat(moons=3, disable_random=True)
-        cat2 = Cat(moons=3, disable_random=True)
+        cat1 = CatFactory.create_cat(CatType.TEST, moons=3, disable_random=True)
+        cat2 = CatFactory.create_cat(CatType.TEST, moons=3, disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -145,8 +158,8 @@ class Mates(unittest.TestCase):
 
     def test_platonic_apprentice_mating(self):
         # given
-        cat1 = Cat(moons=6, disable_random=True)
-        cat2 = Cat(moons=6, disable_random=True)
+        cat1 = CatFactory.create_cat(CatType.TEST, moons=6, disable_random=True)
+        cat2 = CatFactory.create_cat(CatType.TEST, moons=6, disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -164,8 +177,8 @@ class Mates(unittest.TestCase):
 
     def test_romantic_kitten_mating(self):
         # given
-        cat1 = Cat(moons=3, disable_random=True)
-        cat2 = Cat(moons=3, disable_random=True)
+        cat1 = CatFactory.create_cat(CatType.TEST, moons=3, disable_random=True)
+        cat2 = CatFactory.create_cat(CatType.TEST, moons=3, disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)
@@ -183,8 +196,8 @@ class Mates(unittest.TestCase):
 
     def test_romantic_apprentice_mating(self):
         # given
-        cat1 = Cat(moons=6, disable_random=True)
-        cat2 = Cat(moons=6, disable_random=True)
+        cat1 = CatFactory.create_cat(CatType.TEST, moons=6, disable_random=True)
+        cat2 = CatFactory.create_cat(CatType.TEST, moons=6, disable_random=True)
 
         relationship1 = Relationship(cat1, cat2)
         relationship2 = Relationship(cat2, cat1)

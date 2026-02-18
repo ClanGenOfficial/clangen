@@ -30,7 +30,7 @@ class NewCatFactory(BaseCatFactory):
         overrides = {k: v for k, v in overrides.items() if v}
 
         # the worst combined dependency ever
-        age, moons, status = self._determine_moons_and_status(
+        age, moons, status = self._determine_age_moons_and_status(
             moons=overrides.get("moons"), status_dict=overrides.get("status_dict", {})
         )
 
@@ -44,7 +44,11 @@ class NewCatFactory(BaseCatFactory):
         if pelt := overrides.get("pelt"):
             pelt = Pelt(pelt)
         else:
-            pelt = self._random_skills_dict(status.rank, age)
+            pelt = self._random_pelt(
+                gender_dict["sex"],
+                (overrides.get("parent1"), overrides.get("parent2")),
+                age,
+            )
 
         skills = overrides.get("skill_dict", self._random_skills_dict(status.rank, age))
         if not isinstance(skills, CatSkills):
@@ -92,6 +96,15 @@ class NewCatFactory(BaseCatFactory):
         }
 
         cat = Cat(**cat_params)
+
+        cat.name = Name(
+            prefix=overrides.get("prefix"),
+            suffix=overrides.get("suffix"),
+            specsuffix_hidden=overrides.get("specsuffix_hidden", False),
+            load_existing_name=True,
+            cat=cat,
+        )
+
         Cat.all_cats[cat.ID] = cat
 
         return cat
@@ -140,7 +153,7 @@ class NewCatFactory(BaseCatFactory):
         """
         return self.rng.randint(Cat.age_moons[age][0], Cat.age_moons[age][1])
 
-    def _determine_moons_and_status(
+    def _determine_age_moons_and_status(
         self, moons, status_dict
     ) -> Tuple[CatAge, int, Status]:
         """
@@ -159,8 +172,18 @@ class NewCatFactory(BaseCatFactory):
         elif not status_dict and moons:
             age = CatAge.get_from_moons(moons)
             status = self._random_status_from_age(age)
-        elif status_dict and "rank" in status_dict and not moons:
-            age = self._random_age_from_rank(status_dict["rank"])
+        elif status_dict and not moons:
+            if "rank" in status_dict:
+                age = self._random_age_from_rank(status_dict["rank"])
+            elif (
+                "group_history" in status_dict
+                and "rank" in status_dict["group_history"][-1]
+            ):
+                age = self._random_age_from_rank(
+                    status_dict["group_history"][-1]["rank"]
+                )
+            else:
+                age = self._random_age()
             status = Status(**status_dict)
             moons = self._random_moons(age)
         else:
