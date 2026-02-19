@@ -16,7 +16,7 @@ from scripts.cat.enums import (
 from scripts.cat.factories.cat_factory import CatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names, Name
-from scripts.cat.status import StatusDict
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event

@@ -15,7 +15,7 @@ from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
-from scripts.cat.status import Status, StatusDict
+from scripts.cat.status import Status
 from scripts.game_structure import game, constants
 
 BASE_RNG = random.Random

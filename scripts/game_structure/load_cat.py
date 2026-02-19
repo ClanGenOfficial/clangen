@@ -17,7 +17,7 @@ from scripts.game_structure.game.switches import (
 )
 from ..cat.factories.cat_factory import CatFactory
 from ..cat.factories.enums import CatType
-from ..cat.factories.typed_dicts import MentorshipDict
+from ..cat.factories.typed_dicts import MentorshipDict, StatusDict
 from ..cat.names import Name
 from ..cat.pronouns import get_new_pronouns
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
@@ -25,7 +25,6 @@ from scripts.game_structure import constants
 from scripts.game_structure import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
-from ..cat.status import StatusDict
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
