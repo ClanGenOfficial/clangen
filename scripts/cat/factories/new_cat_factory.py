@@ -90,7 +90,9 @@ class NewCatFactory(BaseCatFactory):
                 prevent_fading=False,
                 favourite=False,
             ),
-            "experience": overrides.get("experience", 0),
+            "experience": overrides.get(
+                "experience", self._random_experience(age, moons)
+            ),
             "birth_cooldown": overrides.get("birth_cooldown", 0),
             "specsuffix_hidden": False,
         }
