@@ -572,7 +572,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "m_c finds a young cat who asks to join the Clan. The loner is welcomed into the Clan, and renamed n_c:0.",
+    "event_text": "m_c finds a young cat who asks to join the Clan. The loner is welcomed into the Clan and renamed n_c:0.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["any"]
@@ -768,7 +768,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "m_c finds a young cat who asks to join the Clan. The kittypet is welcomed into the Clan, and renamed n_c:0.",
+    "event_text": "m_c finds a young cat who asks to join the Clan. The kittypet is welcomed into the Clan and renamed n_c:0.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["any"]
@@ -962,7 +962,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "m_c finds a young cat who asks to join the Clan. The rogue is welcomed into the Clan, and renamed n_c:0.",
+    "event_text": "m_c finds a young cat who asks to join the Clan. The rogue is welcomed into the Clan and renamed n_c:0.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
         "status": ["any"]
