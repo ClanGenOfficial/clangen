@@ -3236,37 +3236,6 @@ class Cat:
 # ---------------------------------------------------------------------------- #
 
 
-def create_option_preview_cat(scar: str = None, acc: str = None):
-    """
-    Creates a cat with the specified scar
-    """
-    new_cat = Cat(
-        loading_cat=True,
-        pelt=Pelt(
-            name="SingleColour",
-            colour="WHITE",
-            length="medium",
-            eye_color="SAGE",
-            reverse=False,
-            white_patches=None,
-            vitiligo=None,
-            points=None,
-            tortie_marking=None,
-            tortie_base=None,
-            tortie_pattern=None,
-            tortie_colour=None,
-            tint="gray",
-            skin="BLUE",
-            scars=[scar] if scar else [],
-            adult_sprite=8,
-            accessory=[acc] if acc else [],
-        ),
-    )
-    new_cat.age = CatAge.ADULT
-
-    return new_cat
-
-
 # CAT CLASS ITEMS
 cat_class = Cat
 game.cat_class = Cat
