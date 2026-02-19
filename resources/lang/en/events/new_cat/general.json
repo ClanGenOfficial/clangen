@@ -600,7 +600,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, and the young loner asked to join the Clan, officially becoming n_c:0.",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, the young loner agreeing to be trained in the ways of c_n. m_c cheers the loudest when n_c:0 is made an apprentice",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
@@ -796,7 +796,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, and the young kittypet asked to join the Clan, officially becoming n_c:0.",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, the young kittypet agreeing to be trained in the ways of c_n. m_c cheers the loudest when n_c:0 is made an apprentice",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
@@ -990,7 +990,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, and the young rogue asked to join the Clan, officially becoming n_c:0.",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, the young rogue agreeing to be trained in the ways of c_n. m_c cheers the loudest when n_c:0 is made an apprentice.",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
