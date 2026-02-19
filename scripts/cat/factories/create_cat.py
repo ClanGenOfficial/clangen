@@ -8,10 +8,10 @@ from scripts.cat.factories.enums import CatType
 from scripts.game_structure import game
 
 
-def create_cat(rank, moons=None, biome=None):
+def create_cat(rank, moons=None, biome=None, cat_type: CatType = CatType.TEST):
     status_dict = {"rank": rank}
 
-    new_cat = CatFactory.create_cat(CatType.TEST, status_dict=status_dict, biome=biome)
+    new_cat = CatFactory.create_cat(cat_type, status_dict=status_dict, biome=biome)
 
     if moons is not None:
         new_cat.moons = moons
@@ -46,7 +46,9 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(rank=CatRank.WARRIOR)
+            game.choose_cats[cat_index] = create_cat(
+                cat_type=CatType.NEW, rank=CatRank.WARRIOR
+            )
         else:
             random_rank = choice(
                 [
@@ -57,4 +59,6 @@ def create_example_cats():
                     CatRank.ELDER,
                 ]
             )
-            game.choose_cats[cat_index] = create_cat(rank=random_rank)
+            game.choose_cats[cat_index] = create_cat(
+                cat_type=CatType.NEW, rank=random_rank
+            )
