@@ -133,7 +133,7 @@ class Cat:
     def __init__(
         self,
         ID: str,
-        gender_dict: dict,
+        gender_dict: GenderDict,
         pelt: Pelt,
         moons: int,
         status: Status,
