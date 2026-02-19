@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from random import randint, sample, choice
 
-from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
 from scripts.cat.factories.cat_factory import CatFactory
 from scripts.cat.factories.enums import CatType
