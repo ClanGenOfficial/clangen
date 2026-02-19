@@ -49,8 +49,14 @@ def get_other_cat_for_thought(
         # count and give up if we don't find a suitable cat within 100 checks
         i = 0
         while cat_list and (
-            (other_cat.dead and not thinking_of_dead_cat)
-            or other_cat.ID not in main_cat.relationships
+            (
+                other_cat.dead and not thinking_of_dead_cat
+            )  # dead and thought isn't about dead cat
+            or (
+                main_cat.relationships.get(other_cat.ID)
+                and main_cat.relationships[other_cat.ID].total_relationship_value == 0
+            )  # the two cats have no existing relationship
+            or other_cat.status.is_lost()  # other cat is lost
         ):
             cat_list.remove(other_cat)
 
