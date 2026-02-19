@@ -170,8 +170,8 @@ class Cat:
         :param experience: Cat's experience value
         :param birth_cooldown: How many moons that must pass before this cat can give birth again
         :param specsuffix_hidden: Whether to show or hide the "special suffix" for a cat's name
-        :param example: I actually don't know what this does
-        :param faded: Set to True if a cat is faded.
+        :param example: Marks a cat as being part of the MakeClanScreen
+        :param faded: Set to True if a cat is faded
         :param kwargs: Any other non-specified values. Can include biome for some reason.
         """
 
@@ -218,8 +218,8 @@ class Cat:
         self.adoptive_parents = inheritance["adoptive_parents"]
         self.faded_offspring = inheritance["faded_offspring"]
         """Stores of a list of faded offspring, for relation tracking purposes"""
-        self.mate = []
-        self.previous_mates = []
+        self.mate = inheritance["mate"]
+        self.previous_mates = inheritance["previous_mates"]
         self.inheritance = None
 
         # afterlife affinity
