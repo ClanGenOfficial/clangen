@@ -164,10 +164,11 @@ class NewCatFactory(BaseCatFactory):
         self, moons, status_dict
     ) -> Tuple[CatAge, int, Status]:
         """
+        Figure out the age, moons and status of a cat depending on what's provided
 
-        :param moons:
-        :param status_dict:
-        :return: moons and status_dict
+        :param moons: Moons of the cat
+        :param status_dict: Status dict describing the cat
+        :return: CatAge, moons and Status that all agree with one another
         """
         age = None
         if status_dict and moons is not None:
