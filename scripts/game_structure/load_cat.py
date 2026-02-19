@@ -17,6 +17,8 @@ from scripts.game_structure.game.switches import (
 )
 from ..cat.factories.cat_factory import CatFactory
 from ..cat.factories.enums import CatType
+from ..cat.factories.typed_dicts import MentorshipDict
+from ..cat.names import Name
 from ..cat.pronouns import get_new_pronouns
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.game_structure import constants
@@ -30,15 +32,15 @@ logger = logging.getLogger(__name__)
 
 
 def load_cats():
-    # try:
-    json_load()
-    # except FileNotFoundError:
-    #     try:
-    #         csv_load(Cat.all_cats)
-    #     except FileNotFoundError as e:
-    #         switch_set_value(Switch.error_message, "Can't find clan_cats.json!")
-    #         switch_set_value(Switch.traceback, e)
-    #         raise
+    try:
+        json_load()
+    except FileNotFoundError:
+        try:
+            csv_load(Cat.all_cats)
+        except FileNotFoundError as e:
+            switch_set_value(Switch.error_message, "Can't find clan_cats.json!")
+            switch_set_value(Switch.traceback, e)
+            raise
 
 
 def json_load():
@@ -199,22 +201,40 @@ def csv_load(all_cats):
                     Switch.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 2)",
                 )
-                the_cat = Cat(
+
+                inheritance = {
+                    "parent1": attr[6],
+                    "parent2": attr[7],
+                }
+
+                mentorship = MentorshipDict(
+                    mentor=attr[8],
+                    former_mentor=[],
+                    patrol_with_mentor=0,
+                    apprentice=[],
+                    former_apprentices=[],
+                )
+
+                the_cat = CatFactory.create_cat(
+                    CatType.LOAD_CSV,
                     ID=attr[0],
-                    prefix=attr[1].split(":")[0],
-                    suffix=attr[1].split(":")[1],
                     gender=attr[2],
                     status={"rank": attr[3]},
+                    inheritance=inheritance,
+                    mentorship=mentorship,
                     pelt=the_pelt,
-                    parent1=attr[6],
-                    parent2=attr[7],
+                )
+
+                the_cat.name = Name(
+                    prefix=attr[1].split(":")[0],
+                    suffix=attr[1].split(":")[1],
                 )
 
                 switch_set_value(
                     Switch.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 3)",
                 )
-                the_cat.age, the_cat.mentor = attr[4], attr[8]
+                the_cat.mentor = attr[8]
                 switch_set_value(
                     Switch.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 4)",
