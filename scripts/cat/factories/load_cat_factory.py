@@ -146,7 +146,7 @@ class LoadCatFactory(BaseCatFactory):
         Check & convert status to new Status
         :param status_dict: Possible status_dict
         :param moons: age in moons
-        :param old_bools: old-style status bools in a tuple
+        :param old_bools: old-style status bools in a list
         :return: valid status
         """
         if status_dict is None:
@@ -226,7 +226,7 @@ class LoadCatFactory(BaseCatFactory):
 
         for specialty in ("specialty", "specialty2"):
             if old_scars := kwargs.get(specialty):
-                kwargs["scars"] = [*kwargs["scars"], old_scars]
+                kwargs["scars"] = tuple([*kwargs["scars"], old_scars])
 
         pelt = Pelt(
             **{
