@@ -888,7 +888,7 @@ class Pregnancy_Events:
                 kitten_status: StatusDict = {
                     "social": blood_parent.status.social,
                     "age": CatAge.NEWBORN,
-                    "group_ID": blood_parent.status.group_ID,
+                    "group_ID": blood_parent.status.get_last_living_group(),
                 }
 
                 kit = CatFactory.create_cat(
