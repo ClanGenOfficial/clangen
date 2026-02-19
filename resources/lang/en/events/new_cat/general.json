@@ -614,7 +614,7 @@
         {
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
-            "mutual": false,
+            "mutual": true,
             "values": ["trust", "respect"],
             "amount": 30,
             "log": {
@@ -810,7 +810,7 @@
         {
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
-            "mutual": false,
+            "mutual": true,
             "values": ["trust", "respect"],
             "amount": 30,
             "log": {
@@ -1004,7 +1004,7 @@
         {
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
-            "mutual": false,
+            "mutual": true,
             "values": ["trust", "respect"],
             "amount": 30,
             "log": {
