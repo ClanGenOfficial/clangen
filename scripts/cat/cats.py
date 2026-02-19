@@ -260,6 +260,9 @@ class Cat:
         self._sprite_working: bool = self.not_working()
         """used to store whether we should be displaying sick sprite or not"""
 
+        # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
+        self.all_cats[self.ID] = self
+
         if self.ID is not None and self.ID != "0":
             Cat.insert_cat(self)
 
@@ -289,6 +292,8 @@ class Cat:
         self.moons = moons
         self.inheritance = None  # This should never be used, but just for safety
         # name is assigned by FadedCatFactory
+
+        self.faded = True
         return True
 
     def __repr__(self):
