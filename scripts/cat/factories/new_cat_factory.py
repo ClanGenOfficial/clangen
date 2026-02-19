@@ -27,11 +27,15 @@ class NewCatFactory(BaseCatFactory):
 
     def create_cat(self, **overrides):
         # remove all values that are empty
-        overrides = {k: v for k, v in overrides.items() if v}
+        overrides = {k: v for k, v in overrides.items() if v is not None}
+
+        status_dict = overrides.get("status_dict", {})
+        if "rank" in overrides:
+            status_dict["rank"] = overrides.get("rank")
 
         # the worst combined dependency ever
         age, moons, status = self._determine_age_moons_and_status(
-            moons=overrides.get("moons"), status_dict=overrides.get("status_dict", {})
+            moons=overrides.get("moons"), status_dict=status_dict
         )
 
         gender_dict = self._random_gender_and_genderalign(age)
@@ -94,6 +98,7 @@ class NewCatFactory(BaseCatFactory):
                 "experience", self._random_experience(age, moons)
             ),
             "birth_cooldown": overrides.get("birth_cooldown", 0),
+            "faded": False,
             "specsuffix_hidden": False,
         }
 
@@ -165,16 +170,16 @@ class NewCatFactory(BaseCatFactory):
         :return: moons and status_dict
         """
         age = None
-        if status_dict and moons:
+        if status_dict and moons is not None:
             return CatAge.get_from_moons(moons), moons, Status(**status_dict)
-        if not status_dict and not moons:
+        if not status_dict and moons is None:
             age = self._random_age()
             status = self._random_status_from_age(age)
             moons = self._random_moons(age)
-        elif not status_dict and moons:
+        elif not status_dict and moons is not None:
             age = CatAge.get_from_moons(moons)
             status = self._random_status_from_age(age)
-        elif status_dict and not moons:
+        elif status_dict and moons is None:
             if "rank" in status_dict:
                 age = self._random_age_from_rank(status_dict["rank"])
             elif (
