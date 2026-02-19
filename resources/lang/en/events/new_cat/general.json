@@ -600,7 +600,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, the young loner agreeing to be trained in the ways of c_n. m_c cheers the loudest when n_c:0 is made an apprentice",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new loner friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
@@ -618,7 +618,7 @@
             "values": ["trust", "respect"],
             "amount": 30,
             "log": {
-                    "cats_from": "m_c and n_c:0 became friends over the border before the latter joined the Clan."
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
                 }
         }
     ]
@@ -796,7 +796,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, the young kittypet agreeing to be trained in the ways of c_n. m_c cheers the loudest when n_c:0 is made an apprentice",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new kittypet friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
@@ -814,7 +814,7 @@
             "values": ["trust", "respect"],
             "amount": 30,
             "log": {
-                    "cats_from": "m_c and n_c:0 became friends over the border before the latter joined the Clan."
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
                 }
         }
     ]
@@ -990,7 +990,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new friend a secret forever. The two quietly came back into camp one day, the young rogue agreeing to be trained in the ways of c_n. m_c cheers the loudest when n_c:0 is made an apprentice.",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new rogue friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
@@ -1008,7 +1008,7 @@
             "values": ["trust", "respect"],
             "amount": 30,
             "log": {
-                    "cats_from": "m_c and n_c:0 became friends over the border before the latter joined the Clan."
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
                 }
         }
     ]
