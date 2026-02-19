@@ -15,7 +15,8 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.cat.enums import CatRank
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
+from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.game_structure.constants import DISPLAY_SETTINGS
 from scripts.ui.windows.select_focus_clans import SelectFocusClansWindow
 from scripts.screens.Screens import Screens

@@ -13,13 +13,13 @@ from scripts.clan_package.settings import (
 )
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-    UIImageButton,
     UICheckbox,
-    UITextBoxTweaked,
     UICatListDisplay,
     UIModifiedScrollingContainer,
 )
+from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.windows.window_base_class import GameWindow

@@ -10,9 +10,9 @@ from scripts.game_structure.localization import (
 from scripts.cat.pronouns import get_custom_pronouns, add_custom_pronouns
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
     UIDropDown,
 )
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles

@@ -4,10 +4,8 @@ import shutil
 import pygame
 import pygame_gui
 
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-    UITextBoxTweaked,
-)
+from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles

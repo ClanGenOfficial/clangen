@@ -15,11 +15,11 @@ from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache, game
 from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UITextBoxTweaked,
-    UISurfaceImageButton,
     UIModifiedImage,
 )
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import (
     process_text,

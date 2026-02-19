@@ -21,9 +21,7 @@ from scripts.game_structure import game
 from scripts.cat.pronouns import get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
     UIModifiedScrollingContainer,
-    UITextBoxTweaked,
     UICheckbox,
     UIModifiedImage,
     UIScrollingButtonList,
@@ -31,6 +29,8 @@ from scripts.game_structure.ui_elements import (
     UICollapsibleContainer,
     UIScrollingDropDown,
 )
+from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.editor_save_check import EditorSaveCheck
 from scripts.ui.windows.editor_missing_info import EditorMissingInfoWindow
 from scripts.screens.RelationshipScreen import RelationshipScreen

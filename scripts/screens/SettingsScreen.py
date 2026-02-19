@@ -22,12 +22,12 @@ from scripts.game_structure.game.settings import (
 import scripts.game_structure.game.settings.settings as all_settings
 from scripts.game_structure import game
 from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UISurfaceImageButton,
     UIImageHorizontalSlider,
     UIModifiedScrollingContainer,
     UICheckbox,
 )
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import open_data_dir
 from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions

@@ -9,9 +9,9 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
-    UIImageButton,
     UIModifiedScrollingContainer,
 )
+from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
 
