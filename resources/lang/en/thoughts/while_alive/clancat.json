@@ -143,7 +143,10 @@
         "random_age_constraint": [
             "newborn"
         ],
-        "relationship_constraint": ["-parent/child"]
+        "relationship_constraint": ["-parent/child"],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "gen_apprentice_to_newborn",
@@ -161,6 +164,9 @@
         ],
         "random_age_constraint": [
             "newborn"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -194,6 +200,9 @@
         ],
         "random_status_constraint": [
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -210,6 +219,9 @@
         ],
         "random_status_constraint": [
             "medicine cat"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -227,6 +239,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -241,6 +256,9 @@
         ],
         "random_status_constraint": [
             "elder"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -258,6 +276,9 @@
         ],
         "random_status_constraint": [
             "mediator"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -274,6 +295,9 @@
         ],
         "random_status_constraint": [
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -535,6 +559,9 @@
         ],
         "main_trait_constraint": [
             "calm"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -554,6 +581,9 @@
         ],
         "main_trait_constraint": [
             "careful"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -617,6 +647,9 @@
         ],
         "main_trait_constraint": [
             "childish"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -745,6 +778,9 @@
         ],
         "main_trait_constraint": [
             "compassionate"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -830,6 +866,9 @@
         ],
         "main_trait_constraint": [
             "competitive"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -880,6 +919,9 @@
         ],
         "main_trait_constraint": [
             "cunning"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -917,6 +959,9 @@
         ],
         "main_trait_constraint": [
             "fierce"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -977,6 +1022,9 @@
         ],
         "main_trait_constraint": [
             "insecure"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1058,6 +1106,9 @@
         ],
         "main_trait_constraint": [
             "loving"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1232,6 +1283,9 @@
         ],
         "main_trait_constraint": [
             "rebellious"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1467,6 +1521,9 @@
         ],
         "main_trait_constraint": [
             "strict"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1590,6 +1647,9 @@
         ],
         "main_trait_constraint": [
             "troublesome"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1670,6 +1730,9 @@
         ],
         "random_status_constraint": [
             "leader"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1732,6 +1795,9 @@
         ],
         "main_skill_constraint": [
             "TEACHER,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1837,6 +1903,9 @@
         ],
         "main_skill_constraint": [
             "SWIMMER,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1851,6 +1920,9 @@
         ],
         "main_skill_constraint": [
             "SPEAKER,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1869,6 +1941,9 @@
         ],
         "main_skill_constraint": [
             "MEDIATOR,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1902,6 +1977,9 @@
         ],
         "main_skill_constraint": [
             "CLEVER,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1918,6 +1996,9 @@
         ],
         "main_skill_constraint": [
             "INSIGHTFUL,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1978,6 +2059,9 @@
         ],
         "random_age_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -1992,6 +2076,9 @@
         ],
         "main_skill_constraint": [
             "STORY,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2007,6 +2094,9 @@
         ],
         "main_skill_constraint": [
             "LORE,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2042,6 +2132,9 @@
         ],
         "main_skill_constraint": [
             "HEALER,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2119,6 +2212,9 @@
         ],
         "main_skill_constraint": [
             "DARK,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2130,6 +2226,9 @@
         ],
         "random_skill_constraint": [
             "DARK,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2182,6 +2281,9 @@
         ],
         "main_skill_constraint": [
             "DREAM,2"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2199,6 +2301,9 @@
         ],
         "main_skill_constraint": [
             "CLAIRVOYANT,1"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -2585,6 +2690,9 @@
         ],
         "main_backstory_constraint": [
             "kittypet_backstories"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -3007,6 +3115,9 @@
         ],
         "relationship_constraint": [
             "app/mentor"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -3365,6 +3476,9 @@
         ],
         "main_trait_constraint": [
             "charismatic"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -3388,6 +3502,9 @@
         ],
         "main_trait_constraint": [
             "childish"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -3410,6 +3527,9 @@
         ],
         "main_trait_constraint": [
             "cold"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -3525,6 +3645,9 @@
         ],
         "main_trait_constraint": [
             "insecure"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -3621,6 +3744,9 @@
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -3637,6 +3763,9 @@
         ],
         "main_trait_constraint": [
             "loyal"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
 	{
@@ -3716,6 +3845,9 @@
         ],
         "main_trait_constraint": [
             "playful"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
 	{
@@ -4676,6 +4808,9 @@
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -5235,7 +5370,10 @@
                 "lost a leg",
                 "born without a leg"
             ]
-        }
+        },
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "lost_leg_gen_to_alive_kit",
@@ -5272,7 +5410,10 @@
                 "lost their tail",
                 "born without a tail"
             ]
-        }
+        },
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "half_no_tail_lost_gen_to_alive_gen",
@@ -5285,7 +5426,10 @@
             "m_c": [
                 "lost their tail"
             ]
-        }
+        },
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "half_no_tail_gen_to_alive_kit",
@@ -5304,6 +5448,9 @@
         "random_age_constraint": [
             "newborn",
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -5388,6 +5535,9 @@
         },
         "random_age_constraint": [
             "kitten"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
@@ -5517,6 +5667,9 @@
         "random_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
 	{
@@ -6345,7 +6498,10 @@
                 "severe burn",
                 "severe headache"
             ]
-        }
+        },
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "seizure_prone_gen",
