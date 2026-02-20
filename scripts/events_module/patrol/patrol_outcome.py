@@ -972,7 +972,7 @@ class PatrolOutcome:
             return None
 
         chosen_scar = choice(scar_list)
-        cat.pelt.scars.append(chosen_scar)
+        cat.pelt.scars = (*cat.pelt.scars, chosen_scar)
 
         history_text = self.history_scar
         if history_text and isinstance(history_text, str):

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 import os
+from copy import deepcopy
 from random import choice
 from re import sub
 
@@ -14,11 +15,11 @@ from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache, game
 from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UITextBoxTweaked,
-    UISurfaceImageButton,
     UIModifiedImage,
 )
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import (
     process_text,
@@ -352,7 +353,7 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.leave_clan_button:
                 LeaveClanWindow(self.the_cat)
             elif event.ui_element == self.destroy_accessory_button:
-                self.the_cat.pelt.accessory = []
+                self.the_cat.pelt.accessory = tuple()
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -766,7 +767,7 @@ class ProfileScreen(Screens):
 
         # ACCESSORY
         if the_cat.pelt.accessory:
-            cats_accs = the_cat.pelt.accessory.copy()
+            cats_accs = list(deepcopy(the_cat.pelt.accessory))
             acc_list = []
             if sprites.COLLAR_DATA["palette_map"]:
                 for acc in the_cat.pelt.accessory:
@@ -1286,7 +1287,7 @@ class ProfileScreen(Screens):
                 body_history.append(death_history)
             # separate scar and death
             if body_history:
-                life_history.append("\n".join(body_history))
+                life_history.append("<br>".join(body_history))
 
             murder = self.get_murder_text()
             if murder:
@@ -1297,7 +1298,7 @@ class ProfileScreen(Screens):
                 life_history.append(afterlife_acceptance)
 
             # join together history list with line breaks
-            output = "\n\n".join(life_history)
+            output = "<br><br>".join(life_history)
         return output
 
     def get_afterlife_acceptance_text(self):
@@ -2179,11 +2180,12 @@ class ProfileScreen(Screens):
                 self.see_relationships_button.enable()
                 self.change_adoptive_parent_button.enable()
 
-            if (
-                self.the_cat.age
-                not in ["young adult", "adult", "senior adult", "senior"]
-                or not self.the_cat.status.alive_in_player_clan
-            ):
+            if self.the_cat.age not in [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior",
+            ]:
                 self.choose_mate_button.disable()
             else:
                 self.choose_mate_button.enable()

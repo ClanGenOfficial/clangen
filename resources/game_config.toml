@@ -516,6 +516,10 @@ dev_tools = false
 [focus]
   # NOTE: 'raid other clans' should be more dangerous than 'hoarding'!!!
   duration = 3
+  requires_mediator = ["sabotage_other_clans", "aid_other_clans"]
+  requires_medicine_cat = ["herb_gathering"]
+
+  classic_disallows = ["herb_gathering", "hunting", "hoarding_resources", "raid_other_clans","hoarding"]
 
   [focus.hunting]
     # Defines how much a working warrior(leader/deputy) or apprentice gathers additionally
@@ -526,11 +530,11 @@ dev_tools = false
     # Defines how much increase or decrease the reputation is.
     reputation = 5
 
-  [focus."other clans"]
+  [focus."other_clans"]
     # Defines how much increase or decrease the relation with other clans is.
     relation = 2
 
-  [focus."raid other clans"]
+  [focus."raid_other_clans"]
     # how much prey each working warrior(leader/deputy) will gather
     prey_warrior = 3
 
@@ -549,7 +553,7 @@ dev_tools = false
 
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
-    [focus."raid other clans".injuries]
+    [focus."raid_other_clans".injuries]
       claw-wound = 15
       "cat bite" = 15
       "torn pelt" = 15
@@ -597,7 +601,7 @@ dev_tools = false
       "running nose" = 5
       whitecough = 1
 
-  [focus."rest and recover"]
+  [focus."rest_and_recover"]
     # roughly 1/chance injuries will be prevented
     injury_prevent = 4
 

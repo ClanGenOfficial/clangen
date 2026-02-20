@@ -653,12 +653,11 @@ class Cat:
         """
         return not self.dead
 
-    def die(self, body: bool = True):
+    def die(self, body: bool = True, grief_allowed: bool = True):
         """Kills cat.
-
-        body - defaults to True, use this to mark if the body was recovered so
+        :param body: defaults to True, use this to mark if the body was recovered so
         that grief messages will align with body status
-        - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
+        :param grief_allowed: defaults to True, set to False if death should not trigger grief
         """
         if (
             self.status.is_leader
@@ -701,7 +700,11 @@ class Cat:
 
         # handle grief
         # since we just yeeted them to their afterlife, we gotta check their previous group affiliation, not current
-        if game.clan and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN_ID:
+        if (
+            grief_allowed
+            and game.clan
+            and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN_ID
+        ):
             self.grief(body)
             Cat.dead_cats.append(self)
 
@@ -1652,7 +1655,7 @@ class Cat:
         moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
 
         # focus buff
-        moons_prior = constants.CONFIG["focus"]["rest and recover"][
+        moons_prior = constants.CONFIG["focus"]["rest_and_recover"][
             "moons_earlier_healed"
         ]
 
@@ -1660,9 +1663,9 @@ class Cat:
             self.healed_condition = True
             return False
 
-        # CLAN FOCUS! - if the focus 'rest and recover' is selected
+        # CLAN FOCUS! - if the focus 'rest_and_recover' is selected
         elif (
-            get_clan_setting("rest and recover")
+            get_clan_setting("rest_and_recover")
             and self.illnesses[illness]["duration"] + moons_prior - moons_with <= 0
         ):
             self.healed_condition = True
@@ -1694,7 +1697,7 @@ class Cat:
         moons_with = game.clan.age - self.injuries[injury]["moon_start"]
 
         # focus buff
-        moons_prior = constants.CONFIG["focus"]["rest and recover"][
+        moons_prior = constants.CONFIG["focus"]["rest_and_recover"][
             "moons_earlier_healed"
         ]
 
@@ -1706,10 +1709,10 @@ class Cat:
             self.healed_condition = True
             return False
 
-        # CLAN FOCUS! - if the focus 'rest and recover' is selected
+        # CLAN FOCUS! - if the focus 'rest_and_recover' is selected
         elif (
             not self.injuries[injury]["complication"]
-            and get_clan_setting("rest and recover")
+            and get_clan_setting("rest_and_recover")
             and self.injuries[injury]["duration"] + moons_prior - moons_with <= 0
         ):
             self.healed_condition = True
@@ -2034,9 +2037,9 @@ class Cat:
         new_condition = choice(possible_conditions)
 
         if new_condition == "born without a leg":
-            cat.pelt.scars.append("NOPAW")
+            cat.pelt.scars = (*cat.pelt.scars, "NOPAW")
         elif new_condition == "born without a tail":
-            cat.pelt.scars.append("NOTAIL")
+            cat.pelt.scars = (*cat.pelt.scars, "NOTAIL")
 
         self.get_permanent_condition(new_condition, born_with=True)
 
@@ -2057,7 +2060,7 @@ class Cat:
 
         # remove accessories if need be
         if "NOTAIL" in self.pelt.scars or "HALFTAIL" in self.pelt.scars:
-            self.pelt.accessory = [
+            self.pelt.accessory = tuple(
                 acc
                 for acc in self.pelt.accessory
                 if acc
@@ -2072,7 +2075,7 @@ class Cat:
                     "WISTERIA",
                     "GOLDEN CREEPING JENNY",
                 )
-            ]
+            )
 
         condition = PERMANENT[name]
         new_condition = False
@@ -3458,9 +3461,9 @@ def create_cat(rank, moons=None, biome=None):
         "MANLEG",
     ]
 
-    for scar in new_cat.pelt.scars:
-        if scar in not_allowed_scars:
-            new_cat.pelt.scars.remove(scar)
+    new_cat.pelt.scars = tuple(
+        scar for scar in new_cat.pelt.scars if scar not in not_allowed_scars
+    )
 
     return new_cat
 
