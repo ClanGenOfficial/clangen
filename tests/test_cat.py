@@ -4,8 +4,7 @@ from copy import deepcopy
 from random import Random
 from unittest.mock import patch
 
-from scripts.cat.factories.cat_factory import cat_factory
-from scripts.cat.factories.test_cat_factory import Testcat_factory
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -15,7 +14,7 @@ from scripts.game_structure import game
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatSocial
 from scripts.cat_relations.relationship import Relationship
 
-cat_factory = Testcat_factory(rng=Random())
+cat_factory = TestCatFactory(rng=Random())
 
 
 class TestCreationAge(unittest.TestCase):
