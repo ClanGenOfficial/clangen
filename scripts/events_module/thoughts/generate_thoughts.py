@@ -363,6 +363,10 @@ def _constraints_fulfilled(
             living_status = "living"
         if living_status and living_status != "living":
             return False
+    
+    # Check if dead cat was from player clan to avoid mixing other clan cats
+    if random_cat and random_cat.dead and random_cat.status.is_other_clancat:
+        return False
 
     if random_cat and random_cat.status.is_lost():
         outside_status = "lost"
