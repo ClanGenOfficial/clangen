@@ -23,6 +23,8 @@ class FadedCatFactory(BaseCatFactory):
             status.send_to_afterlife(
                 CatGroup.DARK_FOREST_ID
                 if kwargs.get("df", False)
+                else CatGroup.UNKNOWN_RESIDENCE
+                if status.is_outsider and not status.is_former_clancat
                 else CatGroup.STARCLAN_ID
             )
         else:
