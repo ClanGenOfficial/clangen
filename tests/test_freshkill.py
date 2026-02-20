@@ -1,10 +1,9 @@
 import os
 import shutil
 from pathlib import Path
+from random import Random
 
-from scripts.cat.factories.cat_factory import CatFactory
-from scripts.cat.factories.create_cat import create_cat
-from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.game_structure.game.save_load import read_clans
 from scripts.housekeeping.datadir import get_save_dir
 
@@ -16,7 +15,6 @@ except ImportError:
 import unittest
 from uuid import uuid4
 
-import ujson
 
 from scripts.cat import save_load
 from scripts.cat.enums import CatRank
@@ -32,6 +30,9 @@ from scripts.cat.skills import Skill, SkillPath
 from scripts.clan import Clan, Afterlife
 from scripts.clan_resources.freshkill import FreshkillPile
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
+
+
+cat_factory = TestCatFactory(rng=Random())
 
 
 class FreshkillPileTest(unittest.TestCase):
@@ -57,16 +58,16 @@ class FreshkillPileTest(unittest.TestCase):
 
         # set up clan members and some helpful lists for us to use later
         self.warriors = [
-            create_cat(CatRank.WARRIOR, moons=199),
-            create_cat(CatRank.WARRIOR, moons=20),
-            create_cat(CatRank.WARRIOR, moons=13),
+            cat_factory.create_cat(rank=CatRank.WARRIOR, moons=199),
+            cat_factory.create_cat(rank=CatRank.WARRIOR, moons=20),
+            cat_factory.create_cat(rank=CatRank.WARRIOR, moons=13),
         ]
         self.apprentices = [
-            create_cat(CatRank.APPRENTICE, moons=11),
-            create_cat(CatRank.APPRENTICE, moons=7),
+            cat_factory.create_cat(rank=CatRank.APPRENTICE, moons=11),
+            cat_factory.create_cat(rank=CatRank.APPRENTICE, moons=7),
         ]
-        self.elder = create_cat(CatRank.ELDER, moons=200)
-        self.kitten = create_cat(CatRank.KITTEN, moons=3)
+        self.elder = cat_factory.create_cat(rank=CatRank.ELDER, moons=200)
+        self.kitten = cat_factory.create_cat(rank=CatRank.KITTEN, moons=3)
 
         members = [self.elder, self.kitten]
         members.extend(self.warriors)
@@ -77,9 +78,9 @@ class FreshkillPileTest(unittest.TestCase):
         game.clan = Clan(
             name=self.test_clan_name,
             displayname="Test",
-            leader=create_cat(CatRank.LEADER, moons=20),
-            deputy=create_cat(CatRank.DEPUTY, moons=20),
-            medicine_cat=create_cat(CatRank.MEDICINE_CAT, moons=20),
+            leader=cat_factory.create_cat(rank=CatRank.LEADER, moons=20),
+            deputy=cat_factory.create_cat(rank=CatRank.DEPUTY, moons=20),
+            medicine_cat=cat_factory.create_cat(rank=CatRank.MEDICINE_CAT, moons=20),
             biome="Forest",
             camp_bg="camp1",
             symbol="symbolADDER0",
@@ -451,22 +452,19 @@ class FreshkillPileTest(unittest.TestCase):
     def test_queen_handling(self) -> None:
         # given
         # young enough kid
-        mother = CatFactory.create_cat(
-            CatType.TEST,
+        mother = cat_factory.create_cat(
             status_dict={"rank": CatRank.WARRIOR},
             moons=1,
             disable_random=True,
         )
         mother.gender = "female"
-        father = CatFactory.create_cat(
-            CatType.TEST,
+        father = cat_factory.create_cat(
             status_dict={"rank": CatRank.WARRIOR},
             moons=1,
             disable_random=True,
         )
         father.gender = "male"
-        kid = CatFactory.create_cat(
-            CatType.TEST,
+        kid = cat_factory.create_cat(
             status_dict={"rank": CatRank.KITTEN},
             moons=1,
             disable_random=True,
@@ -475,8 +473,7 @@ class FreshkillPileTest(unittest.TestCase):
         kid.parent1 = father
         kid.parent2 = mother
 
-        no_parent = CatFactory.create_cat(
-            CatType.TEST,
+        no_parent = cat_factory.create_cat(
             status_dict={"rank": CatRank.WARRIOR},
             moons=1,
             disable_random=True,
@@ -516,21 +513,18 @@ class FreshkillPileTest(unittest.TestCase):
     def test_pregnant_handling(self) -> None:
         # given
         # young enough kid
-        pregnant_cat = CatFactory.create_cat(
-            CatType.TEST,
+        pregnant_cat = cat_factory.create_cat(
             status_dict={"rank": CatRank.WARRIOR},
             moons=1,
             disable_random=True,
         )
         pregnant_cat.injuries["pregnant"] = {"severity": "minor"}
-        cat2 = CatFactory.create_cat(
-            CatType.TEST,
+        cat2 = cat_factory.create_cat(
             status_dict={"rank": CatRank.WARRIOR},
             moons=1,
             disable_random=True,
         )
-        cat3 = CatFactory.create_cat(
-            CatType.TEST,
+        cat3 = cat_factory.create_cat(
             status_dict={"rank": CatRank.WARRIOR},
             moons=1,
             disable_random=True,

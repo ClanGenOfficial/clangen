@@ -1,31 +1,30 @@
 import os
 import unittest
-
-from scripts.cat.factories.cat_factory import CatFactory
-from scripts.cat.factories.enums import CatType
-from scripts.cat_relations.enums import rel_type_tiers
+from random import Random
 
 from scripts.cat.enums import CatRank
+from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat_relations.enums import rel_type_tiers
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat, Relationship
+from scripts.cat.cats import Relationship
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat_relations.interaction import (
     SingleInteraction,
     cats_fulfill_single_interaction_constraints,
 )
 
+cat_factory = TestCatFactory(rng=Random())
+
 
 class RelationshipConstraints(unittest.TestCase):
     def test_siblings(self):
         # given
-        parent = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_from = CatFactory.create_cat(CatType.TEST, parent1=parent.ID)
-        cat_to = CatFactory.create_cat(CatType.TEST, parent1=parent.ID)
+        parent = cat_factory.create_cat()
+        cat_from = cat_factory.create_cat(parent1=parent.ID)
+        cat_to = cat_factory.create_cat(parent1=parent.ID)
         rel = Relationship(cat_from, cat_to, False, True)
 
         # then
@@ -38,12 +37,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_mates(self):
         # given
-        cat_from = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from = cat_factory.create_cat()
+        cat_to = cat_factory.create_cat()
         cat_from.mate.append(cat_to.ID)
         cat_to.mate.append(cat_from.ID)
         rel = Relationship(cat_from, cat_to, True, False)
@@ -58,10 +53,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_parent_child_combo(self):
         # given
-        parent = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        child = CatFactory.create_cat(CatType.TEST, parent1=parent.ID)
+        parent = cat_factory.create_cat()
+        child = cat_factory.create_cat(parent1=parent.ID)
 
         child_parent_rel = Relationship(child, parent, False, True)
         parent_child_rel = Relationship(parent, child, False, True)
@@ -90,12 +83,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_rel_values_only_constraint_pos(self):
         # given
-        cat_from1 = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to1 = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         low_rel = Relationship(cat_from1, cat_to1)
         low_rel.romance = 10
         low_rel.like = 10
@@ -103,12 +92,8 @@ class RelationshipConstraints(unittest.TestCase):
         low_rel.trust = 10
         low_rel.respect = 10
 
-        cat_from2 = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to2 = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from2 = cat_factory.create_cat()
+        cat_to2 = cat_factory.create_cat()
         mid_rel = Relationship(cat_from2, cat_to2)
         mid_rel.romance = 50
         mid_rel.like = 50
@@ -116,12 +101,8 @@ class RelationshipConstraints(unittest.TestCase):
         mid_rel.trust = 50
         mid_rel.respect = 50
 
-        cat_from3 = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to3 = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from3 = cat_factory.create_cat()
+        cat_to3 = cat_factory.create_cat()
         high_rel = Relationship(cat_from3, cat_to3)
         high_rel.romance = 90
         high_rel.like = 90
@@ -185,36 +166,24 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_rel_values_only_constraint_neg(self):
         # given
-        cat_from1 = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to1 = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         mid_rel = Relationship(cat_from1, cat_to1)
         mid_rel.romance = -50
         mid_rel.like = -50
         mid_rel.comfort = -50
         mid_rel.trust = -50
 
-        cat_from2 = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to2 = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from2 = cat_factory.create_cat()
+        cat_to2 = cat_factory.create_cat()
         low_rel = Relationship(cat_from2, cat_to2)
         low_rel.romance = -10
         low_rel.like = -10
         low_rel.comfort = -10
         low_rel.trust = -10
 
-        cat_from3 = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to3 = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from3 = cat_factory.create_cat()
+        cat_to3 = cat_factory.create_cat()
         high_rel = Relationship(cat_from3, cat_to3)
         high_rel.romance = -90
         high_rel.like = -90
@@ -278,12 +247,8 @@ class RelationshipConstraints(unittest.TestCase):
     def test_rel_values_ranged_constraint(self):
         # given
         # pos side
-        cat_from1 = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to1 = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         high_rel = Relationship(cat_from1, cat_to1)
         high_rel.romance = 90
         high_rel.like = 90
@@ -292,12 +257,8 @@ class RelationshipConstraints(unittest.TestCase):
         high_rel.respect = 90
 
         # neg side
-        cat_from1 = CatFactory.create_cat(
-            CatType.TEST,
-        )
-        cat_to1 = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         high_rel = Relationship(cat_from1, cat_to1)
         high_rel.romance = -90
         high_rel.like = -90
@@ -360,12 +321,8 @@ class RelationshipConstraints(unittest.TestCase):
 class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
-        warrior = CatFactory.create_cat(
-            CatType.TEST, status_dict={"rank": CatRank.WARRIOR}
-        )
-        medicine = CatFactory.create_cat(
-            CatType.TEST, status_dict={"rank": CatRank.MEDICINE_CAT}
-        )
+        warrior = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
+        medicine = cat_factory.create_cat(status_dict={"rank": CatRank.MEDICINE_CAT})
 
         # when
         warrior_to_all = SingleInteraction("test")
@@ -431,13 +388,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
     def test_trait(self):
         # given
-        calm = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        calm = cat_factory.create_cat()
         calm.personality.trait = "calm"
-        troublesome = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        troublesome = cat_factory.create_cat()
         troublesome.personality.trait = "troublesome"
 
         # when
@@ -473,9 +426,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
     def test_skill(self):
         # given
-        hunter = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        hunter = cat_factory.create_cat(disable_random=True)
         hunter.skills.primary = Skill(SkillPath.HUNTER, points=9)
-        fighter = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        fighter = cat_factory.create_cat(disable_random=True)
         fighter.skills.primary = Skill(SkillPath.FIGHTER, points=9)
 
         # when
@@ -511,13 +464,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
     def test_background(self):
         # given
-        clan = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        clan = cat_factory.create_cat()
         clan.backstory = "clanborn"
-        half = CatFactory.create_cat(
-            CatType.TEST,
-        )
+        half = cat_factory.create_cat()
         half.backstory = "halfclan1"
 
         # when

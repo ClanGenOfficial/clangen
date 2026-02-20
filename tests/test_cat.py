@@ -1,10 +1,11 @@
 import os
 import unittest
-from unittest.mock import patch
 from copy import deepcopy
+from random import Random
+from unittest.mock import patch
 
 from scripts.cat.factories.cat_factory import CatFactory
-from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -14,59 +15,55 @@ from scripts.game_structure import game
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatSocial
 from scripts.cat_relations.relationship import Relationship
 
+cat_factory = TestCatFactory(rng=Random())
+
 
 class TestCreationAge(unittest.TestCase):
     # test that a cat with 1-5 moons has the age of a kitten
     def test_kitten(self):
-        test_cat = CatFactory.create_cat(CatType.TEST, moons=5, disable_random=True)
+        test_cat = cat_factory.create_cat(moons=5, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.KITTEN)
 
     # test that a cat with 6-11 moons has the age of an adolescent
     def test_adolescent(self):
-        test_cat = CatFactory.create_cat(CatType.TEST, moons=6, disable_random=True)
+        test_cat = cat_factory.create_cat(moons=6, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.ADOLESCENT)
 
     # test that a cat with 12-47 moons has the age of a young adult
     def test_young_adult(self):
-        test_cat = CatFactory.create_cat(CatType.TEST, moons=12, disable_random=True)
+        test_cat = cat_factory.create_cat(moons=12, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.YOUNG_ADULT)
 
     # test that a cat with 48-95 moons has the age of an adult
     def test_adult(self):
-        test_cat = CatFactory.create_cat(CatType.TEST, moons=48, disable_random=True)
+        test_cat = cat_factory.create_cat(moons=48, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.ADULT)
 
     # test that a cat with 96-119 moons has the age of a senior adult
     def test_senior_adult(self):
-        test_cat = CatFactory.create_cat(CatType.TEST, moons=96, disable_random=True)
+        test_cat = cat_factory.create_cat(moons=96, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.SENIOR_ADULT)
 
     # test that a cat with 120-300 moons has the age of a senior
     def test_elder(self):
-        test_cat = CatFactory.create_cat(CatType.TEST, moons=120, disable_random=True)
+        test_cat = cat_factory.create_cat(moons=120, disable_random=True)
         self.assertEqual(test_cat.age, CatAge.SENIOR)
 
 
 class TestRelativesFunction(unittest.TestCase):
     # test that is_parent returns True for a parent1-cat relationship and False otherwise
     def test_is_parent(self):
-        parent = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        kit = CatFactory.create_cat(
-            CatType.TEST, parent1=parent.ID, disable_random=True
-        )
+        parent = cat_factory.create_cat(disable_random=True)
+        kit = CatFactory.create_cat(parent1=parent.ID, disable_random=True)
         self.assertFalse(kit.is_parent(kit))
         self.assertFalse(kit.is_parent(parent))
         self.assertTrue(parent.is_parent(kit))
 
     # test that is_sibling returns True for cats with a shared parent1 and False otherwise
     def test_is_sibling(self):
-        parent = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        kit1 = CatFactory.create_cat(
-            CatType.TEST, parent1=parent.ID, disable_random=True
-        )
-        kit2 = CatFactory.create_cat(
-            CatType.TEST, parent1=parent.ID, disable_random=True
-        )
+        parent = cat_factory.create_cat(disable_random=True)
+        kit1 = CatFactory.create_cat(parent1=parent.ID, disable_random=True)
+        kit2 = CatFactory.create_cat(parent1=parent.ID, disable_random=True)
         self.assertFalse(parent.is_sibling(kit1))
         self.assertFalse(kit1.is_sibling(parent))
         self.assertTrue(kit2.is_sibling(kit1))
@@ -74,16 +71,10 @@ class TestRelativesFunction(unittest.TestCase):
 
     # test that is_uncle_aunt returns True for a uncle/aunt-cat relationship and False otherwise
     def test_is_uncle_aunt(self):
-        grand_parent = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        sibling1 = CatFactory.create_cat(
-            CatType.TEST, parent1=grand_parent.ID, disable_random=True
-        )
-        sibling2 = CatFactory.create_cat(
-            CatType.TEST, parent1=grand_parent.ID, disable_random=True
-        )
-        kit = CatFactory.create_cat(
-            CatType.TEST, parent1=sibling1.ID, disable_random=True
-        )
+        grand_parent = cat_factory.create_cat(disable_random=True)
+        sibling1 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        kit = CatFactory.create_cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(sibling1.is_uncle_aunt(kit))
         self.assertFalse(sibling1.is_uncle_aunt(sibling2))
         self.assertFalse(kit.is_uncle_aunt(sibling2))
@@ -91,16 +82,10 @@ class TestRelativesFunction(unittest.TestCase):
 
     # test that is_grandparent returns True for a grandparent-cat relationship and False otherwise
     def test_is_grandparent(self):
-        grand_parent = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        sibling1 = CatFactory.create_cat(
-            CatType.TEST, parent1=grand_parent.ID, disable_random=True
-        )
-        sibling2 = CatFactory.create_cat(
-            CatType.TEST, parent1=grand_parent.ID, disable_random=True
-        )
-        kit = CatFactory.create_cat(
-            CatType.TEST, parent1=sibling1.ID, disable_random=True
-        )
+        grand_parent = cat_factory.create_cat(disable_random=True)
+        sibling1 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        kit = CatFactory.create_cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(sibling1.is_grandparent(kit))
         self.assertFalse(sibling1.is_grandparent(sibling2))
         self.assertFalse(kit.is_grandparent(sibling2))
@@ -112,16 +97,10 @@ class TestRelativesFunction(unittest.TestCase):
 class TestPossibleMateFunction(unittest.TestCase):
     # test that is_potential_mate returns False for cats that are related to each other
     def test_relation(self):
-        grand_parent = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        sibling1 = CatFactory.create_cat(
-            CatType.TEST, parent1=grand_parent.ID, disable_random=True
-        )
-        sibling2 = CatFactory.create_cat(
-            CatType.TEST, parent1=grand_parent.ID, disable_random=True
-        )
-        kit = CatFactory.create_cat(
-            CatType.TEST, parent1=sibling1.ID, disable_random=True
-        )
+        grand_parent = cat_factory.create_cat(disable_random=True)
+        sibling1 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        kit = CatFactory.create_cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(kit.is_potential_mate(grand_parent))
         self.assertFalse(kit.is_potential_mate(sibling1))
         self.assertFalse(kit.is_potential_mate(sibling2))
@@ -133,16 +112,10 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test that is_potential_mate returns False for cats that are related to each other even if for_love_interest is True
     def test_relation_love_interest(self):
-        grand_parent = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        sibling1 = CatFactory.create_cat(
-            CatType.TEST, parent1=grand_parent.ID, disable_random=True
-        )
-        sibling2 = CatFactory.create_cat(
-            CatType.TEST, parent1=grand_parent.ID, disable_random=True
-        )
-        kit = CatFactory.create_cat(
-            CatType.TEST, parent1=sibling1.ID, disable_random=True
-        )
+        grand_parent = cat_factory.create_cat(disable_random=True)
+        sibling1 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        kit = CatFactory.create_cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(kit.is_potential_mate(grand_parent, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling1, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling2, for_love_interest=True))
@@ -157,46 +130,22 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test is_potential_mate for age checks
     def test_age_mating(self):
-        kitten_cat2 = CatFactory.create_cat(CatType.TEST, moons=1, disable_random=True)
-        kitten_cat1 = CatFactory.create_cat(CatType.TEST, moons=1, disable_random=True)
-        adolescent_cat1 = CatFactory.create_cat(
-            CatType.TEST, moons=6, disable_random=True
-        )
-        adolescent_cat2 = CatFactory.create_cat(
-            CatType.TEST, moons=6, disable_random=True
-        )
-        too_young_adult_cat1 = CatFactory.create_cat(
-            CatType.TEST, moons=12, disable_random=True
-        )
-        too_young_adult_cat2 = CatFactory.create_cat(
-            CatType.TEST, moons=12, disable_random=True
-        )
-        young_adult_cat1 = CatFactory.create_cat(
-            CatType.TEST, moons=20, disable_random=True
-        )
-        young_adult_cat2 = CatFactory.create_cat(
-            CatType.TEST, moons=20, disable_random=True
-        )
-        adult_cat_in_range1 = CatFactory.create_cat(
-            CatType.TEST, moons=60, disable_random=True
-        )
-        adult_cat_in_range2 = CatFactory.create_cat(
-            CatType.TEST, moons=60, disable_random=True
-        )
-        adult_cat_out_range1 = CatFactory.create_cat(
-            CatType.TEST, moons=65, disable_random=True
-        )
-        adult_cat_out_range2 = CatFactory.create_cat(
-            CatType.TEST, moons=65, disable_random=True
-        )
-        senior_adult_cat1 = CatFactory.create_cat(
-            CatType.TEST, moons=96, disable_random=True
-        )
-        senior_adult_cat2 = CatFactory.create_cat(
-            CatType.TEST, moons=96, disable_random=True
-        )
-        elder_cat1 = CatFactory.create_cat(CatType.TEST, moons=120, disable_random=True)
-        elder_cat2 = CatFactory.create_cat(CatType.TEST, moons=120, disable_random=True)
+        kitten_cat2 = cat_factory.create_cat(moons=1, disable_random=True)
+        kitten_cat1 = cat_factory.create_cat(moons=1, disable_random=True)
+        adolescent_cat1 = CatFactory.create_cat(moons=6, disable_random=True)
+        adolescent_cat2 = CatFactory.create_cat(moons=6, disable_random=True)
+        too_young_adult_cat1 = CatFactory.create_cat(moons=12, disable_random=True)
+        too_young_adult_cat2 = CatFactory.create_cat(moons=12, disable_random=True)
+        young_adult_cat1 = CatFactory.create_cat(moons=20, disable_random=True)
+        young_adult_cat2 = CatFactory.create_cat(moons=20, disable_random=True)
+        adult_cat_in_range1 = CatFactory.create_cat(moons=60, disable_random=True)
+        adult_cat_in_range2 = CatFactory.create_cat(moons=60, disable_random=True)
+        adult_cat_out_range1 = CatFactory.create_cat(moons=65, disable_random=True)
+        adult_cat_out_range2 = CatFactory.create_cat(moons=65, disable_random=True)
+        senior_adult_cat1 = CatFactory.create_cat(moons=96, disable_random=True)
+        senior_adult_cat2 = CatFactory.create_cat(moons=96, disable_random=True)
+        elder_cat1 = cat_factory.create_cat(moons=120, disable_random=True)
+        elder_cat2 = cat_factory.create_cat(moons=120, disable_random=True)
 
         # check for cat mating with itself
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1))
@@ -262,40 +211,20 @@ class TestPossibleMateFunction(unittest.TestCase):
 
     # test is_potential_mate for age checks with for_love_interest set to True
     def test_age_love_interest(self):
-        kitten_cat2 = CatFactory.create_cat(CatType.TEST, moons=1, disable_random=True)
-        kitten_cat1 = CatFactory.create_cat(CatType.TEST, moons=1, disable_random=True)
-        adolescent_cat1 = CatFactory.create_cat(
-            CatType.TEST, moons=6, disable_random=True
-        )
-        adolescent_cat2 = CatFactory.create_cat(
-            CatType.TEST, moons=6, disable_random=True
-        )
-        young_adult_cat1 = CatFactory.create_cat(
-            CatType.TEST, moons=12, disable_random=True
-        )
-        young_adult_cat2 = CatFactory.create_cat(
-            CatType.TEST, moons=12, disable_random=True
-        )
-        adult_cat_in_range1 = CatFactory.create_cat(
-            CatType.TEST, moons=52, disable_random=True
-        )
-        adult_cat_in_range2 = CatFactory.create_cat(
-            CatType.TEST, moons=52, disable_random=True
-        )
-        adult_cat_out_range1 = CatFactory.create_cat(
-            CatType.TEST, moons=65, disable_random=True
-        )
-        adult_cat_out_range2 = CatFactory.create_cat(
-            CatType.TEST, moons=65, disable_random=True
-        )
-        senior_adult_cat1 = CatFactory.create_cat(
-            CatType.TEST, moons=96, disable_random=True
-        )
-        senior_adult_cat2 = CatFactory.create_cat(
-            CatType.TEST, moons=96, disable_random=True
-        )
-        elder_cat1 = CatFactory.create_cat(CatType.TEST, moons=120, disable_random=True)
-        elder_cat2 = CatFactory.create_cat(CatType.TEST, moons=120, disable_random=True)
+        kitten_cat2 = cat_factory.create_cat(moons=1, disable_random=True)
+        kitten_cat1 = cat_factory.create_cat(moons=1, disable_random=True)
+        adolescent_cat1 = CatFactory.create_cat(moons=6, disable_random=True)
+        adolescent_cat2 = CatFactory.create_cat(moons=6, disable_random=True)
+        young_adult_cat1 = CatFactory.create_cat(moons=12, disable_random=True)
+        young_adult_cat2 = CatFactory.create_cat(moons=12, disable_random=True)
+        adult_cat_in_range1 = CatFactory.create_cat(moons=52, disable_random=True)
+        adult_cat_in_range2 = CatFactory.create_cat(moons=52, disable_random=True)
+        adult_cat_out_range1 = CatFactory.create_cat(moons=65, disable_random=True)
+        adult_cat_out_range2 = CatFactory.create_cat(moons=65, disable_random=True)
+        senior_adult_cat1 = CatFactory.create_cat(moons=96, disable_random=True)
+        senior_adult_cat2 = CatFactory.create_cat(moons=96, disable_random=True)
+        elder_cat1 = cat_factory.create_cat(moons=120, disable_random=True)
+        elder_cat2 = cat_factory.create_cat(moons=120, disable_random=True)
 
         # check for cat mating with itself
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1, True))
@@ -356,12 +285,12 @@ class TestPossibleMateFunction(unittest.TestCase):
     @patch("scripts.game_structure.game.clan")
     @patch("scripts.cat.history.History")
     def test_dead_exiled(self, mock_history, _, __):
-        exiled_cat = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        exiled_cat = cat_factory.create_cat(disable_random=True)
         exiled_cat.status.exile_from_group()
-        dead_cat = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        dead_cat = cat_factory.create_cat(disable_random=True)
         dead_cat.history = mock_history()
         dead_cat.dead = True
-        normal_cat = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        normal_cat = cat_factory.create_cat(disable_random=True)
         self.assertFalse(exiled_cat.is_potential_mate(normal_cat))
         self.assertFalse(normal_cat.is_potential_mate(exiled_cat))
         self.assertFalse(dead_cat.is_potential_mate(normal_cat))
@@ -372,8 +301,8 @@ class TestMateFunctions(unittest.TestCase):
     # test that set_mate adds the mate's ID to the cat's mate list
     def test_set_mate(self):
         # given
-        cat1 = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        cat2 = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        cat1 = cat_factory.create_cat(disable_random=True)
+        cat2 = cat_factory.create_cat(disable_random=True)
 
         # when
         cat1.set_mate(cat2)
@@ -386,8 +315,8 @@ class TestMateFunctions(unittest.TestCase):
     # test that unset_mate removes the mate's ID from the cat's mate list
     def test_unset_mate(self):
         # given
-        cat1 = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        cat2 = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        cat1 = cat_factory.create_cat(disable_random=True)
+        cat2 = cat_factory.create_cat(disable_random=True)
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
 
@@ -404,8 +333,8 @@ class TestMateFunctions(unittest.TestCase):
     # test for relationship comparisons
     def test_set_mate_relationship(self):
         # given
-        cat1 = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        cat2 = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        cat1 = cat_factory.create_cat(disable_random=True)
+        cat2 = cat_factory.create_cat(disable_random=True)
         relation1 = Relationship(cat1, cat2)
         old_relation1 = deepcopy(relation1)
         relation2 = Relationship(cat2, cat1)
@@ -435,8 +364,8 @@ class TestMateFunctions(unittest.TestCase):
     # test for relationship comparisons for cats that are broken up
     def test_unset_mate_relationship(self):
         # given
-        cat1 = CatFactory.create_cat(CatType.TEST, disable_random=True)
-        cat2 = CatFactory.create_cat(CatType.TEST, disable_random=True)
+        cat1 = cat_factory.create_cat(disable_random=True)
+        cat2 = cat_factory.create_cat(disable_random=True)
         relation1 = Relationship(
             cat1,
             cat2,
@@ -490,14 +419,12 @@ class TestUpdateMentor(unittest.TestCase):
     def test_exile_apprentice(self):
         # given
 
-        app = CatFactory.create_cat(
-            CatType.TEST,
+        app = cat_factory.create_cat(
             moons=7,
             status_dict={"rank": CatRank.APPRENTICE},
             disable_random=True,
         )
-        mentor = CatFactory.create_cat(
-            CatType.TEST,
+        mentor = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.WARRIOR},
             disable_random=True,
@@ -557,8 +484,8 @@ class TestNameRepr(unittest.TestCase):
         for testset, moons, suffix in statuses:
             for status in testset:
                 with self.subTest("clancats", status_dict=status):
-                    cat = CatFactory.create_cat(
-                        CatType.TEST, moons=moons, status_dict=status, suffix="test"
+                    cat = cat_factory.create_cat(
+                        moons=moons, status_dict=status, suffix="test"
                     )
                     self.assertTrue(str(cat.name).endswith(suffix))
 
@@ -595,8 +522,8 @@ class TestNameRepr(unittest.TestCase):
         for testset, moons, suffix in statuses:
             for status in testset:
                 with self.subTest("clancats specsuffix", status_dict=status):
-                    cat = CatFactory.create_cat(
-                        CatType.TEST, moons=moons, status_dict=status, suffix="test"
+                    cat = cat_factory.create_cat(
+                        moons=moons, status_dict=status, suffix="test"
                     )
                     cat.name.specsuffix_hidden = True
                     self.assertTrue(str(cat.name).endswith(suffix))
@@ -617,8 +544,7 @@ class TestNameRepr(unittest.TestCase):
         for status in outsider_statuses:
             for moons, suffix in age_suffix:
                 with self.subTest("outsiders", status_dict=status, moons=moons):
-                    cat = CatFactory.create_cat(
-                        CatType.TEST,
+                    cat = cat_factory.create_cat(
                         status_dict=status,
                         moons=moons,
                         suffix="test",
@@ -673,8 +599,7 @@ class TestNameRepr(unittest.TestCase):
 
         for status, suffix in ex_clancat_statuses:
             with self.subTest("Exiled cat names", status_dict=status, suffix=suffix):
-                cat = CatFactory.create_cat(
-                    CatType.TEST,
+                cat = cat_factory.create_cat(
                     status_dict=status,
                     moons=20,
                     suffix="test",
@@ -720,8 +645,7 @@ class TestNameRepr(unittest.TestCase):
         for status in outsider_statuses:
             for moons, suffix in age_suffix:
                 with self.subTest("outsiders", status_dict=status, moons=moons):
-                    cat = CatFactory.create_cat(
-                        CatType.TEST,
+                    cat = cat_factory.create_cat(
                         status_dict=status,
                         moons=moons,
                         suffix="test",
@@ -734,8 +658,7 @@ class TestNameRepr(unittest.TestCase):
         for status in ex_clancat_statuses:
             for moons, suffix in age_suffix:
                 with self.subTest("Clan-like names", status_dict=status, moons=moons):
-                    cat = CatFactory.create_cat(
-                        CatType.TEST,
+                    cat = cat_factory.create_cat(
                         status_dict=status,
                         moons=moons,
                         suffix="test",
@@ -757,8 +680,7 @@ class TestNameRepr(unittest.TestCase):
         ]
         for status, moons, suffix in statuses:
             with self.subTest("lost clancats", moons=moons):
-                cat = CatFactory.create_cat(
-                    CatType.TEST,
+                cat = cat_factory.create_cat(
                     status_dict=status,
                     moons=moons,
                     suffix="test",
@@ -780,8 +702,7 @@ class TestNameRepr(unittest.TestCase):
         ]
         for status, moons, suffix in statuses:
             with self.subTest("lost clancats", status_dict=status):
-                cat = CatFactory.create_cat(
-                    CatType.TEST,
+                cat = cat_factory.create_cat(
                     status_dict=status,
                     moons=moons,
                     suffix="test",
@@ -809,8 +730,8 @@ class TestSocialAssignment(unittest.TestCase):
 
         for rank in clancat_ranks:
             with self.subTest("clancat social assignment", rank=rank):
-                cat = CatFactory.create_cat(
-                    CatType.TEST, status_dict={"rank": rank}, disable_random=True
+                cat = cat_factory.create_cat(
+                    status_dict={"rank": rank}, disable_random=True
                 )
                 self.assertEqual(cat.status.social, CatSocial.CLANCAT)
 
@@ -820,7 +741,7 @@ class TestSocialAssignment(unittest.TestCase):
 
         for rank, social in zip(outsider_ranks, outsider_social):
             with self.subTest("outsider social assignment"):
-                cat = CatFactory.create_cat(
-                    CatType.TEST, status_dict={"rank": rank}, disable_random=True
+                cat = cat_factory.create_cat(
+                    status_dict={"rank": rank}, disable_random=True
                 )
                 self.assertTrue(cat.status.social == social)

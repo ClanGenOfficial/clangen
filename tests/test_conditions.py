@@ -1,28 +1,28 @@
 import os
 import unittest
+from random import Random
+
 import ujson
 
 from scripts.cat.enums import CatRank
-from scripts.cat.factories.cat_factory import CatFactory
-from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat
 from scripts.conditions import medicine_cats_can_cover_clan
+
+cat_factory = TestCatFactory(rng=Random())
 
 
 class TestsMedCondition(unittest.TestCase):
     def test_fulfilled(self):
-        cat1 = CatFactory.create_cat(
-            CatType.TEST,
+        cat1 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.WARRIOR},
             disable_random=True,
         )
-        med = CatFactory.create_cat(
-            CatType.TEST,
+        med = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.MEDICINE_CAT},
             disable_random=True,
@@ -32,39 +32,33 @@ class TestsMedCondition(unittest.TestCase):
         self.assertTrue(medicine_cats_can_cover_clan(all_cats, 15))
 
     def test_fulfilled_many_cats(self):
-        cat1 = CatFactory.create_cat(
-            CatType.TEST,
+        cat1 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.WARRIOR},
             disable_random=True,
         )
-        cat2 = CatFactory.create_cat(
-            CatType.TEST,
+        cat2 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.WARRIOR},
             disable_random=True,
         )
-        cat3 = CatFactory.create_cat(
-            CatType.TEST,
+        cat3 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.WARRIOR},
             disable_random=True,
         )
-        cat4 = CatFactory.create_cat(
-            CatType.TEST,
+        cat4 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.WARRIOR},
             disable_random=True,
         )
 
-        med1 = CatFactory.create_cat(
-            CatType.TEST,
+        med1 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.MEDICINE_CAT},
             disable_random=True,
         )
-        med2 = CatFactory.create_cat(
-            CatType.TEST,
+        med2 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.MEDICINE_CAT},
             disable_random=True,
@@ -74,15 +68,13 @@ class TestsMedCondition(unittest.TestCase):
         self.assertTrue(medicine_cats_can_cover_clan(all_cats, 2))
 
     def test_injured_fulfilled(self):
-        cat1 = CatFactory.create_cat(
-            CatType.TEST,
+        cat1 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.WARRIOR},
             disable_random=True,
         )
 
-        med = CatFactory.create_cat(
-            CatType.TEST,
+        med = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.MEDICINE_CAT},
             disable_random=True,
@@ -93,15 +85,13 @@ class TestsMedCondition(unittest.TestCase):
         self.assertTrue(medicine_cats_can_cover_clan(all_cats, 15))
 
     def test_illness_fulfilled(self):
-        cat1 = CatFactory.create_cat(
-            CatType.TEST,
+        cat1 = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.WARRIOR},
             disable_random=True,
         )
 
-        med = CatFactory.create_cat(
-            CatType.TEST,
+        med = cat_factory.create_cat(
             moons=20,
             status_dict={"rank": CatRank.MEDICINE_CAT},
             disable_random=True,

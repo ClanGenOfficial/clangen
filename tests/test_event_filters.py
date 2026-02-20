@@ -1,16 +1,17 @@
 import unittest
+from random import Random
 
-from scripts.cat.cats import Cat
-from scripts.cat.factories.create_cat import create_cat
 from scripts.cat.enums import CatRank
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.clan import Clan
 from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     event_for_tags,
-    event_for_cat,
 )
 from scripts.game_structure import game
+
+cat_factory = TestCatFactory(rng=Random())
 
 
 class TestEventFilters(unittest.TestCase):
@@ -22,7 +23,7 @@ class TestEventFilters(unittest.TestCase):
         game.clan.starting_season = "Newleaf"
         game.clan.game_mode = "classic"
 
-        self.test_cat = create_cat(CatRank.LEADER, moons=50)
+        self.test_cat = cat_factory.create_cat(rank=CatRank.LEADER, moons=50)
         game.clan.leader = self.test_cat
 
     def test_location(self):
