@@ -22,7 +22,7 @@ BASE_RNG = random.Random
 
 
 class NewCatFactory(BaseCatFactory):
-    def __init__(self, rng):
+    def __init__(self, rng: random.Random):
         self.rng = rng if rng else BASE_RNG()
 
     def create_cat(self, **overrides):

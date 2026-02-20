@@ -1,4 +1,4 @@
-from typing import Dict, Tuple, Optional, Union, List
+from typing import Dict, Tuple, Optional, Union, List, TYPE_CHECKING
 
 import ujson
 
@@ -19,15 +19,20 @@ from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
 from scripts.cat.status import Status
 
-with open(f"resources/dicts/conversion_dict.json", "r", encoding="utf-8") as read_file:
-    CONVERT = ujson.loads(read_file.read())
+if TYPE_CHECKING:
+    from random import Random
 
 
 class LoadCatFactory(BaseCatFactory):
     cat_id = None
 
-    def __init__(self, rng):
-        self.rng = rng  # turns out we do need rng.
+    with open(
+        f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"
+    ) as read_file:
+        CONVERT = ujson.loads(read_file.read())
+
+    def __init__(self, rng: "Random"):
+        self.rng = rng  # needed for converting skills from old format
 
     def create_cat(self, **kwargs) -> Cat:
         """
@@ -264,7 +269,7 @@ class LoadCatFactory(BaseCatFactory):
                 "opacity": kwargs.get("opacity", 100),
             }
         )
-        pelt.check_and_convert(convert_dict=CONVERT)
+        pelt.check_and_convert(convert_dict=self.CONVERT)
 
         return pelt
 

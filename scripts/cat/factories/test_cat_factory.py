@@ -5,6 +5,7 @@ from scripts.cat.skills import CatSkills, SkillPath
 from scripts.cat.status import Status
 
 # this is a patchwork fix for now
+# should be replaced with a deterministic random.Random module in future
 
 
 class TestCatFactory(NewCatFactory):
