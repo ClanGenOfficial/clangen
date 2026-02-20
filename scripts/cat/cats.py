@@ -736,8 +736,6 @@ class Cat:
         body_treated = False
         text = None
 
-        load_grief_reactions()
-
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
             if cat.dead or cat.status.is_outsider or cat.moons < 1:
@@ -807,13 +805,12 @@ class Cat:
                     continue
 
                 text = choice(possible_strings)
-                text += " " + choice(MINOR_MAJOR_REACTION["major"])
                 text = event_text_adjust(Cat, text=text, main_cat=self, random_cat=cat)
 
                 cat.get_ill("grief stricken", event_triggered=True, severity="major")
 
             # If major grief fails, but there are still very_high or high values,
-            # it can fail to to minor grief. If they have a family relation, bypass the roll.
+            # it can fail to minor grief. If they have a family relation, bypass the roll.
             elif (very_high_types or high_types) and (
                 family_relation != "general" or not int(random() * 5)
             ):
@@ -3539,21 +3536,6 @@ with open(
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-MINOR_MAJOR_REACTION: Optional[Dict] = None
-grief_lang: Optional[str] = None
-
-
-def load_grief_reactions():
-    global MINOR_MAJOR_REACTION, grief_lang
-    if grief_lang == i18n.config.get("locale"):
-        return
-    MINOR_MAJOR_REACTION = load_lang_resource(
-        "events/death/death_reactions/minor_major.json"
-    )
-    grief_lang = i18n.config.get("locale")
-
-
-load_grief_reactions()
 
 LEAD_CEREMONY_SC: Optional[Dict] = None
 LEAD_CEREMONY_DF: Optional[Dict] = None
