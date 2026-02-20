@@ -3,18 +3,9 @@ from typing import TypedDict, Optional, List, Dict
 from scripts.cat.enums import CatSocial, CatRank, CatAge
 
 
-class GenderDict(TypedDict, total=False):
-    sex: str
-    genderalign: str
-    pronouns: Optional[Dict]
-
-
-class MentorshipDict(TypedDict):
-    mentor: Optional[str]
-    former_mentor: List[str]
-    patrol_with_mentor: int
-    apprentice: List[str]
-    former_apprentices: List[str]
+class AfterlifeAffinityDict(TypedDict):
+    starclan: int
+    dark_forest: int
 
 
 class CatTogglesDict(TypedDict):
@@ -23,6 +14,12 @@ class CatTogglesDict(TypedDict):
     no_retire: bool
     prevent_fading: bool
     favourite: bool
+
+
+class GenderDict(TypedDict, total=False):
+    sex: str
+    genderalign: str
+    pronouns: Optional[Dict]
 
 
 class InheritanceDict(TypedDict):
@@ -34,9 +31,12 @@ class InheritanceDict(TypedDict):
     previous_mates: List[str]
 
 
-class AfterlifeAffinityDict(TypedDict):
-    starclan: int
-    dark_forest: int
+class MentorshipDict(TypedDict):
+    mentor: Optional[str]
+    former_mentor: List[str]
+    patrol_with_mentor: int
+    apprentice: List[str]
+    former_apprentices: List[str]
 
 
 class StatusDict(TypedDict, total=False):
