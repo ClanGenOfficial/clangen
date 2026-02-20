@@ -4,8 +4,8 @@ from copy import deepcopy
 from random import Random
 from unittest.mock import patch
 
-from scripts.cat.factories.cat_factory import CatFactory
-from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat.factories.cat_factory import cat_factory
+from scripts.cat.factories.test_cat_factory import Testcat_factory
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -15,7 +15,7 @@ from scripts.game_structure import game
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatSocial
 from scripts.cat_relations.relationship import Relationship
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = Testcat_factory(rng=Random())
 
 
 class TestCreationAge(unittest.TestCase):
@@ -54,7 +54,7 @@ class TestRelativesFunction(unittest.TestCase):
     # test that is_parent returns True for a parent1-cat relationship and False otherwise
     def test_is_parent(self):
         parent = cat_factory.create_cat(disable_random=True)
-        kit = CatFactory.create_cat(parent1=parent.ID, disable_random=True)
+        kit = cat_factory.create_cat(parent1=parent.ID, disable_random=True)
         self.assertFalse(kit.is_parent(kit))
         self.assertFalse(kit.is_parent(parent))
         self.assertTrue(parent.is_parent(kit))
@@ -62,8 +62,8 @@ class TestRelativesFunction(unittest.TestCase):
     # test that is_sibling returns True for cats with a shared parent1 and False otherwise
     def test_is_sibling(self):
         parent = cat_factory.create_cat(disable_random=True)
-        kit1 = CatFactory.create_cat(parent1=parent.ID, disable_random=True)
-        kit2 = CatFactory.create_cat(parent1=parent.ID, disable_random=True)
+        kit1 = cat_factory.create_cat(parent1=parent.ID, disable_random=True)
+        kit2 = cat_factory.create_cat(parent1=parent.ID, disable_random=True)
         self.assertFalse(parent.is_sibling(kit1))
         self.assertFalse(kit1.is_sibling(parent))
         self.assertTrue(kit2.is_sibling(kit1))
@@ -72,9 +72,9 @@ class TestRelativesFunction(unittest.TestCase):
     # test that is_uncle_aunt returns True for a uncle/aunt-cat relationship and False otherwise
     def test_is_uncle_aunt(self):
         grand_parent = cat_factory.create_cat(disable_random=True)
-        sibling1 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
-        sibling2 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
-        kit = CatFactory.create_cat(parent1=sibling1.ID, disable_random=True)
+        sibling1 = cat_factory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = cat_factory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        kit = cat_factory.create_cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(sibling1.is_uncle_aunt(kit))
         self.assertFalse(sibling1.is_uncle_aunt(sibling2))
         self.assertFalse(kit.is_uncle_aunt(sibling2))
@@ -83,9 +83,9 @@ class TestRelativesFunction(unittest.TestCase):
     # test that is_grandparent returns True for a grandparent-cat relationship and False otherwise
     def test_is_grandparent(self):
         grand_parent = cat_factory.create_cat(disable_random=True)
-        sibling1 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
-        sibling2 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
-        kit = CatFactory.create_cat(parent1=sibling1.ID, disable_random=True)
+        sibling1 = cat_factory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = cat_factory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        kit = cat_factory.create_cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(sibling1.is_grandparent(kit))
         self.assertFalse(sibling1.is_grandparent(sibling2))
         self.assertFalse(kit.is_grandparent(sibling2))
@@ -98,9 +98,9 @@ class TestPossibleMateFunction(unittest.TestCase):
     # test that is_potential_mate returns False for cats that are related to each other
     def test_relation(self):
         grand_parent = cat_factory.create_cat(disable_random=True)
-        sibling1 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
-        sibling2 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
-        kit = CatFactory.create_cat(parent1=sibling1.ID, disable_random=True)
+        sibling1 = cat_factory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = cat_factory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        kit = cat_factory.create_cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(kit.is_potential_mate(grand_parent))
         self.assertFalse(kit.is_potential_mate(sibling1))
         self.assertFalse(kit.is_potential_mate(sibling2))
@@ -113,9 +113,9 @@ class TestPossibleMateFunction(unittest.TestCase):
     # test that is_potential_mate returns False for cats that are related to each other even if for_love_interest is True
     def test_relation_love_interest(self):
         grand_parent = cat_factory.create_cat(disable_random=True)
-        sibling1 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
-        sibling2 = CatFactory.create_cat(parent1=grand_parent.ID, disable_random=True)
-        kit = CatFactory.create_cat(parent1=sibling1.ID, disable_random=True)
+        sibling1 = cat_factory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        sibling2 = cat_factory.create_cat(parent1=grand_parent.ID, disable_random=True)
+        kit = cat_factory.create_cat(parent1=sibling1.ID, disable_random=True)
         self.assertFalse(kit.is_potential_mate(grand_parent, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling1, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling2, for_love_interest=True))
@@ -132,18 +132,18 @@ class TestPossibleMateFunction(unittest.TestCase):
     def test_age_mating(self):
         kitten_cat2 = cat_factory.create_cat(moons=1, disable_random=True)
         kitten_cat1 = cat_factory.create_cat(moons=1, disable_random=True)
-        adolescent_cat1 = CatFactory.create_cat(moons=6, disable_random=True)
-        adolescent_cat2 = CatFactory.create_cat(moons=6, disable_random=True)
-        too_young_adult_cat1 = CatFactory.create_cat(moons=12, disable_random=True)
-        too_young_adult_cat2 = CatFactory.create_cat(moons=12, disable_random=True)
-        young_adult_cat1 = CatFactory.create_cat(moons=20, disable_random=True)
-        young_adult_cat2 = CatFactory.create_cat(moons=20, disable_random=True)
-        adult_cat_in_range1 = CatFactory.create_cat(moons=60, disable_random=True)
-        adult_cat_in_range2 = CatFactory.create_cat(moons=60, disable_random=True)
-        adult_cat_out_range1 = CatFactory.create_cat(moons=65, disable_random=True)
-        adult_cat_out_range2 = CatFactory.create_cat(moons=65, disable_random=True)
-        senior_adult_cat1 = CatFactory.create_cat(moons=96, disable_random=True)
-        senior_adult_cat2 = CatFactory.create_cat(moons=96, disable_random=True)
+        adolescent_cat1 = cat_factory.create_cat(moons=6, disable_random=True)
+        adolescent_cat2 = cat_factory.create_cat(moons=6, disable_random=True)
+        too_young_adult_cat1 = cat_factory.create_cat(moons=12, disable_random=True)
+        too_young_adult_cat2 = cat_factory.create_cat(moons=12, disable_random=True)
+        young_adult_cat1 = cat_factory.create_cat(moons=20, disable_random=True)
+        young_adult_cat2 = cat_factory.create_cat(moons=20, disable_random=True)
+        adult_cat_in_range1 = cat_factory.create_cat(moons=60, disable_random=True)
+        adult_cat_in_range2 = cat_factory.create_cat(moons=60, disable_random=True)
+        adult_cat_out_range1 = cat_factory.create_cat(moons=65, disable_random=True)
+        adult_cat_out_range2 = cat_factory.create_cat(moons=65, disable_random=True)
+        senior_adult_cat1 = cat_factory.create_cat(moons=96, disable_random=True)
+        senior_adult_cat2 = cat_factory.create_cat(moons=96, disable_random=True)
         elder_cat1 = cat_factory.create_cat(moons=120, disable_random=True)
         elder_cat2 = cat_factory.create_cat(moons=120, disable_random=True)
 
@@ -213,16 +213,16 @@ class TestPossibleMateFunction(unittest.TestCase):
     def test_age_love_interest(self):
         kitten_cat2 = cat_factory.create_cat(moons=1, disable_random=True)
         kitten_cat1 = cat_factory.create_cat(moons=1, disable_random=True)
-        adolescent_cat1 = CatFactory.create_cat(moons=6, disable_random=True)
-        adolescent_cat2 = CatFactory.create_cat(moons=6, disable_random=True)
-        young_adult_cat1 = CatFactory.create_cat(moons=12, disable_random=True)
-        young_adult_cat2 = CatFactory.create_cat(moons=12, disable_random=True)
-        adult_cat_in_range1 = CatFactory.create_cat(moons=52, disable_random=True)
-        adult_cat_in_range2 = CatFactory.create_cat(moons=52, disable_random=True)
-        adult_cat_out_range1 = CatFactory.create_cat(moons=65, disable_random=True)
-        adult_cat_out_range2 = CatFactory.create_cat(moons=65, disable_random=True)
-        senior_adult_cat1 = CatFactory.create_cat(moons=96, disable_random=True)
-        senior_adult_cat2 = CatFactory.create_cat(moons=96, disable_random=True)
+        adolescent_cat1 = cat_factory.create_cat(moons=6, disable_random=True)
+        adolescent_cat2 = cat_factory.create_cat(moons=6, disable_random=True)
+        young_adult_cat1 = cat_factory.create_cat(moons=12, disable_random=True)
+        young_adult_cat2 = cat_factory.create_cat(moons=12, disable_random=True)
+        adult_cat_in_range1 = cat_factory.create_cat(moons=52, disable_random=True)
+        adult_cat_in_range2 = cat_factory.create_cat(moons=52, disable_random=True)
+        adult_cat_out_range1 = cat_factory.create_cat(moons=65, disable_random=True)
+        adult_cat_out_range2 = cat_factory.create_cat(moons=65, disable_random=True)
+        senior_adult_cat1 = cat_factory.create_cat(moons=96, disable_random=True)
+        senior_adult_cat2 = cat_factory.create_cat(moons=96, disable_random=True)
         elder_cat1 = cat_factory.create_cat(moons=120, disable_random=True)
         elder_cat2 = cat_factory.create_cat(moons=120, disable_random=True)
 
