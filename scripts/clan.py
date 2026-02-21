@@ -56,7 +56,6 @@ class Clan:
     age = 0
     all_other_clans = []
 
-    dead_cats_to_grieve = []
     grief_strings = {}
 
     def __init__(
