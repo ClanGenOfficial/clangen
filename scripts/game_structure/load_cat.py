@@ -42,7 +42,7 @@ def load_cats():
 def json_load():
     Cat.all_cats.clear()
     Cat.all_cats_list.clear()
-    Cat.dead_cats.clear()
+
     all_cats = []
     clanname = switch_get_value(Switch.clan_list)[0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
