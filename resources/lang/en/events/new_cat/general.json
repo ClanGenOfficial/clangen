@@ -1577,5 +1577,122 @@
                 "adjust": "increase_30"
             }
         ]
+    },
+    {
+    "event_id": "gen_new_cat_war_sololoner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/subject} opponent saw a loner caught in the fray and helped {PRONOUN/n_c:0/object} get to safety together.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
     }
+},
+    {
+    "event_id": "gen_new_cat_war_solorogue",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw a rogue attempting to pick off Clan cats and chased {PRONOUN/n_c:0/object} away.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -20,
+            "log": {
+                    "cats_from": "from_cat chased to_cat after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_solokittypet",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw a kittypet caught in the fray and helped {PRONOUN/n_c:0/object} get to safety together.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
+    }
+}
 ]
