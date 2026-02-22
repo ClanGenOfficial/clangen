@@ -1584,7 +1584,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/subject} opponent saw a loner caught in the fray and helped {PRONOUN/n_c:0/object} get to safety together.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/subject} opponent saw a loner caught in the middle of the fray and helped {PRONOUN/n_c:0/object} get to safety together.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1600,11 +1600,12 @@
         {
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
-            "mutual": false,
+            "mutual": true,
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
+                    "cats_to": "to_cat was lead away from a battle by to_cat."
                 }
         }
     ],
@@ -1639,11 +1640,12 @@
         {
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
-            "mutual": false,
+            "mutual": true,
             "values": ["trust", "like"],
             "amount": -20,
             "log": {
-                    "cats_from": "from_cat chased to_cat after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
+                    "cats_from": "from_cat chased to_cat after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
+                    "cats_to": "to_cat was chased away from an opprotunistic attack by from_cat."
                 }
         }
     ],
@@ -1678,21 +1680,193 @@
         {
             "cats_from": ["m_c"],
             "cats_to": ["n_c:0"],
-            "mutual": false,
+            "mutual": true,
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
+                    "cats_to": "to_cat was lead away from a battle by to_cat."
                 }
         }
     ],
     "outsider": {
         "current_rep": ["any"],
-        "changed": -1
+        "changed": 1
     },
     "other_clan": {
         "current_rep": ["hostile"],
         "changed": 1
     }
-}
+},
+    {
+    "event_id": "gen_new_cat_war_duoloner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two loners caught in the middle of the fray and helped them both get to safety together.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
+                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
+                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_duorogue",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two rogues attempting to pick off Clan cats and chased them away.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": -20,
+            "log": {
+                    "cats_from": "from_cat chased to_cat after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
+                    "cats_to": "to_cat was chased away from an opprotunistic attack by from_cat."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": -20,
+            "log": {
+                    "cats_from": "from_cat chased to_cat after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
+                    "cats_to": "to_cat was chased away from an opprotunistic attack by from_cat."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_duokittypet",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two kittypets caught in the middle of the fray and helped them get to safety together.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
+                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
+                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+    }
 ]
