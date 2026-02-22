@@ -125,7 +125,7 @@ class NewCatFactory(BaseCatFactory):
     def _get_random_age_from_rank(self, rank):
         """
         :param rank: Provided cat's rank
-        :return: Age the cat should be
+        :return: Random CatAge appropriate for the cat's rank
         """
         if not isinstance(rank, CatRank):
             rank = CatRank(rank)
