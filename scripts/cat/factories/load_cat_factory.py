@@ -113,7 +113,7 @@ class LoadCatFactory(BaseCatFactory):
             "moons": kwargs["moons"],
             "status": status,
             "backstory": backstory,
-            "catskills": cat_skill,
+            "skills": cat_skill,
             "personality": self._build_personality(
                 kwargs.get("facets"),
                 kwargs["trait"],

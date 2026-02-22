@@ -72,7 +72,7 @@ class NewCatFactory(BaseCatFactory):
             "moons": moons,
             "status": status,
             "backstory": overrides.get("backstory", "clanborn"),
-            "catskills": skills,
+            "skills": skills,
             "personality": self._get_random_personality(age),
             "mentorship": MentorshipDict(
                 mentor=None,

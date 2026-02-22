@@ -41,7 +41,7 @@ class FadedCatFactory(BaseCatFactory):
             moons=kwargs["moons"],
             status=status,
             backstory="",
-            catskills=None,
+            skills=None,
             personality=None,
             mentorship={},
             inheritance=InheritanceDict(

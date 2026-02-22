@@ -138,7 +138,7 @@ class Cat:
         moons: int,
         status: Status,
         backstory: str,
-        catskills: CatSkills,
+        skills: CatSkills,
         personality: Personality,
         mentorship: MentorshipDict,
         inheritance: InheritanceDict,
