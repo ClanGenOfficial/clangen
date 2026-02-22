@@ -54,15 +54,12 @@ class LoadCatFactory(BaseCatFactory):
 
         # todo do I want to do this this way
         mate = kwargs.get("mate", [])
-        mate = mate if isinstance(mate, list) else [mate]
         inheritance = InheritanceDict(
             parent1=kwargs["parent1"],
             parent2=kwargs["parent2"],
             adoptive_parents=kwargs.get("adoptive_parents", []),
             faded_offspring=kwargs.get("faded_offsprings", []),
-            mate=kwargs.get("mate", [])
-            if isinstance(kwargs.get("mate"), list)
-            else kwargs.get("mate", []),
+            mate=mate if isinstance(mate, list) else [mate],
             previous_mates=kwargs.get("previous_mates", []),
         )
 
