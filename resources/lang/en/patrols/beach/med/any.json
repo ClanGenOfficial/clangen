@@ -53,7 +53,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "p_l returned to camp with an important vision for c_n."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -75,7 +78,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw p_l return to camp looking much more calm and composed."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -194,17 +200,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "app1 learned more about herbs with perfect concentration, impressing p_l.",
+                            "cats_to": "p_l felt confident with app1's attentiveness during a herb gathering lesson."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -218,17 +228,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "app1 found a hidden herb patch during a lesson, impressing p_l.",
+                            "cats_to": "p_l was amazed by app1's application of knowledge by finding a hidden herb patch."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -241,10 +255,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -252,6 +266,9 @@
                             "trust"
                         ],
                         "amount": -5
+                        ,"log": {
+                            "cats_from": "Frustrated by app1's inattentiveness, p_l ended a lesson about herb gathering."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -492,7 +509,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                          "cats_from": "from_cat and to_cat were able to successfully gather herbs despite the rainy weather."  
+                        }
                     }
                 ],
                 "frequency": 4
@@ -519,7 +539,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                          "cats_from": "from_cat and to_cat were able to quickly harvest herbs and return to camp before they both were drenched."  
+                        }
                     }
                 ],
                 "frequency": 4
@@ -535,13 +558,16 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                          "cats_from": "p_l was visibly frustrated by to_cat while patrolling in the rain."  
+                        }
                     }
                 ],
                 "frequency": 4
@@ -648,17 +674,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "app1 worked hard and gathered a lot of cobwebs alongside p_l.",
+                            "cats_to": "p_l worked hard alongside app1 to gather cobwebs, pleased by app1's hard work."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -683,7 +713,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat and from_cat startled several cats with their cobweb haul."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -706,7 +739,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": ""
+                        }
                     }
                 ],
                 "frequency": 4
