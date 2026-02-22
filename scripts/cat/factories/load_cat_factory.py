@@ -53,14 +53,16 @@ class LoadCatFactory(BaseCatFactory):
         )
 
         # todo do I want to do this this way
-        mate = kwargs.get("mate")
+        mate = kwargs.get("mate", [])
         mate = mate if isinstance(mate, list) else [mate]
         inheritance = InheritanceDict(
             parent1=kwargs["parent1"],
             parent2=kwargs["parent2"],
             adoptive_parents=kwargs.get("adoptive_parents", []),
             faded_offspring=kwargs.get("faded_offsprings", []),
-            mate=mate,
+            mate=kwargs.get("mate", [])
+            if isinstance(kwargs.get("mate"), list)
+            else kwargs.get("mate", []),
             previous_mates=kwargs.get("previous_mates", []),
         )
 
@@ -73,7 +75,7 @@ class LoadCatFactory(BaseCatFactory):
         )
 
         toggles = CatTogglesDict(
-            no_kits=kwargs["no_kits"],
+            no_kits=kwargs.get("no_kits", False),
             no_mates=kwargs.get("no_mates", False),
             no_retire=kwargs.get("no_retire", False),
             prevent_fading=kwargs.get("prevent_fading", False),
@@ -93,7 +95,7 @@ class LoadCatFactory(BaseCatFactory):
         )
 
         backstory = self._convert_backstory(kwargs.get("backstory"))
-        cat_skill, backstory = self._convert_skill_and_backstory(
+        skills, backstory = self._convert_skill_and_backstory(
             kwargs.get("skill_dict"),
             kwargs.get("skill"),
             backstory,
@@ -113,7 +115,7 @@ class LoadCatFactory(BaseCatFactory):
             "moons": kwargs["moons"],
             "status": status,
             "backstory": backstory,
-            "skills": cat_skill,
+            "skills": skills,
             "personality": self._build_personality(
                 kwargs.get("facets"),
                 kwargs["trait"],
@@ -284,10 +286,19 @@ class LoadCatFactory(BaseCatFactory):
         :param backstory:
         :return: the new-style backstory
         """
-        # if the key isn't found, return it as the value (no need to convert
+        # if the key isn't found, return it as the value (no need to convert)
         return BACKSTORIES["conversion"].get(backstory, backstory)
 
-    def _build_personality(self, facets, trait, is_kit_trait):
+    def _build_personality(
+        self, facets: str, trait: str, is_kit_trait: bool
+    ) -> Personality:
+        """
+        Builds the personality object from the inputs provided
+        :param facets: Cat's facet string
+        :param trait: Provided trait
+        :param is_kit_trait: True if the cat is kit-aged, False otherwise
+        :return: Personality object
+        """
         if facets is not None:
             facets = [int(i) for i in facets.split(",")]
             return Personality(

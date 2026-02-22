@@ -26,6 +26,11 @@ class NewCatFactory(BaseCatFactory):
         self.rng = rng if rng else BASE_RNG()
 
     def create_cat(self, **overrides):
+        """
+        Create a new cat with randomness. Override any elements of the creation with keyword arguments
+        :param overrides: Any desired overrides to the random generation
+        :return: Cat object
+        """
         # remove all values that are empty
         overrides = {k: v for k, v in overrides.items() if v is not None}
 
