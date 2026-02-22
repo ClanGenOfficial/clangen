@@ -43,6 +43,10 @@ def create_cat(rank, moons=None, biome=None, cat_type: CatType = CatType.TEST):
 
 
 def create_example_cats():
+    """
+    Creates the cats for MakeClanScreen
+    :return: None
+    """
     warrior_indices = sample(range(12), 3)
 
     for cat_index in range(12):
@@ -67,7 +71,9 @@ def create_example_cats():
 
 def create_option_preview_cat(scar: str = None, acc: str = None):
     """
-    Creates a cat with the specified scar
+    Creates a cat with the specified scar.
+    :param scar: Desired scar (only one)
+    :param acc: Desired accessory (only one)
     """
     new_cat = CatFactory.create_cat(
         CatType.TEST,
