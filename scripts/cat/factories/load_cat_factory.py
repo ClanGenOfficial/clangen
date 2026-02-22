@@ -129,6 +129,10 @@ class LoadCatFactory(BaseCatFactory):
         }
 
         cat = Cat(**cat_params)
+
+        # Unfortunately, these two have to be handled *after* the creation of the cat
+        # because of the horrible nested cat. fixme.
+
         cat.history = self._convert_history(
             kwargs.get("died_by", []), kwargs.get("scar_event", []), cat=cat
         )
@@ -324,14 +328,14 @@ class LoadCatFactory(BaseCatFactory):
         else:
             raise Exception(f"No skill data provided for cat ID: {self.cat_id}")
 
-    def _convert_history(self, died_by, scar_events, cat) -> History:
+    @staticmethod
+    def _convert_history(died_by, scar_events, cat) -> History:
         """
-        Unfortunately, this has to be handled *after* the creation of the cat
-        because of the horrible nested cat. fixme.
-        :param died_by:
-        :param scar_events:
-        :param cat:
-        :return:
+        Converts some very, very old saves to modern ClanGen
+        :param died_by: What killed this cat
+        :param scar_events: What happened when they got scarred
+        :param cat: The cat in question
+        :return: A new History object that describes the cat
         """
         deaths = []
         if died_by:
