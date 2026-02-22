@@ -38,7 +38,7 @@ def create_example_cats():
 
 def create_option_preview_cat(scar: str = None, acc: str = None):
     """
-    Creates a cat with the specified scar.
+    Creates a cat with the specified scar and/or accessory.
     :param scar: Desired scar (only one)
     :param acc: Desired accessory (only one)
     """
