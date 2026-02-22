@@ -11,7 +11,7 @@ from pygame_gui.core import ObjectID
 import scripts.screens.screens_core.screens_core
 from scripts.cat.cats import Cat
 from ..cat.factories.cat_factory import CatFactory
-from ..cat.factories.create_cat import create_cat, create_example_cats
+from ..cat.factories.create_cat import create_example_cats
 from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol

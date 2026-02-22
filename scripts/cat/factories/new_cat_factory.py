@@ -52,6 +52,7 @@ class NewCatFactory(BaseCatFactory):
                 gender_dict["sex"],
                 (overrides.get("parent1"), overrides.get("parent2")),
                 age,
+                no_disabling_scars=overrides.get("no_disabling_scars", False),
             )
 
         skills = overrides.get("skill_dict", self._random_skills_dict(status.rank, age))
@@ -224,12 +225,33 @@ class NewCatFactory(BaseCatFactory):
         return gender
 
     @staticmethod
-    def _random_pelt(gender, parents, age):
-        return Pelt.generate_new_pelt(
+    def _random_pelt(gender, parents, age, no_disabling_scars: bool):
+        pelt = Pelt.generate_new_pelt(
             gender,
             tuple(Cat.fetch_cat(i) for i in parents if i),
             age,
         )
+        if no_disabling_scars:
+            # code copied from removed create_cat function
+            # used for generating new cats for a fresh Clan
+            not_allowed_scars = (
+                "NOPAW",
+                "NOTAIL",
+                "HALFTAIL",
+                "NOEAR",
+                "BOTHBLIND",
+                "RIGHTBLIND",
+                "LEFTBLIND",
+                "BRIGHTHEART",
+                "NOLEFTEAR",
+                "NORIGHTEAR",
+                "MANLEG",
+            )
+
+            pelt.scars = tuple(
+                scar for scar in pelt.scars if scar not in not_allowed_scars
+            )
+        return pelt
 
     def _random_personality(self, age: CatAge):
         if type(self.rng) != BASE_RNG:

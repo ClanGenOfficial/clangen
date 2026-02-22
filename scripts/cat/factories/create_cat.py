@@ -9,39 +9,6 @@ from scripts.cat.pelts import Pelt
 from scripts.game_structure import game
 
 
-def create_cat(rank, moons=None, biome=None, cat_type: CatType = CatType.TEST):
-    status_dict = {"rank": rank}
-
-    new_cat = CatFactory.create_cat(cat_type, status_dict=status_dict, biome=biome)
-
-    if moons is not None:
-        new_cat.moons = moons
-    elif new_cat.moons >= 160:
-        new_cat.moons = randint(120, 155)
-    elif new_cat.moons == 0:
-        new_cat.moons = randint(1, 5)
-
-    not_allowed_scars = [
-        "NOPAW",
-        "NOTAIL",
-        "HALFTAIL",
-        "NOEAR",
-        "BOTHBLIND",
-        "RIGHTBLIND",
-        "LEFTBLIND",
-        "BRIGHTHEART",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "MANLEG",
-    ]
-
-    new_cat.pelt.scars = tuple(
-        scar for scar in new_cat.pelt.scars if scar not in not_allowed_scars
-    )
-
-    return new_cat
-
-
 def create_example_cats():
     """
     Creates the cats for MakeClanScreen
@@ -51,8 +18,8 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(
-                cat_type=CatType.NEW, rank=CatRank.WARRIOR
+            game.choose_cats[cat_index] = CatFactory.create_cat(
+                cat_type=CatType.NEW, rank=CatRank.WARRIOR, no_disabling_scars=True
             )
         else:
             random_rank = choice(
@@ -64,8 +31,8 @@ def create_example_cats():
                     CatRank.ELDER,
                 ]
             )
-            game.choose_cats[cat_index] = create_cat(
-                cat_type=CatType.NEW, rank=random_rank
+            game.choose_cats[cat_index] = CatFactory.create_cat(
+                cat_type=CatType.NEW, rank=random_rank, no_disabling_scars=True
             )
 
 
