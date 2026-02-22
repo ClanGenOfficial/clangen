@@ -93,7 +93,7 @@ class LoadCatFactory(BaseCatFactory):
         )
 
         backstory = self._convert_backstory(kwargs.get("backstory"))
-        cat_skill, backstory = self._convert_skill(
+        cat_skill, backstory = self._convert_skill_and_backstory(
             kwargs.get("skill_dict"),
             kwargs.get("skill"),
             backstory,
@@ -298,7 +298,7 @@ class LoadCatFactory(BaseCatFactory):
             print(f"WARNING: no facets found for cat ID: {self.cat_id}")
             return Personality(trait=trait, kit_trait=is_kit_trait)
 
-    def _convert_skill(
+    def _convert_skill_and_backstory(
         self, skill_dict, skill, backstory, rank, age
     ) -> Tuple[CatSkills, str]:
         """
