@@ -9,20 +9,20 @@ from scripts.cat.status import Status
 
 
 class TestCatFactory(NewCatFactory):
-    def _random_age(self):
+    def _get_random_age(self):
         return CatAge.NEWBORN
 
-    def _random_age_from_rank(self, rank):
+    def _get_random_age_from_rank(self, rank):
         return CatAge.NEWBORN
 
-    def _random_status_from_age(self, age):
+    def _get_random_status_from_age(self, age):
         # it's a bit silly that we do this, then undo it,  and finally redo in Cat() but i don't want this refactor getting huge
         status = Status()
         status.generate_new_status(age, disable_random=True)
 
         return status
 
-    def _random_moons(self, age: CatAge) -> int:
+    def _get_random_moons(self, age: CatAge) -> int:
         """
         Generate random moons appropriate for the given age
         :param age: CatAge
@@ -30,18 +30,18 @@ class TestCatFactory(NewCatFactory):
         """
         return 0
 
-    def _random_gender_and_genderalign(self, age) -> dict:
+    def _get_random_gender_and_genderalign(self, age) -> dict:
         return {"sex": "female", "genderalign": "female"}
 
-    def _random_personality(self, age: CatAge):
+    def _get_random_personality(self, age: CatAge):
         return Personality(
             lawful=8, social=8, aggress=8, stable=8, kit_trait=age.is_baby()
         )
 
-    def _random_experience(self, age, moons: int) -> int:
+    def _get_random_experience(self, age, moons: int) -> int:
         return 0
 
-    def _random_skills_dict(self, rank, age):
+    def _get_random_skills_dict(self, rank, age):
         return CatSkills(
             primary_path=SkillPath.OMEN,
             primary_points=0,
