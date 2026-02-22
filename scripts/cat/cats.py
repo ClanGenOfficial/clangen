@@ -2856,7 +2856,7 @@ class Cat:
             moons=cat_info["moons"],
             status=status,
             backstory="",
-            catskills=None,
+            skills=None,
             personality=None,
             mentorship={},
             inheritance=InheritanceDict(
