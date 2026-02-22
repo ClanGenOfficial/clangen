@@ -1868,5 +1868,81 @@
         "current_rep": ["hostile"],
         "changed": 2
     }
+    },
+    {
+    "event_id": "gen_new_cat_war_mediator1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "When a battle against o_c_n spilled into a loner's territory, n_c:0 successfully mediates between the two battle patrols so no harm came to the Clans.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 20,
+                "log": {
+                    "cats_from": "from_cat was thankful that to_cat prevented a bloody battle against o_c_n."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
     }
+},
+    {
+    "event_id": "gen_new_cat_war_mediator2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "When a battle against o_c_n spilled into a loner's territory, n_c:0's attempts to mediate between the two Clans ended with {PRONOUN/n_c:0/poss} being chased away.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -20,
+            "log": {
+                    "cats_from": "from_cat thinks that to_cat shouldn't have stuck {PRONOUN/n_c:0/poss} nose in c_n's business."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+}
 ]
