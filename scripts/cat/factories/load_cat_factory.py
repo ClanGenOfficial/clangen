@@ -58,7 +58,7 @@ class LoadCatFactory(BaseCatFactory):
             parent1=kwargs["parent1"],
             parent2=kwargs["parent2"],
             adoptive_parents=kwargs.get("adoptive_parents", []),
-            faded_offspring=kwargs.get("faded_offsprings", []),
+            faded_offspring=kwargs.get("faded_offspring", []),
             mate=mate if isinstance(mate, list) else [mate],
             previous_mates=kwargs.get("previous_mates", []),
         )
