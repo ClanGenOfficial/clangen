@@ -149,7 +149,6 @@ class NewCatFactory(BaseCatFactory):
         )
 
     def _get_random_status_from_age(self, age):
-        # it's a bit silly that we do this, then undo it,  and finally redo in Cat() but i don't want this refactor getting huge
         status = Status()
         status.generate_new_status(age, disable_random=type(self.rng) != BASE_RNG)
 
