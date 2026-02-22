@@ -161,7 +161,7 @@ class Cat:
         :param moons: Cat's age in moons
         :param status: Status object
         :param backstory: Cat's backstory
-        :param catskills: CatSkills object
+        :param skills: CatSkills object
         :param personality: Personality object
         :param mentorship: MentorshipDict containing mentor data and apprentice data, including former for both
         :param inheritance: Inheritance object
@@ -202,7 +202,7 @@ class Cat:
         self.moons: int = moons
         self.status: Status = status
         self.backstory = backstory
-        self.skills = catskills
+        self.skills = skills
         self.personality = personality
 
         # mentorship
