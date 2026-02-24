@@ -4,6 +4,7 @@ from typing import Dict, Optional, Union
 import pygame
 import pygame_gui
 import ujson
+from pygame_gui.core import UIElement
 
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
@@ -105,6 +106,9 @@ class Screens:
         self.game_bgs = {}
         self.fullscreen_bgs = {}
 
+        self.matrix_map: list[list] = [[Optional[UIElement]]]
+        """Used to map the placement of interactable elements on a screen. This allows keyboard inputs to move 'focus' from one element to another element in a logical and predetermined order."""
+
     def loading_screen_start_work(
         self, target: callable, thread_name: str = "work_thread", args: tuple = tuple()
     ) -> PropagatingThread:
@@ -199,6 +203,8 @@ class Screens:
 
     def exit_screen(self):
         """Runs when screen exits"""
+        # reset matrix map so that it can be recreated cleanly later
+        self.matrix_map = [[]]
         pass
 
     # Functions to deal with the menu and mute button.
@@ -582,6 +588,25 @@ class Screens:
             )
         except KeyError:
             pass
+
+    def add_to_map(self, element, location: tuple[int, int]):
+        """
+        Adds given element to the matrix map
+        :param element: The element to add, this should be an interactable element
+        :param location: The location within the matrix for the element to be placed. This should be two indexes, first the row, then the column position (i.e. (1, 4) will be row 1 column 4). If an element already exists in that location, the new element will be inserted into the same location with the old element being pushed to the next column.
+        """
+        row = location[0]
+        column = location[1]
+        # first see if we need to expand the map
+        while len(self.matrix_map) < row:
+            # add empty lists to the map until we reach desired row
+            self.matrix_map.append([])
+        while len(self.matrix_map[row]) < column:
+            # add None items to the row until we reach desired column
+            self.matrix_map[row].append(None)
+
+        # now add to the map
+        self.matrix_map[row].insert(column, element)
 
     @property
     def theme(self) -> str:
