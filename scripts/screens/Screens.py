@@ -107,7 +107,7 @@ class Screens:
         self.game_bgs = {}
         self.fullscreen_bgs = {}
 
-        self.matrix_map: list[list] = [[Optional[UIElement]]]
+        self.matrix_map: list[list[Optional[UIElement]]] = []
         """Used to map the placement of interactable elements on a screen. This allows keyboard inputs to move 'focus' from one element to another element in a logical and predetermined order."""
 
     def loading_screen_start_work(
@@ -288,9 +288,9 @@ class Screens:
         Updates the matrix map with the given list of elements.
         """
         if not self.matrix_map:
-            focus_matrix.create_map(element_list)
+            self.matrix_map = focus_matrix.create_map(element_list)
         else:
-            focus_matrix.add_to_map(self.matrix_map, element_list)
+            self.matrix_map = focus_matrix.add_to_map(self.matrix_map, element_list)
 
     @classmethod
     def hide_menu_buttons(cls):
@@ -299,12 +299,11 @@ class Screens:
         for name, button in cls.menu_buttons.items():
             button.hide()
 
-    @classmethod
-    def show_menu_buttons(cls):
+    def show_menu_buttons(self):
         """This shows all menu buttons, and makes them interact-able."""
         rebuild_moon_n_season_indicator()
 
-        for name, button in cls.menu_buttons.items():
+        for name, button in self.menu_buttons.items():
             if name in [
                 "mute_button",
                 "unmute_button",
@@ -321,27 +320,28 @@ class Screens:
         Screens.menu_buttons["mute_button"].hide()
         Screens.menu_buttons["unmute_button"].hide()
 
-    @classmethod
-    def show_mute_buttons(cls):
+    def show_mute_buttons(self):
         """This shows all mute buttons, and makes them interact-able."""
 
         if music_manager.muted or music_manager.audio_disabled:
-            cls.menu_buttons["unmute_button"].show()
-            cls.menu_buttons["mute_button"].hide()
+            self.menu_buttons["unmute_button"].show()
+            self.menu_buttons["mute_button"].hide()
+            self.update_map([self.menu_buttons["unmute_button"]])
         else:
-            cls.menu_buttons["unmute_button"].hide()
-            cls.menu_buttons["mute_button"].show()
+            self.menu_buttons["unmute_button"].hide()
+            self.menu_buttons["mute_button"].show()
+            self.update_map([self.menu_buttons["mute_button"]])
 
     def mute_button_pressed(self, event):
         """This is a short-up to deal with mute button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
         if event.ui_element == Screens.menu_buttons["mute_button"]:
             music_manager.mute_music()
-            Screens.show_mute_buttons()
+            self.show_mute_buttons()
             return True
         elif event.ui_element == Screens.menu_buttons["unmute_button"]:
             out = music_manager.unmute_music(self.name)
-            Screens.show_mute_buttons()
+            self.show_mute_buttons()
             return out
         else:
             return False

@@ -64,8 +64,6 @@ class StartScreen(Screens):
         self.event_edit = None
 
     def handle_event(self, event):
-        """This is where events that occur on this page are handled.
-        For the pygame_gui rewrite, button presses are also handled here."""
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if platform.system() == "Darwin":
                 subprocess.Popen(["open", "-u", event.link_target])
@@ -112,9 +110,6 @@ class StartScreen(Screens):
                 self.change_screen(GameScreen.CAMP)
 
     def exit_screen(self):
-        """
-        TODO: DOCS
-        """
         # Button murder time.
         self.continue_button.kill()
         self.switch_clan_button.kill()
@@ -131,11 +126,8 @@ class StartScreen(Screens):
             self.social_buttons[btn].kill()
 
     def screen_switches(self):
-        """
-        TODO: DOCS
-        """
-
         super().screen_switches()
+
         if game.event_editing:
             game.event_editing = False
 
@@ -157,9 +149,7 @@ class StartScreen(Screens):
         )
         self.set_bg("mainmenu_bg")
 
-        # Make those unslightly menu button hide away
-        self.hide_menu_buttons()
-        Screens.show_mute_buttons()
+        self.show_mute_buttons()
 
         # Create buttons
 
@@ -221,14 +211,14 @@ class StartScreen(Screens):
             element_list.append(self.event_edit)
 
         self.social_buttons["twitter_button"] = UIImageButton(
-            ui_scale(pygame.Rect((12, 647), (40, 40))),
+            ui_scale(pygame.Rect((18, 641), (40, 40))),
             "",
             object_id="#twitter_button",
             manager=MANAGER,
             tool_tip_text="screens.start.tooltip_twitter",
         )
         self.social_buttons["tumblr_button"] = UIImageButton(
-            ui_scale(pygame.Rect((5, 647), (40, 40))),
+            ui_scale(pygame.Rect((5, 641), (40, 40))),
             "",
             object_id="#tumblr_button",
             manager=MANAGER,
@@ -237,7 +227,7 @@ class StartScreen(Screens):
         )
 
         self.social_buttons["discord_button"] = UIImageButton(
-            ui_scale(pygame.Rect((7, 647), (40, 40))),
+            ui_scale(pygame.Rect((7, 641), (40, 40))),
             "",
             object_id="#discord_button",
             manager=MANAGER,
