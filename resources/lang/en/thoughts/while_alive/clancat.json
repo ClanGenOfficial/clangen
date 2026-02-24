@@ -9,9 +9,8 @@
             "Is in the medicine cat den",
             "Almost choked on {PRONOUN/m_c/poss} prey",
             "Regrets not eating the bird on the fresh-kill pile earlier",
-            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} still in {PRONOUN/m_c/poss} nest sleeping",
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} still sleeping in {PRONOUN/m_c/poss} nest",
             "Woke up on the wrong side of the nest",
-            "Spends time watching fish in the nearby river",
             "Is watching cats come and go from camp",
             "Thinks about StarClan",
             "Is debating on which prey to take from the fresh-kill pile",
@@ -36,8 +35,7 @@
             "Is sharing tongues with r_c",
             "Is giving some advice to r_c",
             "Is playing a prank on r_c",
-			"Saw r_c the other day, but didn't get a chance to meow hello",
-			"Bickered about something trivial with r_c",
+			"Bickers about something trivial with r_c",
 			"Nods politely as r_c passes by",
 			"Trips over the same twig that r_c just tripped over",
 			"Watches r_c wind up for a sneeze, but it never happens",
@@ -175,7 +173,7 @@
             "Thinks r_c is doing a great job as deputy",
             "Respects r_c's effort as deputy",
             "Wonders if being deputy is really so hard",
-            "Knows r_c would make a great leader",
+            "Knows r_c will make a great leader",
             "Thinks r_c is doing an alright job as deputy",
             "Thinks r_c is doing poorly as deputy"
         ],
@@ -247,7 +245,6 @@
     {
         "id": "gen_to_alive_elder",
         "thoughts": [
-            "Wonders if r_c misses {PRONOUN/r_c/poss} warrior days",
             "Wants to visit the elders to hear a story"
         ],
         "main_status_constraint": [
@@ -256,6 +253,25 @@
         ],
         "random_status_constraint": [
             "elder"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_to_alive_elder",
+        "thoughts": [
+            "Wonders if r_c misses {PRONOUN/r_c/poss} warrior days",
+        ],
+        "main_status_constraint": [
+            "-elder",
+            "-leader"
+        ],
+        "random_status_constraint": [
+            "elder"
+        ],
+        "random_status_history": [
+            "warrior"
         ],
         "random_living_status": [
             "living"
@@ -390,8 +406,6 @@
             "Tries to put on a brave face for {PRONOUN/m_c/poss} Clanmates",
             "Is daydreaming about a Clan celebration in {PRONOUN/m_c/poss} honor",
             "Offers to help {PRONOUN/m_c/poss} Clanmates with their duties",
-            "Wonders how {PRONOUN/m_c/subject} would run the Clan better",
-            "Considers what {PRONOUN/m_c/poss} first actions as leader would be",
             "Considers spending the whole day hunting on {PRONOUN/m_c/poss} own",
             "Encourages every cat to help fortify the dens"
         ],
@@ -409,6 +423,7 @@
         ],
         "main_status_constraint": [
             "-kitten",
+            "-deputy",
             "-leader"
         ]
     },
@@ -419,7 +434,9 @@
             "Has been imitating the Clan leader's behaviour recently",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shoo-in for deputy",
             "Wonders if r_c talks about {PRONOUN/m_c/object} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not around",
-            "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been doing a wonderful job leading"
+            "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been doing a wonderful job leading",
+            "Wonders how {PRONOUN/m_c/subject} would run the Clan better",
+            "Considers what {PRONOUN/m_c/poss} first actions as leader would be"
         ],
         "main_trait_constraint": [
             "ambitious"
@@ -452,7 +469,6 @@
             "Tells the warriors to get ready for a battle",
             "Wonders if training in the Dark Forest is really that bad",
             "Started a fight with a fellow Clanmate",
-            "Imagines how {PRONOUN/m_c/subject} would run the Clan better",
             "Licks fresh-kill blood off {PRONOUN/m_c/poss} lips a little too intently",
             "Has been glaring at a certain cat in camp with an odd look in {PRONOUN/m_c/poss} eye",
             "Pictures a glorious war breaking out",
@@ -482,6 +498,7 @@
         "thoughts": [
             "Wonders how easy it'd be to attack the leader from where {PRONOUN/r_c/subject} {VERB/r_c/lay/lies}",
             "Is watching the leader closely while imagining the Clan under {PRONOUN/m_c/poss} rule",
+            "Imagines how {PRONOUN/m_c/subject} would run the Clan better",
             "Thinks the Clan leader should punish traitors more harshly"
         ],
         "main_trait_constraint": [
@@ -617,7 +634,7 @@
             "Is looking around camp for someone to share tongues with",
             "Winked playfully at a Clanmate from across the clearing!",
             "Has received several invitations to share tongues... and is deciding which to take",
-            "Is basking in a sunray in the camp clearing",
+            "Is basking in a sunbeam in the camp clearing",
             "Is this moon's heartthrob",
             "Has recently given a wonderful speech to fellow Clanmates, boosting morale",
             "Spends all day chatting and laughing with {PRONOUN/m_c/poss} Clanmates",
@@ -636,7 +653,7 @@
         "thoughts": [
             "Is chasing a butterfly around the camp",
             "Is giggling about Clan drama with friends",
-            "Is gnawing on a small bone busily",
+            "Is gnawing busily on a small bone",
             "Is batting at a ball of moss",
             "Makes immature jokes all day, leaving everyone else rolling their eyes",
             "Doesn't want to share a piece of fresh-kill",
@@ -693,7 +710,7 @@
         "id": "cold_clan_gen",
         "thoughts": [
             "Responds to a stupid comment with a sharp hiss",
-            "Walked away from a conversation that bored {PRONOUN/m_c/object}",
+            "Walks away from a conversation that bored {PRONOUN/m_c/object}",
             "Wonders why others snap back at {PRONOUN/m_c/object}",
             "Notices that {PRONOUN/m_c/poss} Clanmates have been nervous around {PRONOUN/m_c/object} lately",
             "Doesn't say thank you when offered a piece of fresh-kill",
@@ -753,7 +770,7 @@
             "Spends time with a grieving Clanmate today",
             "Listens patiently to r_c's confidently wrong opinions",
             "Let {PRONOUN/m_c/poss} Clanmate have the last piece of fresh-kill on the pile this morning",
-            "Is noticing with joy how well the Clan is looking after one another as of late",
+            "Is pleased by how well the Clan is looking after one another as of late",
             "Is listening to a Clanmate's struggles with love",
             "Lets a Clanmate cry on {PRONOUN/m_c/poss} shoulder",
             "Makes sure to check on a Clanmate who's been having a rough time",
@@ -766,13 +783,13 @@
             "Offers to help Clanmates with their duties",
             "Is the only cat not bothered by a snoring Clanmate",
             "Is laughing at a Clanmate's joke, even though {PRONOUN/m_c/subject} didn't find it funny",
-            "Helped to gather herbs all day",
+            "Helps gather herbs all day",
             "Gives some plump fresh-kill to a Clanmate instead",
             "Offers a helping paw, even after a night of bad sleep",
             "Is listening to the woes of a fellow Clanmate",
             "Is doing some apprentice tasks around camp, to help lighten the load",
             "Is keeping the injured cats company",
-            "Can't stop smiling because of another Clanmates good mood",
+            "Can't stop smiling because of another Clanmate's good mood",
             "Says sorry before {PRONOUN/m_c/subject} {VERB/m_c/bite/bites} into {PRONOUN/m_c/poss} fresh-kill",
             "Purrs contently at the thought of {PRONOUN/m_c/poss} Clanmates being happy"
         ],
@@ -792,6 +809,9 @@
         ],
         "main_trait_constraint": [
             "compassionate"
+        ],
+        "main_age_constraint": [
+            "-senior"
         ],
         "main_status_constraint": [
             "-elder"
@@ -850,17 +870,17 @@
         "thoughts": [
             "Pesters other cats to join {PRONOUN/m_c/poss} made-up challenges around camp",
             "Challenges r_c to a staring contest",
-            "Challenged r_c to a staring contest and won",
-            "Challenged r_c to a staring contest and lost",
+            "Challenges r_c to a staring contest and wins",
+            "Challenges r_c to a staring contest and loses",
             "Has been a good sport about losing to r_c",
             "Has been a bit of a bad sport about losing to r_c",
             "Challenges r_c to a race",
-            "Challenged {PRONOUN/m_c/poss} Clanmates to a scavenger hunt",
-            "Challenged {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and won",
-            "Challenged {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and lost",
+            "Challenges {PRONOUN/m_c/poss} Clanmates to a scavenger hunt",
+            "Challenges {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and wins",
+            "Challenges {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and loses",
             "Makes every patrol into a competition",
             "Is lecturing about something someone said wrong offpawedly",
-            "Watched r_c do a chore {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really good at to see how {PRONOUN/m_c/subject} can improve",
+            "Watches r_c do a chore {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really good at to see how {PRONOUN/m_c/subject} can improve",
             "Totals up how much prey {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} caught this moon",
             "Shows off {PRONOUN/m_c/poss} hunting crouch to r_c"
         ],
@@ -928,7 +948,7 @@
         "id": "daring_clan_gen",
         "thoughts": [
             "Is racing through camp, accidentally knocking into Clanmates",
-            "Defended a Clanmate in an argument",
+            "Defends Clanmate in an argument",
             "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN/m_c/poss} teeth!"
         ],
         "main_trait_constraint": [
