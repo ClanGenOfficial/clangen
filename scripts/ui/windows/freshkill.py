@@ -12,9 +12,7 @@ from scripts.clan_package.settings import (
     switch_clan_setting,
 )
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UICatListDisplay,
-)
+from scripts.ui.elements.cat_list_display import UICatListDisplay
 from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
