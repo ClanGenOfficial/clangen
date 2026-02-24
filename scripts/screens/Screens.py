@@ -660,14 +660,20 @@ class Screens:
         except KeyError:
             pass
 
-    def add_to_map(self, element, location: tuple[int, int]):
+
+
+    def add_to_map(self, element, position: tuple[int, int]):
         """
         Adds given element to the matrix map
         :param element: The element to add, this should be an interactable element
-        :param location: The location within the matrix for the element to be placed. This should be two indexes, first the row, then the column position (i.e. (1, 4) will be row 1 column 4). If an element already exists in that location, the new element will be inserted into the same location with the old element being pushed to the next column.
+        :param position: The element's position on the screen
         """
-        row = location[0]
-        column = location[1]
+
+        # TODO: change this so that it's utilized to insert an element into the matrix map relative to specific other elements
+
+
+"""        row = position[0]
+        column = position[1]
         # first see if we need to expand the map
         while len(self.matrix_map) < row:
             # add empty lists to the map until we reach desired row
@@ -680,7 +686,7 @@ class Screens:
         if self.matrix_map[row][column] is None:
             self.matrix_map[row][column] = element
         else:
-            self.matrix_map[row].insert(column, element)
+            self.matrix_map[row].insert(column, element)"""
 
     @property
     def theme(self) -> str:
