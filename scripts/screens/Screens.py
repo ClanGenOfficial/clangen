@@ -107,6 +107,7 @@ class Screens:
         self.game_bgs = {}
         self.fullscreen_bgs = {}
 
+        self.current_selection: Optional[UIElement] = None
         self.matrix_map: list[list[Optional[UIElement]]] = []
         """Used to map the placement of interactable elements on a screen. This allows keyboard inputs to move 'focus' from one element to another element in a logical and predetermined order."""
 
@@ -201,6 +202,31 @@ class Screens:
             out = self.mute_button_pressed(event)
             if out:
                 return
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+            if event.key == pygame.K_DOWN:
+                self.current_selection = focus_matrix.find_next_focus(
+                    self.matrix_map,
+                    FocusDirection.DOWN,
+                    last_element=self.current_selection,
+                )
+            elif event.key == pygame.K_UP:
+                self.current_selection = focus_matrix.find_next_focus(
+                    self.matrix_map,
+                    FocusDirection.UP,
+                    last_element=self.current_selection,
+                )
+            elif event.key == pygame.K_LEFT:
+                self.current_selection = focus_matrix.find_next_focus(
+                    self.matrix_map,
+                    FocusDirection.LEFT,
+                    last_element=self.current_selection,
+                )
+            elif event.key == pygame.K_RIGHT:
+                self.current_selection = focus_matrix.find_next_focus(
+                    self.matrix_map,
+                    FocusDirection.RIGHT,
+                    last_element=self.current_selection,
+                )
 
     def exit_screen(self):
         """Runs when screen exits"""

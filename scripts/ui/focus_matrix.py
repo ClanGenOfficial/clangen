@@ -114,6 +114,10 @@ def find_next_focus(
             new_row = len(current_map) - 1
             # we also move the column to be the farthest right
             new_col = len(current_map[new_row]) - 1
+        # if we're changing bc of a wrap, we want to predetermine the column
+        if change_to_higher_row:
+            new_col = len(current_map[new_row]) - 1
+
     # going DOWN!
     elif direction == FocusDirection.DOWN or change_to_lower_row:
         # find the new row, wrapping if necessary
@@ -123,32 +127,43 @@ def find_next_focus(
             new_row = 0
             # we also move the column to be the farthest left
             new_col = 0
+        # if we're changing bc of a wrap, we want to predetermine the column
+        if change_to_lower_row:
+            new_col = 0
 
     # if no new row, then the new row is our old one!
-    if not new_row:
+    if new_row is None:  # has to be `is None` so that it doesn't pick up 0 indexes
         new_row = prior_row
 
     # Now to find our new column!
     # going LEFT!
-    if direction == FocusDirection.LEFT:
+    if direction == FocusDirection.LEFT and new_col is None:
         # find the new col, wrapping if necessary
         if prior_col - 1 >= 0:
             new_col = prior_col - 1
         else:
             new_col = len(current_map[new_row]) - 1
     # going RIGHT
-    elif direction == FocusDirection.RIGHT:
+    elif direction == FocusDirection.RIGHT and new_col is None:
         # find the new col, wrapping if necessary
         if prior_col + 1 <= len(current_map[new_row]) - 1:
             new_col = prior_col + 1
         else:
             new_col = 0
     # if neither, then we keep our column the same IF POSSIBLE
-    elif not new_col:
-        if len(current_map[new_row]) < prior_col:
+    elif new_col is None:
+        if len(current_map[new_row]) - 1 < prior_col:
             new_col = len(current_map[new_row]) - 1
         else:
             new_col = prior_col
 
+    try:
+        new_element = current_map[new_row][new_col]
+    except IndexError:
+        print("uhoh")
+
+    last_element.unselect()
+    new_element.select()
+
     # return the element at the newly found indexes!
-    return current_map[new_row][new_col]
+    return new_element

@@ -72,7 +72,6 @@ class StartScreen(Screens):
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            self.mute_button_pressed(event)
             screens = {
                 self.continue_button: GameScreen.CAMP,
                 self.switch_clan_button: GameScreen.SWITCH_CLAN,
@@ -103,11 +102,8 @@ class StartScreen(Screens):
                 open_url("https://officialclangen.tumblr.com/")
             elif event.ui_element == self.social_buttons["twitter_button"]:
                 open_url("https://twitter.com/OfficialClangen")
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
-            if (
-                event.key == pygame.K_RETURN or event.key == pygame.K_SPACE
-            ) and self.continue_button.is_enabled:
-                self.change_screen(GameScreen.CAMP)
+
+        super().handle_event(event)
 
     def exit_screen(self):
         # Button murder time.
@@ -162,6 +158,8 @@ class StartScreen(Screens):
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
+        self.continue_button.select()
+        self.current_selection = self.continue_button
         element_list.append(self.continue_button)
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
@@ -236,9 +234,6 @@ class StartScreen(Screens):
         )
         element_list.extend(self.social_buttons.values())
         self.update_map(element_list)
-        focus_matrix.find_next_focus(
-            self.matrix_map, FocusDirection.RIGHT, self.social_buttons["tumblr_button"]
-        )
 
         errorimg = image_cache.load_image(
             "resources/images/errormsg.png"
