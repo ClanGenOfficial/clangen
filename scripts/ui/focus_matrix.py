@@ -143,7 +143,7 @@ def find_next_focus(
             new_col = prior_col - 1
         else:
             new_col = len(current_map[new_row]) - 1
-    # going RIGHT
+    # going RIGHT!
     elif direction == FocusDirection.RIGHT and new_col is None:
         # find the new col, wrapping if necessary
         if prior_col + 1 <= len(current_map[new_row]) - 1:
@@ -157,13 +157,10 @@ def find_next_focus(
         else:
             new_col = prior_col
 
-    try:
-        new_element = current_map[new_row][new_col]
-    except IndexError:
-        print("uhoh")
+    new_element = current_map[new_row][new_col]
 
-    last_element.unselect()
-    new_element.select()
+    last_element.unfocus()
+    new_element.focus()
 
     # return the element at the newly found indexes!
     return new_element

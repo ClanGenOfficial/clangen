@@ -209,3 +209,29 @@ class UIImageButton(pygame_gui.elements.UIButton):
             else:
                 pygame.draw.lines(screen, (255, 0, 0), True, self.mask_info[1], width=2)
         return hover
+
+    def focus(self):
+        super().focus()
+        self.drawable_shape.set_active_state("selected")
+        if self.tool_tip is None and self.tool_tip_text is not None:
+            self.tool_tip = self.ui_manager.create_tool_tip(
+                text=self.tool_tip_text,
+                position=(self.get_abs_rect().bottomright, self.rect.centery),
+                hover_distance=(0, int(self.rect.height / 2)),
+                parent_element=self,
+                object_id=self.tool_tip_object_id,
+                wrap_width=self.tool_tip_wrap_width,
+                text_kwargs=self.tool_tip_text_kwargs,
+            )
+
+    def unfocus(self):
+        self.drawable_shape.set_active_state("normal")
+        if self.tool_tip is not None:
+            self.tool_tip.kill()
+            self.tool_tip = None
+        super().unfocus()
+
+    def on_unhovered(self):
+        super().on_unhovered()
+        if self.is_focused:
+            self.drawable_shape.set_active_state("selected")

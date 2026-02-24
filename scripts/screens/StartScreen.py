@@ -158,7 +158,7 @@ class StartScreen(Screens):
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
-        self.continue_button.select()
+        self.continue_button.focus()
         self.current_selection = self.continue_button
         element_list.append(self.continue_button)
         self.switch_clan_button = UISurfaceImageButton(
