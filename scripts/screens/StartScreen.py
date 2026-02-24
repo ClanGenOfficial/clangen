@@ -27,6 +27,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game, constants
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game.settings import game_settings_load, game_setting_get
+from ..ui import focus_matrix
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.update_available import UpdateAvailableWindow
@@ -110,12 +111,6 @@ class StartScreen(Screens):
             ) and self.continue_button.is_enabled:
                 self.change_screen(GameScreen.CAMP)
 
-    # def on_use(self):
-    #     """
-    #     TODO: DOCS
-    #     """
-    #     super().on_use()
-
     def exit_screen(self):
         """
         TODO: DOCS
@@ -168,6 +163,8 @@ class StartScreen(Screens):
 
         # Create buttons
 
+        element_list = []
+
         self.continue_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 310), (200, 30))),
             "buttons.continue",
@@ -175,6 +172,7 @@ class StartScreen(Screens):
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
+        element_list.append(self.continue_button)
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.switch_clan",
@@ -183,6 +181,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.continue_button},
         )
+        element_list.append(self.switch_clan_button)
         self.new_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.new_clan",
@@ -191,6 +190,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.switch_clan_button},
         )
+        element_list.append(self.new_clan_button)
         self.settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.settings_info",
@@ -199,6 +199,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.new_clan_button},
         )
+        element_list.append(self.settings_button)
         self.quit = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.quit",
@@ -207,6 +208,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
         )
+        element_list.append(self.quit)
         if constants.CONFIG["dev_tools"]:
             self.event_edit = UISurfaceImageButton(
                 ui_scale(pygame.Rect((70, 15), (200, 30))),
@@ -216,6 +218,7 @@ class StartScreen(Screens):
                 manager=MANAGER,
                 anchors={"top_target": self.quit},
             )
+            element_list.append(self.event_edit)
 
         self.social_buttons["twitter_button"] = UIImageButton(
             ui_scale(pygame.Rect((12, 647), (40, 40))),
@@ -241,6 +244,9 @@ class StartScreen(Screens):
             tool_tip_text="screens.start.tooltip_discord",
             anchors={"left_target": self.social_buttons["tumblr_button"]},
         )
+        element_list.extend(self.social_buttons.values())
+        self.update_map(element_list)
+
         errorimg = image_cache.load_image(
             "resources/images/errormsg.png"
         ).convert_alpha()

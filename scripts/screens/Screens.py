@@ -22,6 +22,7 @@ from scripts.game_structure.screen_settings import (
     screen,
 )
 from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
+from scripts.ui import focus_matrix
 from scripts.ui.windows.freshkill import FreshkillManagementWindow
 from scripts.ui.windows.herbs import HerbManagementWindow
 from scripts.ui.windows.save_check import SaveCheckWindow
@@ -281,6 +282,15 @@ class Screens:
     # Functions to deal with the menu and mute button.
     #   The menu is used very often, so I don't want to keep
     #   recreating and killing it. Lots of chances for bugs there.
+
+    def update_map(self, element_list: list[UIElement]):
+        """
+        Updates the matrix map with the given list of elements.
+        """
+        if not self.matrix_map:
+            focus_matrix.create_map(element_list)
+        else:
+            focus_matrix.add_to_map(self.matrix_map, element_list)
 
     @classmethod
     def hide_menu_buttons(cls):
