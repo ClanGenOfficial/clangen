@@ -198,7 +198,9 @@ class Screens:
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here."""
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS or (
+            event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN
+        ):
             out = self.mute_button_pressed(event)
             if out:
                 return
@@ -290,11 +292,15 @@ class Screens:
     def mute_button_pressed(self, event):
         """This is a short-up to deal with mute button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
-        if event.ui_element == Screens.menu_buttons["mute_button"]:
+        if event.type == pygame.KEYDOWN:
+            element = self.current_selection
+        else:
+            element = event.ui_element
+        if element == Screens.menu_buttons["mute_button"]:
             music_manager.mute_music()
             self.show_mute_buttons()
             return True
-        elif event.ui_element == Screens.menu_buttons["unmute_button"]:
+        elif element == Screens.menu_buttons["unmute_button"]:
             out = music_manager.unmute_music(self.name)
             self.show_mute_buttons()
             return out

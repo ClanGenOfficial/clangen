@@ -71,36 +71,42 @@ class StartScreen(Screens):
                 os.system(f'start "" {event.link_target}')
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS or (
+            event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN
+        ):
+            if event.type == pygame.KEYDOWN:
+                element = self.current_selection
+            else:
+                element = event.ui_element
             screens = {
                 self.continue_button: GameScreen.CAMP,
                 self.switch_clan_button: GameScreen.SWITCH_CLAN,
                 self.new_clan_button: GameScreen.MAKE_CLAN,
                 self.settings_button: GameScreen.SETTINGS,
             }
-            if event.ui_element in screens and not self.error_open:
-                self.change_screen(screens[event.ui_element])
-            elif event.ui_element == self.open_data_directory_button:
+            if element in screens and not self.error_open:
+                self.change_screen(screens[element])
+            elif element == self.open_data_directory_button:
                 open_data_dir()
                 return
-            elif event.ui_element == self.closebtn:
+            elif element == self.closebtn:
                 self.error_box.kill()
                 self.error_label.kill()
                 self.error_gethelp.kill()
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
                 self.error_open = False
-            elif event.ui_element == self.update_button:
+            elif element == self.update_button:
                 UpdateAvailableWindow()
-            elif event.ui_element == self.quit:
+            elif element == self.quit:
                 quit_game(savesettings=False, clearevents=False)
-            elif event.ui_element == self.event_edit:
+            elif element == self.event_edit:
                 self.change_screen(GameScreen.EVENT_EDIT)
-            elif event.ui_element == self.social_buttons["discord_button"]:
+            elif element == self.social_buttons["discord_button"]:
                 open_url("https://discord.gg/clangen")
-            elif event.ui_element == self.social_buttons["tumblr_button"]:
+            elif element == self.social_buttons["tumblr_button"]:
                 open_url("https://officialclangen.tumblr.com/")
-            elif event.ui_element == self.social_buttons["twitter_button"]:
+            elif element == self.social_buttons["twitter_button"]:
                 open_url("https://twitter.com/OfficialClangen")
 
         super().handle_event(event)
