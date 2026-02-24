@@ -21,11 +21,11 @@ from scripts.game_structure import game
 from scripts.cat.pronouns import get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
-    UICheckbox,
     UIModifiedImage,
     UIDropDown,
     UICollapsibleContainer,
 )
+from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.scrolling_button_list import UIScrollingButtonList
 from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
 from scripts.ui.elements.modified_scrolling_container import (

@@ -21,9 +21,7 @@ from scripts.game_structure.game.settings import (
 # please don't do this. we have to.
 import scripts.game_structure.game.settings.settings as all_settings
 from scripts.game_structure import game
-from scripts.game_structure.ui_elements import (
-    UICheckbox,
-)
+from ..ui.elements.checkbox import UICheckbox
 from ..ui.elements.image_horizontal_slider import UIImageHorizontalSlider
 from ..ui.elements.modified_scrolling_container import UIModifiedScrollingContainer
 from ..ui.elements.image_button import UIImageButton
