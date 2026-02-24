@@ -1984,6 +1984,42 @@
                 "prey": [
                     "medium"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan","high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across their enemy's border."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -2002,6 +2038,42 @@
                 ],
                 "prey": [
                     "small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan","high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across their enemy's border."
+                        }
+                    }
                 ],
                 "frequency": 4
             },
@@ -2029,6 +2101,42 @@
                 "prey": [
                     "medium"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan","high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to hunt a rabbit across the border."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat tried to hunt a rabbit across their enemy's border."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -2042,6 +2150,42 @@
                     "shameless",
                     "troublesome"
                 ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan","high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across their enemy's border."
+                        }
+                    }
+                ],
                 "other_clan_rep": -1,
                 "frequency": 4
             },
@@ -2052,9 +2196,44 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it.",
                     "death": "m_c disrespected the border lines and was killed by an enemy warrior for it."
                 },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan","high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat died trying to hunt a rabbit across the border."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat died trying to hunt a rabbit across their enemy's border."
+                        }
+                    }
+                ],
                 "other_clan_rep": -1,
                 "frequency": 3
             },
@@ -2076,8 +2255,44 @@
                 ],
                 "history_text": {
                     "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it.",
-                    "death": "m_c disrespected the border lines and was killed by an enemy warrior for it."
+                    "death": "m_c died to {PRONOUN/m_c/poss} injuries from an enemy warrior."
                 },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan","high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat was injured while hunting across the border."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat was injured while hunting across their enemy's border."
+                        }
+                    }
+                ],
                 "other_clan_rep": -1,
                 "frequency": 3
             }
@@ -2095,6 +2310,42 @@
                 "text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of {PRONOUN/r_c/poss} deed behind. That will show those o_c_n cats just how confident c_n is in their own power.",
                 "exp": 10,
                 "other_clan_rep": -2,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan","high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat caught a rabbit from across their enemy's border."
+                        }
+                    }
+                ],
                 "frequency": 4
             }
         ]
