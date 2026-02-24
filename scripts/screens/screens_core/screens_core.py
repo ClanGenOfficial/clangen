@@ -13,9 +13,7 @@ from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UIDropDown,
-)
+from scripts.ui.elements.dropdown import UIDropDown
 from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton

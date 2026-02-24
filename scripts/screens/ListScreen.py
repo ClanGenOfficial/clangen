@@ -20,9 +20,7 @@ from scripts.game_structure.game.switches import (
 from scripts.cat.enums import CatGroup
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
-from scripts.game_structure.ui_elements import (
-    UIDropDown,
-)
+from scripts.ui.elements.dropdown import UIDropDown
 from scripts.ui.elements.cat_list_display import UICatListDisplay
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
