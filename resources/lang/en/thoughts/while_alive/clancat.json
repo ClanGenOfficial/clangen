@@ -261,7 +261,7 @@
     {
         "id": "gen_to_alive_elder",
         "thoughts": [
-            "Wonders if r_c misses {PRONOUN/r_c/poss} warrior days",
+            "Wonders if r_c misses {PRONOUN/r_c/poss} warrior days"
         ],
         "main_status_constraint": [
             "-elder",
