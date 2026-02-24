@@ -23,6 +23,7 @@ from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.relation_status_fill_bar import UIRelationStatusFillBar
 from scripts.ui.elements.sprite_button import UISpriteButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
@@ -31,59 +32,6 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
-
-
-class UIRelationStatusFillBar(pygame_gui.elements.UIStatusBar):
-    """Wraps together a status bar"""
-
-    def __init__(
-        self,
-        relative_rect,
-        percent_full=0,
-        manager=None,
-        anchors=None,
-        tool_tip_text: str = None,
-        container=None,
-    ):
-        rect = (
-            (relative_rect.x + ui_scale_value(2), relative_rect.y + ui_scale_value(2)),
-            (
-                relative_rect.width - ui_scale_value(4),
-                relative_rect.height - ui_scale_value(4),
-            ),
-        )
-        super().__init__(
-            rect,
-            object_id="#relation_bar",
-            manager=manager,
-            anchors=anchors,
-            container=container,
-        )
-        self.percent_full = percent_full / 100
-
-        # Now to make the overlay
-        image = pygame.transform.scale(
-            image_cache.load_image(
-                "resources/images/relations_border_bars.png"
-            ).convert_alpha(),
-            (relative_rect[2], relative_rect[3]),
-        )
-
-        self.overlay = pygame_gui.elements.UIImage(
-            relative_rect,
-            image,
-            manager=manager,
-            anchors=anchors,
-            object_id="#relation_bar",
-            container=container,
-        )
-        self.overlay.set_tooltip(tool_tip_text)
-        self.overlay.tool_tip_delay = 0
-        self.join_focus_sets(self.overlay)
-
-    def kill(self):
-        self.overlay.kill()
-        super().kill()
 
 
 class UIRelationStatusScaleBar(pygame_gui.elements.UIImage):
