@@ -22,8 +22,15 @@ nav:
         - dev/writing/index.md
         - Reference:
           - dev/writing/reference/index.md
-          - dev/writing/reference/trait-dictionary.md
+          - dev/writing/reference/writing-standards.md
+          - dev/writing/reference/terminology.md
           - dev/writing/reference/tag-lists.md
+          - dev/writing/reference/common-formats.md
+          - dev/writing/reference/pronoun-tags.md
+          - dev/writing/reference/trait-dictionary.md
+          - dev/writing/reference/biomes.md
+          - dev/writing/reference/animals.md
+          - dev/writing/reference/common-errors.md
         - dev/writing/patrols.md
         - dev/writing/shortevents.md
         - dev/writing/future.md
@@ -64,6 +71,7 @@ theme:
     - navigation.top
     - navigation.indexes
     - navigation.tabs
+    - navigation.path
   custom_dir: docs-resources
   palette:
     - media: "(prefers-color-scheme)"

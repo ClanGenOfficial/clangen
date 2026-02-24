@@ -1,4 +1,9 @@
 import os
+import shutil
+from pathlib import Path
+
+from scripts.game_structure.game.save_load import read_clans
+from scripts.housekeeping.datadir import get_save_dir
 
 try:
     import tomllib
@@ -27,6 +32,11 @@ from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
 
 class FreshkillPileTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.clanlist = read_clans()
+        cls.previously_loaded_clan = cls.clanlist[0] if cls.clanlist else None
+
     def setUp(self) -> None:
         self.prey_config = None
         with open("resources/prey_config.toml", "r") as read_file:
@@ -59,8 +69,10 @@ class FreshkillPileTest(unittest.TestCase):
         members.extend(self.warriors)
         members.extend(self.apprentices)
 
+        self.test_clan_name = f"Test_{uuid4()}"
+
         game.clan = Clan(
-            name=f"{'Test'}_{uuid4()}",
+            name=self.test_clan_name,
             displayname="Test",
             leader=create_cat(CatRank.LEADER),
             deputy=create_cat(CatRank.DEPUTY),
@@ -85,9 +97,24 @@ class FreshkillPileTest(unittest.TestCase):
         # set dep as injured for later testing
         game.clan.deputy.injuries["test_injury"] = {"severity": "major"}
 
+        # make list of relevant cats
+        self.cat_list = [c for c in Cat.all_cats_list if c.status.alive_in_player_clan]
+
         self.freshkill_pile = game.clan.freshkill_pile
         # fills all cat's nutrition so we have steady baseline
-        self.freshkill_pile.update_nutrition(Cat.all_cats_list)
+        self.freshkill_pile.update_nutrition(self.cat_list)
+
+    def tearDown(self):
+        rempath = get_save_dir() + "/" + self.test_clan_name
+        shutil.rmtree(rempath)
+        if os.path.exists(rempath + "clan.json"):
+            os.remove(rempath + "clan.json")
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.previously_loaded_clan:
+            with open(Path(get_save_dir()) / "currentclan.txt", "w") as currentclanfile:
+                currentclanfile.write(str(cls.previously_loaded_clan))
 
     def test_add_freshkill(self) -> None:
         """
@@ -168,14 +195,14 @@ class FreshkillPileTest(unittest.TestCase):
         self.freshkill_pile.total_amount = current_amount
 
         # feed them
-        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+        self.freshkill_pile.feed_cats(self.cat_list)
 
         # check that kitten is full
         self.assertEqual(
             self.freshkill_pile.nutrition_info[self.kitten.ID].percentage, 100
         )
         # check that everyone else is hungry
-        for cat in Cat.all_cats_list:
+        for cat in self.cat_list:
             if cat == self.kitten:
                 continue
             self.assertNotEqual(
@@ -200,14 +227,21 @@ class FreshkillPileTest(unittest.TestCase):
         switch_clan_setting("high_rank")
 
         # feed them
-        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+        self.freshkill_pile.feed_cats(self.cat_list)
+
+        nutrition_status = {
+            Cat.fetch_cat(x).status.rank: y.percentage
+            for x, y in self.freshkill_pile.nutrition_info.items()
+        }
 
         # check that leader is full
         self.assertEqual(
-            self.freshkill_pile.nutrition_info[game.clan.leader.ID].percentage, 100
+            self.freshkill_pile.nutrition_info[game.clan.leader.ID].percentage,
+            100,
+            f"nutrition status: {nutrition_status}",
         )
         # check that everyone else is hungry
-        for cat in Cat.all_cats_list:
+        for cat in self.cat_list:
             if cat == game.clan.leader:
                 continue
             self.assertNotEqual(
@@ -232,14 +266,14 @@ class FreshkillPileTest(unittest.TestCase):
         switch_clan_setting("youngest_first")
 
         # feed them
-        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+        self.freshkill_pile.feed_cats(self.cat_list)
 
         # check that kitten is full
         self.assertEqual(
             self.freshkill_pile.nutrition_info[self.kitten.ID].percentage, 100
         )
         # check that everyone else is hungry
-        for cat in Cat.all_cats_list:
+        for cat in self.cat_list:
             if cat == self.kitten:
                 continue
             self.assertNotEqual(
@@ -255,7 +289,7 @@ class FreshkillPileTest(unittest.TestCase):
             self.freshkill_pile.nutrition_info[key].percentage = 100
 
         # then set up the pile with enough to feed the oldest and that's all
-        oldest = sorted(Cat.all_cats_list, key=lambda x: x.moons, reverse=True)[0]
+        oldest = sorted(self.cat_list, key=lambda x: x.moons, reverse=True)[0]
         current_amount = self.prey_requirement[oldest.status.rank]
         self.freshkill_pile.pile["expires_in_4"] = current_amount
         self.freshkill_pile.total_amount = current_amount
@@ -265,12 +299,12 @@ class FreshkillPileTest(unittest.TestCase):
         switch_clan_setting("oldest_first")
 
         # feed them
-        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+        self.freshkill_pile.feed_cats(self.cat_list)
 
         # check that elder is full
         self.assertEqual(self.freshkill_pile.nutrition_info[oldest.ID].percentage, 100)
         # check that everyone else is hungry
-        for cat in Cat.all_cats_list:
+        for cat in self.cat_list:
             if cat == oldest:
                 continue
             self.assertNotEqual(
@@ -286,9 +320,7 @@ class FreshkillPileTest(unittest.TestCase):
             self.freshkill_pile.nutrition_info[key].percentage = 100
 
         # sorting the cats by experience
-        list_of_cats = sorted(
-            Cat.all_cats_list, key=lambda x: x.experience, reverse=True
-        )
+        list_of_cats = sorted(self.cat_list, key=lambda x: x.experience, reverse=True)
         most_exp = list_of_cats[0]
         # then set up the pile with enough to feed the most experienced and that's all
         current_amount = self.prey_requirement[most_exp.status.rank]
@@ -300,14 +332,14 @@ class FreshkillPileTest(unittest.TestCase):
         switch_clan_setting("experience_first")
 
         # feed them
-        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+        self.freshkill_pile.feed_cats(self.cat_list)
 
         # check that experienced is full
         self.assertEqual(
             self.freshkill_pile.nutrition_info[most_exp.ID].percentage, 100
         )
         # check that everyone else is hungry
-        for cat in Cat.all_cats_list:
+        for cat in self.cat_list:
             if cat == most_exp:
                 continue
             self.assertNotEqual(
@@ -335,14 +367,14 @@ class FreshkillPileTest(unittest.TestCase):
         switch_clan_setting("hungriest_first")
 
         # feed them
-        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+        self.freshkill_pile.feed_cats(self.cat_list)
 
         # check that deputy has eaten (it won't be 100, since we lowered the starting nutrition, but it'll still be higher than we began with
         self.assertGreater(
             self.freshkill_pile.nutrition_info[game.clan.deputy.ID].percentage, 90
         )
         # check that everyone else is hungry
-        for cat in Cat.all_cats_list:
+        for cat in self.cat_list:
             if cat == game.clan.deputy:
                 continue
             self.assertNotEqual(
@@ -369,12 +401,12 @@ class FreshkillPileTest(unittest.TestCase):
         # what we SHOULD see is the hunter being fed before the low rank (so leader before kitten)
 
         # feed them
-        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+        self.freshkill_pile.feed_cats(self.cat_list)
 
         # check that leader is full
         self.assertEqual(self.freshkill_pile.nutrition_info[hunter.ID].percentage, 100)
         # check that everyone else is hungry
-        for cat in Cat.all_cats_list:
+        for cat in self.cat_list:
             if cat == hunter:
                 continue
             self.assertNotEqual(
@@ -401,12 +433,12 @@ class FreshkillPileTest(unittest.TestCase):
         # what we SHOULD see is the injured being fed before the low rank (so dep before kitten)
 
         # feed them
-        self.freshkill_pile.feed_cats(Cat.all_cats_list)
+        self.freshkill_pile.feed_cats(self.cat_list)
 
         # check that injured is full
         self.assertEqual(self.freshkill_pile.nutrition_info[injured.ID].percentage, 100)
         # check that everyone else is hungry
-        for cat in Cat.all_cats_list:
+        for cat in self.cat_list:
             if cat == injured:
                 continue
             self.assertNotEqual(

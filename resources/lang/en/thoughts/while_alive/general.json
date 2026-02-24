@@ -2798,7 +2798,7 @@
             "Has a dream full of dream_list",
             "Wonders what all the dream_list in {PRONOUN/m_c/poss} dreams lately means",
             "Has a dream full of strange shapes and colors",
-            "Wakes with a lingering bitter taste on {PRONOUN/m_c/poss} tongue}",
+            "Wakes with a lingering bitter taste on {PRONOUN/m_c/poss} tongue",
             "Wakes with a lingering acrid smell in {PRONOUN/m_c/poss} nose",
             "Wakes with a lingering sweet smell in {PRONOUN/m_c/poss} nose",
             "Wakes with the feeling of dream_list in {PRONOUN/m_c/poss} heart",
@@ -7258,6 +7258,120 @@
         ],
         "random_living_status": [
             "living"
+        ]
+    },
+    {
+        "id": "gen_to_living_fancies_only",
+        "thoughts": [
+            "Offers r_c the choicest piece of fresh-kill",
+            "Keeps grooming {PRONOUN/m_c/poss} pelt to look good for {PRONOUN/m_c/poss} crush",
+            "Practices pick-up lines in private",
+            "Hopes r_c likes {PRONOUN/m_c/object} back",
+            "Daydreams about r_c",
+            "Daydreams about forbidden romance",
+            "Brags about {PRONOUN/m_c/poss} skills in earshot of r_c",
+            "Has a spring to {PRONOUN/m_c/poss} step",
+            "Is in an unusually good mood after a chat with r_c",
+            "Fantasizes clandestine meetings with r_c under the stars"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "fancies_only"
+        ]
+    },
+    {
+        "id": "low_social_to_living_fancies_only",
+        "thoughts": [
+            "Gives r_c a compliment, ears twitching self-consciously",
+            "Blurts an invitation for a walk outside camp with r_c",
+            "Purrs embarrassingly loudly when r_c loafs beside {PRONOUN/m_c/object}",
+            "Sneaks closer to r_c to eat together",
+            "Remembers something r_c said to {PRONOUN/m_c/object} and starts purring uncontrollably"
+        ],
+        "main_trait_constraint": [
+            "lonesome",
+            "cold",
+            "nervous",
+            "insecure",
+            "sneaky",
+            "grumpy",
+            "gloomy"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "fancies_only"
+        ]
+    },
+    {
+        "id": "high_social_to_living_fancies_only",
+        "thoughts": [
+            "Makes r_c purr throatily with a well-placed compliment",
+            "Boldly caresses {PRONOUN/m_c/poss} tail over r_c as {PRONOUN/m_c/subject} {VERB/m_c/pass/passes} by",
+            "Invites r_c on an evening stroll",
+            "Wonders whether {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} \"too much\" for r_c"
+        ],
+        "main_trait_constraint": [
+            "playful",
+            "charismatic",
+            "bold",
+            "daring",
+            "compassionate",
+            "thoughtful",
+            "ambitious",
+            "confident",
+            "loving",
+            "arrogant",
+            "competitive",
+            "flamboyant"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "fancies_only"
+        ]
+    },
+    {
+        "id": "med_cats_to_alive_crush",
+        "thoughts": [
+            "Hums as {PRONOUN/m_c/subject} {VERB/m_c/sort/sorts} herbs, thinking of r_c",
+            "Imagines dramatically saving r_c's life and earning {PRONOUN/r_c/poss} gratitude"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "fancies_only"
+        ]
+    },
+    {
+        "id": "med_cats_to_alive_non-medcat_patrollable_romance",
+        "thoughts": [
+            "Hopes r_c might get assigned to a herb patrol with {PRONOUN/m_c/object}"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "warrior",
+            "deputy",
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "fancies"
         ]
     }
 ]

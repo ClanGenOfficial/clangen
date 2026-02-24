@@ -3,10 +3,8 @@ import os
 import pygame
 import pygame_gui
 
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-    UIImageButton,
-)
+from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import get_saved_images_dir, open_data_dir
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow

@@ -189,7 +189,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat made the long trek to the outer plains on patrol together."
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains while on patrol together."
                         }
                     }
                 ],
@@ -231,7 +231,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat made the long trek to the outer plains on patrol together."
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains while on patrol together."
                         }
                     }
                 ],
@@ -329,6 +329,20 @@
                     },
                     {
                         "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan", "high_social", "low_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat disapproved of how to_cat pushed {PRONOUN/to_cat/poss} patrol to reach the far border."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
@@ -367,7 +381,7 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": [
-                            "high_social"
+                            "clan", "high_social"
                         ],
                         "mutual": false,
                         "values": [
@@ -376,6 +390,20 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "from_cat heard that to_cat advocated for {PRONOUN/to_cat/poss} Clanmates and urged p_l to end a patrol early when the heat took its toll on the cats."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan", "low_social", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat disapproved of to_cat ending a patrol early just because it was hot that day."
                         }
                     },
                     {
@@ -746,7 +774,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 25,
                         "log": {
                             "cats_from": "to_cat laid down {PRONOUN/to_cat/poss} life to protect c_n from coyotes."
                         }
@@ -888,7 +916,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5,
+                        "amount": -15,
                         "log": {
                             "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was killed as a result."
                         }
@@ -1543,9 +1571,9 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
+                        "amount": 20,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's noble death to keep the Clan safe from coyotes."
+                            "cats_from": "from_cat honored to_cat's noble death to keep the Clan safe from coyotes."
                         }
                     }
                 ],
@@ -1669,9 +1697,9 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
+                        "amount": 20,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's noble death to keep the Clan safe from coyotes."
+                            "cats_from": "from_cat honored to_cat's noble death to keep the Clan safe from coyotes."
                         }
                     }
                 ],

@@ -706,7 +706,7 @@ class Relationship:
         group = self._get_tier_group(self.trust)
 
         if group == "extreme_neg":
-            return RelTier.LOATHES
+            return RelTier.DISCREDITS
         elif group == "mid_neg":
             return RelTier.DISTRUSTS
         elif group == "low_neg":
