@@ -1,5 +1,7 @@
 from pygame_gui.core import UIElement
 
+from scripts.screens.enums import FocusDirection
+
 
 def create_map(element_list: list[UIElement]) -> list[list]:
     """
@@ -54,3 +56,99 @@ def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[l
             current_map.insert(new_row_index, [element])
 
     return current_map
+
+
+def find_next_focus(
+    current_map: list[list], direction: FocusDirection, last_element: UIElement
+) -> UIElement:
+    """
+    Moves focus from one element to the next logical element.
+    :param current_map: The current matrix map
+    :param direction: The direction in which to look for the next element
+    :param last_element: The element currently in focus
+    :return: UIElement that has received focus
+    """
+    new_row = None
+    new_col = None
+
+    # find current location on the map
+    prior_row = None
+    prior_col = None
+    for index, row in enumerate(current_map):
+        if last_element in row:
+            prior_row = index
+            prior_col = current_map[index].index(last_element)
+            break
+
+    if (
+        prior_row is None or prior_col is None
+    ):  # specifically NONE, using `if not x or x` will falsely pick up 0 indexes
+        # uh oh it must not be in the map and that's a problem!
+        raise Exception(
+            f"{last_element} not found in the matrix map. Use self.update_map() to add it. If this element shouldn't be interactable, then it was mistakenly given focus!"
+        )
+
+    # where are we going?
+    # if going left or right, let's check if we can!
+    change_to_higher_row = False
+    change_to_lower_row = False
+    if direction in (FocusDirection.LEFT, FocusDirection.RIGHT):
+        # we need to see if there's a valid element to switch to
+        row_without_cur_element = current_map[prior_row].copy()
+        row_without_cur_element.remove(last_element)
+        if not any(row_without_cur_element):
+            # there isn't! so we need to change our row too
+            if direction == FocusDirection.LEFT:
+                # left will go upward
+                change_to_higher_row = True
+            else:
+                # right will go downward
+                change_to_lower_row = True
+
+    # going UP!
+    if direction == FocusDirection.UP or change_to_higher_row:
+        # find the new row, wrapping if necessary
+        if prior_row - 1 >= 0:
+            new_row = prior_row - 1
+        else:
+            new_row = len(current_map) - 1
+            # we also move the column to be the farthest right
+            new_col = len(current_map[new_row]) - 1
+    # going DOWN!
+    elif direction == FocusDirection.DOWN or change_to_lower_row:
+        # find the new row, wrapping if necessary
+        if prior_row + 1 <= len(current_map) - 1:
+            new_row = prior_row + 1
+        else:
+            new_row = 0
+            # we also move the column to be the farthest left
+            new_col = 0
+
+    # if no new row, then the new row is our old one!
+    if not new_row:
+        new_row = prior_row
+
+    # Now to find our new column!
+    # going LEFT!
+    if direction == FocusDirection.LEFT:
+        # find the new col, wrapping if necessary
+        if prior_col - 1 >= 0:
+            new_col = prior_col - 1
+        else:
+            new_col = len(current_map[new_row]) - 1
+    # going RIGHT
+    elif direction == FocusDirection.RIGHT:
+        # find the new col, wrapping if necessary
+        if prior_col + 1 <= len(current_map[new_row]) - 1:
+            new_col = prior_col + 1
+        else:
+            new_col = 0
+    # if neither, then we keep our column the same IF POSSIBLE
+    elif not new_col:
+        if len(current_map[new_row]) < prior_col:
+            new_col = len(current_map[new_row]) - 1
+        else:
+            new_col = prior_col
+
+    # return the element at the newly found indexes!
+    return current_map[new_row][new_col]

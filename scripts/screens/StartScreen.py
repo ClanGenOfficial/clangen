@@ -36,7 +36,7 @@ from scripts.housekeeping.datadir import open_data_dir, open_url
 from ..housekeeping.quit_game import quit_game
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
-from .enums import GameScreen
+from .enums import GameScreen, FocusDirection
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
@@ -236,6 +236,9 @@ class StartScreen(Screens):
         )
         element_list.extend(self.social_buttons.values())
         self.update_map(element_list)
+        focus_matrix.find_next_focus(
+            self.matrix_map, FocusDirection.RIGHT, self.social_buttons["tumblr_button"]
+        )
 
         errorimg = image_cache.load_image(
             "resources/images/errormsg.png"
