@@ -15,8 +15,8 @@ from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UIDropDown,
-    UIModifiedImage,
 )
+from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.version import get_version_info

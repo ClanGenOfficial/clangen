@@ -5,7 +5,7 @@ import pygame_gui
 
 from scripts.cat_relations.enums import RelTier
 from scripts.game_structure import image_cache
-from scripts.game_structure.ui_elements import UIModifiedImage
+from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.ui.scale import ui_scale_value, ui_scale_dimensions
 
 
