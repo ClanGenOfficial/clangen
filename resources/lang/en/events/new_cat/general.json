@@ -1944,5 +1944,163 @@
         "current_rep": ["hostile"],
         "changed": 2
     }
+},
+    {
+    "event_id": "gen_new_cat_war_lonertruce",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "In the midst of a tense stalemate between c_n and o_c_n, it was the suggestion of a passerby loner group that allowed for a night of truce between the two Clans.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 20,
+            "log": {
+                    "cats_from": "from_cat will remember the loners who gave their Clan a night of badly needed respite during a war."
+                }
+        },
+        {
+            "cats_from": ["clan", "high_aggress"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -20,
+            "log": {
+                    "cats_from": "from_cat will remember the loners who foiled a perfectly good battle for their own bleeding hearts."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_rogueretaliate",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "In the midst of a vicious battle between c_n and o_c_n, a large group of rogues took a chance to weaken both of their enemies in one fell swoop. They did not expect the two Clans to turn quickly make a temporary truce and retaliate.",
+    "new_cat": [
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -20,
+            "log": {
+                    "cats_from": "from_cat will remember the rogues who dared to attack c_n so brazenly during a battle against o_c_n."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_kittypetpeace",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "Before a major battle between c_n and o_c_n could take place, their battlefield was overrun by a group of kittypets who refused to leave. Instead, the two Clans intermingled under the watchful and hopeful eyes of the communial cats.",
+    "new_cat": [
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 20,
+            "log": {
+                    "cats_from": "from_cat will remember the kittypets who dared to stop an entire battle against o_c_n."
+                }
+        },
+        {
+            "cats_from": ["clan", "high_lawful"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -25,
+            "log": {
+                    "cats_from": "from_cat really thinks that this kittypet should have left the peacemaking for the mediators."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
 }
 ]
