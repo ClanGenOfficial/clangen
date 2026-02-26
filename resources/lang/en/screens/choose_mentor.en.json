@@ -1,0 +1,28 @@
+{
+    "en": {
+        "heading": "Choose a new mentor for m_c",
+        "info": "If an apprentice is 6 moons old and their mentor is changed, they will not be listed as a former apprentice on their old mentor's profile. Apprentices without a mentor will have one automatically assigned next moon. An apprentice's mentor can have an influence on their trait and skill later in life.\nChoose your mentors wisely.",
+        "current_mentor": {
+            "zero": "m_c does not have a mentor",
+            "one": "m_c's current mentor is r_c"
+        },
+        "set_mentor": "Confirm Mentor",
+        "unset_mentor": "Remove Mentor",
+        "current_mentor_warning": "Current mentor selected",
+        "no_mentor_warning": "<font color=#FF0000>No mentor selected</font>",
+        "no_current_apprentices": "No current apprentices",
+        "no_current_apprentices_tooltip": "Only show mentors with no current apprentices",
+        "no_former_apprentices": "No former apprentices",
+        "no_former_apprentices_tooltip": "Only show mentors who have not had an apprentice",
+        "former_apps": {
+            "zero": "",
+            "one": "\n%{count} former app",
+            "many": "\n%{count} former apps"
+        },
+        "current_apps": {
+            "zero": "",
+            "one": "\n%{count} current app",
+            "many": "\n%{count} current apps"
+        }
+    }
+}

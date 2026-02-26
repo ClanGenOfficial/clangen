@@ -1,0 +1,131 @@
+[
+    {
+        "patrol_id": "fst_train_greenleafromanticstroll_20locked1",
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "patrol_art": "gen_flower_date_warrior_warrior",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [ -1, -1 ]
+        },
+        "frequency": 4,
+        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
+        "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
+        "chance_of_success": 60,
+        "relationship_constraint": [
+            "fancies",
+            "-mates"
+        ],
+        "success_outcomes": [
+            {
+                "text": "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together, the shifting dappled light beneath the canopy a green-tinted backdrop to the excitement of this budding dynamic to their relationship.",
+                "exp": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a romantic stroll in the greenleaf sun together."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "All of p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, the buzz of excitement in their hearts merging with the buzz of life in the green-lit forest, shyly sharing glances between one another.",
+                "exp": 20,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat took a romantic stroll in the greenleaf sun together."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "s_c has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world.",
+                "exp": 20,
+                "stat_skill": [
+                    "SPEAKER,1",
+                    "MEDIATOR,1",
+                    "INSIGHTFUL,1"
+                ],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": true,
+                        "values": ["romance", "like", "comfort"],
+                        "amount": 13,
+                        "log": {
+                            "cats_from": "s_c's social adeptness made {PRONOUN/s_c/poss} romantic greenleaf stroll with r_c all the better."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out - and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["romance"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l felt embarrassed when r_c rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c felt awkward when p_l asked {PRONOUN/r_c/object} out on a romantic stroll, and r_c rejected the offer."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ]
+    }
+]

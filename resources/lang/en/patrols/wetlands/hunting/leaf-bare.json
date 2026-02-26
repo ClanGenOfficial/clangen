@@ -1,0 +1,1016 @@
+[   {
+        "patrol_id": "wtlnd_hunt_leafbaresnowstorm1",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Despite the snow, the patrol manages to hunt successfully, finding the swamp still busy with birds oblivious to leaf-bare. With the wetlands to provide there's more than enough to bring a good haul back to c_n, and as p_l leads them home there's a sense of security and competence driving them onwards.",
+                "exp": 10,
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hunted successfully together in the snow."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
+                "exp": 10,
+                "stat_skill": [
+                    "HUNTER,2"
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how much prey to_cat was able to catch in the snow."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n.",
+                "exp": 10,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "wise",
+                    "calm",
+                    "thoughtful",
+                    "sincere"
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat's gentle presence helped to_cat's patrol stay focused during a difficult snowy hunt."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol retreats to a chump of tangled trees, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball while they wait for the storm to blow over.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together under a bush, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp, r_c is cold and chilled.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "cold_injury"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "death": "m_c froze to death after hunting in a storm."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
+                        }
+                    }
+                ],
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_leafbaresnowstorm2",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something nice for the fresh-kill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "Despite the snow, r_c manages to hunt successfully, finding the normal birds still out fishing the swamps.",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a mouse for the fresh-kill pile."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c really shows {PRONOUN/s_c/poss} talent, bringing a nice eel back to camp for the fresh-kill pile.",
+                "exp": 10,
+                "stat_skill": [
+                    "HUNTER,2"
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a clutch of mice for the fresh-kill pile."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, r_c hides under a bush. By the time the storm has cleared enough to return to camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} shivering and numb.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "cold_injury"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "death": "m_c froze to death after hunting in a storm."
+                },
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_leafbaresnowstorm3",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [ "leaf-bare" ],
+        "types": [ "hunting" ],
+        "tags": [ "romance" ],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "all apprentices": [ -1, -1 ]
+        },
+        "frequency": 2,
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat into a grove of trees and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
+                "exp": 10,
+                "relationships": [
+                    {
+                        "cats_to": [ "patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides in an abandoned Twolegs water-monster where the wind can't get them, until everyone is talking, shaky and unhappy, but determined not to lose hope.",
+                "exp": 10,
+                "stat_skill": [
+                    "SPEAKER,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [ "patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": [ "s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "While huddling for warmth in a snowstorm, from_cat learned what a great conversationalist to_cat is."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it through safely, closer than ever afterwards.",
+                "exp": 10,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [ "patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romance", "trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                        }
+                    },
+                    {
+                        "cats_to": [ "s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "While huddling for warmth in a snowstorm, from_cat realized what a soothing presence to_cat is."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c has stopped responding. At some point in the storm, {PRONOUN/r_c/poss} life slips away, and {PRONOUN/r_c/poss} distraught Clanmates are left to carry {PRONOUN/r_c/poss} body home.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "death": "m_c froze to death while hunting in a storm."
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat's patrol failed to keep warm during a snowstorm and they ended up carrying r_c's body home."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, the cats trudge back home, but r_c hasn't escaped unscathed, {PRONOUN/r_c/poss} body chilled and refusing to warm up properly.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "cold_injury"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "death": "m_c froze to death while hunting in a storm."
+                },
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_kitfox_scavenge1",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows.",
+        "decline_text": "The patrol decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "chance_of_success": 70,
+        "success_outcomes": [
+            {
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... They wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
+                "exp": 10,
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
+                    }
+                }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "It's a truly ridiculous power disparity, with even a single member of the patrol outweighing the little fox. The cats drive it out of c_n's swamps no trouble, but it's hardly worth the little fishy morsel they win for their efforts.",
+                "exp": 10,
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
+                    }
+                }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "A simple display of just how badly the kit fox is outmatched convinces it to run, and s_c carefully seeks out the little food cache the kit fox was working on, taking the minnows for the camp's fresh-kill pile.",
+                "exp": 10,
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
+                    }
+                },
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat admired to_cat's cleverness in hunting down a kit fox's cache and stealing its prey."
+                    }
+                }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "It's frustrating that it only wins them a single minnow, but the patrol drives out the kit fox, and s_c reminds them that's what matters - that now the fox won't keep poaching from c_n's hunting grounds in the future.",
+                "exp": 10,
+                "stat_trait": [
+                    "responsible",
+                    "thoughtful",
+                    "faithful",
+                    "loyal",
+                    "compassionate",
+                    "wise",
+                    "calm"
+                ],
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat and to_cat worked together to drive off a kit fox."
+                    }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat felt that driving off a kit fox was a waste of effort, but to_cat put a positive spin on things."
+                    }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The cats freeze, and carefully creep back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... However, the kit fox has spots them and flees. At least that's one less competitor in c_n's hunting grounds?",
+                "exp": 0,
+                "frequency": 4,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_kitfox_scavenge2",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "r_c catches the scent of a fox. Tracking it, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} a kit fox fishing on a branch overlooking the shallows.",
+        "decline_text": "r_c decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "chance_of_success": 70,
+        "success_outcomes": [
+            {
+                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... They wait until the tiny fox drops down onto a salamander before they pop out of the bushes. Not only do they scare off a potential competitor, they also get the added reward of a little snack.",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "r_c throws their weight around as the bigger predator, stealing the kit fox's lunch and driving it away from the river.",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "s_c uses every trick in {PRONOUN/s_c/poss} fighting skillset to attack the fox with no one to watch {PRONOUN/s_c/poss} flank, biding {PRONOUN/s_c/poss} time until the perfect opportunity opens up and {PRONOUN/s_c/subject} pounce onto the fox's back, digging in {PRONOUN/s_c/poss} claws. It's a wild ride through the swamp until the fox bucks {PRONOUN/s_c/object} off, but it wins {PRONOUN/s_c/subject} the fish carcass.",
+                "exp": 10,
+                "frequency": 4,
+                "stat_skill": ["FIGHTER,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat loved to_cat's crazy story of riding on a kit fox's back."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "In an act of daring bravery, s_c darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c/poss} teeth into the fox's throat. But then {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} dragged through the swamp, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fish.",
+                "exp": 10,
+                "stat_trait": [
+                    "adventurous",
+                    "ambitious",
+                    "bloodthirsty",
+                    "bold",
+                    "confident",
+                    "daring",
+                    "fierce",
+                    "shameless",
+                    "troublesome"
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cat. At least that's one less competitor in c_n's hunting grounds?",
+                "exp": 0,
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_hunt_leafbare_kingfisher_storylorehunterclimberteacherlocked1",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "hunt_general_intro",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "frequency": 2,
+        "chance_of_success": 40,
+        "pl_skill_constraint": [
+            "STORY,1",
+            "LORE,1",
+            "HUNTER,2",
+            "CLIMBER,2",
+            "TEACHER,1"
+        ],
+        "intro_text": "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches app1's attention.",
+        "decline_text": "It's out of the ordinary... and might be dangerous. app1 ignores it.",
+        "success_outcomes": [
+            {
+                "text": "s_c explodes from the bushes, just as much of a blur as the bird as it tries to escape, but {PRONOUN/s_c/poss} pounce is too high, {PRONOUN/s_c/poss} claws too quick. app1 tries not to look too impressed (gotta keep it cool), but that's exactly the kind of warrior {PRONOUN/app1/subject} {VERB/app1/want/wants} to be, an astonishing hunter.",
+                "exp": 30,
+                "art": "gen_train_sneakprey",
+                "prey": [
+                    "medium"
+                ],
+                "stat_skill": [
+                    "HUNTER,2"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's catch on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat idolized to_cat after to_cat caught a kingfisher on a hunting patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "It's only because app1 was already looking that {PRONOUN/app1/subject} {VERB/app1/spot/spots} s_c, high on the tree above the bright bird, edging forward carefully and stealthily. app1 freezes, watching. s_c descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
+                "exp": 30,
+                "art": "gen_train_sneakprey",
+                "prey": [
+                    "medium"
+                ],
+                "stat_skill": [
+                    "CLIMBER,2"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's catch on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat idolized to_cat after to_cat caught a kingfisher on a hunting patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "A kingfisher, p_l whispers from app1's side. They'll take it down together, next time it dives for something in the stream. It's a good plan, and though they have to quickly warm up afterwards, sharing tongues to get cold water off pelts, they win a nice prize for the fresh-kill pile.",
+                "exp": 30,
+                "art": "gen_train_sunny6",
+                "prey": [
+                    "small"
+                ],
+                "stat_skill": [
+                    "TEACHER,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat helped from_cat bring down a kingfisher."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [ "like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat to hunt a kingfisher."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The patrol brings down the kingfisher in a flurry of feathers, and as app1 regains {PRONOUN/app1/poss} breath, s_c smiles, putting a paw on the bird. For a half-moon each year around the shortest day, the storms will not come, and that is when the kingfishers lay their eggs, in the halcyon days.",
+                "exp": 30,
+                "art": "gen_train_sneakprey",
+                "prey": [
+                    "small"
+                ],
+                "stat_skill": [
+                    "STORY,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol" ],
+                        "mutual": true,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about kingfishers while hunting."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat helped to_cat take down a kingfisher."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [ "like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat to hunt a kingfisher."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The patrol brings down the kingfisher in a flurry of feathers. As app1 regains {PRONOUN/app1/poss} breath, p_l scoffs. Don't let anyone tell you foolish myths of halcyon days, app1. Kingfishers nest not in the dead of leaf-bare, but in newleaf, like most birds.",
+                "exp": 30,
+                "art": "gen_train_sneakprey",
+                "prey": [
+                    "small"
+                ],
+                "stat_skill": [
+                    "LORE,1"
+                ],
+                "can_have_stat": [
+                    "p_l"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol" ],
+                        "mutual": true,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's wisdom about kingfishers while hunting."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat helped to_cat take down a kingfisher."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [ "like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat to hunt a kingfisher."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "It's a kingfisher, p_l whispers. Go on, give it a shot. app1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under app1's paw, and the bird flees - but it leaves the frog behind for app1 to take!",
+                "exp": 30,
+                "art": "gen_train_sneakprey",
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat encouraged from_cat to hunt a kingfisher, and while from_cat wasn't able to catch the bird, {PRONOUN/from_cat/subject} caught its prey."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [ "like", "comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat to hunt a kingfisher."
+                        }
+                    }
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 tilts {PRONOUN/app1/poss} head, confused at the sudden splash of color in a cold world. The kingfisher sees the movement, and flies off. Drat.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed by to_cat's slow reflexes on a hunt."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+            {
+                "text": "Trying to catch the kingfisher, app1 misjudges {PRONOUN/app1/poss} pounce and has to be hauled out of the freezing stream by {PRONOUN/app1/poss} scruff. It's neither dignified nor comfortable.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "shivering"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
+                    "death": "Falling into a cold stream gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death."
+                },
+                "frequency": 4
+            }
+        ]
+    }
+]

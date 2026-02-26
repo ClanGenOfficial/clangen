@@ -1,63 +1,110 @@
 import random
 
+import i18n
+import os
 import ujson
 
-from scripts.game_structure.game_essentials import game
+from scripts.cat.enums import CatGroup
+from scripts.cat.skills import SkillPath
+from scripts.game_structure import game
+from scripts.events_module.text_adjust import adjust_list_text
 
 
 class History:
     """
     this class handles the cat's history!
     """
-    def __init__(self,
-                 beginning=None,
-                 mentor_influence=None,
-                 app_ceremony=None,
-                 lead_ceremony=None,
-                 possible_death=None,
-                 died_by=None,
-                 possible_scar=None,
-                 scar_events=None,
-                 murder=None
-                 ):
+
+    history_options = {}
+    if os.path.exists("resources/dicts/history_options.json"):
+        with open("resources/dicts/history_options.json", encoding="utf-8") as f:
+            history_options = ujson.load(f)
+
+    def __init__(
+        self,
+        beginning=None,
+        mentor_influence=None,
+        app_ceremony=None,
+        lead_ceremony=None,
+        possible_history=None,
+        died_by=None,
+        scar_events=None,
+        murder=None,
+        cat=None,
+        afterlife_acceptance=None,
+    ):
         self.beginning = beginning if beginning else {}
-        self.mentor_influence = mentor_influence if mentor_influence else {}
+        self.mentor_influence = (
+            mentor_influence if mentor_influence else {"trait": {}, "skill": {}}
+        )
         self.app_ceremony = app_ceremony if app_ceremony else {}
         self.lead_ceremony = lead_ceremony if lead_ceremony else None
-        self.possible_death = possible_death if possible_death else {}
+        self.possible_history = possible_history if possible_history else {}
         self.died_by = died_by if died_by else []
-        self.possible_scar = possible_scar if possible_scar else {}
         self.scar_events = scar_events if scar_events else []
         self.murder = murder if murder else {}
+        self.cat = cat
+        self.afterlife_acceptance = (
+            afterlife_acceptance if afterlife_acceptance else None
+        )
 
-        """
+        # fix 'old' history save bugs
+        if self.mentor_influence["trait"] is None:
+            self.mentor_influence["trait"] = {}
+        if self.mentor_influence["skill"] is None:
+            self.mentor_influence["skill"] = {}
+        if "mentor" in self.mentor_influence:
+            del self.mentor_influence["mentor"]
+        # converting old murder saves
+        if self.murder:
+            for killed in self.murder.get("is_murderer", []):
+                if isinstance(killed["revealed"], bool):
+                    new_dict = {"to_clan": killed["revealed"], "aware_individuals": []}
+                    killed["revealed"] = new_dict
+            for death in self.murder.get("is_victim", []):
+                if isinstance(death["revealed"], bool):
+                    new_dict = {"to_clan": death["revealed"], "aware_individuals": []}
+                    death["revealed"] = new_dict
+
+        """ 
         want save to look like
         {
-        "beginning":{
+        "beginning": {
             "clan_born": bool,
             "birth_season": season,
             "age": age,
             "moon": moon
             },
-        "mentor_influence":{
-            "mentor": ID
-            "skill": skill
-            "trait": trait
+        "mentor_influence": {
+            "trait": {
+                "mentor_id": {
+                    "lawfulness": 0
+                    ...
+                    "strings": []
+                }
             },
+            "skill": {
+                "mentor_id": {
+                    "path": 0,
+                    string: []
+                }
+            }
         "app_ceremony": {
             "honor": honor,
             "graduation_age": age,
             "moon": moon
             },
         "lead_ceremony": full ceremony text,
-        "possible_death": {
+        "possible_history": {
             "condition name": {
                 "involved": ID
-                "text": text
+                "death_text": text
+                "scar_text": text
                 },
             "condition name": {
                 "involved": ID
-                "text": text
+                "death_text": text
+                "scar_text": text
                 },
             },
         "died_by": [
@@ -67,16 +114,6 @@ class History:
                 "moon": moon
             }
             ],
-        "possible_scar": {
-            "condition name": {
-                "involved": ID
-                "text": text
-                },
-            "condition name": {
-                "involved": ID
-                "text": text
-                },
-            },
         "scar_events": [
             {
                 'involved': ID,
@@ -93,17 +130,21 @@ class History:
             "is_murderer": [
                     {
                     "victim": ID,
-                    "revealed": bool,
-                    "moon": moon
+                    "moon": moon the murder occurred
+                    "revealed": {
+                        "to_clan": bool,
+                        "aware_individuals": [ID]
+                        },
                     },
                 ]
             "is_victim": [
                     {
                     "murderer": ID,
-                    "revealed": bool,
-                    "text": same text as the death history for this murder (revealed history)
-                    "unrevealed_text": unrevealed death history
-                    "moon": moon
+                    "moon": moon the murder occurred
+                    "revealed": {
+                        "to_clan": bool,
+                        "aware_individuals": [ID]
+                        },
                     },
                 ]
             }
@@ -114,28 +155,17 @@ class History:
     #                                   utility                                    #
     # ---------------------------------------------------------------------------- #
 
-    @staticmethod
-    def check_load(cat):
-        """
-        this checks if the cat's history has been loaded and loads it if False
-        :param cat: cat object
-        :return:
-        """
-        if not cat.history:
-            cat.load_history()
-
-    @staticmethod
-    def make_dict(cat):
+    def make_dict(self):
         history_dict = {
-            "beginning": cat.history.beginning,
-            "mentor_influence": cat.history.mentor_influence,
-            "app_ceremony": cat.history.app_ceremony,
-            "lead_ceremony": cat.history.lead_ceremony,
-            "possible_death": cat.history.possible_death,
-            "died_by": cat.history.died_by,
-            "possible_scar": cat.history.possible_scar,
-            "scar_events": cat.history.scar_events,
-            "murder": cat.history.murder,
+            "beginning": self.beginning,
+            "mentor_influence": self.mentor_influence,
+            "app_ceremony": self.app_ceremony,
+            "lead_ceremony": self.lead_ceremony,
+            "afterlife_acceptance": self.afterlife_acceptance,
+            "possible_history": self.possible_history,
+            "died_by": self.died_by,
+            "scar_events": self.scar_events,
+            "murder": self.murder,
         }
         return history_dict
 
@@ -143,300 +173,424 @@ class History:
     #                            adding and removing                               #
     # ---------------------------------------------------------------------------- #
 
-    def add_beginning(self, cat, clan_born=False):
+    def add_beginning(self, clan_born=False):
         """
         adds joining age and moon info to the cat's history save
-        :param cat: cat object
+        :param clan_born: default False, set True if the cat was not born in the Clan
         """
         if not game.clan:
             return
-        self.check_load(cat)
 
-        cat.history.beginning = {
+        self.beginning = {
             "clan_born": clan_born,
             "birth_season": game.clan.current_season if clan_born else None,
-            "age": cat.moons,
-            "moon": game.clan.age
+            "age": self.cat.moons,
+            "moon": game.clan.age,
         }
 
-    def add_mentor_influence(self, cat, mentor, skill, trait):
+    def add_mentor_facet_influence_strings(self):
         """
         adds mentor influence to the cat's history save
-        :param cat: cat object
-        :param mentor: the ID of the mentor who influenced the cat
-        :param skill: the skill that was given by the mentor
-        :param trait: the personality group given by the mentor
         """
-        self.check_load(cat)
 
-        if mentor:
-            mentor = mentor.ID
-            cat.history.mentor_influence["mentor"] = mentor if mentor else None
-        if skill:
-            cat.history.mentor_influence["skill"] = skill if skill else None
-        if trait:
-            cat.history.mentor_influence["trait"] = trait if trait else None
+        if not self.mentor_influence["trait"]:
+            return
 
-        if "mentor" not in cat.history.mentor_influence:
-            cat.history.mentor_influence["mentor"] = None
-        if "skill" not in cat.history.mentor_influence:
-            cat.history.mentor_influence["skill"] = None
-        if "trait" not in cat.history.mentor_influence:
-            cat.history.mentor_influence["trait"] = None
+        if (
+            "Benevolent" or "Abrasive" or "Reserved" or "Outgoing"
+        ) in self.mentor_influence["trait"]:
+            self.mentor_influence["trait"] = None
+            return
 
-    def add_app_ceremony(self, cat, honor):
+        # working under the impression that these blurbs will be preceded by "more likely to"
+        facet_influence_text = {
+            "lawfulness_raise": [
+                "follow rules",
+                "follow the status quo",
+                "heed {PRONOUN/m_c/poss} inner compass",
+                "have strong inner morals",
+            ],
+            "lawfulness_lower": [
+                "bend the rules",
+                "break away from the status quo",
+                "break rules that don't suit {PRONOUN/m_c/object}",
+                "make {PRONOUN/m_c/poss} own rules",
+            ],
+            "sociability_raise": [
+                "be friendly towards others",
+                "step out of {PRONOUN/m_c/poss} comfort zone",
+                "interact with others",
+                "put others at ease",
+            ],
+            "sociability_lower": [
+                "be cold towards others",
+                "refrain from socializing",
+                "bicker with others",
+            ],
+            "aggression_raise": [
+                "be ready for a fight",
+                "start a fight",
+                "defend {PRONOUN/m_c/poss} beliefs",
+                "use teeth and claws over words",
+                "resort to violence",
+            ],
+            "aggression_lower": [
+                "be slow to anger",
+                "avoid a fight",
+                "use words over teeth and claws",
+                "try to avoid violence",
+            ],
+            "stability_raise": [
+                "stay collected",
+                "think things through",
+                "be resilient",
+                "have a positive outlook",
+                "be consistent",
+                "adapt easily",
+            ],
+            "stability_lower": [
+                "behave erratically",
+                "make impulsive decisions",
+                "have trouble adapting",
+                "dwell on things",
+            ],
+        }
+
+        for _ment in self.mentor_influence["trait"]:
+            self.mentor_influence["trait"][_ment]["strings"] = []
+            for _fac in self.mentor_influence["trait"][_ment]:
+                # Check to make sure nothing weird got in there.
+                if _fac in self.cat.personality.facet_types:
+                    if self.mentor_influence["trait"][_ment][_fac] > 0:
+                        self.mentor_influence["trait"][_ment]["strings"].append(
+                            random.choice(facet_influence_text[_fac + "_raise"])
+                        )
+                    elif self.mentor_influence["trait"][_ment][_fac] < 0:
+                        self.mentor_influence["trait"][_ment]["strings"].append(
+                            random.choice(facet_influence_text[_fac + "_lower"])
+                        )
+
+    def add_mentor_skill_influence_strings(self):
+        """
+        adds mentor influence to the cat's history save
+        """
+
+        if not self.mentor_influence["skill"]:
+            return
+
+        # working under the impression that these blurbs will be preceded by "become better at"
+        skill_influence_text = {
+            SkillPath.TEACHER: ["teaching"],
+            SkillPath.HUNTER: ["hunting"],
+            SkillPath.FIGHTER: ["fighting"],
+            SkillPath.RUNNER: ["running"],
+            SkillPath.CLIMBER: ["climbing"],
+            SkillPath.SWIMMER: ["swimming"],
+            SkillPath.SPEAKER: ["arguing"],
+            SkillPath.MEDIATOR: ["resolving arguments"],
+            SkillPath.CLEVER: ["solving problems"],
+            SkillPath.INSIGHTFUL: ["providing insight"],
+            SkillPath.SENSE: ["noticing small details"],
+            SkillPath.KIT: ["caring for kittens"],
+            SkillPath.STORY: ["storytelling"],
+            SkillPath.LORE: ["remembering lore"],
+            SkillPath.CAMP: ["caring for camp"],
+            SkillPath.HEALER: ["healing"],
+            SkillPath.STAR: ["connecting to StarClan"],
+            SkillPath.OMEN: ["finding omens"],
+            SkillPath.DREAM: ["understanding dreams"],
+            SkillPath.CLAIRVOYANT: ["predicting the future"],
+            SkillPath.PROPHET: ["understanding prophecies"],
+            SkillPath.GHOST: ["connecting to the afterlife"],
+        }
+
+        for _ment in self.mentor_influence["skill"]:
+            self.mentor_influence["skill"][_ment]["strings"] = []
+            for _path in self.mentor_influence["skill"][_ment]:
+                # Check to make sure nothing weird got in there.
+                if _path == "strings":
+                    continue
+
+                try:
+                    if self.mentor_influence["skill"][_ment][_path] > 0:
+                        self.mentor_influence["skill"][_ment]["strings"].append(
+                            random.choice(skill_influence_text[SkillPath[_path]])
+                        )
+                except KeyError:
+                    print("issue", _path)
+
+    def add_facet_mentor_influence(self, mentor_id, facet, amount):
+        """Adds the history information for a single mentor facet change, that occurs after a patrol."""
+
+        if mentor_id not in self.mentor_influence["trait"]:
+            self.mentor_influence["trait"][mentor_id] = {}
+        if facet not in self.mentor_influence["trait"][mentor_id]:
+            self.mentor_influence["trait"][mentor_id][facet] = 0
+        self.mentor_influence["trait"][mentor_id][facet] += amount
+
+    def add_skill_mentor_influence(self, mentor_id, path, amount):
+        """Adds mentor influence on skills."""
+
+        if not isinstance(path, SkillPath):
+            path = SkillPath[path]
+
+        if mentor_id not in self.mentor_influence["skill"]:
+            self.mentor_influence["skill"][mentor_id] = {}
+        if path.name not in self.mentor_influence["skill"][mentor_id]:
+            self.mentor_influence["skill"][mentor_id][path.name] = 0
+        self.mentor_influence["skill"][mentor_id][path.name] += amount
+
+    def add_app_ceremony(self, honor):
         """
         adds ceremony honor to the cat's history
-        :param cat: cat object
         :param honor: the honor trait given during the cat's ceremony
         """
         if not game.clan:
             return
-        self.check_load(cat)
 
-        cat.history.app_ceremony = {
+        self.app_ceremony = {
             "honor": honor,
-            "graduation_age": cat.moons,
-            "moon": game.clan.age
+            "graduation_age": self.cat.moons,
+            "moon": game.clan.age,
         }
 
-    def add_possible_death_or_scars(self, cat, condition, text, other_cat=None, scar=False, death=False):
+    def add_possible_history(
+        self,
+        condition: str,
+        death_text: str = None,
+        scar_text: str = None,
+        other_cat=None,
+    ):
         """
         this adds the possible death/scar to the cat's history
-        :param cat: cat object
-        :param other_cat: if another cat is mentioned in the history, include them here
         :param condition: the condition that is causing the death/scar
-        :param text: the history text for the death/scar
-        :param scar: set to True if this is a scar event
-        :param death: set to True if this is a death event
+        :param death_text: text for death history
+        :param scar_text: text for scar history
+        :param other_cat: cat object of other cat involved.
         """
-        self.check_load(cat)
 
-        event_type = None
-        if scar:
-            event_type = "possible_scar"
-        elif death:
-            event_type = "possible_death"
+        # If the condition already exists, we don't want to overwrite it
+        if condition in self.possible_history:
+            if death_text is not None:
+                self.possible_history[condition]["death_text"] = death_text
+            if scar_text is not None:
+                self.possible_history[condition]["scar_text"] = scar_text
+            if other_cat is not None:
+                self.possible_history[condition]["other_cat"] = other_cat.ID
+        else:
+            # Use a default is none is provided.
+            # Will probably sound weird, but it's better than nothing
+            if not death_text:
+                death_text = f"m_c died from an injury or illness ({condition})."
+            if not scar_text:
+                scar_text = f"m_c was scarred from an injury or illness ({condition})."
 
-        if not event_type:
-            print('WARNING: event type was not specified during possible scar/death history writing, '
-                  'did you remember to set scar or death as True?')
-            return
-
-        # now just make sure the names aren't actually in the text and replace as necessary
-        # we can't have the names in the text bc names change over time and so would eventually be out of date
-        # on the history display
-        if str(cat.name) in text:
-            text = text.replace(str(cat.name), "m_c")
-        if other_cat:
-            if str(other_cat.name) in text:
-                text = text.replace(str(other_cat.name), "r_c")
-
-        if event_type == "possible_scar":
-            cat.history.possible_scar[condition] = {
-                "involved": other_cat.ID if other_cat else None,
-                "text": text
-            }
-        elif event_type == 'possible_death':
-            cat.history.possible_death[condition] = {
-                "involved": other_cat.ID if other_cat else None,
-                "text": text
+            self.possible_history[condition] = {
+                "death_text": death_text,
+                "scar_text": scar_text,
+                "other_cat": other_cat.ID if other_cat else None,
             }
 
-    def remove_possible_death_or_scars(self, cat, condition):
+    def remove_possible_history(self, condition):
         """
         use to remove possible death/scar histories
-        :param cat: cat object
         :param condition: condition linked to the death/scar you're removing
-        :param scar: set True if removing scar
-        :param death: set True if removing death
+        # :param scar: set True if removing scar
+        # :param death: set True if removing death
         """
 
-        self.check_load(cat)
+        if condition in self.possible_history:
+            self.possible_history.pop(condition)
 
-        if condition in cat.history.possible_scar:
-            cat.history.possible_scar.pop(condition)
-        if condition in cat.history.possible_death:
-            cat.history.possible_death.pop(condition)
+    def add_death(self, death_text, condition=None, other_cat=None):
+        """Adds death to cat's history. If a condition is passed, it will look into
+        possible_history to see if anything is saved there, and, if so, use the text and
+        other_cat there (overriding the
+        passed death_text and other_cat)."""
 
-    def add_death_or_scars(self, cat, other_cat=None, text=None, extra_text=None, condition=None, scar=False, death=False):
+        if not game.clan:
+            return
+
+        if other_cat is not None:
+            other_cat = other_cat.ID
+        if condition in self.possible_history:
+            if self.possible_history[condition]["death_text"]:
+                death_text = self.possible_history[condition]["death_text"]
+            other_cat = self.possible_history[condition].get("other_cat")
+            self.remove_possible_history(condition)
+
+        self.died_by.append(
+            {"involved": other_cat, "text": death_text, "moon": game.clan.age}
+        )
+
+    def add_afterlife_acceptance(
+        self, guide_afterlife: CatGroup, is_kit=False, contentious=False, rejected=False
+    ):
         """
-        this adds death or scar events to the cat's history, if the condition
-         was already in possible death/scars then it's info is moved to this list
-         and removed from the old dict
-        :param cat: cat object
-        :param other_cat: if another cat is involved in the event, add them here
-        :param text: event history text
-        :param extra_text: the second event string if one exists, this is for use with the murder reveal system
-        :param condition: if it was caused by a condition, add name here
-        :param scar: set True if scar
-        :param death: set True if death
+        Adds afterlife acceptance text to the cat's history. If using an optional parameter, should set only one out of
+        `is_kit`, `contentious`, and `rejected` to `True`, since the rest will be ignored.
+
+        :param guide_afterlife: The afterlife of the guide. Do NOT set to the opposite afterlife if rejected is `True`.
+        :param is_kit: `True` if the cat is a kit. Gives kinder acceptance text referring to kits.
+        :param contentious: `True` if the acceptance is supposed to be contentious. Afterlife will seem iffy about the cat.
+        :param rejected: `True` if cat is rejected from `guide_afterlife`. They will go to the opposite one instead.
+        """
+
+        afterlife = None
+        if guide_afterlife == CatGroup.STARCLAN:
+            afterlife = "starclan"
+        elif guide_afterlife == CatGroup.DARK_FOREST:
+            afterlife = "dark_forest"
+
+        if afterlife:
+            afterlife_acceptance_options = History.history_options[
+                "afterlife_acceptance_options"
+            ]
+            if is_kit:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_kit"]
+                )
+            elif contentious:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_contentious"]
+                )
+            elif rejected:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_rejected"]
+                )
+            else:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_default"]
+                )
+
+    def add_scar(self, scar_text, condition=None, other_cat=None):
+        if not game.clan:
+            return
+
+        if other_cat is not None:
+            other_cat = other_cat.ID
+        if condition in self.possible_history:
+            if self.possible_history[condition]["scar_text"]:
+                scar_text = self.possible_history[condition]["scar_text"]
+            other_cat = self.possible_history[condition].get("other_cat")
+            self.remove_possible_history(condition)
+
+        self.scar_events.append(
+            {"involved": other_cat, "text": scar_text, "moon": game.clan.age}
+        )
+
+    def add_murder(self, murderer_id, victim):
+        """
+        This adds murder info for both the murderer and the victim. This should be called from the murderer's history
+        object.
+        :param victim: cat object for the victim
+        :param murderer_id: murderer's cat ID
         """
         if not game.clan:
             return
-        self.check_load(cat)
+        if "is_murderer" not in self.murder:
+            self.murder["is_murderer"] = []
+        if "is_victim" not in victim.history.murder:
+            victim.history.murder["is_victim"] = []
+        else:
+            print(
+                f"WARNING: victim cat: {victim.ID} already has a murder history - as the victim!"
+            )
 
-        event_type = None
-        old_event_type = None
-        other_cat_ID = None
-        if scar:
-            event_type = "scar_events"
-            old_event_type = "possible_scar"
-        elif death:
-            event_type = "died_by"
-            old_event_type = "possible_death"
+        self.murder["is_murderer"].append(
+            {
+                "victim": victim.ID,
+                "moon": game.clan.age,
+                "revealed": {"to_clan": False, "aware_individuals": []},
+            }
+        )
 
-        if not event_type or not old_event_type:
-            print('WARNING: event type was not specified during scar/death history writing, '
-                  'did you remember to set scar or death as True?')
-            return
+        victim.history.murder["is_victim"].append(
+            {
+                "murderer": murderer_id,
+                "revealed": {"to_clan": False, "aware_individuals": []},
+                "moon": game.clan.age,
+            }
+        )
 
-        # if this was caused by a condition, then we need to get info from the possible scar/death dicts
-        if condition:
-            try:
-                if old_event_type == 'possible_scar':
-                    old_event = cat.history.possible_scar
+    def reveal_murder(
+        self,
+        victim,
+        murderer_id,
+        clan_reveal: bool = False,
+        aware_individuals: list = None,
+    ):
+        """
+        This adds reveal information to both the murderer and victim's history. This should be called from the murderer's history.
+        :param victim: cat object for the victim
+        :param clan_reveal: set to True if the whole Clan now knows about the murder
+        :param aware_individuals: if only individual cats are learning about the murder, give a list of their cat objects
+        """
+        if aware_individuals is None:
+            aware_individuals = []
+
+        for murder in self.murder["is_murderer"]:
+            if murder["victim"] == victim.ID:
+                if clan_reveal:
+                    murder["revealed"]["to_clan"] = True
                 else:
-                    old_event = cat.history.possible_death
-                other_cat_ID = old_event[condition]["involved"]
-                text = old_event[condition]["text"]
-                # and then remove from possible scar/death dict
-                if condition in old_event:
-                    old_event.pop(condition)
-            except KeyError:
-                print(f"WARNING: could not find {condition} in cat's possible death/scar history,"
-                      f" this maybe be due to an expected save conversion change.")
-                return
+                    murder["revealed"]["aware_individuals"].extend(aware_individuals)
 
-        # now just make sure the names aren't actually in the text and replace as necessary
-        # we can't have the names in the text bc names change over time and so would eventually be out of date
-        # on the history display
-        if str(cat.name) in text:
-            text = text.replace(str(cat.name), "m_c")
-        if other_cat:
-            if str(other_cat.name) in text:
-                text = text.replace(str(other_cat.name), "r_c")
-            other_cat_ID = other_cat.ID
+        for murder in victim.history.murder["is_victim"]:
+            if murder["murderer"] == murderer_id:
+                if clan_reveal:
+                    murder["revealed"]["to_clan"] = True
+                else:
+                    murder["revealed"]["aware_individuals"].extend(aware_individuals)
 
-        history_dict = {
-            "involved": other_cat_ID,
-            "text": text,
-            "moon": game.clan.age
-        }
-
-        if event_type == 'scar_events':
-            cat.history.scar_events.append(history_dict)
-        elif event_type == 'died_by':
-            cat.history.died_by.append(history_dict)
-
-    def add_murders(self, cat, other_cat, revealed, text=None, unrevealed_text=None):
+    @staticmethod
+    def get_murder_status_text(murder: dict, Cat) -> str:
         """
-        this adds murder info
-        :param cat: cat object (cat being murdered)
-        :param other_cat: cat object (cat doing the murdering)
-        :param revealed: True or False depending on if the murderer has been revealed to the player
-        :param text: event text for the victim's death (should be same as their death history)
-        :param unrevealed_text: unrevealed event text for victim's death (not saved in their death history)
-        :return:
+        Returns the complete murder reveal status text for this cat.
+        :param murder: the murder history to pull status text from
+        :param Cat: cat object
         """
-        if not game.clan:
-            return
-        self.check_load(cat)
-        self.check_load(other_cat)
-        if "is_murderer" not in other_cat.history.murder:
-            other_cat.history.murder["is_murderer"] = []
-        if 'is_victim' not in cat.history.murder:
-            cat.history.murder["is_victim"] = []
+        text = ""
+        if murder["revealed"]["to_clan"]:
+            return i18n.t("cat.history.murder_revealed_to_clan")
+        if murder["revealed"]["aware_individuals"]:
+            individuals = [
+                Cat.fetch_cat(c).name for c in murder["revealed"]["aware_individuals"]
+            ]
+            names = adjust_list_text(individuals)
+            text = f"{i18n.t('cat.history.murder_revealed_to_individual', name=names)} "
 
-        other_cat.history.murder["is_murderer"].append({
-            "victim": cat.ID,
-            "revealed": revealed,
-            "moon": game.clan.age
-        })
-        cat.history.murder["is_victim"].append({
-            "murderer": other_cat.ID,
-            "revealed": revealed,
-            "text": text,
-            "unrevealed_text": unrevealed_text,
-            "moon": game.clan.age
-        })
+        text += i18n.t("cat.history.murder_not_revealed_to_clan")
+        return text
 
-    def add_lead_ceremony(self, cat):
+    def add_lead_ceremony(self):
         """
         generates and adds lead ceremony to history
         """
-        self.check_load(cat)
 
-        cat.history.lead_ceremony = cat.generate_lead_ceremony()
+        self.lead_ceremony = self.cat.generate_lead_ceremony()
 
     # ---------------------------------------------------------------------------- #
     #                                 retrieving                                   #
     # ---------------------------------------------------------------------------- #
 
-    def get_beginning(self, cat):
-        """
-        returns the beginning info, example of structure:
-
-        "beginning":{
-            "clan_born": bool,
-            "birth_season": season,
-            "age": age,
-            "moon": moon
-            },
-
-        if beginning info is empty, a NoneType is returned
-        :param cat: cat object
-        """
-        self.check_load(cat)
-        return cat.history.beginning
-
-    def get_mentor_influence(self, cat):
-        """
-        Returns mentor influence dict, example of structure:
-
-        "mentor_influence":{
-            "mentor": ID
-            "skill": skill
-            "trait": trait
-            },
-
-        if mentor influence is empty, a NoneType is returned
-        """
-        self.check_load(cat)
-        return cat.history.mentor_influence
-
-    def get_app_ceremony(self, cat):
-        """
-        Returns app_ceremony dict, example of structure:
-
-        "app_ceremony": {
-            "honor": honor,
-            "graduation_age": age,
-            "moon": moon
-            },
-
-        if app_ceremony is empty, a NoneType is returned
-        """
-        self.check_load(cat)
-        return cat.history.app_ceremony
-
-    def get_lead_ceremony(self, cat):
+    def get_lead_ceremony(self):
         """
         returns the leader ceremony text
-        :param cat: cat object
         """
-        self.check_load(cat)
-        if not cat.history.lead_ceremony:
-            self.add_lead_ceremony(cat)
-        return str(cat.history.lead_ceremony)
 
-    def get_possible_death_or_scars(self, cat, condition=None, death=False, scar=False):
+        if not self.lead_ceremony:
+            self.cat.generate_lead_ceremony()
+        return str(self.lead_ceremony)
+
+    def get_possible_history(self, condition=None):
         """
-        Returns the asked for death/scars dict, example of single event structure:
+        Returns the requested death/scars dict, example of single event structure:
 
         {
         "involved": ID
-        "text": text
+        "death_text": text
+        "scar_text": text
         },
 
         example of multi event structure:
@@ -444,49 +598,28 @@ class History:
         {
         "condition name": {
             "involved": ID
-            "text": text
+            "death_text": text
+            "scar_text": text
             },
         "condition name": {
             "involved": ID
-            "text": text
+            "death_text": text
+            "scar_text": text
             },
         },
 
         if possible scar/death is empty, a NoneType is returned
-        :param cat: cat object
-        :param condition: the name of the condition that caused the death/scar (if looking for specific event, else leave None to get all events)
-        :param death: set True to get deaths
-        :param scar: set True to get scars
+        :param condition: which condition that caused the death/scar, default None
         """
-        self.check_load(cat)
 
-        event_type = None
-        if scar:
-            event_type = "possible_scar"
-        elif death:
-            event_type = "possible_death"
-
-        if not event_type:
-            print('WARNING: event type was not specified during possible scar/death history retrieval, '
-                  'did you remember to set scar or death as True?')
-            return
-
-        if condition:
-            if event_type == 'possible_scar':
-                if condition in cat.history.possible_scar:
-                    return cat.history.possible_scar[condition]
-            elif event_type == 'possible_death':
-                if condition in cat.history.possible_death:
-                    return cat.history.possible_death[condition]
-            else:
-                return None
-
-        if event_type == 'possible_scar':
-            return cat.history.possible_scar
+        if condition in self.possible_history:
+            return self.possible_history[condition]
+        elif condition:
+            return None
         else:
-            return cat.history.possible_death
+            return self.possible_history
 
-    def get_death_or_scars(self, cat, death=False, scar=False):
+    def get_death_or_scars(self, death=False, scar=False):
         """
         This returns the death/scar history list for the cat.  example of list structure:
 
@@ -504,59 +637,16 @@ class History:
             ]
 
         if scar/death is empty, a NoneType is returned
-        :param cat: cat object
-        :param death: set True if you want the deaths
-        :param scar: set True if you want the scars
+        :param death: request a death, default False
+        :param scar: request scars, default False
         """
 
-        self.check_load(cat)
-
-        event_type = None
-        if scar:
-            event_type = "scar_events"
+        if not death and not scar:
+            print(
+                "WARNING: event type was not specified during scar/death history retrieval, "
+                "did you remember to set scar or death as True?"
+            )
+        elif scar:
+            return self.scar_events
         elif death:
-            event_type = "died_by"
-
-        if not event_type:
-            print('WARNING: event type was not specified during scar/death history retrieval, '
-                  'did you remember to set scar or death as True?')
-            return
-
-        if event_type == 'scar_events':
-            return cat.history.scar_events
-        else:
-            return cat.history.died_by
-
-    def get_murders(self, cat):
-        """
-        this returns the cat's murder dict. example of dict structure:
-
-        "murder": {
-            "is_murderer": [
-                    {
-                    "victim": ID,
-                    "revealed": bool,
-                    "moon": moon
-                    },
-                ]
-            "is_victim": [
-                    {
-                    "murderer": ID,
-                    "revealed": bool,
-                    "text": same text as the death history for this murder (revealed history)
-                    "unrevealed_text": unrevealed death history
-                    "moon": moon
-                    },
-                ]
-            }
-
-        if murders is empty, a NoneType is returned
-        :param cat: cat object
-        """
-
-        self.check_load(cat)
-
-        return cat.history.murder
-
-
-
+            return self.died_by

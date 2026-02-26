@@ -7,10 +7,11 @@
       "password": "clangen"
     },
     "ghcr.io/devcontainers/features/python:1": {},
-    "ghcr.io/devcontainers-contrib/features/pylint:2": {}
+    "ghcr.io/devcontainers-extra/features/pylint:2": {},
+    "ghcr.io/va-h/devcontainers-features/uv:1": {}
   },
   "capAdd": ["SYS_PTRACE"],
-  "postCreateCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "uv sync",
   "remoteEnv": {
     "SDL_AUDIODRIVER": "dsp"
   },

@@ -1,0 +1,46 @@
+{
+    "high_lawful": {
+        "will_not_reveal": {
+            "general": [],
+            "friends": [
+                "[witness] looks aghast as they stumble upon [murderer] standing over [victim]. Though there is pain in their eyes, they agree to keep their muzzle shut."
+            ],
+            "parent": [
+                "[witness] can feel all of the fur along their spine lifting as they gaze into the eyes of their kit. Ears laid flat against their head, they know that they can't tell anyone."
+            ],
+            "child": [],
+            "sibling": []
+        },
+        "will_reveal": {
+            "general": [],
+            "friends": [
+                "[witness] can't believe what they're seeing. They slowly back away, careful not to let [murderer] spot them."
+            ],
+            "parent": [],
+            "child": [],
+            "sibling": []
+        }
+    },
+    "low_lawful": {
+        "will_not_reveal": {
+            "general": [],
+            "friends": [
+                "[witness] looks aghast as they stumble upon [murderer] standing over [victim]. Though there is pain in their eyes, they agree to keep their muzzle shut."
+            ],
+            "parent": [
+                "[witness] can feel all of the fur along their spine lifting as they gaze into the eyes of their kit. Ears laid flat against their head, they know that they can't tell anyone."
+            ],
+            "child": [],
+            "sibling": []
+        },
+        "will_reveal": {
+            "general": [],
+            "friends": [
+                "[witness] can't believe what they're seeing. They slowly back away, careful not to let [murderer] spot them."
+            ],
+            "parent": [],
+            "child": [],
+            "sibling": []
+        }
+    }
+}

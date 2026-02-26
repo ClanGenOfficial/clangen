@@ -1,0 +1,31 @@
+{
+    "en": {
+        "0": {
+            "subject": "they",
+            "object": "them",
+            "poss": "their",
+            "inposs": "theirs",
+            "self": "themself",
+            "conju": 1,
+            "gender": 0
+        },
+        "1": {
+            "subject": "he",
+            "object": "him",
+            "poss": "his",
+            "inposs": "his",
+            "self": "himself",
+            "conju": 2,
+            "gender": 1
+        },
+        "2": {
+            "subject": "she",
+            "object": "her",
+            "poss": "her",
+            "inposs": "hers",
+            "self": "herself",
+            "conju": 2,
+            "gender": 2
+        }
+    }
+}

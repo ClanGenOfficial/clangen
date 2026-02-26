@@ -1,0 +1,16 @@
+{
+    "en": {
+        "help_tooltip": "This screen allows you to manage your warriors more effectively! You can give them a specific focus, which will provide some benefits (and possibly some negatives) to your Clan.  Some focuses are not available in classic mode.  Click on each focus to see a description of what they will do.  Focuses that target other Clans will allow you to choose which Clans you target.  Your focus can only be changed every 3 moons, so choose carefully.",
+        "change_focus": "Change Focus",
+        "current_focus": "<b>Current Focus:</b> %{name}%{desc}",
+        "focus_last_changed": "<b>Focus Last Changed:</b> %{last_changed}<br>%{next_change}",
+        "next_change": {
+            "zero": "(can change again now)",
+            "one": "(next change in %{moons})",
+            "many": "(next change in %{moons})"
+        },
+        "involved_clans": "<br><b>Involved Clans:</b> %{clans}",
+        "what_to_focus": "What should your warriors focus on?",
+        "selected_info": "<b>Selected information:</b>\n%{info}"
+    }
+}

@@ -1,0 +1,284 @@
+{
+  "general": {
+    "body": [
+      "No cat will ever be what m_c was to r_c. {PRONOUN/m_c/subject/CAP} meant something to {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} will never be able to put into words.",
+      "r_c sits at m_c's vigil, unable to speak of the cat that meant everything to {PRONOUN/r_c/object}. There was no cat r_c trusted more.",
+      "m_c was r_c's rock, cutting through the wild currents of life. r_c doesn't know who or what {PRONOUN/r_c/subject}'ll cling to without {PRONOUN/r_c/poss} mate.",
+      "r_c is choked with grief, standing over m_c's still body. {PRONOUN/r_c/poss/CAP} mate was the steadiest presence in {PRONOUN/r_c/poss} life, and now {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} gone.",
+      "There were so many things that r_c could only trust m_c to understand. Now, without {PRONOUN/r_c/poss} mate, r_c has no idea what {PRONOUN/r_c/subject}'ll do.",
+      "r_c spends longer than any other cat at m_c's vigil, {PRONOUN/r_c/poss} muzzle buried in the cold fur of the cat on whom {PRONOUN/r_c/subject} relied so much."
+    ],
+    "no_body": [
+      "No cat will ever be what m_c was to r_c. {PRONOUN/m_c/subject/CAP} meant something to {PRONOUN/r_c/object} that {PRONOUN/r_c/subject} will never be able to put into words.",
+      "r_c sits at m_c's vigil, unable to speak of the cat that meant everything to {PRONOUN/r_c/object}. There was no cat r_c trusted more.",
+      "m_c was r_c's rock, cutting through the wild currents of life. r_c doesn't know who or what {PRONOUN/r_c/subject}'ll cling to without {PRONOUN/r_c/poss} mate.",
+      "r_c is choked with grief at m_c's vigil. {PRONOUN/r_c/poss/CAP} mate was the steadiest presence in {PRONOUN/r_c/poss} life, and now {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} gone.",
+      "There were so many things that r_c could only trust m_c to understand. Now, without {PRONOUN/r_c/poss} mate, r_c has no idea what {PRONOUN/r_c/subject}'ll do.",
+      "r_c can't stand m_c's vigil. In the absence of a body, {PRONOUN/r_c/subject} {VERB/r_c/convince/convinces} {PRONOUN/r_c/self} that m_c will come home to {PRONOUN/r_c/object} one day, just as {PRONOUN/m_c/subject} always promised."
+    ]
+  },
+  "adventurous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "altruistic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "ambitious": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bloodthirsty": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "bold": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "calm": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "careful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "charismatic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "childish": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "cold": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "compassionate": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "confident": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "daring": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "empathetic": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "faithful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "fierce": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "insecure": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "lonesome": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "loving": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "loyal": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "nervous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "patient": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "playful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "responsible": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "righteous": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "shameless": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "sneaky": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "strange": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "strict": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "thoughtful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "troublesome": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "vengeful": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  },
+  "wise": {
+    "body": [
+
+    ],
+    "no_body": [
+
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+name: Assign Issue
+
+on:
+  # for automatic unassigning for inactivity
+  schedule:
+    - cron: 0 0 * * *
+  issue_comment:
+    types: [created]
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Assign user or unassign inactive self-assigned issue
+        uses: takanome-dev/assign-issue-action@v2.1.1
+        with:
+          github_token: '${{ secrets.GITHUB_TOKEN }}'

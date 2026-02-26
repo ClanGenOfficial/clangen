@@ -1,0 +1,18 @@
+{
+    "en": {
+        "heading": "%{name}'s Family Tree",
+        "lineage": "Viewing %{name}'s Lineage",
+        "no_cats": "None",
+        "parents": "parents",
+        "siblings": "siblings",
+        "siblings_mates": "siblings' mates",
+        "siblings_kits": "siblings' kits",
+        "parents_siblings": "parents' siblings",
+        "cousins": "cousins",
+        "grandparents": "grandparents",
+        "mates": "mates",
+        "kits": "kits",
+        "kits_mates": "kits' mates",
+        "grandkits": "grandkits"
+    }
+}

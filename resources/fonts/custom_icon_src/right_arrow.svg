@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        height="1000"
+        width="1000"
+        version="1.1"
+        id="svg1"
+        xml:space="preserve"
+        sodipodi:docname="right_arrow.svg"
+        inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+        xmlns="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="0.813"
+     inkscape:cx="499.38499"
+     inkscape:cy="500"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+    <defs
+            id="defs4"/>
+    <metadata
+            id="metadata7"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"/></cc:Work></rdf:RDF></metadata>
+    <g
+            id="layer1"
+            transform="matrix(-1,0,0,1,1000,0)"><path
+       style="fill:#000000"
+       d="m 440,320 h -60 v 30 h -30 v 30 h -30 v 30 h -30 v 30 h -30 l 0.9224,60 h 31.81981 L 290,530 h 30 v 30 h 30 v 30 h 30 v 30 h 60 v -90 h 120 v -30 h 90 V 470 H 620 V 440 H 590 V 410 H 440 Z"
+       id="path1" />
+        <path
+                style="fill:#000000"
+                d="m 680,530 v -30 h 30 v 30 z"
+                id="path2"/>
+        <path
+                style="fill:#000000"
+                d="m 740,470 h -60 v -30 h -30 v -30 h 60 v 30 h 30 z"
+                id="path3"/></g></svg>

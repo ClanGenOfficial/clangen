@@ -1,0 +1,25 @@
+{
+    "en": {
+        "promote_leader": "promote to leader",
+        "blurb_leader": "%{name} is the <b>leader</b> of %{clan}Clan. The guardianship of all Clan cats has been entrusted to them by StarClan. The leader is the highest authority in the Clan. The leader holds Clan meetings, determines mentors for new apprentices, and names new warriors. To help them protect the Clan, StarClan has given them nine lives. They typically take the suffix \"star\".",
+        "promote_deputy": "promote to deputy",
+        "blurb_deputy": "%{name} is %{clan}Clan's <b>deputy</b>. The deputy is the second in command, just below the leader. They advise the leader and organize daily patrols, alongside normal warrior duties. Typically, a deputy is personally appointed by the current leader. As dictated by the Warrior Code, all deputies must train at least one apprentice before appointment.  The deputy succeeds the leader if they die or retire.",
+        "switch_warrior": "switch to warrior",
+        "blurb_warrior": "%{name} is a <b>warrior</b>. Warriors are adult cats who feed and protect their Clan. They are trained to hunt and fight in addition to the ways of the Warrior Code. Warriors are essential to the survival of a Clan, and usually make up the bulk of its members.",
+        "retire": "retire",
+        "blurb_elder": "%{name} is an <b>elder</b>. They have spent many moons serving their Clan, and have earned many moons of rest. Elders are essential to passing down the oral tradition of the Clan. Sometimes, cats may retire due to disability or injury. Whatever the circumstance of their retirement, elders are held in high esteem in the Clan and always eat before warriors and medicine cats. ",
+        "switch_medicine_cat": "switch to medicine\ncat",
+        "blurb_medicine_cat": "%{name} is a <b>medicine cat</b>. Medicine cats are the healers of the Clan. They treat injuries and illnesses with herbal remedies. Unlike warriors, medicine cats are not expected to hunt and fight for the Clan. In addition to their healing duties, medicine cats also have a special connection to StarClan. Every half-moon, they travel to their Clan's holy place to commune with StarClan.",
+        "switch_mediator": "switch to mediator",
+        "blurb_mediator": "%{name} is a <b>mediator</b>. Mediators are not typically required to hunt or fight for the Clan. Rather, mediators are charged with handling disagreements between Clanmates and disputes between Clans. Some mediators train as apprentices to serve their Clan, while others may choose to become mediators later in life.",
+        "switch_app": "switch to warrior\napprentice",
+        "blurb_apprentice": "%{name} is an <b>apprentice</b>, in training to become a warrior. Kits can be made warrior apprentices at six moons of age, where they will learn how to hunt and fight for their Clan. Typically, the training of an apprentice is entrusted to a single warrior - their mentor. To build character, apprentices are often assigned the unpleasant and grunt tasks of Clan life. Apprentices usually take the suffix \"-paw\", to represent the path their paws take towards adulthood. ",
+        "switch_medcat_app": "switch to medicine\ncat apprentice",
+        "blurb_medcat_app": "%{name} is a <b>medicine cat apprentice</b>, training to become a full medicine cat. Kits can be made medicine cat apprentices at six moons of age, where they will learn how to heal their Clanmates and commune with StarClan. Medicine cat apprentices are typically chosen for their interest in healing and/or their connecting to StarClan. Apprentices usually take the suffix \"-paw\", to represent the path their paws take towards adulthood.",
+        "switch_mediator_app": "switch to mediator\napprentice",
+        "blurb_mediator_app": "%{name} is a <b>mediator apprentice</b>, training to become a full mediator. Mediators are in charge of handling disagreements both within the Clan and between Clans. Mediator apprentices are often chosen for their quick thinking and steady personality. Apprentices usually take the suffix \"-paw\", to represent the path their paws take towards adulthood. ",
+        "blurb_kitten": "%{name} is a <b>kitten</b>. All cats below the age of six moons are considered kits. Kits are prohibited from leaving camp in order to protect them from the dangers of the wild. Although they don't have any official duties in the Clan, they are expected to learn the legends and traditions of their Clan. They are protected by every cat in the Clan and always eat first. Kits usually take the suffix \"-kit\".",
+        "blurb_newborn": "%{name} is a <b>newborn kitten</b>. All cats below the age of six moons are considered kits. Kits are prohibited from leaving camp in order to protect them from the dangers of the wild. Although they don't have any official duties in the Clan, they are expected to learn the legends and traditions of their Clan. They are protected by every cat in the Clan and always eat first. Kits usually take the suffix \"-kit\".",
+        "blurb_unknown": "%{name} has an unknown rank. I guess they want to make their own way in life!"
+    }
+}

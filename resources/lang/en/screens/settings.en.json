@@ -1,0 +1,16 @@
+{
+    "en": {
+        "general": "general settings",
+        "general_info": "Change the general settings of your game here.\nMore settings are available in the settings page of your Clan.",
+        "audio": "audio settings",
+        "audio_info": "Change the settings for the game audio here.",
+        "music_volume": "Music Volume:",
+        "sfx_volume": "Sound Effect Volume:",
+        "info": "info",
+        "language": "language",
+        "language_info": "Change the language of the game here. This is currently a work-in-progress.",
+        "lang_english": "english",
+        "lang_spanish": "spanish",
+        "lang_german": "german"
+    }
+}

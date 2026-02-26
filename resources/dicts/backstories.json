@@ -1,0 +1,82 @@
+{
+    "backstory_categories": {
+        "clan_founder_backstories": [
+            "clan_founder"
+        ],
+        "clan_guide_backstories": [
+            "clan_guide1", "clan_guide2", "clan_guide3", "clan_guide4", "clan_guide5", "clan_guide6", "clan_guide7"
+        ],
+        "clanborn_backstories": [
+            "clanborn"
+        ],
+        "outsider_roots_backstories": [
+            "outsider_roots1", "outsider_roots2"
+        ],
+        "half_clan_backstories": [
+            "halfclan1", "halfclan2"
+        ],
+        "loner_backstories": [
+            "loner1",
+            "loner2",
+            "loner3",
+            "loner4",
+            "refugee2",
+            "tragedy_survivor4",
+            "guided3",
+            "wandering_healer2"
+        ],
+        "rogue_backstories": [
+            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2", "guided2", "wandering_healer1"
+        ],
+        "kittypet_backstories": [
+            "kittypet1", "kittypet2", "kittypet3", "kittypet4", "refugee3", "tragedy_survivor3", "guided1", "refugee6"
+        ],
+        "former_clancat_backstories": [
+            "otherclan1",
+            "otherclan2",
+            "otherclan3",
+            "otherclan4",
+            "ostracized_warrior",
+            "disgraced1",
+            "disgraced2",
+            "disgraced3",
+            "retired_leader",
+            "refugee1",
+            "tragedy_survivor1",
+            "medicine_cat",
+            "guided4",
+            "refugee5",
+            "stolenkit1"
+        ],
+        "healer_backstories": [
+            "medicine_cat", "wandering_healer1", "wandering_healer2"
+        ],
+        "orphaned_backstories": [
+            "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"
+        ],
+        "abandoned_backstories": [
+            "abandoned1", "abandoned2", "abandoned3", "abandoned4"
+        ],
+        "outsider_backstories": [
+            "outsider1", "outsider2", "outsider3"
+        ],
+        "baby_clancat_backstories": [
+            "halfclan1", "halfclan2", "outsider_roots1", "abandoned3"
+        ],
+        "baby_loner_backstories": [
+            "outsider_roots2", "abandoned1", "abandoned2"
+        ],
+        "baby_kittypet_backstories": [
+            "abandoned4"
+        ]
+    },
+    "conversion": {
+        "tragedy_survivor": "tragedy_survivor1",
+        "disgraced": "disgraced1",
+        "otherclan": "otherclan1",
+        "other_clan1": "otherclan4",
+        "orphaned": "orphaned1",
+        "refugee": "refugee1",
+        "outsider": "outsider1"
+    }
+}

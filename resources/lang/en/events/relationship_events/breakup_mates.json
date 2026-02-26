@@ -1,0 +1,38 @@
+{
+	"had_fight":[
+		"m_c and r_c had a huge fight and broke up.",
+		"At the same spot in camp they announced their commitment to each other as mates, m_c and r_c announce their break up, looking coldly at each other with anger and hurt in their eyes.",
+		"m_c and r_c have been arguing with each other a lot as of late, making everyone uneasy around them. c_n is secretly relieved when they announce that they're no longer mates.",
+		"m_c and r_c had a huge fight in the middle of the clearing, exchanging hurtful words before calling off their relationship for good.",
+		"When a Clanmate asked m_c about r_c, m_c hissed angrily at them, saying {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} want to hear anything about that fox-heart again and they're no longer mates.",
+		"m_c and r_c had enough of each other's fox-dung after arguing about every little thing for the past moon now. m_c calls off their relationship."
+	],
+	"decided_to_be_friends":[
+		"m_c and r_c realized that they were better off as friends, so they decided to break up.",
+		"After thinking for some time, m_c told r_c that {PRONOUN/m_c/subject} now {VERB/m_c/see/sees} {PRONOUN/r_c/object} as more like a close friend to {PRONOUN/m_c/object} than a mate. It turns out, r_c feels the same way, and they decide to remain close, but not together. As friends, not lovers.",
+		"m_c realizes that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have the mentality to keep a romantic relationship right now. After a little talk with r_c, they have decided that they should just be friends, for now at least.",
+		"m_c feels like {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} a good fit for r_c anymore. After a talk with {PRONOUN/r_c/object}, they've decided to just be friends.",
+		"m_c isn't so sure about continuing a romantic relationship with r_c anymore. After a little talk, they have decided that they should just be friends.",
+		"m_c and r_c announced their break up today. But before their friends could offer sympathy, m_c and r_c reassure them that they left off on good terms and will still be good friends!"
+	],
+	"lost_feelings":[
+		"m_c and r_c lost feelings for each other overtime - they broke up this moon.",
+		"m_c and r_c realized that they are a lot different from each other than they initially thought, the realization steers them away from the relationship they once had and they break up.",
+            	"One day, m_c and r_c were crazy in love with each other. The next day, they're distant, refusing to talk to one another. The distance continues for a while, making it clear that they're no longer mates.",
+            	"Things sadly just didn't work out the way m_c and r_c thought it would... with heaviness in their hearts, they have decided to break up.",
+            	"Sometimes, good things must come to an end, m_c and r_c realize as they announce to the Clan that they’re no longer mates.",
+		"m_c isn't so sure about continuing a romantic relationship with r_c anymore. After talking with {PRONOUN/r_c/object}, they decided to break up.",
+		"m_c realizes that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have the mentality to keep a romantic relationship right now. After a little talk with r_c, they have decided to break up."
+	],
+	"bad_breakup":[
+		"Out of the blue, m_c bluntly tells r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} interested in {PRONOUN/r_c/object} anymore, so {PRONOUN/m_c/subject} {VERB/m_c/call/calls} off their relationship and r_c walks away heartbroken and confused.",
+            	"Some relationships turn out good, some don't, but for m_c and r_c's relationship, things really didn't turn out so well. They've broken up.", 
+            	"Things have become tense and sour in m_c and r_c’s relationship. They decided to break up before any fight breaks out between them.",
+		"r_c broke up with m_c and m_c has taken it very hard. {PRONOUN/m_c/subject/CAP} seem to be avoiding r_c as much as possible."
+	],
+	"chill_breakup":[
+		"m_c and r_c broke up.", 
+            	"m_c and r_c have decided that they may not be the right fit for each other after all, they decide leave off on good terms and break up.",
+		"After explaining {PRONOUN/m_c/poss} feelings and thoughts to r_c, m_c broke up with {PRONOUN/r_c/object}, no hard feelings."
+	]
+}

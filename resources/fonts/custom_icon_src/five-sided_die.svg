@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        version="1.1"
+        id="svg1"
+        width="17"
+        height="17"
+        viewBox="0 0 17 17"
+        sodipodi:docname="random_dice.svg"
+        inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+        xmlns="http://www.w3.org/2000/svg">
+    <defs
+            id="defs1">
+        <clipPath
+                clipPathUnits="userSpaceOnUse"
+                id="clipPath8">
+            <g
+                    inkscape:label="Clip"
+                    id="use8"/>
+        </clipPath>
+    </defs>
+    <sodipodi:namedview
+            id="namedview1"
+            pagecolor="#505050"
+            bordercolor="#ffffff"
+            borderopacity="1"
+            inkscape:showpageshadow="0"
+            inkscape:pageopacity="0"
+            inkscape:pagecheckerboard="1"
+            inkscape:deskcolor="#505050"
+            showgrid="true"
+            inkscape:zoom="22.852941"
+            inkscape:cx="5.1634491"
+            inkscape:cy="5.8416988"
+            inkscape:window-width="1920"
+            inkscape:window-height="991"
+            inkscape:window-x="-9"
+            inkscape:window-y="-9"
+            inkscape:window-maximized="1"
+            inkscape:current-layer="g2">
+        <inkscape:grid
+                id="grid1"
+                units="px"
+                originx="0"
+                originy="0"
+                spacingx="0.5"
+                spacingy="0.5"
+                empcolor="#0099e5"
+                empopacity="0.30196078"
+                color="#0099e5"
+                opacity="0.14901961"
+                empspacing="5"
+                dotted="false"
+                gridanglex="30"
+                gridanglez="30"
+                visible="true"/>
+    </sodipodi:namedview>
+    <g
+            inkscape:groupmode="layer"
+            inkscape:label="Image"
+            id="g1">
+        <g
+                id="g2"
+                style="display:inline">
+            <path
+                    id="path1"
+                    style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75"
+                    d="M 2.375,1.5 V 2.375 H 1.5 v 12.25 H 2.375 V 15.5 h 12.25 V 14.625 H 15.5 V 2.375 H 14.625 V 1.5 Z m 1.75,2.625 h 1.75 v 1.75 h -1.75 z m 7,0 h 1.75 v 1.75 h -1.75 z m -3.5,3.5 h 1.75 v 1.75 h -1.75 z m 3.5,3.5 h 1.75 v 1.75 h -1.75 z m -7,0.02051 h 1.75 v 1.75 h -1.75 z"/>
+        </g>
+    </g>
+</svg>

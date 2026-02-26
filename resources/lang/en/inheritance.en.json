@@ -1,0 +1,15 @@
+{
+    "en": {
+        "current_mate": "current mate",
+        "prev_mate": "previous mate",
+        "parent_of_inter": "parent of %{name}",
+        "second_parent": "second parent: %{name}",
+        "blood_parent": {
+            "one": "blood parent: %{name}",
+            "many": "blood parents: %{name}"
+        },
+        "mate_of_inter": "mate of %{name}",
+        "littermates": "litter mates",
+        "child_of_inter": "child of %{name}"
+    }
+}

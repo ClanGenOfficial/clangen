@@ -87,19 +87,29 @@ profile_default/
 ipython_config.py
 
 # Saves
-saves/
-saves/clanlist.txt
-saves/settings.txt
-saves\
-saves\clanlist.txt
-saves\settings.txt
+saves/**
+#saves/clanlist.txt
+#saves/settings.txt
+#saves\
+#saves\clanlist.txt
+#saves\settings.txt
+
+#User's generated theming (for screen scale)
+/resources/theme/generated/screen_scale.json
+
+#anything used for testing localization
+resources/lang/po/
 
 # Logs
 logs/
 
 # Temp
-~temp/
-~temp\
+~temp/**
+# ~temp\
+
+# Saved Images
+saved_images/**
+# saved_images\
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
@@ -158,15 +168,9 @@ cython_debug/
 
 /saves/**
 *.png~
-.vscode/settings.json
 scripts/__pycache__/**
 /__pycache__/
-.vscode/**
-
-.vscode/launch.json
-.idea/clan_gen_working.iml
-.idea/misc.xml
-.idea/workspace.xml
+.idea/
 
 
 saves/currentclan.txt

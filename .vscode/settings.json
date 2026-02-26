@@ -1,6 +1,31 @@
 {
+    "json.schemas": [
+        {
+            "url": "./schemas/thought.schema.json",
+            "fileMatch": [
+                "thoughts/**/*.json"
+            ]
+        },
+        {
+            "url": "./schemas/patrol.schema.json",
+            "fileMatch": [
+                "patrols/**/*.json",
+                "!patrols/explicit_patrol_art.json"
+            ]
+        },
+        {
+            "url": "./schemas/shortevent.schema.json",
+            "fileMatch": [
+                "events/death/*.json",
+                "events/misc/*.json",
+                "events/new_cat/*.json",
+                "events/injury/*.json"
+            ]
+        }
+    ],
     "python.formatting.provider": "yapf",
-    "python.linting.enabled": false,
+    "editor.formatOnSave": false,
+    "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
     "python.testing.unittestArgs": [
         "-v",
@@ -13,15 +38,21 @@
     "python.testing.unittestEnabled": true,
     "cSpell.words": [
         "blit",
+        "bloodlust",
+        "Clanmates",
         "cooldown",
         "freshkill",
         "greenleaf",
+        "headedness",
+        "hoofprints",
         "kittypet",
+        "kittypets",
         "leafbare",
         "leaffall",
         "newleaf",
         "parentless",
         "pygame",
+        "Silverpelt",
         "starclan",
         "Thunderpath",
         "Twoleg",

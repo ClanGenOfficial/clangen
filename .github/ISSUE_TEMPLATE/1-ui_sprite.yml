@@ -1,0 +1,97 @@
+name: Bug - UI and Sprite (report typos further down)
+description: Report an issue with sprites, buttons, backgrounds, visual overlaps etc.
+title: "[UI] "
+labels: [ 'visual', 'bug' ]
+body:
+  - type: checkboxes
+    id: existing_issue
+    attributes:
+      label: Pre-requisites
+      options:
+        - label: I have searched the existing issues
+          required: true
+        - label: This issue was encountered (or replicated) on a non-edited Clan
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug
+      placeholder: "e.g. My 12 moon mediator apprentice doesn't have their accessory on the mediation screen."
+    validations:
+      required: true
+  - type: dropdown
+    id: grade
+    attributes:
+      label: Grade
+      description: How much of an impact does this issue have on play?
+      options:
+        - Unimportant - Little to no impact on play
+        - Non-vital - Can easily be ignored and does not have a large impact on play
+        - Regular - Should be handled soon, but doesn't necessarily break the game or inhibit the player
+        - Important - Has a large effect on the gameplay but is not urgent
+        - Dire - Still playable, but a major feature is broken
+        - Game-breaking - makes it impossible to play the game
+      default: 2
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: patrol
+    attributes:
+      label: Patrol ID + Outcome Print (if applicable)
+      description: For assistance, see [\"what's a patrol ID and do I need it?\"](https://www.clangen.io/docs/report-a-bug#whats-a-patrol-id-do-i-need-it) and [\"how do I find the patrol ID?\"](https://www.clangen.io/docs/report-a-bug#how-do-i-find-the-patrol-id)
+  - type: input
+    id: version
+    attributes:
+      description: See [here](https://www.clangen.io/docs/report-a-bug/#how-do-i-find-my-game-version) for help finding your game version.
+      label: "Commit # or Game Version Number"
+      placeholder: e.g. "4ef20d05" (if on development) or "v0.12.2" (if stable)
+    validations:
+      required: true
+  - type: dropdown
+    id: fullscreen
+    attributes:
+      label: Is this bug only happening in fullscreen?
+      description: Answer "yes" if the issue is resolved by using windowed mode, or if it relates to fullscreen.
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+  - type: input
+    id: fullscreen_size
+    attributes:
+      label: If yes, what is your display size in pixels?
+      description: Include height and width; this can usually be found in your computer's display settings.
+      placeholder: e.g. 1920x1080
+  - type: dropdown
+    id: fullscreen_config
+    attributes:
+      label: Select any visual config options you are using
+      description: You can select more than one.
+      multiple: true
+      options:
+        - Disable sprite antialiasing
+        - Ignore fullscreen scaling rules
+        - Other (specify in additional context)
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      placeholder: Add any other context about the problem here.
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      placeholder: Add screenshots to help explain your problem.

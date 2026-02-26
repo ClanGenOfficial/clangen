@@ -1,0 +1,24 @@
+name: Test Documentation Build
+
+on:
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  test-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'   
+      - name: Install docs dependencies
+        run: uv sync --no-default-groups --group docs
+      - name: Build documentation
+        run: uv run mkdocs build --strict

@@ -1,0 +1,86 @@
+{
+	"high_romantic": [
+		"m_c confessed {PRONOUN/m_c/poss} feelings to r_c and they have become mates.",
+		"This has been a long time coming - m_c and r_c have become mates.",
+		"m_c and r_c really think the Clan hasn't noticed how they feel about each other? Everyone carefully hides their smiles as they announce becoming mates.",
+		"m_c and r_c have been practically floating on air since announcing their commitment as mates before c_n.",
+		"Some of the less sympathetic cats of c_n would prefer to try to hack up a hairball, rather than watch m_c and r_c melt in each others' direction. New mates can be insufferable.",
+		"The more romantic members of the Clan sigh, watching the new mates m_c and r_c, who're too caught up in each other to notice.",
+		"In a bright spot this moon, m_c and r_c have finally announced their commitment as mates.",
+		"Their love has been a slow basking warmth, not a wildfire, and m_c wouldn't change it for the world. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} so excited to commit to padding at r_c's side forever.",
+        "It's neither a mystery nor a surprise, but c_n is happy to celebrate m_c and r_c becoming mates regardless.",
+		"m_c and r_c announce they've become mates in the least showy way possible, by combining their nests into one.",
+		"There's such happiness in the promises they make to each other. m_c and r_c leap into their new life as mates without question or hesitation.",
+		"For just this one perfect moment, heads pressed together and speaking their commitment in front of the Clan, there's nothing in m_c and r_c's worlds but love.",
+		"m_c and r_c are very proud to announce their new status as mates - it's quite cute."
+	],
+	"low_romantic":[
+		"m_c and r_c have become mates.",
+		"It's funny how quickly love takes flight - m_c and r_c have become mates.",
+		"The Clan gathers to celebrate a new pair of mates, m_c and r_c.",
+		"In a bright spot this moon, m_c and r_c have announced their commitment as mates.",
+        "m_c puts {PRONOUN/m_c/poss} paw over r_c's, as they announce they've become mates.",
+		"m_c bunts {PRONOUN/m_c/poss} head against r_c's as c_n celebrates the new mates.",
+		"It's funny how love has worked for m_c and r_c. Slowly at first, like a little trip or tumble, and then suddenly falling all at once.",
+		"Maybe it's surprising to some cats. It doesn't feel like it should be, m_c is so sure {PRONOUN/m_c/subject} {VERB/m_c/want/wants} r_c as {PRONOUN/m_c/poss} mate, and r_c loves {PRONOUN/m_c/object} just as much in return.",
+		"This moon marks the beginning of the rest of their lives together for m_c and r_c.",
+		"Tails twined together, m_c and r_c announce that love has blossomed between them. They've become mates.",
+        "It's endearing how embarrassed m_c is, with {PRONOUN/m_c/object} and r_c briefly becoming the center of attention as new mates.",
+        "No one is going to blame m_c for the pride {PRONOUN/m_c/subject} {VERB/m_c/display/displays} in successfully asking r_c to become {PRONOUN/m_c/poss} mate. It's a wonderful life event to celebrate, and something to rightfully congratulate the couple on."
+	],
+	"like_to_romance":[
+		"m_c and r_c see each other in a different light and have become mates.",
+		"It's like- like shedding fur to find a new colour underneath, m_c explains. r_c has been such an important friend, is it so surprising that both their feelings have evolved in this new direction to become mates?",
+		"It surprised them, too. But m_c and r_c are sure of this. So sure. The new mates celebrate with c_n.",
+		"Closeness can bring new aspects to any relationship. m_c glows with contentment, flushed the thrill of {PRONOUN/m_c/poss} new romance with r_c.",
+		"Tails twined together, m_c and r_c announce that love has blossomed between them. They've become mates.",
+		"In a bright spot this moon, m_c and r_c announce that their friendship has had romance added to the mix - they're now mates.",
+		"Sometimes one form of love can grow into another - m_c and r_c no longer only think of each other platonically.",
+		"Love blooms from platonic to romantic, and m_c is now mates with r_c.",
+        "m_c and r_c don't make any big announcements. But when they combine their nests, the Clan realizes that their relationship isn't so platonic anymore."
+	],
+	"rejected":[
+		"m_c confessed {PRONOUN/m_c/poss} feelings to r_c but {PRONOUN/m_c/subject} got rejected.",
+		"m_c confessed to r_c. Everyone tiptoes around {PRONOUN/m_c/object}, not wanting to disturb {PRONOUN/m_c/object} as m_c processes the rejection.",
+		"This, them, together? It wouldn't work out. r_c rejects m_c.",
+		"It stings. m_c is going to be nursing the hurt from r_c rejecting {PRONOUN/m_c/object} for a while.",
+		"m_c was so confident that r_c felt the same. But {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't}. m_c <i>really</i> doesn't want to talk about it.",
+		"r_c's rejection of m_c was very... public. Everyone's still feeling awkward about it.",
+		"m_c's dreams of romance and love have been crushed by r_c's rejection.",
+        "After being rejected by r_c, m_c's barely been visible round camp. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} good at hiding when {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to be.",
+		"m_c confesses {PRONOUN/m_c/poss} feelings to r_c, asking to be mates. And the answer, well, it's not yes.",
+		"Look, r_c is sorry, but {PRONOUN/r_c/subject} just {VERB/r_c/don't/doesn't} see m_c that way. m_c slinks off, rejected.",
+		"m_c's confession of love to r_c could've gone better. Actually, anything would've been better than the rejection {PRONOUN/m_c/subject} got."
+	],
+	"makeup_fail":[
+		"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c but was rejected.",
+		"<i>Seriously?</i> m_c wants to get back with r_c after what they've said to each other? Sorry, but no thanks, r_c rejects {PRONOUN/m_c/object}.",
+		"Even though they broke up, m_c wants to start things over with r_c. Unfortunately, r_c doesn't feel the same and rejects {PRONOUN/m_c/object}.",
+		"m_c asked r_c if they could get back together again. r_c sighs and tries to calmly explain that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} already in the process of moving on and that m_c should move on too.",
+		"Realizing how much m_c misses being with r_c, {PRONOUN/m_c/subject} asked {PRONOUN/r_c/poss} if they could get back together again. Unfortunately r_c said no.",
+		"m_c asked r_c if they could become mates again. The answer is no - they broke up for a reason.",
+		"m_c regrets breaking up with r_c, so {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} r_c to be {PRONOUN/m_c/poss} mate again. r_c rejects {PRONOUN/m_c/object}.",
+		"Some cats may say it is wrong to get back with your ex-mate, but m_c just can't ignore these leftover feelings any longer! So {PRONOUN/m_c/subject} confesses to r_c, but is rejected. Perhaps those cats were right?",
+        "m_c still has feelings for r_c and wants {PRONOUN/r_c/object} back. {PRONOUN/m_c/subject/CAP} {VERB/m_c/plead/pleads} with r_c to get back with {PRONOUN/m_c/object} in the middle of the clearing. Weirded out and embarrassed, r_c had to reject {PRONOUN/m_c/object} ...publicly."
+	],
+	"high_romantic_makeup":[
+		"m_c really wanted to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c and they've become mates again.",
+		"Still having lots of love for r_c even after their break up, m_c asked {PRONOUN/r_c/object} if they can make up and try again, r_c accepted and they've become mates again.",
+		"Realizing how much they missed being with each other, m_c and r_c have gotten back together.",
+		"Despite their prior misgivings, m_c and r_c decided to try their romantic relationship again and got back together, promising to do better with each other than ever before.",
+		"Even though they broke up, m_c loves r_c too much and wants to start things over with {PRONOUN/r_c/object}. Turns out, r_c feels the same way and they have gotten back together, starting anew.",
+		"m_c regrets breaking up with r_c, realizing how much they actually loved each other. m_c asks r_c to be {PRONOUN/m_c/poss} mate again and r_c accepts.",
+		"m_c and r_c have been seen all lovey-dovey with each other again lately - it seems that they've gotten back together!",
+		"m_c and r_c announced that they have gotten back together! Though the Clan's not really surprised, everyone knew m_c and r_c's love could never truly die.",
+		"Some cats may say it is wrong to get back with your ex-mate, but for m_c and r_c, it feels so right - they have made amends and gotten back together.",
+		"m_c and r_c realized that their reason for breaking up just wasn't worth it. They've made up and decided to try again.",
+		"After discussing their feelings and the reason why they broke up in the first place, m_c and r_c decided to start over and become mates again."
+	],
+	"low_romantic_makeup":[
+		"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c and they've become mates again.",
+		"Despite their prior misgivings, m_c and r_c decided to try their romantic relationship again and got back together.",
+		"m_c and r_c announced that they have made up and gotten back together, much to the Clan's surprise. Everyone still congratulates them.",
+		"m_c and r_c realized they still have some feelings for each other. They decided to try their relationship again and got back together.",
+		"Even though they broke up, m_c wants to try to start things over with r_c and asks {PRONOUN/r_c/object} to be {PRONOUN/m_c/poss} mate again. Though r_c was reluctant at first, {PRONOUN/r_c/subject} eventually {VERB/r_c/accept/accepts} and they've become mates again."
+	]
+}
