@@ -14,11 +14,11 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-    UIImageButton,
     UIDropDown,
     UIModifiedImage,
 )
+from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -145,6 +145,7 @@ def rebuild_top_menu_buttons():
             manager=MANAGER,
             starting_height=6,
             anchors={"left": "left", "left_target": menu_buttons["events"]},
+            open_on_hover=True,
         )
         prev_element = menu_buttons["supplies"]
     else:
@@ -178,6 +179,7 @@ def rebuild_top_menu_buttons():
         starting_height=6,
         anchors={"left": "left", "left_target": menu_buttons["cats"]},
         disable_selection=False,
+        open_on_hover=True,
     )
     # menu_buttons["events"].change_layer(menu_buttons["dens"].get_starting_height() + 5)
 

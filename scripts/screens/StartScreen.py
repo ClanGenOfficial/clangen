@@ -27,7 +27,8 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game, constants
 from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game.settings import game_settings_load, game_setting_get
-from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.update_available import UpdateAvailableWindow
 from scripts.ui.windows.changelog import ChangelogWindow
 from scripts.housekeeping.datadir import open_data_dir, open_url

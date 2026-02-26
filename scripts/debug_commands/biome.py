@@ -1,8 +1,8 @@
 from typing import List
 
+from scripts.game_structure import constants
 from scripts.debug_commands import Command
 from scripts.debug_commands.utils import add_output_line_to_log
-from scripts.game_structure import constants
 from scripts.game_structure import game
 
 

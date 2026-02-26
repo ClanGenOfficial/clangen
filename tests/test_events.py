@@ -1,39 +1,52 @@
 import unittest
+from pathlib import Path
 from random import choice
 from uuid import uuid4
+
+import shutil
+import os
 
 from scripts.cat import save_load
 from scripts.cat.cats import create_cat, Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, Afterlife
-from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
+from scripts.clan_package.settings import set_clan_setting
 from scripts import events
 from scripts.events_module.short.short_event_generation import (
-    find_needed_events,
     filter_events,
 )
 from scripts.game_structure import game
-from scripts.clan_package.get_clan_cats import get_living_cat_count
+from scripts.clan_package.get_clan_cats import (
+    get_living_clan_cat_count,
+)
+from scripts.game_structure.game.save_load import read_clans
+from scripts.housekeeping.datadir import get_save_dir
 
 
 class TestEvents(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         # load in the spritesheets
         # we have to do this to prevent a crash, even though we won't be displaying anything
         sprites.load_all()
 
+        cls.test_clan_name = f"Test_{uuid4()}"
+
+        cls.clanlist = read_clans()
+        cls.previously_loaded_clan = cls.clanlist[0] if cls.clanlist else None
+
         game.starclan = Afterlife()
         game.dark_forest = Afterlife()
         game.clan = Clan(
-            name=f"{'Test'}_{uuid4()}",
+            name=cls.test_clan_name,
             displayname="Test",
             leader=create_cat(CatRank.LEADER),
             deputy=create_cat(CatRank.DEPUTY),
             medicine_cat=create_cat(CatRank.MEDICINE_CAT),
             biome="Forest",
             camp_bg="camp1",
-            symbol="ADDER0",
+            symbol="symbolADDER0",
             game_mode="expanded",
             starting_members=[
                 create_cat(
@@ -62,6 +75,21 @@ class TestEvents(unittest.TestCase):
         # prevent them from just dying of starvation
         set_clan_setting("business as usual", False)
         set_clan_setting("hunting", True)
+
+    @classmethod
+    def tearDownClass(cls):
+        """
+        Be a polite bulk test and clean up after yourself
+        :return:
+        """
+        rempath = get_save_dir() + "/" + cls.test_clan_name
+        shutil.rmtree(rempath)
+        if os.path.exists(rempath + "clan.json"):
+            os.remove(rempath + "clan.json")
+
+        if cls.previously_loaded_clan:
+            with open(Path(get_save_dir()) / "currentclan.txt", "w") as currentclanfile:
+                currentclanfile.write(str(cls.previously_loaded_clan))
 
     def test_random_cat_assignment(self):
         """
@@ -92,6 +120,24 @@ class TestEvents(unittest.TestCase):
         ):
             for _ in range(500):
                 events.one_moon()
+
+                if not _ % 10:
+                    # every 10 moons, top up the number of cats in the Clan to at least 8
+                    # to give a good chance for event variety without bloat
+                    while get_living_clan_cat_count(Cat) < 8:
+                        game.clan.add_cat(
+                            create_cat(
+                                choice(
+                                    [
+                                        CatRank.KITTEN,
+                                        CatRank.APPRENTICE,
+                                        CatRank.WARRIOR,
+                                        CatRank.WARRIOR,
+                                        CatRank.ELDER,
+                                    ]
+                                )
+                            )
+                        )
+
                 if not _ % 100:
-                    # todo: why use this function? this also counts COTC, which is useless for telling if the clan is dead
-                    print(f"CATS ALIVE: {get_living_cat_count(Cat)}")
+                    print(f"CLANCATS ALIVE: {get_living_clan_cat_count(Cat)}")

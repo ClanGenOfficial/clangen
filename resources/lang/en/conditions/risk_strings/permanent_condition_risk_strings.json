@@ -48,7 +48,7 @@
     },
     "lost their tail": {
         "an infected wound": [
-            "r_c drags m_c into the medicine cat den to apply a herbal salve despite m_c's protests - {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} begun to smell infection in the tail stump.",
+            "r_c drags m_c into the medicine cat den to apply an herbal salve despite m_c's protests - {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} begun to smell infection in the tail stump.",
             "The stump where m_c's tail used to be has become infected."
         ],
         "phantom pain": [

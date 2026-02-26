@@ -3,10 +3,10 @@ import unittest
 from unittest.mock import patch
 from copy import deepcopy
 
-from scripts.game_structure import game
-
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
+
+from scripts.game_structure import game
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatSocial
