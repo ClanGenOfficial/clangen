@@ -50,9 +50,9 @@ class WarriorDenScreen(Screens):
         self.active_code = None
         self.original_focus_code = None
         self.other_clan_settings = [
-            "sabotage other clans",
-            "aid other clans",
-            "raid other clans",
+            "sabotage_other_clans",
+            "aid_other_clans",
+            "raid_other_clans",
         ]
 
         self.has_mediators = True
