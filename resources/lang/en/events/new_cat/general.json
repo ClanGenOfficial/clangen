@@ -1584,7 +1584,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/subject} opponent saw a loner caught in the middle of the fray and helped {PRONOUN/n_c:0/object} get to safety together.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/subject} opponent saw a loner stuck caught in the crossfire and helped {PRONOUN/n_c:0/object} get to safety together.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1604,8 +1604,8 @@
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
-                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                    "cats_from": "cat_from helped cat_to get to safety during a battle against another Clan.",
+                    "cats_to": "cat_from was lead away from a battle by cat_to."
                 }
         }
     ],
@@ -1624,7 +1624,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw a rogue attempting to pick off Clan cats and chased {PRONOUN/n_c:0/object} away.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw a rogue attempting to pick off wounded Clan cats and chased {PRONOUN/n_c:0/object} away.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1644,7 +1644,7 @@
             "values": ["trust", "like"],
             "amount": -20,
             "log": {
-                    "cats_from": "from_cat chased to_cat after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
                     "cats_to": "to_cat was chased away from an opprotunistic attack by from_cat."
                 }
         }
@@ -1664,7 +1664,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw a kittypet caught in the fray and helped {PRONOUN/n_c:0/object} get to safety together.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw a kittypet caught in the crossfire and helped {PRONOUN/n_c:0/object} get to safety together.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1704,7 +1704,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two loners caught in the middle of the fray and helped them both get to safety together.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two loners caught in the crossfire and helped them both get to safety together.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1761,7 +1761,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two rogues attempting to pick off Clan cats and chased them away.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two rogues attempting to pick off injured Clan cats and chased them away.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1787,7 +1787,7 @@
             "values": ["trust", "like"],
             "amount": -20,
             "log": {
-                    "cats_from": "from_cat chased to_cat after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
                     "cats_to": "to_cat was chased away from an opprotunistic attack by from_cat."
                 }
         },
@@ -1798,7 +1798,7 @@
             "values": ["trust", "like"],
             "amount": -20,
             "log": {
-                    "cats_from": "from_cat chased to_cat after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
                     "cats_to": "to_cat was chased away from an opprotunistic attack by from_cat."
                 }
         }
@@ -1818,7 +1818,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two kittypets caught in the middle of the fray and helped them get to safety together.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw two kittypets caught in the crossfire and helped them get to safety together.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1875,7 +1875,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "When a battle against o_c_n spilled into a loner's territory, n_c:0 successfully mediates between the two battle patrols so no harm came to the Clans.",
+    "event_text": "When a battle against o_c_n spilled into a loner's territory, n_c:0 successfully mediates between the two battle patrols so no further harm would come to pass.",
     "new_cat": [
         ["old_name",
         "loner",
@@ -1951,7 +1951,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 1,
-    "event_text": "In the midst of a tense stalemate between c_n and o_c_n, it was the suggestion of a passerby loner group that allowed for a night of truce between the two Clans.",
+    "event_text": "In the midst of a tense stalemate between c_n and o_c_n, it was the suggestion of a passering loner group that allowed for a night of truce between the two Clans.",
     "new_cat": [
         ["old_name",
         "loner",
@@ -2034,7 +2034,7 @@
             "values": ["trust", "like"],
             "amount": -20,
             "log": {
-                    "cats_from": "from_cat will remember the rogues who dared to attack c_n so brazenly during a battle against o_c_n."
+                    "cats_from": "from_cat will remember the rogue who dared to attack c_n so brazenly during a battle against o_c_n."
                 }
         }
     ],
@@ -2053,7 +2053,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 1,
-    "event_text": "Before a major battle between c_n and o_c_n could take place, their battlefield was overrun by a group of kittypets who refused to leave. Instead, the two Clans intermingled under the watchful and hopeful eyes of the communial cats.",
+    "event_text": "Before a major battle between c_n and o_c_n could take place, their battlefield was overrun by a group of kittypets who refused to leave and let them fight. Instead, the two Clans intermingled under the watchful and hopeful eyes of the communial cats.",
     "new_cat": [
         ["old_name",
         "kittypet",
@@ -2080,7 +2080,7 @@
             "values": ["trust", "like"],
             "amount": 20,
             "log": {
-                    "cats_from": "from_cat will remember the kittypets who dared to stop an entire battle against o_c_n."
+                    "cats_from": "from_cat will remember the kittypet who dared to stop an entire battle against o_c_n."
                 }
         },
         {
