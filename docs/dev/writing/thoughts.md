@@ -160,14 +160,14 @@ Constrains the thought to only occur if m_c and r_c fulfill the tags requirement
 ***
 
 ### backstory_constraint: dict[str: list]
-Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary values](reference/index.md#exclusionary-values).
+Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 > [Backstory Tag List](reference/tag-lists.md#backstories)
 
 ***
 
 ### main_status_constraint: list[str] & random_status_constraint: list[str]
-Constrains the thought to only happen if m_c or r_c are in a certain role. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
+Constrains the thought to only happen if m_c or r_c are in a certain role. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 > [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
 > 

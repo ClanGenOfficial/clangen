@@ -11464,6 +11464,7 @@
         "r_c": {
             "skill": ["DREAM,1"]
         },
+        "exclude_involved": ["m_c"],
         "relationships": [
             {
                 "cats_from": ["r_c"],

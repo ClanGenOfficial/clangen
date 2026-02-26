@@ -18,7 +18,7 @@ from scripts.cat_relations.enums import RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
-from scripts.events_module.text_adjust import process_text
+from scripts.events_module.text_adjust import process_text, adjust_list_text
 
 
 def create_new_cat_block(
@@ -290,7 +290,10 @@ def create_new_cat_block(
         existing_outsiders = [
             i
             for i in Cat.all_cats.values()
-            if i.status.is_outsider and not i.dead and i not in in_event_cats.values()
+            if i.status.is_outsider
+            and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            and not i.dead
+            and i not in in_event_cats.values()
         ]
         possible_outsiders = []
         for cat in existing_outsiders:
@@ -628,10 +631,10 @@ def create_new_cat(
                 name = choice(names.names_dict["loner_names"])
                 # check if the kittypets come with a pretty acc
                 if bool(getrandbits(1)):
-                    # TODO: refactor this entire function to remove this call amongst other things
-                    from scripts.cat.pelts import Pelt
-
-                    new_cat.pelt.accessory.append(choice(Pelt.collar_accessories))
+                    new_cat.pelt.accessory = (
+                        *new_cat.pelt.accessory,
+                        choice(new_cat.pelt.collar_accessories),
+                    )
 
             # try to give name from full loner name list
             elif original_social in (CatSocial.LONER, CatSocial.ROGUE) and bool(
@@ -675,9 +678,10 @@ def create_new_cat(
             "NORIGHTEAR",
             "MANLEG",
         ]
-        for scar in new_cat.pelt.scars:
-            if scar in not_allowed:
-                new_cat.pelt.scars.remove(scar)
+
+        new_cat.pelt.scars = tuple(
+            scar for scar in new_cat.pelt.scars if scar not in not_allowed
+        )
 
         # chance to give the new cat a permanent condition, higher chance for found kits and litters
         if kit or litter:
@@ -717,10 +721,11 @@ def create_new_cat(
                         ] = -2
 
                 # assign scars
+
                 if chosen_condition in ("lost a leg", "born without a leg"):
-                    new_cat.pelt.scars.append("NOPAW")
+                    new_cat.pelt.scars = (*new_cat.pelt.scars, "NOPAW")
                 elif chosen_condition in ("lost their tail", "born without a tail"):
-                    new_cat.pelt.scars.append("NOTAIL")
+                    new_cat.pelt.scars = (*new_cat.pelt.scars, "NOTAIL")
 
         # KILL >:D only if we're sposed to tho
         if not alive:
@@ -829,7 +834,7 @@ def gather_cat_objects(
 
 def unpack_rel_block(
     Cat, relationship_effects: List[dict], event=None, stat_cat=None, extra_cat=None
-):
+) -> dict:
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
     accordingly.
@@ -839,14 +844,25 @@ def unpack_rel_block(
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
+    :returns: List of all created rel logs for this rel block.
     """
     possible_values = [*RelType]
+
+    created_rel_logs: dict = {}
+
+    is_clan_reaction: bool = False
 
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])
         cats_to = block.get("cats_to", [])
         amount = block.get("amount")
         values = [x for x in block.get("values", ()) if x in possible_values]
+
+        # if this is a reaction from the entire clan, we need to know for later
+        if cats_from == ["clan"] or (
+            len(cats_from) == 2 and "clan" in cats_from and "patrol" in cats_from
+        ):
+            is_clan_reaction = True
 
         # Gather actual cat objects:
         cats_from_ob = gather_cat_objects(Cat, cats_from, event, stat_cat, extra_cat)
@@ -891,21 +907,48 @@ def unpack_rel_block(
             if not to_log and not from_log:
                 print(f"something is wrong with relationship log: {block['log']}")
 
-        change_relationship_values(
-            cats_to_ob,
-            cats_from_ob,
-            **value_changes,
-            log=from_log,
-        )
+        if is_clan_reaction:
+            value_list = adjust_list_text(
+                [i18n.t(f"relationships.{x}_word") for x in values]
+            )
+            name_list = adjust_list_text([str(x.name) for x in cats_to_ob])
+            if positive:
+                effect = "pos"
+            else:
+                effect = "neg"
+            created_rel_logs["clan"] = i18n.t(
+                f"windows.{effect}_clan_rel_log",
+                value_list=value_list,
+                name_list=name_list,
+            )
+            change_relationship_values(
+                cats_to_ob,
+                cats_from_ob,
+                **value_changes,
+                log=from_log,
+            )
+        else:
+            created_rel_logs.update(
+                change_relationship_values(
+                    cats_to_ob,
+                    cats_from_ob,
+                    **value_changes,
+                    log=from_log,
+                )
+            )
 
         if block.get("mutual"):
             # we'll default to the other log if no unique log was written
-            change_relationship_values(
-                cats_from_ob,
-                cats_to_ob,
-                **value_changes,
-                log=to_log if to_log else from_log,
+            created_rel_logs.update(
+                change_relationship_values(
+                    cats_from_ob,
+                    cats_to_ob,
+                    **value_changes,
+                    log=to_log if to_log else from_log,
+                )
             )
+
+    return created_rel_logs
 
 
 def change_relationship_values(
@@ -917,7 +960,7 @@ def change_relationship_values(
     comfort: int = 0,
     trust: int = 0,
     log: str = None,
-):
+) -> dict:
     """
     changes relationship values according to the parameters.
 
@@ -941,6 +984,7 @@ def change_relationship_values(
     else:
         changed = True"""
 
+    created_rel_logs = {}
     # pick out the correct cats
     for single_cat_from in cats_from:
         for single_cat_to in cats_to:
@@ -995,6 +1039,13 @@ def change_relationship_values(
                 else:
                     processed_log = log
 
+                if single_cat_from in created_rel_logs:
+                    created_rel_logs[single_cat_from] = "<br><br>".join(
+                        [created_rel_logs[single_cat_from], processed_log]
+                    )
+                else:
+                    created_rel_logs.update({single_cat_from: processed_log})
+
                 log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
                     name=str(single_cat_to.name),
@@ -1002,3 +1053,5 @@ def change_relationship_values(
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)
+
+    return created_rel_logs

@@ -567,6 +567,62 @@
             }
         ]
     },
+        {
+    "event_id": "gen_new_cat_lonerapp1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 4,
+    "event_text": "m_c finds a young cat who asks to join the Clan. The loner is welcomed into the Clan and renamed n_c:0.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "loner",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 20,
+            "log": {
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
+                }
+        }
+    ]
+},
+    {
+    "event_id": "gen_new_cat_lonerapp2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new loner friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
+    "m_c": {
+        "age": ["adolescent"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "loner",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "respect"],
+            "amount": 30,
+            "log": {
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
+                }
+        }
+    ]
+},
     {
         "event_id": "gen_new_cat_anykittypet1",
         "location": ["any"],
@@ -707,6 +763,62 @@
             }
         ]
     },
+            {
+    "event_id": "gen_new_cat_kittypetapp1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 4,
+    "event_text": "m_c finds a young cat who asks to join the Clan. The kittypet is welcomed into the Clan and renamed n_c:0.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "kittypet",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 20,
+            "log": {
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
+                }
+        }
+    ]
+},
+    {
+    "event_id": "gen_new_cat_kittypetapp2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new kittypet friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n",
+    "m_c": {
+        "age": ["adolescent"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "kittypet",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "respect"],
+            "amount": 30,
+            "log": {
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
+                }
+        }
+    ]
+},
     {
         "event_id": "gen_new_cat_anyrogue1",
         "location": ["any"],
@@ -845,7 +957,62 @@
             }
         ]
     },
-
+        {
+    "event_id": "gen_new_cat_rogueapp1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 4,
+    "event_text": "m_c finds a young cat who asks to join the Clan. The rogue is welcomed into the Clan and renamed n_c:0.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "rogue",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 20,
+            "log": {
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
+                }
+        }
+    ]
+},
+    {
+    "event_id": "gen_new_cat_rogueapp2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new rogue friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n",
+    "m_c": {
+        "age": ["adolescent"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "rogue",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "respect"],
+            "amount": 30,
+            "log": {
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
+                }
+        }
+    ]
+},
     {
         "event_id": "gen_new_cat_anyotherclancat1",
         "location": ["any"],
