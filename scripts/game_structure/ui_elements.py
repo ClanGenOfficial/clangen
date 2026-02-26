@@ -2,7 +2,6 @@ import math
 from functools import lru_cache
 from math import ceil
 from typing import (
-    Tuple,
     Optional,
     List,
     Union,
@@ -13,8 +12,8 @@ import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer, IContainerLikeInterface, UIElement, ObjectID
-from pygame_gui.core.gui_type_hints import RectLike, Coordinate
-from pygame_gui.core.interfaces import IUIManagerInterface, IUIElementInterface
+from pygame_gui.core.gui_type_hints import RectLike
+from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.cat_relations.enums import RelType, RelTier
@@ -32,342 +31,6 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
-
-
-class UIModifiedScrollingContainer(
-    pygame_gui.elements.UIScrollingContainer, IContainerLikeInterface
-):
-    def __init__(
-        self,
-        relative_rect: pygame.Rect,
-        manager=None,
-        starting_height: int = 1,
-        container=None,
-        object_id=None,
-        visible: int = 1,
-        allow_scroll_x: bool = False,
-        allow_scroll_y: bool = False,
-        should_grow_automatically=True,
-        anchors=None,
-    ):
-        self.scroll_bar_starting_height = 1
-
-        super().__init__(
-            relative_rect=relative_rect,
-            manager=manager,
-            starting_height=starting_height,
-            container=container,
-            object_id=object_id,
-            visible=visible,
-            allow_scroll_x=allow_scroll_x,
-            allow_scroll_y=allow_scroll_y,
-            should_grow_automatically=should_grow_automatically,
-            anchors=anchors,
-        )
-        self.scroll_bar_starting_height = self.get_top_layer()
-        if self.allow_scroll_y:
-            self.vert_scroll_bar.kill()
-            self.vert_scroll_bar = None
-
-            self.scroll_bar_width = self._get_scroll_bar_width()
-            scroll_bar_rect = pygame.Rect(
-                -self.scroll_bar_width,
-                0,
-                self.scroll_bar_width,
-                self.relative_rect.height,
-            )
-
-            self.vert_scroll_bar = UIImageVerticalScrollBar(
-                relative_rect=scroll_bar_rect,
-                visible_percentage=1.0,
-                manager=self.ui_manager,
-                container=self._root_container,
-                parent_element=self,
-                starting_height=self.scroll_bar_starting_height,
-                anchors={
-                    "left": "right",
-                    "right": "right",
-                    "top": "top",
-                    "bottom": "bottom",
-                },
-                visible=False,
-            )
-            self.join_focus_sets(self.vert_scroll_bar)
-
-            self.vert_scroll_bar.set_container_this_will_scroll(
-                self.scrollable_container
-            )
-
-        if self.allow_scroll_x:
-            self.horiz_scroll_bar.kill()
-            self.horiz_scroll_bar = None
-
-            self.scroll_bar_height = self._get_scroll_bar_height()
-
-            scroll_bar_rect = pygame.Rect(
-                0,
-                -self.scroll_bar_height,
-                self.relative_rect.width,
-                self.scroll_bar_height,
-            )
-            self.horiz_scroll_bar = UIModifiedHorizScrollBar(
-                relative_rect=scroll_bar_rect,
-                visible_percentage=1.0,
-                manager=self.ui_manager,
-                container=self._root_container,
-                parent_element=self,
-                anchors={
-                    "left": "left",
-                    "right": "right",
-                    "top": "bottom",
-                    "bottom": "bottom",
-                },
-                visible=True,
-                starting_height=self.scroll_bar_starting_height,
-            )
-            self.horiz_scroll_bar.set_dimensions((self.relative_rect.width, 0))
-            self.horiz_scroll_bar.set_relative_position((0, 0))
-            self.horiz_scroll_bar.set_container_this_will_scroll(
-                self.scrollable_container
-            )
-            self.join_focus_sets(self.horiz_scroll_bar)
-
-    def set_view_container_dimensions(self, dimensions: Coordinate):
-        self._view_container.set_dimensions(dimensions)
-
-    def set_dimensions(self, dimensions, clamp_to_container: bool = False):
-        super().set_dimensions(dimensions, clamp_to_container)
-
-    def on_contained_elements_changed(self, target: IUIElementInterface) -> None:
-        """
-        Update the positioning of the contained elements of this container. To be called when one of the contained
-        elements may have moved, been resized or changed its anchors.
-
-        :param target: the UI element that has been benn moved resized or changed its anchors.
-        """
-        self.scrollable_container.on_contained_elements_changed(target)
-
-    def _sort_out_element_container_scroll_bars(self):
-        """
-        This creates, re-sizes or removes the scrollbars after resizing, but not after the scroll
-        bar has been moved. Instead, it tries to keep the scrollbars in the same approximate position
-        they were in before resizing
-        """
-        self.scroll_bar_width = self._get_scroll_bar_width()
-        super()._sort_out_element_container_scroll_bars()
-
-        if self.vert_scroll_bar:
-            self.vert_scroll_bar.change_layer(self.scroll_bar_starting_height)
-            self.vert_scroll_bar.show()
-
-        if self.horiz_scroll_bar:
-            self.horiz_scroll_bar.change_layer(self.scroll_bar_starting_height)
-            self.horiz_scroll_bar.show()
-
-    def _check_scroll_bars(self) -> Tuple[bool, bool]:
-        """
-        Check if we need a horizontal or vertical scrollbar.
-        """
-        self.scroll_bar_width = 0
-        self.scroll_bar_height = 0
-        need_horiz_scroll_bar = False
-        need_vert_scroll_bar = False
-
-        if (
-            self.scrolling_height > self._view_container.rect.height
-            or self.scrollable_container.relative_rect.top != 0
-        ) and self.allow_scroll_y:
-            need_vert_scroll_bar = True
-            self.scroll_bar_width = self._get_scroll_bar_width()
-
-        # Need to subtract scrollbar width here to account for when the above statement evaluated to True
-        if (
-            self.scrolling_width
-            > self._view_container.rect.width - self.scroll_bar_width
-            or self.scrollable_container.relative_rect.left != 0
-        ) and self.allow_scroll_x:
-            need_horiz_scroll_bar = True
-            self.scroll_bar_height = self._get_scroll_bar_height()
-
-            # Needs a second check for the case where we didn't need the vertical scroll bar until after creating a
-            # horizontal scroll bar
-            if (
-                self.scrolling_height
-                > self._view_container.rect.height - self.scroll_bar_height
-                or self.scrollable_container.relative_rect.top != 0
-            ) and self.allow_scroll_y:
-                need_vert_scroll_bar = True
-                self.scroll_bar_width = self._get_scroll_bar_width()
-
-        self._calculate_scrolling_dimensions()
-        return need_horiz_scroll_bar, need_vert_scroll_bar
-
-    def _get_scroll_bar_width(self) -> int:
-        return ui_scale_value(20) + 4
-
-    def _get_scroll_bar_height(self) -> int:
-        return ui_scale_value(18) + 2
-
-    def are_contents_hovered(self) -> bool:
-        """
-        Are any of the elements in the container hovered? Used for handling mousewheel events.
-
-        :return: True if one of the elements is hovered, False otherwise.
-        """
-        for element in self:
-            if any(sub_element.hovered for sub_element in element.get_focus_set()):
-                return True
-            elif (
-                isinstance(element, IContainerLikeInterface)
-                and element.are_contents_hovered()
-            ):
-                return True
-        return False
-
-
-class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
-    def __init__(
-        self,
-        relative_rect: pygame.Rect,
-        visible_percentage: float,
-        manager=None,
-        container=None,
-        parent_element=None,
-        object_id=None,
-        anchors=None,
-        visible: int = 1,
-        starting_height: int = 1,
-    ):
-        super().__init__(
-            relative_rect=relative_rect,
-            visible_percentage=visible_percentage,
-            manager=manager,
-            container=container,
-            parent_element=parent_element,
-            object_id=object_id,
-            anchors=anchors,
-            visible=visible,
-        )
-
-        self.scroll_wheel_speed = 100
-        self.sliding_button.change_layer(starting_height)
-        self.button_height = 16
-        self.arrow_button_height = self.button_height
-        self.top_button.kill()
-        self.top_button = UIImageButton(
-            ui_scale(pygame.Rect((0, 0), (16, 16))),
-            text="",
-            manager=self.ui_manager,
-            container=self.button_container,
-            starting_height=starting_height,
-            parent_element=self,
-            object_id="#vertical_slider_up_arrow_button",
-            anchors={
-                "centerx": "centerx",
-            },
-        )
-
-        self.bottom_button.kill()
-        bottom_button_rect = ui_scale(pygame.Rect((0, 0), (16, 16)))
-        bottom_button_rect.bottomleft = (0, 0)
-        self.bottom_button = UIImageButton(
-            bottom_button_rect,
-            text="",
-            manager=self.ui_manager,
-            container=self.button_container,
-            starting_height=starting_height,
-            parent_element=self,
-            object_id="#vertical_slider_down_arrow_button",
-            anchors={
-                "bottom": "bottom",
-                "centerx": "centerx",
-            },
-        )
-        del bottom_button_rect
-
-        self.sliding_button.kill()
-        scroll_bar_height = max(
-            5, int(self.scrollable_height * self.visible_percentage)
-        )
-        self.sliding_button = pygame_gui.elements.UIButton(
-            pygame.Rect(
-                (
-                    int(self.sliding_rect_position[0]),
-                    int(self.sliding_rect_position[1]),
-                ),
-                (self.background_rect.width, scroll_bar_height),
-            ),
-            "",
-            self.ui_manager,
-            container=self.button_container,
-            starting_height=starting_height,
-            parent_element=self,
-            object_id="#sliding_button",
-            anchors={"left": "left", "right": "right", "top": "top", "bottom": "top"},
-        )
-
-        self.join_focus_sets(self.sliding_button)
-        self.sliding_button.set_hold_range((100, self.background_rect.height))
-
-    def set_visible_percentage(self, percentage: float):
-        super().set_visible_percentage(percentage)
-        self.scroll_wheel_speed = (1 / self.visible_percentage) * ui_scale_value(15)
-
-    def _check_should_handle_mousewheel_event(self) -> bool:
-        def recursive_check_if_ignore(element):
-            """
-            If this is TRUE, we should ignore the scroll. This just helps with shortcutting
-            :param element: The UIElement to check
-            :return: True to ignore, False if we should care
-            """
-            if (
-                isinstance(element, (UIScrollingDropDown, UIScrollingButtonList))
-                and element.are_contents_hovered()
-            ):
-                return True
-            elif isinstance(element, IContainerLikeInterface):
-                for sub_element in element:
-                    if recursive_check_if_ignore(sub_element):
-                        return True
-            return False
-
-        # inverting the outcome of that
-        if any(recursive_check_if_ignore(ele) for ele in self._container_to_scroll):
-            return False
-        else:
-            return (
-                self._container_to_scroll
-                and self._container_to_scroll.are_contents_hovered()
-            ) or self._check_is_focus_set_hovered()
-
-
-class UIModifiedHorizScrollBar(pygame_gui.elements.UIHorizontalScrollBar):
-    def __init__(
-        self,
-        relative_rect: RectLike,
-        visible_percentage: float,
-        manager,
-        container,
-        parent_element,
-        anchors,
-        visible,
-        starting_height=1,
-    ):
-        super().__init__(
-            relative_rect,
-            visible_percentage,
-            manager=manager,
-            container=container,
-            parent_element=parent_element,
-            anchors=anchors,
-            visible=visible,
-        )
-
-        self.button_width = ui_scale_value(15)
-        self.arrow_button_width = self.button_width
-        self.sliding_button.change_layer(starting_height + 1)
-
-        self.rebuild()
 
 
 class UIRelationStatusFillBar(pygame_gui.elements.UIStatusBar):
@@ -867,12 +530,15 @@ class UICatListDisplay(UIContainer):
         anchors: Optional[dict] = None,
         rows: int = None,
         show_names: bool = False,
+        tool_tip_text_list: list = None,
         tool_tip_name: bool = False,
         tool_tip_nutrition: bool = False,
+        custom_sprites_object_id: str = None,
         visible: bool = True,
         text_theme="#cat_list_text",
         y_px_between: int = None,
         allow_selection: bool = False,
+        hover_input_only: bool = False,
     ):
         """
         Creates and displays a list of click-able cat sprites.
@@ -920,8 +586,10 @@ class UICatListDisplay(UIContainer):
         self.prev_button = prev_button
         self.first_button = first_button
         self.last_button = last_button
+        self.tool_tip_text = tool_tip_text_list
         self.tool_tip_name = tool_tip_name
         self.tool_tip_nutrition = tool_tip_nutrition
+        self.custom_sprites_object_id = custom_sprites_object_id
         self.text_theme = text_theme
         self.allow_selection = allow_selection
 
@@ -1095,8 +763,11 @@ class UICatListDisplay(UIContainer):
             )
         elif self.tool_tip_name:
             tooltip_text = str(kitty.name)
+        elif self.tool_tip_text:
+            tooltip_text = self.tool_tip_text[i]
         else:
             tooltip_text = None
+
         if self.allow_selection:
             self.selection_boxes[f"sprite{i}"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((0, 15), (56, 56))),
@@ -1114,7 +785,9 @@ class UICatListDisplay(UIContainer):
             cat_id=kitty.ID,
             mask=None,
             container=container,
-            object_id=f"#sprite{str(i)}",
+            object_id=f"#cat_sprite"
+            if not self.custom_sprites_object_id
+            else self.custom_sprites_object_id,
             tool_tip_text=tooltip_text,
             starting_height=1,
             anchors={"centerx": "centerx"},
@@ -1215,102 +888,6 @@ class UICatListDisplay(UIContainer):
                     self.selection_boxes[sprite].hide()
 
 
-class UIImageHorizontalSlider(pygame_gui.elements.UIHorizontalSlider):
-    """
-    a subclass of UIHorizontalSlider, this is really only meant for one size and appearance of slider, though could
-    be modified to allow for more customizability.  As we currently only use horizontal sliders in one spot and I
-    don't foresee future additional sliders, I will leave it as is for now.
-    """
-
-    def __init__(
-        self,
-        relative_rect,
-        start_value,
-        value_range,
-        click_increment=None,
-        object_id=None,
-        manager=None,
-        anchors=None,
-    ):
-        super().__init__(
-            relative_rect=relative_rect,
-            start_value=start_value,
-            value_range=value_range,
-            click_increment=click_increment,
-            object_id=object_id,
-            manager=manager,
-            anchors=anchors,
-        )
-
-        self.sliding_button_width = ui_scale_value(30)
-        self.arrow_button_width = ui_scale_value(self.arrow_button_width)
-
-        self.scrollable_width = (
-            self.background_rect.width
-            - self.sliding_button_width
-            - (2 * self.arrow_button_width)
-        )
-        self.right_limit_position = self.scrollable_width
-        self.scroll_position = self.scrollable_width / 2
-
-        # kill the sliding button that the UIHorizontalSlider class makes, then make it again
-        self.sliding_button.kill()
-        self.sliding_button = UIImageButton(
-            pygame.Rect(
-                (0, 0), (self.sliding_button_width, self.background_rect.height)
-            ),
-            text="",
-            manager=self.ui_manager,
-            container=self.button_container,
-            starting_height=1,
-            parent_element=self,
-            object_id="#horizontal_slider_button",
-            anchors={"left": "left", "right": "left", "top": "top", "bottom": "bottom"},
-            visible=self.visible,
-        )
-
-        # reset start value, for some reason it defaults to 50 otherwise
-        self.set_current_value(start_value)
-        # set hold range manually since using UIImageButton breaks it?
-        self.sliding_button.set_hold_range((self.background_rect.width, 100))
-
-        # kill and remake the left button
-        self.left_button.kill()
-        self.left_button = UIImageButton(
-            pygame.Rect((0, 0), (self.arrow_button_width, self.background_rect.height)),
-            text="",
-            manager=self.ui_manager,
-            container=self.button_container,
-            starting_height=1,
-            parent_element=self,
-            object_id="#horizontal_slider_left_arrow_button",
-            anchors={"left": "left", "right": "left", "top": "top", "bottom": "bottom"},
-            visible=self.visible,
-        )
-
-        # kill and remake the right button
-        self.right_button.kill()
-        self.right_button = UIImageButton(
-            pygame.Rect(
-                (-self.arrow_button_width, 0),
-                (ui_scale_value(20), self.background_rect.height),
-            ),
-            text="",
-            manager=self.ui_manager,
-            container=self.button_container,
-            starting_height=1,
-            parent_element=self,
-            object_id="#horizontal_slider_right_arrow_button",
-            anchors={
-                "left": "right",
-                "right": "right",
-                "top": "top",
-                "bottom": "bottom",
-            },
-            visible=self.visible,
-        )
-
-
 class UIModifiedImage(pygame_gui.elements.UIImage):
     """
     UIImage class modified to prevent it from blocking hover actions in other elements
@@ -1391,149 +968,6 @@ class UIModifiedImage(pygame_gui.elements.UIImage):
             return True
         else:
             return False
-
-
-class UIScrollingButtonList(UIModifiedScrollingContainer):
-    def __init__(
-        self,
-        relative_rect,
-        item_list,
-        button_dimensions: tuple,
-        button_style=ButtonStyles.DROPDOWN,
-        multiple_choice: bool = True,
-        disable_selection: bool = False,
-        offset_scroll: bool = True,
-        manager=None,
-        container=None,
-        starting_height=1,
-        object_id=None,
-        anchors=None,
-        visible=1,
-        starting_selection: list = None,
-    ):
-        self.selected_list = (
-            [item for item in starting_selection if starting_selection]
-            if starting_selection
-            else []
-        )
-        self.button_style = button_style
-        child_rect_height = (
-            button_dimensions[1] if button_dimensions else relative_rect.height
-        )
-        child_rect_width = (
-            button_dimensions[0] if button_dimensions else relative_rect.width
-        )
-        self.child_rect = (child_rect_width, child_rect_height)
-
-        if offset_scroll:
-            relative_rect.width += 20
-
-        self.vert_scroll_bar = None
-
-        super().__init__(
-            relative_rect=ui_scale(relative_rect.copy()),
-            manager=manager,
-            container=container,
-            starting_height=starting_height,
-            object_id=object_id,
-            anchors=anchors,
-            visible=visible,
-            allow_scroll_y=True,
-        )
-        self.buttons = {}
-        self.multiple_choice = multiple_choice
-        self.disable_selection = disable_selection
-        self.total_button_height = (child_rect_height - 2) * len(item_list)
-        prev_element = None
-        for child in item_list:
-            y_pos = -2 if prev_element else 0
-
-            self.buttons[child] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, y_pos), self.child_rect)),
-                child,
-                get_button_dict(self.button_style, self.child_rect),
-                manager=manager,
-                object_id=f"@buttonstyles_{self.button_style.value}",
-                container=self,
-                anchors={"top_target": prev_element} if prev_element else None,
-            )
-            prev_element = self.buttons[child]
-
-        if disable_selection and starting_selection:
-            for button in starting_selection:
-                self.buttons[button].disable()
-
-    def hide(self):
-        super().hide()
-        if self.vert_scroll_bar:
-            self.vert_scroll_bar.hide()
-
-    def update(self, time_delta: float):
-        # updates our selection list
-        for name, button in self.buttons.items():
-            # multiple choice
-            if button.pressed and self.multiple_choice:
-                if self.disable_selection:
-                    button.disable()
-
-                (
-                    self.selected_list.remove(name)
-                    if name in self.selected_list
-                    else self.selected_list.append(name)
-                )
-                break
-
-            # single choice
-            elif button.pressed and not self.multiple_choice:
-                if name in self.selected_list:
-                    self.selected_list.clear()
-                else:
-                    self.selected_list.clear()
-                    self.selected_list.append(name)
-                if self.disable_selection:
-                    for other_button in self.buttons.values():
-                        other_button.enable()
-                    button.disable()
-                break
-
-        super().update(time_delta)
-
-        # don't ask me why the scroll bar doesn't obey the container's visibility, updating it after the super().update
-        # fixes it and that's all I want to know
-        if not self.visible:
-            self.vert_scroll_bar.hide()
-
-    def set_selected_list(self, new_list):
-        self.selected_list.clear()
-        self.selected_list = new_list
-        if self.disable_selection:
-            for item in self.selected_list:
-                self.buttons[item].disable()
-
-    def new_item_list(self, item_list):
-        """
-        Replace the old item_list with a new one. This kills and then rebuilds the child buttons.
-        """
-        # destroy old buttons and clear selected list
-        for button in self.buttons.values():
-            button.kill()
-        self.buttons.clear()
-        self.selected_list.clear()
-
-        prev_element = None
-        for child in item_list:
-            y_pos = -2 if prev_element else 0
-
-            self.buttons[child] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, y_pos), self.child_rect)),
-                child,
-                get_button_dict(self.button_style, self.child_rect),
-                manager=self.ui_manager,
-                object_id=f"@buttonstyles_{self.button_style.value}",
-                container=self,
-                anchors={"top_target": prev_element} if prev_element else None,
-            )
-            prev_element = self.buttons[child]
 
 
 class UIDropDown(UIDropDownContainer):
@@ -1757,128 +1191,6 @@ class UIDropDown(UIDropDownContainer):
                 break
 
         super().update(time_delta)
-
-
-class UIScrollingDropDown(UIDropDownContainer):
-    def __init__(
-        self,
-        relative_rect: RectLike,
-        manager: IUIManagerInterface,
-        parent_text: str,
-        item_list: list,
-        dropdown_dimensions: tuple,
-        container: UIContainer = None,
-        child_dimensions: tuple = None,
-        parent_style: ButtonStyles = ButtonStyles.DROPDOWN,
-        child_style: ButtonStyles = ButtonStyles.DROPDOWN,
-        offset_scroll: bool = True,
-        multiple_choice: bool = True,
-        disable_selection: bool = False,
-        starting_height: int = 1,
-        object_id: str = None,
-        visible: bool = True,
-        anchors: dict = None,
-        child_trigger_close=False,
-        starting_selection: list = None,
-    ):
-        """
-        Class to handle the creation and management of scrolling dropdowns. It's recommended to use the on_use()
-        screen func to check for changes to the selected_list attribute rather than handle_event()
-
-        :param relative_rect: The rect for the parent button, by default these dimensions are also used for the child
-        buttons. All positioning is based off this rect's position. THIS SHOULD NOT BE UI_SCALED
-        :param parent_text: The text to display on the parent button.
-        :param item_list: The list of options that will become child buttons.
-        :param child_dimensions: This overrides the relative_rect dimensions for the child buttons, allowing you to create
-        parent and child buttons with differing dimensions
-        :param dropdown_dimensions: The dimensions for the dropdown. If there are enough item_list items to exceed these
-         dimensions, then a scrollbar is created.
-        :param parent_style: The button style to use for the parent button, defaults to DROPDOWN
-        :param child_style: The button style to use for the child buttons, defaults to DROPDOWN
-        :param offset_scroll: If the scrollbar will sit to the side of the dropdown, rather than overlapping, defaults
-        to True
-        :param multiple_choice: If the selected_list should hold multiple selections, defaults to True
-        :param disable_selection: If the clicked child_button should be disabled, defaults to False
-        :param child_trigger_close: If clicking a child_button should close the dropdown, defaults to False
-        :param starting_selection: Items from item_list that should begin selected.
-        """
-
-        super().__init__(
-            relative_rect=ui_scale(relative_rect.copy()),
-            container=container,
-            manager=manager,
-            starting_height=starting_height,
-            object_id=object_id,
-            visible=visible,
-            anchors=anchors,
-            child_trigger_close=child_trigger_close,
-            starting_selection=starting_selection,
-        )
-
-        # create parent button
-        self.parent_button = UISurfaceImageButton(
-            ui_scale(relative_rect.copy()),
-            parent_text,
-            get_button_dict(parent_style, relative_rect.size),
-            manager=manager,
-            object_id=f"@buttonstyles_{parent_style.value}",
-            container=self,
-            anchors=anchors,
-        )
-
-        # create child buttons
-        if child_dimensions:
-            dimensions = child_dimensions
-        else:
-            dimensions = relative_rect.size
-
-        dropdown_rect = ((relative_rect.x, 0), dropdown_dimensions)
-        self.child_button_container = UIScrollingButtonList(
-            pygame.Rect(dropdown_rect),
-            button_dimensions=dimensions,
-            item_list=item_list,
-            manager=manager,
-            container=self,
-            anchors=(
-                {
-                    "top_target": self.parent_button,
-                    "left_target": self.parent_button.anchors.get("left_target"),
-                }
-                if self.parent_button.anchors.get("left_target")
-                else {"top_target": self.parent_button}
-            ),
-            offset_scroll=offset_scroll,
-            button_style=child_style,
-            multiple_choice=multiple_choice,
-            disable_selection=disable_selection,
-            starting_selection=starting_selection,
-        )
-        self.child_buttons = self.child_button_container.buttons.values()
-        self.child_button_dicts = self.child_button_container.buttons
-
-        self.close()
-
-    def update(self, time_delta: float):
-        if self.is_open and self.child_trigger_close:
-            for button in self.child_buttons:
-                if button.pressed:
-                    self.close()
-
-        super().update(time_delta)
-
-        self.selected_list = self.child_button_container.selected_list
-
-    def set_selected_list(self, new_list):
-        self.child_button_container.set_selected_list(new_list)
-
-    def new_item_list(self, item_list):
-        """
-        Replace the old item_list with a new one. This kills and then rebuilds the child buttons.
-        """
-        self.child_button_container.new_item_list(item_list)
-
-        self.child_buttons = self.child_button_container.buttons.values()
-        self.child_button_dicts = self.child_button_container.buttons
 
 
 class UICollapsibleContainer(

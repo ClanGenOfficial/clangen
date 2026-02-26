@@ -15,6 +15,8 @@ from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UICheckbox,
     UICatListDisplay,
+)
+from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
 )
 from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked

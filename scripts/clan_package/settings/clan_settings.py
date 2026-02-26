@@ -31,6 +31,11 @@ def load_clan_settings():
                 _load_settings[_old_save_conversion[key]] = value
                 _load_settings.pop(key)
 
+        # convert old clan focus saved settings into plain bools
+        for key in clan_settings:
+            if isinstance(_load_settings.get(key), list):
+                _load_settings[key] = _load_copy.get(key.replace("_", " "))[2]
+
         # loading settings from converted dict
         for key, value in _load_settings.items():
             if key in clan_settings:

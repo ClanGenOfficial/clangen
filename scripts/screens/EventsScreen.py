@@ -18,7 +18,7 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
+from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
 )
 from scripts.ui.elements.id_image_button import IDImageButton

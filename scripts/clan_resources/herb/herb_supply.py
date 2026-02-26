@@ -205,7 +205,9 @@ class HerbSupply:
             # a whole. also helps prevent death spiral when med cats aren't able to work.
             if not med_cats and not kitty.status.rank.is_any_medicine_rank():
                 break
+
             severities = []
+
             conditions = kitty.permanent_condition.copy()
             conditions.update(kitty.injuries)
             conditions.update(kitty.illnesses)
@@ -656,6 +658,23 @@ class HerbSupply:
                 return
 
             chosen_effect = choice(possible_effects)
+
+            if (
+                treatment_cat.is_disabled()
+                and name in treatment_cat.permanent_condition
+            ):
+                # if chance of death is already low, med cat doesn't treat
+                if condition.get("mortality") and condition.get("mortality", 0) > 20:
+                    self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
+                    return
+                # if chance of risk is already low, med cat doesn't treat
+                no_treatment = False
+                for risk in condition.get("risks", []):
+                    if risk["chance"] > 20:
+                        self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
+                        no_treatment = True
+                if no_treatment:
+                    return
 
             if game.clan.game_mode == "classic":
                 # classic always applies basic treatment, regardless of herb supply

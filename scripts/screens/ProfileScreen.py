@@ -34,6 +34,7 @@ from .enums import GameScreen
 from ..cat.enums import CatAge, CatRank, CatGroup, CatThought
 from ..cat.sprites.load_sprites import sprites
 from ..clan_package.settings import get_clan_setting
+from ..events import update_afterlife_temper
 from ..game_structure.game.save_load import safe_save
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
@@ -347,6 +348,7 @@ class ProfileScreen(Screens):
                         self.the_cat.get_new_thought(CatThought.ON_AFTERLIFE_CHANGE)
                         self.the_cat.pelt.rebuild_sprite = True
 
+                    update_afterlife_temper()
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()

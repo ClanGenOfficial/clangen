@@ -72,7 +72,6 @@ if TYPE_CHECKING:
 class Cat:
     """The cat class."""
 
-    dead_cats = []
     used_screen = screen
     current_pronoun_lang = None
 
@@ -121,8 +120,6 @@ class Cat:
 
     all_cats_list: List[Cat] = []
     ordered_cat_list: List[Cat] = []
-
-    grief_strings = {}
 
     def __init__(
         self,
@@ -653,12 +650,11 @@ class Cat:
         """
         return not self.dead
 
-    def die(self, body: bool = True):
+    def die(self, body: bool = True, grief_allowed: bool = True):
         """Kills cat.
-
-        body - defaults to True, use this to mark if the body was recovered so
+        :param body: defaults to True, use this to mark if the body was recovered so
         that grief messages will align with body status
-        - if it is None, a lost cat died and therefore not trigger grief, since the clan does not know
+        :param grief_allowed: defaults to True, set to False if death should not trigger grief
         """
         if (
             self.status.is_leader
@@ -701,9 +697,13 @@ class Cat:
 
         # handle grief
         # since we just yeeted them to their afterlife, we gotta check their previous group affiliation, not current
-        if game.clan and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN_ID:
+        if (
+            grief_allowed
+            and game.clan
+            and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN_ID
+        ):
             self.grief(body)
-            Cat.dead_cats.append(self)
+            game.dead_cats_to_grieve.append(self)
 
         # mark the sprite as outdated
         self.pelt.rebuild_sprite = True
@@ -732,8 +732,6 @@ class Cat:
         # Keep track is the body was treated with rosemary.
         body_treated = False
         text = None
-
-        load_grief_reactions()
 
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
@@ -804,13 +802,12 @@ class Cat:
                     continue
 
                 text = choice(possible_strings)
-                text += " " + choice(MINOR_MAJOR_REACTION["major"])
                 text = event_text_adjust(Cat, text=text, main_cat=self, random_cat=cat)
 
                 cat.get_ill("grief stricken", event_triggered=True, severity="major")
 
             # If major grief fails, but there are still very_high or high values,
-            # it can fail to to minor grief. If they have a family relation, bypass the roll.
+            # it can fail to minor grief. If they have a family relation, bypass the roll.
             elif (very_high_types or high_types) and (
                 family_relation != "general" or not int(random() * 5)
             ):
@@ -823,10 +820,12 @@ class Cat:
 
             if grief_type:
                 # Generate the event:
-                if cat.ID not in Cat.grief_strings:
-                    Cat.grief_strings[cat.ID] = []
+                if cat.ID not in game.clan.grief_strings:
+                    game.clan.grief_strings[cat.ID] = []
 
-                Cat.grief_strings[cat.ID].append((text, (self.ID, cat.ID), grief_type))
+                game.clan.grief_strings[cat.ID].append(
+                    (text, (self.ID, cat.ID), grief_type)
+                )
                 continue
 
             # Negative "grief" messages are just for flavor.
@@ -844,10 +843,12 @@ class Cat:
                 text = event_text_adjust(
                     Cat, choice(possible_strings), main_cat=self, random_cat=cat
                 )
-                if cat.ID not in Cat.grief_strings:
-                    Cat.grief_strings[cat.ID] = []
+                if cat.ID not in game.clan.grief_strings:
+                    game.clan.grief_strings[cat.ID] = []
 
-                Cat.grief_strings[cat.ID].append((text, (self.ID, cat.ID), "negative"))
+                game.clan.grief_strings[cat.ID].append(
+                    (text, (self.ID, cat.ID), "negative")
+                )
 
     def familial_grief(self, living_cat: Cat):
         """
@@ -924,7 +925,7 @@ class Cat:
                 and child.moons < 12
             ):
                 child.status.add_to_group(
-                    new_group_ID=CatGroup.PLAYER_CLAN_ID, age=self.age
+                    new_group_ID=CatGroup.PLAYER_CLAN_ID, age=child.age
                 )
                 child.add_to_clan()
                 child.history.add_beginning()
@@ -1652,7 +1653,7 @@ class Cat:
         moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
 
         # focus buff
-        moons_prior = constants.CONFIG["focus"]["rest and recover"][
+        moons_prior = constants.CONFIG["focus"]["rest_and_recover"][
             "moons_earlier_healed"
         ]
 
@@ -1660,9 +1661,9 @@ class Cat:
             self.healed_condition = True
             return False
 
-        # CLAN FOCUS! - if the focus 'rest and recover' is selected
+        # CLAN FOCUS! - if the focus 'rest_and_recover' is selected
         elif (
-            get_clan_setting("rest and recover")
+            get_clan_setting("rest_and_recover")
             and self.illnesses[illness]["duration"] + moons_prior - moons_with <= 0
         ):
             self.healed_condition = True
@@ -1694,7 +1695,7 @@ class Cat:
         moons_with = game.clan.age - self.injuries[injury]["moon_start"]
 
         # focus buff
-        moons_prior = constants.CONFIG["focus"]["rest and recover"][
+        moons_prior = constants.CONFIG["focus"]["rest_and_recover"][
             "moons_earlier_healed"
         ]
 
@@ -1706,10 +1707,10 @@ class Cat:
             self.healed_condition = True
             return False
 
-        # CLAN FOCUS! - if the focus 'rest and recover' is selected
+        # CLAN FOCUS! - if the focus 'rest_and_recover' is selected
         elif (
             not self.injuries[injury]["complication"]
-            and get_clan_setting("rest and recover")
+            and get_clan_setting("rest_and_recover")
             and self.injuries[injury]["duration"] + moons_prior - moons_with <= 0
         ):
             self.healed_condition = True
@@ -3536,21 +3537,6 @@ with open(
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-MINOR_MAJOR_REACTION: Optional[Dict] = None
-grief_lang: Optional[str] = None
-
-
-def load_grief_reactions():
-    global MINOR_MAJOR_REACTION, grief_lang
-    if grief_lang == i18n.config.get("locale"):
-        return
-    MINOR_MAJOR_REACTION = load_lang_resource(
-        "events/death/death_reactions/minor_major.json"
-    )
-    grief_lang = i18n.config.get("locale")
-
-
-load_grief_reactions()
 
 LEAD_CEREMONY_SC: Optional[Dict] = None
 LEAD_CEREMONY_DF: Optional[Dict] = None
