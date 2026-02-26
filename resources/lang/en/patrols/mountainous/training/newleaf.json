@@ -15,14 +15,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 3,
         "intro_text": "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest.",
@@ -34,18 +28,30 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about the behavior of eagles and sparrows."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about the behavior of eagles and sparrows."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -55,18 +61,30 @@
                 "exp": 15,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about the behavior of eagles and sparrows."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about the behavior of eagles and sparrows."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -83,139 +101,33 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat told to_cat the story of an eagle chick who became a warrior."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat told from_cat the story of an eagle chick who became a warrior."
+                        }
                     }
                 ],
                 "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 cannot believe that going near an eagle camp could ever possibly be safe and flatly refuses to go.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l can't get app1 to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/make/makes} too much noise, not understanding the importance and danger of the opportunity.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_train_eagles2",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "mtn_train_eagles",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest.",
-        "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "This close to the nest, the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's an opportunity to observe a side of the birds birds that app1 never expected to see - to learn their body language and watch them with their chicks.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l tells app1 to watch carefully as the parents arrive at and leave the nest - this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
             },
             {
                 "text": "s_c shows app1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive - if scary - lesson, and app1 learns a lot.",
@@ -228,18 +140,30 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how eagles rip apart their prey for their nestlings."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how eagles rip apart their prey for their nestlings."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -252,17 +176,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "like",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat refused to go near an eagle nest, ruining from_cat's plans for afternoon of training."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -273,17 +200,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat wouldn't take a training session about eagles seriously, ruining from_cat's lesson."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -306,18 +236,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 2],
+            "normal adult": [1, 4]
         },
         "frequency": 3,
         "intro_text": "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest.",
@@ -329,18 +249,30 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about the behavior of eagles and sparrows."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about the behavior of eagles and sparrows."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -350,18 +282,30 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about the behavior of eagles and sparrows."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about the behavior of eagles and sparrows."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -378,143 +322,33 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat told to_cat the story of an eagle chick who became a warrior."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat told from_cat the story of an eagle chick who became a warrior."
+                        }
                     }
                 ],
                 "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 cannot believe that going near an eagle camp could ever possibly be safe and flatly refuses to go. app2 tries to comfort {PRONOUN/app1/object}, but the patrol is called off.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l can't get app1 to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/make/makes} too much noise, not understanding the importance and danger of the opportunity. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_train_eagles4",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "mtn_train_eagles",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest.",
-        "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "This close to the nest, the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a parental side of them that the apprentices never expected.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l tells the apprentices to watch carefully as the parents arrive at and leave the nest - this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
             },
             {
                 "text": "s_c shows app1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive - if scary - lesson, and app1 learns a lot.",
@@ -527,18 +361,30 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat how eagles rip apart their prey for their nestlings."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat how eagles rip apart their prey for their nestlings."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -551,17 +397,36 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "like",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat refused to go near an eagle nest, ruining from_cat's plans for afternoon of training."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "app2 tried to comfort app1 when {PRONOUN/app1/subject} {VERB/app1/were/was} too nervous to go near an eagle nest for training."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -572,61 +437,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_train_snowcrunching3",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [
-            "rom_two_apps",
-            "romance",
-            "all_mentored"
-        ],
-        "patrol_art": "mtn_train_snowcrunching",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "The apprentices emerge into a pre-dawn world hushed and smothered in a dusting of snow! app1 and app2 tear off into the territory near camp, looking to play.",
-        "decline_text": "Their mentors are already up for the day and call them back. There'll be time to play later.",
-        "chance_of_success": 70,
-        "success_outcomes": [
-            {
-                "text": "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows {PRONOUN/app1/object}, only to immediately hear a crack and sink up to {PRONOUN/app2/poss} haunches in the fluffy stuff. Teasingly, app1 runs around near {PRONOUN/app2/object}, and it turns into a game of app2 romping through the snow trying to catch {PRONOUN/app1/object}.",
-                "exp": 10,
-                "relationships": [
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat wouldn't take a training session about eagles seriously, ruining from_cat's lesson."
+                        }
+                    },
                     {
                         "cats_to": [
                             "app1"
@@ -636,80 +461,14 @@
                         ],
                         "mutual": true,
                         "values": [
-                            "romance",
-                            "like",
-                            "comfort"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat goofed off during a lesson together."
+                        }
                     }
                 ],
-                "frequency": 4
-            },
-            {
-                "text": "app1 finds a snowdrift, and {PRONOUN/app1/subject} and app2 spend the early morning by turning it into a very respectable snow den, complete with a short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
-                "exp": 10,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "After a while romping around in the heavy snow, app1 complains of the cold seeping into {PRONOUN/app1/poss} fur. s_c digs a little hollow and invites {PRONOUN/app1/object} in to curl up with {PRONOUN/s_c/object}. Strictly for warmth, of course. They both stay there to watch the sun rise and cuddle. For warmth.",
-                "exp": 10,
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "loving",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "can_have_stat": [
-                    "app2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The apprentices find a promising patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, but now they have to clean it up too, all while trying to hide the fact that they disturbed it in the first place! It leaves them both irritated and grossed out.",
-                "exp": 0,
-                "frequency": 4
-            },
-            {
-                "text": "As they play in the snow, app1 falls over {PRONOUN/app1/self} embarrassingly, and suddenly decides {PRONOUN/app1/subject} {VERB/app1/remember/remembers} that {PRONOUN/app1/subject} {VERB/app1/have/has} other things {PRONOUN/app1/subject} should be doing.",
-                "exp": 0,
                 "frequency": 4
             }
         ]
@@ -730,14 +489,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ],
-            "apprentice": [
-                1,
-                6
-            ]
+            "normal adult": [1, 5],
+            "apprentice": [1, 5]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -749,7 +502,7 @@
         "decline_text": "Best not to be anywhere near a bear fresh from hibernation, the cats decide.",
         "success_outcomes": [
             {
-                "text": "Have they ever starved? Felt hunger gnawing their belly until it flips, filled it with water just to get a moment's relief, felt their limbs tremble with weakness as their mind desperately yearns for prey? How long did that take, a day, a quarter of a moon? Imagine several moons in a row without food. Stay away from bears emerging from hibernation.",
+                "text": "Have they ever starved? Felt hunger gnawing their belly, filled it with water just to get a moment's relief, felt their limbs tremble with weakness as their mind desperately yearns for prey? How long did that take, a day, a quarter of a moon? Imagine several moons in a row without food. Stay away from bears emerging from hibernation, p_l warns.",
                 "exp": 30,
                 "art": "gen_train_ghost",
                 "relationships": [
@@ -765,20 +518,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat listened to to_cat's warning about bears coming out of hibernation."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -801,7 +544,10 @@
                             "respect",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l reassured app1 when {PRONOUN/app1/subject} ran off during a lesson about hibernating bears."
+                        }
                     }
                 ],
                 "frequency": 4

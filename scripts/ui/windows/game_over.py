@@ -7,10 +7,8 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
 )
 from scripts.game_structure import game
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-    UITextBoxTweaked,
-)
+from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow

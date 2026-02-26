@@ -1963,7 +1963,8 @@
                 "text": "s_c spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
                 "exp": 20,
                 "stat_skill": [
-                    "SPEAKER,1"
+                    "SPEAKER,1",
+                    "STORY,1"
                 ],
                 "relationships": [
                     {
@@ -1985,7 +1986,7 @@
                 "exp": 20,
                 "stat_trait": [
                     "charismatic",
-                    "childish",
+                    "confident",
                     "playful",
                     "loving"
                 ],

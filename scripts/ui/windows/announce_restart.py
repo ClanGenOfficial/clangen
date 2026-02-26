@@ -3,9 +3,7 @@ import time
 
 import pygame
 
-from scripts.game_structure.ui_elements import (
-    UITextBoxTweaked,
-)
+from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
 
