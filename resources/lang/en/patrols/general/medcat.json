@@ -1579,7 +1579,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "app1 didn't want to confide in p_l about {PRONOUN/app1/poss} vision.",
+                            "cats_from": "from_cat didn't want to confide in to_cat about {PRONOUN/from_cat/poss} vision.",
                             "cats_to": "p_l could tell app1 was hiding something from {PRONOUN/p_l/object} on patrol."
                         }
                     }
@@ -1939,6 +1939,7 @@
                 "text": "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
                 "art": "gen_angry_cat_med",
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1965,13 +1966,13 @@
                             "cats_from": "from_cat feared to_cat's opinion of {PRONOUN/from_cat/object} after {PRONOUN/from_cat/subject} hissed at a StarClan spirit in front of {PRONOUN/to_cat/object}."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
                 "text": "p_l hisses at the unknown cat, fur bristling. The ghost vanishes, leaving p_l alone... for now.",
                 "exp": 30,
                 "art": "gen_angry_cat_med",
+                "frequency": 4,
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1998,8 +1999,7 @@
                             "cats_from": "from_cat feared to_cat's opinion of {PRONOUN/from_cat/object} after {PRONOUN/from_cat/subject} hissed at a StarClan spirit in front of {PRONOUN/to_cat/object}."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     },
@@ -4151,7 +4151,19 @@
                 "herbs": [
                     "random_herbs"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a lot of fun competing to gather the most herbs."
+                        }
+                    }
+                ]
             },
             {
                 "text": "Driven by the competition, p_l and app2 work extra hard and return to camp with a <i>lot</i> of herbs, to the surprise of their mentors.",
@@ -4161,7 +4173,29 @@
                     "many_herbs",
                     "random_herbs"
                 ],
-                "frequency": 1
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a lot of fun competing to gather the most herbs and were praised back at camp."
+                        }
+                    },
+                    {
+                        "cats_from": ["clan", "high_stable", "high_lawful"],
+                        "cats_to": ["patrol"],
+                        "mutual": true,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw to_cat return from herb-gathering laden with herbs."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The game is on! p_l and app2 are quite evenly matched, and both their mentors are pleased with the herbs they bring back.",
@@ -4171,14 +4205,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a lot of fun competing to gather the most herbs."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4192,14 +4226,14 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a lot of fun competing to gather the most herbs."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4209,21 +4243,35 @@
                 "exp": 10,
                 "stat_trait": [
                     "playful",
-                    "loving"
+                    "loving",
+                    "compassionate",
+                    "confident",
+                    "charismatic"
                 ],
+                "can_have_stat": ["p_l"],
                 "herbs": [
                     "random_herbs"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "cats_to": ["app2"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a lot of fun competing to gather the most herbs."
+                        }
+                    },
+                    {
+                        "cats_from": ["app2"],
+                        "cats_to": ["s_c"],
                         "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["like", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat noticed that to_cat let {PRONOUN/from_cat/object} win the herb-gathering contest."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4240,34 +4288,43 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "like",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat failed to find any herbs and bickered about whose fault it was."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c pranks app1 by scattering {PRONOUN/app1/poss} herb bounty. app1 huffs at s_c, annoyed, and runs off without a single herb.",
+                "text": "s_c pranks p_l by scattering {PRONOUN/p_l/poss} herb bounty. p_l huffs at s_c, annoyed, and runs off without a single herb.",
                 "exp": 0,
                 "can_have_stat": [
                     "app2"
                 ],
                 "stat_trait": [
                     "shameless",
-                    "troublesome"
+                    "troublesome",
+                    "childish",
+                    "arrogant",
+                    "rebellious"
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "respect",
-                            "comfort"
+                            "like"
                         ],
-                        "amount": -5
+                        "amount": -12,
+                        "log": {
+                            "cats_from": "from_cat was upset when to_cat scattered {PRONOUN/from_cat/poss} collected herbs just to win a stupid competition."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4275,7 +4332,19 @@
             {
                 "text": "Either it's bad luck, or app2's herb-gathering skills don't measure up. Disappointed, p_l stresses about how to explain this failed patrol to their mentors.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "mutual": false,
+                        "values": ["trust", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat didn't find any herbs on patrol, and from_cat silently blamed to_cat."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -4311,10 +4380,12 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat both harvested many herbs while on a herb-gathering patrol together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4333,9 +4404,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a little herb-gathering competition together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4353,9 +4427,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect"
+                            "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat becmae frustrated with each other after a failed herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4367,7 +4444,10 @@
                 "stat_trait": [
                     "strict",
                     "childish",
-                    "troublesome"
+                    "troublesome",
+                    "righteous",
+                    "cold",
+                    "arrogant"
                 ],
                 "relationships": [
                     {
@@ -4378,7 +4458,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat argued on a herb-gathering patrol after s_c blamed r_c for distracting {PRONOUN/s_c/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4404,7 +4487,7 @@
         },
         "frequency": 1,
         "intro_text": "p_l thinks r_c is a bit of a feather-brain, so when {PRONOUN/r_c/subject} {VERB/r_c/come/comes} up to p_l while p_l is gathering herbs and {VERB/r_c/suggest/suggests} replenishing the Clan's catmint supply with a gleam in {PRONOUN/r_c/poss} eye, p_l hesitates.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is}n't going to go after an herb renowned for the silliness it can cause with a cat {PRONOUN/p_l/subject} {VERB/p_l/dislike/dislikes}. It's simply a bad idea.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is}n't going to go after an herb renowned for causing silliness with a cat {PRONOUN/p_l/subject} {VERB/p_l/dislike/dislikes}. It's simply a bad idea.",
         "chance_of_success": 40,
         "relationship_constraint": [
             "dislikes"
@@ -4422,7 +4505,10 @@
                         "values": [
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "r_c and p_l passed a surprisingly pleasant herb-gathering patrol chatting, even though they found no catmint."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4443,7 +4529,10 @@
                         "values": [
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l and r_c enjoyed some catmint stems on a herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4462,7 +4551,10 @@
                         "values": [
                             "romance"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "r_c was pushy about going out herb-gathering with p_l, and p_l shut {PRONOUN/r_c/object} down."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4499,17 +4591,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "r_c noticed how hard p_l was working and comforted {PRONOUN/p_l/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4523,17 +4615,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "r_c feigned tiredness on patrol to help p_l take a break and praised all {PRONOUN/p_l/poss} hard work."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4553,17 +4645,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "r_c left a gift for p_l in {PRONOUN/p_l/poss} nest after noticing {PRONOUN/p_l/poss} fatigue."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4575,7 +4667,11 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "thoughtful"
+                    "thoughtful",
+                    "sincere",
+                    "wise",
+                    "calm",
+                    "charismatic"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -4585,17 +4681,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "p_l felt a huge weight lift off {PRONOUN/p_l/poss} shoulders after confiding in r_c.",
+                            "cats_to": "r_c was happy to lend an ear to p_l so {PRONOUN/p_l/subject} could vent about {PRONOUN/p_l/poss} stress."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4607,17 +4704,19 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "like",
-                            "respect",
                             "comfort",
-                            "trust"
+                            "trust",
+                            "romance"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c pushed p_l to talk about {PRONOUN/p_l/poss} exhaustion, and p_l snapped at {PRONOUN/r_c/object}.",
+                            "cats_to": "When r_c tried to lend a friendly ear to p_l, p_l snapped at {PRONOUN/r_c/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4653,17 +4752,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "r_c noticed how hard p_l was working and comforted {PRONOUN/p_l/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4677,17 +4776,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "r_c feigned tiredness on patrol to help p_l take a break and praised all {PRONOUN/p_l/poss} hard work."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4707,17 +4806,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "r_c left a gift for p_l in {PRONOUN/p_l/poss} nest after noticing {PRONOUN/p_l/poss} fatigue."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4729,7 +4828,11 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "thoughtful"
+                    "thoughtful",
+                    "sincere",
+                    "wise",
+                    "calm",
+                    "charismatic"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -4739,17 +4842,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "p_l felt a huge weight lift off {PRONOUN/p_l/poss} shoulders after confiding in r_c.",
+                            "cats_to": "r_c was happy to lend an ear to p_l so {PRONOUN/p_l/subject} could vent about {PRONOUN/p_l/poss} stress."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4761,17 +4865,19 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "like",
-                            "respect",
                             "comfort",
-                            "trust"
+                            "trust",
+                            "romance"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c pushed p_l to talk about {PRONOUN/p_l/poss} exhaustion, and p_l snapped at {PRONOUN/r_c/object}.",
+                            "cats_to": "When r_c tried to lend a friendly ear to p_l, p_l snapped at {PRONOUN/r_c/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4808,17 +4914,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l noticed how hard r_c was working and comforted {PRONOUN/r_c/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4832,17 +4938,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "p_l feigned tiredness on patrol to help r_c take a break and praised all {PRONOUN/r_c/poss} hard work."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4862,17 +4968,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "p_l left a gift for r_c in {PRONOUN/r_c/poss} nest after noticing {PRONOUN/r_c/poss} fatigue."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4884,7 +4990,11 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "thoughtful"
+                    "thoughtful",
+                    "sincere",
+                    "wise",
+                    "calm",
+                    "charismatic"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -4894,17 +5004,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "r_c felt a huge weight lift off {PRONOUN/r_c/poss} shoulders after confiding in s_c.",
+                            "cats_to": "s_c was happy to lend an ear to r_c so {PRONOUN/r_c/subject} could vent about {PRONOUN/r_c/poss} stress."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4916,17 +5027,19 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "like",
-                            "respect",
                             "comfort",
-                            "trust"
+                            "trust",
+                            "romance"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "p_l pushed r_c to talk about {PRONOUN/r_c/poss} exhaustion, and r_c snapped at {PRONOUN/p_l/object}.",
+                            "cats_to": "When p_l tried to lend a friendly ear to r_c, r_c snapped at {PRONOUN/p_l/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4954,7 +5067,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Smiling softly, s_c reassures app1 that {PRONOUN/s_c/subject} didn't feel ready to be a medicine cat, either, when {PRONOUN/s_c/subject} {VERB/s_c/were/was} an apprentice. s_c tells app1 a story from {PRONOUN/s_c/poss} own apprenticeship, when {PRONOUN/s_c/subject} accidentally swapped all the thyme for yarrow. Great StarClan was {PRONOUN/s_c/poss} mentor unhappy when all their patients started throwing up! Before long, app1 is laughing at s_c's own mishaps, {PRONOUN/app1/poss} own troubles forgotten.",
+                "text": "s_c reassures app1 with a smile that {PRONOUN/s_c/subject} didn't feel ready to be a medicine cat, either, when {PRONOUN/s_c/subject} {VERB/s_c/were/was} an apprentice. s_c tells app1 a story from {PRONOUN/s_c/poss} own apprenticeship, when {PRONOUN/s_c/subject} accidentally swapped all the thyme for yarrow. Great StarClan was {PRONOUN/s_c/poss} mentor unhappy when all their patients started throwing up! Before long, app1 is purring at s_c's own mishaps, {PRONOUN/app1/poss} own troubles forgotten.",
                 "exp": 20,
                 "stat_trait": [
                     "childish",
@@ -4974,21 +5087,25 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
                         "mutual": true,
                         "values": [
                             "like",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "s_c was glad to be able to cheer app1 up by recounting some of {PRONOUN/s_c/poss} own apprenticeship mishaps.",
+                            "cats_to": "app1 was cheered up a lot to hear about s_c's apprenticeship mishaps."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/s_c/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remember/remembers} that c_n trust {PRONOUN/s_c/object} to heal them, and so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
+                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/s_c/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remember/remembers} that c_n trust {PRONOUN/s_c/object} to heal them, so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
                 "exp": 20,
                 "stat_trait": [
                     "compassionate",
@@ -5001,7 +5118,6 @@
                     "calm",
                     "thoughtful",
                     "faithful",
-                    "righteous",
                     "responsible"
                 ],
                 "can_have_stat": [
@@ -5012,15 +5128,19 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "s_c was glad to be able to reassure app1 by sharing some of {PRONOUN/s_c/poss} own insecurities.",
+                            "cats_to": "app1 was reassured by s_c's admission of {PRONOUN/s_c/poss} insecurities."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5033,24 +5153,27 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l reassured app1 about {PRONOUN/app1/poss} role as a medicine cat apprentice."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Turning to face app1, s_c reminds {PRONOUN/app1/object} that {PRONOUN/app1/subject} {VERB/app1/were/was} chosen by <i>StarClan</i> - their ancestors know that app1 is good enough, so {PRONOUN/app1/subject} should, too. Smiling, app1 nods, raising {PRONOUN/app1/poss} tail with a new-found confidence.",
+                "text": "Turning to face app1, s_c reminds {PRONOUN/app1/object} that {PRONOUN/app1/subject} {VERB/app1/were/was} chosen by <i>StarClan</i> - their ancestors know that app1 is good enough, so {PRONOUN/app1/subject} should, too. Smiling, app1 nods, raising {PRONOUN/app1/poss} tail with newfound confidence.",
                 "exp": 20,
                 "stat_skill": [
-                    "STAR,0"
+                    "STAR,1"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -5060,21 +5183,25 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "s_c reassured app1 about {PRONOUN/app1/poss} role as a medicine cat apprentice and StarClan's faith in {PRONOUN/app1/object}.",
+                            "cats_to": "app1 was reassured to hear from s_c that StarClan chose {PRONOUN/app1/object} as a medicine cat apprentice."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Fine, s_c tells app1. Medicine cats had to work hard to learn the skills they needed - if app1 didn't want to spend moons memorising herbs, trying {PRONOUN/app1/poss} best and making mistakes, then {PRONOUN/app1/subject} should go find an easier role. Walking away from app1, s_c is pleased to hear the apprentice eagerly bounding after {PRONOUN/s_c/object}.",
+                "text": "Fine, s_c tells app1. Medicine cats had to work hard to learn the skills they needed - if app1 didn't want to spend moons memorizing herbs, trying {PRONOUN/app1/poss} best and making mistakes, then {PRONOUN/app1/subject} should go find an easier role. Walking away from app1, s_c is pleased to hear the apprentice eagerly bounding after {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "stat_trait": [
                     "ambitious",
@@ -5098,21 +5225,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
                         "values": [
                             "like",
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c motivated app1 to try harder in {PRONOUN/app1/poss} training."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Tail lashing, s_c snaps that {PRONOUN/s_c/subject} didn't train app1 just for them to give up. s_c had <i>chosen</i> app1 to be {PRONOUN/s_c/poss} apprentice, so app1 better pull {PRONOUN/app1/self} together and deal with it! Snapped out of {PRONOUN/app1/poss} gloom, app1 looks at {PRONOUN/app1/poss} intelligent, imposing mentor, and realises {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} right - s_c wouldn't have chosen just anycat to be {PRONOUN/s_c/poss} apprentice. s_c knew app1 could be a great medicine cat, and now app1 realised it, too.",
+                "text": "Tail lashing, s_c snaps that {PRONOUN/s_c/subject} didn't train app1 just for them to give up. s_c <i>chose</i> app1 to be {PRONOUN/s_c/poss} apprentice, so app1 better pull {PRONOUN/app1/self} together and deal with it! Snapped out of {PRONOUN/app1/poss} gloom, app1 looks at {PRONOUN/app1/poss} intelligent, imposing mentor and realizes {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} right - s_c wouldn't have chosen just anyone to be {PRONOUN/s_c/poss} apprentice. s_c knew app1 could be a great medicine cat, and now app1 realizes it, too.",
                 "exp": 20,
                 "stat_trait": [
                     "arrogant",
@@ -5120,7 +5250,8 @@
                     "confident",
                     "gloomy",
                     "vengeful",
-                    "sneaky"
+                    "sneaky",
+                    "righteous"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -5130,15 +5261,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
                         "values": [
                             "like",
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "s_c urged app1 to stay committed to {PRONOUN/app1/poss} training and work hard."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5160,15 +5294,19 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["app1"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
                         "values": [
                             "like",
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "s_c was glad to be able to cheer app1 up by reminding {PRONOUN/app1/object} how great {PRONOUN/app1/subject} {VERB/app1/are/is}.",
+                            "cats_to": "app1 was cheered up a lot by s_c's over-the-top praise."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5180,16 +5318,18 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat sought reassurance from to_cat but felt unsatisfied despite to_cat's efforts."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5250,11 +5390,13 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "like",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l explained the uses of mullein to r_c while they gathered herbs together."
+                        }
                     }
                 ],
                 "art": "gen_med_collectingmullein",
@@ -5283,16 +5425,18 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed gathering herbs together in companionable silence."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Though s_c may not always understand the path of a medicine cat, {PRONOUN/s_c/subject} wants p_l to know that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} proud of {PRONOUN/p_l/object} anyway, and is glad p_l is happy in {PRONOUN/p_l/poss} role. Surprised - but appreciative - of the reassurance, p_l smiles and promises s_c that just because they walk different paths doesn't mean {PRONOUN/p_l/subject}'ll stop needing s_c.",
+                "text": "Though s_c may not always understand the path of a medicine cat, {PRONOUN/s_c/subject} wants p_l to know that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} proud of {PRONOUN/p_l/object} anyway and glad p_l is happy in {PRONOUN/p_l/poss} role. p_l smiles and promises s_c that just because they walk different paths doesn't mean {PRONOUN/p_l/subject}'ll stop needing s_c.",
                 "exp": 20,
                 "stat_trait": [
                     "ambitious",
@@ -5324,17 +5468,19 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "s_c expressed pride in p_l for {PRONOUN/p_l/poss} role as a medicine cat."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Even as {PRONOUN/r_c/poss} kit grows, r_c will always see p_l as a mewling kit, always hungry for milk. r_c gazes fondly at p_l as {PRONOUN/p_l/subject} {VERB/p_l/sniff/sniffs} around, looking for herbs. It's just so wonderful seeing your kit grow up. Of course, it can be sad, but that's why r_c cherishes every moment {PRONOUN/r_c/subject} {VERB/r_c/spend/spends} with p_l.",
+                "text": "Even as {PRONOUN/r_c/poss} kit grows, r_c will always see p_l as a mewling kit, hungry for milk. r_c gazes fondly at p_l as {PRONOUN/p_l/subject} {VERB/p_l/sniff/sniffs} around, looking for herbs. It's just so wonderful seeing your kit grow up. Of course, it can be sad, but that's why r_c cherishes every moment {PRONOUN/r_c/subject} {VERB/r_c/spend/spends} with p_l.",
                 "exp": 20,
                 "herbs": [
                     "random_herbs"
@@ -5345,17 +5491,18 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "r_c reminisced on p_l's kithood days while they gathered herbs together."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c suddenly pauses, brightly suggesting a game for them to play - every time they see a herb, p_l had to teach s_c its uses, and, at the end of the patrol, p_l could give {PRONOUN/s_c/object} a quiz. If s_c got more than half the questions right, {PRONOUN/s_c/subject} {VERB/s_c/win/wins}! Pleased at the opportunity to both impart {PRONOUN/p_l/poss} herbal knowledge and spend time with {PRONOUN/p_l/poss} parent, the patrol seems to fly by all too quickly, with both cats having a great time.",
+                "text": "s_c suggests a game for them to play - every time they see a herb, p_l has to teach s_c its uses, and, at the end of the patrol, p_l will give {PRONOUN/s_c/object} a quiz. If s_c gets more than half the questions right, {PRONOUN/s_c/subject} {VERB/s_c/win/wins}! p_l is pleased at the opportunity to both impart {PRONOUN/p_l/poss} herbal knowledge and spend time with {PRONOUN/p_l/poss} parent, and the patrol flies by all too quickly.",
                 "exp": 20,
                 "stat_trait": [
                     "childish",
@@ -5372,15 +5519,19 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "s_c enjoyed learning about the uses of herbs from p_l while gathering herbs together.",
+                            "cats_to": "p_l enjoyed teaching s_c the uses of herbs while gathering herbs together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5388,7 +5539,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l tries to start a conversation about the herbs they're gathering, but after realising how uninterested r_c is, {PRONOUN/p_l/subject} quickly {VERB/p_l/trail/trails} off. Disappointed, the pair continue the patrol in a relatively awkward silence.",
+                "text": "p_l tries to start a conversation about the herbs they're gathering, but after realising how uninterested r_c is, {PRONOUN/p_l/subject} {VERB/p_l/trail/trails} off. The pair continues the patrol in awkward silence.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -5399,7 +5550,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had an awkward patrol gathering herbs together because r_c wasn't interested in chatting about herbs."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5424,7 +5578,7 @@
         "frequency": 2,
         "chance_of_success": 50,
         "intro_text": "p_l and app2 leave camp together to gather herbs and refresh c_n's stocks of some basic necessities. A short ways out of camp, app2 stops p_l and asks, with a glint in {PRONOUN/app2/poss} eye, if p_l will show {PRONOUN/app2/object} where deathberries grow on c_n's territory.",
-        "decline_text": "p_l hastily makes up an excuse to return to camp, and app2's curiosity remains unsatisfied.",
+        "decline_text": "p_l makes up an excuse to return to camp, and app2's curiosity remains unsatisfied.",
         "success_outcomes": [
             {
                 "text": "p_l snorts; {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't so mouse-brained that {PRONOUN/p_l/subject}'ll tell app2 where to find deadly poison. Especially not when they have a task to accomplish. app2 sighs and resigns {PRONOUN/app2/self} to gathering regular old herbs.",
@@ -5440,7 +5594,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat felt uneasy when to_cat asked where deathberries grow."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -5460,7 +5617,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat felt uneasy when to_cat asked where deathberries grow."
+                        }
                     }
                 ],
                 "art": "fst_med_herblocation2",
@@ -5480,13 +5640,16 @@
                 ],
                 "relationship": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["s_c"],
+                        "cat_to": ["s_c"],
+                        "cat_from": ["app2"],
                         "values": [
-                            "trust",
-                            "comfort"
+                            "like",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -12,
+                        "log": {
+                            "cats_from": "from_cat was angered when to_cat refused to show {PRONOUN/from_cat/object} where deathberries grow and patronized {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -5510,12 +5673,15 @@
                 "relationship": [
                     {
                         "cat_to": ["app2"],
-                        "cat_from": ["s_c"],
+                        "cat_from": ["p_l"],
                         "values": [
                             "trust",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat felt uneasy when to_cat asked where deathberries grow."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -5534,7 +5700,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l showed app2 where the deathberries grow on the territory."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -5543,7 +5712,8 @@
                 "text": "Come on, s_c persuades {PRONOUN/p_l/object}. Just one little look? A look isn't harming any cat. No cat's gotten poisoned from <i>looking</i> at deathberries, right? p_l caves and shows s_c the way to the deathberry bush, but neither apprentice manages to actually gather any of the herbs they were looking for along the way.",
                 "exp": 0,
                 "stat_skill": [
-                    "SPEAKER,1"
+                    "SPEAKER,0",
+                    "CLEVER,0"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -5556,7 +5726,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "app2 convinced p_l to show {PRONOUN/app2/object} where the deathberries grow on the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5579,7 +5752,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "app2 convinced p_l to show {PRONOUN/app2/object} where the deathberries grow on the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5588,8 +5764,8 @@
                 "text": "p_l agrees hesitantly, darting looks back at app2 as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to the bushes. The glistening red berries reflect in app2's eyes, obscuring whatever thoughts might be swirling within. p_l shivers and suggests they get back to camp before any cat notices they're in the wrong part of the territory.",
                 "exp": 0,
                 "stat_skill": [
-                    "DARK,1",
-                    "GHOST,1"
+                    "DARK,0",
+                    "GHOST,0"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -5603,7 +5779,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "p_l felt extremely uneasy when s_c showed a strong interest in deathberries."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5628,7 +5807,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "p_l felt extremely uneasy when s_c showed a strong interest in deathberries."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5657,18 +5839,21 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "app2 bullied p_l into showing {PRONOUN/app2/object} where deathberries grow on the territory."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
                 "frequency": 4
             },
             {
-                "text": "p_l tentatively leads app2 to the deathberry bush, and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
+                "text": "p_l tentatively leads app2 to the deathberry bush and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
                 "exp": 0,
                 "stat_skill": [
-                    "INSIGHTFUL,1",
-                    "HEALER,1"
+                    "INSIGHTFUL,0",
+                    "HEALER,0"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -5679,17 +5864,20 @@
                         "cat_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "comfort"
+                            "trust",
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l gained respect for app2's maturity when p_l showed {PRONOUN/app2/object} where the deathberries grow on the territory and app2 took it seriously."
+                        }
                     }
                 ],
                 "art": "gen_speaking_cat_app",
                 "frequency": 4
             },
             {
-                "text": "p_l tentatively leads app2 to the deathberry bush, and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
+                "text": "p_l tentatively leads app2 to the deathberry bush and is relieved when app2 takes in the sight with the appropriate awe and respect. {PRONOUN/app2/subject/CAP} {VERB/app2/ask/asks} if p_l ever uses deathberries in healing. p_l shudders. That kind of healing is more advanced than where {PRONOUN/p_l/subject} {VERB/p_l/are/is} in {PRONOUN/p_l/poss} training. They may have wasted the time they were meant to use herb-gathering, but p_l has a new appreciation for app2's maturity.",
                 "exp": 0,
                 "stat_trait": [
                     "thoughtful",
@@ -5706,17 +5894,20 @@
                         "cat_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "comfort"
+                            "trust",
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l gained respect for app2's maturity when p_l showed {PRONOUN/app2/object} where the deathberries grow on the territory and app2 took it seriously."
+                        }
                     }
                 ],
                 "art": "gen_speaking_cat_app",
                 "frequency": 4
             },
             {
-                "text": "p_l is unsettled by the request, but leads {PRONOUN/app2/object} to the deathberry bushes anyway. When {PRONOUN/p_l/subject} {VERB/p_l/look/looks} back, p_l is startled to see app2's fur bushed out and {PRONOUN/app2/poss} eyes wide, staring at the berries. app2's a talented fighter, but none of {PRONOUN/app2/poss} skills can protect {PRONOUN/app2/object} from the threat of poison. With this insight into {PRONOUN/p_l/poss} Clanmate gained, p_l leads {PRONOUN/app2/object} away.",
+                "text": "p_l is unsettled by the request but leads {PRONOUN/app2/object} to the deathberry bushes anyway. When {PRONOUN/p_l/subject} {VERB/p_l/look/looks} back, p_l is startled to see app2's fur bushed out and {PRONOUN/app2/poss} eyes wide, staring at the berries. app2's a talented fighter, but none of {PRONOUN/app2/poss} skills can protect {PRONOUN/app2/object} from the threat of poison. With this insight into {PRONOUN/p_l/poss} Clanmate gained, p_l leads {PRONOUN/app2/object} away.",
                 "exp": 0,
                 "stat_trait": [
                     "fierce",
@@ -5727,7 +5918,7 @@
                     "bloodthirsty"
                 ],
                 "stat_skill": [
-                    "FIGHTER,1"
+                    "FIGHTER,0"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -5738,15 +5929,19 @@
                         "cat_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "like",
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l gained an understanding of how app2 thinks when p_l showed {PRONOUN/app2/object} where deathberries grow and app2 seemed frightened."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "p_l knows app2 probably doesn't have any nefarious plans in mind, so {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to where the yew grows. To p_l's horror, app2 cheerfully announces {PRONOUN/app2/subject}{VERB/app2/'ve/'s} always been curious how they'd taste, and plucks a few berries with {PRONOUN/app2/poss} mouth. p_l tackles {PRONOUN/app2/object}, forcing {PRONOUN/app2/object} to spit them out right away, and takes {PRONOUN/app2/object} back to camp for immediate medical attention.",
+                "text": "p_l knows app2 probably doesn't have any nefarious plans in mind, so {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} {PRONOUN/app2/object} to where the yew grows. To p_l's horror, app2 cheerfully announces {PRONOUN/app2/subject}{VERB/app2/'ve/'s} always been curious how they'd taste and plucks a few berries with {PRONOUN/app2/poss} mouth. p_l tackles {PRONOUN/app2/object}, forcing {PRONOUN/app2/object} to spit them out right away, and takes {PRONOUN/app2/object} back to camp for immediate medical attention.",
                 "exp": 0,
                 "stat_trait": [
                     "childish"
@@ -5762,7 +5957,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "p_l learned that app2 is an impulsive mouse-brain when p_l showed {PRONOUN/app2/object} where deathberries grow and app2 immediately ate some."
+                        }
                     }
                 ],
                 "injury": [
@@ -5799,7 +5997,7 @@
         },
         "frequency": 2,
         "chance_of_success": 50,
-        "intro_text": "r_c joins p_l to gather juniper berries. {PRONOUN/r_c/subject/CAP} {VERB/r_c/station/stations} {PRONOUN/r_c/self} by the edge of the clearing as p_l gathers from a bush. r_c's fur bushes up when {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a snake slithering closer!",
+        "intro_text": "r_c joins p_l to gather juniper berries and {VERB/r_c/station/stations} {PRONOUN/r_c/self} by the edge of the clearing while p_l gathers from a bush. r_c's fur bushes up when {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a snake slithering closer!",
         "decline_text": "r_c squints and realizes it's actually a curvy stick, rolled along by a breeze.",
         "success_outcomes": [
             {
@@ -5814,28 +6012,27 @@
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "trust",
-                            "like"
+                            "respect",
+                            "like",
+                            "romance"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "r_c scared off a snake and saved p_l while p_l was gathering juniper berries."
+                        }
                     },
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": [
+                            "like",
                             "romance"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "r_c scared off a snake and saved p_l while p_l was gathering juniper berries."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_warrior_med",
@@ -5856,32 +6053,31 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["r_c"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "trust",
-                            "like"
-                        ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["p_l"],
-                        "mutual": true,
-                        "values": [
+                            "respect",
+                            "like",
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "s_c killed a snake and saved p_l while p_l was gathering juniper berries."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c killed a snake and saved p_l while p_l was gathering juniper berries."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_warrior_med",
@@ -5901,7 +6097,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "r_c alerted p_l to a snake while p_l was gathering juniper berries."
+                        }
                     },
                     {
                         "cats_to": ["r_c"],
@@ -5909,10 +6108,13 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "trust",
+                            "respect",
                             "romance"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat's heart fluttered while hiding in a bush with r_c from a snake."
+                        }
                     }
                 ],
                 "art": "gen_med_romanticstroll_v1",
@@ -5933,23 +6135,29 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["p_l"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "s_c saved r_c from a snake while gathering herbs on patrol."
+                        }
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
                             "romance",
                             "like",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "r_c was flustered by s_c's surprising reflexes when s_c killed a snake lurking around a juniper bush during a herb-gathering patrol."
+                        }
                     }
                 ],
                 "art": "gen_med_romanticstroll_v2",
@@ -5970,7 +6178,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "Despite being there to stand guard, r_c left p_l to face a snake on {PRONOUN/p_l/poss} own."
+                        }
                     }
                 ],
                 "art": "gen_train_argueWM",
@@ -5998,7 +6209,10 @@
                             "trust",
                             "like"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "Despite being there to stand guard, r_c ran off at the sight of a non-venomous snake."
+                        }
                     }
                 ],
                 "art": "gen_train_argueWM",
@@ -6049,7 +6263,10 @@
                             "like",
                             "romance"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "r_c didn't hesitate to throw {PRONOUN/r_c/self} in front of a striking snake to save p_l."
+                        }
                     },
                     {
                         "cats_to": ["r_c"],
@@ -6061,7 +6278,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l was breathless when r_c threw {PRONOUN/r_c/self} in front of a striking snake to save {PRONOUN/p_l/poss} life."
+                        }
                     }
                 ],
                 "art": "running_med",
@@ -6086,7 +6306,10 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "r_c gave {PRONOUN/r_c/poss} life to save p_l from a striking snake, and p_l will never forget {PRONOUN/r_c/poss} sacrifice."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6119,7 +6342,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "r_c was too slow to save p_l from a striking snake on patrol."
+                        }
                     }
                 ],
                 "art": "running_warrior",
@@ -6168,7 +6394,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     }
                 ],
                 "art": "gen_med_warappmedapp_herbcontest",
@@ -6190,7 +6419,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "app2 was impressed by the great herb patch app1 found."
+                        }
                     },
                     {
                         "cats_to": ["app1"],
@@ -6200,7 +6432,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     }
                 ],
                 "art": "gen_med_warappmedapp_herbcontest",
@@ -6210,8 +6445,8 @@
                 "text": "s_c leads app2 to a plentiful, herb-rich area and harvests them with the practiced ease of a full medicine cat. app2 wonders what the point of {PRONOUN/app2/object} being there is if s_c can do it all {PRONOUN/s_c/self}.",
                 "exp": 30,
                 "stat_skill": [
-                    "HEALER,1",
-                    "SENSE,1"
+                    "HEALER,0",
+                    "SENSE,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -6229,7 +6464,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "app2 was jealous of app1's skill in herb-gathering when they patrolled together."
+                        }
                     }
                 ],
                 "art": "app_cat_looking_up",
@@ -6239,8 +6477,8 @@
                 "text": "s_c bosses app2 around the whole time. To make matters worse, s_c <i>is</i> right about the best places and techniques for herb-gathering. The patrol is highly productive, but app2 seethes with resentment.",
                 "exp": 30,
                 "stat_skill": [
-                    "HEALER,1",
-                    "SENSE,1"
+                    "HEALER,0",
+                    "SENSE,0"
                 ],
                 "stat_trait": [
                     "confident",
@@ -6267,7 +6505,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -13,
+                        "log": {
+                            "cats_from": "app1 bossed app2 around the whole time on a herb-gathering patrol, and to make matters worse, the patrol was highly successful."
+                        }
                     }
                 ],
                 "art": "app_cat_looking_up",
@@ -6297,7 +6538,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     },
                     {
                         "cats_to": ["app2"],
@@ -6308,7 +6552,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "app1 was grateful for app2's vote of confidence in {PRONOUN/app1/object}."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_apps",
@@ -6338,7 +6585,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     },
                     {
                         "cats_to": ["app1"],
@@ -6349,7 +6599,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat really appreciated to_cat's sympathy and advice when from_cat confided in {PRONOUN/to_cat/object} about {PRONOUN/from_cat/poss} insecurities."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_apps",
@@ -6359,8 +6612,8 @@
                 "text": "While they're gathering, s_c comments that app2 seems down about something. {PRONOUN/app2/subject/CAP} {VERB/app2/confess/confesses} what's been bothering {PRONOUN/app2/object} lately, and s_c gives {PRONOUN/app2/object} a sympathetic ear and some good advice.",
                 "exp": 30,
                 "stat_skill": [
-                    "INSIGHTFUL,1",
-                    "MEDIATOR,1"
+                    "INSIGHTFUL,0",
+                    "MEDIATOR,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -6376,7 +6629,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     },
                     {
                         "cats_to": ["app1"],
@@ -6387,7 +6643,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat really appreciated to_cat's sympathy and advice when from_cat confided in {PRONOUN/to_cat/object} about {PRONOUN/from_cat/poss} insecurities."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_apps",
@@ -6397,7 +6656,7 @@
                 "text": "As they gather herbs, s_c suddenly stops and calls app2 over to show {PRONOUN/app2/object} omen_list_sight/s_c. The apprentices discuss what it might mean on their way back to camp.",
                 "exp": 30,
                 "stat_skill": [
-                    "OMEN,1"
+                    "OMEN,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -6414,7 +6673,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat discussed what might be an omen together while gathering herbs."
+                        }
                     }
                 ],
                 "art": "gen_app_crouching_perplexed",
@@ -6424,7 +6686,7 @@
                 "text": "app2 scents juniper off to {PRONOUN/app2/poss} left. s_c scents clair_list_smell/s_c to the right. No matter how carefully {PRONOUN/app2/subject} {VERB/app2/scent/scents} the air, app2 can't catch that scent and suggests it might be a sign. They discuss it while herb-gathering.",
                 "exp": 30,
                 "stat_skill": [
-                    "CLAIRVOYANT,1"
+                    "CLAIRVOYANT,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -6441,7 +6703,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat discussed what might have been a sign together while gathering herbs."
+                        }
                     }
                 ],
                 "art": "gen_apprentice_found_scent_clanmate",
@@ -6451,7 +6716,7 @@
                 "text": "As the apprentices gather herbs, app2 brushes {PRONOUN/app2/poss} pelt against s_c's. s_c is filled with prophecy_list_emotion/s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/share/shares} this with app2, wondering if it might be a sign.",
                 "exp": 30,
                 "stat_skill": [
-                    "PROPHET,1"
+                    "PROPHET,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -6468,7 +6733,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat discussed what might have been a sign together while gathering herbs."
+                        }
                     }
                 ],
                 "art": "gen_speaking_cat_app",
@@ -6478,7 +6746,7 @@
                 "text": "s_c strikes up conversation with app2 as they gather herbs, wondering what {PRONOUN/app2/subject} {VERB/app2/think/thinks} about StarClan and fate. app2 takes the question seriously and the apprentices discuss as they work.",
                 "exp": 30,
                 "stat_skill": [
-                    "STAR,1"
+                    "STAR,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -6494,10 +6762,12 @@
                         "values": [
                             "like",
                             "trust",
-                            "respect",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a thoughtful conversation about StarClan and fate while gathering herbs together."
+                        }
                     }
                 ],
                 "art": "gen_speaking_cat_app",
@@ -6527,14 +6797,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["s_c"],
                         "cats_from": ["app2"],
                         "mutual": false,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "Despite a successful gathering patrol, app2 was reminded that {PRONOUN/app2/subject} {VERB/app2/find/finds} s_c irritating." 
+                        }
                     }
                 ],
                 "art": "app_cat_looking_up",
@@ -6565,10 +6838,12 @@
                         "mutual": true,
                         "values": [
                             "like",
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a little herb-gathering competition."
+                        }
                     }
                 ],
                 "art": "fst_hunt_fun4",
@@ -6589,7 +6864,10 @@
                             "comfort",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat squabbled over whose fault it was that they found no herbs on patrol."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -6599,8 +6877,8 @@
                 "text": "s_c does a poor job of leading the patrol, but r_c is actually relieved to see that even {PRONOUN/s_c/subject} {VERB/s_c/fail/fails} sometimes, too. Though they return empty-pawed, r_c feels closer to p_l.",
                 "exp": 0,
                 "stat_skill": [
-                    "SENSE,1",
-                    "HEALER,1"
+                    "SENSE,0",
+                    "HEALER,0"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -6611,20 +6889,13 @@
                         "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "comfort",
-                            "trust"
+                            "respect",
+                            "comfort"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was comforted to realize that even to_cat fails sometimes."
+                        }
                     }
                 ],
                 "art": "gen_happy_cat2",
@@ -6635,24 +6906,17 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "respect"
-                        ],
-                        "amount": -5
-                    },
-                    {
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "respect"
+                            "respect",
+                            "like"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat argued about who should be leading a patrol when p_l led r_c to the wrong area."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -6682,16 +6946,22 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat noticed that to_cat led {PRONOUN/from_cat/object} to the wrong herb-gathering area."
+                        }
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["s_c"],
-                        "mutual": true,
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
                         "values": [
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "Though to_cat was gracious about the mistake, from_cat was embarrassed to have led to_cat to the wrong herb-gathering area."
+                        }
                     }
                 ],
                 "art": "gen_train_patrolapprenticesessionfail",
@@ -6709,7 +6979,10 @@
                             "comfort",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed chatting and hanging out on patrol, even though they didn't gather any herbs."
+                        }
                     }
                 ],
                 "art": "gen_app_siblings",
@@ -6734,7 +7007,10 @@
                             "comfort",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat played around on patrol."
+                        }
                     },
                     {
                         "cats_to": ["s_c"],
@@ -6743,7 +7019,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was amused but also irritated that to_cat shredded a bunch of herbs on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6764,11 +7043,13 @@
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was fed up by to_cat's childish antics on patrol when to_cat shredded perfectly good herbs."
+                        }
                     }
                 ],
                 "art": "gen_angry_cat_app",
@@ -6793,10 +7074,12 @@
                         "mutual": false,
                         "values": [
                             "trust",
-                            "like",
-                            "respect"
+                            "like"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat's awkwardness in a leadership role meant that from_cat wasn't able to gather any herbs when they patrolled together."
+                        }
                     }
                 ],
                 "art": "gen_train_patrolapprenticesessionfail",
@@ -6806,7 +7089,7 @@
                 "text": "s_c strikes up conversation with app2 as they gather herbs, wondering what {PRONOUN/app2/subject} {VERB/app2/think/thinks} about StarClan and fate. app2 doesn't take the conversation seriously and s_c ends the patrol early, feeling annoyed.",
                 "exp": 30,
                 "stat_skill": [
-                    "STAR,1"
+                    "STAR,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -6821,11 +7104,13 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "trust",
                             "respect",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wanted to discuss StarClan and fate with to_cat, but to_cat didn't take the conversation seriously."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -6852,10 +7137,12 @@
                         "mutual": true,
                         "values": [
                             "like",
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "app2 dismissed s_c's idea to turn their herb-gathering patrol into a competition. s_c was annoyed and stormed off."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -6865,7 +7152,7 @@
                 "text": "s_c gets sidetracked by a prey scent and catches a lizard. r_c is irritated. They're here to gather herbs, not hunt.",
                 "exp": 0,
                 "stat_skill": [
-                    "HUNTER,1"
+                    "HUNTER,0"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -6877,13 +7164,15 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
-                            "comfort",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was annoyed that to_cat got sidetracked on patrol and went hunting instead of gathering herbs."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -6923,13 +7212,16 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "comfort",
                             "respect",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     }
                 ],
                 "art": "gen_med_warappmedapp_herbcontest",
@@ -6951,17 +7243,23 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat was impressed by the great herb patch app1 found."
+                        }
                     },
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     }
                 ],
                 "art": "gen_med_warappmedapp_herbcontest",
@@ -6990,7 +7288,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was jealous of app1's skill in herb-gathering when they patrolled together."
+                        }
                     }
                 ],
                 "art": "app_cat_looking_up",
@@ -7000,8 +7301,8 @@
                 "text": "s_c bosses the other apprentices around the whole time. To make matters worse, s_c <i>is</i> right about the best places and techniques for herb-gathering. The patrol is highly productive, but the other apprentices feel resentment toward s_c build.",
                 "exp": 30,
                 "stat_skill": [
-                    "HEALER,1",
-                    "SENSE,1"
+                    "HEALER,0",
+                    "SENSE,0"
                 ],
                 "stat_trait": [
                     "confident",
@@ -7028,7 +7329,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -13,
+                        "log": {
+                            "cats_from": "app1 bossed to_cat around the whole time on a herb-gathering patrol, and to make matters worse, the patrol was highly successful."
+                        }
                     }
                 ],
                 "art": "app_cat_looking_up",
@@ -7051,14 +7355,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     },
                     {
                         "cats_to": ["app2"],
@@ -7069,20 +7376,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "app2",
-                            "app1"
-                        ],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "app1 was grateful for app2's vote of confidence in {PRONOUN/app1/object}."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_apps",
@@ -7106,13 +7403,16 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["app2"],
-                        "mutual": true,
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather herbs."
+                        }
                     },
                     {
                         "cats_to": ["app1"],
@@ -7123,7 +7423,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat really appreciated to_cat's sympathy and advice when from_cat confided in {PRONOUN/to_cat/object} about {PRONOUN/from_cat/poss} insecurities."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_apps",
@@ -7133,8 +7436,8 @@
                 "text": "While they're gathering, s_c comments on the tension between app2 and app3. {PRONOUN/app2/subject/CAP} {VERB/app2/confess/confesses} to app3 that {PRONOUN/app3/subject} hurt {PRONOUN/app2/poss} feelings the other day. s_c helps app2 and app3 reconcile.",
                 "exp": 30,
                 "stat_skill": [
-                    "INSIGHTFUL,1",
-                    "MEDIATOR,1"
+                    "INSIGHTFUL,0",
+                    "MEDIATOR,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -7145,29 +7448,28 @@
                 "relationships": [
                     {
                         "cats_to": ["app1"],
-                        "cats_from": [
-                            "app2",
-                            "app3"
-                        ],
-                        "mutual": true,
+                        "cats_from": ["patrol"],
+                        "mutual": false,
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat smoothing over the tension between app2 and app3."
+                        }
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": [
-                            "app2",
-                            "app3"
-                        ],
-                        "mutual": false,
+                        "cats_to": ["app2"],
+                        "cats_from": ["app3"],
+                        "mutual": true,
                         "values": [
                             "like",
-                            "comfort",
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "app3 apologized for hurting app2's feelings."
+                        }
                     }
                 ],
                 "art": "gen_bump_heads_apps",
@@ -7177,7 +7479,7 @@
                 "text": "As they gather herbs, s_c suddenly stops and calls the other apprentices over to show them omen_list_sight/s_c. The apprentices discuss what it might mean on their way back to camp.",
                 "exp": 30,
                 "stat_skill": [
-                    "OMEN,1"
+                    "OMEN,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -7187,14 +7489,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "While gathering herbs, from_cat and to_cat discussed what might be an omen together."
+                        }
                     }
                 ],
                 "art": "gen_app_crouching_perplexed",
@@ -7204,7 +7509,7 @@
                 "text": "app2 scents juniper off to {PRONOUN/app2/poss} left. s_c scents clair_list_smell/s_c to the right. No matter how carefully the others scent the air, they can't catch the scent s_c describes. Perhaps it's a sign? They discuss it while herb-gathering",
                 "exp": 30,
                 "stat_skill": [
-                    "CLAIRVOYANT,1"
+                    "CLAIRVOYANT,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -7214,14 +7519,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "While gathering herbs, from_cat and to_cat discussed what might have been a sign."
+                        }
                     }
                 ],
                 "art": "gen_apprentice_found_scent_clanmate",
@@ -7231,7 +7539,7 @@
                 "text": "As the apprentices gather herbs, app2 brushes {PRONOUN/app2/poss} pelt against s_c's. s_c is filled with prophecy_list_emotion. {PRONOUN/s_c/subject/CAP} {VERB/s_c/share/shares} this with app2, wondering if it might be a sign.",
                 "exp": 30,
                 "stat_skill": [
-                    "PROPHET,1"
+                    "PROPHET,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -7248,7 +7556,10 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat discussed what might have been a sign together while gathering herbs."
+                        }
                     }
                 ],
                 "art": "gen_speaking_cat_app",
@@ -7258,7 +7569,7 @@
                 "text": "s_c strikes up conversation with the other apprentices as they gather herbs, wondering what they think about StarClan and fate. The others take the question seriously and the apprentices discuss as they work.",
                 "exp": 30,
                 "stat_skill": [
-                    "STAR,1"
+                    "STAR,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -7268,16 +7579,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["app1"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
                             "trust",
-                            "respect",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a thoughtful conversation about StarClan and fate while gathering herbs together."
+                        }
                     }
                 ],
                 "art": "gen_speaking_cat_app",
@@ -7308,16 +7621,16 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": [
-                            "app2",
-                            "app3"
-                        ],
+                        "cats_from": ["app2", "app3"],
                         "mutual": false,
                         "values": [
                             "like",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "Despite a successful gathering patrol, from_cat was reminded that {PRONOUN/from_cat/subject} {VERB/from_cat/find/finds} s_c irritating." 
+                        }
                     }
                 ],
                 "art": "app_cat_looking_up",
@@ -7348,10 +7661,12 @@
                         "mutual": true,
                         "values": [
                             "like",
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a little herb-gathering competition."
+                        }
                     }
                 ],
                 "art": "fst_hunt_fun4",
@@ -7372,7 +7687,10 @@
                             "comfort",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat squabbled over whose fault it was that they found no herbs on patrol."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -7382,8 +7700,8 @@
                 "text": "s_c does a poor job of leading the patrol, but r_c is actually relieved to see that even {PRONOUN/s_c/subject} {VERB/s_c/fail/fails} sometimes, too. Though the patrol returns empty-pawed, r_c feels closer to p_l.",
                 "exp": 0,
                 "stat_skill": [
-                    "SENSE,1",
-                    "HEALER,1"
+                    "SENSE,0",
+                    "HEALER,0"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -7394,31 +7712,13 @@
                         "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "comfort",
-                            "trust"
+                            "respect",
+                            "comfort"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was comforted to realize that even to_cat fails sometimes."
+                        }
                     }
                 ],
                 "art": "gen_happy_cat2",
@@ -7429,33 +7729,17 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "respect"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -10
-                    },
-                    {
                         "cats_to": ["r_c"],
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect",
+                            "like"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat argued about who should be leading a patrol when p_l led r_c to the wrong area."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -7485,26 +7769,22 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat noticed that to_cat led {PRONOUN/from_cat/object} to the wrong herb-gathering area."
+                        }
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": ["s_c"],
+                        "cats_to": ["patrol"],
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "Though s_c was gracious about the mistake, from_cat was embarrassed to have led to_cat to the wrong herb-gathering area."
+                        }
                     }
                 ],
                 "art": "gen_train_patrolapprenticesessionfail",
@@ -7517,12 +7797,15 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "comfort",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed chatting and hanging out on patrol, even though they didn't gather any herbs."
+                        }
                     }
                 ],
                 "art": "gen_app_siblings",
@@ -7547,7 +7830,10 @@
                             "comfort",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat played around on patrol."
+                        }
                     },
                     {
                         "cats_to": ["s_c"],
@@ -7556,27 +7842,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "like"
-                        ],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["p_l"],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "like"
-                        ],
-                        "amount": 10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was irritated that to_cat shredded a bunch of herbs on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -7597,11 +7866,13 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was fed up by to_cat's childish antics on patrol when to_cat shredded perfectly good herbs."
+                        }
                     }
                 ],
                 "art": "gen_angry_cat_app",
@@ -7626,10 +7897,12 @@
                         "mutual": false,
                         "values": [
                             "trust",
-                            "like",
-                            "respect"
+                            "like"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat's awkwardness in a leadership role meant that from_cat wasn't able to gather any herbs when they patrolled together."
+                        }
                     }
                 ],
                 "art": "gen_train_patrolapprenticesessionfail",
@@ -7639,7 +7912,7 @@
                 "text": "s_c strikes up conversation with the others as they gather herbs, wondering what they think about StarClan and fate. The others don't take the conversation seriously and s_c ends the patrol early, feeling annoyed.",
                 "exp": 30,
                 "stat_skill": [
-                    "STAR,1"
+                    "STAR,0"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -7649,16 +7922,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["app2"],
                         "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
                             "like",
-                            "trust",
                             "respect",
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wanted to discuss StarClan and fate with to_cat, but to_cat didn't take the conversation seriously."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -7685,10 +7960,12 @@
                         "mutual": true,
                         "values": [
                             "like",
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat dismissed to_cat's idea to turn their herb-gathering patrol into a competition. to_cat was annoyed and stormed off."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -7698,7 +7975,7 @@
                 "text": "s_c gets sidetracked by a prey scent and catches a lizard. The other apprentices are irritated. They're here to gather herbs, not hunt.",
                 "exp": 0,
                 "stat_skill": [
-                    "HUNTER,1"
+                    "HUNTER,0"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -7710,13 +7987,15 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
-                            "comfort",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was annoyed that to_cat got sidetracked on patrol and went hunting instead of gathering herbs."
+                        }
                     }
                 ],
                 "art": "gen_train_argueAA",
@@ -7738,7 +8017,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [1, 5],
+            "normal adult": [3, 5],
             "medicine cat": [1, 1]
         },
         "frequency": 3,
@@ -7758,11 +8037,13 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat and {PRONOUN/from_cat/poss} training patrol from possible disaster after being warned by a Death's Head Moth."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -7824,62 +8105,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The two trot towards the field, tails raised nonchalantly. Suddenly, p_l hears a shriek and manages to duck out of the way as a crow swoops close. Angry caws ring across the field. r_c calls for retreat as more crows converge on them. The two cats run away from the field, fur fluffed in both terror and embarrassment.",
-                "exp": 0,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_med_pumpkinpatch2",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [
-            "romance",
-            "halloween"
-        ],
-        "patrol_art": "gen_med_pumpkinpatch2",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "medicine cat": [2, 2]
-        },
-        "frequency": 4,
-        "intro_text": "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm.",
-        "decline_text": "The distant call of a Twoleg makes the cats think better of the whole idea.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "The two cats come upon a field of pumpkins, luckily empty of Twolegs. As p_l pokes around to see if any herbs are about, r_c instead gleefully sinks {PRONOUN/r_c/poss} claws into a pumpkin. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scratch/scratches} some crude shapes into the pumpkin before declaring that it's a cat! p_l snickers and replies that it's the most beautiful cat {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever seen. r_c slyly shoots back: yes, second only to p_l.",
-                "exp": 20,
-                "herbs": [
-                    "rosemary"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat flirted and played with pumpkins on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -7922,7 +8151,7 @@
                 "frequency": 4
             },
             {
-                "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in {PRONOUN/r_c/poss} fur. But it doesn't seem malicious either. The ghost waves its tail as if to say 'hello'. r_c nods back at it and continues {PRONOUN/r_c/poss} herb gathering with the friendly ghost flitting about.",
+                "text": "Despite being alone, r_c decides to follow the figure. Perhaps it's a StarClan cat. As {PRONOUN/r_c/subject} {VERB/r_c/get/gets} closer, {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} that no, this cat doesn't have stars in {PRONOUN/r_c/poss} fur. But it doesn't seem malicious either. The ghost waves its tail as if to say hello. r_c nods back at it and continues {PRONOUN/r_c/poss} herb gathering with the friendly ghost flitting about.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -7967,7 +8196,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c approaches the strange cat, thinking that they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion. Glowing, haunted eyes watch {PRONOUN/r_c/object} back from the shadows. r_c shivers and decides to hunt for herbs someplace else.",
+                "text": "r_c approaches the strange cat, thinking that they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/r_c/subject} {VERB/r_c/move/moves} toward it, gradually reappearing further and further away. r_c stops, watching the stranger in the distance with confusion. Glowing, haunted eyes return {PRONOUN/r_c/poss} gaze from the shadows. r_c shivers and decides to hunt for herbs someplace else.",
                 "exp": 10,
                 "frequency": 4
             }
@@ -8030,7 +8259,7 @@
                 "frequency": 3
             },
             {
-                "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a bone-chilling omen, omen_list/s_c.",
+                "text": "Sensing the black cat's strong aura, s_c urges it to speak, and listens carefully as it imparts a message of dream_list.",
                 "exp": 30,
                 "stat_skill": [
                     "INSIGHTFUL,2",

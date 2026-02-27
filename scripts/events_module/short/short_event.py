@@ -522,10 +522,13 @@ class ShortEvent:
             return False
 
         if self.main_cat.pelt.accessory:
-            self.main_cat.pelt.accessory.append(choice(acc_list))
+            self.main_cat.pelt.accessory = (
+                *self.main_cat.pelt.accessory,
+                choice(acc_list),
+            )
             return None
         else:
-            self.main_cat.pelt.accessory = [choice(acc_list)]
+            self.main_cat.pelt.accessory = (choice(acc_list),)
             return None
 
     def handle_transition(self):

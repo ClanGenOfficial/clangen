@@ -3306,6 +3306,240 @@
         ]
     },
     {
+        "patrol_id": "wtlnd_bord_soloneutral1",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "normal adult": [1, 1]
+        },
+        "frequency": 2,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c re-marks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"warrior": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor, the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/turn/turns} to follow the same marking path as them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors",
+                "exp": 20,
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"warrior": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n deputy out with their new apprentice. Their fellow deputy encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the tar pits.",
+                "exp": 20,
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue and walk away with a greater respect for one another.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue and walk away with a greater respect for one another.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader. They strike up a friendly conversation, and eventually the o_c_n warriors drift away. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the tar pits.",
+                "exp": 20,
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n leader out with their new apprentice. Their fellow leader encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c marks a little, but reaches a section where the border is muddled and has to give up and go home.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
+                "exp": 0,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path and return to their respective camps to discuss with their leaders.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/do/does}'t make it back to camp.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "death": "m_c lost their life in an ambush on the border."
+                },
+                "other_clan_rep": -1,
+                "frequency": 3
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new hardness in {PRONOUN/r_c/poss} heart.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "death": "lost a life in an ambush on the border"
+                },
+                "other_clan_rep": -1,
+                "frequency": 3
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path and agree to raise it at the next Gathering instead.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_bord_appmission",
         "biome": [
             "any"
@@ -4468,28 +4702,19 @@
         "types": [
             "border"
         ],
-        "tags": ["clan:leader"],
+        "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
+            "normal adult": [1, 6]
         },
         "frequency": 1,
         "intro_text": "The patrol spots a badger making a den on o_c_n territory.",
-        "decline_text": "It's not c_n's problem, but {PRONOUN/p_l/subject} {VERB/p_l/make/makes} a mental note to mention the badger to {PRONOUN/p_l/poss} leader later.",
+        "decline_text": "It's not c_n's problem, but {PRONOUN/p_l/subject} {VERB/p_l/make/makes} a mental note to report the badger sighting back at camp.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "min_max_status": {
-                    "leader": [
-                        -1,
-                        -1
-                    ]
-                },
                 "text": "As luck would have it, p_l smells a o_c_n patrol approaching. {PRONOUN/p_l/subject/CAP} {VERB/p_l/call/calls} out to the patrol and tells them about the badger and where {PRONOUN/p_l/subject} saw it making a den. The o_c_n patrol is grateful and return to camp immediately to report the badger to their leader.",
                 "exp": 10,
                 "relationships": [

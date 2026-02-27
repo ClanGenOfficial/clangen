@@ -1,166 +1,62 @@
 # Reference 
-This page contains formatting information that is generally utilized across all event formats and should be treated as a main reference.
+These articles hold information generally relevant when writing any content for ClanGen and should be treated as a main reference.
 
-## Pronoun Tags
+<div class="grid cards" markdown>
 
-There are three kinds of pronoun tag: `PRONOUN`, `VERB` and `ADJ` tags.
+- __[Writing Standards](writing-standards.md)__
 
-#### A note on plural pronouns
-Though less relevant in English, the ability to specify plural pronouns is provided. The format is slightly different:
-```
-{PRONOUN/PLURAL/m_c+r_c/subject/CAP}
-{VERB/PLURAL/m_c+r_c/conju_0/conju_1/[...]/conju_n}
-{ADJ/PLURAL/m_c+r_c/gender_0/gender_1/[...]/gender_n}
-```
-The addition of `PLURAL` immediately following the tag identifier signals that it's a plural pronoun and to use the relevant system. Each cat that is to be referred to by the plural must be referenced in this block, separated by a `+`. Otherwise, the system is the same as below for singular pronouns.
+    ---
 
-### PRONOUN
-A `PRONOUN` tag has three main sections: the `PRONOUN` identifier, the relevant cat, and which pronoun is being requested. There is an optional modifier at the end - `CAP` - that is used to signal that the requested pronoun should be capitalized.
+    Guidelines for grammar and allowed content.
 
-Example:
-```
-{PRONOUN/m_c/subject}
-{PRONOUN/m_c/subject/CAP}
-```
-Permitted pronouns and their English equivalents:
+- __[Terminology](terminology.md)__
 
-| Pronoun   | English equivalent       |
-|-----------|--------------------------|
-| `subject` | he/she/they              |
-| `object`  | him/her/them             |
-| `poss`    | his/her/their            |
-| `inposs`  | his/hers/theirs          |
-| `self`    | himself/herself/themself |
+    ---
 
-### VERB
-A `VERB` tag has a technically-infinite number of sections depending on the language, but in English it has four sections: the `VERB` identifier, the relevant cat, and the options for each conjugation in the language (in the case of English, plural and singular conjugations).
+    Terminology guidelines for how warrior-specific terms should be written as well as a guide on code-specific terminology that you should know when navigating this documentation.
 
-Example:
-```
-{VERB/m_c/were/was}
-```
+- __[Tag Lists](tag-lists.md)__
 
-!!! caution
-    Pay close attention to the order of verbs. In English, **plural conjugation is first**.
+    ---
 
-### ADJ
-Not especially relevant for English, the `ADJ` tag exists to allow items in a sentence to be referred to with the correct grammatical gender. An English example of gendered words could be actor/actress.
+    When writing events for ClanGen, you'll need to use certain tags to control how the game responds to the event. This article will include tag lists commonly shared between event formats.
 
-Example:
-```
-{ADJ/m_c/parent/father/mother}
-```
+- __[Common Formats](common-formats.md)__
+
+    ---
+
+    Many event formats share consistent formatting for certain parameters. These common formats will be held here for easy references and linked to within their related event format docs.
+
+- __[Pronoun Tags](pronoun-tags.md)__
+
+    ---
+
+    In order to feature dynamic pronouns within our text, we must utilize a system call "pronoun tags". This article explains how these work and can be used within your writing.
+
+- __[Trait Dictionary](trait-dictionary.md)__
+
+    ---
+
+    Guidelines on how to write content for specific traits. Following these will help keep our personality portrayals consistent.
+
+- __[Biome Content](biomes.md)__
+
+    ---
+
+    Curious how to write biome-specific content? This has guidelines on what different biomes should include or avoid.
+
+- __[Non-cat Animals](animals.md)__
+
+    ---
+
+    Warriors includes plenty of other animals, this article can guide you on how to include them within ClanGen content.
+
+- __[Common Errors](common-errors.md)__
+
+    ---
+
+    Common errors you may encounter while writing. If you're trying to troubleshoot, head here first!
+
+</div>
 
 
-## Writing Histories
-Cats receive history text to go with each scar-able injury as well as possibly-fatal injury and direct deaths.  These histories show up in their profile.  Many event formats require you to include the history text if a cat is being injured or killed.  These typically refer to three different history types: `scar`, `reg_death`, `lead_death`.  Following are the guidelines for writing each:
-
-| history type | guidelines                                                                                                                                                                                                                                                                            |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| scar         | This history is given to a cat who gains a scar from an injury gotten during the event.  ONLY INCLUDE if the injury being given is able to scar (i.e a bruise will not scar, but a claw-wound will scar).  This should be a single, full sentence specifying how the cat was scarred. |
-| death        | This history is given to a cat who is either killed by the event or dies from an injury gotten during the event.  This should be a single, full sentence specifying how the cat died.  Try not to get too wordy with these.                                                           |
-|
-
-**Example of acceptable histories**
-```json
-{
-    "scar": "m_c gained a scar from a fox.",
-    "death": "m_c died from a fox bite."
-}
-```
-
-## Writing Relationship Changes
-These blocks indicate a change in the involved cats' relationships. You can include multiple blocks within the list to change a variety of relationships.
-
-```json
-{
-    "cats_from": [],
-    "cats_to": [],
-    "mutual": false,
-    "values": [],
-    "amount": 5,
-    "log": {}
-}
-```
-
-### cats_from:list[str]
-A list of the cats whose relationship values are being changed. You are changing how these cats feel towards the cats_to group.
-
-### cats_to:list[str]
-A list of the cats who are the target of cats_from's feelings. 
-
-**Possible Abbreviations:**
-For `cats_from` and `cats_to` you may use any of cat abbreviations already utilized within the event format you are adding to, in addition to the following:
-
-| string         |                                                                                                                                                                                                      |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `patrol`       | If this is a patrol, you can use this to affect all cats within the patrol                                                                                                                           |
-| `clan`         | The entire player Clan's feelings are affected                                                                                                                                                       |
-| `some_clan`    | This will affect a random set of cats equalling 1/8th of the player Clan                                                                                                                             |
-| `low_lawful`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All tagged cats with a 0-8 lawfulness facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.       |
-| `high_lawful`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 lawfulness facet are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
-| `low_social`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 sociable facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.    |
-| `high_social`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 sociable facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.   |
-| `low_stable`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 stability facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.   |
-| `high_stable`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 stability facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
-| `low_aggress`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
-| `high_aggress` | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
-
-### mutual:bool
-Optional. Controls if the relation effect will be applied in both directions. Defaults to False.
-
-| bool    |                                                                                                                                             |
-|---------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| `true`  | Relationship effects will be applied in both directions. Equivalent to repeating the relation block with "cats_from" and "cats_to" swapped. |
-| `false` | Default. Relationship effects will be applied in a single direction.                                                                        |
-
-### values:list[str]
-The relationship types that will be changed.
-
-| string    | effect                                                                                                                                                                                                               |
-|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `romance` | Romance is affected. Be careful with this one! There is no automatic check to ensure the cats are potential mates. See "tags" and ensure that the correct tags are added, and "cats_to" and "cats_from" are correct. |
-| `like`    | Like is affected                                                                                                                                                                                                     |
-| `comfort` | Comfort is affected                                                                                                                                                                                                  |
-| `trust`   | Trust is affected                                                                                                                                                                                                    |
-| `respect` | Respect is affected.                                                                                                                                                                                                 |
-
-### amount:int
-The amount that the chosen relationship types will change by. 8 is a low amount, 16 is a high amount.
-
-### log:dict[str]
-The string that will display within the relationship logs. A string can be specified for both the `cats_from` and `cats_to` groups. 
-
-!!! tip "Writing Logs"
-    When writing a log string, you can utilize the same abbreviations that you have already used within the event format. You can also use the abbreviations `from_cat` and `to_cat` to utilize names and pronouns for individual cats within their respective groups, which is handy when you've indicated a change should occur across multiple cats. For example: "to_cat was part of the patrol that invited n_c:0 to c_n." would appear in the log as "PatrolCat was part of the patrol that invited NewCat to ExampleClan."
-
-```json
-"log": {
-    "cats_from": "",
-    "cats_to": ""
-}
-```
-
-**cats_from**: This string will be added to the relationship logs of all cats in cats_from.
-
-**cats_to**: This string will be added to the relationship logs of all cats in cats_to.
-
-!!! warning "If the change is mutual..."
-    The `cats_to` log will only be used if the relationship change is `mutual`. If the relationship change is `mutual`, but no `cats_to` log was specified, then all involved cats will use the given `cats_from` log.
-
-!!! warning "If no logs are given..."
-    If no logs are provided at all, then the event's text will be used. In the case of patrols, a default "These cats interacted" string will be used.
-
-***
-
-## Exclusionary Values
-Some values can be made exclusionary by prefixing them with `-`. For example:
-```json
-"trait": ["-calm"]
-```
-This would allow any cat with a trait that *isn't* `calm`.
-
-As this is allowed in some but *not all* values, parameters that allow exclusionary values will be linked to this section. If a parameter *doesn't* link here, then exclusionary values are not allowed.
-
-!!! warning
-    You cannot mix exclusionary values and inclusionary values in one parameter. You must use one or the other and, frankly, there is no reason to mix them. 

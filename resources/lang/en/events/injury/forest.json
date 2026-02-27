@@ -20,12 +20,8 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "broken bone",
-                    "broken jaw",
-                    "broken back",
-                    "head damage"
-                ],
-                "scars": []
+                    "blunt_force_injury"
+                ]
             }
         ],
         "history": [
@@ -62,8 +58,7 @@
                     "claw-wound",
                     "mangled leg",
                     "mangled tail"
-                ],
-                "scars": []
+                ]
             }
         ],
         "history": [
@@ -121,12 +116,8 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "broken back",
-                    "broken jaw",
-                    "broken bone",
-                    "head damage"
-                ],
-                "scars": []
+                    "blunt_force_injury"
+                ]
             }
         ],
         "history": [
@@ -206,7 +197,9 @@
                     "scrapes",
                     "small cut"
                 ],
-                "scars": []
+                "scars": [
+                    "QUILLSIDE", "SCRATCHSIDE"
+                ]
             }
         ]
     },
@@ -238,7 +231,7 @@
                     "mangled tail"
                 ],
                 "scars": [
-                    "MANTAIL"
+                    "HALFTAIL", "MANTAIL", "NOTAIL", "TAILSCAR"
                 ]
             }
         ],
@@ -279,12 +272,6 @@
                 "injuries": [
                     "burn",
                     "severe burn"
-                ],
-                "scars": [
-                    "BURNRUMP",
-                    "BURNTAIL",
-                    "BURNBELLY",
-                    "BURNPAWS"
                 ]
             }
         ],
@@ -350,12 +337,6 @@
                 ],
                 "injuries": [
                     "severe burn"
-                ],
-                "scars": [
-                    "BURNPAWS",
-                    "BURNBELLY",
-                    "BURNTAIL",
-                    "BURNRUMP"
                 ]
             }
         ],
@@ -449,8 +430,7 @@
                 ],
                 "injuries": [
                     "cold_injury"
-                ],
-                "scars": []
+                ]
             }
         ],
         "history": [
@@ -519,8 +499,7 @@
                 ],
                 "injuries": [
                     "headache"
-                ],
-                "scars": []
+                ]
             }
         ]
     },
@@ -555,7 +534,9 @@
                     "scrapes",
                     "small cut"
                 ],
-                "scars": []
+                "scars": [
+                    "QUILLSIDE", "SCRATCHSIDE"
+                ]
             }
         ]
     }

@@ -1,0 +1,16 @@
+[
+    {
+        "id": "becoming_apprentice",
+        "thoughts": ["Looks forward to {PRONOUN/m_c/poss} apprenticeship"],
+        "main_status_constraint": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+    },
+
+    {
+        "id": "becoming_adult_rank",
+        "thoughts": [
+            "Hopes {PRONOUN/m_c/subject} can serve the Clan well"
+        ],
+        "main_status_constraint": ["leader", "deputy", "medicine cat", "mediator", "warrior"]
+    }
+
+]

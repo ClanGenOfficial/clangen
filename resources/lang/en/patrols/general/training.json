@@ -1575,7 +1575,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat practiced their concealing their tracks from each other."
+                            "cats_from": "from_cat and to_cat practiced concealing their tracks from each other."
                         }
                     }
                 ],
@@ -2021,7 +2021,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 20,
+                        "amount": 15,
                         "log": {
                             "cats_from": "from_cat appreciated how to_cat de-escalated the conflict between p_l and r_c."
                         }
@@ -2101,7 +2101,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat thought that despite to_cat's fighting abilities, {PRONOUN/to_cat/subject} {VERB/to_cat/make/makes} a poor teacher."
+                            "cats_from": "from_cat thought that, despite to_cat's fighting abilities, {PRONOUN/to_cat/subject} {VERB/to_cat/make/makes} a poor teacher."
                         }
                     }
                 ],
@@ -2203,7 +2203,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat was reminded of how grumpy and difficult to_cat can be when they trained together."
+                            "cats_from": "When they trained together, from_cat was reminded of how grumpy and difficult to_cat can be."
                         }
                     },
                     {
@@ -2213,7 +2213,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -20,
+                        "amount": -15,
                         "log": {
                             "cats_from": "r_c ended up snapping at s_c on a training patrol over {PRONOUN/s_c/poss} bad mood."
                         }
@@ -2444,7 +2444,7 @@
                         "values": [
                             "trust", "respect"
                         ],
-                        "amount": 30,
+                        "amount": 15,
                         "log": {
                             "cats_from": "from_cat worked hard to impress to_cat when to_cat assessed the fitness of the warriors on a training patrol."
                         }
@@ -2510,7 +2510,7 @@
                         "values": [
                             "trust", "comfort"
                         ],
-                        "amount": 20,
+                        "amount": 15,
                         "log": {
                             "cats_from": "from_cat learned about to_cat's opinions on a piece of disputed territory."
                         }
@@ -2567,7 +2567,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was reminded of how wise and measured to_cat is as a leader while training together."
+                            "cats_from": "While training together, from_cat was reminded of how wise and measured to_cat is as a leader."
                         }
                     }
                 ],
@@ -2597,7 +2597,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat was reminded of what a gentle and kind leader to_cat is while training together."
+                            "cats_from": "While training together, from_cat was reminded of what a gentle and kind leader to_cat is."
                         }
                     },
                     {
@@ -3123,7 +3123,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "When an argument started on patrol, from_cat wished that to_cat had put {PRONOUN/to_cat/poss} foot down sooner."
+                            "cats_from": "When an argument started on patrol, from_cat wished that to_cat had put {PRONOUN/to_cat/poss} paw down sooner."
                         }
                     }
                 ],
@@ -3142,7 +3142,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "When an argument started on patrol, to_cat was unable to settle"
+                            "cats_from": "When an argument started on patrol, to_cat was unable to settle it."
                         }
                     },
                     {
@@ -3211,7 +3211,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat explained the importance of good form to to_cat when {PRONOUN/to_cat/subject} started an argument and appreciated that to_cat apologized."
+                            "cats_from": "from_cat explained the importance of good form to to_cat when {PRONOUN/to_cat/subject} started an argument, and appreciated that to_cat apologized."
                         }
                     }
                 ],
@@ -3528,7 +3528,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [1, 6]
+            "normal adult": [3, 6]
         },
         "frequency": 1,
         "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject} had a vision from StarClan last night.",
@@ -3548,7 +3548,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When r_c claimed to have a StarClan vision, from_cat and to_cat discussed it."
+                            "cats_from": "from_cat and to_cat discussed the vision r_c claimed to have."
                         }
                     }
                 ],
@@ -3666,7 +3666,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat felt uncomfortable around to_cat's obvious jealousy when from_cat shared on patrol about a vision from StarClan."
+                            "cats_from": "from_cat felt uncomfortable around to_cat's obvious jealousy when from_cat shared about {PRONOUN/from_cat/poss} vision from StarClan."
                         }
                     }
                 ],
@@ -3961,6 +3961,19 @@
                         "log": {
                             "cats_from": "from_cat tried to confide in to_cat about {PRONOUN/from_cat/poss} dreams, but to_cat didn't take {PRONOUN/from_cat/poss} concerns seriously."
                         }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wasn't pleased that to_cat let silly dreams distract {PRONOUN/to_cat/object} from {PRONOUN/to_cat/poss} training."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4085,7 +4098,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was struck by the vividity of the ghost story to_cat told on patrol."
+                            "cats_from": "from_cat was struck by the vividness of the ghost story to_cat told on patrol."
                         }
                     }
                 ],
@@ -4106,7 +4119,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat got spooked on patrol, then argued about what caused the noise."
+                            "cats_from": "from_cat and to_cat got spooked on patrol, then argued about what caused the noise that scared them."
                         }
                     }
                 ],
@@ -4174,16 +4187,27 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["app2"],
-                        "cats_from": ["patrol"],
-                        "mutual": true,
+                        "cats_to": ["patrol"],
+                        "cats_from": ["app2"],
+                        "mutual": false,
                         "values": [
                             "comfort"
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat reassured to_cat when {PRONOUN/to_cat/subject} was frightened by a ghost story on patrol.",
-                            "cats_to": "app2 was comforted by the patrol when {PRONOUN/app2/subject} {VERB/app2/were/was} frightened by a ghost story on patrol."
+                            "cats_from": "app2 was comforted by the patrol when {PRONOUN/app2/subject} {VERB/app2/were/was} frightened by a ghost story on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["app2"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat reassured to_cat when {PRONOUN/to_cat/subject} was frightened by a ghost story on patrol."
                         }
                     }
                 ],
@@ -13161,6 +13185,238 @@
                             "comfort"
                         ],
                         "amount": 10
+                    }
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_leaffall_eclipsemyth_storylocked1",
+        "biome": [
+            "forest", "mountainous", "wetlands"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [],
+        "tags": [],
+        "patrol_art": "gen_train_ghost",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "frequency": 3,
+        "chance_of_success": 60,
+        "pl_skill_constraint": [
+            "STORY,1"
+        ],
+        "intro_text": "Gather round, gather round. p_l sits in the center of the group, in the most prominent place, and drops {PRONOUN/p_l/poss} voice down low as a hush falls - today, {PRONOUN/p_l/subject}'ll tell the story of StarClan's Great Anger.",
+        "decline_text": "A leaf-fall rainshower chooses that moment to break - thematic, perhaps, but wet. The cats decide to pick up the story some other time.",
+        "success_outcomes": [
+            {
+                "text": "At first, few but the medicine cats noticed the leaf-fall, its harshness, the snows early, the prey scarce. All noticed on the day StarClan hissed - the great sun itself blinking dark under their anger. All paid heed to the omens then, and the Clans turned back to the stars, begging for life and sun to return. They learned a lesson not soon forgotten.",
+                "exp": 40,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story of StarClan's Anger."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c refuses to believe their ancestors ever blotted out the sun - not because they couldn't, but because they would never hurt the Clans, their own beloved descendants.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "Even though to_cat interrupted, from_cat was touched that to_cat had such strong faith in StarClan's goodness."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "If StarClan hissed at them, they should've hissed back, s_c argues. Their ancestors are nothing without them!",
+                "exp": 0,
+                "can_have_stat": [
+                    "r_c"
+                ],
+                "stat_trait": [
+                    "rebellious"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was annoyed that to_cat interrupted {PRONOUN/from_cat/poss} story to argue with its message."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_leafbare_thecurseofleafbare_lorelocked1",
+        "biome": [
+            "forest", "mountainous", "plains"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "frequency": 3,
+        "chance_of_success": 60,
+        "pl_skill_constraint": [
+            "LORE,1"
+        ],
+        "intro_text": "Many seasons ago, p_l begins, a powerful, gifted apprentice walked the land, their skills coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and energy.",
+        "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
+        "success_outcomes": [
+            {
+                "text": "After moons of having their Clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leaf-bare in their anger before fleeing the Clans, never to return and never to walk the stars, their life and talents wasted by cruel, petty fighting.",
+                "exp": 30,
+                "art": "scaryghost_INTRO",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the gifted apprentice who created leaf-bare in anger."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Rudely, r_c leaves in the middle of p_l's tale, ruining its suspense. p_l trails off, embarrassed.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat walked off in the middle of to_cat's boring story."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like", "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat walked off in the middle of from_cat's enthralling story."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c is so concerned with the health of the long-dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to gently remind {PRONOUN/s_c/object} that this apprentice is long beyond helping.",
+                "exp": 0,
+                "art": "scaryghost_INTRO",
+                "can_have_stat": [
+                    "not_pl"
+                ],
+                "stat_trait": [
+                    "nervous",
+                    "insecure",
+                    "gloomy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "Even though to_cat interrupted, from_cat was touched by to_cat's concern for a character in {PRONOUN/from_cat/poss} story."
+                        }
                     }
                 ],
                 "frequency": 4

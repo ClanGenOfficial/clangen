@@ -70,7 +70,7 @@ class TestEvents(unittest.TestCase):
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(15)
         game.clan.save_herb_supply(game.clan)
-        Cat.grief_strings.clear()
+        game.clan.grief_strings.clear()
         Cat.sort_cats()
         # prevent them from just dying of starvation
         set_clan_setting("business as usual", False)

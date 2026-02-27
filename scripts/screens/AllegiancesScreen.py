@@ -11,7 +11,7 @@ from ..ui.scale import ui_scale, ui_scale_offset
 from ..clan_package.get_clan_cats import get_alive_clan_queens
 from .Screens import Screens
 from ..cat.enums import CatRank
-from ..game_structure.ui_elements import UIModifiedScrollingContainer
+from ..ui.elements.modified_scrolling_container import UIModifiedScrollingContainer
 
 
 class AllegiancesScreen(Screens):
