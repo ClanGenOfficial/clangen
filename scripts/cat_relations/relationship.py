@@ -59,6 +59,11 @@ class Relationship:
         else:
             self.log = []
 
+        self.no_longer_neutral = []
+        """
+        List of rel types that made it out of the neutral tier (ROMANCE is not included). This list is used to indicate which types should not return to a neutral state.
+        """
+
         # romance operates on a 0-100 scale, 0 is no romantic interest and 100 is full romantic interest
         self.romance = romance
 
@@ -81,6 +86,7 @@ class Relationship:
             "comfort": self.comfort,
             "trust": self.trust,
             "log": self.log,
+            "no_longer_neutral": self.no_longer_neutral,
         }
 
     def link_relationship(self):
@@ -606,7 +612,14 @@ class Relationship:
             value = 100
         elif value < -100:
             value = -100
+
         self._like = value
+
+        if RelType.LIKE in self.no_longer_neutral and self.like_tier.is_neutral:
+            self._like = self._get_neutral_adjusted_value(self._like)
+
+        if RelType.LIKE not in self.no_longer_neutral and not self.like_tier.is_neutral:
+            self.no_longer_neutral.append(RelType.LIKE)
 
     @property
     def like_tier(self) -> Optional[RelTier]:
@@ -639,6 +652,15 @@ class Relationship:
             value = -100
         self._respect = value
 
+        if RelType.RESPECT in self.no_longer_neutral and self.respect_tier.is_neutral:
+            self._respect = self._get_neutral_adjusted_value(self._respect)
+
+        if (
+            RelType.RESPECT not in self.no_longer_neutral
+            and not self.respect_tier.is_neutral
+        ):
+            self.no_longer_neutral.append(RelType.RESPECT)
+
     @property
     def respect_tier(self) -> Optional[RelTier]:
         group = self._get_tier_group(self.respect)
@@ -669,6 +691,15 @@ class Relationship:
         elif value < -100:
             value = -100
         self._comfort = value
+
+        if RelType.COMFORT in self.no_longer_neutral and self.comfort_tier.is_neutral:
+            self._comfort = self._get_neutral_adjusted_value(self._comfort)
+
+        if (
+            RelType.COMFORT not in self.no_longer_neutral
+            and not self.comfort_tier.is_neutral
+        ):
+            self.no_longer_neutral.append(RelType.COMFORT)
 
     @property
     def comfort_tier(self) -> Optional[RelTier]:
@@ -701,6 +732,15 @@ class Relationship:
             value = -100
         self._trust = value
 
+        if RelType.TRUST in self.no_longer_neutral and self.trust_tier.is_neutral:
+            self._trust = self._get_neutral_adjusted_value(self._trust)
+
+        if (
+            RelType.TRUST not in self.no_longer_neutral
+            and not self.trust_tier.is_neutral
+        ):
+            self.no_longer_neutral.append(RelType.TRUST)
+
     @property
     def trust_tier(self) -> Optional[RelTier]:
         group = self._get_tier_group(self.trust)
@@ -732,3 +772,20 @@ class Relationship:
                 return group
 
         return None
+
+    @staticmethod
+    def _get_neutral_adjusted_value(value: int):
+        value_intervals = constants.CONFIG["relationship"]["value_intervals"]
+        neutral_start = value_intervals["low_neg"]
+        neutral_end = value_intervals["neutral"]
+
+        if neutral_start < value <= neutral_end:  # if value is neutral
+            # find which end of the neutral range we're closest too
+            if abs(value - neutral_start) < abs(neutral_end - value):
+                # if closest to neg side, return negative tier value
+                return neutral_start - 1
+            else:
+                # if closest to pos side, return positive tier value
+                return neutral_end + 1
+        else:
+            return value

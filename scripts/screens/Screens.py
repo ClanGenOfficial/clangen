@@ -53,8 +53,13 @@ class Screens:
         # self.exit_screen()
         game.last_screen_forupdate = self.name
 
-        # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in [GameScreen.CAMP, GameScreen.LIST, GameScreen.EVENTS]:
+        # This keeps track of the last screen for the back button on cat profiles
+        # Only add screens to this if it's possible for the profile to be accessed from them
+        if self.name in (
+            GameScreen.CAMP,
+            GameScreen.LIST,
+            GameScreen.EVENTS,
+        ):
             game.last_screen_forProfile = self.name
 
         if new_screen not in [

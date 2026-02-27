@@ -55,6 +55,9 @@ For `cats_from` and `cats_to` you may use any of cat abbreviations already utili
 | `low_aggress`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
 | `high_aggress` | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
 
+!!! tip
+    To *exclude* certain cats from the relationship change, you can utilize any of these abbreviations as an [exclusionary value](#exclusionary-values)! So, for example, you could write `["patrol", "-p_l", "-app1"]` to affect the entire patrol *except* `p_l` and `app1`. Keep in mind that the order of abbreviations matters here! You can only *remove* cats from previously stated groups. So if we were to reverse the previous example like this: `["-p_l", "-app1", "patrol"]`, then it wouldn't work correctly, as `patrol` is being stated last and the code didn't know what group to remove `p_l` and `app1` from. 
+
 ### mutual:bool
 Optional. Controls if the relation effect will be applied in both directions. Defaults to False.
 
