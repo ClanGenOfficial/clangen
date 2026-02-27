@@ -2053,7 +2053,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 1,
-    "event_text": "Before a major battle between c_n and o_c_n could take place, their battlefield was overrun by a group of kittypets who refused to leave and let them fight. Instead, the two Clans intermingled under the watchful and hopeful eyes of the communial cats.",
+    "event_text": "Before a major battle between c_n and o_c_n could take place, their battlefield was overrun by a group of kittypets who refused to leave and let them fight. Instead, the two Clans intermingled under the hopeful eyes of the communial cats.",
     "new_cat": [
         ["old_name",
         "kittypet",
