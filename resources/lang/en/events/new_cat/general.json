@@ -1584,7 +1584,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/subject} opponent saw a loner stuck caught in the crossfire and helped {PRONOUN/n_c:0/object} get to safety together.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent saw a loner stuck caught in the crossfire and helped {PRONOUN/n_c:0/object} get to safety together.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
