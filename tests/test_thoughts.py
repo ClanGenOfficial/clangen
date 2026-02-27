@@ -1,19 +1,25 @@
 import os
 import unittest
+from random import Random
 
-from scripts.events_module.thoughts import generate_thoughts
 from scripts.cat.enums import CatRank, CatGroup, CatThought
+from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.events_module.thoughts import generate_thoughts
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat
+cat_factory = TestCatFactory(rng=Random())
 
 
 class TestNotWorkingThoughts(unittest.TestCase):
     def setUp(self):
-        self.main = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        self.other = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        self.main = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
+        self.other = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
         self.biome = "Forest"
         self.season = "Newleaf"
         self.camp = "camp2"
@@ -91,8 +97,8 @@ class TestNotWorkingThoughts(unittest.TestCase):
 class TestsGetStatusThought(unittest.TestCase):
     def test_medicine_thought(self):
         # given
-        medicine = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
-        warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
+        medicine = cat_factory.create_cat(status_dict={"rank": CatRank.MEDICINE_CAT})
+        warrior = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
         medicine.trait = "bold"
         biome = "Forest"
         season = "Newleaf"
@@ -116,7 +122,9 @@ class TestsGetStatusThought(unittest.TestCase):
                 {"group": CatGroup.PLAYER_CLAN, "standing": ["member", "exiled"]}
             ],
         }
-        cat = Cat(status_dict=exiled_status, moons=40, disable_random=True)
+        cat = cat_factory.create_cat(
+            status_dict=exiled_status, moons=40, disable_random=True
+        )
         biome = "Forest"
         season = "Newleaf"
         camp = "camp2"
@@ -128,7 +136,11 @@ class TestsGetStatusThought(unittest.TestCase):
 
     def test_lost_thoughts(self):
         # given
-        cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=40, disable_random=True)
+        cat = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR},
+            moons=40,
+            disable_random=True,
+        )
         cat.status.become_lost()
         biome = "Forest"
         season = "Newleaf"
@@ -143,8 +155,8 @@ class TestsGetStatusThought(unittest.TestCase):
 class TestFamilyThoughts(unittest.TestCase):
     def test_family_thought_young_children(self):
         # given
-        parent = Cat(moons=40, disable_random=True)
-        kit = Cat(parent1=parent.ID, moons=4, disable_random=True)
+        parent = cat_factory.create_cat(moons=40, disable_random=True)
+        kit = cat_factory.create_cat(parent1=parent.ID, moons=4, disable_random=True)
         biome = "Forest"
         season = "Newleaf"
         camp = "camp2"
@@ -166,8 +178,8 @@ class TestFamilyThoughts(unittest.TestCase):
 
     def test_family_thought_unrelated(self):
         # given
-        cat1 = Cat(moons=40, disable_random=True)
-        cat2 = Cat(moons=40, disable_random=True)
+        cat1 = cat_factory.create_cat(moons=40, disable_random=True)
+        cat2 = cat_factory.create_cat(moons=40, disable_random=True)
 
         # when
 

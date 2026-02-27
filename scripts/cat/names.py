@@ -78,6 +78,7 @@ class Name:
         specsuffix_hidden=False,
         load_existing_name=False,
         cat=None,
+        pelt=None,
     ):
         self.prefix = prefix
         self.suffix = suffix
@@ -85,16 +86,22 @@ class Name:
 
         self.cat = cat
 
-        try:
-            color = cat.pelt.colour
-            eyes = cat.pelt.eye_colour
-            pelt = cat.pelt.name
-            tortie_pattern = cat.pelt.tortie_pattern
-        except AttributeError:
-            color = None
-            eyes = None
-            pelt = None
-            tortie_pattern = None
+        if pelt is not None:
+            color = pelt.colour
+            eyes = pelt.eye_colour
+            pelt = pelt.name
+            tortie_pattern = pelt.tortie_pattern
+        else:
+            try:
+                color = cat.pelt.colour
+                eyes = cat.pelt.eye_colour
+                pelt = cat.pelt.name
+                tortie_pattern = cat.pelt.tortie_pattern
+            except AttributeError:
+                color = None
+                eyes = None
+                pelt = None
+                tortie_pattern = None
 
         name_fixpref = False
         # Set prefix
@@ -259,6 +266,10 @@ class Name:
                     self.suffix = random.choice(self.names_dict["normal_suffixes"])
             else:
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
+
+    def change_name(self, prefix, suffix):
+        self.prefix = prefix
+        self.suffix = suffix
 
     def __repr__(self):
         # Handles predefined suffixes (such as newborns being kit),

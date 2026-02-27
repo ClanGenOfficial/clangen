@@ -1,19 +1,22 @@
 import os
 import unittest
-
-from scripts.clan import Clan
+from random import Random
 
 from scripts.cat.enums import CatRank
+from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.clan import Clan
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat, Relationship
+from scripts.cat.cats import Relationship
 from scripts.cat.skills import Skill, SkillPath
 from scripts.events_module.relationship.group_events import (
     GroupEvents,
     GroupInteraction,
 )
+
+cat_factory = TestCatFactory(rng=Random())
 
 
 class MainCatFiltering(unittest.TestCase):
@@ -31,7 +34,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_status_one(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        main_cat = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
@@ -53,7 +56,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_status_all(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        main_cat = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
@@ -76,7 +79,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_trait_one(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat()
+        main_cat = cat_factory.create_cat()
         main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
@@ -99,7 +102,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_trait_all(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat()
+        main_cat = cat_factory.create_cat()
         main_cat.personality.trait = "calm"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
@@ -123,7 +126,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_skill_one(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat(moons=40)
+        main_cat = cat_factory.create_cat(moons=40)
         main_cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
         main_cat.skills.secondary = Skill(SkillPath.SWIMMER, points=9)
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
@@ -147,7 +150,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_skill_all(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat()
+        main_cat = cat_factory.create_cat()
         main_cat.skills.primary = Skill(SkillPath.HUNTER, 9)
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
@@ -171,7 +174,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_backstory_one(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat()
+        main_cat = cat_factory.create_cat()
         main_cat.backstory = "clanborn"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
@@ -194,7 +197,7 @@ class MainCatFiltering(unittest.TestCase):
     def test_main_cat_backstory_all(self):
         # given
         group_events = GroupEvents()
-        main_cat = Cat()
+        main_cat = cat_factory.create_cat()
         main_cat.backstory = "clanborn"
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
@@ -219,11 +222,11 @@ class MainCatFiltering(unittest.TestCase):
 class Abbreviations(unittest.TestCase):
     def test_get_abbreviation_possibilities_all(self):
         # given
-        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        main_cat = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
 
-        random1 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        random3 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        random1 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
+        random2 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
+        random3 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
 
         interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
@@ -249,11 +252,11 @@ class Abbreviations(unittest.TestCase):
 
     def test_get_abbreviation_possibilities_not_all(self):
         # given
-        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        main_cat = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
 
-        random1 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        random3 = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
+        random1 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
+        random2 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
+        random3 = cat_factory.create_cat(status_dict={"rank": CatRank.MEDICINE_CAT})
 
         interaction1 = GroupInteraction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
@@ -302,12 +305,12 @@ class Abbreviations(unittest.TestCase):
 
     def test_set_abbreviations_cats(self):
         # given
-        main_cat = Cat(status_dict={"rank": CatRank.WARRIOR})
+        main_cat = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
         abbreviations_cat_id = {"m_c": main_cat.ID, "r_c1": None, "r_c2": None}
 
-        random1 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        random3 = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
+        random1 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
+        random2 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
+        random3 = cat_factory.create_cat(status_dict={"rank": CatRank.MEDICINE_CAT})
 
         # when
         interaction_cats = [random1, random2, random3]
@@ -330,10 +333,14 @@ class Abbreviations(unittest.TestCase):
 class OtherCatsFiltering(unittest.TestCase):
     def test_relationship_allow_true(self):
         # given
-        parent = Cat()
-        main_cat = Cat(parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR})
-        random1 = Cat(status_dict={"rank": CatRank.WARRIOR})
-        random2 = Cat(parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR})
+        parent = cat_factory.create_cat()
+        main_cat = cat_factory.create_cat(
+            parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR}
+        )
+        random1 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
+        random2 = cat_factory.create_cat(
+            parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR}
+        )
         abbreviations_cat_id = {
             "m_c": main_cat.ID,
             "r_c1": random1.ID,
@@ -482,10 +489,14 @@ class OtherCatsFiltering(unittest.TestCase):
 
     def test_relationship_allow_false(self):
         # given
-        parent = Cat()
-        main_cat = Cat(parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR})
-        random1 = Cat(parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR})
-        random2 = Cat(status_dict={"rank": CatRank.WARRIOR})
+        parent = cat_factory.create_cat()
+        main_cat = cat_factory.create_cat(
+            parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR}
+        )
+        random1 = cat_factory.create_cat(
+            parent1=parent.ID, status_dict={"rank": CatRank.WARRIOR}
+        )
+        random2 = cat_factory.create_cat(status_dict={"rank": CatRank.WARRIOR})
         abbreviations_cat_id = {
             "m_c": main_cat.ID,
             "r_c1": random1.ID,

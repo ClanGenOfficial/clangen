@@ -9,12 +9,15 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 
 import scripts.screens.screens_core.screens_core
-from scripts.cat.cats import create_example_cats, create_cat, Cat
+from scripts.cat.cats import Cat
+from ..cat.factories.cat_factory import CatFactory
+from ..cat.factories.create_example_cat import create_example_cats
 from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure import game
+from ..cat.factories.enums import CatType
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
@@ -1249,9 +1252,15 @@ class MakeClanScreen(Screens):
             self.symbol_selected = f"symbol{self.clan_name.upper()}0"
         else:
             self.symbol_selected = choice(sprites.clan_symbols)
-        self.leader = create_cat(rank=CatRank.WARRIOR)
-        self.deputy = create_cat(rank=CatRank.WARRIOR)
-        self.med_cat = create_cat(rank=CatRank.WARRIOR)
+        self.leader = CatFactory.create_cat(
+            CatType.NEW, status_dict={"rank": CatRank.WARRIOR}
+        )
+        self.deputy = CatFactory.create_cat(
+            CatType.NEW, status_dict={"rank": CatRank.WARRIOR}
+        )
+        self.med_cat = CatFactory.create_cat(
+            CatType.NEW, status_dict={"rank": CatRank.WARRIOR}
+        )
         for _ in range(randrange(4, 8)):
             random_rank = choice(
                 [
@@ -1262,7 +1271,9 @@ class MakeClanScreen(Screens):
                     CatRank.ELDER,
                 ]
             )
-            self.members.append(create_cat(rank=random_rank))
+            self.members.append(
+                CatFactory.create_cat(CatType.NEW, status_dict={"rank": random_rank})
+            )
 
     def random_clan_name(self):
         clan_names = (
