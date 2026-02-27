@@ -143,17 +143,17 @@ def one_moon():
     # disaster_events.handle_disasters()
 
     # Handle grief events.
-    if Cat.grief_strings:
+    if game.clan.grief_strings:
         # Grab all the dead or outside cats, who should not have grief text
-        for ID in Cat.grief_strings.copy():
+        for ID in game.clan.grief_strings.copy():
             check_cat = Cat.all_cats.get(ID)
             if isinstance(check_cat, Cat):
                 if check_cat.dead or not check_cat.status.alive_in_player_clan:
-                    Cat.grief_strings.pop(ID)
+                    game.clan.grief_strings.pop(ID)
 
         # Generate events
 
-        for cat_id, details in Cat.grief_strings.items():
+        for cat_id, details in game.clan.grief_strings.items():
             for _info in details:
                 text = _info[0]
                 cats = _info[1]
@@ -169,19 +169,21 @@ def one_moon():
                         Single_Event(text, ["birth_death", "relation"], cats)
                     )
 
-        Cat.grief_strings.clear()
+        game.clan.grief_strings.clear()
 
-    if Cat.dead_cats:
+    if game.dead_cats_to_grieve:
         ghost_names = []
         shaken_cats = []
         extra_event = None
-        for ghost in Cat.dead_cats:
+        for ghost in game.dead_cats_to_grieve:
             ghost_names.append(str(ghost.name))
         insert = adjust_list_text(ghost_names)
 
-        if len(Cat.dead_cats) > 1:
+        if len(game.dead_cats_to_grieve) > 1:
             event = i18n.t(
-                "hardcoded.event_deaths", count=len(Cat.dead_cats), insert=insert
+                "hardcoded.event_deaths",
+                count=len(game.dead_cats_to_grieve),
+                insert=insert,
             )
 
             if len(ghost_names) > 2:
@@ -229,9 +231,11 @@ def one_moon():
             Single_Event(
                 event,
                 ["birth_death"],
-                [i.ID for i in Cat.dead_cats],
+                [i.ID for i in game.dead_cats_to_grieve],
                 cat_dict=(
-                    {"m_c": Cat.dead_cats[0]} if len(Cat.dead_cats) == 1 else None
+                    {"m_c": game.dead_cats_to_grieve[0]}
+                    if len(game.dead_cats_to_grieve) == 1
+                    else None
                 ),
             )
         )
@@ -239,7 +243,7 @@ def one_moon():
             game.cur_events_list.append(
                 Single_Event(extra_event, ["birth_death"], [i.ID for i in shaken_cats])
             )
-        Cat.dead_cats.clear()
+        game.dead_cats_to_grieve.clear()
 
     if game.clan.game_mode in ("expanded", "cruel season") and game.clan.freshkill_pile:
         # make a notification if the Clan does not have enough prey

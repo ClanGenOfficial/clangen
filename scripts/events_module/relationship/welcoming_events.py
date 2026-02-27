@@ -71,11 +71,25 @@ class Welcoming_Events:
         # influence the relationship
         new_to_clan_cat = constants.CONFIG["new_cat"]["rel_buff"]["new_to_clan_cat"]
         clan_cat_to_new = constants.CONFIG["new_cat"]["rel_buff"]["clan_cat_to_new"]
+
+        # the effect is set through the settings, therefore a rough assumption has to be made
+        if any(val > 0 for val in clan_cat_to_new.values()):
+            effect = " (positive effect)"
+        else:
+            effect = " (negative effect)"
+        interaction_str += effect
+
         change_relationship_values(
-            cats_to=[clan_cat], cats_from=[new_cat], **new_to_clan_cat
+            cats_to=[clan_cat],
+            cats_from=[new_cat],
+            log=interaction_str,
+            **new_to_clan_cat,
         )
         change_relationship_values(
-            cats_to=[new_cat], cats_from=[clan_cat], **clan_cat_to_new
+            cats_to=[new_cat],
+            cats_from=[clan_cat],
+            log=interaction_str,
+            **clan_cat_to_new,
         )
 
         # add it to the event list
@@ -87,37 +101,6 @@ class Welcoming_Events:
                 cat_dict={"m_c": new_cat, "r_c": clan_cat},
             )
         )
-
-        # the effect is set through the settings, therefore a rough assumption has to be made
-        if any(val > 0 for val in clan_cat_to_new.values()):
-            effect = " (positive effect)"
-        else:
-            effect = " (negative effect)"
-
-        interaction_str += effect
-
-        # add to relationship logs
-        if new_cat.ID in clan_cat.relationships:
-            clan_cat.relationships[new_cat.ID].log.append(
-                interaction_str
-                + i18n.t(
-                    "relationships.age_postscript",
-                    name=str(clan_cat.name),
-                    count=clan_cat.moons,
-                )
-            )
-
-            new_cat.relationships[clan_cat.ID].link_relationship()
-
-        if clan_cat.ID in new_cat.relationships:
-            clan_cat.relationships[new_cat.ID].log.append(
-                interaction_str
-                + i18n.t(
-                    "relationships.age_postscript",
-                    name=str(new_cat.name),
-                    count=new_cat.moons,
-                )
-            )
 
     @staticmethod
     def rebuild_dicts():

@@ -16,7 +16,17 @@
             "Enjoys some very special family moments",
             "Remembers what a full night of sleep used to feel like",
             "Realizes how much work kits can be",
-            "Needs a moment away from the new litter"
+            "Needs a moment away from the new litter",
+            "Can't believe the new litter is finally here",
+            "Grooms the new litter",
+            "Hasn't stopped purring since the litter arrived",
+            "Hasn't left the nursery since the litter arrived",
+            "Won't let anyone look at the new litter just yet",
+            "Wants to show every cat the new litter",
+            "Is still indecisive on names",
+            "Fondly remembers sleeping through the night",
+            "Hopes the new litter's crying isn't keeping everyone up",
+            "Has never been so exhausted in all {PRONOUN/m_c/poss} life"
         ]
     },
         {
@@ -26,5 +36,17 @@
         ],
             "random_age_constraint": ["young adult", "adult", "senior adult", "senior"],
             "relationship_constraint": ["trusts"]
+    },
+    {
+        "id": "gen_parent_to_newborn",
+        "thoughts": [
+            "Stops r_c from falling out of the nest",
+            "Makes sure r_c has fed enough",
+            "Hissed at a Clanmate who got too close to r_c",
+            "Considers renaming r_c",
+            "Is proud of r_c for sleeping through the night"
+        ],
+        "random_age_constraint": ["newborn"],
+        "relationship_constraint": ["parent/child"]
     }
 ]

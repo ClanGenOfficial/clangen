@@ -11,7 +11,8 @@
             "r_c curls around m_c's body one last time, grooming {PRONOUN/m_c/poss} fur flat. It's the least {PRONOUN/r_c/subject} can do for a cat that gave r_c so much.",
             "r_c hides {PRONOUN/r_c/poss} face in m_c's cold fur so {PRONOUN/r_c/poss} Clanmates can't see how hard this loss has hit {PRONOUN/r_c/object}.",
             "The loss of m_c gives r_c the flutters of anxiety and pangs of sorrow that only {PRONOUN/m_c/subject} {VERB/m_c/were/was} able to soothe. But now m_c is gone, forever.",
-            "m_c is dead? r_c's heart seizes at the news, {PRONOUN/r_c/poss} mind racing as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to imagine life without {PRONOUN/m_c/object}."
+            "m_c is dead? r_c's heart seizes at the news, {PRONOUN/r_c/poss} mind racing as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to imagine life without {PRONOUN/m_c/object}.",
+            "As r_c's Clanmates comfort {PRONOUN/r_c/object} during the vigil, {PRONOUN/r_c/subject} can't help but wonder if things will ever feel normal again without m_c in {PRONOUN/r_c/poss} life."
         ],
         "no_body": [
             "r_c looks at all the cats sitting vigil for m_c, and wonders how any of them will cope without m_c in their lives.",
@@ -20,7 +21,8 @@
             "r_c blinks back tears as the realization sinks in that {PRONOUN/r_c/subject}'ll never share a joke or a companionable silence with m_c ever again in this life.",
             "m_c was such a source of solace and peace for r_c that {PRONOUN/r_c/object} {VERB/r_c/wonder/wonders} how {PRONOUN/r_c/subject}'ll get by without {PRONOUN/m_c/object}.",
             "The loss of m_c gives r_c the flutters of anxiety and pangs of sorrow that only {PRONOUN/m_c/subject} {VERB/m_c/were/was} able to soothe. But now m_c is gone, forever.",
-            "m_c is dead? r_c's heart seizes at the news, {PRONOUN/r_c/poss} mind racing as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to imagine life without {PRONOUN/m_c/object}."
+            "m_c is dead? r_c's heart seizes at the news, {PRONOUN/r_c/poss} mind racing as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to imagine life without {PRONOUN/m_c/object}.",
+            "As r_c's Clanmates comfort {PRONOUN/r_c/object} during the vigil, {PRONOUN/r_c/subject} can't help but wonder if things will ever feel normal again without m_c in {PRONOUN/r_c/poss} life."
         ]
     },
     "adventurous": {
