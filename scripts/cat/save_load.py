@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from typing import TYPE_CHECKING, Type, List
 
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.settings.settings import game_setting_get
@@ -89,7 +89,7 @@ def save_faded_cats(clanname, cat_class: Type["Cat"], game: "Game"):
         # Get a copy of info
         if game_setting_get("save_faded_copy"):
             copy_of_info += (
-                ujson.dumps(inter_cat.get_save_dict(), indent=4)
+                json.dumps(inter_cat.get_save_dict(), indent=4)
                 + "\n--------------------------------------------------------------------------\n"
             )
 
@@ -143,11 +143,11 @@ def add_faded_offspring_to_faded_cat(clanname, parent: str, offspring: str):
             "r",
             encoding="utf-8",
         ) as read_file:
-            cat_info = ujson.loads(read_file.read())
+            cat_info = json.loads(read_file.read())
     except IOError:
         print("ERROR loading faded cat (file read error)")
         return False
-    except ujson.JSONDecodeError:
+    except json.JSONDecodeError:
         print("ERROR: loading faded cat (invalid JSON)")
         return False
 

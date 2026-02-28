@@ -2,7 +2,7 @@ import random
 from typing import Optional
 
 import i18n
-import ujson
+from utils.json_compat import json
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
@@ -208,7 +208,7 @@ def get_event_dicts(file_path) -> list:
         with open(
             get_resource_directory() + file_path, "r", encoding="utf-8"
         ) as read_file:
-            events = ujson.loads(read_file.read())
+            events = json.loads(read_file.read())
     except ValueError:
         try:
             with open(
@@ -216,7 +216,7 @@ def get_event_dicts(file_path) -> list:
                 "r",
                 encoding="utf-8",
             ) as read_file:
-                events = ujson.loads(read_file.read())
+                events = json.loads(read_file.read())
         except ValueError:
             print(f"ERROR: Unable to load {file_path}.")
             return []

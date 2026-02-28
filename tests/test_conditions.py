@@ -1,6 +1,6 @@
 import os
 import unittest
-import ujson
+from utils.json_compat import json
 
 from scripts.cat.enums import CatRank
 
@@ -65,7 +65,7 @@ class TestsIllnesses(unittest.TestCase):
         resource_directory = "resources/dicts/conditions/"
 
         with open(f"{resource_directory}Illnesses.json", "r") as read_file:
-            illnesses = ujson.loads(read_file.read())
+            illnesses = json.loads(read_file.read())
         return illnesses
 
 
@@ -74,5 +74,5 @@ class TestInjury(unittest.TestCase):
         resource_directory = "resources/dicts/conditions/"
 
         with open(f"{resource_directory}Injuries.json", "r") as read_file:
-            injuries = ujson.loads(read_file.read())
+            injuries = json.loads(read_file.read())
         return injuries

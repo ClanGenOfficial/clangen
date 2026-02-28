@@ -2,7 +2,7 @@ import os.path
 from typing import Dict, Optional
 
 import i18n
-import ujson
+from utils.json_compat import json
 
 lang_config: Optional[Dict] = None
 _lang_config_directory = os.path.join("resources", "lang", "{locale}", "config.json")
@@ -41,14 +41,14 @@ def load_lang_resource(location: str, *, root_directory=None):
             "r",
             encoding="utf-8",
         ) as string_file:
-            return ujson.loads(string_file.read())
+            return json.loads(string_file.read())
     except FileNotFoundError:
         with open(
             os.path.join(fallback_directory, location.replace("{lang}", fallback)),
             "r",
             encoding="utf-8",
         ) as string_file:
-            return ujson.loads(string_file.read())
+            return json.loads(string_file.read())
 
 
 def get_lang_config() -> Dict:
@@ -61,7 +61,7 @@ def get_lang_config() -> Dict:
         with open(
             _lang_config_directory.replace("{locale}", locale), "r", encoding="utf-8"
         ) as lang_file:
-            lang_config = ujson.loads(lang_file.read())
+            lang_config = json.loads(lang_file.read())
         _directory_changed = False
     return lang_config
 
@@ -74,7 +74,7 @@ def get_additional_lang_list() -> Dict:
             "r",
             encoding="utf-8",
         ) as lang_file:
-            additional_lang_list = ujson.loads(lang_file.read())
+            additional_lang_list = json.loads(lang_file.read())
     return additional_lang_list
 
 

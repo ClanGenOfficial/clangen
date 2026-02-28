@@ -2,7 +2,7 @@
 # -*- coding: ascii -*-
 
 import i18n
-import ujson
+from utils.json_compat import json
 
 from scripts.cat_relations.enums import RelType
 from scripts.events_module.event_filters import (
@@ -30,14 +30,14 @@ class GenerateEvents:
     with open(
         f"resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
     ) as read_file:
-        INJURIES = ujson.loads(read_file.read())
+        INJURIES = json.loads(read_file.read())
 
     @staticmethod
     def get_ongoing_event_dicts(file_path):
         events = None
         try:
             with open(file_path, "r", encoding="utf-8") as read_file:
-                events = ujson.loads(read_file.read())
+                events = json.loads(read_file.read())
         except:
             print(f"ERROR: Unable to load events from biome {file_path}.")
 
@@ -54,7 +54,7 @@ class GenerateEvents:
         try:
             file_path = f"{get_resource_directory()}leader_den/{'success' if success else 'fail'}/{event_type}.json"
             with open(file_path, "r", encoding="utf-8") as read_file:
-                events = ujson.loads(read_file.read())
+                events = json.loads(read_file.read())
         except:
             events = None
             print(

@@ -13,7 +13,7 @@ except ImportError:
 import unittest
 from uuid import uuid4
 
-import ujson
+from utils.json_compat import json
 
 from scripts.cat import save_load
 from scripts.cat.enums import CatRank

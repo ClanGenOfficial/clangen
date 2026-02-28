@@ -2,7 +2,7 @@ import logging
 import os.path
 from typing import TYPE_CHECKING
 
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure.game.settings import (
     game_settings_save,
@@ -70,7 +70,7 @@ def set_display_mode(
         fullscreen = game_setting_get("fullscreen")
 
     with open("resources/screen_config.json", "r", encoding="utf-8") as read_config:
-        screen_config = ujson.load(read_config)
+        screen_config = json.load(read_config)
 
     if source_screen is not None:
         curr_variable_dict = source_screen.display_change_save()
@@ -285,7 +285,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         with open(
             get_save_dir() + "/settings.json", "r", encoding="utf-8"
         ) as read_file:
-            settings_data = ujson.loads(read_file.read())
+            settings_data = json.loads(read_file.read())
     except FileNotFoundError:
         return
 
@@ -303,7 +303,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         with open(
             get_save_dir() + "/settings.json", "w", encoding="utf-8"
         ) as write_file:
-            new_settings = ujson.dumps(settings_data, ensure_ascii=False, indent=4)
+            new_settings = json.dumps(settings_data, ensure_ascii=False, indent=4)
             write_file.write(new_settings)
             del new_settings
 

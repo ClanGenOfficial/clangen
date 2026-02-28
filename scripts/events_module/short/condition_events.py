@@ -3,7 +3,7 @@ from copy import deepcopy
 from typing import Dict, List
 
 import i18n
-import ujson
+from utils.json_compat import json
 import logging
 
 from scripts.cat.cats import Cat
@@ -49,15 +49,15 @@ class Condition_Events:
     with open(
         f"{resource_directory}illnesses.json", "r", encoding="utf-8"
     ) as read_file:
-        ILLNESSES = ujson.loads(read_file.read())
+        ILLNESSES = json.loads(read_file.read())
 
     with open(f"{resource_directory}injuries.json", "r", encoding="utf-8") as read_file:
-        INJURIES = ujson.loads(read_file.read())
+        INJURIES = json.loads(read_file.read())
 
     with open(
         "resources/dicts/conditions/permanent_conditions.json", "r", encoding="utf-8"
     ) as read_file:
-        PERMANENT = ujson.loads(read_file.read())
+        PERMANENT = json.loads(read_file.read())
     # ---------------------------------------------------------------------------- #
     #                                    CHANCE                                    #
     # ---------------------------------------------------------------------------- #
@@ -65,7 +65,7 @@ class Condition_Events:
     with open(
         "resources/dicts/conditions/illnesses_seasons.json", "r", encoding="utf-8"
     ) as read_file:
-        ILLNESSES_SEASON_LIST = ujson.loads(read_file.read())
+        ILLNESSES_SEASON_LIST = json.loads(read_file.read())
 
     # ---------------------------------------------------------------------------- #
     #                                   STRINGS                                    #

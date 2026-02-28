@@ -3,7 +3,7 @@ import os
 import unittest
 
 import i18n
-import ujson
+from utils.json_compat import json
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -22,7 +22,7 @@ class TestLocalisation(unittest.TestCase):
         with open(
             "resources/lang/en/pronouns.en.json", "r", encoding="utf-8"
         ) as read_file:
-            cls.pronouns = ujson.loads(read_file.read())["en"]
+            cls.pronouns = json.loads(read_file.read())["en"]
 
         male_cat = Cat(gender="male", disable_random=True)
         male_cat.genderalign = "male"

@@ -3,7 +3,7 @@ import random
 
 import pygame
 import pygame_gui
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.game_structure import game
@@ -35,7 +35,7 @@ class MusicManager:
         # loading playlists
         try:
             with open("resources/audio/music.json", "r", encoding="utf-8") as f:
-                music_data = ujson.load(f)
+                music_data = json.load(f)
         except:
             logger.exception("Failed to load playlist index")
             return
@@ -241,7 +241,7 @@ class _SoundManager:
         # open up the sound dictionary
         try:
             with open("resources/audio/sounds.json", "r", encoding="utf-8") as f:
-                sound_data = ujson.load(f)
+                sound_data = json.load(f)
         except:
             logger.exception("Failed to load sound index")
             return

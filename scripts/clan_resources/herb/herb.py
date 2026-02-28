@@ -1,6 +1,6 @@
 import os
 
-import ujson
+from utils.json_compat import json
 import i18n
 
 
@@ -39,4 +39,4 @@ class Herb:
 with open(
     os.path.normpath("resources/dicts/herb_info.json"), "r", encoding="utf-8"
 ) as read_file:
-    HERBS = ujson.loads(read_file.read())
+    HERBS = json.loads(read_file.read())

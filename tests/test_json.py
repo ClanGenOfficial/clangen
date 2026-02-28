@@ -12,7 +12,7 @@ import os
 import sys
 import unittest
 
-import ujson
+from utils.json_compat import json
 
 
 def _test():
@@ -33,8 +33,8 @@ def _test():
                         continue
 
                 try:
-                    _ = ujson.loads(contents)
-                except ujson.JSONDecodeError as e:
+                    _ = json.loads(contents)
+                except json.JSONDecodeError as e:
                     print(f"::error file={path}::File {path} is invalid json")
                     print(e)
                     failed = True

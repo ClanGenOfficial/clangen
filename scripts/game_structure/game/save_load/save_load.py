@@ -3,7 +3,7 @@ from pathlib import Path
 from shutil import move as shutil_move
 from typing import Union, List
 
-import ujson
+from utils.json_compat import json
 
 from scripts.housekeeping.datadir import get_temp_dir, get_save_dir
 
@@ -19,7 +19,7 @@ def safe_save(
 
     # If write_data is not a string,
     if type(write_data) is not str:
-        _data = ujson.dumps(write_data, indent=4)
+        _data = json.dumps(write_data, indent=4)
     else:
         _data = write_data
 

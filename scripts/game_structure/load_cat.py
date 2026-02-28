@@ -4,7 +4,7 @@ from math import floor
 from random import choice
 
 import i18n
-import ujson
+from utils.json_compat import json
 
 from scripts.cat.cats import Cat, BACKSTORIES
 from ..cat.enums import CatGroup, CatRank
@@ -49,15 +49,15 @@ def json_load():
     with open(
         f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"
     ) as read_file:
-        convert = ujson.loads(read_file.read())
+        convert = json.loads(read_file.read())
     try:
         with open(clan_cats_json_path, "r", encoding="utf-8") as read_file:
-            cat_data = ujson.loads(read_file.read())
+            cat_data = json.loads(read_file.read())
     except PermissionError as e:
         switch_set_value(Switch.error_message, f"Can\t open {clan_cats_json_path}!")
         switch_set_value(Switch.traceback, e)
         raise
-    except ujson.JSONDecodeError as e:
+    except json.JSONDecodeError as e:
         switch_set_value(Switch.error_message, f"{clan_cats_json_path} is malformed!")
         switch_set_value(Switch.traceback, e)
         raise

@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.game_structure.game.switches import Switch, switch_get_value
@@ -21,7 +21,7 @@ def load_clan_settings():
             "r",
             encoding="utf-8",
         ) as write_file:
-            _load_settings = ujson.loads(write_file.read())
+            _load_settings = json.loads(write_file.read())
 
         # creating a copy that we can iterate through while modifying the original dict
         _load_copy = _load_settings.copy()
@@ -93,7 +93,7 @@ _clan_settings = DISPLAY_SETTINGS["clan"]
 with open(
     "resources/clansettings_conversion.json", "r", encoding="utf-8"
 ) as conversion_file:
-    _old_save_conversion = ujson.loads(conversion_file.read())
+    _old_save_conversion = json.loads(conversion_file.read())
 
 all_settings = [
     _clan_settings["general"],

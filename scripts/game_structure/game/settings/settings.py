@@ -2,7 +2,7 @@ import traceback
 from pathlib import Path
 from typing import Any, Tuple, Generator
 
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.housekeeping.datadir import get_save_dir
@@ -40,7 +40,7 @@ def game_settings_load():
 
     try:
         with open(settings_path, "r", encoding="utf-8") as read_file:
-            settings_data = ujson.loads(read_file.read())
+            settings_data = json.loads(read_file.read())
     except FileNotFoundError:
         return
 

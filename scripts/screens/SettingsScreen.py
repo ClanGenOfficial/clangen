@@ -8,7 +8,7 @@ from math import floor
 import i18n
 import pygame
 import pygame_gui
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game.settings import (
@@ -84,7 +84,7 @@ class SettingsScreen(Screens):
     info_text_index = "welcome"
     contributors_start = 0
     with open("resources/credits_text.json", "r", encoding="utf-8") as f:
-        credits_text = ujson.load(f)
+        credits_text = json.load(f)
     for string in credits_text["text"]:
         if string == "{credits}":
             info_text_index = "ogs"

@@ -12,7 +12,7 @@ import os
 import statistics
 from random import choice, randint
 
-import ujson
+from utils.json_compat import json
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup
@@ -719,7 +719,7 @@ class Clan:
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
-            clan_data = ujson.loads(read_file.read())
+            clan_data = json.loads(read_file.read())
 
         if clan_data["leader"]:
             leader = Cat.all_cats[clan_data["leader"]]
@@ -905,7 +905,7 @@ class Clan:
             with open(
                 file_path, "r", encoding="utf-8"
             ) as read_file:  # pylint: disable=redefined-outer-name
-                clan.pregnancy_data = ujson.load(read_file)
+                clan.pregnancy_data = json.load(read_file)
         else:
             clan.pregnancy_data = {}
 
@@ -933,7 +933,7 @@ class Clan:
                 with open(
                     file_path, "r", encoding="utf-8"
                 ) as read_file:  # pylint: disable=redefined-outer-name
-                    disaster = ujson.load(read_file)
+                    disaster = json.load(read_file)
                     if disaster:
                         clan.primary_disaster = OngoingEvent(
                             event=disaster["event"],
@@ -956,7 +956,7 @@ class Clan:
                 os.makedirs(get_save_dir() + f"/{game.clan.name}/disasters")
                 clan.primary_disaster = None
                 with open(file_path, "w", encoding="utf-8") as rel_file:
-                    json_string = ujson.dumps(clan.primary_disaster, indent=4)
+                    json_string = json.dumps(clan.primary_disaster, indent=4)
                     rel_file.write(json_string)
         except:
             clan.primary_disaster = None
@@ -965,7 +965,7 @@ class Clan:
         try:
             if os.path.exists(file_path):
                 with open(file_path, "r", encoding="utf-8") as read_file:
-                    disaster = ujson.load(read_file)
+                    disaster = json.load(read_file)
                     if disaster:
                         clan.secondary_disaster = OngoingEvent(
                             event=disaster["event"],
@@ -986,7 +986,7 @@ class Clan:
                 os.makedirs(get_save_dir() + f"/{game.clan.name}/disasters")
                 clan.secondary_disaster = None
                 with open(file_path, "w", encoding="utf-8") as rel_file:
-                    json_string = ujson.dumps(clan.secondary_disaster, indent=4)
+                    json_string = json.dumps(clan.secondary_disaster, indent=4)
                     rel_file.write(json_string)
 
         except:
@@ -1046,7 +1046,7 @@ class Clan:
         file_path = f"{get_save_dir()}/{game.clan.name}/future_events.json"
         if os.path.exists(file_path):
             with open(file_path, "r", encoding="utf-8") as save_file:
-                save_list = ujson.load(save_file)
+                save_list = json.load(save_file)
                 for event in save_list:
                     try:
                         game.clan.future_events.append(
@@ -1091,14 +1091,14 @@ class Clan:
             # load the old file path and convert the save data into current format
             if os.path.exists(old_file_path):
                 with open(old_file_path, "r", encoding="utf-8") as save_file:
-                    herbs = ujson.load(save_file)
+                    herbs = json.load(save_file)
                     clan.herb_supply = HerbSupply()
                     clan.herb_supply.convert_old_save(herbs)
 
             # load the current file path, if it exists in save
             elif os.path.exists(current_file_path):
                 with open(current_file_path, "r", encoding="utf-8") as save_file:
-                    herbs = ujson.load(save_file)
+                    herbs = json.load(save_file)
                     clan.herb_supply = HerbSupply(herb_supply=herbs["storage"])
                     clan.herb_supply.collected = herbs["collected"]
 
@@ -1150,13 +1150,13 @@ class Clan:
                 with open(
                     file_path, "r", encoding="utf-8"
                 ) as read_file:  # pylint: disable=redefined-outer-name
-                    pile = ujson.load(read_file)
+                    pile = json.load(read_file)
                     clan.freshkill_pile = FreshkillPile(pile)
 
                 file_path = get_save_dir() + f"/{game.clan.name}/nutrition_info.json"
                 if os.path.exists(file_path) and clan.freshkill_pile:
                     with open(file_path, "r", encoding="utf-8") as read_file:
-                        nutritions = ujson.load(read_file)
+                        nutritions = json.load(read_file)
                         for k, nutr in nutritions.items():
                             nutrition = Nutrition()
                             nutrition.max_score = nutr["max_score"]

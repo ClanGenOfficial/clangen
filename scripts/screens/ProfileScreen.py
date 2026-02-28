@@ -8,7 +8,7 @@ from re import sub
 import i18n
 import pygame
 import pygame_gui
-import ujson
+from utils.json_compat import json
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat, BACKSTORIES
@@ -1241,7 +1241,7 @@ class ProfileScreen(Screens):
 
         try:
             with open(notes_file_path, "r", encoding="utf-8") as read_file:
-                rel_data = ujson.loads(read_file.read())
+                rel_data = json.loads(read_file.read())
                 self.user_notes = i18n.t("screens.profile.user_notes")
                 if str(self.the_cat.ID) in rel_data:
                     self.user_notes = rel_data.get(str(self.the_cat.ID))

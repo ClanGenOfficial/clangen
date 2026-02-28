@@ -1,6 +1,6 @@
 import pygame
 import pygame_gui
-import ujson
+from utils.json_compat import json
 
 from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
@@ -50,7 +50,7 @@ class EditorSaveCheck(GameWindow):
 
     @staticmethod
     def modify_file(event_list, path):
-        event_json = ujson.dumps(event_list, indent=4)
+        event_json = json.dumps(event_list, indent=4)
         event_json = event_json.replace(
             "\\/", "/"
         )  # ujson tries to escape "/", but doesn't end up doing a good job.
