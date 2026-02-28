@@ -101,7 +101,10 @@ class KillCat(GameWindow):
                     else:
                         game.clan.leader_lives -= 1
 
-                self.the_cat.die()
+                if self.the_cat.status.alive_in_player_clan:
+                    self.the_cat.die()
+                else:
+                    self.the_cat.die(grief_allowed=False)
                 self.the_cat.history.add_death(death_message)
                 update_sprite(self.the_cat)
                 game.all_screens[GameScreen.PROFILE].exit_screen()
