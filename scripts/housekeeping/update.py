@@ -19,7 +19,7 @@ def _mock_imghdr_what(_, h=None):
 
 sys.modules['imghdr'] = type('Mock', (object,), {'what': _mock_imghdr_what})
 
-import pgpy
+from utils.pgpy_compat import pgpy
 import requests
 from requests import Response
 from strenum import StrEnum
@@ -91,6 +91,9 @@ def get_latest_version_number():
 
 
 def has_update(update_channel: UpdateChannel):
+    if platform.system() == "iOS":
+        return False
+        
     latest_endpoint = (
         f"{get_update_url()}/v1/Update/Channels/{update_channel.value}/Releases/Latest"
     )
@@ -133,6 +136,8 @@ def determine_platform_name() -> str:
             return "linux2.35"
         else:
             raise RuntimeError()
+    elif platform.system() == "iOS":
+        return "iOS"
 
     raise RuntimeError()
 
