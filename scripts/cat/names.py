@@ -145,7 +145,7 @@ class Name:
             return
 
         if always_english:
-            with open("resources/dicts/en/names.json", encoding="utf-8") as read_file:
+            with open("resources/lang/en/names.json", encoding="utf-8") as read_file:
                 names_dict = ujson.loads(read_file.read())
         else:
             names_dict = load_lang_resource("names.json")
