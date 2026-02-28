@@ -3246,7 +3246,7 @@ class Cat:
         if make_clan:
             return "\n".join(
                 [
-                    self.genderalign,
+                    self.get_genderalign_string(),
                     i18n.t(
                         (
                             f"general.{self.age}"
