@@ -310,6 +310,9 @@ dev_tools = false
   # allows cats to be named after the color of their eyes
   allow_eye_names = true
 
+  # set to True to always use English names instead of the localized version
+  always_use_english = false
+
 [accessory_generation]
   # base 1/chance a cat generates with an accessory 
   base_acc_chance = 150
