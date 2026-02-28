@@ -1075,7 +1075,9 @@ class MakeClanScreen(Screens):
 
         if self.sub_screen == "choose leader":
             self.elements["cat_name"].set_text(
-                str(selected.name) + " --> " + selected.name.prefix + "star"
+                str(selected.name)
+                + " --> "
+                + selected.name.get_specsuffix_name(CatRank.LEADER)
             )
         else:
             self.elements["cat_name"].set_text(str(selected.name))
