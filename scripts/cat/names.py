@@ -145,16 +145,14 @@ class Name:
             return
 
         if always_english:
-            with open(
-                "resources/dicts/en/names.json", encoding="utf-8"
-            ) as read_file:
+            with open("resources/dicts/en/names.json", encoding="utf-8") as read_file:
                 names_dict = ujson.loads(read_file.read())
         else:
             names_dict = load_lang_resource("names.json")
 
         # here onwards is copied wholesale from the original Name class
 
-        if os.path.exists(get_save_dir() + "/prefixlist.txt"):
+        if os.path.exists(save_dir + "/prefixlist.txt"):
             with open(
                 str(save_dir + "/prefixlist.txt"), "r", encoding="utf-8"
             ) as read_file:
