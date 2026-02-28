@@ -9,6 +9,16 @@ import time
 import urllib.parse
 import zipfile
 
+# Mock imghdr for pgpy on Python 3.13+ where it was removed from the standard library
+def _mock_imghdr_what(_, h=None):
+    if h is None:
+        return None
+    if h[6:10] in (b'JFIF', b'Exif') or h[:4] == b'\xff\xd8\xff\xdb':
+        return 'jpeg'
+    return None
+
+sys.modules['imghdr'] = type('Mock', (object,), {'what': _mock_imghdr_what})
+
 import pgpy
 import requests
 from requests import Response

@@ -13,14 +13,14 @@ keywords = [
     "fan-edit",
     "warrior cats",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.13"
 dependencies = [
     "black~=23.0",
     "cryptography~=42.0",
     "pgpy~=0.6",
     "platformdirs~=3.3",
     "pydantic>=2.12.0",
-    "pygame-ce~=2.2",
+    "pygame-ce~=2.5.6",
     "pygame-gui~=0.6",
     "requests~=2.28",
     "strenum~=0.4",
@@ -37,6 +37,7 @@ build = [
 ]
 dev = [
     "hatchling>=1.27.0",
+    "pygame-ios>=0.0.5",
     "pytest~=8.2",
 ]
 docs = [
