@@ -1,6 +1,6 @@
 from random import choice, randrange
 from re import sub
-from typing import Optional
+from typing import Optional, List
 from uuid import uuid4
 
 import i18n
@@ -15,6 +15,8 @@ from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure import game
+from ..clan_package.clan_names import get_possible_clan_names
+from ..game_structure.localization import get_lang_config
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
@@ -1260,9 +1262,7 @@ class MakeClanScreen(Screens):
             self.members.append(create_cat(rank=random_rank))
 
     def random_clan_name(self):
-        clan_names = (
-            names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
-        )
+        clan_names = get_possible_clan_names()
         while True:
             chosen_name = choice(clan_names)
             if chosen_name.casefold() not in (

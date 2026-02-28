@@ -25,6 +25,7 @@ from scripts.cat.save_load import (
     load_faded_cat_ids,
 )
 from scripts.cat.sprites.load_sprites import sprites
+from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
@@ -266,14 +267,10 @@ class Clan:
             other_clan_names = [str(i.name) for i in self.all_other_clans] + [
                 game.clan.displayname
             ]
-            other_clan_name = choice(
-                names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
-            )
+            clan_names = get_possible_clan_names()
+            other_clan_name = other_clan_names[0]
             while other_clan_name in other_clan_names:
-                other_clan_name = choice(
-                    names.names_dict["normal_prefixes"]
-                    + names.names_dict["clan_prefixes"]
-                )
+                other_clan_name = choice(clan_names)
             other_clan = OtherClan(name=other_clan_name)
             self.all_other_clans.append(other_clan)
 
@@ -1293,8 +1290,7 @@ class OtherClan:
             self.group_ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
         game.clan.other_clan_IDs.append(self.group_ID)
 
-        clan_names = names.names_dict["normal_prefixes"]
-        clan_names.extend(names.names_dict["clan_prefixes"])
+        clan_names = get_possible_clan_names()
         self.name = name or choice(clan_names)
         self.relations = relations or randint(8, 12)
         self.temperament = temperament or choice(self.temperament_list)
