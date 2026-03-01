@@ -159,8 +159,8 @@
             "m_c pants, helplessly searching for a cooler place to lie and nap. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} utterly exhausted by this heat."
         ],
         "sore throat": [
-            "r_c has tried to get some water into m_c, but {PRONOUN/m_c/poss} thirst has left {PRONOUN/m_c/poss} throat dry and scratchy.",
-            "The lack of water has left m_c's throat dry and sore."
+            "The lack of water has left m_c's throat dry and sore.",
+            "r_c has tried to get some water into m_c, but {PRONOUN/m_c/poss} thirst has left {PRONOUN/m_c/poss} throat dry and scratchy."
         ]
     },
     "damaged eyes": {
