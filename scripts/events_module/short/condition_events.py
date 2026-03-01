@@ -476,7 +476,7 @@ class Condition_Events:
             "recurring shock",
             "lasting grief",
             "persistent headaches",
-            "selective mutism"
+            "selective mutism",
         )
 
         got_condition = False
