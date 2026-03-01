@@ -366,7 +366,7 @@ class FreshkillPile:
 
         # sort the hungry
         hungry_cats_sorted = sorted(
-            list(hungry_cats), key=lambda x: self.nutrition_info[x.ID]
+            list(hungry_cats), key=lambda x: self.nutrition_info[x.ID].percentage
         )
 
         self._feed_group(hungry_cats_sorted)
