@@ -6719,7 +6719,10 @@
                             "trust",
                             "romance"
                         ],
-                        "amount": 7
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "from_cat enjoyed training with {PRONOUN/from_cat/poss} mate to_cat."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6736,6 +6739,20 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like",
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was in a rare good mood spending a day training with {PRONOUN/from_cat/poss} mates."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
@@ -6743,7 +6760,10 @@
                             "like",
                             "romance"
                         ],
-                        "amount": 7
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "from_cat was glad to see to_cat in a good mood when they spent the day together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6761,6 +6781,20 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like",
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat felt more confident when training with {PRONOUN/from_cat/poss} mate to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
@@ -6768,7 +6802,10 @@
                             "like",
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "from_cat was glad to see to_cat in a good mood when they spent the day together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6793,7 +6830,10 @@
                             "like",
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c started a silly game with {PRONOUN/s_c/poss} mates when they spent the day together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6810,13 +6850,16 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_from": ["s_c"],
+                        "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c expressed {PRONOUN/s_c/poss} devotion to {PRONOUN/s_c/poss} mates when they all spent the day together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6833,14 +6876,17 @@
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "like",
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat felt loved and appreciated by {PRONOUN/from_cat/poss} mates when they all spent the day together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6850,6 +6896,20 @@
             {
                 "text": "They don't get any training done, but... well... what a wonderful afternoon spent together. No regrets.",
                 "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a tremendously unproductive afternoon of \"training.\""
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
