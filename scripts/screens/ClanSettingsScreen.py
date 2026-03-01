@@ -11,9 +11,7 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.ui_elements import (
-    UICheckbox,
-)
+from ..ui.elements.checkbox import UICheckbox
 from ..ui.elements.modified_scrolling_container import UIModifiedScrollingContainer
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton

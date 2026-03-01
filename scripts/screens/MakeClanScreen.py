@@ -2159,7 +2159,7 @@ class MakeClanScreen(Screens):
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(len(self.members))
         game.clan.save_herb_supply(game.clan)
-        Cat.grief_strings.clear()
+        game.clan.grief_strings.clear()
         Cat.sort_cats()
 
     def get_camp_art_path(self, campnum) -> Optional[str]:

@@ -7,9 +7,7 @@ import pygame_gui.elements
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure import game
-from scripts.game_structure.ui_elements import (
-    UIRelationDisplay,
-)
+from scripts.ui.elements.relation_display import UIRelationDisplay
 from scripts.ui.elements.sprite_button import UISpriteButton
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
@@ -84,7 +82,7 @@ class RelationshipScreen(Screens):
                 self.inspect_cat = event.ui_element.return_cat_object()
                 self.update_inspected_relation()
             elif event.ui_element == self.back_button:
-                self.change_screen(GameScreen.PROFILE)
+                self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.switch_focus_button:
                 switch_set_value(Switch.cat, self.inspect_cat.ID)
                 self.update_focus_cat()

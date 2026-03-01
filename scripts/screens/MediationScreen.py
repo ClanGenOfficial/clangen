@@ -7,9 +7,7 @@ import pygame_gui.elements
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game
-from scripts.game_structure.ui_elements import (
-    UIRelationDisplay,
-)
+from ..ui.elements.relation_display import UIRelationDisplay
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
