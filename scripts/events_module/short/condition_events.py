@@ -458,7 +458,7 @@ class Condition_Events:
             "LEGBITE": ["weak leg"],
             "TOETRAP": ["weak leg"],
             "HINDLEG": ["weak leg"],
-            "THROAT": ["damaged throat"]
+            "THROAT": ["damaged throat"],
         }
 
         scarless_conditions = (
