@@ -3188,7 +3188,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat became closer after hanging out on a patrol searching for moss."
+                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
                         }
                     }
                 ],
@@ -3217,7 +3218,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "wIP."
+                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
                         }
                     }
                 ],
@@ -3242,7 +3244,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat would rather have done anything else than be on an herb gathering patrol, upsetting to_cat.",
+                            "cats_to": "to_cat could feel from_cat's irritation about the herb patrol and stayed away."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3318,7 +3324,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3344,7 +3354,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3357,18 +3371,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "app2"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "romance",
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat snapped at and irritated each other on an herb gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3475,18 +3492,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "app2"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "romance",
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat snapped at and irritated each other on an herb gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
