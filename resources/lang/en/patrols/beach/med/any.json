@@ -3453,7 +3453,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3479,7 +3483,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3570,7 +3578,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat had a productive time hunting for moss together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3595,7 +3606,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat had a productive time hunting for moss and herbs together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3618,7 +3632,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat's patrol kept arguing amongst each other, ruining everyone's day."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3682,7 +3699,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat had a productive time hunting for moss together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3707,7 +3727,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat had a productive time hunting for moss and herbs together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3730,7 +3753,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat's patrol kept arguing amongst each other, ruining everyone's day."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3798,7 +3824,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3824,7 +3854,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3848,7 +3882,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat snapped at and irritated each other on an herb gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3912,7 +3949,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat had a productive time hunting for moss together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3937,7 +3977,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat had a productive time hunting for moss and herbs together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3960,7 +4003,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat's patrol kept arguing amongst each other, ruining everyone's day."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4016,7 +4062,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4042,7 +4092,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
+                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4066,7 +4120,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat snapped at and irritated each other on an herb gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4126,7 +4183,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat had a productive time hunting for moss together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4151,7 +4211,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat had a productive time hunting for moss and herbs together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4174,7 +4237,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat and from_cat's patrol kept arguing amongst each other, ruining everyone's day."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4236,7 +4302,11 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat cheered up to_cat with a small puddle fight during a herb gathering patrol.",
+                            "cats_to": "to_cat was splashed with a puddle by from_cat, evolving into a splash fight that left them both happier."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4260,7 +4330,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat worked diligently alongside to_cat, {PRONOUN/from_cat/poss} determination shining through.",
+                            "cats_to": "to_cat was impressed at from_cat's dilligence and detemination despite the former's previous bad mood."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -4295,7 +4369,11 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "WIP",
+                            "cats_to": "WIP"
+                        }
                     }
                 ],
                 "frequency": 4
