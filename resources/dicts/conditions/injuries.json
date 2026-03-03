@@ -1636,11 +1636,14 @@
         ],
         "herbs": {
             "1": [
-            "poppy",
             "juniper"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "thyme"
+            ],
+            "3": [
+                "poppy"
+            ]
         }
     },
 
@@ -1666,16 +1669,13 @@
         "cause_permanent": [
             "damaged throat"
         ],
-        "herbs": {
+             "herbs": {
             "1": [
+            "poppy",
             "juniper"
         ],
-            "2": [
-                "thyme"
-            ],
-            "3": [
-                "poppy"
-            ]
+            "2": [],
+            "3": []
         }
     },
     
