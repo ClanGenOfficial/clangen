@@ -205,6 +205,8 @@ class Clan:
         game.reset_used_group_IDs()
         switch_set_value(Switch.clan_name, self.name)
         reset_loaded_clan_settings()
+        game.starclan = Afterlife()
+        game.dark_forest = Afterlife()
         instructor_rank = choice(
             (
                 CatRank.APPRENTICE,
