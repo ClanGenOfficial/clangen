@@ -626,7 +626,12 @@ def create_new_cat(
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()
         elif original_group not in game.clan.other_clan_IDs:
-            name_categories = ["popculture_names", "human_names", "loner_names", "normal_prefixes"]
+            name_categories = [
+                "popculture_names", 
+                "human_names", 
+                "loner_names", 
+                "normal_prefixes",
+            ]
             #defaults in case of error
             weights = [1,1,1,1]
             # give kittypets a kittypet name
