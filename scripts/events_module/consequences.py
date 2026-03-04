@@ -633,7 +633,7 @@ def create_new_cat(
                 "normal_prefixes",
             ]
             #defaults in case of error
-            weights = [1,1,1,1]
+            weights = [1, 1, 1, 1]
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
                 weights = constants.CONFIG["cat_name_controls"]["kittypet"]
