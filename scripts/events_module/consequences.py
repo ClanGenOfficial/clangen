@@ -627,12 +627,12 @@ def create_new_cat(
             new_cat.change_name()
         elif original_group not in game.clan.other_clan_IDs:
             name_categories = [
-                "popculture_names", 
-                "human_names", 
-                "loner_names", 
+                "popculture_names",
+                "human_names",
+                "loner_names",
                 "normal_prefixes",
             ]
-            #defaults in case of error
+            # defaults in case of error
             weights = [1, 1, 1, 1]
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
@@ -645,14 +645,14 @@ def create_new_cat(
                     )
             if original_social == CatSocial.LONER:
                 weights = constants.CONFIG["cat_name_controls"]["loner"]
-                
+
             if original_social == CatSocial.ROGUE:
                 weights = constants.CONFIG["cat_name_controls"]["rogue"]
-            
+
             selected = choices(name_categories, weights, k=1)[0]
             name = choice(names.names_dict[selected])
 
-                # now, if this cat should take a new clan name, we give them such
+            # now, if this cat should take a new clan name, we give them such
             if new_name:
                 # check if adding suffix to OG name
                 if bool(getrandbits(1)):
