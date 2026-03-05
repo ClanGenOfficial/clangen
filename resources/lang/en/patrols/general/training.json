@@ -11960,10 +11960,12 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat gained a greater appreciation for to_cat's knowledge of nesting materials and camp-guarding technique."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -11977,10 +11979,12 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat gained a greater appreciation for to_cat's knowledge of nesting materials and den-weaving technique."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -11992,14 +11996,28 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["app1"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort"
+                            "like"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat thought it was disrespectful of to_cat to wander off during training, even if the lesson was a bit boring."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat had no interest in listening to p_l natter about nesting materials."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -12022,8 +12040,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "normal adult": [1, 6]
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
         },
         "frequency": 4,
         "intro_text": "p_l is the leader of the training group today and considers {PRONOUN/p_l/self} a good choice for the role. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} skilled at explaining things, which is especially beneficial for apprentices - if {PRONOUN/p_l/subject} can get them to listen, that is.",
