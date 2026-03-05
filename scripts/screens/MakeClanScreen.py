@@ -259,14 +259,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements["next_step"]:
-            new_name = sub(
-                r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
-            ).strip()
-            if not new_name:
-                self.elements["error"].set_text("Your Clan's name cannot be empty")
-                self.elements["error"].show()
-                return
-            self.clan_name = new_name
+            self.clan_name = self.elements["name_entry"].get_text()
             self.open_choose_leader()
         elif event.ui_element == self.elements["previous_step"]:
             self.clan_name = ""
@@ -1075,7 +1068,9 @@ class MakeClanScreen(Screens):
 
         if self.sub_screen == "choose leader":
             self.elements["cat_name"].set_text(
-                str(selected.name) + " --> " + selected.name.prefix + "star"
+                str(selected.name)
+                + " --> "
+                + selected.name.get_specsuffix_name(CatRank.LEADER)
             )
         else:
             self.elements["cat_name"].set_text(str(selected.name))
@@ -1432,9 +1427,7 @@ class MakeClanScreen(Screens):
             ui_scale(pygame.Rect((265, 597), (140, 29))),
             manager=MANAGER,
         )
-        self.elements["name_entry"].set_allowed_characters(
-            list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- ")
-        )
+        self.elements["name_entry"].set_forbidden_characters("forbidden_file_path")
         self.elements["name_entry"].set_text_length_limit(11)
         self.elements["clan"] = pygame_gui.elements.UITextBox(
             "-Clan",
@@ -2134,12 +2127,13 @@ class MakeClanScreen(Screens):
         save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
-        convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}
+        convert_camp = f"camp{self.selected_camp_tab}"
         displayname = self.clan_name
-        if self._clan_name_exists(self.clan_name):
-            clan_name = self._generate_unique_clan_name(self.clan_name)
-        else:
-            clan_name = self.clan_name
+
+        # extra sanitization for filenames
+        clan_name = sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", self.clan_name)
+        if self._clan_name_exists(clan_name):
+            clan_name = self._generate_unique_clan_name(clan_name)
 
         game.clan = Clan(
             name=clan_name,
@@ -2148,7 +2142,7 @@ class MakeClanScreen(Screens):
             deputy=self.deputy,
             medicine_cat=self.med_cat,
             biome=self.biome_selected,
-            camp_bg=convert_camp[self.selected_camp_tab],
+            camp_bg=convert_camp,
             symbol=self.symbol_selected,
             game_mode=self.game_mode,
             starting_members=self.members,
