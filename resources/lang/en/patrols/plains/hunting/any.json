@@ -1475,12 +1475,9 @@
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-                "min_max_status": {
-            "deputy": [
-                1,
-                1
-            ]
-        },
+        "min_max_status": {
+            "deputy": [1, 1]
+            },
         "frequency": 4,
         "intro_text": "r_c heads out onto the plains alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
@@ -1570,10 +1567,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "leader": [
-                1,
-                1
-            ]
+            "leader": [1, 1]
         },
         "frequency": 4,
         "intro_text": "r_c heads out onto the plains alone, wanting to sink {PRONOUN/r_c/poss} teeth into some prey and have some time to {PRONOUN/r_c/self}.",
@@ -1661,7 +1655,7 @@
         ],
         "tags": [],
         "patrol_art": "hunt_general_intro",
-        "min_cats": 5,
+        "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
@@ -1884,100 +1878,6 @@
                     "death": "m_c died of injuries sustained after being surprised by a fox on patrol."
                 },
                 "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_hunt_gonetnr3",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "The patrol encounters a patch of bare ground where a lot of Twolegs linger.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 10,
-        "success_outcomes": [
-            {
-                "text": "They continue hunting undetected.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
-                "exp": 20,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol they need to leave. Now.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,3"
-                ],
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
-                "exp": 20,
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "cold",
-                    "fierce",
-                    "shameless",
-                    "strict",
-                    "troublesome",
-                    "vengeful"
-                ],
-                "prey": [
-                    "small"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter delicious-smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
-                "exp": 0,
-                "lost_cats": [
-                    "multi"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? {PRONOUN/s_c/subject/CAP} {VERB/s_c/wander/wanders} closer, drawing more of the patrol in with {PRONOUN/s_c/object}. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster.",
-                "exp": 0,
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "loving",
-                    "responsible",
-                    "thoughtful",
-                    "wise"
-                ],
-                "lost_cats": [
-                    "multi"
-                ],
-                "frequency": 4
             }
         ]
     },
