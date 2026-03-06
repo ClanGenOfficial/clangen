@@ -6548,5 +6548,208 @@
                 "frequency": 3
             }
         ]
+    },
+    {
+        "patrol_id": "gen_hunt_gonetnr1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "pln_hunt_gonetwolegtrap1",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "When the patrol reaches their hunting grounds, they find a swarm of Twolegs milling around.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
+                "text": "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
+                "exp": 20,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"normal adult": [2, 2]},
+                "text": "p_l stands guard while r_c hunts. When p_l sees a Twoleg edging toward r_c, {PRONOUN/p_l/subject} {VERB/p_l/signal/signals} to r_c and {VERB/p_l/leads/leads} the patrol back to camp.",
+                "exp": 20,
+                "prey": [
+                    "small"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
+                "exp": 20,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters and abruptly tells the patrol they need to leave. Now.",
+                "exp": 20,
+                "stat_skill": [
+                    "CLEVER,3"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's familiarity with Twoleg behavior saved from_cat on a patrol."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
+                "exp": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+                "exp": 0,
+                "lost_cats": [
+                    "r_c"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/r_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/r_c/object} away in the monster.",
+                "exp": 0,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "lost_cats": [
+                    "s_c"
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_gonetnr2",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "pln_hunt_gonetwolegtrap1",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [-1, -1]
+        },
+        "frequency": 1,
+        "intro_text": "When the r_c reaches {PRONOUN/r_c/poss} hunting grounds, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} a swarm of Twolegs milling around.",
+        "decline_text": "r_c decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c immediately turns and heads for home to report this to {PRONOUN/r_c/poss} leader, alarmed by the sudden presence of Twolegs in their territory.",
+                "exp": 20,
+                "frequency": 4
+            },
+            {
+                "text": "Slyly, r_c uses the unusual presence of the weird Twoleg to help {PRONOUN/r_c/poss} hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards {PRONOUN/r_c/object}. It works, and {PRONOUN/r_c/subject} {VERB/r_c/leave/leaves} the Twolegs to their business.",
+                "exp": 20,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and recognizes that it can't be anything good, leaving immediately.",
+                "exp": 20,
+                "stat_skill": [
+                    "CLEVER,3"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c spits in the Twolegs' direction and decides to pick a different place to hunt.",
+                "exp": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c mostly ignores the Twolegs as {PRONOUN/r_c/subject} {VERB/r_c/hunt/hunts}, crawling into a metal box to follow the scent of food. But when {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to back up, the way is blocked, and there's nothing {PRONOUN/r_c/subject} can do - eventually the Twolegs notice, and r_c is taken by them.",
+                "exp": 0,
+                "lost_cats": [
+                    "r_c"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c has heard terrible things about Twolegs, but {PRONOUN/s_c/subject} still {VERB/s_c/creep/creeps} closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} taken far away with the injured Twoleg.",
+                "exp": 0,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "lost_cats": [
+                    "s_c"
+                ],
+                "frequency": 4
+            }
+        ]
     }
 ]
