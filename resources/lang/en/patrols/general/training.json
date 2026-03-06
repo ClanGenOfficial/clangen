@@ -4195,7 +4195,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "app2 was comforted by the patrol when {PRONOUN/app2/subject} {VERB/app2/were/was} frightened by a ghost story on patrol."
+                            "cats_from": "app2 was comforted by the patrol when {PRONOUN/app2/subject} {VERB/app2/were/was} frightened by a ghost story."
                         }
                     },
                     {
@@ -5614,7 +5614,7 @@
                         "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "trust", "like"
+                            "comfort", "like"
                         ],
                         "amount": 10,
                         "log": {
@@ -5898,7 +5898,7 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 20,
+                        "amount": 15,
                         "log": {
                             "cats_from": "s_c taught app1 how to mirror another cat's movements and praised {PRONOUN/app1/object} for {PRONOUN/app1/poss} rapid progress."
                         }
