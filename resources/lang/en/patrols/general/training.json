@@ -4820,13 +4820,14 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["p_l"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "trust"
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat took to_cat's advice on how best to group their Clanmates on a training patrol."
+                            "cats_from": "from_cat took to_cat's advice on how best to group their Clanmates on a training patrol.",
+                            "cats_to": "from_cat appreciated that to_cat listened to {PRONOUN/from_cat/poss} advice."
                         }
                     }
                 ],
@@ -4957,13 +4958,14 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["s_c"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect"
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat decided {PRONOUN/from_cat/subject}'d do a better job leading a training patrol than to_cat and tried to take over."
+                            "cats_from": "from_cat decided {PRONOUN/from_cat/subject}'d do a better job leading a training patrol than to_cat and tried to take over.",
+                            "cats_to": "from_cat was angered when to_cat seized control of the patrol that from_cat was meant to be leading."
                         }
                     }
                 ],
@@ -5723,13 +5725,14 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["s_c"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect"
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat decided {PRONOUN/from_cat/subject}'d do a better job leading a training patrol than to_cat and tried to take over."
+                            "cats_from": "from_cat decided {PRONOUN/from_cat/subject}'d do a better job leading a training patrol than to_cat and tried to take over.",
+                            "cats_to": "from_cat was angered when to_cat seized control of the patrol that from_cat was meant to be leading."
                         }
                     }
                 ],
