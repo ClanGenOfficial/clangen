@@ -645,7 +645,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 20,
                         "log": {
                             "cats_from": "to_cat laid down {PRONOUN/to_cat/poss} life to protect c_n from coyotes."
                         }
@@ -654,7 +654,7 @@
                 "frequency": 4
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c and decides that cat would make a nice courting gift.The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside.",
                 "exp": 0,
                 "art": "gen_coyote_danger1",
                 "injury": [
@@ -819,7 +819,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5,
+                        "amount": -15,
                         "log": {
                             "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was killed as a result."
                         }
@@ -859,7 +859,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5,
+                        "amount": -10,
                         "log": {
                             "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was injured as a result."
                         }
@@ -1669,9 +1669,9 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
+                        "amount": 20,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's noble death to keep the Clan safe from coyotes."
+                            "cats_from": "from_cat honored to_cat's noble death to keep the Clan safe from coyotes."
                         }
                     }
                 ],

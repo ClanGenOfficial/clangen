@@ -652,7 +652,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5,
+                        "amount": -10,
                         "log": {
                             "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was killed as a result."
                         }
@@ -1493,9 +1493,9 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
+                        "amount": 15,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's noble death to keep the Clan safe from coyotes."
+                            "cats_from": "from_cat honored to_cat's noble death to keep the Clan safe from coyotes."
                         }
                     }
                 ],
