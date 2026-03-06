@@ -33,15 +33,11 @@
                 "cats_from": ["m_c"],
                 "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": ["comfort"],
-                "amount": 10
-            },
-            {
-                "cats_from": ["n_c:0"],
-                "cats_to": ["m_c"],
-                "mutual": true,
-                "values": ["like", "trust"],
-                "amount": 10
+                "values": ["respect", "like", "trust"],
+                "amount": 30,
+                "log": {
+                    "cats_from": "n_c:0 saved m_c from drowning, and m_c vouched for {PRONOUN/n_c:0/object} to join the Clan."
+                }
             }
         ],
         "outsider": {
@@ -83,9 +79,22 @@
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["n_c:0"],
-                "mutual": true,
+                "mutual": false,
                 "values": ["comfort", "like"],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat saved to_cat from drowning as a kit."
+                }
+            },
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust", "like", "respect"],
+                "amount": 50,
+                "log": {
+                    "cats_from": "from_cat saved to_cat from drowning as a kit."
+                }
             }
         ],
         "outsider": {
@@ -126,16 +135,22 @@
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["n_c:0"],
-                "mutual": true,
-                "values": ["comfort"],
-                "amount": 10
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": 15,
+                "log": {
+                    "cats_from": "from_cat found to_cat abandoned under a rocky ledge as a kit."
+                }
             },
             {
                 "cats_from": ["n_c:0"],
                 "cats_to": ["m_c"],
-                "mutual": true,
-                "values": ["like", "trust"],
-                "amount": 10
+                "mutual": false,
+                "values": ["trust", "like", "respect"],
+                "amount": 50,
+                "log": {
+                    "cats_from": "from_cat brought to_cat to the Clan after {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} abandoned as a kit."
+                }
             }
         ],
         "outsider": {

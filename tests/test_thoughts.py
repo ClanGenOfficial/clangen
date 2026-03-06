@@ -2,7 +2,7 @@ import os
 import unittest
 
 from scripts.events_module.thoughts import generate_thoughts
-from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.enums import CatRank, CatGroup, CatThought
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -100,7 +100,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         function_thoughts = generate_thoughts._load_group(
-            medicine, warrior, biome, season, camp
+            CatThought.WHILE_ALIVE, medicine, warrior, biome, season, camp
         )
 
         # when
@@ -123,7 +123,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         function_thoughts = generate_thoughts._load_group(
-            cat, None, biome, season, camp
+            CatThought.WHILE_ALIVE, cat, None, biome, season, camp
         )
 
     def test_lost_thoughts(self):
@@ -136,7 +136,7 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # load thoughts
         function_thoughts = generate_thoughts._load_group(
-            cat, None, biome, season, camp
+            CatThought.WHILE_ALIVE, cat, None, biome, season, camp
         )
 
 
@@ -151,10 +151,10 @@ class TestFamilyThoughts(unittest.TestCase):
 
         # when
         function_thoughts1 = generate_thoughts._load_group(
-            parent, kit, biome, season, camp
+            CatThought.WHILE_ALIVE, parent, kit, biome, season, camp
         )
         function_thoughts2 = generate_thoughts._load_group(
-            kit, parent, biome, season, camp
+            CatThought.WHILE_ALIVE, kit, parent, biome, season, camp
         )
 
         # then

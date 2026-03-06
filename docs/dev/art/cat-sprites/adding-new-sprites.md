@@ -20,7 +20,7 @@ These must be properly spaced on the 50x50 grid to line up with the other sprite
     New poses can be added to the end of the sheet or inserted at the start or middle! Width or height can be increased in increments of 50 px. Be sure to adjust the `sheet_layout` information in the `pose_sprite_data.json` file. This informs the code of how many columns and rows of sprites it should expect to find. The first number is the number of columns and second number is the rows. 
 
 !!! tip "If removing a pose..."
-    If a pose needs to be removed, it can safely be removed from the spritesheet as long as the `pose_sprite_data.json` file's pose list is updated to match. The pose's entry in the pose list should be removed and the index numbers of all other poses should be updated to reflect their new positions on the spritesheet. Conversion of old saves that utilize the removed pose will be handled automatically by the code without any extra work. **There must always be at least one of each pose type to avoid errors (i.e. at least one kitten, one adolescent, one adult, ect.) Para and sick sprites should not be removed.**)
+    If a pose needs to be removed, it can safely be removed from the spritesheet as long as the `pose_sprite_data.json` file's pose list is updated to match. The pose's entry in the pose list should be removed. Conversion of old saves that utilize the removed pose will be handled automatically by the code without any extra work. **There must always be at least one of each pose type to avoid errors (i.e. at least one kitten, one adolescent, one adult, ect.) Para and sick sprites should not be removed.**
 
 ## Adding Sprites to their DATA Sheet
 Once you've completed your changes to the spritesheet, the matching `DATA` sheet will need to be altered. This is the last step! Once the `DATA` sheet is altered, the new sprites should appear in game.
@@ -56,9 +56,9 @@ The pelt `DATA` sheet is particularly complex due to how integral it is to the m
 
 The pose `DATA` sheet is also unique.
 
-| `spritesheet`                                                                                | `sheet_layout`                                                         | `poses`                                                                                                                                                                                                  |
-|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| List of all lineart-related spritesheets, such as lineart, gradients, overlays, and shaders. | List containing the columns and rows of sprites expected on the sheet. | Dicts containing key:value pairs for `"pose save name": "pose index on the spritesheets"`. Pose index is counted starting from the top left corner of the sheet and moving left-to-right, top-to-bottom. |
+| `spritesheet`                                                                                | `sheet_layout`                                                         | `poses`                                                                                                                                                                  |
+|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| List of all lineart-related spritesheets, such as lineart, gradients, overlays, and shaders. | List containing the columns and rows of sprites expected on the sheet. | List of pose names as they should appear in the save file. Pose index is counted starting from the top left corner of the sheet and moving left-to-right, top-to-bottom. |
 
 
 

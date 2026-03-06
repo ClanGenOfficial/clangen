@@ -490,6 +490,10 @@
             {
                 "name": "torn pelt",
                 "chance": 40
+            },
+            {
+                "name": "selective mutism",
+                "chance": 250
             }
         ],
         "herbs": {
@@ -754,6 +758,10 @@
             {
                 "name": "constant nightmares",
                 "chance": 20
+            },
+            {
+                "name": "selective mutism",
+                "chance": 250
             }
         ],
         "herbs": {
@@ -841,6 +849,62 @@
             "3": [
             "poppy"
             ]
+        }
+    },
+    "selective mutism": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 4,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "herbs": {
+            "1": [
+            "poppy",
+            "juniper"
+        ],
+            "2": [],
+            "3": []
+        }
+    },
+    "damaged throat": {
+        "severity": "minor",
+        "congenital": "never",
+        "moons_until": 4,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "sore throat",
+                "chance": 30
+            }
+        ],
+        "herbs": {
+            "1": [
+            "poppy",
+            "juniper"
+        ],
+            "2": [],
+            "3": []
         }
     }
 }

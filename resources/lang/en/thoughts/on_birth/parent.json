@@ -1,0 +1,52 @@
+[
+
+    {
+        "id": "gen_new_parent",
+        "thoughts": [
+            "Watches over the new litter",
+            "Is brimming with love",
+            "Is thinking of {PRONOUN/m_c/poss} new responsibilities",
+            "Is in awe of how fast {PRONOUN/m_c/poss} family has grown",
+            "Is taken aback by the intensity of {PRONOUN/m_c/poss} love",
+            "Can't think of anything cuter than {PRONOUN/m_c/poss} new kits",
+            "Looks forward to every little moment to come",
+            "Can barely stand to be separate from the new litter",
+            "Is fascinated by how small {PRONOUN/m_c/poss} new kitten's paws are",
+            "Gushes over every noise {PRONOUN/m_c/poss} kit is making",
+            "Enjoys some very special family moments",
+            "Remembers what a full night of sleep used to feel like",
+            "Realizes how much work kits can be",
+            "Needs a moment away from the new litter",
+            "Can't believe the new litter is finally here",
+            "Grooms the new litter",
+            "Hasn't stopped purring since the litter arrived",
+            "Hasn't left the nursery since the litter arrived",
+            "Won't let anyone look at the new litter just yet",
+            "Wants to show every cat the new litter",
+            "Is still indecisive on names",
+            "Fondly remembers sleeping through the night",
+            "Hopes the new litter's crying isn't keeping everyone up",
+            "Has never been so exhausted in all {PRONOUN/m_c/poss} life"
+        ]
+    },
+        {
+        "id": "gen_new_parent_to_friend",
+        "thoughts": [
+            "Asks r_c to watch over the kits"
+        ],
+            "random_age_constraint": ["young adult", "adult", "senior adult", "senior"],
+            "relationship_constraint": ["trusts"]
+    },
+    {
+        "id": "gen_parent_to_newborn",
+        "thoughts": [
+            "Stops r_c from falling out of the nest",
+            "Makes sure r_c has fed enough",
+            "Hissed at a Clanmate who got too close to r_c",
+            "Considers renaming r_c",
+            "Is proud of r_c for sleeping through the night"
+        ],
+        "random_age_constraint": ["newborn"],
+        "relationship_constraint": ["parent/child"]
+    }
+]

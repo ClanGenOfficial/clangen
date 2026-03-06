@@ -344,7 +344,7 @@ class ShortEvent:
                     self.types.append("misc")
                 if block["type"] == "freshkill":
                     self.handle_freshkill_supply(block)
-                else:  # if freshkill isn't being adjusted, then it must be a herb supply
+                else:  # if freshkill isn't being adjusted, then it must be an herb supply
                     self.handle_herb_supply(block)
 
         # adjust text again to account for info that wasn't available when we do rel changes
@@ -522,10 +522,13 @@ class ShortEvent:
             return False
 
         if self.main_cat.pelt.accessory:
-            self.main_cat.pelt.accessory.append(choice(acc_list))
+            self.main_cat.pelt.accessory = (
+                *self.main_cat.pelt.accessory,
+                choice(acc_list),
+            )
             return None
         else:
-            self.main_cat.pelt.accessory = [choice(acc_list)]
+            self.main_cat.pelt.accessory = (choice(acc_list),)
             return None
 
     def handle_transition(self):
@@ -751,8 +754,7 @@ class ShortEvent:
 
     def handle_injury(self):
         """
-        assigns an injury to involved cats and then assigns possible histories (if in classic, assigns scar and scar
-        history)
+        assigns an injury to involved cats and then assigns possible histories
         """
 
         # if no injury block, then no injury gets assigned
@@ -765,6 +767,7 @@ class ShortEvent:
         # now go through each injury block
         for block in self.injury:
             cats_affected = block["cats"]
+            potential_scars = block.get("scars", ())
 
             # find all possible injuries
             possible_injuries = []
@@ -779,20 +782,22 @@ class ShortEvent:
                 # MAIN CAT
                 if abbr == "m_c":
                     injury = choice(possible_injuries)
-                    self.main_cat.get_injured(injury)
+                    self.main_cat.get_injured(injury, potential_scars=potential_scars)
                     self.handle_injury_history(self.main_cat, "m_c", injury)
 
                 # RANDOM CAT
                 elif abbr == "r_c":
                     injury = choice(possible_injuries)
-                    self.random_cat.get_injured(injury)
+                    self.random_cat.get_injured(injury, potential_scars=potential_scars)
                     self.handle_injury_history(self.random_cat, "r_c", injury)
 
                 # NEW CATS
                 elif "n_c" in abbr:
                     for i, new_cat_objects in enumerate(self.new_cats):
                         injury = choice(possible_injuries)
-                        new_cat_objects[i].get_injured(injury)
+                        new_cat_objects[i].get_injured(
+                            injury, potential_scars=potential_scars
+                        )
                         self.handle_injury_history(new_cat_objects[i], abbr, injury)
 
     def handle_injury_history(self, cat, cat_abbr, injury=None):

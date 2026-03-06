@@ -21,13 +21,11 @@ from scripts.game_structure.game.settings import (
 # please don't do this. we have to.
 import scripts.game_structure.game.settings.settings as all_settings
 from scripts.game_structure import game
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UISurfaceImageButton,
-    UIImageHorizontalSlider,
-    UIModifiedScrollingContainer,
-    UICheckbox,
-)
+from ..ui.elements.checkbox import UICheckbox
+from ..ui.elements.image_horizontal_slider import UIImageHorizontalSlider
+from ..ui.elements.modified_scrolling_container import UIModifiedScrollingContainer
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import open_data_dir
 from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions
@@ -44,8 +42,7 @@ from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 logger = logging.getLogger(__name__)
-with open("resources/gamesettings.json", "r", encoding="utf-8") as f:
-    settings_dict = ujson.load(f)
+settings_dict = constants.DISPLAY_SETTINGS["game"]
 
 
 class SettingsScreen(Screens):

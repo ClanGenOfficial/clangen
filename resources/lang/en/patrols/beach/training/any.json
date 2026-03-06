@@ -15,14 +15,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
         },
         "frequency": 4,
         "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
@@ -32,12 +26,36 @@
             {
                 "text": "app1 listens carefully as p_l explains where to find the best prey in the rich waters of the pools.",
                 "exp": 20,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat learned about hunting in tide pools from to_cat."
+                        }
+                    }
+                ]
             },
             {
                 "text": "app1 picks up the instruction quickly and is soon hopping from pool to pool, picking out the tasty morsels from them.",
                 "exp": 20,
-                "frequency": 1
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat learned about hunting in tide pools from to_cat."
+                        }
+                    }
+                ]
             },
             {
                 "text": "By the end of the patrol, s_c is easily fishing fresh-kill out of the pools without an ounce of hesitation in {PRONOUN/s_c/poss} movements.",
@@ -52,7 +70,29 @@
                 "can_have_stat": [
                     "app"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "like"],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat learned about hunting in tide pools from to_cat."
+                        }
+                    },
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["s_c"],
+                        "values": ["respect", "like"],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing hunting in tide pools, from_cat discovered to_cat is a quick study."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -66,12 +106,25 @@
                 "exp": 0,
                 "stat_trait": [
                     "troublesome",
-                    "playful"
+                    "playful",
+                    "childish"
                 ],
                 "can_have_stat": [
                     "app"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["app1"],
+                        "values": ["respect", "like"],
+                        "amount": -3,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "from_cat's afternoon was ruined by to_cat goofing off during hunting training."
+                        }
+                    }
+                ]
             },
             {
                 "text": "app1 pokes around in the pools for potential food. Ouch! Oops, that was a sea urchin. app1 limps the whole way home.",
@@ -856,14 +909,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 2,
         "intro_text": "p_l takes app1 out to see a big octopus a patrol spotted in one of c_n's rockpools.",
@@ -876,17 +923,32 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned about octopi from to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about octopi."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -897,17 +959,32 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned about octopi from to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about octopi."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -916,25 +993,76 @@
                 "text": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster with legs sprouting from each claw. As app1 watches the octopus contort itself, more liquid than animal, {PRONOUN/app1/subject} can see how it could be a sea cat.",
                 "exp": 15,
                 "stat_skill": [
-                    "SPEAKER,1"
+                    "SPEAKER,1",
+                    "LORE,1",
+                    "STORY,1"
                 ],
                 "can_have_stat": [
                     "adult"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned about octopi from to_cat with a story about a Dark Forest cat being turned into an octopus."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about octopi with a story about a Dark Forest cat being turned into an octopus."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app1 wouldn't be able to predict how it can move in a fight. Something to be careful of.",
+                "exp": 15,
+                "stat_skill": [
+                    "TEACHER,1"
+                ],
+                "can_have_stat": [
+                    "adult"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat warned from_cat about how dangerous octopi can be."
+                        }
+                    },
+                    {
+                        "cats_to": [ "app1" ],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat warned to_cat about how dangerous octopi can be."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -947,17 +1075,42 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "respect", "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat goofed off during a lesson about octopi, irritating from_cat."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. ",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like", "respect"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got into an argument while p_l tried to teach app1 about octopi."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -977,145 +1130,11 @@
         ],
         "tags": [],
         "patrol_art": "bch_train_octopus",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 2,
-        "intro_text": "p_l takes app1 out to see a big octopus a patrol spotted in one of c_n's rockpools.",
-        "decline_text": "When they get there, they can't find it, and the lesson fails.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app1 wouldn't be able to predict how it can move in a fight. Something to be careful of.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
-                ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. ",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_train_octopus3",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "bch_train_octopus",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 5],
+            "normal adult": [1, 4]
         },
         "frequency": 2,
         "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
@@ -1128,17 +1147,27 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
+                        "values": ["trust", "respect"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about octopi."
+                        }
+                    },
+                    {
+                        "cats_to":[
+                            "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "amount": 5
+                        "cats_from": ["p_l"],
+                        "values": ["comfort", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about octopi."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1149,17 +1178,27 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
+                        "values": ["trust", "respect"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about octopi."
+                        }
+                    },
+                    {
+                        "cats_to":[
+                            "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "amount": 5
+                        "cats_from": ["p_l"],
+                        "values": ["comfort", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about octopi."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1168,129 +1207,46 @@
                 "text": "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. app1 and app2 watch the octopus contort itself, more liquid than animal, and they can see how it could be a sea cat.",
                 "exp": 20,
                 "stat_skill": [
-                    "SPEAKER,1"
+                    "SPEAKER,1",
+                    "LORE,1",
+                    "STORY,1"
                 ],
                 "can_have_stat": [
                     "adult"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1", "app2", "app3", "app4", "app5"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about octopi with a story about a Dark Forest Cat."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about octopi with a story about a Dark Forest cat."
+                        }
+                    },
+                    {
+                        "cats_to": ["app2"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
+                        "values": ["like", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat wondered at p_l's story about a Dark Forest cat who became an octopus."
+                        }
                     }
                 ],
                 "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_train_octopus4",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "bch_train_octopus",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "frequency": 2,
-        "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
-        "decline_text": "When they get there, they can't find it, and the lesson fails.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp.",
-                "exp": 15,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
             },
             {
                 "text": "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app2 wouldn't be able to predict how it can move in a fight. Something to be careful of.",
@@ -1303,18 +1259,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1", "app2", "app3", "app4", "app5"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat taught from_cat about octopi and showed {PRONOUN/from_cat/object} how it can be dangerous in a fight."
+                        }
+                    },
+                    {
+                        "cats_to": ["app1", "app2", "app3", "app4", "app5"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat taught to_cat about octopi and showed {PRONOUN/from_cat/object} how it can be dangerous in a fight."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1322,22 +1284,74 @@
         ],
         "fail_outcomes": [
             {
+                "text": "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} app2 as well, and eventually p_l has to give up on teaching.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "app1 didn't take p_l's lesson about octopi seriously."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
+                        "mutual": false,
+                        "values": ["like", "comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat goofed off together during p_l's lesson about octopi."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
                 "text": "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. app2 sides with p_l, and no one learns anything in the squabbling.",
                 "exp": 0,
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got into an argument when p_l tried to teach app1 about how dangerous octopi can be."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "app2"
                         ],
-                        "amount": -5
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "app2 sided with p_l when app1 argued with {PRONOUN/p_l/object} about how dangerous octopi can be."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1363,14 +1377,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ]
+            "apprentice": [2, 2]
         },
         "frequency": 3,
         "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
@@ -1389,12 +1396,11 @@
                             "app2"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat watched waves break against the cliff, just the two of them."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1411,12 +1417,11 @@
                             "app2"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat watched waves break against the cliff during a storm and snuggled for warmth."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1446,12 +1451,11 @@
                             "app2"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "app1 met with app2 to spend time together - just the two of them."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1463,157 +1467,41 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_train_stormwaves2",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "training"
-        ],
-        "tags": [
-            "rom_two_apps",
-            "romance"
-        ],
-        "patrol_art": "bch_train_stormwaves",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
-        "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
-        "chance_of_success": 60,
-        "success_outcomes": [
-            {
-                "text": "app2 picks {PRONOUN/app2/poss} way up the cliff path, asking what app1 wanted to show {PRONOUN/app2/object}. app1 brings {PRONOUN/app2/object} to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling, a little scary, and very cool.",
-                "exp": 10,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was confused and annoyed when to_cat asked to meet alone and then ran off."
+                        }
+                    },
+                    {
+                        "cats_to": ["app2"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wanted to meet to_cat alone, but lost {PRONOUN/from_cat/poss} nerve and ran off."
+                        }
                     }
                 ],
                 "frequency": 4
             },
-            {
-                "text": "When app2 arrives, app1 shows {PRONOUN/app2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a lightning bolt strikes the sea, throwing the world into black and white. The apprentices huddle against each other, warmed by the other's pelt.",
-                "exp": 10,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, app2 would like to hang out... just the two of them? app2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled.",
-                "exp": 10,
-                "stat_trait": [
-                    "adventurous",
-                    "bold",
-                    "charismatic",
-                    "childish",
-                    "confident",
-                    "daring",
-                    "playful",
-                    "righteous"
-                ],
-                "can_have_stat": [
-                    "app1"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
             {
                 "text": "app2 refuses to come up the cliff while it's so stormy, and app1 gives up on {PRONOUN/app1/poss} idea, disappointed {PRONOUN/app1/subject} didn't get to spend time with app2.",
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "app2"
-                        ],
+                        "cats_to": ["app2"],
+                        "cats_from": ["app1"],
                         "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -5
+                        "values": ["romance", "comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wanted to show to_cat how the waves crash against the cliffs during a storm, but to_cat refused the offer."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1639,14 +1527,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ]
+            "apprentice": [2, 2]
         },
         "frequency": 4,
         "intro_text": "app1 and app2 wander on a sandy beach near camp.",
@@ -1665,18 +1546,17 @@
                             "app2"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat tussled and played, enjoying some time alone together."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "app1 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until {PRONOUN/app1/subject} finally {VERB/app1/get/gets} bored to make its escape.",
+                "text": "app1 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. They chase it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until they finally get bored to make its escape.",
                 "exp": 10,
                 "relationships": [
                     {
@@ -1687,12 +1567,11 @@
                             "app2"
                         ],
                         "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "values": ["romance", "like"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "from_cat and to_cat found a hermit crab and chased it around together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1719,13 +1598,12 @@
                         "cats_from": [
                             "app2"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "app1 presented app2 with a pretty shiny shell, and app2 kept it in {PRONOUN/app2/poss} nest."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1745,11 +1623,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "romance",
-                            "like",
-                            "comfort"
+                            "romance"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "app1 presented app2 with a pretty shell and was crushed when app2 rejected it."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1939,11 +1818,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [ -1, -1 ],
+            "normal adult": [2, 2]
         },
         "frequency": 3,
         "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notice sparkles of light where the waves break upon the shore.",
@@ -1961,13 +1837,13 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                            "romance", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat found tiny sparkly crabs and ate them, enjoying a glowing night on the beach together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1983,13 +1859,13 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                            "romance", "like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat watched light ripple through the waves of the sea at night and cuddled to stay warm."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2009,8 +1885,7 @@
                     "wise"
                 ],
                 "can_have_stat": [
-                    "r_c",
-                    "p_l"
+                    "r_c"
                 ],
                 "relationships": [
                     {
@@ -2018,15 +1893,15 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "s_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5
+                            "romance", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat watched light ripple through the waves of the sea at night and cuddled to stay warm."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2066,7 +1941,7 @@
         "chance_of_success": 60,
         "relationship_constraint": [
             "dislikes",
-            "not_mates"
+            "-mates"
         ],
         "success_outcomes": [
             {
@@ -2150,18 +2025,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                2,
-                2
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 2],
+            "normal adult": [1, 4]
         },
         "frequency": 2,
         "intro_text": "p_l sees a pod of dolphins swimming in the distance and considers it a good learning opportunity for the apprentices.",
@@ -2184,7 +2049,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was touched by to_cat's story of how dolphins saved a tiny white and red cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2205,7 +2073,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was touched by to_cat's story of how dolphins saved a tiny white and red cat."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2355,20 +2226,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about how sea otters came to be."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2405,7 +2266,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated that to_cat promised to wait to tell {PRONOUN/to_cat/poss} story until from_cat was able to listen."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2425,17 +2289,11 @@
         ],
         "tags": [],
         "patrol_art": "gen_bord_story",
-        "min_cats": 4,
+        "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                2,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 5],
+            "normal adult": [1, 4]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -2459,25 +2317,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
                             "comfort",
-                            "trust",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about the Fox Warrior."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2490,16 +2336,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "app1"
                         ],
                         "cats_from": [
-                            "app1"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
-                            "respect"
+                            "like", "comfort"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l indulged app1 and let {PRONOUN/app1/object} run off during training."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2899,6 +2748,135 @@
                     }
                 ],
                 "frequency": 3
+            }
+        ]
+    },
+        {
+        "patrol_id": "bch_train_glnl_romantic_oceanswim1",
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf", "newleaf"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "patrol_art": "train_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "all apprentices": [ -1, -1 ],
+            "normal adult": [2, 2]
+        },
+        "frequency": 3,
+        "intro_text": "p_l suggests to r_c that it is the perfect weather to go for a swim in the ocean together.",
+        "decline_text": "r_c isn't convinced and suggests they should probably focus on the patrol instead.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "p_l flashes r_c a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c/subject} {VERB/r_c/admire/admires}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/brush/brushes} it aside and {VERB/r_c/plunge/plunges} in after {PRONOUN/p_l/object}.",
+                "exp": 5,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat admired to_cat's muscular frame and sleek fur during a swim together."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter and the sunlight catching on {PRONOUN/r_c/poss} pelt in just the right way.",
+                "exp": 5,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat's heart fluttered at the sound of to_cat's laugh during a swim together."
+                        }
+                    }
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with {PRONOUN/r_c/object} instead.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat didn't want to go for a swim with to_cat because it was too chilly."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c tries {PRONOUN/s_c/poss} best to show off {PRONOUN/s_c/poss} swimming skills, but {PRONOUN/s_c/poss} companion just isn't paying attention, too focused on {PRONOUN/r_c/poss} own swimming to notice. Eventually, s_c gives up for now, discouraged.",
+                "exp": 0,
+                "stat_trait": [
+                    "ambitious",
+                    "childish",
+                    "insecure",
+                    "lonesome"
+                ],
+                "can_have_stat": ["r_c"],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat tried to show off for to_cat on a swim together, but to_cat was too focused on {PRONOUN/to_cat/poss} own swimming."
+                        }
+                    }
+                ],
+                "frequency": 4
             }
         ]
     },

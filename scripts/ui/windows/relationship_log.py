@@ -3,9 +3,7 @@ import pygame
 import pygame_gui
 
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-)
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.windows.window_base_class import GameWindow
@@ -97,7 +95,7 @@ class RelationshipLogWindow(GameWindow):
                 container=self,
             )
 
-    def closing_process(self):
+    def kill(self):
         """Handles to enable and kill all processes when an exit button is clicked."""
         for button in self.disable_button_list:
             button.enable()
@@ -108,10 +106,10 @@ class RelationshipLogWindow(GameWindow):
         self.log_icon.kill()
         self.exit_button.kill()
         self.back_button.kill()
-        self.kill()
+        super().kill()
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element in self.closing_buttons:
-                self.closing_process()
+                self.kill()
         return super().process_event(event)

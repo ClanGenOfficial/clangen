@@ -10,7 +10,7 @@ from scripts.game_structure import image_cache, game
 from scripts.game_structure.game import switch_get_value, Switch
 from scripts.game_structure.game.settings import game_settings_save
 from scripts.game_structure.game.switches import switch_set_value
-from scripts.game_structure.ui_elements import UISurfaceImageButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.scale import ui_scale_dimensions, ui_scale
@@ -19,7 +19,6 @@ from scripts.ui.windows.save_error import SaveErrorWindow
 
 class UISaveButton:
     DIMENSIONS = (114, 30)
-    unsaved_state_dict = get_button_dict(ButtonStyles.SQUOVAL, DIMENSIONS)
 
     def __init__(
         self,
@@ -37,6 +36,7 @@ class UISaveButton:
         :param anchors: The anchor dictionary.
         :param visible: The visible state of the button.
         """
+        self.unsaved_state_dict = get_button_dict(ButtonStyles.SQUOVAL, self.DIMENSIONS)
         # this needs to be here to that the scaling is updated properly
         self.unsaved_state_dict["normal"] = pygame.transform.scale(
             image_cache.load_image("resources/images/buttons/save_clan.png"),
