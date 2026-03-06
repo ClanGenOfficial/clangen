@@ -89,7 +89,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's stalking technique when they hunted a prairie dog together."
+                        }
                     },
                     {
                         "cats_to": [
@@ -102,7 +105,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "to_cat praised from_cat's hunting."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -132,7 +138,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 7
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "from_cat was very impressed by to_cat's speed when they hunted a prairie dog together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -162,7 +171,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 7
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "from_cat was very impressed by to_cat's stalking technique when they hunted a prairie dog together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -193,13 +205,16 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 7
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "from_cat was very impressed by to_cat's stealth when they hunted a prairie dog together."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Let's apply some teamwork to this problem, s_c suggests. They have the cats, they don't have to do this alone. Just... like prairie dogs, s_c supposes. It works, using a signal to make the sentry alarm in one direction while attacking from another, and the cats grin to each other in victory.",
+                "text": "s_c suggests applying teamwork to the problem. They have the cats, they don't have to do this alone. Just... like prairie dogs, s_c supposes. It works - using a signal to make the sentry alarm in one direction while attacking from another, and the cats grin to each other in victory.",
                 "exp": 15,
                 "art": "gen_train_talkingWW",
                 "prey": [
@@ -215,6 +230,22 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's clever idea to distract the sentry while hunting prairie dogs."
+                        }
+                    },
+                    {
+                        "cats_to": [
                             "patrol"
                         ],
                         "cats_from": [
@@ -222,10 +253,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked as a team to hunt prairie dogs."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -242,7 +275,7 @@
                 "frequency": 4
             },
             {
-                "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, r_c is left wheezing and out of breath as the prey chatters angrily from within their burrows. Starsdamnit.",
+                "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, r_c is left wheezing and out of breath as the prey chatters angrily from within their burrows. Mouse-dung.",
                 "exp": 0,
                 "art": "pln_hunt_fun1",
                 "prey": [
@@ -251,7 +284,7 @@
                 "frequency": 4
             },
             {
-                "text": "Ha, watch and learn, everyone! s_c's got this.<br><br>...{PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does} not got this.",
+                "text": "s_c instructs the patrol to watch and learn. A heartbeat later, an empty-pawed s_c must eat {PRONOUN/s_c/poss} words.",
                 "exp": 0,
                 "art": "pln_hunt_fun1",
                 "prey": [
@@ -280,7 +313,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat got cocky while hunting prairie dogs and failed to back up {PRONOUN/to_cat/poss} meows with prey."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -303,14 +339,8 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
-            "normal adult": [
-                1,
-                2
-            ],
-            "apprentice": [
-                1,
-                2
-            ]
+            "normal adult": [1, 2],
+            "apprentice": [1, 2]
         },
         "frequency": 4,
         "intro_text": "A prairie dog is on watch, plopped back on its hindlegs as others forage nearby. It won't be easy getting past its guard.",
@@ -336,20 +366,26 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's stalking technique when they hunted a prairie dog together."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat praised from_cat's hunting."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -379,7 +415,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was very impressed by to_cat's speed when they hunted a prairie dog together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -409,7 +448,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was very impressed by to_cat's stalking technique when they hunted a prairie dog together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -440,13 +482,16 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was very impressed by to_cat's stealth when they hunted a prairie dog together."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Uh... s_c has an idea? Look, if one of them attacks from one direction and the other from the other direction at the same time... maybe it'll work? It does!",
+                "text": "s_c pipes up and suggests one of cats attacks from one direction and the other attacks from the other direction at the same time. p_l agrees to the plan and congratulates s_c when it works.",
                 "exp": 15,
                 "art": "gen_speaking_cat_app",
                 "prey": [
@@ -462,20 +507,6 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
@@ -485,7 +516,42 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's clever idea to distract the sentry while hunting prairie dogs."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked as a team to hunt prairie dogs."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was pleased when to_cat took {PRONOUN/from_cat/poss} suggested strategy on a hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -511,7 +577,7 @@
                 "frequency": 4
             },
             {
-                "text": "Ha, watch and learn, everyone! s_c's got this.<br><br>...{PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does} not got this.",
+                "text": "s_c instructs the patrol to watch and learn. A heartbeat later, an empty-pawed s_c must eat {PRONOUN/s_c/poss} words.",
                 "exp": 0,
                 "art": "gen_train_patrolapprenticesessionfail",
                 "prey": [
@@ -540,7 +606,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat got cocky while hunting prairie dogs and failed to back up {PRONOUN/to_cat/poss} meows with prey."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -597,12 +666,38 @@
             {
                 "text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["p_l"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "from_cat was not pleased that to_cat told {PRONOUN/to_cat/poss} patrol to attack Twoleg kits."
+                    }
+                }
+            ]
             },
             {
                 "text": "A Twoleg kit approaches the patrol, and they send it away squawking with its blood on their claws.",
                 "exp": 10,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat had fun antagonizing Twoleg kits on a hunting patrol with to_cat."
+                    }
+                }
+            ]
             }
         ]
     },
@@ -634,21 +729,19 @@
                     "medium"
                 ],
                 "art": "gen_hunt_twolegdencatdare",
-                "relationships": [
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["p_l"],
+                    "values": ["like", "respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 3
+                        "cats_from": "to_cat led from_cat on a successful hunting patrol near a Twoleg nest."
                     }
-                ],
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -670,7 +763,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 3
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hunted successfully together in a mysteriously empty Twoleg den."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -708,7 +804,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 3
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hunted successfully together in a Twoleg den."
+                        }
                     },
                     {
                         "cats_to": [
@@ -721,7 +820,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat listened to to_cat's plan for safely hunting in a Twoleg den."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -744,19 +846,6 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 3
-                    },
-                    {
-                        "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
@@ -766,7 +855,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's unusual plan to steal some meat from Twolegs."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -824,7 +916,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -833,37 +925,25 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 3
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat leading a rabbit hunt by acting as a lookout."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The patrol's attention is caught by an old animal, one that limps as it grazes. They creep forward on their bellies, tightening the noose around the weakened animal. Survival of the fittest.",
+                "text": "The patrol's attention is caught by an old animal, one that limps as it grazes. They creep forward on their bellies, cutting off every possible escape route. Survival of the fittest.",
                 "exp": 20,
                 "prey": [
                     "medium"
                 ],
                 "art": "gen_hunt_strangerabbit",
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 3
-                    }
-                ],
                 "frequency": 4
             },
             {
-                "text": "Sometimes it's better to let the prey come to you. s_c, with the knowledge of a builder, positions the patrol between the best rabbit feeding grounds and the rabbits' burrows. Then all they have to do is wait.",
+                "text": "Sometimes it's better to let the prey come to you. s_c, evaluating the layout of the rabbits' \"camp,\" positions the patrol between the best rabbit feeding grounds and the rabbits' burrows. Then all they have to do is wait.",
                 "exp": 20,
                 "art": "gen_hunt_burrow",
                 "can_have_stat": [
@@ -878,19 +958,6 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 3
-                    },
-                    {
-                        "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
@@ -900,7 +967,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat's anticipation of where the rabbits would run yielded great success for from_cat and the hunting patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -922,19 +992,6 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 3
-                    },
-                    {
-                        "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
@@ -944,7 +1001,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how to_cat used the light of the rising sun to blind the rabbits their patrol was hunting."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -998,7 +1058,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat wasn't happy with to_cat for pouncing on single rabbit and startling all the others, spoiling the patrol's chances of a bigger haul."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1018,7 +1081,7 @@
         ],
         "tags": [],
         "patrol_art": "pln_hunt_windmill",
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
@@ -1027,7 +1090,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The patrol moves among the white trunks, checking the ground underneath them. Sometimes, dead birds can be found scattered about in this area and, if not yet rotten, make for acceptable fresh-kill.  They find a few carcasses worth taking.",
+                "text": "The patrol moves among the white trunks, checking the ground underneath them. Sometimes, dead birds can be found scattered about in this area and, if not yet rotten, make for acceptable fresh-kill. They find a few carcasses worth taking.",
                 "exp": 10,
                 "prey": [
                     "medium"
@@ -1078,160 +1141,19 @@
             {
                 "text": "The patrol is frustrated by this seemingly permanent proof of Twoleg on their territory and takes the time to thoroughly and aggressively mark the area. There. That will show the Twoleg whose land this is.",
                 "exp": 10,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_hunt_burrow1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "gen_hunt_burrow",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 3,
-        "intro_text": "The patrol finds a small burrow in the ground with a strange scent. p_l hesitates, unsure if this is worth checking.",
-        "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The patrol flushes a gopher out of the burrow! More fresh-kill!",
-                "exp": 10,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now.",
-                "exp": 10,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The burrow turns out to be empty - nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
-                "exp": 0,
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
-                "exp": 0,
-                "stat_trait": [
-                    "bold",
-                    "ambitious",
-                    "childish"
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until p_l turns back to help {PRONOUN/r_c/object}.",
-                "exp": 0,
-                "injury": [
+                "relationships": [
                     {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "big_bite_injury"
-                        ],
-                        "scars": [
-                            "LEFTBLIND"
-                        ]
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat vented their frustration at Twoleg presence in their territory by aggressively marking the strange white metal forest."
+                        }
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c was scarred after an unfortunate encounter with a wolverine."
-                },
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 3
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_hunt_burrow2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "gen_hunt_burrow",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 3,
-        "intro_text": "The patrol finds a small burrow in the ground with a strange scent. p_l hesitates, unsure if this is worth checking.",
-        "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "r_c flushes a gopher out of the burrow! More fresh-kill!",
-                "exp": 10,
-                "prey": [
-                    "large"
-                ],
                 "frequency": 4
-            },
-            {
-                "text": "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now.",
-                "exp": 10,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The burrow turns out to be empty - nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
-                "exp": 0,
-                "frequency": 4
-            },
-            {
-                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
-                "exp": 0,
-                "stat_trait": [
-                    "bold",
-                    "ambitious",
-                    "childish"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws. With no other cats around to help, {PRONOUN/r_c/subject} is quickly killed by the predator.",
-                "exp": 0,
-                "dead_cats": [
-                    "r_c"
-                ],
-                "history_text": {
-                    "death": "m_c was killed after an unfortunate experience with a wolverine."
-                },
-                "frequency": 3
             }
         ]
     },

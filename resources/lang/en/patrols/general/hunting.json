@@ -6187,5 +6187,198 @@
                 "frequency": 3
             }
         ]
+    },
+    {
+        "patrol_id": "gen_hunt_burrow1",
+        "biome": [
+            "forest", "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "gen_hunt_burrow",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "The patrol finds a small burrow in the ground with a strange scent. p_l hesitates, unsure if this is worth checking.",
+        "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The patrol flushes a gopher out of the burrow! More fresh-kill!",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now.",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
+                "exp": 0,
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["p_l"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "from_cat felt that to_cat wasted time on a hunting patrol by checking an empty burrow."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
+                "exp": 0,
+                "stat_trait": [
+                    "bold",
+                    "ambitious",
+                    "childish"
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4,
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "to_cat got from_cat sprayed by a skunk by doing something mouse-brained on patrol."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "big_bite_injury"
+                        ],
+                        "scars": [
+                            "ONE"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after an unfortunate encounter with a wolverine.",
+                    "death": "m_c was killed after an unfortunate experience with a wolverine."
+                },
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_burrow2",
+        "biome": [
+            "forest", "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "gen_hunt_burrow",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "r_c finds a small burrow in the ground with a strange scent. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hesitate/hesitates}, unsure if this is worth checking.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} decides to avoid the burrow. There's no telling what could await inside.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c flushes a gopher out of the burrow! More fresh-kill!",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now.",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole, only to come face-to-face with a skunk! {PRONOUN/s_c/subject/CAP} is sprayed!",
+                "exp": 0,
+                "stat_trait": [
+                    "bold",
+                    "ambitious",
+                    "childish"
+                ],
+                "frequency": 4,
+                "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["s_c"],
+                    "values": ["like", "comfort"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "to_cat came back to camp empty-pawed and stinking of skunk. from_cat got an unfortunate noseful."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws. With no other cats around to help, r_c is quickly killed by the predator.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "death": "m_c was killed after an unfortunate experience with a wolverine."
+                },
+                "frequency": 3
+            }
+        ]
     }
 ]
