@@ -6,19 +6,13 @@ import pygame_gui.elements
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UISpriteButton,
-    UISurfaceImageButton,
-)
-from scripts.utility import (
-    get_personality_compatibility,
-    get_text_box_theme,
-    ui_scale,
-    ui_scale_dimensions,
-    ui_scale_offset,
-    shorten_text_to_fit,
-)
+from ..ui.elements.sprite_button import UISpriteButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import shorten_text_to_fit
+from ..events_module.event_filters import get_personality_compatibility
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.enums import CatCompatibility
@@ -1204,6 +1198,3 @@ class ChooseMateScreen(Screens):
         ]
 
         return valid_mates
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]

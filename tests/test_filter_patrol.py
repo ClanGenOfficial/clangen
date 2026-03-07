@@ -9,7 +9,8 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import PatrolEvent, Patrol
 
-from scripts.utility import filter_relationship_type
+from scripts.events_module.event_filters import filter_relationship_type
+
 
 # TODO: redo them! Filtering is not working like this anymore, but it got removed from .github/workflows/test.yml
 # so they are not failing!
@@ -32,8 +33,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
 
         con_patrol_event = PatrolEvent(patrol_id="test1")
         con_patrol_event.relationship_constraints = ["siblings"]
-        no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints = []
+        opp_con_patrol_event = PatrolEvent(patrol_id="test2")
+        opp_con_patrol_event.relationship_constraints = ["-siblings"]
 
         test_clan = Clan(name="test")
 
@@ -44,15 +45,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
-        self.assertTrue(
+        self.assertFalse(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -63,15 +62,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
         self.assertTrue(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -88,8 +85,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
         con_patrol_event.relationship_constraints = ["mates"]
-        no_con_patrol_event = PatrolEvent(patrol_id="test2")
-        no_con_patrol_event.relationship_constraints = []
+        opp_con_patrol_event = PatrolEvent(patrol_id="test2")
+        opp_con_patrol_event.relationship_constraints = ["-mates"]
 
         test_clan = Clan(name="test")
 
@@ -100,15 +97,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
-        self.assertTrue(
+        self.assertFalse(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -119,15 +114,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
         self.assertTrue(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -138,15 +131,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
         self.assertTrue(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -160,6 +151,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
         con_patrol_event.relationship_constraints = ["parent/child"]
+        opp_con_patrol_event = PatrolEvent(patrol_id="test2")
+        opp_con_patrol_event.relationship_constraints = ["-parent/child"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -174,15 +167,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
-        self.assertTrue(
+        self.assertFalse(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -195,15 +186,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
         self.assertTrue(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -213,11 +202,10 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         patrol.add_patrol_cats(cat_list, test_clan)
         patrol.patrol_leader = parent
         patrol.random_cat = cat2
-        self.assertFalse(
+        self.assertTrue(
             filter_relationship_type(
                 patrol.patrol_cats,
-                con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
+                no_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -225,7 +213,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -239,6 +226,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")
         con_patrol_event.relationship_constraints = ["child/parent"]
+        opp_con_patrol_event = PatrolEvent(patrol_id="test2")
+        opp_con_patrol_event.relationship_constraints = ["-child/parent"]
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         no_con_patrol_event.relationship_constraints = []
 
@@ -253,15 +242,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
-        self.assertTrue(
+        self.assertFalse(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -274,15 +261,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
         self.assertTrue(
             filter_relationship_type(
                 patrol.patrol_cats,
-                no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                opp_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -292,11 +277,10 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         patrol.add_patrol_cats(cat_list, test_clan)
         patrol.patrol_leader = parent
         patrol.random_cat = cat2
-        self.assertFalse(
+        self.assertTrue(
             filter_relationship_type(
                 patrol.patrol_cats,
-                con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
+                no_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -304,7 +288,77 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
+                patrol.patrol_leader,
+            )
+        )
+
+    def test_mixed_value_type_patrol(self):
+        # given
+        parent = Cat(disable_random=True)
+        cat1 = Cat(parent1=parent.ID, disable_random=True)
+        cat2 = Cat(parent1=parent.ID, disable_random=True)
+
+        cat1.mentor = parent.ID
+        parent.apprentice = [cat1.ID]
+
+        # when
+        con_patrol_event = PatrolEvent(patrol_id="test1")
+        con_patrol_event.relationship_constraints = ["parent/child"]
+        opp_con_patrol_event = PatrolEvent(patrol_id="test2")
+        opp_con_patrol_event.relationship_constraints = ["-mentor/app"]
+        two_con_patrol_event = PatrolEvent(patrol_id="test2")
+        two_con_patrol_event.relationship_constraints = ["parent/child", "-mentor/app"]
+
+        test_clan = Clan(name="test")
+
+        # then
+        patrol = Patrol()
+        patrol.add_patrol_cats([parent, cat1], test_clan)
+        patrol.patrol_leader = parent
+        patrol.random_cat = cat1
+        self.assertTrue(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        self.assertFalse(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                opp_con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        self.assertFalse(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                two_con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        patrol = Patrol()
+        patrol.add_patrol_cats([parent, cat2], test_clan)
+        patrol.patrol_leader = parent
+        patrol.random_cat = cat2
+        self.assertTrue(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        self.assertTrue(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                opp_con_patrol_event.relationship_constraints,
+                patrol.patrol_leader,
+            )
+        )
+        self.assertTrue(
+            filter_relationship_type(
+                patrol.patrol_cats,
+                two_con_patrol_event.relationship_constraints,
                 patrol.patrol_leader,
             )
         )
@@ -340,7 +394,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -348,7 +401,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -364,7 +416,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -372,7 +423,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -408,7 +458,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -416,7 +465,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -431,7 +479,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -439,7 +486,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -475,7 +521,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -483,7 +528,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -499,7 +543,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -507,7 +550,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -543,7 +585,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -551,7 +592,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -567,7 +607,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -575,7 +614,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -611,7 +649,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -619,7 +656,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -635,7 +671,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -643,7 +678,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -679,7 +713,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -687,7 +720,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -703,7 +735,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -711,7 +742,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -765,7 +795,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -773,7 +802,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -789,7 +817,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -797,7 +824,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -814,7 +840,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -822,7 +847,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 no_con_patrol_event.relationship_constraints,
-                no_con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -860,7 +884,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -868,7 +891,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event2.relationship_constraints,
-                con_patrol_event2.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -883,7 +905,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event.relationship_constraints,
-                con_patrol_event.patrol_id,
                 patrol.patrol_leader,
             )
         )
@@ -891,7 +912,6 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
             filter_relationship_type(
                 patrol.patrol_cats,
                 con_patrol_event2.relationship_constraints,
-                con_patrol_event2.patrol_id,
                 patrol.patrol_leader,
             )
         )

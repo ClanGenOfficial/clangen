@@ -1,3 +1,0 @@
-[submodule "tests/testSaves"]
-	path = tests/testSaves
-	url = https://github.com/lillithkt/clangen-unittest-saves.git

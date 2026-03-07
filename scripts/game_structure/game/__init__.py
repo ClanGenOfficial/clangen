@@ -27,7 +27,9 @@ max_name_length = 10
 
 mediated = []  # Keep track of which couples have been mediated this moon.
 just_died = []  # keeps track of which cats died this moon via die()
-
+dead_cats_to_grieve = (
+    []
+)  # keeps track of the cats who died and need a clan grieving message
 cur_events_list = []
 ceremony_events_list = []
 birth_death_events_list = []
@@ -89,9 +91,6 @@ starclan: Optional["Afterlife"] = None
 dark_forest: Optional["Afterlife"] = None
 
 cat_class = None
-with open(f"resources/prey_config.json", "r", encoding="utf-8") as read_file:
-    prey_config = ujson.loads(read_file.read())
-
 rpc = None
 
 is_close_menu_open = False
@@ -149,8 +148,6 @@ DEPRECATED: use get_game_setting() and set_game_setting() or helpers instead.
 WILL CRASH if you try and use this anyway.
 """
 settings: Any
-
-del read_file  # cleanup from load
 
 
 def update_game():
@@ -288,6 +285,17 @@ def get_free_group_ID(group_type: CatGroup) -> str:
     new_ID = str(int(list(used_group_IDs.keys())[-1]) + 1)
     used_group_IDs.update({new_ID: group_type})
     return new_ID
+
+
+def reset_used_group_IDs():
+    for ID, group_type in used_group_IDs.copy().items():
+        if group_type not in (
+            CatGroup.PLAYER_CLAN,
+            CatGroup.STARCLAN,
+            CatGroup.DARK_FOREST,
+            CatGroup.UNKNOWN_RESIDENCE,
+        ):
+            used_group_IDs.pop(ID)
 
 
 pygame.display.set_caption("Clan Generator")

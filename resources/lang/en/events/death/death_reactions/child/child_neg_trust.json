@@ -1,1 +1,10 @@
-{}
+{
+    "general": {
+        "body": [
+            "r_c looks at m_c’s body from across the camp, unsure how to feel after how much {PRONOUN/r_c/subject} had been lied to for all {PRONOUN/r_c/poss} life by m_c. Maybe it was for the best {PRONOUN/m_c/poss} lies could no longer cloud r_c's judgement."
+        ],
+        "no_body": [
+
+        ]
+    }
+}

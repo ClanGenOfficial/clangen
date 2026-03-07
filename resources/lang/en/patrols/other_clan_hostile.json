@@ -24,7 +24,25 @@
                 "text": "p_l remains calm and collected, ignoring the aggression. Eventually the o_c_n patrol gives up on their taunting and leaves the area, deflated by the lack of reaction.",
                 "exp": 10,
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated p_l's calm demeanor when confronted with a hostile o_c_n patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c is quick to strike up conversation with the other patrol, trying to get to the root of their rudeness. Eventually the problem is smoothed over, nothing but a misunderstanding and unfounded assumptions.",
@@ -33,7 +51,26 @@
                     "SPEAKER,1"
                 ],
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated s_c's smooth conversation when they met with a o_c_n patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "s_c is quick to strike up conversation with the other patrol, trying to get to the root of their rudeness. Eventually the problem is smoothed over, nothing but a misunderstanding and unfounded assumptions.",
@@ -45,7 +82,26 @@
                     "confident"
                 ],
                 "other_clan_rep": 2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated s_c's smooth conversation when they met with a o_c_n patrol."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -63,7 +119,25 @@
                     "nervous"
                 ],
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed with s_c's cowardly reaction to a hostile o_c_n patrol."
+                        }
+                    }
+                ]
             },
             {
                 "text": "The two patrols begin throwing insults back and forth, the tension ratcheting higher and higher until suddenly a fight breaks out! The tussle quickly becomes deadly, r_c lying motionless on the ground when the enemy patrol backs off.",
@@ -73,8 +147,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an enemy warrior.",
-                    "reg_death": "m_c was killed by an enemy warrior.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
+                    "death": "m_c was killed by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -97,8 +170,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an enemy warrior.",
-                    "reg_death": "m_c was killed by an enemy warrior.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
+                    "death": "m_c was killed by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -109,7 +181,25 @@
                 "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. Despite {PRONOUN/p_l/poss} righteous fury, the o_c_n patrol quickly overpowers {PRONOUN/p_l/object} and sends p_l back onto {PRONOUN/p_l/poss} own side of the border.",
                 "exp": 0,
                 "other_clan_rep": -1,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was disappointed with how easily to_cat was rebuffed by a o_c_n patrol, it seems to_cat is all yowl and no bite."
+                        }
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -117,7 +207,25 @@
                 "text": "Angry at the insult to {PRONOUN/p_l/poss} Clan, p_l throws {PRONOUN/p_l/self} at the enemy patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drive/drives} the o_c_n patrol away from the border.",
                 "exp": 10,
                 "other_clan_rep": -2,
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed at to_cat's fighting prowess against a o_c_n patrol."
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -171,7 +279,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -185,20 +296,27 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "n_c:0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "trust"
+                            "comfort",
+                            "respect"
                         ],
-                        "amount": -6
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat begged to_cat to join c_n, but to_cat refused and left Clan-life altogether."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -229,7 +347,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -243,20 +364,26 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat couldn't believe it when to_cat brought a <i>o_c_n</i> cat back to camp as a <i>mate</i>."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -286,7 +413,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -300,20 +430,27 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "n_c:0"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "trust"
+                            "comfort",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat begged to_cat to join c_n, but to_cat refused and left Clan-life altogether."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -349,7 +486,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -363,20 +503,28 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "n_c:0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "trust"
+                            "comfort",
+                            "like",
+                            "respect"
                         ],
-                        "amount": -15
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat decided to leave Clan-life and travel together, free from the confines of their old lives."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -388,7 +536,7 @@
                     ]
                 ],
                 "art": "gen_flower_date_warrior_other_clan",
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "p_l and n_c:0 spend one last night together - and though p_l tries to convince {PRONOUN/n_c:0/object} that the birdsong is the nightingale and not the lark, n_c:0 knows better. {PRONOUN/n_c:0/subject/CAP} can't bear to live in this fantasy any longer. Though p_l calls after n_c:0, {PRONOUN/n_c:0/subject} {VERB/n_c:0/do/does}n't look back as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees} into the rosy dawn.",
@@ -418,7 +566,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 24
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -432,20 +583,28 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 12
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "n_c:0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "comfort",
+                            "trust",
+                            "romance"
                         ],
-                        "amount": -15
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat had lost faith in their love's resilience and, despite from_cat's pleading, ran from {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -457,7 +616,7 @@
                     ]
                 ],
                 "art": "gen_flower_date_warrior_other_clan",
-                "frequency": 4
+                "frequency": 1
             },
             {
                 "text": "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged and, despite n_c:0's wails of protest, pounce on p_l, clawing {PRONOUN/p_l/object} within a mouse-length of {PRONOUN/p_l/poss} life. n_c:0, horrified by {PRONOUN/n_c:0/poss} Clanmates' actions, flees the territory.",
@@ -486,7 +645,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates.",
-                    "reg_death": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
+                    "death": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
                 },
                 "relationships": [
                     {
@@ -501,7 +660,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -515,20 +677,27 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "n_c:0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
+                            "comfort",
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "While the two were meeting, to_cat's Clanmates attacked and nearly killed from_cat. to_cat ran from the territories altogether."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -564,7 +733,7 @@
                     "cats": [
                         "p_l"
                     ],
-                    "reg_death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
+                    "death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                 },
                 "relationships": [
                     {
@@ -579,7 +748,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -593,20 +765,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -15
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other until from_cat's Clan killed to_cat."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -621,12 +783,12 @@
                 "frequency": 1
             },
             {
-                "text": "p_l and n_c:0 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c:0 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c:0 wails that p_l has killed {PRONOUN/n_c:0/poss} littermate, then flees, leaving p_l and the remaining o_c_n warriors staring at each other.",
+                "text": "p_l and n_c:2 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c:2 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c:2 wails that p_l has killed {PRONOUN/n_c:2/poss} sibling, then flees, leaving p_l and the remaining o_c_n warriors staring at each other.",
                 "exp": 0,
                 "injury": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c:2"
                         ],
                         "injuries": [
                             "grief stricken"
@@ -640,53 +802,76 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c:2"
                         ],
                         "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c:2"
                         ],
                         "mutual": true,
                         "values": [
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "n_c:2"
                         ],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "When to_cat killed from_cat's sibling, from_cat fled, {PRONOUN/from_cat/poss} heart torn."
+                        }
                     }
                 ],
                 "new_cat": [
                     [
                         "meeting",
                         "clancat",
+                        "age:senior",
+                        "unknown"
+                    ],
+                    [
+                        "meeting",
+                        "clancat",
+                        "age:adult",
+                        "parent:0",
+                        "dead"
+                    ],
+                    [
+                        "meeting",
+                        "former clancat",
                         "mate:p_l",
-                        "age:mate"
+                        "age:mate",
+                        "parent:0"
                     ]
                 ],
                 "art": "gen_battle_warrior_other_clan",
-                "frequency": 1
+                "frequency": 4
             }
         ],
         "antag_success_outcomes": [
@@ -711,7 +896,7 @@
                     "cats": [
                         "n_c:0"
                     ],
-                    "reg_death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
+                    "death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                 },
                 "relationships": [
                     {
@@ -726,7 +911,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 46
+                        "amount": 46,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -740,47 +928,61 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 28
+                        "amount": 28,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "clan"
                         ],
-                        "mutual": true,
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
                         "values": [
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "The death of {PRONOUN/from_cat/poss} mate at the paws of {PRONOUN/from_cat/poss} own Clan left from_cat embittered and wary."
+                        }
                     },
                     {
                         "cats_to": [
-                            "clan"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
-                            "like"
+                            "respect",
+                            "trust"
                         ],
-                        "amount": -10
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                        }
                     },
                     {
                         "cats_to": [
-                            "clan"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "clan", "low_lawful", "high_social"
                         ],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "respect"
                         ],
-                        "amount": -10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -811,7 +1013,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 22
+                        "amount": 22,
+                        "log": {
+                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                        }
                     },
                     {
                         "cats_to": [
@@ -825,20 +1030,44 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 14
+                        "amount": 14,
+                        "log": {
+                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                        }
                     },
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
+                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -18
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_social"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all."
+                        }
                     }
                 ],
                 "new_cat": [
@@ -868,48 +1097,39 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 48
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "n_c:0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 36
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
+                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -15
-                    }
-                ],
-                "history": [
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                        }
+                    },
                     {
-                        "reg_death": "m_c died in a fight with {PRONOUN/m_c/poss} mate's Clanmates."
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan", "low_lawful", "high_social"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
+                        }
                     }
                 ],
+                "history_text": {
+                        "death": "m_c died in a fight with {PRONOUN/m_c/poss} mate's Clanmates."
+                    },
                 "new_cat": [
                     [
                         "dead",
@@ -1030,8 +1250,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after being ambushed on patrol.",
-                    "reg_death": "m_c died of injuries sustained in an ambush.",
-                    "lead_death": "died of injuries sustained in an ambush"
+                    "death": "m_c died of injuries sustained in an ambush."
                 },
                 "relationships": [
                     {
@@ -1145,8 +1364,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after brawling with a Clanmate.",
-                    "reg_death": "m_c died from injuries sustained in a brawl with a Clanmate.",
-                    "lead_death": "died from injuries sustained in a brawl with a Clanmate"
+                    "death": "m_c died from injuries sustained in a brawl with a Clanmate."
                 },
                 "relationships": [
                     {
@@ -1189,8 +1407,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after being ambushed on patrol.",
-                    "reg_death": "m_c died after {PRONOUN/m_c/poss} Clanmate abandoned {PRONOUN/m_c/object} to a rogue ambush.",
-                    "lead_death": "died after being abandoned and ambushed on patrol"
+                    "death": "m_c died after {PRONOUN/m_c/poss} Clanmate abandoned {PRONOUN/m_c/object} to a rogue ambush."
                 },
                 "frequency": 2
             },
@@ -1203,8 +1420,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred in a o_c_n ambush.",
-                    "reg_death": "m_c died after {PRONOUN/m_c/poss} Clanmate abandoned them to a o_c_n ambush.",
-                    "lead_death": "died after being abandoned and ambushed on patrol"
+                    "death": "m_c died after {PRONOUN/m_c/poss} Clanmate abandoned them to a o_c_n ambush."
                 },
                 "other_clan_rep": -2,
                 "frequency": 2
@@ -1457,8 +1673,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an enemy warrior.",
-                    "reg_death": "m_c was killed by an enemy warrior.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
+                    "death": "m_c was killed by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1481,8 +1696,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an enemy warrior.",
-                    "reg_death": "m_c was killed by an enemy warrior.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
+                    "death": "m_c was killed by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1602,8 +1816,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it.",
-                    "reg_death": "m_c disrespected the border lines and was killed by an enemy warrior for it.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
+                    "death": "m_c disrespected the border lines and was killed by an enemy warrior for it."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1626,8 +1839,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it.",
-                    "reg_death": "m_c disrespected the border lines and was killed by an enemy warrior for it.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an enemy warrior"
+                    "death": "m_c disrespected the border lines and was killed by an enemy warrior for it."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1823,8 +2035,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",
-                    "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
+                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1848,8 +2059,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",
-                    "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
+                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1947,8 +2157,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",
-                    "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
+                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1972,8 +2181,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "reg_death": "m_c followed the scent of a trespassing cat and was killed by a dog.",
-                    "lead_death": "followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog"
+                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2096,8 +2304,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2120,8 +2327,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2154,8 +2360,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2177,10 +2382,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2255,8 +2460,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2279,8 +2483,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2303,8 +2506,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2337,8 +2539,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2363,7 +2564,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2435,8 +2636,7 @@
                 "exp": 0,
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2459,8 +2659,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2483,8 +2682,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2517,8 +2715,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2549,10 +2746,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2621,8 +2818,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2645,8 +2841,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2679,8 +2874,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2705,7 +2899,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -2774,8 +2968,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2799,8 +2992,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2833,8 +3025,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2950,8 +3141,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2974,8 +3164,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3008,8 +3197,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3031,10 +3219,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3109,8 +3297,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3133,8 +3320,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3157,8 +3343,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3191,8 +3376,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3217,7 +3401,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3293,8 +3477,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3317,8 +3500,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3341,8 +3523,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3375,8 +3556,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3407,10 +3587,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3479,8 +3659,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3502,8 +3681,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3536,8 +3714,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3562,7 +3739,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3631,8 +3808,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3655,8 +3831,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3689,8 +3864,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3806,8 +3980,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3830,8 +4003,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3864,8 +4036,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3887,10 +4058,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -3965,8 +4136,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3989,8 +4159,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4013,8 +4182,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4047,8 +4215,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4073,7 +4240,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -4149,8 +4316,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4173,8 +4339,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4198,8 +4363,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4232,8 +4396,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4264,10 +4427,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -4336,8 +4499,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4360,8 +4522,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4394,8 +4555,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4420,7 +4580,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -4489,8 +4649,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4513,8 +4672,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4547,8 +4705,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4664,8 +4821,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4688,8 +4844,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4722,8 +4877,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4745,10 +4899,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -4823,8 +4977,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4847,8 +5000,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4871,8 +5023,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4905,8 +5056,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4931,7 +5081,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -5007,8 +5157,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5031,8 +5180,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5055,8 +5203,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5089,8 +5236,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c lost a life against a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c lost a life against a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5121,10 +5267,10 @@
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
-        "min_max_status": {
+                "min_max_status": {
             "deputy": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -5193,8 +5339,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -5217,8 +5362,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -5251,8 +5395,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -5277,7 +5420,7 @@
         "min_max_status": {
             "leader": [
                 1,
-                6
+                1
             ]
         },
         "frequency": 4,
@@ -5346,8 +5489,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5370,8 +5512,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5404,8 +5545,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "reg_death": "m_c was killed by a hostile Clan.",
-                    "lead_death": "{VERB/m_c/were/was} killed by a hostile Clan"
+                    "death": "m_c was killed by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5418,6 +5558,304 @@
                 ],
                 "other_clan_rep": -6,
                 "frequency": 2
+            }
+        ]
+    },
+    {
+        "patrol_id": "wtlnd_bord_solohostile1",
+        "biome": [
+            "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "normal adult": [1, 1]
+        },
+        "frequency": 2,
+        "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that {PRONOUN/r_c/poss} other duties have to come first.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "A section of their border with o_c_n has flooded under some recent rains, wiping the border markings off the map. r_c remarks it and heads home, a simple but necessary mission completed.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"warrior": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The youngster is terrified and protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who are formal but genuinely grateful.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+                "exp": 20,
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who fluffs up their pelt and insults {PRONOUN/s_c/object}. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly, their mentor joins s_c in lecturing the apprentice.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The youngster is terrified and protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who bow their heads to c_n's deputy in gratitude.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who fluffs up their pelt and insults {PRONOUN/s_c/object}. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly, their mentor joins s_c, both warrior and deputy lecturing the apprentice.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. They're carefully frosty with each other but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their deputy. One of the patrol members yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other deputy calls their warrior back, begrudgingly impressed.",
+                "exp": 20,
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n deputy out with their new apprentice. s_c passes on a message from c_n's leader and politely wishes the young apprentice well. The other deputy is begrudgingly impressed.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The youngster is terrified and protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who crouch to the ground and thank r_c profusely.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, who fluffs up their pelt and insults {PRONOUN/s_c/object}. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly, their mentor joins s_c, both warrior and leader lecturing the apprentice.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. They're carefully frosty with each other but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
+                "exp": 20,
+                "other_clan_rep": 2,
+                "frequency": 1
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "s_c comes across a patrol from o_c_n, out on a similar mission to them, led by their Clan leader. One of the patrol members yowls an insult and s_c squares up, coldly sneering at the warrior that thinks they can take {PRONOUN/s_c/object}. The other leader calls their warrior back, begrudgingly impressed.",
+                "exp": 20,
+                "stat_skill": [
+                    "SPEAKER,1"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} the o_c_n leader out with their new apprentice. s_c passes on some important information affecting both their Clans and politely wishes the young apprentice well. The other leader is begrudgingly impressed.",
+                "exp": 20,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "min_max_status": {"warrior": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious swipe of {PRONOUN/r_c/poss} claws and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "text": "s_c is marking along the territory line when {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends. The patrol is marred by muttered insults and hissed threats from both sides.",
+                "exp": 0,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [-1, -1]},
+                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps - s_c doesn't make it back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "exp": 0,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "dead_cats": [
+                    "s_c"
+                ],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c was killed by a hostile Clan."
+                },
+                "other_clan_rep": -1,
+                "frequency": 3
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c encounters a patrol from o_c_n on the border and greets them coldly, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} make it back to camp.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c was killed by a hostile Clan."
+                },
+                "other_clan_rep": -1,
+                "frequency": 3
+            },
+            {
+                "min_max_status": {"deputy": [1, 1]},
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path, and it nearly comes to a fight.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. Furious, {PRONOUN/r_c/subject} {VERB/r_c/snarl/snarls} {PRONOUN/r_c/poss} anger. The apprentice turns tail and flees with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's leader.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. {PRONOUN/r_c/subject/CAP} {VERB/r_c/return/returns} to camp, blood soaked through {PRONOUN/r_c/poss} fur and a new hardness in {PRONOUN/r_c/poss} heart.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c lost a life against a hostile Clan."
+                },
+                "other_clan_rep": -1,
+                "frequency": 3
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path and storm off in a huff.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"leader": [1, 1]},
+                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps and s_c loses a life in a vicious fight. o_c_n boasts about it at the next Gathering.",
+                "exp": 0,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "dead_cats": [
+                    "s_c"
+                ],
+                "history_text": {
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c lost a life against a hostile Clan."
+                },
+                "other_clan_rep": -1,
+                "frequency": 3
             }
         ]
     },
@@ -5499,8 +5937,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar, and lingering resentment, from when a Clanmate failed to watch {PRONOUN/m_c/poss} back during a border altercation.",
-                    "reg_death": "m_c was killed in a border altercation when a Clanmate failed to watch {PRONOUN/m_c/poss} back.",
-                    "lead_death": "were killed when a Clanmate failed to support {PRONOUN/m_c/object} during a border altercation"
+                    "death": "m_c was killed in a border altercation when a Clanmate failed to watch {PRONOUN/m_c/poss} back."
                 },
                 "relationships": [
                     {
@@ -5541,8 +5978,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar, and lingering resentment, from when a Clanmate failed to watch {PRONOUN/m_c/poss} back during a border altercation.",
-                    "reg_death": "m_c was killed in a border altercation when a Clanmate failed to watch {PRONOUN/m_c/poss} back.",
-                    "lead_death": "were killed when a Clanmate failed to support {PRONOUN/m_c/object} during a border altercation"
+                    "death": "m_c was killed in a border altercation when a Clanmate failed to watch {PRONOUN/m_c/poss} back."
                 },
                 "relationships": [
                     {
@@ -5633,15 +6069,14 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for {PRONOUN/r_c/object}, and as soon as r_c steps fully into o_c_n territory, it's all over.",
+                "text": "It's too good of an opportunity to pass up - too good to be true. The o_c_n patrol is waiting for {PRONOUN/r_c/object}, and as soon as r_c steps fully into o_c_n territory, it's all over.",
                 "exp": 0,
                 "dead_cats": [
                     "patrol",
                     "some_lives"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
-                    "lead_death": "were killed by o_c_n in a border ambush"
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5666,8 +6101,7 @@
                     "some_lives"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
-                    "lead_death": "were killed by o_c_n in a border ambush"
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5741,7 +6175,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's too good of an opportunity to pass up - too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, it's all over for the entire patrol.",
+                "text": "It's too good of an opportunity to pass up - too good to be true. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, it's all over for the entire patrol.",
                 "exp": 0,
                 "dead_cats": [
                     "patrol",
@@ -5749,8 +6183,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
-                    "lead_death": "were killed by o_c_n in a border ambush"
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5778,8 +6211,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
-                    "lead_death": "were killed by o_c_n in a border ambush"
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5805,8 +6237,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
-                    "lead_death": "were killed by o_c_n in a border ambush"
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5886,8 +6317,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
-                    "lead_death": "were killed by o_c_n in a border ambush"
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5915,8 +6345,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
-                    "lead_death": "were killed by o_c_n in a border ambush"
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5942,8 +6371,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "reg_death": "m_c was killed in a border ambush by a hostile Clan.",
-                    "lead_death": "were killed by o_c_n in a border ambush"
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -6126,8 +6554,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "reg_death": "m_c was slain by o_c_n warriors",
-                    "lead_death": "lost a life by o_c_n warriors"
+                    "death": "m_c was slain by o_c_n warriors"
                 },
                 "relationships": [
                     {

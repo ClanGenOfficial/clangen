@@ -15,24 +15,20 @@ from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure import game
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UISpriteButton,
-    UISurfaceImageButton,
-)
-from scripts.utility import get_text_box_theme, ui_scale, ui_scale_blit, ui_scale_offset
-from scripts.utility import ui_scale_dimensions
+from ..ui.elements.sprite_button import UISpriteButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_blit
 from .Screens import Screens
 from .enums import GameScreen
-from .screens_core.screens_core import rebuild_den_dropdown
 from ..cat import save_load
 from ..cat.enums import CatRank
-from ..cat.sprites import sprites
-from ..clan_package.settings import get_clan_setting
+from ..cat.sprites.load_sprites import sprites
 from ..game_structure.game.settings import game_setting_set, game_setting_get
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER, screen
-from ..game_structure.windows import SymbolFilterWindow
+from ..ui.windows.symbol_filter import SymbolFilterWindow
 from ..ui.generate_box import get_box, BoxStyles
 from ..ui.generate_button import ButtonStyles, get_button_dict
 from ..ui.icon import Icon
@@ -164,7 +160,6 @@ class MakeClanScreen(Screens):
             starting_height=1,
         )
         create_example_cats()
-        # self.worldseed = randrange(10000)
         self.open_game_mode()
 
     def handle_event(self, event):
@@ -264,14 +259,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements["next_step"]:
-            new_name = sub(
-                r"[^A-Za-z0-9 ]+", "", self.elements["name_entry"].get_text()
-            ).strip()
-            if not new_name:
-                self.elements["error"].set_text("Your Clan's name cannot be empty")
-                self.elements["error"].show()
-                return
-            self.clan_name = new_name
+            self.clan_name = self.elements["name_entry"].get_text()
             self.open_choose_leader()
         elif event.ui_element == self.elements["previous_step"]:
             self.clan_name = ""
@@ -1080,7 +1068,9 @@ class MakeClanScreen(Screens):
 
         if self.sub_screen == "choose leader":
             self.elements["cat_name"].set_text(
-                str(selected.name) + " --> " + selected.name.prefix + "star"
+                str(selected.name)
+                + " --> "
+                + selected.name.get_specsuffix_name(CatRank.LEADER)
             )
         else:
             self.elements["cat_name"].set_text(str(selected.name))
@@ -1437,9 +1427,7 @@ class MakeClanScreen(Screens):
             ui_scale(pygame.Rect((265, 597), (140, 29))),
             manager=MANAGER,
         )
-        self.elements["name_entry"].set_allowed_characters(
-            list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- ")
-        )
+        self.elements["name_entry"].set_forbidden_characters("forbidden_file_path")
         self.elements["name_entry"].set_text_length_limit(11)
         self.elements["clan"] = pygame_gui.elements.UITextBox(
             "-Clan",
@@ -2139,12 +2127,13 @@ class MakeClanScreen(Screens):
         save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
-        convert_camp = {1: "camp1", 2: "camp2", 3: "camp3", 4: "camp4"}
+        convert_camp = f"camp{self.selected_camp_tab}"
         displayname = self.clan_name
-        if self._clan_name_exists(self.clan_name):
-            clan_name = self._generate_unique_clan_name(self.clan_name)
-        else:
-            clan_name = self.clan_name
+
+        # extra sanitization for filenames
+        clan_name = sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", self.clan_name)
+        if self._clan_name_exists(clan_name):
+            clan_name = self._generate_unique_clan_name(clan_name)
 
         game.clan = Clan(
             name=clan_name,
@@ -2153,7 +2142,7 @@ class MakeClanScreen(Screens):
             deputy=self.deputy,
             medicine_cat=self.med_cat,
             biome=self.biome_selected,
-            camp_bg=convert_camp[self.selected_camp_tab],
+            camp_bg=convert_camp,
             symbol=self.symbol_selected,
             game_mode=self.game_mode,
             starting_members=self.members,
@@ -2164,13 +2153,8 @@ class MakeClanScreen(Screens):
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(len(self.members))
         game.clan.save_herb_supply(game.clan)
-        Cat.grief_strings.clear()
+        game.clan.grief_strings.clear()
         Cat.sort_cats()
-
-        rebuild_den_dropdown(
-            left_align=not get_clan_setting("moons and seasons"),
-            game_mode=game.clan.game_mode,
-        )
 
     def get_camp_art_path(self, campnum) -> Optional[str]:
         if not campnum:
@@ -2187,9 +2171,6 @@ class MakeClanScreen(Screens):
         return (
             f"{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png"
         )
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
 
     def draw_art_frame(self):
         if "art_frame" in self.elements:

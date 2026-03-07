@@ -21,14 +21,14 @@ from scripts.game_structure.game.settings import (
 # please don't do this. we have to.
 import scripts.game_structure.game.settings.settings as all_settings
 from scripts.game_structure import game
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UISurfaceImageButton,
-    UIImageHorizontalSlider,
-    UIModifiedScrollingContainer,
-)
+from ..ui.elements.checkbox import UICheckbox
+from ..ui.elements.image_horizontal_slider import UIImageHorizontalSlider
+from ..ui.elements.modified_scrolling_container import UIModifiedScrollingContainer
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import open_data_dir
-from scripts.utility import get_text_box_theme, ui_scale, ui_scale_dimensions
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure import constants
@@ -42,8 +42,7 @@ from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 logger = logging.getLogger(__name__)
-with open("resources/gamesettings.json", "r", encoding="utf-8") as f:
-    settings_dict = ujson.load(f)
+settings_dict = constants.DISPLAY_SETTINGS["game"]
 
 
 class SettingsScreen(Screens):
@@ -205,11 +204,11 @@ class SettingsScreen(Screens):
                         game_setting_set("language", key)
                     else:
                         game_setting_toggle(key)
-                        value.change_object_id(
-                            "@checked_checkbox"
-                            if game_setting_get(key)
-                            else "@unchecked_checkbox"
-                        )
+                        if value.checked:
+                            value.uncheck()
+                        else:
+                            value.check()
+
                     self.settings_changed = True
                     self.update_save_button()
 
@@ -802,14 +801,8 @@ class SettingsScreen(Screens):
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):
-                if game_setting_get(code):
-                    box_type = "@checked_checkbox"
-                else:
-                    box_type = "@unchecked_checkbox"
-                self.checkboxes[code] = UIImageButton(
-                    ui_scale(pygame.Rect((170, 34 if i < 0 else 0), (34, 34))),
-                    "",
-                    object_id=box_type,
+                self.checkboxes[code] = UICheckbox(
+                    position=(170, 34 if i < 0 else 0),
                     container=self.checkboxes_text["container_" + self.sub_menu],
                     tool_tip_text=f"settings.{code}_tooltip",
                     anchors=(
@@ -817,6 +810,8 @@ class SettingsScreen(Screens):
                         if i > 0
                         else None
                     ),
+                    check=game_setting_get(code),
+                    manager=MANAGER,
                 )
 
     def clear_sub_settings_buttons_and_text(self):

@@ -207,9 +207,11 @@ def set_display_mode(
 
     display_change_in_progress = False
     if source_screen is not None and show_confirm_dialog:
-        from scripts.game_structure.windows import ConfirmDisplayChanges
+        from scripts.ui.windows.confirm_display_change import (
+            ConfirmDisplayChangesWindow,
+        )
 
-        ConfirmDisplayChanges(source_screen=source_screen)
+        ConfirmDisplayChangesWindow(source_screen=source_screen)
 
     pygame_gui.core.utility.set_default_manager(MANAGER)
 
@@ -217,7 +219,7 @@ def set_display_mode(
 def determine_screen_scale(x, y):
     global screen_scale, screen_x, screen_y, offset, game_screen_size
 
-    if game_setting_get("fullscreen_scaling"):
+    if game_setting_get("fullscreen scaling"):
         scalex = (x - 20) // 80
         scaley = (y - 20) // 70
 
