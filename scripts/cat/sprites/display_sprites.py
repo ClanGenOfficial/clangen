@@ -31,7 +31,8 @@ def generate_sprite(
     :param disable_sick_sprite: If true, never use the not_working lineart.
                     If false, use the cat.not_working() to determine the no_working art.
     """
-    sprite_poses = sprites.POSE_DATA["poses"]
+    poses: list = sprites.POSE_DATA["poses"]
+    sprite_poses = {x: str(poses.index(x)) for x in poses}
 
     if life_state is not None:
         age = life_state

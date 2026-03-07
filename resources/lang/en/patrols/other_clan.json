@@ -4702,28 +4702,19 @@
         "types": [
             "border"
         ],
-        "tags": ["clan:leader"],
+        "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ]
+            "normal adult": [1, 6]
         },
         "frequency": 1,
         "intro_text": "The patrol spots a badger making a den on o_c_n territory.",
-        "decline_text": "It's not c_n's problem, but {PRONOUN/p_l/subject} {VERB/p_l/make/makes} a mental note to mention the badger to {PRONOUN/p_l/poss} leader later.",
+        "decline_text": "It's not c_n's problem, but {PRONOUN/p_l/subject} {VERB/p_l/make/makes} a mental note to report the badger sighting back at camp.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "min_max_status": {
-                    "leader": [
-                        -1,
-                        -1
-                    ]
-                },
                 "text": "As luck would have it, p_l smells a o_c_n patrol approaching. {PRONOUN/p_l/subject/CAP} {VERB/p_l/call/calls} out to the patrol and tells them about the badger and where {PRONOUN/p_l/subject} saw it making a den. The o_c_n patrol is grateful and return to camp immediately to report the badger to their leader.",
                 "exp": 10,
                 "relationships": [

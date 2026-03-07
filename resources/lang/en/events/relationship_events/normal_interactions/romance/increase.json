@@ -108,7 +108,7 @@
 		"reaction_random_cat": {
 			"romance": "increase",
 			"like": "increase",
-			"admirable": "increase"
+			"respect": "increase"
 		}
 	},
 	{

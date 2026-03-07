@@ -149,6 +149,10 @@
             {
                 "name": "yellowcough",
                 "chance": 60
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -194,6 +198,10 @@
             {
                 "name": "whitecough",
                 "chance": 10
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -360,6 +368,10 @@
             {
                 "name": "whitecough",
                 "chance": 15
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -400,6 +412,10 @@
             {
                 "name": "greencough",
                 "chance": 18
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -446,6 +462,10 @@
             {
                 "name": "redcough",
                 "chance": 80
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -689,6 +709,10 @@
             {
                 "name": "constant nightmares",
                 "chance": 15
+            },
+            {
+                "name": "selective mutism",
+                "chance": 150
             }
         ],
         "herbs": {
