@@ -8,11 +8,9 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import game
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UISpriteButton,
-    UISurfaceImageButton,
-)
+from ..ui.elements.sprite_button import UISpriteButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import shorten_text_to_fit
 from ..ui.scale import ui_scale, ui_scale_dimensions
@@ -27,6 +25,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
+from ..ui.windows.rel_change_details import RelChangeDetailWindow
 
 
 class PatrolScreen(Screens):
@@ -66,6 +65,7 @@ class PatrolScreen(Screens):
         self.current_patrol = None
         self.display_text = ""
         self.results_text = ""
+        self.rel_results = {}
         self.start_patrol_thread: Optional[PropagatingThread] = None
         self.proceed_patrol_thread: Optional[PropagatingThread] = None
         self.outcome_art = None
@@ -291,6 +291,8 @@ class PatrolScreen(Screens):
         elif event.ui_element == self.elements["clan_return"]:
             self.in_progress_data = None
             self.change_screen(GameScreen.CAMP)
+        elif event.ui_element == self.elements.get("rel_detail"):
+            RelChangeDetailWindow(self.rel_results)
 
     def screen_switches(self):
         super().screen_switches()
@@ -333,6 +335,7 @@ class PatrolScreen(Screens):
 
         variable_dict["display_text"] = self.display_text
         variable_dict["results_text"] = self.results_text
+        variable_dict["rel_results"] = self.rel_results.copy()
         variable_dict["outcome_art"] = self.outcome_art
 
         variable_dict["current_moon"] = game.clan.age
@@ -872,7 +875,7 @@ class PatrolScreen(Screens):
 
         # Draw Patrol Cats
         pos_x = 400
-        pos_y = 475
+        pos_y = 488
         for u in range(6):
             if u < len(self.patrol_obj.patrol_cats):
                 self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(
@@ -920,18 +923,21 @@ class PatrolScreen(Screens):
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("decline")
         elif user_input in ["antag", "antagonize"]:
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("antag")
         else:
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("proceed")
 
@@ -968,6 +974,18 @@ class PatrolScreen(Screens):
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
+
+        if self.rel_results:
+            self.elements["rel_detail"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((500, -2), (36, 36))),
+                Icon.MAGNIFY,
+                get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+                object_id="@buttonstyles_squoval",
+                manager=MANAGER,
+                anchors={"top_target": self.elements["event_bg"]},
+                tool_tip_text="see relationship changes",
+            )
+
         self.elements["patrol_results"].set_text(self.results_text)
 
         self.elements["patrol_text"].set_text(self.display_text)

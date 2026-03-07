@@ -9,10 +9,8 @@ from scripts.game_structure.localization import (
 )
 from scripts.cat.pronouns import get_custom_pronouns, add_custom_pronouns
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-    UIDropDown,
-)
+from scripts.ui.elements.dropdown import UIDropDown
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -112,32 +110,35 @@ class PronounCreationWindow(GameWindow):
 
         self.heading = pygame_gui.elements.UITextBox(
             "windows.create_pronouns_desc",
-            ui_scale(pygame.Rect((0, 60), (350, 75))),
+            ui_scale(pygame.Rect((0, 0), (350, 75))),
             object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
             container=self.elements["core_container"],
-            anchors={"centerx": "centerx"},
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.elements["title"],
+            },
         )
         config = get_lang_config()["pronouns"]
 
         self.dropdowns["conju_label"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((-50, 130), (100, 32))),
+            ui_scale(pygame.Rect((95, 0), (100, 32))),
             "windows.conju",
-            object_id="#text_box_30_horizcenter_spacing_95",
+            object_id="#text_box_30_horizleft_spacing_95",
             container=self.elements["core_container"],
-            anchors={"centerx": "centerx"},
+            anchors={"top_target": self.heading},
         )
 
         self.dropdowns["gender_label"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((-50, 5), (100, 32))),
+            ui_scale(pygame.Rect((110, 10), (70, 32))),
             "windows.gender",
-            object_id="#text_box_30_horizcenter_spacing_95",
+            object_id="#text_box_30_horizleft_spacing_95",
             container=self.elements["core_container"],
-            anchors={"top_target": self.dropdowns["conju_label"], "centerx": "centerx"},
+            anchors={"top_target": self.dropdowns["conju_label"]},
         )
 
         self.dropdowns["conju"] = UIDropDown(
-            pygame.Rect((0, -3), (100, 32)),
+            pygame.Rect((0, 0), (90, 32)),
             parent_text=f"windows.conju{self.conju}",
             item_list=[
                 f"windows.conju{i}" for i in range(1, config["conju_count"] + 1)
@@ -145,22 +146,23 @@ class PronounCreationWindow(GameWindow):
             manager=MANAGER,
             container=self.elements["core_container"],
             anchors={
-                "left_target": self.dropdowns["gender_label"],
+                "left_target": self.dropdowns["conju_label"],
                 "top_target": self.heading,
             },
             starting_selection=[f"windows.conju{self.conju}"],
+            open_on_hover=True,
         )
         self.dropdowns["gender"] = UIDropDown(
-            pygame.Rect((0, 34), (100, 32)),
+            pygame.Rect((0, 172), (100, 32)),
             parent_text=f"windows.gender{self.gender}",
             item_list=[f"windows.gender{i}" for i in range(0, config["gender_count"])],
             manager=MANAGER,
             container=self.elements["core_container"],
             anchors={
                 "left_target": self.dropdowns["gender_label"],
-                "top_target": self.heading,
             },
             starting_selection=[f"windows.gender{self.gender}"],
+            open_on_hover=True,
         )
 
         text_inputs = list(self.pronoun_template.keys())
@@ -174,7 +176,7 @@ class PronounCreationWindow(GameWindow):
         for i, item in enumerate(text_inputs):
             self.box_labels[item] = pygame_gui.elements.UITextBox(
                 f"windows.{item}",
-                ui_scale(pygame.Rect((0, 5), (200, 30))),
+                ui_scale(pygame.Rect((2, 5), (200, 30))),
                 object_id="#text_box_30_horizcenter_spacing_95",
                 manager=MANAGER,
                 container=self.elements["core_container"],

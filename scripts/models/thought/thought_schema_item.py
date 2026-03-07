@@ -71,6 +71,14 @@ class ThoughtSchemaItem(BaseModel):
         MISSING,
         description="Constrains the thought to only happen if r_c is in a certain role.",
     )
+    main_status_history: Union[List[StatusAny], MISSING] = Field(
+        MISSING,
+        description="Constrains the thought to only happen if m_c had a certain role, but no longer does.",
+    )
+    random_status_history: Union[List[StatusAny], MISSING] = Field(
+        MISSING,
+        description="Constrains the thought to only happen if r_c had a certain role, but no longer does.",
+    )
     main_age_constraint: Union[List[Age], MISSING] = Field(
         MISSING,
         description="Constrains the thought to only happen if m_c is within a certain age group.",

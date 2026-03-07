@@ -329,6 +329,20 @@
                     },
                     {
                         "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan", "high_social", "low_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat disapproved of how to_cat pushed {PRONOUN/to_cat/poss} patrol to reach the far border."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
@@ -376,6 +390,20 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "from_cat heard that to_cat advocated for {PRONOUN/to_cat/poss} Clanmates and urged p_l to end a patrol early when the heat took its toll on the cats."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan", "low_social", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat disapproved of to_cat ending a patrol early just because it was hot that day."
                         }
                     },
                     {
@@ -431,7 +459,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts, more play than true intent, and half the weight of an adult. Dangerous, but... manageable. The patrol leaves the area quickly afterwards, before the pup's parents realize it's missing.",
+                "text": "That yip seemed a little high-pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts, more play than true intent, and half the weight of an adult. Dangerous, but... manageable. The patrol leaves the area quickly afterwards, before the pup's parents realize it's missing.",
                 "exp": 60,
                 "art": "gen_coyote2",
                 "relationships": [
@@ -489,7 +517,7 @@
                 "frequency": 2
             },
             {
-                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up, and the scrabbling of paws, the yip of frustration confirms the coyote has reached them far too late. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
+                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon - from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
                 "exp": 40,
                 "art": "gen_coyote_danger1",
                 "relationships": [
@@ -587,7 +615,7 @@
                 "frequency": 4
             },
             {
-                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything, they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon. The coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
+                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon. The coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
                 "exp": 50,
                 "art": "gen_coyote_danger1",
                 "can_have_stat": [
@@ -746,7 +774,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 25,
                         "log": {
                             "cats_from": "to_cat laid down {PRONOUN/to_cat/poss} life to protect c_n from coyotes."
                         }
@@ -795,6 +823,20 @@
                         "amount": 15,
                         "log": {
                             "cats_from": "from_cat heard that to_cat held off a coyote long enough to save the lives of the rest of the patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "trust"
+                        ],
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "to_cat held off a coyote long enough to save the lives of from_cat and the rest of the patrol."
                         }
                     }
                 ],
@@ -861,7 +903,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
                     "death": "This cat died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
@@ -875,7 +916,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5,
+                        "amount": -15,
                         "log": {
                             "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was killed as a result."
                         }
@@ -1530,9 +1571,9 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
+                        "amount": 20,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's noble death to keep the Clan safe from coyotes."
+                            "cats_from": "from_cat honored to_cat's noble death to keep the Clan safe from coyotes."
                         }
                     }
                 ],
@@ -1656,9 +1697,9 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
+                        "amount": 20,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's noble death to keep the Clan safe from coyotes."
+                            "cats_from": "from_cat honored to_cat's noble death to keep the Clan safe from coyotes."
                         }
                     }
                 ],

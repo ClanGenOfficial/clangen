@@ -5,13 +5,20 @@ from typing import Optional, List, Union, Type
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank, CatAge, CatSocial, CatGroup, CatStanding
+from scripts.cat.enums import (
+    CatRank,
+    CatAge,
+    CatSocial,
+    CatGroup,
+    CatStanding,
+    CatThought,
+)
 from scripts.cat.names import names
 from scripts.cat_relations.enums import RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
-from scripts.events_module.text_adjust import process_text
+from scripts.events_module.text_adjust import process_text, adjust_list_text
 
 
 def create_new_cat_block(
@@ -33,7 +40,6 @@ def create_new_cat_block(
     :param list[str] attribute_list: attribute list contained within the block
     """
 
-    thought = i18n.t("hardcoded.thought_new_cat")
     new_cats = None
 
     # gather parents
@@ -257,25 +263,26 @@ def create_new_cat_block(
         ):
             cat_social = CatSocial.ROGUE
 
+    thought = None
     # KITTEN THOUGHT
     if rank in (CatRank.KITTEN, CatRank.NEWBORN):
-        thought = i18n.t("hardcoded.thought_new_kitten")
+        thought = CatThought.ON_JOIN
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
     outside = False
     if "meeting" in attribute_list:
+        thought = CatThought.ON_MEETING
         outside = True
         rank = None
         new_name = False
-        thought = i18n.t("hardcoded.thought_meeting")
         if age is not None and age <= 6 and not bs_override:
             chosen_backstory = "outsider1"
 
     # IS THE CAT DEAD?
     alive = True
     if "dead" in attribute_list:
+        thought = CatThought.ON_DEATH
         alive = False
-        thought = i18n.t("hardcoded.thought_new_dead")
 
     # check if we can use an existing cat here
     chosen_cat: Optional["Cat"] = None
@@ -283,7 +290,10 @@ def create_new_cat_block(
         existing_outsiders = [
             i
             for i in Cat.all_cats.values()
-            if i.status.is_outsider and not i.dead and i not in in_event_cats.values()
+            if i.status.is_outsider
+            and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            and not i.dead
+            and i not in in_event_cats.values()
         ]
         possible_outsiders = []
         for cat in existing_outsiders:
@@ -308,7 +318,9 @@ def create_new_cat_block(
                     rank = chosen_cat.status.get_rank_from_age(chosen_cat.age)
                 chosen_cat.add_to_clan()
                 if chosen_cat.status.rank != rank:
-                    chosen_cat.rank_change(new_rank=CatRank(rank), resort=True)
+                    chosen_cat.rank_change(
+                        new_rank=CatRank(rank), resort=True, new_thought=False
+                    )
             elif outside:
                 # updates so that the clan is marked as knowing of this cat
                 current_standing = chosen_cat.status.get_standing_with_group(
@@ -360,11 +372,11 @@ def create_new_cat_block(
             litter=litter,
             backstory=chosen_backstory,
             rank=rank,
+            thought=thought,
             original_social=cat_social,
             original_group=cat_group,
             moons=age,
             gender=gender,
-            thought=thought,
             alive=alive,
             outside=outside,
             parent1=parent1.ID if parent1 else None,
@@ -469,9 +481,9 @@ def create_new_cat(
     rank: Optional[CatRank] = None,
     original_social: CatSocial = CatSocial.CLANCAT,
     original_group: CatGroup = None,
+    thought: Optional[CatThought] = None,
     moons: int = None,
     gender: str = None,
-    thought: str = None,
     alive: bool = True,
     outside: bool = False,
     parent1: str = None,
@@ -490,18 +502,17 @@ def create_new_cat(
     :param original_social: set as the cat's old social - default: None (cat will not be given any past social, it will
     appear that they have always been a clancat)
     :param original_group: set as the cat's old group - default: None (cat will not be given any past group)
+    :param str thought: if you need to give a custom thought, set it here
     :param bool outside: set this as True to generate the cat as an outsider instead of as part of the Clan - default: False (Clan cat)
     :param int moons: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
     :param str gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
-    :param str thought: if you need to give a custom "welcome" thought, set it here
     :param bool alive: set this as False to generate the cat as already dead - default: True (alive)
     :param str parent1: Cat ID to set as the biological parent1
     :param str parent2: Cat ID to set as the biological parent2
     :param list adoptive_parents: Cat IDs to set as adoptive parents
     """
-
-    if thought is None:
-        thought = i18n.t("hardcoded.thought_new_cat")
+    if not thought:
+        thought = CatThought.ON_JOIN
 
     if isinstance(backstory, list):
         backstory = choice(backstory)
@@ -620,10 +631,10 @@ def create_new_cat(
                 name = choice(names.names_dict["loner_names"])
                 # check if the kittypets come with a pretty acc
                 if bool(getrandbits(1)):
-                    # TODO: refactor this entire function to remove this call amongst other things
-                    from scripts.cat.pelts import Pelt
-
-                    new_cat.pelt.accessory.append(choice(Pelt.collar_accessories))
+                    new_cat.pelt.accessory = (
+                        *new_cat.pelt.accessory,
+                        choice(new_cat.pelt.collar_accessories),
+                    )
 
             # try to give name from full loner name list
             elif original_social in (CatSocial.LONER, CatSocial.ROGUE) and bool(
@@ -667,9 +678,10 @@ def create_new_cat(
             "NORIGHTEAR",
             "MANLEG",
         ]
-        for scar in new_cat.pelt.scars:
-            if scar in not_allowed:
-                new_cat.pelt.scars.remove(scar)
+
+        new_cat.pelt.scars = tuple(
+            scar for scar in new_cat.pelt.scars if scar not in not_allowed
+        )
 
         # chance to give the new cat a permanent condition, higher chance for found kits and litters
         if kit or litter:
@@ -709,17 +721,18 @@ def create_new_cat(
                         ] = -2
 
                 # assign scars
+
                 if chosen_condition in ("lost a leg", "born without a leg"):
-                    new_cat.pelt.scars.append("NOPAW")
+                    new_cat.pelt.scars = (*new_cat.pelt.scars, "NOPAW")
                 elif chosen_condition in ("lost their tail", "born without a tail"):
-                    new_cat.pelt.scars.append("NOTAIL")
+                    new_cat.pelt.scars = (*new_cat.pelt.scars, "NOTAIL")
 
         # KILL >:D only if we're sposed to tho
         if not alive:
             new_cat.die()
 
         # newbie thought
-        new_cat.thought = thought
+        new_cat.get_new_thought(thought)
 
         # and they exist now
         created_cats.append(new_cat)
@@ -754,64 +767,101 @@ def gather_cat_objects(
     out_set = set()
 
     for abbr in abbr_list:
+        is_exclusionary = False
+        if "-" in abbr:
+            is_exclusionary = True
+            abbr = abbr.replace("-", "")
+
+        found_cat = None
         if abbr == "m_c":
-            if extra_cat:
-                out_set.add(extra_cat)
-            else:
-                out_set.add(event.main_cat)
+            found_cat = extra_cat if extra_cat else event.main_cat
         elif abbr == "r_c":
-            out_set.add(event.random_cat)
-        elif re.match(r"n_c:[0-9]+", abbr):
+            found_cat = event.random_cat
+        # PATROL SPECIFIC
+        elif abbr == "p_l":
+            found_cat = event.patrol_leader
+        elif abbr == "s_c":
+            found_cat = stat_cat
+        elif abbr == "app1" and len(event.patrol_apprentices) >= 1:
+            found_cat = event.patrol_apprentices[0]
+        elif abbr == "app2" and len(event.patrol_apprentices) >= 2:
+            found_cat = event.patrol_apprentices[1]
+        elif abbr == "app3" and len(event.patrol_apprentices) >= 3:
+            found_cat = event.patrol_apprentices[2]
+        elif abbr == "app4" and len(event.patrol_apprentices) >= 4:
+            found_cat = event.patrol_apprentices[3]
+        elif abbr == "app5" and len(event.patrol_apprentices) >= 5:
+            found_cat = event.patrol_apprentices[4]
+        elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
+            found_cat = event.patrol_apprentices[5]
+
+        # add/remove cat if found and then continue for loop
+        if is_exclusionary and found_cat:
+            if found_cat not in out_set:
+                # continue to avoid KeyError
+                continue
+            out_set.remove(found_cat)
+            continue
+        if not is_exclusionary and found_cat:
+            out_set.add(found_cat)
+            continue
+
+        # SMALL CAT GROUPS
+        found_cat_list = set()
+        if abbr == "patrol":
+            found_cat_list.update(event.patrol_cats)
+        elif re.match(r"n_c:[0-9]+", abbr):  # new_cats
             index = re.match(r"n_c:([0-9]+)", abbr).group(1)
             index = int(index)
             if index < len(event.new_cats):
-                out_set.update(event.new_cats[index])
-        # PATROL SPECIFIC
-        elif abbr == "p_l":
-            out_set.add(event.patrol_leader)
-        elif abbr == "s_c":
-            out_set.add(stat_cat)
-        elif abbr == "app1" and len(event.patrol_apprentices) >= 1:
-            out_set.add(event.patrol_apprentices[0])
-        elif abbr == "app2" and len(event.patrol_apprentices) >= 2:
-            out_set.add(event.patrol_apprentices[1])
-        elif abbr == "app3" and len(event.patrol_apprentices) >= 3:
-            out_set.add(event.patrol_apprentices[2])
-        elif abbr == "app4" and len(event.patrol_apprentices) >= 4:
-            out_set.add(event.patrol_apprentices[3])
-        elif abbr == "app5" and len(event.patrol_apprentices) >= 5:
-            out_set.add(event.patrol_apprentices[4])
-        elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
-            out_set.add(event.patrol_apprentices[5])
-        elif abbr == "patrol":
-            out_set.update(event.patrol_cats)
+                found_cat_list.update(event.new_cats[index])
         elif abbr == "multi":
             cat_num = randint(1, max(1, len(event.patrol_cats) - 1))
-            out_set.update(sample(event.patrol_cats, cat_num))
+            found_cat_list.update(sample(event.patrol_cats, cat_num))
         # OVERALL CLAN CATS
         elif abbr == "clan":
-            out_set.update(clan_cats)
+            found_cat_list.update(clan_cats)
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
-            out_set.update(
+            found_cat_list.update(
                 sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
             )
+
+        # add/remove cats if found and then continue for loop
+        if is_exclusionary and found_cat_list:
+            # removes found_cat_list items from out_set if they are present in out_set
+            out_set -= found_cat_list
+            continue
+        if not is_exclusionary and found_cat_list:
+            out_set.update(found_cat_list)
+            continue
+
         # FACET CATS IN CLAN
-        elif abbr == "high_social":
-            out_set = {c for c in out_set if c.personality.sociability > 8}
+        if abbr == "high_social":
+            found_cat_list = {c for c in out_set if c.personality.sociability > 8}
         elif abbr == "low_social":
-            out_set = {c for c in out_set if c.personality.sociability <= 8}
+            found_cat_list = {c for c in out_set if c.personality.sociability <= 8}
         elif abbr == "high_lawful":
-            out_set = {c for c in out_set if c.personality.lawfulness > 8}
+            found_cat_list = {c for c in out_set if c.personality.lawfulness > 8}
         elif abbr == "low_lawful":
-            out_set = {c for c in out_set if c.personality.lawfulness <= 8}
+            found_cat_list = {c for c in out_set if c.personality.lawfulness <= 8}
         elif abbr == "high_stable":
-            out_set = {c for c in out_set if c.personality.stability > 8}
+            found_cat_list = {c for c in out_set if c.personality.stability > 8}
         elif abbr == "low_stable":
-            out_set = {c for c in out_set if c.personality.stability <= 8}
+            found_cat_list = {c for c in out_set if c.personality.stability <= 8}
         elif abbr == "high_aggress":
-            out_set = {c for c in out_set if c.personality.aggression > 8}
+            found_cat_list = {c for c in out_set if c.personality.aggression > 8}
         elif abbr == "low_aggress":
-            out_set = {c for c in out_set if c.personality.aggression <= 8}
+            found_cat_list = {c for c in out_set if c.personality.aggression <= 8}
+
+        # add/remove cats if found and then continue for loop
+        if is_exclusionary and found_cat_list:
+            # removes found_cat_list items from out_set if they are present in out_set
+            out_set -= found_cat_list
+            continue
+        if not is_exclusionary and found_cat_list:
+            # found_cat_list includes all qualifying cats!
+            out_set = found_cat_list
+            continue
 
         else:
             print(f"WARNING: Unsupported abbreviation {abbr}")
@@ -821,7 +871,7 @@ def gather_cat_objects(
 
 def unpack_rel_block(
     Cat, relationship_effects: List[dict], event=None, stat_cat=None, extra_cat=None
-):
+) -> dict:
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
     accordingly.
@@ -831,14 +881,25 @@ def unpack_rel_block(
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
+    :returns: List of all created rel logs for this rel block.
     """
     possible_values = [*RelType]
+
+    created_rel_logs: dict = {}
+
+    is_clan_reaction: bool = False
 
     for block in relationship_effects:
         cats_from = block.get("cats_from", [])
         cats_to = block.get("cats_to", [])
         amount = block.get("amount")
         values = [x for x in block.get("values", ()) if x in possible_values]
+
+        # if this is a reaction from the entire clan, we need to know for later
+        if cats_from == ["clan"] or (
+            len(cats_from) == 2 and "clan" in cats_from and "patrol" in cats_from
+        ):
+            is_clan_reaction = True
 
         # Gather actual cat objects:
         cats_from_ob = gather_cat_objects(Cat, cats_from, event, stat_cat, extra_cat)
@@ -883,21 +944,48 @@ def unpack_rel_block(
             if not to_log and not from_log:
                 print(f"something is wrong with relationship log: {block['log']}")
 
-        change_relationship_values(
-            cats_to_ob,
-            cats_from_ob,
-            **value_changes,
-            log=from_log,
-        )
+        if is_clan_reaction:
+            value_list = adjust_list_text(
+                [i18n.t(f"relationships.{x}_word") for x in values]
+            )
+            name_list = adjust_list_text([str(x.name) for x in cats_to_ob])
+            if positive:
+                effect = "pos"
+            else:
+                effect = "neg"
+            created_rel_logs["clan"] = i18n.t(
+                f"windows.{effect}_clan_rel_log",
+                value_list=value_list,
+                name_list=name_list,
+            )
+            change_relationship_values(
+                cats_to_ob,
+                cats_from_ob,
+                **value_changes,
+                log=from_log,
+            )
+        else:
+            created_rel_logs.update(
+                change_relationship_values(
+                    cats_to_ob,
+                    cats_from_ob,
+                    **value_changes,
+                    log=from_log,
+                )
+            )
 
         if block.get("mutual"):
             # we'll default to the other log if no unique log was written
-            change_relationship_values(
-                cats_from_ob,
-                cats_to_ob,
-                **value_changes,
-                log=to_log if to_log else from_log,
+            created_rel_logs.update(
+                change_relationship_values(
+                    cats_from_ob,
+                    cats_to_ob,
+                    **value_changes,
+                    log=to_log if to_log else from_log,
+                )
             )
+
+    return created_rel_logs
 
 
 def change_relationship_values(
@@ -909,7 +997,7 @@ def change_relationship_values(
     comfort: int = 0,
     trust: int = 0,
     log: str = None,
-):
+) -> dict:
     """
     changes relationship values according to the parameters.
 
@@ -933,6 +1021,7 @@ def change_relationship_values(
     else:
         changed = True"""
 
+    created_rel_logs = {}
     # pick out the correct cats
     for single_cat_from in cats_from:
         for single_cat_to in cats_to:
@@ -987,6 +1076,13 @@ def change_relationship_values(
                 else:
                     processed_log = log
 
+                if single_cat_from in created_rel_logs:
+                    created_rel_logs[single_cat_from] = "<br><br>".join(
+                        [created_rel_logs[single_cat_from], processed_log]
+                    )
+                else:
+                    created_rel_logs.update({single_cat_from: processed_log})
+
                 log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
                     name=str(single_cat_to.name),
@@ -994,3 +1090,5 @@ def change_relationship_values(
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)
+
+    return created_rel_logs
