@@ -8256,8 +8256,7 @@
         "frequency": 3,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "Sniffing for daisies, p_l begins a story. Once, eons ago, during the Long Dawn after the Great Moonrise, cats staggered through the cold wide world, searching for a new home.",
         "decline_text": "Today isn't the time to linger on old history.",
@@ -8341,8 +8340,7 @@
         "frequency": 3,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "p_l ponders one of life's little ironies with a small smile.",
         "decline_text": "The joke remains a private one.",
@@ -8463,8 +8461,7 @@
         "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "As the patrol sets out, p_l remembers an old saying about searching for juniper.",
         "decline_text": "The patrol doesn't stop to listen.",
@@ -8489,20 +8486,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned a trick for remembering where juniper gorws from to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8523,9 +8510,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was upset that no one wanted to listen to {PRONOUN/from_cat/poss} trick for remembering where juniper grows."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8533,7 +8523,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_lungwort_storylorehealerlocked1",
+        "patrol_id": "gen_med_lungwort_storylorelocked1",
         "biome": [
             "any"
         ],
@@ -8556,34 +8546,20 @@
         "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "Keeping a supply of lungwort is serious business, p_l instructs.",
         "decline_text": "Yes, the cats all know that, that's why they're here looking for the stuff.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Lungwort doesn't help with many ailments. But it is the <b>only</b> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs till none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
+                "text": "Lungwort doesn't help with many ailments. But it is the <i>only</i> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs till none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
                 "exp": 20,
                 "art": "gen_bord_story",
                 "herbs": [
                     "lungwort"
                 ],
                 "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
                     {
                         "cats_to": [
                             "p_l"
@@ -8596,20 +8572,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 25
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat made from_cat understand just how crucial lungwort is."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8629,23 +8595,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat tried to explain the importance of lungwort to to_cat, but it backfired and made to_cat too anxious to focus."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8653,7 +8608,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_mallow_storylorehealerlocked1",
+        "patrol_id": "gen_med_mallow_storylorelocked1",
         "biome": [
             "any"
         ],
@@ -8676,8 +8631,7 @@
         "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "As they lift their muzzles to try and catch mallow's sweet scent on the wind, p_l asks the patrol if they know how the herb got its name.",
         "decline_text": "Before p_l can continue, a messenger arrives from camp - p_l's presence is needed there.",
@@ -8702,7 +8656,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned how mallow got its name from to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8730,7 +8687,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was unhappy with to_cat for munching on the mallow the patrol was meant to be gathering."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8738,7 +8698,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_marigold_storylorehealerlocked1",
+        "patrol_id": "gen_med_marigold_storylorelocked1",
         "biome": [
             "any"
         ],
@@ -8761,8 +8721,7 @@
         "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "Heads crane about, looking for marigold. As they work, p_l offers a story.",
         "decline_text": "Herb gathering isn't always compatible with conversation, and p_l trails off before {PRONOUN/p_l/subject} truly {VERB/p_l/start/starts}.",
@@ -8787,33 +8746,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about how marigold's strength comes from the fading warmth of the day."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8835,7 +8771,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -2
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat's attempts to tell a story distracted from_cat from gathering any marigold."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8843,7 +8782,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_oakleaves_storylorehealerlocked1",
+        "patrol_id": "gen_med_oakleaves_storylorelocked1",
         "biome": [
             "any"
         ],
@@ -8866,8 +8805,7 @@
         "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "Looking up at a powerful old oak tree reminds p_l of an old tale.",
         "decline_text": "Now's not the time to get distracted.",
@@ -8892,33 +8830,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's explanation of how oak leaves' medicinal properties are drawn from the strength of the tree."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8931,16 +8846,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat misjudge {PRONOUN/to_cat/poss} step while gathering oak leaves and nearly get stuck in a tree."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -8948,7 +8866,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_ragwort_storylorehealerlocked1",
+        "patrol_id": "gen_med_ragwort_storylorelocked1",
         "biome": [
             "any"
         ],
@@ -8967,25 +8885,24 @@
         "min_max_status": {
             "healer cats": [
                 1,
-                6
+                5
             ],
             "apprentice": [
                 1,
-                6
+                5
             ]
         },
         "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "app1 is probably not <i>trying</i> to be annoying - but {PRONOUN/app1/poss} complaints about the taste of ragwort help no one, and it's just slowing the entire patrol down.",
         "decline_text": "Toughen up, honestly.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper. Listen, the strength that ragwort imparts is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
+                "text": "p_l sighs, holding {PRONOUN/p_l/poss} temper, and explains that ragwort's strength is what gives it such a foul taste. If app1's found a particularly disgusting bunch of leaves, that's success, not failure.",
                 "exp": 30,
                 "herbs": [
                     "ragwort"
@@ -8996,41 +8913,17 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
-                            "comfort"
+                            "respect"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned to respect the unique challenges of herb-gathering when gathering ragwort with to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9052,7 +8945,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l wasn't happy with app1 for sidetracking an herb-gathering patrol by complaining about the foul taste of ragwort."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9070,9 +8966,12 @@
                         ],
                         "mutual": true,
                         "values": [
-                            "respect"
+                            "like", "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l snapped at app1 for sidetracking an herb-gathering patrol by complaining about the foul taste of ragwort."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9080,7 +8979,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_raspberry_storylorehealerlocked1",
+        "patrol_id": "gen_med_raspberry_storylorelocked1",
         "biome": [
             "any"
         ],
@@ -9097,25 +8996,24 @@
         "min_max_status": {
             "healer cats": [
                 1,
-                6
+                5
             ],
             "apprentice": [
                 1,
-                6
+                5
             ]
         },
         "frequency": 4,
         "pl_skill_constraint": [
             "LORE,1",
-            "STORY,1",
-            "HEALER,1"
+            "STORY,1"
         ],
         "intro_text": "It's said that the first queen who lost her life in kitting left a blessing to save those who came after her.",
         "decline_text": "A rainshower disrupts the story, and the herb gathering is called off.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The jagged edges of the raspberry leaves mark them as a gift from the stars. Their pain relief and ability to reduce bloodloss have saved countless lives, and brought kittens safely into the world.",
+                "text": "The jagged edges of the raspberry leaves mark them as a gift from the stars. Their pain relief and ability to reduce bloodloss have saved countless lives and brought kittens safely into the world.",
                 "exp": 30,
                 "herbs": [
                     "raspberry"
@@ -9133,7 +9031,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned the story of how raspbery leaves were originally a gift from StarClan."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9168,11 +9069,14 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was impatient gathering raspberry with to_cat and got scratched by the thorny bush."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9180,7 +9084,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_tansy_storylorehealerlocked1",
+        "patrol_id": "gen_med_tansy_storylorelocked1",
         "biome": [
             "any"
         ],
@@ -9195,18 +9099,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                1,
-                5
-            ],
-            "medicine cat": [
-                1,
-                5
-            ]
+            "healer cats": [1, 6],
+            "all apprentices": [1, 5],
+            "medicine cat": [1, 5]
         },
         "frequency": 4,
         "intro_text": "app1 shovels tansy into {PRONOUN/app1/poss} mouth without a care in the world. p_l stops {PRONOUN/app1/object}, and tells {PRONOUN/app1/object} that {PRONOUN/app1/subject} really <i>should</i> have a care.",
@@ -9232,7 +9127,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heeded to_cat's warning about how dangerous tansy can be in high doses."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9255,7 +9153,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat blamed to_cat for distracting {PRONOUN/from_cat/object} when the patrol was supposed to be gathering tansy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9280,17 +9181,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l didn't keep a close enough eye on the patrol, and app1 got poisoned as a result."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9324,17 +9228,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "to_cat ignored from_cat's warning about tansy and got sick."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9342,7 +9249,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_thyme_risingclanref_storylorehealerlocked1",
+        "patrol_id": "gen_med_thyme_risingclanref_storylorelocked1",
         "biome": [
             "any"
         ],
@@ -9357,22 +9264,10 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ],
-            "apprentice": [
-                -1,
-                -1
-            ]
+            "medicine cat": [1, 5],
+            "medicine cat apprentice": [1, 5],
+            "normal adult": [-1, -1],
+            "apprentice": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "Listen to the wisdom of the sages, p_l meows. app1 doesn't just need to learn to set bones and clean wounds; being a medicine cat is so much more than blood and bodies.",
@@ -9398,7 +9293,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned from to_cat about how not all illnesses and injuries are physical in nature."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -9414,14 +9312,16 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "When from_cat felt overwhelmed during a lesson about non-physical ailments, to_cat stopped the patrol to comfort {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 4
