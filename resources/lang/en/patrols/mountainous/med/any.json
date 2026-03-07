@@ -233,63 +233,6 @@
         ]
     },
     {
-        "patrol_id": "mtn_med_appfirstsign1",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [
-            "app1_mentored"
-        ],
-        "patrol_art": "med_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of {PRONOUN/app1/poss} mentor. The wind is whistling through the hills as {PRONOUN/app1/subject} {VERB/app1/pad/pads} along.",
-        "decline_text": "Before {PRONOUN/app1/subject} {VERB/app1/get/gets} more than a few pawsteps away, {PRONOUN/app1/poss} mentor calls {PRONOUN/app1/object} back. Apparently, something more pressing has come up.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "app1 is plucking some rosemary when {PRONOUN/app1/poss} attention is suddenly grabbed by omen_list_sight/app1. The fur on {PRONOUN/app1/poss} back begins to prickle slightly, the sound of {PRONOUN/app1/poss} heartbeat like thunder in {PRONOUN/app1/poss} ears. {PRONOUN/app1/subject/CAP} {VERB/app1/turn/turns} and {VERB/app1/hare/hares} back to camp, herbs forgotten. {PRONOUN/app1/subject/CAP} {VERB/app1/need/needs} to tell {PRONOUN/app1/poss} mentor about this as soon as possible!",
-                "exp": 20,
-                "herbs": [
-                    "rosemary"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "app1 feels a pit of dread beginning to form in {PRONOUN/app1/poss} belly - {PRONOUN/app1/subject}{VERB/app1/'re/'s} forgotten where to find the herb {PRONOUN/app1/poss} mentor wanted. {PRONOUN/app1/subject/CAP} {VERB/app1/taste/tastes} the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. {PRONOUN/app1/subject/CAP}'ll have to swallow {PRONOUN/app1/poss} pride and return to ask for directions.",
-                "exp": 0,
-                "frequency": 4
-            }
-        ]
-    },
-    {
         "patrol_id": "mtn_med_rainygathering1",
         "biome": [
             "mountainous"
