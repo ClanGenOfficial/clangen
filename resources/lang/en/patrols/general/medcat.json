@@ -8318,6 +8318,128 @@
         ]
     },
     {
+        "patrol_id": "gen_med_gatheringelder_lorehealingstorylocked1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "healer cats": [
+                1,
+                6
+            ]
+        },
+        "frequency": 3,
+        "pl_skill_constraint": [
+            "LORE,1",
+            "STORY,1",
+            "HEALER,1"
+        ],
+        "intro_text": "p_l ponders one of life's little ironies with a small smile.",
+        "decline_text": "The joke remains a private one.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "It's at least a little funny, how elder leaves are so suited for easing the pains of the Clan's elders. The tree isn't named for that - there's an old myth about a medicine cat asking an ancient tree for advice - but sometimes the coincidence amuses p_l.",
+                "exp": 30,
+                "herbs": [
+                    "elder_leaves"
+                ],
+                "art": "gen_bord_story",
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's joke about how appropriately-named elder leaves are."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c feels like p_l is finding amusement in {PRONOUN/r_c/poss} scrambling attempts to get elder leaves, and {PRONOUN/r_c/subject}'d really rather p_l <i>didn't</i>.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat suspected to_cat was laughing at {PRONOUN/from_cat/object}."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c hears p_l chuckling, and can't help but lash {PRONOUN/s_c/poss} tail. Why is p_l laughing at {PRONOUN/s_c/object} when {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just trying to help get the herbs?",
+                "exp": 0,
+                "can_have_stat": [
+                    "not_pl"
+                ],
+                "stat_trait": [
+                    "nervous",
+                    "insecure",
+                    "gloomy",
+                    "childish",
+                    "grumpy",
+                    "arrogant"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat knew to_cat was laughing at {PRONOUN/from_cat/object}."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_med_deathsheadmoth1",
         "biome": ["any"],
         "season": ["any"],
