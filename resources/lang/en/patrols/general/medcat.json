@@ -4205,7 +4205,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "They fail to interpret any signs and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything, the trip cut short by the discovery of ominous Twoleg things, piled in an abandoned, stinking heap.",
+                "text": "They fail to interpret any signs and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything, the trip cut short by an overcast sky.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -8231,6 +8231,88 @@
             {
                 "text": "app1 feels a pit of dread beginning to form in {PRONOUN/app1/poss} belly - {PRONOUN/app1/subject}{VERB/app1/'ve/'s} forgotten where to find the herb {PRONOUN/app1/poss} mentor wanted. {PRONOUN/app1/subject/CAP} {VERB/app1/taste/tastes} the air, hoping desperately for some hint of its telltale scent, but it's a useless effort. {PRONOUN/app1/subject/CAP}'ll have to swallow {PRONOUN/app1/poss} pride and return to ask for directions.",
                 "exp": 0,
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_daisy_lorestoryhealinglocked1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "gen_bord_story",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "healer cats": [1, 6]
+        },
+        "frequency": 3,
+        "pl_skill_constraint": [
+            "LORE,1",
+            "STORY,1",
+            "HEALER,1"
+        ],
+        "intro_text": "Sniffing for daisies, p_l begins a story. Once, eons ago, during the Long Dawn after the Great Moonrise, cats staggered through the cold wide world, searching for a new home.",
+        "decline_text": "Today isn't the time to linger on old history.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "Their success was owed to many things - StarClan, the mysterious sun-drown-place, other Clans who helped them on their way. But the humble daisy saved many lives, keeping their strength up for long enough to travel to new territories.",
+                "exp": 30,
+                "herbs": [
+                    "daisy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's tale of how the humble daisy played an important role in the Great Journey."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l gets so distracted telling the old histories that {PRONOUN/p_l/poss} daisy gathering mission is forgotten.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed with to_cat for distracting {PRONOUN/to_cat/self} telling stories."
+                        }
+                    }
+                ],
                 "frequency": 4
             }
         ]

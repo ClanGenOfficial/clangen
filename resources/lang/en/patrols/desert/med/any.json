@@ -1221,5 +1221,142 @@
                 "frequency": 4
             }
         ]
+    },
+    {
+        "patrol_id": "dst_nllf_med_dwindleherbsgathering1",
+        "biome": [
+            "desert"
+        ],
+        "season": [
+            "leaf-fall", "newleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [2, 2]
+        },
+        "frequency": 4,
+        "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
+        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "p_l and r_c decide to search in the slot canyons, where the deep clefts may yet harbor water and plant life. It's a mark of both of their skill and experience that they return home with herbs for c_n, scavenged from the impossible heat.",
+                "exp": 10,
+                "herbs": [
+                    "random_herbs"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was proud of to_cat for persevering during a hot herb-gathering patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
+                "exp": 10,
+                "herbs": [
+                    "random_herbs"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a friendly competition while gathering herbs."
+                        }
+                    }
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were short with each other after failing to gathering any herbs."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting {PRONOUN/p_l/object}, and they get into a huge argument.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l blamed r_c for a failed herb-gathering patrol and the two got into a huge argument."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "As the medicine cats search deep within the slot canyons for the precious herbs that will keep c_n going, a light rain shower falls. Water, on any other day good news, instead spells doom. The rushing water sweeps through the canyon in a flash flood. r_c hears it coming, shoving p_l towards the canyon walls, but they can't both fit on the little ledge, and r_c loses their grip on the rock, falling beneath the rushing water.",
+                "exp": 0,
+                "lost_cats": [
+                    "r_c"
+                ],
+                "frequency": 3
+            }
+        ]
     }
 ]

@@ -15,18 +15,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "medicine cat": [2, 2]
         },
         "frequency": 4,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
@@ -52,7 +41,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was proud of to_cat for persevering during a hot herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -76,7 +68,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a friendly competition while gathering herbs."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -99,13 +94,16 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were short with each other after failing to gathering any herbs."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Even though there should be many herbs they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument.",
+                "text": "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting {PRONOUN/p_l/object}, and they get into a huge argument.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -120,7 +118,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l blamed r_c for a failed herb-gathering patrol and the two got into a huge argument."
+                        }
                     }
                 ],
                 "frequency": 4
