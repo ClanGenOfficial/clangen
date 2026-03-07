@@ -1584,7 +1584,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a loner caught in the crossfire and, working together helped get {PRONOUN/n_c:0/subject} to safety.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a loner caught in the crossfire and, working together, help get {PRONOUN/n_c:0/subject} to safety.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1604,8 +1604,7 @@
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
-                    "cats_to": "from_cat was lead away from a battle by to_cat."
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
                 }
         }
     ],
@@ -1642,10 +1641,9 @@
             "cats_to": ["n_c:0"],
             "mutual": true,
             "values": ["trust", "like"],
-            "amount": -20,
+            "amount": -10,
             "log": {
-                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
-                    "cats_to": "to_cat was chased away from an opportunistic attack by from_cat."
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
                 }
         }
     ],
@@ -1664,7 +1662,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "IIn a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a kittypet caught in the crossfire and, working together, help get {PRONOUN/n_c:0/object} to safety.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a kittypet caught in the crossfire and, working together, help get {PRONOUN/n_c:0/object} to safety.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -1684,8 +1682,7 @@
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
-                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
                 }
         }
     ],
@@ -1730,8 +1727,7 @@
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
-                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
                 }
         },
         {
@@ -1741,8 +1737,7 @@
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
-                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
                 }
         }
     ],
@@ -1785,10 +1780,9 @@
             "cats_to": ["n_c:0"],
             "mutual": true,
             "values": ["trust", "like"],
-            "amount": -20,
+            "amount": -10,
             "log": {
-                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
-                    "cats_to": "to_cat was chased away from an opportunistic attack by from_cat."
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
                 }
         },
         {
@@ -1796,10 +1790,9 @@
             "cats_to": ["n_c:1"],
             "mutual": true,
             "values": ["trust", "like"],
-            "amount": -20,
+            "amount": -10,
             "log": {
-                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle.",
-                    "cats_to": "to_cat was chased away from an opportunistic attack by from_cat."
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
                 }
         }
     ],
@@ -1844,8 +1837,7 @@
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
-                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
                 }
         },
         {
@@ -1855,8 +1847,7 @@
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan.",
-                    "cats_to": "to_cat was lead away from a battle by to_cat."
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
                 }
         }
     ],
@@ -1930,7 +1921,7 @@
             "cats_to": ["n_c:0"],
             "mutual": false,
             "values": ["trust", "like"],
-            "amount": -20,
+            "amount": -10,
             "log": {
                     "cats_from": "from_cat thinks that to_cat shouldn't have stuck {PRONOUN/n_c:0/poss} nose in c_n's business."
                 }
@@ -1976,7 +1967,7 @@
             "cats_to": ["n_c:0, n_c:1, n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
-            "amount": 20,
+            "amount": 10,
             "log": {
                     "cats_from": "from_cat will remember the loners who gave their Clan a night of badly needed respite during a war."
                 }
@@ -1986,7 +1977,7 @@
             "cats_to": ["n_c:0, n_c:1, n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
-            "amount": -20,
+            "amount": -10,
             "log": {
                     "cats_from": "from_cat will remember the loners who foiled a perfectly good battle for their own bleeding hearts."
                 }
@@ -2032,7 +2023,7 @@
             "cats_to": ["n_c:0, n_c:1, n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
-            "amount": -20,
+            "amount": -10,
             "log": {
                     "cats_from": "from_cat will remember the rogue who dared to attack c_n so brazenly during a battle against o_c_n."
                 }
@@ -2078,7 +2069,7 @@
             "cats_to": ["n_c:0, n_c:1, n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
-            "amount": 20,
+            "amount": 10,
             "log": {
                     "cats_from": "from_cat will remember the kittypet who dared to stop an entire battle against o_c_n."
                 }
@@ -2088,7 +2079,7 @@
             "cats_to": ["n_c:0, n_c:1, n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
-            "amount": -25,
+            "amount": -15,
             "log": {
                     "cats_from": "from_cat really thinks that this kittypet should have left the peacemaking for the mediators."
                 }
