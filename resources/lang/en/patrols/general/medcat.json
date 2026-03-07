@@ -8006,7 +8006,7 @@
     {
         "patrol_id": "gen_med_soloripples1",
         "biome": [
-            "-desert"
+            "any"
         ],
         "season": [
             "any"
