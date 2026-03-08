@@ -459,7 +459,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "That yip seemed a little high pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts, more play than true intent, and half the weight of an adult. Dangerous, but... manageable. The patrol leaves the area quickly afterwards, before the pup's parents realize it's missing.",
+                "text": "That yip seemed a little high-pitched. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a juvenile hunts, more play than true intent, and half the weight of an adult. Dangerous, but... manageable. The patrol leaves the area quickly afterwards, before the pup's parents realize it's missing.",
                 "exp": 60,
                 "art": "gen_coyote2",
                 "relationships": [
@@ -517,7 +517,7 @@
                 "frequency": 2
             },
             {
-                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up, and the scrabbling of paws, the yip of frustration confirms the coyote has reached them far too late. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
+                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon - from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
                 "exp": 40,
                 "art": "gen_coyote_danger1",
                 "relationships": [
@@ -615,7 +615,7 @@
                 "frequency": 4
             },
             {
-                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything, they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon. The coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
+                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon. The coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
                 "exp": 50,
                 "art": "gen_coyote_danger1",
                 "can_have_stat": [
@@ -824,6 +824,20 @@
                         "log": {
                             "cats_from": "from_cat heard that to_cat held off a coyote long enough to save the lives of the rest of the patrol."
                         }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "trust"
+                        ],
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "to_cat held off a coyote long enough to save the lives of from_cat and the rest of the patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -889,7 +903,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
                     "death": "This cat died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
