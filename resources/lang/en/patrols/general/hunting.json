@@ -6818,7 +6818,7 @@
                             "app2"
                         ],
                         "mutual": false,
-                        "values": ["romance", "like"],
+                        "values": ["romance", "comfort"],
                         "amount": 10,
                         "log": {
                             "cats_from": "from_cat and to_cat tasted a little kittypet food together on patrol."
