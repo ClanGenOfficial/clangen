@@ -98,9 +98,9 @@ class KillCat(GameWindow):
                 self.kill()
             elif event.ui_element == self.all_lives_check:
                 if self.all_lives_check.checked:
-                    self.all_lives_check.check()
-                else:
                     self.all_lives_check.uncheck()
+                else:
+                    self.all_lives_check.check()
             elif event.ui_element == self.back_button:
                 game.all_screens[GameScreen.PROFILE].exit_screen()
                 game.all_screens[GameScreen.PROFILE].screen_switches()
