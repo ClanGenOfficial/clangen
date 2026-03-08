@@ -96,7 +96,7 @@
         "show dead relation" = [
             false, true
         ]
-        "show_empty relation" = [
+        "show empty relation" = [
             false, true
         ]
         "den labels" = [
