@@ -6072,5 +6072,684 @@
                 "frequency": 4
             }
         ]
+    },
+    {
+        "patrol_id": "gen_hunt_strangerabbit1",
+        "biome": [
+            "-beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "gen_hunt_strangerabbit",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "r_c spots a rabbit up ahead, but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
+        "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "r_c catches the rabbit and it is eaten as normal.",
+                "exp": 10,
+                "prey": [
+                    "large"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "r_c catches the rabbit, but when {PRONOUN/r_c/subject} {VERB/r_c/report/reports} about the strange incident at camp, the dead rabbit is taken far away and buried.",
+                "exp": 20,
+                "frequency": 1,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["trust"],
+                    "mutual": false,
+                    "amount": -2,
+                    "log":
+                    {
+                        "cats_from": "from_cat heard that to_cat caught a rabbit that might have been diseased."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "s_c stops the patrol from catching the rabbit and takes the opportunity to teach them about illnesses that can pass from prey to cat.",
+                "exp": 30,
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat was on the hunting patrol to stop any cat from catching a potentially diseased rabbit."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c leaps for the rabbit but it still manages to slip away, despite its obvious illness.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "r_c catches the rabbit, but later {PRONOUN/r_c/subject} and the cats who eat it become violently ill.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat was the one who caught the rabbit that made the Clan sick."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c",
+                            "some_clan"
+                        ],
+                        "injuries": [
+                            "poisoned"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "death": "This cat died after eating tainted prey."
+                },
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_burrow1",
+        "biome": [
+            "forest", "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "gen_hunt_burrow",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "The patrol finds a small burrow in the ground with a strange scent. p_l hesitates, unsure if this is worth checking.",
+        "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The patrol flushes a gopher out of the burrow! More fresh-kill!",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now.",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
+                "exp": 0,
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["p_l"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "from_cat felt that to_cat wasted time on a hunting patrol by checking an empty burrow."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
+                "exp": 0,
+                "stat_trait": [
+                    "bold",
+                    "ambitious",
+                    "childish"
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4,
+                "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": -5,
+                    "log":
+                    {
+                        "cats_from": "to_cat got from_cat sprayed by a skunk by doing something mouse-brained on patrol."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "big_bite_injury"
+                        ],
+                        "scars": [
+                            "ONE"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after an unfortunate encounter with a wolverine.",
+                    "death": "m_c was killed after an unfortunate experience with a wolverine."
+                },
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_burrow2",
+        "biome": [
+            "forest", "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "gen_hunt_burrow",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "r_c finds a small burrow in the ground with a strange scent. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hesitate/hesitates}, unsure if this is worth checking.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} decides to avoid the burrow. There's no telling what could await inside.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c flushes a gopher out of the burrow! More fresh-kill!",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now.",
+                "exp": 10,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole, only to come face-to-face with a skunk! {PRONOUN/s_c/subject/CAP} is sprayed!",
+                "exp": 0,
+                "stat_trait": [
+                    "bold",
+                    "ambitious",
+                    "childish"
+                ],
+                "frequency": 4,
+                "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["s_c"],
+                    "values": ["like", "comfort"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "to_cat came back to camp empty-pawed and stinking of skunk. from_cat got an unfortunate noseful."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws. With no other cats around to help, r_c is quickly killed by the predator.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "death": "m_c was killed after an unfortunate experience with a wolverine."
+                },
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_huntassessment1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "all_mentored"
+        ],
+        "patrol_art": "gen_hunt_huntassessment",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice": [
+                1,
+                6
+            ]
+        },
+        "frequency": 3,
+        "intro_text": "r_c's mentor assesses {PRONOUN/r_c/object} by sending {PRONOUN/r_c/object} on a solo hunt.",
+        "decline_text": "r_c asks {PRONOUN/r_c/poss} mentor to do the assessment some other time.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c manages a skillful catch and brings it back to the camp to show everyone!",
+                "exp": 20,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return from a hunting assessment carrying a juicy piece of fresh-kill."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "r_c focuses completely on {PRONOUN/r_c/poss} test, slipping into a clear-eyed, focused routine of catch and stash, catch and stash. Eventually {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} caught enough to need {PRONOUN/r_c/poss} mentor's help carrying it back to camp, and the feeling seeing {PRONOUN/r_c/poss} prey stock the fresh-kill pile... {PRONOUN/r_c/subject} {VERB/r_c/are/is} ready to burst with happiness!",
+                "exp": 20,
+                "prey": [
+                    "large"
+                ],
+                "frequency": 1,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return from a hunting assessment buried under all the fresh-kill {PRONOUN/to_cat/subject} caught!"
+                    }
+                }
+            ]
+            },
+            {
+                "text": "It's a terrible day for hunting, the prey running sparse and alert. But, s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/object}, until eventually the right opportunity presents itself and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!",
+                "exp": 20,
+                "stat_trait": [
+                    "calm",
+                    "careful",
+                    "insecure",
+                    "lonesome",
+                    "loyal",
+                    "nervous",
+                    "sneaky",
+                    "strange",
+                    "thoughtful",
+                    "wise"
+                ],
+                "can_have_stat": [
+                    "app"
+                ],
+                "prey": [
+                    "large"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 3,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat return from a hunting assessment carrying a juicy piece of fresh-kill."
+                    }
+                }
+            ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to catch what isn't there.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "s_c is too hasty, bouncing after first one prey, then another, until it ends with {PRONOUN/s_c/object} empty-pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed - {PRONOUN/s_c/subject} clearly {VERB/s_c/need/needs} more training.",
+                "exp": 0,
+                "stat_trait": [
+                    "adventurous",
+                    "bold",
+                    "charismatic",
+                    "childish",
+                    "confident",
+                    "daring",
+                    "playful",
+                    "righteous"
+                ],
+                "can_have_stat": [
+                    "app"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["clan", "high_lawful"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -3,
+                    "log":
+                    {
+                        "cats_from": "from_cat heard that to_cat goofed off during a hunting assessment and returned empty-pawed."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "While on the hunt, r_c tumbles right down a steep slope while {PRONOUN/r_c/poss} attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} to camp.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "minor_injury"
+                        ],
+                        "scars": [
+                            "LEFTEAR"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c got injured as an apprentice during a hunting assessment.",
+                    "death": "m_c died after a minor injury progressed to something worse."
+                },
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_gonetnr1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "pln_hunt_gonetwolegtrap1",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "When the patrol reaches their hunting grounds, they find a swarm of Twolegs milling around.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "min_max_status": {
+                    "normal adult": [3, 6]
+                },
+                "text": "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
+                "exp": 20,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"normal adult": [2, 2]},
+                "text": "p_l stands guard while r_c hunts. When p_l sees a Twoleg edging toward r_c, {PRONOUN/p_l/subject} {VERB/p_l/signal/signals} to r_c and {VERB/p_l/leads/leads} the patrol back to camp.",
+                "exp": 20,
+                "prey": [
+                    "small"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Slyly, r_c uses the chance to get food, practicing {PRONOUN/r_c/poss} best kittypet impression until just the right moment, when {PRONOUN/r_c/subject} {VERB/r_c/dart/darts} forward and {VERB/r_c/make/makes} off with a sandwich in {PRONOUN/r_c/poss} mouth.",
+                "exp": 20,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters and abruptly tells the patrol they need to leave. Now.",
+                "exp": 20,
+                "stat_skill": [
+                    "CLEVER,3"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["trust", "respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's familiarity with Twoleg behavior saved from_cat on a patrol."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees.",
+                "exp": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol mostly ignores the Twolegs. As they hunt, they hear a yelp from r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} crawled into a metal Twolegs box, and there's nothing {PRONOUN/r_c/subject} or the rest of the patrol can do to get {PRONOUN/r_c/object} out - eventually the Twolegs notice, and r_c is taken by them.",
+                "exp": 0,
+                "lost_cats": [
+                    "r_c"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/r_c/object}. s_c fights desperately, but the Twolegs take {PRONOUN/r_c/object} away in the monster.",
+                "exp": 0,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "lost_cats": [
+                    "s_c"
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_gonetnr2",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "pln_hunt_gonetwolegtrap1",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "leader": [-1, -1]
+        },
+        "frequency": 1,
+        "intro_text": "When the r_c reaches {PRONOUN/r_c/poss} hunting grounds, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} a swarm of Twolegs milling around.",
+        "decline_text": "r_c decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "r_c immediately turns and heads for home to report this to {PRONOUN/r_c/poss} leader, alarmed by the sudden presence of Twolegs in their territory.",
+                "exp": 20,
+                "frequency": 4
+            },
+            {
+                "text": "Slyly, r_c uses the unusual presence of the weird Twoleg to help {PRONOUN/r_c/poss} hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards {PRONOUN/r_c/object}. It works, and {PRONOUN/r_c/subject} {VERB/r_c/leave/leaves} the Twolegs to their business.",
+                "exp": 20,
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "s_c spots the Twolegs unloading metal boxes from their monsters, and recognizes that it can't be anything good, leaving immediately.",
+                "exp": 20,
+                "stat_skill": [
+                    "CLEVER,3"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c spits in the Twolegs' direction and decides to pick a different place to hunt.",
+                "exp": 20,
+                "stat_trait": [
+                    "ambitious",
+                    "bloodthirsty",
+                    "cold",
+                    "fierce",
+                    "shameless",
+                    "strict",
+                    "troublesome",
+                    "vengeful"
+                ],
+                "prey": [
+                    "medium"
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c mostly ignores the Twolegs as {PRONOUN/r_c/subject} {VERB/r_c/hunt/hunts}, crawling into a metal box to follow the scent of food. But when {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to back up, the way is blocked, and there's nothing {PRONOUN/r_c/subject} can do - eventually the Twolegs notice, and r_c is taken by them.",
+                "exp": 0,
+                "lost_cats": [
+                    "r_c"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c has heard terrible things about Twolegs, but {PRONOUN/s_c/subject} still {VERB/s_c/creep/creeps} closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} taken far away with the injured Twoleg.",
+                "exp": 0,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "lost_cats": [
+                    "s_c"
+                ],
+                "frequency": 4
+            }
+        ]
     }
 ]
