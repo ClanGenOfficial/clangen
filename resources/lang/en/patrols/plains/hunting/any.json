@@ -3535,7 +3535,7 @@
                             "r_c"],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "trust", "comfort"
                         ],
                         "amount": -10,
                         "log": {
