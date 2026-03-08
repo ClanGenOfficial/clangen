@@ -1,12 +1,21 @@
+# === This is require for iOS specific file handling. DO NOT MOVE THIS! ===
+# This is required to allow the game to load files from the app bundle on iOS, 
+# which has an unstable relative path. By adding the app bundle to the start of sys.path, 
+# we can ensure that imports will work correctly.
+import sys, os
+if getattr(sys, "platform", "") == "ios":
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+
 # ==== DO NOT MOVE THIS IMPORT!
 # ==== DO NOT ADD ANYTHING BEFORE THIS IMPORT!
 import init  # isort: skip
-
 # Load game
 import logging
 import threading
 
 import pygame
+import asyncio
 
 import scripts.game_structure.screen_settings
 from scripts.cat.sprites.load_sprites import sprites
@@ -166,8 +175,6 @@ all_screens.get_screen(GameScreen.START).screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
 
-import asyncio
-
 async def main():
     fps = switch_get_value(Switch.fps)
     music_manager.check_music(GameScreen.START)
@@ -248,6 +255,24 @@ async def main():
             MANAGER.process_events(event)
 
         MANAGER.update(time_delta)
+
+        if IS_IOS:
+            focus_set = MANAGER.get_focus_set()
+            if focus_set:
+                text_entry_focused = False
+                for element in focus_set:
+                    if type(element).__name__ in ('UITextEntryLine', 'UITextEntryBox'):
+                        pygame.key.start_text_input()
+                        try:
+                            pygame.key.set_text_input_rect(element.get_abs_rect())
+                        except:
+                            pass
+                        text_entry_focused = True
+                        break
+                if not text_entry_focused:
+                    pygame.key.stop_text_input()
+            else:
+                pygame.key.stop_text_input()
 
         # update
         game.update_game()
