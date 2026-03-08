@@ -40,6 +40,8 @@ from scripts.screens import all_screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.housekeeping.quit_game import quit_game
+from scripts.housekeeping.platform import IS_IOS
+from scripts.housekeeping.platform_manager import get_platform_manager
 
 # P Y G A M E
 clock = pygame.time.Clock()
@@ -184,6 +186,8 @@ async def main():
     else:
         MANAGER.set_active_cursor(constants.DEFAULT_CURSOR)
 
+    platform_manager = get_platform_manager()
+
     while 1:
         time_delta = clock.tick(fps) / 1000.0
 
@@ -192,23 +196,16 @@ async def main():
 
         # Draw screens
         # This occurs before events are handled to stop pygame_gui buttons from blinking.
-        game.all_screens[game.current_screen].on_use()
-        # EVENTS
+        if not platform_manager.is_backgrounded:
+            game.all_screens[game.current_screen].on_use()
+
+        # EVENTS - We must ALWAYS pump events, even when backgrounded, to catch OS lifecycle changes!
         for event in pygame.event.get():
-            if (
-                event.type == pygame.KEYDOWN
-                and game_setting_get("keybinds")
-                and debug_mode.debug_menu.visible
-            ):
-                pass
-            else:
-                # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-                all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
-                    event
-                )
+            # Let the mobile manager handle OS background/foreground and explicit keyboard taps
+            if platform_manager.handle_event(event, music_manager):
+                continue
 
-            sound_manager.handle_sound_events(event)
-
+            # Process global events like QUIT regardless of background state
             if event.type == pygame.QUIT:
                 # Don't display if on the start screen or there is no clan.
                 if (
@@ -224,6 +221,24 @@ async def main():
                     quit_game(savesettings=False)
                 else:
                     SaveCheckWindow(switch_get_value(Switch.cur_screen), False, None)
+
+            # If the app is in the background, ignore all input and game events
+            if platform_manager.is_backgrounded:
+                continue
+
+            if (
+                event.type == pygame.KEYDOWN
+                and game_setting_get("keybinds")
+                and debug_mode.debug_menu.visible
+            ):
+                pass
+            else:
+                # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
+                all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
+                    event
+                )
+
+            sound_manager.handle_sound_events(event)
 
             # MOUSE CLICK
             if event.type == pygame.MOUSEBUTTONDOWN:
@@ -254,25 +269,13 @@ async def main():
 
             MANAGER.process_events(event)
 
-        MANAGER.update(time_delta)
+        if platform_manager.is_backgrounded:
+            # Yield control back to OS/asyncio to save battery, skipping update/draw
+            await asyncio.sleep(0.1)
+            continue
 
-        if IS_IOS:
-            focus_set = MANAGER.get_focus_set()
-            if focus_set:
-                text_entry_focused = False
-                for element in focus_set:
-                    if type(element).__name__ in ('UITextEntryLine', 'UITextEntryBox'):
-                        pygame.key.start_text_input()
-                        try:
-                            pygame.key.set_text_input_rect(element.get_abs_rect())
-                        except:
-                            pass
-                        text_entry_focused = True
-                        break
-                if not text_entry_focused:
-                    pygame.key.stop_text_input()
-            else:
-                pygame.key.stop_text_input()
+        MANAGER.update(time_delta)
+        platform_manager.update()
 
         # update
         game.update_game()
