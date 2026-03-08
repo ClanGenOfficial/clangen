@@ -3,9 +3,10 @@ import os
 import shutil
 import subprocess
 import sys
+import json
 
 
-APP_NAME = "ClanGen"
+APP_NAME = "Clan Gen"
 BUNDLE_ID = "com.clangen.clangen"
 PYGAME_CE_VERSION = "2.5.6"
 
@@ -36,12 +37,12 @@ def main():
         print(f"Error: Custom template zip not found at {zip_path}", file=sys.stderr)
         sys.exit(1)
 
-    import zipfile
     if os.path.exists(template_dir):
         print("Cleaning old template directory...")
         shutil.rmtree(template_dir)
         
     os.makedirs(template_dir, exist_ok=True)
+    import zipfile
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall(template_dir)
         
@@ -107,6 +108,21 @@ def main():
             "<key>MainModule</key>\n\t<string>main</string>"
         )
 
+        # Update Display Name - try multiple variants to match template
+        plist_content = plist_content.replace(
+            "<key>CFBundleDisplayName</key>\n\t<string>${PRODUCT_NAME}</string>",
+            f"<key>CFBundleDisplayName</key>\n\t<string>{APP_NAME}</string>"
+        )
+        plist_content = plist_content.replace(
+            "<key>CFBundleDisplayName</key>\n\t<string>pygame-ios</string>",
+            f"<key>CFBundleDisplayName</key>\n\t<string>{APP_NAME}</string>"
+        )
+        if "<key>CFBundleDisplayName</key>" not in plist_content:
+             plist_content = plist_content.replace(
+                "<key>CFBundleName</key>\n\t<string>$(PRODUCT_NAME)</string>",
+                f"<key>CFBundleName</key>\n\t<string>$(PRODUCT_NAME)</string>\n\t<key>CFBundleDisplayName</key>\n\t<string>{APP_NAME}</string>"
+            )
+
         # Add UIApplicationSupportsIndirectInputEvents
         if "<key>UIApplicationSupportsIndirectInputEvents</key>" not in plist_content:
             plist_content = plist_content.replace(
@@ -141,6 +157,36 @@ def main():
             f.write(main_m_content)
     else:
         print(f"Warning: Could not find {main_m_path}")
+
+    # 4.5. Set App Icon
+    print("Setting app icon...")
+    icon_source = os.path.join(project_dir, "resources", "images", "icon.png")
+    icon_dest_dir = os.path.join(template_dir, "pygame-ios", "Images.xcassets", "AppIcon.appiconset")
+    if os.path.exists(icon_source) and os.path.exists(icon_dest_dir):
+        icon_dest_path = os.path.join(icon_dest_dir, "clangen_icon.png")
+        shutil.copy2(icon_source, icon_dest_path)
+        
+        # Upscale to 1024x1024 to satisfy actool validation
+        run_cmd(["sips", "-z", "1024", "1024", icon_dest_path])
+        
+        # Update Contents.json to use the new icon
+        contents_json_path = os.path.join(icon_dest_dir, "Contents.json")
+        with open(contents_json_path, "r") as f:
+            contents = json.load(f)
+        
+        contents["images"] = [
+            {
+                "filename": "clangen_icon.png",
+                "idiom": "universal",
+                "platform": "ios",
+                "size": "1024x1024"
+            }
+        ]
+        
+        with open(contents_json_path, "w") as f:
+            json.dump(contents, f, indent=2)
+    else:
+        print(f"Warning: Could not find icon source {icon_source} or destination {icon_dest_dir}")
 
 
     print("Exporting pip requirements...")
