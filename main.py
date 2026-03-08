@@ -166,106 +166,115 @@ all_screens.get_screen(GameScreen.START).screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
 
-fps = switch_get_value(Switch.fps)
-music_manager.check_music(GameScreen.START)
+import asyncio
 
-if game_setting_get("custom cursor"):
-    MANAGER.set_active_cursor(constants.CUSTOM_CURSOR)
-else:
-    MANAGER.set_active_cursor(constants.DEFAULT_CURSOR)
+async def main():
+    fps = switch_get_value(Switch.fps)
+    music_manager.check_music(GameScreen.START)
 
-while 1:
-    time_delta = clock.tick(fps) / 1000.0
+    if game_setting_get("custom cursor"):
+        MANAGER.set_active_cursor(constants.CUSTOM_CURSOR)
+    else:
+        MANAGER.set_active_cursor(constants.DEFAULT_CURSOR)
 
-    if switch_get_value(Switch.switch_clan):
-        load_game()
+    while 1:
+        time_delta = clock.tick(fps) / 1000.0
 
-    # Draw screens
-    # This occurs before events are handled to stop pygame_gui buttons from blinking.
-    game.all_screens[game.current_screen].on_use()
-    # EVENTS
-    for event in pygame.event.get():
-        if (
-            event.type == pygame.KEYDOWN
-            and game_setting_get("keybinds")
-            and debug_mode.debug_menu.visible
-        ):
-            pass
-        else:
-            # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-            all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
-                event
-            )
+        if switch_get_value(Switch.switch_clan):
+            load_game()
 
-        sound_manager.handle_sound_events(event)
-
-        if event.type == pygame.QUIT:
-            # Don't display if on the start screen or there is no clan.
+        # Draw screens
+        # This occurs before events are handled to stop pygame_gui buttons from blinking.
+        game.all_screens[game.current_screen].on_use()
+        # EVENTS
+        for event in pygame.event.get():
             if (
-                switch_get_value(Switch.cur_screen)
-                in (
-                    GameScreen.START,
-                    GameScreen.SWITCH_CLAN,
-                    GameScreen.SETTINGS,
-                    GameScreen.MAKE_CLAN,
-                )
-                or not game.clan
+                event.type == pygame.KEYDOWN
+                and game_setting_get("keybinds")
+                and debug_mode.debug_menu.visible
             ):
-                quit_game(savesettings=False)
+                pass
             else:
-                SaveCheckWindow(switch_get_value(Switch.cur_screen), False, None)
-
-        # MOUSE CLICK
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            game.clicked = True
-
-            if MANAGER.visual_debug_active:
-                _ = pygame.mouse.get_pos()
-                if game_setting_get("fullscreen"):
-                    print(f"(x: {_[0]}, y: {_[1]})")
-                else:
-                    print(f"(x: {_[0] * screen_scale}, y: {_[1] * screen_scale})")
-                del _
-
-        # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_F2:
-                MANAGER.print_layer_debug()
-            elif event.key == pygame.K_F3:
-                debug_mode.toggle_debug_mode()
-                # debugmode.toggle_console()
-            elif event.key == pygame.K_F11:
-                scripts.game_structure.screen_settings.toggle_fullscreen(
-                    source_screen=all_screens.screen_dict[
-                        switch_get_value(Switch.cur_screen).replace(" ", "_")
-                    ],
-                    show_confirm_dialog=False,
+                # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
+                all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
+                    event
                 )
 
-        MANAGER.process_events(event)
+            sound_manager.handle_sound_events(event)
 
-    MANAGER.update(time_delta)
+            if event.type == pygame.QUIT:
+                # Don't display if on the start screen or there is no clan.
+                if (
+                    switch_get_value(Switch.cur_screen)
+                    in (
+                        GameScreen.START,
+                        GameScreen.SWITCH_CLAN,
+                        GameScreen.SETTINGS,
+                        GameScreen.MAKE_CLAN,
+                    )
+                    or not game.clan
+                ):
+                    quit_game(savesettings=False)
+                else:
+                    SaveCheckWindow(switch_get_value(Switch.cur_screen), False, None)
 
-    # update
-    game.update_game()
-    if game.switch_screens:
-        all_screens.get_screen(
-            game.last_screen_forupdate.replace(" ", "_")
-        ).exit_screen()
-        all_screens.get_screen(game.current_screen.replace(" ", "_")).screen_switches()
-        game.switch_screens = False
-    if (
-        not music_manager.audio_disabled
-        and not pygame.mixer.music.get_busy()
-        and not music_manager.muted
-    ):
-        music_manager.play_queued()
+            # MOUSE CLICK
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                game.clicked = True
 
-    debug_mode.pre_update(clock)
-    # END FRAME
+                if MANAGER.visual_debug_active:
+                    _ = pygame.mouse.get_pos()
+                    if game_setting_get("fullscreen"):
+                        print(f"(x: {_[0]}, y: {_[1]})")
+                    else:
+                        print(f"(x: {_[0] * screen_scale}, y: {_[1] * screen_scale})")
+                    del _
 
-    MANAGER.draw_ui(screen)
+            # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_F2:
+                    MANAGER.print_layer_debug()
+                elif event.key == pygame.K_F3:
+                    debug_mode.toggle_debug_mode()
+                    # debugmode.toggle_console()
+                elif event.key == pygame.K_F11 and not IS_IOS:
+                    scripts.game_structure.screen_settings.toggle_fullscreen(
+                        source_screen=all_screens.screen_dict[
+                            switch_get_value(Switch.cur_screen).replace(" ", "_")
+                        ],
+                        show_confirm_dialog=False,
+                    )
 
-    debug_mode.post_update(screen)
+            MANAGER.process_events(event)
 
-    pygame.display.update()
+        MANAGER.update(time_delta)
+
+        # update
+        game.update_game()
+        if game.switch_screens:
+            all_screens.get_screen(
+                game.last_screen_forupdate.replace(" ", "_")
+            ).exit_screen()
+            all_screens.get_screen(game.current_screen.replace(" ", "_")).screen_switches()
+            game.switch_screens = False
+        if (
+            not music_manager.audio_disabled
+            and not pygame.mixer.music.get_busy()
+            and not music_manager.muted
+        ):
+            music_manager.play_queued()
+
+        debug_mode.pre_update(clock)
+        # END FRAME
+
+        MANAGER.draw_ui(screen)
+
+        debug_mode.post_update(screen)
+
+        pygame.display.update()
+
+        # Yield to browser event loop when compiled with pygbag
+        await asyncio.sleep(0)
+
+if __name__ == "__main__":
+    asyncio.run(main())
