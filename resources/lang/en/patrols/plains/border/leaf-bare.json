@@ -3278,6 +3278,18 @@
                     "scar": "m_c was injured after disturbing a badger in its sett.",
                     "death": "This cat was killed after an unfortunate meeting with a badger."
                 },
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "low_social", "low_stable"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["like", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -3299,6 +3311,18 @@
                     "scar": "m_c was injured after disturbing a badger in its sett.",
                     "death": "m_c was killed after an unfortunate meeting with a wolverine."
                 },
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "low_social", "low_stable"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["like", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -3346,6 +3370,16 @@
                         "amount": 25,
                         "log": {
                             "cats_from": "to_cat saved from_cat's life by distracting a badger, at the cost of {PRONOUN/to_cat/poss} own life."
+                        }
+                    },
+                    {
+                        "cats_from": ["clan", "low_social", "low_stable"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["like", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
                         }
                     }
                 ],
@@ -4318,6 +4352,22 @@
                         "amount": -15,
                         "log": {
                             "cats_from": "to_cat wrongly identified a tunnel as safe, and app2 was killed by a wolverine as a result."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "some_clan", "low_social", "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat believed to_cat's negligence on patrol was responsible for app2's death."
                         }
                     }
                 ],
