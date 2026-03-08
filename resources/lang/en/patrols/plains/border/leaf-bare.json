@@ -72,7 +72,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat made the long trek to the outer plains on patrol together."
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains while on patrol together."
                         }
                     }
                 ],
@@ -113,7 +113,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat made the long trek to the outer plains on patrol together."
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains while on patrol together."
                         }
                     }
                 ],
@@ -2127,7 +2127,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to find shelter in a snowstorm."
+                            "cats_from": "from_cat and to_cat were unable to find shelter in a snowstorm and lost trust in each other's skills."
                         }
                     }
                 ],
@@ -2642,7 +2642,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was pleased when to_cat praised {PRONOUN/from_cat/object} for discovering new tunnels on patrol."
+                            "cats_from": "from_cat was pleased when to_cat praised {PRONOUN/from_cat/object} for discovering new tunnels while on patrol."
                         }
                     },
                     {
@@ -2658,7 +2658,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was proud of to_cat for {PRONOUN/to_cat/poss} discovery of new tunnels on patrol."
+                            "cats_from": "from_cat was proud of to_cat for {PRONOUN/to_cat/poss} discovery of new tunnels while on patrol."
                         }
                     }
                 ],
@@ -2778,7 +2778,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat discovered a new set of tunnels on patrol."
+                            "cats_from": "from_cat heard that to_cat discovered a new set of tunnels while on patrol."
                         }
                     }
                 ],
@@ -4266,7 +4266,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat fought off a prairie dog on patrol."
+                            "cats_from": "from_cat was impressed when to_cat fought off a prairie dog while on patrol."
                         }
                     }
                 ],
