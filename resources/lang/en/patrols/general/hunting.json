@@ -6928,7 +6928,7 @@
     {
         "patrol_id": "gen_hunt_thunderpath1",
         "biome": [
-            "forest", "beach", "desert", "mountainous", "plains", "wetlands"
+            "any"
         ],
         "season": [
             "any"
