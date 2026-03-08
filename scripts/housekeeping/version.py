@@ -5,7 +5,7 @@ import sys
 from configparser import ConfigParser
 from importlib.util import find_spec
 
-from platformdirs import user_data_dir
+from scripts.housekeeping.platform import user_data_dir
 
 logger = logging.getLogger(__name__)
 

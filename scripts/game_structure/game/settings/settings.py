@@ -1,3 +1,4 @@
+import sys
 import traceback
 from pathlib import Path
 from typing import Any, Tuple, Generator
@@ -7,6 +8,7 @@ from utils.json_compat import json
 from scripts.game_structure.game.save_load import safe_save
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.screens.enums import GameScreen
+from scripts.housekeeping.platform import IS_IOS
 
 from ...constants import DISPLAY_SETTINGS
 
@@ -67,6 +69,8 @@ def game_setting_toggle(setting_name):
 
 
 def game_setting_get(name, *, default=None):
+    if name == "fullscreen" and IS_IOS:
+        return True
     return settings.get(name, default)
 
 

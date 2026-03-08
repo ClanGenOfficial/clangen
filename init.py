@@ -21,12 +21,14 @@ from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.housekeeping.version import VERSION_NAME, get_version_info
+from scripts.housekeeping.platform import IS_IOS
 
 try:
     directory = os.path.dirname(__file__)
 except NameError:
     directory = os.getcwd()
-if directory:
+
+if directory and not IS_IOS:
     os.chdir(directory)
 
 if os.path.exists("auto-updated"):

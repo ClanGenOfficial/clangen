@@ -4,6 +4,7 @@ import subprocess
 import logging
 
 from scripts.housekeeping.version import get_version_info
+from scripts.housekeeping.platform import IS_IOS, user_data_dir
 
 logger = logging.getLogger(__name__)
 
@@ -32,8 +33,6 @@ def setup_data_dir():
 def get_data_dir():
     if get_version_info().is_source_build:
         return "."
-
-    from platformdirs import user_data_dir
 
     if get_version_info().is_dev():
         return user_data_dir("ClanGenBeta", "ClanGen")

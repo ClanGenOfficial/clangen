@@ -306,6 +306,9 @@ class SettingsScreen(Screens):
             },
         )
 
+        if IS_IOS:
+            self.fullscreen_toggle.hide()
+
         self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 645), (178, 30))),
             "buttons.open_data_directory",
