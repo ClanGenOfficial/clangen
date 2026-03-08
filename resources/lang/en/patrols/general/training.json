@@ -6568,7 +6568,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c convinced r_c to get playful with {PRONOUN/r_c/poss} mate when they were supposed to be training together."
+                            "cats_from": "s_c convinced r_c to get playful with {PRONOUN/r_c/poss} when they were supposed to be training together."
                         }
                     }
                 ],
