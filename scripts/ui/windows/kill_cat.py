@@ -26,7 +26,6 @@ class KillCat(GameWindow):
         )
 
         self.the_cat = cat
-        self.take_all = True
 
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         self.heading = pygame_gui.elements.UITextBox(
@@ -98,8 +97,7 @@ class KillCat(GameWindow):
                 game.all_screens[GameScreen.PROFILE].screen_switches()
                 self.kill()
             elif event.ui_element == self.all_lives_check:
-                self.take_all = not self.take_all
-                if self.take_all:
+                if self.all_lives_check.checked:
                     self.all_lives_check.check()
                 else:
                     self.all_lives_check.uncheck()
@@ -108,3 +106,7 @@ class KillCat(GameWindow):
                 game.all_screens[GameScreen.PROFILE].screen_switches()
 
         return super().process_event(event)
+
+    @property
+    def take_all(self):
+        return self.all_lives_check.checked
