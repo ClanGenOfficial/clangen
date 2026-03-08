@@ -183,3 +183,4 @@ cache/
 download.tmp
 version.ini
 *.xml
+pygame-ios-template
