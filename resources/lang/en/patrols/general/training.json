@@ -4185,7 +4185,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "app2 was comforted by the patrol when {PRONOUN/app2/subject} {VERB/app2/were/was} frightened by a ghost story on patrol."
+                            "cats_from": "app2 was comforted by the patrol when {PRONOUN/app2/subject} {VERB/app2/were/was} frightened by a ghost story."
                         }
                     },
                     {
@@ -4810,13 +4810,14 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["p_l"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "trust"
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat took to_cat's advice on how best to group their Clanmates on a training patrol."
+                            "cats_from": "from_cat took to_cat's advice on how best to group their Clanmates on a training patrol.",
+                            "cats_to": "from_cat appreciated that to_cat listened to {PRONOUN/from_cat/poss} advice."
                         }
                     }
                 ],
@@ -4947,13 +4948,14 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["s_c"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect"
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat decided {PRONOUN/from_cat/subject}'d do a better job leading a training patrol than to_cat and tried to take over."
+                            "cats_from": "from_cat decided {PRONOUN/from_cat/subject}'d do a better job leading a training patrol than to_cat and tried to take over.",
+                            "cats_to": "from_cat was angered when to_cat seized control of the patrol that from_cat was meant to be leading."
                         }
                     }
                 ],
@@ -5371,24 +5373,11 @@
                         "cats_from": ["p_l"],
                         "mutual": true,
                         "values": [
-                            "respect"
+                            "comfort", "respect"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "p_l praised app1 for {PRONOUN/app1/poss} focus and enthusiasm on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat praised from_cat's hunting."
                         }
                     }
                 ],
@@ -5617,7 +5606,7 @@
                         "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "trust", "like"
+                            "comfort", "like"
                         ],
                         "amount": 10,
                         "log": {
@@ -5726,13 +5715,14 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": ["s_c"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect"
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat decided {PRONOUN/from_cat/subject}'d do a better job leading a training patrol than to_cat and tried to take over."
+                            "cats_from": "from_cat decided {PRONOUN/from_cat/subject}'d do a better job leading a training patrol than to_cat and tried to take over.",
+                            "cats_to": "from_cat was angered when to_cat seized control of the patrol that from_cat was meant to be leading."
                         }
                     }
                 ],
@@ -5901,7 +5891,7 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 20,
+                        "amount": 15,
                         "log": {
                             "cats_from": "s_c taught app1 how to mirror another cat's movements and praised {PRONOUN/app1/object} for {PRONOUN/app1/poss} rapid progress."
                         }
