@@ -1182,7 +1182,7 @@ class Cat:
         :type history_dir: str
         """
         if not os.path.exists(history_dir):
-            os.makedirs(history_dir)
+            os.makedirs(history_dir, exist_ok=True)
 
         history_dict = self.history.make_dict()
         try:

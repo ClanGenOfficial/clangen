@@ -1220,7 +1220,7 @@ class ProfileScreen(Screens):
         notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
 
         if not os.path.exists(notes_directory):
-            os.makedirs(notes_directory)
+            os.makedirs(notes_directory, exist_ok=True)
 
         if notes is None or notes == i18n.t("screens.profile.user_notes"):
             return
