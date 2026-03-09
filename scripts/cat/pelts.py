@@ -911,7 +911,7 @@ class Pelt:
 
         if acc_display_choice == 1:
             self.accessory = tuple(
-                choice([choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)])
+                (choice(Pelt.plant_accessories + Pelt.wild_accessories),)
             )
         else:
             self.accessory = tuple()

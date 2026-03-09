@@ -1,101 +1,5 @@
 [
     {
-        "patrol_id": "bch_med_soloripples1",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [],
-        "patrol_art": "gen_med_soloripples",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "frequency": 2,
-        "intro_text": "While gathering fresh water, p_l sees strange ripples on the surface of a puddle.",
-        "decline_text": "p_l is in too much of a hurry and doesn't spare the rippling water a second glance.",
-        "chance_of_success": 45,
-        "pl_skill_constraint": [
-            "PROPHET,1"
-        ],
-        "success_outcomes": [
-            {
-                "text": "As p_l looks into the puddle, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} greeted by an intense vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing and {VERB/p_l/race/races} back to the camp to consult with the leader - water can wait, this is far more important.",
-                "exp": 10,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "p_l returned to camp with an important vision for c_n."
-                        }
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l's shoulders sag with the weight of {PRONOUN/p_l/poss} relief, and p_l feels the burden of the death lift from over {PRONOUN/p_l/poss} head.",
-                "exp": 10,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat saw p_l return to camp looking much more calm and composed."
-                        }
-                    }
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/gaze/gazes} eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - {PRONOUN/p_l/subject} really could have used some guidance from StarClan.",
-                "exp": 0,
-                "frequency": 4
-            }
-        ]
-    },
-    {
         "patrol_id": "bch_med_clair1",
         "biome": [
             "beach"
@@ -200,21 +104,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "app1"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "app1 learned more about herbs with perfect concentration, impressing p_l.",
-                            "cats_to": "p_l felt confident with app1's attentiveness during a herb gathering lesson."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -228,21 +128,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "app1"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "app1 found a hidden herb patch during a lesson, impressing p_l.",
-                            "cats_to": "p_l was amazed by app1's application of knowledge by finding a hidden herb patch."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 1
@@ -255,10 +151,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -266,9 +162,6 @@
                             "trust"
                         ],
                         "amount": -5
-                        ,"log": {
-                            "cats_from": "Frustrated by app1's inattentiveness, p_l ended a lesson about herb gathering."
-                        }
                     }
                 ],
                 "frequency": 4
@@ -509,10 +402,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                          "cats_from": "from_cat and to_cat were able to successfully gather herbs despite the rainy weather."  
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -539,10 +429,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                          "cats_from": "from_cat and to_cat were able to quickly harvest herbs and return to camp before they both were drenched."  
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -558,16 +445,13 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                          "cats_from": "p_l was visibly frustrated by to_cat while patrolling in the rain."  
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -674,21 +558,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "app1"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "app1 worked hard and gathered a lot of cobwebs alongside p_l.",
-                            "cats_to": "p_l worked hard alongside app1 to gather cobwebs, pleased by app1's hard work."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -713,10 +593,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat startled several cats with their cobweb haul, much to their glee."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 1
@@ -729,20 +606,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "p_l was irritated by app1's inattentive attitude on a lesson."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -798,10 +672,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat and to_cat shared 'mrrps' of laughter while gathering cobwebs together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -826,10 +697,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat shared tongues after gathering an impressive haul of cobwebs."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -847,7 +715,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -857,10 +725,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat was impressed by to_cat's tracking skills during an cobweb gathering patrol."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -873,7 +738,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -883,10 +748,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat was visibly frustrated with from_cat's lack of attention during a cobweb patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -1003,23 +865,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat's curiousity about horsetail herbs helped from_cat's lesson go smoothly.",
-                            "cats_to": "to_cat encorages from_cat's interest and curiousity about herbs during a lesson."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -1046,10 +904,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat and to_cat have a productive patrol hunting horsetail together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -1070,23 +925,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "app1"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat impressed from_cat with {PRONOUN/to_cat/poss} skill in plucking an entire horsetail herb.",
-                            "cats_to": "from_cat was impressed by to_cat's skill in picking an entire horsetail herb."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -1099,23 +950,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "app1"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
                             "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat could not find the horsetail herb needed for a lesson, disappointing from_cat.",
-                            "cats_to": "from_cat was disappointed in to_cat, expecting more from {PRONOUN/from_cat/poss} mentor's experience."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -1175,10 +1022,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat gathered a large shoot of horsetail back to camp together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -1206,10 +1050,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat picked out an impressive addition of horsetail back to camp together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -1232,10 +1073,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat snapped at each other after a failed horsetail gathering patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -1349,10 +1187,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat gathered a large patch of moss back to camp together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -1374,10 +1209,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat failed to gather some moss for the Clan, disheartened by one another's performance."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -1436,10 +1268,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat gather new modd for the medicine den."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -1461,10 +1290,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat failed to gather some moss for the Clan, disheartened by one another's performance."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -1523,10 +1349,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat gather lots of moss for the medicine den together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -1548,10 +1371,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat failed to gather some moss for the Clan, disheartened by one another's performance."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -1619,10 +1439,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat gathered rosemary while tending to the graves of the departed."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -1700,10 +1517,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat gathered rosemary while tending to the graves of the departed."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -1733,126 +1547,6 @@
         ]
     },
     {
-        "patrol_id": "bch_med_discussion1",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [],
-        "patrol_art": "gen_med_discussion",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "all apprentices": [ -1, -1 ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "frequency": 3,
-        "intro_text": "p_l and r_c head inland to look for herbs, discussing the latest news.",
-        "decline_text": "It seems like some mischievous cat has gotten into the herb storage, and they have to sort it all over again.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "They have a good discussion while foraging among the dunes and manage to come up with several ideas to discuss with c_n's leadership.",
-                "exp": 10,
-                "herbs": [
-                    "random_herbs"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a pleasant time discussing ideas about c_n's leadership."
-                        }
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Carefully plucking some herbs, they discuss the latest signs from StarClan and ponder what to do about them. They manage to think up some tentative plans and return to camp to discuss them with the leader and deputy.",
-                "exp": 10,
-                "herbs": [
-                    "random_herbs"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time discussing the most recent sign from StarClan."
-                        }
-                    }
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "They fail to interpret any signs and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything when the trip is cut short by the ominous looking clouds springing up over the ocean.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat argued and became irritated with one another omens from the afterlife."
-                        }
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
         "patrol_id": "bch_med_dwindleherbsgathering1",
         "biome": [
             "beach"
@@ -1868,18 +1562,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "medicine cat": [2, 2]
         },
         "frequency": 4,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
@@ -1905,10 +1588,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time searching Twoleg beach dens for herbs."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -1932,10 +1612,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat have a lot of fun during an impromptu herb gathering competition."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 1
@@ -1958,10 +1635,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat became irritated with each other after a fruitless effort finding herbs."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -1982,10 +1656,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a fight over a failed herb search, ending with blame being thrown around carelessly."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -2048,10 +1719,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a fun time gathering cobwebs on sticks, enjoying each other's company."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -2077,10 +1745,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat have a small stick fight while collecting cobwebs, purring and laughing all the while."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -2104,10 +1769,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat spent the patrol playing instead of collecting, ruining the cobwebs they gathered."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -2178,10 +1840,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a fun time gathering cobwebs on sticks, enjoying each other's company."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -2207,10 +1866,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat have a small stick fight while collecting cobwebs, purring and laughing all the while."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -2234,10 +1890,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat spent the patrol playing instead of collecting, ruining the cobwebs they gathered."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -2308,10 +1961,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a fun time gathering cobwebs on sticks, enjoying each other's company."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -2337,10 +1987,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat have a small stick fight while collecting cobwebs, purring and laughing all the while."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -2364,10 +2011,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat spent the patrol playing instead of collecting, ruining the cobwebs they gathered."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -2438,10 +2082,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a fun time gathering cobwebs on sticks, enjoying each other's company."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -2467,10 +2108,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat have a small stick fight while collecting cobwebs, purring and laughing all the while."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -2494,10 +2132,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat spent the patrol playing instead of collecting, ruining the cobwebs they gathered."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -2564,10 +2199,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a fun time gathering cobwebs on sticks, enjoying each other's company."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -2593,10 +2225,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat have a small stick fight while collecting cobwebs, purring and laughing all the while."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -2620,10 +2249,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat spent the patrol playing instead of collecting, ruining the cobwebs they gathered."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -2687,10 +2313,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat work hard to gather up more cobwebs, earning a newfound appreciation for the skill."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -2715,10 +2338,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat work hard and help each other gather cobwebs, earning a newfound appreciation for the skill."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -2731,7 +2351,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2741,11 +2361,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "from_cat disdainfully gathered cobwebs, annoying to_cat with {PRONOUN/from_cat/poss} attitude.",
-                            "cats_to": "to_cat felt disgusted with how from_cat acted during the cobweb patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -2809,10 +2425,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat work hard to gather up more cobwebs, earning a newfound appreciation for the skill."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -2837,10 +2450,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat work hard and help each other gather cobwebs, earning a newfound appreciation for the skill."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -2853,7 +2463,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2863,11 +2473,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "from_cat disdainfully gathered cobwebs, annoying to_cat with {PRONOUN/from_cat/poss} attitude.",
-                            "cats_to": "to_cat felt disgusted with how from_cat acted during the cobweb patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -2931,10 +2537,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat work hard to gather up more cobwebs, earning a newfound appreciation for the skill."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -2959,10 +2562,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat work hard and help each other gather cobwebs, earning a newfound appreciation for the skill."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -2975,7 +2575,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2985,11 +2585,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "from_cat disdainfully gathered cobwebs, annoying to_cat with {PRONOUN/from_cat/poss} attitude.",
-                            "cats_to": "to_cat felt disgusted with how from_cat acted during the cobweb patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -3053,10 +2649,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat work hard to gather up more cobwebs, earning a newfound appreciation for the skill."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -3081,10 +2674,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat work hard and help each other gather cobwebs, earning a newfound appreciation for the skill."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -3097,7 +2687,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -3107,11 +2697,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "from_cat disdainfully gathered cobwebs, annoying to_cat with {PRONOUN/from_cat/poss} attitude.",
-                            "cats_to": "to_cat felt disgusted with how from_cat acted during the cobweb patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -3186,11 +2772,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -3216,11 +2798,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -3244,11 +2822,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "from_cat would rather have done anything else than be on an herb gathering patrol, upsetting to_cat.",
-                            "cats_to": "to_cat could feel from_cat's irritation about the herb patrol and stayed away."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -3324,11 +2898,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -3354,11 +2924,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -3371,21 +2937,18 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app2"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat snapped at and irritated each other on an herb gathering patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -3453,11 +3016,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -3483,11 +3042,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -3500,21 +3055,18 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app2"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat snapped at and irritated each other on an herb gathering patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -3578,10 +3130,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time hunting for moss together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -3606,10 +3155,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time hunting for moss and herbs together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -3632,10 +3178,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat's patrol kept arguing amongst each other, ruining everyone's day."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -3699,10 +3242,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time hunting for moss together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -3727,10 +3267,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time hunting for moss and herbs together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -3753,10 +3290,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat's patrol kept arguing amongst each other, ruining everyone's day."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -3824,11 +3358,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -3854,11 +3384,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -3882,10 +3408,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat snapped at and irritated each other on an herb gathering patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -3949,10 +3472,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time hunting for moss together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -3977,10 +3497,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time hunting for moss and herbs together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -4003,10 +3520,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat's patrol kept arguing amongst each other, ruining everyone's day."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -4062,11 +3576,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat and to_cat became closer, bumping shoulders and laughing, after hangng out on a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat bumped shoulders and shared smiles while on a moss gathering patrol."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -4092,11 +3602,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "Despite some earlier irritation, from_cat and to_cat warmed up to one another during a moss gathering patrol.",
-                            "cats_to": "to_cat and from_cat warmed up to one another after from_cat's earlier irritation faded away."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -4120,10 +3626,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat snapped at and irritated each other on an herb gathering patrol."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -4183,10 +3686,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time hunting for moss together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 4
@@ -4211,10 +3711,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat had a productive time hunting for moss and herbs together."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 1
@@ -4237,10 +3734,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "to_cat and from_cat's patrol kept arguing amongst each other, ruining everyone's day."
-                        }
+                        "amount": -10
                     }
                 ],
                 "frequency": 4
@@ -4302,11 +3796,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat cheered up to_cat with a small puddle fight during a herb gathering patrol.",
-                            "cats_to": "to_cat was splashed with a puddle by from_cat, evolving into a splash fight that left them both happier."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -4330,11 +3820,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "from_cat worked diligently alongside to_cat, {PRONOUN/from_cat/poss} determination shining through.",
-                            "cats_to": "to_cat was impressed at from_cat's dilligence and detemination despite the former's previous bad mood."
-                        }
+                        "amount": 10
                     }
                 ],
                 "frequency": 3
@@ -4369,11 +3855,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat lended an ear to to_cat after a terrible storm ruined what herbs the Clan had.",
-                            "cats_to": "to_cat felt much better after venting {PRONOUN/to_cat/poss} heart out to from_cat."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -4397,11 +3879,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "from_cat got hissed at by to_cat after failing to make {PRONOUN/to_cat/object} feel better.",
-                            "cats_to": "to_cat had no time for childish splash fights and told from_cat so in {PRONOUN/from_cat/poss} face."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -4412,10 +3890,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": true,
                         "values": [
@@ -4423,10 +3901,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "from_cat and to_cat returned to camp in a foul mood after failing to find new herbs to restock the Clan with."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -4447,10 +3922,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "from_cat stared at to_cat for too long, making the latter very uncomfortable."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -4484,11 +3956,7 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "from_cat tried {PRONOUN/from_cat/poss} best to cheer up to_cat, and got hissed at for {PRONOUN/from_cat/poss} troubles.",
-                            "cats_to": "to_cat's irritation boiled over at from_cat's kit-like games, leaving ruffled fur and stinging words in {PRONOUN/to_cat/poss} wake."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
