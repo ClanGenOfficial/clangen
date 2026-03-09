@@ -310,6 +310,13 @@ dev_tools = false
   # allows cats to be named after the color of their eyes
   allow_eye_names = true
 
+  # determines which list outsiders pull from: silly_names, human_names, loner_names, or normal_prefixes
+  # number / total for each control
+
+  kittypet = [30, 50, 10, 10]
+  loner = [5, 15, 50, 30]
+  rogue = [3, 7, 35, 55]
+
 [accessory_generation]
   # base 1/chance a cat generates with an accessory 
   base_acc_chance = 150
