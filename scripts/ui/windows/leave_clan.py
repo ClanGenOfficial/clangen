@@ -9,9 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import CatSocial
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UICheckbox,
-)
+from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen

@@ -6,6 +6,12 @@
             "m_c has been feeling the pain in {PRONOUN/m_c/poss} broken jaw lessen, but {PRONOUN/m_c/poss} teeth just don't fit together neatly like they used to.",
             "m_c can finally chew without pain, but it seems {PRONOUN/m_c/poss} jaw is permanently crooked now.",
             "While m_c is glad that {PRONOUN/m_c/poss} jaw is finally healed, it's still frustrating that it's now permanently twisted."
+        ],
+        "damaged throat": [
+            "m_c's jaw has healed, but {PRONOUN/m_c/poss} throat remains sore, making speech difficult.",
+            "m_c's jaw has been realigned, but the rest of {PRONOUN/m_c/poss} throat is another story.",
+            "r_c had assumed m_c's difficulty speaking was just the result of {PRONOUN/m_c/poss} broken jaw, but it appears the injury extended deeper into m_c's throat.",
+            "m_c tries to be optimistic: difficulty with speaking is certainly better than a broken jaw."
         ]
     },
     "broken bone": {
@@ -119,6 +125,10 @@
         "absent": [
             "m_c never really came around again after going into shock.",
             "m_c fails to respond to r_c yet again, leading {PRONOUN/r_c/subject} to accept m_c is never really coming back."
+        ],
+        "selective mutism": [
+            "m_c's nerves seem to have eased, until {PRONOUN/m_c/poss} voice gets caught in {PRONOUN/m_c/poss} chest.",
+            "Ever since going into shock, m_c struggles with communicating with other cats when {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} stressed."
         ]
     },
     "head damage": {
@@ -218,6 +228,12 @@
             "A lump has appeared under m_c's wound. {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} sure that's a good sign.",
             "m_c complains about being unable to sleep properly, leading r_c to find a strange lump under the wound.",
             "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
+        ]
+    },
+    "sore throat": {
+        "damaged throat": [
+            "The soreness of m_c's throat has lessened, but {PRONOUN/m_c/subject} still {VERB/m_c/struggle/struggles} to mew and purr as {PRONOUN/m_c/subject} did before.",
+            "m_c's sore throat was a sign of greater damage to the area, making vocalization difficult."
         ]
     }
 }
