@@ -314,9 +314,10 @@
     "ORANGE": ["Amber", "Sun", "Fire", "Honey", "Flame", "Blaze", "Pumpkin", "Red", "Ember", "Orange"]
   },
 
-  "silly_names": ["Adora", "Aether", "Agent Smith", "Ah ha", "Albedo", "Alcyone", "Alphonse", "Alphys", "Altair", "Amongus", "Andromeda",
-    "Anju", "Ankha", "Antares", "Anubis", "Aphrodite", "Apple Pencil", "Aquarius", "Arch", "Archimedes", "Arcturus", "Aries", "Artificer",
-    "Asgore", "Askari", "Atlas", "Award Winning Smile", "Azimuth", "Azula", "Baba Yaga", "Baby Dog", "Bacchus", "Bagheera", "Baihu", "Baja Blast", 
+  "silly_names": ["Ace Impact", "Adios Butler", "Admire Groove", "Admire Vega", "Adora", "Aether", "Agent Smith", "Agnes Digital", "Agnes Tachyon",
+    "Ah ha", "Air Groove", "Air Messiah", "Air Shakur", "Albedo", "Alcyone", "Allez France", "Almond Eye", "Alphonse", "Alphys", "Altair", "Alydar", "American Pharoah",
+    "Amongus", "Andromeda", "Animal Kingdom", "Anju", "Ankha", "Antares", "Anubis", "Aphrodite", "Apple Pencil", "Aquarius", "Arch", "Archimedes", "Arcturus", "Aries", "Arkle", "Arrogate", "Artificer",
+    "Asgore", "Askari", "Atlas", "Auguste Rodin", "Award Winning Smile", "Azimuth", "Azula", "Baba Yaga", "Baby Dog", "Bacchus", "Bagheera", "Baihu", "Baja Blast", 
     "Baldie", "Baliyo", "Baloo", "Baphomet", "Barbatuques", "Bastet", "Beanie Baby", "Beanie", "Beatle", "Beef Stroganoff", "Beesechurger",
     "Bellafide", "Bellatrix", "Bellibolt", "Belphegor", "Berlioz", "Betelgeuse", "Bic", "Bidoof", "Big Mac", "Big Man", "Big Papa Huge Time", "Bigwig", 
     "Bill Bailey", "Bingus", "Binx", "Birb", "Bird of Paradise", "Biscuits B. Bakin", "Black Widow", "Blahaj", "Blavingad", "Bliklotep", 
@@ -378,10 +379,10 @@
     "Yoshi", "Yote", "Zekrom", "Zelda", "Zenyatta", "Zeraora", "Zim", "Zoomie", "Zorua", "Zuko"
   ],
 
-  "human_names": ["Abby", "Abigail", "Abuko", "Adaliz", "Adam", "Agatha", "Agnes", "Aidan", "Aiden", "Akila", "Akilah", "Alaska", "Alastair", 
+  "human_names": ["Abby", "Abigail", "Abuko", "Adaliz", "Adam", "Agatha", "Agnes", "Aidan", "Aiden", "Ajax", "Akila", "Akilah", "Alaska", "Alastair", 
     "Alba", "Albert", "Alberto", "Alcina", "Alcor", "Aldrich", "Alec", "Alex", "Alexa", "Alfie", "Alfred", "Algernon", "Alice", "Alma", 
     "Alonzo", "Alvin", "Amanda", "Amani", "Amari", "Amaya", "Amelia", "Amir", "Amy", "Ana", "Anais", "Ananya", "Andrew", "Angie", "Anita", "Anya", 
-    "April", "Apu", "Archibald", "Archie", "Ari", "Ariel", "Armin", "Arroyo", "Artemis", "Arusha", "Ashe", "Asriel", "Astrid", "Atticus", 
+    "April", "Apu", "Archer", "Archibald", "Archie", "Ari", "Ariel", "Aristides", "Armin", "Arroyo", "Artemis", "Arusha", "Ashe", "Asriel", "Astrid", "Atticus", 
     "Aubrey", "August", "Augustus", "Ava", "Avellana", "Avery", "Azizi", "Badru", "Bahati", "Bailey", "Baisel", "Baldwin", "Baojin", "Barbie", 
     "Barker", "Barnaby", "Bella", "Belle", "Ben", "Benito", "Bennett", "Benny", "Bentley", "Beowulf", "Beth", "Bethany", "Betsy", "Beverly", 
     "Bianca", "Bill", "Billy", "Birdie", "Bitnara", "Bixby", "Blair", "Blaire", "Blanche", "Blu", "Bob", "Bobby", "Bombalurina", "Boni", "Bonnie", 
@@ -430,7 +431,7 @@
   ],
 
   "loner_names": [
-    "Abyss", "Acacia", "Ace", "Admiral", "Ah", "Alfredo", "Alien", "Amaretto", "Amber", "Amethyst", "Amigo", "Amity", "Amor", "Angel", "Angler", "Apex", 
+    "Abyss", "Acacia", "Ace", "Admiral", "Affirmed", "Ah", "Alfredo", "Alien", "Amaretto", "Amber", "Amethyst", "Amigo", "Amity", "Amor", "Angel", "Angler", "Apapane", "Apex", 
     "Apple Cider", "Armageddon", "Aspen", "Aurora", "Axel", "Azurite", "Baby", "Backflip", "Bacon", "Bagel", "Bamboo", "Bandit", "Banshee", "Banzai", "Baobei",
     "Basil", "Bastion", "Bean", "Beans", "Beau", "Beauty", "Bebe", "Bede", "Bell", "Bellini", "Bibelot", "Bibimbap", "Bingo", "Bingsu", "Biscuit", 
     "Bismuth", "Bixbite", "Blade", "Bluebell", "Bluebird", "Boba", "Bok Choy", "Bokshiri", "Bologna", "Bolt", "Bombon", "Bonbon", "Bongo", "Boo", "Boots", 
