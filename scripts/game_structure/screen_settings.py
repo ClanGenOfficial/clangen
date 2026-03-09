@@ -10,7 +10,7 @@ from scripts.game_structure.game.settings import (
     game_setting_set,
 )
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.housekeeping.datadir import get_save_dir
+from scripts.housekeeping.datadir import get_save_dir, get_cache_dir
 
 if TYPE_CHECKING:
     from scripts.screens.Screens import Screens
@@ -109,7 +109,7 @@ def set_display_mode(
     else:
         # generate new theme
         origin = "resources/theme/master_screen_scale.json"
-        theme_location = "resources/theme/generated/screen_scale.json"
+        theme_location = os.path.join(get_cache_dir(), "screen_scale.json")
         generate_screen_scale(origin, theme_location, screen_scale)
         MANAGER.get_theme().load_theme(theme_location)
 
@@ -330,13 +330,14 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
+    screen_scale_path = os.path.join(get_cache_dir(), "screen_scale.json")
     generate_screen_scale(
         "resources/theme/master_screen_scale.json",
-        "resources/theme/generated/screen_scale.json",
+        screen_scale_path,
         screen_scale,
     )
 
-    manager.get_theme().load_theme("resources/theme/generated/screen_scale.json")
+    manager.get_theme().load_theme(screen_scale_path)
     manager.get_theme().load_theme("resources/theme/themes/dark.json")
 
     return manager

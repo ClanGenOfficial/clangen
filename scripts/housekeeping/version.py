@@ -5,7 +5,7 @@ import sys
 from configparser import ConfigParser
 from importlib.util import find_spec
 
-from scripts.housekeeping.platform import user_data_dir
+from scripts.housekeeping.platform import user_data_dir, IS_IOS
 
 logger = logging.getLogger(__name__)
 
@@ -38,15 +38,16 @@ def get_version_info():
             release_channel = version_ini.get("DEFAULT", "release_channel")
             upstream = version_ini.get("DEFAULT", "upstream")
         else:
-            try:
-                version_number = (
-                    subprocess.check_output(["git", "rev-parse", "HEAD"])
-                    .decode("ascii")
-                    .strip()
-                )
-                git_installed = True
-            except:
-                logger.exception("Git CLI invocation failed")
+            if not IS_IOS:
+                try:
+                    version_number = (
+                        subprocess.check_output(["git", "rev-parse", "HEAD"])
+                        .decode("ascii")
+                        .strip()
+                    )
+                    git_installed = True
+                except:
+                    logger.exception("Git CLI invocation failed")
 
         if (
             "--launched-through-itch" in sys.argv

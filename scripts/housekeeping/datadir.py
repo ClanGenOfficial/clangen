@@ -31,6 +31,11 @@ def setup_data_dir():
 
 
 def get_data_dir():
+    if IS_IOS:
+        if get_version_info().is_dev():
+            return user_data_dir("ClanGenBeta", "ClanGen")
+        return user_data_dir("ClanGen", "ClanGen")
+
     if get_version_info().is_source_build:
         return "."
 
