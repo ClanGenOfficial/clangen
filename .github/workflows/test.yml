@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - python-version: '3.11'
+          - python-version: '3.12'
     steps:
       - uses: actions/checkout@v4
       - name: Install uv
@@ -32,10 +32,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Python 3.11 x64
+      - name: Setup Python 3.12 x64
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           architecture: 'x64'
       - name: Install uv
         uses: astral-sh/setup-uv@v5
@@ -51,10 +51,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
-        - name: Setup Python 3.11 x64
+        - name: Setup Python 3.12 x64
           uses: actions/setup-python@v5
           with:
-            python-version: '3.11'
+            python-version: '3.12'
             architecture: 'x64'
         - name: Install uv
           uses: astral-sh/setup-uv@v5
@@ -68,10 +68,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
-        - name: Setup Python 3.11 x64
+        - name: Setup Python 3.12 x64
           uses: actions/setup-python@v5
           with:
-            python-version: '3.11'
+            python-version: '3.12'
             architecture: 'x64'
         - name: Install uv
           uses: astral-sh/setup-uv@v5
