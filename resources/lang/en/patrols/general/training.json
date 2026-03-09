@@ -9601,8 +9601,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "r_c was cheered to hear that p_l thought {PRONOUN/r_c/subject} {VERB/r_c/do/does} a good job of helping {PRONOUN/r_c/poss} Clanmates.",
-                            "cats_to": "p_l assured r_c that {PRONOUN/r_c/subject} {VERB/r_c/do/does} a good job of helping {PRONOUN/r_c/poss} Clanmates."
+                            "cats_from": "r_c was cheered to hear that p_l thought {PRONOUN/r_c/subject} did a good job of helping {PRONOUN/r_c/poss} Clanmates.",
+                            "cats_to": "p_l assured r_c that {PRONOUN/r_c/subject} did a good job of helping {PRONOUN/r_c/poss} Clanmates."
                         }
                     }
                 ],
@@ -9927,7 +9927,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "When to_cat rushed into the forbidden tunnels, from_cat watched in horror as the earth caved in on {PRONOUN/to_cat/object}."
+                            "cats_from": "from_cat questioned to_cat's judgment after watching {PRONOUN/to_cat/object} recklessly enter the forbidden tunnels and get hurt."
                         }
                     }
                 ],
@@ -10266,7 +10266,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "r_c was tormented by p_l during a training session but seemed to be smiling to {PRONOUN/r_c/self} about it later.",
+                            "cats_from": "r_c was tormented by p_l during a training session, but {PRONOUN/r_c/subject} seemed to be smiling to {PRONOUN/r_c/self} about it later.",
                             "cats_to": "p_l enjoyed messing up r_c's perfect pelt far more than {PRONOUN/p_l/subject} should."
                         }
                     }
@@ -10835,7 +10835,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "r_c helped p_l back to camp in spite of their bickering when p_l tripped over a root."
+                            "cats_from": "When p_l tripped over a root, r_c helped p_l back to camp in spite of their bickering."
                         }
                     }
                 ],
