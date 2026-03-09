@@ -4371,8 +4371,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "WIP",
-                            "cats_to": "WIP"
+                            "cats_from": "from_cat lended an ear to to_cat after a terrible storm ruined what herbs the Clan had.",
+                            "cats_to": "to_cat felt much better after venting {PRONOUN/to_cat/poss} heart out to from_cat."
                         }
                     }
                 ],
@@ -4397,7 +4397,11 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat got hissed at by to_cat after failing to make {PRONOUN/to_cat/object} feel better.",
+                            "cats_to": "to_cat had no time for childish splash fights and told from_cat so in {PRONOUN/from_cat/poss} face."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4408,10 +4412,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "patrol"
                         ],
                         "mutual": true,
                         "values": [
@@ -4419,7 +4423,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat returned to camp in a foul mood after failing to find new herbs to restock the Clan with."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4440,7 +4447,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat stared at to_cat for too long, making the latter very uncomfortable."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4474,7 +4484,11 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat tried {PRONOUN/from_cat/poss} best to cheer up to_cat, and got hissed at for {PRONOUN/from_cat/poss} troubles.",
+                            "cats_to": "to_cat's irritation boiled over at from_cat's kit-like games, leaving ruffled fur and stinging words in {PRONOUN/to_cat/poss} wake."
+                        }
                     }
                 ],
                 "frequency": 4
