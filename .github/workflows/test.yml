@@ -9,7 +9,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - python-version: '3.8'
           - python-version: '3.11'
     steps:
       - uses: actions/checkout@v4
@@ -22,9 +21,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: 'x64'
-      - name: Switch uv Python environment
-        if: matrix.python-version == '3.8'
-        run: uv venv --python 3.8
       - name: install dependencies
         run: uv sync
       - name: Run unit tests
