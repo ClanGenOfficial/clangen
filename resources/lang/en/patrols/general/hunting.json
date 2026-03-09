@@ -6751,5 +6751,604 @@
                 "frequency": 4
             }
         ]
+    },
+    {
+        "patrol_id": "gen_hunt_twolegdenappdare1",
+        "biome": [
+            "forest", "plains", "beach", "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [
+            "rom_two_apps"
+        ],
+        "patrol_art": "gen_hunt_twolegdenappdare",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [2, 2]
+        },
+        "frequency": 2,
+        "intro_text": "{PRONOUN/app2/poss/CAP} eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+        "decline_text": "On second thought, they decide to reline their nests today instead.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall, it works out.",
+                "exp": 20,
+                "prey": [
+                    "small",
+                    "medium"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
+                        "mutual": false,
+                        "values": ["romance", "like"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from convinced to_cat to hunt by the Twoleg dens and found success.",
+                            "cats_to": "to_cat followed from_cat in a risky hunt by the Twoleg dens and found success."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "A friendly Twoleg makes a 'psspsspss' noise and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide-eyed and thrilled by the experience.",
+                "exp": 20,
+                "prey": [
+                    "very_small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "app2"
+                        ],
+                        "mutual": false,
+                        "values": ["romance", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat tasted a little kittypet food together on patrol."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/app1/poss} belly low to the ground. app2 tries to be even sneakier, and so app1 ups {PRONOUN/app1/poss} game, until they're both probably the most obvious pair of cats in the neighborhood.",
+                "exp": 20,
+                "stat_trait": [
+                    "lonesome",
+                    "sneaky",
+                    "strange",
+                    "cunning"
+                ],
+                "can_have_stat": [
+                    "app"
+                ],
+                "prey": [
+                    "small"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat played a silly sneaky game together in a Twolegplace."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Carelessly, app2 is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/app2/subject} {VERB/app2/hear/hears} app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses {PRONOUN/app2/poss} pelt against app1 as they pad home.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romance", "like", "comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a frightening experience with a Twoleg den and began to spend less time with each other."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory.",
+                "exp": 0,
+                "stat_trait": [
+                    "compassionate",
+                    "faithful",
+                    "loving",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "can_have_stat": [
+                    "app"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
+                        "mutual": true,
+                        "values": ["romance", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat's Twoleg adventure turned out to be less exciting than they'd hoped."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Carelessly, app1 is seen by Twolegs and taken from c_n.",
+                "exp": 0,
+                "lost_cats": [
+                    "r_c"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was with to_cat when {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} taken by Twolegs and blamed {PRONOUN/from_cat/self}."
+                        }
+                    }
+                ],
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_thunderpath1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "gen_hunt_thunderpath",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "The patrol comes across the Thunderpath at the edge of their territory.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The patrol crosses the Thunderpath and hunts on the other side.",
+                "exp": 10,
+                "prey": [
+                    "large"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws but a successful haul of prey.",
+                "exp": 10,
+                "prey": [
+                    "large"
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "The patrol stops on the edge of the Thunderpath. s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+                "exp": 10,
+                "stat_skill": [
+                    "CLEVER,1"
+                ],
+                "prey": [
+                    "large"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect", "like"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "to_cat's clever scavenging saved from_cat from having to cross the Thunderpath to hunt."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "s_c is patient enough to wait until the Thunderpath is completely clear, then trot across to hunt on the other side.",
+                "exp": 10,
+                "stat_trait": [
+                    "calm",
+                    "careful",
+                    "insecure",
+                    "nervous",
+                    "sneaky",
+                    "strange",
+                    "responsible",
+                    "thoughtful",
+                    "wise"
+                ],
+                "prey": [
+                    "large"
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c hears a monster thundering towards {PRONOUN/r_c/object}, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {"normal adult": [5, 6]},
+                "text": "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats scatter in all directions, and several of them get hit and die.",
+                "exp": 0,
+                "dead_cats": [
+                    "multi"
+                ],
+                "history_text": {
+                    "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+                    "death": "This cat was hit by a monster and killed."
+                },
+                "frequency": 4
+            },
+            {
+                "text": "r_c is hit by a monster while crossing and dies instantly.",
+                "exp": 0,
+                "dead_cats": [
+                    "r_c"
+                ],
+                "history_text": {
+                    "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+                    "death": "m_c was hit by a monster and killed."
+                },
+                "frequency": 3
+            },
+            {
+                "text": "r_c is hit by a monster and seems quite injured, but miraculously still alive.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "blunt_force_injury"
+                        ],
+                        "scars": [
+                            "MANLEG"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
+                    "death": "m_c was hit by a monster and killed."
+                },
+                "frequency": 3
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_rabbit2",
+        "biome": [
+            "forest", "desert", "mountainous", "plains", "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "gen_hunt_rabbit",
+        "min_cats": 2,
+        "max_cats": 4,
+        "min_max_status": {},
+        "frequency": 4,
+        "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
+        "decline_text": "They watch it go, just as startled.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The patrol rallies almost instantly and manages to corner and catch the rabbit!",
+                "exp": 10,
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to catch a rabbit and felt their trust in each other grow."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down. The patrol congratulates {PRONOUN/s_c/object}.",
+                "exp": 10,
+                "stat_skill": [
+                    "HUNTER,2"
+                ],
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat felt appreciated by to_cat when {PRONOUN/from_cat/subject} caught a rabbit on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's quick reflexes on a hunting patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Claws tearing into the ground, s_c bounds after the rabbit, reaching full sprint before the rest of the patrol has worked out what's going on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/collide/collides} with the fleeing prey, bringing it down in a dramatic tangle of kicking legs.",
+                "exp": 10,
+                "stat_skill": [
+                    "RUNNER,1"
+                ],
+                "prey": [
+                    "large"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed showing off {PRONOUN/from_cat/poss} speed in front of to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was amazed by to_cat's speed in catching a rabbit."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol jumps after it, but the rabbit has too great of a head start.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -2,
+                        "log": {
+                            "cats_from": "from_cat and to_cat felt disappointed in each other after failing to catch a rabbit on patrol."
+                        }
+                    }
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c is quicker than anyone else, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg.",
+                "exp": 0,
+                "stat_skill": [
+                    "RUNNER,1"
+                ],
+                "injury": [
+                    {
+                        "cats": [
+                            "s_c"
+                        ],
+                        "injuries": [
+                            "sprain"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "from_cat discovered to_cat wasn't as good a runner as from_cat had thought after a failed hunt on patrol."
+                        }
+                    }
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_hunt_rabbit3",
+        "biome": [
+            "forest", "desert", "mountainous", "plains", "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "tags": [],
+        "patrol_art": "gen_hunt_rabbit",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "frequency": 4,
+        "intro_text": "A rabbit bursts out from cover, startled by r_c.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/watch/watches} it go, just as startled.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "r_c manages to corner and catch the rabbit!",
+                "exp": 10,
+                "frequency": 4,
+                "prey": ["huge"]
+            },
+            {
+                "text": "s_c reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down.",
+                "exp": 20,
+                "stat_skill": [
+                    "HUNTER,2"
+                ],
+                "prey": [
+                    "huge"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat dragging a huge rabbit back to camp."
+                    }
+                }
+            ]
+            },
+            {
+                "text": "<i>BAM</i>. s_c slams into the rabbit in a tumbling collision of teeth and claws.",
+                "exp": 20,
+                "stat_skill": [
+                    "RUNNER,1"
+                ],
+                "prey": [
+                    "huge"
+                ],
+                "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": 5,
+                    "log":
+                    {
+                        "cats_from": "from_cat saw to_cat dragging a huge rabbit back to camp."
+                    }
+                }
+            ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c jumps after it, but the rabbit has too great of a head start.",
+                "exp": 0,
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c reacts quickly, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg.",
+                "exp": 0,
+                "stat_skill": [
+                    "RUNNER,1"
+                ],
+                "injury": [
+                    {
+                        "cats": [
+                            "s_c"
+                        ],
+                        "injuries": [
+                            "sprain"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "prey": [
+                    "very_small"
+                ],
+                "frequency": 4
+            }
+        ]
     }
 ]

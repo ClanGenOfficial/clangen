@@ -5379,6 +5379,19 @@
                         "log": {
                             "cats_from": "p_l praised app1 for {PRONOUN/app1/poss} focus and enthusiasm on a training patrol."
                         }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat praised from_cat's hunting."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6206,7 +6219,7 @@
                         ],
                         "amount": 7,
                         "log": {
-                            "cats_from": "s_c felt surprising cheerful training with r_c.",
+                            "cats_from": "s_c felt surprisingly cheerful training with r_c.",
                             "cats_to": "r_c noticed s_c's unusual good mood while they were training together."
                         }
                     }
@@ -6555,7 +6568,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c convinced r_c to get playful with {PRONOUN/r_c/poss} mate when they were supposed to be training together."
+                            "cats_from": "s_c convinced r_c to get playful with {PRONOUN/s_c/object} when they were supposed to be training together."
                         }
                     }
                 ],
@@ -9134,7 +9147,7 @@
                         "mutual": false,
                         "values": [
                             "romance",
-                            "like"
+                            "comfort"
                         ],
                         "amount": 10,
                         "log": {
@@ -9485,7 +9498,7 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like"
+                            "comfort"
                         ],
                         "amount": 10,
                         "log": {
