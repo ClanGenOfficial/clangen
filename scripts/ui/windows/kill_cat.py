@@ -7,7 +7,7 @@ import pygame_gui
 
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -26,7 +26,6 @@ class KillCat(GameWindow):
         )
 
         self.the_cat = cat
-        self.take_all = False
 
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         self.heading = pygame_gui.elements.UITextBox(
@@ -38,10 +37,8 @@ class KillCat(GameWindow):
             anchors={"centerx": "centerx"},
         )
 
-        self.one_life_check = UIImageButton(
-            ui_scale(pygame.Rect((25, 150), (34, 34))),
-            "",
-            object_id="@unchecked_checkbox",
+        self.all_lives_check = UICheckbox(
+            (25, 150),
             tool_tip_text=process_text(
                 i18n.t("windows.all_lives_leader_tooltip"),
                 cat_dict,
@@ -49,24 +46,13 @@ class KillCat(GameWindow):
             manager=MANAGER,
             container=self,
         )
-        self.all_lives_check = UIImageButton(
-            ui_scale(pygame.Rect((25, 150), (34, 34))),
-            "",
-            object_id="@checked_checkbox",
-            tool_tip_text=process_text(
-                i18n.t("windows.all_lives_leader_tooltip"),
-                cat_dict,
-            ),
-            manager=MANAGER,
-            container=self,
-        )
+        self.all_lives_check.check()
 
         self.initial = i18n.t("windows.default_death_pronounless")
         self.prompt = None
 
         if not cat.status.is_leader:
             self.all_lives_check.hide()
-            self.one_life_check.hide()
 
         self.death_entry_box = pygame_gui.elements.UITextEntryBox(
             ui_scale(pygame.Rect((25, 55), (400, 75))),
@@ -111,15 +97,16 @@ class KillCat(GameWindow):
                 game.all_screens[GameScreen.PROFILE].screen_switches()
                 self.kill()
             elif event.ui_element == self.all_lives_check:
-                self.take_all = False
-                self.all_lives_check.hide()
-                self.one_life_check.show()
-            elif event.ui_element == self.one_life_check:
-                self.take_all = True
-                self.all_lives_check.show()
-                self.one_life_check.hide()
+                if self.all_lives_check.checked:
+                    self.all_lives_check.uncheck()
+                else:
+                    self.all_lives_check.check()
             elif event.ui_element == self.back_button:
                 game.all_screens[GameScreen.PROFILE].exit_screen()
                 game.all_screens[GameScreen.PROFILE].screen_switches()
 
         return super().process_event(event)
+
+    @property
+    def take_all(self):
+        return self.all_lives_check.checked
