@@ -462,7 +462,6 @@ class Condition_Events:
             "LEGBITE": ["weak leg"],
             "TOETRAP": ["weak leg"],
             "HINDLEG": ["weak leg"],
-            "THROAT": ["damaged throat"],
         }
 
         scarless_conditions = (
@@ -480,7 +479,6 @@ class Condition_Events:
             "recurring shock",
             "lasting grief",
             "persistent headaches",
-            "selective mutism",
         )
 
         got_condition = False
