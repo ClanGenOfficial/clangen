@@ -1657,7 +1657,7 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "trust"
+                            "comfort", "trust"
                         ],
                         "amount": 12,
                         "log": {
@@ -1708,7 +1708,7 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "trust"
+                            "comfort", "trust"
                         ],
                         "amount": 12,
                         "log": {
@@ -1722,7 +1722,7 @@
                         "values": ["comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat were amazed by the size of the thunderbeasts together."
+                            "cats_from": "from_cat and to_cat were both amazed by the size of the thunderbeasts they saw while patrolling."
                         }
                     }
                 ],
@@ -1767,7 +1767,7 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "trust"
+                            "comfort", "trust"
                         ],
                         "amount": 15,
                         "log": {
@@ -3293,7 +3293,7 @@
                 "text": "When p_l stops the patrol at the entrance to an abandoned badger sett and asks if the apprentices know why c_n values every safe burrow and underground haven, s_c pipes up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/know/knows}! It's because these are the places c_n retreat to in times of danger!",
                 "exp": 40,
                 "can_have_stat": [
-                    "app"
+                    "app1"
                 ],
                 "stat_skill": [
                     "CAMP,0",
