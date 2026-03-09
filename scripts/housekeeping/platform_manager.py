@@ -1,4 +1,8 @@
 import pygame
+import sys
+import os
+import time
+import logging
 from typing import Protocol
 
 class PlatformManager(Protocol):
@@ -16,6 +20,10 @@ class PlatformManager(Protocol):
         """Updates platform-specific state, such as native keyboard tracking."""
         ...
 
+    def configure_logging(self):
+        """Configures system-wide logging, including stdout/stderr redirection if appropriate."""
+        ...
+
 
 class DesktopManager:
     """Default manager for desktop platforms (Windows, macOS, Linux)."""
@@ -28,6 +36,44 @@ class DesktopManager:
 
     def update(self):
         pass
+
+    def configure_logging(self):
+        from scripts.housekeeping.datadir import get_log_dir
+        from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
+        from scripts.housekeeping.log_cleanup import prune_logs
+
+        timestr = time.strftime("%Y%m%d_%H%M%S")
+
+        try:
+            stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a")
+            stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a")
+            sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
+            sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
+        except (IOError, PermissionError):
+            # If we can't open the files, just continue with normal stdout/stderr
+            pass
+
+        formatter = logging.Formatter(
+            "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
+        )
+
+        # Logging for file
+        log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
+        try:
+            file_handler = logging.FileHandler(log_file_name)
+            file_handler.setFormatter(formatter)
+            # Only log errors to file
+            file_handler.setLevel(logging.ERROR)
+            logging.root.addHandler(file_handler)
+        except (IOError, PermissionError):
+            pass
+
+        # Logging for console
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
+        logging.root.addHandler(stream_handler)
+
+        prune_logs(logs_to_keep=10, retain_empty_logs=False)
 
 
 class IOSManager:
@@ -100,6 +146,17 @@ class IOSManager:
                     pygame.key.stop_text_input()
             else:
                 pygame.key.stop_text_input()
+
+    def configure_logging(self):
+        """On iOS, we just use the normal console (stdout/stderr) and don't write to files."""
+        formatter = logging.Formatter(
+            "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
+        )
+
+        # Logging for console only
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
+        logging.root.addHandler(stream_handler)
 
 
 # TODO: I'll clean this up a bit later, eventually this can also manage other platform-specific features like file storage paths, etc.
