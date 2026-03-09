@@ -14600,8 +14600,8 @@
                     "app1"
                 ],
                 "history_text": {
-                    "scar": "r_c carries a scar from when {PRONOUN/r_c/subject} fought with a Clanmate as an apprentice.",
-                    "death": "r_c died when {PRONOUN/r_c/subject} distractedly ran onto the Thunderpath as an apprentice."
+                    "scar": "m_c carries a scar from when {PRONOUN/m_c/subject} fought with a Clanmate as an apprentice.",
+                    "death": "m_c died when {PRONOUN/m_c/subject} distractedly ran onto the Thunderpath as an apprentice."
                 },
                 "relationships": [
                     {
@@ -14635,8 +14635,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c carries a scar from when {PRONOUN/r_c/subject} fought with a Clanmate as an apprentice.",
-                    "death": "r_c died from fighting with a Clanmate as an apprentice."
+                    "scar": "m_c carries a scar from when {PRONOUN/m_c/subject} fought with a Clanmate as an apprentice.",
+                    "death": "m_c died from fighting with a Clanmate as an apprentice."
                 },
                 "relationships": [
                     {
