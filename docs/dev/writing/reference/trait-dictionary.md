@@ -357,7 +357,7 @@ Pop-Culture Examples: Cloudstar (Warrior Cats), Zazu (Lion King); C-3PO (Star Wa
 
 ### **Loving**
 
-***\[0\] lawfulness | \[0\] sociability | \[0\] aggression | \[0\] stability*** 
+***\[6, 13\] lawfulness | \[9, 16\] sociability | \[0, 8\] aggression | \[5, 14\] stability*** 
 
 * "I put my loved ones above all else."
 * "I may become infatuated easily."
