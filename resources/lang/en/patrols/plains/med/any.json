@@ -1479,117 +1479,6 @@
         ]
     },
     {
-        "patrol_id": "pln_med_discussion1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [],
-        "patrol_art": "gen_med_discussion",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "all apprentices": [ -1, -1 ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "p_l and r_c head into the vast open grasslands to look for herbs, discussing the latest news.",
-        "decline_text": "It seems like some mischievous cat has gotten into the herb storage, and p_l has to sort it all over again.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "They have a good discussion while foraging, following their mental maps and scent trails through the seemingly featureless grasslands as familiar as their own pelts. Together, they come up with several ideas to discuss with c_n's leadership.",
-                "exp": 10,
-                "herbs": [
-                    "random_herbs"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Carefully plucking herbs, they discuss the latest signs from StarClan and ponder what to do about them. They think up some tentative plans and return to camp to discuss them with the leader and deputy.",
-                "exp": 10,
-                "herbs": [
-                    "random_herbs"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "They fail to interpret any signs and are too irritated with each other to discuss any other news. Furthermore, neither cat manages to gather anything, because the trip is cut short by the discovery of ominous Twoleg things, piled in an abandoned, stinking heap.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
         "patrol_id": "pln_med_cobwebapps1",
         "biome": [
             "plains"
@@ -1718,18 +1607,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "medicine cat": [2, 2]
         },
         "frequency": 4,
         "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
