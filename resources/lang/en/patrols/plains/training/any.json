@@ -1551,11 +1551,11 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like", "trust"
+                            "respect"
                         ],
                         "amount": -12,
                         "log": {
-                            "cats_from": "app1 refused to listen to p_l's lesson about the thunderbeasts."
+                            "cats_from": "app1 didn't believe that p_l knew what {PRONOUN/p_l/subject} {VERB/p_l/were/was} talking about during a lesson on thunderbeasts."
                         }
                     }
                 ],
@@ -2162,11 +2162,11 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like", "trust"
+                            "respect"
                         ],
                         "amount": -12,
                         "log": {
-                            "cats_from": "app1 refused to listen to p_l's lesson about tunnel navigation."
+                            "cats_from": "app1 didn't believe that p_l knew what {PRONOUN/p_l/subject} {VERB/p_l/were/was} talking about during a lesson on tunnel navigation."
                         }
                     }
                 ],
@@ -2201,11 +2201,11 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like", "trust"
+                            "trust"
                         ],
                         "amount": -12,
                         "log": {
-                            "cats_from": "app1 refused to take p_l's lesson about the tunnels seriously."
+                            "cats_from": "app1 didn't believe that p_l knew what {PRONOUN/p_l/subject} {VERB/p_l/were/was} talking about during a lesson on the tunnels."
                         }
                     }
                 ],
@@ -2529,12 +2529,11 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "app1 didn't take p_l's lesson about tunnel navigation seriously."
+                            "cats_from": "app1 didn't believe that p_l knew what {PRONOUN/p_l/subject} {VERB/p_l/were/was} talking about during a lesson on tunnel navigation."
                         }
                     },
                     {
@@ -4217,29 +4216,14 @@
                         "cats_from": [
                             "app1", "app2", "app3", "app4", "app5"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "comfort"
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat brought from_cat close to the thunderpath for a lesson in safety, but from_cat found it too frightening and ran off."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "app1", "app2", "app3", "app4", "app5"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "to_cat brought from_cat close to the thunderpath for a lesson in safety, but from_cat found it too frightening and ran off."
+                            "cats_from": "to_cat brought from_cat close to the thunderpath for a lesson in safety, but from_cat found it too frightening and ran off.",
+                            "cats_to": "to_cat brought from_cat close to the thunderpath for a lesson in safety, but from_cat found it too frightening and ran off."
                         }
                     }
                 ],
