@@ -17,11 +17,10 @@ import sys
 import time
 from importlib import reload
 
-from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
-from scripts.housekeeping.log_cleanup import prune_logs
-from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
+from scripts.housekeeping.datadir import setup_data_dir
 from scripts.housekeeping.version import VERSION_NAME, get_version_info
 from scripts.housekeeping.platform import IS_IOS
+from scripts.housekeeping.platform_manager import get_platform_manager
 
 try:
     directory = os.path.dirname(__file__)
@@ -39,34 +38,10 @@ if os.path.exists("auto-updated"):
     print("New version: " + get_version_info().version_number)
 
 setup_data_dir()
-timestr = time.strftime("%Y%m%d_%H%M%S")
-
-stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a")
-stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a")
-sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
-sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
+get_platform_manager().configure_logging()
 
 # Setup logging
 import logging
-
-formatter = logging.Formatter(
-    "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
-)
-
-# Logging for file
-timestr = time.strftime("%Y%m%d_%H%M%S")
-log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
-file_handler = logging.FileHandler(log_file_name)
-file_handler.setFormatter(formatter)
-# Only log errors to file
-file_handler.setLevel(logging.ERROR)
-# Logging for console
-stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(formatter)
-logging.root.addHandler(file_handler)
-logging.root.addHandler(stream_handler)
-
-prune_logs(logs_to_keep=10, retain_empty_logs=False)
 
 
 def log_crash(logtype, value, tb):
