@@ -3293,7 +3293,7 @@
                 "text": "When p_l stops the patrol at the entrance to an abandoned badger sett and asks if the apprentices know why c_n values every safe burrow and underground haven, s_c pipes up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/know/knows}! It's because these are the places c_n retreat to in times of danger!",
                 "exp": 40,
                 "can_have_stat": [
-                    "app"
+                    "app1"
                 ],
                 "stat_skill": [
                     "CAMP,0",
