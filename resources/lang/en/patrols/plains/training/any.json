@@ -4222,8 +4222,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat brought from_cat close to the thunderpath for a lesson in safety, but from_cat found it too frightening and ran off.",
-                            "cats_to": "to_cat brought from_cat close to the thunderpath for a lesson in safety, but from_cat found it too frightening and ran off."
+                            "cats_from": "to_cat brought from_cat close to the thunderpath for a lesson in safety, but from_cat found it too frightening and ran off."
                         }
                     }
                 ],
