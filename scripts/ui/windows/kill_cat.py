@@ -81,6 +81,8 @@ class KillCat(GameWindow):
                     "",
                     self.death_entry_box.get_text(),
                 )
+                if not death_message:
+                    death_message = self.initial
                 if self.the_cat.status.is_leader:
                     if self.take_all:
                         game.clan.leader_lives = 0
