@@ -260,6 +260,18 @@ class Name:
             else:
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
+    def get_specsuffix_name(self, rank: CatRank = CatRank.LEADER):
+        """
+        Return the cat's name with the appropriate special suffix. If no specsuffix is given for that rank, returns
+        default prefix + suffix. If specsuffix_hidden is true, return default prefix + suffix.
+        :param rank: CatRank matching
+        :return: Cat's name string
+        """
+        if rank in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:
+            return self.prefix + self.names_dict["special_suffixes"][rank]
+
+        return self.prefix + self.suffix
+
     def __repr__(self):
         # Handles predefined suffixes (such as newborns being kit),
         # then suffixes based on ages (fixes #2004, just trust me)
