@@ -45,8 +45,8 @@ class DesktopManager:
         timestr = time.strftime("%Y%m%d_%H%M%S")
 
         try:
-            stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a")
-            stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a")
+            stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a", encoding="utf-8")
+            stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a", encoding="utf-8")
             sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
             sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
         except (IOError, PermissionError):
