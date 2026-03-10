@@ -8,7 +8,7 @@ try:
 except ImportError:
     # On iOS, pgpy will fail to import because we don't install it.
     # Provide a mock so that the consuming code can handle it cleanly.
-    
+
     class MockPGPSignature:
         @classmethod
         def from_blob(cls, *args, **kwargs):

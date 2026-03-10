@@ -955,7 +955,9 @@ class Clan:
                     else:
                         clan.primary_disaster = {}
             else:
-                os.makedirs(get_save_dir() + f"/{game.clan.name}/disasters", exist_ok=True)
+                os.makedirs(
+                    get_save_dir() + f"/{game.clan.name}/disasters", exist_ok=True
+                )
                 clan.primary_disaster = None
                 with open(file_path, "w", encoding="utf-8") as rel_file:
                     json_string = json.dumps(clan.primary_disaster, indent=4)
@@ -985,7 +987,9 @@ class Clan:
                     else:
                         clan.secondary_disaster = {}
             else:
-                os.makedirs(get_save_dir() + f"/{game.clan.name}/disasters", exist_ok=True)
+                os.makedirs(
+                    get_save_dir() + f"/{game.clan.name}/disasters", exist_ok=True
+                )
                 clan.secondary_disaster = None
                 with open(file_path, "w", encoding="utf-8") as rel_file:
                     json_string = json.dumps(clan.secondary_disaster, indent=4)

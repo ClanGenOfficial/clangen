@@ -7,8 +7,10 @@ from typing import Protocol
 
 IS_IOS = getattr(sys, "platform", "") == "ios"
 
+
 class PlatformManager(Protocol):
     """Protocol for platform-specific lifecycle and hardware interactions."""
+
     is_backgrounded: bool
 
     def handle_event(self, event, music_manager) -> bool:
@@ -26,7 +28,9 @@ class PlatformManager(Protocol):
         """Configures system-wide logging, including stdout/stderr redirection if appropriate."""
         ...
 
-    def user_data_dir(self, appname=None, appauthor=None, version=None, roaming=False) -> str:
+    def user_data_dir(
+        self, appname=None, appauthor=None, version=None, roaming=False
+    ) -> str:
         """Returns the platform-specific directory for user data."""
         ...
 
@@ -67,8 +71,12 @@ class DesktopManager:
         timestr = time.strftime("%Y%m%d_%H%M%S")
 
         try:
-            stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a", encoding="utf-8")
-            stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a", encoding="utf-8")
+            stdout_file = open(
+                get_log_dir() + f"/stdout_{timestr}.log", "a", encoding="utf-8"
+            )
+            stderr_file = open(
+                get_log_dir() + f"/stderr_{timestr}.log", "a", encoding="utf-8"
+            )
             sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
             sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
         except (IOError, PermissionError):
@@ -97,8 +105,11 @@ class DesktopManager:
 
         prune_logs(logs_to_keep=10, retain_empty_logs=False)
 
-    def user_data_dir(self, appname=None, appauthor=None, version=None, roaming=False) -> str:
+    def user_data_dir(
+        self, appname=None, appauthor=None, version=None, roaming=False
+    ) -> str:
         from platformdirs import user_data_dir as _user_data_dir
+
         return _user_data_dir(appname, appauthor, version, roaming)
 
     def always_use_fullscreen(self) -> bool:
@@ -145,12 +156,15 @@ class IOSManager:
     def _handle_keyboard_tap(self, event):
         """Re-opens the keyboard if a focused text entry is tapped again."""
         from scripts.game_structure.screen_settings import MANAGER
+
         focus_set = MANAGER.get_focus_set()
         if focus_set:
             mouse_pos = pygame.mouse.get_pos()
             for element in focus_set:
-                if type(element).__name__ in ('UITextEntryLine', 'UITextEntryBox'):
-                    if hasattr(element, 'hover_point') and element.hover_point(mouse_pos[0], mouse_pos[1]):
+                if type(element).__name__ in ("UITextEntryLine", "UITextEntryBox"):
+                    if hasattr(element, "hover_point") and element.hover_point(
+                        mouse_pos[0], mouse_pos[1]
+                    ):
                         pygame.key.start_text_input()
                         try:
                             pygame.key.set_text_input_rect(element.get_abs_rect())
@@ -160,6 +174,7 @@ class IOSManager:
     def update(self):
         """Updates mobile specific state, like text input focus tracking."""
         from scripts.game_structure.screen_settings import MANAGER
+
         focus_set = MANAGER.get_focus_set()
 
         # Detect focus changes
@@ -170,7 +185,7 @@ class IOSManager:
                 text_entry_focused = False
                 target_element = None
                 for element in focus_set:
-                    if type(element).__name__ in ('UITextEntryLine', 'UITextEntryBox'):
+                    if type(element).__name__ in ("UITextEntryLine", "UITextEntryBox"):
                         text_entry_focused = True
                         target_element = element
                         break
@@ -197,11 +212,14 @@ class IOSManager:
         stream_handler.setFormatter(formatter)
         logging.root.addHandler(stream_handler)
 
-    def user_data_dir(self, appname=None, appauthor=None, version=None, roaming=False) -> str:
+    def user_data_dir(
+        self, appname=None, appauthor=None, version=None, roaming=False
+    ) -> str:
         # Try to get the iCloud Ubiquity container
         try:
             from rubicon.objc import ObjCClass
-            NSFileManager = ObjCClass('NSFileManager')
+
+            NSFileManager = ObjCClass("NSFileManager")
             fileManager = NSFileManager.defaultManager
 
             # This returns the URL for the iCloud container defined in your entitlements
@@ -233,6 +251,7 @@ class IOSManager:
     def setup_environment(self, directory: str):
         pass
 
+
 # TODO: I'll clean this up a bit later, eventually this can also manage other platform-specific features like file storage paths, etc.
 # TODO: Also add "require_fullscreen" check to remove IS_IOS throughout the codebase.
 def get_platform_manager() -> PlatformManager:
@@ -240,6 +259,7 @@ def get_platform_manager() -> PlatformManager:
     if IS_IOS:
         return IOSManager()
     return DesktopManager()
+
 
 def user_data_dir(appname=None, appauthor=None, version=None, roaming=False) -> str:
     """Convenience function to get the user data directory from the platform manager."""

@@ -1,8 +1,9 @@
 # === This is require for iOS specific file handling. DO NOT MOVE THIS! ===
-# This is required to allow the game to load files from the app bundle on iOS, 
-# which has an unstable relative path. By adding the app bundle to the start of sys.path, 
+# This is required to allow the game to load files from the app bundle on iOS,
+# which has an unstable relative path. By adding the app bundle to the start of sys.path,
 # we can ensure that imports will work correctly.
 import sys, os
+
 if getattr(sys, "platform", "") == "ios":
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -10,6 +11,7 @@ if getattr(sys, "platform", "") == "ios":
 # ==== DO NOT MOVE THIS IMPORT!
 # ==== DO NOT ADD ANYTHING BEFORE THIS IMPORT!
 import init  # isort: skip
+
 # Load game
 import logging
 import threading
@@ -176,6 +178,7 @@ all_screens.get_screen(GameScreen.START).screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
 
+
 async def main():
     fps = switch_get_value(Switch.fps)
     music_manager.check_music(GameScreen.START)
@@ -233,9 +236,9 @@ async def main():
                 pass
             else:
                 # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-                all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
-                    event
-                )
+                all_screens.get_screen(
+                    game.current_screen.replace(" ", "_")
+                ).handle_event(event)
 
             sound_manager.handle_sound_events(event)
 
@@ -258,7 +261,10 @@ async def main():
                 elif event.key == pygame.K_F3:
                     debug_mode.toggle_debug_mode()
                     # debugmode.toggle_console()
-                elif event.key == pygame.K_F11 and not platform_manager.always_use_fullscreen():
+                elif (
+                    event.key == pygame.K_F11
+                    and not platform_manager.always_use_fullscreen()
+                ):
                     scripts.game_structure.screen_settings.toggle_fullscreen(
                         source_screen=all_screens.screen_dict[
                             switch_get_value(Switch.cur_screen).replace(" ", "_")
@@ -282,7 +288,9 @@ async def main():
             all_screens.get_screen(
                 game.last_screen_forupdate.replace(" ", "_")
             ).exit_screen()
-            all_screens.get_screen(game.current_screen.replace(" ", "_")).screen_switches()
+            all_screens.get_screen(
+                game.current_screen.replace(" ", "_")
+            ).screen_switches()
             game.switch_screens = False
         if (
             not music_manager.audio_disabled
@@ -302,6 +310,7 @@ async def main():
 
         # Yield to browser event loop when compiled with pygbag
         await asyncio.sleep(0)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
