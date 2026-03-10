@@ -1209,7 +1209,7 @@ class Clan:
             self._reputation = 0
 
     @property
-    def temperament(self) -> (str, str):
+    def temperament(self) -> tuple[str, str]:
         """Temperament is determined whenever it's accessed. This makes sure it's always accurate to the
         current cats in the Clan. However, determining Clan temperament is slow!
         Clan temperament should be used as sparsely as possible, since
@@ -1509,7 +1509,7 @@ class Afterlife:
 
 def get_temper_alignment(
     sociability: int, aggression: int, lawfulness: int, stability: int
-) -> (str, str):
+) -> tuple[str, str]:
     """
     Returns the temperament strings associated with given values
     """
