@@ -19,16 +19,18 @@ from importlib import reload
 
 from scripts.housekeeping.datadir import setup_data_dir
 from scripts.housekeeping.version import VERSION_NAME, get_version_info
-from scripts.housekeeping.platform import IS_IOS
 from scripts.housekeeping.platform_manager import get_platform_manager
 
 try:
-    directory = os.path.dirname(__file__)
+    cwd = os.path.dirname(__file__)
 except NameError:
-    directory = os.getcwd()
+    cwd = os.getcwd()
 
-if directory and not IS_IOS:
-    os.chdir(directory)
+# I think the only reason to change directory here is so when running from
+# source the save game files are created in the correct location - it might be better
+# to change the way to save game path resolution works rather than changing the working directory here
+# would help reduce some code complexity and the risks of bugs and side-effects.
+get_platform_manager().setup_environment(cwd)
 
 if os.path.exists("auto-updated"):
     print("Clangen starting, deleting auto-updated file")

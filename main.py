@@ -40,7 +40,6 @@ from scripts.screens import all_screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.housekeeping.quit_game import quit_game
-from scripts.housekeeping.platform import IS_IOS
 from scripts.housekeeping.platform_manager import get_platform_manager
 
 # P Y G A M E
@@ -259,7 +258,7 @@ async def main():
                 elif event.key == pygame.K_F3:
                     debug_mode.toggle_debug_mode()
                     # debugmode.toggle_console()
-                elif event.key == pygame.K_F11 and not IS_IOS:
+                elif event.key == pygame.K_F11 and not platform_manager.always_use_fullscreen():
                     scripts.game_structure.screen_settings.toggle_fullscreen(
                         source_screen=all_screens.screen_dict[
                             switch_get_value(Switch.cur_screen).replace(" ", "_")

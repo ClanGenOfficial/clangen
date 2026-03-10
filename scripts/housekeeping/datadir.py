@@ -4,7 +4,7 @@ import subprocess
 import logging
 
 from scripts.housekeeping.version import get_version_info
-from scripts.housekeeping.platform import IS_IOS, user_data_dir
+from scripts.housekeeping.platform_manager import IS_IOS, user_data_dir, get_platform_manager
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 def setup_data_dir():
     data_dir = get_data_dir()
     os.makedirs(data_dir, exist_ok=True)
-    
+
     # iOS Migration: Move local files to iCloud if needed
     if IS_IOS and "Documents" in data_dir and "/private/var/mobile/Library/Mobile Documents/" in data_dir:
         local_dir = os.path.join(os.environ.get("HOME", "."), "Documents")
@@ -54,17 +54,12 @@ def setup_data_dir():
 
 
 def get_data_dir():
-    if IS_IOS:
-        if get_version_info().is_dev():
-            return user_data_dir("ClanGenBeta", "ClanGen")
-        return user_data_dir("ClanGen", "ClanGen")
 
-    if get_version_info().is_source_build:
+    if get_platform_manager().is_source_build():
         return "."
 
-    if get_version_info().is_dev():
-        return user_data_dir("ClanGenBeta", "ClanGen")
-    return user_data_dir("ClanGen", "ClanGen")
+    appname = "ClanGenBeta" if get_version_info().is_dev() else "ClanGen"
+    return user_data_dir(appname, "ClanGen")
 
 
 def get_log_dir():

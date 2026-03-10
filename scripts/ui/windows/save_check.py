@@ -20,7 +20,7 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.housekeeping.quit_game import quit_game
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
-from scripts.housekeeping.platform import IS_IOS
+from scripts.housekeeping.platform_manager import get_platform_manager
 
 
 class SaveCheckWindow(GameWindow):
@@ -63,7 +63,7 @@ class SaveCheckWindow(GameWindow):
                 container=self,
                 anchors={"centerx": "centerx"},
             )
-            if IS_IOS:
+            if not get_platform_manager().allow_quit_button():
                 self.main_menu_button.hide()
 
         self.game_over_message = UITextBoxTweaked(

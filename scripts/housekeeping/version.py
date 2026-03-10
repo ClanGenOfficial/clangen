@@ -5,7 +5,7 @@ import sys
 from configparser import ConfigParser
 from importlib.util import find_spec
 
-from scripts.housekeeping.platform import user_data_dir, IS_IOS
+from scripts.housekeeping.platform_manager import get_platform_manager, IS_IOS
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ def get_version_info():
         is_thonny = False
         git_installed = False
 
-        if not getattr(sys, "frozen", False):
+        if get_platform_manager().is_source_build():
             is_source_build = True
 
         if find_spec("thonny") is not None:
@@ -55,7 +55,7 @@ def get_version_info():
         ):
             is_itch = True
 
-        if "itch-player" in user_data_dir().lower():
+        if "itch-player" in get_platform_manager().user_data_dir().lower():
             is_sandboxed = True
 
         get_version_info.instance = VersionInfo(

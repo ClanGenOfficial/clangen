@@ -27,7 +27,7 @@ from ..ui.elements.modified_scrolling_container import UIModifiedScrollingContai
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import open_data_dir
-from scripts.housekeeping.platform import IS_IOS
+from scripts.housekeeping.platform_manager import get_platform_manager
 from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
@@ -307,7 +307,7 @@ class SettingsScreen(Screens):
             },
         )
 
-        if IS_IOS:
+        if get_platform_manager().always_use_fullscreen():
             self.fullscreen_toggle.hide()
 
         self.open_data_directory_button = UISurfaceImageButton(
