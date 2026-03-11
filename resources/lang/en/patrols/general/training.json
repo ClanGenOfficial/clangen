@@ -13958,7 +13958,7 @@
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "like", "comfort"
                         ],
                         "amount": -10,
                         "log": {
