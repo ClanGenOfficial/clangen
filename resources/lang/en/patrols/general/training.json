@@ -13744,7 +13744,7 @@
                         "values": ["comfort"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat out of embarrassment after having a vision in front of {PRONOUN/to_cat/object} on patrol."
+                            "cats_from": "from_cat avoided to_cat out of embarrassment after having a vision in front of {PRONOUN/to_cat/object} while on patrol."
                         }
                     }
                 ],
