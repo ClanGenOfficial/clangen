@@ -16048,7 +16048,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat sought to_cat's advice on whether it's disloyal to befriend kittypets, but to_Cat didn't give {PRONOUN/from_cat/object} a useful answer."
+                            "cats_from": "from_cat sought to_cat's advice on whether it's disloyal to befriend kittypets, but to_cat didn't give {PRONOUN/from_cat/object} a useful answer."
                         }
                     }
                 ],
@@ -16172,7 +16172,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c explains that {PRONOUN/s_c/subject} may one day be in a life or death situation and need to kill. p_l eyes {PRONOUN/s_c/object}, wondering if s_c might secretly be looking forward to that day, but nevertheless agrees to show {PRONOUN/s_c/object} some moves.",
+                "text": "s_c explains that {PRONOUN/s_c/subject} may one day be in a life-or-death situation and need to kill. p_l eyes {PRONOUN/s_c/object}, wondering if s_c might secretly be looking forward to that day, but nevertheless agrees to show {PRONOUN/s_c/object} some moves.",
                 "exp": 10,
                 "can_have_stat": [
                     "app1"
@@ -16194,7 +16194,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "app1 convinced p_l to show {PRONOUN/app1/object} some advanced battle moves in case app1 ever gets into a life or death fight."
+                            "cats_from": "app1 convinced p_l to show {PRONOUN/app1/object} some advanced battle moves in case app1 ever gets into a life-or-death fight."
                         }
                     }
                 ],
@@ -16475,7 +16475,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "app1 convinced p_l to show {PRONOUN/app1/object} some advanced battle moves to help app1 achieve {PRONOUN/app1/poss} ambition to win every fight or spar."
+                            "cats_from": "app1 convinced p_l to show {PRONOUN/app1/object} some advanced battle moves to help app1 achieve {PRONOUN/app1/poss} ambition to win every fight and spar."
                         }
                     }
                 ],
