@@ -400,7 +400,7 @@
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
-        "intro_text": "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
+        "intro_text": "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them, bringing along app1 for an herb-craft lesson.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -421,12 +421,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about gathering betony."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -449,12 +450,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about gathering betony."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -480,12 +482,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about gathering betony."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -498,19 +501,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "trust", 
+                            "respect"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat questioned to_cat's abilities when to_cat was unable to identify betony on an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2164,7 +2168,7 @@
                 "frequency": 1
             },
             {
-                "text": "With the last bits of greenleaf's warmth still lingering in the air, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, {PRONOUN/s_c/subject} {VERB/s_c/let/lets} app1 take the lead in finding the plants and {VERB/s_c/praise/praises} {PRONOUN/app1/object} for all the progress {PRONOUN/app1/subject}{VERB/app1/'ve/'s} made in herbcraft. {PRONOUN/s_c/subject/CAP} feel particularly proud when app1 notices the wild garlic without {PRONOUN/s_c/object} needing to point it out.",
+                "text": "With the last bits of greenleaf's warmth still lingering in the air, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, {PRONOUN/s_c/subject} {VERB/s_c/let/lets} app1 take the lead in finding the plants and {VERB/s_c/praise/praises} {PRONOUN/app1/object} for all the progress {PRONOUN/app1/subject}{VERB/app1/'ve/'s} made in herb-craft. {PRONOUN/s_c/subject/CAP} feel particularly proud when app1 notices the wild garlic without {PRONOUN/s_c/object} needing to point it out.",
                 "exp": 20,
                 "stat_skill": [
                     "SENSE,2"
@@ -2493,7 +2497,7 @@
                 "frequency": 4
             },
             {
-                "text": "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l is pickier with {PRONOUN/p_l/poss} gathering. {PRONOUN/p_l/subject/CAP} {VERB/p_l/choose/chooses} leaves as close to green as possible for maximum usefulness, which {PRONOUN/p_l/subject} {VERB/p_l/find/finds} tends to fade the redder their leaves get. app1 soaks up the information, filing it away in {PRONOUN/app1/poss} ever-increasing herbcraft knowledge.",
+                "text": "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l is pickier with {PRONOUN/p_l/poss} gathering. {PRONOUN/p_l/subject/CAP} {VERB/p_l/choose/chooses} leaves as close to green as possible for maximum usefulness, which {PRONOUN/p_l/subject} {VERB/p_l/find/finds} tends to fade the redder their leaves get. app1 soaks up the information, filing it away in {PRONOUN/app1/poss} ever-increasing herb-craft knowledge.",
                 "exp": 20,
                 "herbs": [
                     "many_herbs",
@@ -5092,7 +5096,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home, including an extra mouthful of elder leaves not wanting any good herb to be left to waste in the harsh frosts. app1 takes on the lesson about leaf color quickly, impressing p_l with {PRONOUN/app1/poss} efforts to learn herbcraft.",
+                "text": "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home, including an extra mouthful of elder leaves not wanting any good herb to be left to waste in the harsh frosts. app1 takes on the lesson about leaf color quickly, impressing p_l with {PRONOUN/app1/poss} efforts to learn herb-craft.",
                 "exp": 20,
                 "herbs": [
                     "elder_leaves",
@@ -5778,7 +5782,7 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them, bringing along app1 for an herbcraft lesson.",
+        "intro_text": "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them, bringing along app1 for an herb-craft lesson.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -6640,7 +6644,7 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with app1, bringing the apprentice for an important herbcraft lesson.",
+        "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with app1, bringing the apprentice for an important herb-craft lesson.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/poss} apprentice along too, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
