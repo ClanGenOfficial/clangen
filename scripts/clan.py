@@ -1218,7 +1218,6 @@ class Clan:
         Clan temperament should be used as sparsely as possible, since
         it's pretty resource-intensive to determine it."""
 
-
         leader = (
             Cat.fetch_cat(self.leader)
             if isinstance(Cat.fetch_cat(self.leader), Cat)

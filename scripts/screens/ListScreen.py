@@ -719,18 +719,9 @@ class ListScreen(Screens):
             else:
                 group = i18n.t(f"general.{self.current_group}")
             if self.current_group == "starclan":
-                if not game.starclan or not game.starclan.influencing_cats:
-                    self.temper_message.hide()
-
-                    # this means there's probably no cats in starclan, so no temper
-                    return ""
                 first_temper, second_temper = game.starclan.temperament
                 temper = f"{i18n.t(f"screens.leader_den.{first_temper}")} & {i18n.t(f"screens.leader_den.{second_temper}")}"
             else:
-                if not game.dark_forest or not game.dark_forest.influencing_cats:
-                    self.temper_message.hide()
-                    # this means there's probably no cats in df, so no temper
-                    return ""
                 first_temper, second_temper = game.dark_forest.temperament
                 temper = f"{i18n.t(f"screens.leader_den.{first_temper}")} & {i18n.t(f"screens.leader_den.{second_temper}")}"
 
