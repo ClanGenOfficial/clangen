@@ -395,14 +395,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -742,14 +736,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -1089,14 +1077,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -1447,14 +1429,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -1786,14 +1762,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -2129,14 +2099,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -2492,14 +2456,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -2901,14 +2859,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -3244,14 +3196,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -3527,14 +3473,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -4131,14 +4071,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -4474,14 +4408,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -4817,14 +4745,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -5160,14 +5082,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -5503,14 +5419,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
