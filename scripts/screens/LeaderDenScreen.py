@@ -768,7 +768,11 @@ class LeaderDenScreen(Screens):
     ) -> float:
         """
         compares two temper ints and finds the chance of failure between them, adds additional modifiers for distance
-        between two tempers on the temperament chart.  returns percent chance of failure
+        between two tempers on the temperament chart.
+        :param player_temper: the temperament to compare from the player clan
+        :param other_temper: the temperament to compare from the other clan
+        :param temper_dict: the temper dict that pertains to the compared tempers
+        :return: the percent chance of failure
         """
 
         player_temper_int = self._find_temper_int(
