@@ -13513,6 +13513,19 @@
                         "log": {
                             "cats_from": "to_cat was tricked by app1 feigning an injury to end a training session early."
                         }
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat ended training early out of concern for to_cat's injured paw, then later discovered to_cat had been lying to get out of training."
+                        }
                     }
                 ],
                 "frequency": 4
