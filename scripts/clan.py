@@ -39,7 +39,10 @@ from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
-from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
+from scripts.clan_package.get_clan_cats import (
+    get_living_clan_cat_count,
+    find_alive_cats_with_rank,
+)
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 
@@ -1215,12 +1218,7 @@ class Clan:
         Clan temperament should be used as sparsely as possible, since
         it's pretty resource-intensive to determine it."""
 
-        all_cats = [
-            i
-            for i in Cat.all_cats_list
-            if i.status.rank not in (CatRank.LEADER, CatRank.DEPUTY)
-            and i.status.alive_in_player_clan
-        ]
+
         leader = (
             Cat.fetch_cat(self.leader)
             if isinstance(Cat.fetch_cat(self.leader), Cat)
@@ -1231,77 +1229,67 @@ class Clan:
             if isinstance(Cat.fetch_cat(self.deputy), Cat)
             else None
         )
+        medicine_cats = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT])
 
-        weight = 0.3
+        all_other_cats = [
+            i
+            for i in Cat.all_cats_list
+            if i.status.rank
+            not in (CatRank.LEADER, CatRank.DEPUTY, CatRank.MEDICINE_CAT)
+            and i.status.alive_in_player_clan
+        ]
 
-        if (leader or deputy) and all_cats:
-            clan_sociability = round(
-                (1 - weight)
-                * statistics.mean(
-                    [i.personality.sociability for i in (leader, deputy) if i]
-                )
-                + weight
-                * statistics.median([i.personality.sociability for i in all_cats])
+        sociability_list = []
+        aggression_list = []
+        lawfulness_list = []
+        stability_list = []
+
+        if leader:
+            sociability_list += [leader.personality.sociability] * 3
+            aggression_list += [leader.personality.aggression] * 3
+            lawfulness_list += [leader.personality.lawfulness] * 3
+            stability_list += [leader.personality.stability] * 3
+
+        if deputy:
+            sociability_list += [deputy.personality.sociability] * 2
+            aggression_list += [deputy.personality.aggression] * 2
+            lawfulness_list += [deputy.personality.lawfulness] * 2
+            stability_list += [deputy.personality.stability] * 2
+
+        if medicine_cats:
+            sociability_list.append(
+                statistics.median([i.personality.sociability for i in medicine_cats])
             )
-            clan_aggression = round(
-                (1 - weight)
-                * statistics.mean(
-                    [i.personality.aggression for i in (leader, deputy) if i]
-                )
-                + weight
-                * statistics.median([i.personality.aggression for i in all_cats])
+            aggression_list.append(
+                statistics.median([i.personality.aggression for i in medicine_cats])
             )
-            clan_lawfulness = round(
-                (1 - weight)
-                * statistics.mean(
-                    [i.personality.lawfulness for i in (leader, deputy) if i]
-                )
-                + weight
-                * statistics.median([i.personality.lawfulness for i in all_cats])
+            lawfulness_list.append(
+                statistics.median([i.personality.lawfulness for i in medicine_cats])
             )
-            clan_stability = round(
-                (1 - weight)
-                * statistics.mean(
-                    [i.personality.stability for i in (leader, deputy) if i]
-                )
-                + weight
-                * statistics.median([i.personality.stability for i in all_cats])
+            stability_list.append(
+                statistics.median([i.personality.stability for i in medicine_cats])
             )
-        elif leader or deputy:
-            clan_sociability = round(
-                statistics.mean(
-                    [i.personality.sociability for i in (leader, deputy) if i]
-                )
+
+        if all_other_cats:
+            sociability_list.append(
+                statistics.median([i.personality.sociability for i in all_other_cats])
             )
-            clan_aggression = round(
-                statistics.mean(
-                    [i.personality.aggression for i in (leader, deputy) if i]
-                )
+            aggression_list.append(
+                statistics.median([i.personality.aggression for i in all_other_cats])
             )
-            clan_lawfulness = round(
-                statistics.mean(
-                    [i.personality.lawfulness for i in (leader, deputy) if i]
-                )
+            lawfulness_list.append(
+                statistics.median([i.personality.lawfulness for i in all_other_cats])
             )
-            clan_stability = round(
-                statistics.mean(
-                    [i.personality.stability for i in (leader, deputy) if i]
-                )
+            stability_list.append(
+                statistics.median([i.personality.stability for i in all_other_cats])
             )
-        elif all_cats:
-            clan_sociability = round(
-                statistics.median([i.personality.sociability for i in all_cats])
-            )
-            clan_aggression = round(
-                statistics.median([i.personality.aggression for i in all_cats])
-            )
-            clan_lawfulness = round(
-                statistics.median([i.personality.lawfulness for i in all_cats])
-            )
-            clan_stability = round(
-                statistics.median([i.personality.stability for i in all_cats])
-            )
-        else:
+
+        clan_sociability = round(statistics.mean(sociability_list))
+        clan_aggression = round(statistics.mean(aggression_list))
+        clan_lawfulness = round(statistics.mean(lawfulness_list))
+        clan_stability = round(statistics.mean(stability_list))
+
+        if not leader and not deputy and not all_other_cats:
             print("returned default temper: stoic, observant")
             return "stoic", "observant"
 
