@@ -126,7 +126,7 @@ class Clan:
         # and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
         self._reputation = 80
 
-        self.all_other_clans = []
+        self.all_other_clans: list[OtherClan] = []
         self.other_clan_IDs = []
 
         self.starting_members = starting_members
@@ -1333,7 +1333,12 @@ class OtherClan:
         second_temper_list.extend(_l)
 
     def __init__(
-        self, name="", relations=0, temperament=("", ""), chosen_symbol="", ID: int = 0
+        self,
+        name: str = "",
+        relations: int = 0,
+        temperament: tuple[str, str] = ("", ""),
+        chosen_symbol: str = "",
+        ID: int = 0,
     ):
         self.group_ID = ID
         if not self.group_ID:
@@ -1345,17 +1350,30 @@ class OtherClan:
         self.name = name or choice(clan_names)
         self.relations = relations or randint(8, 12)
 
+        self.temperament: tuple[str, str]
+
         # detect old saves and convert
         if isinstance(temperament, str):
-            self.temperament = (temperament, choice(self.second_temper_list))
+            used_tempers = []
+            for clan in game.clan.all_other_clans:
+                used_tempers.extend(clan.temperament)
+
+            self.temperament = (
+                temperament,
+                choice([x for x in self.second_temper_list if x not in used_tempers]),
+            )
         # assign if a saved temper exists
         elif temperament:
             self.temperament = temperament
         # find temperament
         else:
+            used_tempers = []
+            for clan in game.clan.all_other_clans:
+                used_tempers.extend(clan.temperament)
+
             self.temperament = (
-                choice(self.first_temper_list),
-                choice(self.second_temper_list),
+                choice([x for x in self.first_temper_list if x not in used_tempers]),
+                choice([x for x in self.second_temper_list if x not in used_tempers]),
             )
 
         self.chosen_symbol = (
