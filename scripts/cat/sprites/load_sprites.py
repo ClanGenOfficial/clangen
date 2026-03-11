@@ -291,7 +291,7 @@ class Sprites:
         # Line art
         for sheet in self.POSE_DATA["spritesheet"]:
             self.make_group(sheet, (0, 0), sheet)
-            
+
         # Heterochromia mask
         self.make_group("heterochromiamask", (0, 0), f"heterochromiamask")
 
