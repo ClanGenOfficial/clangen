@@ -1243,18 +1243,21 @@ class Clan:
         lawfulness_list = []
         stability_list = []
 
+        # 3x influence
         if leader:
             sociability_list += [leader.personality.sociability] * 3
             aggression_list += [leader.personality.aggression] * 3
             lawfulness_list += [leader.personality.lawfulness] * 3
             stability_list += [leader.personality.stability] * 3
 
+        # 2x influence
         if deputy:
             sociability_list += [deputy.personality.sociability] * 2
             aggression_list += [deputy.personality.aggression] * 2
             lawfulness_list += [deputy.personality.lawfulness] * 2
             stability_list += [deputy.personality.stability] * 2
 
+        # collective influence
         if medicine_cats:
             sociability_list.append(
                 statistics.median([i.personality.sociability for i in medicine_cats])
@@ -1269,6 +1272,7 @@ class Clan:
                 statistics.median([i.personality.stability for i in medicine_cats])
             )
 
+        # collective influence
         if all_other_cats:
             sociability_list.append(
                 statistics.median([i.personality.sociability for i in all_other_cats])
@@ -1283,6 +1287,7 @@ class Clan:
                 statistics.median([i.personality.stability for i in all_other_cats])
             )
 
+        # mean of [leader, leader, leader, deputy, deputy, medicine_cats, all_other_cats]
         clan_sociability = round(statistics.mean(sociability_list))
         clan_aggression = round(statistics.mean(aggression_list))
         clan_lawfulness = round(statistics.mean(lawfulness_list))
