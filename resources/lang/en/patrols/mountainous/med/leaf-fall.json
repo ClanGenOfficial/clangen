@@ -48,10 +48,13 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "r_c asked about the herbs {PRONOUN/r_c/subject} {VERB/r_c/were/was} gathering with p_l, and {PRONOUN/r_c/subject} appreciated p_l's earnest answers.",
+                            "cats_to": "p_l appreciated that r_c was genuinely interested in the herbs they were gathering together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -74,15 +77,18 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "s_c"
                         ],
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c really enjoyed gathering herbs and chatting with p_l.",
+                            "cats_to": "p_l felt relaxed and happy while gathering herbs with s_c."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -103,10 +109,12 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had little to chat about during a herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -124,18 +132,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
                         "values": [
                             "romance",
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat found to_cat unbearably obnoxious when they went out herb gathering together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -199,10 +210,12 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect"
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "r_c caught p_l when p_l slipped during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -226,15 +239,18 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "s_c"
                         ],
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c really enjoyed gathering herbs and chatting with p_l.",
+                            "cats_to": "p_l felt relaxed and happy while gathering herbs with s_c."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -255,10 +271,12 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had little to chat about during a herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -276,18 +294,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
                         "values": [
                             "romance",
                             "like",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat found to_cat unbearably obnoxious when they went out herb gathering together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -310,18 +331,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them.",
@@ -668,18 +678,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit and p_l heads out to take advantage.",
@@ -1026,18 +1025,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks.",
@@ -1734,18 +1722,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel.",
@@ -2088,18 +2065,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. If dandelions are around, could there be something else needed for the herb storage, too, like wild garlic?",
@@ -2446,18 +2412,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today.",
@@ -2882,18 +2837,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores.",
@@ -3236,18 +3180,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l sniffs the clean, fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze.",
@@ -4134,18 +4067,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores.",
@@ -4488,18 +4410,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores before the plants wither and die off.",
@@ -4842,18 +4753,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it.",
@@ -5196,18 +5096,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves.",
@@ -5550,18 +5439,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall.",
@@ -5904,18 +5782,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them.",
@@ -6423,18 +6290,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As leaf-fall arrives, the raspberry plants burst into fruit, suddenly revealing that several brambles p_l assumed were roses are actually useful for herb harvesting.",
@@ -6788,18 +6644,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them.",
@@ -7153,18 +6998,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "The thyme plants are running out of growing time - p_l better go harvest them before leaf-fall is over.",
@@ -7518,18 +7352,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent.",
