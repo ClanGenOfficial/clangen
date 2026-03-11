@@ -293,7 +293,7 @@ class Sprites:
             self.make_group(sheet, (0, 0), sheet)
             
         # Heterochromia mask
-        self.make_group('heterochromiamask', (0,0), f"heterochromiamask")
+        self.make_group("heterochromiamask", (0, 0), f"heterochromiamask")
 
         # Fading Fog
         for i in range(0, 3):
