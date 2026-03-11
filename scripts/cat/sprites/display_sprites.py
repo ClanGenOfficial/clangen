@@ -204,7 +204,7 @@ def generate_sprite(
                 special_flags=pygame.BLEND_RGBA_MULT,
             )
 
-            # Add patches onto cat.
+            # Add eye onto cat
             new_sprite.blit(eyes2, (0, 0))
 
         if not scars_hidden:
