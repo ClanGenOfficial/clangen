@@ -1704,17 +1704,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat lost {PRONOUN/from_cat/poss} temper with to_cat when to_cat trampled a crucial catmint plant in {PRONOUN/to_cat/poss} excitement about the herb."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1827,12 +1830,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 the basic uses of daisies and dandelions while they gathered herbs."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1855,12 +1859,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 the best techniques for drying and preserving daisies and dandelions."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1879,19 +1884,22 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
                             "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how many daisies and dandelions s_c was able to find, even in leaf-fall.",
+                            "cats_to": "to_cat appreciated from_cat's help carrying home a plentiful harvest of dandelions and daisies."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1904,19 +1912,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": -10
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "When from_cat and to_cat's daisy-gathering mission failed, from_cat struggled not to take {PRONOUN/from_cat/poss} irritation out on to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1939,17 +1947,11 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 4],
+            "normal adult": [2, 5]
         },
         "frequency": 4,
-        "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l assembles a little group of warriors to help {PRONOUN/p_l/object} carry the herbs.",
+        "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l assembles a group of warriors to help {PRONOUN/p_l/object} carry the herbs.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -1966,14 +1968,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
+                            "trust",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering daisies and dandelions."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1992,14 +1997,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
+                            "trust",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering daisies and dandelions."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2021,14 +2029,18 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
+                            "trust",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering daisies and dandelions.",
+                            "cats_to": "to_cat was impressed by how many dandelions and daisies from_cat was able to find during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2044,14 +2056,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
+                            "trust",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was irritated with to_cat for getting sidetracked during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2148,7 +2163,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. p_l smiles fondly as {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} watching app1 playing with them just a few short moons ago. Then another scent touches {PRONOUN/p_l/poss} nose, drawing {PRONOUN/p_l/object} from {PRONOUN/p_l/poss} thoughts, and {PRONOUN/p_l/subject} soon {VERB/p_l/sniff/sniffs} out the wild garlic that was hidden a short distance away. It would be pretty funny to see how app1 will react to this stinky herb!",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. It hasn't been many moons since app1 might have played with such a toy. Then another scent touches {PRONOUN/p_l/poss} nose, drawing {PRONOUN/p_l/object} from {PRONOUN/p_l/poss} thoughts, and {PRONOUN/p_l/subject} soon {VERB/p_l/sniff/sniffs} out the wild garlic that was hidden a short distance away. It would be pretty funny to see how app1 will react to this stinky herb!",
                 "exp": 20,
                 "herbs": [
                     "dandelion",
@@ -2157,19 +2172,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat thought fondly of how recently to_cat was a kit while they gathered dandelions together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2185,19 +2200,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about gathering dandelions, digging up wild garlic bulbs, and preserving their leaves."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2216,19 +2232,22 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "s_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
                             "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was proud of to_cat's progress in herb-craft when to_cat easily identified wild garlic.",
+                            "cats_to": "to_cat was pleased that from_cat trusted {PRONOUN/to_cat/object} to take the lead during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2241,19 +2260,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat got into an argument over whether it was prudent to keep harvesting from a damaged dandelion plant."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2276,9 +2296,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 5],
-            "healer cats": [1, 5],
-            "normal adult": [1, 5]
+            "medicine cat": [1, 4],
+            "healer cats": [1, 4],
+            "normal adult": [2, 5]
         },
         "frequency": 4,
         "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, bringing a group of {PRONOUN/p_l/poss} Clanmates along for the gathering patrol. With this many cats, they might be able to collect some other herbs along the way, too, such as the wild garlic that p_l knows grows near the dandelion patch they're looking for.",
@@ -2298,14 +2318,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering dandelion and wild garlic."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2324,14 +2347,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering dandelion and wild garlic."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2353,14 +2379,34 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering dandelion and wild garlic."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol", "high_social"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat thought it was sweet of to_cat to gather fluffy dandelion heads for the nursery."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2373,7 +2419,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2381,9 +2427,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -10
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat noticed that p_l was in a sour mood after {PRONOUN/p_l/poss} herb-gathering patrol was sidetracked by warriors who wanted to hunt instead."
+                        }
                     }
                 ],
                 "frequency": 4
