@@ -1,5 +1,5 @@
 {
-    "pl": {
+    "en": {
         "kit_amount": {
             "one": "single kitten",
             "many": "litter of %{count} kits"
@@ -10,8 +10,10 @@
         "kitting_death": "%{name} died while kitting.",
         "kitting_death_severe": "%{name} died after a harsh kitting.",
         "half_blood_kitting_thought": {
-            "one": "Is glad that {PRONOUN\/m_c\/poss} kit is safe",
-            "many": "Is glad that {PRONOUN\/m_c\/poss} kits are safe"
-        }
+            "one": "Is glad that {PRONOUN/m_c/poss} kit is safe",
+            "many": "Is glad that {PRONOUN/m_c/poss} kits are safe"
+        },
+        "keep_clan_tradition": "%{name} decided to name the litter according to Clan tradition.",
+        "reject_clan_tradition": "%{name} decided not to name the litter according to Clan tradition."
     }
 }

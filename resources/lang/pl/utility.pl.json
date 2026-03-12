@@ -3,7 +3,7 @@
         "items": {
             "zero": "",
             "one": "%{item1}",
-            "many": "%{item1} and %{item2}"
+            "many": "%{item1} i %{item2}"
         },
         "exclamation": "%{text}!",
         "question": "%{text}?",
@@ -16,6 +16,6 @@
         "seventh": "seventh",
         "eighth": "eighth",
         "ninth": "ninth",
-        "indefinite": "a %{text}"
+        "indefinite": "%{text}"
     }
 }

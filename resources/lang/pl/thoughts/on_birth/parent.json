@@ -1,0 +1,30 @@
+[
+
+    {
+        "id": "gen_new_parent",
+        "thoughts": [
+            "Watches over the new litter",
+            "Is brimming with love",
+            "Is thinking of {PRONOUN/m_c/poss} new responsibilities",
+            "Is in awe of how fast {PRONOUN/m_c/poss} family has grown",
+            "Is taken aback by the intensity of {PRONOUN/m_c/poss} love",
+            "Can't think of anything cuter than {PRONOUN/m_c/poss} new kits",
+            "Looks forward to every little moment to come",
+            "Can barely stand to be separate from the new litter",
+            "Is fascinated by how small {PRONOUN/m_c/poss} new kitten's paws are",
+            "Gushes over every noise {PRONOUN/m_c/poss} kit is making",
+            "Enjoys some very special family moments",
+            "Remembers what a full night of sleep used to feel like",
+            "Realizes how much work kits can be",
+            "Needs a moment away from the new litter"
+        ]
+    },
+        {
+        "id": "gen_new_parent_to_friend",
+        "thoughts": [
+            "Asks r_c to watch over the kits"
+        ],
+            "random_age_constraint": ["young adult", "adult", "senior adult", "senior"],
+            "relationship_constraint": ["trusts"]
+    }
+]

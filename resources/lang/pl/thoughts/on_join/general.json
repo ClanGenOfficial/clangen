@@ -1,0 +1,15 @@
+[
+    {
+        "id": "newly_joined",
+        "thoughts": [
+            "Rozgląda się po obozie ze zdumieniem"
+        ]
+    },
+    {
+        "id": "newly_joined_kit",
+        "thoughts": [
+            "Bezpiecznie leży w żłobku"
+        ],
+        "main_status_constraint": ["kitten", "newborn"]
+    }
+]

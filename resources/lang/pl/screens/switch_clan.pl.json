@@ -1,8 +1,8 @@
 {
     "pl": {
         "current_clan": {
-            "zero": "There is no Clan currently loaded.",
-            "one": "The currently loaded Clan is %{clan}Clan."
+            "zero": "Brak obecnie wczytanego Klanu.",
+            "one": "Obecnie wczytany Klan to Klan %{clan}."
         }
     }
 }

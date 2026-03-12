@@ -1,9 +1,9 @@
 {
-    "pl": {
+    "en": {
         "herb_used": "m_c was given %{herb} as treatment for %{condition}. %{effect}",
-        "mortality_down": "{PRONOUN\/m_c\/subject\/CAP} will be less likely to die.",
-        "duration_down": "{PRONOUN\/m_c\/subject\/CAP} will heal sooner.",
-        "risks_down": "The risks associated with {PRONOUN\/m_c\/poss} condition are lowered.",
+        "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
+        "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
+        "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
         "elder_leaves": {
             "one": "elder leaf bundle",
             "many": "elder leaf bundles"

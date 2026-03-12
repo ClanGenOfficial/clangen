@@ -1,5 +1,5 @@
 {
-    "pl": {
+    "en": {
         "seizure": "seizure",
         "diarrhea": "diarrhea",
         "fleas": "fleas",
@@ -18,6 +18,8 @@
         "constant nightmares": "constant nightmares",
         "grief stricken": "grief-stricken",
         "malnourished": "malnourished",
-        "starving": "starving"
+        "starving": "starving",
+        "tick fever": "tick fever"
+
     }
 }

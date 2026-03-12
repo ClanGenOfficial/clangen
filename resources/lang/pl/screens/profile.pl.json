@@ -23,11 +23,11 @@
         "kill_cat": "zabij",
         "kill_cat_tooltip": "To otworzy dialog pytający o potwierdzenie i pozwoli Ci podać powód śmierci.",
         "destroy_accessory": "usuń akcesoria",
+        "destroy_accessory_tooltip": "To usunie wszystkie akcesoria kota.",
+        "leave_clan": "opuść Klan",
+        "leave_clan_tooltip": "To otworzy dialog pytający o potwierdzenie i pozwoli kotu opuścić Klan.",
         "adoptive_parents": "rodzice adopcyjni",
         "user_notes": "Kliknij ptaszka po lewej, by móc pisać w notatniku.",
-        "guide_thought_sc": "Witam. Sprowadzam martwe koty Klanu %{clan} do Klanu Gwiazdy.",
-        "guide_thought_df": "Witam. Ściągam martwe koty Klanu %{clan} do Mrocznej Puszczy.",
-        "guide_thought_ur": "Witam. Towarzysze martwym kotom Klanu %{clan} w podróży do mistycznych zaświatów.",
         "leader_ceremony": "Ceremonia Przywódcy",
         "eyes_label": "oczy: %{eyes}",
         "pelt_label": "futro: %{pelt}",
@@ -53,6 +53,7 @@
         "change_gender_cis": "zmień na:\npłeć biologiczna",
         "change_gender_transmale": "zmień na: trans\nsamiec",
         "change_gender_transfemale": "zmień na: trans\nsamiczka",
-        "change_gender_nonbinary": "zmień na:\nniebinarne"
+        "change_gender_nonbinary": "zmień na:\nniebinarne",
+        "nutrition_text": "żywienie: %{nutrition_text}"
     }
 }

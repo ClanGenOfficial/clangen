@@ -2,7 +2,8 @@
     "pl": {
         "0": {
             "nominative": "on",
-            "genitive": "go",
+            "genitive": "jego",
+            "genitive_short": "go",
             "dative": "mu",
             "accusative": "go",
             "instrumental": "nim",
@@ -13,6 +14,7 @@
         "1": {
             "nominative": "ona",
             "genitive": "jej",
+            "genitive_short": "jej",
             "dative": "jej",
             "accusative": "ją",
             "instrumental": "nią",
@@ -22,7 +24,8 @@
         },
         "2": {
             "nominative": "ono",
-            "genitive": "no",
+            "genitive": "jeno",
+            "genitive_short": "no",
             "dative": "nu",
             "accusative": "je",
             "instrumental": "niem",
@@ -33,6 +36,7 @@
         "3": {
             "nominative": "oni",
             "genitive": "ich",
+            "genitive_short": "ich",
             "dative": "im",
             "accusative": "ich",
             "instrumental": "nimi",
@@ -43,6 +47,7 @@
         "4": {
             "nominative": "one",
             "genitive": "ich",
+            "genitive_short": "ich",
             "dative": "im",
             "accusative": "je",
             "instrumental": "nimi",

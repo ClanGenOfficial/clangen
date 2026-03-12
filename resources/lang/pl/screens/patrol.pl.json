@@ -55,6 +55,7 @@
         "prey_small": "Upolowano małą ilość zwierzyny.",
         "prey_medium": "Upolowano średnią ilość zwierzyny.",
         "prey_large": "Upolowano dużą ilość zwierzyny.",
-        "prey_huge": "Upolowano ogromną ilość zwierzyny."
+        "prey_huge": "Upolowano ogromną ilość zwierzyny.",
+        "relationship_changed": "Relacje między kotami Klanu zmieniły się."
     }
 }

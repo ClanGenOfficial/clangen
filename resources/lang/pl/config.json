@@ -34,7 +34,6 @@
             "pattern": [
                 "color"
             ],
-            "cat": "",
             "vitiligo": "",
             "amputation": ""
         },
@@ -56,11 +55,10 @@
             },
             {
                 "values": [
-                    4,
-                    5
+                    4
                 ],
                 "format": "list",
-                "pre_value": ", with "
+                "pre_value": ", "
             }
         ]
     },

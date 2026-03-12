@@ -1,130 +1,130 @@
 {
     "pl": {
         "WHITE": {
-            "one": "pale",
-            "many": "pale"
+            "one": "jasny",
+            "many": "jasny"
         },
-        "FULLWHITE": "white",
+        "FULLWHITE": "biały",
         "PALEGREY": {
-            "one": "gray",
-            "many": "pale gray"
+            "one": "szary",
+            "many": "jasnoszary"
         },
         "SILVER": {
-            "one": "silver",
-            "many": "silver"
+            "one": "srebrny",
+            "many": "srebrny"
         },
         "GREY": {
-            "one": "gray",
-            "many": "gray"
+            "one": "szary",
+            "many": "szary"
         },
         "DARKGREY": {
-            "one": "gray",
-            "many": "dark gray"
+            "one": "szary",
+            "many": "ciemnoszary"
         },
         "GHOST": {
-            "one": "black",
-            "many": "black"
+            "one": "czarny",
+            "many": "czarny"
         },
         "BLACK": {
-            "one": "black",
-            "many": "black"
+            "one": "czarny",
+            "many": "czarny"
         },
         "CREAM": {
-            "one": "cream",
-            "many": "cream"
+            "one": "kremowy",
+            "many": "kremowy"
         },
         "PALEGINGER": {
-            "one": "ginger",
-            "many": "pale ginger"
+            "one": "rudy",
+            "many": "jasnorudy"
         },
         "GOLDEN": {
-            "one": "golden",
-            "many": "golden"
+            "one": "złoty",
+            "many": "złoty"
         },
         "GINGER": {
-            "one": "ginger",
-            "many": "ginger"
+            "one": "rudy",
+            "many": "rudy"
         },
         "DARKGINGER": {
-            "one": "ginger",
-            "many": "dark ginger"
+            "one": "rudy",
+            "many": "ciemnorudy"
         },
         "SIENNA": {
-            "one": "ginger",
-            "many": "dark ginger"
+            "one": "rudy",
+            "many": "ciemnorudy"
         },
         "LIGHTBROWN": {
-            "one": "brown",
-            "many": "light brown"
+            "one": "beżowy",
+            "many": "beżowy"
         },
         "LILAC": {
-            "one": "brown",
-            "many": "light brown"
+            "one": "brązowy",
+            "many": "szarobrązowy"
         },
         "BROWN": {
-            "one": "brown",
-            "many": "brown"
+            "one": "brązowy",
+            "many": "brązowy"
         },
         "GOLDEN-BROWN": {
-            "one": "brown",
-            "many": "golden brown"
+            "one": "brązowy",
+            "many": "ciepło brązowy"
         },
         "DARKBROWN": {
-            "one": "brown",
-            "many": "dark brown"
+            "one": "brązowy",
+            "many": "ciemnobrązowy"
         },
         "CHOCOLATE": {
-            "one": "brown",
-            "many": "dark brown"
+            "one": "brązowy",
+            "many": "ciemnobrązowy"
         },
-        "SingleColour": "single color",
-        "SingleColour_long": "%{color}",
-        "TwoColour": "two color",
-        "TwoColour_long": "%{color}",
-        "Tabby": "tabby",
-        "Tabby_long": "%{color} tabby",
-        "Speckled": "speckled",
-        "Speckled_long": "speckled %{color}",
-        "Bengal": "bengal",
-        "Bengal_long": "unusually dappled %{color}",
-        "Marbled": "marbled",
-        "Marbled_long": "%{color} tabby",
+        "SingleColour": "jednokolorowe",
+        "SingleColour_long": "%{color} kot",
+        "TwoColour": "dwukolorowe",
+        "TwoColour_long": "%{color} kot",
+        "Tabby": "pręgowane",
+        "Tabby_long": "pręgowany %{color} kot",
+        "Speckled": "nakrapiane",
+        "Speckled_long": "nakrapiany %{color} kot",
+        "Bengal": "cętkowane",
+        "Bengal_long": "cętkowany %{color} kot",
+        "Marbled": "klasyczne",
+        "Marbled_long": "pręgowany %{color} kot",
         "Ticked": "ticked",
-        "Ticked_long": "%{color} ticked",
+        "Ticked_long": "%{color} kot ticked",
         "Smoke": "smoke",
-        "Smoke_long": "%{color} smoke",
-        "Mackerel": "mackerel",
-        "Mackerel_long": "%{color} tabby",
-        "Classic": "classic",
-        "Classic_long": "%{color} tabby",
-        "Agouti": "agouti",
-        "Agouti_long": "%{color} tabby",
-        "Singlestripe": "single-striped",
-        "Singlestripe_long": "dorsal-striped %{color}",
-        "Rosette": "Rosette",
-        "Rosette_long": "unusually spotted %{color}",
-        "Sokoke": "Sokoke",
-        "Sokoke_long": "%{color} tabby",
-        "Masked": "Masked",
-        "Masked_long": "masked %{color} tabby",
-        "Calico": "calico",
-        "Calico_tabby": "calico tabby",
-        "Tortie": "tortie",
-        "Tortie_tabby": "tortie tabby",
-        "mottled": "mottled",
-        "mottled_long": "%{color} mottled",
-        "point": "%{color} point",
-        "NOTAIL": "no tail",
-        "HALFTAIL": "half a tail",
-        "NOPAW": "three legs",
-        "NOLEFTEAR": "a missing ear",
-        "NORIGHTEAR": "a missing ear",
-        "NOEAR": "no ears",
-        "vitiligo": "vitiligo",
-        "long_furred": "long-furred",
-        "scarred": "scarred",
-        "fur_short": "short",
-        "fur_medium": "medium",
-        "fur_long": "long"
+        "Smoke_long": "%{color} kot smoke",
+        "Mackerel": "makrelowe",
+        "Mackerel_long": "pręgowany %{color} kot",
+        "Classic": "klasyczne",
+        "Classic_long": "pręgowany %{color} kot",
+        "Agouti": "aguti",
+        "Agouti_long": "%{color} kot aguti",
+        "Singlestripe": "z jedną pręgą",
+        "Singlestripe_long": "%{color} kot z grzbietową pręgą",
+        "Rosette": "z rozetkami",
+        "Rosette_long": "%{color} kot z rozetkami",
+        "Sokoke": "sokoke",
+        "Sokoke_long": "pręgowany %{color} kot",
+        "Masked": "maskowane",
+        "Masked_long": "pręgowany %{color} kot",
+        "Calico": "kaliko",
+        "Calico_tabby": "pręgowany kot kaliko",
+        "Tortie": "pstrokate",
+        "Tortie_tabby": "pręgowany pstrokaty kot",
+        "mottled": "pstrokate",
+        "mottled_long": "pstrokaty %{color} kot",
+        "point": "%{color} colorpoint",
+        "NOTAIL": "bez ogona",
+        "HALFTAIL": "z połową ogona",
+        "NOPAW": "z trzema nogami",
+        "NOLEFTEAR": "bez lewego ucha",
+        "NORIGHTEAR": "bez prawego ucha",
+        "NOEAR": "bez uszu",
+        "vitiligo": "bielactwo",
+        "long_furred": "długowłosy",
+        "scarred": "pokryty bliznami",
+        "fur_short": "krótkie",
+        "fur_medium": "średnie",
+        "fur_long": "długie"
     }
 }

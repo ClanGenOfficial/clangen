@@ -13,6 +13,8 @@
         "filter_death": "śmierć",
         "filter_exp": "doświadczenie",
         "filter_id": "ID",
-        "filter_rank": "ranga"
+        "filter_rank": "ranga",
+        "filter_name": "imię",
+        "filter_reverse_name": "imię \u2193"
     }
 }

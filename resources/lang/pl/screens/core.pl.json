@@ -1,11 +1,16 @@
 {
     "pl": {
         "events": "Wydarzenia",
-        "camp": "Obóz",
+        "camp": "⬅┐ Obóz",
+        "header_tooltip": "wróć do obozu",
         "cat_list": "Koty",
         "patrol": "Patrol",
         "allegiances": "Spis Kotów",
         "settings": "Opcje",
+        "clan_settings": "Opcje Klanu",
+        "supplies": "Zasoby",
+        "freshkill": "zwierzyna",
+        "herbs": "zioła",
         "dens": "Legowiska",
         "warriors_den": "legowisko wojowników",
         "leader_den": "legowisko przywódcy",
