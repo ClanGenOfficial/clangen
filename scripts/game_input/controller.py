@@ -6,6 +6,7 @@ from pygame._sdl2 import controller
 
 from typing import Literal, Union
 
+from scripts.game_input.input_abc import InputManager
 from scripts.game_input.action import Action
 from scripts.game_input import custom_events
 
@@ -33,7 +34,7 @@ action_map = {
 }
 
 
-class ControllerManager:
+class ControllerManager(InputManager):
     def __init__(self):
         self.controllers: dict[str, controller.Controller] = {}
         self._last_used_controller: Union[str, None] = None
@@ -63,14 +64,6 @@ class ControllerManager:
         :return: Corresponding Action, or `None` if there's no corresponding Action.
         """
         return action_map.get(event.button)
-
-    def _post_action(self, action: Union[Action, None], event: int):
-        """
-        Posts Action to Pygame events.
-        Event should be one of INPUT_ACTION_PRESSED, BUTTON_PRESSED or BUTTON_RELEASED.
-        """
-        posted_event = pygame.event.Event(event, {"action": action})
-        pygame.event.post(posted_event)
 
     def _normalize_axis(
         self, axis_value: int, axis: Literal["joystick", "trigger"]

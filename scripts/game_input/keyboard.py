@@ -8,6 +8,7 @@ from typing import Union
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_input.action import Action
 from scripts.game_input import custom_events
+from scripts.game_input.input_abc import InputManager
 
 
 action_map = {
@@ -20,7 +21,7 @@ action_map = {
     pygame.K_DOWN: Action.DOWN,
 }
 
-class KeyboardManager:
+class KeyboardManager(InputManager):
     def __init__(self):
         pass
 
@@ -30,14 +31,6 @@ class KeyboardManager:
         :return: Corresponding Action, or `None` if there's no corresponding Action.
         """
         return action_map.get(event.key)
-
-    def _post_action(self, action: Union[Action, None], event: int):
-        """
-        Posts Action to Pygame events.
-        Event should be one of INPUT_ACTION_PRESSED, BUTTON_PRESSED or BUTTON_RELEASED.
-        """
-        posted_event = pygame.event.Event(event, {"action": action})
-        pygame.event.post(posted_event)
 
     def process_event(self, event: pygame.Event):
         """
