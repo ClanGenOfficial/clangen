@@ -28,7 +28,7 @@ class KeyboardManager:
         :param event: Event to get corresponding Action of.
         :return: Corresponding Action, or `None` if there's no corresponding Action.
         """
-        return action_map.get(event.button)
+        return action_map.get(event.key)
 
     def _post_action(self, action: Union[Action, None], event: int):
         """
