@@ -18,13 +18,6 @@ class InputManager(ABC):
     Abstract class for input reading.
     """
 
-    @abstractmethod
-    def _get_action_from_event(self, event: pygame.Event) -> Union[Action, None]:
-        """
-        :param event: Event to get corresponding Action of.
-        :return: Corresponding Action, or `None` if there's no corresponding Action.
-        """
-
     def _post_action(self, action: Union[Action, None], event: int):
         """
         Posts Action to Pygame events.
@@ -66,9 +59,6 @@ class KeyboardManager(InputManager):
         return KeyboardManager.action_map.get(event.key)
 
     def process_event(self, event: pygame.Event):
-        """
-        :param event: Pygame Event to process.
-        """
         if event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             action = self._get_action_from_event(event)
             if action:
@@ -158,9 +148,6 @@ class ControllerManager(InputManager):
             return axis_value / 32768
 
     def process_event(self, event: pygame.Event):
-        """
-        :param event: Pygame Event to process.
-        """
         # have to listen for the joydevice events or else you can't get the instance_id
         if event.type == pygame.JOYDEVICEADDED:
             if controller.is_controller(event.device_index):
