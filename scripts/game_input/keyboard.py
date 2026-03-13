@@ -11,12 +11,13 @@ from scripts.game_input import custom_events
 
 
 action_map = {
-    pygame.K_z: Action.CONFIRM,
-    pygame.K_x: Action.BACK,
+    pygame.K_ESCAPE: Action.BACK,
+    pygame.K_RETURN: Action.CONFIRM,
+    pygame.K_LEFT: Action.PREVIOUS,
+    pygame.K_RIGHT: Action.NEXT,
+    pygame.K_SPACE: Action.SAVE,
     pygame.K_UP: Action.UP,
     pygame.K_DOWN: Action.DOWN,
-    pygame.K_LEFT: Action.LEFT,
-    pygame.K_RIGHT: Action.RIGHT,
 }
 
 class KeyboardManager:
