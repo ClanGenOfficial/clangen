@@ -1686,7 +1686,7 @@
         },
         "misc": {
             "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "20"
+            "text_vert_alignment_padding": "17"
         }
     },
     "#support_leader_button": {
