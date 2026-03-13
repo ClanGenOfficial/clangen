@@ -313,6 +313,9 @@ class Clan:
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
 
+            if self.freshkill_pile and cat.ID not in self.freshkill_pile.nutrition_info:
+                self.freshkill_pile.add_cat_to_nutrition(cat)
+
     def remove_cat(self, ID):  # ID is cat.ID
         """
         This function is for completely removing the cat from the game,
