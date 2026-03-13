@@ -1,4 +1,5 @@
 import logging
+
 logger = logging.getLogger(__name__)
 
 import pygame
@@ -10,6 +11,7 @@ from abc import ABC, abstractmethod
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_input.action import Action
 from scripts.game_input import custom_events
+
 
 class InputManager(ABC):
     """
@@ -36,6 +38,7 @@ class InputManager(ABC):
         """
         :param event: Pygame Event to process.
         """
+
 
 class KeyboardManager(InputManager):
     """
@@ -70,6 +73,7 @@ class KeyboardManager(InputManager):
             action = self._get_action_from_event(event)
             if action:
                 self._post_action(action, custom_events.INPUT_ACTION_PRESSED)
+
 
 class ControllerManager(InputManager):
     """
@@ -140,7 +144,7 @@ class ControllerManager(InputManager):
         call this and then only use it if abs(value) >= CONTROLLER_DEADZONE.
 
         :param axis_value: Raw axis input value.
-        :param axis: Which axis is being used. Either "`joystick`" (thumbstick) or 
+        :param axis: Which axis is being used. Either "`joystick`" (thumbstick) or
                     "`trigger`" (L/R).
         """
         # joysticks can return a value between -32768 and 32767.
