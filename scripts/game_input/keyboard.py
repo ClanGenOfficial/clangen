@@ -10,18 +10,21 @@ from scripts.game_input.action import Action
 from scripts.game_input import custom_events
 from scripts.game_input.input_abc import InputManager
 
-
-action_map = {
-    pygame.K_ESCAPE: Action.BACK,
-    pygame.K_RETURN: Action.CONFIRM,
-    pygame.K_LEFT: Action.PREVIOUS,
-    pygame.K_RIGHT: Action.NEXT,
-    pygame.K_SPACE: Action.SAVE,
-    pygame.K_UP: Action.UP,
-    pygame.K_DOWN: Action.DOWN,
-}
-
 class KeyboardManager(InputManager):
+    """
+    Input manager for keyboard inputs.
+    """
+
+    action_map = {
+        pygame.K_ESCAPE: Action.BACK,
+        pygame.K_RETURN: Action.CONFIRM,
+        pygame.K_LEFT: Action.PREVIOUS,
+        pygame.K_RIGHT: Action.NEXT,
+        pygame.K_SPACE: Action.SAVE,
+        pygame.K_UP: Action.UP,
+        pygame.K_DOWN: Action.DOWN,
+    }
+
     def __init__(self):
         pass
 
@@ -30,7 +33,7 @@ class KeyboardManager(InputManager):
         :param event: Event to get corresponding Action of.
         :return: Corresponding Action, or `None` if there's no corresponding Action.
         """
-        return action_map.get(event.key)
+        return KeyboardManager.action_map.get(event.key)
 
     def process_event(self, event: pygame.Event):
         """

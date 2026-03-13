@@ -10,31 +10,34 @@ from scripts.game_input.input_abc import InputManager
 from scripts.game_input.action import Action
 from scripts.game_input import custom_events
 
-# deadzone
-CONTROLLER_DEADZONE = 0.35
-
-# CONTROLLER LAYOUT FOR XBOX AND PS4:
-#   Y
-# X   B
-#   A
-#
-# CONTROLLER LAYOUT FOR NINTENDO
-#   X
-# Y   A
-#   B
-action_map = {
-    pygame.CONTROLLER_BUTTON_A: Action.CONFIRM,
-    pygame.CONTROLLER_BUTTON_B: Action.BACK,
-    pygame.CONTROLLER_BUTTON_DPAD_UP: Action.UP,
-    pygame.CONTROLLER_BUTTON_DPAD_DOWN: Action.DOWN,
-    pygame.CONTROLLER_BUTTON_DPAD_LEFT: Action.LEFT,
-    pygame.CONTROLLER_BUTTON_DPAD_RIGHT: Action.RIGHT,
-    pygame.CONTROLLER_BUTTON_LEFTSHOULDER: Action.PREVIOUS,
-    pygame.CONTROLLER_BUTTON_RIGHTSHOULDER: Action.NEXT,
-}
-
-
 class ControllerManager(InputManager):
+    """
+    Input manager for controller inputs.
+    """
+
+    # deadzone
+    CONTROLLER_DEADZONE = 0.35
+
+    # CONTROLLER LAYOUT FOR XBOX AND PS4:
+    #   Y
+    # X   B
+    #   A
+    #
+    # CONTROLLER LAYOUT FOR NINTENDO
+    #   X
+    # Y   A
+    #   B
+    action_map = {
+        pygame.CONTROLLER_BUTTON_A: Action.CONFIRM,
+        pygame.CONTROLLER_BUTTON_B: Action.BACK,
+        pygame.CONTROLLER_BUTTON_DPAD_UP: Action.UP,
+        pygame.CONTROLLER_BUTTON_DPAD_DOWN: Action.DOWN,
+        pygame.CONTROLLER_BUTTON_DPAD_LEFT: Action.LEFT,
+        pygame.CONTROLLER_BUTTON_DPAD_RIGHT: Action.RIGHT,
+        pygame.CONTROLLER_BUTTON_LEFTSHOULDER: Action.PREVIOUS,
+        pygame.CONTROLLER_BUTTON_RIGHTSHOULDER: Action.NEXT,
+    }
+
     def __init__(self):
         self.controllers: dict[str, controller.Controller] = {}
         self._last_used_controller: Union[str, None] = None
@@ -63,7 +66,7 @@ class ControllerManager(InputManager):
         :param event: Event to get corresponding Action of.
         :return: Corresponding Action, or `None` if there's no corresponding Action.
         """
-        return action_map.get(event.button)
+        return ControllerManager.action_map.get(event.button)
 
     def _normalize_axis(
         self, axis_value: int, axis: Literal["joystick", "trigger"]
@@ -128,7 +131,7 @@ class ControllerManager(InputManager):
                 or event.axis == pygame.CONTROLLER_AXIS_RIGHTX
             ):
                 normalized_axis_motion = self._normalize_axis(event.value, "joystick")
-                if abs(normalized_axis_motion) < CONTROLLER_DEADZONE:
+                if abs(normalized_axis_motion) < ControllerManager.CONTROLLER_DEADZONE:
                     return
 
                 if normalized_axis_motion > 0:
@@ -141,7 +144,7 @@ class ControllerManager(InputManager):
                 or event.axis == pygame.CONTROLLER_AXIS_RIGHTY
             ):
                 normalized_axis_motion = self._normalize_axis(event.value, "joystick")
-                if abs(normalized_axis_motion) < CONTROLLER_DEADZONE:
+                if abs(normalized_axis_motion) < ControllerManager.CONTROLLER_DEADZONE:
                     return
 
                 if normalized_axis_motion > 0:
