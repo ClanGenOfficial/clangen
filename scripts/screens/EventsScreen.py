@@ -712,7 +712,7 @@ class EventsScreen(Screens):
         # UPDATE CLAN INFO
         self.clan_info["season"].set_text(
             "screens.events.season",
-            text_kwargs={"season": i18n.t(game.clan.current_season)},
+            text_kwargs={"season": i18n.t(f"general.{game.clan.current_season}")},
         )
         self.clan_info["age"].set_text(
             "screens.events.age", text_kwargs={"count": game.clan.age}
