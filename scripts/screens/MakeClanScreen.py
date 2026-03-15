@@ -1430,9 +1430,10 @@ class MakeClanScreen(Screens):
         self.elements["name_entry"].set_forbidden_characters("forbidden_file_path")
         self.elements["name_entry"].set_text_length_limit(11)
         self.elements["clan"] = pygame_gui.elements.UITextBox(
-            "-Clan",
+            "general.clan",
             ui_scale(pygame.Rect((375, 600), (100, 25))),
             object_id="#text_box_30_horizcenter_light",
+            text_kwargs={"name": "-"},
             manager=MANAGER,
         )
         self.elements["reset_name"] = UISurfaceImageButton(
@@ -1462,9 +1463,10 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(
-            self.clan_name + "Clan",
+            "general.clan",
             ui_scale(pygame.Rect((292, 100), (216, 50))),
             object_id=ObjectID("#text_box_30_horizcenter_vertcenter", "#dark"),
+            text_kwargs={"name": self.clan_name},
             manager=MANAGER,
         )
 
