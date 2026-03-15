@@ -3188,6 +3188,10 @@ class Cat:
                 break
 
     @property
+    def experience_level_string(self):
+        return i18n.t(f"cat.skills.{self.experience_level}")
+
+    @property
     def moons(self):
         return self._moons
 

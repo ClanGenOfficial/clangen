@@ -1011,7 +1011,7 @@ class ProfileScreen(Screens):
 
         # EXPERIENCE
         output += i18n.t(
-            "screens.profile.experience_label", exp=the_cat.experience_level
+            "screens.profile.experience_label", exp=the_cat.experience_level_string
         )
         if get_clan_setting("showxp"):
             output += " (" + str(the_cat.experience) + ")"
