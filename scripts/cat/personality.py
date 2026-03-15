@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from random import randint, choice, choices
 
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure import constants
 
@@ -16,7 +16,7 @@ class Personality:
     with open(
         "resources/dicts/traits/trait_ranges.json", "r", encoding="utf-8"
     ) as read_file:
-        trait_ranges = ujson.loads(read_file.read())
+        trait_ranges = json.loads(read_file.read())
 
     def __init__(
         self,

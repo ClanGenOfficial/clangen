@@ -1,4 +1,4 @@
-import json as ujson
+from utils.json_compat import json
 import collections
 import os
 from os.path import exists as file_exists
@@ -27,7 +27,7 @@ def history_regex_helper(m):
     if not new_history_dict:
         return ""
 
-    dict_text = ujson.dumps(new_history_dict, indent=4)
+    dict_text = json.dumps(new_history_dict, indent=4)
     dict_text = dict_text.replace(
         "\/", "/"
     )  # ujson tries to escape "/", but doesn't end up doing a good job.
@@ -48,7 +48,7 @@ def reformat_history_text(path):
     try:
         with open(path, "r") as read_file:
             patrols = read_file.read()
-            patrol_ujson = ujson.loads(patrols)
+            patrol_ujson = json.loads(patrols)
 
     except:
         print(f"Something went wrong with {path}")
@@ -98,7 +98,7 @@ def patrol_success_regex_helper(m):
     if not new_success_dict:
         return ""
 
-    dict_text = ujson.dumps(new_success_dict, indent=4)
+    dict_text = json.dumps(new_success_dict, indent=4)
     dict_text = dict_text.replace(
         "\/", "/"
     )  # ujson tries to escape "/", but doesn't end up doing a good job.
@@ -119,7 +119,7 @@ def reformat_success_text(path):
     try:
         with open(path, "r") as read_file:
             patrols = read_file.read()
-            patrol_ujson = ujson.loads(patrols)
+            patrol_ujson = json.loads(patrols)
 
     except:
         print(f"Something went wrong with {path}")

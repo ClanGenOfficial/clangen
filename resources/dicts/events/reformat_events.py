@@ -1,4 +1,4 @@
-import json as ujson
+from utils.json_compat import json
 import os
 import re
 
@@ -62,7 +62,7 @@ def reformat(path):
     try:
         with open(path, "r", encoding="utf-8") as read_file:
             events = read_file.read()
-            event_ujson = ujson.loads(events)
+            event_ujson = json.loads(events)
 
     except:
         print(f"Something went wrong with {path}")
@@ -750,7 +750,7 @@ def reformat(path):
 
         # print(new_format["tags"])
 
-        dict_text = ujson.dumps(new_format, indent=4)
+        dict_text = json.dumps(new_format, indent=4)
         dict_text = dict_text.replace(
             "\/", "/"
         )  # ujson tries to escape "/", but doesn't end up doing a good job.

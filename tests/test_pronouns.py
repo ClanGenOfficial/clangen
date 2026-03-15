@@ -12,7 +12,7 @@ import os
 import re
 import sys
 import unittest
-import ujson
+from utils.json_compat import json
 
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
@@ -103,8 +103,8 @@ def _test_replacement_failure(path: str, repl_dict: dict) -> bool:
     success = True
     with open(path, "r", encoding="utf-8") as file:
         try:
-            contents = ujson.loads(file.read())
-        except ujson.JSONDecodeError as _e:
+            contents = json.loads(file.read())
+        except json.JSONDecodeError as _e:
             print(f"::error file={path}::File {path} is invalid json")
             print(_e)
             return False

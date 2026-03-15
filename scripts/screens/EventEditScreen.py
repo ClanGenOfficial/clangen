@@ -5,7 +5,7 @@ from random import choice
 
 import pygame
 import pygame_gui
-import ujson
+from utils.json_compat import json
 
 from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
 from scripts.cat.pelts import Pelt
@@ -51,10 +51,10 @@ class EventEditScreen(Screens):
     """
 
     with open("resources/dicts/events/tags.json", "r", encoding="utf-8") as read_file:
-        TAGS = ujson.loads(read_file.read())
+        TAGS = json.loads(read_file.read())
 
     with open("resources/dicts/events/types.json", "r", encoding="utf-8") as read_file:
-        TYPES = ujson.loads(read_file.read())
+        TYPES = json.loads(read_file.read())
 
     test_cat_names: dict = {
         "m_c": "MainCat",
@@ -725,7 +725,7 @@ class EventEditScreen(Screens):
         try:
             with open(path, "r", encoding="utf-8") as read_file:
                 events = read_file.read()
-                event_list = ujson.loads(events)
+                event_list = json.loads(events)
         except:
             print(f"Something went wrong with event loading. Is {path} valid?")
 

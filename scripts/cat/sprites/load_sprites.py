@@ -3,7 +3,7 @@ import os
 from copy import copy
 
 import pygame
-import ujson
+from utils.json_compat import json
 
 from scripts.cat.enums import CatGroup
 from scripts.game_structure import constants, image_cache
@@ -21,55 +21,55 @@ class Sprites:
     with open(
         "sprites/dicts/pose_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        POSE_DATA = ujson.loads(read_file.read())
+        POSE_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/collar_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        COLLAR_DATA = ujson.loads(read_file.read())
+        COLLAR_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/wild_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        WILD_DATA = ujson.loads(read_file.read())
+        WILD_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/plant_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        PLANT_DATA = ujson.loads(read_file.read())
+        PLANT_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/scar_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        SCAR_DATA = ujson.loads(read_file.read())
+        SCAR_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/scar_missing_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        SCAR_MISSING_PART_DATA = ujson.loads(read_file.read())
+        SCAR_MISSING_PART_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/skin_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        SKIN_DATA = ujson.loads(read_file.read())
+        SKIN_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/tortie_patches_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        TORTIE_DATA = ujson.loads(read_file.read())
+        TORTIE_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/pelt_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        PELT_DATA = ujson.loads(read_file.read())
+        PELT_DATA = json.loads(read_file.read())
 
     with open("sprites/dicts/eye_sprite_data.json", "r", encoding="utf-8") as read_file:
-        EYE_DATA = ujson.loads(read_file.read())
+        EYE_DATA = json.loads(read_file.read())
 
     with open(
         "sprites/dicts/white_patches_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        WHITE_DATA = ujson.loads(read_file.read())
+        WHITE_DATA = json.loads(read_file.read())
 
     def __init__(self):
         """Class that handles and hold all spritesheets.
@@ -92,7 +92,7 @@ class Sprites:
     def load_tints(self):
         try:
             with open("sprites/dicts/tint.json", "r", encoding="utf-8") as read_file:
-                self.cat_tints = ujson.loads(read_file.read())
+                self.cat_tints = json.loads(read_file.read())
         except IOError:
             print("ERROR: Reading Tints")
 
@@ -100,7 +100,7 @@ class Sprites:
             with open(
                 "sprites/dicts/white_patches_tint.json", "r", encoding="utf-8"
             ) as read_file:
-                self.white_patches_tints = ujson.loads(read_file.read())
+                self.white_patches_tints = json.loads(read_file.read())
         except IOError:
             print("ERROR: Reading White Patches Tints")
 
@@ -350,7 +350,7 @@ class Sprites:
             with open(
                 "resources/dicts/clan_symbols.json", encoding="utf-8"
             ) as read_file:
-                self.symbol_dict = ujson.loads(read_file.read())
+                self.symbol_dict = json.loads(read_file.read())
 
         # U and X omitted from letter list due to having no prefixes
         letters = [

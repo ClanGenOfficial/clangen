@@ -1,5 +1,5 @@
 import itertools
-import json
+from utils.json_compat import json
 from typing import List, Union
 
 from pydantic import BaseModel

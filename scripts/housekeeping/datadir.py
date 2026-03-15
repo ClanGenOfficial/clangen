@@ -4,12 +4,47 @@ import subprocess
 import logging
 
 from scripts.housekeeping.version import get_version_info
+from scripts.housekeeping.platform_manager import (
+    IS_IOS,
+    user_data_dir,
+    get_platform_manager,
+)
 
 logger = logging.getLogger(__name__)
 
 
 def setup_data_dir():
-    os.makedirs(get_data_dir(), exist_ok=True)
+    data_dir = get_data_dir()
+    os.makedirs(data_dir, exist_ok=True)
+
+    # iOS Migration: Move local files to iCloud if needed
+    if (
+        IS_IOS
+        and "Documents" in data_dir
+        and "/private/var/mobile/Library/Mobile Documents/" in data_dir
+    ):
+        local_dir = os.path.join(os.environ.get("HOME", "."), "Documents")
+        # If iCloud 'saves' doesn't exist but local 'saves' does, migrate!
+        if not os.path.exists(os.path.join(data_dir, "saves")) and os.path.exists(
+            os.path.join(local_dir, "saves")
+        ):
+            print(f"Migrating local data to iCloud...")
+            import shutil
+
+            for item in os.listdir(local_dir):
+                s = os.path.join(local_dir, item)
+                d = os.path.join(data_dir, item)
+                try:
+                    if os.path.isdir(s):
+                        shutil.copytree(s, d, dirs_exist_ok=True)
+                        shutil.rmtree(s)
+                    else:
+                        shutil.copy2(s, d)
+                        os.remove(s)
+                except Exception as e:
+                    print(f"Error migrating {item}: {e}")
+            print("Migration complete!")
+
     try:
         os.makedirs(get_save_dir(), exist_ok=True)
         os.makedirs(get_temp_dir(), exist_ok=True)
@@ -30,14 +65,11 @@ def setup_data_dir():
 
 
 def get_data_dir():
-    if get_version_info().is_source_build:
+    if get_platform_manager().is_source_build():
         return "."
 
-    from platformdirs import user_data_dir
-
-    if get_version_info().is_dev():
-        return user_data_dir("ClanGenBeta", "ClanGen")
-    return user_data_dir("ClanGen", "ClanGen")
+    appname = "ClanGenBeta" if get_version_info().is_dev() else "ClanGen"
+    return user_data_dir(appname, "ClanGen")
 
 
 def get_log_dir():

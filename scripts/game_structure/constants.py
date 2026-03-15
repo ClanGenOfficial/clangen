@@ -1,7 +1,7 @@
 import tomllib
 
 from pygame import Cursor, image, SYSTEM_CURSOR_ARROW
-import ujson
+from utils.json_compat import json
 
 # these scripts don't import any clangen scripts into themselves, so it's okay for them to be imported here
 from scripts.clan_resources.herb.herb import HERBS
@@ -151,7 +151,7 @@ with open("resources/prey_config.toml", "r", encoding="utf-8") as read_file:
     PREY_CONFIG = tomllib.loads(read_file.read())
 
 with open("resources/placements.json", "r", encoding="utf-8") as read_file:
-    LAYOUTS = ujson.loads(read_file.read())
+    LAYOUTS = json.loads(read_file.read())
 
 CUSTOM_CURSOR = Cursor((9, 0), image.load("resources/images/cursor.png"))
 DEFAULT_CURSOR = Cursor(SYSTEM_CURSOR_ARROW)

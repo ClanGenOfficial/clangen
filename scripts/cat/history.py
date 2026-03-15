@@ -2,7 +2,7 @@ import random
 
 import i18n
 import os
-import ujson
+from utils.json_compat import json
 
 from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
@@ -18,7 +18,7 @@ class History:
     history_options = {}
     if os.path.exists("resources/dicts/history_options.json"):
         with open("resources/dicts/history_options.json", encoding="utf-8") as f:
-            history_options = ujson.load(f)
+            history_options = json.load(f)
 
     def __init__(
         self,

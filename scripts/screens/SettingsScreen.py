@@ -8,7 +8,7 @@ from math import floor
 import i18n
 import pygame
 import pygame_gui
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game.settings import (
@@ -27,6 +27,7 @@ from ..ui.elements.modified_scrolling_container import UIModifiedScrollingContai
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import open_data_dir
+from scripts.housekeeping.platform_manager import get_platform_manager
 from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
@@ -84,7 +85,7 @@ class SettingsScreen(Screens):
     info_text_index = "welcome"
     contributors_start = 0
     with open("resources/credits_text.json", "r", encoding="utf-8") as f:
-        credits_text = ujson.load(f)
+        credits_text = json.load(f)
     for string in credits_text["text"]:
         if string == "{credits}":
             info_text_index = "ogs"
@@ -305,6 +306,9 @@ class SettingsScreen(Screens):
                 )
             },
         )
+
+        if get_platform_manager().always_use_fullscreen():
+            self.fullscreen_toggle.hide()
 
         self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 645), (178, 30))),

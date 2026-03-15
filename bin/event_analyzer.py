@@ -1,8 +1,8 @@
-import json
+from utils.json_compat import json
 import os
 from typing import MutableMapping
 
-import ujson
+from utils.json_compat import json
 
 # Please don't mind this truly horrifying list of global variables.
 # Lord have mercy on my soul
@@ -117,10 +117,10 @@ invalid_records = {
 
 
 with open("../schemas/common.schema.json", "r", encoding="utf-8") as f:
-    schema_common = ujson.load(f)
+    schema_common = json.load(f)
 
 with open("../schemas/shortevent.schema.json", "r", encoding="utf-8") as f:
-    schema_short = ujson.load(f)
+    schema_short = json.load(f)
 
 for i in schema_short["items"]["properties"]["season"]["items"]["enum"]:
     valid_records["season"][i] = []
@@ -296,7 +296,7 @@ def ea_init(directory, blacklist) -> list:
     with open(
         "../resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
     ) as f:
-        data = ujson.loads(f.read())
+        data = json.loads(f.read())
     history_lethal = [
         lethal for lethal in data.values() if lethal["mortality"].values() != 0
     ]

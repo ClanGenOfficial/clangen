@@ -1,4 +1,4 @@
-import json
+from utils.json_compat import json
 import math
 import os
 import re
@@ -42,6 +42,6 @@ def generate_screen_scale(input_file, output_file, multiplier):
         from pathlib import Path
 
         p = Path(output_file)
-        os.makedirs(p.parent)
+        os.makedirs(p.parent, exist_ok=True)
     with open(os.path.abspath(output_file), "w", encoding="utf-8") as writefile:
         json.dump(modified_data, writefile, indent=4)

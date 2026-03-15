@@ -1,0 +1,37 @@
+[app]
+name = "Clan Gen"
+bundle_id = "com.clangen.clangen"
+icon_path = "resources/images/icon.png"
+main_module = "main"
+
+[build]
+pygame_ce_version = "2.5.6"
+development_team = "FC7774V74B"
+source_dir = "."
+# Directories to ignore when copying the source code into the app bundle
+ignore_dirs = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "pygame-ios-template",
+    "build",
+    ".github",
+    ".vscode"
+]
+# C-extensions or packages to exclude from pip installation on iOS
+# (Usually because they are already provided by the template or are incompatible)
+exclude_pip_packages = [
+    "pygame-ce",
+    "pygame",
+    "ujson",
+    "cryptography",
+    "cffi",
+    "pgpy",
+    "pycparser",
+    "-e"
+]
+
+[capabilities]
+icloud = true
+icloud_documents = true
+files_app = true

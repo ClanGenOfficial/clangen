@@ -12,7 +12,7 @@ from random import choice, randint, sample, random, randrange
 from typing import Dict, List, Any, Union, Callable, Optional, TYPE_CHECKING
 
 import i18n
-import ujson  # type: ignore
+from utils.json_compat import json  # type: ignore
 
 import scripts.game_structure.localization as pronouns
 from scripts.cat import save_load, pronouns
@@ -1125,7 +1125,7 @@ class Cat:
             return
         try:
             with open(cat_history_directory, "r", encoding="utf-8") as read_file:
-                history_data = ujson.loads(read_file.read())
+                history_data = json.loads(read_file.read())
 
                 self._history = History(
                     beginning=(
@@ -1182,7 +1182,7 @@ class Cat:
         :type history_dir: str
         """
         if not os.path.exists(history_dir):
-            os.makedirs(history_dir)
+            os.makedirs(history_dir, exist_ok=True)
 
         history_dict = self.history.make_dict()
         try:
@@ -2271,7 +2271,7 @@ class Cat:
 
         try:
             with open(condition_cat_directory, "r", encoding="utf-8") as read_file:
-                rel_data = ujson.loads(read_file.read())
+                rel_data = json.loads(read_file.read())
                 self.illnesses = rel_data.get("illnesses", {})
                 self.injuries = rel_data.get("injuries", {})
                 self.permanent_condition = rel_data.get("permanent conditions", {})
@@ -2756,7 +2756,7 @@ class Cat:
                 return
             try:
                 with open(relation_cat_directory, "r", encoding="utf-8") as read_file:
-                    rel_data = ujson.loads(read_file.read())
+                    rel_data = json.loads(read_file.read())
 
                     for rel in rel_data:
                         # checking validity
@@ -3007,7 +3007,7 @@ class Cat:
                 "r",
                 encoding="utf-8",
             ) as read_file:
-                cat_info = ujson.loads(read_file.read())
+                cat_info = json.loads(read_file.read())
                 # If loading cats is attempted before the Clan is loaded, we would need to use this.
 
         except (
@@ -3023,7 +3023,7 @@ class Cat:
                 "r",
                 encoding="utf-8",
             ) as read_file:
-                cat_info = ujson.loads(read_file.read())
+                cat_info = json.loads(read_file.read())
         except:
             print("ERROR: in loading faded cat")
             return False
@@ -3527,15 +3527,15 @@ game.cat_class = cat_class
 
 resource_directory = "resources/dicts/conditions/"
 with open(f"{resource_directory}illnesses.json", "r", encoding="utf-8") as read_file:
-    ILLNESSES = ujson.loads(read_file.read())
+    ILLNESSES = json.loads(read_file.read())
 
 with open(f"{resource_directory}injuries.json", "r", encoding="utf-8") as read_file:
-    INJURIES = ujson.loads(read_file.read())
+    INJURIES = json.loads(read_file.read())
 
 with open(
     f"{resource_directory}permanent_conditions.json", "r", encoding="utf-8"
 ) as read_file:
-    PERMANENT = ujson.loads(read_file.read())
+    PERMANENT = json.loads(read_file.read())
 
 
 LEAD_CEREMONY_SC: Optional[Dict] = None
@@ -3555,4 +3555,4 @@ def load_leader_ceremonies():
 load_leader_ceremonies()
 
 with open("resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:
-    BACKSTORIES = ujson.loads(read_file.read())
+    BACKSTORIES = json.loads(read_file.read())

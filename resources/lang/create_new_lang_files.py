@@ -1,6 +1,6 @@
 import os
 
-import ujson
+from utils.json_compat import json
 
 
 # CHANGE THIS TO MAKE NEW LANGUAGE
@@ -9,7 +9,7 @@ lang = "es"
 
 def process_json_file(input_path, output_path, lang):
     with open(input_path, "r", encoding="utf-8") as file:
-        data = ujson.load(file)
+        data = json.load(file)
 
     if "en" in data:
         data = {lang: data["en"]}
@@ -17,7 +17,7 @@ def process_json_file(input_path, output_path, lang):
         data = data
 
     with open(output_path, "w", encoding="utf-8") as file:
-        ujson.dump(data, file, indent=4)
+        json.dump(data, file, indent=4)
 
 
 # Folder setup

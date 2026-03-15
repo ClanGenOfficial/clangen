@@ -3,7 +3,7 @@ from typing import Dict, Optional, Union
 
 import pygame
 import pygame_gui
-import ujson
+from utils.json_compat import json
 
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
@@ -596,7 +596,7 @@ class Screens:
             with open(
                 "resources/gamesettings.json", "r", encoding="utf-8"
             ) as read_file:
-                _settings = ujson.loads(read_file.read())
+                _settings = json.loads(read_file.read())
                 return "dark" if _settings["dark mode"] else "light"
 
     # pragma pylint: disable=no-member

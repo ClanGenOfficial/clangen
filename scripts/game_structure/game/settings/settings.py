@@ -1,12 +1,14 @@
+import sys
 import traceback
 from pathlib import Path
 from typing import Any, Tuple, Generator
 
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.screens.enums import GameScreen
+from scripts.housekeeping.platform_manager import get_platform_manager
 
 from ...constants import DISPLAY_SETTINGS
 
@@ -40,7 +42,7 @@ def game_settings_load():
 
     try:
         with open(settings_path, "r", encoding="utf-8") as read_file:
-            settings_data = ujson.loads(read_file.read())
+            settings_data = json.loads(read_file.read())
     except FileNotFoundError:
         return
 
@@ -67,6 +69,8 @@ def game_setting_toggle(setting_name):
 
 
 def game_setting_get(name, *, default=None):
+    if name == "fullscreen" and get_platform_manager().always_use_fullscreen():
+        return True
     return settings.get(name, default)
 
 

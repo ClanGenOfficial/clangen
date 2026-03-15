@@ -1,4 +1,3 @@
-# pylint: disable=line-too-long
 import logging
 import os
 import platform
@@ -7,7 +6,7 @@ from typing import Dict
 
 import pygame
 import pygame_gui
-import ujson
+from utils.json_compat import json
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game.settings import game_setting_get
@@ -27,6 +26,7 @@ from ..game_structure.screen_settings import MANAGER, toggle_fullscreen
 from ..game_structure.constants import DISPLAY_SETTINGS
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from scripts.housekeeping.platform_manager import get_platform_manager
 
 logger = logging.getLogger(__name__)
 
@@ -211,6 +211,8 @@ class ClanSettingsScreen(Screens):
                 "right_target": Screens.menu_buttons["mute_button"],
             },
         )
+        if get_platform_manager().always_use_fullscreen():
+            self.fullscreen_toggle.hide()
         del rect
 
         if get_version_info().is_sandboxed:

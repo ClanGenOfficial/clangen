@@ -2,7 +2,7 @@ import os
 import random
 from random import choice, randint
 
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
@@ -27,7 +27,7 @@ class Relation_Events:
 
     types_path = os.path.join(base_path, "group_interactions", "group_types.json")
     with open(types_path, "r", encoding="utf-8") as read_file:
-        GROUP_TYPES = ujson.load(read_file)
+        GROUP_TYPES = json.load(read_file)
     del base_path
 
     @staticmethod

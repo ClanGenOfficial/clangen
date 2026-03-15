@@ -16,6 +16,7 @@ import os
 import platform
 import subprocess
 import traceback
+import sys
 from html import escape
 
 import pygame
@@ -38,10 +39,11 @@ from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.game.switches import switch_get_value, Switch
-from ..housekeeping.datadir import get_data_dir, get_cache_dir
+from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from scripts.housekeeping.platform_manager import get_platform_manager
 
 logger = logging.getLogger(__name__)
 has_checked_for_update = False
@@ -207,6 +209,10 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
         )
+
+        if not get_platform_manager().allow_quit_button():
+            self.quit.hide()
+
         if constants.CONFIG["dev_tools"]:
             self.event_edit = UISurfaceImageButton(
                 ui_scale(pygame.Rect((70, 15), (200, 30))),

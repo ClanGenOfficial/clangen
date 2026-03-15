@@ -6,7 +6,7 @@ import contextlib
 import os
 import random
 
-import ujson
+from utils.json_compat import json
 
 from scripts.game_structure import constants
 from scripts.cat.enums import CatRank, CatGroup, CatAge
@@ -20,7 +20,7 @@ class Name:
 
     if os.path.exists("resources/dicts/names/names.json"):
         with open("resources/dicts/names/names.json", encoding="utf-8") as read_file:
-            names_dict = ujson.loads(read_file.read())
+            names_dict = json.loads(read_file.read())
 
         if os.path.exists(get_save_dir() + "/prefixlist.txt"):
             with open(

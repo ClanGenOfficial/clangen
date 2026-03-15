@@ -1,7 +1,7 @@
 from typing import Optional, TYPE_CHECKING, Any
 
 import pygame
-import ujson
+from utils.json_compat import json
 
 from scripts.event_class import Single_Event
 from scripts.housekeeping.datadir import get_save_dir
@@ -185,7 +185,7 @@ def add_faded_offspring_to_faded_cat(parent, offspring):
             "r",
             encoding="utf-8",
         ) as read_file:
-            cat_info = ujson.loads(read_file.read())
+            cat_info = json.loads(read_file.read())
     except:
         print("ERROR: loading faded cat")
         return False
@@ -209,7 +209,7 @@ def load_events():
     events_list = []
     try:
         with open(events_path, "r", encoding="utf-8") as f:
-            events_list = ujson.loads(f.read())
+            events_list = json.loads(f.read())
         for event_dict in events_list:
             event_obj = Single_Event.from_dict(event_dict, cat_class)
             if event_obj:
