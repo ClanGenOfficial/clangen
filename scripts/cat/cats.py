@@ -2865,10 +2865,10 @@ class Cat:
         if not int(random() * chance):
             apply_bonus = False
             if sabotage:
-                output += "Sabotage Failed!\n"
+                output += i18n.t("screens.mediation.sabotage_failed")
                 sabotage = False
             else:
-                output += "Mediate Failed!\n"
+                output += i18n.t("screens.mediation.mediate_failed")
                 sabotage = True
         else:
             apply_bonus = True
