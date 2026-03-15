@@ -35,7 +35,7 @@ def recursive_potatofy(debug_data):
     if isinstance(debug_data, dict):
         return {k: recursive_potatofy(v) for k, v in debug_data.items()}
     else:
-        return debug_potatofy(str(debug_data))
+        return debug_potatofy(debug_data) if isinstance(debug_data, str) else debug_data
 
 
 def debug_potatofy(text: str) -> str:
