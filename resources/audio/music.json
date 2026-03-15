@@ -1,10 +1,8 @@
 {
-  "menu_playlist": ["resources/audio/music/Menu_Ambiance.mp3"],
-  "creation_playlist": ["resources/audio/music/Clangen_Generations_441khz.mp3"],
-  "forest_playlist": [],
-  "plains_playlist": [],
-  "beach_playlist": [],
-  "mountainous_playlist": [],
-  "wetlands_playlist": [],
-  "desert_playlist": []
+  "menu_playlist": ["Generations.mp3", "Dawn_Patrol.mp3", "Leafbare.mp3", "Newleaf.mp3", "Moonstone.mp3", "Moonhigh_Vigil.mp3", "Ancient_Tunnels.mp3"],
+
+  "general_playlist": ["Dawn_Patrol.mp3", "Moonstone.mp3", "Moonhigh_Vigil.mp3", "Ancient_Tunnels.mp3"],
+  "leafbare_playlist": ["Leafbare.mp3"],
+  "newleaf_playlist": ["Newleaf.mp3"]
+
 }

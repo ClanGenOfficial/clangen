@@ -115,7 +115,10 @@ class Pregnancy_Events:
 
         # Check if they can have kits.
         can_have_kits = Pregnancy_Events.check_if_can_have_kits(
-            cat, get_clan_setting("single parentage"), get_clan_setting("affair")
+            cat,
+            get_clan_setting("single parentage"),
+            get_clan_setting("unmated parentage"),
+            get_clan_setting("affair"),
         )
         if not can_have_kits:
             return
@@ -129,6 +132,7 @@ class Pregnancy_Events:
             cat,
             second_parent,
             get_clan_setting("single parentage"),
+            get_clan_setting("unmated parentage"),
             get_clan_setting("affair"),
             get_clan_setting("same sex birth"),
             get_clan_setting("same sex adoption"),
@@ -597,7 +601,7 @@ class Pregnancy_Events:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def check_if_can_have_kits(cat, single_parentage, allow_affair):
+    def check_if_can_have_kits(cat, single_parentage, allow_unmated, allow_affair):
         """Check if the given cat can have kits, see for age, birth-cooldown and so on."""
         if not cat:
             return False
@@ -609,7 +613,7 @@ class Pregnancy_Events:
             return False
 
         # decide chances of having kits, and if it's possible at all.
-        # Including - age, dead statis, having kits turned off.
+        # Including - age, dead status, having kits turned off.
         not_correct_age = (
             cat.age in [CatAge.NEWBORN, CatAge.KITTEN, CatAge.ADOLESCENT]
             or cat.moons < 15
@@ -626,8 +630,12 @@ class Pregnancy_Events:
                     )
                     cat.mate.remove(mate_id)
 
-        # If the "single parentage setting in on, we should only allow cats that have mates to have kits.
-        if not single_parentage and len(cat.mate) < 1 and not allow_affair:
+        # If "single parentage", "unmated parentage" and "affair" settings are all off
+        # we should only allow cats that have mates to have kits.
+        if (
+            not (single_parentage or allow_unmated or allow_affair)
+            and len(cat.mate) < 1
+        ):
             return False
 
         # if function reaches this point, having kits is possible
@@ -638,6 +646,7 @@ class Pregnancy_Events:
         cat: Cat,
         second_parent: Cat,
         single_parentage: bool,
+        allow_unmated: bool,
         allow_affair: bool,
         same_sex_birth: bool,
         same_sex_adoption: bool,
@@ -650,7 +659,7 @@ class Pregnancy_Events:
 
         # Checks for second parent alone:
         if not Pregnancy_Events.check_if_can_have_kits(
-            second_parent, single_parentage, allow_affair
+            second_parent, single_parentage, allow_unmated, allow_affair
         ):
             return False, False
 
@@ -678,6 +687,7 @@ class Pregnancy_Events:
         samesex = get_clan_setting("same sex birth")
         allow_affair = get_clan_setting("affair")
         mate = None
+        coparenting = False
 
         # randomly select a mate of given cat
         if len(cat.mate) > 0:
@@ -694,7 +704,7 @@ class Pregnancy_Events:
             if len(opposite_mate) > 0:
                 mate = choice(opposite_mate)
 
-        if not allow_affair:
+        if not allow_affair and mate:
             # if affairs setting is OFF, second parent (mate) will be returned
             return mate, False
 
@@ -705,24 +715,24 @@ class Pregnancy_Events:
         elif mate:
             mate_relation = cat.create_one_relationship(mate)
 
-        # LOVE AFFAIR
+        if len(cat.mate) <= 0:
+            coparenting = True
+
+        # LOVE AFFAIR & COPARENTING
         # Handle love affair chance.
-        affair_partner = Pregnancy_Events.determine_love_affair(
+        affair_partner = Pregnancy_Events.determine_highest_romantic_relation(
             cat, mate, mate_relation, samesex
         )
         if affair_partner:
             return affair_partner, True
 
-        # RANDOM AFFAIR
-        chance = constants.CONFIG["pregnancy"]["random_affair_chance"]
-        special_affair = False
-        if len(cat.mate) <= 0:
-            # Special random affair check only for unmated cats. For this check, only
-            # other unmated cats can be the affair partner.
+        # RANDOM AFFAIR & COPARENTING
+        if coparenting:
             chance = constants.CONFIG["pregnancy"]["unmated_random_affair_chance"]
-            special_affair = True
+        else:
+            chance = constants.CONFIG["pregnancy"]["random_affair_chance"]
 
-        # 'buff' affairs if the current biggest family is big + this cat doesn't belong there
+        # 'buff' affairs & coparenting if the current biggest family is big + this cat doesn't belong there
         if not Pregnancy_Events.biggest_family:
             Pregnancy_Events.set_biggest_family()
 
@@ -732,7 +742,7 @@ class Pregnancy_Events:
         ):
             chance = int(chance * 0.8)
 
-            # "regular" random affair
+        # "regular" random affair
         if not int(random.random() * chance):
             possible_affair_partners = [
                 i
@@ -741,7 +751,7 @@ class Pregnancy_Events:
                 and (samesex or i.gender != cat.gender)
                 and i.ID not in cat.mate
             ]
-            if special_affair:
+            if coparenting:
                 possible_affair_partners = [
                     c for c in possible_affair_partners if len(c.mate) < 1
                 ]
@@ -766,7 +776,7 @@ class Pregnancy_Events:
         return mate, False
 
     @staticmethod
-    def determine_love_affair(cat, mate, mate_relation, samesex):
+    def determine_highest_romantic_relation(cat, mate, mate_relation, samesex):
         """
         Function to handle everything around love affairs.
         Will return a second parent if a love affair is triggerd, and none otherwise.
@@ -785,8 +795,8 @@ class Pregnancy_Events:
                 if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
                     return highest_romantic_relation.cat_to
         elif highest_romantic_relation:
-            # Love affair change if the cat doesn't have a mate:
-            chance_love_affair = Pregnancy_Events.get_unmated_love_affair_chance(
+            # Love affair chance if the cat doesn't have a mate:
+            chance_love_affair = Pregnancy_Events.get_unmated_coparenting_chance(
                 highest_romantic_relation
             )
             if not chance_love_affair or not int(random.random() * chance_love_affair):
@@ -1242,27 +1252,30 @@ class Pregnancy_Events:
         return affair_chance
 
     @staticmethod
-    def get_unmated_love_affair_chance(relation: Relationship):
-        """Get the "love affair" change when neither the cat nor the highest romantic relation have a mate"""
+    def get_unmated_coparenting_chance(relation: Relationship) -> int:
+        """
+        Calculates the chance of coparenting when neither the cat
+        nor highest romantic relation have mates.
+        """
 
         if not relation.opposite_relationship:
             relation.link_relationship()
 
-        affair_chance = 15
+        coparenting_chance = 15
         average_romantic_love = (
             relation.romance + relation.opposite_relationship.romance
         ) / 2
 
         if average_romantic_love > 50:
-            affair_chance -= 12
+            coparenting_chance -= 12
         elif average_romantic_love > 40:
-            affair_chance -= 10
+            coparenting_chance -= 10
         elif average_romantic_love > 30:
-            affair_chance -= 7
+            coparenting_chance -= 7
         elif average_romantic_love > 10:
-            affair_chance -= 5
+            coparenting_chance -= 5
 
-        return affair_chance
+        return coparenting_chance
 
     @staticmethod
     def get_balanced_kit_chance(
@@ -1277,7 +1290,9 @@ class Pregnancy_Events:
 
         # SETTINGS
         # - decrease inverse chance if only mated pairs can have kits
-        if not get_clan_setting("single parentage"):
+        if not get_clan_setting("single parentage") or not get_clan_setting(
+            "unmated parentage"
+        ):
             inverse_chance = int(inverse_chance * 0.7)
 
         # - decrease inverse chance if affairs are not allowed
