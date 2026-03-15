@@ -771,7 +771,7 @@
             "Listens patiently to r_c's confidently wrong opinions",
             "Let {PRONOUN/m_c/poss} Clanmate have the last piece of fresh-kill on the pile this morning",
             "Is pleased by how well the Clan is looking after one another as of late",
-            "Is listening to a Clanmate's struggles with love",
+            "Helps a struggling Clanmate",
             "Lets a Clanmate cry on {PRONOUN/m_c/poss} shoulder",
             "Makes sure to check on a Clanmate who's been having a rough time",
             "Quickly forgives somebody after they snapped at {PRONOUN/m_c/object}",
@@ -1114,15 +1114,16 @@
     {
         "id": "loving_clan_gen",
         "thoughts": [
-            "Is trying to gently correct a Clanmate who is very wrong about something",
             "Purrs all night, so full of love for {PRONOUN/m_c/poss} fellow Clanmates",
+            "Is listening to a Clanmate's struggles with love",
             "Takes a Clanmate out to a beautiful spot in the territory, just for fun",
             "Wants to surprise a Clanmate with a gift",
             "Makes sure to include {PRONOUN/m_c/poss} Clanmates that don't participate much",
             "Quizzes {PRONOUN/m_c/poss} Clanmates on their favorite flowers... just 'cause",
-            "Helps a struggling Clanmate",
             "Compares r_c to a legendary StarClan warrior",
-            "Brings r_c {PRONOUN/r_c/poss} favorite prey"
+            "Brings r_c {PRONOUN/r_c/poss} favorite prey",
+            "Daydreams about a whirlwind romance",
+            "Feels giddy watching two Clanmates flirt"
         ],
         "main_trait_constraint": [
             "loving"
@@ -1171,6 +1172,30 @@
         ],
         "main_trait_constraint": [
             "loving"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "loving_to_mate",
+        "thoughts": [
+            "Is so glad {PRONOUN/m_c/subject} met r_c",
+            "Can't think of anything but r_c",
+            "Will destroy anyone who harms r_c",
+            "Wonders if r_c is thinking about other cats",
+            "Feels proud to be r_c's mate",
+            "Stares at a Clanmate who is getting too friendly with r_c",
+            "Wants to be with r_c forever and ever",
+            "Knows {PRONOUN/m_c/subject} will spend an eternity with r_c in StarClan one day",
+            "Wants to learn every little thing about r_c",
+            "Can't stand to be apart from r_c for long"
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ],
+        "relationship_constraint": [
+            "mates"
         ],
         "random_living_status": [
             "living"
