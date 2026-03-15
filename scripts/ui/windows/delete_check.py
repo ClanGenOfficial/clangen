@@ -1,6 +1,7 @@
 import os
 import shutil
 
+import i18n
 import pygame
 import pygame_gui
 
@@ -27,7 +28,7 @@ class CheckDeletionWindow(GameWindow):
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
-            text_kwargs={"clan": str(self.clan_name + "Clan")},
+            text_kwargs={"clan": i18n.t("general.clan", name=self.clan_name)},
         )
 
         self.delete_it_button = UISurfaceImageButton(
