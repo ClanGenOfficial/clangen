@@ -848,8 +848,8 @@ class PatrolScreen(Screens):
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
         for x in self.patrol_obj.patrol_cats:
-            if x.personality.trait not in traits:
-                traits.append(x.personality.trait)
+            if (t := i18n.t(f"cat.personality.{x.personality.trait}")) not in traits:
+                traits.append(t)
 
             if (
                 x.skills.primary
@@ -1135,8 +1135,10 @@ class PatrolScreen(Screens):
                 ):
                     patrol_skills.append(x.skills.secondary.get_short_skill_string())
 
-                if x.personality.trait not in patrol_traits:
-                    patrol_traits.append(x.personality.trait)
+                if (
+                    t := i18n.t(f"cat.personality.{x.personality.trait}")
+                ) not in patrol_traits:
+                    patrol_traits.append(t)
 
         self.elements["skills_box"].set_text(
             "screens.patrol.current_patrol_info",
