@@ -309,7 +309,7 @@ class EventsScreen(Screens):
             starting_height=1,
             container=self.event_screen_container,
             manager=MANAGER,
-            text_kwargs={"season": i18n.t(game.clan.current_season)},
+            text_kwargs={"season": i18n.t(f"general.{game.clan.current_season}")},
         )
         self.clan_info["age"] = pygame_gui.elements.UITextBox(
             "screens.events.age",
