@@ -724,9 +724,9 @@ class ProfileScreen(Screens):
         output = ""
         # SEX/GENDER
         if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
-            output += the_cat.get_gender_string()
+            output += the_cat.gender_string
         else:
-            output += the_cat.get_genderalign_string()
+            output += the_cat.genderalign_string
         # NEWLINE ----------
         output += "\n"
 
