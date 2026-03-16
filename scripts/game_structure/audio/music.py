@@ -199,12 +199,14 @@ class Music:
             self._stop_timers()
             self._start_music_timer(self.remaining_time_of_paused_track)
 
-    def fade_out(self, fadeout=2000, delay=randint(30, 300)):
+    def fade_out(self, fadeout=2000, delay=None):
         """
         fades the music out and begins the silence timer to count down to next track play
         :param fadeout: length of fadeout in milliseconds
-        :param delay: Dictates the seconds of silence between this track and the next one, including fade time
+        :param delay: Dictates the seconds of silence between this track and the next one, including fade time. Default is random duration between 30 and 300 seconds.
         """
+        if not delay:
+            delay = randint(30, 300)
         if self.channel and self.channel.get_busy():
             self.channel.fadeout(fadeout)
             self._start_silence_timer(max(fadeout, delay))
@@ -237,13 +239,16 @@ class Music:
         self.music_timer.daemon = True
         self.music_timer.start()
 
-    def _start_silence_timer(self, duration=randint(30, 300)):
+    def _start_silence_timer(self, duration=None):
         """
         Clears old music, then sets a timer for the next track to play.  When the timer ends, new music begins.
-        :param duration: length of silence in seconds, by default this is a random duration between 120 and 300 seconds
+        :param duration: length of silence in seconds, by default this is a random duration between 30 and 300 seconds
         """
         if self.silence_timer and self.silence_timer.is_alive():
             return
+
+        if not duration:
+            duration = randint(30, 300)
         self._clear()
         self.silence_timer = AudioTimer(duration, self.play)
         self.silence_timer.daemon = True
