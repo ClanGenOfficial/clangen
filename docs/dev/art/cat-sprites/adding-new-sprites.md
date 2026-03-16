@@ -1,4 +1,4 @@
-# Adding Sprites
+# Modifying Sprites
 If you would like to add new collars, head to [Palette Maps](palette-maps.md) for more information.
 
 !!! important
