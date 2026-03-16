@@ -3007,7 +3007,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c taught app1 to distinguish judge the quality of stems of goldenrod while they gathered herbs together."
+                            "cats_from": "s_c taught app1 to judge the quality of goldenrod stems while they gathered herbs together."
                         }
                     }
                 ],
@@ -3538,21 +3538,6 @@
                 "herbs": [
                     "lungwort"
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -3560,21 +3545,6 @@
                 "exp": 20,
                 "herbs": [
                     "lungwort"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
                 ],
                 "frequency": 1
             },
@@ -3591,16 +3561,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan", "high_social"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was impressed by the quantity of lungwort that to_cat brought back to the camp."
+                        }
                     }
                 ],
                 "frequency": 4
