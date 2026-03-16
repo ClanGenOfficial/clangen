@@ -17377,7 +17377,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was highly impressed when to_cat bested both p_l and r_c in a fight despite {PRONOUN/to_cat/poss} initial reluctance."
+                            "cats_from": "from_cat was highly impressed when to_cat bested both p_l and r_c in a fight, despite {PRONOUN/to_cat/poss} initial reluctance."
                         }
                     },
                     {
