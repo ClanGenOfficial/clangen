@@ -5491,7 +5491,7 @@
                         "cats_from": [
                             "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
                             "trust"
