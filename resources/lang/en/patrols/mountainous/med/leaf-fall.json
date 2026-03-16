@@ -275,7 +275,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had little to chat about during a herb-gathering patrol."
+                            "cats_from": "from_cat and to_cat had little to chat about during an herb-gathering patrol."
                         }
                     }
                 ],
@@ -1709,7 +1709,7 @@
                         "cats_from": [
                             "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
                             "respect"
