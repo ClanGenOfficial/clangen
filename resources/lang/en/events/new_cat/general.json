@@ -1032,7 +1032,7 @@
             ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1072,7 +1072,7 @@
            }
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1108,7 +1108,7 @@
           ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1154,7 +1154,7 @@
           ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1200,7 +1200,7 @@
           ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1248,7 +1248,7 @@
             ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1322,7 +1322,7 @@
             }
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -5
         }
     },
@@ -1370,7 +1370,7 @@
             }
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -5
         }
     },
@@ -1577,5 +1577,521 @@
                 "adjust": "increase_30"
             }
         ]
+    },
+        {
+    "event_id": "gen_new_cat_war_sololoner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a loner caught in the crossfire and, working together, help get {PRONOUN/n_c:0/subject} to safety.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
     }
+},
+    {
+    "event_id": "gen_new_cat_war_solorogue",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a rogue attempting to pick off wounded Clan cats and, working together, chase {PRONOUN/n_c:0/object} away.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_solokittypet",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a kittypet caught in the crossfire and, working together, help get {PRONOUN/n_c:0/object} to safety.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_duoloner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot two loners caught in the crossfire and, working together, help the pair get to safety.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_duorogue",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot two rogues attempting to pick off injured Clan cats and, working together, chase the pair away.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "from_cat chased to_cat away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_duokittypet",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot two kittypets caught in the crossfire and, working together, help the pair get to safety.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat helped to_cat get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+    },
+    {
+    "event_id": "gen_new_cat_war_mediator1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "When a battle against o_c_n spills into a loner's territory, n_c:0 successfully mediates between the two battle patrols so no further harm would come to pass.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 20,
+                "log": {
+                    "cats_from": "from_cat was thankful that to_cat prevented a bloody battle against o_c_n."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_mediator2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "When a battle against o_c_n spills into a loner's territory, n_c:0's attempts to mediate between the two Clans ends with {PRONOUN/n_c:0/poss} being chased away.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "from_cat thinks that to_cat shouldn't have stuck {PRONOUN/n_c:0/poss} nose in c_n's business."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_lonertruce",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "In the midst of a tense stalemate between c_n and o_c_n, it is the suggestion of a passing group of loners that allows for a night of peace between the two Clans.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat will remember the loners who gave their Clan a night of badly needed respite during a war."
+                }
+        },
+        {
+            "cats_from": ["clan", "high_aggress"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "from_cat will remember the loners who foiled a perfectly good battle for their own bleeding hearts."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_rogueretaliate",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "In the midst of a vicious battle between c_n and o_c_n, a large group of rogues takes a chance to weaken both of their enemies in one fell swoop. They did not expect the two Clans to quickly make a temporary truce and retaliate.",
+    "new_cat": [
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "from_cat will remember the rogue who dared to attack c_n so brazenly during a battle against o_c_n."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_kittypetpeace",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "Before a major battle between c_n and o_c_n can take place, their battlefield is overrun by a group of kittypets who refuse to leave and let them fight. Instead, the two Clans intermingle under the hopeful eyes of the gathered cats.",
+    "new_cat": [
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "from_cat will remember the kittypet who dared to stop an entire battle against o_c_n."
+                }
+        },
+        {
+            "cats_from": ["clan", "high_lawful"],
+            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -15,
+            "log": {
+                    "cats_from": "from_cat really thinks that this kittypet should have left the peacemaking for the mediators."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
+}
 ]

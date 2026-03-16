@@ -103,7 +103,7 @@
   },
   {
     "interaction_type": "invite",
-    "event_text": "There's one specific cat, m_c, that keeps regularly upstaging c_n's hunting patrols. However, instead of trying to drive {PRONOUN/m_c/object} out, c_n welcomes m_c with open paws.",
+    "event_text": "There's one specific cat, m_c, that regularly upstages c_n's hunting patrols. However, instead of trying to drive {PRONOUN/m_c/object} out, c_n welcomes m_c with open paws.",
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
@@ -117,31 +117,30 @@
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["like"],
-          "amount": 5
-        },
-        {
-          "cats_from": ["m_c"],
           "cats_to": ["some_clan"],
           "mutual": false,
-          "values": ["trust"],
-          "amount": 5
+          "values": ["like", "trust"],
+          "amount": 5,
+          "log": {
+            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          }
         },
         {
           "cats_from": ["clan"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat heard of to_cat's hunting skills and was glad to hear {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} joining c_n."
+          }
         }
       ]
     }
   },
   {
     "interaction_type": "drive",
-    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey... especially when said outsider is doing it as successfully as m_c is. The yowls that chase m_c to the c_n border and beyond are a clear warning: do not return.",
+    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <i>their</i> prey... especially when said outsider is doing it as successfully as m_c is. The yowls that chase m_c to the c_n border and beyond are a clear warning: do not return.",
     "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
@@ -216,17 +215,23 @@
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
+          "cats_to": ["some_clan"],
           "mutual": false,
-          "values": ["like"],
-          "amount": 5
+          "values": ["like", "trust"],
+          "amount": 5,
+          "log": {
+            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          }
         },
         {
           "cats_from": ["clan"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat heard of to_cat's hunting skills and was glad to hear {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} joining c_n."
+          }
         }
       ]
     }
@@ -261,7 +266,19 @@
       ],
       "new_thought": "Grudgingly admits other cats can be useful sometimes",
       "kit_thought": "Wonders about this new place"
-    }
+    },
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["like", "trust"],
+          "amount": 5,
+          "log": {
+            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          }
+        }
+      ]
   },
   {
     "interaction_type": "invite",
@@ -279,24 +296,23 @@
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["like"],
-          "amount": 5
-        },
-        {
-          "cats_from": ["m_c"],
           "cats_to": ["some_clan"],
           "mutual": false,
-          "values": ["trust"],
-          "amount": 5
+          "values": ["like", "trust"],
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat was glad to be welcomed back into the Clan by to_cat."
+          }
         },
         {
-          "cats_from": ["clan"],
+          "cats_from": ["clan", "high_stable"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat recognized the wisdom of allowing a skilled hunter like to_cat back into the Clan."
+          }
         }
       ]
     }
@@ -353,15 +369,12 @@
     "m_c": {
       "status": ["exiled"],
       "age": ["adolescent", "young adult", "adult", "senior adult"],
-      "skill": [
-        "HUNTER,3"
-      ],
       "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
     }
   },
   {
     "interaction_type": "search",
-    "event_text": "Patrol after patrol has been sent out in search of m_c, always returning without their lost Clanmate. Then, just as the Clan is about to give up all hope, m_c manages to track them down, resulting in a joyful reunion.",
+    "event_text": "Patrol after patrol has been sent out in search of m_c, always returning without their lost Clanmate. Just as the Clan is about to give up all hope, m_c manages to track them down, resulting in a joyful reunion.",
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
@@ -377,15 +390,11 @@
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["like"],
-          "amount": 5
-        },
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["some_clan"],
-          "mutual": false,
-          "values": ["trust"],
-          "amount": 5
+          "values": ["like", "comfort"],
+          "amount": 5,
+          "log": {
+            "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+          }
         }
       ]
     }
@@ -399,16 +408,7 @@
       "status": ["lost"],
       "skill": [  ],
       "new_thought": "Doesn't understand why {PRONOUN/m_c/subject} {VERB/m_c/were/was} killed",
-      "kit_thought": "Wonders what happened to m_c",
-      "relationships": [
-        {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
-          "values": ["like"],
-          "amount": -15
-        }
-      ]
+      "kit_thought": "Wonders what happened to m_c"
     }
   },
   {
@@ -537,7 +537,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "c_n tracks down m_c and corners {PRONOUN/m_c/object}. Despite being outnumbered and backed into a corner, m_c fights 'til the end.",
+    "event_text": "c_n tracks down m_c and corners {PRONOUN/m_c/object}. Despite being outnumbered and backed into a corner, m_c fights until the end.",
     "reputation": ["any"],
     "rep_change": -3,
     "m_c": {
@@ -566,7 +566,27 @@
       "status": ["kittypet" ],
       "new_thought": "Hopes {PRONOUN/m_c/subject} made the right choice",
       "kit_thought": "Takes in the new surroundings with wide eyes"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "trust"],
+        "amount": 5,
+        "log": {
+          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+        }
+      },
+      {
+        "cats_from": ["clan", "high_lawful"],
+        "cats_to": ["m_c"],
+        "values": ["trust"],
+        "amount": -5,
+        "log": {
+          "cats_from": "from_cat was skeptical of allowing a kittypet like to_cat into the Clan."
+        }
+      }
+    ]
   },
   {
     "interaction_type": "invite",
@@ -578,7 +598,18 @@
       "trait": [ "arrogant", "confident", "cunning", "sneaky", "careful" ],
       "new_thought": "Is impressed c_n managed to find {PRONOUN/m_c/object}",
       "kit_thought": "Takes in the new surroundings with wide eyes"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "trust"],
+        "amount": 5,
+        "log": {
+          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+        }
+      }
+    ]
   },
   {
     "interaction_type": "invite",
@@ -590,7 +621,18 @@
       "trait": [ "oblivious" ],
       "new_thought": "Feels very comfortable with {PRONOUN/m_c/poss} choice to join c_n",
       "kit_thought": "Takes in the new surroundings with wide eyes"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "trust"],
+        "amount": 5,
+        "log": {
+          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+        }
+      }
+    ]
   },
   {
     "interaction_type": "invite",
@@ -601,7 +643,18 @@
       "status": ["loner" ],
       "new_thought": "Has met more new cats today than {PRONOUN/m_c/subject} ever {VERB/m_c/have/has} before",
       "kit_thought": "Stares at all the new cats"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "trust"],
+        "amount": 5,
+        "log": {
+          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+        }
+      }
+    ]
   },
   {
     "interaction_type": "invite",
@@ -612,7 +665,18 @@
       "status": [ "rogue" ],
       "new_thought": "Tries to remember all the names of {PRONOUN/m_c/poss} new 'Clanmates'",
       "kit_thought": "Explores their new home"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "trust"],
+        "amount": 5,
+        "log": {
+          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+        }
+      }
+    ]
   },
   {
     "interaction_type": "invite",
@@ -623,7 +687,18 @@
       "status": [ "exiled" ],
       "new_thought": "Tentatively reconnects with {PRONOUN/m_c/poss} old Clanmates",
       "kit_thought": "Is learning the truth behind all the stories"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "comfort"],
+        "amount": 5,
+        "log": {
+          "cats_from": "Despite the bad blood over {PRONOUN/from_cat/poss} exile, from_cat was glad to see to_cat again."
+        }
+      }
+    ]
   },
   {
     "interaction_type": "invite",
@@ -634,7 +709,18 @@
       "status": ["former Clancat"],
       "new_thought": "Readjusts to Clan life",
       "kit_thought": "Is learning the truth behind all the stories"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "trust"],
+        "amount": 5,
+        "log": {
+          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+        }
+      }
+    ]
   },
   {
     "interaction_type": "drive",
@@ -666,7 +752,18 @@
       "status": [ "lost" ],
       "new_thought": "Never lost hope in {PRONOUN/m_c/poss} Clanmates finding {PRONOUN/m_c/object}",
       "kit_thought": "Is learning the truth behind all the stories"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "comfort"],
+        "amount": 5,
+        "log": {
+          "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+        }
+      }
+    ]
   },
   {
     "interaction_type": "search",
@@ -678,6 +775,17 @@
       "trait": ["loyal", "confident", "bold", "faithful", "righteous"],
       "new_thought": "Swears {PRONOUN/m_c/poss} loyalty to all the Clanmates that helped bring {PRONOUN/m_c/object} home",
       "kit_thought": "Is learning the truth behind all the stories"
-    }
+    },
+    "relationships": [
+      {
+        "cats_from": ["m_c"],
+        "cats_to": ["some_clan"],
+        "values": ["like", "comfort"],
+        "amount": 5,
+        "log": {
+          "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+        }
+      }
+    ]
   }
 ]

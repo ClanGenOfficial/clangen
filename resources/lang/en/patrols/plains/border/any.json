@@ -1612,7 +1612,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": -10,
@@ -1621,7 +1621,7 @@
                         }
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["s_c"],
                         "mutual": false,
                         "values": ["like", "respect"],

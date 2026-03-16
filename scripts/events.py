@@ -102,7 +102,14 @@ def one_moon():
         switch_set_value(Switch.no_able_left, False)
 
     # age up the clan, set current season
+    old_season = game.clan.current_season
     game.clan.age += 1
+    if game.clan.current_season != old_season:
+        # update audio to use new season ambiance
+        try:
+            game.audio.check(should_fade_out=True)
+        except AttributeError:
+            pass
     update_afterlife_temper()
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()
@@ -526,6 +533,12 @@ def handle_lead_den_event():
                         # if cat is an apprentice, make sure they get a mentor!
                         if invited_cat.status.rank == CatRank.APPRENTICE:
                             invited_cat.update_mentor()
+                        # if the cat chose to become a mediator but the settings don't allow it, make them a warrior instead
+                        if (
+                            invited_cat.status.rank == CatRank.MEDIATOR
+                            and not get_clan_setting("become_mediator")
+                        ):
+                            invited_cat.status._change_rank(CatRank.WARRIOR)
 
                     invited_cat.create_relationships_new_cat()
 
