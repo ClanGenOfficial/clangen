@@ -1709,7 +1709,7 @@
                         "cats_from": [
                             "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
                             "respect"
