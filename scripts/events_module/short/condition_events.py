@@ -784,8 +784,8 @@ class Condition_Events:
                         )
 
                         # try to translate the injury & condition
-                        translated_injury = i18n.t(f"conditions.injury.{injury}")
-                        translated_injury.replace("conditions.injury.", "")
+                        translated_injury = i18n.t(f"conditions.injuries.{injury}")
+                        translated_injury.replace("conditions.injuries.", "")
 
                         translated_condition = i18n.t(
                             f"conditions.permanent_conditions.{condition_got}"
