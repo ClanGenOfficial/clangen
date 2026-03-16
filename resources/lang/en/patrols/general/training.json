@@ -17174,7 +17174,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was highly impressed when to_cat bested both p_l and r_c in a fight with {PRONOUN/to_cat/poss} fluid and patient technique."
+                            "cats_from": "from_cat was highly impressed when to_cat bested both p_l and r_c with {PRONOUN/to_cat/poss} fluid and patient fighting technique."
                         }
                     }
                 ],
