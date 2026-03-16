@@ -15136,7 +15136,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} {VERB/app1/wish/wishes} that p_l would hurry up and come out. Wait, is that . . .? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1. app1 barely has time to yowl for help before the stranger pounces.",
+                "text": "app1 is jumping at shadows. Everything around {PRONOUN/app1/object} seems like a predator waiting to pounce. Where could p_l be hiding? {PRONOUN/app1/subject/CAP} {VERB/app1/wish/wishes} that p_l would hurry up and come out. Wait, is that...? app1 charges toward the bulky shape of another cat in the dark. However, this is not p_l. The smell of a foreign cat washes over app1. app1 barely has time to yowl for help before the stranger pounces.",
                 "exp": 0,
                 "dead_cats": [
                     "app1"
@@ -15144,6 +15144,17 @@
                 "history_text": {
                     "death": "m_c was killed by another cat while doing {PRONOUN/m_c/poss} assessment as an apprentice."
                 },
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_lawful", "high_aggress"],
+                        "cats_to": ["p_l"],
+                        "values": ["respect", "trust"],
+                        "amount": -12,
+                        "log": {
+                            "cats_from": "from_cat blamed to_cat's negligence for app1's death during {PRONOUN/app1/poss} assessment."
+                        }
+                    }
+                ],
                 "frequency": 2
             },
             {
@@ -15784,12 +15795,14 @@
                     {
                         "cats_to": ["app1"],
                         "cats_from": ["app2"],
+                        "mutual": true,
                         "values": [
                             "respect"
                         ],
                         "amount": -12,
                         "log": {
-                            "cats_from": "from_cat was derisive of to_cat's poor form during battle training."
+                            "cats_from": "from_cat was derisive of to_cat's poor form during battle training.",
+                            "cats_to": "to_cat noticed from_cat rolling {PRONOUN/from_cat/poss} eyes at to_cat's poor form during battle training."
                         }
                     }
                 ],
