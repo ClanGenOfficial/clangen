@@ -227,10 +227,10 @@ dev_tools = false
   # 1/chance that kits, relationship and other factors will influence this chance
   primary_chance_unmated = 130
 
-  # 1/chance that a mated cat to has an affair
+  # 1/chance that a mated cat has an affair
   random_affair_chance = 50
 
-  # special 1/chance for an unmated cat to have an affair
+  # 1/chance for an unmated cat to have an affair (coparenting)
   # for this check, only other unmated cats can be the affair partner
   unmated_random_affair_chance = 10
 
@@ -309,6 +309,13 @@ dev_tools = false
 
   # allows cats to be named after the color of their eyes
   allow_eye_names = true
+
+  # determines which list outsiders pull from: silly_names, human_names, loner_names, or normal_prefixes
+  # number / total for each control
+
+  kittypet = [30, 50, 10, 10]
+  loner = [5, 15, 50, 30]
+  rogue = [3, 7, 35, 55]
 
 [accessory_generation]
   # base 1/chance a cat generates with an accessory 

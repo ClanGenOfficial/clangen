@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Optional
 
 import i18n
 
-from scripts.cat.enums import CatGroup, CatThought, CatRank
+from scripts.cat.enums import CatGroup, CatThought, CatRank, CatAge
 from scripts.events_module.event_filters import event_for_cat
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
@@ -49,8 +49,14 @@ def get_other_cat_for_thought(
         # count and give up if we don't find a suitable cat within 100 checks
         i = 0
         while cat_list and (
-            (other_cat.dead and not thinking_of_dead_cat)
-            or other_cat.ID not in main_cat.relationships
+            (
+                other_cat.dead and not thinking_of_dead_cat
+            )  # dead and thought isn't about dead cat
+            or (
+                main_cat.relationships.get(other_cat.ID)
+                and main_cat.relationships[other_cat.ID].total_relationship_value == 0
+            )  # the two cats have no existing relationship
+            or other_cat.status.is_lost()  # other cat is lost
         ):
             cat_list.remove(other_cat)
 
@@ -107,11 +113,18 @@ def _load_group(
         thoughts = load_lang_resource(f"{new_path}/{rank}.json")
 
         # make sure lost thoughts are included
-        if main_cat.status.is_lost(CatGroup.PLAYER_CLAN):
-            thoughts.extend(load_lang_resource(f"{start_path}/while_lost/{rank}.json"))
+        if main_cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
+            prior_rank = main_cat.status.find_prior_clan_rank(
+                CatGroup.PLAYER_CLAN_ID
+            ).replace(" ", "_")
+            thoughts.extend(
+                load_lang_resource(f"{start_path}/while_lost/{prior_rank}.json")
+            )
 
-        thoughts.extend(_load_exiled_and_former(main_cat, new_path))
-        thoughts.extend(_load_general(main_cat, new_path))
+        else:
+            thoughts.extend(_load_general(main_cat, new_path))
+            thoughts.extend(_load_exiled_and_former(main_cat, new_path))
+            thoughts.extend(_load_clancat(main_cat, new_path))
 
     # CATS WHO JUST CHANGED RANK
     elif thought_type == CatThought.ON_RANK_CHANGE:
@@ -189,9 +202,20 @@ def _load_general(main_cat: "Cat", path) -> list:
     """
     Returns general thoughts if the cat is not a newborn
     """
-    if main_cat.status.rank != CatRank.NEWBORN:
-        # newborns don't receive general thoughts
+    # newborns don't receive general thoughts
+    if main_cat.age != CatAge.NEWBORN:
         return load_lang_resource(f"{path}/general.json")
+
+    return []
+
+
+def _load_clancat(main_cat: "Cat", path) -> list:
+    """
+    Returns clancat thoughts if the cat is a clancat
+    """
+    # newborns don't receive general thoughts
+    if main_cat.status.is_clancat:
+        return load_lang_resource(f"{path}/clancat.json")
 
     return []
 

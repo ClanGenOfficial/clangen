@@ -462,6 +462,7 @@ class Condition_Events:
             "LEGBITE": ["weak leg"],
             "TOETRAP": ["weak leg"],
             "HINDLEG": ["weak leg"],
+            "THROAT": ["damaged throat"],
         }
 
         scarless_conditions = (
@@ -479,6 +480,7 @@ class Condition_Events:
             "recurring shock",
             "lasting grief",
             "persistent headaches",
+            "selective mutism",
         )
 
         got_condition = False
@@ -782,8 +784,8 @@ class Condition_Events:
                         )
 
                         # try to translate the injury & condition
-                        translated_injury = i18n.t(f"conditions.injury.{injury}")
-                        translated_injury.replace("conditions.injury.", "")
+                        translated_injury = i18n.t(f"conditions.injuries.{injury}")
+                        translated_injury.replace("conditions.injuries.", "")
 
                         translated_condition = i18n.t(
                             f"conditions.permanent_conditions.{condition_got}"
