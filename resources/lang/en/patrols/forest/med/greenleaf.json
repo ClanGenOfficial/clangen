@@ -75,18 +75,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 4,
         "intro_text": "The sun is hot on r_c's pelt as {PRONOUN/r_c/subject} {VERB/r_c/follow/follows} p_l to what's apparently a 'really good spot' for herbs. r_c doesn't know what makes one spot better than any other, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusiastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt.",
@@ -102,17 +92,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "comfort"
+                            "romance"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a moment of amusement when a butterfly landed on p_l's haunches. r_c didn't blame the butterfly for mistaking p_l for a beautiful flower."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -136,7 +128,10 @@
                             "romance",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a moment of amusement when r_c struggled to bat a butterfly away from p_l."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -146,6 +141,26 @@
             {
                 "text": "Try as {PRONOUN/r_c/subject} might, r_c is more of a hindrance than a help for herb-hunting, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, apologizing profusely. p_l waves it off with flick of {PRONOUN/p_l/poss} tail, but it's not what either cat was hoping for from the afternoon.",
                 "exp": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat found to_cat more of a hindrance than a help while gathering herbs together."
+                        }
+                    },
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["p_l"],
+                        "values": ["comfort"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was embarrassed when {PRONOUN/from_cat/subject} failed to help to_cat gather any herbs."
+                        }
+                    }
+                ],
                 "frequency": 4
             }
         ]
@@ -166,15 +181,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "all apprentices": [ -1, -1 ]
+            "medicine cat": [1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l is on a mission to find herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} a nice place where mullein grows in a grassy clearing, and it's always good to have some on paw for coughs and sore throats.",
