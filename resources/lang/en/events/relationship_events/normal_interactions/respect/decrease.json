@@ -100,6 +100,7 @@
 	},
 	{
 		"id": "respect_adult_de_med1",
+		"intensity": "med",
 		"interactions": [
 			"m_c saw r_c miss an easy catch today.",
 			"m_c is disappointed in r_c's subpar work lately.",
@@ -173,6 +174,7 @@
 	},
 	{
 		"id": "respect_patrol_de_med",
+		"intensity": "med",
 		"interactions": [
 			"m_c is jealous that r_c was praised by the leader.",
 			"m_c is jealous that r_c got to fight in a border skirmish when {PRONOUN/m_c/subject} didn't.",
@@ -198,6 +200,7 @@
 	},
 	{
 		"id": "respect_existingjealousy_de_med",
+		"intensity": "med",
 		"interactions": [
 			"r_c is visibly upset to be on a patrol with m_c.",
 			"m_c and r_c try to upstage one another during battle training.",
@@ -245,6 +248,7 @@
 	},
 	{
 		"id": "respect_kit_de_med2",
+		"intensity": "med",
 		"interactions": [
 			"m_c hisses at r_c for getting a bigger piece of prey.",
 			"m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} deserve all the attention from the older cats.",
