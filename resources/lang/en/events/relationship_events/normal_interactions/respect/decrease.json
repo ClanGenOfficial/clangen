@@ -40,15 +40,13 @@
 		}
 	},
 	{
-		"id": "respect_de_medium1",
+		"id": "respect_de_med1",
 		"intensity": "med",
 		"interactions": [
 			"m_c saw r_c take the last piece of prey from the fresh-kill pile.",
 			"m_c is frustrated that r_c won't take {PRONOUN/r_c/poss} actions more seriously.",
 			"m_c feels like r_c isn't taking {PRONOUN/r_c/poss} own personal health seriously.",
-			"m_c starts to see flaws in r_c's philosophies.",
 			"r_c interrupted m_c to say something frivolous.",
-			"m_c suspects r_c lied about something trivial.",
 			"r_c tells m_c a joke that {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't find funny.",
 			"m_c sees r_c ignore someone.",
 			"m_c wishes r_c would act more maturely.",

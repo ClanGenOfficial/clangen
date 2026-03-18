@@ -9,6 +9,7 @@
 			"m_c sees r_c whispering suspiciously to a Clanmate.",
 			"m_c smells something strange on r_c.",
 			"m_c feels like r_c has been quieter than usual.",
+			"m_c suspects r_c lied about something trivial.",
 			"m_c noticed that r_c wasn't in {PRONOUN/r_c/poss} nest last night.",
 			"Though m_c asks around, {PRONOUN/m_c/subject} can't find r_c anywhere.",
 			"m_c asks r_c a simple question, but r_c reacts strangely to it.",
@@ -56,6 +57,7 @@
 			"m_c swears {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c sneaking around the camp at night.",
 			"r_c keeps making excuses about something m_c wants to know.",
 			"m_c can't seem to get a straight answer from r_c lately.",
+			"m_c starts to see flaws in r_c's philosophies.",
 			"r_c let m_c down when m_c was counting on {PRONOUN/r_c/object}."
 		]
 	},
