@@ -18,9 +18,8 @@
 			"A Clanmate that m_c wanted to get to know better is already friends with r_c.",
 			"m_c thinks Clanmates talk more highly of r_c than {PRONOUN/m_c/object}.",
 			"m_c suspects that r_c gets special treatment.",
+			"m_c thinks the prey r_c is biting into on the other side of camp looks delicious.",
 			"m_c sees a Clanmate complimenting r_c and feels a pang of envy.",
-			"m_c wishes that a Clanmate liked {PRONOUN/m_c/object} as much as they like r_c.",
-			"m_c was scolded for something that r_c gets praised for.",
 			"m_c's friend says nice things about r_c, but it just makes m_c jealous.",
 			"m_c thinks r_c looks nicer than {PRONOUN/m_c/object} today.",
 			"m_c notices one of {PRONOUN/m_c/poss} friends talking to r_c."
@@ -45,32 +44,31 @@
 		"intensity": "med",
 		"interactions": [
 			"m_c saw r_c take the last piece of prey from the fresh-kill pile.",
-			"m_c thinks r_c has a strange sense of humor.",
 			"m_c is frustrated that r_c won't take {PRONOUN/r_c/poss} actions more seriously.",
 			"m_c feels like r_c isn't taking {PRONOUN/r_c/poss} own personal health seriously.",
-			"m_c has started to see flaws in r_c's philosophies.",
-			"m_c worries about how capable r_c is.",
+			"m_c starts to see flaws in r_c's philosophies.",
 			"r_c interrupted m_c to say something frivolous.",
-			"m_c feels like r_c lied about something trivial.",
-			"r_c told m_c a joke that {PRONOUN/m_c/subject} didn't find funny.",
-			"m_c saw r_c ignore someone.",
+			"m_c suspects r_c lied about something trivial.",
+			"r_c tells m_c a joke that {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't find funny.",
+			"m_c sees r_c ignore someone.",
 			"m_c wishes r_c would act more maturely.",
 			"m_c and r_c argue over a piece of fresh-kill.",
 			"r_c panics over something that m_c finds trivial.",
 			"m_c thinks r_c is a bit of a mouse-brain.",
 			"m_c thinks r_c is shirking {PRONOUN/r_c/poss} duties.",
-			"m_c thinks the prey r_c is biting into on the other side of camp looks delicious.",
 			"m_c notices that r_c makes other Clanmates laugh more than {PRONOUN/m_c/subject} {VERB/m_c/do/does}.",
+			"m_c wishes that a Clanmate liked {PRONOUN/m_c/object} as much as they like r_c.",
+			"m_c was scolded for something that r_c gets praised for.",
 			"m_c worries that the Clan trusts r_c more than {PRONOUN/m_c/object}.",
 			"m_c thinks that r_c stole one of {PRONOUN/m_c/poss} ideas.",
 			"The Clan likes one of r_c's suggestions, but it was just m_c's reworded.",
-			"m_c tries to do something like r_c, but just ends up getting embarrassed.",
+			"m_c tries to do something like r_c but ends up embarrassing {PRONOUN/m_c/self}.",
 			"A Clanmate accuses m_c of copying one of r_c's jokes.",
 			"m_c wishes {PRONOUN/m_c/subject} looked more like r_c.",
 			"m_c thinks that r_c is more talented than {PRONOUN/m_c/object}.",
 			"r_c has a talent that m_c wants to have.",
 			"m_c tried on an accessory that r_c threw away, but realized r_c looked a lot better in it.",
-			"m_c worries that one of {PRONOUN/m_c/poss} friends likes r_c more."
+			"m_c worries that one of {PRONOUN/m_c/poss} friends prefers r_c."
 		]
 	},
 	{
@@ -86,7 +84,7 @@
 			"After r_c finished {PRONOUN/r_c/poss} food, m_c noticed {PRONOUN/r_c/subject} made a mess.",
 			"r_c kept getting distracted while helping m_c and nearly got {PRONOUN/m_c/object} hurt.",
 			"m_c calls r_c useless when they struggle to complete a task together.",
-			"m_c and r_c had to fix something around camp and argued about how to fix it. It ended up being fixed by some other cat in the end.",
+			"m_c and r_c had to fix something around camp and argued about how to fix it. It ended up being fixed by some other cat.",
 			"m_c notices that r_c has been avoiding {PRONOUN/r_c/poss} responsibilities lately.",
 			"m_c and r_c were supposed to be working together today, but they can never agree long enough to accomplish anything."
 		],
@@ -109,7 +107,6 @@
 			"r_c was supposed to be showing m_c a cool battle move but messed up so badly it made m_c cringe.",
 			"m_c noticed that r_c ignored an easy hunting opportunity on a recent patrol.",
 			"r_c froze up during a hunting patrol with m_c.",
-			"r_c is visibly upset to be on a patrol with m_c.",
 			"When m_c's border patrol encountered another Clan, r_c acted like a fool.",
 			"m_c is frustrated after finishing a task that r_c was supposed to do.",
 			"m_c calls out r_c for sleeping through a meeting.",
@@ -117,9 +114,7 @@
 			"m_c thinks that r_c acted disrespectfully during a patrol.",
 			"m_c notices that r_c seems to disappear whenever difficult tasks are being discussed.",
 			"r_c was meant to take a piece of prey to a Clanmate, but m_c saw {PRONOUN/r_c/object} eat it.",
-			"r_c didn't finish a chore that m_c assigned {PRONOUN/m_c/object}.",
-			"The Clan notices that m_c and r_c won't talk to each other after coming back from a patrol.",
-			"m_c and r_c have very different approaches to hunting and argue about which is better."
+			"r_c didn't finish a chore that m_c asked {PRONOUN/r_c/object} to do."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -202,6 +197,94 @@
 		]
 	},
 	{
+		"id": "respect_existingjealousy_de_med",
+		"interactions": [
+			"r_c is visibly upset to be on a patrol with m_c.",
+			"m_c and r_c try to upstage one another during battle training.",
+			"r_c tries to make m_c look bad during training.",
+			"m_c and r_c shoot each other dirty looks during a patrol.",
+			"m_c and r_c have very different approaches to hunting and argue about which is better.",
+			"The Clan notices that m_c and r_c won't talk to each other after coming back from a patrol."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+			"apprentice",
+			"warrior",
+			"deputy",
+			"leader"
+		],
+		"relationship_constraint": [
+			"begrudges"
+		],
+		"reaction_random_cat": {
+			"respect": "decrease"
+		}
+	},
+	{
+		"id": "respect_kit_de_med1",
+		"intensity": "med",
+		"interactions": [
+			"m_c is jealous that r_c is getting more attention than {PRONOUN/m_c/object}.",
+			"r_c gets all the praise that m_c wishes {PRONOUN/m_c/subject} got.",
+			"r_c was told {PRONOUN/r_c/subject} {VERB/r_c/are/is} growing bigger than m_c.",
+			"r_c is better at moss-ball than m_c.",
+			"The older Clanmates always believe r_c over m_c.",
+			"m_c is upset that r_c always wins in their games."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"kitten"
+		]
+	},
+	{
+		"id": "respect_kit_de_med2",
+		"interactions": [
+			"m_c hisses at r_c for getting a bigger piece of prey.",
+			"m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} deserve all the attention from the older cats.",
+			"m_c says r_c's name is stupid, but m_c is just jealous.",
+			"An older Clanmate tells m_c to be nice to r_c."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"reaction_random_cat": {
+			"respect": "decrease"
+		}
+	},
+	{
+		"id": "respect_apptokit_de_med3",
+		"intensity": "med",
+		"interactions": [
+			"m_c looks at r_c and remembers how easy it was to be a kitten.",
+			"m_c doesn't get why r_c gets away with so much more than m_c did as a kitten.",
+			"m_c is afraid that r_c is going to grow up bigger than {PRONOUN/m_c/object}.",
+			"r_c says that m_c said something mean, and no one will believe m_c's defense.",
+			"m_c gets scolded for not watching r_c when r_c does something naughty.",
+			"m_c is resentful that so much is expected of {PRONOUN/m_c/object}, yet no one expects anything of r_c."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice"
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"reaction_random_cat": {
+			"respect": "decrease"
+		}
+	},
+	{
 		"id": "respect_de_high1",
 		"intensity": "high",
 		"interactions": [
@@ -229,7 +312,7 @@
 		"interactions": [
 			"m_c had a difficult conversation with r_c, and they both ended up resentful of one another.",
 			"m_c was noticeably distracted while r_c was trying to tell a story.",
-			"m_c asks r_c about something complicated and regrets it almost immediately when r_c misses the point.",
+			"m_c asks r_c about something complicated and regrets it when r_c misses the point.",
 			"m_c spent a long time talking with r_c but was disappointed by r_c's lack of interest.",
 			"m_c scolds r_c about something {PRONOUN/r_c/object} did, but r_c doesn't take {PRONOUN/m_c/object} seriously.",
 			"r_c laughs at m_c's embarrassing mistake.",
@@ -248,72 +331,30 @@
         ]
 	},
 	{
-		"id": "jealousy_kit_inc_med1",
+		"id": "respect_existingjealousy_de_high1",
+		"intensity": "high",
 		"interactions": [
-			"m_c is jealous that r_c is getting more attention than {PRONOUN/m_c/object}.",
-			"r_c gets all the praise that m_c wishes {PRONOUN/m_c/subject} got.",
-			"r_c was told {PRONOUN/r_c/subject} {VERB/r_c/are/is} growing bigger than m_c.",
-			"r_c is better at moss-ball than m_c.",
-			"The older Clanmates always believe r_c over m_c.",
-			"m_c is upset that r_c always wins in their games."
+			"m_c is complaining that r_c never does anything helpful.",
+			"m_c can't stand hearing about how helpful r_c is.",
+			"m_c can't understand why a Clanmate likes r_c so much.",
+			"m_c seethes at the thought of r_c succeeding.",
+			"m_c plans to embarrass r_c in front of all their Clanmates.",
+			"m_c wants to prove that r_c isn't worthy of any cat's respect.",
+			"m_c tries to turn r_c's friends against {PRONOUN/r_c/object}."
 		],
-		"main_status_constraint": [
-			"kitten"
-		],
-		"random_status_constraint": [
-			"kitten"
+		"relationship_constraint": [
+			"envies"
 		]
 	},
 	{
-		"id": "jealousy_kit_inc_med2",
-		"interactions": [
-			"m_c hisses at r_c for getting a bigger piece of prey.",
-			"m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} deserve all the attention from the older cats.",
-			"m_c says r_c's name is stupid, but m_c is just jealous.",
-			"An older Clanmate tells m_c to be nice to r_c."
-		],
-		"main_status_constraint": [
-			"kitten"
-		],
-		"random_status_constraint": [
-			"kitten"
-		],
-		"reaction_random_cat": {
-			"like": "decrease"
-		}
-	},
-	{
-		"id": "jealousy_kit_inc_med3",
-		"intensity": "med",
-		"interactions": [
-			"m_c looks at r_c and remembers how easy it was to be a kitten.",
-			"m_c doesn't get why r_c gets away with so much more than m_c did as a kitten.",
-			"m_c is afraid that r_c is going to grow up bigger than {PRONOUN/m_c/object}.",
-			"r_c says that m_c said something mean, and no one will believe m_c's defense.",
-			"m_c gets scolded for not watching r_c when r_c does something naughty.",
-			"m_c is resentful that so much is expected of {PRONOUN/m_c/object}, yet no one expects anything of r_c."
-		],
-		"main_status_constraint": [
-			"apprentice",
-			"mediator apprentice",
-			"medicine cat apprentice"
-		],
-		"random_status_constraint": [
-			"kitten"
-		],
-		"reaction_random_cat": {
-			"like": "decrease"
-		}
-	},
-	{
-		"id": "jel_inc_high1",
+		"id": "respect_tomedcat_de_high1",
 		"intensity": "high",
 		"interactions": [
 			"m_c is jealous that r_c gets to do cool super secret medicine cat things.",
 			"m_c wants to commune with StarClan like r_c does.",
 			"r_c refuses to tell m_c too much about {PRONOUN/r_c/poss} medicine cat training.",
 			"m_c feels like r_c's life is easier as a medicine cat apprentice.",
-			"m_c tries to get free catmint from r_c, but gets snitched on instead.",
+			"m_c tries to \"borrow\" catmint from r_c, but r_c snitches.",
 			"m_c thinks r_c's training sounds way easier than what m_c does now.",
 			"m_c thinks it's unfair that r_c always gets to go to Gatherings."
 		],
@@ -326,7 +367,7 @@
 		]
 	},
 	{
-		"id": "jel_inc_high3",
+		"id": "respect_apptoelder_de_high3",
 		"intensity": "high",
 		"interactions": [
 			"m_c sees r_c lazing about in the sunshine and is resentful at how little {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} expected to contribute.",
