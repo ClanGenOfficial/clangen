@@ -1,6 +1,6 @@
 [
 	{
-		"id": "platonic_inc_low1",
+		"id": "like_inc_low1",
 		"intensity": "low",
 		"interactions": [
 			"m_c thinks r_c was nice to {PRONOUN/m_c/object} today.",
@@ -14,7 +14,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_low2",
+		"id": "like_inc_low2",
 		"intensity": "low",
 		"interactions": [
 			"m_c is talking with r_c.",
@@ -34,7 +34,7 @@
 		}
 	},
 		{
-		"id": "platonic_incfromneg_low1",
+		"id": "like_incfromneg_low1",
 		"intensity": "low",
 		"interactions": [
 			"m_c is surprised by r_c being thoughtful.",
@@ -55,7 +55,7 @@
 		]
 	},
 	{
-		"id": "platonic_incfromneg_low2",
+		"id": "like_incfromneg_low2",
 		"intensity": "low",
 		"interactions": [
 			"m_c apologized to r_c for being rude the other day.",
@@ -78,7 +78,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med1",
+		"id": "like_inc_med1",
 		"intensity": "med",
 		"interactions": [
 			"m_c saw r_c the other day and did get a chance to meow hello!",
@@ -91,7 +91,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med2",
+		"id": "like_inc_med2",
 		"intensity": "med",
 		"interactions": [
 			"m_c tells a story to r_c.",
@@ -109,7 +109,7 @@
 		}
 	},
 	{
-		"id": "platonic_inc_med3",
+		"id": "like_inc_med3",
 		"intensity": "med",
 		"interactions": [
 			"m_c waves to r_c with {PRONOUN/m_c/poss} tail as their patrols cross paths on the territory.",
@@ -139,7 +139,7 @@
 		}
 	},
 	{
-		"id": "platonic_inc_med4",
+		"id": "like_inc_med4",
 		"intensity": "med",
 		"interactions": [
 			"r_c charms m_c.",
@@ -159,7 +159,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med5",
+		"id": "like_inc_med5",
 		"intensity": "med",
 		"interactions": [
 			"r_c relaxing with m_c.",
@@ -171,7 +171,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med6",
+		"id": "like_inc_med6",
 		"intensity": "med",
 		"interactions": [
 			"r_c challenges m_c to a race.",
@@ -183,7 +183,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med7",
+		"id": "like_inc_med7",
 		"intensity": "med",
 		"interactions": [
 			"r_c is making sure m_c knows that {PRONOUN/m_c/subject} {VERB/m_c/are/is} loved.",
@@ -198,7 +198,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med8",
+		"id": "like_inc_med8",
 		"intensity": "med",
 		"interactions": [
 			"r_c is playing tag with m_c.",
@@ -211,7 +211,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med9",
+		"id": "like_inc_med9",
 		"intensity": "med",
 		"interactions": [
 			"m_c feels bad that {PRONOUN/m_c/subject} caused a problem for r_c.",
@@ -226,7 +226,7 @@
 		}
 	},
 	{
-		"id": "platonic_inc_med10",
+		"id": "like_inc_med10",
 		"intensity": "med",
 		"interactions": [
 			"m_c wants to explore Twolegplace with r_c.",
@@ -238,7 +238,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med10",
+		"id": "like_inc_med10",
 		"intensity": "med",
 		"interactions": [
 			"m_c is hiding behind a bush ready to pounce on r_c."
@@ -248,7 +248,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_med4",
+		"id": "like_inc_med4",
 		"intensity": "med",
 		"interactions": [
 			"m_c wants to explore the whole territory with r_c!",
@@ -269,7 +269,7 @@
 		]
 	},
 	{
-		"id": "platonic_to_app_inc_med1",
+		"id": "like_to_app_inc_med1",
 		"intensity": "med",
 		"interactions": [
 			"m_c noticed that r_c is falling behind in training and offered to help {PRONOUN/r_c/object} catch up.",
@@ -289,7 +289,7 @@
 		}
 	},
 	{
-		"id": "platonic_kit_inc_med1",
+		"id": "like_kit_inc_med1",
 		"intensity": "med",
 		"interactions": [
 			"m_c plays moss-ball with r_c.",
@@ -303,7 +303,7 @@
 		]
 	},
 	{
-		"id": "platonic_kit_inc_med3",
+		"id": "like_kit_inc_med3",
 		"intensity": "med",
 		"interactions": [
 			"m_c lets r_c play with {PRONOUN/m_c/poss} favorite toy.",
@@ -336,7 +336,7 @@
 		}
 	},
 	{
-		"id": "platonic_kit_inc_med4",
+		"id": "like_kit_inc_med4",
 		"intensity": "med",
 		"interactions": [
 			"m_c decorates {PRONOUN/m_c/poss} nest with gifts that r_c brought {PRONOUN/m_c/object}.",
@@ -353,7 +353,7 @@
 		}
 	},
 	{
-		"id": "platonic_kit_inc_med5",
+		"id": "like_kit_inc_med5",
 		"intensity": "med",
 		"interactions": [
 			"m_c asks r_c what it's like to be in training.",
@@ -374,7 +374,7 @@
 		}
 	},
 	{
-		"id": "platonic_kit_inc_med6",
+		"id": "like_kit_inc_med6",
 		"intensity": "med",
 		"interactions": [
 			"m_c is watching over r_c.",
@@ -404,7 +404,7 @@
 		}
 	},
 	{
-		"id": "platonic_kit_inc_odd1",
+		"id": "like_kit_inc_odd1",
 		"intensity": "med",
 		"interactions": [
 			"m_c is asking r_c where kits come from."
@@ -424,7 +424,7 @@
 		}
 	},
 	{
-		"id": "platonic_app_med1",
+		"id": "like_app_med1",
 		"intensity": "med",
 		"interactions": [
 			"m_c is telling r_c about a hunting technique.",
@@ -446,7 +446,7 @@
 		}
 	},
 	{
-		"id": "platonic_app_med2",
+		"id": "like_app_med2",
 		"intensity": "med",
 		"interactions": [
 			"m_c brings r_c a piece of prey to share after a long day of training.",
@@ -465,7 +465,7 @@
 		}
 	},
 	{
-		"id": "platonic_app_med3",
+		"id": "like_app_med3",
 		"intensity": "med",
 		"interactions": [
 			"m_c daydreams with r_c about their future warrior ceremonies.",
@@ -485,7 +485,7 @@
 		]
 	},
 	{
-		"id": "platonic_app_med4",
+		"id": "like_app_med4",
 		"intensity": "med",
 		"interactions": [
 			"m_c listens closely as r_c tells {PRONOUN/m_c/object} about the new herb {PRONOUN/r_c/subject} learned to recognize today.",
@@ -502,7 +502,7 @@
 		]
 	},
 	{
-		"id": "platonic_app_med5",
+		"id": "like_app_med5",
 		"intensity": "med",
 		"interactions": [
 			"m_c gently grooms some cobwebs off r_c's fur.",
@@ -520,7 +520,7 @@
 		]
 	},
 	{
-		"id": "platonic_warrior_inc_med1",
+		"id": "like_warrior_inc_med1",
 		"intensity": "med",
 		"interactions": [
 			"m_c greets r_c as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} exiting the warriors' den.",
@@ -538,7 +538,7 @@
 		}
 	},
 	{
-		"id": "platonic_elder_med1",
+		"id": "like_elder_med1",
 		"intensity": "med",
 		"interactions": [
 			"m_c is pestering r_c for a story.",
@@ -554,7 +554,7 @@
 		}
 	},
 	{
-		"id": "platonic_incfromneg_med1",
+		"id": "like_incfromneg_med1",
 		"intensity": "med",
 		"interactions": [
 			"m_c realized that {PRONOUN/m_c/subject} {VERB/m_c/were/was} too harsh in {PRONOUN/m_c/poss} judgement of r_c.",
@@ -574,7 +574,7 @@
 		]
 	},
 	{
-		"id": "platonic_incfromneg_med2",
+		"id": "like_incfromneg_med2",
 		"intensity": "med",
 		"interactions": [
 			"m_c covered for r_c on something minor.",
@@ -599,7 +599,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_high1",
+		"id": "like_inc_high1",
 		"intensity": "high",
 		"interactions": [
 			"m_c wants to spend more time with r_c!",
@@ -619,7 +619,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_high2",
+		"id": "like_inc_high2",
 		"intensity": "high",
 		"interactions": [
 			"m_c is having a wonderful time discussing recent Clan news with r_c.",
@@ -637,7 +637,7 @@
 		}
 	},
 	{
-		"id": "platonic_inc_high3",
+		"id": "like_inc_high3",
 		"intensity": "high",
 		"interactions": [
 			"m_c thinks about how lucky {PRONOUN/m_c/subject} {VERB/m_c/are/is} to have someone like r_c as a friend.",
@@ -652,7 +652,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_high4",
+		"id": "like_inc_high4",
 		"intensity": "high",
 		"interactions": [
 			"m_c tells a joke that only r_c can understand.",
@@ -670,7 +670,7 @@
 		}
 	},
 	{
-		"id": "platonic_inc_high5",
+		"id": "like_inc_high5",
 		"intensity": "high",
 		"interactions": [
 			"m_c can't imagine {PRONOUN/m_c/poss} life if {PRONOUN/m_c/subject} never met r_c.",
@@ -688,7 +688,7 @@
 		]
 	},
 	{
-		"id": "platonic_inc_high6",
+		"id": "like_inc_high6",
 		"intensity": "high",
 		"interactions": [
 			"m_c thinks r_c tells the best stories.",
@@ -705,7 +705,7 @@
 		}
 	},
 	{
-		"id": "platonic_kit_inc_high",
+		"id": "like_kit_inc_high",
 		"intensity": "high",
 		"interactions": [
 			"m_c and r_c agree to be best friends forever.",
@@ -736,7 +736,7 @@
 		}
 	},
 	{
-		"id": "platonic_inc_high_grumpymedcat1",
+		"id": "like_inc_high_grumpymedcat1",
 		"intensity": "high",
 		"interactions": [
 			"m_c grumbles while checking on r_c, but r_c appreciates the care and hard work m_c does anyways.",
@@ -754,7 +754,7 @@
 		]
 	},
 	{
-		"id": "platonic_incfromneg_high1",
+		"id": "like_incfromneg_high1",
 		"intensity": "high",
 		"interactions": [
 			"m_c is surprised to hear r_c express an ideal {PRONOUN/m_c/subject} can agree with.",
@@ -774,7 +774,7 @@
 		]
 	},
 	{
-		"id": "platonic_incfromneg_high2",
+		"id": "like_incfromneg_high2",
 		"intensity": "high",
 		"interactions": [
 			"m_c and r_c joke around about how bad the other Clans smell.",
@@ -795,7 +795,7 @@
 		]
 	},
 	{
-		"id": "platonic_incfromneg_high3",
+		"id": "like_incfromneg_high3",
 		"intensity": "high",
 		"interactions": [
 			"m_c reconsiders the depth of {PRONOUN/m_c/poss} hatred for r_c.",
@@ -806,7 +806,7 @@
 		]
 	},
 	{
-		"id": "platonic_gathering_inc_high",
+		"id": "like_gathering_inc_high",
 		"intensity": "high",
 		"interactions": [
 			"m_c and r_c heckled another Clan at the Gathering together.",
@@ -823,7 +823,7 @@
 		]
 	},
 	{
-		"id": "platonic_patrol_incfromneg_high3",
+		"id": "like_patrol_incfromneg_high3",
 		"intensity": "high",
 		"interactions": [
 			"m_c and r_c worked well together on a patrol.",
