@@ -8137,33 +8137,47 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "medicine cat apprentice": [1, 1],
+            "medicine cat": [1, 1]
         },
         "tags": [],
         "intro_text": "p_l sets off to find the bulbs of a corpse lily, so that app1 can learn both risk and reward.",
-        "decline_text": "Still, they're lilies - poisonous and deadly. p_l decides to not risk both their lives.",
+        "decline_text": "p_l considers the dangers of exposing app1 to lilies, even for a lesson, and decides not to risk it.",
         "chance_of_success": 70,
         "frequency": 4,
         "success_outcomes": [
             {
-                "text": "p_l finds a cluster of corpse lilies, wilting. The flowers, red and spindly, droop towards the floor. p_l steers clear, but has a productive session telling app1 about their memory enhancing effects.",
+                "text": "p_l finds a cluster of corpse lilies, wilting. The flowers, red and spindly, droop towards the floor. p_l steers clear, but has a productive session telling app1 about their memory-enhancing effects.",
                 "exp": 20,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about the dangers and uses of corpse lilies, and app1 listened carefully."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
                 "text": "There's plenty of corpse lilies here, and p_l can only be thankful the pollen can be washed off with moss, <i>and</i> that app1 hung back while {PRONOUN/p_l/subject} {VERB/p_l/explain/explains} the strange effects of poison.",
                 "exp": 20,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about the effects of corpse lilies' poison, and app1 listened carefully."
+                        }
+                    }
+                ],
                 "frequency": 4
             }
         ],
@@ -8179,6 +8193,18 @@
                         "injuries": [
                             "poisoned"
                         ]
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "app1 wondered why p_l would expose both {PRONOUN/p_l/self} and app1 to a poisonous flower."
+                        }
                     }
                 ],
                 "history_text": {
