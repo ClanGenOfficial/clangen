@@ -2503,7 +2503,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When r_c tripped on patrol, {PRONOUN/r_c/subject} insisted on leaning p_l all the way back to camp."
+                            "cats_from": "When r_c tripped on patrol, {PRONOUN/r_c/subject} insisted on leaning against p_l all the way back to camp."
                         }
                     },
                     {
@@ -2557,7 +2557,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "When s_c tripped on patrol, {PRONOUN/s_c/subject} tried to play it off in front of p_l.",
-                            "cats_to": "p_l was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root on patrol."
+                            "cats_to": "p_l was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root while on patrol."
                         }
                     }
                 ],
@@ -2598,7 +2598,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root and avoided {PRONOUN/to_cat/object} afterward."
+                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
                         }
                     }
                 ],
@@ -2816,7 +2816,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When r_c tripped on patrol, {PRONOUN/r_c/subject} insisted on leaning p_l all the way back to camp."
+                            "cats_from": "When r_c tripped on patrol, {PRONOUN/r_c/subject} insisted on leaning against p_l all the way back to camp."
                         }
                     },
                     {
@@ -2870,7 +2870,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "When s_c tripped on patrol, {PRONOUN/s_c/subject} tried to play it off in front of p_l.",
-                            "cats_to": "p_l was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root on patrol."
+                            "cats_to": "p_l was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root while on patrol."
                         }
                     }
                 ],
@@ -2911,7 +2911,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root and avoided {PRONOUN/to_cat/object} afterward."
+                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
                         }
                     }
                 ],
@@ -3130,7 +3130,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When p_l tripped on patrol, {PRONOUN/p_l/subject} insisted on leaning r_c all the way back to camp."
+                            "cats_from": "When p_l tripped on patrol, {PRONOUN/p_l/subject} insisted on leaning against r_c all the way back to camp."
                         }
                     }
                 ],
@@ -3167,7 +3167,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "When s_c tripped on patrol, {PRONOUN/s_c/subject} tried to play it off in front of r_c.",
-                            "cats_to": "r_c was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root on patrol."
+                            "cats_to": "r_c was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root while on patrol."
                         }
                     }
                 ],
@@ -3208,7 +3208,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root and avoided {PRONOUN/to_cat/object} afterward."
+                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
                         }
                     }
                 ],
