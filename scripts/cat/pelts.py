@@ -14,10 +14,13 @@ from scripts.events_module.text_adjust import adjust_list_text
 
 class Pelt:
     # POSES
-    all_poses = list(sprites.POSE_DATA["poses"].keys())
+    all_poses = sprites.POSE_DATA["poses"]
     newborn_poses = [x for x in all_poses if "newborn" in x]
     kitten_poses = [x for x in all_poses if "kitten" in x]
-    adolescent_poses = [x for x in all_poses if "adolescent" in x]
+    adolescent_long_poses = [x for x in all_poses if "adolescent_long" in x]
+    adolescent_short_poses = [
+        x for x in all_poses if "adolescent" in x and "long" not in x
+    ]
     adult_short_poses = [x for x in all_poses if "adult_short" in x and "para" not in x]
     adult_long_poses = [x for x in all_poses if "adult_long" in x and "para" not in x]
     senior_poses = [x for x in all_poses if "senior" in x]
@@ -247,7 +250,13 @@ class Pelt:
         self._accessory = accessory
         self._paralyzed = paralyzed
         self.opacity = opacity
-        self.scars = scars if isinstance(scars, list) else []
+        self._scars = (
+            tuple(scars)
+            if isinstance(scars, list)
+            else scars
+            if isinstance(scars, tuple)
+            else tuple()
+        )
         self.tint = tint
         self.white_patches_tint = white_patches_tint
         self.screen_scale = scripts.game_structure.screen_settings.screen_scale
@@ -264,6 +273,7 @@ class Pelt:
                 para_adult_sprite,
             ]
         ):
+            # DO NOT CHANGE THIS: this is meant to convert old saves and should not be updated with new pose additions
             self.cat_sprites = {
                 "kitten": kitten_sprite if kitten_sprite is not None else 0,
                 "adolescent": adol_sprite if adol_sprite is not None else 3,
@@ -297,12 +307,16 @@ class Pelt:
                     self.cat_sprites[age] = f"kitten{pose}"
                     continue
                 if age == CatAge.ADOLESCENT:
+                    if self.length == "long":
+                        fur = "long"
+                    else:
+                        fur = "short"
                     if pose == 3:
-                        self.cat_sprites[age] = "adolescent0"
+                        self.cat_sprites[age] = f"adolescent_{fur}0"
                     elif pose == 4:
-                        self.cat_sprites[age] = "adolescent1"
+                        self.cat_sprites[age] = f"adolescent_{fur}1"
                     elif pose == 5:
-                        self.cat_sprites[age] = "adolescent2"
+                        self.cat_sprites[age] = f"adolescent_{fur}2"
                     continue
                 if age in (CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT):
                     if pose in (0, 9):
@@ -337,6 +351,12 @@ class Pelt:
                 else "adult_short0"
             )
 
+            if adol_sprite in ("adolescent0", "adolescent1", "adolescent2"):
+                if self.length == "long":
+                    adol_sprite = random.choice(self.adolescent_long_poses)
+                else:
+                    adol_sprite = f"adolescent_short{adol_sprite[-1]}"
+
             self.cat_sprites = {
                 "newborn": newborn_sprite
                 if newborn_sprite is not None and newborn_sprite in self.newborn_poses
@@ -345,8 +365,12 @@ class Pelt:
                 if kitten_sprite is not None and kitten_sprite in self.kitten_poses
                 else "kitten0",
                 "adolescent": adol_sprite
-                if adol_sprite is not None and adol_sprite in self.adolescent_poses
-                else "adolescent0",
+                if adol_sprite is not None
+                and (
+                    adol_sprite in self.adolescent_short_poses
+                    or adol_sprite in self.adolescent_long_poses
+                )
+                else "adolescent_short0",
                 "young adult": adult_sprite,
                 "adult": adult_sprite,
                 "senior adult": adult_sprite,
@@ -370,6 +394,15 @@ class Pelt:
     def accessory(self, val):
         self.rebuild_sprite = True
         self._accessory = val
+
+    @property
+    def scars(self):
+        return self._scars
+
+    @scars.setter
+    def scars(self, val):
+        self.rebuild_sprite = True
+        self._scars = val
 
     @property
     def paralyzed(self):
@@ -465,9 +498,9 @@ class Pelt:
             self.tortie_marking = "MINIMALFOUR"
 
         if self.accessory is None:
-            self.accessory = []
+            self.accessory = tuple()
         elif isinstance(self.accessory, str):
-            self.accessory = [self.accessory]
+            self.accessory = tuple([self.accessory])
 
         new_acc_list = []
         for acc in self.accessory:
@@ -475,7 +508,7 @@ class Pelt:
                 new_acc_list.append(convert_dict["collar_map"][acc])
             else:
                 new_acc_list.append(acc)
-        self.accessory = new_acc_list
+        self.accessory = tuple(new_acc_list)
 
     def init_eyes(self, parents):
         """Sets eye color for this cat's pelt. Takes parents' eye colors into account.
@@ -821,7 +854,6 @@ class Pelt:
         self.cat_sprites = {
             "newborn": random.choice(self.newborn_poses),
             "kitten": random.choice(self.kitten_poses),
-            "adolescent": random.choice(self.adolescent_poses),
             "senior": random.choice(self.senior_poses),
             "para_young": "para_young0",
         }
@@ -830,6 +862,11 @@ class Pelt:
         self.skin = choice(Pelt.skin_sprites)
 
         if self.length == "long":
+            self.cat_sprites["adolescent"] = random.choice(
+                self.adolescent_long_poses
+                if self.adolescent_long_poses
+                else self.adolescent_short_poses
+            )
             self.cat_sprites["adult"] = random.choice(
                 self.adult_long_poses
                 if self.adult_long_poses
@@ -837,6 +874,7 @@ class Pelt:
             )
             self.cat_sprites["para_adult"] = "para_adult_long0"
         else:
+            self.cat_sprites["adolescent"] = random.choice(self.adolescent_short_poses)
             self.cat_sprites["adult"] = random.choice(self.adult_short_poses)
             self.cat_sprites["para_adult"] = "para_adult_short0"
 
@@ -855,14 +893,14 @@ class Pelt:
             scar_choice = random.randint(0, 15)  # 6.67%
 
         if scar_choice == 1:
-            self.scars.append(choice(Pelt.general_scars))
+            self.scars = (*self.scars, choice(Pelt.general_scars))
 
         if "NOTAIL" in self.scars and "HALFTAIL" in self.scars:
-            self.scars.remove("HALFTAIL")
+            self.scars = tuple(scar for scar in self.scars if scar != "HALFTAIL")
 
     def init_accessories(self, age):
         if age == "newborn":
-            self.accessory = []
+            self.accessory = tuple()
             return
 
         acc_display_choice = random.randint(0, 80)
@@ -872,11 +910,11 @@ class Pelt:
             acc_display_choice = random.randint(0, 100)
 
         if acc_display_choice == 1:
-            self.accessory = [
-                choice([choice(Pelt.plant_accessories), choice(Pelt.wild_accessories)])
-            ]
+            self.accessory = tuple(
+                (choice(Pelt.plant_accessories + Pelt.wild_accessories),)
+            )
         else:
-            self.accessory = []
+            self.accessory = tuple()
 
     def init_pattern(self):
         if self.name in Pelt.torties:

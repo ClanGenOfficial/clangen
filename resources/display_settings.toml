@@ -1,0 +1,120 @@
+# WARNING: This file is NOT where your settings are stored.
+# This file is used only to display the settings in the game.
+# The files you may be looking for are "settings.json" in your saves folder,
+# or "clan_settings.json" in your clan's save folder.
+
+# FORMAT:
+# [group]:
+#   setting_name = default_value
+
+[game]
+    [game.general]
+        "dark mode" = false
+        "fullscreen scaling" = false
+        "no sprite antialiasing" = false
+        "custom cursor" = false
+        keybinds = false
+        shaders = false
+        gore = false
+        discord = false
+        check_for_updates = true
+        show_changelog = true
+        special_dates = true
+        "random relation" = true
+        "they them default" = false
+
+    [game.other]
+        language = [
+            "en", "es", "de"
+        ]
+        text_size = [
+            0, 1, 2
+        ]
+        fullscreen = [
+            false, true
+        ]
+        music_volume = [
+            50
+        ]
+        ambiance_volume = [
+            50
+        ]
+        sound_volume = [
+            50
+        ]
+        audio_mute = [
+            false, true
+        ]
+
+[clan]
+    [clan.general]
+        autosave = false
+        disasters = false
+        showxp = false
+        "random med cat" = true
+        fading = true
+        save_faded_copy = false
+        backgrounds = true
+    
+    [clan.role]
+        deputy = false
+        12_moon_graduation = false
+        retirement = false
+        become_mediator = false
+    
+    [clan.relation]
+        affair = false
+        "unmated parentage" = false
+        "same sex birth" = false
+        "same sex adoption" = false
+        "single parentage" = false
+        "romantic with former mentor" = true
+        "first cousin mates" = false
+    
+    [clan.freshkill_tactics]
+        low_rank = true
+        high_rank = false
+        youngest_first = false
+        oldest_first = false
+        hungriest_first = false
+        hunter_first = false
+        sick_injured_first = false
+        experience_first = false
+
+        ration_prey = false
+        auto_feed = true
+    
+    [clan.clan_focus]
+        business_as_usual = true
+        hunting = false
+        herb_gathering = false
+        threaten_outsiders = false
+        seek_outsiders = false
+        rest_and_recover = false
+        sabotage_other_clans = false
+        aid_other_clans = false
+        raid_other_clans = false
+        hoarding = false
+    
+    [clan.other]
+        "show dead relation" = [
+            false, true
+        ]
+        "show empty relation" = [
+            false, true
+        ]
+        "den labels" = [
+            true, false
+        ]
+        "show fav" = [
+            false, true
+        ]
+
+    # Certain clan settings can be nested, so there's a new "nests" key.
+    # FORMAT:
+    # [clan.nests]
+    #   [clan.nests."section_name"."setting_name"]
+    #       required_setting_name = required_value
+    [clan.nests]
+            [clan.nests.relation."same sex adoption"]
+                "same sex birth" = false

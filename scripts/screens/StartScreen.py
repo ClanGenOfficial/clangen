@@ -25,9 +25,9 @@ from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game, constants
-from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game.settings import game_settings_load, game_setting_get
-from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.update_available import UpdateAvailableWindow
 from scripts.ui.windows.changelog import ChangelogWindow
 from scripts.housekeeping.datadir import open_data_dir, open_url
@@ -37,7 +37,7 @@ from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.game.switches import switch_get_value, Switch
-from ..housekeeping.datadir import get_data_dir, get_cache_dir
+from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -142,10 +142,6 @@ class StartScreen(Screens):
         super().screen_switches()
         if game.event_editing:
             game.event_editing = False
-
-        # start menu music if it isn't already playing
-        # this is the only screen that has to check its own music, other screens handle that in the screen change
-        music_manager.check_music(GameScreen.START)
 
         bg = pygame.image.load("resources/images/menu.png").convert()
         if game_setting_get("dark mode"):

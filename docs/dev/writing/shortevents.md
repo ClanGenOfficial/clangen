@@ -26,9 +26,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         "status": [],
         "relationship_status": [],
         "skill": [],
-        "not_skill": [],
         "trait": [],
-        "not_trait": [],
         "backstory": [],
         "dies": false
     },
@@ -37,9 +35,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         "status": [],
         "relationship_status": [],
         "skill": [],
-        "not_skill": [],
         "trait": [],
-        "not_trait": [],
         "backstory": [],
         "dies": false
     },
@@ -102,33 +98,33 @@ the event_id is a unique string used to identify the event. It does not affect e
 >- If you are making new_cat or other_clan events, please include if the event is hostile/neutral/welcoming or hostile/neutral/allies in the ID
 >- If the event is under some kind of constraint, like being skill locked or relationship locked, please indicate that in the ID 
 
-| Abbreviations |      Meaning                     |
-|---------------|----------------------------------|
-| mtn           | appears in the mountainous biome |
-| pln           | appears in the plains biome      |
-| fst           | appears in the forest biome      |
-| bch           | appears in the beach biome       |
-| wtlnd         | appears in the wetlands biome    |
-| dst           | appears in the desert biome      |
-| gen           | appears in any biome             |
-| death         | death type event                 |
-| injury        | injury type event                |
-| new_cat       | new_cat type event               |
-| misc          | any event type that does not fit into the preceding three       |
+| Abbreviations | Meaning                                                   |
+|---------------|-----------------------------------------------------------|
+| mtn           | appears in the mountainous biome                          |
+| pln           | appears in the plains biome                               |
+| fst           | appears in the forest biome                               |
+| bch           | appears in the beach biome                                |
+| wtlnd         | appears in the wetlands biome                             |
+| dst           | appears in the desert biome                               |
+| gen           | appears in any biome                                      |
+| death         | death type event                                          |
+| injury        | injury type event                                         |
+| new_cat       | new_cat type event                                        |
+| misc          | any event type that does not fit into the preceding three |
 
 Example:
 !!! todo "TODO"
     write example
 
 How to make sure your event_id is unique:
-> ctrl (or command) + f through the .json file you're writing the event into. As each event_id contains the biome & type within it and we have different jsons for different biomes and event types, if your potential event_id isn't in the json already, your event_id will be unique.
+> ctrl (or command) + f through the .json file you're writing the event into. As each event_id contains the biome & type within it, and we have different jsons for different biomes and event types, if your potential event_id isn't in the json already, your event_id will be unique.
 
 !!! caution
     No NSFW event_ids. No exceptions.
 
 ***
 ### location:list[str]
->This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  
+>This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 | string        | use                              |
 |---------------|----------------------------------|
@@ -143,10 +139,10 @@ How to make sure your event_id is unique:
 !!! todo "TODO"
     add a table listing various camps
 
-Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols. 
+Please have a look at the [full biome differences list](reference/biomes.md) when thinking about writing patrols. 
 
 ### season:list[str]
->List of seasons in which the event may occur.
+>List of seasons in which the event may occur. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 lowercase season names + "any"
 
@@ -154,12 +150,12 @@ lowercase season names + "any"
 ### sub_type:list[str]
 >List of subtypes for this event. If the event has no subtype, remove parameter.  Possible subtypes:
 
-| death event subtypes | use                                                                                                               |
-|----------------------|-------------------------------------------------------------------------------------------------------------------|
-| war                  | marks event as only occurring during war                                                                          |
-| murder               | marks event as being a murder (m_c is the victim, r_c is the murderer)                                            |
-| old_age              | marks event as only occurring if the m_c is old enough to die of old age                                          |
-| mass_death           | marks event as a mass death event, 3-11 cats will be selected for death                                       |
+| death event subtypes | use                                                                      |
+|----------------------|--------------------------------------------------------------------------|
+| war                  | marks event as only occurring during war                                 |
+| murder               | marks event as being a murder (m_c is the victim, r_c is the murderer)   |
+| old_age              | marks event as only occurring if the m_c is old enough to die of old age |
+| mass_death           | marks event as a mass death event, 3-11 cats will be selected for death  |
 
 | injury event subtypes | use                                      |
 |-----------------------|------------------------------------------|
@@ -246,9 +242,9 @@ lowercase season names + "any"
 ### m_c:dict[str, various]
 >Specifies the requirements for the main cat (m_c) of the event. 
 >
->**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](reference/tag-lists.md#__tabbed_2_1)
+>**age:[list]** : a list of ages m_c can be. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags). [Possible Ages](reference/tag-lists.md#__tabbed_2_1)
 >
->**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](reference/tag-lists.md#__tabbed_2_2)
+>**status:[list]** : a list of statuses m_c can b. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags). [Possible Statuses](reference/tag-lists.md#__tabbed_2_2)
 
 !!! tip
     Keep in mind that the status and ages you input can limit each other! For example, if you add "kitten" to `age`, remember that kitten age cats can only ever have the kitten status.  This means that you *could* leave `status` as "any" and be secure in the knowledge that kitten status cats will be the only ones chosen.  
@@ -259,17 +255,11 @@ lowercase season names + "any"
 
 >**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
->**skill[list]** : m_c must possess at least one skill from this list. if they can be anything, use "any"
+>**skill[list]** : m_c must possess at least one skill from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**not_skill[list]** : m_c cannot possess any of the skills on this list. 
->This is mostly useful in cases where a cat can have any skill except one or two, in which case you would need to list those few skills here, but would not have to list all the other skills in the skill parameter.  Cats are also capable of having multiple skills, so it can be valuable to specify if a cat with an allowed skill should still be prevented from this event due to possessing a second, un-allowed skill.  Also useful for stopping a cat with a certain skill (like FIGHTER,3) from getting an event incongruent with their skill (dying in a fight to an apprentice)
+>**trait[list]** : m_c must possess at least one trait from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**trait[list]** : m_c must possess at least one trait from this list. if they can be anything, use "any"
->
->**not_trait[list]** : m_c cannot possess any of the traits on this list. 
->This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.  
->
->**backstory[list]** : m_c must possess a backstory from this list. if they can be anything, use "any"
+>**backstory[list]** : m_c must possess a backstory from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
 >**dies[bool]** : the m_c will die due to this event. default is False
 
@@ -278,23 +268,18 @@ lowercase season names + "any"
 ### r_c:dict[str, various]
 >Specifies the requirements for r_c of the event.  If there is no r_c in the event, then do not include this parameter. 
 >
->**age:[list]** : a list of ages r_c can be. if they can be anything, use "any"
+>**age:[list]** : a list of ages r_c can be. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**status:[list]** : a list of statuses r_c can be. if they can be anything, use "any"
+>**status:[list]** : a list of statuses r_c can be. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
 >**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers).
 > 
->**skill[list]** : r_c must possess at least one skill from this list. if they can be anything, remove parameter or leave list empty.
+>**skill[list]** : r_c must possess at least one skill from this list. If they can be anything, remove parameter or leave list empty. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**not_skill[list]** : r_c cannot possess any of the skills on this list
->This is mostly useful in cases where a cat can have any skill except one or two, in which case you would need to list those few skills here, but would not have to list all the other skills in the skill parameter.  Cats are also capable of having multiple skills, so it can be valuable to specify if a cat with an allowed skill should still be prevented from this event due to possessing a second, un-allowed skill.
 >
->**trait[list]** : r_c must possess at least one trait from this list. if they can be anything, use "any"
+>**trait[list]** : r_c must possess at least one trait from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**not_trait[list]** : r_c cannot possess any of the traits on this list
->This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.  
->
->**backstory[list]** : r_c must possess a backstory from this list. if they can be anything, use "any"
+>**backstory[list]** : r_c must possess a backstory from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
 >**dies[bool]** : r_c will die due to this event, default is False
 
@@ -385,7 +370,7 @@ lowercase season names + "any"
 
 ### history_text: Dict[str, str]:
 >Controls the history-text for scars and death. You must include a list of cats for whom the history will be assigned (i.e. "m_c", "r_c").
->[History Writing Guidelines](reference/index.md#writing-histories)
+>[History Writing Guidelines](reference/common-formats.md#writing-histories)
 >
 >Block:
 >
@@ -405,7 +390,7 @@ lowercase season names + "any"
 ***
 
 ### relationships:list[dict[str, various]]
->Optional. Indicates effect on cat relationships. Check [Writing Relationship Changes](reference/index.md#writing-relationship-changes) for full parameters.
+>Optional. Indicates effect on cat relationships. Check [Writing Relationship Changes](reference/common-formats.md#writing-relationship-changes) for full parameters.
 ***
 
 ### outsider:dict[str, various]

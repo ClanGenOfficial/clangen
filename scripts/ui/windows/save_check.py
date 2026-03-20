@@ -12,10 +12,8 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-    UITextBoxTweaked,
-)
+from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
@@ -116,7 +114,7 @@ class SaveCheckWindow(GameWindow):
         self.main_menu_button.enable()
 
     def process_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_PRESSED:
             if event.ui_element == self.main_menu_button:
                 if self.isMainMenu:
                     game.is_close_menu_open = False

@@ -21,7 +21,7 @@ class CanHaveKits(unittest.TestCase):
         # then
         self.assertFalse(
             Pregnancy_Events.check_if_can_have_kits(
-                cat, single_parentage=True, allow_affair=True
+                cat, single_parentage=True, allow_unmated=True, allow_affair=True
             )
         )
 
@@ -62,15 +62,16 @@ class SameSexAdoptions(unittest.TestCase):
 
         # when
         single_parentage = False
+        unmated_parentage = False
         allow_affair = False
         self.assertTrue(
             Pregnancy_Events.check_if_can_have_kits(
-                cat1, single_parentage, allow_affair
+                cat1, single_parentage, unmated_parentage, allow_affair
             )
         )
         self.assertTrue(
             Pregnancy_Events.check_if_can_have_kits(
-                cat2, single_parentage, allow_affair
+                cat2, single_parentage, unmated_parentage, allow_affair
             )
         )
 
@@ -78,6 +79,7 @@ class SameSexAdoptions(unittest.TestCase):
             cat=cat1,
             second_parent=cat2,
             single_parentage=single_parentage,
+            allow_unmated=unmated_parentage,
             allow_affair=allow_affair,
             same_sex_birth=False,
             same_sex_adoption=True,

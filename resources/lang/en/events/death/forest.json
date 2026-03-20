@@ -42,8 +42,8 @@
         "frequency": 3,
         "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around {PRONOUN/m_c/object}.",
         "m_c": {
-            "not_skill": [
-                "CLIMBER,2"
+            "skill": [
+                "-CLIMBER,2"
             ],
             "trait": [
                 "nervous",
@@ -146,8 +146,8 @@
                 "warrior",
                 "deputy"
             ],
-            "not_skill": [
-                "RUNNER,2"
+            "skill": [
+                "-RUNNER,2"
             ]
         },
         "history": [

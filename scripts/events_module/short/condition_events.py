@@ -303,25 +303,25 @@ class Condition_Events:
                 # if a non-kitten got kittencough, switch it to whitecough instead
                 if chosen_illness == "kittencough" and not cat.status.rank.is_baby():
                     chosen_illness = "whitecough"
-                # make em sick
-                cat.get_ill(chosen_illness)
 
                 # create event text
-                if i18n.config.get("locale") == "en" and chosen_illness in (
-                    "running nose",
-                    "stomachache",
-                ):
-                    illness = f"a {chosen_illness}"
+                try:
+                    event_string = random.choice(
+                        Condition_Events.ILLNESS_GOT_STRINGS[chosen_illness]
+                    )
+                except KeyError:
+                    # try to translate the illness
+                    chosen_illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
 
-                # try to translate the illness
-                illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
+                    event_string = i18n.t(
+                        "defaults.illness_get_event",
+                        illness=chosen_illness,
+                    )
+                    # just in case we couldn't translate it
+                    event_string.replace("conditions.illnesses.", "")
 
-                illness.replace("conditions.illnesses.", "")
-
-                event_string = i18n.t(
-                    "defaults.illness_get_event",
-                    illness=illness,
-                )
+                # make em sick
+                cat.get_ill(chosen_illness)
 
                 event_string = event_text_adjust(Cat, text=event_string, main_cat=cat)
 
@@ -462,6 +462,7 @@ class Condition_Events:
             "LEGBITE": ["weak leg"],
             "TOETRAP": ["weak leg"],
             "HINDLEG": ["weak leg"],
+            "THROAT": ["damaged throat"],
         }
 
         scarless_conditions = (
@@ -479,6 +480,7 @@ class Condition_Events:
             "recurring shock",
             "lasting grief",
             "persistent headaches",
+            "selective mutism",
         )
 
         got_condition = False
@@ -613,10 +615,10 @@ class Condition_Events:
                 # gather potential event strings for healed illness
                 possible_string_list = Condition_Events.ILLNESS_HEALED_STRINGS[illness]
 
-                # choose event string
-                random_index = int(random.random() * len(possible_string_list))
-                event = possible_string_list[random_index]
-                event = event_text_adjust(Cat, event, main_cat=cat)
+                event = Condition_Events.get_valid_string_from_list(
+                    possible_string_list, cat
+                )
+
                 event_list.append(event)
                 game.herb_events_list.append(event)
 
@@ -645,6 +647,27 @@ class Condition_Events:
         if len(event_list) > 0:
             event_string = " ".join(event_list)
         return event_string
+
+    @staticmethod
+    def get_valid_string_from_list(event_list: list[str], cat: Cat) -> str:
+        med_cats = find_alive_cats_with_rank(
+            Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], working=True
+        )
+
+        allowed_events = []
+        for event in event_list:
+            if "r_c" in event:
+                if med_cats:
+                    allowed_events.append(event)
+            else:
+                allowed_events.append(event)
+
+        return event_text_adjust(
+            Cat,
+            random.choice(allowed_events),
+            main_cat=cat,
+            random_cat=random.choice(med_cats) if med_cats else None,
+        )
 
     @staticmethod
     def handle_already_injured(cat):
@@ -714,8 +737,8 @@ class Condition_Events:
                 # If a scar was not given, we need to grab a separate healed event
                 if not scar_given:
                     try:
-                        event = random.choice(
-                            Condition_Events.INJURY_HEALED_STRINGS[injury]
+                        event = Condition_Events.get_valid_string_from_list(
+                            Condition_Events.INJURY_HEALED_STRINGS[injury], cat
                         )
                     except KeyError:
                         logger.warning(

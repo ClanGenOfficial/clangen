@@ -9,8 +9,11 @@ import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.game_structure import constants
 from scripts.cat.enums import CatGroup
-from scripts.game_structure.audio import music_manager
-from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.settings import (
+    game_setting_get,
+    game_setting_set,
+    game_settings_save,
+)
 from scripts.game_structure.game.switches import (
     switch_set_value,
     switch_get_value,
@@ -49,12 +52,16 @@ class Screens:
         It will handle keeping track of the last screen and cur screen.
         Last screen must be tracked to ensure a clear transition between screens."""
 
-        music_manager.check_music(new_screen)
         # self.exit_screen()
         game.last_screen_forupdate = self.name
 
-        # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in [GameScreen.CAMP, GameScreen.LIST, GameScreen.EVENTS]:
+        # This keeps track of the last screen for the back button on cat profiles
+        # Only add screens to this if it's possible for the profile to be accessed from them
+        if self.name in (
+            GameScreen.CAMP,
+            GameScreen.LIST,
+            GameScreen.EVENTS,
+        ):
             game.last_screen_forProfile = self.name
 
         if new_screen not in [
@@ -77,6 +84,7 @@ class Screens:
             self.current_page = 1
 
         switch_set_value(Switch.cur_screen, new_screen)
+
         game.switch_screens = True
         game.rpc.update_rpc.set()
 
@@ -177,6 +185,16 @@ class Screens:
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
+        # flipping between menu screens and not menu screens
+        if (
+            switch_get_value(Switch.cur_screen) in constants.MENU_SCREENS
+            and game.last_screen_forupdate not in constants.MENU_SCREENS
+        ) or (
+            switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
+            and game.last_screen_forupdate in constants.MENU_SCREENS
+        ):
+            game.audio.check(should_fade_out=True)
+
         Screens.hide_mute_buttons()
         Screens.hide_menu_buttons()
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
@@ -238,7 +256,7 @@ class Screens:
     def show_mute_buttons(cls):
         """This shows all mute buttons, and makes them interact-able."""
 
-        if music_manager.muted or music_manager.audio_disabled:
+        if game.audio.muted or game.audio.disabled or game_setting_get("audio_mute"):
             cls.menu_buttons["unmute_button"].show()
             cls.menu_buttons["mute_button"].hide()
         else:
@@ -248,14 +266,20 @@ class Screens:
     def mute_button_pressed(self, event):
         """This is a short-up to deal with mute button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
+        if game.audio.disabled:
+            return False
         if event.ui_element == Screens.menu_buttons["mute_button"]:
-            music_manager.mute_music()
+            game.audio.mute()
+            game_setting_set("audio_mute", True)
+            game_settings_save(self)
             Screens.show_mute_buttons()
             return True
         elif event.ui_element == Screens.menu_buttons["unmute_button"]:
-            out = music_manager.unmute_music(self.name)
+            game.audio.unmute()
+            game_setting_set("audio_mute", False)
+            game_settings_save(self)
             Screens.show_mute_buttons()
-            return out
+            return True
         else:
             return False
 
@@ -275,17 +299,7 @@ class Screens:
 
         # VIEW EVENTS
         if event.ui_element == Screens.menu_buttons["events"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.EVENTS)
-        # SUPPLY DROPDOWN
-        elif (
-            Screens.menu_buttons.get("supplies")
-            and event.ui_element == Screens.menu_buttons["supplies"].parent_button
-        ):
-            if Screens.menu_buttons["dens"].is_open:
-                Screens.menu_buttons["dens"].close()
         # OPEN FRESHKILL
         elif (
             Screens.menu_buttons.get("supplies")
@@ -302,16 +316,6 @@ class Screens:
             == Screens.menu_buttons["supplies"].child_button_dicts["screens.core.herbs"]
         ):
             HerbManagementWindow()
-        # DEN DROPDOWN
-        elif (
-            Screens.menu_buttons.get("supplies")
-            and event.ui_element == Screens.menu_buttons["dens"].parent_button
-        ):
-            if (
-                Screens.menu_buttons.get("supplies")
-                and Screens.menu_buttons["supplies"].is_open
-            ):
-                Screens.menu_buttons["supplies"].close()
         # OPEN LEADER
         elif (
             event.ui_element
@@ -319,7 +323,6 @@ class Screens:
                 "screens.core.leader_den"
             ]
         ):
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.LEADER_DEN)
         # OPEN MEDICINE
         elif (
@@ -328,7 +331,6 @@ class Screens:
                 "screens.core.medicine_cat_den"
             ]
         ):
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.MED_DEN)
         # OPEN WARRIOR
         elif (
@@ -337,35 +339,24 @@ class Screens:
                 "screens.core.warriors_den"
             ]
         ):
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.WARRIOR_DEN)
         # OPEN CLEARING/MEDIATOR
         elif (
             event.ui_element
             == Screens.menu_buttons["dens"].child_button_dicts["screens.core.clearing"]
         ):
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.MEDIATION)
         # GO TO CAMP
         elif event.ui_element in (
             Screens.menu_buttons["back_to_camp"],
             Screens.menu_buttons["heading"],
         ):
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-                Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.CAMP)
         # VIEW CATS
         elif event.ui_element == Screens.menu_buttons["cats"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.LIST)
         # PATROL
         elif event.ui_element == Screens.menu_buttons["patrols"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.PATROL)
         # MAIN MENU
         elif event.ui_element == Screens.menu_buttons["main_menu"]:
@@ -376,15 +367,9 @@ class Screens:
             )
         # ALLEGIANCES
         elif event.ui_element == Screens.menu_buttons["allegiances"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.ALLEGIANCES)
         # CLAN SETTINGS
         elif event.ui_element == Screens.menu_buttons["clan_settings"]:
-            if Screens.menu_buttons.get("supplies"):
-                Screens.menu_buttons["supplies"].close()
-            Screens.menu_buttons["dens"].close()
             self.change_screen(GameScreen.CLAN_SETTINGS)
 
     @classmethod

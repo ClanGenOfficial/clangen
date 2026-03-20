@@ -85,19 +85,30 @@ class PatrolOutcome:
         self.exp = exp
 
         self.min_max_status = min_max_status if min_max_status else {}
-        self.weight += len(self.min_max_status) * 2
+        self.weight += len(self.min_max_status) * 4
 
         self.relationship_constraints = (
             relationship_constraints if relationship_constraints else []
         )
         if relationship_constraints:
-            self.weight += len(relationship_constraints) * 2
+            self.weight += len(relationship_constraints) * 8
         self.stat_trait = stat_trait if stat_trait else []
         if self.stat_trait:
-            self.weight += int((self.NUM_OF_TRAITS - len(self.stat_trait)) / 10)
+            # exclusionary values!
+            if "-" in self.stat_trait[0]:
+                self.weight += len(self.stat_trait)
+            else:
+                # inclusionary values get inverse weighting
+                self.weight += int((self.NUM_OF_TRAITS - len(self.stat_trait)))
         self.stat_skill = stat_skill if stat_skill else []
         if self.stat_skill:
-            self.weight += int((self.NUM_OF_SKILLS - len(self.stat_skill)) / 5)
+            # exclusionary values!
+            if "-" in self.stat_skill[0]:
+                self.weight += len(self.stat_skill)
+            else:
+                # inclusionary values get inverse weighting
+                self.weight += int((self.NUM_OF_SKILLS - len(self.stat_skill)))
+
         self.can_have_stat = can_have_stat if can_have_stat else []
 
         self.dead_cats = dead_cats if dead_cats else []
@@ -143,7 +154,6 @@ class PatrolOutcome:
             if not filter_relationship_type(
                 group=patrol.patrol_cats,
                 filter_types=outcome.relationship_constraints,
-                event_id=patrol.patrol_event.patrol_id,
                 patrol_leader=patrol.patrol_leader,
             ):
                 continue
@@ -219,11 +229,13 @@ class PatrolOutcome:
 
         return outcome_list
 
-    def execute_outcome(self, patrol: "Patrol") -> Tuple[str, str, Optional[str]]:
+    def execute_outcome(self, patrol: "Patrol") -> Tuple[str, str, list, Optional[str]]:
         """
         Executes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
-        format: (Outcome text, results text, outcome art (might be None))
+        :returns: Outcome text, results text, list of created rel logs (might be empty), outcome art (might be None)
         """
+        rel_results = {}
+
         # This must be done before text processing so that the new cat's pronouns are generated first
         results = [self._handle_new_cats(patrol)]
 
@@ -263,7 +275,14 @@ class PatrolOutcome:
                         other_clan=patrol.other_clan,
                     )
 
-        results.append(self._handle_relationship_changes(patrol))
+        rel_results.update(
+            unpack_rel_block(
+                Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat
+            )
+        )
+        if self.relationship_effects:
+            results.append(i18n.t(f"screens.patrol.relationship_changed"))
+
         results.append(self._handle_rep_changes())
         results.append(self._handle_other_clan_relations(patrol))
         results.append(self._handle_prey(patrol))
@@ -278,15 +297,7 @@ class PatrolOutcome:
 
         print("PATROL END -----------------------------------------------------")
 
-        return processed_text, " ".join(results), self.get_outcome_art()
-
-    def _handle_relationship_changes(self, patrol) -> str:
-        unpack_rel_block(Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat)
-
-        if self.relationship_effects:
-            return i18n.t(f"screens.patrol.relationship_changed")
-        else:
-            return ""
+        return processed_text, " ".join(results), rel_results, self.get_outcome_art()
 
     def _handle_future_event(self, patrol):
         """
@@ -875,6 +886,8 @@ class PatrolOutcome:
             outside = []
             new = []
             for cat in patrol.new_cats[-1]:
+                if "unknown" in attribute_list:
+                    continue
                 if cat.dead:
                     dead.append(str(cat.name))
                 elif cat.status.is_outsider or cat.status.is_other_clancat:
@@ -959,7 +972,7 @@ class PatrolOutcome:
             return None
 
         chosen_scar = choice(scar_list)
-        cat.pelt.scars.append(chosen_scar)
+        cat.pelt.scars = (*cat.pelt.scars, chosen_scar)
 
         history_text = self.history_scar
         if history_text and isinstance(history_text, str):

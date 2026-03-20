@@ -15,7 +15,14 @@ from math import floor
 import i18n
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
-from scripts.cat.enums import CatAge, CatRank, CatGroup, CatStanding, CatSocial
+from scripts.cat.enums import (
+    CatAge,
+    CatRank,
+    CatGroup,
+    CatStanding,
+    CatSocial,
+    CatThought,
+)
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.cat.skills import SkillPath
@@ -100,7 +107,14 @@ def one_moon():
         switch_set_value(Switch.no_able_left, False)
 
     # age up the clan, set current season
+    old_season = game.clan.current_season
     game.clan.age += 1
+    if game.clan.current_season != old_season:
+        # update audio to use new season ambiance
+        try:
+            game.audio.check(should_fade_out=True)
+        except AttributeError:
+            pass
     update_afterlife_temper()
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()
@@ -141,46 +155,47 @@ def one_moon():
     # disaster_events.handle_disasters()
 
     # Handle grief events.
-    if Cat.grief_strings:
+    if game.clan.grief_strings:
         # Grab all the dead or outside cats, who should not have grief text
-        for ID in Cat.grief_strings.copy():
+        for ID in game.clan.grief_strings.copy():
             check_cat = Cat.all_cats.get(ID)
             if isinstance(check_cat, Cat):
                 if check_cat.dead or not check_cat.status.alive_in_player_clan:
-                    Cat.grief_strings.pop(ID)
+                    game.clan.grief_strings.pop(ID)
 
         # Generate events
 
-        for cat_id, values in Cat.grief_strings.items():
-            for _val in values:
-                if _val[2] == "minor":
-                    # Apply the grief message as a thought to the cat
-                    text = event_text_adjust(
-                        Cat,
-                        _val[0],
-                        main_cat=Cat.fetch_cat(cat_id),
-                        random_cat=Cat.fetch_cat(_val[1][0]),
+        for cat_id, details in game.clan.grief_strings.items():
+            for _info in details:
+                text = _info[0]
+                cats = _info[1]
+                grief_type = _info[2]
+
+                if grief_type == "minor":
+                    Cat.fetch_cat(cat_id).get_new_thought(
+                        text, other_cat=Cat.fetch_cat(cats[0])
                     )
 
-                    Cat.fetch_cat(cat_id).thought = text
                 else:
                     game.cur_events_list.append(
-                        Single_Event(_val[0], ["birth_death", "relation"], _val[1])
+                        Single_Event(text, ["birth_death", "relation"], cats)
                     )
 
-        Cat.grief_strings.clear()
+        game.clan.grief_strings.clear()
 
-    if Cat.dead_cats:
+    if game.dead_cats_to_grieve:
         ghost_names = []
         shaken_cats = []
         extra_event = None
-        for ghost in Cat.dead_cats:
+        for ghost in game.dead_cats_to_grieve:
             ghost_names.append(str(ghost.name))
         insert = adjust_list_text(ghost_names)
 
-        if len(Cat.dead_cats) > 1:
+        if len(game.dead_cats_to_grieve) > 1:
             event = i18n.t(
-                "hardcoded.event_deaths", count=len(Cat.dead_cats), insert=insert
+                "hardcoded.event_deaths",
+                count=len(game.dead_cats_to_grieve),
+                insert=insert,
             )
 
             if len(ghost_names) > 2:
@@ -228,9 +243,11 @@ def one_moon():
             Single_Event(
                 event,
                 ["birth_death"],
-                [i.ID for i in Cat.dead_cats],
+                [i.ID for i in game.dead_cats_to_grieve],
                 cat_dict=(
-                    {"m_c": Cat.dead_cats[0]} if len(Cat.dead_cats) == 1 else None
+                    {"m_c": game.dead_cats_to_grieve[0]}
+                    if len(game.dead_cats_to_grieve) == 1
+                    else None
                 ),
             )
         )
@@ -238,7 +255,7 @@ def one_moon():
             game.cur_events_list.append(
                 Single_Event(extra_event, ["birth_death"], [i.ID for i in shaken_cats])
             )
-        Cat.dead_cats.clear()
+        game.dead_cats_to_grieve.clear()
 
     if game.clan.game_mode in ("expanded", "cruel season") and game.clan.freshkill_pile:
         # make a notification if the Clan does not have enough prey
@@ -255,7 +272,7 @@ def one_moon():
     # handle the herb supply for the moon
     game.clan.herb_supply.handle_moon(
         clan_size=get_living_clan_cat_count(Cat),
-        clan_cats=Cat.all_cats_list,
+        clan_cats=[c for c in Cat.all_cats_list if c.status.alive_in_player_clan],
         med_cats=find_alive_cats_with_rank(
             Cat,
             ranks=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
@@ -367,7 +384,7 @@ def trigger_future_events():
                 main_cat=Cat.fetch_cat(event.involved_cats.get("m_c")),
                 random_cat=Cat.fetch_cat(event.involved_cats.get("r_c")),
                 victim_cat=Cat.fetch_cat(event.involved_cats.get("mur_c")),
-                sub_type=event.pool.get("subtype"),
+                sub_type=event.pool.get("sub_type"),
                 future_event=event,
             )
             if event.triggered:
@@ -521,6 +538,12 @@ def handle_lead_den_event():
                         # if cat is an apprentice, make sure they get a mentor!
                         if invited_cat.status.rank == CatRank.APPRENTICE:
                             invited_cat.update_mentor()
+                        # if the cat chose to become a mediator but the settings don't allow it, make them a warrior instead
+                        if (
+                            invited_cat.status.rank == CatRank.MEDIATOR
+                            and not get_clan_setting("become_mediator")
+                        ):
+                            invited_cat.status._change_rank(CatRank.WARRIOR)
 
                     invited_cat.create_relationships_new_cat()
 
@@ -634,7 +657,7 @@ def handle_focus():
     """
     # if no focus is selected, skip all other
     focus_text = i18n.t("defaults.focus_text")
-    if get_clan_setting("business as usual") or get_clan_setting("rest and recover"):
+    if get_clan_setting("business_as_usual") or get_clan_setting("rest_and_recover"):
         return
     elif get_clan_setting("hunting"):
         # handle warrior
@@ -668,7 +691,7 @@ def handle_focus():
         focus_text = i18n.t("hardcoded.focus_prey", count=total_amount)
         game.freshkill_event_list.append(focus_text)
 
-    elif get_clan_setting("herb gathering"):
+    elif get_clan_setting("herb_gathering"):
         # get medicine cats
         healthy_meds = find_alive_cats_with_rank(
             Cat,
@@ -684,31 +707,31 @@ def handle_focus():
 
         focus_text = game.clan.herb_supply.handle_focus(healthy_meds, healthy_warriors)
 
-    elif get_clan_setting("threaten outsiders"):
+    elif get_clan_setting("threaten_outsiders"):
         amount = constants.CONFIG["focus"]["outsiders"]["reputation"]
         change_clan_reputation(-amount)
         focus_text = None
 
-    elif get_clan_setting("seek outsiders"):
+    elif get_clan_setting("seek_outsiders"):
         amount = constants.CONFIG["focus"]["outsiders"]["reputation"]
         change_clan_reputation(amount)
         focus_text = None
 
-    elif get_clan_setting("sabotage other clans") or get_clan_setting(
-        "aid other clans"
+    elif get_clan_setting("sabotage_other_clans") or get_clan_setting(
+        "aid_other_clans"
     ):
-        amount = constants.CONFIG["focus"]["other clans"]["relation"]
-        if get_clan_setting("sabotage other clans"):
+        amount = constants.CONFIG["focus"]["other_clans"]["relation"]
+        if get_clan_setting("sabotage_other_clans"):
             amount = amount * -1
         for name in game.clan.clans_in_focus:
             clan = [clan for clan in game.clan.all_other_clans if clan.name == name][0]
             change_clan_relations(clan, amount)
         focus_text = None
 
-    elif get_clan_setting("hoarding") or get_clan_setting("raid other clans"):
+    elif get_clan_setting("hoarding") or get_clan_setting("raid_other_clans"):
         info_dict = constants.CONFIG["focus"]["hoarding"]
-        if get_clan_setting("raid other clans"):
-            info_dict = constants.CONFIG["focus"]["raid other clans"]
+        if get_clan_setting("raid_other_clans"):
+            info_dict = constants.CONFIG["focus"]["raid_other_clans"]
 
         involved_cats = {"injured": [], "sick": []}
         # handle prey
@@ -740,19 +763,19 @@ def handle_focus():
 
         # handle injuries / illness
         relevant_cats = healthy_warriors + healthy_meds
-        if get_clan_setting("raid other clans"):
+        if get_clan_setting("raid_other_clans"):
             chance = info_dict[f"injury_chance_warrior"]
             # increase the chance of injuries depending on how many clans are raided
             increase = info_dict["chance_increase_per_clan"]
             chance -= increase * len(game.clan.clans_in_focus)
         for cat in relevant_cats:
             # if the raid setting or 50/50 for hoarding to get to the injury part
-            if get_clan_setting("raid other clans") or random.getrandbits(1):
+            if get_clan_setting("raid_other_clans") or random.getrandbits(1):
                 status_use = cat.status.rank
                 if status_use in (CatRank.DEPUTY, CatRank.LEADER):
                     status_use = CatRank.WARRIOR
                 chance = info_dict[f"injury_chance_{status_use}"]
-                if get_clan_setting("raid other clans"):
+                if get_clan_setting("raid_other_clans"):
                     # increase the chance of injuries depending on how many clans are raided
                     increase = info_dict["chance_increase_per_clan"]
                     chance -= increase * len(game.clan.clans_in_focus)
@@ -777,17 +800,17 @@ def handle_focus():
                         involved_cats["sick"].append(cat.ID)
 
         # if it is raiding, lower the relation to other clans
-        if get_clan_setting("raid other clans"):
+        if get_clan_setting("raid_other_clans"):
             for name in game.clan.clans_in_focus:
                 clan = [
                     clan for clan in game.clan.all_other_clans if clan.name == name
                 ][0]
-                amount = -constants.CONFIG["focus"]["raid other clans"]["relation"]
+                amount = -constants.CONFIG["focus"]["raid_other_clans"]["relation"]
                 change_clan_relations(clan, amount)
 
         # finish
         text_snippet = "hardcoded.focus_injury_hoarding"
-        if get_clan_setting("raid other clans"):
+        if get_clan_setting("raid_other_clans"):
             text_snippet = "hardcoded.focus_injury_raiding"
         for condition_type, value in involved_cats.items():
             game.cur_events_list.append(
@@ -964,8 +987,9 @@ def one_moon_cat(cat):
         return
 
     if cat.dead:
-        cat.get_new_thought()
-        if cat.ID in game.just_died:
+        cat.get_new_thought(CatThought.WHILE_DEAD)
+        if cat.ID in game.just_died and cat.status.rank != CatRank.NEWBORN:
+            # newborns are exempt from this bc if we increase the moons, they become a kitten without actually gaining the kitten rank
             cat.moons += 1
         else:
             cat.status.increase_current_moons_as()
@@ -1023,7 +1047,6 @@ def one_moon_cat(cat):
     # newborns don't do much
     if cat.status.rank == CatRank.NEWBORN:
         cat.relationship_interaction()
-        cat.get_new_thought()
         return
 
     handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
@@ -1044,7 +1067,6 @@ def one_moon_cat(cat):
         return
 
     cat.relationship_interaction()
-    cat.get_new_thought()
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:
@@ -1112,7 +1134,7 @@ def check_war():
         game.clan.war["duration"] = 0
 
     # check if war in progress
-    war_events = None
+    war_events: list = []
     enemy_clan = None
     if game.clan.war["at_war"]:
         # Grab the enemy clan object
@@ -1173,7 +1195,7 @@ def check_war():
 
     available_med = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
 
-    for event in war_events:
+    for event in war_events.copy():
         if not game.clan.leader and "lead_name" in event:
             war_events.remove(event)
             continue
@@ -2200,10 +2222,13 @@ def handle_murder(cat):
         and Cat.fetch_cat(i.cat_to).status.alive_in_player_clan
     ]
     targets.extend(negative_relation)
+    # sort by total relationship, this way we know who has the worst relationship
+    targets.sort(key=lambda x: x.total_relationship_value)
 
     # if we have some, then we need to decide if this cat will kill
     if targets:
-        chosen_target = random.choice(targets)
+        # chosen target is the cat with the worst relationship
+        chosen_target = targets[0]
 
         kill_chance = constants.CONFIG["death_related"]["base_murder_kill_chance"]
 
@@ -2211,9 +2236,8 @@ def handle_murder(cat):
             [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg]
         )
         mid_neg = len([t for t in chosen_target.get_reltype_tiers() if t.is_mid_neg])
-        neg = len([t for t in chosen_target.get_reltype_tiers() if t.is_low_neg])
 
-        relation_modifier = (extreme_neg * 20) + (mid_neg * 10) + (neg * 5)
+        relation_modifier = (extreme_neg * 15) + (mid_neg * 5)
 
         kill_chance -= relation_modifier
 
@@ -2221,7 +2245,7 @@ def handle_murder(cat):
             len(chosen_target.log) > 0
             and "(high negative effect)" in chosen_target.log[-1]
         ):
-            kill_chance -= 20
+            kill_chance -= 15
 
         if (
             len(chosen_target.log) > 0
@@ -2230,11 +2254,13 @@ def handle_murder(cat):
             kill_chance -= 10
 
         # little easter egg just for fun
-        if (
-            cat.personality.trait == "ambitious"
-            and Cat.fetch_cat(chosen_target.cat_to).status.is_leader
+        if cat.personality.trait in ("ambitious", "arrogant", "rebellious") and (
+            Cat.fetch_cat(chosen_target.cat_to).status.is_leader
+            or Cat.fetch_cat(chosen_target.cat_to).status.rank == CatRank.DEPUTY
         ):
             kill_chance -= 10
+            if cat.status.rank == CatRank.DEPUTY:
+                kill_chance -= 15
 
         kill_chance -= cat.personality.aggression
         kill_chance -= 16 - cat.personality.stability
@@ -2252,7 +2278,7 @@ def handle_murder(cat):
                 sub_type=["murder"],
             )
 
-        elif kill_chance <= 20:
+        elif kill_chance <= 15:
             create_short_event(
                 event_type="misc",
                 main_cat=cat,

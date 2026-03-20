@@ -18,12 +18,12 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
+from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
-    IDImageButton,
-    UISurfaceImageButton,
-    CatButton,
 )
+from scripts.ui.elements.id_image_button import IDImageButton
+from scripts.ui.elements.cat_button import CatButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
 from scripts.ui.elements.save_button import UISaveButton
 from scripts.ui.windows.game_over import GameOverWindow

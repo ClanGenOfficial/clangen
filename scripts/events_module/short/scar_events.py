@@ -213,7 +213,7 @@ class Scar_Events:
 
             specialty = random.choice(scar_pool)
             if specialty in ["NOTAIL", "HALFTAIL"]:
-                cat.pelt.accessory = [
+                cat.pelt.accessory = tuple(
                     acc
                     for acc in cat.pelt.accessory
                     if acc
@@ -226,24 +226,32 @@ class Scar_Events:
                         "CLOVER",
                         "DAISY",
                     )
-                ]
+                )
 
             # combining left/right variations into the both version
             if "NOLEFTEAR" in cat.pelt.scars and specialty == "NORIGHTEAR":
-                cat.pelt.scars.remove("NOLEFTEAR")
+                cat.pelt.scars = tuple(
+                    scar for scar in cat.pelt.scars if scar != "NOLEFTEAR"
+                )
                 specialty = "NOEAR"
             elif "NORIGHTEAR" in cat.pelt.scars and specialty == "NOLEFTEAR":
-                cat.pelt.scars.remove("NORIGHTEAR")
+                cat.pelt.scars = tuple(
+                    scar for scar in cat.pelt.scars if scar != "NORIGHTEAR"
+                )
                 specialty = "NOEAR"
 
             if "RIGHTBLIND" in cat.pelt.scars and specialty == "LEFTBLIND":
-                cat.pelt.scars.remove("LEFTBLIND")
+                cat.pelt.scars = tuple(
+                    scar for scar in cat.pelt.scars if scar != "RIGHTBLIND"
+                )
                 specialty = "BOTHBLIND"
             elif "LEFTBLIND" in cat.pelt.scars and specialty == "RIGHTBLIND":
-                cat.pelt.scars.remove("RIGHTBLIND")
+                cat.pelt.scars = tuple(
+                    scar for scar in cat.pelt.scars if scar != "LEFTBLIND"
+                )
                 specialty = "BOTHBLIND"
 
-            cat.pelt.scars.append(specialty)
+            cat.pelt.scars = (*cat.pelt.scars, specialty)
 
             scar_gain_strings = [
                 "hardcoded.scar_event0",

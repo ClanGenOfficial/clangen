@@ -22,6 +22,13 @@ EVENTS_PER_PAGE = 10
 
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
+CAMPS: dict = {
+    "Forest": ["Classic", "Gully", "Grotto", "Lakeside"],
+    "Mountainous": ["Cliff", "Cavern", "Crystal River", "Ruins"],
+    "Plains": ["Grasslands", "Tunnels", "Wastelands"],
+    "Beach": ["Tidepools", "Tidal Cave", "Shipwreck", "Fjord"],
+}
+
 SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
 SEASON_CALENDAR = [
     "Newleaf",
@@ -144,7 +151,10 @@ SUPPLY_ADJUSTMENTS = [
 with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
     CONFIG = tomllib.loads(read_file.read())
 
-with open(f"resources/prey_config.toml", "r", encoding="utf-8") as read_file:
+with open("resources/display_settings.toml", "r", encoding="utf-8") as read_file:
+    DISPLAY_SETTINGS = tomllib.loads(read_file.read())
+
+with open("resources/prey_config.toml", "r", encoding="utf-8") as read_file:
     PREY_CONFIG = tomllib.loads(read_file.read())
 
 with open("resources/placements.json", "r", encoding="utf-8") as read_file:

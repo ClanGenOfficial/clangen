@@ -48,7 +48,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed the story to_cat told {PRONOUN/from_cat/poss} patrol."
+                        }
                     },
                     {
                         "cats_to": [
@@ -61,7 +64,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat listened to a story together on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -85,7 +91,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wished that to_cat paid attention to {PRONOUN/from_cat/poss} story."
+                        }
                     }
                 ],
                 "frequency": 4
