@@ -159,7 +159,9 @@ class Patrol:
             other_clan=self.other_clan,
         )
 
-    def proceed_patrol(self, path: str = "proceed") -> Tuple[str, str, Optional[str]]:
+    def proceed_patrol(
+        self, path: str = "proceed"
+    ) -> Tuple[str, str, list, Optional[str]]:
         """Proceed the patrol to the next step.
         path can be: "proceed", "antag", or "decline" """
 
@@ -181,6 +183,7 @@ class Patrol:
                         other_clan=self.other_clan,
                     ),
                     "",
+                    [],
                     None,
                 )
             else:
@@ -523,7 +526,6 @@ class Patrol:
         if not filter_relationship_type(
             group=self.patrol_cats,
             filter_types=patrol.relationship_constraints,
-            event_id=patrol.patrol_id,
             patrol_leader=self.patrol_leader,
         ):
             if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
@@ -844,7 +846,9 @@ class Patrol:
 
         return all_patrol_events
 
-    def determine_outcome(self, antagonize=False) -> Tuple[str, str, Optional[str]]:
+    def determine_outcome(
+        self, antagonize=False
+    ) -> Tuple[str, str, list, Optional[str]]:
         if self.patrol_event is None:
             raise Exception("No patrol event supplied")
 

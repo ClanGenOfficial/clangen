@@ -226,7 +226,7 @@ def get_special_snippet_list(
         unique_snippets.append(choice(snip_list))
 
     # pick out our final snippets
-    final_snippets = sample(unique_snippets, k=amount)
+    final_snippets = sample(unique_snippets, k=min(amount, len(unique_snippets)))
 
     if return_string:
         text = adjust_list_text(final_snippets)

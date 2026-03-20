@@ -300,5 +300,24 @@
         "random_living_status": [
             "starclan"
         ]
+    },
+    {
+        "id": "med_cat_app_to_alive_non-medcat_crush",
+        "thoughts": [
+            "Brags to r_c about the important work {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing",
+            "Gives r_c a tour of the medicine cat den to impress {PRONOUN/r_c/object}",
+            "Fusses over a <i>teeny</i> tiny scratch r_c got",
+            "Feels bad for hoping r_c might get hurt so {PRONOUN/m_c/subject} could see {PRONOUN/r_c/object}"
+        ],
+        "random_status_constraint": [
+            "-medicine cat apprentice",
+            "-medicine cat"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraint": [
+            "fancies_only"
+        ]
     }
 ]

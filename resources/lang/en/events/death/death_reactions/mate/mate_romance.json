@@ -152,7 +152,9 @@
   "loving": {
     "body": [
       "When m_c's body is returned to camp, r_c can't help but break down in caterwauls. {PRONOUN/r_c/subject/CAP} {VERB/r_c/press/presses} {PRONOUN/r_c/poss} muzzle into m_c's icy pelt, shivering with grief.",
-      "Despite feeling like {PRONOUN/r_c/poss} heart has been torn in two, r_c gently places m_c's favorite nest decorations next to {PRONOUN/m_c/poss} still body, so that it looks like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not dead, but simply in a deep and peaceful sleep."
+      "Despite feeling like {PRONOUN/r_c/poss} heart has been torn in two, r_c gently places m_c's favorite nest decorations next to {PRONOUN/m_c/poss} still body, so that it looks like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not dead, but simply in a deep and peaceful sleep.",
+      "r_c is at a loss for who {PRONOUN/r_c/subject} will become without m_c at {PRONOUN/r_c/poss} side.",
+      "The idea of going on living when m_c is dead is unthinkable to r_c. {PRONOUN/m_c/poss/CAP} mate was {PRONOUN/r_c/poss} whole life."
 
     ],
     "no_body": [

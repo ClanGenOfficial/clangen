@@ -4,6 +4,7 @@
         "general_info": "Change the general settings of your game here.\nMore settings are available in the settings page of your Clan.",
         "audio": "audio settings",
         "audio_info": "Change the settings for the game audio here.",
+        "ambiance_volume": "Ambiance Volume:",
         "music_volume": "Music Volume:",
         "sfx_volume": "Sound Effect Volume:",
         "info": "info",

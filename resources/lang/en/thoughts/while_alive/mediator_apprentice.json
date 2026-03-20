@@ -86,5 +86,19 @@
         "main_trait_constraint": [
             "vengeful"
         ]
+    },
+    {
+        "id": "mediator_apprentice_alive_romantic_crush",
+        "thoughts": [
+            "Wonders if {PRONOUN/m_c/subject} can use {PRONOUN/m_c/poss} new skills to impress r_c",
+            "Hopes r_c will be swayed by {PRONOUN/m_c/poss} gallantry",
+            "Wonders if it'd be okay to assign {PRONOUN/m_c/self} to work with r_c one-on-one"
+        ],
+        "random_living_status": [
+            "living"
+        ],
+        "relationship_constraints": [
+            "fancies_only"
+        ]
     }
 ]

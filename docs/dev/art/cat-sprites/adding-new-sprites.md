@@ -1,4 +1,4 @@
-# Adding Sprites
+# Modifying Sprites
 If you would like to add new collars, head to [Palette Maps](palette-maps.md) for more information.
 
 !!! important
@@ -20,7 +20,7 @@ These must be properly spaced on the 50x50 grid to line up with the other sprite
     New poses can be added to the end of the sheet or inserted at the start or middle! Width or height can be increased in increments of 50 px. Be sure to adjust the `sheet_layout` information in the `pose_sprite_data.json` file. This informs the code of how many columns and rows of sprites it should expect to find. The first number is the number of columns and second number is the rows. 
 
 !!! tip "If removing a pose..."
-    If a pose needs to be removed, it can safely be removed from the spritesheet as long as the `pose_sprite_data.json` file's pose list is updated to match. The pose's entry in the pose list should be removed and the index numbers of all other poses should be updated to reflect their new positions on the spritesheet. Conversion of old saves that utilize the removed pose will be handled automatically by the code without any extra work. **There must always be at least one of each pose type to avoid errors (i.e. at least one kitten, one adolescent, one adult, ect.) Para and sick sprites should not be removed.**)
+    If a pose needs to be removed, it can safely be removed from the spritesheet as long as the `pose_sprite_data.json` file's pose list is updated to match. The pose's entry in the pose list should be removed. Conversion of old saves that utilize the removed pose will be handled automatically by the code without any extra work. **There must always be at least one of each pose type to avoid errors (i.e. at least one kitten, one adolescent, one adult, ect.) Para and sick sprites should not be removed.**
 
 ## Adding Sprites to their DATA Sheet
 Once you've completed your changes to the spritesheet, the matching `DATA` sheet will need to be altered. This is the last step! Once the `DATA` sheet is altered, the new sprites should appear in game.
@@ -34,16 +34,21 @@ If you have added your new sprite set to the end of a row, then you will locate 
 ### Individual DATA Sheet Information
 As mentioned, some DATA sheets contain more information than others. At it's most basic, a sheet will have a `spritesheet` string and a `sprite_list` that contains a list of lists. The more intricate aspects of certain DATA sheets is detailed below.
 
-| DATA sheet                   | `spritesheet`                          | `sprite_list`                                                                                                                                |
-|------------------------------|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `eye_sprite_data`            | List containing both eye spritesheets. | List containing dicts, each dict contains key:value pairs for `"NAME": "color category"`. Allowed colors are `yellow`, `green`, or `blue`.   |
-| `skin_sprite_data`           | Name of the spritesheet.               | List of lists containing name information.                                                                                                   |
-| `plant_sprite_data`          | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`.  |
-| `wild_sprite_data`           | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`.  |
-| `scar_sprite_data`           | Name of the spritesheet.               | List of lists containing name information.                                                                                                   |
-| `scar_missing_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                   |
-| `white_patches_sprite_data`  | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "white amount"`. Allowed white amounts are `little`, `mid`, `high`, `mostly`. |
-| `tortie_patches_sprite_data` | Name of the spritesheet.               | List of lists containing name information.                                                                                                   |
+| DATA sheet                           | `spritesheet`                          | `sprite_list`                                                                                                                               |
+|--------------------------------------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `eye_sprite_data`                    | List containing both eye spritesheets. | List containing dicts, each dict contains key:value pairs for `"NAME": "color category"`. Allowed colors are `yellow`, `green`, or `blue`.  |
+| `skin_sprite_data`                   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `plant_sprite_data`                  | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`. |
+| `wild_sprite_data`                   | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`. |
+| `scar_sprite_data`                   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `scar_missing_sprite_data`           | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_mostly_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_high_sprite_data`     | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_mid_sprite_data`      | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_little_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_vitiligo_sprite_data` | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_points_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `tortie_patches_sprite_data`         | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
 
 The pelt `DATA` sheet is particularly complex due to how integral it is to the multiple areas of the cat's sprite. Additions to this sheet should be discussed with senior contributors beforehand, as we are rather choose-y about adding new colors or patterns to the game.
 
@@ -56,9 +61,9 @@ The pelt `DATA` sheet is particularly complex due to how integral it is to the m
 
 The pose `DATA` sheet is also unique.
 
-| `spritesheet`                                                                                | `sheet_layout`                                                         | `poses`                                                                                                                                                                                                  |
-|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| List of all lineart-related spritesheets, such as lineart, gradients, overlays, and shaders. | List containing the columns and rows of sprites expected on the sheet. | Dicts containing key:value pairs for `"pose save name": "pose index on the spritesheets"`. Pose index is counted starting from the top left corner of the sheet and moving left-to-right, top-to-bottom. |
+| `spritesheet`                                                                                | `sheet_layout`                                                         | `poses`                                                                                                                                                                  |
+|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| List of all lineart-related spritesheets, such as lineart, gradients, overlays, and shaders. | List containing the columns and rows of sprites expected on the sheet. | List of pose names as they should appear in the save file. Pose index is counted starting from the top left corner of the sheet and moving left-to-right, top-to-bottom. |
 
 
 

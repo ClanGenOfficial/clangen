@@ -1612,7 +1612,7 @@
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["like", "comfort"],
                         "amount": -10,
@@ -1621,7 +1621,7 @@
                         }
                     },
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["s_c"],
                         "mutual": false,
                         "values": ["like", "respect"],
@@ -2537,7 +2537,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat fought off a prairie dog on patrol."
+                            "cats_from": "from_cat was impressed when to_cat fought off a prairie dog while on patrol."
                         }
                     }
                 ],
@@ -3470,7 +3470,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat discovered a new set of tunnels on patrol."
+                            "cats_from": "from_cat heard that to_cat discovered a new set of tunnels while on patrol."
                         }
                     }
                 ],

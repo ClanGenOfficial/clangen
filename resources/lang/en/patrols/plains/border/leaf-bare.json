@@ -26,18 +26,16 @@
                 "art": "gen_speaking_cat_w1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat scouted good hunting grounds on patrol together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -54,57 +52,28 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 8
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned about running endurance from to_cat."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains while on patrol together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -124,44 +93,28 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat noticed {PRONOUN/from_cat/object} struggling in the cold and found some shelter."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat made the long trek to the outer plains while on patrol together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -184,18 +137,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": true,
                         "values": [
                             "trust",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat noticed that from_cat was struggling on patrol and decided to take the patrol back to camp early."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -255,18 +207,45 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "patrol"
+                            "clan", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat approved of how to_cat pushed {PRONOUN/to_cat/poss} patrol to reach the far border."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan", "high_social", "low_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat disapproved of how to_cat pushed {PRONOUN/to_cat/poss} patrol to reach the far border."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat pushed from_cat to finish a long patrol in the extreme cold, and the patrol suffered for it."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -292,45 +271,58 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_social"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat advocated for {PRONOUN/to_cat/poss} Clanmates and urged p_l to end a patrol early when the cold took its toll on the cats."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "patrol"
+                            "clan", "low_social", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -10
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat disapproved of to_cat ending a patrol early just because it was cold that day."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust"
                         ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat doubted to_cat's leadership when {PRONOUN/to_cat/subject} tried to force a patrol to persevere in the extreme cold."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was very grateful that to_cat spoke up on behalf of the patrol when the cold started to take its toll on them."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -368,14 +360,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol reported courting coyotes on their territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -386,55 +381,54 @@
                 "art": "running_two_warriors",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated how to_cat's patrol shadowed a coyote to track its movements and keep c_n safe."
+                        }
                     }
                 ],
                 "frequency": 2
             },
             {
-                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up, and yes, there's the scrabbling of paws, the yip of frustration as the coyote reaches them far too late. Well, if they needed confirmation that the beast was both really here and really interested in cat meat, there it is. They wait for the predator to give up, so they can go warn c_n.",
+                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon - from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
                 "exp": 40,
                 "art": "gen_coyote2",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_lawful"
                         ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warning the Clan about a coyote."
+                        } 
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust",
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat gained respect for to_cat when {PRONOUN/to_cat/subject} thought fast and led the patrol up a tree to escape a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -445,18 +439,18 @@
                 "art": "running_two_warriors",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's small patrol led a coyote away from the camp."
+                        }
                     }
                 ],
                 "frequency": 2
@@ -473,38 +467,37 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard about how to_cat's patrol attacked a coyote to drive it out of the territory."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat ambushed a coyote on patrol and led from_cat in an effort to drive it off the territory."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything, they go to a well known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
+                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
                 "exp": 50,
                 "art": "gen_coyote2",
                 "can_have_stat": [
@@ -515,32 +508,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat from a coyote by finding a burrow for the patrol to hide in."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -557,32 +535,30 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat warning the Clan of courting coyotes."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat identified the sound of courting coyotes and warned the patrol before they encountered danger."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -603,18 +579,33 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat led a coyote away from c_n territory on a patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat took on the brunt of the danger in leading a coyote away from c_n territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -646,24 +637,24 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "to_cat laid down {PRONOUN/to_cat/poss} life to protect c_n from coyotes."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift.The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside.",
                 "exp": 0,
                 "art": "gen_coyote_danger1",
                 "injury": [
@@ -692,22 +683,6 @@
                     "scar": "Courting coyotes scarred r_c's pelt.",
                     "death": "r_c was killed by a coyote male trying to offer a courting gift to a female."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -740,23 +715,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "clan"
                         ],
@@ -764,7 +723,24 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat held off a coyote long enough to save the lives of the rest of the patrol."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect", "trust"
+                        ],
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "to_cat held off a coyote long enough to save the lives of from_cat and the rest of the patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -775,18 +751,19 @@
                 "art": "running_warrior",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat failed to track a coyote on patrol, leaving c_n in danger."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -803,9 +780,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -814,7 +789,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat failed to track a coyote on patrol, leaving c_n in danger."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -828,14 +806,11 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
                     "death": "This cat died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -844,7 +819,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was killed as a result."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -872,9 +850,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -883,7 +859,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was injured as a result."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -907,7 +886,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings - so recently that it stinks from several fox lengths away, sharply disgusting in the muffled frosty world, so recently that the canine might be still here.",
+        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings - so recently that it stinks from several fox-lengths away, sharply disgusting in the muffled frosty world, so recently that the canine might be still here.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -917,46 +896,44 @@
                 "art": "gen_coyote1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["r_c"],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat's daring move helped from_cat's patrol drive off a coyote."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -978,46 +955,44 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat led from_cat and the rest of the patrol in tracking down a coyote."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1032,28 +1007,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol reported courting coyotes on their territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1077,51 +1041,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1129,13 +1049,42 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol, unbelievably, drove off an entire pack of coyotes."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "to_cat led from_cat and the rest of the patrol in driving off an entire pack of coyotes."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive off an entire pack of coyotes."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's only because s_c is with them, sprinting as fast as the wind in the worse of the life threatening relay race, that they're able to lead the stinking pack away.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. Because s_c is with them, sprinting as fast as the wind in the worst of this life-threatening relay race, the patrol is able to lead the stinking pack away.",
                 "exp": 70,
                 "art": "running_warrior",
                 "can_have_stat": [
@@ -1146,37 +1095,7 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
@@ -1184,12 +1103,13 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol led a pack of coyotes off the territory."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
                             "patrol"
                         ],
@@ -1197,7 +1117,22 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat's speed allowed from_cat's patrol to lead a pack of coyotes away from c_n's territory."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat lead a pack of coyotes away from c_n's territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1208,18 +1143,30 @@
                 "art": "fst_hunt_fun3",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol tracked a coyote."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to track a coyote."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1230,18 +1177,30 @@
                 "art": "fst_hunt_fun3",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1252,22 +1211,49 @@
                 "art": "gen_coyote1",
                 "stat_skill": [
                     "FIGHTER,3",
-                    "INSIGHTFUL,2"
+                    "INSIGHTFUL,2",
+                    "CLEVER,3"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat's patrol was able to drive off a coyote thanks to to_cat's brilliant strategy."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1288,32 +1274,44 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat led from_cat's patrol in a fight against a coyote."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1341,6 +1339,19 @@
                     "scar": "A coyote encounter left its scars on r_c.",
                     "death": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
                 },
+                "relationships": [
+                {
+                    "cats_from": ["patrol", "high_aggress"],
+                    "cats_to": ["r_c"],
+                    "values": ["respect"],
+                    "mutual": false,
+                    "amount": -8,
+                    "log":
+                    {
+                        "cats_from": "from_cat blamed to_cat for the patrol's failure to drive off a coyote."
+                    }
+                }
+            ],
                 "frequency": 4
             },
             {
@@ -1363,25 +1374,8 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "",
                     "death": "r_c was killed by a coyote male trying to offer a courting gift to a female."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -1420,14 +1414,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "clan"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "to_cat put {PRONOUN/to_cat/self} in danger to rescue r_c from the jaws of a coyote."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1462,37 +1459,24 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "clan"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "to_cat attacked a coyote to save from_cat's life when a courting male decided to offer from_cat as a gift to a female."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads them to attack anyway. It is a mistake.",
+                "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads an attack anyway. It is a mistake.",
                 "exp": 0,
                 "art": "gen_coyote_danger1",
                 "can_have_stat": [
@@ -1551,7 +1535,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "from_cat blamed to_cat's foolhardy attack on a pack of coyotes for the injuries and deaths on the patrol."
+                        }
                     },
                     {
                         "cats_to": [
@@ -1564,7 +1551,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat's foolhardy attack on a pack of coyotes caused the deaths and injuries of multiple Clanmates."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1607,44 +1597,16 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "like"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat's life on patrol by staunching the blood-flow after a coyote took a bite out of {PRONOUN/from_cat/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1669,18 +1631,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
+                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "clan"
+                            "patrol", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat blamed to_cat for the patrol's failure to drive off a coyote."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1699,18 +1661,18 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
+                        "cats_to": ["r_c"],
                         "cats_from": [
                             "clan"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -3
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat honored to_cat's noble death to keep the Clan safe from coyotes."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1738,18 +1700,18 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "r_c"
-                        ],
+                        "cats_to": ["r_c"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat respected that to_cat put {PRONOUN/to_cat/self} in danger in a fight against a coyote."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1772,22 +1734,16 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                5
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 5],
+            "normal adult": [1, 5]
         },
         "frequency": 2,
-        "intro_text": "Patrolling the border and updating the markings, p_l feels the temperature drop. Rearing up, {PRONOUN/p_l/subject} can just make out the distant sky above the valley of trampled snow the patrol pads in. A sheer wall of grey approaches. They need to take cover!!",
+        "intro_text": "Patrolling the border and updating the markings, p_l feels the temperature drop. Rearing up, {PRONOUN/p_l/subject} can just make out the distant sky above the valley of trampled snow the patrol pads in. A wall of gray approaches. They need to take cover!",
         "decline_text": "Fortunately they haven't padded far from camp yet, and the patrol makes it back before the storm hits.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l knows a set of tunnels near here, and charges through the snowbanks, leading the patrol to the entrance and digging frantically as the wind starts to pick up. They make it inside by the skin of their teeth, but the important thing is that they make it.",
+                "text": "p_l knows a set of tunnels near here and charges through the snowbanks, leading the patrol to the entrance and digging frantically as the wind starts to pick up. They make it inside by the skin of their teeth, but the important thing is that they make it.",
                 "exp": 30,
                 "art": "fst_hunt_fun3",
                 "relationships": [
@@ -1803,21 +1759,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                        }
                     },
                     {
                         "cats_to": [
@@ -1830,7 +1775,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat's quick thinking allowed from_cat and the patrol to find shelter before a snowstorm hit."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1844,7 +1792,8 @@
                 "stat_trait": [
                     "nervous",
                     "insecure",
-                    "gloomy"
+                    "gloomy",
+                    "careful"
                 ],
                 "art": "running_two_warriors",
                 "relationships": [
@@ -1860,25 +1809,14 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                        }
                     },
                     {
                         "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -1887,13 +1825,16 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat's cautious nature allowed from_cat and the patrol to find shelter before a snowstorm hit."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "It's important not to panic. s_c takes one deep breath. Two. By {PRONOUN/s_c/poss} third, {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} remembered the route to the nearest set of known, safe tunnels. The rest of the patrol is snappish and impatient, but they all apologise later, packed snugly and safely into an old badger sett as the storm rages outside.",
+                "text": "It's important not to panic. s_c takes one deep breath. Two. By {PRONOUN/s_c/poss} third, {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} remembered the route to the nearest set of known, safe tunnels. The rest of the patrol is impatient, but they all apologize later, packed snugly and safely into an old badger sett as the storm rages outside.",
                 "exp": 30,
                 "can_have_stat": [
                     "any"
@@ -1918,25 +1859,14 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                        }
                     },
                     {
                         "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -1945,13 +1875,16 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat remembered the route to a tunnel where from_cat and the patrol could shelter before a snowstorm hit."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c is an expert on the network of tunnels and burrows that dot the plains, and the entire patrol immediately looks to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/nod/nods}- {PRONOUN/s_c/subject} {VERB/s_c/know/knows} just the place, an old sett. By the smell of the wind, the storm blowing down on them will be one of sleet capable of wicking away all warmth from a pelt. The patrol needs to shelter and wait it out.",
+                "text": "s_c is an expert on the network of tunnels and burrows that dot the plains, and the entire patrol immediately looks to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/nod/nods} - {PRONOUN/s_c/subject} {VERB/s_c/know/knows} just the place, an old sett. By the smell of the wind, the storm blowing down on them can wick away all warmth from a pelt. The patrol needs to shelter and wait it out.",
                 "exp": 40,
                 "can_have_stat": [
                     "any"
@@ -1973,25 +1906,14 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                        }
                     },
                     {
                         "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2000,7 +1922,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat's knowledge of the burrows and tunnels on the territory allowed from_cat and the patrol to find shelter before a snowstorm hit."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2028,21 +1953,10 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                        }
                     },
                     {
                         "cats_to": [
@@ -2055,16 +1969,22 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat encouraged from_cat and the patrol to share tongues to stay warm during a snowstorm."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c spots a rabbit bolting for home. You know what? That's good enough. Calling the patrol in, s_c tracks it to its burrow, and the cats cram themselves in, one at a time and completely squished, to wait out the storm. It's not comfortable, but it works.",
+                "text": "s_c spots a rabbit bolting for home. That'll do. Calling the patrol in, s_c tracks it to its burrow, and the cats cram themselves in, one at a time and completely squished, to wait out the storm. It's not comfortable, but it works. At least they don't go hungry.",
                 "exp": 30,
                 "can_have_stat": [
                     "any"
+                ],
+                "prey": [
+                    "small"
                 ],
                 "stat_skill": [
                     "HUNTER,2"
@@ -2083,11 +2003,14 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hid from a snowstorm in a warren together."
+                        }
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2096,13 +2019,16 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat's quick thinking allowed from_cat and the patrol to find shelter in a warren before a snowstorm hit."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "There's absolutely no shelter here, no tunnels, no burrow, no bushes or valleys, nothing. The patrol begins to panic, but s_c frowns, concentrating, remembering the histories of cats who live on hills of ice. The snow itself can be their den, a snow-den, cold, but better than nothing.",
+                "text": "There's absolutely no shelter here, no tunnels, no burrow, no bushes or valleys, nothing. The patrol begins to panic, but s_c frowns, concentrating, remembering the histories of cats who live on hills of ice. The snow itself can be their den: a snow-den. Cold, but better than nothing.",
                 "exp": 30,
                 "can_have_stat": [
                     "any"
@@ -2140,11 +2066,14 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                        }
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2153,7 +2082,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "to_cat's knowledge of cats who live in hills of ice gave {PRONOUN/to_cat/object} the idea to shelter in a snow-den with from_cat and the rest of the patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2161,7 +2093,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bonechilling sleet, half melted specks of hail and ice cold water that suck the heat from the cats' pelts and slick them down wet against the skin.",
+                "text": "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bone-chilling sleet that sucks the heat from the cats' pelts and slicks their fur against the skin.",
                 "exp": 0,
                 "art": "gen_bord_flashflood",
                 "injury": [
@@ -2193,13 +2125,16 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to find shelter in a snowstorm and lost trust in each other's skills."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bonechilling sleet, half melted specks of hail and ice cold water that suck the heat from the cats' pelts and slick them down wet against the skin. r_c becomes unresponsive.",
+                "text": "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bone-chilling sleet that sucks the heat from the cats' pelts and slicks their fur against the skin. r_c becomes unresponsive.",
                 "exp": 0,
                 "art": "gen_bord_flashflood",
                 "injury": [
@@ -2234,13 +2169,16 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were unable to find shelter before a snowstorm hit, and r_c froze to death."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} {VERB/s_c/do/does} best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/arrive/arrives} in one piece. One shivering, sodden piece.",
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it - they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} {VERB/s_c/do/does} best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/arrive/arrives} in one piece. One shivering, sodden piece.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_warrior",
                 "can_have_stat": [
@@ -2269,16 +2207,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "trust", "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wasn't happy with to_cat for insisting on racing home instead of sheltering when a snowstorm threatened their patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2321,16 +2262,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "trust", "respect"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat regretted trusting to_cat when to_cat insisted the patrol run home instead of sheltering when a snowstorm descended on their patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2360,21 +2304,6 @@
                     "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
                     "death": "m_c was killed by the consequences of failing to find shelter in a sleet storm."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -2394,21 +2323,6 @@
                     "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
                     "death": "m_c was killed by the consequences of failing to find shelter in a sleet storm."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -2429,14 +2343,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "normal adult": [
-                2,
-                6
-            ],
-            "apprentice": [
-                -1,
-                -1
-            ]
+            "normal adult": [2, 2]
         },
         "frequency": 2,
         "intro_text": "While on a dawn border patrol, with the sun still hugging the distant horizon, p_l finds an opening to what seems to be a new set of tunnels.",
@@ -2444,26 +2351,9 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "This could be a burrow, r_c agrees. But digging it out to check will chill their paws, and possibly disturb a hibernating occupant, if they're unlucky. Reporting it back at camp is worth doing, but let's not poke at half buried snow mounds, yes?",
+                "text": "This could be a burrow, r_c agrees. But digging it out to check will chill their paws, and possibly disturb a hibernating occupant, if they're unlucky. Reporting it back at camp is worth doing, whereas poking at StarClan-knows-what under the snow might be dangerous.",
                 "exp": 25,
                 "art": "gen_train_talkingWW",
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -2472,71 +2362,56 @@
                 "art": "gen_train_talkingWW",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat felt jealous that to_cat was the one to discover new tunnels instead of {PRONOUN/from_cat/object}."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 3
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat discovered a new set of tunnels on the territory."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "No, these aren't new... but the smell of badger on them is. Something's very odd here. No badger, no matter the species, should be moving into new tunnels during leaf-bare. Maybe it's injured, or sick, maybe it was driven out of its cete, but they should report this to the rest of c_n.",
+                "text": "These aren't new, but the smell of badger on them is. Something's very odd here. No badger, no matter the species, should be moving into new tunnels during leaf-bare. Maybe it's injured, or sick, maybe it was driven out of its cete, but they should report this to the rest of c_n.",
                 "exp": 30,
                 "art": "fst_bord_sett",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat found a badger's scent around a tunnel on patrol and went back to camp to report it."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery, that kind should move in packs. s_c devises a plan to block the entrance with snow, to mark the place for another, bigger border patrol to deal with.",
+                "text": "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. s_c devises a plan to block the entrance with snow, to mark the place for another, bigger border patrol to deal with.",
                 "exp": 30,
                 "art": "fst_bord_sett",
                 "can_have_stat": [
@@ -2547,98 +2422,70 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat approved of to_cat's plan to block a badger sett's entrance with snow."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c pauses before entering the tunnels. After a careful inspection of the half buried entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on.",
+                "text": "s_c pauses before entering the tunnels. After a careful inspection of the half-buried entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on.",
                 "exp": 20,
                 "art": "gen_warrior_crouching",
                 "stat_skill": [
                     "HUNTER,3",
                     "CLEVER,1",
-                    "TEACHER,3"
+                    "TEACHER,3",
+                    "SENSE,1"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat's sharp observation saved to_cat from potentially encountering a wolverine on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c pauses before entering the tunnels. After a careful inspection of the half buried entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on.",
+                "text": "s_c pauses before entering the tunnels. After a careful inspection of the half buried entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on.",
                 "exp": 20,
                 "art": "gen_warrior_crouching",
                 "stat_trait": [
                     "careful",
                     "wise",
-                    "responsible"
+                    "responsible",
+                    "nervous"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat's sharp observation saved to_cat from potentially encountering a wolverine on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2744,14 +2591,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "normal adult": [
-                1,
-                6
-            ],
-            "apprentice": [
-                1,
-                6
-            ]
+            "normal adult": [1, 1],
+            "apprentice": [1, 1]
         },
         "frequency": 2,
         "intro_text": "Trotting along the track that marks the border with app1, p_l spots the entrance to an unfamiliar hole in the ground.",
@@ -2759,7 +2600,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "Checking the new tunnels proves a good move - not only are they sound and safe, abet with a pile of snow and grass stalks blown into the sole shallow chamber's terminus, but they immediately prove necessary. A rainstorm rolls in, to warm for snow or sleet but too cold to be out walking in, and p_l and app1 shelter in their newly found refuge.",
+                "text": "Checking the new tunnels proves a good move - not only are they unoccupied, albeit with snow and grass stalks blown into the shallow chamber's terminus, but the tunnels immediately prove necessary. A rainstorm rolls in, too warm for snow or sleet but too cold to be out walking in. p_l and app1 shelter in their newly found refuge.",
                 "exp": 25,
                 "art": "pln_bord_tunnel",
                 "relationships": [
@@ -2775,44 +2616,21 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat sheltered from a rainstorm in a newly-discovered tunnel."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. But p_l and app1 persist, and when they return to camp, p_l makes sure to tell app1 {PRONOUN/app1/subject}{VERB/app1/'ve/'s} done a good day's work, and to take {PRONOUN/app1/poss} pick from the fresh-kill pile.",
+                "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. But p_l and app1 persist, and when they return to camp, p_l makes sure to tell app1 {PRONOUN/app1/subject}{VERB/app1/'ve/'s} done a good day's work and to take {PRONOUN/app1/poss} pick from the fresh-kill pile.",
                 "exp": 25,
                 "art": "pln_bord_tunnel",
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
@@ -2820,9 +2638,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust", "like"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was pleased when to_cat praised {PRONOUN/from_cat/object} for discovering new tunnels while on patrol."
+                        }
                     },
                     {
                         "cats_to": [
@@ -2833,22 +2654,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "comfort", "respect"
                         ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 2
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was proud of to_cat for {PRONOUN/to_cat/poss} discovery of new tunnels while on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2859,30 +2670,28 @@
                 "art": "pln_bord_tunnel",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat how to mark the location of tunnels."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect", "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned how to mark the location of tunnels from to_cat."
+                        }
                     }
                 ],
                 "frequency": 2
@@ -2893,30 +2702,28 @@
                 "art": "pln_bord_tunnel",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat reminded to_cat of the importance of a secure tunnel system around c_n's borders."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect", "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned about the borders' tunnels from to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2927,30 +2734,52 @@
                 "art": "pln_bord_tunnel",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 15
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat how to uncover the location of tunnels."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
                         ],
-                        "cats_from": [
-                            "clan"
-                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned how to find tunnels from to_cat."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was jealous that to_cat discovered a new set of tunnels instead of {PRONOUN/from_cat/object}."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["some_clan"],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat discovered a new set of tunnels while on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2970,33 +2799,28 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust",
-                            "respect"
+                            "comfort", "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat about how to check the safety of new tunnels and appreciated to_cat's concern for safety."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "trust"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned how to check the safety of new tunnels from to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3013,37 +2837,33 @@
                     "righteous",
                     "loving",
                     "loyal",
-                    "sincere"
+                    "sincere",
+                    "faithful"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust",
-                            "respect"
+                            "comfort", "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat about how to check the safety of new tunnels and appreciated to_cat's concern for other cats."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "trust"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned how to check the safety of new tunnels from to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3064,33 +2884,28 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust",
-                            "respect"
+                            "comfort", "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat about how to check the safety of new tunnels and appreciated to_cat's attention to detail."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect", "trust"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned how to check the safety of new tunnels from to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3108,20 +2923,39 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust",
-                            "respect"
+                            "comfort", "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed teaching to_cat about how to check the safety of new tunnels and was amused by to_cat's zeal."
+                        }
                     },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "respect", "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat learned how to check the safety of new tunnels from to_cat."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. p_l gives up when {PRONOUN/p_l/subject} {VERB/p_l/see/sees} app1 starting to shiver and takes the younger cat back to camp before the cold starts to truly bite.",
+                "exp": 0,
+                "art": "mtn_hunt_newleafsnowstorm",
+                "relationships": [
                     {
                         "cats_to": [
                             "p_l"
@@ -3131,33 +2965,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 10
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. p_l gives up when {PRONOUN/p_l/subject} {VERB/p_l/see/sees} app1 starting to shiver, and takes the younger cat back to camp before the cold starts to truly bite.",
-                "exp": 0,
-                "art": "mtn_hunt_newleafsnowstorm",
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was relieved that to_cat canceled a patrol when {PRONOUN/from_cat/subject} started to shiver in the cold."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3207,13 +3020,16 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wished to_cat had canceled their patrol before both of them started shivering in the cold."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "It's a good thing p_l spotted the entrance, but a bad, <i>bad</i> day to be out in the borderlands. THe weather closes in, and though both cats huddle close, with just the two of them neither escapes the bite of the wind, even if the sleet can't touch them.",
+                "text": "It's a good thing p_l spotted the entrance, but a bad, <i>bad</i> day to be out in the borderlands. The weather closes in, and though both cats huddle close, with just the two of them neither escapes the bite of the wind, even if the sleet can't touch them.",
                 "exp": 0,
                 "art": "mtn_hunt_newleafsnowstorm",
                 "injury": [
@@ -3230,8 +3046,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "The weather caved in while m_c was out patrolling in leaf-bare, causing the cold to bite in a way that marked {PRONOUN/m_c/poss} coat.",
-                    "death": "The weather caved in while m_c was out patrolling in leaf-bare, killing {PRONOUN/m_c/object}."
+                    "scar": "A snowstorm struck while m_c was out patrolling in leaf-bare, causing the cold to bite in a way that marked {PRONOUN/m_c/poss} coat.",
+                    "death": "A snowstorm struck while m_c was out patrolling in leaf-bare, killing {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -3241,12 +3057,15 @@
                         "cats_from": [
                             "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "trust",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled for warmth in a snowstorm."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3267,59 +3086,58 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "trust",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was not pleased when to_cat charged into a badger sett and needed rescuing."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 20
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat was rescued from a badger by to_cat after irresponsibly sticking {PRONOUN/from_cat/poss} muzzle in a badger sett."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat rushed into a burrow irresponsibly and was almost mauled by a badger."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat saved app1 from a badger on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3383,59 +3201,58 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
-                            "comfort",
                             "trust",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was not pleased when to_cat charged into a badger sett and needed rescuing."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 20
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "from_cat was rescued from a badger by to_cat after irresponsibly sticking {PRONOUN/from_cat/poss} muzzle in a badger sett."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat rushed into a burrow irresponsibly and was attacked by a badger."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat saved app1 from a badger on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3463,65 +3280,20 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
+                        "cats_from": ["clan", "low_social", "low_stable"],
+                        "cats_to": ["p_l"],
                         "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -10
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 20
-                    },
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
+                        "values": ["like", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Careful, p_l warns. app1 sneers at them, and bounds forward to check out the new discovery, crawling into the hole. p_l is too far away to do anything when the wolverine inside kills {PRONOUN/app1/object}.",
+                "text": "Careful, p_l warns. app1 sneers at {PRONOUN/p_l/object} and bounds forward to check out the new discovery, crawling into the hole. p_l is too far away to do anything when the wolverine inside kills {PRONOUN/app1/object}.",
                 "exp": 30,
                 "art": "gen_dead_cat_EXPLICIT",
                 "art_clean": "gen_train_soloapp",
@@ -3539,6 +3311,18 @@
                     "scar": "m_c was injured after disturbing a badger in its sett.",
                     "death": "m_c was killed after an unfortunate meeting with a wolverine."
                 },
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "low_social", "low_stable"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["like", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
@@ -3555,40 +3339,48 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat wasn't happy with to_cat when {PRONOUN/to_cat/subject} rushed into a tunnel without pausing to think."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "As p_l investigates the new tunnel, its owner comes snuffling through the grass. app1 calls out, but p_l has {PRONOUN/p_l/poss} head down the burrow, and app1 runs in instead, distracting the badger, jumping on its back with claws stretched out. It saves p_l's life. It costs app1 {PRONOUN/app1/poss}s.",
+                "text": "As p_l investigates the new tunnel, its owner comes snuffling through the grass. app1 calls out, but p_l has {PRONOUN/p_l/poss} head down the burrow, and app1 runs in instead, distracting the badger, jumping on its back with claws stretched out. It saves p_l's life. It costs app1 {PRONOUN/app1/inposs}.",
                 "exp": 0,
                 "art": "gen_scarybadger",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust",
                             "like"
                         ],
-                        "amount": 25
+                        "amount": 25,
+                        "log": {
+                            "cats_from": "to_cat saved from_cat's life by distracting a badger, at the cost of {PRONOUN/to_cat/poss} own life."
+                        }
+                    },
+                    {
+                        "cats_from": ["clan", "low_social", "low_stable"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["like", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
+                        }
                     }
                 ],
                 "injury": [
@@ -3652,10 +3444,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "normal adult": [
-                1,
-                1
-            ]
+            "normal adult": [1, 1]
         },
         "frequency": 2,
         "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border - after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in the white of the snow-dabbed fields. Is that a burrow entrance?",
@@ -3680,17 +3469,18 @@
                 "art": "pln_hunt_gonetwolegtrap1",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat reported a strange scent around a mysterious shadow in the grass."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3705,17 +3495,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "p_l"
-                        ],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat cleverly disabled a Twoleg trap on the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3733,7 +3524,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. s_c quickly moves on.",
+                "text": "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. s_c quickly moves on.",
                 "exp": 20,
                 "art": "running_warrior",
                 "stat_skill": [
@@ -3744,7 +3535,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. s_c quickly moves on.",
+                "text": "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. s_c quickly moves on.",
                 "exp": 20,
                 "art": "running_warrior",
                 "stat_trait": [
@@ -3766,13 +3557,13 @@
                 "frequency": 4
             },
             {
-                "text": "The weather is caving in. The burrow is small, cramped, and hard to wiggle into - but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and shivering. Ugh.",
+                "text": "The weather is caving in. The burrow is small, cramped, and hard to wiggle into - but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and shivering.",
                 "exp": 20,
                 "art": "gen_bord_flashflood",
                 "injury": [
                     {
                         "cats": [
-                            "patrol"
+                            "p_l"
                         ],
                         "injuries": [
                             "shivering"
@@ -3786,22 +3577,6 @@
                     "scar": "The weather caved in while m_c was out patrolling in leaf-bare, causing the cold to bite in a way that marked {PRONOUN/m_c/poss} coat.",
                     "death": "The weather caved in while m_c was out patrolling in leaf-bare, killing {PRONOUN/m_c/object}."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "app1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -3892,10 +3667,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                1,
-                1
-            ]
+            "apprentice": [1, 1]
         },
         "frequency": 2,
         "intro_text": "app1's ears swivel back and forth, pressing flat against {PRONOUN/app1/poss} head every so often as {PRONOUN/app1/poss} emotions slip through. With fur bristled out to full puff against cold and danger {PRONOUN/app1/subject} nevertheless {VERB/app1/pad/pads} the border alone. A strange mismash of shadows catches {PRONOUN/app1/poss} eye. Is that a tunnel entrance?",
@@ -3925,22 +3697,23 @@
                 "exp": 20,
                 "art": "pln_hunt_gonetwolegtrap1",
                 "stat_skill": [
-                    "CLEVER,1",
+                    "CLEVER,0",
                     "CAMP,0"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
-                            "clan"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat heard that to_cat reported the location of a Twoleg trap on the territory."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3958,17 +3731,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_social"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "like"
                         ],
-                        "amount": 3
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat liked to_cat's story of encountering a stoat on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3982,21 +3756,6 @@
                     "sneaky",
                     "cunning"
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 3
-                    }
-                ],
                 "frequency": 1
             },
             {
@@ -4007,21 +3766,6 @@
                     "nervous",
                     "insecure",
                     "gloomy"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 3
-                    }
                 ],
                 "frequency": 1
             },
@@ -4039,17 +3783,18 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
+                        "cats_to": ["app1"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_social"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "like", "comfort"
                         ],
-                        "amount": 3
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about discovering a mysterious tunnel system while alone on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4306,14 +4051,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [2, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 3,
         "intro_text": "The apprentices are at the border - not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Not a patrol <i>anyone</i> is supposed to do with a storm rolling in. Anyway, is that a tunnel entrance over there?",
@@ -4326,18 +4065,17 @@
                 "art": "pln_bord_tunnel",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had fun exploring a tunnel together, then ended up sheltering in it when a snowstorm descended."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4356,17 +4094,16 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["app1"],
+                        "cats_from": ["app2"],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect", "like"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was upset when to_cat shoved {PRONOUN/from_cat/object} aside to claim the discovery of a tunnel for {PRONOUN/to_cat/self}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4377,101 +4114,94 @@
                 "art": "gen_bord_flashflood",
                 "relationships": [
                     {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Oh hey cool, what's this? The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides, digging the soil that's been piled on top of it off. Really weird, but this'll make a great story to tell back at camp.",
-                "exp": 20,
-                "art": "pln_hunt_gonetwolegtrap1",
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
                             "like"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had fun exploring a tunnel together, then ended up sheltering in it when a snowstorm descended."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["app1"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "The tunnels to_cat discovered on an all-apprentice patrol ended up saving from_cat when a snowstorm descended."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Oh hey cool, what's this? The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides. s_c suddenly flinches backwards. Get away from that, it's a trap!",
+                "text": "The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides, clearing away the soil piled on its roof. Really weird, but this'll make a great story to tell back at camp.",
+                "exp": 20,
+                "art": "pln_hunt_gonetwolegtrap1",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat found a strange metal tunnel covered in rust and dirt and had fun exploring it."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides. s_c suddenly flinches backwards. Get away from that, it's a trap!",
                 "exp": 20,
                 "art": "gen_scared_cat_app",
                 "can_have_stat": [
                     "any"
                 ],
                 "stat_skill": [
-                    "CLEVER,1",
+                    "CLEVER,0",
                     "CAMP,0"
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "trust",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat discovered a Twoleg trap on patrol and had fun messing around with it."
+                        }
                     },
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "to_cat noticed that a weird tunnel was actually a Twoleg trap and saved from_cat from it."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The tunnels are marked with c_n scent, already known and therefore less enticing. But s_c refuses to leave their safety, arguing with the rest of the patrol until thunder claps outside. The cold rain that would've soaked them all rather proves {PRONOUN/s_c/poss} point.",
+                "text": "The tunnels are marked with c_n scent, already known and therefore less enticing. But s_c refuses to leave their safety, arguing with the rest of the patrol until thunder claps outside. The cold rain that would've soaked them all proves {PRONOUN/s_c/poss} point.",
                 "exp": 20,
                 "art": "gen_speaking_cat_app",
                 "can_have_stat": [
@@ -4494,20 +4224,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "s_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat assumed to_cat was being overly cautious on patrol, right up until a storm descended and to_cat's caution paid off."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4535,11 +4255,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat realized what a good leader to_cat would make when {PRONOUN/to_cat/subject} kept every cat calm and dry in a tunnel when a storm descended on their patrol."
+                        }
                     },
                     {
                         "cats_to": [
@@ -4553,20 +4275,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 15
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 15
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat and to_cat huddled in a tunnel together when a thunderstorm descended."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4580,17 +4292,16 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "from_cat was impressed when to_cat fought off a prairie dog while on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4598,7 +4309,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Oh hey cool, what's this? The apprentices gather round the tunnel, investigating. Hey s_c, does this look safe? When s_c nods, app2 scrambles inside - but inside lurks a sleepy wolverine.",
+                "text": "The apprentices gather round the tunnel, investigating. They defer to s_c over whether the tunnel's safe. When s_c nods, app2 scrambles inside - but inside lurks a sleepy wolverine.",
                 "exp": 20,
                 "art": "gen_dead_cat_app_EXPLICIT",
                 "art_clean": "gen_dead_cat_app",
@@ -4624,7 +4335,6 @@
                     "app2"
                 ],
                 "history_text": {
-                    "scar": "",
                     "death": "m_c was killed when another apprentice made the wrong judgement call on a border patrol."
                 },
                 "relationships": [
@@ -4639,20 +4349,26 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": -15
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "to_cat wrongly identified a tunnel as safe, and app2 was killed by a wolverine as a result."
+                        }
                     },
                     {
                         "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "some_clan", "low_social", "low_stable"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": -15
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat believed to_cat's negligence on patrol was responsible for app2's death."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4698,6 +4414,20 @@
                     "scar": "m_c was injured after disturbing a wrathful prairie dog.",
                     "death": "This cat was killed after wounds given by a prairie dog progressed to something worse."
                 },
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed when a prairie dog got the better of to_cat on patrol."
+                        }
+                    }
+                ],
                 "frequency": 2
             },
             {
@@ -4719,13 +4449,12 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "",
                     "death": "This cat was killed by the shock of watching a fellow apprentice be kidnapped by Twolegs."
                 },
                 "frequency": 2
             },
             {
-                "text": "Oh hey cool, what's this? The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides, digging the soil that's been piled on top of it off, crawling in to claw at the back. The trap shuts with a violent snap.",
+                "text": "The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides, clearing away the soil piled on its roof, crawling in to claw at the back. The trap shuts with a violent snap.",
                 "exp": 20,
                 "art": "pln_hunt_gonetwolegtrap1",
                 "lost_cats": [
@@ -4749,7 +4478,7 @@
                 "frequency": 2
             },
             {
-                "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shriek, and something pulls {PRONOUN/s_c/subject} in.",
+                "text": "s_c bounds forward to the entrance, tail lashing excitedly. There's a shriek, and something pulls {PRONOUN/s_c/subject} in.",
                 "exp": 0,
                 "art": "gen_train_patrolapprenticesessionsuccess",
                 "can_have_stat": [
@@ -4767,7 +4496,6 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "scar": "",
                     "death": "This cat was killed as an apprentice, patrolling the border and investigating things {PRONOUN/m_c/subject} shouldn't have."
                 },
                 "frequency": 2
@@ -4795,7 +4523,7 @@
                 "frequency": 2
             },
             {
-                "text": "Snow half-blocks the entrance. Ugh. With no one wanting to get their paws chilled digging it out, the patrol continues on, as overhead thunder rumbles threateningly. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery. Not all of them can be revived back at camp.",
+                "text": "Snow half-blocks the entrance. Ugh. With no one wanting to get their paws chilled digging it out, the patrol continues on. Thunder rumbles threateningly overhead. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery, and not all of them can be revived back at camp.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_app",
                 "dead_cats": [
@@ -4831,7 +4559,7 @@
                 "frequency": 4
             },
             {
-                "text": "Snow half-blocks the entrance. Ugh. With no one wanting to get their paws chilled digging it out, the patrol continues on, as overhead thunder rumbles threateningly. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery. Their bodies are all cold.",
+                "text": "Snow half-blocks the entrance. No one wanting to get their paws chilled digging it out, so the patrol continues on. Thunder rumbles threateningly overhead. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery. Their bodies are all cold.",
                 "exp": 0,
                 "art": "gen_bord_flashflood",
                 "dead_cats": [
