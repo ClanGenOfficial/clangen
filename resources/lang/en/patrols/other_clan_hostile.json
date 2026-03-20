@@ -4828,18 +4828,36 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol", "-r_c"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust",
-                            "like"
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from admired p_l's ferocious rescue of r_c from the claws of a o_c_n warrior."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "r_c was grateful that p_l pulled an enemy warrior off of {PRONOUN/r_c/object}."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4850,18 +4868,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust",
-                            "like"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "r_c realized {PRONOUN/r_c/poss} hatred for p_l wasn't so great that {PRONOUN/r_c/subject} wouldn't protect p_l in a fight."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4875,27 +4894,45 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar, and lingering resentment, from when a Clanmate failed to watch {PRONOUN/m_c/poss} back during a border altercation.",
                     "death": "m_c was killed in a border altercation when a Clanmate failed to watch {PRONOUN/m_c/poss} back."
                 },
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol", "low_stable"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust",
-                            "like"
+                            "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat couldn't help but wonder how p_l lost sight of r_c long enough for r_c to die at the claws of o_c_n."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan", "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that r_c died while on p_l's patrol and couldn't help but remember the animosity between the two..."
+                        }
                     }
                 ],
-                "other_clan_rep": -1,
+                "other_clan_rep": -3,
                 "frequency": 4
             },
             {
@@ -4909,34 +4946,67 @@
                         "injuries": [
                             "bite-wound",
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar, and lingering resentment, from when a Clanmate failed to watch {PRONOUN/m_c/poss} back during a border altercation.",
-                    "death": "m_c was killed in a border altercation when a Clanmate failed to watch {PRONOUN/m_c/poss} back."
+                    "death": "m_c died to wounds inflicted by enemy warriors."
                 },
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "multi", "-r_c"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust",
-                            "like"
+                            "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard p_l's snarled refusal to help r_c during battle."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "p_l refused to help r_c during a battle, leaving r_c injured."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan", "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that r_c was hurt while on p_l's patrol and couldn't help but remember the animosity between the two..."
+                        }
                     }
                 ],
-                "other_clan_rep": -1,
+                "other_clan_rep": -2,
                 "frequency": 4
             }
         ],
@@ -5365,7 +5435,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -5373,9 +5443,13 @@
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                        }
                     }
                 ],
                 "other_clan_rep": 3,
@@ -5384,22 +5458,6 @@
             {
                 "text": "p_l orders the patrol except r_c back to camp. p_l and r_c grab the kits by their scruffs despite their protests, and on their journey to o_c_n they are greeted by a wary patrol that is very happy and grateful to see the kits safe, thanking them with clipped tones before ushering the two off the territory.",
                 "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 10
-                    }
-                ],
                 "other_clan_rep": 2,
                 "frequency": 1
             },
@@ -5416,17 +5474,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                        }
                     }
                 ],
                 "other_clan_rep": 5,
@@ -5446,17 +5508,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
-                            "trust"
+                            "trust",
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                        }
                     }
                 ],
                 "other_clan_rep": 3,
@@ -5467,22 +5533,6 @@
             {
                 "text": "As p_l goes to step over the border with r_c to retrieve the kits and bring them to their Clan, they stop as they hear a o_c_n patrol shouting for the kits. p_l is relieved to know they will be safe with their own Clan and resume {PRONOUN/p_l/poss} patrol. The patrol doesn't realize that the o_c_n cats saw them cross the border and now look upon their departing backs with fury.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "other_clan_rep": -2,
                 "frequency": 4
             },
@@ -5498,17 +5548,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "clan", "high_aggress", "low_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat heard that r_c died because p_l wanted to help enemy kits."
+                        }
                     }
                 ],
                 "other_clan_rep": -3,
