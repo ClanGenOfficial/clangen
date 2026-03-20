@@ -10,6 +10,8 @@
 			"m_c notices a strange glint in r_c's eyes.",
 			"m_c struggles to make sense of something trivial r_c said.",
 			"m_c can't help but feel uneased at r_c's words lately.",
+			"r_c confuses m_c in a conversation.",
+			"m_c is taken aback by one of r_c's comments.",
 			"m_c noticed that r_c had a sour expression while looking at a Clanmate in the distance.",
 			"m_c felt eyes on {PRONOUN/m_c/poss} back, and when {PRONOUN/m_c/subject} looked, r_c was quickly turning away.",
 			"m_c thinks that r_c's tone sounds off today.",
@@ -45,18 +47,18 @@
 		"id": "comfort_de_med1",
 		"interactions": [
 			"m_c finds the way r_c acts increasingly uncomfortable.",
-			"m_c thinks r_c has been acting stuck up and rude.",
 			"m_c swears that r_c's fangs are longer than usual.",
 			"m_c's hackles raise when r_c passes by.",
+			"m_c and r_c talk about a Clanmate and realize they have very different opinions on them.",
 			"m_c had a terrible dream about r_c.",
 			"m_c worries about r_c's mental stability.",
 			"m_c can't stop thinking about the strange joke r_c told the other day.",
+			"In the middle of a conversation, m_c and r_c realize they have less in common than they thought.",
 			"r_c said something the other day that made m_c nervous.",
 			"m_c realizes that a strange smell in camp is coming from r_c.",
 			"m_c tells {PRONOUN/m_c/poss} Clanmates that something's off about r_c.",
 			"The moon casts a shadow on r_c's face in a way that makes m_c uneasy.",
-			"For a moment, m_c thought r_c sounded like someone else.",
-			"After r_c finished {PRONOUN/r_c/poss} food, m_c noticed {PRONOUN/r_c/subject} made a mess."
+			"For a moment, m_c thought r_c sounded like someone else."
 		]
 	},
 	{
@@ -99,9 +101,10 @@
 		"interactions": [
 			"m_c called r_c the wrong name.",
 			"r_c squashes a bug that m_c was watching.",
+			"m_c realizes how hard it is to hold a conversation with r_c.",
 			"m_c won't take r_c seriously.",
+			"m_c thinks r_c has a strange sense of humor.",
 			"m_c accuses r_c of stealing something.",
-			"r_c interrupted m_c to say something frivolous.",
 			"m_c was rudely awoken by r_c.",
 			"r_c says that m_c smells weird.",
 			"m_c keeps looking behind r_c during their conversation.",
@@ -193,6 +196,7 @@
 			"m_c always notices r_c lurking nearby.",
 			"m_c badly misinterprets r_c's words.",
 			"r_c keeps pacing around the clearing late at night and m_c is the only one who notices.",
+			"r_c told m_c something awful, and m_c may never look at {PRONOUN/r_c/object} quite the same.",
 			"m_c is discomforted by r_c's muttering.",
 			"m_c feels extremely unsettled when r_c looks at {PRONOUN/m_c/object}.",
 			"m_c can't stop thinking about the way r_c glared at {PRONOUN/r_c/object} Clanmate."
@@ -206,10 +210,10 @@
 			"r_c won't tell m_c what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing.",
 			"The Clan feels uneasy whenever m_c and r_c speak to each other.",
 			"m_c and r_c are joking around together, but the jokes are becoming targeted.",
-			"m_c told r_c to shut up.",
 			"During a conversation with r_c, m_c says something too bluntly.",
 			"m_c scolds r_c for not telling anyone about a piece of crowfood in the pile.",
 			"r_c thinks m_c is lying when {PRONOUN/m_c/subject} {VERB/m_c/apologize/apologizes} for something.",
+			"m_c and r_c have a long discussion about goals and aspirations, and find that they don't agree on many things.",
 			"m_c tells r_c that {PRONOUN/r_c/subject} {VERB/r_c/look/looks} terrible today.",
 			"m_c was sarcastic to r_c at an inappropriate time.",
 			"m_c hisses at r_c over something small."

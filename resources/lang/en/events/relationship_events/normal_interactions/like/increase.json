@@ -60,6 +60,7 @@
 			"m_c is telling r_c something interesting about another Clan.",
 			"m_c and r_c laugh about something small together.",
 			"m_c spends some time sheltering with r_c during a storm.",
+			"Both m_c and r_c enthusiastically congratulate another Clanmate on something.",
 			"m_c chats with r_c while grabbing something to eat."
 		],
 		"reaction_random_cat": {
@@ -844,5 +845,71 @@
 			"medicine cat apprentice",
 			"medicine cat"
 		]
+	},
+	{
+		"id": "like_inc_respect_de1",
+		"intensity": "med",
+		"interactions": [
+			"m_c feels like {PRONOUN/m_c/subject}'ll never accomplish as much as r_c.",
+			"m_c wonders if {PRONOUN/m_c/subject} can ever be as good as r_c.",
+			"m_c strives to catch up to r_c's success.",
+			"m_c can't imagine being as talented as r_c was in {PRONOUN/r_c/poss} youth.",
+			"m_c wants to tell stories as well as r_c.",
+			"m_c listens to r_c's fascinating life stories with envy and intrigue.",
+			"m_c hopes to leave behind a legacy like r_c."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior",
+			"mediator",
+			"medicine cat",
+			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+			"elder"
+		],
+		"random_age_constraint": [
+			"senior adult",
+			"senior"
+		],
+		"also_influences": {
+			"respect": "decrease"
+		}
+	},
+	{
+		"id": "like_inc_respect_de2",
+		"intensity": "med",
+		"interactions": [
+			"m_c thinks r_c is so much braver than {PRONOUN/m_c/object}.",
+			"If it were a life-or-death situation, m_c thinks that r_c should be saved first.",
+			"m_c thinks about how to be more like r_c.",
+			"m_c tries to groom {PRONOUN/m_c/poss} pelt the same way r_c does.",
+			"m_c can barely keep up with r_c.",
+			"m_c feels like r_c is more accomplished than {PRONOUN/m_c/object}."
+		],
+		"relationship_constraint": [
+			"likes"
+		],
+		"main_status_constraint": [
+			"warrior",
+			"mediator",
+			"medicine cat",
+			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+			"elder",
+			"warrior",
+			"mediator",
+			"medicine cat",
+			"deputy",
+			"leader"
+		],
+		"also_influences": {
+			"respect": "decrease"
+		}
 	}
 ]

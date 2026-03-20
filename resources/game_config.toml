@@ -445,6 +445,9 @@ dev_tools = false
   # forces specified event to occur regardless of if requirements are met
   debug_override_requirements = false
 
+  # forces the given frequency, frequency can be a number from 1-4
+  debug_override_frequency = 0
+
 [death_related]
   # base 1/chance that leader will die
   leader_death_chance = 50

@@ -1,0 +1,33 @@
+{
+    "spritesheet": "patches_white_mostly",
+    "sprite_list": [
+        [
+            "FULLWHITE",
+            "VAN",
+            "PEBBLESHINE",
+            "ONEEAR",
+            "LIGHTSONG",
+            "BLACKSTAR",
+            "PETAL",
+            "TAIL",
+            "APRON",
+            "CAPSADDLE",
+            "HEART",
+            "MOORISH",
+            "CHESTSPECK",
+            "HEARTTWO"
+        ],
+        [
+            "BOOTS",
+            "COW",
+            "COWTWO",
+            "LOVEBUG",
+            "SHOOTINGSTAR",
+            "EYESPOT",
+            "PEBBLE",
+            "TAILTWO",
+            "BUDDY",
+            "KROPKA"
+        ]
+    ]
+}
