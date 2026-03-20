@@ -849,7 +849,6 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     if len(group) == 1:
         raise ValueError("Relationship constraints provided but only one cat in group!")
 
-
     exclusionary_values = []
     inclusionary_values = []
     for value in filter_types:
@@ -870,7 +869,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
     qualifies = False
 
-    if "strangers" in filter_list:
+    if "strangers" in filter_types:
         if any([inter_cat.ID in test_cat.relationships for inter_cat in testing_cats]):
             if "strangers" in exclusionary_values:
                 qualifies = True
@@ -883,7 +882,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
         filter_types.remove("strangers")
 
-    if "siblings" in filter_list:
+    if "siblings" in filter_types:
         if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             if "siblings" in exclusionary_values:
                 qualifies = True
@@ -893,7 +892,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
             return False
         filter_types.remove("siblings")
 
-    if "littermates" in filter_list:
+    if "littermates" in filter_types:
         if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             if "littermates" in exclusionary_values:
                 qualifies = True
