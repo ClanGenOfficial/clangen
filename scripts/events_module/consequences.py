@@ -292,6 +292,7 @@ def create_new_cat_block(
             for i in Cat.all_cats.values()
             if i.status.is_outsider
             and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            and not i.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
             and not i.dead
             and i not in in_event_cats.values()
         ]
@@ -626,26 +627,33 @@ def create_new_cat(
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()
         elif original_group not in game.clan.other_clan_IDs:
+            name_categories = [
+                "silly_names",
+                "human_names",
+                "loner_names",
+                "normal_prefixes",
+            ]
+            # defaults in case of error
+            weights = [1, 1, 1, 1]
             # give kittypets a kittypet name
             if original_social == CatSocial.KITTYPET:
-                name = choice(names.names_dict["loner_names"])
+                weights = constants.CONFIG["cat_name_controls"]["kittypet"]
                 # check if the kittypets come with a pretty acc
                 if bool(getrandbits(1)):
                     new_cat.pelt.accessory = (
                         *new_cat.pelt.accessory,
                         choice(new_cat.pelt.collar_accessories),
                     )
+            if original_social == CatSocial.LONER:
+                weights = constants.CONFIG["cat_name_controls"]["loner"]
 
-            # try to give name from full loner name list
-            elif original_social in (CatSocial.LONER, CatSocial.ROGUE) and bool(
-                getrandbits(1)
-            ):
-                name = choice(names.names_dict["loner_names"])
-            # otherwise give name from prefix list (more nature-y names)
-            else:
-                name = choice(names.names_dict["normal_prefixes"])
+            if original_social == CatSocial.ROGUE:
+                weights = constants.CONFIG["cat_name_controls"]["rogue"]
 
-                # now, if this cat should take a new clan name, we give them such
+            selected_category = choices(name_categories, weights, k=1)[0]
+            name = choice(names.names_dict[selected_category])
+
+            # now, if this cat should take a new clan name, we give them such
             if new_name:
                 # check if adding suffix to OG name
                 if bool(getrandbits(1)):
@@ -982,6 +990,7 @@ def unpack_rel_block(
                     cats_to_ob,
                     **value_changes,
                     log=to_log if to_log else from_log,
+                    flip_log=True,
                 )
             )
 
@@ -997,6 +1006,7 @@ def change_relationship_values(
     comfort: int = 0,
     trust: int = 0,
     log: str = None,
+    flip_log: bool = False,
 ) -> dict:
     """
     changes relationship values according to the parameters.
@@ -1011,6 +1021,7 @@ def change_relationship_values(
     :param int comfort: amount to change comfort, default 0
     :param int trust: amount to change trust, default 0
     :param str log: the string to append to the relationship log of cats involved
+    :param bool flip_log: If True, this will "flip" the cats used for to_cat and from_cat abbreviation replacements. This should really only be used for mutual relationship changes from events.
     """
 
     # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
@@ -1061,32 +1072,34 @@ def change_relationship_values(
                 log = i18n.t("relationships.relationship_log")
             if log and isinstance(log, str):
                 replace_dict = {}
+                from_cat = single_cat_to if flip_log else single_cat_from
+                to_cat = single_cat_from if flip_log else single_cat_to
                 if "from_cat" in log:
                     replace_dict["from_cat"] = (
-                        str(single_cat_from.name),
-                        choice(single_cat_from.pronouns),
+                        str(from_cat.name),
+                        choice(from_cat.pronouns),
                     )
                 if "to_cat" in log:
                     replace_dict["to_cat"] = (
-                        str(single_cat_to.name),
-                        choice(single_cat_to.pronouns),
+                        str(to_cat.name),
+                        choice(to_cat.pronouns),
                     )
                 if replace_dict:
                     processed_log = process_text(log, replace_dict)
                 else:
                     processed_log = log
 
-                if single_cat_from in created_rel_logs:
-                    created_rel_logs[single_cat_from] = "<br><br>".join(
-                        [created_rel_logs[single_cat_from], processed_log]
+                if from_cat in created_rel_logs:
+                    created_rel_logs[from_cat] = "<br><br>".join(
+                        [created_rel_logs[from_cat], processed_log]
                     )
                 else:
-                    created_rel_logs.update({single_cat_from: processed_log})
+                    created_rel_logs.update({from_cat: processed_log})
 
                 log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
-                    name=str(single_cat_to.name),
-                    count=single_cat_to.moons,
+                    name=str(from_cat.name),
+                    count=from_cat.moons,
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)

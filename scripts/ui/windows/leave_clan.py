@@ -73,8 +73,6 @@ class LeaveClanWindow(GameWindow):
         )
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
                 self.the_cat.leave_clan(self.chosen_social)
@@ -92,3 +90,4 @@ class LeaveClanWindow(GameWindow):
                     else:
                         button.check()
                         self.chosen_social = CatSocial(name)
+        return super().process_event(event)
