@@ -1295,7 +1295,7 @@ def perform_ceremonies(cat):
         # apprentice a kitten to either med or warrior
         if cat.moons == cat_class.age_moons[CatAge.ADOLESCENT][0]:
             if cat.status.rank == CatRank.KITTEN:
-                if _determine_medcat_eligibility(cat):
+                if _is_suitable_medcat_app(cat):
                     ceremony(cat, CatRank.MEDICINE_APPRENTICE)
                     ceremony_accessory = True
                     gain_accessories(cat)
@@ -1389,7 +1389,7 @@ def perform_ceremonies(cat):
                     gain_accessories(cat)
 
 
-def _determine_medcat_eligibility(cat) -> bool:
+def _is_suitable_medcat_app(cat) -> bool:
     """
     Determines whether this cat will become a medicine cat
     :param cat: A kitten preparing for apprenticeship ceremony
@@ -1433,39 +1433,24 @@ def _determine_medcat_eligibility(cat) -> bool:
         )
 
     # check if the medicine cats are old
-    senior_med_ratio = (
-        (
-            len(
-                [
-                    c
-                    for c in med_cat_list
-                    if c.age == "senior" and c.status.rank == CatRank.MEDICINE_CAT
-                ]
-            )
-            / num_medcats
-        )
-        if num_medcats != 0
-        else 0
-    )
+    senior_meds = [
+        c
+        for c in med_cat_list
+        if c.age == "senior" and c.status.rank == CatRank.MEDICINE_CAT
+    ]
 
-    ancient_med_ratio = (
-        (
-            len(
-                [
-                    c
-                    for c in med_cat_list
-                    if c.moons
-                    >= constants.CONFIG["roles"]["medicine cat apprentice"][
-                        "threshold_moons_ancient"
-                    ]
-                    and c.status.rank == CatRank.MEDICINE_CAT
-                ]
-            )
-            / num_medcats
-        )
-        if num_medcats != 0
-        else 0
-    )
+    ancient_meds = [
+        c
+        for c in senior_meds
+        if c.moons
+        >= constants.CONFIG["roles"]["medicine cat apprentice"][
+            "threshold_moons_ancient"
+        ]
+    ]
+
+    senior_med_ratio = (len(senior_meds) / num_medcats) if num_medcats != 0 else 0
+
+    ancient_med_ratio = (len(ancient_meds) / num_medcats) if num_medcats != 0 else 0
 
     if (
         ancient_med_ratio
