@@ -231,8 +231,10 @@ def generate_event_objects(event_triggered, biome, frequency) -> list:
     :param biome: The biome to pull events for
     :param frequency: The frequency to pull events for
     """
+    debug_freq = constants.CONFIG["event_generation"]["debug_override_frequency"]
+
     file_path = f"{event_triggered}/{biome}.json"
-    load_name = f"{file_path}_{frequency}"
+    load_name = f"{file_path}_{debug_freq if debug_freq else frequency}"
 
     try:
         if file_path in loaded_events:
@@ -259,6 +261,17 @@ def generate_event_objects(event_triggered, biome, frequency) -> list:
                 if frequency != event_frequency:
                     continue
 
+                # this is a catch for empty dict r_c
+                if "r_c" in event:
+                    # check if it's an empty dict.
+                    # we assume if the param is present but empty, then we just want any available cat
+                    if not event["r_c"]:
+                        r_c = {"age": ["any"]}
+                    else:
+                        r_c = event["r_c"]
+                else:
+                    r_c = {}
+
                 event = ShortEvent(
                     event_id=event["event_id"] if "event_id" in event else "",
                     location=event["location"] if "location" in event else ["any"],
@@ -270,7 +283,7 @@ def generate_event_objects(event_triggered, biome, frequency) -> list:
                         event["new_accessory"] if "new_accessory" in event else []
                     ),
                     m_c=event["m_c"] if "m_c" in event else {},
-                    r_c=event["r_c"] if "r_c" in event else {},
+                    r_c=r_c,
                     new_cat=event["new_cat"] if "new_cat" in event else [],
                     injury=event["injury"] if "injury" in event else [],
                     exclude_involved=(
@@ -326,25 +339,6 @@ def filter_events(
     incorrect_format = []
 
     for event in possible_events:
-        if event.history:
-            if not isinstance(event.history, list) or "cats" not in event.history[0]:
-                if (
-                    f"{event.event_id} history formatted incorrectly"
-                    not in incorrect_format
-                ):
-                    incorrect_format.append(
-                        f"{event.event_id} history formatted incorrectly"
-                    )
-        if event.injury:
-            if not isinstance(event.injury, list) or "cats" not in event.injury[0]:
-                if (
-                    f"{event.event_id} injury formatted incorrectly"
-                    not in incorrect_format
-                ):
-                    incorrect_format.append(
-                        f"{event.event_id} injury formatted incorrectly"
-                    )
-
         # check if event is in allowed or excluded
         if allowed_events and event.event_id not in allowed_events:
             continue

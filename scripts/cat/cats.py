@@ -1581,15 +1581,8 @@ class Cat:
                 main_cat=self,
             )
 
-        biome = switch_get_value(Switch.biome)
-        camp = switch_get_value(Switch.camp_bg)
-        try:
-            season = game.clan.current_season
-        except Exception:
-            season = None
-
         # get chosen thought
-        chosen_thought = new_thought(thought_type, self, other_cat, biome, season, camp)
+        chosen_thought = new_thought(thought_type, self, other_cat)
 
         chosen_thought = event_text_adjust(
             self.__class__,

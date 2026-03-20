@@ -12,7 +12,16 @@
 			"m_c doesn't see why r_c is upset about something trivial.",
 			"r_c yawns while m_c is trying to tell {PRONOUN/r_c/object} something.",
 			"m_c asks for the last of r_c's fresh-kill, but r_c says no.",
-			"r_c won't help m_c fix {PRONOUN/m_c/poss} nest."
+			"r_c won't help m_c fix {PRONOUN/m_c/poss} nest.",
+			"m_c saw r_c being rude.",
+			"m_c heard r_c say something mean.",
+			"m_c saw r_c cough up a hairball.",
+			"m_c is annoyed by r_c's negative comments.",
+			"r_c tells m_c to smile more.",
+			"m_c hopes {PRONOUN/m_c/subject} just misheard r_c's rude remark.",
+			"r_c sneezed on m_c.",
+			"m_c doesn't understand why r_c is being so rude.",
+			"m_c was woken up early by r_c."
 		]
 	},
 	{
@@ -47,6 +56,7 @@
 			"m_c thinks that r_c is acting overly dramatic lately.",
 			"r_c won't give up a warm, sunny spot for m_c, not even for a minute.",
 			"m_c keeps telling r_c to stop saying a joke, but r_c doesn't take {PRONOUN/m_c/poss} request seriously.",
+			"r_c makes a snide remark about one of m_c's friends.",
 			"m_c is baffled by something r_c says about religion.",
 			"r_c makes a crude remark about the Clan to m_c."
 		]
@@ -297,6 +307,7 @@
 			"m_c prays that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} on patrol with r_c tomorrow.",
 			"m_c sighs loudly every time r_c does anything on patrol.",
 			"While on a patrol, m_c secretly pulled back a branch and made it whop r_c in the face.",
+			"m_c pranked r_c during a patrol.",
 			"m_c laughed at r_c for making a mistake on a patrol.",
 			"m_c ignored r_c's advice on a patrol and nearly got hurt because of it.",
 			"m_c and r_c couldn't agree which way to go on a patrol and got home late.",
@@ -375,6 +386,7 @@
 			"r_c is bragging about being better than m_c.",
 			"r_c is belittling m_c's accomplishments.",
 			"r_c is always talking about how much {PRONOUN/r_c/subject} {VERB/r_c/dislike/dislikes} m_c.",
+			"r_c won't stop complaining to m_c!",
 			"r_c's friends are tired of hearing about all of the things {PRONOUN/r_c/subject} {VERB/r_c/hate/hates} about m_c.",
 			"The Clan is starting to get nervous about how much m_c and r_c dislike one another.",
 			"m_c and r_c argue and fight like it's in their blood to do so.",
@@ -478,14 +490,17 @@
 		"interactions": [
 			"m_c thinks r_c is annoying.",
 			"m_c can't stand being around r_c.",
+			"m_c overhears r_c say something awful about a dead Clanmate.",
 			"m_c daydreams about r_c being exiled.",
-			"m_c thinks about telling others that r_c broke the code.",
+			"m_c thinks about telling others that r_c broke the Code.",
 			"m_c finds fault in everything r_c does.",
 			"m_c always assumes the worst of r_c.",
 			"A Clanmate claims that m_c wants r_c dead.",
 			"The Clan is very uncomfortable whenever m_c talks about r_c.",
 			"m_c makes all kinds of faces whenever r_c is brought up in conversation.",
-			"m_c sighs at the mere mention of r_c."
+			"m_c sighs at the mere mention of r_c.",
+			"m_c got lost and r_c didn't look for {PRONOUN/m_c/object}.",
+			"m_c and r_c argue about religion in the middle of camp."
 		]
 	},
 	{
@@ -666,5 +681,26 @@
 			"mediator apprentice",
 			"medicine cat apprentice"
 		]
+	},
+	{
+		"id": "platonic_de_low_opposites",
+		"intensity": "low",
+		"interactions": [
+			"m_c and r_c disagree on something that should have an obvious answer.",
+			"r_c tells m_c to be happier. m_c explains it's not that simple."
+		],
+		"main_trait_constraint": [
+			"gloomy",
+			"grumpy"
+		],
+		"random_trait_constraint": [
+			"childish",
+			"oblivious",
+			"bold",
+			"confident"
+		],
+		"reaction_random_cat": {
+			"like": "decrease"
+		}
 	}
 ]

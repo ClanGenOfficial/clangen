@@ -227,10 +227,10 @@ dev_tools = false
   # 1/chance that kits, relationship and other factors will influence this chance
   primary_chance_unmated = 130
 
-  # 1/chance that a mated cat to has an affair
+  # 1/chance that a mated cat has an affair
   random_affair_chance = 50
 
-  # special 1/chance for an unmated cat to have an affair
+  # 1/chance for an unmated cat to have an affair (coparenting)
   # for this check, only other unmated cats can be the affair partner
   unmated_random_affair_chance = 10
 
@@ -447,6 +447,9 @@ dev_tools = false
 
   # forces specified event to occur regardless of if requirements are met
   debug_override_requirements = false
+
+  # forces the given frequency, frequency can be a number from 1-4
+  debug_override_frequency = 0
 
 [death_related]
   # base 1/chance that leader will die
