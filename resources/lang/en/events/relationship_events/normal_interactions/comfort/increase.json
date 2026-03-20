@@ -12,7 +12,9 @@
 			"m_c had a good dream about r_c.",
 			"m_c remembers something nice that r_c did.",
 			"m_c sees a pretty flower in r_c's nest.",
-			"m_c heard a story about something kind r_c did."
+			"m_c heard a story about something kind r_c did.",
+			"When m_c and r_c realize they've been grooming their pelts the same way, they laugh about it.",
+			"m_c learns some pelt-grooming techniques from r_c, and tells r_c some of {PRONOUN/m_c/poss} own."
 		]
 	},
 	{
@@ -87,6 +89,7 @@
 			"r_c saves the funniest jokes for m_c.",
 			"m_c and r_c perk up happily when they see each other.",
 			"The Clan hears m_c and r_c laughing together across the camp.",
+			"m_c and r_c share stories of a Clanmate they didn't realize they both miss.",
 			"m_c and r_c share little secrets about themselves."
 		],
 		"reaction_random_cat": {
@@ -399,7 +402,8 @@
 			"Whenever r_c's name is mentioned, m_c relaxes.",
 			"m_c's Clanmates notice that {PRONOUN/m_c/subject} {VERB/m_c/talk/talks} a lot about r_c.",
 			"r_c compliments m_c on something {PRONOUN/m_c/subject} {VERB/m_c/were/was} self-conscious about.",
-			"m_c associates {PRONOUN/m_c/poss} favorite smell with r_c."
+			"m_c associates {PRONOUN/m_c/poss} favorite smell with r_c.",
+			"m_c and r_c find out they're both bringing flowers to the same Clanmate's grave."
 		]
 	},
 	{

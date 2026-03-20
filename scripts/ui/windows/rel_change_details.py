@@ -118,4 +118,4 @@ class RelChangeDetailWindow(GameWindow):
                 self.current_page -= 1
                 self.update_cats_list()
 
-        super().process_event(event)
+        return super().process_event(event)

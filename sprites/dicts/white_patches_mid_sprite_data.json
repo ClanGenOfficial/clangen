@@ -1,0 +1,36 @@
+{
+    "spritesheet": "patches_white_mid",
+    "sprite_list": [
+        [
+            "TUXEDO",
+            "SAVANNAH",
+            "FADESPOTS",
+            "FANCY",
+            "MITAINE",
+            "DIVA",
+            "BEARD",
+            "UNDERS",
+            "DAMIEN",
+            "TOPCOVER",
+            "SQUEAKS",
+            "STAR",
+            "SKUNK",
+            "DAPPLEPAW"
+        ],
+        [
+            "WINGS",
+            "WOODPECKER",
+            "MISS",
+            "BOWTIE",
+            "VEST",
+            "DIGIT",
+            "FCTWO",
+            "FCONE",
+            "MIA",
+            "FADEBELLY",
+            "ROSINA",
+            "PRINCESS",
+            "DOUGIE"
+        ]
+    ]
+}

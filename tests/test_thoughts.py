@@ -33,9 +33,6 @@ class TestNotWorkingThoughts(unittest.TestCase):
                 self.main,
                 self.other,
                 thought,
-                self.biome,
-                self.season,
-                self.camp,
             )
         ]
 
@@ -94,13 +91,12 @@ class TestsGetStatusThought(unittest.TestCase):
         medicine = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
         warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
         medicine.trait = "bold"
-        biome = "Forest"
-        season = "Newleaf"
-        camp = "camp2"
 
         # load thoughts
         function_thoughts = generate_thoughts._load_group(
-            CatThought.WHILE_ALIVE, medicine, warrior, biome, season, camp
+            CatThought.WHILE_ALIVE,
+            medicine,
+            warrior,
         )
 
         # when
@@ -117,26 +113,22 @@ class TestsGetStatusThought(unittest.TestCase):
             ],
         }
         cat = Cat(status_dict=exiled_status, moons=40, disable_random=True)
-        biome = "Forest"
-        season = "Newleaf"
-        camp = "camp2"
 
         # load thoughts
         function_thoughts = generate_thoughts._load_group(
-            CatThought.WHILE_ALIVE, cat, None, biome, season, camp
+            CatThought.WHILE_ALIVE, cat, None
         )
 
     def test_lost_thoughts(self):
         # given
         cat = Cat(status_dict={"rank": CatRank.WARRIOR}, moons=40, disable_random=True)
         cat.status.become_lost()
-        biome = "Forest"
-        season = "Newleaf"
-        camp = "camp2"
 
         # load thoughts
         function_thoughts = generate_thoughts._load_group(
-            CatThought.WHILE_ALIVE, cat, None, biome, season, camp
+            CatThought.WHILE_ALIVE,
+            cat,
+            None,
         )
 
 
@@ -145,16 +137,17 @@ class TestFamilyThoughts(unittest.TestCase):
         # given
         parent = Cat(moons=40, disable_random=True)
         kit = Cat(parent1=parent.ID, moons=4, disable_random=True)
-        biome = "Forest"
-        season = "Newleaf"
-        camp = "camp2"
 
         # when
         function_thoughts1 = generate_thoughts._load_group(
-            CatThought.WHILE_ALIVE, parent, kit, biome, season, camp
+            CatThought.WHILE_ALIVE,
+            parent,
+            kit,
         )
         function_thoughts2 = generate_thoughts._load_group(
-            CatThought.WHILE_ALIVE, kit, parent, biome, season, camp
+            CatThought.WHILE_ALIVE,
+            kit,
+            parent,
         )
 
         # then

@@ -694,6 +694,7 @@ class ProfileScreen(Screens):
                 "right": "right",
                 "right_target": self.profile_elements["cat_name"],
             },
+            sound_id="fav_cat",
         )
         self.profile_elements["favourite_button"].rebuild()
         del favorite_button_rect

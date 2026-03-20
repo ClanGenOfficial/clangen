@@ -1,0 +1,46 @@
+{
+    "spritesheet": "patches_white_high",
+    "sprite_list": [
+        [
+            "ANY",
+            "ANYTWO",
+            "BROKEN",
+            "PIEBALD",
+            "CURVED",
+            "SHIBAINU",
+            "OWL",
+            "FRECKLES",
+            "RINGTAIL",
+            "HALFFACE",
+            "PANTSTWO",
+            "GOATEE",
+            "PRINCE",
+            "FAROFA"
+        ],
+        [
+            "MISTER",
+            "MASKMANTLE",
+            "PANTS",
+            "REVERSEPANTS",
+            "HALFWHITE",
+            "APPALOOSA",
+            "GLASS",
+            "MAO",
+            "PAINTED",
+            "BUB",
+            "SPARROW",
+            "TRIXIE",
+            "SAMMY",
+            "FRONT"
+        ],
+        [
+            "BLOSSOMSTEP",
+            "BULLSEYE",
+            "FINN",
+            "SCAR",
+            "BUSTER",
+            "HAWKBLAZE",
+            "CAKE"
+        ]
+    ]
+}
