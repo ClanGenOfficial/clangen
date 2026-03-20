@@ -138,9 +138,10 @@ class Name:
         else:
             lang = i18n.config.get("locale")
 
-        save_dir = get_save_dir()
-
-        if save_dir == get_save_dir() and self.currently_loaded_lang == lang:
+        if (
+            self.current_save_dir == get_save_dir()
+            and self.currently_loaded_lang == lang
+        ):
             # nothing to do here, all good
             return
 
@@ -149,6 +150,8 @@ class Name:
                 names_dict = ujson.loads(read_file.read())
         else:
             names_dict = load_lang_resource("names.json")
+
+        save_dir = get_save_dir()
 
         # here onwards is copied wholesale from the original Name class
 
