@@ -4919,7 +4919,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan", "low_stable"
+                            "clan", "low_stable", "-patrol", "-r_c"
                         ],
                         "mutual": false,
                         "values": [
@@ -4993,7 +4993,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan", "low_stable"
+                            "clan", "low_stable", "-patrol"
                         ],
                         "mutual": false,
                         "values": [
