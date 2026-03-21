@@ -9,6 +9,7 @@ from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import constants, image_cache
 from scripts.game_structure.game import game_setting_get
 from scripts.ui.scale import ui_scale_dimensions
+from scripts.cat.pelts import Pelt
 
 logger = logging.getLogger(__name__)
 
@@ -134,7 +135,17 @@ def generate_sprite(
 
         # draw white patches
         if cat.pelt.white_patches is not None:
-            sprite_name = f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.white_patches}{cat_sprite}"
+            patch = cat.pelt.white_patches
+            if patch in cat.pelt.mostly_white or patch == "FULLWHITE":
+                spritesheet = sprites.WHITE_MOSTLY_DATA["spritesheet"]
+            elif patch in cat.pelt.high_white:
+                spritesheet = sprites.WHITE_HIGH_DATA["spritesheet"]
+            elif patch in cat.pelt.mid_white:
+                spritesheet = sprites.WHITE_MID_DATA["spritesheet"]
+            else:
+                spritesheet = sprites.WHITE_LITTLE_DATA["spritesheet"]
+
+            sprite_name = f"{spritesheet}{patch}{cat_sprite}"
             white_patches = sprites.sprites[sprite_name].copy()
 
             # Apply tint to white patches.
@@ -158,9 +169,7 @@ def generate_sprite(
         # draw vit & points
 
         if cat.pelt.points:
-            sprite_name = (
-                f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.points}{cat_sprite}"
-            )
+            sprite_name = f"{sprites.WHITE_POINT_DATA['spritesheet']}{cat.pelt.points}{cat_sprite}"
 
             points = sprites.sprites[sprite_name].copy()
             if (
@@ -180,9 +189,7 @@ def generate_sprite(
             new_sprite.blit(points, (0, 0))
 
         if cat.pelt.vitiligo:
-            sprite_name = (
-                f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.vitiligo}{cat_sprite}"
-            )
+            sprite_name = f"{sprites.WHITE_VITILIGO_DATA['spritesheet']}{cat.pelt.vitiligo}{cat_sprite}"
 
             new_sprite.blit(
                 sprites.sprites[sprite_name],

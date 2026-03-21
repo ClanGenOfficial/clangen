@@ -990,6 +990,7 @@ def unpack_rel_block(
                     cats_to_ob,
                     **value_changes,
                     log=to_log if to_log else from_log,
+                    flip_log=True,
                 )
             )
 
@@ -1005,6 +1006,7 @@ def change_relationship_values(
     comfort: int = 0,
     trust: int = 0,
     log: str = None,
+    flip_log: bool = False,
 ) -> dict:
     """
     changes relationship values according to the parameters.
@@ -1019,6 +1021,7 @@ def change_relationship_values(
     :param int comfort: amount to change comfort, default 0
     :param int trust: amount to change trust, default 0
     :param str log: the string to append to the relationship log of cats involved
+    :param bool flip_log: If True, this will "flip" the cats used for to_cat and from_cat abbreviation replacements. This should really only be used for mutual relationship changes from events.
     """
 
     # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
@@ -1069,32 +1072,34 @@ def change_relationship_values(
                 log = i18n.t("relationships.relationship_log")
             if log and isinstance(log, str):
                 replace_dict = {}
+                from_cat = single_cat_to if flip_log else single_cat_from
+                to_cat = single_cat_from if flip_log else single_cat_to
                 if "from_cat" in log:
                     replace_dict["from_cat"] = (
-                        str(single_cat_from.name),
-                        choice(single_cat_from.pronouns),
+                        str(from_cat.name),
+                        choice(from_cat.pronouns),
                     )
                 if "to_cat" in log:
                     replace_dict["to_cat"] = (
-                        str(single_cat_to.name),
-                        choice(single_cat_to.pronouns),
+                        str(to_cat.name),
+                        choice(to_cat.pronouns),
                     )
                 if replace_dict:
                     processed_log = process_text(log, replace_dict)
                 else:
                     processed_log = log
 
-                if single_cat_from in created_rel_logs:
-                    created_rel_logs[single_cat_from] = "<br><br>".join(
-                        [created_rel_logs[single_cat_from], processed_log]
+                if from_cat in created_rel_logs:
+                    created_rel_logs[from_cat] = "<br><br>".join(
+                        [created_rel_logs[from_cat], processed_log]
                     )
                 else:
-                    created_rel_logs.update({single_cat_from: processed_log})
+                    created_rel_logs.update({from_cat: processed_log})
 
                 log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
-                    name=str(single_cat_to.name),
-                    count=single_cat_to.moons,
+                    name=str(from_cat.name),
+                    count=from_cat.moons,
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)

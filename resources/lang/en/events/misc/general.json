@@ -10898,6 +10898,7 @@
         "frequency": 4,
         "event_text": "m_c seemed to be watching r_c closely this moon.",
         "m_c": {},
+        "r_c": {},
         "relationships": [
             {
                 "cats_from": ["r_c"],
@@ -10925,6 +10926,7 @@
         "frequency": 4,
         "event_text": "r_c couldn't help but feel uneasy around m_c this moon.",
         "m_c": {},
+        "r_c": {},
         "relationships": [
             {
                 "cats_from": ["r_c"],
@@ -10952,6 +10954,7 @@
         "frequency": 4,
         "event_text": "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} being followed.",
         "m_c": {},
+        "r_c": {},
         "exclude_involved": ["m_c"]
     },
     {
@@ -11291,9 +11294,11 @@
         ],
         "frequency": 4,
         "event_text": "A single crow feather appeared in r_c's nest one day. No one knew where it came from.",
+        "m_c": {},
         "r_c": {
             "skill": ["CAMP,1"]
-        }
+        },
+        "exclude_involved": ["m_c"]
     },
     {
         "event_id": "gen_misc_failedmurder_clever1",

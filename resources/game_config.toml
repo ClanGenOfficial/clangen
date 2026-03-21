@@ -227,10 +227,10 @@ dev_tools = false
   # 1/chance that kits, relationship and other factors will influence this chance
   primary_chance_unmated = 130
 
-  # 1/chance that a mated cat to has an affair
+  # 1/chance that a mated cat has an affair
   random_affair_chance = 50
 
-  # special 1/chance for an unmated cat to have an affair
+  # 1/chance for an unmated cat to have an affair (coparenting)
   # for this check, only other unmated cats can be the affair partner
   unmated_random_affair_chance = 10
 
@@ -377,6 +377,19 @@ dev_tools = false
   # base 1/chance that a cat will be chosen as a med cat apprentice
   base_medicine_app_chance = 41
 
+[roles."medicine cat apprentice"]
+  # maximum number of medicine cat apprentices to full medicine cats (e.g. 4 adult medcats can have 2 apps total)
+  max_medcats_to_apps = 2
+
+  # minimum percentage of medcat population that are seniors for buff to app chance
+  threshold_percentage_seniors = 30
+
+  # how many moons is considered "very old"
+  threshold_moons_ancient = 150
+
+  # minimum percentage of medcat population that are ancient for buff to app chance
+  threshold_percentage_ancient = 30
+
 [roles.become_mediator_chances]
   # 1/chance that a cat will switch to mediator. rolls every moon, so keep it high.
   warrior = 5000
@@ -444,6 +457,9 @@ dev_tools = false
 
   # forces specified event to occur regardless of if requirements are met
   debug_override_requirements = false
+
+  # forces the given frequency, frequency can be a number from 1-4
+  debug_override_frequency = 0
 
 [death_related]
   # base 1/chance that leader will die

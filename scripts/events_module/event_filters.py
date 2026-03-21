@@ -52,6 +52,7 @@ def event_for_location(locations: list) -> bool:
     """
     if "any" in locations:
         return True
+
     if not game.clan:
         return False
 
@@ -92,6 +93,10 @@ def event_for_season(seasons: list) -> bool:
     if "any" in seasons:
         # "any" will never be exclusionary, so we check for it first
         return True
+
+    # if game.clan hasn't been initialized yet, we don't include any season specific events
+    if not game.clan:
+        return False
 
     is_exclusionary = _check_for_exclusionary_value(seasons)
     if is_exclusionary:

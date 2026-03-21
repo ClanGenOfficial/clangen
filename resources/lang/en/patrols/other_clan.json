@@ -4397,7 +4397,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5,
+                        "amount": 5,
                         "log": {
                             "cats_from": "from_cat was glad to_cat was there to stop a fight with o_c_n before it got too serious."
                         }

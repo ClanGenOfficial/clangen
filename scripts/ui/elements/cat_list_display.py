@@ -272,7 +272,9 @@ class UICatListDisplay(UIContainer):
         elif self.tool_tip_name:
             tooltip_text = str(kitty.name)
         elif self.tool_tip_text:
-            tooltip_text = self.tool_tip_text[i]
+            tooltip_text = self.tool_tip_text[
+                i + ((self.current_page - 1) * self.cats_displayed)
+            ]
         else:
             tooltip_text = None
 

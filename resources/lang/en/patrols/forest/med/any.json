@@ -2475,22 +2475,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                1
-            ],
-            "normal adult": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 4,
         "intro_text": "r_c trips over a tree root while helping p_l to collect herbs.",
@@ -2506,17 +2492,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "like"
+                            "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When r_c tripped on patrol, {PRONOUN/r_c/subject} insisted on leaning against p_l all the way back to camp."
+                        }
                     },
                     {
                         "cats_to": [
@@ -2530,13 +2518,16 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated how to_cat checked {PRONOUN/from_cat/object} over when {PRONOUN/from_cat/subject} tripped on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
+                "text": "s_c swears {PRONOUN/s_c/subject} didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
                 "exp": 20,
                 "stat_trait": [
                     "playful",
@@ -2553,17 +2544,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "s_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When s_c tripped on patrol, {PRONOUN/s_c/subject} tried to play it off in front of p_l.",
+                            "cats_to": "p_l was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root while on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2585,7 +2580,26 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -6,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat embarrass {PRONOUN/to_cat/self} in front of {PRONOUN/from_cat/object} by tripping on a root."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2615,7 +2629,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat was abrasive and unfeeling when from_cat tripped over a root in front of {PRONOUN/to_cat/object}."
+                        }
                     },
                     {
                         "cats_to": [
@@ -2628,7 +2645,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed by how to_cat made a big deal out of tripping over a root."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2677,20 +2697,23 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "romance",
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a laugh when they both tripped over the same root."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "text": "s_c can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
                 "exp": 0,
                 "stat_trait": [
-                    "childish"
+                    "childish",
+                    "playful"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -2719,7 +2742,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was upset that to_cat laughed at {PRONOUN/from_cat/object} when from_cat tripped on a root."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2763,18 +2789,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                2,
-                2
-            ]
+            "medicine cat": [2, 2]
         },
         "frequency": 4,
         "intro_text": "r_c trips over a tree root while out collecting herbs with p_l.",
@@ -2790,17 +2805,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "romance",
-                            "like"
+                            "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When r_c tripped on patrol, {PRONOUN/r_c/subject} insisted on leaning against p_l all the way back to camp."
+                        }
                     },
                     {
                         "cats_to": [
@@ -2814,13 +2831,16 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated how to_cat checked {PRONOUN/from_cat/object} over when {PRONOUN/from_cat/subject} tripped on patrol."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
+                "text": "s_c swears {PRONOUN/s_c/subject} didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
                 "exp": 20,
                 "stat_trait": [
                     "playful",
@@ -2837,17 +2857,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "s_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When s_c tripped on patrol, {PRONOUN/s_c/subject} tried to play it off in front of p_l.",
+                            "cats_to": "p_l was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root while on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2869,7 +2893,26 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -6,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat embarrass {PRONOUN/to_cat/self} in front of {PRONOUN/from_cat/object} by tripping on a root."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2899,7 +2942,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat was abrasive and unfeeling when from_cat tripped over a root in front of {PRONOUN/to_cat/object}."
+                        }
                     },
                     {
                         "cats_to": [
@@ -2912,7 +2958,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed by how to_cat made a big deal out of tripping over a root."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2961,20 +3010,23 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "romance",
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a laugh when they both tripped over the same root."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "text": "s_c can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
                 "exp": 0,
                 "stat_trait": [
-                    "childish"
+                    "childish",
+                    "playful"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -3003,7 +3055,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was upset that to_cat laughed at {PRONOUN/from_cat/object} when from_cat tripped on a root."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3047,22 +3102,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                1
-            ],
-            "normal adult": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l trips over a tree root while out collecting herbs with r_c.",
@@ -3078,37 +3119,25 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
+                        "cats_from": [
+                            "r_c"
                         ],
-                        "amount": 10
+                        "mutual": true,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When p_l tripped on patrol, {PRONOUN/p_l/subject} insisted on leaning against r_c all the way back to camp."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
+                "text": "s_c swears {PRONOUN/s_c/subject} didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
                 "exp": 20,
                 "stat_trait": [
                     "playful",
@@ -3125,17 +3154,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When s_c tripped on patrol, {PRONOUN/s_c/subject} tried to play it off in front of r_c.",
+                            "cats_to": "r_c was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root while on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3157,13 +3190,32 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -6,
+                        "log": {
+                            "cats_from": "from_cat watched to_cat embarrass {PRONOUN/to_cat/self} in front of {PRONOUN/from_cat/object} by tripping on a root."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c may not be a medicine cat, but even <i>{PRONOUN/s_c/subject}</i> can tell that p_l is fine. Already annoyed at having been woken up so early in the stars-damned morning just to go pick herbs, s_c rather callously tells the medicine cat to get up and walk it off.",
+                "text": "s_c may not be a medicine cat, but even <i>{PRONOUN/s_c/subject}</i> can tell that p_l is fine. Already annoyed at having been woken up so early in the morning just to go pick herbs, s_c callously tells the medicine cat to get up and walk it off.",
                 "exp": 0,
                 "stat_trait": [
                     "cold",
@@ -3187,7 +3239,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "to_cat was abrasive and unfeeling when from_cat tripped over a root in front of {PRONOUN/to_cat/object}."
+                        }
                     },
                     {
                         "cats_to": [
@@ -3200,7 +3255,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was unimpressed by how to_cat made a big deal out of tripping over a root."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3249,20 +3307,23 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "romance",
                             "like",
                             "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat shared a laugh when they both tripped over the same root."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only p_l could see {PRONOUN/p_l/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at p_l's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "text": "s_c can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only p_l could see {PRONOUN/p_l/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at p_l's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
                 "exp": 0,
                 "stat_trait": [
-                    "childish"
+                    "childish",
+                    "playful"
                 ],
                 "can_have_stat": [
                     "r_c"
@@ -3291,7 +3352,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was upset that to_cat laughed at {PRONOUN/from_cat/object} when from_cat tripped on a root."
+                        }
                     }
                 ],
                 "frequency": 4
