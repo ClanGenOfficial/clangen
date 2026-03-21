@@ -55,7 +55,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "p_l returned to camp with an important vision for c_n."
+                            "cats_from": "from_cat returned to camp with an important vision for c_n."
                         }
                     }
                 ],
@@ -80,7 +80,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw p_l return to camp looking much more calm and composed."
+                            "cats_from": "from_cat saw to_cat return to camp looking much more calm and composed."
                         }
                     }
                 ],
@@ -205,15 +205,15 @@
                         "cats_from": [
                             "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect",
                             "trust"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "app1 learned more about herbs with perfect concentration, impressing p_l.",
-                            "cats_to": "p_l felt confident with app1's attentiveness during a herb gathering lesson."
+                            "cats_from": "from_cat listened to to_cat attentivly during a herb gathering patrol.",
+                            "cats_to": "to_cat felt a measure of confidence in from_cat's attentiveness during a herb gathering patrol."
                         }
                     }
                 ],
@@ -233,15 +233,15 @@
                         "cats_from": [
                             "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect",
                             "trust"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "app1 found a hidden herb patch during a lesson, impressing p_l.",
-                            "cats_to": "p_l was amazed by app1's application of knowledge by finding a hidden herb patch."
+                            "cats_from": "from_cat found a hidden herb patch during a lesson, impressing to_cat.",
+                            "cats_to": "to_cat was impressed by from_cat's keen observation by finding a hidden herb patch."
                         }
                     }
                 ],
@@ -267,7 +267,7 @@
                         ],
                         "amount": -5
                         ,"log": {
-                            "cats_from": "Frustrated by app1's inattentiveness, p_l ended a lesson about herb gathering."
+                            "cats_from": "Frustrated by to_cat's inattentiveness, from_cat ended {PRONOUN/from_cat/poss} gathering lesson early."
                         }
                     }
                 ],
@@ -541,7 +541,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                          "cats_from": "from_cat and to_cat were able to quickly harvest herbs and return to camp before they both were drenched."  
+                          "cats_from": "from_cat and to_cat were able to quickly harvest herbs and return to camp before they wewre drenched."  
                         }
                     }
                 ],
@@ -566,7 +566,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                          "cats_from": "p_l was visibly frustrated by to_cat while patrolling in the rain."  
+                          "cats_from": "from_cat was visibly frustrated by to_cat while patrolling in the rain empty-pawed."  
                         }
                     }
                 ],
@@ -686,8 +686,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "app1 worked hard and gathered a lot of cobwebs alongside p_l.",
-                            "cats_to": "p_l worked hard alongside app1 to gather cobwebs, pleased by app1's hard work."
+                            "cats_from": "from_cat worked hard and gathered a lot of cobwebs alongside to_cat, proud of {PRONOUN/from_cat/poss} haul.",
+                            "cats_to": "to_cat worked hard alongside app1 to gather cobwebs, pleased by from_cat's hard work."
                         }
                     }
                 ],
@@ -715,7 +715,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat startled several cats with their cobweb haul, much to their glee."
+                            "cats_from": "to_cat and from_cat startled several cats with their cobweb haul much to their glee."
                         }
                     }
                 ],
@@ -741,7 +741,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "p_l was irritated by app1's inattentive attitude on a lesson."
+                            "cats_from": "to_cat was irritated by from_cat's inattentive attitude on a lesson."
                         }
                     }
                 ],
@@ -1017,8 +1017,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat's curiousity about horsetail herbs helped from_cat's lesson go smoothly.",
-                            "cats_to": "to_cat encorages from_cat's interest and curiousity about herbs during a lesson."
+                            "cats_from": "to_cat encorages from_cat's interest and curiousity about herbs during a lesson.",
+                            "cats_to": "to_cat's curiousity about horsetail herbs helped from_cat's lesson go smoothly."
                         }
                     }
                 ],
@@ -1048,7 +1048,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat have a productive patrol hunting horsetail together."
+                            "cats_from": "from_cat and to_cat work together to process a large stem of horsetail, leaning on one another's experience."
                         }
                     }
                 ],
@@ -1084,8 +1084,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat impressed from_cat with {PRONOUN/to_cat/poss} skill in plucking an entire horsetail herb.",
-                            "cats_to": "from_cat was impressed by to_cat's skill in picking an entire horsetail herb."
+                            "cats_from": "to_cat impressed from_cat with {PRONOUN/to_cat/poss} skill in plucking an entire horsetail herb."
                         }
                     }
                 ],
@@ -1113,8 +1112,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat could not find the horsetail herb needed for a lesson, disappointing from_cat.",
-                            "cats_to": "from_cat was disappointed in to_cat, expecting more from {PRONOUN/from_cat/poss} mentor's experience."
+                            "cats_from": "from_cat was disappointed in to_cat, expecting more from {PRONOUN/from_cat/poss} mentor's experience."
                         }
                     }
                 ],
@@ -1177,7 +1175,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat and from_cat gathered a large shoot of horsetail back to camp together."
+                            "cats_from": "to_cat and from_cat gathered a large shoot of horsetail back to camp together, encouraged by one another's performance."
                         }
                     }
                 ],
@@ -1208,7 +1206,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat and from_cat picked out an impressive addition of horsetail back to camp together."
+                            "cats_from": "from_cat was impressed by to_cat's precision in plucking an entire horsetail herb."
                         }
                     }
                 ],
@@ -1351,7 +1349,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat and from_cat gathered a large patch of moss back to camp together."
+                            "cats_from": "to_cat and from_cat gather lots of moss for the medicine den together, encouraged by one another's performance."
                         }
                     }
                 ],
@@ -1438,7 +1436,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat and from_cat gather new modd for the medicine den."
+                            "cats_from": "to_cat and from_cat gather lots of moss for the medicine den together, encouraged by one another's performance."
                         }
                     }
                 ],
@@ -1525,7 +1523,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat and from_cat gather lots of moss for the medicine den together."
+                            "cats_from": "to_cat and from_cat gather lots of moss for the medicine den together, encouraged by one another's performance."
                         }
                     }
                 ],
@@ -1621,7 +1619,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat gathered rosemary while tending to the graves of the departed."
+                            "cats_from": "to_cat and from_cat solemly lean on one another while tending to c_n's gravesite."
                         }
                     }
                 ],
@@ -1702,7 +1700,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat gathered rosemary while tending to the graves of the departed."
+                            "cats_from": "to_cat and from_cat solemly lean on one another while tending to c_n's gravesite."
                         }
                     }
                 ],
@@ -1789,7 +1787,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat had a pleasant time discussing ideas about c_n's leadership."
+                            "cats_from": "to_cat and from_cat had a pleasant chat discussing ideas about c_n's leadership."
                         }
                     }
                 ],
@@ -1817,7 +1815,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat had a productive time discussing the most recent sign from StarClan."
+                            "cats_from": "to_cat and from_cat had a productive chat discussing the most recent sign from StarClan."
                         }
                     }
                 ],
@@ -1844,7 +1842,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat and from_cat argued and became irritated with one another omens from the afterlife."
+                            "cats_from": "to_cat and from_cat argued and became irritated with one another discussing omens from the afterlife."
                         }
                     }
                 ],
