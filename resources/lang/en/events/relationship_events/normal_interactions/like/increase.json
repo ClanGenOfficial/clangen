@@ -79,7 +79,7 @@
 	},
 	{
 		"id": "like_inc_med1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c saw r_c the other day and did get a chance to meow hello!",
 			"r_c points out that m_c's fresh-kill has gone bad before {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} it.",
@@ -92,7 +92,7 @@
 	},
 	{
 		"id": "like_inc_med2",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c tells a story to r_c.",
 			"m_c shares a piece of fresh-kill with r_c.",
@@ -111,7 +111,7 @@
 	},
 	{
 		"id": "like_inc_med3",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c waves to r_c with {PRONOUN/m_c/poss} tail as their patrols cross paths on the territory.",
 			"m_c calls to r_c to catch {PRONOUN/m_c/object} a fat mouse on {PRONOUN/r_c/poss} next hunting patrol.",
@@ -141,7 +141,7 @@
 	},
 	{
 		"id": "like_inc_med4",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"r_c charms m_c.",
 			"r_c smiles at m_c whenever they meet.",
@@ -161,7 +161,7 @@
 	},
 	{
 		"id": "like_inc_med5",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"r_c relaxes with m_c.",
 			"r_c helps m_c calm down.",
@@ -173,7 +173,7 @@
 	},
 	{
 		"id": "like_inc_med6",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"r_c challenges m_c to a race.",
 			"m_c knows hanging out with r_c will always bring an adrenaline rush.",
@@ -185,7 +185,7 @@
 	},
 	{
 		"id": "like_inc_med7",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"r_c is making sure m_c knows that {PRONOUN/m_c/subject} {VERB/m_c/are/is} loved.",
 			"r_c is telling m_c how much {PRONOUN/r_c/subject} {VERB/r_c/cherish/cherishes} {PRONOUN/m_c/object}.",
@@ -200,7 +200,7 @@
 	},
 	{
 		"id": "like_inc_med8",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"r_c is playing tag with m_c.",
 			"r_c bats a moss ball towards m_c to play.",
@@ -213,7 +213,7 @@
 	},
 	{
 		"id": "like_inc_med9",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c feels bad that {PRONOUN/m_c/subject} caused a problem for r_c.",
 			"m_c convinces r_c to help {PRONOUN/m_c/object} pull a prank on a Clanmate."
@@ -228,7 +228,7 @@
 	},
 	{
 		"id": "like_inc_med10",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c wants to explore Twolegplace with r_c.",
 			"m_c wants to sneak along the border with r_c.",
@@ -240,7 +240,7 @@
 	},
 	{
 		"id": "like_inc_med10",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is hiding behind a bush ready to pounce on r_c."
 		],
@@ -250,7 +250,7 @@
 	},
 	{
 		"id": "like_inc_med4",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c wants to explore the whole territory with r_c!",
 			"m_c claims that r_c is one of {PRONOUN/m_c/poss} best friends.",
@@ -271,7 +271,7 @@
 	},
 	{
 		"id": "like_to_app_inc_med1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c noticed that r_c is falling behind in training and offered to help {PRONOUN/r_c/object} catch up.",
 			"m_c gives r_c advice on an upcoming assessment."
@@ -291,7 +291,7 @@
 	},
 	{
 		"id": "like_kit_inc_med1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c plays moss-ball with r_c.",
 			"m_c wants to show r_c {PRONOUN/m_c/poss} favorite toy."
@@ -305,7 +305,7 @@
 	},
 	{
 		"id": "like_kit_inc_med3",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c lets r_c play with {PRONOUN/m_c/poss} favorite toy.",
 			"m_c pretends to be a warrior with r_c.",
@@ -338,7 +338,7 @@
 	},
 	{
 		"id": "like_kit_inc_med4",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c decorates {PRONOUN/m_c/poss} nest with gifts that r_c brought {PRONOUN/m_c/object}.",
 			"m_c follows r_c around everywhere."
@@ -355,7 +355,7 @@
 	},
 	{
 		"id": "like_kit_inc_med5",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c asks r_c what it's like to be in training.",
 			"m_c tells r_c {PRONOUN/m_c/subject}'ll be {PRONOUN/r_c/poss} apprentice one day.",
@@ -376,7 +376,7 @@
 	},
 	{
 		"id": "like_kit_inc_med6",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is watching over r_c.",
 			"m_c trains playfully with r_c.",
@@ -406,7 +406,7 @@
 	},
 	{
 		"id": "like_kit_inc_odd1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is asking r_c where kits come from."
 		],
@@ -426,7 +426,7 @@
 	},
 	{
 		"id": "like_app_med1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is telling r_c about a hunting technique.",
 			"m_c is thinking about how much r_c reminds {PRONOUN/m_c/subject} of {PRONOUN/m_c/poss} own apprentice days.",
@@ -448,7 +448,7 @@
 	},
 	{
 		"id": "like_app_med2",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c brings r_c a piece of prey to share after a long day of training.",
 			"m_c offers to help r_c clean out the elder's bedding.",
@@ -467,7 +467,7 @@
 	},
 	{
 		"id": "like_app_med3",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c daydreams with r_c about their future warrior ceremonies.",
 			"m_c feels like training goes by much faster when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} with r_c.",
@@ -487,7 +487,7 @@
 	},
 	{
 		"id": "like_app_med4",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c listens closely as r_c tells {PRONOUN/m_c/object} about the new herb {PRONOUN/r_c/subject} learned to recognize today.",
 			"m_c playfully teases r_c for having herbs stuck in {PRONOUN/r_c/poss} fur.",
@@ -504,7 +504,7 @@
 	},
 	{
 		"id": "like_app_med5",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c gently grooms some cobwebs off r_c's fur.",
 			"m_c tells r_c that {PRONOUN/r_c/subject}'ll be an amazing medicine cat someday.",
@@ -522,7 +522,7 @@
 	},
 	{
 		"id": "like_warrior_inc_med1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c greets r_c as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} exiting the warriors' den.",
 			"m_c chats quietly with r_c while they're both on camp guard duty.",
@@ -540,7 +540,7 @@
 	},
 	{
 		"id": "like_elder_med1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is pestering r_c for a story.",
 			"m_c settles down next to r_c to listen to {PRONOUN/r_c/poss} stories.",
@@ -556,7 +556,7 @@
 	},
 	{
 		"id": "like_incfromneg_med1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c realized that {PRONOUN/m_c/subject} {VERB/m_c/were/was} too harsh in {PRONOUN/m_c/poss} judgement of r_c.",
 			"m_c is still hurt by r_c but wants to make amends.",
@@ -576,7 +576,7 @@
 	},
 	{
 		"id": "like_incfromneg_med2",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c covered for r_c on something minor.",
 			"m_c spends some time with r_c and they both end up understanding each other a little better.",
@@ -856,7 +856,7 @@
 	},
 	{
 		"id": "like_inc_respect_de1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c feels like {PRONOUN/m_c/subject}'ll never accomplish as much as r_c.",
 			"m_c wonders if {PRONOUN/m_c/subject} can ever be as good as r_c.",
@@ -889,7 +889,7 @@
 	},
 	{
 		"id": "like_inc_respect_de2",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c thinks r_c is so much braver than {PRONOUN/m_c/object}.",
 			"If it were a life-or-death situation, m_c thinks that r_c should be saved first.",
