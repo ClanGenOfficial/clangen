@@ -872,7 +872,8 @@ def gather_cat_objects(
             continue
 
         else:
-            print(f"WARNING: Unsupported abbreviation {abbr}")
+            print(f"WARNING: No cats found for {abbr_list}")
+            return list(found_cat_list)
 
     return list(out_set)
 
