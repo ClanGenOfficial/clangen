@@ -10436,7 +10436,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_fro": "from_cat and to_cat enjoyed a relaxed afternoon picking raspberry and blackberry leaves."
+                            "cats_from": "from_cat and to_cat enjoyed a relaxed afternoon picking raspberry and blackberry leaves."
                         }
                     }
                 ],
@@ -11909,7 +11909,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into an argument over whether it was prudent to keep harvesting from a damaged dandelion plant."
+                            "cats_from": "from_cat and to_cat argued over whether it was prudent to keep harvesting from a damaged dandelion plant."
                         }
                     }
                 ],
@@ -11918,7 +11918,7 @@
         ]
     },
     {
-        "patrol_id": "fst_med_herbsdandy_greenleaf1",
+        "patrol_id": "fst_med_herbsdandelion_greenleaf1",
         "biome": [
             "-desert"
         ],
