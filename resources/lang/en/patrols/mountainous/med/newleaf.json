@@ -17,14 +17,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/look/looks} for newleaf's fresh buds, and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
@@ -160,22 +154,10 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find the buds of newleaf.",
@@ -310,18 +292,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "The betony plants stretch outwards, racing to take advantage of the newleaf sun. It's the perfect time to harvest them, and p_l is glad for the sun on their pelt after the long winter.",
@@ -385,14 +358,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -529,14 +496,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "The betony plants stretch outwards, racing to take advantage of the newleaf sun. p_l points out the plants to the warriors {PRONOUN/p_l/subject} brought with {PRONOUN/p_l/object}, who just accept that this particular green shrub is different to all the other green shrubs.",
@@ -664,18 +625,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "Newleaf should bring new leaves on the blackberry brambles. p_l heads out to collect some.",
@@ -739,14 +691,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -883,14 +829,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "Newleaf should bring new leaves on the blackberry brambles. p_l heads out to collect some, bringing along anyone who isn't busy with other work.",
@@ -1018,18 +958,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "Worried about {PRONOUN/p_l/poss} stores of burdock, and anticipating the plants' newleaf growth, p_l heads out to replenish the Clan's stocks.",
@@ -1093,14 +1024,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -1237,14 +1162,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "Worried about {PRONOUN/p_l/poss} stores of burdock, and anticipating the plants' newleaf growth, p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
@@ -1372,10 +1291,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6]
         },
         "frequency": 4,
         "intro_text": "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves.",
@@ -1439,18 +1355,9 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6]
         },
         "frequency": 4,
         "intro_text": "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves, bringing app1 along for a lesson.",
@@ -1586,14 +1493,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a little group of warriors to help {PRONOUN/p_l/object} carry the herbs.",
@@ -1721,18 +1622,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "p_l tastes the air, trying to decide if it's warm enough to gather catmint yet. {PRONOUN/p_l/subject/CAP}'d really like to replenish the herb stocks after leaf-bare.",
@@ -1792,14 +1684,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -1932,14 +1818,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' {PRONOUN/p_l/object} gather catmint, {PRONOUN/p_l/poss} heart sinks. These overly excited warriors don't look like they're going to be useful, and p_l really needs to renew c_n's stocks of catmint as newleaf brings the plants back to life.",
@@ -2063,14 +1943,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -2207,14 +2081,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "The strengthening sun in the sky will bring dandelion plants out - always the first to take advantage of newleaf, those ones. p_l heads out to look for them, bringing a group of {PRONOUN/p_l/poss} Clanmates along for the gathering patrol, with the instructions to also be on the lookout for wild garlic, as they don't tend to grow far from dandelions.",
@@ -2342,18 +2210,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "As newleaf brings green back to the world, p_l has been eagerly anticipating the unfurling of the new leaf buds on the elder trees. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today. Maybe that juniper {PRONOUN/p_l/subject} saw growing nearby the other day is ready to be plucked as well...",
@@ -2433,14 +2292,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -2611,14 +2464,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "As newleaf brings green back to the world, p_l has been eagerly anticipating the unfurling of the new leaf buds on the elder trees. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, bringing a group of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object}.",
@@ -2778,18 +2625,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh goldenrod for the stores. It sure would be nice to get some marigold, too, if it's matured enough to be harvested.",
@@ -2853,14 +2691,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -2997,14 +2829,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh goldenrod and marigold for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}.",
@@ -3132,18 +2958,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "The strengthening sun in the sky will bring dandelion plants out - always the first to take advantage of newleaf, those ones. Perhaps there will also be other herbs ready to be collected, such as some wild garlic. p_l heads out to look for them.",
@@ -3207,18 +3024,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "With newleaf having won against the snows of leaf-bare, it's far safer to go gather juniper needles from the trees.",
@@ -3282,14 +3090,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -3426,14 +3228,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "With newleaf having won against the snows of leaf-bare, it's far safer to go gather juniper needles from the trees. p_l heads out with a gathering patrol, promising the warriors that they can pick up a few needles for the dens of the camp to help freshen them up, so long as they gather enough for the herb stores first.",
@@ -3561,14 +3357,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -3729,10 +3519,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
+            "healer cats": [1, 6],
             "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
@@ -3894,18 +3681,9 @@
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. They take along a warrior escort to help.",
@@ -4099,18 +3877,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh mallow for the stores.",
@@ -4174,14 +3943,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -4318,14 +4081,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh mallow for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}.",
@@ -4453,18 +4210,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where marigold might be growing this year.",
@@ -4528,14 +4276,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -4672,14 +4414,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where marigold might be growing this year. p_l goes with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}.",
@@ -4807,18 +4543,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year.",
@@ -4882,26 +4609,11 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year with app1.",
@@ -5037,14 +4749,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year. p_l goes with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}.",
@@ -5172,18 +4878,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "As the branches of the oak trees start to green, p_l heads out to collect its leaves.",
@@ -5249,26 +4946,11 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "As the branches of the oak trees start to green, p_l brings app1 to collect its leaves.",
@@ -5404,14 +5086,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "As the branches of the oak trees start to green, p_l heads out to collect its leaves with {PRONOUN/p_l/poss} Clanmates coming along. Many paws will make light work, after all.",
@@ -5539,18 +5215,9 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves.",
@@ -5614,26 +5281,11 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves. app1 asks to come along!",
@@ -5769,14 +5421,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves with a gathering patrol.",
@@ -5904,22 +5550,10 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity.",
@@ -5980,14 +5614,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                1
-            ],
-            "medicine cat apprentice": [
-                1,
-                1
-            ]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "relationship_constraint": ["mentor/app"],
         "frequency": 4,
@@ -6121,18 +5749,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a good-sized patrol full of Clanmates to help {PRONOUN/p_l/object} out with the gathering of this important herb.",
@@ -6257,22 +5876,10 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year.",
@@ -6336,26 +5943,11 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to app1 the annoyances of the type of plant that dies completely in leaf-bare, leaving them having to search for all-new spots every newleaf.",
@@ -6491,18 +6083,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. {PRONOUN/p_l/subject/CAP} {VERB/p_l/describe/describes} ragwort to the warriors with {PRONOUN/p_l/object}, though {PRONOUN/p_l/subject}'d be surprised if anyone manages to spot it.",
@@ -6630,22 +6213,10 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. It can be reassuring, in a way, to be the only cat gathering the sometimes-dangerous herb.",
@@ -6709,26 +6280,11 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} app1 with {PRONOUN/p_l/object} for an important lesson on its use.",
@@ -6864,18 +6420,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. There shouldn't be any problem collecting it with other cats - these warriors are all strong and healthy.",
@@ -7003,22 +6550,10 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme.",
@@ -7084,26 +6619,11 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme. p_l lets app1 take the lead, testing {PRONOUN/app1/poss} knowledge.",
@@ -7239,18 +6759,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme, and the gathering patrol would rather have this over with quickly.",
@@ -7378,22 +6889,10 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze.",
@@ -7457,26 +6956,11 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "medicine cat apprentice": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 6],
+            "medicine cat apprentice": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [-1, -1]
         },
         "frequency": 4,
         "intro_text": "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze, encouraging app1 to try the technique.",
@@ -7612,18 +7096,9 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "medicine cat": [1, 6],
+            "healer cats": [1, 6],
+            "normal adult": [1, 6]
         },
         "frequency": 4,
         "intro_text": "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze, a patrol of warriors assisting {PRONOUN/p_l/object}.",
