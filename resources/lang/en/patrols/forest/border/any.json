@@ -2263,7 +2263,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_dog",
+        "patrol_art": "gen_border_dogscent_clanmember",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {

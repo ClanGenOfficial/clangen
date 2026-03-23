@@ -109,7 +109,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_hunt_strange",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -259,7 +259,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_scent_hostile",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
