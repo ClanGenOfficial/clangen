@@ -1736,7 +1736,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1825,7 +1825,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
                 "min_max_status": {
@@ -1919,7 +1919,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2133,7 +2133,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2293,7 +2293,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_twolegplace",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3842,7 +3842,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_anxious1",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -4667,7 +4667,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_app_siblings",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4899,7 +4899,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["all_mentored"],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_app_siblings",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -5917,7 +5917,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -6242,7 +6242,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {

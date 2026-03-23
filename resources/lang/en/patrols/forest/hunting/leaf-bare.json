@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_newleafsnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -187,7 +187,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_newleafsnowstorm",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -271,7 +271,7 @@
         "season": [ "leaf-bare" ],
         "types": [ "hunting" ],
         "tags": [ "romance" ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_newleafsnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -429,7 +429,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -530,7 +530,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -610,7 +610,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -720,7 +720,7 @@
         "season": [ "leaf-bare" ],
         "types": [ "hunting" ],
         "tags": [ "romance" ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_mice_ohnotheyrehot",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1017,7 +1017,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1631,7 +1631,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "mtn_hunt_newleafsnowstorm",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1986,7 +1986,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},

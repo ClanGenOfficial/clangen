@@ -594,7 +594,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -643,7 +643,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_warrior_rainy",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -810,7 +810,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -967,7 +967,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1064,7 +1064,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1429,7 +1429,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -1576,7 +1576,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -1736,7 +1736,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2234,7 +2234,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2345,7 +2345,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_soloapp",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2647,7 +2647,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_eggs_newleaf1",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
@@ -2828,7 +2828,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3100,7 +3100,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_eggs_newleaf1",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

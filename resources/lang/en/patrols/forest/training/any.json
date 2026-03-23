@@ -2280,7 +2280,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_med_gatheringraspberrysolo",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -2398,7 +2398,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_med_gatheringraspberrysoloapp",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
