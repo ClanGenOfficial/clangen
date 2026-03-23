@@ -12668,7 +12668,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c has a good eye for these things, and snips off the best and most lush goldenrod, and the odd marigold, to take back for the Clan's stores. As {PRONOUN/s_c/subject} {VERB/s_c/do/does}, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too.",
+                "text": "s_c has a good eye for these things and snips off the best and most lush goldenrod, and the odd marigold, to take back for the Clan's stores. As {PRONOUN/s_c/subject} {VERB/s_c/do/does}, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too.",
                 "exp": 20,
                 "stat_skill": [
                     "SENSE,2"
@@ -13224,21 +13224,6 @@
                 "herbs": [
                     "lungwort"
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -13246,21 +13231,6 @@
                 "exp": 20,
                 "herbs": [
                     "lungwort"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
                 ],
                 "frequency": 1
             },
@@ -13273,21 +13243,6 @@
                 ],
                 "herbs": [
                     "lungwort"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
                 ],
                 "frequency": 4
             },
@@ -13307,16 +13262,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_social", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat noticed how hard to_cat pushed {PRONOUN/to_cat/self} to find lungwort for the Clan."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -13335,21 +13293,6 @@
                             "sore"
                         ],
                         "scars": []
-                    }
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -14245,7 +14188,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c finds a patch of marigold, harvests its best leaves and flowers, somehow finds some tansy as well, and pads home, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering. app1 watches, trying to soak up {PRONOUN/s_c/poss} skills.",
+                "text": "s_c finds a patch of marigold, harvests its best leaves, and picks up some nice tansy too. {PRONOUN/s_c/subject/CAP} {VERB/s_c/pad/pads} home after {PRONOUN/s_c/poss} work is finished with app1 in tow, unaware of how much of {PRONOUN/s_c/poss} success rests on {PRONOUN/s_c/poss} talent for herb gathering. app1 watches, trying to soak up {PRONOUN/s_c/poss} skills.",
                 "exp": 20,
                 "stat_skill": [
                     "SENSE,2"

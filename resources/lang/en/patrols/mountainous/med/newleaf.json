@@ -2921,12 +2921,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a successful patrol gathering goldenrod together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2949,18 +2950,19 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a successful patrol gathering goldenrod together."
+                        }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c has a good eye for these things, and snips off the best and most lush goldenrod and marigold petals to take back for the Clan's stores. As {PRONOUN/s_c/subject} {VERB/s_c/do/does}, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem or petal. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too.",
+                "text": "s_c has a good eye for these things and snips off the best and most lush goldenrod and marigold petals to take back for the Clan's stores. As {PRONOUN/s_c/subject} {VERB/s_c/do/does}, {PRONOUN/s_c/subject} {VERB/s_c/instruct/instructs} app1 in how to judge the quality of each stem or petal. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too.",
                 "exp": 20,
                 "stat_skill": [
                     "SENSE,2"
@@ -2980,12 +2982,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c taught app1 to judge the quality of goldenrod stems while they gathered herbs together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2998,19 +3001,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was frustrated by to_cat's cavalier attitude when they discovered their goldenrod bushes weren't recovering well from leaf-bare."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3042,7 +3046,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. After that, it isn't too hard to find some marigold, and then the process begins once more. The patrol chats as they work, exchanging gossip and news as the smell of cut stems grows around them.",
+                "text": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. After that, it isn't too hard to find some marigold, and then the process begins once more. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
                 "exp": 10,
                 "herbs": [
                     "goldenrod",
@@ -3051,7 +3055,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -3059,9 +3063,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed chatting and gossiping while gathering goldenrod together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3077,17 +3084,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering goldenrod."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3106,7 +3116,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -3116,7 +3126,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's skill in gathering goldenrod when {PRONOUN/from_cat/subject} assisted {PRONOUN/to_cat/object} during a patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3129,7 +3142,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -3139,7 +3152,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were short with each other during a herb gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3252,12 +3268,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about the uses of juniper needles while gathering herbs together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3273,19 +3290,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about the uses of juniper and oak leaves while they gathered herbs together.",
+                            "cats_to": "app1 was glad that p_l let {PRONOUN/app1/object} keep a sprig of juniper for {PRONOUN/app1/poss} nest."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3311,12 +3330,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a highly successful herb-gathering patrol thanks to s_c's sharp senses."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3329,19 +3349,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat lost faith in to_cat when to_cat was unable to locate a juniper tree during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3392,7 +3413,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather juniper needles and oak leaves."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3404,22 +3428,6 @@
                     "many_herbs",
                     "oak_leaves",
                     "juniper"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
-                    }
                 ],
                 "frequency": 1
             },
@@ -3437,17 +3445,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat gained respect for to_cat's skill in herb-gathering while helping {PRONOUN/to_cat/object} gather juniper needles."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3463,14 +3473,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat was irate when to_cat spent an herb-gathering patrol complaining about juniper needles instead of gathering them."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3479,6 +3492,110 @@
     },
     {
         "patrol_id": "mtn_med_gatheringlungwort_newleaf1",
+        "biome": [
+            "mountainous"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "gen_med_gatheringlungwort",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "healer cats": [1, 1]
+        },
+        "frequency": 4,
+        "intro_text": "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it.",
+        "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "It takes {PRONOUN/p_l/object} all day, but finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
+                "exp": 20,
+                "herbs": [
+                    "lungwort"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but {PRONOUN/p_l/subject} {VERB/p_l/stick/sticks} the location in {PRONOUN/p_l/poss} mind as a place to return to.",
+                "exp": 20,
+                "herbs": [
+                    "lungwort"
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders. The medicine cat visits each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+                "exp": 20,
+                "stat_skill": [
+                    "SENSE,2",
+                    "CLEVER,3"
+                ],
+                "herbs": [
+                    "lungwort"
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "Night falls, but still s_c insistently keeps going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the precious, speckled leaves.",
+                "exp": 20,
+                "stat_trait": [
+                    "thoughtful",
+                    "confident",
+                    "loyal",
+                    "responsible",
+                    "arrogant"
+                ],
+                "herbs": [
+                    "lungwort"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan", "high_social", "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat noticed how hard to_cat pushed {PRONOUN/to_cat/self} to find lungwort for the Clan."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "sore"
+                        ],
+                        "scars": []
+                    }
+                ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "mtn_med_gatheringlungwort_newleaf2",
         "biome": [
             "mountainous"
         ],
@@ -3518,11 +3635,14 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "like",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "After finding lungwort, from_cat and to_cat played with each other on an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3536,18 +3656,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "app1 was bursting with pride when p_l praised {PRONOUN/app1/object} for finding lungwort.",
+                            "cats_to": "p_l was proud of app1 for finding lungwort."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3565,18 +3688,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by how to_cat was able to hunt down lungwort."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3597,18 +3721,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat realized the depths of to_cat's dedication to c_n when {PRONOUN/to_cat/subject} persevered in the search for lungwort."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3621,180 +3746,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
+                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_med_gatheringlungwort_newleaf2",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "healer cats": [1, 6],
-            "all apprentices": [ -1, -1 ]
-        },
-        "frequency": 4,
-        "intro_text": "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it.",
-        "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "It takes {PRONOUN/p_l/object} all day, but finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard.",
-                "exp": 20,
-                "herbs": [
-                    "lungwort"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but {PRONOUN/p_l/subject} {VERB/p_l/stick/sticks} the location in {PRONOUN/p_l/poss} mind as a place to return to.",
-                "exp": 20,
-                "herbs": [
-                    "lungwort"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders. The medicine cat visits each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
-                "exp": 20,
-                "stat_skill": [
-                    "SENSE,2",
-                    "CLEVER,3"
-                ],
-                "herbs": [
-                    "lungwort"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Night falls, but still s_c insistently keeps going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the precious, speckled leaves.",
-                "exp": 20,
-                "stat_trait": [
-                    "thoughtful",
-                    "confident",
-                    "loyal",
-                    "responsible",
-                    "arrogant"
-                ],
-                "herbs": [
-                    "lungwort"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "sore"
-                        ],
-                        "scars": []
-                    }
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat wasn't happy with to_cat for {PRONOUN/to_cat/poss} inattention during a crucial search for lungwort."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3815,11 +3781,10 @@
         "tags": [],
         "patrol_art": "gen_med_gatheringlungwort",
         "min_cats": 2,
-        "max_cats": 3,
+        "max_cats": 2,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "healer cats": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. They take along a warrior escort to help.",
@@ -3840,11 +3805,15 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "like"
+                            "trust",
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat admired to_cat's perseverance on an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3858,16 +3827,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
-                        "values": [
-                            "like"
+                        "cats_from": [
+                            "p_l"
                         ],
-                        "amount": 5
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help on a lungwort-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3893,11 +3866,15 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "like"
+                            "respect",
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's sharp senses and hard work in a search for lungwort."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3926,11 +3903,15 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "like"
+                            "respect",
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat realized the depths of to_cat's dedication to c_n when {PRONOUN/from_cat/subject} accompanied {PRONOUN/to_cat/object} on a search for lungwort."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3950,16 +3931,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "p_l"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "like"
+                            "like",
+                            "respect",
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "to_cat was no help to from_cat during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3984,13 +3970,16 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "like"
+                            "comfort"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat was in no hurry to accompany to_cat on another herb-gathering patrol after a search for lungwort left {PRONOUN/from_cat/object} with sore paws."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -4103,12 +4092,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather plenty of betony and mallow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4131,12 +4121,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "p_l tested app1 on {PRONOUN/app1/poss} knowledge of herbs while they gathered herbs together, and app1 proved {PRONOUN/app1/self}."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4155,19 +4146,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 how to judge the quality of mallow and betony stems."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4180,19 +4172,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was frustrated when to_cat acted dismissive about the poor growth of mallow plants in newleaf."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4233,7 +4226,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -4241,9 +4234,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat chatted and gossiped while gathering mallow and betony together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4259,17 +4255,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering mallow and betony."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4285,10 +4284,11 @@
                     "mallow",
                     "betony"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -4298,7 +4298,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's skill and leadership while {PRONOUN/from_cat/subject} helped {PRONOUN/to_cat/object} gather mallow and betony."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4311,17 +4314,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was irritated when to_cat dismissed {PRONOUN/from_cat/poss} concerns over the poor growth of mallow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4427,19 +4433,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l taught app1 tricks for identifying marigold and tansy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4462,12 +4469,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "app1 and p_l worked together to gather as much marigold as possible."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4486,19 +4494,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat tried to soak up to_cat's skill in herb-gathering."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4511,19 +4520,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was frustrated by to_cat's dismissive attitude when their herb-gathering patrol failed to find any marigold."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4555,27 +4565,11 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance, and tansy, growing hidden nearby, is betrayed by its scent. The non-medicine cats wander straight past them, and have to be gently called back by p_l to harvest them.",
+                "text": "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance, and tansy, growing hidden nearby, is betrayed by its scent. The non-medicine cats wander straight past them and have to be called back by p_l to harvest them.",
                 "exp": 10,
                 "herbs": [
                     "tansy",
                     "marigold"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
-                    }
                 ],
                 "frequency": 4
             },
@@ -4595,12 +4589,16 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Though from_cat didn't understand the importance of the task, {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} happy to help p_l gather herbs.",
+                            "cats_to": "to_cat appreciated from_cat's help gathering marigold and tansy."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4626,10 +4624,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect"
+                            "trust"
                         ],
-                        "amount": 10
+                        "amount": 13,
+                        "log": {
+                            "cats_from": "from_cat's faith in to_cat was bolstered by seeing {PRONOUN/to_cat/poss} effortless success on an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4642,17 +4642,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was irritated when to_cat dismissed {PRONOUN/from_cat/poss} concerns over the poor growth of marigold."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4739,11 +4742,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year with app1.",
@@ -4767,12 +4767,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather both mullein and thyme."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4795,12 +4796,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about the uses of mullein."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4823,15 +4825,16 @@
                         ],
                         "cats_from": [
                             "patrol"
-                        ],
+                        ],  
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "app1 helped s_c knock down mullein plants to bring them back to the medicine cat den."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4844,19 +4847,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was frustrated by to_cat's dismissive attitude when their herb-gathering patrol failed to find any mullein."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4897,17 +4901,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering mullein and thyme."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4928,12 +4935,16 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "Though from_cat didn't understand the importance of the task, {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} happy to help p_l gather herbs.",
+                            "cats_to": "to_cat appreciated from_cat's help gathering mullein and thyme."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -4952,7 +4963,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -4962,7 +4973,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather mullein and thyme."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -4975,17 +4989,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was irritated when to_cat dismissed {PRONOUN/from_cat/poss} concerns over the poor growth of mullein."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5074,11 +5091,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As the branches of the oak trees start to green, p_l brings app1 to collect its leaves.",
@@ -5095,25 +5109,26 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 how to tell the passage of seasons and the weather cycles by looking at the elder and oak trees."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den. Elder leaves work well alongside them, p_l explains to app1, being great for easing the pains of a sprain. To p_l's excitement, they soon come across a young elder tree, and the older cat quickly uses the opportunity to teach app1 how to safely climb up the bark and gather the valuable herbs. Both cats return home carrying a good selection, tails held high and curled in satisfaction.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den. Elder leaves work well alongside them, p_l explains to app1, being great for easing the pains of a sprain. To p_l's excitement, they soon come across a young elder tree, and {PRONOUN/p_l/subject} quickly {VERB/p_l/use/uses} the opportunity to teach app1 how to safely climb up the bark and gather the valuable herbs. Both cats return home carrying a good selection, tails held high and curled in satisfaction.",
                 "exp": 20,
                 "herbs": [
                     "many_herbs",
@@ -5130,12 +5145,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 how to safely climb elder trees to gather their leaves."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -5151,49 +5167,13 @@
                     "elder_leaves",
                     "oak_leaves"
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
-                    }
-                ],
                 "frequency": 4
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today. app1's ears and tail droop disappointingly, but {PRONOUN/app1/poss} mentor assures {PRONOUN/app1/object} that they'll find something else to do later today.",
+                "text": "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today. app1's ears and tail droop in disappointment, but {PRONOUN/app1/poss} mentor assures {PRONOUN/app1/object} that they'll find something else to do later today.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -5232,7 +5212,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -5242,13 +5222,16 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a little balancing competition while gathering oak and elder leaves."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den. Elder leaves work well alongside them, being great for easing the pains of a sprain, and to p_l's excitement- {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a young elder tree. {PRONOUN/p_l/poss/CAP} Clanmates are, as expected, a huge help carrying everything back home.",
+                "text": "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine cat den. Elder leaves work well alongside them, being great for easing the pains of a sprain, and to p_l's excitement, {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a young elder tree. {PRONOUN/p_l/poss/CAP} Clanmates are, as expected, a huge help carrying everything back home.",
                 "exp": 10,
                 "herbs": [
                     "many_herbs",
@@ -5258,17 +5241,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was grateful for to_cat's help gathering oak and elder leaves."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -5287,7 +5273,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -5297,7 +5283,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat had a pleasant, calm afternoon gathering oak and elder leaves."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5307,22 +5296,6 @@
             {
                 "text": "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today. {PRONOUN/p_l/poss/CAP} Clanmates are secretly pleased not to spend the day gathering herbs.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -5407,11 +5380,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves. app1 asks to come along!",
@@ -5428,19 +5398,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "trust",
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 how plantain leaves can be used to bandage injuries and keep poultices in place."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5452,24 +5423,6 @@
                     "many_herbs",
                     "plantain",
                     "mullein"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10
-                    }
                 ],
                 "frequency": 1
             },
@@ -5494,12 +5447,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 how to track down plantain."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5512,19 +5466,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was frustrated by to_cat's dismissive attitude when their herb-gathering patrol failed to find any plantain."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5565,7 +5520,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -5575,7 +5530,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather plantain."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5591,17 +5549,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help gathering mullein and plantain."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -5620,7 +5581,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -5630,7 +5591,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat were glad to catch two birds with one pounce by both gathering plantain <i>and</i> cleaning up the most often-used trails of the territory."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5643,17 +5607,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was irritated when to_cat dismissed {PRONOUN/from_cat/poss} concerns over the poor growth of plantain."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5676,10 +5643,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity.",
@@ -5765,12 +5729,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "p_l took app1 out to gather poppy seeds before leaf-fall's frost kills them off."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5785,19 +5749,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was proud of how hard to_cat worked to gather poppy seeds."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -5815,19 +5780,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c taught app1 about the many uses of poppy seeds, and also warned {PRONOUN/app1/object} not to use them on pregnant or nursing queens."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5837,24 +5803,6 @@
             {
                 "text": "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l and app1 even had a chance to harvest them.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -5875,9 +5823,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "healer cats": [1, 4],
+            "normal adult": [2, 5]
         },
         "frequency": 4,
         "intro_text": "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a good-sized patrol full of Clanmates to help {PRONOUN/p_l/object} out with the gathering of this important herb.",
@@ -5903,7 +5850,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was happy to help to_cat gather poppy seeds.",
+                            "cats_to": "p_l appreciated from_cat's help gathering poppy seeds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -5928,7 +5879,11 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat was happy to help to_cat gather poppy seeds.",
+                            "cats_to": "p_l appreciated from_cat's help gathering poppy seeds."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -5943,22 +5898,6 @@
                     "many_herbs",
                     "poppy"
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10
-                    }
-                ],
                 "frequency": 4
             }
         ],
@@ -5966,22 +5905,6 @@
             {
                 "text": "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l and {PRONOUN/p_l/poss} Clanmates even had a chance to harvest them.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -6002,10 +5925,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year.",
@@ -6069,11 +5989,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to app1 the annoyances of the type of plant that dies completely in leaf-bare, leaving them having to search for all-new spots every newleaf.",
@@ -6097,12 +6014,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked hard on an herb-gathering patrol despite the stench of the ragwort they were gathering."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6125,12 +6042,29 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat commiserated over the terrible scent of ragwort while gathering it."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat let {PRONOUN/from_cat/object} carry back the burdock they collected instead of the stinky ragwort."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6156,12 +6090,29 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c taught app1 a trick for gathering ragwort without putting the stinky herb in {PRONOUN/app1/poss} mouth."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "app1 enjoyed learning s_c's herb-gathering tricks."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6174,19 +6125,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was surprised and disappointed that to_cat couldn't identify ragwort."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6235,10 +6187,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect"
+                            "respect",
+                            "like"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "Though from_cat wasn't thrilled to be gathering foul-smelling ragwort with to_cat, to_cat was highly appreciative."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6254,17 +6209,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect"
+                            "comfort",
+                            "like"
                         ],
-                        "amount": 10
+                        "amount": -5,
+                        "log": {
+                            "cats_From": "Despite the patrol's success, from_cat was peeved to have to listen to to_cat's complaints about the stench of ragwort."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6283,7 +6241,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -6293,7 +6251,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat teaching {PRONOUN/from_cat/object} a trick for harvesting ragwort that saves {PRONOUN/from_cat/object} from having to carry it in {PRONOUN/from_cat/poss} mouth."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6313,10 +6274,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": -10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "Even though the herb-gathering patrol failed, from_cat was glad {PRONOUN/from_cat/subject} had an excuse not to gather ragwort for to_cat."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6339,10 +6302,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. It can be reassuring, in a way, to be the only cat gathering the sometimes-dangerous herb.",
@@ -6406,11 +6366,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} app1 with {PRONOUN/p_l/object} for an important lesson on its use.",
@@ -6434,12 +6391,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "p_l gave app1 a lesson on tansy dosage and how to moderate the amount for kits, weakened cats, and elders."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6458,16 +6416,17 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about both the uses and risks of tansy while they gathered herbs together."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6486,19 +6445,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "s_c"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was glad that to_cat was careful while gathering tansy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6511,19 +6471,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was surprised and disappointed that to_cat couldn't identify tansy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6565,17 +6526,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l was grateful for to_cat's help gathering tansy and ragwort.",
+                            "cats_to": "to_cat appreciated that p_l let {PRONOUN/to_cat/object} bring a sprig of tansy back to {PRONOUN/to_cat/poss} den to freshen the air."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6598,10 +6563,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's guidance to be careful harvesting tansy and ragwort."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6627,10 +6594,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat learned from to_cat to be careful around tansy."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6650,10 +6619,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
+                            "trust",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat lost faith in to_cat when to_cat admitted to not being able to identify tansy during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6676,10 +6648,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme.",
@@ -6745,11 +6714,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme. p_l lets app1 take the lead, testing {PRONOUN/app1/poss} knowledge.",
@@ -6773,18 +6739,19 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat felt very relaxed while collecting thyme together."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near the nests they and app1 curl up in at night.",
+                "text": "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organize the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near the nests {PRONOUN/p_l/subject} and app1 curl up in at night.",
                 "exp": 20,
                 "herbs": [
                     "many_herbs",
@@ -6794,19 +6761,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated that to_cat chose to store the thyme next to their nests."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6825,19 +6793,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "app1 was amused by s_c's dorky pun about thyme.",
+                            "cats_to": "s_c told app1 a hilarious and quite clever joke about thyme."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6850,19 +6820,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": -10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "After an unsuccessful herb-gathering patrol, app1 cheered up p_l with herbal puns."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6885,9 +6855,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "healer cats": [1, 4],
+            "normal adult": [2, 5]
         },
         "frequency": 4,
         "intro_text": "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme, and the gathering patrol would rather have this over with quickly.",
@@ -6904,7 +6873,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -6912,9 +6881,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat and to_cat enjoyed a relaxing patrol gathering thyme together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6938,9 +6910,12 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was grateful that to_cat gave {PRONOUN/from_cat/object} a piece of thyme to put in {PRONOUN/from_cat/poss} nest."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -6959,17 +6934,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "from_cat was amused by s_c's dorky pun about thyme.",
+                            "cats_to": "s_c told from_cat a hilarious and quite clever joke about thyme."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -6992,7 +6971,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt like to_cat wasted {PRONOUN/from_cat/poss} time with an unsuccessful thyme-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -7015,10 +6997,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "healer cats": [1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze.",
@@ -7082,11 +7061,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [-1, -1],
-            "medicine cat": [1, 6],
-            "medicine cat apprentice": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [-1, -1]
+            "medicine cat": [1, 1],
+            "medicine cat apprentice": [1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze, encouraging app1 to try the technique.",
@@ -7110,12 +7086,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather mallow and wild garlic."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -7138,12 +7115,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "p_l taught app1 about how, even though patients may complain of the smell, wild garlic is the best herb for treating infection."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -7162,19 +7140,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "respect",
-                            "comfort",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "app1 was impressed by how s_c's keen senses allowed {PRONOUN/s_c/object} to find both wild garlic and mallow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -7187,19 +7165,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect",
-                            "comfort",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "from_cat was surprised and disappointed that to_cat couldn't identify wild garlic."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -7222,9 +7201,8 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-            "medicine cat": [1, 6],
-            "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "medicine cat": [1, 4],
+            "normal adult": [2, 5]
         },
         "frequency": 4,
         "intro_text": "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze, a patrol of warriors assisting {PRONOUN/p_l/object}.",
@@ -7241,7 +7219,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
                             "patrol"
@@ -7251,7 +7229,10 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat and to_cat worked together to gather wild garlic and mallow."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -7267,17 +7248,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat appreciated to_cat's help and minimal complaining while gathering wild garlic."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -7296,17 +7280,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat was impressed by to_cat's sharp senses while helping {PRONOUN/to_cat/object} gather wild garlic."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -7326,10 +7312,13 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
+                            "trust",
                             "respect"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat lost faith in to_cat when to_cat admitted to not being able to identify wild garlic during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
