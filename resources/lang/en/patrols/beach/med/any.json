@@ -2503,7 +2503,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat tried to cheer up to_cat, but it backfired and to_cat hissed at {PRONOUN/from_cat/object.",
+                            "cats_from": "from_cat tried to cheer up to_cat, but it backfired and to_cat hissed at {PRONOUN/from_cat/object}.",
                             "cats_to": "from_cat stared at to_cat for too long, making the latter uncomfortable."
                         }
                     }
