@@ -619,7 +619,7 @@
         ]
     },
     {
-        "event_id": "bch_injury_bruises_multibouncykit1",
+        "event_id": "bch_injury_bruises_kit1",
         "location": [
             "beach:camp1"
         ],
@@ -635,7 +635,7 @@
                 "kitten"
             ],
             "trait": [
-                "bouncy"
+                "impulsive"
             ]
         },
         "injury": [
@@ -665,7 +665,6 @@
                 "kitten"
             ],
             "trait": [
-                "bouncy",
                 "daring",
                 "impulsive",
                 "noisy",
@@ -701,7 +700,6 @@
                 "kitten"
             ],
             "trait": [
-                "bouncy",
                 "daring",
                 "impulsive",
                 "noisy",
