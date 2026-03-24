@@ -95,9 +95,6 @@
                 "LORE,1"
             ]
         },
-        "r_c": {
-            "age": ["kitten"]
-        },
         "relationships": [
             {
                 "cats_from": ["r_c"],
