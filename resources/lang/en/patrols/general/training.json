@@ -1276,16 +1276,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
@@ -1299,16 +1300,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
@@ -1333,8 +1335,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -1342,7 +1344,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
