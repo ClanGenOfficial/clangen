@@ -2021,7 +2021,7 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "from_cat would rather have done anything else than be on an herb-gathering patrol.",
-                            "cats_to": "to_cat could feel from_cat's irritation about being sent to gather herbs with {PRONOUN/to_cat/object."
+                            "cats_to": "to_cat could feel from_cat's irritation about being sent to gather herbs with {PRONOUN/to_cat/object}."
                         }
                     }
                 ],
