@@ -3430,6 +3430,9 @@
                 "stat_skill": [
                     "SENSE,2"
                 ],
+                "can_have_stat": [
+                    "p_l"
+                ],
                 "herbs": [
                     "juniper",
                     "many_herbs"
