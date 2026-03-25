@@ -146,9 +146,6 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],
@@ -757,9 +754,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -791,9 +785,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -988,9 +979,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1065,9 +1053,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TOETRAP"
                         ]
                     }
                 ],
@@ -1161,9 +1146,6 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],

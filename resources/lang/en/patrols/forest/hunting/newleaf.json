@@ -2914,9 +2914,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
@@ -3022,9 +3019,6 @@
                         "injuries": [
                             "minor_injury",
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
@@ -3074,9 +3068,6 @@
                         "injuries": [
                             "minor_injury",
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
@@ -3327,9 +3318,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
@@ -3354,9 +3342,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],

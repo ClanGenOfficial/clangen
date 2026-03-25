@@ -2051,9 +2051,6 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],

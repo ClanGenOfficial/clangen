@@ -800,9 +800,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
@@ -835,9 +832,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1036,9 +1030,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1117,9 +1108,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
@@ -1214,9 +1202,6 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],

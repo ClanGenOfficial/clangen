@@ -3135,9 +3135,6 @@
                         "injuries": [
                             "blunt_force_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
@@ -3311,9 +3308,6 @@
                         "injuries": [
                             "blunt_force_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
@@ -3381,9 +3375,6 @@
                         "injuries": [
                             "blunt_force_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
@@ -3596,9 +3587,6 @@
                         "injuries": [
                             "blunt_force_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
@@ -3666,9 +3654,6 @@
                         "injuries": [
                             "blunt_force_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
