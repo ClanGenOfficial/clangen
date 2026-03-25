@@ -1530,7 +1530,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "p_l leads the way to the stream. The sense of excitement among the patrol wanes as they wait... and wait... for a salmon to appear. In past seasons, this stream has been used as a migratory channel, but p_l wonders if that has changed this year. Whatever the case, this salmon run will have to be canceled, because the salmon certainly aren't running.",
+            "text": "p_l leads the way to the stream. The patrol's excitement wanes as they wait... and wait... for a salmon to appear. In past seasons, this stream has been used as a migratory channel, but p_l wonders if that has changed this year. Whatever the case, this salmon run will have to be canceled, because the salmon certainly aren't running.",
             "exp": 0,
             "frequency": 4,
             "art": "gen_warrior_crouching_perplexed"
