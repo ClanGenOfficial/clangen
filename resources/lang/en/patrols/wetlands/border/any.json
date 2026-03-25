@@ -1762,6 +1762,7 @@
                     "STORY,1",
                     "SPEAKER,1"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1787,6 +1788,7 @@
                     "loving",
                     "confident"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
