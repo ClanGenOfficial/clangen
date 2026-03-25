@@ -1383,7 +1383,7 @@
         "normal adult": [2, 6]
     },
     "frequency": 4,
-    "chance_of_success": 50,
+    "chance_of_success": 60,
     "intro_text": "As the days grow shorter and the nights grow colder, p_l leads a patrol down to the foothills to partake in one of c_n's favorite annual hunting traditions: the salmon run.",
     "decline_text": "When {PRONOUN/p_l/subject} {VERB/p_l/step/steps} out of camp, p_l sees the storm brewing on the horizon and thinks better of it.",
     "success_outcomes": [
@@ -1530,7 +1530,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "p_l leads the way to the stream. The sense of excitement among the patrol wanes slowly as they wait... and wait... for a salmon to appear. In past seasons, this stream has been used as a migratory channel, but p_l wonders if that has changed this year. Whatever the case, this salmon run will have to be canceled, because the salmon certainly aren't running.",
+            "text": "p_l leads the way to the stream. The sense of excitement among the patrol wanes as they wait... and wait... for a salmon to appear. In past seasons, this stream has been used as a migratory channel, but p_l wonders if that has changed this year. Whatever the case, this salmon run will have to be canceled, because the salmon certainly aren't running.",
             "exp": 0,
             "frequency": 4,
             "art": "gen_warrior_crouching_perplexed"
