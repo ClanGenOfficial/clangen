@@ -1780,7 +1780,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 7,
+                        "amount": -7,
                         "log": {
                             "cats_from": "...which ruined the cobwebs they had collected."
                         }
