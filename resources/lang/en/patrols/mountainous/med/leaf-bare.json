@@ -745,6 +745,46 @@
                 "history_text": {
                     "death": "m_c froze to death after getting stuck in a snowbank."
                 },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan", "low_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt that the accident that caused app1's death was due in part to negligence from p_l."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat didn't believe that app1's death was as much of an accident as p_l claimed."
+                        }
+                    }
+                ],
                 "frequency": 2
             },
             {
@@ -768,7 +808,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by frostbite after getting falling into a snowbank.",
-                    "reg_death": "m_c died of frostbite after searching for berries in leaf-bare."
+                    "death": "m_c died of frostbite after searching for berries in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -799,7 +839,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death after getting stuck in a snowbank."
+                    "death": "m_c froze to death after getting stuck in a snowbank."
                 },
                 "frequency": 1
             }
@@ -1446,6 +1486,46 @@
                 "history_text": {
                     "death": "m_c froze to death searching for burdock in leaf-bare."
                 },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan", "low_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt that the accident that caused app1's death was due in part to negligence from p_l."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat didn't believe that app1's death was as much of an accident as p_l claimed."
+                        }
+                    }
+                ],
                 "frequency": 2
             },
             {
@@ -1469,7 +1549,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by frostbite after searching for burdock in leaf-bare.",
-                    "reg_death": "m_c died of frostbite after searching for burdock in leaf-bare."
+                    "death": "m_c died of frostbite after searching for burdock in leaf-bare."
                 },
                 "frequency": 2
             },
@@ -1480,7 +1560,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death searching for burdock in leaf-bare."
+                    "death": "m_c froze to death searching for burdock in leaf-bare."
                 },
                 "frequency": 1
             }
@@ -1826,7 +1906,7 @@
                     "p_l"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death searching for daisies in leaf-bare."
+                    "death": "m_c froze to death searching for daisies in leaf-bare."
                 },
                 "frequency": 2
             }
@@ -2044,8 +2124,48 @@
                     "app1"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death searching for daisies in leaf-bare."
+                    "death": "m_c froze to death searching for daisies in leaf-bare."
                 },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan", "low_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt that the accident that caused app1's death was due in part to negligence from p_l."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat didn't believe that app1's death was as much of an accident as p_l claimed."
+                        }
+                    }
+                ],
                 "frequency": 2
             },
             {
@@ -2055,7 +2175,7 @@
                     "p_l"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death searching for daisies in leaf-bare."
+                    "death": "m_c froze to death searching for daisies in leaf-bare."
                 },
                 "frequency": 2
             },
@@ -2091,7 +2211,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death searching for daisies in leaf-bare."
+                    "death": "m_c froze to death searching for daisies in leaf-bare."
                 },
                 "frequency": 1
             }
@@ -2646,8 +2766,48 @@
                     "app1"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death searching for dandelions in leaf-bare."
+                    "death": "m_c froze to death searching for dandelions in leaf-bare."
                 },
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan", "low_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "from_cat felt that the accident that caused app1's death was due in part to negligence from p_l."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan", "high_aggress"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat didn't believe that app1's death was as much of an accident as p_l claimed."
+                        }
+                    }
+                ],
                 "frequency": 2
             },
             {
@@ -2657,7 +2817,7 @@
                     "p_l"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death searching for dandelions in leaf-bare."
+                    "death": "m_c froze to death searching for dandelions in leaf-bare."
                 },
                 "frequency": 2
             },
@@ -2693,7 +2853,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "reg_death": "m_c froze to death searching for dandelions in leaf-bare."
+                    "death": "m_c froze to death searching for dandelions in leaf-bare."
                 },
                 "frequency": 1
             }
