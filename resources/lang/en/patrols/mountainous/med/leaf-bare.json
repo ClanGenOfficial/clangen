@@ -770,7 +770,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "some_clan", "high_aggress"
+                            "some_clan", "high_aggress", "low_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -1511,7 +1511,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "some_clan", "high_aggress"
+                            "some_clan", "high_aggress", "low_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -2151,7 +2151,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "some_clan", "high_aggress"
+                            "some_clan", "high_aggress", "low_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -2793,7 +2793,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "some_clan", "high_aggress"
+                            "some_clan", "high_aggress", "low_stable"
                         ],
                         "mutual": false,
                         "values": [
