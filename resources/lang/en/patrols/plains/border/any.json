@@ -4650,6 +4650,8 @@
             {
                 "text": "p_l would've told s_c about any known tunnels near here. Is this a new one? It turns out no, but it's a (newly collapsed) entrance to a known network, and the patrol makes sure to particularly praise s_c for discovering it, even if accidentally.",
                 "exp": 40,
+                "stat_skill": ["INSIGHTFUL,0", "SENSE,0", "TEACHER,0"],
+                "can_have_stat": ["app"],
                 "art": "gen_train_patrolapprenticesessionsuccess",
                 "relationships": [
                     {
