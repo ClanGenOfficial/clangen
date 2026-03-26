@@ -1896,7 +1896,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app2", "app3", "app4", "app5"
+                            "app2", "app3", "app4", "app5", "app6"
                         ],
                         "cats_from": [
                             "app1"
