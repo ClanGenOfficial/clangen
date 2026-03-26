@@ -97,8 +97,8 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
-                        ,"log": {
+                        "amount": -5,
+                        "log": {
                             "cats_from": "Frustrated by to_cat's inattention, from_cat ended {PRONOUN/from_cat/poss} gathering lesson early."
                         }
                     }
