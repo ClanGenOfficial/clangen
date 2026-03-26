@@ -738,6 +738,9 @@ def create_new_cat(
         # KILL >:D only if we're sposed to tho
         if not alive:
             new_cat.die()
+            if new_cat.status.group_ID == "3":
+                death_history = i18n.t("events.death.outsider_deaths.history.loner")         
+                new_cat.history.add_death(death_text=death_history)
 
         # newbie thought
         new_cat.get_new_thought(thought)
