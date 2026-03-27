@@ -429,9 +429,8 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "broken bone"
-                        ],
-                        "scars": []
+                            "blunt_force_injury"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -772,12 +771,11 @@
                             "sprain",
                             "sore",
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred after disappearing on patrol and being discovered injured.",
+                    "scar": "m_c was scarred after disappearing on patrol and catching a chill.",
                     "death": "m_c caught a chill on patrol and never recovered."
                 },
                 "relationships": [
@@ -1217,7 +1215,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1341,7 +1341,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1384,7 +1386,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2311,8 +2315,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2331,8 +2334,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2422,8 +2424,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -2442,8 +2443,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
             "relationships": [
@@ -2893,8 +2893,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2922,9 +2921,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
@@ -3030,9 +3026,6 @@
                         "injuries": [
                             "minor_injury",
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
@@ -3082,9 +3075,6 @@
                         "injuries": [
                             "minor_injury",
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
@@ -3335,9 +3325,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
@@ -3363,9 +3350,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],

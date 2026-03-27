@@ -677,15 +677,9 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": [
-                            "TOETRAP"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c gained a scar after trying to chase some squirrels up a tree."
-                },
                 "prey": [
                     "very_small"
                 ],
@@ -860,9 +854,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -1017,9 +1008,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -1269,9 +1257,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2107,9 +2092,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2260,14 +2242,9 @@
                         ],
                         "injuries": [
                             "torn pelt"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c was scarred after being scraped by broken glass in a Twoleg den.",
-                    "death": "m_c died from injuries sustained during an escape from a Twoleg den."
-                },
                 "frequency": 3,
             "relationships": [
                 {
@@ -4279,8 +4256,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": { 
@@ -4317,8 +4293,7 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": { 
@@ -4768,8 +4743,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -5000,8 +4974,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -5818,8 +5791,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["dislocated joint"],
-                        "scars": []
+                        "injuries": ["dislocated joint"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -5895,8 +5867,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["severe headache"],
-                        "scars": []
+                        "injuries": ["severe headache"]
                     }
                 ],
                 "relationships": [
@@ -5984,8 +5955,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -6232,8 +6202,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["dislocated joint"],
-                        "scars": []
+                        "injuries": ["dislocated joint"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -6309,8 +6278,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]

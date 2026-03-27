@@ -151,8 +151,7 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -251,8 +250,7 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -405,8 +403,7 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1446,9 +1443,8 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "broken bone"
-                        ],
-                        "scars": []
+                            "blunt_force_injury"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1589,8 +1585,7 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1751,8 +1746,7 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2134,7 +2128,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2259,7 +2255,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2285,7 +2283,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -3051,9 +3051,6 @@
                         "injuries": [
                             "minor_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -3078,9 +3075,6 @@
                         "injuries": [
                             "minor_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -3213,9 +3207,6 @@
                         "injuries": [
                             "minor_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -3255,9 +3246,6 @@
                         "injuries": [
                             "minor_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -3788,7 +3776,10 @@
                             "scrapes",
                             "torn ear"
                         ],
-                        "scars": []
+                        "scars": [
+                            "LEFTEAR",
+                            "RIGHTEAR"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -4253,8 +4244,7 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {

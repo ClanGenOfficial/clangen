@@ -177,15 +177,9 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "TOETRAP"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c got scarred training in the forest as an apprentice."
-                },
                 "frequency": 3
             }
         ]
@@ -374,9 +368,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BELLY"
                         ]
                     }
                 ],
@@ -560,9 +551,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
@@ -800,9 +788,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
@@ -835,9 +820,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1036,9 +1018,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1117,9 +1096,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
@@ -1214,8 +1190,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2358,8 +2333,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2457,8 +2431,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2526,8 +2499,7 @@
                         ],
                         "injuries": [
                             "stomachache"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
