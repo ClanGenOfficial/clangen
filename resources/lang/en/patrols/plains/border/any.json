@@ -127,9 +127,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "RIGHTBLIND"
                         ]
                     }
                 ],
@@ -409,9 +406,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
@@ -2222,13 +2216,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "death": "m_c fell in battle with a fox."
+                    "death": "m_c died of an injury inflicted by a fox."
                 },
                 "relationships": [
                     {
@@ -2251,13 +2244,12 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "death": "m_c fell in battle with a fox."
+                    "death": "m_c died of an injury inflicted by a fox."
                 },
                 "relationships": [
                     {
@@ -2555,22 +2547,18 @@
                         "cats": ["app1"],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
-                    },
-                    {
-                        "cats": ["app1"],
-                        "injuries": [
-                            "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
                         "cats": ["app1"],
                         "injuries": [
-                            "torn pelt"
+                            "torn ear"
+                        ]
+                    },
+                    {
+                        "cats": ["app1"],
+                        "injuries": [
+                            "claw-wound"
                         ],
                         "scars": [
                             "BRIDGE"
@@ -2579,7 +2567,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wrathful prairie dog.",
-                    "death": "This cat was killed after wounds given by a prairie dog progressed to something worse."
+                    "death": "m_c died of injuries inflicted by a prairie dog."
                 },
                 "relationships": [
                     {
@@ -2618,8 +2606,7 @@
                         "cats": ["patrol"],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2707,23 +2694,19 @@
                         "injuries": [
                             "shock",
                             "constant nightmares"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": ["patrol"],
                         "injuries": [
                             "big_bite_injury",
                             "claw-wound"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger as an apprentice, after being dared to leap down into an unknown burrow.",
-                    "death": "This cat was killed as an apprentice, after being dared to jump into an unknown burrow."
+                    "death": "m_c died of injuries inflicted by a badger after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dared to leap into an unknown burrow."
                 },
                 "frequency": 4
             }
@@ -2893,22 +2876,18 @@
                         "cats": ["app1"],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
-                    },
-                    {
-                        "cats": ["app1"],
-                        "injuries": [
-                            "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
                         "cats": ["app1"],
                         "injuries": [
-                            "torn pelt"
+                            "torn ear"
+                        ]
+                    },
+                    {
+                        "cats": ["app1"],
+                        "injuries": [
+                            "claw-wound"
                         ],
                         "scars": [
                             "BRIDGE"
@@ -2917,7 +2896,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wrathful prairie dog.",
-                    "death": "This cat was killed after wounds given by a prairie dog progressed to something worse."
+                    "death": "m_c died of injuries inflicted by a prairie dog."
                 },
                 "frequency": 4
             },
@@ -2977,40 +2956,27 @@
                         "cats": ["app1"],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": ["app1"],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
                         "cats": ["app1"],
                         "injuries": [
-                            "torn pelt"
+                            "claw-wound"
                         ],
                         "scars": [
                             "BRIDGE"
-                        ]
-                    },
-                    {
-                        "cats": ["app1"],
-                        "injuries": [
-                            "mangled tail"
-                        ],
-                        "scars": [
-                            "MANTAIL"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 4
             },
@@ -3066,15 +3032,12 @@
                         "cats": ["app1"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "m_c died of an injury inflicted by a badger."
                 },
                 "frequency": 1
             }
@@ -3202,8 +3165,7 @@
                         "cats": ["patrol"],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -3229,40 +3191,27 @@
                         "cats": ["p_l"],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": ["p_l"],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
                         "cats": ["p_l"],
                         "injuries": [
-                            "torn pelt"
+                            "claw-wound"
                         ],
                         "scars": [
                             "BRIDGE"
-                        ]
-                    },
-                    {
-                        "cats": ["p_l"],
-                        "injuries": [
-                            "mangled tail"
-                        ],
-                        "scars": [
-                            "MANTAIL"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat died to {PRONOUN/m_c/poss} injuries after an unfortunate meeting with a badger."
+                    "death": "m_c died of an injury inflicted by a badger."
                 },
                 "frequency": 4
             },
@@ -3319,15 +3268,12 @@
                         "cats": ["p_l"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 4
             }
@@ -3779,8 +3725,7 @@
                         "cats": ["patrol"],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -3882,15 +3827,12 @@
                             "torn ear",
                             "scrapes",
                             "shock"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "relationships": [
                     {
@@ -4048,8 +3990,7 @@
                         "cats": ["p_l"],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "dead_cats": [
@@ -4069,15 +4010,12 @@
                         "cats": ["p_l"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 2
             }
@@ -4378,9 +4316,6 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "claw-wound"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
@@ -4476,15 +4411,12 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
+                    "death": "m_c died of an injury inflicted by a badger."
                 },
                 "frequency": 2
             }
@@ -4784,13 +4716,14 @@
                             "beak_bite"
                         ],
                         "scars": [
-                            "BEAKSIDE"
+                            "BEAKSIDE",
+                            "BEAKLOWER"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred up by a very indignant burrowing owl.",
-                    "death": "m_c died after injuries {PRONOUN/m_c/subject} got from a burrowing owl progressed to something worse."
+                    "death": "m_c died of an injury inflicted by a burrowing owl."
                 },
                 "frequency": 4
             },
@@ -4804,8 +4737,7 @@
                         "injuries": [
                             "sprain",
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -4831,8 +4763,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -4861,13 +4792,11 @@
                         "cats": ["app1"],
                         "injuries": [
                             "water in their lungs"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c's lungs were never the same after falling into a sinkhole as an apprentice.",
-                    "death": "m_c died after from complications from falling into a sinkhole and being buried as an apprentice."
+                    "death": "m_c died from complications after falling into a sinkhole and being buried as an apprentice."
                 },
                 "relationships": [
                     {
@@ -5219,7 +5148,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred up by a very indignant burrowing owl.",
-                    "death": "m_c died after injuries {PRONOUN/m_c/subject} got from a burrowing owl progressed to something worse."
+                    "death": "m_c died of an injury inflicted by a burrowing owl."
                 },
                 "relationships": [
                     {
@@ -5295,9 +5224,6 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
@@ -5359,15 +5285,12 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "relationships": [
                     {
@@ -5680,15 +5603,12 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely leading a coyote away from the Clan.",
-                    "death": "This cat died from injuries after trying to lead a coyote away from c_n."
+                    "scar": "m_c was scarred from leading a coyote away from the Clan.",
+                    "death": "m_c died of injuries inflicted by a coyote {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to lead away from the Clan."
                 },
                 "relationships": [
                     {
@@ -5722,15 +5642,12 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "mangled leg"
-                        ],
-                        "scars": [
-                            "MANLEG"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat bears a mangled leg after thinking {PRONOUN/m_c/subject} could take on a coyote by {PRONOUN/m_c/self}",
-                    "death": "This cat died from {PRONOUN/m_c/poss} injuries after trying to take on a coyote alone."
+                    "scar": "m_c bears a mangled leg after thinking {PRONOUN/m_c/subject} could take on a coyote by {PRONOUN/m_c/self}",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after trying to take on a coyote alone."
                 },
                 "relationships": [
                     {

@@ -144,14 +144,12 @@
                         ],
                         "injuries": [
                             "bite-wound"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got scarred training in the plains as an apprentice."
+                    "scar": "m_c got scarred training in the plains as an apprentice.",
+                    "death": "m_c died from a bite-wound {PRONOUN/m_c/subject} got while training in the tall grass."
                 },
                 "relationships": [
                     {
@@ -356,15 +354,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "MANLEG"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "death": "m_c lost their life to a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 3
             }
@@ -540,15 +535,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred by a badger.",
-                    "death": "This cat died from wounds inflicted by a badger."
+                    "scar": "m_c was scarred by a badger.",
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "relationships": [
                     {
@@ -755,8 +747,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c suffocated after the earth caved in beneath {PRONOUN/m_c/poss} paws."
                 },
                 "frequency": 3
             },
@@ -773,15 +764,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c was scarred after the earth caved in beneath {PRONOUN/m_c/poss} paws.",
+                    "death": "m_c died of injuries {PRONOUN/m_c/subject} sustained when the earth caved in beneath {PRONOUN/m_c/poss} paws."
                 },
                 "frequency": 3
             },
@@ -792,8 +780,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c suffocated after the earth caved in beneath {PRONOUN/m_c/poss} paws."
                 },
                 "frequency": 3
             },
@@ -807,15 +794,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c was scarred after the earth caved in beneath {PRONOUN/m_c/poss} paws.",
+                    "death": "m_c died of injuries {PRONOUN/m_c/subject} sustained when the earth caved in beneath {PRONOUN/m_c/poss} paws."
                 },
                 "frequency": 3
             }
@@ -989,8 +973,8 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c was scarred after the earth caved in beneath {PRONOUN/m_c/poss} paws.",
+                    "death": "m_c died of injuries {PRONOUN/m_c/subject} sustained when the earth caved in beneath {PRONOUN/m_c/poss} paws."
                 },
                 "frequency": 3
             },
@@ -1004,15 +988,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c was scarred after the earth caved in beneath {PRONOUN/m_c/poss} paws.",
+                    "death": "m_c died of injuries {PRONOUN/m_c/subject} sustained when the earth caved in beneath {PRONOUN/m_c/poss} paws."
                 },
                 "frequency": 3
             }
@@ -1081,15 +1062,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c was scarred after the earth caved in beneath {PRONOUN/m_c/poss} paws.",
+                    "death": "m_c died of injuries {PRONOUN/m_c/subject} sustained when the earth caved in beneath {PRONOUN/m_c/poss} paws."
                 },
                 "frequency": 3
             }
@@ -1182,15 +1160,9 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "CHEEK"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c got injured as an apprentice, exploring alone."
-                },
                 "frequency": 3
             }
         ]
@@ -3144,8 +3116,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -4184,9 +4155,6 @@
                         ],
                         "injuries": [
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     },
                     {
@@ -4195,14 +4163,9 @@
                         ],
                         "injuries": [
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c was scarred from being dragged away from a Thunderpath {PRONOUN/m_c/subject} got too close to as a curious apprentice.",
-                    "death": "Being hauled away from the Thunderpath was intended to protect {PRONOUN/m_c/object}, but the wounds on {PRONOUN/m_c/poss} pelt progressed to infection and death for m_c"
-                },
                 "frequency": 4
             },
             {

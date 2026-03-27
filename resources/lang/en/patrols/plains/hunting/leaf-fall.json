@@ -394,7 +394,9 @@
                             "non_lethal"
                         ],
                         "scars": [
-                            "SNOUT"
+                            "SNOUT",
+                            "FACE",
+                            "BRIDGE"
                         ]
                     }
                 ],
