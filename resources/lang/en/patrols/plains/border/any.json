@@ -4525,6 +4525,7 @@
                 "exp": 40,
                 "art": "gen_train_patrolapprenticesessionsuccess",
                 "can_have_stat": [
+                    "any",
                     "app"
                 ],
                 "stat_skill": [
@@ -4564,6 +4565,7 @@
                 "exp": 40,
                 "art": "pln_train_sett",
                 "can_have_stat": [
+                    "any",
                     "app"
                 ],
                 "stat_trait": [
@@ -4593,6 +4595,7 @@
                 "exp": 40,
                 "art": "gen_train_patrolapprenticesessionfail",
                 "can_have_stat": [
+                    "any",
                     "app"
                 ],
                 "stat_skill": [
@@ -4650,8 +4653,15 @@
             {
                 "text": "p_l would've told s_c about any known tunnels near here. Is this a new one? It turns out no, but it's a (newly collapsed) entrance to a known network, and the patrol makes sure to particularly praise s_c for discovering it, even if accidentally.",
                 "exp": 40,
-                "stat_skill": ["INSIGHTFUL,0", "SENSE,0", "TEACHER,0"],
-                "can_have_stat": ["app"],
+                "stat_skill": [
+                    "INSIGHTFUL,0",
+                    "SENSE,0",
+                    "TEACHER,0"
+                ],
+                "can_have_stat": [
+                    "any",
+                    "app"
+                ],
                 "art": "gen_train_patrolapprenticesessionsuccess",
                 "relationships": [
                     {
@@ -4679,7 +4689,7 @@
                         }
                     }
                 ],
-                "frequency": 1
+                "frequency": 4
             },
             {
                 "text": "The apprentice has made an accidental discovery, tripping into a well-hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
