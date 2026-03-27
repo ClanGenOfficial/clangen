@@ -280,7 +280,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -409,7 +409,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "s_c"
@@ -508,7 +508,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -637,7 +637,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "s_c"
@@ -725,7 +725,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -768,7 +768,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -813,7 +813,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -895,7 +895,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -976,7 +976,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -1019,7 +1019,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -1080,7 +1080,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -1165,7 +1165,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
