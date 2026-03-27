@@ -596,7 +596,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "death": "m_c lost {PRONOUN/s_c/poss} life to a badger."
+                    "death": "m_c died of an injury inflicted by a badger."
                 },
                 "relationships": [
                     {"cats_from": ["some_clan"],
@@ -790,7 +790,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "death": "m_c lost {PRONOUN/m_c/poss} life to a badger."
+                    "death": "m_c died of an injury inflicted by a badger."
                 },
                 "relationships": [
                     {
@@ -982,7 +982,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of an injury inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -1101,7 +1101,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of an injury inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -1406,7 +1406,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of an injury inflicted by an invading rogue."
                 },
                 "relationships": [
                     {
@@ -1598,7 +1598,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of an injury inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -2228,8 +2228,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep c_n safe from a large dog."
+                    "scar": "m_c was scarred while defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a large dog."
                 },
                 "relationships": [
                     {
@@ -2695,8 +2695,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "scar": "m_c was scarred while defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a large dog."
                 },
                 "relationships": [
                     {
@@ -2838,8 +2838,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "scar": "m_c was scarred while defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a large dog."
                 },
                 "relationships": [
                     {
@@ -2962,8 +2962,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
-                    "death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}."
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "death": "m_c died of injuries inflicted by a small dog."
                 },
                 "relationships": [
                     {
@@ -3125,7 +3125,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog."
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "death": "m_c died of injuries inflicted by a small dog."
                 },
                 "frequency": 3
             }
@@ -3424,7 +3425,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "death": "m_c fell in battle with a fox."
+                    "death": "m_c died of an injury inflicted by a red vixen."
                 },
                 "relationships": [
                     {
@@ -3453,7 +3454,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "death": "m_c fell in battle with a fox."
+                    "death": "m_c died of an injury inflicted by a fox."
                 },
                 "relationships": [
                     {
@@ -3581,7 +3582,10 @@
                         "scars": ["LEFTEAR"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." }
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c died of an injury inflicted by a fox."
+                }
             },
             {
                 "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill.",
@@ -3732,7 +3736,10 @@
                         "scars": ["LEFTEAR"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c died of an injury inflicted by a fox."
+            },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
