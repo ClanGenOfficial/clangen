@@ -505,8 +505,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred from the bite of the cold rock pool {PRONOUN/m_c/subject} swam in as an apprentice.",
-                    "death": "Falling into a cold rock pool gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death."
+                    "scar": "m_c was scarred from the bite of the cold rockpool {PRONOUN/m_c/subject} swam in as an apprentice.",
+                    "death": "Falling into a cold rockpool gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death."
                 },
                 "frequency": 4
             }
