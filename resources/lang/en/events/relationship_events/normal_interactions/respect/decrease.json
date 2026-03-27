@@ -41,7 +41,7 @@
 	},
 	{
 		"id": "respect_de_med1",
-		"intensity": "med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c saw r_c take the last piece of prey from the fresh-kill pile.",
 			"m_c is frustrated that r_c won't take {PRONOUN/r_c/poss} actions more seriously.",

@@ -1509,7 +1509,7 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["like", "respect", "comfort"],
@@ -1528,6 +1528,7 @@
                     "SPEAKER,1",
                     "STORY,1"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],

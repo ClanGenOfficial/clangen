@@ -1966,6 +1966,7 @@
                     "SPEAKER,1",
                     "STORY,1"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1990,6 +1991,7 @@
                     "playful",
                     "loving"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],

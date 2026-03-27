@@ -1,5 +1,5 @@
 import random
-from typing import Optional
+from typing import Optional, Tuple
 
 import i18n
 import ujson
@@ -139,7 +139,7 @@ def create_short_event(
             used_frequencies.add(frequency)
             frequency = find_new_frequency(used_frequencies)
 
-            # if we've ended up with 4 frequency twice then we're out of events and it's time to reset
+            # if we've ended up with 4 frequency twice then we're out of events so it's time to reset
             if 4 in used_frequencies and frequency == 4:
                 used_events.clear()
                 used_frequencies.clear()
@@ -178,15 +178,25 @@ def find_needed_events(frequency, event_type=None) -> list:
     """
     event_list = []
 
-    # skip the rest of the loading if there is an unrecognised biome
+    # skip the rest of the loading if there is an unrecognized biome
     temp_biome = (
         game.clan.biome if not game.clan.override_biome else game.clan.override_biome
     )
     if temp_biome not in constants.BIOME_TYPES:
         print(
             f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
-            f"in clan.py?"
+            f"in scripts.game_structure.constants?"
         )
+        raise Exception(f"Unrecognized biome {game.clan.biome}.")
+
+    if (
+        debug_id := constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+    ) and "debug" in debug_id:
+        try:
+            event_list.extend(generate_event_objects(event_type, "_debug", 0))
+            frequency = 0
+        except FileNotFoundError:
+            pass
 
     biome = temp_biome.lower()
 
@@ -322,7 +332,7 @@ def filter_events(
     excluded_events: list = None,
     ignore_subtyping: bool = False,
     reduction_avoidance_chance: int = 1,
-) -> (Optional[ShortEvent], Optional[Cat]):
+) -> Tuple[Optional[ShortEvent], Optional[Cat]]:
     """
     Filters possible events to find an event that fits the given requirements
     :param possible_events: list of possible events

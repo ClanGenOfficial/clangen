@@ -94,22 +94,7 @@
             "skill": [
                 "LORE,1"
             ]
-        },
-        "r_c": {
-            "age": ["kitten"]
-        },
-        "relationships": [
-            {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
-                "values": ["like", "respect"],
-                "amount": 15,
-                "mutual": false,
-                "log": {
-                    "cats_from": "from_cat listened raptly to to_cat's stories of c_n's ancestors."
-                }
-            }
-        ]
+        }
     },
     {
         "event_id": "mtn_misc_any_patch_accessory",

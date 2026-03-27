@@ -63,6 +63,7 @@
 	},
 	{
 		"id": "platonic_de_med2",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is annoyed that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to pull ticks off of r_c today.",
 			"m_c doesn't like being bossed around by r_c just because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} young.",
@@ -79,6 +80,7 @@
 	},
 	{
 		"id": "platonic_de_med3",
+		"intensity": "medium",
 		"interactions": [
 			"r_c makes sure m_c is following the Warrior Code.",
 			"r_c snaps at m_c for making a joke about the Clan.",
@@ -90,6 +92,7 @@
 	},
 	{
 		"id": "platonic_de_med4",
+		"intensity": "medium",
 		"interactions": [
 			"r_c is not backing down in an argument with m_c.",
 			"r_c is getting too violent in an argument with m_c.",
@@ -267,7 +270,8 @@
 	},
 	{
 		"id": "dislike_inc_med1",
-		"intensity": [
+		"intensity": "medium",
+		"interactions": [
 			"m_c wishes r_c would take things more seriously.",
 			"m_c thinks r_c is acting childish lately.",
 			"m_c keeps complaining about something r_c did.",
@@ -282,6 +286,7 @@
 	},
 	{
 		"id": "dislike_inc_med2",
+		"intensity": "medium",
 		"interactions": [
 			"m_c ignores r_c.",
 			"m_c had a huge argument with r_c.",
@@ -301,6 +306,7 @@
 	},
 	{
 		"id": "dislike_inc_med3",
+		"intensity": "medium",
 		"interactions": [
 			"m_c had a disagreement with r_c while on patrol earlier.",
 			"m_c stole r_c's catch right out from under {PRONOUN/r_c/poss} claws.",
@@ -331,6 +337,7 @@
 	},
 	{
 		"id": "dislike_inc_med4",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is thinking about how r_c wronged {PRONOUN/m_c/object}.",
 			"m_c is watching r_c scornfully.",
@@ -347,6 +354,7 @@
 	},
 	{
 		"id": "dislike_inc_med5",
+		"intensity": "medium",
 		"interactions": [
 			"r_c is asking m_c to tell {PRONOUN/r_c/object} about how good {PRONOUN/r_c/subject} {VERB/m_c/look/looks}.",
 			"r_c offends m_c with {PRONOUN/r_c/poss} brutal honesty.",
@@ -362,6 +370,7 @@
 	},
 	{
 		"id": "dislike_inc_med6",
+		"intensity": "medium",
 		"interactions": [
 			"r_c pulled a prank on m_c.",
 			"r_c blamed m_c for {PRONOUN/r_c/poss} own mistake.",
@@ -377,6 +386,7 @@
 	},
 	{
 		"id": "dislike_effect_other1",
+		"intensity": "medium",
 		"relationship_constraint": [
 			"hates"
 		],
@@ -397,6 +407,7 @@
 	},
 	{
 		"id": "dislike_kit_inc_med1",
+		"intensity": "medium",
 		"interactions": [
 			"m_c trips over r_c.",
 			"m_c had to nip r_c on the rump because {PRONOUN/r_c/subject} {VERB/r_c/were/was} being naughty.",
@@ -424,6 +435,7 @@
 	},
 	{
 		"id": "dislike_dep_leader_inc_med1",
+		"intensity": "medium",
 		"interactions": [
 			"m_c punishes r_c with extra work.",
 			"m_c divides r_c into extra patrols.",
@@ -445,6 +457,7 @@
 	},
 	{
 		"id": "dislike_dep_leader_inc_med2",
+		"intensity": "medium",
 		"interactions": [
 			"m_c punishes r_c with extra work.",
 			"m_c divides r_c into extra patrols.",
@@ -467,6 +480,7 @@
 	},
 	{
 		"id": "dislike_med_inc_med1",
+		"intensity": "medium",
 		"interactions": [
 			"m_c gives r_c bitter herbs on purpose.",
 			"m_c snaps at r_c for seeking treatment for something trivial and wasting {PRONOUN/m_c/poss} time.",
@@ -585,21 +599,57 @@
 		}
 	},
 	{
-		"id": "dislike_inc_high6",
+		"id": "dislike_inc_high_highrank1",
+		"intensity": "high",
+		"interactions": [
+			"m_c calls r_c a threat to the safety of the Clan.",
+			"m_c and r_c are arguing about something important and risking the Clan's safety.",
+			"m_c claims {PRONOUN/m_c/subject} spoke with StarClan and heard bad things about r_c."
+		],
+		"main_status_constraint": [
+			"medicine cat",
+			"leader"
+		],
+		"reaction_random_cat": {
+			"like": "decrease",
+			"comfort": "decrease",
+			"respect": "decrease",
+			"trust": "decrease"
+		}
+	},
+	{
+		"id": "dislike_inc_high_highrank2",
 		"intensity": "high",
 		"interactions": [
 			"m_c is scolding r_c.",
 			"m_c is bossing r_c around.",
 			"m_c calls r_c a threat to the safety of the Clan.",
 			"m_c and r_c are arguing about something important and risking the Clan's safety.",
-			"m_c threatens r_c with exile.",
-			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor.",
-			"m_c threatens to give r_c a terrible name.",
-			"m_c claims {PRONOUN/m_c/subject} spoke with StarClan and heard bad things about r_c."
+			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor."
 		],
 		"main_status_constraint": [
-			"medicine cat",
 			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+			"-leader"
+		],
+		"reaction_random_cat": {
+			"like": "decrease",
+			"comfort": "decrease",
+			"respect": "decrease",
+			"trust": "decrease"
+		}
+	},
+	{
+		"id": "dislike_inc_high_highrank3",
+		"intensity": "high",
+		"interactions": [
+			"m_c threatens r_c with exile.",
+			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor.",
+			"m_c threatens to give r_c a terrible name."
+		],
+		"main_status_constraint": [
 			"leader"
 		],
 		"reaction_random_cat": {
@@ -634,6 +684,7 @@
 	},
 	{
 		"id": "dislike_kit_de_med1",
+		"intensity": "medium",
 		"interactions": [
 			"m_c sticks {PRONOUN/m_c/poss} tongue out at r_c.",
 			"m_c makes stinky faces at r_c for seemingly no reason.",
@@ -649,6 +700,7 @@
 	},
 	{
 		"id": "dislike_kit_de_med2",
+		"intensity": "medium",
 		"interactions": [
 			"m_c tried to have a friendly discussion with r_c about what prey tastes best, but it turned into an argument.",
 			"m_c and r_c always end up arguing over what games to play.",
@@ -669,6 +721,7 @@
 	},
 	{
 		"id": "dislike_kit_inc_med3",
+		"intensity": "medium",
 		"interactions": [
 			"m_c whines that r_c won't play with {PRONOUN/m_c/object}, even though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} always around camp.",
 			"m_c doesn't understand why r_c won't let {PRONOUN/m_c/object} play in the medicine cat den."

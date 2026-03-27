@@ -5600,7 +5600,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c sees that o_c_n has been cleaning the border trackways, and adds {PRONOUN/m_c/poss} own paws the the effort.",
+        "event_text": "m_c sees that o_c_n has been cleaning the border trackways and adds {PRONOUN/m_c/poss} own paws to the effort.",
         "m_c": {
             "age": [
                 "adolescent",
