@@ -332,7 +332,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "death": "This cat died from being ambushed by rogues."
+                    "death": "m_c was ambushed and killed by rogues."
                 },
                 "frequency": 4
             }
@@ -560,7 +560,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "death": "This cat died from being ambushed by rogues."
+                    "death": "m_c was ambushed and killed by rogues."
                 },
                 "frequency": 4
             }
