@@ -569,13 +569,13 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
-                "history_text": { "scar": "m_c was marked by a fight with a pair of swift foxes." },
+                "history_text": {
+                    "scar": "m_c was marked by a fight with a pair of swift foxes.",
+                    "death": "m_c died of injuries inflicted by a pair of swift foxes."
+                },
                 "relationships": [
                     {
                         "cats_to": [

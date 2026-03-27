@@ -149,15 +149,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep c_n safe from a large dog."
+                    "scar": "m_c was scarred defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a big dog."
                 },
                 "relationships": [
                     {
@@ -617,15 +614,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "scar": "m_c was scarred defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a dog."
                 },
                 "relationships": [
                     {
@@ -763,15 +757,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "scar": "m_c was scarred defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a dog."
                 },
                 "relationships": [
                     {
@@ -920,15 +911,12 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
-                    "death": "This cat was killed in a fight with a small dog, but they took the dog out with them."
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "death": "m_c died of injuries inflicted by a small dog."
                 },
                 "relationships": [
                     {
@@ -1085,14 +1073,12 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "death": "m_c died of injuries inflicted by a small dog."
                 },
                 "frequency": 3
             }
@@ -1231,14 +1217,12 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "death": "m_c died of injuries inflicted by a small dog."
                 },
                 "frequency": 3
             }

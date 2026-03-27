@@ -813,8 +813,7 @@
                         ],
                         "injuries": [
                             "torn pelt"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3,
@@ -1792,11 +1791,13 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c died of injuries inflicted by a fox."
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1818,11 +1819,13 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c died of injuries inflicted by a fox."
+                },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -2263,14 +2266,12 @@
                         ],
                         "injuries": [
                             "bite-wound"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a gray fox fight."
+                    "scar": "m_c carries a scar from a gray fox fight.",
+                    "death": "m_c died of injuries inflicted by a gray fox."
                 },
                 "relationships": [
                     {
@@ -2725,12 +2726,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["small_bite_injury"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a red fox fight."
+                    "scar": "m_c carries a scar from a red fox fight.",
+                    "death": "m_c died of injuries inflicted by a red fox."
                 },
                 "relationships": [
                     {
@@ -2771,12 +2772,12 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["small_bite_injury"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a red fox fight."
+                    "scar": "m_c carries a scar from a red fox fight.",
+                    "death": "m_c died of injuries inflicted by a red fox."
                 },
                 "relationships": [
                     {
@@ -2963,11 +2964,13 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["small_bite_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a gray fox fight." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a gray fox fight.",
+                    "death": "m_c died of injuries inflicted by a gray fox."
+                },
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -3004,13 +3007,13 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a gray fox fight." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a gray fox fight.",
+                    "death": "m_c died of injuries inflicted by a gray fox."
+                },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -3350,8 +3353,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -3582,8 +3584,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -4400,10 +4401,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["water in their lungs"],
-                        "scars": []
+                        "injuries": ["water in their lungs"]
                     }
                 ],
+                "history_text": {
+                    "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after slipping off a rock while fishing."
+                },
                 "prey": ["very_small"]
             }
         ]
@@ -4477,8 +4480,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["severe headache"],
-                        "scars": []
+                        "injuries": ["severe headache"]
                     }
                 ],
                 "relationships": [
@@ -4566,8 +4568,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -4814,10 +4815,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["water in their lungs"],
-                        "scars": []
+                        "injuries": ["water in their lungs"]
                     }
                 ],
+                "history_text": {
+                    "death": "m_c died of the water in {PRONOUN/m_c/poss} lungs after slipping off a rock while fishing."
+                },
                 "prey": ["very_small"]
             }
         ]
@@ -4891,8 +4894,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]

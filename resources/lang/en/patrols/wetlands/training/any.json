@@ -1214,8 +1214,7 @@
                         ],
                         "injuries": [
                             "stomachache"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -1322,6 +1321,9 @@
                         ]
                     }
                 ],
+                "history_text": {
+                    "death": "m_c died of shock after seeing a moose on patrol."
+                },
                 "relationships": [
                     {
                         "cats_to": [
