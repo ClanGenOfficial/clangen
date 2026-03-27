@@ -18,8 +18,7 @@ from scripts.cat_relations.enums import RelType
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
-from scripts.events_module.text_adjust import process_text, adjust_list_text
-
+from scripts.events_module.text_adjust import process_text, adjust_list_text, history_text_adjust
 
 def create_new_cat_block(
     Cat: Optional["Cat"],
@@ -738,9 +737,22 @@ def create_new_cat(
         # KILL >:D only if we're sposed to tho
         if not alive:
             new_cat.die()
-            if new_cat.status.group_ID == "3":
-                death_history = i18n.t("events.death.outsider_deaths.history.loner")         
-                new_cat.history.add_death(death_text=death_history)
+            if new_cat.status.rank == CatRank.LONER:
+                death_history = i18n.t("events.death.outsider_deaths.history.loner")
+                new_cat.history.add_death(death_text=history_text_adjust(death_history, other_clan_name=None, clan=game.clan))
+            elif new_cat.status.rank == CatRank.ROGUE:
+                death_history = i18n.t("events.death.outsider_deaths.history.rogue")
+                new_cat.history.add_death(death_text=history_text_adjust(death_history, other_clan_name=None, clan=game.clan))
+            elif new_cat.status.rank == CatRank.KITTYPET:
+                death_history = i18n.t("events.death.outsider_deaths.history.kittypet")
+                new_cat.history.add_death(death_text=history_text_adjust(death_history, other_clan_name=None,clan=game.clan))
+            elif new_cat.status.is_other_clancat:
+                for item in game.clan.all_other_clans:
+                    for entry in new_cat.status.group_history:
+                        if entry.get("group") == item.group_ID:
+                            other_clan_name = f"{item.name}Clan"
+                death_history = i18n.t("events.death.outsider_deaths.history.other_clan")
+                new_cat.history.add_death(death_text=history_text_adjust(death_history, other_clan_name, game.clan))
 
         # newbie thought
         new_cat.get_new_thought(thought)
