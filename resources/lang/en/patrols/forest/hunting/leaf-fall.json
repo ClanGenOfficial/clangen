@@ -435,7 +435,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred after falling from a tree.",
+                    "scar": "m_c was scarred after falling from a tree.",
                     "death": "m_c died after falling from a tree while hunting."
                 },
                 "relationships": [
@@ -723,7 +723,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred after disappearing on patrol and being found soaked and freezing."
+                    "scar": "m_c was scarred after disappearing on patrol and being found soaked and freezing.",
+                    "death": "m_c caught a chill on patrol and never recovered."
                 },
             "relationships": [
                 {
@@ -1073,7 +1074,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from fighting a swarm of rats."
+                    "scar": "m_c carries a scar from fighting a swarm of rats.",
+                    "death": "m_c died of a rat bite."
                 },
                 "prey": [
                     "very_small"
@@ -1179,7 +1181,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred fighting a Rat King."
+                    "scar": "m_c was scarred fighting a Rat King.",
+                    "death": "m_c died of a rat bite sustained while fighting a Rat King."
                 },
                 "prey": [
                     "very_small"
@@ -1204,7 +1207,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred fighting a Rat King."
+                    "scar": "m_c was scarred fighting a Rat King.",
+                    "death": "m_c died of a rat bite sustained while fighting a Rat King."
                 },
                 "prey": [
                     "very_small"

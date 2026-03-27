@@ -382,7 +382,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "death": "m_c lost their life to a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 3
             }
@@ -807,8 +807,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -842,8 +842,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1043,8 +1043,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1124,8 +1124,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1220,9 +1220,6 @@
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c got injured as an apprentice, exploring alone."
-                },
                 "frequency": 3
             }
         ]

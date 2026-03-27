@@ -448,7 +448,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred after falling from a tree.",
-                    "death": "m_c died after falling from a tree while hunting."
+                    "death": "m_c died from {PRONOUN/m_c/poss} broken bone after falling from a tree while hunting."
                 },
                 "relationships": [
                     {
@@ -2413,7 +2413,7 @@
                     }
                 ],
                 "history_text": {
-                    "death": "This cat died from heat stroke."
+                    "death": "m_c died from heat stroke."
                 },
                 "prey": [
                     "very_small"

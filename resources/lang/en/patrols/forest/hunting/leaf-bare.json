@@ -157,7 +157,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death after hunting in a storm."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after hunting in a storm."
                 },
                 "relationships": [
                     {
@@ -257,7 +257,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death after hunting in a storm."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after hunting in a storm."
                 },
                 "frequency": 4
             }
@@ -411,7 +411,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death while hunting in a storm."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after hunting in a storm."
                 },
                 "frequency": 4
             }
@@ -1452,7 +1452,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred after falling from a tree.",
+                    "scar": "m_c was scarred after falling from a tree.",
                     "death": "m_c died after falling from a tree while hunting."
                 },
                 "relationships": [
@@ -1594,7 +1594,7 @@
                     }
                 ],
                 "history_text": {
-                    "death": "This cat froze to death."
+                    "death": "m_c caught a chill while hunting and couldn't recover."
                 },
                 "relationships": [
                     {
@@ -1757,7 +1757,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death after hunting in leaf-bare."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after hunting in a storm."
                 },
                 "prey": [
                     "very_small"
@@ -3221,7 +3221,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-                    "death": "m_c froze to death, caught in a snowstorm while hunting by themselves."
+                    "death": "m_c died of frostbite after hunting alone in leaf-bare."
                 },
                 "frequency": 4
             },
@@ -3263,7 +3263,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-                    "death": "m_c froze to death, caught in a snowstorm while hunting by {PRONOUN/app1/self}."
+                    "death": "m_c died of frostbite after hunting alone in leaf-bare."
                 },
                 "frequency": 4
             }
@@ -4259,7 +4259,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
-                    "death": "The viewpoint c_n thought was safe from avalanches... was not."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after falling in a freezing stream."
                 },
                 "frequency": 4
             }

@@ -434,6 +434,10 @@
                         "scars": []
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after {PRONOUN/m_c/subject} fell out of a tree during a hunt.",
+                    "death": "m_c died of a broken bone after falling out of a tree during a hunt."
+                },
                 "relationships": [
                     {
                         "cats_to": [
@@ -773,7 +777,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred after disappearing on patrol and being discovered injured."
+                    "scar": "m_c was scarred after disappearing on patrol and being discovered injured.",
+                    "death": "m_c caught a chill on patrol and never recovered."
                 },
                 "relationships": [
                     {
@@ -1216,7 +1221,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from fighting a swarm of rats."
+                    "scar": "m_c carries a scar from fighting a swarm of rats.",
+                    "death": "m_c died of a rat bite."
                 },
                 "prey": [
                     "very_small"
@@ -1339,7 +1345,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred fighting a Rat King."
+                    "scar": "m_c was scarred fighting a Rat King.",
+                    "death": "m_c died of a rat bite sustained while fighting a Rat King."
                 },
                 "relationships": [
                     {
@@ -1381,7 +1388,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred fighting a Rat King."
+                    "scar": "m_c was scarred fighting a Rat King.",
+                    "death": "m_c died of a rat bite sustained while fighting a Rat King."
                 },
             "relationships": [
                 {
@@ -2922,7 +2930,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone.",
-                    "death": "m_c died falling from the treetops, out on a solo nest raid."
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after falling from the treetops, out on a solo nest raid."
                 },
                 "frequency": 2
             }
@@ -3030,7 +3038,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone.",
-                    "death": "m_c died falling from the treetops, out on a solo nest raid."
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after falling from the treetops, out on a solo nest raid."
                 },
                 "frequency": 3
             },
@@ -3082,7 +3090,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone.",
-                    "death": "m_c died falling from the treetops, out on a solo nest raid."
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after falling from the treetops, out on a solo nest raid."
                 },
                 "frequency": 2
             }
@@ -3334,7 +3342,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice."
+                    "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after falling from the treetops, out on a solo nest raid."
                 },
                 "frequency": 2
             },
@@ -3361,7 +3370,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice."
+                    "scar": "m_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after falling from the treetops, out on a solo nest raid."
                 },
                 "frequency": 1
             },

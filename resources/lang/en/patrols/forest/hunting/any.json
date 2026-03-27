@@ -163,7 +163,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a porcupine while on patrol.",
-                    "death": "m_c was killed by an angry porcupine while on patrol."
+                    "death": "m_c died after being quilled by a porcupine on patrol."
                 },
                 "frequency": 3
             }
@@ -309,7 +309,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a porcupine while on patrol.",
-                    "death": "m_c was killed by an angry porcupine while on patrol."
+                    "death": "m_c died after being quilled by a porcupine on patrol."
                 },
                 "frequency": 3
             }
@@ -868,7 +868,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
-                    "death": "m_c was killed by a coyote protecting its scavenged meal."
+                    "death": "m_c died from injuries inflicted by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             }
@@ -1025,7 +1025,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
-                    "death": "m_c was killed by a coyote protecting its scavenged meal."
+                    "death": "m_c died from injuries inflicted by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             }
@@ -1277,7 +1277,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a wolf protecting its scavenged meal.",
-                    "death": "m_c was killed by a wolf protecting its meal."
+                    "death": "m_c died from injuries inflicted by a wolf protecting its meal."
                 },
                 "frequency": 3
             }
@@ -2264,6 +2264,10 @@
                         "scars": []
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after being scraped by broken glass in a Twoleg den.",
+                    "death": "m_c died from injuries sustained during an escape from a Twoleg den."
+                },
                 "frequency": 3,
             "relationships": [
                 {
