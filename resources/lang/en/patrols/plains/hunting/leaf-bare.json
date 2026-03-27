@@ -914,7 +914,9 @@
                         "injuries": [
                             "cold_injury"
                         ],
-                        "scars": []
+                        "scars": [
+                            "FROSTMITT"
+                        ]
                     }
                 ],
                 "history_text": {
