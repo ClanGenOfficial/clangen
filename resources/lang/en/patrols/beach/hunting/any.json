@@ -781,6 +781,7 @@
                     }
                 ],
                 "history_text": {
+                    "scar": "m_c was scarred after being scraped by broken glass in a Twoleg den.",
                     "death": "m_c bled out after escaping from a Twoleg den."
                 },
                 "frequency": 3,
@@ -922,6 +923,7 @@
                     }
                 ],
                 "history_text": {
+                    "scar": "m_c was scarred after being scraped by broken glass in a Twoleg den.",
                     "death": "m_c bled out after escaping from a Twoleg den."
                 },
                 "frequency": 3
@@ -5364,6 +5366,9 @@
                         "scars": []
                     }
                 ],
+                "history_text": {
+                    "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after a rogue wave struck {PRONOUN/m_c/object} during a hunt."
+                },
                 "prey": ["very_small"]
             }
         ]
@@ -5778,6 +5783,9 @@
                         "scars": []
                     }
                 ],
+                "history_text": {
+                    "death": "m_c died of water in {PRONOUN/m_c/poss} lungs after a rogue wave struck {PRONOUN/m_c/object} during a hunt."
+                },
                 "prey": ["very_small"]
             }
         ]
