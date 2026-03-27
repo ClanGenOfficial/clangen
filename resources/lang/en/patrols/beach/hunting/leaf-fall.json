@@ -406,9 +406,6 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
@@ -694,7 +691,7 @@
                             "burn"
                         ],
                         "scars": [
-                            "BURNRUMP",
+                            "BURNBELLY",
                             "BURNPAWS"
                         ]
                     }

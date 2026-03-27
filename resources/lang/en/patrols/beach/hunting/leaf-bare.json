@@ -427,9 +427,6 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
@@ -770,8 +767,7 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -870,8 +866,7 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1001,8 +996,7 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {

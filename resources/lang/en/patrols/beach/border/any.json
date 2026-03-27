@@ -127,9 +127,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
@@ -409,9 +406,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
@@ -636,8 +630,7 @@
                         "injuries": [
                             "blunt_force_injury",
                             "water in their lungs"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -658,8 +651,7 @@
                         "injuries": [
                             "blunt_force_injury",
                             "water in their lungs"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -856,9 +848,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -995,9 +984,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -1185,9 +1171,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -1330,9 +1313,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -1886,8 +1866,7 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["FACE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": {
@@ -1946,8 +1925,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["THREE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": {
@@ -2076,8 +2054,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEGBITE"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "history_text": { 
@@ -2224,8 +2201,7 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEGBITE"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "history_text": { 

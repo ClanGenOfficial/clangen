@@ -397,9 +397,6 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
@@ -609,8 +606,7 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3

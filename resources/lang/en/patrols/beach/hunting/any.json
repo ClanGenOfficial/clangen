@@ -489,9 +489,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -525,9 +522,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -621,9 +615,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -776,8 +767,7 @@
                             "blood loss",
                             "scrapes",
                             "small cut"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -918,8 +908,7 @@
                             "blood loss",
                             "scrapes",
                             "small cut"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1944,11 +1933,6 @@
                         ],
                         "injuries": [
                             "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKCHEEK",
-                            "BEAKLOWER",
-                            "BEAKSIDE"
                         ]
                     }
                 ],
@@ -1997,11 +1981,6 @@
                         ],
                         "injuries": [
                             "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKCHEEK",
-                            "BEAKLOWER",
-                            "BEAKSIDE"
                         ]
                     }
                 ],
@@ -2265,11 +2244,6 @@
                         ],
                         "injuries": [
                             "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKCHEEK",
-                            "BEAKLOWER",
-                            "BEAKSIDE"
                         ]
                     }
                 ],
@@ -2597,9 +2571,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2647,9 +2618,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -3012,9 +2980,6 @@
                         ],
                         "injuries": [
                             "bite-wound"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -3352,9 +3317,6 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -3405,9 +3367,6 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -3649,9 +3608,6 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -3699,9 +3655,6 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -4197,7 +4150,7 @@
                             "poisoned"
                         ],
                         "scars": [
-                            "SCRATCHSIDE"
+                            "QUILLSIDE"
                         ],
                         "no_results": false
                         }
@@ -4312,8 +4265,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -4544,8 +4496,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -5362,8 +5313,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["water in their lungs"],
-                        "scars": []
+                        "injuries": ["water in their lungs"]
                     }
                 ],
                 "history_text": {
@@ -5442,8 +5392,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["severe headache"],
-                        "scars": []
+                        "injuries": ["severe headache"]
                     }
                 ],
                 "relationships": [
@@ -5531,8 +5480,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -5779,8 +5727,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["water in their lungs"],
-                        "scars": []
+                        "injuries": ["water in their lungs"]
                     }
                 ],
                 "history_text": {
@@ -5859,8 +5806,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]

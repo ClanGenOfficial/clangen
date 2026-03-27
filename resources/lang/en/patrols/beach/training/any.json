@@ -136,16 +136,9 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "QUILLCHUNK"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c got spiked by a sea urchin while training as an apprentice.",
-                    "death": "m_c died after being spiked by a sea urchin."
-                },
                 "frequency": 3
             }
         ]
@@ -355,9 +348,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "CHEEK"
                         ]
                     }
                 ],
@@ -388,9 +378,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -591,9 +578,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -668,9 +652,6 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "ONE"
                         ]
                     }
                 ],
@@ -764,9 +745,6 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],
@@ -2246,10 +2224,6 @@
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c got a small cut while out training, which has left a scar.",
-                    "death": "m_c died from complications from a small cut."
-                },
                 "relationships": [
                     {
                         "cats_to": [
@@ -2725,8 +2699,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2956,8 +2929,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
