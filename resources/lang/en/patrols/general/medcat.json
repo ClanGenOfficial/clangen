@@ -18668,7 +18668,7 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -5,
+                        "amount": -10,
                         "log": {
                             "cats_from": "When from_cat and to_cat's daisy-gathering mission failed, from_cat struggled not to take {PRONOUN/from_cat/poss} irritation out on to_cat."
                         }
@@ -18954,8 +18954,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "app1 learned how to judge whether a catmint plant is ready for harvest in newleaf from p_l.",
-                            "cats_to": "p_l appreciated app1's focus during a lesson about gathering catmint."
+                            "cats_from": "p_l taught app1 how to judge whether a catmint plant is ready for harvest in newleaf.",                            "cats_to": "p_l appreciated app1's focus during a lesson about gathering catmint."
                         }
                     }
                 ],
@@ -19092,7 +19091,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "Though from_cat was excited by the scent of catmint, {PRONOUN/from_cat/subject} knew it was important to focus and help to_cat gather it"
+                            "cats_from": "Though from_cat was excited by the scent of catmint, {PRONOUN/from_cat/subject} knew it was important to focus and help to_cat gather it."
                         }
                     },
                     {
