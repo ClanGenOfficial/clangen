@@ -642,7 +642,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured in a flood.",
-                    "death": "m_c was drowned by floodwaters."
+                    "death": "m_c died of injuries sustained in a flood."
                 },
                 "frequency": 4
             },
@@ -663,7 +663,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was injured in a flood."
+                    "scar": "m_c was injured in a flood.",
+                    "death": "m_c died of injuries sustained in a flood."
                 },
                 "frequency": 4
             }
@@ -1891,7 +1892,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a vixen.",
-                    "death": "m_c fell in a battle with a vixen."
+                    "death": "m_c died of injuries inflicted by a vixen."
                 },
                 "relationships": [
                     {
@@ -1951,7 +1952,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "death": "m_c fell in battle with a red fox."
+                    "death": "m_c died of injuries inflicted by a red vixen."
                 },
                 "relationships": [
                     {
@@ -2081,7 +2082,7 @@
                 ],
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a gray vixen.",
-                    "death": "m_c died after a battle with a gray vixen."
+                    "death": "m_c died of injuries inflicted by a gray vixen."
                 }
             },
             {
@@ -2229,7 +2230,7 @@
                 ],
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a gray vixen.",
-                    "death": "m_c died after a battle with a gray vixen."
+                    "death": "m_c died from injuries inflicted by a gray vixen."
                 },
                 "relationships": [
                     {
