@@ -782,7 +782,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c was killed by a falling branch on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -820,7 +820,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c was killed by a falling branch on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1021,7 +1021,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c was killed by a falling branch on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1102,7 +1102,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c was killed by a falling branch on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
