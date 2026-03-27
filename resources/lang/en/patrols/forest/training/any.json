@@ -1215,9 +1215,7 @@
                         "injuries": [
                             "minor_injury"
                         ],
-                        "scars": [
-                            "LEFTEAR"
-                        ]
+                        "scars": []
                     }
                 ],
                 "frequency": 3
