@@ -6243,11 +6243,7 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "snake bite"
-                        ],
-                        "scars": [
-                            "SNAKETWO"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -6322,11 +6318,7 @@
                         "cats": ["p_l"],
                         "injuries": [
                             "snake bite"
-                        ],
-                        "scars": [
-                            "SNAKE"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -8946,16 +8938,9 @@
                         ],
                         "injuries": [
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c was scarred from bramble thorns on an herb gathering patrol.",
-                    "death": "Bramble thorns scratched up m_c, and the wounds eventually festered and killed {PRONOUN/m_c/object}."
-                },
                 "relationships": [
                     {
                         "cats_to": [
@@ -9066,8 +9051,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -9104,8 +9088,7 @@
                         ],
                         "injuries": [
                             "stomachache"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": [
@@ -9113,8 +9096,7 @@
                         ],
                         "injuries": [
                             "diarrhea"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -9501,8 +9483,7 @@
                         "injuries": [
                             "shock",
                             "non_lethal"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -10582,8 +10563,7 @@
                         ],
                         "injuries": [
                             "small cut"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -10653,14 +10633,9 @@
                         ],
                         "injuries": [
                             "small cut"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c was scarred after stepping on a thorn.",
-                    "death": "m_c died after a small cut progressed to something worse."
-                },
                 "frequency": 4
             }
         ]
@@ -14465,8 +14440,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -14620,8 +14594,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -14779,8 +14752,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -15556,8 +15528,7 @@
                         ],
                         "injuries": [
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -15936,8 +15907,7 @@
                         ],
                         "injuries": [
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -18276,8 +18246,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -18350,8 +18319,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -19794,12 +19762,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTSOCK",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20028,12 +19990,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTSOCK",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20071,12 +20027,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20195,12 +20145,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20443,12 +20387,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTSOCK",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20486,12 +20424,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTSOCK",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20614,12 +20546,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT",
-                            "FROSTFACE",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20824,12 +20750,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT",
-                            "FROSTFACE",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20849,12 +20769,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -20936,12 +20850,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -21147,12 +21055,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT",
-                            "FROSTFACE",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -21172,12 +21074,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTMITT",
-                            "FROSTFACE",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -21282,12 +21178,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -21475,12 +21365,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -21500,12 +21384,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -21587,12 +21465,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -21767,12 +21639,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -21792,12 +21658,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -21905,12 +21765,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -22117,12 +21971,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -22142,12 +21990,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -22229,12 +22071,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -22449,12 +22285,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK",
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -22474,12 +22304,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL",
-                            "FROSTFACE",
-                            "FROSTMITT",
-                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -25614,8 +25438,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -25770,8 +25593,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -25929,8 +25751,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -26708,8 +26529,7 @@
                         ],
                         "injuries": [
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -27082,8 +26902,7 @@
                         ],
                         "injuries": [
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -32961,8 +32780,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -33117,8 +32935,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -33275,8 +33092,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -34071,8 +33887,7 @@
                         ],
                         "injuries": [
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -34451,8 +34266,7 @@
                         ],
                         "injuries": [
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -36496,8 +36310,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -36575,8 +36388,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -37673,13 +37485,11 @@
                         ],
                         "scars": [
                             "SCRATCHSIDE"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was permanently marked by raspberry bramble thorns.",
-                    "death": "m_c died from complications from a small cut, proof that even tiny wounds can progress to dangerous levels."
+                    "scar": "m_c was permanently marked by raspberry bramble thorns."
                 },
                 "frequency": 4
             }

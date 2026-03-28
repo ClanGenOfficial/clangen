@@ -1593,9 +1593,6 @@
                             "torn ear",
                             "scrapes"
                         ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
                         "no_results": false
                     }
                 ],
@@ -1686,11 +1683,7 @@
                         "injuries": [
                             "torn ear",
                             "scrapes"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1780,11 +1773,7 @@
                         "injuries": [
                             "torn ear",
                             "scrapes"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1874,11 +1863,7 @@
                         "injuries": [
                             "torn ear",
                             "scrapes"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1968,11 +1953,7 @@
                         "injuries": [
                             "torn ear",
                             "scrapes"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -3616,11 +3597,7 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -3786,11 +3763,7 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -3966,11 +3939,7 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -4134,11 +4103,7 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -4302,11 +4267,7 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
@@ -6177,12 +6138,11 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "death": "This cat died after eating tainted prey."
+                    "death": "m_c died after eating tainted prey."
                 },
                 "frequency": 3
             }
@@ -6283,16 +6243,13 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "big_bite_injury"
-                        ],
-                        "scars": [
-                            "ONE"
+                            "claw-wound"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after an unfortunate encounter with a wolverine.",
-                    "death": "m_c was killed after an unfortunate experience with a wolverine."
+                    "death": "m_c died of a claw-wound inflicted by a wolverine."
                 },
                 "prey": [
                     "very_small"
@@ -6535,16 +6492,9 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c got injured as an apprentice during a hunting assessment.",
-                    "death": "m_c died after a minor injury progressed to something worse."
-                },
                 "frequency": 3
             }
         ]
@@ -7047,15 +6997,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "MANLEG"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was heavily injured by a monster, and carries the scars from it.",
-                    "death": "m_c was hit by a monster and killed."
+                    "scar": "m_c was heavily injured by a monster and carries the scars from it.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster."
                 },
                 "frequency": 3
             }
@@ -7219,8 +7166,7 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -7340,8 +7286,7 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "prey": [
