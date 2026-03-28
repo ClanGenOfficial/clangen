@@ -550,7 +550,13 @@ class Relationship:
         """
         Returns the sum of the absolute values of all relationship types.
         """
-        return abs(self.romance) + abs(self.like) + abs(self.respect) + abs(self.comfort) + abs(self.trust)
+        return (
+            abs(self.romance)
+            + abs(self.like)
+            + abs(self.respect)
+            + abs(self.comfort)
+            + abs(self.trust)
+        )
 
     @property
     def has_extreme_negative(self) -> bool:
