@@ -162,15 +162,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CHEEK"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an enemy warrior.",
-                    "death": "m_c was killed by an enemy warrior."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -629,9 +626,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     },
                     {
@@ -1688,15 +1682,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an enemy warrior.",
-                    "death": "m_c was killed by an enemy warrior."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1830,7 +1821,7 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "battle_injury"
+                            "cat bite"
                         ],
                         "scars": [
                             "LEGBITE"
@@ -1839,7 +1830,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it.",
-                    "death": "m_c disrespected the border lines and was killed by an enemy warrior for it."
+                    "death": "m_c died of a bite from an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1948,8 +1939,7 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "other_clan_rep": -1,
@@ -2051,15 +2041,12 @@
                         "injuries": [
                             "bite-wound",
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
+                    "death": "m_c died of injuries inflicted by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2173,15 +2160,12 @@
                         "injuries": [
                             "bite-wound",
                             "mangled tail"
-                        ],
-                        "scars": [
-                            "TAILSCAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
+                    "death": "m_c died of injuries inflicted by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2287,7 +2271,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -2296,15 +2280,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2352,15 +2333,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of an injury inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2475,15 +2453,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CHEEK"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2539,7 +2514,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2651,15 +2626,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SNOUT"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2707,15 +2679,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SNOUT"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -2810,15 +2779,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by the deputy of an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2866,15 +2832,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -2960,15 +2923,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by the leader of an enemy Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3017,15 +2977,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3124,7 +3081,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -3133,15 +3090,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "TAILBASE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3189,15 +3143,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "TAILBASE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3312,15 +3263,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3368,15 +3316,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3492,15 +3437,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3548,15 +3490,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3651,15 +3590,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "FACE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by the deputy of an enemy Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3706,15 +3642,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "FACE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -3800,15 +3733,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "ONE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by the leader of an enemy Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3856,15 +3786,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "ONE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -3963,7 +3890,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -3972,15 +3899,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4028,15 +3952,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4151,15 +4072,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4207,15 +4125,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4331,15 +4246,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SNOUT"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4388,15 +4300,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SNOUT"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4491,15 +4400,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CHEEK"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by the deputy of an enemy Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4547,15 +4453,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CHEEK"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4641,15 +4544,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by the leader of an enemy Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4697,15 +4597,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -4804,7 +4701,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -4821,7 +4718,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4869,15 +4766,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -4992,15 +4886,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -5048,15 +4939,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -5172,15 +5060,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CHEEK"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5228,15 +5113,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CHEEK"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost a life against a hostile Clan."
+                    "death": "m_c died of injuries inflicted by the leader of an enemy Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5331,15 +5213,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -5387,15 +5266,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -5481,15 +5357,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by the leader of an enemy Clan."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5527,9 +5400,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -5545,7 +5415,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c was killed by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -5970,15 +5840,12 @@
                         "injuries": [
                             "bite-wound",
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar, and lingering resentment, from when a Clanmate failed to watch {PRONOUN/m_c/poss} back during a border altercation.",
-                    "death": "m_c was killed in a border altercation when a Clanmate failed to watch {PRONOUN/m_c/poss} back."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "relationships": [
                     {
@@ -6202,16 +6069,12 @@
                             "small_bite_injury",
                             "torn pelt",
                             "torn ear"
-                        ],
-                        "scars": [
-                            "NECKBITE",
-                            "RIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "death": "m_c was killed in a border ambush by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -6316,7 +6179,6 @@
                     "some_lives"
                 ],
                 "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
                 "other_clan_rep": -1,
@@ -6336,16 +6198,12 @@
                             "small_bite_injury",
                             "torn pelt",
                             "torn ear"
-                        ],
-                        "scars": [
-                            "NECKBITE",
-                            "RIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "death": "m_c was killed in a border ambush by a hostile Clan."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -6596,6 +6454,10 @@
                         ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after trying to attack another Clan's kits and being ambushed instead.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
+                },
                 "other_clan_rep": -1,
                 "frequency": 4
             },

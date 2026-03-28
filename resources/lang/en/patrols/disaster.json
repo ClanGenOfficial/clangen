@@ -917,15 +917,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues ambushed their patrol.",
-                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    "death": "m_c died of wounds sustained in a rogue ambush."
                 },
                 "frequency": 4
             }
@@ -1187,9 +1184,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],

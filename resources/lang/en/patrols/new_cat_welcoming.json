@@ -1640,6 +1640,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after being hit by a monster on the Thunderpath.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster."
+                },
                 "relationships": [
                     {
                         "cats_from": ["n_c:0"],
@@ -1753,6 +1757,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after being hit by a monster on the Thunderpath.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster."
+                },
                 "new_cat": [
                     [
                         "loner"
@@ -2990,9 +2998,6 @@
                         ],
                         "injuries": [
                             "claw-wound"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -3223,10 +3228,13 @@
                             "p_l"
                         ],
                         "injuries": [
-                            "battle_injury"
+                            "claw-wound"
                         ],
                         "scars": [
-                            "BRIDGE"
+                            "FACE",
+                            "SNOUT",
+                            "BRIDGE",
+                            "CHEEK"
                         ]
                     }
                 ],
@@ -3905,8 +3913,7 @@
                         ],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "outsider_rep": 0,
@@ -4044,8 +4051,7 @@
                         ],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "outsider_rep": 0,
@@ -4350,14 +4356,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat gained a scar from a fight with an angry kittypet."
+                    "scar": "m_c gained a scar from a fight with an angry kittypet.",
+                    "death": "m_c died of injuries inflicted by an intruding kittypet."
                 },
                 "outsider_rep": -1,
                 "new_cat": [
@@ -4441,6 +4445,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 4
             },
             {
@@ -4475,6 +4483,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 1
             },
             {
@@ -4512,6 +4524,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 4
             }
         ],
@@ -4608,6 +4624,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 4
             },
             {
@@ -4641,6 +4661,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 1
             },
             {
@@ -4677,6 +4701,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 4
             }
         ],
@@ -4748,7 +4776,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Oh StarClan, app1 can't live with leaving some poor sad soul alone on the mountainside in the cold! Following the pitious cries, app1 finds a terrified kittypet crouched by a Thunderpath, desperately searching for a monster and the Twolegs that it contains. But it's alright, app1 is here, and c_n will be able to help.",
+                "text": "Oh StarClan, app1 can't live with leaving some poor sad soul alone on the mountainside in the cold! Following the piteous cries, app1 finds a terrified kittypet crouched by a Thunderpath, desperately searching for a monster and the Twolegs that it contains. But it's alright, app1 is here, and c_n will be able to help.",
                 "exp": 20,
                 "new_cat": [
                     [
@@ -4778,6 +4806,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 4
             },
             {
@@ -4811,6 +4843,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 1
             },
             {
@@ -4851,6 +4887,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 4
             }
         ],
@@ -4939,6 +4979,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a Twoleg attempted to drown {PRONOUN/m_c/object}.",
+                    "death": "m_c died of injuries inflicted by a Twoleg attempting to drown {PRONOUN/m_c/object}."
+                },
                 "frequency": 4
             },
             {
@@ -4981,6 +5025,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a Twoleg attempted to drown {PRONOUN/m_c/object}.",
+                    "death": "m_c died of injuries inflicted by a Twoleg attempting to drown {PRONOUN/m_c/object}."
+                },
                 "frequency": 4
             }
         ],
@@ -4995,10 +5043,13 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a Twoleg kicked {PRONOUN/m_c/object} into a tree.",
+                    "death": "m_c died of injuries inflicted by a Twoleg."
+                },
                 "outsider_rep": -1,
                 "frequency": 4
             },
@@ -5019,10 +5070,13 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a Twoleg threw {PRONOUN/m_c/object} to the earth.",
+                    "death": "m_c died of injuries inflicted by a Twoleg."
+                },
                 "outsider_rep": -1,
                 "frequency": 4
             }
@@ -5203,6 +5257,10 @@
                         ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a wound inflicted by another Clan's apprentice.",
+                    "death": "m_c died of a wound inflicted by another Clan's apprentice."
+                },
                 "outsider_rep": -1,
                 "frequency": 4
             }
@@ -5417,10 +5475,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR",
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -5450,10 +5504,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR",
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -5594,32 +5644,6 @@
                             "minor_injury",
                             "torn ear"
                         ],
-                        "scars": [
-                            "ONE",
-                            "TWO",
-                            "THREE",
-                            "FOUR",
-                            "RIGHTEAR",
-                            "LEFTEAR",
-                            "RIGHTBLIND",
-                            "LEFTBLIND",
-                            "BOTHBLIND",
-                            "MANLEG",
-                            "MANTAIL",
-                            "CATBITE",
-                            "CATBITETWO",
-                            "BRIDGE",
-                            "FACE",
-                            "SNOUT",
-                            "CHEEK",
-                            "THROAT",
-                            "TAILBASE",
-                            "TAILSCAR",
-                            "BACK",
-                            "SCRATCHSIDE",
-                            "SIDE",
-                            "BELLY"
-                        ],
                         "no_results": true
                     },
                     {
@@ -5632,10 +5656,6 @@
                             "scrapes",
                             "torn ear",
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "RIGHTEAR",
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -5682,32 +5702,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "ONE",
-                            "TWO",
-                            "THREE",
-                            "FOUR",
-                            "RIGHTEAR",
-                            "LEFTEAR",
-                            "RIGHTBLIND",
-                            "LEFTBLIND",
-                            "BOTHBLIND",
-                            "MANLEG",
-                            "MANTAIL",
-                            "CATBITE",
-                            "CATBITETWO",
-                            "BRIDGE",
-                            "FACE",
-                            "SNOUT",
-                            "CHEEK",
-                            "THROAT",
-                            "TAILBASE",
-                            "TAILSCAR",
-                            "BACK",
-                            "SCRATCHSIDE",
-                            "SIDE",
-                            "BELLY"
                         ],
                         "no_results": true
                     }
@@ -5829,32 +5823,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "ONE",
-                            "TWO",
-                            "THREE",
-                            "FOUR",
-                            "RIGHTEAR",
-                            "LEFTEAR",
-                            "RIGHTBLIND",
-                            "LEFTBLIND",
-                            "BOTHBLIND",
-                            "MANLEG",
-                            "MANTAIL",
-                            "CATBITE",
-                            "CATBITETWO",
-                            "BRIDGE",
-                            "FACE",
-                            "SNOUT",
-                            "CHEEK",
-                            "THROAT",
-                            "TAILBASE",
-                            "TAILSCAR",
-                            "BACK",
-                            "SCRATCHSIDE",
-                            "SIDE",
-                            "BELLY"
                         ]
                     }
                 ],
@@ -5915,32 +5883,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "ONE",
-                            "TWO",
-                            "THREE",
-                            "FOUR",
-                            "RIGHTEAR",
-                            "LEFTEAR",
-                            "RIGHTBLIND",
-                            "LEFTBLIND",
-                            "BOTHBLIND",
-                            "MANLEG",
-                            "MANTAIL",
-                            "CATBITE",
-                            "CATBITETWO",
-                            "BRIDGE",
-                            "FACE",
-                            "SNOUT",
-                            "CHEEK",
-                            "THROAT",
-                            "TAILBASE",
-                            "TAILSCAR",
-                            "BACK",
-                            "SCRATCHSIDE",
-                            "SIDE",
-                            "BELLY"
                         ]
                     }
                 ],
@@ -6403,9 +6345,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     },
                     {
@@ -6414,16 +6353,12 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had with a treacherous, flirtatious rogue.",
-                    "reg_death": "The wounds obtained fighting a treacherous, flirtatious rogue eventually killed m_c.",
-                    "lead_death": "wounds obtained fighting a treacherous, flirtatious rogue eventually killed m_c"
+                    "death": "m_c died of wounds sustained fighting a treacherous, flirtatious rogue."
                 },
                 "outsider_rep": -1,
                 "frequency": 4
@@ -6508,9 +6443,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     },
                     {
@@ -6519,9 +6451,6 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     },
                     {
@@ -6530,9 +6459,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     }
                 ],

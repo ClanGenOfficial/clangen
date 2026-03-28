@@ -482,7 +482,7 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "battle_injury"
+                            "cat bite"
                         ],
                         "scars": [
                             "LEGBITE"
@@ -490,7 +490,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it."
+                    "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior who caught {PRONOUN/m_c/object} trespassing."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3,
@@ -626,8 +627,7 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -795,15 +795,12 @@
                         "injuries": [
                             "bite-wound",
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "NORIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} scarred by a dog.",
-                    "death": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog."
+                    "death": "m_c died of injuries inflicted by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -939,15 +936,12 @@
                         "injuries": [
                             "bite-wound",
                             "mangled tail"
-                        ],
-                        "scars": [
-                            "TAILSCAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
+                    "death": "m_c died from injuries inflicted by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1390,15 +1384,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured by an enemy patrol while marking the border.",
-                    "death": "m_c lost a life in an ambush on the border."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -1408,7 +1399,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationship": {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -1427,14 +1418,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -1859,14 +1848,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -1876,7 +1863,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationship": {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -1895,14 +1882,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -2327,14 +2312,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -2344,7 +2327,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationship": {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -2363,15 +2346,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost their life in an ambush on the border."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -2796,14 +2776,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -2813,7 +2791,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationship": {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -2832,14 +2810,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -3254,14 +3230,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -3271,7 +3245,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationship": {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -3290,14 +3264,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -3764,16 +3736,11 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE",
-                            "BRIDGE",
-                            "CATBITETWO"
                         ]
                     }
                 ],
                 "history_text": {
-                    "death": "m_c died from a border skirmish after sneaking across the o_c_n border.",
+                    "death": "m_c died from injuries inflicted by an enemy warrior after {PRONOUN/m_c/subject} snuck across the o_c_n border.",
                     "scar": "m_c was scarred in a border skirmish after sneaking across the o_c_n border"
                 },
                 "relationships": [
@@ -4274,15 +4241,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a o_c_n apprentice after a border scrum.",
-                    "death": "m_c died after picking a fight with a o_c_n apprentice on patrol."
+                    "death": "m_c died from injuries inflicted by a o_c_n apprentice after picking a fight on patrol."
                 },
                 "relationships": [
                     {
@@ -4361,9 +4325,6 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -4417,10 +4378,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE",
-                            "SNOUT"
                         ]
                     }
                 ],
