@@ -427,14 +427,12 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c was scarred by a rattlesnake."
+                    "scar": "m_c was scarred by a rattlesnake.",
+                    "death": "m_c died after being bitten by a rattlesnake on patrol."
                 },
                 "relationships": [
                     {
@@ -769,12 +767,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c caught a chill while hunting in leaf-bare."
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "death": "m_c got too cold after a snowstorm descended on {PRONOUN/m_c/poss} hunting patrol and never recovered."
                 },
                 "relationships": [
                     {
@@ -868,12 +866,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c caught a chill while hunting in leaf-bare."
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "death": "m_c got too cold after a snowstorm descended on {PRONOUN/m_c/poss} hunting patrol and never recovered."
                 },
                 "frequency": 4
             }
@@ -998,12 +996,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c caught a chill while hunting in leaf-bare."
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "death": "m_c got too cold after a snowstorm descended on {PRONOUN/m_c/poss} hunting patrol and never recovered."
                 },
                 "prey": [
                     "very_small"

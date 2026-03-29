@@ -1688,8 +1688,7 @@
                         ],
                         "injuries": [
                             "dehydrated"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": [
@@ -1697,12 +1696,11 @@
                         ],
                         "injuries": [
                             "dehydrated"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "death": "m_c got dehydrated trying to outrun the Thunderpath-runner bird."
+                    "death": "m_c got dehydrated trying to outrun the Thunderpath-runner bird and couldn't recover."
                 },
                 "relationships": [
                     {
@@ -2279,8 +2277,7 @@
                         ],
                         "injuries": [
                             "stomachache"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [

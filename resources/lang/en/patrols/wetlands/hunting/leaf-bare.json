@@ -150,13 +150,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death after hunting in a storm."
+                    "death": "m_c caught a chill while hunting and couldn't recover."
                 },
                 "relationships": [
                     {
@@ -250,13 +249,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death after hunting in a storm."
+                    "death": "m_c caught a chill while hunting and couldn't recover."
                 },
                 "frequency": 4
             }
@@ -396,13 +394,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death while hunting in a storm."
+                    "death": "m_c caught a chill while hunting and couldn't recover."
                 },
                 "frequency": 4
             }
@@ -1001,8 +998,7 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {

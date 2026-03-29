@@ -36,17 +36,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat listened to to_cat attentively during an herb-gathering patrol.",
+                            "cats_to": "to_cat felt a measure of confidence in from_cat's attentiveness during an herb-gathering patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -57,17 +61,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "from_cat found a hidden herb patch during a lesson, impressing to_cat.",
+                            "cats_to": "to_cat was impressed by from_cat's keen observation by finding a hidden herb patch."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -80,17 +88,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "Frustrated by to_cat's inattention, from_cat ended {PRONOUN/from_cat/poss} gathering lesson early."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -143,94 +154,6 @@
         ]
     },
     {
-        "patrol_id": "wtlnd_med_rescue1",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [
-            "new_cat"
-        ],
-        "patrol_art": "med_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "healer cats": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "frequency": 4,
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
-        "chance_of_success": 35,
-        "success_outcomes": [
-            {
-                "text": "p_l, sure that it is a sign of StarClan, follows the sounds and whispers on the wind and finds a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c back to camp to find help and a queen willing to nurse them.",
-                "exp": 10,
-                "frequency": 4
-            },
-            {
-                "text": "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with {PRONOUN/n_c:0/poss} kits.",
-                "exp": 10,
-                "new_cat": [
-                    [
-                        "can_birth",
-                        "age:has_kits"
-                    ],
-                    [
-                        "litter",
-                        "parent:0",
-                        "status:newborn",
-                        "backstory:outsider_roots2"
-                    ]
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "p_l follows the strange sounds on the wind and finds the bodies of a(n) unknown queen with their kits slowly going cold. r_c goes back to camp to find help to bring their bodies back to camp to pay respects and bury them.",
-                "exp": 0,
-                "outsider_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "text": "null, ",
-                "exp": 0,
-                "outsider_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_success_outcomes": [
-            {
-                "text": "null, ",
-                "exp": 10,
-                "outsider_rep": -2,
-                "frequency": 4
-            }
-        ]
-    },
-    {
         "patrol_id": "wtlnd_med_dwindleherbsgathering1",
         "biome": [
             "wetlands"
@@ -269,12 +192,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "trust",
+                            "like",
                             "respect"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat felt more confident in each other after gathering herbs together."
+                            "cats_from": "to_cat and from_cat had a productive time searching an island in the swamp for herbs."
                         }
                     }
                 ],
@@ -301,7 +224,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed a friendly competition while gathering herbs."
+                            "cats_from": "to_cat and from_cat had fun during an impromptu herb-gathering competition."
                         }
                     }
                 ],
@@ -327,7 +250,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were short with each other after failing to gathering any herbs."
+                            "cats_from": "to_cat and from_cat became irritated with each other after a fruitless herb-gathering patrol."
                         }
                     }
                 ],

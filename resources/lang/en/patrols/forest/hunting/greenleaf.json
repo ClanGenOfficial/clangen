@@ -448,7 +448,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred after falling from a tree.",
-                    "death": "m_c died after falling from a tree while hunting."
+                    "death": "m_c died from {PRONOUN/m_c/poss} broken bone after falling from a tree while hunting."
                 },
                 "relationships": [
                     {
@@ -648,8 +648,7 @@
                         "injuries": [
                             "minor_injury",
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -1294,8 +1293,7 @@
                             "sprain",
                             "sore",
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2307,8 +2305,7 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "prey": [
@@ -2408,12 +2405,11 @@
                         ],
                         "injuries": [
                             "hot_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "death": "This cat died from heat stroke."
+                    "death": "m_c died from heat stroke."
                 },
                 "prey": [
                     "very_small"
@@ -2489,7 +2485,12 @@
                             "burn",
                             "non_lethal"
                         ],
-                        "scars": []
+                        "scars": [
+                            "BURNBELLY",
+                            "BURNPAWS",
+                            "BURNRUMP",
+                            "BURNTAIL"
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2651,9 +2652,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2683,9 +2681,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2881,9 +2876,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2913,9 +2905,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -3032,8 +3021,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "prey": [
@@ -3086,9 +3074,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -3129,9 +3114,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -3759,8 +3741,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -3784,8 +3765,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -3877,8 +3857,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -3902,8 +3881,7 @@
                         ],
                         "injuries": [
                             "small cut"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
             "relationships": [
@@ -4003,8 +3981,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4

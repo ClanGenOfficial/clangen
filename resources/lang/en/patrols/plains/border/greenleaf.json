@@ -742,9 +742,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     },
                     {
@@ -753,8 +750,7 @@
                         ],
                         "injuries": [
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "dead_cats": [
@@ -800,9 +796,6 @@
                         "injuries": [
                             "minor_injury",
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -933,15 +926,12 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "scar": "m_c was scarred defending the Clan against a coyote.",
+                    "death": "m_c died of injuries inflicted by a coyote."
                 },
                 "relationships": [
                     {
@@ -1137,16 +1127,12 @@
                         ],
                         "injuries": [
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": ["r_c"],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1251,17 +1237,13 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "bite-wound"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     },
                     {
                         "cats": ["r_c"],
                         "injuries": [
                             "blood loss"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1503,9 +1485,6 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1539,9 +1518,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     },
                     {
@@ -1550,8 +1526,7 @@
                         ],
                         "injuries": [
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "dead_cats": [
@@ -1597,9 +1572,6 @@
                         "injuries": [
                             "minor_injury",
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1714,15 +1686,12 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "death": "m_c died of injuries inflicted by a coyote."
                 },
                 "relationships": [
                     {
@@ -2051,15 +2020,12 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was injured from bounding up to an elk calf after a dare from fellow apprentices.",
-                    "death": "m_c provoked an elk calf and the wounds gotten from the experience eventually killed {PRONOUN/m_c/object}."
+                    "scar": "m_c was scarred from bounding up to an elk calf after a dare from fellow apprentices.",
+                    "death": "m_c provoked an elk calf, and the wounds gotten from the experience eventually killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -2086,22 +2052,19 @@
                         "cats": ["app1"],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": ["app1"],
                         "injuries": [
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": ["app1"],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2134,9 +2097,6 @@
                         "injuries": [
                             "claw-wound",
                             "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKSIDE"
                         ]
                     }
                 ],
@@ -2193,9 +2153,6 @@
                         "injuries": [
                             "claw-wound",
                             "beak_bite"
-                        ],
-                        "scars": [
-                            "BEAKSIDE"
                         ]
                     }
                 ],
@@ -2258,12 +2215,11 @@
                         "cats": ["patrol"],
                         "injuries": [
                             "dehydrated"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "death": "m_c died from overheating on a patrol."
+                    "death": "m_c died after overheating on a patrol."
                 },
                 "relationships": [
                     {
@@ -2292,12 +2248,11 @@
                         ],
                         "injuries": [
                             "hot_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "death": "m_c died from overheating on a patrol."
+                    "death": "m_c died after overheating on a patrol."
                 },
                 "relationships": [
                     {
@@ -2327,9 +2282,6 @@
                         "cats": ["app1"],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     },
                     {
@@ -2338,18 +2290,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     },
                     {
                         "cats": ["app1"],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     },
                     {
@@ -2358,9 +2304,6 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],

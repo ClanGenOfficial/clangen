@@ -406,15 +406,12 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c was scarred by a rattlesnake.",
-                    "death": "r_c succumbed to a rattlesnake bite."
+                    "scar": "m_c was scarred by a rattlesnake.",
+                    "death": "m_c succumbed to a rattlesnake bite."
                 },
                 "relationships": [
                     {
@@ -694,13 +691,13 @@
                             "burn"
                         ],
                         "scars": [
-                            "BURNRUMP",
+                            "BURNBELLY",
                             "BURNPAWS"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred by the poison of the death tree.",
+                    "scar": "m_c was scarred by the poison of the death tree.",
                     "death": "m_c died from burns caused by the poison of the death tree."
                 },
                 "relationships": [

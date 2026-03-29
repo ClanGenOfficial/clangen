@@ -7547,7 +7547,7 @@
     "season": ["any"],
     "sub_type": ["murder"],
     "tags": [],
-    "frequency": 2,
+    "frequency": 1,
     "event_text": "r_c meets with a rogue named n_c:0 on the border. A quarter-moon later, m_c turns up dead along the border, n_c:0's scent on {PRONOUN/m_c/poss} cold body.",
     "m_c": {
         "status": [
@@ -7567,7 +7567,7 @@
     "history": [
         {
             "cats": ["m_c"],
-            "death": "m_c was murdered by a rogue named n_c:0, hired by r_c."
+            "death": "m_c was murdered by a rogue hired by r_c."
         }
     ],
     "relationships": [
@@ -7627,7 +7627,7 @@
     "history": [
         {
             "cats": ["m_c"],
-            "death": "m_c died when a rogue named n_c:0 attacked {PRONOUN/m_c/object} on r_c's orders"
+            "death": "m_c died when a rogue attacked {PRONOUN/m_c/object} on r_c's orders"
         }
     ],
     "relationships": [
@@ -7685,7 +7685,7 @@
     "history": [
         {
             "cats": ["m_c"],
-            "death": "m_c was murdered by a rogue named n_c:0, hired by r_c."
+            "death": "m_c was murdered by a rogue hired by r_c."
         }
     ],
     "relationships": [
@@ -7729,7 +7729,7 @@
     "season": ["any"],
     "sub_type": ["murder"],
     "tags": [],
-    "frequency": 4,
+    "frequency": 1,
     "event_text": "r_c promises n_c:0 a new beginning in c_n... at a price paid in blood. Within the moon, m_c is dead and r_c vouches for n_c:0 to join c_n.",
     "m_c": {
         "status": [
@@ -7749,7 +7749,7 @@
     "history": [
         {
             "cats": ["m_c"],
-            "death": "m_c was murdered by a rogue named n_c:0, hired by r_c in exchange for a place in the Clan."
+            "death": "m_c was murdered by a rogue hired by r_c in exchange for a place in the Clan."
         }
     ],
     "relationships": [

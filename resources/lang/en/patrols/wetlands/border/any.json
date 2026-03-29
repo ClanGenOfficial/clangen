@@ -1762,6 +1762,7 @@
                     "STORY,1",
                     "SPEAKER,1"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1787,6 +1788,7 @@
                     "loving",
                     "confident"
                 ],
+                "can_have_stat": ["r_c"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -2131,13 +2133,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "death": "m_c fell in battle with a red fox."
+                    "death": "m_c died of injuries inflicted by a red vixen."
                 },
                 "relationships": [
                     {
@@ -2160,13 +2161,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "death": "m_c fell in battle with a red fox."
+                    "death": "m_c died of injuries inflicted by a red vixen."
                 },
                 "relationships": [
                     {
@@ -2290,11 +2290,13 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a fight with a gray vixen.",
+                    "death": "m_c died of injuries inflicted by a gray vixen."
+                },
                 "frequency": 2
             },
             {
@@ -2454,11 +2456,13 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fight with a gray vixen." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a fight with a gray vixen.",
+                    "death": "m_c died of injuries inflicted by a gray vixen."
+                },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],

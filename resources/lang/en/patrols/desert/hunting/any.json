@@ -846,8 +846,7 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "prey": ["very_small"],
@@ -1031,14 +1030,12 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by a kit fox."
+                    "scar": "m_c was scarred by a kit fox.",
+                    "death": "m_c died of injuries inflicted by a kit fox."
                 },
                 "relationships": [
                     {
@@ -1180,13 +1177,13 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fight with a kit fox." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a fight with a kit fox.",
+                    "death": "m_c died of injuries inflicted by a kit fox."
+                },
                 "prey": ["very_small"],
                 "relationships": [
                 {
@@ -1823,9 +1820,6 @@
                             "bite-wound",
                             "poisoned"
                         ],
-                        "scars": [
-                            "SNAKETWO"
-                        ],
                         "no_results": false
                         }
                     ],
@@ -1940,8 +1934,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -2172,8 +2165,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -2990,8 +2982,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["dislocated joint"],
-                        "scars": []
+                        "injuries": ["dislocated joint"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -3067,8 +3058,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["severe headache"],
-                        "scars": []
+                        "injuries": ["severe headache"]
                     }
                 ],
                 "relationships": [
@@ -3156,8 +3146,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -3404,8 +3393,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["dislocated joint"],
-                        "scars": []
+                        "injuries": ["dislocated joint"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -3481,8 +3469,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]

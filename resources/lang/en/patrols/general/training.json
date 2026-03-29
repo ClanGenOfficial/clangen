@@ -1283,16 +1283,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
@@ -1306,16 +1307,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
@@ -1340,8 +1342,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -1349,7 +1351,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
@@ -1741,8 +1744,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -4844,8 +4846,7 @@
                         "cats": ["p_l"],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -4922,8 +4923,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -5326,8 +5326,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -5684,8 +5683,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -5700,8 +5698,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4,
@@ -5986,8 +5983,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4,
@@ -6451,8 +6447,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -6704,8 +6699,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -6957,8 +6951,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -7241,8 +7234,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -9925,14 +9917,12 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "broken back"
-                        ],
-                        "scars": [
-                            "TAILBASE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat's back was broken after attempting to enter the forbidden tunnels."
+                    "scar": "m_c's back was broken after attempting to enter the forbidden tunnels.",
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} broken back after attempting to enter the forbidden tunnels."
                 },
                 "relationships": [
                     {
@@ -10320,8 +10310,7 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -10541,8 +10530,7 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -11322,8 +11310,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -11876,8 +11863,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -11917,8 +11903,7 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -14980,15 +14965,12 @@
                         "cats": ["patrol"],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from when {PRONOUN/m_c/subject} fought with a Clanmate as an apprentice.",
-                    "death": "m_c died from fighting with a Clanmate as an apprentice."
+                    "death": "m_c died from injuries inflicted by another apprentice."
                 },
                 "relationships": [
                     {
@@ -15774,8 +15756,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -18528,8 +18509,7 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -18625,8 +18605,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {

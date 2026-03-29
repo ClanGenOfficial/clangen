@@ -163,7 +163,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a porcupine while on patrol.",
-                    "death": "m_c was killed by an angry porcupine while on patrol."
+                    "death": "m_c died after being quilled by a porcupine on patrol."
                 },
                 "frequency": 3
             }
@@ -309,7 +309,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a porcupine while on patrol.",
-                    "death": "m_c was killed by an angry porcupine while on patrol."
+                    "death": "m_c died after being quilled by a porcupine on patrol."
                 },
                 "frequency": 3
             }
@@ -677,15 +677,9 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": [
-                            "TOETRAP"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c gained a scar after trying to chase some squirrels up a tree."
-                },
                 "prey": [
                     "very_small"
                 ],
@@ -860,15 +854,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
-                    "death": "m_c was killed by a coyote protecting its scavenged meal."
+                    "death": "m_c died from injuries inflicted by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             }
@@ -1017,15 +1008,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a coyote protecting its scavenged meal.",
-                    "death": "m_c was killed by a coyote protecting its scavenged meal."
+                    "death": "m_c died from injuries inflicted by a coyote protecting its scavenged meal."
                 },
                 "frequency": 3
             }
@@ -1269,15 +1257,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a wolf protecting its scavenged meal.",
-                    "death": "m_c was killed by a wolf protecting its meal."
+                    "death": "m_c died from injuries inflicted by a wolf protecting its meal."
                 },
                 "frequency": 3
             }
@@ -2107,9 +2092,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2260,8 +2242,7 @@
                         ],
                         "injuries": [
                             "torn pelt"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3,
@@ -4275,8 +4256,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": { 
@@ -4313,8 +4293,7 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": { 
@@ -4764,8 +4743,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -4996,8 +4974,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -5814,8 +5791,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["dislocated joint"],
-                        "scars": []
+                        "injuries": ["dislocated joint"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -5891,8 +5867,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["severe headache"],
-                        "scars": []
+                        "injuries": ["severe headache"]
                     }
                 ],
                 "relationships": [
@@ -5980,8 +5955,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -6228,8 +6202,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["dislocated joint"],
-                        "scars": []
+                        "injuries": ["dislocated joint"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -6305,8 +6278,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]

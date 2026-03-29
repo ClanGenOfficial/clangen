@@ -397,14 +397,12 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c was scarred by a rattlesnake."
+                    "scar": "m_c was scarred by a rattlesnake.",
+                    "death": "m_c died after being bitten by a rattlesnake on patrol."
                 },
                 "relationships": [
                     {
@@ -608,8 +606,7 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3

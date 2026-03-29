@@ -847,7 +847,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         return True
 
     if len(group) == 1:
-        raise ValueError("Relationship constraints provided but only one cat in group!")
+        return False
 
     exclusionary_values = []
     inclusionary_values = []

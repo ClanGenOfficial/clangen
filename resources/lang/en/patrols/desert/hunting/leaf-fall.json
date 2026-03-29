@@ -158,8 +158,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "death": "This cat died from heat stroke."
+                    "death": "m_c got heat exhaustion on a patrol and never recovered."
                 },
                 "frequency": 3
             }

@@ -52,20 +52,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's story about how, in a distant land, the sun brings relief and growth instead of searing death."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -93,20 +83,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat enjoyed to_cat's tales of distant Clans for whom greenleaf is the season of plenty."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -123,8 +103,7 @@
                         ],
                         "injuries": [
                             "dehydrated"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
