@@ -710,7 +710,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws. As the adult Twolegs join their kits, the rest of the patrol sprints down to the pelt and snatch as much Twoleg food as they can. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches, {PRONOUN/r_c/subject} and the patrol taste all sorts of mysteries - creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque.",
+            "text": "r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws. As the adult Twolegs join their kits, the rest of the patrol sprints over to snatch as much Twoleg food as they can. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches, {PRONOUN/r_c/subject} and the patrol taste all sorts of mysteries - creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque.",
             "exp": 30,
             "frequency": 3,
             "prey": ["medium"],
@@ -760,7 +760,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "As the patrol talks strategy, their gazes slowly turn to s_c. s_c growls - no, no chance. But it's decided. As the patrol crouches, ready to strike as soon as the Twolegs are distracted, s_c bushes {PRONOUN/s_c/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c/poss} tail whipping in discomfort as they run their smooth paws over {PRONOUN/s_c/poss} bristling fur - and they certainly don't notice the rest of the patrol making off with their feast.",
+            "text": "As the patrol talks strategy, their gazes slowly turn to s_c. s_c growls - no, no chance. But it's decided. As the patrol crouches, ready to strike as soon as the Twolegs are distracted, s_c bushes {PRONOUN/s_c/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c/poss} discomfort as they run their smooth paws over {PRONOUN/s_c/poss} bristling fur - and they certainly don't notice the rest of the patrol making off with their feast.",
             "exp": 30,
             "frequency": 3,
             "prey": ["large"],
@@ -793,7 +793,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c can steal whatever smells like food - but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed.",
+            "text": "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c can steal the Twoleg food - but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed.",
             "exp": 0,
             "frequency": 3,
             "art": "mtn_hunt_kea_leafbare_parentchildapprentice1"
@@ -805,7 +805,7 @@
             "art": "cat_running_two"
         },
         {
-            "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass to paw through their haul. r_c dabs {PRONOUN/r_c/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Back at the camp, r_c feels the consequences of tasting mysterious Twoleg food.",
+            "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass with their haul. r_c dabs {PRONOUN/r_c/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Back at the camp, r_c feels the consequences of tasting mysterious Twoleg food.",
             "exp": 0,
             "frequency": 2,
             "prey": ["very_small"],
@@ -860,7 +860,7 @@
             "art": "gen_angry_cat_warrior"
         },
         {
-            "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/take/takes} a swipe. One adult Twoleg lets out a deep cry of anger and runs over to where s_c is facing off with a wailing Twoleg kit. s_c stands {PRONOUN/s_c/poss} ground, but the adult Twoleg grasps {PRONOUN/s_c/object} by the scruff and throws {PRONOUN/s_c/object} away from their kit. s_c lands heavily.",
+            "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/take/takes} a swipe. One adult Twoleg lets out a deep cry of anger and runs over to their wailing Twoleg kit. s_c stands {PRONOUN/s_c/poss} ground, but the adult Twoleg grasps {PRONOUN/s_c/object} by the scruff and throws {PRONOUN/s_c/object} away from their kit. s_c lands heavily.",
             "exp": 0,
             "frequency": 1,
             "stat_trait": ["fierce", "bloodthirsty", "vengeful", "arrogant", "cold", "grumpy"],
@@ -877,7 +877,7 @@
             "art": "gen_angry_cat_warrior"
         },
         {
-            "text": "The patrol has arrived too late - the Twolegs pack their food back into the woven nest and gather up their pelt. s_c loses {PRONOUN/s_c/poss} head over the scent of the food and follows the Twolegs back to their monster, ignoring p_l's order to return to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c leaps into the monster after it! The belly snaps shut, and the patrol watches in horror as the monster takes off with their trapped Clanmate.",
+            "text": "The patrol has arrived too late - the Twolegs pack their food back into the woven nest and gather up their pelt. s_c follows the Twolegs back to their monster, ignoring p_l's order to return to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c leaps into the monster after it! The belly snaps shut, and the patrol watches in horror as the monster takes off with their trapped Clanmate.",
             "exp": 0,
             "frequency": 1,
             "stat_trait": ["fierce", "arrogant", "ambitious", "competitive", "rebellious", "confident", "adventurous", "daring", "bold", "shameless", "troublesome"],
