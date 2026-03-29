@@ -1090,17 +1090,17 @@ def change_relationship_values(
                 else:
                     processed_log = log
 
-                if from_cat in created_rel_logs:
-                    created_rel_logs[from_cat] = "<br><br>".join(
-                        [created_rel_logs[from_cat], processed_log]
+                if single_cat_from in created_rel_logs:
+                    created_rel_logs[single_cat_from] = "<br><br>".join(
+                        [created_rel_logs[single_cat_from], processed_log]
                     )
                 else:
-                    created_rel_logs.update({from_cat: processed_log})
+                    created_rel_logs.update({single_cat_from: processed_log})
 
                 log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
-                    name=str(from_cat.name),
-                    count=from_cat.moons,
+                    name=str(single_cat_from.name),
+                    count=single_cat_from.moons,
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)
