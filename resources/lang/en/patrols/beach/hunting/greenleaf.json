@@ -631,7 +631,7 @@
     "decline_text": "p_l decides messing with Twolegs isn't worth the trouble. c_n should have no trouble with traditional hunting in greenleaf.",
     "success_outcomes": [
         {
-            "text": "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c snatches up the prize - a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever know they were there.",
+            "text": "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c snatches up the prize - a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever learn they were there.",
             "exp": 30,
             "frequency": 4,
             "prey": ["medium"],
@@ -670,7 +670,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "The Twolegs leave their white-and-red pelt to return to their monster, and the patrol strikes. p_l keeps watch while the others snatch as much of the Twolegs' feast as they can. When they return to the tussock, hearts hammering and eyes wide, they sort through their mysterious haul. r_c likes the salty taste of the orange crackly triangles, whereas p_l doesn't find the miniature red, green, and yellow fresh-kill that get stuck in {PRONOUN/p_l/poss} teeth very flavorful.",
+            "text": "The Twolegs leave their white-and-red pelt to return to their monster, and the patrol strikes. p_l keeps watch while the others snatch the Twolegs' feast. When they return to the tussock, eyes wide, they sort through their mysterious haul. r_c likes the salty taste of the orange crackly triangles, whereas p_l doesn't find the miniature red, green, and yellow fresh-kill that get stuck in {PRONOUN/p_l/poss} teeth very flavorful.",
             "exp": 30,
             "frequency": 3,
             "prey": ["medium"],
@@ -882,6 +882,27 @@
             "frequency": 1,
             "stat_trait": ["fierce", "arrogant", "ambitious", "competitive", "rebellious", "confident", "adventurous", "daring", "bold", "shameless", "troublesome"],
             "lost_cats": ["s_c"],
+            "art": "gen_bord_rescue"
+        },
+        {
+            "text": "When r_c suggests trying to distract the Twolegs and steal their food, s_c scolds {PRONOUN/r_c/object}. The presence of Twolegs on their territory is a threat, not an opportunity. They should return to camp at once and report this.",
+            "exp": 0,
+            "can_have_stat": ["p_l"],
+            "frequency": 4,
+            "stat_trait": ["strict", "righteous"],
+            "relationships": [
+                {
+                    "cats_from": ["p_l"],
+                    "cats_to": ["r_c"],
+                    "mutual": true,
+                    "values": ["respect", "trust"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat was displeased that to_cat suggested stealing food from Twolegs.",
+                        "cats_to": "to_cat was annoyed that from_cat shot down {PRONOUN/to_cat/poss} suggestion to steal food from Twolegs."
+                    }
+                }
+            ],
             "art": "gen_bord_rescue"
         }
     ]
