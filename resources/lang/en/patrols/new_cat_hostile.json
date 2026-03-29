@@ -634,7 +634,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol approaches the cat and sees some signs of life. The patrol, after some hesitation, decides to bring the cat back to camp so that they can be treated by the medicine cat. The cat thanks them profusely and promises to repay them by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can.",
+                "text": "The patrol approaches the cat and sees some signs of life. The patrol, after some hesitation, decides to bring the cat back to camp so that {PRONOUN/n_c:0/subject} can be treated by the medicine cat. The cat thanks them profusely and promises to repay them by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can.",
                 "exp": 10,
                 "injury": [
                     {
@@ -651,6 +651,9 @@
                     "scar": "m_c was scarred after being hit by a monster on the Thunderpath.",
                     "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster on the Thunderpath."
                 },
+                "new_cat": [
+                    ["loner", "kittypet", "rogue"]
+                ],
                 "relationships": [
                     {
                         "cats_from": ["n_c:0"],
@@ -733,7 +736,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l approaches the cat and sees some signs of life. After some hesitation, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to bring the cat back to camp so that they can be treated by the medicine cat. The cat thanks {PRONOUN/p_l/object} profusely and promises to repay {PRONOUN/p_l/object} by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can.",
+                "text": "p_l approaches the cat and sees some signs of life. After some hesitation, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to bring the cat back to camp so that {PRONOUN/n_c:0/subject} can be treated by the medicine cat. The cat thanks {PRONOUN/p_l/object} profusely and promises to repay {PRONOUN/p_l/object} by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can.",
                 "exp": 10,
                 "injury": [
                     {
@@ -750,6 +753,9 @@
                     "scar": "m_c was scarred after being hit by a monster on the Thunderpath.",
                     "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster on the Thunderpath."
                 },
+                "new_cat": [
+                    ["loner", "kittypet", "rogue"]
+                ],
                 "relationships": [
                     {
                         "cats_from": ["n_c:0"],
