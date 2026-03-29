@@ -750,7 +750,7 @@
         },
         {
             "min_max_status": {"normal adult": [2, 2]},
-            "text": "r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws, running over. As the adult Twolegs join their kits, p_l sprints down to the white-and-red pelt and snatches something fishy. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches and the patrol returns to camp with their spoils, {PRONOUN/r_c/subject} and p_l wonder why Twolegs would put delicious tuna between two strange slabs of something that smells of wheat.",
+            "text": "r_c strolls down the beach, meowing sweetly. The Twolegs screech and run over, and p_l sprints down to the white-and-red pelt to snatch something fishy. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches and the patrol returns to camp with their spoils, {PRONOUN/r_c/subject} and p_l wonder why Twolegs would put delicious tuna between two strange slabs of something that smells of wheat.",
             "exp": 30,
             "frequency": 3,
             "prey": ["medium"],
@@ -770,7 +770,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws. As the adult Twolegs join their kits, the rest of the patrol sprints over to snatch as much Twoleg food as they can. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches and the patrol returns to camp, they share all sorts of mysteries with their Clanmates - creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque.",
+            "text": "r_c strolls down the beach, meowing sweetly. The Twolegs screech and run over, and the patrol snatches as much Twoleg food as they can. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches and the patrol returns to camp, they share all sorts of mysteries with their Clanmates - creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque.",
             "exp": 30,
             "frequency": 3,
             "prey": ["medium"],
@@ -860,7 +860,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "As the patrol talks strategy, their gazes slowly turn to s_c. s_c growls - no, no chance. But it's decided. As the patrol crouches, ready to strike as soon as the Twolegs are distracted, s_c bushes {PRONOUN/s_c/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c/poss} discomfort as they run their smooth paws over {PRONOUN/s_c/poss} bristling fur - and they certainly don't notice the rest of the patrol making off with their feast.",
+            "text": "As the patrol strategizes, they slowly turn to s_c. s_c growls - no, no chance. But it's decided. The patrol waits as s_c bushes {PRONOUN/s_c/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c/poss} discomfort as they run their smooth paws over {PRONOUN/s_c/poss} bristling fur - and they certainly don't notice the rest of the patrol making off with their feast.",
             "exp": 30,
             "frequency": 3,
             "prey": ["large"],
