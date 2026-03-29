@@ -690,7 +690,7 @@
         },
         {
             "min_max_status": {"normal adult": [2, 2]},
-            "text": "The Twolegs are about to dig into their feast when r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws, running over to stroke the kitty. As the adult Twolegs join their kits, wary of the mysterious r_c, p_l sprints down to the white-and-red pelt and snatches something that smells of fish. When r_c later extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches, {PRONOUN/r_c/subject} and p_l wonder why Twolegs would put delicious tuna between two strange slabs of something that smells of wheat.",
+            "text": "r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws, running over. As the adult Twolegs join their kits, p_l sprints down to the white-and-red pelt and snatches something fishy. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches, {PRONOUN/r_c/subject} and p_l wonder why Twolegs would put delicious tuna between two strange slabs of something that smells of wheat.",
             "exp": 30,
             "frequency": 3,
             "prey": ["medium"],
