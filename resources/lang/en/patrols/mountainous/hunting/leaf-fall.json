@@ -1370,7 +1370,236 @@
                 "frequency": 3
             }
         ]
+    },{
+    "patrol_id": "mtn_hunt_salmonrun",
+    "biome": ["mountainous"],
+    "season": ["leaf-fall"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "gen_bord_shortswim",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [2, 6]
     },
+    "frequency": 4,
+    "chance_of_success": 60,
+    "intro_text": "As the days grow shorter and the nights grow colder, p_l leads a patrol down to the foothills to partake in one of c_n's favorite annual hunting traditions: the salmon run.",
+    "decline_text": "When {PRONOUN/p_l/subject} {VERB/p_l/step/steps} out of camp, p_l sees the storm brewing on the horizon and thinks better of it.",
+    "success_outcomes": [
+        {
+            "min_max_status": {"normal adult": [2, 2]},
+            "text": "p_l crouches on one slick rock, almost nose-to-nose with the rushing rapids below. r_c takes the other side of the stream. Both cats narrow their eyes in concentration, ready, ready... p_l strikes as a salmon flips up out of the water, batting it to r_c, who kills it neatly. They continue all afternoon and bring home a sizeable haul.",
+            "exp": 20,
+            "frequency": 4,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["r_c"],
+                    "mutual": true,
+                    "values": ["trust"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat and to_cat worked together to catch fish during a salmon run."
+                    }
+                }
+            ],
+            "art": "gen_hunt_fish"
+        },
+        {
+            "min_max_status": {"normal adult": [3, 6]},
+            "text": "p_l leads the patrol to a fast-flowing stream, and the cats position themselves along the bank. When the first salmon leaps from the waves, r_c is there with a lightning-fast paw. Another comes, and p_l slaps it downstream, where {PRONOUN/p_l/poss} Clanmate is ready. With enough cats to react to any salmon that pops out of the current, the patrol returns to camp with mouths full of fish.",
+            "exp": 20,
+            "frequency": 4,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat and to_cat worked together to catch fish during a salmon run."
+                    }
+                }
+            ],
+            "art": "gen_hunt_fish"
+        },
+        {
+            "min_max_status": {"apprentice": [1, 1]},
+            "text": "p_l leads the patrol to a fast-flowing stream and instructs app1 to sit at {PRONOUN/p_l/poss} side and watch {PRONOUN/p_l/poss} movements. app1 is astonished when a salmon leaps from the waves, its silver body thrashing as it fights the current. p_l slaps it out of the air and knocks it into r_c's waiting paws on the other bank. app1 is crouched and ready when the next salmon comes, and the patrol returns to camp laden with mouth-watering salmon.",
+            "exp": 30,
+            "frequency": 4,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat and to_cat worked together to catch fish during a salmon run."
+                    }
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1"],
+                    "mutual": true,
+                    "values": ["comfort", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "p_l taught app1 how to catch salmon as part of a team in a salmon run."
+                    }
+                }
+            ],
+            "art": "bch_train_session1"
+        },
+        {
+            "min_max_status": {"apprentice": [2, 4]},
+            "text": "p_l leads the patrol to a fast-flowing stream and instructs the apprentices to sit at {PRONOUN/p_l/poss} side and watch {PRONOUN/p_l/poss} movements. When a salmon leaps from the waves, p_l slaps it out of the air, knocking it into r_c's waiting paws on the other bank. app1 and app2 catch on quickly, and app2 knocks the next salmon to app1. The patrol returns to camp laden with mouth-watering salmon.",
+            "exp": 30,
+            "frequency": 4,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat and to_cat worked together to catch fish during a salmon run."
+                    }
+                },
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["app1", "app2", "app3", "app4"],
+                    "mutual": true,
+                    "values": ["comfort", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "to_cat taught from_cat how to work in a team to catch salmon in a salmon run."
+                    }
+                }
+            ],
+            "art": "bch_train_session1"
+        },
+        {
+            "text": "When the stream comes into view, s_c is the first to the streambank. {PRONOUN/s_c/subject/CAP} {VERB/s_c/step/steps} onto the slick rocks poking up above the current, {PRONOUN/s_c/poss} footing sure. When the first salmon shoots up from the water, s_c is perfectly positioned to pick it off. With {PRONOUN/s_c/poss} confidence in the water, the patrol brings home a plentiful haul of salmon.",
+            "exp": 25,
+            "frequency": 4,
+            "stat_skill": ["SWIMMER,1"],
+            "prey": ["large"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat was impressed by to_cat's confidence in the water when the patrol fished during a salmon run."
+                    }
+                }
+            ],
+            "art": "gen_train_soggykitty_happy_warrior"
+        },
+        {
+            "text": "s_c has been waiting all year for this moment! p_l leads the way to the stream, and s_c bounds to the water's edge, crouched and ready. When the first salmon flies above the waves, {PRONOUN/s_c/poss} sharp reflexes and hunter's instinct make dispatching it a breeze. The patrol passes an exciting afternoon of salmon-catching and returns home with plenty of fish.",
+            "exp": 25,
+            "frequency": 4,
+            "stat_skill": ["HUNTER,1"],
+            "prey": ["large"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "from_cat was impressed by to_cat's reflexes when the patrol fished during a salmon run."
+                    }
+                }
+            ],
+            "art": "gen_hunt_fish"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l leads the way to the stream. The patrol's excitement wanes as they wait... and wait... for a salmon to appear. In past seasons, this stream has been used as a migratory channel, but p_l wonders if that has changed this year. Whatever the case, this salmon run will have to be canceled, because the salmon certainly aren't running.",
+            "exp": 0,
+            "frequency": 4,
+            "art": "gen_warrior_crouching_perplexed"
+        },
+        {
+            "text": "p_l leads the way to the stream. s_c, in {PRONOUN/s_c/poss} eagerness, leaps out onto a rock in the middle of the fast-flowing current. The spray from the rapids has made the rock much more slippery than it appears, and s_c plunges into the water with a yowl of fear. p_l leaps in after {PRONOUN/s_c/object}, hauling {PRONOUN/s_c/object} out of the shallows. s_c coughs, water clogging {PRONOUN/s_c/poss} throat. p_l forgoes the hunt in favor of helping s_c back to camp.",
+            "exp": 0,
+            "frequency": 2,
+            "stat_trait": ["-careful"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10,
+                    "log": {
+                        "cats_from": "from_cat was frustrated that to_cat's carelessness ruined a planned hunt."
+                    }
+                }
+            ],
+            "injury": [
+                {
+                    "cats": ["s_c"],
+                    "injuries": ["water in their lungs"]
+                }
+            ],
+            "art": "gen_fallenwater_cat2"
+        },
+        {
+            "text": "When s_c reaches the stream, {PRONOUN/s_c/subject} eyes the speed of the current and the spray-slick rocks doubtfully. Perhaps a late greenleaf storm has swelled the stream, or perhaps the water is running unusually high today. Whatever it may be, s_c judges the stream too dangerous for hunting today.",
+            "exp": 0,
+            "frequency": 4,
+            "can_have_stat": ["p_l"],
+            "stat_trait": ["careful", "nervous", "insecure", "responsible", "strict", "gloomy", "compassionate", "thoughtful", "wise"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol", "high_lawful", "low_aggress"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat was glad to_cat decided a fast-flowing stream was too dangerous to fish in."
+                    }
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol", "low_lawful", "high_aggress"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": -10,
+                    "log": {
+                        "cats_from": "from_cat was annoyed to_cat decided a fast-flowing stream was too dangerous to fish in."
+                    }
+                }
+            ],
+            "art": "gen_warrior_perplexed"
+        },
+        {
+            "text": "p_l leads the way to the stream, and the cats position themselves along the bank. When the first salmon appears, p_l bats it into r_c's paws. The hunt continues all afternoon. As daylight wanes, a salmon pops up right in front of r_c. {PRONOUN/r_c/poss/CAP} caution faded after such an easy hunt, r_c leaps, snatching the salmon out of the air... and launching {PRONOUN/r_c/self} into the waves. r_c's yowl of fear is cut short when the relentless current flings {PRONOUN/r_c/object} into the rocks.",
+            "exp": 0,
+            "frequency": 1,
+            "dead_cats": ["r_c"],
+            "prey": ["small"],
+            "art": "gen_drowning_warrior"
+        }
+    ]
+},
     {
     	"patrol_id": "mtn_hunt_pipistrellebats1",
     	"biome": ["mountainous"],

@@ -151,13 +151,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death after hunting in a storm."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after hunting in a storm."
                 },
                 "relationships": [
                     {
@@ -251,13 +250,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death after hunting in a storm."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after hunting in a storm."
                 },
                 "frequency": 4
             }
@@ -405,13 +403,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death while hunting in a storm."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after hunting in a storm."
                 },
                 "frequency": 4
             }
@@ -1446,13 +1443,12 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "broken bone"
-                        ],
-                        "scars": []
+                            "blunt_force_injury"
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred after falling from a tree.",
+                    "scar": "m_c was scarred after falling from a tree.",
                     "death": "m_c died after falling from a tree while hunting."
                 },
                 "relationships": [
@@ -1589,12 +1585,11 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "death": "This cat froze to death."
+                    "death": "m_c caught a chill while hunting and couldn't recover."
                 },
                 "relationships": [
                     {
@@ -1751,13 +1746,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c caught a chill while hunting in leaf-bare.",
-                    "death": "m_c froze to death after hunting in leaf-bare."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after hunting in a storm."
                 },
                 "prey": [
                     "very_small"
@@ -2134,7 +2128,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2259,7 +2255,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2285,7 +2283,9 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -3051,9 +3051,6 @@
                         "injuries": [
                             "minor_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -3078,9 +3075,6 @@
                         "injuries": [
                             "minor_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
@@ -3213,15 +3207,12 @@
                         "injuries": [
                             "minor_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-                    "death": "m_c froze to death, caught in a snowstorm while hunting by themselves."
+                    "death": "m_c died of frostbite after hunting alone in leaf-bare."
                 },
                 "frequency": 4
             },
@@ -3255,15 +3246,12 @@
                         "injuries": [
                             "minor_injury",
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
-                    "death": "m_c froze to death, caught in a snowstorm while hunting by {PRONOUN/app1/self}."
+                    "death": "m_c died of frostbite after hunting alone in leaf-bare."
                 },
                 "frequency": 4
             }
@@ -3788,7 +3776,10 @@
                             "scrapes",
                             "torn ear"
                         ],
-                        "scars": []
+                        "scars": [
+                            "LEFTEAR",
+                            "RIGHTEAR"
+                        ]
                     }
                 ],
                 "history_text": {
@@ -4253,13 +4244,12 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
-                    "death": "The viewpoint c_n thought was safe from avalanches... was not."
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after falling in a freezing stream."
                 },
                 "frequency": 4
             }

@@ -406,9 +406,6 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
@@ -428,7 +425,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to stop a rattlesnake from biting m_c."
+                            "cats_from": "from_cat and to_cat were unable to stop a rattlesnake from biting r_c."
                         }
                     }
                 ],
@@ -694,13 +691,13 @@
                             "burn"
                         ],
                         "scars": [
-                            "BURNRUMP",
+                            "BURNBELLY",
                             "BURNPAWS"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred by the poison of the death tree.",
+                    "scar": "m_c was scarred by the poison of the death tree.",
                     "death": "m_c died from burns caused by the poison of the death tree."
                 },
                 "relationships": [

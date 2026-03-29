@@ -1,0 +1,12 @@
+{
+    "spritesheet": "patches_points",
+    "sprite_list": [
+        [
+            "COLOURPOINT",
+            "RAGDOLL",
+            "SEPIAPOINT",
+            "MINKPOINT",
+            "SEALPOINT"
+        ]
+    ]
+}

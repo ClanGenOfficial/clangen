@@ -127,9 +127,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
@@ -409,9 +406,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
@@ -636,13 +630,12 @@
                         "injuries": [
                             "blunt_force_injury",
                             "water in their lungs"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured in a flood.",
-                    "death": "m_c was drowned by floodwaters."
+                    "death": "m_c died of injuries sustained in a flood."
                 },
                 "frequency": 4
             },
@@ -658,12 +651,12 @@
                         "injuries": [
                             "blunt_force_injury",
                             "water in their lungs"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was injured in a flood."
+                    "scar": "m_c was injured in a flood.",
+                    "death": "m_c died of injuries sustained in a flood."
                 },
                 "frequency": 4
             }
@@ -855,9 +848,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -994,9 +984,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -1184,9 +1171,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -1329,9 +1313,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -1885,13 +1866,12 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["FACE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a vixen.",
-                    "death": "m_c fell in a battle with a vixen."
+                    "death": "m_c died of injuries inflicted by a vixen."
                 },
                 "relationships": [
                     {
@@ -1945,13 +1925,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["THREE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fight with a red vixen.",
-                    "death": "m_c fell in battle with a red fox."
+                    "death": "m_c died of injuries inflicted by a red vixen."
                 },
                 "relationships": [
                     {
@@ -2075,13 +2054,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEGBITE"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a gray vixen.",
-                    "death": "m_c died after a battle with a gray vixen."
+                    "death": "m_c died of injuries inflicted by a gray vixen."
                 }
             },
             {
@@ -2223,13 +2201,12 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEGBITE"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "history_text": { 
                     "scar": "m_c carries a scar from a fight with a gray vixen.",
-                    "death": "m_c died after a battle with a gray vixen."
+                    "death": "m_c died from injuries inflicted by a gray vixen."
                 },
                 "relationships": [
                     {

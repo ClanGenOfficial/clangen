@@ -22,6 +22,13 @@ EVENTS_PER_PAGE = 10
 
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
+CAMPS: dict = {
+    "Forest": ["Classic", "Gully", "Grotto", "Lakeside"],
+    "Mountainous": ["Cliff", "Cavern", "Crystal River", "Ruins"],
+    "Plains": ["Grasslands", "Tunnels", "Wastelands"],
+    "Beach": ["Tidepools", "Tidal Cave", "Shipwreck", "Fjord"],
+}
+
 SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
 SEASON_CALENDAR = [
     "Newleaf",

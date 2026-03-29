@@ -1,4 +1,4 @@
-# Adding Sprites
+# Modifying Sprites
 If you would like to add new collars, head to [Palette Maps](palette-maps.md) for more information.
 
 !!! important
@@ -34,16 +34,21 @@ If you have added your new sprite set to the end of a row, then you will locate 
 ### Individual DATA Sheet Information
 As mentioned, some DATA sheets contain more information than others. At it's most basic, a sheet will have a `spritesheet` string and a `sprite_list` that contains a list of lists. The more intricate aspects of certain DATA sheets is detailed below.
 
-| DATA sheet                   | `spritesheet`                          | `sprite_list`                                                                                                                                |
-|------------------------------|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `eye_sprite_data`            | List containing both eye spritesheets. | List containing dicts, each dict contains key:value pairs for `"NAME": "color category"`. Allowed colors are `yellow`, `green`, or `blue`.   |
-| `skin_sprite_data`           | Name of the spritesheet.               | List of lists containing name information.                                                                                                   |
-| `plant_sprite_data`          | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`.  |
-| `wild_sprite_data`           | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`.  |
-| `scar_sprite_data`           | Name of the spritesheet.               | List of lists containing name information.                                                                                                   |
-| `scar_missing_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                   |
-| `white_patches_sprite_data`  | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "white amount"`. Allowed white amounts are `little`, `mid`, `high`, `mostly`. |
-| `tortie_patches_sprite_data` | Name of the spritesheet.               | List of lists containing name information.                                                                                                   |
+| DATA sheet                           | `spritesheet`                          | `sprite_list`                                                                                                                               |
+|--------------------------------------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `eye_sprite_data`                    | List containing both eye spritesheets. | List containing dicts, each dict contains key:value pairs for `"NAME": "color category"`. Allowed colors are `yellow`, `green`, or `blue`.  |
+| `skin_sprite_data`                   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `plant_sprite_data`                  | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`. |
+| `wild_sprite_data`                   | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`. |
+| `scar_sprite_data`                   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `scar_missing_sprite_data`           | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_mostly_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_high_sprite_data`     | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_mid_sprite_data`      | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_little_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_vitiligo_sprite_data` | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `white_patches_points_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
+| `tortie_patches_sprite_data`         | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
 
 The pelt `DATA` sheet is particularly complex due to how integral it is to the multiple areas of the cat's sprite. Additions to this sheet should be discussed with senior contributors beforehand, as we are rather choose-y about adding new colors or patterns to the game.
 

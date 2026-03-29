@@ -406,15 +406,12 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a rattlesnake.",
-                    "death": "m_c died after succumbing to a rattlesnake's venom."
+                    "death": "m_c succumbed to a rattlesnake's venom."
                 },
                 "relationships": [
                     {
@@ -428,7 +425,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to stop a rattlesnake from biting m_c."
+                            "cats_from": "from_cat and to_cat were unable to stop a rattlesnake from biting r_c."
                         }
                     }
                 ],

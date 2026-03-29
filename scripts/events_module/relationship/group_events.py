@@ -116,26 +116,26 @@ class GroupEvents:
             chosen_interaction.intensity
         ]
 
-        if len(chosen_interaction.general_reaction) > 0:
-            # if there is a general reaction in the interaction, then use this
-            GroupEvents.influence_general_relationship(
-                amount, abbreviations_cat_id, chosen_interaction
-            )
-        else:
-            GroupEvents.influence_specific_relationships(
-                amount, abbreviations_cat_id, chosen_interaction
-            )
-
         # choose the interaction text and display
         interaction_str = choice(chosen_interaction.interactions)
         interaction_str = GroupEvents.prepare_text(
             interaction_str, abbreviations_cat_id
         )
-        # TODO: add the interaction to the relationship log?
 
         interaction_str = interaction_str + i18n.t(
             f"relationships.{inter_type}_postscript"
         )
+
+        if len(chosen_interaction.general_reaction) > 0:
+            # if there is a general reaction in the interaction, then use this
+            GroupEvents.influence_general_relationship(
+                amount, abbreviations_cat_id, chosen_interaction, interaction_str
+            )
+        else:
+            GroupEvents.influence_specific_relationships(
+                amount, abbreviations_cat_id, chosen_interaction, interaction_str
+            )
+
         ids = list(abbreviations_cat_id.values())
         relevant_event_tabs = ["relation", "interaction"]
         if chosen_interaction.get_injuries:
@@ -522,7 +522,7 @@ class GroupEvents:
 
     @staticmethod
     def influence_general_relationship(
-        amount, abbreviations_cat_id, chosen_interaction
+        amount, abbreviations_cat_id, chosen_interaction, log
     ):
         """
         Influence the relationship between all cats with the same amount, defined by the chosen group relationship.
@@ -544,18 +544,19 @@ class GroupEvents:
 
         abbreviations_cat = []
 
-        for cat in abbreviations_cat_id:
+        for cat in abbreviations_cat_id.values():
             abbreviations_cat.append(Cat.fetch_cat(cat))
         for inter_cat in abbreviations_cat:
             change_relationship_values(
                 cats_from=[inter_cat],
                 cats_to=list(abbreviations_cat),
+                log=log,
                 **amount_dict,
             )
 
     @staticmethod
     def influence_specific_relationships(
-        amount, abbreviations_cat_id, chosen_interaction
+        amount, abbreviations_cat_id, chosen_interaction, log
     ):
         """
         Influence the relationships based on the list of the reaction of the chosen group interaction.
@@ -586,7 +587,7 @@ class GroupEvents:
                     )
 
             change_relationship_values(
-                cats_from=[cat_from], cats_to=[cat_to], **amount_dict
+                cats_from=[cat_from], cats_to=[cat_to], log=log, **amount_dict
             )
 
     @staticmethod

@@ -914,6 +914,12 @@
           "virtue": ["ambition", "bravery", "certainty", "clear judgment", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy", 
       "stubbornness", "authority"]
+        },
+        {
+            "text": "r_c arrives in a plume of gray smoke, prowling up to m_c with a snarl rumbling in {PRONOUN/r_c/poss} chest. {PRONOUN/r_c/subject/CAP} {VERB/r_c/warn/warns} m_c that {PRONOUN/m_c/poss} soft-hearted nature will be a weakness if {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to hold onto power. With a last contemptuous look, r_c gives a life for [virtue].",
+            "virtue": ["ambition", "bravery", "certainty", "clear judgment", "confidence", "courage",
+      "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy",
+      "stubbornness", "authority"]
         }
       ]
     },
@@ -1031,7 +1037,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy", "medicine cat apprentice", "mediator apprentice"],
       "life_giving": [
         {
-            "text": "r_c arrives in a plume of gray smoke, prowling up to m_c with a snarl rumbling in {PRONOUN/r_c/poss} chest. {PRONOUN/r_c/subject/CAP} {VERB/r_c/warn/warns} m_c that {PRONOUN/m_c/poss} soft-hearted nature will be a weakness if {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to hold onto power. With a last contemptuous look, r_c gives a life for [virtue].",
+            "text": "r_c arrives in a plume of gray smoke, curling around m_c with a gentle tail-tip on {PRONOUN/m_c/poss} back. r_c reminds m_c that the only thing that can truly keep {PRONOUN/m_c/poss} loved ones safe is ruthless strength. m_c nods and closes {PRONOUN/m_c/poss} eyes as r_c grants a life for [virtue].",
           "virtue": ["ambition", "bravery", "certainty", "clear judgment", "confidence", "courage",
       "determination", "endurance", "farsightedness", "instincts", "strength", "ferocity", "cunning", "shamelessness", "zealotry", "bloodlust", "restless energy",
       "stubbornness", "authority"]

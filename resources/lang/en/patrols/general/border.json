@@ -88,7 +88,7 @@
                         "cats_to": ["p_l"],
                         "mutual": false,
                         "values": ["respect", "like"],
-                        "amount": 5,
+                        "amount": -5,
                         "log": {
                             "cats_from": "from_cat noticed to_cat's half-hearted job on a border patrol caused more work for others."
                         }
@@ -767,13 +767,12 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "battle_injury",
                             "battle_injury"
                         ]
                     }
                 ],
                 "history_text": {
-                    "death": "m_c died from {PRONOUN/r_c/poss} injuries after a fight with a rogue.",
+                    "death": "m_c died of injuries inflicted by a rogue.",
                     "scar": "m_c was scarred in a fight with a rogue."
                 },
                 "relationships": [
@@ -1296,8 +1295,7 @@
                 "injury": [
                     {
                         "cats": ["app2"],
-                        "injuries": ["water in their lungs"],
-                        "no_results": false
+                        "injuries": ["water in their lungs"]
                     }
                 ],
                 "history_text": {

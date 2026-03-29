@@ -177,15 +177,9 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "TOETRAP"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c got scarred training in the forest as an apprentice."
-                },
                 "frequency": 3
             }
         ]
@@ -374,15 +368,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BELLY"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "death": "m_c lost their life to a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 3
             }
@@ -560,9 +551,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
@@ -782,7 +770,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c was killed by a falling branch while on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -800,15 +788,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -820,7 +805,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c was killed by a falling branch while on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -835,15 +820,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1021,7 +1003,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c was killed by a falling branch while on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1036,15 +1018,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1102,7 +1081,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "death": "m_c was killed by a falling branch while on patrol."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1117,15 +1096,12 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from being trapped on patrol.",
-                    "death": "m_c tragically died after being trapped on patrol."
+                    "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
                 "art": "fst_train_stuck_outcome",
                 "frequency": 3
@@ -1214,15 +1190,9 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
-                "history_text": {
-                    "scar": "m_c got injured as an apprentice, exploring alone."
-                },
                 "frequency": 3
             }
         ]
@@ -2363,8 +2333,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2462,8 +2431,7 @@
                         ],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -2531,8 +2499,7 @@
                         ],
                         "injuries": [
                             "stomachache"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
