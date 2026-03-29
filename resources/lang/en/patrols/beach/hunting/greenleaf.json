@@ -612,5 +612,278 @@
                 "frequency": 3
             }
         ]
-    }
+    },
+    {
+    "patrol_id": "bch_hunt_greenleaf_picnicheist",
+    "biome": ["beach"],
+    "season": ["greenleaf"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "bch_hunt_twolegsobject",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [2, 6]
+    },
+    "frequency": 3,
+    "chance_of_success": 40,
+    "intro_text": "The patrol creeps over the edge of a tussock overlooking the beach, their eyes on a group of Twolegs sitting on a strange white-and-red pelt spread on the sand. The woven nest beside them wafts delicious smells toward the cats.",
+    "decline_text": "p_l decides messing with Twolegs isn't worth the trouble. c_n should have no trouble with traditional hunting in greenleaf.",
+    "success_outcomes": [
+        {
+            "text": "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c snatches up the prize - a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever know they were there.",
+            "exp": 30,
+            "frequency": 4,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "from_cat and to_cat worked together to steal food from Twolegs on the beach."
+                    }
+                }
+            ],
+            "art": "fst_hunt_fun3"
+        },
+        {
+            "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. p_l knocks over the woven basket, and r_c paws through the Twolegs' trove. The delicious scent was... a huge green fruit? The patrol trades baffled glances. r_c scoops a pawful of red flesh out from the halved fruit and tastes it, {PRONOUN/r_c/poss} eyes growing round with delight. It tastes like meat!",
+            "exp": 30,
+            "frequency": 2,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "from_cat and to_cat worked together to steal strangely delicious fruit from Twolegs on the beach."
+                    }
+                }
+            ],
+            "art": "gen_happy_cat"
+        },
+        {
+            "min_max_status": {"normal adult": [3, 6]},
+            "text": "When the Twolegs leave their white-and-red pelt to return to their monster, p_l gives the signal, and the patrol strikes. p_l keeps watch while the others snatch as much of the Twolegs' feast as they can. When they return to the tussock, hearts hammering and eyes wide, they sort through their mysterious haul. r_c likes the salty taste of the orange crackly triangles, whereas p_l doesn't find the miniature red, green, and yellow fresh-kill that get stuck in {PRONOUN/p_l/poss} teeth very flavorful.",
+            "exp": 30,
+            "frequency": 3,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "from_cat and to_cat worked together to steal strange Twolegs food from Twolegs on the beach."
+                    }
+                }
+            ],
+            "art": "gen_warrior_crouching_perplexed"
+        },
+        {
+            "min_max_status": {"normal adult": [2, 2]},
+            "text": "The Twolegs are about to dig into their feast when r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws, running over to stroke the kitty. As the adult Twolegs join their kits, wary of the mysterious r_c, p_l sprints down to the white-and-red pelt and snatches something that smells of fish. When r_c later extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches, {PRONOUN/r_c/subject} and p_l wonder why Twolegs would put delicious tuna between two strange slabs of something that smells of wheat.",
+            "exp": 30,
+            "frequency": 3,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "from_cat and to_cat worked together to steal tuna from Twolegs on the beach."
+                    }
+                }
+            ],
+            "art": "gen_hunt_heat"
+        },
+        {
+            "min_max_status": {"normal adult": [3, 6]},
+            "text": "r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws. As the adult Twolegs join their kits, wary of the mysterious r_c, the rest of the patrol sprints down to the white-and-red pelt and gathers up as much Twolegs food as they can. When r_c later extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches, {PRONOUN/r_c/subject} and the patrol taste all sorts of mysteries - creamy goop-covered tubers, strange cylindrical meat packed into wheaty casing, and large shell-less chicken eggs made soft and opaque.",
+            "exp": 30,
+            "frequency": 3,
+            "prey": ["medium"],
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "r_c distracted some Twolegs on the beach so p_l could steal their food."
+                    }
+                }
+            ],
+            "art": "gen_hunt_heat"
+        },
+        {
+            "text": "s_c bounces right up to the white-and-red pelt, {PRONOUN/s_c/poss} tail swishing and {PRONOUN/s_c/poss} eyes kit-round and sweet. The Twoleg kits squeal with delight as s_c winds around their legs and <i>mrrow</i>s at them. None of the Twolegs are any the wiser as their feast is slowly picked off, their attention fully focused on s_c.",
+            "exp": 30,
+            "frequency": 3,
+            "prey": ["large"],
+            "stat_trait": ["flamboyant", "charismatic", "playful", "shameless", "bold", "daring", "adventurous", "rebellious", "sneaky", "strange", "troublesome"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol", "low_lawful", "high_social"],
+                    "mutual": false,
+                    "values": ["trust", "respect"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "from_cat was impressed by how easily to_cat distracted some Twolegs while from_cat stole their food."
+                    }
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol", "high_lawful", "low_social"],
+                    "mutual": false,
+                    "values": ["trust", "respect"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat was suspicious about how comfortable to_cat seemed with Twolegs."
+                    }
+                }
+            ],
+            "art": "gen_hunt_heat"
+        },
+        {
+            "min_max_status": {"normal adult": [3, 6]},
+            "text": "As the patrol talks strategy, their gazes slowly turn to s_c. s_c growls - no, no chance. But it's decided. As the patrol crouches, ready to strike as soon as the Twolegs are distracted, s_c bushes {PRONOUN/s_c/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c/poss} tail whipping in discomfort as they run their smooth paws over {PRONOUN/s_c/poss} bristling fur - and they certainly don't notice the rest of the patrol making off with their feast.",
+            "exp": 30,
+            "frequency": 3,
+            "prey": ["large"],
+            "can_have_stat": ["any"],
+            "stat_trait": ["bloodthirsty", "cold", "righteous", "strict", "vengeful", "arrogant", "ambitious", "gloomy", "grumpy", "nervous", "lonesome"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust", "respect"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "from_cat was impressed to_cat could put aside {PRONOUN/to_cat/poss} discomfort around Twolegs to distract them while from_cat stole their food."
+                    }
+                },
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["s_c"],
+                    "mutual": false,
+                    "values": ["like", "comfort"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat wasn't happy that to_cat and the rest of the patrol forced {PRONOUN/from_cat/object} to be the distraction while the patrol stole food from Twolegs."
+                    }
+                }
+            ],
+            "art": "gen_cat_looking_up3"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c can steal whatever smells like food - but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed.",
+            "exp": 0,
+            "frequency": 3,
+            "art": "mtn_hunt_kea_leafbare_parentchildapprentice1"
+        },
+        {
+            "text": "Before the patrol can strike, another Twoleg kit trundles past and spots the cats, squealing with glee. p_l shouts the order to retreat, and the cats sprint up the beach into the undergrowth where clumsy Twolegs can't follow.",
+            "exp": 0,
+            "frequency": 4,
+            "art": "cat_running_two"
+        },
+        {
+            "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass to paw through their haul. r_c dabs {PRONOUN/r_c/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Later, back at the camp, r_c feels the consequences of tasting mysterious Twoleg food.",
+            "exp": 0,
+            "frequency": 2,
+            "prey": ["very_small"],
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": [
+                        "poisoned",
+                        "stomachache"
+                    ]
+                }
+            ],
+            "art": "gen_warrior_crouching"
+        },
+        {
+            "text": "p_l suggests that s_c distract them, and though s_c looks worried, {PRONOUN/s_c/subject} {VERB/s_c/agree/agrees}. But when a Twoleg kit squeals at the sight of s_c and runs over, hairless paws outstretched, s_c spooks and sprints away. p_l forgoes stealing any of the Twolegs' food in favor of chasing after {PRONOUN/p_l/poss} Clanmate.",
+            "exp": 0,
+            "frequency": 3,
+            "stat_trait": ["gloomy", "insecure", "nervous", "lonesome", "careful", "childish"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["p_l"],
+                    "mutual": false,
+                    "values": ["like", "trust"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat was frustrated that to_cat agreed to act as a distraction when the patrol was trying to steal Twoleg food but then ran off.",
+                        "cats_to": "to_cat was ashamed that {PRONOUN/to_cat/subject} failed when from_cat asked {PRONOUN/to_cat/object} to distract Twolegs so from_cat could steal their food."
+                    }
+                }
+            ],
+            "art": "cat_running_solo"
+        },
+        {
+            "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/hiss/hisses}. The Twoleg kit is undeterred, reaching for {PRONOUN/s_c/object} with a smooth paw, and s_c swipes. p_l didn't have <i>that</i> kind of distraction in mind and yowls for the patrol to retreat.",
+            "exp": 0,
+            "frequency": 3,
+            "stat_trait": ["fierce", "bloodthirsty", "vengeful", "arrogant", "cold", "grumpy", "troublesome"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["p_l"],
+                    "mutual": false,
+                    "values": ["like", "trust"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "from_cat disapproved of to_cat taking a swipe at a Twoleg kit while acting as a distraction."
+                    }
+                }
+            ],
+            "art": "gen_angry_cat_warrior"
+        },
+        {
+            "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/take/takes} a swipe. One adult Twoleg lets out a deep cry of anger, leaps to their hind-paws, and runs over to where s_c is facing off with a wailing Twoleg kit. s_c stands {PRONOUN/s_c/poss} ground, but the adult Twoleg grasps {PRONOUN/s_c/object} by the scruff and throws {PRONOUN/s_c/object} away from their kit. s_c lands heavily.",
+            "exp": 0,
+            "frequency": 1,
+            "stat_trait": ["fierce", "bloodthirsty", "vengeful", "arrogant", "cold", "grumpy"],
+            "injury": [
+                {
+                    "cats": ["s_c"],
+                    "injuries": [
+                        "blunt_force_injury",
+                        "sprain",
+                        "scrapes"
+                    ]
+                }
+            ],
+            "art": "gen_angry_cat_warrior"
+        },
+        {
+            "text": "It seems the patrol has arrived too late - the Twolegs are packing their delicious-smelling food back into the woven nest and gathering up their white-and-red pelt. s_c loses {PRONOUN/s_c/poss} head over the scent of the food and follows the Twolegs as they return to their monster, ignoring p_l's order to return back to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c leaps into the monster after it! The belly snaps shut, and the patrol can only watch in horror as the monster takes off with their trapped Clanmate.",
+            "exp": 0,
+            "frequency": 1,
+            "stat_trait": ["fierce", "arrogant", "ambitious", "competitive", "rebellious", "confident", "adventurous", "daring", "bold", "shameless", "troublesome"],
+            "lost_cats": ["s_c"],
+            "art": "gen_bord_rescue"
+        }
+    ]
+}
 ]
