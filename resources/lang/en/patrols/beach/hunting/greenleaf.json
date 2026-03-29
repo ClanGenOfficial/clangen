@@ -670,7 +670,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "When the Twolegs leave their white-and-red pelt to return to their monster, p_l gives the signal, and the patrol strikes. p_l keeps watch while the others snatch as much of the Twolegs' feast as they can. When they return to the tussock, hearts hammering and eyes wide, they sort through their mysterious haul. r_c likes the salty taste of the orange crackly triangles, whereas p_l doesn't find the miniature red, green, and yellow fresh-kill that get stuck in {PRONOUN/p_l/poss} teeth very flavorful.",
+            "text": "The Twolegs leave their white-and-red pelt to return to their monster, and the patrol strikes. p_l keeps watch while the others snatch as much of the Twolegs' feast as they can. When they return to the tussock, hearts hammering and eyes wide, they sort through their mysterious haul. r_c likes the salty taste of the orange crackly triangles, whereas p_l doesn't find the miniature red, green, and yellow fresh-kill that get stuck in {PRONOUN/p_l/poss} teeth very flavorful.",
             "exp": 30,
             "frequency": 3,
             "prey": ["medium"],
@@ -710,7 +710,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws. As the adult Twolegs join their kits, wary of the mysterious r_c, the rest of the patrol sprints down to the white-and-red pelt and gathers up as much Twolegs food as they can. When r_c later extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches, {PRONOUN/r_c/subject} and the patrol taste all sorts of mysteries - creamy goop-covered tubers, strange cylindrical meat packed into wheaty casing, and large shell-less chicken eggs made soft and opaque.",
+            "text": "r_c strolls down the beach, meowing sweetly. The Twoleg kits screech and jump to their hind-paws. As the adult Twolegs join their kits, the rest of the patrol sprints down to the pelt and snatch as much Twoleg food as they can. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches, {PRONOUN/r_c/subject} and the patrol taste all sorts of mysteries - creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque.",
             "exp": 30,
             "frequency": 3,
             "prey": ["medium"],
@@ -805,7 +805,7 @@
             "art": "cat_running_two"
         },
         {
-            "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass to paw through their haul. r_c dabs {PRONOUN/r_c/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Later, back at the camp, r_c feels the consequences of tasting mysterious Twoleg food.",
+            "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass to paw through their haul. r_c dabs {PRONOUN/r_c/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Back at the camp, r_c feels the consequences of tasting mysterious Twoleg food.",
             "exp": 0,
             "frequency": 2,
             "prey": ["very_small"],
@@ -860,7 +860,7 @@
             "art": "gen_angry_cat_warrior"
         },
         {
-            "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/take/takes} a swipe. One adult Twoleg lets out a deep cry of anger, leaps to their hind-paws, and runs over to where s_c is facing off with a wailing Twoleg kit. s_c stands {PRONOUN/s_c/poss} ground, but the adult Twoleg grasps {PRONOUN/s_c/object} by the scruff and throws {PRONOUN/s_c/object} away from their kit. s_c lands heavily.",
+            "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/take/takes} a swipe. One adult Twoleg lets out a deep cry of anger and runs over to where s_c is facing off with a wailing Twoleg kit. s_c stands {PRONOUN/s_c/poss} ground, but the adult Twoleg grasps {PRONOUN/s_c/object} by the scruff and throws {PRONOUN/s_c/object} away from their kit. s_c lands heavily.",
             "exp": 0,
             "frequency": 1,
             "stat_trait": ["fierce", "bloodthirsty", "vengeful", "arrogant", "cold", "grumpy"],
@@ -877,7 +877,7 @@
             "art": "gen_angry_cat_warrior"
         },
         {
-            "text": "It seems the patrol has arrived too late - the Twolegs are packing their delicious-smelling food back into the woven nest and gathering up their white-and-red pelt. s_c loses {PRONOUN/s_c/poss} head over the scent of the food and follows the Twolegs as they return to their monster, ignoring p_l's order to return back to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c leaps into the monster after it! The belly snaps shut, and the patrol can only watch in horror as the monster takes off with their trapped Clanmate.",
+            "text": "The patrol has arrived too late - the Twolegs pack their food back into the woven nest and gather up their pelt. s_c loses {PRONOUN/s_c/poss} head over the scent of the food and follows the Twolegs back to their monster, ignoring p_l's order to return to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c leaps into the monster after it! The belly snaps shut, and the patrol watches in horror as the monster takes off with their trapped Clanmate.",
             "exp": 0,
             "frequency": 1,
             "stat_trait": ["fierce", "arrogant", "ambitious", "competitive", "rebellious", "confident", "adventurous", "daring", "bold", "shameless", "troublesome"],
