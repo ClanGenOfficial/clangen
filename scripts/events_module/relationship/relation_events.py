@@ -101,11 +101,11 @@ class Relation_Events:
                 cat.relationships[inter_cat.ID].like > 10
                 or cat.relationships[inter_cat.ID].comfort > 10
             )
-            inter_cat_to = (
+            inter_to_cat = (
                 inter_cat.relationships[cat.ID].like > 10
                 or inter_cat.relationships[cat.ID].comfort > 10
             )
-            if cat_to_inter and inter_cat_to:
+            if cat_to_inter and inter_to_cat:
                 cat_to_choose_from.append(inter_cat)
 
         # if the cat has one or more mates, check how high the chance is,

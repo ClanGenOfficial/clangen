@@ -63,7 +63,7 @@ def _test():
         "dep_name": _r,
         "med_name": _r,
         "cat_tag": _r,
-        "cat_to": _r,
+        "to_cat": _r,
         "cat_from": _r,
     }
 
