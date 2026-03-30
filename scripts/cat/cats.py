@@ -2782,30 +2782,30 @@ class Cat:
                             #   using the "negative" value for the lower of
                             #   platonic_like/comfort and trust/admiration.
                             # if the relationship isn't complex
-                            #   (< 10 for negative values; this is an arbitrary value),
+                            #   (<= 5 for negative values; this is an arbitrary value),
                             #   then it just takes the value without considering the negative.
                             if old_rel["platonic_like"] > old_rel["comfortable"]:
                                 rel["like"] = old_rel["platonic_like"]
-                                if old_rel["dislike"] < 10:
+                                if old_rel["dislike"] <= 5:
                                     rel["comfort"] = old_rel["comfortable"]
                                 else:
                                     rel["comfort"] = -old_rel["dislike"]
                             else:  # old_rel["platonic_like"] < old_rel["comfort"]
                                 rel["comfort"] = old_rel["comfortable"]
-                                if old_rel["dislike"] < 10:
+                                if old_rel["dislike"] <= 5:
                                     rel["like"] = old_rel["platonic_like"]
                                 else:
                                     rel["like"] = -old_rel["dislike"]
 
                             if old_rel["trust"] > old_rel["admiration"]:
                                 rel["trust"] = old_rel["trust"]
-                                if old_rel["jealousy"] < 10:
+                                if old_rel["jealousy"] <= 5:
                                     rel["respect"] = old_rel["admiration"]
                                 else:
                                     rel["respect"] = -old_rel["jealousy"]
                             else: # old_rel["trust"] < old_rel["admiration"]
                                 rel["respect"] = old_rel["admiration"]
-                                if old_rel["jealousy"] < 10:
+                                if old_rel["jealousy"] <= 5:
                                     rel["trust"] = old_rel["trust"]
                                 else:
                                     rel["trust"] = -old_rel["jealousy"]
