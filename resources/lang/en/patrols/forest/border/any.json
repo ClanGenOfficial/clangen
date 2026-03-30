@@ -712,7 +712,7 @@
                         "values": ["respect", "trust"],
                         "amount": 10,
                         "log": {
-                            "from_cat": "from_cat respected to_cat's cautious and thoughtful approach to dealing with a badger on patrol."
+                            "cats_from": "from_cat respected to_cat's cautious and thoughtful approach to dealing with a badger on patrol."
                         }
                     }
                 ],
