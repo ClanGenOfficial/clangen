@@ -2768,20 +2768,47 @@ class Cat:
 
                         # converting old saves
                         if "platonic_like" in rel:
+                            old_rel = rel.copy()
+                            rel = {}
+                            rel["log"] = old_rel["log"]
+                            rel["mates"] = old_rel["mates"]
+                            rel["family"] = old_rel["family"]
+                            rel["cat_to_id"] = old_rel["cat_to_id"]
+
                             # romance
-                            rel["romance"] = rel["romantic_love"]
-                            rel.pop("romantic_love")
-                            # like
-                            rel["like"] = rel["platonic_like"] - rel["dislike"]
-                            rel.pop("platonic_like")
-                            rel.pop("dislike")
-                            # respect
-                            rel["respect"] = rel["admiration"] - rel["jealousy"]
-                            rel.pop("admiration")
-                            rel.pop("jealousy")
-                            # comfort
-                            rel["comfort"] = rel["comfortable"]
-                            rel.pop("comfortable")
+                            rel["romance"] = old_rel["romantic_love"]
+
+                            # attempts to convert "complex" relationships by
+                            #   using the "negative" value for the lower of
+                            #   platonic_like/comfort and trust/admiration.
+                            # if the relationship isn't complex
+                            #   (<= 5 for negative values; this is an arbitrary value),
+                            #   then it just takes the value without considering the negative.
+                            if old_rel["platonic_like"] > old_rel["comfortable"]:
+                                rel["like"] = old_rel["platonic_like"]
+                                if old_rel["dislike"] <= 5:
+                                    rel["comfort"] = old_rel["comfortable"]
+                                else:
+                                    rel["comfort"] = -old_rel["dislike"]
+                            else:  # old_rel["platonic_like"] < old_rel["comfort"]
+                                rel["comfort"] = old_rel["comfortable"]
+                                if old_rel["dislike"] <= 5:
+                                    rel["like"] = old_rel["platonic_like"]
+                                else:
+                                    rel["like"] = -old_rel["dislike"]
+
+                            if old_rel["trust"] > old_rel["admiration"]:
+                                rel["trust"] = old_rel["trust"]
+                                if old_rel["jealousy"] <= 5:
+                                    rel["respect"] = old_rel["admiration"]
+                                else:
+                                    rel["respect"] = -old_rel["jealousy"]
+                            else:  # old_rel["trust"] < old_rel["admiration"]
+                                rel["respect"] = old_rel["admiration"]
+                                if old_rel["jealousy"] <= 5:
+                                    rel["trust"] = old_rel["trust"]
+                                else:
+                                    rel["trust"] = -old_rel["jealousy"]
 
                         # create relationship
                         new_rel = Relationship(

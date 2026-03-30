@@ -1356,7 +1356,7 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
@@ -1386,7 +1386,8 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat set an ambush for a rogue together."
+                            "cats_from": "from_cat was impressed by s_c's ability to set an ambush.",
+                            "cats_to": "to_cat was glad from_cat acknowledged {PRONOUN/s_c/poss} abilities."
                         }
                     }
                 ],
@@ -1407,7 +1408,8 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat drove off a rogue side by side."
+                            "cats_from": "from_cat was impressed by s_c's skill in battle against rogues.",
+                            "cats_to": "to_cat was glad to drive away rogues with from_cat."
                         }
                     }
                 ],
@@ -1443,7 +1445,8 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat saw a rogue off their territory together."
+                            "cats_from": "from_cat was impressed by s_c's confidence in fighting rogues.",
+                            "cats_to": "to_cat enjoyed driving away rogues with from_cat."
                         }
                     }
                 ],

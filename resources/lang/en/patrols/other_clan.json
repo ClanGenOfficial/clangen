@@ -326,7 +326,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -380,7 +380,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -459,7 +459,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -501,7 +501,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -537,7 +537,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -3701,7 +3701,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -3767,7 +3767,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
