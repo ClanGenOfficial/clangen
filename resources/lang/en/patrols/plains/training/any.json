@@ -1926,9 +1926,9 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
+                "art": "gen_dirt_tunnel",
                 "text": "app1 carefully practices padding around, in the pitch black, in the dim where the light from the entrance still reaches, with {PRONOUN/app1/poss} eyes shut, all of it. It's definitely easier in bigger burrows than the ones rabbits make, and it's good to train where no one can see {PRONOUN/app1/object} faceplant into the walls.",
                 "exp": 15,
-                "art": "gen_happy_cat2",
                 "relationships": [
                     {
                         "cats_to": [
@@ -2210,9 +2210,9 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
+                "art": "gen_dirt_tunnel",
                 "text": "app1 carefully practices padding around, in the pitch black, in the dim where the light from the entrance still reaches, with {PRONOUN/app1/poss} eyes shut, all of it. It's definitely easier in bigger burrows than the ones rabbits make, and it's good to train where no one can see {PRONOUN/app1/object} faceplant into the walls. app2 does notice when app1 faceplants into {PRONOUN/app2/object} though!",
                 "exp": 15,
-                "art": "gen_happy_cat2",
                 "relationships": [
                     {
                         "cats_to": [
@@ -3338,6 +3338,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "p_l shows the apprentices different types of tunnels, expanding their knowledge of safe hideyholes to retreat from danger into. It soothes something in s_c to know about them. By the end of the afternoon there's a lightness to {PRONOUN/s_c/poss} step and {PRONOUN/s_c/poss} tail is up.",
                 "exp": 40,
                 "can_have_stat": [
@@ -3403,6 +3404,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "As p_l shows the apprentices different types of tunnels and explains how valuable they are as refuges for c_n in moments of danger, s_c gives p_l {PRONOUN/s_c/poss} full attention. This sounds just as important as p_l promised, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} determined to remember the locations of the safe hideyholes in c_n's territory.",
                 "exp": 40,
                 "can_have_stat": [
@@ -3470,6 +3472,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "s_c carefully shows the apprentices three examples of safe refuge tunnels. The first is huge, big enough for all the patrol to fit into, but shallow, made by the large badgers. The next is cramped, a burrow rather than a tunnel, first dug out by rabbits. The last is the most valuable, a huge badger sett dug by the smaller badger species, sprawling out with multiple entrances and spacious chambers.",
                 "exp": 40,
                 "can_have_stat": [
@@ -3516,6 +3519,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "These tunnels have sheltered many cats in their time, s_c explains. c_n learned to hide from danger underground when they first came to the plains, when their first leader sheltered from danger as it stalked above ground.",
                 "exp": 40,
                 "can_have_stat": [
@@ -3632,6 +3636,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short by an irritated p_l. This isn't a game - these are important safe retreats in case of danger!",
                 "exp": 0,
                 "can_have_stat": [

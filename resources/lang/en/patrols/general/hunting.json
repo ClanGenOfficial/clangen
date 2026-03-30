@@ -1075,7 +1075,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_warrior_crouching",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1166,7 +1166,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1327,7 +1327,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_warrior_crouching",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1426,7 +1426,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1525,7 +1525,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_soloapp",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1616,7 +1616,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_soloapp",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1706,7 +1706,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_soloapp",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1796,7 +1796,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_soloapp",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1886,7 +1886,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_soloapp",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1976,7 +1976,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_talkingWW",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -2111,7 +2111,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_talkingWW",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -3083,7 +3083,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_talkingWW",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -3335,7 +3335,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_talkingWW",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -3465,7 +3465,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_med_warappmedapp_herbcontest",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -3620,7 +3620,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_med_warappmedapp_herbcontest",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -3786,7 +3786,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_med_warappmedapp_herbcontest",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -3962,7 +3962,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_med_warappmedapp_herbcontest",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -4126,7 +4126,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_med_warappmedapp_herbcontest",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {

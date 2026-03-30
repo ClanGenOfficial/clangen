@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -94,7 +94,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -159,7 +159,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -483,7 +483,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -610,7 +610,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1117,7 +1117,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -1334,7 +1334,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_shortswim",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1379,7 +1379,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_rat",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1447,7 +1447,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_shortswim",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1541,7 +1541,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1875,7 +1875,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -2022,7 +2022,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -2200,7 +2200,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_squirrelchase",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3199,7 +3199,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3786,7 +3786,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "running_app2",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3913,7 +3913,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 3,
         "max_cats": 4,
         "min_max_status": {},

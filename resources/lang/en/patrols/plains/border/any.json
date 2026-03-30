@@ -2291,6 +2291,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
+                "art": "gen_dirt_tunnel",
                 "text": "They don't know this tunnel - but it knows them, marked by scent and claw as one of the safe refuges in the network c_n constantly maintains and expands in their territory. Thrilled with the illicit discovery, the apprentices have a great adventure crawling in and exploring every inch.",
                 "exp": 20,
                 "art": "pln_bord_tunnel2",
@@ -2473,6 +2474,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "The apprentices huddle around the burrow entrance. It'll be okay, s_c reassures. They've had lessons on burrows and this one has no tracks at the front, so it's empty. Together, everyone plucks up just enough bravery to explore it and run home, whispering the story of what it was like that night to each other in the apprentice den.",
                 "exp": 20,
                 "art": "gen_med_warappmedapp_herbcontest",
@@ -2738,6 +2740,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
+                "art": "gen_dirt_tunnel",
                 "text": "app1 pokes {PRONOUN/app1/poss} head into the shallow cave, one whisker at a time, eyes wide. Huh. Well, there's no one home, and from the look of the debris blown in by the wind, no one has been home in a while. There's also no c_n scent though. Perhaps because this is too shallow to be a refuge from predators?",
                 "exp": 20,
                 "art": "pln_bord_tunnel",
@@ -2805,6 +2808,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush normally conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
                 "exp": 20,
                 "art": "pln_bord_tunnel",
@@ -2827,6 +2831,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
                 "exp": 20,
                 "art": "gen_train_patrolapprenticesessionsuccess",
@@ -3067,6 +3072,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
+                "art": "gen_dirt_tunnel",
                 "text": "This shallow cave smells of badger, and claw marks show recent construction efforts. p_l is fortunate that the owner isn't home, and {PRONOUN/p_l/poss} pelt bristles with unease as {PRONOUN/p_l/subject} {VERB/p_l/trot/trots} home.",
                 "exp": 20,
                 "art": "running_warrior2",
@@ -4045,9 +4051,9 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
+                "art": "gen_dirt_tunnel",
                 "text": "The tunnels prove to be a new entrance to a set of tunnels c_n already uses. This could be helpful in the future, c_n can always use another point on their network.",
                 "exp": 25,
-                "art": "gen_happy_cat",
                 "frequency": 4
             },
             {
@@ -4941,9 +4947,9 @@
                 "frequency": 4
             },
             {
+                "art": "gen_dirt_tunnel",
                 "text": "s_c is brought forward to check it out. After careful consideration, {PRONOUN/s_c/subject} {VERB/s_c/determine/determines} that this burrow was dug by a hedgehog, then enlarged by a stoat, explaining its recent appearance. The home renovator appears to have moved on, leaving it open for c_n's use.",
                 "exp": 40,
-                "art": "gen_bord_scent_allies",
                 "can_have_stat": [
                     "any"
                 ],
