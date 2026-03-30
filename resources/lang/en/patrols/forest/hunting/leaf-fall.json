@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -429,13 +429,12 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "broken bone"
-                        ],
-                        "scars": []
+                            "blunt_force_injury"
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat was scarred after falling from a tree.",
+                    "scar": "m_c was scarred after falling from a tree.",
                     "death": "m_c died after falling from a tree while hunting."
                 },
                 "relationships": [
@@ -598,7 +597,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_warrior_rainy",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -718,12 +717,12 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred after disappearing on patrol and being found soaked and freezing."
+                    "scar": "m_c was scarred after catching a chill on patrol.",
+                    "death": "m_c caught a chill on patrol and never recovered."
                 },
             "relationships": [
                 {
@@ -921,7 +920,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1069,11 +1068,14 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from fighting a swarm of rats."
+                    "scar": "m_c carries a scar from fighting a swarm of rats.",
+                    "death": "m_c died of a rat bite."
                 },
                 "prey": [
                     "very_small"
@@ -1175,11 +1177,14 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred fighting a Rat King."
+                    "scar": "m_c was scarred fighting a Rat King.",
+                    "death": "m_c died of a rat bite sustained while fighting a Rat King."
                 },
                 "prey": [
                     "very_small"
@@ -1200,11 +1205,14 @@
                         "injuries": [
                             "rat_bite"
                         ],
-                        "scars": []
+                        "scars": [
+                            "RATBITE"
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred fighting a Rat King."
+                    "scar": "m_c was scarred fighting a Rat King.",
+                    "death": "m_c died of a rat bite sustained while fighting a Rat King."
                 },
                 "prey": [
                     "very_small"
@@ -1252,7 +1260,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -1399,7 +1407,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -1559,7 +1567,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2057,7 +2065,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2150,8 +2158,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2170,8 +2177,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2192,7 +2198,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_train_soloapp",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2304,8 +2310,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -2324,8 +2329,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [

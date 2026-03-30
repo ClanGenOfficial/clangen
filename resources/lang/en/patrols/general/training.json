@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -80,7 +80,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_solo",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -180,7 +180,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_solo",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -193,6 +193,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
+                "art": "gen_bump_heads_warriors",
                 "text": "The patrol tells p_l that the Clan wouldn't be the same without {PRONOUN/p_l/object}, and p_l is visibly relieved.",
                 "exp": 20,
                 "relationships": [
@@ -228,6 +229,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_comfort_warrior_warrior",
                 "text": "r_c reminds p_l of all the advice {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} given r_c that has made such a difference in {PRONOUN/r_c/poss} life. Every cat has their skills, and p_l is vital to the Clan.",
                 "exp": 20,
                 "relationships": [
@@ -248,6 +250,7 @@
                 "frequency": 3
             },
             {
+                "art": "gen_comfort_warrior_warrior",
                 "text": "s_c blinks at p_l compassionately - that sounds like a hard burden to bear alone. With an empathetic ear, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to p_l's current struggles filling the deputy position, and by the end of their training patrol, p_l feels a huge weight off {PRONOUN/p_l/poss} shoulders.",
                 "exp": 20,
                 "stat_trait": [
@@ -280,6 +283,7 @@
         ],
         "fail_outcomes": [
             {
+                "art": "gen_embarrassed1",
                 "text": "The patrol secretly agrees with p_l. It's a very awkward training session.",
                 "exp": 0,
                 "relationships": [
@@ -328,6 +332,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_speaking_cat_w1",
                 "text": "Well if that's how p_l feels, s_c suggests {PRONOUN/p_l/subject} give up the deputy position and let another cat take over.",
                 "exp": 0,
                 "stat_trait": [
@@ -384,6 +389,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_speaking_cat_w1",
                 "text": "Deputies shouldn't show weakness, s_c meows unsympathetically.",
                 "exp": 0,
                 "stat_trait": [
@@ -435,6 +441,7 @@
                 "frequency": 4
             },
             {
+                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
                 "text": "Yes, s_c <i>has</i> always thought that {PRONOUN/s_c/subject}'d do a better job, {PRONOUN/s_c/subject} {VERB/s_c/comment/comments} smugly.",
                 "exp": 0,
                 "stat_trait": [
@@ -1276,16 +1283,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
@@ -1299,16 +1307,17 @@
                 "exp": 20,
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": true,
                         "values": [
                             "like",
                             "comfort"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
@@ -1333,8 +1342,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -1342,7 +1351,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending time with their parent while sunbathing."
+                            "cats_from": "from_cat enjoyed spending time with {PRONOUN/from_cat/poss} parent while sunbathing.",
+                            "cats_to": "to_cat enjoyed spending time with {PRONOUN/to_cat/poss} kit while sunbathing."
                         }
                     }
                 ],
@@ -1439,7 +1449,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro.png",
+        "patrol_art": "train_general_intro",
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {
@@ -1734,8 +1744,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -1769,7 +1778,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro.png",
+        "patrol_art": "train_general_intro",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
@@ -2262,7 +2271,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro.png",
+        "patrol_art": "train_general_intro",
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {
@@ -4837,8 +4846,7 @@
                         "cats": ["p_l"],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -4915,8 +4923,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -5319,8 +5326,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -5339,7 +5345,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "train_general_intro",
+        "patrol_art": "gen_train_patrolapprenticesession",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -5352,6 +5358,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "text": "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. app1 really gets into it and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus and enthusiasm.",
                 "exp": 20,
                 "relationships": [
@@ -5397,6 +5404,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "text": "p_l leads the group in a mock-battle exercise, deliberately giving app1 a starring role that has {PRONOUN/app1/object} vibrating with excitement and pride.",
                 "exp": 20,
                 "relationships": [
@@ -5429,6 +5437,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "text": "Sometimes, the best thing of all is to just help an apprentice get the chance to feel equal to the warriors {PRONOUN/app1/subject}{VERB/app1/'re/'s} trying to become. p_l treats app1 exactly like everyone else. app1's confidence grows and {PRONOUN/app1/poss} eyes light up as the cats work together.",
                 "exp": 20,
                 "relationships": [
@@ -5461,6 +5470,7 @@
                 "frequency": 4
             },
             {
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "text": "It's good the see the progress app1 is making with {PRONOUN/app1/poss} training, and p_l makes sure to tell {PRONOUN/app1/object} so as the patrol work on their ambushing strategies.",
                 "exp": 20,
                 "relationships": [
@@ -5533,6 +5543,7 @@
         ],
         "fail_outcomes": [
             {
+                "art": "gen_embarrassed1",
                 "text": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties.",
                 "exp": 0,
                 "frequency": 1,
@@ -5550,6 +5561,7 @@
                 ]
             },
             {
+                "art": "gen_embarrassed1",
                 "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their cooperation...? Great StarClan, that was a terrible performance.",
                 "exp": 0,
                 "frequency": 4,
@@ -5567,6 +5579,7 @@
                 ]
             },
             {
+                "art": "gen_train_patrolapprenticesessionfail",
                 "text": "app1 does a terrible job, but p_l isn't willing to call {PRONOUN/app1/object} out on it. It's the wrong move for a patrol leader to make, and no cat learns anything from the experience.",
                 "exp": 0,
                 "frequency": 4,
@@ -5598,6 +5611,7 @@
                 ]
             },
             {
+                "art": "gen_train_patrolapprenticesessionfail",
                 "text": "app1 screws up the teamwork exercise, making a decision that betrays {PRONOUN/app1/poss} lack of experience, and while p_l smooths everything over between everyone, the exercise is concluded early.",
                 "exp": 0,
                 "frequency": 4,
@@ -5629,6 +5643,7 @@
                 ]
             },
             {
+                "art": "gen_train_patrolapprenticesessionfail",
                 "text": "app1 doesn't enjoy being singled out for attention and doesn't engage with the learning opportunity. Nothing goes drastically wrong, but p_l doubts anyone learned anything from this afternoon.",
                 "exp": 0,
                 "frequency": 4,
@@ -5668,13 +5683,13 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
             },
             {
+                "art": "gen_train_patrolapprenticesessionfail",
                 "text": "app1, trying to show off, is too busy checking to see if p_l is watching to check where {PRONOUN/app1/poss} own paws are. app1 falls over with a comical thump and cloud of dust.",
                 "exp": 0,
                 "injury": [
@@ -5683,8 +5698,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4,
@@ -5969,8 +5983,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4,
@@ -6434,8 +6447,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -6687,8 +6699,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -6940,8 +6951,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -7224,8 +7234,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -9908,14 +9917,12 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "broken back"
-                        ],
-                        "scars": [
-                            "TAILBASE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat's back was broken after attempting to enter the forbidden tunnels."
+                    "scar": "m_c's back was broken after attempting to enter the forbidden tunnels.",
+                    "death": "m_c couldn't recover from {PRONOUN/m_c/poss} broken back after attempting to enter the forbidden tunnels."
                 },
                 "relationships": [
                     {
@@ -10303,8 +10310,7 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -10524,8 +10530,7 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -11305,8 +11310,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -11859,8 +11863,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -11900,8 +11903,7 @@
                         "cats": ["s_c"],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -14963,15 +14965,12 @@
                         "cats": ["patrol"],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from when {PRONOUN/m_c/subject} fought with a Clanmate as an apprentice.",
-                    "death": "m_c died from fighting with a Clanmate as an apprentice."
+                    "death": "m_c died from injuries inflicted by another apprentice."
                 },
                 "relationships": [
                     {
@@ -15757,8 +15756,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -18511,8 +18509,7 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -18608,8 +18605,7 @@
                         "cats": ["app1"],
                         "injuries": [
                             "poisoned"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {

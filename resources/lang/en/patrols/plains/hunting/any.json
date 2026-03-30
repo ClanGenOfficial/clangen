@@ -1748,9 +1748,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -1867,9 +1864,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2022,8 +2016,7 @@
                         ],
                         "injuries": [
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3,
@@ -2689,11 +2682,13 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["small_bite_injury"],
-                        "scars": ["LEGBITE"]
+                        "injuries": ["small_bite_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by a kit fox." },
+                "history_text": {
+                    "scar": "m_c was scarred by a kit fox.",
+                    "death": "m_c died of injuries inflicted by a kit fox."
+                },
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
@@ -2968,14 +2963,12 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a fight with a kit fox."
+                    "scar": "m_c carries a scar from a fight with a kit fox.",
+                    "death": "m_c died of injuries inflicted by a kit fox."
                 },
                 "prey": [
                     "very_small"
@@ -3147,14 +3140,12 @@
                         "injuries": [
                             "small_bite_injury",
                             "shock"
-                        ],
-                        "scars": [
-                            "FACE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from irritating a maned wolf as an apprentice."
+                    "scar": "m_c carries a scar from irritating a maned wolf as an apprentice.",
+                    "death": "m_c died of injuries inflicted by a maned wolf."
                 },
                 "frequency": 3
             },
@@ -3182,14 +3173,12 @@
                         "injuries": [
                             "small_bite_injury",
                             "shock"
-                        ],
-                        "scars": [
-                            "FACE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from irritating a maned wolf as an apprentice."
+                    "scar": "m_c carries a scar from irritating a maned wolf as an apprentice.",
+                    "death": "m_c died of injuries inflicted by a maned wolf."
                 },
                 "frequency": 3
             }
@@ -3519,14 +3508,12 @@
                         "injuries": [
                             "big_bite_injury",
                             "shock"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by a maned wolf, fighting over food."
+                    "scar": "m_c was scarred by a maned wolf, fighting over food.",
+                    "death": "m_c died of injuries inflicted by a maned wolf."
                 },
                 "relationships": [
                     {
@@ -3566,14 +3553,12 @@
                         "injuries": [
                             "big_bite_injury",
                             "shock"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by a maned wolf, fighting over food."
+                    "scar": "m_c was scarred by a maned wolf, fighting over food.",
+                    "death": "m_c died of injuries inflicted by a maned wolf."
                 },
                 "relationships": [
                     {
@@ -3863,11 +3848,13 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c died of injuries inflicted by a fox."
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -3890,11 +3877,13 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["big_bite_injury"],
-                        "scars": ["NECKBITE"]
+                        "injuries": ["big_bite_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "history_text": {
+                    "scar": "m_c carries a scar from a fox fight.",
+                    "death": "m_c died of injuries inflicted by a fox."
+                },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -4475,16 +4464,12 @@
                             "small cut",
                             "damaged eyes"
                         ],
-                        "scars": [
-                            "SNOUT",
-                            "LEFTBLIND"
-                        ],
                         "no_results": false
                         }
                     ],
                     "history_text": {
                         "scar": "m_c was permanently marked by the claws of a hare as an apprentice - but {PRONOUN/m_c/subject} survived.",
-                        "death": "m_c died from the claws of a hare encountered on a hunt as a foolish apprentice."
+                        "death": "m_c died from injuries inflicted by a hare {PRONOUN/m_c/subject} encountered on a hunt as a foolish apprentice."
                         },
                     "frequency": 4
                 }
@@ -4593,8 +4578,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -4825,8 +4809,7 @@
                 "injury": [
                     {
                         "cats": ["app1"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -5643,8 +5626,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["dislocated joint"],
-                        "scars": []
+                        "injuries": ["dislocated joint"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -5720,8 +5702,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["severe headache"],
-                        "scars": []
+                        "injuries": ["severe headache"]
                     }
                 ],
                 "relationships": [
@@ -5809,8 +5790,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -6057,8 +6037,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["dislocated joint"],
-                        "scars": []
+                        "injuries": ["dislocated joint"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -6134,8 +6113,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["diarrhea"],
-                        "scars": []
+                        "injuries": ["diarrhea"]
                     }
                 ],
                 "prey": ["very_small"]
@@ -6255,12 +6233,15 @@
                             "non_lethal"
                         ],
                         "scars": [
-                            "SNOUT"
+                            "SNOUT",
+                            "FACE",
+                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred as an apprentice by an angry ground squirrel."
+                    "scar": "m_c was scarred as an apprentice by an angry ground squirrel.",
+                    "death": "m_c died of injuries inflicted by a ground squirrel."
                 },
                 "relationships": [
                     {

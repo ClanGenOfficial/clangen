@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -94,7 +94,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -159,7 +159,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -448,7 +448,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat was scarred after falling from a tree.",
-                    "death": "m_c died after falling from a tree while hunting."
+                    "death": "m_c died from {PRONOUN/m_c/poss} broken bone after falling from a tree while hunting."
                 },
                 "relationships": [
                     {
@@ -483,7 +483,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -610,7 +610,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -648,8 +648,7 @@
                         "injuries": [
                             "minor_injury",
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -1118,7 +1117,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -1294,8 +1293,7 @@
                             "sprain",
                             "sore",
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1336,7 +1334,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_shortswim",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1381,7 +1379,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_rat",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1449,7 +1447,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_shortswim",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1543,7 +1541,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_bord_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1877,7 +1875,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -2024,7 +2022,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_lillizard",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -2202,7 +2200,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "fst_hunt_squirrelchase",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2307,8 +2305,7 @@
                         ],
                         "injuries": [
                             "sprain"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "prey": [
@@ -2408,12 +2405,11 @@
                         ],
                         "injuries": [
                             "hot_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "death": "This cat died from heat stroke."
+                    "death": "m_c died from heat stroke."
                 },
                 "prey": [
                     "very_small"
@@ -2489,7 +2485,12 @@
                             "burn",
                             "non_lethal"
                         ],
-                        "scars": []
+                        "scars": [
+                            "BURNBELLY",
+                            "BURNPAWS",
+                            "BURNRUMP",
+                            "BURNTAIL"
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -2651,9 +2652,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2683,9 +2681,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2881,9 +2876,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -2913,9 +2905,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
@@ -3032,8 +3021,7 @@
                         "injuries": [
                             "bruises",
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "prey": [
@@ -3086,9 +3074,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -3129,9 +3114,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -3217,7 +3199,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_mouse",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3759,8 +3741,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -3784,8 +3765,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 3
@@ -3806,7 +3786,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "running_app2",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3877,8 +3857,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -3902,8 +3881,7 @@
                         ],
                         "injuries": [
                             "small cut"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
             "relationships": [
@@ -3935,7 +3913,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "hunt_general_intro",
+        "patrol_art": "gen_hunt_squirrel",
         "min_cats": 3,
         "max_cats": 4,
         "min_max_status": {},
@@ -4003,8 +3981,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "frequency": 4

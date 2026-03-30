@@ -504,7 +504,10 @@ def event_text_adjust(
             clan_name = clan.displayname
         except AttributeError:
             # todo can this be Switch.clan_name ?
-            clan_name = switch_get_value(Switch.clan_list)[0]
+            try:
+                clan_name = switch_get_value(Switch.clan_list)[0]
+            except IndexError:
+                clan_name = "Test"
 
         text = _replace_clan_name(text, "c_n", str(clan_name) + "Clan")
 

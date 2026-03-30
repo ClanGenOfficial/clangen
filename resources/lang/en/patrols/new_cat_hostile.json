@@ -634,7 +634,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol approaches the cat and sees some signs of life. The patrol, after some hesitation, decides to bring the cat back to camp so that they can be treated by the medicine cat. The cat thanks them profusely and promises to repay them by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can.",
+                "text": "The patrol approaches the cat and sees some signs of life. The patrol, after some hesitation, decides to bring the cat back to camp so that {PRONOUN/n_c:0/subject} can be treated by the medicine cat. The cat thanks them profusely and promises to repay them by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can.",
                 "exp": 10,
                 "injury": [
                     {
@@ -646,6 +646,13 @@
                         ],
                         "no_results": true
                     }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after being hit by a monster on the Thunderpath.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster on the Thunderpath."
+                },
+                "new_cat": [
+                    ["loner", "kittypet", "rogue"]
                 ],
                 "relationships": [
                     {
@@ -729,7 +736,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l approaches the cat and sees some signs of life. After some hesitation, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to bring the cat back to camp so that they can be treated by the medicine cat. The cat thanks {PRONOUN/p_l/object} profusely and promises to repay {PRONOUN/p_l/object} by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can.",
+                "text": "p_l approaches the cat and sees some signs of life. After some hesitation, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to bring the cat back to camp so that {PRONOUN/n_c:0/subject} can be treated by the medicine cat. The cat thanks {PRONOUN/p_l/object} profusely and promises to repay {PRONOUN/p_l/object} by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can.",
                 "exp": 10,
                 "injury": [
                     {
@@ -741,6 +748,13 @@
                         ],
                         "no_results": true
                     }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after being hit by a monster on the Thunderpath.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster on the Thunderpath."
+                },
+                "new_cat": [
+                    ["loner", "kittypet", "rogue"]
                 ],
                 "relationships": [
                     {
@@ -2088,6 +2102,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after being attacked by a dog.",
+                    "death": "m_c died of injuries inflicted by a dog."
+                },
                 "frequency": 4
             },
             {
@@ -2132,6 +2150,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after being attacked by a dog.",
+                    "death": "m_c died of injuries inflicted by a dog."
+                },
                 "frequency": 4
             }
         ],
@@ -2328,10 +2350,14 @@
                             "p_l"
                         ],
                         "injuries": [
-                            "battle_injury"
+                            "claw-wound"
                         ],
                         "scars": [
-                            "BRIDGE"
+                            "FACE",
+                            "BRIDGE",
+                            "SNOUT",
+                            "CHEEK",
+                            "THROAT"
                         ]
                     }
                 ],
@@ -2385,9 +2411,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
@@ -3396,10 +3419,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ]
+            "apprentice": [1, 1]
         },
         "frequency": 1,
         "intro_text": "It's a cold day in c_n's territory, and app1 is the only cat stepping out. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} by {PRONOUN/app1/self} when {PRONOUN/app1/subject} {VERB/app1/hear/hears} a cat screaming for help.",
@@ -3445,10 +3465,14 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned in leaf-bare by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned in leaf-bare by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 4
             },
             {
-                "text": "StarClan, but the cat {PRONOUN/app1/subject} {VERB/app1/find/finds} is weird, {PRONOUN/n_c:0/poss} fur soft and thin, {PRONOUN/n_c:0/poss} cries desperate as {PRONOUN/n_c:0/subject} call in confusion. app1 watches until {PRONOUN/app1/poss} paws are cold and uncomfortable, crouched behind cover, but the dumb outsider doesn't even try to steal prey. {PRONOUN/n_c:0/subject/CAP} just {VERB/n_c:0/wail/wails} for help, quieter and quieter as {PRONOUN/n_c:0/subject} {VERB/n_c:0/begin/begins} to lose {PRONOUN/n_c:0/poss} voice. Finally, app1 can't take it anymore - striding out, {PRONOUN/app1/subject} {VERB/app1/tell/tells} the cat to follow {PRONOUN/app1/object}, the Leader will know what to do with this.",
+                "text": "StarClan, but the cat {PRONOUN/app1/subject} {VERB/app1/find/finds} is weird, {PRONOUN/n_c:0/poss} fur soft and thin, {PRONOUN/n_c:0/poss} cries desperate as {PRONOUN/n_c:0/subject} {VERB/n_c:0/call/calls} in confusion. app1 watches until {PRONOUN/app1/poss} paws are cold and uncomfortable, crouched behind cover, but the dumb outsider doesn't even try to steal prey. {PRONOUN/n_c:0/subject/CAP} just {VERB/n_c:0/wail/wails} for help, quieter and quieter as {PRONOUN/n_c:0/subject} {VERB/n_c:0/begin/begins} to lose {PRONOUN/n_c:0/poss} voice. Finally, app1 can't take it anymore. Striding out, {PRONOUN/app1/subject} {VERB/app1/tell/tells} the cat to follow {PRONOUN/app1/object} - lead_name will know what to do with this.",
                 "exp": 20,
                 "new_cat": [
                     [
@@ -3486,10 +3510,14 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned in leaf-bare by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned in leaf-bare by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 1
             },
             {
-                "text": "app1 follows the sad cries to find a kittypet, lost and alone and cold. {PRONOUN/app1/subject/CAP} {VERB/app1/watch/watches} from under a rock overhang, but no, actually the kittypet is <i>that stupid</i> and it really seems likely they'll freeze to death if app1 doesn't do something. Ugh. Fine, well app1 can bring them back to camp, and then it's the Leader's problem to deal with, not app1's.",
+                "text": "app1 follows the sad cries to find a kittypet, lost and alone and cold. {PRONOUN/app1/subject/CAP} {VERB/app1/watch/watches} from under a rock overhang, but no, actually the kittypet is <i>that stupid</i> and it really seems likely {PRONOUN/n_c:0/subject}'ll freeze to death if app1 doesn't do something. app1 decides bring them back to camp so it'll be lead_name's problem to deal with, not app1's.",
                 "exp": 20,
                 "stat_trait": [
                     "adventurous",
@@ -3534,6 +3562,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned in leaf-bare by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned in leaf-bare by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 4
             }
         ],

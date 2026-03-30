@@ -1,0 +1,238 @@
+[
+    {
+        "event_id": "debug_newcat_loner_oldname",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0.",
+        "new_cat": [
+            [
+                "old_name",
+                "loner",
+                "status:warrior",
+                "exists"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_newcat_loner_newname",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0.",
+        "new_cat": [
+            [
+                "new_name",
+                "loner",
+                "status:warrior",
+                "exists"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_newcat_rogue_oldname",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0.",
+        "new_cat": [
+            [
+                "old_name",
+                "rogue",
+                "status:warrior",
+                "exists"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_newcat_loner_newname",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0.",
+        "new_cat": [
+            [
+                "new_name",
+                "rogue",
+                "status:warrior",
+                "exists"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_newcat_kittypet_oldname",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0.",
+        "new_cat": [
+            [
+                "old_name",
+                "kittypet",
+                "status:warrior",
+                "exists"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_newcat_kittypet_newname",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0.",
+        "new_cat": [
+            [
+                "new_name",
+                "kittypet",
+                "status:warrior",
+                "exists"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_newcat_otherclan_warrior",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0 from o_c_n (warrior).",
+        "new_cat": [
+            [
+                "old_name",
+                "clancat",
+                "status:warrior"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_newcat_otherclan_medcat",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0 from o_c_n (medicine cat).",
+        "new_cat": [
+            [
+                "old_name",
+                "clancat",
+                "status:medicine cat"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_newcat_otherclan_app",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0 from o_c_n (apprentice).",
+        "new_cat": [
+            [
+                "old_name",
+                "clancat",
+                "status:apprentice"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_meet_loner",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: met n_c:0.",
+        "new_cat": [
+            [
+                "meeting",
+                "loner"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_meet_rogue",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: met n_c:0.",
+        "new_cat": [
+            [
+                "meeting",
+                "rogue"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_meet_kittypet",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: met n_c:0.",
+        "new_cat": [
+            [
+                "meeting",
+                "kittypet"
+            ]
+        ]
+    },
+    {
+        "event_id": "debug_meet_otherclan",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: met n_c:0 from o_c_n.",
+        "new_cat": [
+            [
+                "meeting",
+                "clancat"
+            ]
+        ]
+    }
+]

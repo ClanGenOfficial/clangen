@@ -8,6 +8,10 @@
 			"r_c's laugh reminds m_c of someone {PRONOUN/m_c/subject} {VERB/m_c/miss/misses}.",
 			"m_c overhears r_c humming a comforting tune.",
 			"r_c brought m_c some dry bedding.",
+			"m_c and r_c chat about Clan news.",
+			"m_c talks with r_c about some Clan drama.",
+			"m_c is asking r_c interesting questions.",
+			"m_c learns something new about a Clanmate from r_c.",
 			"r_c lets m_c grab a piece of fresh-kill first.",
 			"m_c had a good dream about r_c.",
 			"m_c remembers something nice that r_c did.",
@@ -433,6 +437,7 @@
 			"When m_c panics about something, {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} of r_c to feel better.",
 			"m_c wakes up r_c every morning so they're up together.",
 			"m_c and r_c share their prey with one another every day.",
+			"m_c and r_c know more about each other than anyone else.",
 			"m_c and r_c have multiple inside jokes with one another."
 		],
 		"relationship_constraint": [

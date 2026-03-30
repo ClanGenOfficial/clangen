@@ -1015,6 +1015,9 @@
             "Whispers the names of cats who have wronged {PRONOUN/m_c/object} before {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}",
             "Is laughing because a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like got hurt"
         ],
+        "main_trait_constraint": [
+            "vengeful"
+        ],
         "relationship_constraint": [
             "dislikes"
         ],

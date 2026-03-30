@@ -533,8 +533,7 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": [
@@ -542,15 +541,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "An adolescent coyote scarred m_c's pelt.",
-                    "death": "m_c was killed by trying to fight an adolescent coyote with a small patrol."
+                    "death": "m_c died of injuries inflicted by an adolescent coyote."
                 },
                 "relationships": [
                     {
@@ -588,9 +584,6 @@
                         "injuries": [
                             "minor_injury",
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -691,7 +684,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "death": "m_c died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
@@ -723,15 +716,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "scar": "m_c was scarred defending the Clan against a coyote.",
+                    "death": "m_c died of injuries inflicted by a coyote."
                 },
                 "relationships": [
                     {
@@ -1059,9 +1049,6 @@
                         ],
                         "injuries": [
                             "bite-wound"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     },
                     {
@@ -1070,8 +1057,7 @@
                         ],
                         "injuries": [
                             "blood loss"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1312,9 +1298,6 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
@@ -1323,8 +1306,7 @@
                         ],
                         "injuries": [
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": [
@@ -1332,8 +1314,7 @@
                         ],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1366,9 +1347,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     },
                     {
@@ -1377,8 +1355,7 @@
                         ],
                         "injuries": [
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1483,8 +1460,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "death": "m_c died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
@@ -1515,15 +1491,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "scar": "m_c was scarred defending the Clan against a coyote.",
+                    "death": "m_c died of injuries inflicted by a coyote."
                 },
                 "relationships": [
                     {

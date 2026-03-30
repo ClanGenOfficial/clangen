@@ -193,17 +193,12 @@
                         ],
                         "injuries": [
                             "frostbite"
-                        ],
-                        "scars": [
-                            "FROSTSOCK",
-                            "FROSTTAIL"
-                        ],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "r_c carried the marks of frostbite on {PRONOUN/r_c/poss} pelt from a freezing border patrol in leaf-bare.",
-                    "death": "r_c died from a freezing border patrol in leaf-bare after getting frostbitten."
+                    "death": "r_c died from frostbite after a freezing border patrol in leaf-bare."
                 },
                 "relationships": [
                     {
@@ -269,6 +264,10 @@
                         ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a chill caught on patrol progressed to frostbite.",
+                    "death": "m_c caught a chill on patrol and never recovered."
+                },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -623,17 +622,16 @@
                             "patrol"
                         ],
                         "injuries": [
-                            "shock"
-                        ],
-                        "scars": []
+                            "shock",
+                            "non_lethal"
+                        ]
                     }
                 ],
                 "dead_cats": [
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "",
-                    "death": "r_c was killed by a coyote male trying to offer a courting gift to a female."
+                    "death": "m_c was killed by a coyote male trying to offer a courting gift to a female."
                 },
                 "relationships": [
                     {
@@ -673,15 +671,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "Courting coyotes scarred r_c's pelt.",
-                    "death": "r_c was killed by a coyote male trying to offer a courting gift to a female."
+                    "scar": "Courting coyotes scarred m_c's pelt.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after a coyote male tried to offer {PRONOUN/m_c/object} as a courting gift to a female."
                 },
                 "frequency": 4
             },
@@ -703,9 +698,6 @@
                         "injuries": [
                             "minor_injury",
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -806,7 +798,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "death": "m_c died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
@@ -838,15 +830,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "scar": "m_c was scarred defending the Clan against a coyote.",
+                    "death": "m_c died of injuries inflicted by a coyote."
                 },
                 "relationships": [
                     {
@@ -1329,9 +1318,6 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1365,16 +1351,16 @@
                             "patrol"
                         ],
                         "injuries": [
-                            "shock"
-                        ],
-                        "scars": []
+                            "shock",
+                            "non_lethal"
+                        ]
                     }
                 ],
                 "dead_cats": [
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "r_c was killed by a coyote male trying to offer a courting gift to a female."
+                    "death": "m_c was killed by a coyote male trying to offer a courting gift to a female."
                 },
                 "frequency": 4
             },
@@ -1389,24 +1375,20 @@
                         ],
                         "injuries": [
                             "minor_injury"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": [
-                            "patrol"
+                            "r_c"
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "Courting coyotes scarred r_c's pelt.",
-                    "death": "r_c was killed by a coyote male trying to offer a courting gift to a female."
+                    "scar": "Courting coyotes scarred m_c's pelt.",
+                    "death": "m_c died of injuries inflicted by a coyote male trying to offer {PRONOUN/m_c/object} as a courting gift to a female."
                 },
                 "relationships": [
                     {
@@ -1447,9 +1429,6 @@
                         "injuries": [
                             "minor_injury",
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -1500,9 +1479,6 @@
                         "injuries": [
                             "big_bite_injury",
                             "scrapes"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     },
                     {
@@ -1511,8 +1487,7 @@
                         ],
                         "injuries": [
                             "scrapes"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "dead_cats": [
@@ -1576,9 +1551,6 @@
                         ],
                         "injuries": [
                             "bite-wound"
-                        ],
-                        "scars": [
-                            "NECKBITE"
                         ]
                     },
                     {
@@ -1587,8 +1559,7 @@
                         ],
                         "injuries": [
                             "blood loss"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -1656,8 +1627,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "death": "m_c died to keep the Clan safe from a large coyote."
                 },
                 "relationships": [
                     {
@@ -1688,15 +1658,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                    "scar": "m_c was scarred defending the Clan against a coyote.",
+                    "death": "m_c died of injuries inflicted by a coyote."
                 },
                 "relationships": [
                     {
@@ -2043,15 +2010,12 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
-                    "death": "m_c was killed by the consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm."
+                    "death": "Though m_c's patrol found shelter during a snowstorm, m_c still caught a chill that eventually killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -2103,15 +2067,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
-                    "death": "m_c was killed by the consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm."
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries when {PRONOUN/m_c/poss} border patrol failed to find shelter in a sleet storm."
                 },
                 "relationships": [
                     {
@@ -2144,9 +2105,6 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
@@ -2155,7 +2113,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
-                    "death": "m_c was killed by the consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm."
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries when {PRONOUN/m_c/poss} border patrol failed to find shelter in a sleet storm."
                 },
                 "relationships": [
                     {
@@ -2194,15 +2152,12 @@
                         ],
                         "injuries": [
                             "frostbite"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
-                    "death": "m_c was killed by the consequences of failing to find shelter in a sleet storm."
+                    "death": "m_c thought {PRONOUN/m_c/subject} could outrun a snowstorm, but {PRONOUN/m_c/subject} succumbed to frostbite."
                 },
                 "relationships": [
                     {
@@ -2249,15 +2204,12 @@
                         ],
                         "injuries": [
                             "frostbite"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
-                    "death": "m_c was killed by the consequences of failing to find shelter in a sleet storm."
+                    "death": "m_c died of frostbite after attempting to return to camp during a snowstorm instead of sheltering."
                 },
                 "relationships": [
                     {
@@ -2505,12 +2457,13 @@
                             "shivering"
                         ],
                         "scars": [
-                            "FROSTTAIL"
+                            "FROSTSOCK",
+                            "FROSTMITT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "Digging out a tunnel in leafbare wasn't a good idea, and left m_c marked by frostbite.",
+                    "scar": "Digging out a tunnel in leafbare wasn't a good idea and left m_c marked by frostbite.",
                     "death": "Digging out a tunnel in leafbare wasn't a good idea, and the cold killed m_c."
                 },
                 "frequency": 4
@@ -2526,15 +2479,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "MANLEG"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was injured after disturbing a sheltering coyote in leaf-bare.",
-                    "death": "This cat was killed after disturbing a sheltering coyote in leaf-bare."
+                    "scar": "m_c was scarred after disturbing a sheltering coyote in leaf-bare.",
+                    "death": "m_c died of injuries inflicted by a coyote sheltering from leaf-bare's cold."
                 },
                 "frequency": 4
             },
@@ -2549,15 +2499,12 @@
                         ],
                         "injuries": [
                             "claw-wound"
-                        ],
-                        "scars": [
-                            "MANLEG"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a sheltering coyote in leaf-bare.",
-                    "death": "This cat was killed after disturbing a sheltering coyote in leaf-bare."
+                    "death": "m_c died of injuries inflicted by a coyote sheltering from leaf-bare's cold."
                 },
                 "frequency": 4
             },
@@ -2986,9 +2933,6 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
                         ]
                     },
                     {
@@ -2999,7 +2943,8 @@
                             "frostbite"
                         ],
                         "scars": [
-                            "FROSTMITT"
+                            "FROSTMITT",
+                            "FROSTSOCK"
                         ]
                     }
                 ],
@@ -3039,15 +2984,12 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "A snowstorm struck while m_c was out patrolling in leaf-bare, causing the cold to bite in a way that marked {PRONOUN/m_c/poss} coat.",
-                    "death": "A snowstorm struck while m_c was out patrolling in leaf-bare, killing {PRONOUN/m_c/object}."
+                    "scar": "A snowstorm struck while m_c was out patrolling in leaf-bare, and frostbite left its mark on m_c.",
+                    "death": "While sheltering from a snowstorm, m_c caught a chill that eventually killed {PRONOUN/m_c/object}."
                 },
                 "relationships": [
                     {
@@ -3166,9 +3108,6 @@
                             "torn ear",
                             "scrapes",
                             "shock"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     },
                     {
@@ -3179,9 +3118,6 @@
                             "torn ear",
                             "scrapes",
                             "shock"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
@@ -3191,13 +3127,12 @@
                         "injuries": [
                             "scrapes",
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "relationships": [
                     {
@@ -3389,9 +3324,9 @@
                             "p_l"
                         ],
                         "injuries": [
-                            "shock"
-                        ],
-                        "scars": []
+                            "shock",
+                            "non_lethal"
+                        ]
                     }
                 ],
                 "dead_cats": [
@@ -3399,7 +3334,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed saving an older warrior from a badger as an apprentice."
+                    "death": "m_c was killed saving an older warrior from a badger as an apprentice."
                 },
                 "frequency": 4
             },
@@ -3414,15 +3349,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a wolverine."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 1
             }
@@ -3567,15 +3499,12 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": [
-                            "FROSTMITT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "The weather caved in while m_c was out patrolling in leaf-bare, causing the cold to bite in a way that marked {PRONOUN/m_c/poss} coat.",
-                    "death": "The weather caved in while m_c was out patrolling in leaf-bare, killing {PRONOUN/m_c/object}."
+                    "scar": "The weather caved in while m_c was out patrolling in leaf-bare, and frostbite left its mark on m_c.",
+                    "death": "m_c caught a chill while sheltering from a leaf-bare storm and couldn't recover."
                 },
                 "frequency": 4
             },
@@ -3635,15 +3564,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "THREE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 1
             }
@@ -3848,8 +3774,7 @@
                         ],
                         "injuries": [
                             "sore"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": [
@@ -3857,15 +3782,12 @@
                         ],
                         "injuries": [
                             "frostbite"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c went out on a border patrol alone as an apprentice during leaf-bare, and still bears the marks of that lesson.",
-                    "death": "This cat was killed after a leaf-bare storm caught {PRONOUN/s_c/object} on patrol as an apprentice."
+                    "scar": "m_c went out on a border patrol alone as an apprentice during leaf-bare and still bears the marks of that lesson.",
+                    "death": "m_c died of frostbite after exploring alone in leaf-bare."
                 },
                 "frequency": 4
             },
@@ -3880,18 +3802,6 @@
                         ],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
-                    },
-                    {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
@@ -3899,7 +3809,15 @@
                             "app1"
                         ],
                         "injuries": [
-                            "torn pelt"
+                            "torn ear"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "claw-wound"
                         ],
                         "scars": [
                             "BRIDGE"
@@ -3908,7 +3826,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wrathful prairie dog.",
-                    "death": "This cat was killed after wounds given by a prairie dog progressed to something worse."
+                    "death": "m_c died of injuries inflicted by a prairie dog."
                 },
                 "frequency": 3
             },
@@ -3971,8 +3889,7 @@
                         ],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": [
@@ -3980,9 +3897,6 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
@@ -3990,27 +3904,13 @@
                             "p_l"
                         ],
                         "injuries": [
-                            "torn pelt"
-                        ],
-                        "scars": [
-                            "BRIDGE"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "injuries": [
-                            "mangled tail"
-                        ],
-                        "scars": [
-                            "MANTAIL"
+                            "claw-wound"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
-                    "death": "This cat was killed after an unfortunate meeting with a badger."
+                    "death": "m_c died of injuries inflicted by a badger."
                 },
                 "frequency": 3
             },
@@ -4327,15 +4227,14 @@
                         ],
                         "injuries": [
                             "constant nightmares"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "dead_cats": [
                     "app2"
                 ],
                 "history_text": {
-                    "death": "m_c was killed when another apprentice made the wrong judgement call on a border patrol."
+                    "death": "m_c was killed when another apprentice made the wrong judgment call on a border patrol."
                 },
                 "relationships": [
                     {
@@ -4384,18 +4283,6 @@
                         ],
                         "injuries": [
                             "bruises"
-                        ],
-                        "scars": []
-                    },
-                    {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "torn ear"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     },
                     {
@@ -4403,7 +4290,15 @@
                             "app1"
                         ],
                         "injuries": [
-                            "torn pelt"
+                            "torn ear"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "app1"
+                        ],
+                        "injuries": [
+                            "claw-wound"
                         ],
                         "scars": [
                             "BRIDGE"
@@ -4412,7 +4307,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wrathful prairie dog.",
-                    "death": "This cat was killed after wounds given by a prairie dog progressed to something worse."
+                    "death": "m_c died of injuries inflicted by a prairie dog."
                 },
                 "relationships": [
                     {
@@ -4444,8 +4339,7 @@
                         ],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -4467,12 +4361,10 @@
                         ],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "",
                     "death": "This cat was killed by the shock of watching fellow apprentices be kidnapped by Twolegs."
                 },
                 "frequency": 2
@@ -4536,9 +4428,9 @@
                         ],
                         "injuries": [
                             "shock",
-                            "constant nightmares"
-                        ],
-                        "scars": []
+                            "constant nightmares",
+                            "non_lethal"
+                        ]
                     },
                     {
                         "cats": [
@@ -4546,15 +4438,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c went out with a group of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
-                    "death": "This cat was killed as an apprentice, after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm."
+                    "scar": "m_c was frostbitten after going out with a group of friends as apprentices and getting caught in a sleet storm.",
+                    "death": "m_c was killed after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleet storm."
                 },
                 "frequency": 4
             },
@@ -4583,8 +4472,7 @@
                         "injuries": [
                             "shock",
                             "constant nightmares"
-                        ],
-                        "scars": []
+                        ]
                     },
                     {
                         "cats": [
@@ -4592,15 +4480,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c went out with a group of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
-                    "death": "This cat was killed as an apprentice, after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm."
+                    "scar": "m_c was frostbitten after going out with a group of friends as apprentices and getting caught in a sleet storm.",
+                    "death": "m_c was killed after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleet storm."
                 },
                 "frequency": 4
             }

@@ -638,15 +638,12 @@
                         "injuries": [
                             "bite-wound",
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "TAILSCAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
+                    "death": "m_c died from injuries inflicted by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -790,9 +787,6 @@
                         "injuries": [
                             "bite-wound",
                             "mangled tail"
-                        ],
-                        "scars": [
-                            "TAILSCAR"
                         ]
                     }
                 ],
@@ -1023,9 +1017,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],

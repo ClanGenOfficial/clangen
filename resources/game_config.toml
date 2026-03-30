@@ -354,7 +354,7 @@ dev_tools = false
   #   i.e. 1/(chance + adolescent_modifier + older_modifier)
   # so SUBTRACTING will INCREASE the chance a cat transitions
 
-  # modifies transition chance based on if cat is an adolescent
+  # modifies transition chance based on if cat is a kitten or adolescent
   adolescent_modifier = -128
 
   # modifies transition chance based on if cat is an adult or older

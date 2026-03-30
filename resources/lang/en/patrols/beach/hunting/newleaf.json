@@ -406,15 +406,12 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c was scarred by a rattlesnake.",
-                    "death": "r_c died after succumbing to a rattlesnake's venom."
+                    "scar": "m_c was scarred by a rattlesnake.",
+                    "death": "m_c succumbed to a rattlesnake's venom."
                 },
                 "relationships": [
                     {
