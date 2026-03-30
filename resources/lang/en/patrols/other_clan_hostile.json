@@ -1196,7 +1196,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to fight off an o_c_n patrol, despite their differences."
+                            "cats_from": "from_cat and to_cat worked together to fight off a o_c_n patrol, despite their differences."
                         }
                     }
                 ],
@@ -1734,7 +1734,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by s_c's ability to intimidate an o_c_n patrol."
+                            "cats_from": "from_cat was impressed by s_c's ability to intimidate a o_c_n patrol."
                         }
                     },
                     {
@@ -1782,7 +1782,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated how easily s_c disarmed an o_c_n patrol with nothing but {PRONOUN/from_cat/poss} force of personality."
+                            "cats_from": "from_cat appreciated how easily s_c disarmed a o_c_n patrol with nothing but {PRONOUN/from_cat/poss} force of personality."
                         }
                     }
                 ],
