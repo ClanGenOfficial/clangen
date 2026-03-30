@@ -10693,7 +10693,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
@@ -10816,7 +10816,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "During an odd moment of downtime, r_c asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a good teacher.",
@@ -10934,7 +10934,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "p_l gets taken aside by r_c as {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} why {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like StarClan ignores {PRONOUN/r_c/object}.",
@@ -11197,7 +11197,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "p_l guides app1 to sit, gently asking what's wrong. app1, cuddled close to p_l's side, whispers that {PRONOUN/app1/subject} {VERB/app1/feel/feels} like a failure, and that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing well enough. p_l gently tugs {PRONOUN/app1/object} close, murmuring that app1's more than {PRONOUN/app1/poss} failures. Failure hurts, yes, but with it comes a chance to learn. All {PRONOUN/app1/subject} can do is try not to make the same mistake twice.",
+                "text": "p_l guides app1 to sit, asking what's wrong. app1, cuddled close to p_l's side, whispers that {PRONOUN/app1/subject} {VERB/app1/feel/feels} like a failure, and that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing well enough. p_l tugs {PRONOUN/app1/object} close, murmuring that app1's more than {PRONOUN/app1/poss} failures. Failure hurts, yes, but with it comes a chance to learn. All {PRONOUN/app1/subject} can do is try not to make the same mistake twice.",
                 "exp": 5,
                 "relationships": [
                     {
@@ -11231,7 +11231,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l gently asks what's wrong and app1 breaks down, wailing that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing well enough even though {PRONOUN/app1/subject}{VERB/app1/'re/'s} <i>really</i> trying. p_l curls around {PRONOUN/app1/object}, purring softly, and tells a story of {PRONOUN/p_l/poss} own apprentice days and {PRONOUN/p_l/poss} own mistakes. p_l chuckles at the look on {PRONOUN/app1/poss} face, promising that nobody but {PRONOUN/app1/object} will remember {PRONOUN/app1/poss} mistakes.",
+                "text": "p_l asks what's wrong and app1 breaks down, wailing that {PRONOUN/app1/subject}{VERB/app1/'re/'s} not doing well enough even though {PRONOUN/app1/subject}{VERB/app1/'re/'s} <i>really</i> trying. p_l curls around {PRONOUN/app1/object}, purring softly, and tells a story of {PRONOUN/p_l/poss} own apprentice days and {PRONOUN/p_l/poss} own mistakes. p_l chuckles at the look on {PRONOUN/app1/poss} face, promising that nobody but {PRONOUN/app1/object} will remember {PRONOUN/app1/poss} mistakes.",
                 "exp": 5,
                 "relationships": [
                     {
@@ -11285,6 +11285,26 @@
                     }
                 ],
                 "frequency": 4
+            },
+            {
+                "text": "p_l asks app1 if there's something {PRONOUN/p_l/subject} can help with, or if {PRONOUN/app1/subject} {VERB/app1/want/wants} to talk about it. When app1 confesses {PRONOUN/app1/poss} insecurities, p_l is surprised - that's all? app1 shouldn't worry about something small like that. This reply does little to assuage app1's anxiety.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat admitted {PRONOUN/from_cat/poss} insecurities to to_cat, but to_cat minimized them."
+                        }
+                    }
+                ],
+                "frequency": 3
             }
         ]
     },
