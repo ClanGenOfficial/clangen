@@ -683,7 +683,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "cat_from was impressed by to_cat's hunting skill, even though it meant to_cat remained on c_n territory."
+            "cats_from": "cat_from was impressed by cat_to's hunting skill, even though it meant cat_to remained on c_n territory."
           }
         }
       ]
@@ -709,7 +709,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "cat_from was grudgingly impressed by how to_cat eluded c_n's pursuit."
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
           }
         },
         {
@@ -745,7 +745,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "cat_from was grudgingly impressed by how to_cat eluded c_n's pursuit."
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
           }
         },
         {
@@ -817,7 +817,7 @@
           "values": ["respect"],
           "amount": 10,
           "log": {
-            "cats_from": "cat_from was grudgingly impressed by to_cat's hunting skill."
+            "cats_from": "cat_from was grudgingly impressed by cat_to's hunting skill."
           }
         }
       ]
@@ -843,7 +843,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "cat_from was grudgingly impressed by how to_cat eluded c_n's pursuit."
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
           }
         },
         {
@@ -879,7 +879,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "cat_from was grudgingly impressed by how to_cat evaded c_n's trap."
+            "cats_from": "cat_from was grudgingly impressed by how cat_to evaded c_n's trap."
           }
         },
         {

@@ -44,7 +44,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from learned from to_cat about how the Twolegs occupy a particular beach throughout greenleaf."
+                            "cats_from": "cat_from learned from cat_to about how the Twolegs occupy a particular beach throughout greenleaf."
                         }
                     }
                 ],
@@ -124,7 +124,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and to_cat enjoyed cooling off in a rockpool on a hot greenleaf day."
+                            "cats_from": "cat_from and cat_to enjoyed cooling off in a rockpool on a hot greenleaf day."
                         }
                     }
                 ],
@@ -150,7 +150,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and to_cat were so involved in splashing each other while cooling down on patrol that they forgot any other cat was there."
+                            "cats_from": "cat_from and cat_to were so involved in splashing each other while cooling down on patrol that they forgot any other cat was there."
                         }
                     }
                 ],

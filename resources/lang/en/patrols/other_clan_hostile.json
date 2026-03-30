@@ -193,7 +193,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was disappointed with how easily to_cat was rebuffed by a o_c_n patrol, it seems to_cat is all yowl and no bite."
+                            "cats_from": "cat_from was disappointed with how easily cat_to was rebuffed by a o_c_n patrol, it seems cat_to is all yowl and no bite."
                         }
                     }
                 ]
@@ -219,7 +219,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from was impressed at to_cat's fighting prowess against a o_c_n patrol."
+                            "cats_from": "cat_from was impressed at cat_to's fighting prowess against a o_c_n patrol."
                         }
                     }
                 ]
@@ -278,7 +278,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -295,7 +295,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -312,7 +312,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from begged to_cat to join c_n, but to_cat refused and left Clan-life altogether."
+                            "cats_from": "cat_from begged cat_to to join c_n, but cat_to refused and left Clan-life altogether."
                         }
                     }
                 ],
@@ -346,7 +346,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -363,7 +363,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -379,7 +379,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "cat_from couldn't believe it when to_cat brought a <i>o_c_n</i> cat back to camp as a <i>mate</i>."
+                            "cats_from": "cat_from couldn't believe it when cat_to brought a <i>o_c_n</i> cat back to camp as a <i>mate</i>."
                         }
                     }
                 ],
@@ -412,7 +412,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -429,7 +429,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -446,7 +446,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from begged to_cat to join c_n, but to_cat refused and left Clan-life altogether."
+                            "cats_from": "cat_from begged cat_to to join c_n, but cat_to refused and left Clan-life altogether."
                         }
                     }
                 ],
@@ -485,7 +485,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -502,7 +502,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -520,7 +520,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and to_cat decided to leave Clan-life and travel together, free from the confines of their old lives."
+                            "cats_from": "cat_from and cat_to decided to leave Clan-life and travel together, free from the confines of their old lives."
                         }
                     }
                 ],
@@ -565,7 +565,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -582,7 +582,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -600,7 +600,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat had lost faith in their love's resilience and, despite cat_from's pleading, ran from {PRONOUN/cat_from/object}."
+                            "cats_from": "cat_to had lost faith in their love's resilience and, despite cat_from's pleading, ran from {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -656,7 +656,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -673,7 +673,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -690,7 +690,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "While the two were meeting, to_cat's Clanmates attacked and nearly killed cat_from. to_cat ran from the territories altogether."
+                            "cats_from": "While the two were meeting, cat_to's Clanmates attacked and nearly killed cat_from. cat_to ran from the territories altogether."
                         }
                     }
                 ],
@@ -744,7 +744,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -761,7 +761,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other until cat_from's Clan killed to_cat."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other until cat_from's Clan killed cat_to."
                         }
                     }
                 ],
@@ -805,7 +805,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -822,7 +822,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -838,7 +838,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "When to_cat killed cat_from's sibling, cat_from fled, {PRONOUN/cat_from/poss} heart torn."
+                            "cats_from": "When cat_to killed cat_from's sibling, cat_from fled, {PRONOUN/cat_from/poss} heart torn."
                         }
                     }
                 ],
@@ -907,7 +907,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -924,7 +924,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -959,7 +959,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "cat_from heard about to_cat's unfortunate cross-Clan relationship."
+                            "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
                         }
                     },
                     {
@@ -975,7 +975,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
+                            "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
                         }
                     }
                 ],
@@ -1009,7 +1009,7 @@
                         ],
                         "amount": 22,
                         "log": {
-                            "cats_from": "cat_from and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -1026,7 +1026,7 @@
                         ],
                         "amount": 14,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -1044,7 +1044,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "cat_from heard about to_cat's unfortunate cross-Clan relationship."
+                            "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
                         }
                     },
                     {
@@ -1060,7 +1060,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all."
+                            "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all."
                         }
                     }
                 ],
@@ -1101,7 +1101,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "cat_from heard about to_cat's unfortunate cross-Clan relationship."
+                            "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
                         }
                     },
                     {
@@ -1117,7 +1117,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
+                            "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
                         }
                     }
                 ],

@@ -185,7 +185,7 @@ dev_tools = false
 
   [new_cat.sib_buff]
     # default relationships buff for siblings' relationships in one direction
-    [new_cat.sib_buff.cat1_to_cat2]
+    [new_cat.sib_buff.cat1_cat_to2]
       romance = 0
       like = 40
       respect = 10
@@ -193,7 +193,7 @@ dev_tools = false
       trust = 30
 
     # default relationships buff for siblings' relationships in the other direction
-    [new_cat.sib_buff.cat2_to_cat1]
+    [new_cat.sib_buff.cat2_cat_to1]
       romance = 0
       like = 40
       respect = 10
