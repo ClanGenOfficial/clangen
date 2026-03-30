@@ -470,7 +470,6 @@ class Condition_Events:
             "weak leg",
             "absent",
             "crooked jaw",
-            "strange lump",
             "paralyzed",
             "raspy lungs",
             "wasting disease",
