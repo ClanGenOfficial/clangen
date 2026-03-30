@@ -78,6 +78,10 @@
         "whitecough": [
             "r_c's worst fears are realized as whitecough has infected m_c thanks to {PRONOUN/m_c/poss} weakened lungs.",
             "m_c's weak lungs have left {PRONOUN/m_c/object} coughing and wheezing this moon, unable to resist potential sickness."
+        ],
+        "breathless fit": [
+            "m_c is used to being breathless, but today {PRONOUN/m_c/subject} can hardly walk a few fox-lengths before growing faint. Something in the air must have irritated {PRONOUN/m_c/poss} lungs.",
+            "m_c wheezes to r_c that it feels like a cat is sitting on {PRONOUN/m_c/poss} chest. r_c waves fragrant herbs beneath m_c's nose, praying this breathlessness will not progress to suffocation."
         ]
     },
     "wasting disease": {
