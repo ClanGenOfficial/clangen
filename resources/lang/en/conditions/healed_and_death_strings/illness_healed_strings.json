@@ -7,6 +7,10 @@
         "m_c has stopped constantly running to the dirtplace. It seems {PRONOUN/m_c/poss} brush with diarrhea has ended.",
         "m_c is finally feeling better, {PRONOUN/m_c/poss} experience with diarrhea now over."
     ],
+    "breathless fit": [
+        "The tightness in m_c's chest has finally abated.",
+        "m_c is thrilled to finally be out of {PRONOUN/m_c/poss} nest and breathing easy."
+    ],
     "fleas": [
         "m_c has finally gotten rid of all {PRONOUN/m_c/poss} fleas.",
         "m_c is free of fleas at last."
