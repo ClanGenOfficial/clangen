@@ -2778,8 +2778,12 @@ class Cat:
                             # romance
                             rel["romance"] = old_rel["romantic_love"]
 
-                            # attempts to convert "complex" relationships by using the "negative" value for the lower of platonic_like/comfort and trust/admiration.
-                            # if the relationship isn't complex (< 10 for the negative; this is an arbitrary value), then it just uses
+                            # attempts to convert "complex" relationships by
+                            #   using the "negative" value for the lower of
+                            #   platonic_like/comfort and trust/admiration.
+                            # if the relationship isn't complex
+                            #   (< 10 for negative values; this is an arbitrary value),
+                            #   then it just takes the value without considering the negative.
                             if old_rel["platonic_like"] > old_rel["comfortable"]:
                                 rel["like"] = old_rel["platonic_like"]
                                 if old_rel["dislike"] < 10:
@@ -2799,7 +2803,7 @@ class Cat:
                                     rel["respect"] = old_rel["admiration"]
                                 else:
                                     rel["respect"] = -old_rel["jealousy"]
-                            else:
+                            else: # old_rel["trust"] < old_rel["admiration"]
                                 rel["respect"] = old_rel["admiration"]
                                 if old_rel["jealousy"] < 10:
                                     rel["trust"] = old_rel["trust"]
