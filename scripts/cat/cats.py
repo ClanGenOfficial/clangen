@@ -2825,7 +2825,7 @@ class Cat:
                         )
                         self.relationships[rel["cat_to_id"]] = new_rel
 
-            except KeyError as err:
+            except KeyError:
                 print(
                     f"WARNING: There was an error reading the relationship file of cat #{self}."
                 )
