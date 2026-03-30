@@ -6326,6 +6326,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "frequency": 1
             },
             {
@@ -6347,6 +6348,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "frequency": 1
             },
             {
@@ -6366,6 +6368,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "frequency": 1
             },
             {
@@ -6394,6 +6397,7 @@
                         }
                     }
                 ],
+                "art": "gen_hunt_mentor_app",
                 "frequency": 4
             },
             {
@@ -6426,6 +6430,7 @@
                         }
                     }
                 ],
+                "art": "gen_happy_cat2",
                 "frequency": 4
             },
             {
@@ -6452,6 +6457,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "frequency": 1
             }
         ],
@@ -6473,6 +6479,7 @@
                         }
                     }
                 ],
+                "art": "app_cat_looking_up",
                 "frequency": 1
             },
             {
@@ -6492,6 +6499,7 @@
                         }
                     }
                 ],
+                "art": "gen_warrior_crouching",
                 "frequency": 4
             },
             {
@@ -6513,6 +6521,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueAW",
                 "frequency": 4
             },
             {
@@ -6542,6 +6551,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionfail",
                 "frequency": 4
             },
             {
@@ -6568,12 +6578,12 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionfail",
                 "frequency": 4
             },
             {
                 "text": "app1 does a terrible job, but p_l isn't willing to call {PRONOUN/app1/object} out on it. It's the wrong move for a teacher to make, and no cat learns anything from the experience.",
                 "exp": 0,
-                "frequency": 4,
                 "relationships": [
                     {
                         "cats_from": ["p_l"],
@@ -6595,7 +6605,9 @@
                             "cats_from": "from_cat didn't learn anything from to_cat in a training session."
                         }
                     }
-                ]
+                ],
+                "art": "gen_embarrassed1_warrior_app",
+                "frequency": 4
             },
             {
                 "text": "app1, trying to show off, is too busy checking to see if p_l is watching to check where {PRONOUN/app1/poss} own paws are. app1 falls over with a comical thump and cloud of dust.",
@@ -6609,7 +6621,6 @@
                         ]
                     }
                 ],
-                "frequency": 4,
                 "relationships": [
                     {
                         "cats_from": ["app1"],
@@ -6621,7 +6632,9 @@
                             "cats_from": "from_cat wanted to impress to_cat during training."
                         }
                     }
-                ]
+                ],
+                "art": "gen_hunt_mentor_app",
+                "frequency": 4
             }
         ]
     },
