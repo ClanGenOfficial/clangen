@@ -76,9 +76,9 @@ class SetRelationshipCommand(Command):
             )
             return
 
-        set_cat_relationship_to_cat(cat_from, rel_type, to_cat, rel_value)
+        set_cat_relationship_to_cat(cat_from, rel_type, cat_to, rel_value)
         if len(args) == 5:
-            set_cat_relationship_to_cat(to_cat, rel_type, cat_from, rel_value)
+            set_cat_relationship_to_cat(cat_to, rel_type, cat_from, rel_value)
 
 
 class RelationshipsCommand(Command):
