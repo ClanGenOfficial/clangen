@@ -468,6 +468,9 @@ class Condition_Events:
 
         scarless_conditions = (
             "weak leg",
+            "absent",
+            "crooked jaw",
+            "strange lump",
             "paralyzed",
             "raspy lungs",
             "wasting disease",
