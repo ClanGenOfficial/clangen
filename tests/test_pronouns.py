@@ -64,7 +64,7 @@ def _test():
         "med_name": _r,
         "cat_tag": _r,
         "to_cat": _r,
-        "from_cat": _r,
+        "cat_from": _r,
     }
 
     for x in range(0, 11):

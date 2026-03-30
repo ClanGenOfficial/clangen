@@ -440,7 +440,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "from_cat was shoved off a cliff by to_cat."
+                    "cats_from": "cat_from was shoved off a cliff by to_cat."
                 }
             }
         ],
@@ -550,7 +550,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "from_cat was shoved off a cliff by to_cat, who made the death look like an accident."
+                    "cats_from": "cat_from was shoved off a cliff by to_cat, who made the death look like an accident."
                 }
             }
         ],
@@ -648,7 +648,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "from_cat drowned in the tides as to_cat stood by and watched."
+                    "cats_from": "cat_from drowned in the tides as to_cat stood by and watched."
                 }
             }
         ],
