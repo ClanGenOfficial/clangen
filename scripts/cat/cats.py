@@ -2803,7 +2803,7 @@ class Cat:
                                     rel["respect"] = old_rel["admiration"]
                                 else:
                                     rel["respect"] = -old_rel["jealousy"]
-                            else: # old_rel["trust"] < old_rel["admiration"]
+                            else:  # old_rel["trust"] < old_rel["admiration"]
                                 rel["respect"] = old_rel["admiration"]
                                 if old_rel["jealousy"] <= 5:
                                     rel["trust"] = old_rel["trust"]
