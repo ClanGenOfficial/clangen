@@ -10425,6 +10425,64 @@
                     }
                 ],
                 "frequency": 1
+            },
+            {
+                "text": "Everything seems to be going well - then r_c trips over {PRONOUN/r_c/poss} paws and introduces {PRONOUN/r_c/poss} muzzle to the ground at speed. Maybe they need to go back to basics.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": [
+                            "bruises",
+                            "scrapes"
+                        ]
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l and r_c really struggle to work together on their hunting. They end the training session early, feeling irritated with each other.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "comfort", "romance"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat and to_cat questioned their compatibility after struggling to practice their hunting together on a training patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l is so distracted by r_c that {PRONOUN/p_l/subject} {VERB/p_l/struggle/struggles} to focus on the training. r_c suggests ending the training session early, and p_l watches {PRONOUn/r_c/object} go, kicking {PRONOUN/p_l/self}.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": ["romance"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "from_cat found to_cat so distracting on a training patrol that {PRONOUN/from_cat/subject} didn't get any actual training done."
+                        }
+                    },
+                    {
+                        "cats_from": ["r_c"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat felt awkward around to_cat after {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} clearly distracted during a training patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
             }
         ]
     },
@@ -10539,6 +10597,63 @@
                         }
                     }
                 ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c shares {PRONOUN/s_c/poss} concern, but p_l's solution is completely useless. s_c thanks {PRONOUN/p_l/object}, privately deciding not to consult {PRONOUN/p_l/object} again about this.",
+                "exp": 0,
+                "can_have_stat": ["r_c"],
+                "stat_trait": ["compassionate", "calm", "wise", "nervous", "careful", "insecure", "charismatic", "cunning", "sneaky", "thoughtful", "faithful", "gloomy", "lonesome", "responsible"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "trust", "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat wanted to confide in to_cat about something, but to_cat's advice was useless."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "from_cat was glad to_cat sought {PRONOUN/from_cat/poss} advice on something."
+                        }
+                    }
+                ],
+                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
+                "frequency": 4
+            },
+            {
+                "text": "s_c shares {PRONOUN/s_c/poss} concern, but p_l's solution is completely useless. s_c tells {PRONOUN/p_l/object} so to {PRONOUN/p_l/poss} face, and they get into an argument about it.",
+                "exp": 0,
+                "can_have_stat": ["r_c"],
+                "stat_trait": [ "fierce", "adventurous", "ambitious", "confident", "childish", "arrogant", "bloodthirsty", "cold", "bold", "daring", "competitive", "grumpy", "loyal", "oblivious", "rebellious", "righteous", "strict", "sincere", "shameless", "strange", "troublesome"],
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": true,
+                        "values": [
+                            "trust", "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "from_cat wanted to confide in to_cat about something, but to_cat's advice was useless.",
+                            "cats_to": "from_cat asked for to_cat's help and then rejected {PRONOUN/to_cat/poss} advice."
+                        }
+                    }
+                ],
+                "art": "gen_train_argueWW",
                 "frequency": 4
             }
         ]
