@@ -54,7 +54,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about how, in a distant land, the sun brings relief and growth instead of searing death."
+                            "cats_from": "cat_from enjoyed cat_to's story about how, in a distant land, the sun brings relief and growth instead of searing death."
                         }
                     }
                 ],
@@ -85,7 +85,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's tales of distant Clans for whom greenleaf is the season of plenty."
+                            "cats_from": "cat_from enjoyed cat_to's tales of distant Clans for whom greenleaf is the season of plenty."
                         }
                     }
                 ],
@@ -121,7 +121,7 @@
                         ],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat and to_cat felt awkward around each other after a rainy training patrol necessitated a trip to the medicine cat den."
+                            "cats_from": "cat_from and cat_to felt awkward around each other after a rainy training patrol necessitated a trip to the medicine cat den."
                         }
                     }
                 ],
@@ -187,7 +187,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the Rainbow Serpent who created all other animals."
+                            "cats_from": "cat_from enjoyed cat_to's story about the Rainbow Serpent who created all other animals."
                         }
                     }
                 ],
@@ -213,7 +213,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was irritated that to_cat kept interrupting {PRONOUN/from_cat/poss} story to ask silly questions."
+                            "cats_from": "cat_from was irritated that cat_to kept interrupting {PRONOUN/cat_from/poss} story to ask silly questions."
                         }
                     }
                 ],

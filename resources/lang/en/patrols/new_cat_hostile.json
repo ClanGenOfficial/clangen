@@ -46,7 +46,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -83,7 +83,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -116,7 +116,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat had second thoughts on joining c_n after feeling anxious while encountering to_cat's patrol."
+                            "cats_from": "cat_from had second thoughts on joining c_n after feeling anxious while encountering cat_to's patrol."
                         }
                     }
                 ],
@@ -148,7 +148,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat attacked p_l on patrol and c_n was angry once they found out what happened."
+                            "cats_from": "cat_from attacked p_l on patrol and c_n was angry once they found out what happened."
                         }
                     }
                 ],
@@ -180,7 +180,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was threatened by to_cat's patrol to leave or else."
+                            "cats_from": "cat_from was threatened by cat_to's patrol to leave or else."
                         }
                     }
                 ],
@@ -235,7 +235,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n."
+                            "cats_from": "cat_to invited cat_from to c_n."
                         }
                     }
                 ],
@@ -272,7 +272,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -319,7 +319,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat attacked p_l on patrol and c_n was angry once they found out what happened."
+                            "cats_from": "cat_from attacked p_l on patrol and c_n was angry once they found out what happened."
                         }
                     }
                 ],
@@ -351,7 +351,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was threatened by to_cat to leave or else."
+                            "cats_from": "cat_from was threatened by cat_to to leave or else."
                         }
                     }
                 ],
@@ -406,7 +406,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -443,7 +443,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -529,7 +529,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n."
+                            "cats_from": "cat_to invited cat_from to c_n."
                         }
                     }
                 ],
@@ -565,7 +565,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -661,7 +661,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that rescued from_cat from the Thunderpath."
+                            "cats_from": "cat_to was part of the patrol that rescued cat_from from the Thunderpath."
                         }
                     }
                 ],
@@ -763,7 +763,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat from the Thunderpath."
+                            "cats_from": "cat_to rescued cat_from from the Thunderpath."
                         }
                     }
                 ],
@@ -867,7 +867,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
+                            "cats_from": "cat_to was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
                         }
                     }
                 ],
@@ -917,7 +917,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
+                            "cats_from": "cat_to was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
                         }
                     }
                 ],
@@ -972,7 +972,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that <i>rudely</i> stepped over n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hiding with {PRONOUN/n_c:0/poss} kits from Clan cats."
+                            "cats_from": "cat_to was part of the patrol that <i>rudely</i> stepped over n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hiding with {PRONOUN/n_c:0/poss} kits from Clan cats."
                         }
                     },
                     {
@@ -981,7 +981,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "n_c:0 surprised from_cat when from_cat's patrol almost stepped over n_c:0 and {PRONOUN/n_c:0/poss} kits on accident."
+                            "cats_from": "n_c:0 surprised cat_from when cat_from's patrol almost stepped over n_c:0 and {PRONOUN/n_c:0/poss} kits on accident."
                         }
                     }
                 ],
@@ -1009,7 +1009,7 @@
                         "mutual": false,
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat called from_cat scent-blind when {PRONOUN/from_cat/subject} smelt a scent trail over the border."
+                            "cats_from": "cat_to called cat_from scent-blind when {PRONOUN/cat_from/subject} smelt a scent trail over the border."
                         }
                     }
                 ],
@@ -1111,8 +1111,8 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat friend, to_cat, over the border.",
-                            "cats_to": "to_cat met {PRONOUN/to_cat/poss} loner friend, n_c:0, over the border."
+                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat friend, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c:0, over the border."
                         }
                     }
                 ],
@@ -1160,8 +1160,8 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, to_cat, over the border.",
-                            "cats_to": "to_cat met {PRONOUN/to_cat/poss} loner mate, n_c:0, over the border."
+                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
                         }
                     }
                 ],
@@ -1209,8 +1209,8 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, to_cat, over the border.",
-                            "cats_to": "to_cat met {PRONOUN/to_cat/poss} loner mate, n_c:0, over the border."
+                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
                         }
                     }
                 ],
@@ -1257,8 +1257,8 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "to_cat convinced n_c:0 to join {PRONOUN/to_cat/poss} Clan and stay with {PRONOUN/to_cat/object}, despite knowing how hostile to_cat's Clan is towards outsiders.",
-                            "cats_to": "to_cat convinced {PRONOUN/to_cat/poss} mate, n_c:0, to join the Clan and stay with {PRONOUN/to_cat/object}, even if that means {PRONOUN/to_cat/subject}'d be harshly judged by {PRONOUN/to_cat/poss} Clanmates."
+                            "cats_from": "cat_to convinced n_c:0 to join {PRONOUN/cat_to/poss} Clan and stay with {PRONOUN/cat_to/object}, despite knowing how hostile cat_to's Clan is towards outsiders.",
+                            "cats_to": "cat_to convinced {PRONOUN/cat_to/poss} mate, n_c:0, to join the Clan and stay with {PRONOUN/cat_to/object}, even if that means {PRONOUN/cat_to/subject}'d be harshly judged by {PRONOUN/cat_to/poss} Clanmates."
                         }
                     },
                     {
@@ -1275,7 +1275,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "Upon n_c:0 joining the Clan, it was found out that to_cat and n_c:0 were in a forbidden relationship. to_cat hid this secret from the rest of the Clan."
+                            "cats_from": "Upon n_c:0 joining the Clan, it was found out that cat_to and n_c:0 were in a forbidden relationship. cat_to hid this secret from the rest of the Clan."
                         }
                     }
                 ],
@@ -1327,7 +1327,7 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "to_cat decided to run away from {PRONOUN/to_cat/poss} outsider-phobic Clan to be with n_c:0."
+                            "cats_from": "cat_to decided to run away from {PRONOUN/cat_to/poss} outsider-phobic Clan to be with n_c:0."
                         }
                     }
                 ],
@@ -1358,7 +1358,7 @@
                         "values": ["like"],
                         "amount": -50,
                         "log": {
-                            "cats_from": "...but n_c:0 had already told to_cat that {PRONOUN/n_c:0/subject} refused to join. to_cat, who was tired of being separated from n_c:0, tried to pressure n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 still refused. to_cat then told {PRONOUN/n_c:0/poss} to leave and never return."
+                            "cats_from": "...but n_c:0 had already told cat_to that {PRONOUN/n_c:0/subject} refused to join. cat_to, who was tired of being separated from n_c:0, tried to pressure n_c:0 into joining {PRONOUN/cat_to/poss} Clan but n_c:0 still refused. cat_to then told {PRONOUN/n_c:0/poss} to leave and never return."
                         }
                     },
                     {
@@ -1389,7 +1389,7 @@
                         "values": ["romance"],
                         "amount": 40,
                         "log": {
-                            "cats_from": "to_cat and n_c:0 were mates hiding their relationship from to_cat's Clan."
+                            "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
                 ],
@@ -1421,7 +1421,7 @@
                         "values": ["like"],
                         "amount": -50,
                         "log": {
-                            "cats_from": "...but n_c:0 said {PRONOUN/n_c:0/subject} {VERB/n_c:0/weren't/wasn't} ready to join. to_cat, who was tired of n_c:0's indecision, tried to coerce n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 wasn't having it, sick of to_cat's pressuring."
+                            "cats_from": "...but n_c:0 said {PRONOUN/n_c:0/subject} {VERB/n_c:0/weren't/wasn't} ready to join. cat_to, who was tired of n_c:0's indecision, tried to coerce n_c:0 into joining {PRONOUN/cat_to/poss} Clan but n_c:0 wasn't having it, sick of cat_to's pressuring."
                         }
                     },
                     {
@@ -1452,7 +1452,7 @@
                         "values": ["romance"],
                         "amount": 40,
                         "log": {
-                            "cats_from": "to_cat and n_c:0 were mates hiding their relationship from to_cat's Clan."
+                            "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
                 ],
@@ -1484,7 +1484,7 @@
                         "values": ["like"],
                         "amount": -50,
                         "log": {
-                            "cats_from": "...but n_c:0 had already told to_cat that {PRONOUN/n_c:0/subject} refused to join. to_cat, who was tired of being separated from n_c:0, tried to pressure n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 still refused. to_cat then told {PRONOUN/n_c:0/poss} to leave and never return."
+                            "cats_from": "...but n_c:0 had already told cat_to that {PRONOUN/n_c:0/subject} refused to join. cat_to, who was tired of being separated from n_c:0, tried to pressure n_c:0 into joining {PRONOUN/cat_to/poss} Clan but n_c:0 still refused. cat_to then told {PRONOUN/n_c:0/poss} to leave and never return."
                         }
                     },
                     {
@@ -1515,7 +1515,7 @@
                         "values": ["romance"],
                         "amount": 40,
                         "log": {
-                            "cats_from": "to_cat and n_c:0 were mates hiding their relationship from to_cat's Clan."
+                            "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
                 ],
@@ -1571,7 +1571,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "n_c:0 was found by to_cat and {PRONOUN/to_cat/poss} patrol and taken into the Clan as a kit."
+                            "cats_from": "n_c:0 was found by cat_to and {PRONOUN/cat_to/poss} patrol and taken into the Clan as a kit."
                         }
                     }
                 ],
@@ -1657,7 +1657,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "n_c:0 was found by to_cat and taken into the Clan as a kit."
+                            "cats_from": "n_c:0 was found by cat_to and taken into the Clan as a kit."
                         }
                     }
                 ],
@@ -1743,7 +1743,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -1781,7 +1781,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -1828,7 +1828,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat attacked p_l on patrol and c_n was angry once they found out what happened."
+                            "cats_from": "cat_from attacked p_l on patrol and c_n was angry once they found out what happened."
                         }
                     }
                 ],
@@ -1860,7 +1860,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was threatened by to_cat's patrol to leave or else."
+                            "cats_from": "cat_from was threatened by cat_to's patrol to leave or else."
                         }
                     }
                 ],
@@ -1915,7 +1915,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n."
+                            "cats_from": "cat_to invited cat_from to c_n."
                         }
                     }
                 ],
@@ -1953,7 +1953,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -2000,7 +2000,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat attacked p_l on patrol and c_n was angry once they found out what happened."
+                            "cats_from": "cat_from attacked p_l on patrol and c_n was angry once they found out what happened."
                         }
                     }
                 ],
@@ -2032,7 +2032,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was threatened by to_cat to leave or else."
+                            "cats_from": "cat_from was threatened by cat_to to leave or else."
                         }
                     }
                 ],
@@ -2086,7 +2086,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved n_c:0 from a dog."
+                            "cats_from": "cat_to was part of the patrol that saved n_c:0 from a dog."
                         }
                     }
                 ],
@@ -2134,7 +2134,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved n_c:0 from a dog."
+                            "cats_from": "cat_to was part of the patrol that saved n_c:0 from a dog."
                         }
                     }
                 ],
@@ -2196,8 +2196,8 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "from_cat can't believe how selfish Clan cats can be, not only did they not help {PRONOUN/from_cat/object} escape the dog, but they had the audacity to say they don't owe outsiders anything - even if the outsider was in danger.",
-                            "cats_to": "to_cat heard about that the loner, from_cat, scowled to the patrol who watched {PRONOUN/from_cat/object} get chased by a dog."
+                            "cats_from": "cat_from can't believe how selfish Clan cats can be, not only did they not help {PRONOUN/cat_from/object} escape the dog, but they had the audacity to say they don't owe outsiders anything - even if the outsider was in danger.",
+                            "cats_to": "cat_to heard about that the loner, cat_from, scowled to the patrol who watched {PRONOUN/cat_from/object} get chased by a dog."
                         }
                     }
                 ],
@@ -2229,7 +2229,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat cannot believe how selfish Clan cats can be, not only did they not help {PRONOUN/from_cat/object} escape the dog, but they chased the dog away only <i>after</i> {PRONOUN/from_cat/subject} climbed the tree. Then they had the audacity to spit at {PRONOUN/from_cat/object} to not cross the border!? How incredibly selfish they are."
+                            "cats_from": "cat_from cannot believe how selfish Clan cats can be, not only did they not help {PRONOUN/cat_from/object} escape the dog, but they chased the dog away only <i>after</i> {PRONOUN/cat_from/subject} climbed the tree. Then they had the audacity to spit at {PRONOUN/cat_from/object} to not cross the border!? How incredibly selfish they are."
                         }
                     }
                 ],
@@ -2294,7 +2294,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat was driven out of c_n territory by to_cat's patrol after {PRONOUN/from_cat/subject} barely attacked p_l."
+                            "cats_from": "cat_from was driven out of c_n territory by cat_to's patrol after {PRONOUN/cat_from/subject} barely attacked p_l."
                         }
                     }
                 ],
@@ -2340,7 +2340,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat was driven out of c_n territory by to_cat's patrol after {PRONOUN/from_cat/subject} attacked p_l."
+                            "cats_from": "cat_from was driven out of c_n territory by cat_to's patrol after {PRONOUN/cat_from/subject} attacked p_l."
                         }
                     }
                 ],
@@ -2400,7 +2400,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "to_cat's patrol was ambushed by from_cat and two other rogues and the rogues badly injured one of the patrol members."
+                            "cats_from": "cat_to's patrol was ambushed by cat_from and two other rogues and the rogues badly injured one of the patrol members."
                         }
                     }
                 ],
@@ -2455,8 +2455,8 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and the other rogues almost attacked p_l's patrol before they ran away. Wow, c_n cats really think they're so big and bad towards outsiders, but they're too mouse-hearted to fight them!",
-                            "cats_to": "to_cat heard that p_l's patrol almost got attacked by from_cat and the other rogues. Thankfully, the patrol got away, but those mange-pelts are still out there, still talking bad about c_n."
+                            "cats_from": "cat_from and the other rogues almost attacked p_l's patrol before they ran away. Wow, c_n cats really think they're so big and bad towards outsiders, but they're too mouse-hearted to fight them!",
+                            "cats_to": "cat_to heard that p_l's patrol almost got attacked by cat_from and the other rogues. Thankfully, the patrol got away, but those mange-pelts are still out there, still talking bad about c_n."
                         }
                     }
                 ],
@@ -2521,7 +2521,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that brought from_cat to c_n as a kit."
+                            "cats_from": "cat_to was part of the patrol that brought cat_from to c_n as a kit."
                         }
                     }
                 ],
@@ -2552,7 +2552,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that brought from_cat to c_n as a kit."
+                            "cats_from": "cat_to was part of the patrol that brought cat_from to c_n as a kit."
                         }
                     }
                 ],
@@ -2587,7 +2587,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that brought from_cat to c_n as a kit."
+                            "cats_from": "cat_to was part of the patrol that brought cat_from to c_n as a kit."
                         }
                     }
                 ],
@@ -2811,7 +2811,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -2842,7 +2842,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3075,7 +3075,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3106,7 +3106,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3337,7 +3337,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3368,7 +3368,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3449,7 +3449,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],
@@ -3494,7 +3494,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],
@@ -3546,7 +3546,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],

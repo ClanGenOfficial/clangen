@@ -49,7 +49,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a relaxing time in the water after a dreadfully hot patrol."
+                            "cats_from": "cat_from and cat_to had a relaxing time in the water after a dreadfully hot patrol."
                         }
                     },
                     {
@@ -65,7 +65,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a fun water fight after a dreadfully hot patrol."
+                            "cats_from": "cat_from and cat_to had a fun water fight after a dreadfully hot patrol."
                         }
                     }
                 ],
@@ -90,7 +90,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a relaxing time in the water after a dreadfully hot patrol."
+                            "cats_from": "cat_from and cat_to had a relaxing time in the water after a dreadfully hot patrol."
                         }
                     },
                     {
@@ -108,7 +108,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a fun water fight after a dreadfully hot patrol."
+                            "cats_from": "cat_from and cat_to had a fun water fight after a dreadfully hot patrol."
                         }
                     }
                 ],

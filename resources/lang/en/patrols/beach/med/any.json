@@ -44,8 +44,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat listened to to_cat attentively during an herb-gathering patrol.",
-                            "cats_to": "to_cat felt a measure of confidence in from_cat's attentiveness during an herb-gathering patrol."
+                            "cats_from": "cat_from listened to cat_to attentively during an herb-gathering patrol.",
+                            "cats_to": "cat_to felt a measure of confidence in cat_from's attentiveness during an herb-gathering patrol."
                         }
                     }
                 ],
@@ -72,8 +72,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat found a hidden herb patch during a lesson, impressing to_cat.",
-                            "cats_to": "to_cat was impressed by from_cat's keen observation by finding a hidden herb patch."
+                            "cats_from": "cat_from found a hidden herb patch during a lesson, impressing cat_to.",
+                            "cats_to": "cat_to was impressed by cat_from's keen observation by finding a hidden herb patch."
                         }
                     }
                 ],
@@ -99,7 +99,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "Frustrated by to_cat's inattention, from_cat ended {PRONOUN/from_cat/poss} gathering lesson early."
+                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN/cat_from/poss} gathering lesson early."
                         }
                     }
                 ],
@@ -201,7 +201,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat had a productive time searching Twoleg beach dens for herbs."
+                            "cats_from": "cat_to and cat_from had a productive time searching Twoleg beach dens for herbs."
                         }
                     }
                 ],
@@ -228,7 +228,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat had fun during an impromptu herb-gathering competition."
+                            "cats_from": "cat_to and cat_from had fun during an impromptu herb-gathering competition."
                         }
                     }
                 ],
@@ -254,7 +254,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat and from_cat became irritated with each other after a fruitless herb-gathering patrol."
+                            "cats_from": "cat_to and cat_from became irritated with each other after a fruitless herb-gathering patrol."
                         }
                     }
                 ],
@@ -278,7 +278,7 @@
                         ],
                         "amount": -12,
                         "log": {
-                            "cats_from": "to_cat and from_cat got into a huge argument over whose fault it was that an herb-gathering patrol failed."
+                            "cats_from": "cat_to and cat_from got into a huge argument over whose fault it was that an herb-gathering patrol failed."
                         }
                     }
                 ],

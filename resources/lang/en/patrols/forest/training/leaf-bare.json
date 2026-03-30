@@ -43,7 +43,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the frosty leaf-bare forest together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the frosty leaf-bare forest together."
                         }
                     }
                 ],
@@ -64,7 +64,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the frosty leaf-bare forest together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the frosty leaf-bare forest together."
                         }
                     }
                 ],
@@ -172,7 +172,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about how StarClan cats cleaning out their nests creates snowfall"
+                            "cats_from": "cat_from enjoyed cat_to's story about how StarClan cats cleaning out their nests creates snowfall"
                         }
                     }
                 ],
@@ -211,7 +211,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat was a casualty in to_cat's snowball fight."
+                            "cats_from": "cat_from was a casualty in cat_to's snowball fight."
                         }
                     },
                     {
@@ -227,7 +227,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a snowball fight on patrol."
+                            "cats_from": "cat_from and cat_to had a snowball fight on patrol."
                         }
                     }
                 ],
@@ -262,7 +262,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat to get out of more work."
+                            "cats_from": "cat_from avoided cat_to to get out of more work."
                         }
                     },
                     {
@@ -278,7 +278,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat wanted to tell to_cat and some other apprentices a story, but to_cat ran off."
+                            "cats_from": "cat_from wanted to tell cat_to and some other apprentices a story, but cat_to ran off."
                         }
                     }
                 ],
@@ -330,7 +330,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the lake cat."
+                            "cats_from": "cat_from enjoyed cat_to's story about the lake cat."
                         }
                     }
                 ],
@@ -369,7 +369,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was chilled to the bone by to_cat's story of the Underwater Panther."
+                            "cats_from": "cat_from was chilled to the bone by cat_to's story of the Underwater Panther."
                         }
                     }
                 ],

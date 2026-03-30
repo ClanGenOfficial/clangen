@@ -44,7 +44,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat learned from to_cat about how the Twolegs occupy a particular beach throughout greenleaf."
+                            "cats_from": "cat_from learned from cat_to about how the Twolegs occupy a particular beach throughout greenleaf."
                         }
                     }
                 ],
@@ -69,7 +69,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was disappointed that from_cat and the patrol were too nervous at the sight of monsters to listen to {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_from was disappointed that cat_from and the patrol were too nervous at the sight of monsters to listen to {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -124,7 +124,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed cooling off in a rockpool on a hot greenleaf day."
+                            "cats_from": "cat_from and cat_to enjoyed cooling off in a rockpool on a hot greenleaf day."
                         }
                     }
                 ],
@@ -150,7 +150,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat were so involved in splashing each other while cooling down on patrol that they forgot any other cat was there."
+                            "cats_from": "cat_from and cat_to were so involved in splashing each other while cooling down on patrol that they forgot any other cat was there."
                         }
                     }
                 ],

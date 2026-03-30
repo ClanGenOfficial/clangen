@@ -37,7 +37,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                            "cats_from": "cat_from saw cat_to come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
                         }
                     }
                 ]
@@ -57,7 +57,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                            "cats_from": "cat_from saw cat_to come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
                         }
                     }
                 ]
@@ -80,7 +80,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                            "cats_from": "cat_from saw cat_to come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
                         }
                     }
                 ]
@@ -137,7 +137,7 @@
                         "values": ["respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                            "cats_from": "cat_from saw cat_to come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
                         }
                     }
                 ],
@@ -157,7 +157,7 @@
                         "values": ["respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
+                            "cats_from": "cat_from saw cat_to come back from a solo-hunt in the snow with a squirrel for the fresh-kill pile."
                         }
                     }
                 ],
@@ -219,7 +219,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat watched to_cat's hunting improve under {PRONOUN/from_cat/poss} tutelage."
+                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN/cat_from/poss} tutelage."
                         }
                     },
                     {
@@ -229,7 +229,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat got great hunting advice from to_cat."
+                            "cats_from": "cat_from got great hunting advice from cat_to."
                         }
                     }
                 ],
@@ -249,7 +249,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat witnessed first-paw how to_cat's hunting training has paid off."
+                            "cats_from": "cat_from witnessed first-paw how cat_to's hunting training has paid off."
                         }
                     },
                     {
@@ -259,7 +259,7 @@
                         "values": ["comfort", "like"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat felt great when to_cat praised {PRONOUN/from_cat/poss} hunting."
+                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN/cat_from/poss} hunting."
                         }
                     }
                 ],
@@ -278,7 +278,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat for a bit after messing up in a hunt in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -330,7 +330,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat caught a squirrel fighting with a rattlesnake."
+                            "cats_from": "cat_from was impressed by how cat_to caught a squirrel fighting with a rattlesnake."
                         }
                     }
                 ],
@@ -356,7 +356,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat caught a squirrel fighting with a rattlesnake."
+                            "cats_from": "cat_from was impressed by how cat_to caught a squirrel fighting with a rattlesnake."
                         }
                     }
                 ],
@@ -385,7 +385,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was highly impressed by how to_cat used a squirrel and rattlesnake's fight to sneakily kill both pieces of prey."
+                            "cats_from": "cat_from was highly impressed by how cat_to used a squirrel and rattlesnake's fight to sneakily kill both pieces of prey."
                         }
                     }
                 ],
@@ -410,7 +410,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat stood around watching a squirrel and a rattlesnake fight instead of catching any prey."
+                            "cats_from": "cat_from and cat_to stood around watching a squirrel and a rattlesnake fight instead of catching any prey."
                         }
                     }
                 ],
@@ -446,7 +446,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to stop a rattlesnake from biting r_c."
+                            "cats_from": "cat_from and cat_to were unable to stop a rattlesnake from biting r_c."
                         }
                     }
                 ],
@@ -495,7 +495,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat successfully hunted ground squirrels together."
+                            "cats_from": "cat_from and cat_to successfully hunted ground squirrels together."
                         }
                     },
                     {
@@ -505,7 +505,7 @@
                         "amount": 5,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol bring back ground squirrels from a leaf-bare hunting patrol."
+                            "cats_from": "cat_from saw cat_to's patrol bring back ground squirrels from a leaf-bare hunting patrol."
                         }
                     }
                 ],
@@ -531,7 +531,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat trusted to_cat to block ground squirrels' burrows so the patrol could trap them."
+                            "cats_from": "cat_from trusted cat_to to block ground squirrels' burrows so the patrol could trap them."
                         }
                     },
                     {
@@ -541,7 +541,7 @@
                         "amount": 5,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol bring back ground squirrels from a leaf-bare hunting patrol."
+                            "cats_from": "cat_from saw cat_to's patrol bring back ground squirrels from a leaf-bare hunting patrol."
                         }
                     }
                 ],
@@ -569,7 +569,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat's plan to pick off ground squirrels and enjoyed a successful hunt."
+                            "cats_from": "cat_from approved of cat_to's plan to pick off ground squirrels and enjoyed a successful hunt."
                         }
                     },
                     {
@@ -579,7 +579,7 @@
                         "amount": 5,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol bring back ground squirrels from a leaf-bare hunting patrol."
+                            "cats_from": "cat_from saw cat_to's patrol bring back ground squirrels from a leaf-bare hunting patrol."
                         }
                     }
                 ],
@@ -604,7 +604,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat silently blamed to_cat for alerting squirrels to the patrol's presence and spoiling a hunt."
+                            "cats_from": "cat_from silently blamed cat_to for alerting squirrels to the patrol's presence and spoiling a hunt."
                         }
                     }
                 ],
@@ -650,7 +650,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat hunted successfully together in the snow."
+                            "cats_from": "cat_from and cat_to hunted successfully together in the snow."
                         }
                     },
                     {
@@ -660,7 +660,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
+                            "cats_from": "cat_from saw cat_to's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -683,7 +683,7 @@
                         "values": ["trust", "respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by how much prey to_cat was able to catch in the snow."
+                            "cats_from": "cat_from was impressed by how much prey cat_to was able to catch in the snow."
                         }
                     },
                     {
@@ -693,7 +693,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
+                            "cats_from": "cat_from saw cat_to's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -722,7 +722,7 @@
                         "values": ["comfort", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat's gentle presence helped to_cat's patrol stay focused during a difficult snowy hunt."
+                            "cats_from": "cat_from's gentle presence helped cat_to's patrol stay focused during a difficult snowy hunt."
                         }
                     },
                     {
@@ -732,7 +732,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat's patrol go out to hunt for the Clan despite the snow."
+                            "cats_from": "cat_from saw cat_to's patrol go out to hunt for the Clan despite the snow."
                         }
                     }
                 ],
@@ -751,7 +751,7 @@
                         "values": ["comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
+                            "cats_from": "cat_from and cat_to huddled for warmth during a snowstorm."
                         }
                     }
                 ],
@@ -782,7 +782,7 @@
                         "values": ["comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat huddled for warmth during a snowstorm."
+                            "cats_from": "cat_from and cat_to huddled for warmth during a snowstorm."
                         }
                     }
                 ],
@@ -825,7 +825,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a mouse for the fresh-kill pile."
+                            "cats_from": "cat_from saw cat_to come back from a solo-hunt in the snow with a mouse for the fresh-kill pile."
                         }
                     }
                 ],
@@ -848,7 +848,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat saw to_cat come back from a solo-hunt in the snow with a clutch of mice for the fresh-kill pile."
+                            "cats_from": "cat_from saw cat_to come back from a solo-hunt in the snow with a clutch of mice for the fresh-kill pile."
                         }
                     }
                 ],
@@ -910,7 +910,7 @@
                         "values": ["romance", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                            "cats_from": "cat_from and cat_to got extra close while huddling for warmth in a snowstorm."
                         }
                     }
                 ],
@@ -933,7 +933,7 @@
                         "values": ["romance", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                            "cats_from": "cat_from and cat_to got extra close while huddling for warmth in a snowstorm."
                         }
                     },
                     {
@@ -943,7 +943,7 @@
                         "values": ["like", "comfort"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "While huddling for warmth in a snowstorm, from_cat learned what a great conversationalist to_cat is."
+                            "cats_from": "While huddling for warmth in a snowstorm, cat_from learned what a great conversationalist cat_to is."
                         }
                     }
                 ],
@@ -968,7 +968,7 @@
                         "values": ["romance", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat got extra close while huddling for warmth in a snowstorm."
+                            "cats_from": "cat_from and cat_to got extra close while huddling for warmth in a snowstorm."
                         }
                     },
                     {
@@ -978,7 +978,7 @@
                         "values": ["like", "comfort"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "While huddling for warmth in a snowstorm, from_cat realized what a soothing presence to_cat is."
+                            "cats_from": "While huddling for warmth in a snowstorm, cat_from realized what a soothing presence cat_to is."
                         }
                     }
                 ],

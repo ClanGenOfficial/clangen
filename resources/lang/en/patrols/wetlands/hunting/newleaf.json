@@ -42,7 +42,7 @@
                         "amount": 5,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat saw to_cat bring back a huge haul of prey from a solo-hunt."
+                            "cats_from": "cat_from saw cat_to bring back a huge haul of prey from a solo-hunt."
                         }
                     }
                 ],
@@ -65,7 +65,7 @@
                         "amount": 5,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat saw to_cat bring back a huge haul of prey from a solo-hunt."
+                            "cats_from": "cat_from saw cat_to bring back a huge haul of prey from a solo-hunt."
                         }
                     }
                 ],

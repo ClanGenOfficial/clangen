@@ -43,7 +43,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the greenleaf sun together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the greenleaf sun together."
                         }
                     }
                 ],
@@ -64,7 +64,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the greenleaf sun together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the greenleaf sun together."
                         }
                     }
                 ],

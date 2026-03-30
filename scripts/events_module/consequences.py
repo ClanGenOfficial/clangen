@@ -1022,7 +1022,7 @@ def change_relationship_values(
     :param int comfort: amount to change comfort, default 0
     :param int trust: amount to change trust, default 0
     :param str log: the string to append to the relationship log of cats involved
-    :param bool flip_log: If True, this will "flip" the cats used for to_cat and from_cat abbreviation replacements. This should really only be used for mutual relationship changes from events.
+    :param bool flip_log: If True, this will "flip" the cats used for cat_to and cat_from abbreviation replacements. This should really only be used for mutual relationship changes from events.
     """
 
     # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
@@ -1073,17 +1073,17 @@ def change_relationship_values(
                 log = i18n.t("relationships.relationship_log")
             if log and isinstance(log, str):
                 replace_dict = {}
-                from_cat = single_cat_to if flip_log else single_cat_from
-                to_cat = single_cat_from if flip_log else single_cat_to
-                if "from_cat" in log:
-                    replace_dict["from_cat"] = (
-                        str(from_cat.name),
-                        choice(from_cat.pronouns),
+                cat_from = single_cat_to if flip_log else single_cat_from
+                cat_to = single_cat_from if flip_log else single_cat_to
+                if "cat_from" in log:
+                    replace_dict["cat_from"] = (
+                        str(cat_from.name),
+                        choice(cat_from.pronouns),
                     )
-                if "to_cat" in log:
-                    replace_dict["to_cat"] = (
-                        str(to_cat.name),
-                        choice(to_cat.pronouns),
+                if "cat_to" in log:
+                    replace_dict["cat_to"] = (
+                        str(cat_to.name),
+                        choice(cat_to.pronouns),
                     )
                 if replace_dict:
                     processed_log = process_text(log, replace_dict)

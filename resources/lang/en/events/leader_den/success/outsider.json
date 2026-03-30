@@ -122,7 +122,7 @@
           "values": ["like", "trust"],
           "amount": 5,
           "log": {
-            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+            "cats_from": "cat_to was one of the first cats cat_from met in c_n."
           }
         },
         {
@@ -132,7 +132,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat heard of to_cat's hunting skills and was glad to hear {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} joining c_n."
+            "cats_from": "cat_from heard of cat_to's hunting skills and was glad to hear {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} joining c_n."
           }
         }
       ]
@@ -220,7 +220,7 @@
           "values": ["like", "trust"],
           "amount": 5,
           "log": {
-            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+            "cats_from": "cat_to was one of the first cats cat_from met in c_n."
           }
         },
         {
@@ -230,7 +230,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat heard of to_cat's hunting skills and was glad to hear {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} joining c_n."
+            "cats_from": "cat_from heard of cat_to's hunting skills and was glad to hear {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} joining c_n."
           }
         }
       ]
@@ -275,7 +275,7 @@
           "values": ["like", "trust"],
           "amount": 5,
           "log": {
-            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+            "cats_from": "cat_to was one of the first cats cat_from met in c_n."
           }
         }
       ]
@@ -301,7 +301,7 @@
           "values": ["like", "trust"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was glad to be welcomed back into the Clan by to_cat."
+            "cats_from": "cat_from was glad to be welcomed back into the Clan by cat_to."
           }
         },
         {
@@ -311,7 +311,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat recognized the wisdom of allowing a skilled hunter like to_cat back into the Clan."
+            "cats_from": "cat_from recognized the wisdom of allowing a skilled hunter like cat_to back into the Clan."
           }
         }
       ]
@@ -393,7 +393,7 @@
           "values": ["like", "comfort"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+            "cats_from": "cat_from was overjoyed to see the familiar face of cat_to after being lost."
           }
         }
       ]
@@ -574,7 +574,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       },
       {
@@ -583,7 +583,7 @@
         "values": ["trust"],
         "amount": -5,
         "log": {
-          "cats_from": "from_cat was skeptical of allowing a kittypet like to_cat into the Clan."
+          "cats_from": "cat_from was skeptical of allowing a kittypet like cat_to into the Clan."
         }
       }
     ]
@@ -606,7 +606,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -629,7 +629,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -651,7 +651,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -673,7 +673,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -695,7 +695,7 @@
         "values": ["like", "comfort"],
         "amount": 5,
         "log": {
-          "cats_from": "Despite the bad blood over {PRONOUN/from_cat/poss} exile, from_cat was glad to see to_cat again."
+          "cats_from": "Despite the bad blood over {PRONOUN/cat_from/poss} exile, cat_from was glad to see cat_to again."
         }
       }
     ]
@@ -717,7 +717,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -760,7 +760,7 @@
         "values": ["like", "comfort"],
         "amount": 5,
         "log": {
-          "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+          "cats_from": "cat_from was overjoyed to see the familiar face of cat_to after being lost."
         }
       }
     ]
@@ -783,7 +783,7 @@
         "values": ["like", "comfort"],
         "amount": 5,
         "log": {
-          "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+          "cats_from": "cat_from was overjoyed to see the familiar face of cat_to after being lost."
         }
       }
     ]

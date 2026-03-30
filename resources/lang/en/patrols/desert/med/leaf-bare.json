@@ -51,7 +51,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed a friendly competition while gathering herbs."
+                            "cats_from": "cat_from and cat_to enjoyed a friendly competition while gathering herbs."
                         }
                     }
                 ],
@@ -77,7 +77,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were short with each other after failing to gathering any herbs."
+                            "cats_from": "cat_from and cat_to were short with each other after failing to gathering any herbs."
                         }
                     }
                 ],

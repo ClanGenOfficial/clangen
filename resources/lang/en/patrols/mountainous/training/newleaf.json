@@ -37,7 +37,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about the behavior of eagles and sparrows."
+                            "cats_from": "cat_from taught cat_to about the behavior of eagles and sparrows."
                         }
                     },
                     {
@@ -50,7 +50,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about the behavior of eagles and sparrows."
+                            "cats_from": "cat_to taught cat_from about the behavior of eagles and sparrows."
                         }
                     }
                 ],
@@ -70,7 +70,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about the behavior of eagles and sparrows."
+                            "cats_from": "cat_from taught cat_to about the behavior of eagles and sparrows."
                         }
                     },
                     {
@@ -83,7 +83,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about the behavior of eagles and sparrows."
+                            "cats_from": "cat_to taught cat_from about the behavior of eagles and sparrows."
                         }
                     }
                 ],
@@ -110,7 +110,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat told to_cat the story of an eagle chick who became a warrior."
+                            "cats_from": "cat_from told cat_to the story of an eagle chick who became a warrior."
                         }
                     },
                     {
@@ -123,7 +123,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat told from_cat the story of an eagle chick who became a warrior."
+                            "cats_from": "cat_to told cat_from the story of an eagle chick who became a warrior."
                         }
                     }
                 ],
@@ -149,7 +149,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how eagles rip apart their prey for their nestlings."
+                            "cats_from": "cat_from taught cat_to how eagles rip apart their prey for their nestlings."
                         }
                     },
                     {
@@ -162,7 +162,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how eagles rip apart their prey for their nestlings."
+                            "cats_from": "cat_to taught cat_from how eagles rip apart their prey for their nestlings."
                         }
                     }
                 ],
@@ -188,7 +188,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat refused to go near an eagle nest, ruining from_cat's plans for afternoon of training."
+                            "cats_from": "cat_to refused to go near an eagle nest, ruining cat_from's plans for afternoon of training."
                         }
                     }
                 ],
@@ -212,7 +212,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat wouldn't take a training session about eagles seriously, ruining from_cat's lesson."
+                            "cats_from": "cat_to wouldn't take a training session about eagles seriously, ruining cat_from's lesson."
                         }
                     }
                 ],
@@ -258,7 +258,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about the behavior of eagles and sparrows."
+                            "cats_from": "cat_from taught cat_to about the behavior of eagles and sparrows."
                         }
                     },
                     {
@@ -271,7 +271,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about the behavior of eagles and sparrows."
+                            "cats_from": "cat_to taught cat_from about the behavior of eagles and sparrows."
                         }
                     }
                 ],
@@ -291,7 +291,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about the behavior of eagles and sparrows."
+                            "cats_from": "cat_from taught cat_to about the behavior of eagles and sparrows."
                         }
                     },
                     {
@@ -304,7 +304,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about the behavior of eagles and sparrows."
+                            "cats_from": "cat_to taught cat_from about the behavior of eagles and sparrows."
                         }
                     }
                 ],
@@ -331,7 +331,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat told to_cat the story of an eagle chick who became a warrior."
+                            "cats_from": "cat_from told cat_to the story of an eagle chick who became a warrior."
                         }
                     },
                     {
@@ -344,7 +344,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat told from_cat the story of an eagle chick who became a warrior."
+                            "cats_from": "cat_to told cat_from the story of an eagle chick who became a warrior."
                         }
                     }
                 ],
@@ -370,7 +370,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how eagles rip apart their prey for their nestlings."
+                            "cats_from": "cat_from taught cat_to how eagles rip apart their prey for their nestlings."
                         }
                     },
                     {
@@ -383,7 +383,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how eagles rip apart their prey for their nestlings."
+                            "cats_from": "cat_to taught cat_from how eagles rip apart their prey for their nestlings."
                         }
                     }
                 ],
@@ -409,7 +409,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat refused to go near an eagle nest, ruining from_cat's plans for afternoon of training."
+                            "cats_from": "cat_to refused to go near an eagle nest, ruining cat_from's plans for afternoon of training."
                         }
                     },
                     {
@@ -449,7 +449,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat wouldn't take a training session about eagles seriously, ruining from_cat's lesson."
+                            "cats_from": "cat_to wouldn't take a training session about eagles seriously, ruining cat_from's lesson."
                         }
                     },
                     {
@@ -465,7 +465,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat goofed off during a lesson together."
+                            "cats_from": "cat_from and cat_to goofed off during a lesson together."
                         }
                     }
                 ],
@@ -520,7 +520,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat listened to to_cat's warning about bears coming out of hibernation."
+                            "cats_from": "cat_from listened to cat_to's warning about bears coming out of hibernation."
                         }
                     }
                 ],

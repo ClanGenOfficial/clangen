@@ -45,8 +45,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated the story to_cat told on patrol.",
-                            "cats_to": "to_cat appreciated from_cat listening to {PRONOUN/to_cat/poss} story on patrol."
+                            "cats_from": "cat_from appreciated the story cat_to told on patrol.",
+                            "cats_to": "cat_to appreciated cat_from listening to {PRONOUN/cat_to/poss} story on patrol."
                         }
                     }
                 ],
@@ -73,7 +73,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat refused to believe the story to_cat told could ever be true."
+                            "cats_from": "cat_from refused to believe the story cat_to told could ever be true."
                         }
                     }
                 ],
@@ -104,7 +104,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat disliked how to_cat's story depicted cats as powerless to Starclan."
+                            "cats_from": "cat_from disliked how cat_to's story depicted cats as powerless to Starclan."
                         }
                     },
                     {
@@ -121,7 +121,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat disliked how to_cat tolerated a clearly disempowering story."
+                            "cats_from": "cat_from disliked how cat_to tolerated a clearly disempowering story."
                         }
                     }
                 ],

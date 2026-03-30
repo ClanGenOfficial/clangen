@@ -184,7 +184,7 @@
                 "amount": 5,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat approved of how to_cat disguised the camp tunnels' entrance."
+                    "cats_from": "cat_from approved of how cat_to disguised the camp tunnels' entrance."
                 }
             }
         ]

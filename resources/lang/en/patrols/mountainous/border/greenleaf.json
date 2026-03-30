@@ -286,7 +286,7 @@
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat successfully drove a rogue away together."
+                            "cats_from": "cat_to and cat_from successfully drove a rogue away together."
                         }
                     }
                 ],
@@ -305,7 +305,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat skillfully defeated a rogue."
+                            "cats_from": "cat_from was impressed when cat_to skillfully defeated a rogue."
                         }
                     }
                 ]
@@ -336,7 +336,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                            "cats_from": "cat_from was impressed when cat_to skillfully deterred a rogue without bloodshed."
                         }
                     }
                 ],
@@ -356,7 +356,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake the scent of dogwood for something suspicious."
+                            "cats_from": "cat_from saw cat_to mistake the scent of dogwood for something suspicious."
                         }
                     }
                 ]
@@ -376,7 +376,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched as to_cat's trap for a rogue failed miserably."
+                            "cats_from": "cat_from watched as cat_to's trap for a rogue failed miserably."
                         }
                     }
                 ]
@@ -395,7 +395,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched to_cat fail to defeat a rogue."
+                            "cats_from": "cat_from watched cat_to fail to defeat a rogue."
                         }
                     }
                 ],
@@ -426,7 +426,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched as to_cat was taken off-guard by a rogue."
+                            "cats_from": "cat_from watched as cat_to was taken off-guard by a rogue."
                         }
                     }
                 ],
@@ -477,7 +477,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -501,7 +501,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake the scent of dogwood for something suspicious."
+                            "cats_from": "cat_from saw cat_to mistake the scent of dogwood for something suspicious."
                         }
                     }
                 ],
@@ -539,7 +539,7 @@
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat bravely confronted a rogue while on patrol with from_cat."
+                            "cats_from": "cat_to bravely confronted a rogue while on patrol with cat_from."
                         }
                     }
                 ],
@@ -572,7 +572,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat watched as to_cat was taken off-guard by a rogue."
+                            "cats_from": "cat_from watched as cat_to was taken off-guard by a rogue."
                         }
                     }
                 ],
@@ -612,7 +612,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -638,7 +638,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat fought off a rogue alone"
+                            "cats_from": "cat_from was impressed when cat_to fought off a rogue alone"
                         }
                     }
                 ]
@@ -661,7 +661,7 @@
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat scared a rogue off the territory."
+                            "cats_from": "cat_from was impressed when cat_to scared a rogue off the territory."
                         }
                     }
                 ],
@@ -694,7 +694,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                            "cats_from": "cat_from was impressed when cat_to skillfully deterred a rogue without bloodshed."
                         }
                     }
                 ]
@@ -713,7 +713,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake the scent of a dogwood for something suspicious."
+                            "cats_from": "cat_from saw cat_to mistake the scent of a dogwood for something suspicious."
                         }
                     }
                 ]
@@ -732,7 +732,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched to_cat fail to defeat a rogue."
+                            "cats_from": "cat_from watched cat_to fail to defeat a rogue."
                         }
                     }
                 ],
@@ -753,7 +753,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched as to_cat's trap for a rogue failed miserably."
+                            "cats_from": "cat_from watched as cat_to's trap for a rogue failed miserably."
                         }
                     }
                 ]
@@ -803,7 +803,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -827,7 +827,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake the scent of a dogwood for something suspicious."
+                            "cats_from": "cat_from saw cat_to mistake the scent of a dogwood for something suspicious."
                         }
                     }
                 ],
@@ -865,7 +865,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                            "cats_from": "cat_from was impressed when cat_to skillfully deterred a rogue without bloodshed."
                         }
                     }
                 ],

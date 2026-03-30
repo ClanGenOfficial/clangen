@@ -45,7 +45,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat shared a moment of amusement when a butterfly landed on p_l's haunches. r_c didn't blame the butterfly for mistaking p_l for a beautiful flower."
+                            "cats_from": "cat_from and cat_to shared a moment of amusement when a butterfly landed on p_l's haunches. r_c didn't blame the butterfly for mistaking p_l for a beautiful flower."
                         }
                     }
                 ],
@@ -72,7 +72,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat shared a moment of amusement when r_c struggled to bat a butterfly away from p_l."
+                            "cats_from": "cat_from and cat_to shared a moment of amusement when r_c struggled to bat a butterfly away from p_l."
                         }
                     }
                 ],
@@ -90,7 +90,7 @@
                         "values": ["respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat found to_cat more of a hindrance than a help while gathering herbs together."
+                            "cats_from": "cat_from found cat_to more of a hindrance than a help while gathering herbs together."
                         }
                     },
                     {
@@ -99,7 +99,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was embarrassed when {PRONOUN/from_cat/subject} failed to help to_cat gather any herbs."
+                            "cats_from": "cat_from was embarrassed when {PRONOUN/cat_from/subject} failed to help cat_to gather any herbs."
                         }
                     }
                 ],

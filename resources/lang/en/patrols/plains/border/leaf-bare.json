@@ -34,7 +34,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat scouted good hunting grounds on patrol together."
+                            "cats_from": "cat_from and cat_to scouted good hunting grounds on patrol together."
                         }
                     }
                 ],
@@ -60,7 +60,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned about running endurance from to_cat."
+                            "cats_from": "cat_from learned about running endurance from cat_to."
                         }
                     },
                     {
@@ -72,7 +72,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat made the long trek to the outer plains while on patrol together."
+                            "cats_from": "cat_from and cat_to made the long trek to the outer plains while on patrol together."
                         }
                     }
                 ],
@@ -101,7 +101,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was grateful that to_cat noticed {PRONOUN/from_cat/object} struggling in the cold and found some shelter."
+                            "cats_from": "cat_from was grateful that cat_to noticed {PRONOUN/cat_from/object} struggling in the cold and found some shelter."
                         }
                     },
                     {
@@ -113,7 +113,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat made the long trek to the outer plains while on patrol together."
+                            "cats_from": "cat_from and cat_to made the long trek to the outer plains while on patrol together."
                         }
                     }
                 ],
@@ -146,7 +146,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat noticed that from_cat was struggling on patrol and decided to take the patrol back to camp early."
+                            "cats_from": "cat_to noticed that cat_from was struggling on patrol and decided to take the patrol back to camp early."
                         }
                     }
                 ],
@@ -212,7 +212,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat approved of how to_cat pushed {PRONOUN/to_cat/poss} patrol to reach the far border."
+                            "cats_from": "cat_from approved of how cat_to pushed {PRONOUN/cat_to/poss} patrol to reach the far border."
                         }
                     },
                     {
@@ -226,7 +226,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat disapproved of how to_cat pushed {PRONOUN/to_cat/poss} patrol to reach the far border."
+                            "cats_from": "cat_from disapproved of how cat_to pushed {PRONOUN/cat_to/poss} patrol to reach the far border."
                         }
                     },
                     {
@@ -239,7 +239,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat pushed from_cat to finish a long patrol in the extreme cold, and the patrol suffered for it."
+                            "cats_from": "cat_to pushed cat_from to finish a long patrol in the extreme cold, and the patrol suffered for it."
                         }
                     }
                 ],
@@ -280,7 +280,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat advocated for {PRONOUN/to_cat/poss} Clanmates and urged p_l to end a patrol early when the cold took its toll on the cats."
+                            "cats_from": "cat_from heard that cat_to advocated for {PRONOUN/cat_to/poss} Clanmates and urged p_l to end a patrol early when the cold took its toll on the cats."
                         }
                     },
                     {
@@ -294,7 +294,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat disapproved of to_cat ending a patrol early just because it was cold that day."
+                            "cats_from": "cat_from disapproved of cat_to ending a patrol early just because it was cold that day."
                         }
                     },
                     {
@@ -307,7 +307,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat doubted to_cat's leadership when {PRONOUN/to_cat/subject} tried to force a patrol to persevere in the extreme cold."
+                            "cats_from": "cat_from doubted cat_to's leadership when {PRONOUN/cat_to/subject} tried to force a patrol to persevere in the extreme cold."
                         }
                     },
                     {
@@ -320,7 +320,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was very grateful that to_cat spoke up on behalf of the patrol when the cold started to take its toll on them."
+                            "cats_from": "cat_from was very grateful that cat_to spoke up on behalf of the patrol when the cold started to take its toll on them."
                         }
                     }
                 ],
@@ -368,7 +368,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol reported courting coyotes on their territory."
+                            "cats_from": "cat_from heard that cat_to's patrol reported courting coyotes on their territory."
                         }
                     }
                 ],
@@ -391,7 +391,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated how to_cat's patrol shadowed a coyote to track its movements and keep c_n safe."
+                            "cats_from": "cat_from appreciated how cat_to's patrol shadowed a coyote to track its movements and keep c_n safe."
                         }
                     }
                 ],
@@ -413,7 +413,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat warning the Clan about a coyote."
+                            "cats_from": "cat_from appreciated cat_to warning the Clan about a coyote."
                         } 
                     },
                     {
@@ -426,7 +426,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat gained respect for to_cat when {PRONOUN/to_cat/subject} thought fast and led the patrol up a tree to escape a coyote."
+                            "cats_from": "cat_from gained respect for cat_to when {PRONOUN/cat_to/subject} thought fast and led the patrol up a tree to escape a coyote."
                         }
                     }
                 ],
@@ -448,7 +448,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's small patrol led a coyote away from the camp."
+                            "cats_from": "cat_from heard about how cat_to's small patrol led a coyote away from the camp."
                         }
                     }
                 ],
@@ -476,7 +476,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol attacked a coyote to drive it out of the territory."
+                            "cats_from": "cat_from heard about how cat_to's patrol attacked a coyote to drive it out of the territory."
                         }
                     },
                     {
@@ -489,7 +489,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat ambushed a coyote on patrol and led from_cat in an effort to drive it off the territory."
+                            "cats_from": "cat_to ambushed a coyote on patrol and led cat_from in an effort to drive it off the territory."
                         }
                     }
                 ],
@@ -516,7 +516,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat saved from_cat from a coyote by finding a burrow for the patrol to hide in."
+                            "cats_from": "cat_to saved cat_from from a coyote by finding a burrow for the patrol to hide in."
                         }
                     }
                 ],
@@ -544,7 +544,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat warning the Clan of courting coyotes."
+                            "cats_from": "cat_from appreciated cat_to warning the Clan of courting coyotes."
                         }
                     },
                     {
@@ -556,7 +556,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat identified the sound of courting coyotes and warned the patrol before they encountered danger."
+                            "cats_from": "cat_to identified the sound of courting coyotes and warned the patrol before they encountered danger."
                         }
                     }
                 ],
@@ -588,7 +588,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat led a coyote away from c_n territory on a patrol."
+                            "cats_from": "cat_from heard that cat_to led a coyote away from c_n territory on a patrol."
                         }
                     },
                     {
@@ -603,7 +603,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was grateful that to_cat took on the brunt of the danger in leading a coyote away from c_n territory."
+                            "cats_from": "cat_from was grateful that cat_to took on the brunt of the danger in leading a coyote away from c_n territory."
                         }
                     }
                 ],
@@ -645,7 +645,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "to_cat laid down {PRONOUN/to_cat/poss} life to protect c_n from coyotes."
+                            "cats_from": "cat_to laid down {PRONOUN/cat_to/poss} life to protect c_n from coyotes."
                         }
                     }
                 ],
@@ -717,7 +717,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat held off a coyote long enough to save the lives of the rest of the patrol."
+                            "cats_from": "cat_from heard that cat_to held off a coyote long enough to save the lives of the rest of the patrol."
                         }
                     },
                     {
@@ -731,7 +731,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "to_cat held off a coyote long enough to save the lives of from_cat and the rest of the patrol."
+                            "cats_from": "cat_to held off a coyote long enough to save the lives of cat_from and the rest of the patrol."
                         }
                     }
                 ],
@@ -754,7 +754,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat failed to track a coyote on patrol, leaving c_n in danger."
+                            "cats_from": "cat_from heard that cat_to failed to track a coyote on patrol, leaving c_n in danger."
                         }
                     }
                 ],
@@ -783,7 +783,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat failed to track a coyote on patrol, leaving c_n in danger."
+                            "cats_from": "cat_from heard that cat_to failed to track a coyote on patrol, leaving c_n in danger."
                         }
                     }
                 ],
@@ -813,7 +813,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was killed as a result."
+                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c was killed as a result."
                         }
                     }
                 ],
@@ -850,7 +850,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol wasn't able to lead a coyote away and r_c was injured as a result."
+                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c was injured as a result."
                         }
                     }
                 ],
@@ -895,7 +895,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                            "cats_from": "cat_from heard that cat_to's patrol drove off a coyote."
                         }
                     },
                     {
@@ -909,7 +909,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat's daring move helped from_cat's patrol drive off a coyote."
+                            "cats_from": "cat_to's daring move helped cat_from's patrol drive off a coyote."
                         }
                     },
                     {
@@ -921,7 +921,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                            "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
                 ],
@@ -954,7 +954,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                            "cats_from": "cat_from heard that cat_to's patrol drove off a coyote."
                         }
                     },
                     {
@@ -968,7 +968,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat led from_cat and the rest of the patrol in tracking down a coyote."
+                            "cats_from": "cat_to led cat_from and the rest of the patrol in tracking down a coyote."
                         }
                     },
                     {
@@ -980,7 +980,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                            "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
                 ],
@@ -1005,7 +1005,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol reported courting coyotes on their territory."
+                            "cats_from": "cat_from heard that cat_to's patrol reported courting coyotes on their territory."
                         }
                     }
                 ],
@@ -1040,7 +1040,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol, unbelievably, drove off an entire pack of coyotes."
+                            "cats_from": "cat_from heard that cat_to's patrol, unbelievably, drove off an entire pack of coyotes."
                         }
                     },
                     {
@@ -1054,7 +1054,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "to_cat led from_cat and the rest of the patrol in driving off an entire pack of coyotes."
+                            "cats_from": "cat_to led cat_from and the rest of the patrol in driving off an entire pack of coyotes."
                         }
                     },
                     {
@@ -1066,7 +1066,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off an entire pack of coyotes."
+                            "cats_from": "cat_from and cat_to worked together to drive off an entire pack of coyotes."
                         }
                     }
                 ],
@@ -1094,7 +1094,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol led a pack of coyotes off the territory."
+                            "cats_from": "cat_from heard that cat_to's patrol led a pack of coyotes off the territory."
                         }
                     },
                     {
@@ -1108,7 +1108,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat's speed allowed from_cat's patrol to lead a pack of coyotes away from c_n's territory."
+                            "cats_from": "cat_to's speed allowed cat_from's patrol to lead a pack of coyotes away from c_n's territory."
                         }
                     },
                     {
@@ -1120,7 +1120,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat and to_cat lead a pack of coyotes away from c_n's territory."
+                            "cats_from": "cat_from and cat_to lead a pack of coyotes away from c_n's territory."
                         }
                     }
                 ],
@@ -1142,7 +1142,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol tracked a coyote."
+                            "cats_from": "cat_from heard that cat_to's patrol tracked a coyote."
                         }
                     },
                     {
@@ -1154,7 +1154,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to track a coyote."
+                            "cats_from": "cat_from and cat_to worked together to track a coyote."
                         }
                     }
                 ],
@@ -1176,7 +1176,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                            "cats_from": "cat_from heard that cat_to's patrol drove off a coyote."
                         }
                     },
                     {
@@ -1188,7 +1188,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                            "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
                 ],
@@ -1215,7 +1215,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                            "cats_from": "cat_from heard that cat_to's patrol drove off a coyote."
                         }
                     },
                     {
@@ -1229,7 +1229,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat's patrol was able to drive off a coyote thanks to to_cat's brilliant strategy."
+                            "cats_from": "cat_from's patrol was able to drive off a coyote thanks to cat_to's brilliant strategy."
                         }
                     },
                     {
@@ -1241,7 +1241,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                            "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
                 ],
@@ -1273,7 +1273,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol drove off a coyote."
+                            "cats_from": "cat_from heard that cat_to's patrol drove off a coyote."
                         }
                     },
                     {
@@ -1287,7 +1287,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat led from_cat's patrol in a fight against a coyote."
+                            "cats_from": "cat_to led cat_from's patrol in a fight against a coyote."
                         }
                     },
                     {
@@ -1299,7 +1299,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a coyote."
+                            "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
                 ],
@@ -1334,7 +1334,7 @@
                     "amount": -8,
                     "log":
                     {
-                        "cats_from": "from_cat blamed to_cat for the patrol's failure to drive off a coyote."
+                        "cats_from": "cat_from blamed cat_to for the patrol's failure to drive off a coyote."
                     }
                 }
             ],
@@ -1405,7 +1405,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "to_cat put {PRONOUN/to_cat/self} in danger to rescue r_c from the jaws of a coyote."
+                            "cats_from": "cat_to put {PRONOUN/cat_to/self} in danger to rescue r_c from the jaws of a coyote."
                         }
                     }
                 ],
@@ -1448,7 +1448,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "to_cat attacked a coyote to save from_cat's life when a courting male decided to offer from_cat as a gift to a female."
+                            "cats_from": "cat_to attacked a coyote to save cat_from's life when a courting male decided to offer cat_from as a gift to a female."
                         }
                     }
                 ],
@@ -1512,7 +1512,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "from_cat blamed to_cat's foolhardy attack on a pack of coyotes for the injuries and deaths on the patrol."
+                            "cats_from": "cat_from blamed cat_to's foolhardy attack on a pack of coyotes for the injuries and deaths on the patrol."
                         }
                     },
                     {
@@ -1528,7 +1528,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's foolhardy attack on a pack of coyotes caused the deaths and injuries of multiple Clanmates."
+                            "cats_from": "cat_from heard that cat_to's foolhardy attack on a pack of coyotes caused the deaths and injuries of multiple Clanmates."
                         }
                     }
                 ],
@@ -1576,7 +1576,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "to_cat saved from_cat's life on patrol by staunching the blood-flow after a coyote took a bite out of {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to saved cat_from's life on patrol by staunching the blood-flow after a coyote took a bite out of {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -1612,7 +1612,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat blamed to_cat for the patrol's failure to drive off a coyote."
+                            "cats_from": "cat_from blamed cat_to for the patrol's failure to drive off a coyote."
                         }
                     }
                 ],
@@ -1641,7 +1641,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat honored to_cat's noble death to keep the Clan safe from coyotes."
+                            "cats_from": "cat_from honored cat_to's noble death to keep the Clan safe from coyotes."
                         }
                     }
                 ],
@@ -1677,7 +1677,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat respected that to_cat put {PRONOUN/to_cat/self} in danger in a fight against a coyote."
+                            "cats_from": "cat_from respected that cat_to put {PRONOUN/cat_to/self} in danger in a fight against a coyote."
                         }
                     }
                 ],
@@ -1728,7 +1728,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                            "cats_from": "cat_from and cat_to hid from a snowstorm in a tunnel together."
                         }
                     },
                     {
@@ -1744,7 +1744,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat's quick thinking allowed from_cat and the patrol to find shelter before a snowstorm hit."
+                            "cats_from": "cat_to's quick thinking allowed cat_from and the patrol to find shelter before a snowstorm hit."
                         }
                     }
                 ],
@@ -1778,7 +1778,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                            "cats_from": "cat_from and cat_to hid from a snowstorm in a tunnel together."
                         }
                     },
                     {
@@ -1794,7 +1794,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat's cautious nature allowed from_cat and the patrol to find shelter before a snowstorm hit."
+                            "cats_from": "cat_to's cautious nature allowed cat_from and the patrol to find shelter before a snowstorm hit."
                         }
                     }
                 ],
@@ -1828,7 +1828,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                            "cats_from": "cat_from and cat_to hid from a snowstorm in a tunnel together."
                         }
                     },
                     {
@@ -1844,7 +1844,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat remembered the route to a tunnel where from_cat and the patrol could shelter before a snowstorm hit."
+                            "cats_from": "cat_to remembered the route to a tunnel where cat_from and the patrol could shelter before a snowstorm hit."
                         }
                     }
                 ],
@@ -1875,7 +1875,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                            "cats_from": "cat_from and cat_to hid from a snowstorm in a tunnel together."
                         }
                     },
                     {
@@ -1891,7 +1891,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat's knowledge of the burrows and tunnels on the territory allowed from_cat and the patrol to find shelter before a snowstorm hit."
+                            "cats_from": "cat_to's knowledge of the burrows and tunnels on the territory allowed cat_from and the patrol to find shelter before a snowstorm hit."
                         }
                     }
                 ],
@@ -1922,7 +1922,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                            "cats_from": "cat_from and cat_to hid from a snowstorm in a tunnel together."
                         }
                     },
                     {
@@ -1938,7 +1938,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat encouraged from_cat and the patrol to share tongues to stay warm during a snowstorm."
+                            "cats_from": "cat_to encouraged cat_from and the patrol to share tongues to stay warm during a snowstorm."
                         }
                     }
                 ],
@@ -1972,7 +1972,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat hid from a snowstorm in a warren together."
+                            "cats_from": "cat_from and cat_to hid from a snowstorm in a warren together."
                         }
                     },
                     {
@@ -1988,7 +1988,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat's quick thinking allowed from_cat and the patrol to find shelter in a warren before a snowstorm hit."
+                            "cats_from": "cat_to's quick thinking allowed cat_from and the patrol to find shelter in a warren before a snowstorm hit."
                         }
                     }
                 ],
@@ -2032,7 +2032,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat hid from a snowstorm in a tunnel together."
+                            "cats_from": "cat_from and cat_to hid from a snowstorm in a tunnel together."
                         }
                     },
                     {
@@ -2048,7 +2048,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat's knowledge of cats who live in hills of ice gave {PRONOUN/to_cat/object} the idea to shelter in a snow-den with from_cat and the rest of the patrol."
+                            "cats_from": "cat_to's knowledge of cats who live in hills of ice gave {PRONOUN/cat_to/object} the idea to shelter in a snow-den with cat_from and the rest of the patrol."
                         }
                     }
                 ],
@@ -2088,7 +2088,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to find shelter in a snowstorm and lost trust in each other's skills."
+                            "cats_from": "cat_from and cat_to were unable to find shelter in a snowstorm and lost trust in each other's skills."
                         }
                     }
                 ],
@@ -2129,7 +2129,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to find shelter before a snowstorm hit, and r_c froze to death."
+                            "cats_from": "cat_from and cat_to were unable to find shelter before a snowstorm hit, and r_c froze to death."
                         }
                     }
                 ],
@@ -2173,7 +2173,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat wasn't happy with to_cat for insisting on racing home instead of sheltering when a snowstorm threatened their patrol."
+                            "cats_from": "cat_from wasn't happy with cat_to for insisting on racing home instead of sheltering when a snowstorm threatened their patrol."
                         }
                     }
                 ],
@@ -2225,7 +2225,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat regretted trusting to_cat when to_cat insisted the patrol run home instead of sheltering when a snowstorm descended on their patrol."
+                            "cats_from": "cat_from regretted trusting cat_to when cat_to insisted the patrol run home instead of sheltering when a snowstorm descended on their patrol."
                         }
                     }
                 ],
@@ -2322,7 +2322,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat felt jealous that to_cat was the one to discover new tunnels instead of {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_from felt jealous that cat_to was the one to discover new tunnels instead of {PRONOUN/cat_from/object}."
                         }
                     },
                     {
@@ -2336,7 +2336,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat discovered a new set of tunnels on the territory."
+                            "cats_from": "cat_from heard that cat_to discovered a new set of tunnels on the territory."
                         }
                     }
                 ],
@@ -2356,7 +2356,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat found a badger's scent around a tunnel on patrol and went back to camp to report it."
+                            "cats_from": "cat_from and cat_to found a badger's scent around a tunnel on patrol and went back to camp to report it."
                         }
                     }
                 ],
@@ -2382,7 +2382,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat's plan to block a badger sett's entrance with snow."
+                            "cats_from": "cat_from approved of cat_to's plan to block a badger sett's entrance with snow."
                         }
                     }
                 ],
@@ -2409,7 +2409,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat's sharp observation saved to_cat from potentially encountering a wolverine on patrol."
+                            "cats_from": "cat_from's sharp observation saved cat_to from potentially encountering a wolverine on patrol."
                         }
                     }
                 ],
@@ -2436,7 +2436,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat's sharp observation saved to_cat from potentially encountering a wolverine on patrol."
+                            "cats_from": "cat_from's sharp observation saved cat_to from potentially encountering a wolverine on patrol."
                         }
                     }
                 ],
@@ -2565,7 +2565,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat and to_cat sheltered from a rainstorm in a newly-discovered tunnel."
+                            "cats_from": "cat_from and cat_to sheltered from a rainstorm in a newly-discovered tunnel."
                         }
                     }
                 ],
@@ -2589,7 +2589,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was pleased when to_cat praised {PRONOUN/from_cat/object} for discovering new tunnels while on patrol."
+                            "cats_from": "cat_from was pleased when cat_to praised {PRONOUN/cat_from/object} for discovering new tunnels while on patrol."
                         }
                     },
                     {
@@ -2605,7 +2605,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was proud of to_cat for {PRONOUN/to_cat/poss} discovery of new tunnels while on patrol."
+                            "cats_from": "cat_from was proud of cat_to for {PRONOUN/cat_to/poss} discovery of new tunnels while on patrol."
                         }
                     }
                 ],
@@ -2625,7 +2625,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed teaching to_cat how to mark the location of tunnels."
+                            "cats_from": "cat_from enjoyed teaching cat_to how to mark the location of tunnels."
                         }
                     },
                     {
@@ -2637,7 +2637,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat learned how to mark the location of tunnels from to_cat."
+                            "cats_from": "cat_from learned how to mark the location of tunnels from cat_to."
                         }
                     }
                 ],
@@ -2657,7 +2657,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat reminded to_cat of the importance of a secure tunnel system around c_n's borders."
+                            "cats_from": "cat_from reminded cat_to of the importance of a secure tunnel system around c_n's borders."
                         }
                     },
                     {
@@ -2669,7 +2669,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat learned about the borders' tunnels from to_cat."
+                            "cats_from": "cat_from learned about the borders' tunnels from cat_to."
                         }
                     }
                 ],
@@ -2689,7 +2689,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed teaching to_cat how to uncover the location of tunnels."
+                            "cats_from": "cat_from enjoyed teaching cat_to how to uncover the location of tunnels."
                         }
                     },
                     {
@@ -2701,7 +2701,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat learned how to find tunnels from to_cat."
+                            "cats_from": "cat_from learned how to find tunnels from cat_to."
                         }
                     },
                     {
@@ -2713,7 +2713,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was jealous that to_cat discovered a new set of tunnels instead of {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_from was jealous that cat_to discovered a new set of tunnels instead of {PRONOUN/cat_from/object}."
                         }
                     },
                     {
@@ -2725,7 +2725,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat discovered a new set of tunnels while on patrol."
+                            "cats_from": "cat_from heard that cat_to discovered a new set of tunnels while on patrol."
                         }
                     }
                 ],
@@ -2754,7 +2754,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed teaching to_cat about how to check the safety of new tunnels and appreciated to_cat's concern for safety."
+                            "cats_from": "cat_from enjoyed teaching cat_to about how to check the safety of new tunnels and appreciated cat_to's concern for safety."
                         }
                     },
                     {
@@ -2766,7 +2766,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned how to check the safety of new tunnels from to_cat."
+                            "cats_from": "cat_from learned how to check the safety of new tunnels from cat_to."
                         }
                     }
                 ],
@@ -2797,7 +2797,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed teaching to_cat about how to check the safety of new tunnels and appreciated to_cat's concern for other cats."
+                            "cats_from": "cat_from enjoyed teaching cat_to about how to check the safety of new tunnels and appreciated cat_to's concern for other cats."
                         }
                     },
                     {
@@ -2809,7 +2809,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned how to check the safety of new tunnels from to_cat."
+                            "cats_from": "cat_from learned how to check the safety of new tunnels from cat_to."
                         }
                     }
                 ],
@@ -2839,7 +2839,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed teaching to_cat about how to check the safety of new tunnels and appreciated to_cat's attention to detail."
+                            "cats_from": "cat_from enjoyed teaching cat_to about how to check the safety of new tunnels and appreciated cat_to's attention to detail."
                         }
                     },
                     {
@@ -2851,7 +2851,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned how to check the safety of new tunnels from to_cat."
+                            "cats_from": "cat_from learned how to check the safety of new tunnels from cat_to."
                         }
                     }
                 ],
@@ -2878,7 +2878,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed teaching to_cat about how to check the safety of new tunnels and was amused by to_cat's zeal."
+                            "cats_from": "cat_from enjoyed teaching cat_to about how to check the safety of new tunnels and was amused by cat_to's zeal."
                         }
                     },
                     {
@@ -2890,7 +2890,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned how to check the safety of new tunnels from to_cat."
+                            "cats_from": "cat_from learned how to check the safety of new tunnels from cat_to."
                         }
                     }
                 ],
@@ -2916,7 +2916,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was relieved that to_cat canceled a patrol when {PRONOUN/from_cat/subject} started to shiver in the cold."
+                            "cats_from": "cat_from was relieved that cat_to canceled a patrol when {PRONOUN/cat_from/subject} started to shiver in the cold."
                         }
                     }
                 ],
@@ -2967,7 +2967,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wished to_cat had canceled their patrol before both of them started shivering in the cold."
+                            "cats_from": "cat_from wished cat_to had canceled their patrol before both of them started shivering in the cold."
                         }
                     }
                 ],
@@ -3006,7 +3006,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat huddled for warmth in a snowstorm."
+                            "cats_from": "cat_from and cat_to huddled for warmth in a snowstorm."
                         }
                     }
                 ],
@@ -3037,7 +3037,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was not pleased when to_cat charged into a badger sett and needed rescuing."
+                            "cats_from": "cat_from was not pleased when cat_to charged into a badger sett and needed rescuing."
                         }
                     },
                     {
@@ -3050,7 +3050,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat was rescued from a badger by to_cat after irresponsibly sticking {PRONOUN/from_cat/poss} muzzle in a badger sett."
+                            "cats_from": "cat_from was rescued from a badger by cat_to after irresponsibly sticking {PRONOUN/cat_from/poss} muzzle in a badger sett."
                         }
                     },
                     {
@@ -3064,7 +3064,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat rushed into a burrow irresponsibly and was almost mauled by a badger."
+                            "cats_from": "cat_from heard that cat_to rushed into a burrow irresponsibly and was almost mauled by a badger."
                         }
                     },
                     {
@@ -3078,7 +3078,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat saved app1 from a badger on patrol."
+                            "cats_from": "cat_from heard that cat_to saved app1 from a badger on patrol."
                         }
                     }
                 ],
@@ -3145,7 +3145,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was not pleased when to_cat charged into a badger sett and needed rescuing."
+                            "cats_from": "cat_from was not pleased when cat_to charged into a badger sett and needed rescuing."
                         }
                     },
                     {
@@ -3158,7 +3158,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat was rescued from a badger by to_cat after irresponsibly sticking {PRONOUN/from_cat/poss} muzzle in a badger sett."
+                            "cats_from": "cat_from was rescued from a badger by cat_to after irresponsibly sticking {PRONOUN/cat_from/poss} muzzle in a badger sett."
                         }
                     },
                     {
@@ -3172,7 +3172,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat rushed into a burrow irresponsibly and was attacked by a badger."
+                            "cats_from": "cat_from heard that cat_to rushed into a burrow irresponsibly and was attacked by a badger."
                         }
                     },
                     {
@@ -3186,7 +3186,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat saved app1 from a badger on patrol."
+                            "cats_from": "cat_from heard that cat_to saved app1 from a badger on patrol."
                         }
                     }
                 ],
@@ -3221,7 +3221,7 @@
                         "values": ["like", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
+                            "cats_from": "cat_from privately suspected cat_to could have done more to save app1's life."
                         }
                     }
                 ],
@@ -3254,7 +3254,7 @@
                         "values": ["like", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
+                            "cats_from": "cat_from privately suspected cat_to could have done more to save app1's life."
                         }
                     }
                 ],
@@ -3282,7 +3282,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wasn't happy with to_cat when {PRONOUN/to_cat/subject} rushed into a tunnel without pausing to think."
+                            "cats_from": "cat_from wasn't happy with cat_to when {PRONOUN/cat_to/subject} rushed into a tunnel without pausing to think."
                         }
                     }
                 ],
@@ -3304,7 +3304,7 @@
                         ],
                         "amount": 25,
                         "log": {
-                            "cats_from": "to_cat saved from_cat's life by distracting a badger, at the cost of {PRONOUN/to_cat/poss} own life."
+                            "cats_from": "cat_to saved cat_from's life by distracting a badger, at the cost of {PRONOUN/cat_to/poss} own life."
                         }
                     },
                     {
@@ -3314,7 +3314,7 @@
                         "values": ["like", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat privately suspected to_cat could have done more to save app1's life."
+                            "cats_from": "cat_from privately suspected cat_to could have done more to save app1's life."
                         }
                     }
                 ],
@@ -3411,7 +3411,7 @@
                         ],
                         "amount": 3,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat reported a strange scent around a mysterious shadow in the grass."
+                            "cats_from": "cat_from heard that cat_to reported a strange scent around a mysterious shadow in the grass."
                         }
                     }
                 ],
@@ -3437,7 +3437,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat cleverly disabled a Twoleg trap on the territory."
+                            "cats_from": "cat_from heard that cat_to cleverly disabled a Twoleg trap on the territory."
                         }
                     }
                 ],
@@ -3638,7 +3638,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat reported the location of a Twoleg trap on the territory."
+                            "cats_from": "cat_from heard that cat_to reported the location of a Twoleg trap on the territory."
                         }
                     }
                 ],
@@ -3667,7 +3667,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat liked to_cat's story of encountering a stoat on patrol."
+                            "cats_from": "cat_from liked cat_to's story of encountering a stoat on patrol."
                         }
                     }
                 ],
@@ -3719,7 +3719,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about discovering a mysterious tunnel system while alone on patrol."
+                            "cats_from": "cat_from enjoyed cat_to's story about discovering a mysterious tunnel system while alone on patrol."
                         }
                     }
                 ],
@@ -3974,7 +3974,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun exploring a tunnel together, then ended up sheltering in it when a snowstorm descended."
+                            "cats_from": "cat_from and cat_to had fun exploring a tunnel together, then ended up sheltering in it when a snowstorm descended."
                         }
                     }
                 ],
@@ -4002,7 +4002,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was upset when to_cat shoved {PRONOUN/from_cat/object} aside to claim the discovery of a tunnel for {PRONOUN/to_cat/self}."
+                            "cats_from": "cat_from was upset when cat_to shoved {PRONOUN/cat_from/object} aside to claim the discovery of a tunnel for {PRONOUN/cat_to/self}."
                         }
                     }
                 ],
@@ -4023,7 +4023,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun exploring a tunnel together, then ended up sheltering in it when a snowstorm descended."
+                            "cats_from": "cat_from and cat_to had fun exploring a tunnel together, then ended up sheltering in it when a snowstorm descended."
                         }
                     },
                     {
@@ -4033,7 +4033,7 @@
                         "values": ["respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "The tunnels to_cat discovered on an all-apprentice patrol ended up saving from_cat when a snowstorm descended."
+                            "cats_from": "The tunnels cat_to discovered on an all-apprentice patrol ended up saving cat_from when a snowstorm descended."
                         }
                     }
                 ],
@@ -4054,7 +4054,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat and to_cat found a strange metal tunnel covered in rust and dirt and had fun exploring it."
+                            "cats_from": "cat_from and cat_to found a strange metal tunnel covered in rust and dirt and had fun exploring it."
                         }
                     }
                 ],
@@ -4082,7 +4082,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat and to_cat discovered a Twoleg trap on patrol and had fun messing around with it."
+                            "cats_from": "cat_from and cat_to discovered a Twoleg trap on patrol and had fun messing around with it."
                         }
                     },
                     {
@@ -4094,7 +4094,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat noticed that a weird tunnel was actually a Twoleg trap and saved from_cat from it."
+                            "cats_from": "cat_to noticed that a weird tunnel was actually a Twoleg trap and saved cat_from from it."
                         }
                     }
                 ],
@@ -4126,7 +4126,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat assumed to_cat was being overly cautious on patrol, right up until a storm descended and to_cat's caution paid off."
+                            "cats_from": "cat_from assumed cat_to was being overly cautious on patrol, right up until a storm descended and cat_to's caution paid off."
                         }
                     }
                 ],
@@ -4160,7 +4160,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat realized what a good leader to_cat would make when {PRONOUN/to_cat/subject} kept every cat calm and dry in a tunnel when a storm descended on their patrol."
+                            "cats_from": "cat_from realized what a good leader cat_to would make when {PRONOUN/cat_to/subject} kept every cat calm and dry in a tunnel when a storm descended on their patrol."
                         }
                     },
                     {
@@ -4177,7 +4177,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat and to_cat huddled in a tunnel together when a thunderstorm descended."
+                            "cats_from": "cat_from and cat_to huddled in a tunnel together when a thunderstorm descended."
                         }
                     }
                 ],
@@ -4200,7 +4200,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat fought off a prairie dog while on patrol."
+                            "cats_from": "cat_from was impressed when cat_to fought off a prairie dog while on patrol."
                         }
                     }
                 ],
@@ -4250,7 +4250,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "to_cat wrongly identified a tunnel as safe, and app2 was killed by a wolverine as a result."
+                            "cats_from": "cat_to wrongly identified a tunnel as safe, and app2 was killed by a wolverine as a result."
                         }
                     },
                     {
@@ -4266,7 +4266,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat believed to_cat's negligence on patrol was responsible for app2's death."
+                            "cats_from": "cat_from believed cat_to's negligence on patrol was responsible for app2's death."
                         }
                     }
                 ],
@@ -4319,7 +4319,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat was unimpressed when a prairie dog got the better of to_cat on patrol."
+                            "cats_from": "cat_from was unimpressed when a prairie dog got the better of cat_to on patrol."
                         }
                     }
                 ],

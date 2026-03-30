@@ -50,7 +50,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed the story to_cat told {PRONOUN/from_cat/poss} patrol."
+                            "cats_from": "cat_from enjoyed the story cat_to told {PRONOUN/cat_from/poss} patrol."
                         }
                     },
                     {
@@ -66,7 +66,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat listened to a story together on patrol."
+                            "cats_from": "cat_from and cat_to listened to a story together on patrol."
                         }
                     }
                 ],
@@ -93,7 +93,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wished that to_cat paid attention to {PRONOUN/from_cat/poss} story."
+                            "cats_from": "cat_from wished that cat_to paid attention to {PRONOUN/cat_from/poss} story."
                         }
                     }
                 ],

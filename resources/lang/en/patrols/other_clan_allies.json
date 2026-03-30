@@ -54,7 +54,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed the chat to_cat started up with a o_c_n patrol."
+                            "cats_from": "cat_from enjoyed the chat cat_to started up with a o_c_n patrol."
                         }
                     }
                 ]
@@ -84,7 +84,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed the chat to_cat started up with a o_c_n patrol."
+                            "cats_from": "cat_from enjoyed the chat cat_to started up with a o_c_n patrol."
                         }
                     }
                 ]
@@ -146,7 +146,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat didn't appreciate to_cat's hostile taunting of an allied Clan."
+                            "cats_from": "cat_from didn't appreciate cat_to's hostile taunting of an allied Clan."
                         }
                     }
                 ]
@@ -174,7 +174,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat thought to_cat should have acted more confident in the presence of a o_c_n patrol."
+                            "cats_from": "cat_from thought cat_to should have acted more confident in the presence of a o_c_n patrol."
                         }
                     }
                 ]
@@ -242,7 +242,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     }
                 ]
@@ -279,7 +279,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was grateful for s_c's skills in preventing a fight with o_c_n."
+                            "cats_from": "cat_from was grateful for s_c's skills in preventing a fight with o_c_n."
                         }
                     },
                     {
@@ -297,7 +297,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border and nearly started a fight."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border and nearly started a fight."
                         }
                     }
                 ]
@@ -331,7 +331,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was grateful for to_cat's sharp eyes preventing {PRONOUN/from_cat/object} from blatantly trespassing during a hunt."
+                            "cats_from": "cat_from was grateful for cat_to's sharp eyes preventing {PRONOUN/cat_from/object} from blatantly trespassing during a hunt."
                         }
                     }
                 ]
@@ -379,7 +379,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     }
                 ]
@@ -415,7 +415,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     }
                 ]
@@ -540,7 +540,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's quick thinking during a dog attack."
+                            "cats_from": "cat_from was impressed by cat_to's quick thinking during a dog attack."
                         }
                     }
                 ]
@@ -569,7 +569,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat found to_cat's compassion toward a hurt o_c_n warrior admirable."
+                            "cats_from": "cat_from found cat_to's compassion toward a hurt o_c_n warrior admirable."
                         }
                     }
                 ]
@@ -609,7 +609,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat watched to_cat harshly reprimand a stray o_c_n apprentice and couldn't help feeling like it was too much."
+                            "cats_from": "cat_from watched cat_to harshly reprimand a stray o_c_n apprentice and couldn't help feeling like it was too much."
                         }
                     }
                 ]
@@ -672,7 +672,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw how to_cat's patrol jumped to hasty conclusions about an allied Clan's scent."
+                            "cats_from": "cat_from saw how cat_to's patrol jumped to hasty conclusions about an allied Clan's scent."
                         }
                     }
                 ]
@@ -727,7 +727,7 @@
                         "values": ["respect", "like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat escorting o_c_n's medicine cat back to the camp to ask for help."
+                            "cats_from": "cat_from approved of cat_to escorting o_c_n's medicine cat back to the camp to ask for help."
                         }
                     }
                 ]
@@ -971,7 +971,7 @@
                         "values": ["respect"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's clumsy border marking nearly caused an incident with o_c_n."
+                            "cats_from": "cat_from heard that cat_to's clumsy border marking nearly caused an incident with o_c_n."
                         }
                     }
                 ],
@@ -1001,7 +1001,7 @@
                         "values": ["respect"],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's clumsy border marking nearly caused an incident with o_c_n."
+                            "cats_from": "cat_from heard that cat_to's clumsy border marking nearly caused an incident with o_c_n."
                         }
                     }
                 ]
@@ -1084,7 +1084,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed listening to to_cat's story on patrol."
+                            "cats_from": "cat_from enjoyed listening to cat_to's story on patrol."
                         }
                     }
                 ],
@@ -1158,7 +1158,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how soft to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how soft cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -1197,7 +1197,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -1231,7 +1231,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -1270,7 +1270,7 @@
                         ],
                         "amount": -25,
                         "log": {
-                            "cats_from": "from_cat can't help but blame to_cat's hasty action for r_c's death."
+                            "cats_from": "cat_from can't help but blame cat_to's hasty action for r_c's death."
                         }
                     }
                 ],
@@ -1317,7 +1317,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was witness to how to_cat apparently can't tell the difference between o_c_n kits and c_n kits."
+                            "cats_from": "cat_from was witness to how cat_to apparently can't tell the difference between o_c_n kits and c_n kits."
                         }
                     }
                 ]
@@ -1393,7 +1393,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was witness to how to_cat apparently can't tell the difference between o_c_n kits and c_n kits."
+                            "cats_from": "cat_from was witness to how cat_to apparently can't tell the difference between o_c_n kits and c_n kits."
                         }
                     }
                 ]

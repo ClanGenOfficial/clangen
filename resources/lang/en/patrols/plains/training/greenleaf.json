@@ -50,7 +50,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat learned from to_cat about how the plains used to be much more verdant land before the Twolegs ruined it."
+                            "cats_from": "cat_from learned from cat_to about how the plains used to be much more verdant land before the Twolegs ruined it."
                         }
                     }
                 ],
@@ -81,7 +81,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat finding a cool, shady spot for the patrol to take a break."
+                            "cats_from": "cat_from appreciated cat_to finding a cool, shady spot for the patrol to take a break."
                         }
                     },
                     {
@@ -97,7 +97,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was grateful to to_cat for finding {PRONOUN/from_cat/object} a place to cool off on patrol."
+                            "cats_from": "cat_from was grateful to cat_to for finding {PRONOUN/cat_from/object} a place to cool off on patrol."
                         }
                     }
                 ],
@@ -127,7 +127,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story of The Earth-Cat's ticks."
+                            "cats_from": "cat_from enjoyed cat_to's story of The Earth-Cat's ticks."
                         }
                     }
                 ],

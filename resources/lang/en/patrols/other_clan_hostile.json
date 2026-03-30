@@ -39,7 +39,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated p_l's calm demeanor when confronted with a hostile o_c_n patrol."
+                            "cats_from": "cat_from appreciated p_l's calm demeanor when confronted with a hostile o_c_n patrol."
                         }
                     }
                 ]
@@ -67,7 +67,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated s_c's smooth conversation when they met with a o_c_n patrol."
+                            "cats_from": "cat_from appreciated s_c's smooth conversation when they met with a o_c_n patrol."
                         }
                     }
                 ]
@@ -98,7 +98,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated s_c's smooth conversation when they met with a o_c_n patrol."
+                            "cats_from": "cat_from appreciated s_c's smooth conversation when they met with a o_c_n patrol."
                         }
                     }
                 ]
@@ -134,7 +134,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was disappointed with s_c's cowardly reaction to a hostile o_c_n patrol."
+                            "cats_from": "cat_from was disappointed with s_c's cowardly reaction to a hostile o_c_n patrol."
                         }
                     }
                 ]
@@ -193,7 +193,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was disappointed with how easily to_cat was rebuffed by a o_c_n patrol, it seems to_cat is all yowl and no bite."
+                            "cats_from": "cat_from was disappointed with how easily cat_to was rebuffed by a o_c_n patrol, it seems cat_to is all yowl and no bite."
                         }
                     }
                 ]
@@ -219,7 +219,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed at to_cat's fighting prowess against a o_c_n patrol."
+                            "cats_from": "cat_from was impressed at cat_to's fighting prowess against a o_c_n patrol."
                         }
                     }
                 ]
@@ -278,7 +278,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -295,7 +295,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -312,7 +312,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat begged to_cat to join c_n, but to_cat refused and left Clan-life altogether."
+                            "cats_from": "cat_from begged cat_to to join c_n, but cat_to refused and left Clan-life altogether."
                         }
                     }
                 ],
@@ -346,7 +346,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -363,7 +363,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -379,7 +379,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat couldn't believe it when to_cat brought a <i>o_c_n</i> cat back to camp as a <i>mate</i>."
+                            "cats_from": "cat_from couldn't believe it when cat_to brought a <i>o_c_n</i> cat back to camp as a <i>mate</i>."
                         }
                     }
                 ],
@@ -412,7 +412,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -429,7 +429,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -446,7 +446,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat begged to_cat to join c_n, but to_cat refused and left Clan-life altogether."
+                            "cats_from": "cat_from begged cat_to to join c_n, but cat_to refused and left Clan-life altogether."
                         }
                     }
                 ],
@@ -485,7 +485,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -502,7 +502,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -520,7 +520,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat decided to leave Clan-life and travel together, free from the confines of their old lives."
+                            "cats_from": "cat_from and cat_to decided to leave Clan-life and travel together, free from the confines of their old lives."
                         }
                     }
                 ],
@@ -565,7 +565,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -582,7 +582,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -600,7 +600,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat had lost faith in their love's resilience and, despite from_cat's pleading, ran from {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to had lost faith in their love's resilience and, despite cat_from's pleading, ran from {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -656,7 +656,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -673,7 +673,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -690,7 +690,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "While the two were meeting, to_cat's Clanmates attacked and nearly killed from_cat. to_cat ran from the territories altogether."
+                            "cats_from": "While the two were meeting, cat_to's Clanmates attacked and nearly killed cat_from. cat_to ran from the territories altogether."
                         }
                     }
                 ],
@@ -744,7 +744,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -761,7 +761,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other until from_cat's Clan killed to_cat."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other until cat_from's Clan killed cat_to."
                         }
                     }
                 ],
@@ -805,7 +805,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -822,7 +822,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -838,7 +838,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "When to_cat killed from_cat's sibling, from_cat fled, {PRONOUN/from_cat/poss} heart torn."
+                            "cats_from": "When cat_to killed cat_from's sibling, cat_from fled, {PRONOUN/cat_from/poss} heart torn."
                         }
                     }
                 ],
@@ -907,7 +907,7 @@
                         ],
                         "amount": 46,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -924,7 +924,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -941,7 +941,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "The death of {PRONOUN/from_cat/poss} mate at the paws of {PRONOUN/from_cat/poss} own Clan left from_cat embittered and wary."
+                            "cats_from": "The death of {PRONOUN/cat_from/poss} mate at the paws of {PRONOUN/cat_from/poss} own Clan left cat_from embittered and wary."
                         }
                     },
                     {
@@ -959,7 +959,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                            "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
                         }
                     },
                     {
@@ -975,7 +975,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
+                            "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
                         }
                     }
                 ],
@@ -1009,7 +1009,7 @@
                         ],
                         "amount": 22,
                         "log": {
-                            "cats_from": "from_cat and to_cat have been meeting in secret."
+                            "cats_from": "cat_from and cat_to have been meeting in secret."
                         }
                     },
                     {
@@ -1026,7 +1026,7 @@
                         ],
                         "amount": 14,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, from_cat and to_cat found comfort in each other."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     },
                     {
@@ -1044,7 +1044,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                            "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
                         }
                     },
                     {
@@ -1060,7 +1060,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all."
+                            "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all."
                         }
                     }
                 ],
@@ -1101,7 +1101,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's unfortunate cross-Clan relationship."
+                            "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
                         }
                     },
                     {
@@ -1117,7 +1117,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
+                            "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
                         }
                     }
                 ],
@@ -1190,7 +1190,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to fight off a o_c_n patrol, despite their differences."
+                            "cats_from": "cat_from and cat_to worked together to fight off a o_c_n patrol, despite their differences."
                         }
                     }
                 ],
@@ -1216,7 +1216,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were able to work out some of their differences while patrolling together."
+                            "cats_from": "cat_from and cat_to were able to work out some of their differences while patrolling together."
                         }
                     }
                 ],
@@ -1249,7 +1249,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a good time competing with each other."
+                            "cats_from": "cat_from and cat_to had a good time competing with each other."
                         }
                     }
                 ],
@@ -1275,7 +1275,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat couldn't help but argue while paired on patrol."
+                            "cats_from": "cat_from and cat_to couldn't help but argue while paired on patrol."
                         }
                     }
                 ]
@@ -1429,7 +1429,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat judged p_l and r_c for fighting with each other instead of doing their duty."
+                            "cats_from": "cat_from judged p_l and r_c for fighting with each other instead of doing their duty."
                         }
                     }
                 ],
@@ -1671,7 +1671,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat couldn't help but argue while paired on patrol."
+                            "cats_from": "cat_from and cat_to couldn't help but argue while paired on patrol."
                         }
                     }
                 ],
@@ -1728,7 +1728,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by s_c's ability to intimidate a o_c_n patrol."
+                            "cats_from": "cat_from was impressed by s_c's ability to intimidate a o_c_n patrol."
                         }
                     },
                     {
@@ -1744,7 +1744,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was a bit intimidated {PRONOUN/from_cat/self} by s_c's scary demeanor toward o_c_n cats."
+                            "cats_from": "cat_from was a bit intimidated {PRONOUN/cat_from/self} by s_c's scary demeanor toward o_c_n cats."
                         }
                     }
                 ],
@@ -1776,7 +1776,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated how easily s_c disarmed a o_c_n patrol with nothing but {PRONOUN/from_cat/poss} force of personality."
+                            "cats_from": "cat_from appreciated how easily s_c disarmed a o_c_n patrol with nothing but {PRONOUN/cat_from/poss} force of personality."
                         }
                     }
                 ],
@@ -1813,7 +1813,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "s_c was frustrated when to_cat didn't back {PRONOUN/s_c/object} up while confronting a o_c_n patrol."
+                            "cats_from": "s_c was frustrated when cat_to didn't back {PRONOUN/s_c/object} up while confronting a o_c_n patrol."
                         }
                     },
                     {
@@ -1831,7 +1831,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat thought s_c was too hasty and aggressive in confronting a o_c_n patrol."
+                            "cats_from": "cat_from thought s_c was too hasty and aggressive in confronting a o_c_n patrol."
                         }
                     }
                 ],
@@ -1871,7 +1871,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "s_c was frustrated when to_cat didn't back {PRONOUN/s_c/object} up while confronting a o_c_n patrol."
+                            "cats_from": "s_c was frustrated when cat_to didn't back {PRONOUN/s_c/object} up while confronting a o_c_n patrol."
                         }
                     },
                     {
@@ -1889,7 +1889,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat thought s_c was too hasty and aggressive in confronting a o_c_n patrol."
+                            "cats_from": "cat_from thought s_c was too hasty and aggressive in confronting a o_c_n patrol."
                         }
                     }
                 ],
@@ -1990,7 +1990,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     },
                     {
@@ -2007,7 +2007,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across their enemy's border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across their enemy's border."
                         }
                     }
                 ],
@@ -2045,7 +2045,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     },
                     {
@@ -2062,7 +2062,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across their enemy's border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across their enemy's border."
                         }
                     }
                 ],
@@ -2107,7 +2107,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat tried to hunt a rabbit across the border."
+                            "cats_from": "cat_from heard that cat_to tried to hunt a rabbit across the border."
                         }
                     },
                     {
@@ -2124,7 +2124,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat tried to hunt a rabbit across their enemy's border."
+                            "cats_from": "cat_from heard that cat_to tried to hunt a rabbit across their enemy's border."
                         }
                     }
                 ],
@@ -2156,7 +2156,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     },
                     {
@@ -2173,7 +2173,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across their enemy's border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across their enemy's border."
                         }
                     }
                 ],
@@ -2204,7 +2204,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat died trying to hunt a rabbit across the border."
+                            "cats_from": "cat_from heard that cat_to died trying to hunt a rabbit across the border."
                         }
                     },
                     {
@@ -2221,7 +2221,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat died trying to hunt a rabbit across their enemy's border."
+                            "cats_from": "cat_from heard that cat_to died trying to hunt a rabbit across their enemy's border."
                         }
                     }
                 ],
@@ -2263,7 +2263,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat was injured while hunting across the border."
+                            "cats_from": "cat_from heard that cat_to was injured while hunting across the border."
                         }
                     },
                     {
@@ -2280,7 +2280,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat was injured while hunting across their enemy's border."
+                            "cats_from": "cat_from heard that cat_to was injured while hunting across their enemy's border."
                         }
                     }
                 ],
@@ -2316,7 +2316,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     },
                     {
@@ -2333,7 +2333,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across their enemy's border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across their enemy's border."
                         }
                     }
                 ],
@@ -4823,7 +4823,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat admired p_l's ferocious rescue of r_c from the claws of a o_c_n warrior."
+                            "cats_from": "cat_from admired p_l's ferocious rescue of r_c from the claws of a o_c_n warrior."
                         }
                     },
                     {
@@ -4895,7 +4895,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat couldn't help but wonder how p_l lost sight of r_c long enough for r_c to die at the claws of o_c_n."
+                            "cats_from": "cat_from couldn't help but wonder how p_l lost sight of r_c long enough for r_c to die at the claws of o_c_n."
                         }
                     },
                     {
@@ -4912,7 +4912,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that r_c died while on p_l's patrol and couldn't help but remember the animosity between the two..."
+                            "cats_from": "cat_from heard that r_c died while on p_l's patrol and couldn't help but remember the animosity between the two..."
                         }
                     }
                 ],
@@ -4952,7 +4952,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard p_l's snarled refusal to help r_c during battle."
+                            "cats_from": "cat_from heard p_l's snarled refusal to help r_c during battle."
                         }
                     },
                     {
@@ -4986,7 +4986,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that r_c was hurt while on p_l's patrol and couldn't help but remember the animosity between the two..."
+                            "cats_from": "cat_from heard that r_c was hurt while on p_l's patrol and couldn't help but remember the animosity between the two..."
                         }
                     }
                 ],
@@ -5423,7 +5423,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -5462,7 +5462,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -5496,7 +5496,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -5535,7 +5535,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that r_c died because p_l wanted to help enemy kits."
+                            "cats_from": "cat_from heard that r_c died because p_l wanted to help enemy kits."
                         }
                     }
                 ],

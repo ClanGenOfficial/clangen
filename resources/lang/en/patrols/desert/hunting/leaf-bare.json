@@ -454,7 +454,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off a swift fox vixen together."
+                            "cats_from": "cat_from and cat_to drove off a swift fox vixen together."
                         }
                     },
                     {
@@ -464,7 +464,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off a swift fox vixen."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a swift fox vixen."
                         }
                     }
                 ],
@@ -488,7 +488,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat killed a swift fox vixen and her cubs together."
+                            "cats_from": "cat_from and cat_to killed a swift fox vixen and her cubs together."
                         }
                     },
                     {
@@ -498,7 +498,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol killed a swift fox vixen and her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol killed a swift fox vixen and her cubs."
                         }
                     }
                 ],
@@ -517,7 +517,7 @@
                         "values": ["respect", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was impressed that to_cat knew to wait and lure out a swift fox vixen's mate so the patrol could drive off both."
+                            "cats_from": "cat_from was impressed that cat_to knew to wait and lure out a swift fox vixen's mate so the patrol could drive off both."
                         }
                     },
                     {
@@ -527,7 +527,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off both a swift fox vixen and her mate."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off both a swift fox vixen and her mate."
                         }
                     }
                 ],
@@ -588,7 +588,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to drive off a pair of swift foxes together."
+                            "cats_from": "cat_from and cat_to were unable to drive off a pair of swift foxes together."
                         }
                     }
                 ],

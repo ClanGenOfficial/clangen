@@ -43,7 +43,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the colorful leaf-fall forest together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the colorful leaf-fall forest together."
                         }
                     }
                 ],
@@ -64,7 +64,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the colorful leaf-fall forest together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the colorful leaf-fall forest together."
                         }
                     }
                 ],
@@ -170,7 +170,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun tussling in the piles of leaf-fall leaves."
+                            "cats_from": "cat_from and cat_to had fun tussling in the piles of leaf-fall leaves."
                         }
                     }
                 ],
@@ -229,7 +229,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun tussling in the piles of leaf-fall leaves."
+                            "cats_from": "cat_from and cat_to had fun tussling in the piles of leaf-fall leaves."
                         }
                     },
                     {
@@ -245,7 +245,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat got quite close when app1 knocked p_l into r_c."
+                            "cats_from": "cat_from and cat_to got quite close when app1 knocked p_l into r_c."
                         }
                     }
                 ],
@@ -306,7 +306,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun tussling and flirting in the piles of leaf-fall leaves."
+                            "cats_from": "cat_from and cat_to had fun tussling and flirting in the piles of leaf-fall leaves."
                         }
                     },
                     {
@@ -322,7 +322,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat were amused to see app1 and app2 flirting on patrol."
+                            "cats_from": "cat_from and cat_to were amused to see app1 and app2 flirting on patrol."
                         }
                     }
                 ],

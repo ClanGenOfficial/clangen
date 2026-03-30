@@ -41,7 +41,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat learned about elephant seals from to_cat."
+                            "cats_from": "cat_from learned about elephant seals from cat_to."
                         }
                     },
                     {
@@ -58,7 +58,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about elephant seals."
+                            "cats_from": "cat_to taught cat_from about elephant seals."
                         }
                     }
                 ],
@@ -82,7 +82,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat learned about elephant seals from to_cat."
+                            "cats_from": "cat_from learned about elephant seals from cat_to."
                         }
                     },
                     {
@@ -99,7 +99,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about elephant seals."
+                            "cats_from": "cat_from taught cat_to about elephant seals."
                         }
                     }
                 ],
@@ -129,7 +129,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how to distinguish dangerous bull seals from the female elephant seals."
+                            "cats_from": "cat_to taught cat_from how to distinguish dangerous bull seals from the female elephant seals."
                         }
                     },
                     {
@@ -146,7 +146,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how to distinguish dangerous bull seals from the female elephant seals."
+                            "cats_from": "cat_from taught cat_to how to distinguish dangerous bull seals from the female elephant seals."
                         }
                     }
                 ],
@@ -181,7 +181,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat reassured from_cat when elephant seals startled {PRONOUN/from_cat/object} on patrol."
+                            "cats_from": "cat_to reassured cat_from when elephant seals startled {PRONOUN/cat_from/object} on patrol."
                         }
                     },
                     {
@@ -198,7 +198,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat reassured to_cat when elephant seals startled {PRONOUN/to_cat/object} on patrol."
+                            "cats_from": "cat_from reassured cat_to when elephant seals startled {PRONOUN/cat_to/object} on patrol."
                         }
                     }
                 ],
@@ -218,7 +218,7 @@
                         "values": ["like", "trust"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "to_cat comforted from_cat when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} startled by a elephant seal on patrol."
+                            "cats_from": "cat_to comforted cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} startled by a elephant seal on patrol."
                         }
                     }
                 ]
@@ -290,7 +290,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned the importance of being able to keep one's footing on slippery rocks from to_cat's story of the daring rescue of a kit during a storm."
+                            "cats_from": "cat_from learned the importance of being able to keep one's footing on slippery rocks from cat_to's story of the daring rescue of a kit during a storm."
                         }
                     },
                     {
@@ -307,7 +307,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat the importance of keeping one's footing with a story about rescuing a kit."
+                            "cats_from": "cat_from taught cat_to the importance of keeping one's footing with a story about rescuing a kit."
                         }
                     }
                 ],
@@ -338,7 +338,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned the importance of being able to keep one's footing on slippery rocks from to_cat."
+                            "cats_from": "cat_from learned the importance of being able to keep one's footing on slippery rocks from cat_to."
                         }
                     },
                     {
@@ -355,7 +355,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat the importance of keeping one's footing on slippery rocks."
+                            "cats_from": "cat_from taught cat_to the importance of keeping one's footing on slippery rocks."
                         }
                     }
                 ],
@@ -386,7 +386,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned how to judge the depths of rockpools from to_cat."
+                            "cats_from": "cat_from learned how to judge the depths of rockpools from cat_to."
                         }
                     },
                     {
@@ -403,7 +403,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat to judge the depths of rockpools."
+                            "cats_from": "cat_from taught cat_to to judge the depths of rockpools."
                         }
                     }
                 ],
@@ -434,7 +434,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned the importance of being able to keep one's footing on slippery rocks from to_cat when {PRONOUN/to_cat/subject} challenged {PRONOUN/from_cat/object} to a race."
+                            "cats_from": "cat_from learned the importance of being able to keep one's footing on slippery rocks from cat_to when {PRONOUN/cat_to/subject} challenged {PRONOUN/cat_from/object} to a race."
                         }
                     },
                     {
@@ -451,7 +451,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat the importance of keeping one's footing on slippery rocks by challenging {PRONOUN/to_cat/object} to a race."
+                            "cats_from": "cat_from taught cat_to the importance of keeping one's footing on slippery rocks by challenging {PRONOUN/cat_to/object} to a race."
                         }
                     }
                 ],
@@ -504,7 +504,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat thought to_cat was a mouse-brain for racing around on slippery rocks before learning to keep {PRONOUN/to_cat/poss} footing."
+                            "cats_from": "cat_from thought cat_to was a mouse-brain for racing around on slippery rocks before learning to keep {PRONOUN/cat_to/poss} footing."
                         }
                     }
                 ],
@@ -566,7 +566,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat thought to_cat was a mouse-brain for racing around on slippery rocks before learning to keep {PRONOUN/to_cat/poss} footing."
+                            "cats_from": "cat_from thought cat_to was a mouse-brain for racing around on slippery rocks before learning to keep {PRONOUN/cat_to/poss} footing."
                         }
                     }
                 ],

@@ -35,7 +35,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off a swift fox vixen together."
+                            "cats_from": "cat_from and cat_to drove off a swift fox vixen together."
                         }
                     },
                     {
@@ -45,7 +45,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off a swift fox vixen."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a swift fox vixen."
                         }
                     }
                 ],
@@ -66,7 +66,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat killed a swift fox vixen together."
+                            "cats_from": "cat_from and cat_to killed a swift fox vixen together."
                         }
                     },
                     {
@@ -76,7 +76,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol killed a swift fox vixen."
+                            "cats_from": "cat_from heard about how cat_to's patrol killed a swift fox vixen."
                         }
                     }
                 ],
@@ -96,7 +96,7 @@
                         "values": ["respect", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was impressed that to_cat knew to wait and lure out a swift fox vixen's mate so the patrol could drive off both."
+                            "cats_from": "cat_from was impressed that cat_to knew to wait and lure out a swift fox vixen's mate so the patrol could drive off both."
                         }
                     },
                     {
@@ -106,7 +106,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off both a swift fox vixen and her mate."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off both a swift fox vixen and her mate."
                         }
                     }
                 ],
@@ -168,7 +168,7 @@
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ],
@@ -193,7 +193,7 @@
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ],
@@ -253,7 +253,7 @@
                     "amount": 8,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ],
@@ -275,7 +275,7 @@
                     "amount": 8,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ],
@@ -334,7 +334,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat witnessed first-paw how to_cat's hunting training has paid off."
+                            "cats_from": "cat_from witnessed first-paw how cat_to's hunting training has paid off."
                         }
                     },
                     {
@@ -344,7 +344,7 @@
                         "values": ["comfort", "like"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat felt great when to_cat praised {PRONOUN/from_cat/poss} hunting."
+                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN/cat_from/poss} hunting."
                         }
                     }
                 ],
@@ -364,7 +364,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat watched to_cat's hunting improve under {PRONOUN/from_cat/poss} tutelage."
+                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN/cat_from/poss} tutelage."
                         }
                     },
                     {
@@ -374,7 +374,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat got great hunting advice from to_cat."
+                            "cats_from": "cat_from got great hunting advice from cat_to."
                         }
                     }
                 ],
@@ -393,7 +393,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat for a bit after messing up in a hunt in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -443,7 +443,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to catch ground squirrels."
+                            "cats_from": "cat_from and cat_to worked together to catch ground squirrels."
                         }
                     }
                 ],
@@ -467,7 +467,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to catch ground squirrels."
+                            "cats_from": "cat_from and cat_to worked together to catch ground squirrels."
                         }
                     }
                 ],
@@ -495,7 +495,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to catch ground squirrels."
+                            "cats_from": "cat_from and cat_to worked together to catch ground squirrels."
                         }
                     },
                     {
@@ -509,7 +509,7 @@
                         "values": ["respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's leadership and quick thinking during a squirrel hunt."
+                            "cats_from": "cat_from was impressed by cat_to's leadership and quick thinking during a squirrel hunt."
                         }
                     }
                 ],
@@ -532,7 +532,7 @@
                         "values": [ "like", "respect"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat blamed to_cat for a hunt going badly."
+                            "cats_from": "cat_from blamed cat_to for a hunt going badly."
                         }
                     }
                 ],
@@ -644,7 +644,7 @@
                     "amount": 8,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat go out to hunt alone and come back with a mouse."
+                        "cats_from": "cat_from saw cat_to go out to hunt alone and come back with a mouse."
                     }
                 }
             ],
@@ -665,7 +665,7 @@
                     "amount": 8,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat go out to hunt alone and come back with a mouse."
+                        "cats_from": "cat_from saw cat_to go out to hunt alone and come back with a mouse."
                     }
                 }
             ],
@@ -727,7 +727,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat witnessed first-paw how to_cat's hunting training has paid off."
+                            "cats_from": "cat_from witnessed first-paw how cat_to's hunting training has paid off."
                         }
                     },
                     {
@@ -737,7 +737,7 @@
                         "values": ["comfort", "like"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat felt great when to_cat praised {PRONOUN/from_cat/poss} hunting."
+                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN/cat_from/poss} hunting."
                         }
                     }
                 ],
@@ -757,7 +757,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat watched to_cat's hunting improve under {PRONOUN/from_cat/poss} tutelage."
+                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN/cat_from/poss} tutelage."
                         }
                     },
                     {
@@ -767,7 +767,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat got great hunting advice from to_cat."
+                            "cats_from": "cat_from got great hunting advice from cat_to."
                         }
                     }
                 ],
@@ -786,7 +786,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat for a bit after messing up in a hunt in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -832,7 +832,7 @@
                         "values": ["respect", "like"],
                         "amount": 3,
                         "log": {
-                            "cats_from": "from_cat and to_cat shared a satisfying hunt together."
+                            "cats_from": "cat_from and cat_to shared a satisfying hunt together."
                         }
                     }
                 ],
@@ -856,7 +856,7 @@
                         "values": ["respect", "like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat picked a good hunting location for from_cat's hunting patrol."
+                            "cats_from": "cat_to picked a good hunting location for cat_from's hunting patrol."
                         }
                     }
                 ],
@@ -883,7 +883,7 @@
                         "values": ["respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat gained a greater respect for to_cat's hunting skills while hunting mice together."
+                            "cats_from": "cat_from gained a greater respect for cat_to's hunting skills while hunting mice together."
                         }
                     }
                 ],
@@ -906,7 +906,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's poor choice of hunting grounds wasted from_cat's time on a hunting patrol."
+                            "cats_from": "cat_to's poor choice of hunting grounds wasted cat_from's time on a hunting patrol."
                         }
                     }
                 ],
