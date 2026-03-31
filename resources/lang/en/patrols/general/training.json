@@ -10863,7 +10863,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 3,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
@@ -10952,6 +10952,97 @@
                         "log": {
                             "cats_from": "cat_from and cat_to felt frustrated after an unproductive training patrol."
                         }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "p_l and r_c practice their hunting, but the conversation is awkward and stilted. When the session ends, they're secretly relieved.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to felt like they had little chemistry during a training session."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l gets close to r_c to correct {PRONOUN/r_c/poss} posture, but r_c flinches away, uncomfortable. p_l apologizes, and the rest of the afternoon is awkward.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "romance", "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "r_c didn't seem comfortable with p_l's proximity during a training session."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+            {
+                "text": "p_l gives r_c a few pointers, hoping to show off {PRONOUN/p_l/poss} knowledge of hunting, but r_c doesn't take well to being talked down to. The training session ends early, both cats feeling on edge.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "romance", "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from wanted to show off for cat_to during a training session, but it backfired.",
+                            "cats_to": "cat_to felt like cat_from was talking down to {PRONOUN/cat_to/object} during a training session."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+            {
+                "text": "p_l playfully pounces on s_c when s_c isn't looking, and on instinct, s_c whips around and lashes {PRONOUN/s_c/poss} claws across p_l's face. s_c is horrified and apologizes, but the damage is done, and s_c has to hurry {PRONOUN/p_l/object} back to camp to seek treatment.",
+                "exp": 0,
+                "can_have_stat": ["r_c"],
+                "stat_trait": ["gloomy", "lonesome", "nervous", "careful", "insecure", "fierce", "strange"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "romance", "comfort"
+                        ],
+                        "amount": -13,
+                        "log": {
+                            "cats_from": "cat_from playfully pounced on cat_to, and cat_to was so startled {PRONOUN/cat_to/subject} attacked cat_from on instinct."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["claw-wound"],
+                        "scars": [
+                            "FACE",
+                            "BRIDGE",
+                            "SNOUT",
+                            "CHEEK"
+                        ]
                     }
                 ],
                 "frequency": 1
