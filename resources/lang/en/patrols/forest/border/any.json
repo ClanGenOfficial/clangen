@@ -471,7 +471,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives}; its owner must be out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives {PRONOUN/r_c/poss} is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
+                "text": "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives}; its owner must be out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks — but all it gives {PRONOUN/r_c/poss} is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
                 "exp": 40,
                 "frequency": 4,
                 "relationships": [
@@ -506,7 +506,7 @@
                 ]
             },
             {
-                "text": "s_c sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c expected. To confirm {PRONOUN/s_c/poss} theory, {PRONOUN/s_c/subject} {VERB/s_c/stake/stakes} out the sett itself, and when the beast pokes its head out at night, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to confirm it's a juvenile - young and inexperienced. s_c pads quietly back to camp with the intel.",
+                "text": "s_c sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c expected. To confirm {PRONOUN/s_c/poss} theory, {PRONOUN/s_c/subject} {VERB/s_c/stake/stakes} out the sett itself, and when the beast pokes its head out at night, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to confirm it's a juvenile — young and inexperienced. s_c pads quietly back to camp with the intel.",
                 "exp": 40,
                 "stat_trait": [
                     "responsible",
@@ -535,7 +535,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Well, the only way to know is to check! Once {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the sett, s_c scrambles inside for a look - and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the sett, s_c scrambles inside for a look — and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "stat_trait": [
                     "adventurous",
@@ -567,7 +567,7 @@
                 ]
             },
             {
-                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/r_c/subject/CAP} {VERB/r_c/try/tries} to creep just a little closer - but the ground drops away steeply beneath {PRONOUN/r_c/poss} paws and {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing, skidding right into the disturbed badger's lethal jaws.",
+                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/r_c/subject/CAP} {VERB/r_c/try/tries} to creep just a little closer — but the ground drops away steeply beneath {PRONOUN/r_c/poss} paws and {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing, skidding right into the disturbed badger's lethal jaws.",
                 "exp": 0,
                 "dead_cats": [
                     "r_c"
@@ -579,7 +579,7 @@
                 "frequency": 3
             },
             {
-                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/r_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett; r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
+                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/r_c/object}. It's difficult to say who's more surprised — r_c or the badger. It charges for the sett; r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
                 "exp": 0,
                 "injury": [
                     {
@@ -670,7 +670,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat — stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 40,
                 "stat_skill": [
                     "CLEVER,1"
@@ -739,7 +739,7 @@
                 "frequency": 4
             },
             {
-                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look - and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look — and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "stat_trait": [
                     "adventurous",
@@ -773,7 +773,7 @@
                 "frequency": 4
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home in one piece... including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised — the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home in one piece... including the badger.",
                 "exp": 0,
                 "injury": [
                     {
@@ -875,7 +875,7 @@
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -1204,7 +1204,7 @@
                 "frequency": 4
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with r_c to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with r_c to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -1228,7 +1228,7 @@
                 "frequency": 4
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with p_l to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with p_l to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -1676,7 +1676,7 @@
                 "frequency": 4
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with {PRONOUN/s_c/poss} Clanmates to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with {PRONOUN/s_c/poss} Clanmates to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -2212,7 +2212,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives them speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives them speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified — but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "injury": [
                     {
@@ -2598,7 +2598,7 @@
                 "min_max_status": {
                     "normal adult": [2, 3]
                 },
-                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} - the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c/poss} borders.",
+                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} — the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c/poss} borders.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -3146,12 +3146,12 @@
             "apprentice": [-1, 2]
         },
         "frequency": 4,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down — they do not share territory with foxes.",
                 "exp": 30,
                 "frequency": 4,
                 "relationships": [
@@ -3381,7 +3381,7 @@
                 ]
             },
             {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+                "text": "Never threaten a mother's young — the red vixen kills r_c in the skirmish.",
                 "exp": 0,
                 "frequency": 2,
                 "dead_cats": ["r_c"],
@@ -3485,7 +3485,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 4,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -3544,7 +3544,7 @@
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters — a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "frequency": 4,
                 "stat_skill": ["FIGHTER,3"],
@@ -3774,7 +3774,7 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!",
-        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst possible thing happens - a warrior discovers them and sends them back to camp with a loud scolding.",
+        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst possible thing happens — a warrior discovers them and sends them back to camp with a loud scolding.",
         "success_outcomes": [
             {
                 "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge pillar that blinks down with slow, glowing red eyes.",
@@ -3806,7 +3806,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The border patrol is immediately diverted to tracking this new unknown - with feet the size of a small dog, c_n needs to know what this thing is. It takes every bit of their talents at tracking through the woods, but the cats catch a glimpse of a giant, furred Twoleg, crossing a distant clearing and disappearing forever.",
+                "text": "The border patrol is immediately diverted to tracking this new unknown — with feet the size of a small dog, c_n needs to know what this thing is. It takes every bit of their talents at tracking through the woods, but the cats catch a glimpse of a giant, furred Twoleg, crossing a distant clearing and disappearing forever.",
                 "exp": 20,
                 "frequency": 4
             }
@@ -3835,7 +3835,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It leaps up onto a fallen log - whatever it is: bulbous head; long, spindly limbs; pale, hairless skin like a skink. r_c hisses, and it echoes in a whisper, skittering off into the woods.",
+                "text": "It leaps up onto a fallen log — whatever it is: bulbous head; long, spindly limbs; pale, hairless skin like a skink. r_c hisses, and it echoes in a whisper, skittering off into the woods.",
                 "exp": 20,
                 "frequency": 4
             }

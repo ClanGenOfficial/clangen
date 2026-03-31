@@ -18,7 +18,7 @@
             "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
-        "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
+        "intro_text": "r_c tastes the air and perks up — there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -31,7 +31,7 @@
                 "frequency": 4
             },
             {
-                "text": "Though it tries to escape, r_c is faster and smarter - {PRONOUN/r_c/subject} {VERB/r_c/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease.",
+                "text": "Though it tries to escape, r_c is faster and smarter — {PRONOUN/r_c/subject} {VERB/r_c/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease.",
                 "exp": 10,
                 "prey": [
                     "medium"
@@ -39,7 +39,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} pounced - and by then it's far too late for the squirrel to do anything about it.",
+                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} pounced — and by then it's far too late for the squirrel to do anything about it.",
                 "exp": 10,
                 "stat_skill": [
                     "HUNTER,1"
@@ -88,7 +88,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to — {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
                 "exp": 30,
                 "prey": [
                     "medium"
@@ -130,7 +130,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct - by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
+                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct — by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
                 "exp": 0,
                 "prey": [
                     "very_small"
@@ -170,7 +170,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. T{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. T{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to — {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -311,7 +311,7 @@
                 "frequency": 4
             },
             {
-                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only {VERB/r_c/do/does} {PRONOUN/r_c/subject} have the squirrel, but {PRONOUN/r_c/subject} now also {VERB/r_c/have/has} a pawful of oak leaves for the medicine cat!",
+                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates — whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only {VERB/r_c/do/does} {PRONOUN/r_c/subject} have the squirrel, but {PRONOUN/r_c/subject} now also {VERB/r_c/have/has} a pawful of oak leaves for the medicine cat!",
                 "exp": 40,
                 "herbs": [
                     "oak_leaves"
@@ -530,7 +530,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
+                "text": "s_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap — with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
                 "exp": 20,
                 "stat_skill": [
                     "HUNTER,1",
@@ -609,7 +609,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol backtracks. r_c is found, huddled under a bush - {PRONOUN/r_c/subject} lost the path and sight of {PRONOUN/r_c/poss} Clanmates but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
+                "text": "The patrol backtracks. r_c is found, huddled under a bush — {PRONOUN/r_c/subject} lost the path and sight of {PRONOUN/r_c/poss} Clanmates but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
                 "exp": 20,
                 "prey": [
                     "small"
@@ -1114,7 +1114,7 @@
                 "frequency": 4
             },
             {
-                "text": "The rats defending the Rat King's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that {PRONOUN/p_l/subject} saw it - multiple eyes glowing in the dark, watching {PRONOUN/p_l/object}.",
+                "text": "The rats defending the Rat King's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that {PRONOUN/p_l/subject} saw it — multiple eyes glowing in the dark, watching {PRONOUN/p_l/object}.",
                 "exp": 30,
                 "prey": [
                     "large"
@@ -1577,7 +1577,7 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "app1 catches scent of a mouse nearby. {PRONOUN/app1/subject/CAP} {VERB/app1/look/looks} at the leaf litter on the ground - {VERB/app1/are/is} {PRONOUN/app1/subject} good enough to stalk without being heard?",
+        "intro_text": "app1 catches scent of a mouse nearby. {PRONOUN/app1/subject/CAP} {VERB/app1/look/looks} at the leaf litter on the ground — {VERB/app1/are/is} {PRONOUN/app1/subject} good enough to stalk without being heard?",
         "decline_text": "app1 ignores the mouse.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -1769,7 +1769,7 @@
         "min_max_status": {},
         "frequency": 3,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems absolutely unconcerned with {PRONOUN/r_c/poss} duties, ambling along as through the prey is going to waltz into {PRONOUN/r_c/poss} paws.",
-        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -1951,7 +1951,7 @@
         "min_max_status": {},
         "frequency": 3,
         "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
-        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
         "chance_of_success": 10,
         "success_outcomes": [
             {
@@ -1999,7 +1999,7 @@
                 "frequency": 1
             },
             {
-                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - {PRONOUN/s_c/subject} really {VERB/s_c/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
+                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol — {PRONOUN/s_c/subject} really {VERB/s_c/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
                 "exp": 20,
                 "stat_skill": [
                     "HUNTER,1"
@@ -2072,7 +2072,7 @@
             "all apprentices": [ -1, -1 ]
         },
         "frequency": 3,
-        "intro_text": "The air feels tense - r_c is sure that a storm is on its way to pull more leaves from the forest's canopy. If {PRONOUN/r_c/subject} {VERB/r_c/are/is} going to hunt, {PRONOUN/r_c/subject} should do it now.",
+        "intro_text": "The air feels tense — r_c is sure that a storm is on its way to pull more leaves from the forest's canopy. If {PRONOUN/r_c/subject} {VERB/r_c/are/is} going to hunt, {PRONOUN/r_c/subject} should do it now.",
         "decline_text": "No, {PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to reinforce the ceiling of the warriors' den instead. r_c doesn't want a wet nest tonight.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -2208,7 +2208,7 @@
             ]
         },
         "frequency": 3,
-        "intro_text": "app1 hears the senior warriors chatting about an incoming storm. {PRONOUN/app1/subject/CAP} could go out for a quick hunt - {PRONOUN/app1/subject} would much rather do that, bring some prey home, and then earn a break from {PRONOUN/app1/poss} chores to wait out the rain.",
+        "intro_text": "app1 hears the senior warriors chatting about an incoming storm. {PRONOUN/app1/subject/CAP} could go out for a quick hunt — {PRONOUN/app1/subject} would much rather do that, bring some prey home, and then earn a break from {PRONOUN/app1/poss} chores to wait out the rain.",
         "decline_text": "...Maybe it'd be better to wait until {PRONOUN/app1/poss} mentor is free to take {PRONOUN/app1/object} on a hunting patrol. Even if {PRONOUN/app1/subject} {VERB/app1/get/gets} damp.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -2273,7 +2273,7 @@
                 "frequency": 1
             },
             {
-                "text": "app1 doesn't want to go far with bad weather incoming - but {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} have to. Only a dozen fox-lengths from camp, an oak tree is shedding acorns like raindrops. {PRONOUN/app1/subject/CAP} {VERB/app1/wait/waits} there, alert and patient, ambushing three f_tp_p before heading home to a warm dry nest and an impressed mentor.",
+                "text": "app1 doesn't want to go far with bad weather incoming — but {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} have to. Only a dozen fox-lengths from camp, an oak tree is shedding acorns like raindrops. {PRONOUN/app1/subject/CAP} {VERB/app1/wait/waits} there, alert and patient, ambushing three f_tp_p before heading home to a warm dry nest and an impressed mentor.",
                 "exp": 25,
                 "stat_trait": [
                     "calm",
@@ -2432,7 +2432,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats - but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
+                "text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats — but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
                 "exp": 20,
                 "relationships": [
                     {

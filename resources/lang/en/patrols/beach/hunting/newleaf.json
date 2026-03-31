@@ -285,7 +285,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 4,
-        "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it - there's a rattlesnake, staring down a ground squirrel!",
+        "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it — there's a rattlesnake, staring down a ground squirrel!",
         "decline_text": "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake even if there's a squirrel to be caught.",
         "chance_of_success": 40,
         "success_outcomes": [

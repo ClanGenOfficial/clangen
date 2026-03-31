@@ -1665,7 +1665,7 @@
         "chance_of_success": 50,
         "relationship_constraint": [],
         "pl_skill_constraint": [],
-        "intro_text": "This is just weird - what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?",
+        "intro_text": "This is just weird — what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?",
         "decline_text": "Look, app1 knows grass, and this is too weird to want to spend time in. {PRONOUN/app1/subject/CAP} {VERB/app1/head/heads} home without ever seeing the Fresno Nightcrawler.",
         "success_outcomes": [
             {
@@ -1780,7 +1780,7 @@
         "decline_text": "This... really isn't the time to stop for a story.",
         "success_outcomes": [
             {
-                "text": "Outraged, the tom drew his claws - only for the molly to disappear in a burst of starlight, StarClan judging the tom for his monstrous heart. His scent grew foul, his whiskers fell off, his claws blunted, and so the first coyote was born, howling his anger and loss.",
+                "text": "Outraged, the tom drew his claws — only for the molly to disappear in a burst of starlight, StarClan judging the tom for his monstrous heart. His scent grew foul, his whiskers fell off, his claws blunted, and so the first coyote was born, howling his anger and loss.",
                 "exp": 30,
                 "art": "gen_train_ghost",
                 "relationships": [
@@ -1838,7 +1838,7 @@
                 "frequency": 4
             },
             {
-                "text": "The powerful tom went to chase her off, but StarClan judged him a monster, and cursed him to become a coyote. It is a lesson all can take note of - the stars will judge you for your actions.",
+                "text": "The powerful tom went to chase her off, but StarClan judged him a monster, and cursed him to become a coyote. It is a lesson all can take note of — the stars will judge you for your actions.",
                 "exp": 30,
                 "art": "gen_train_ghost",
                 "can_have_stat": [
@@ -1926,7 +1926,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol isn't interested in hearing p_l's fable as they work. A pity - one should always remember the lessons of c_n's myths.",
+                "text": "The patrol isn't interested in hearing p_l's fable as they work. A pity — one should always remember the lessons of c_n's myths.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -1964,12 +1964,12 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or swift?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down — they do not share territory with foxes.",
                 "exp": 30,
                 "frequency": 4,
                 "relationships": [
@@ -2178,7 +2178,7 @@
                 ]
             },
             {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+                "text": "Never threaten a mother's young — the red vixen kills r_c in the skirmish.",
                 "exp": 0,
                 "frequency": 2,
                 "dead_cats": ["r_c"],
@@ -2286,13 +2286,13 @@
             "normal adult": [-1, -1]
         },
         "frequency": 3,
-        "intro_text": "The apprentices are at the border - not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?",
+        "intro_text": "The apprentices are at the border — not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?",
         "decline_text": "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
                 "art": "gen_dirt_tunnel",
-                "text": "They don't know this tunnel - but it knows them, marked by scent and claw as one of the safe refuges in the network c_n constantly maintains and expands in their territory. Thrilled with the illicit discovery, the apprentices have a great adventure crawling in and exploring every inch.",
+                "text": "They don't know this tunnel — but it knows them, marked by scent and claw as one of the safe refuges in the network c_n constantly maintains and expands in their territory. Thrilled with the illicit discovery, the apprentices have a great adventure crawling in and exploring every inch.",
                 "exp": 20,
                 "art": "pln_bord_tunnel2",
                 "relationships": [
@@ -2313,7 +2313,7 @@
                 "frequency": 3
             },
             {
-                "text": "app1 claims the discovery for {PRONOUN/app1/self}, shoving app2 aside with {PRONOUN/app1/poss} shoulder when app2 comes to take a look. What a furball! app2 isn't staying here to be treated like this - {PRONOUN/app2/subject}{VERB/app2/'re/'s} going home!",
+                "text": "app1 claims the discovery for {PRONOUN/app1/self}, shoving app2 aside with {PRONOUN/app1/poss} shoulder when app2 comes to take a look. What a furball! app2 isn't staying here to be treated like this — {PRONOUN/app2/subject}{VERB/app2/'re/'s} going home!",
                 "exp": 20,
                 "art": "gen_train_argueAA",
                 "can_have_stat": [
@@ -2341,7 +2341,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 has found a wonderful set of tunnels - not one anyone knew existed, but the entrance is still marked with c_n scent, so these are safe to explore. It's very cool! But it's hard not to feel a bit envious at the discovery - this'll be all the apprentice den gossips about for the next moon.",
+                "text": "app1 has found a wonderful set of tunnels — not one anyone knew existed, but the entrance is still marked with c_n scent, so these are safe to explore. It's very cool! But it's hard not to feel a bit envious at the discovery — this'll be all the apprentice den gossips about for the next moon.",
                 "exp": 20,
                 "art": "gen_med_warappmedapp_herbcontest",
                 "relationships": [
@@ -3067,7 +3067,7 @@
             "normal adult": [1, 1]
         },
         "frequency": 2,
-        "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border - after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in a dip in the grass. Is that a burrow entrance?",
+        "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border — after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in a dip in the grass. Is that a burrow entrance?",
         "decline_text": "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -4063,7 +4063,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c congratulates p_l on the discovery - this'll be welcome news back at camp. But once p_l turns away, {PRONOUN/r_c/subject} can't help the small twitches at the end of {PRONOUN/r_c/poss} tail. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} so close to finding those tunnels {PRONOUN/r_c/self}!",
+                "text": "r_c congratulates p_l on the discovery — this'll be welcome news back at camp. But once p_l turns away, {PRONOUN/r_c/subject} can't help the small twitches at the end of {PRONOUN/r_c/poss} tail. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} so close to finding those tunnels {PRONOUN/r_c/self}!",
                 "exp": 25,
                 "art": "gen_train_talkingWW",
                 "relationships": [
@@ -4630,7 +4630,7 @@
                 "frequency": 4
             },
             {
-                "text": "The apprentice has made an accidental discovery, tripping into a well-hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
+                "text": "The apprentice has made an accidental discovery, tripping into a well-hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel — the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life.",
                 "exp": 40,
                 "art": "pln_bord_tunnel",
                 "can_have_stat": [
@@ -4658,7 +4658,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 seems a little freaked out by {PRONOUN/app1/poss} discovery - understandable, considering {PRONOUN/app1/subject} fell into it. s_c sings a nursery song as {PRONOUN/s_c/subject} {VERB/s_c/free/frees} app1. Dig a tunnel, dig, dig a tunnel, when you're done, you dig a bigger tunnel, dig a tunnel, dig, dig a tunnel, quick before the hyena come.",
+                "text": "app1 seems a little freaked out by {PRONOUN/app1/poss} discovery — understandable, considering {PRONOUN/app1/subject} fell into it. s_c sings a nursery song as {PRONOUN/s_c/subject} {VERB/s_c/free/frees} app1. Dig a tunnel, dig, dig a tunnel, when you're done, you dig a bigger tunnel, dig a tunnel, dig, dig a tunnel, quick before the hyena come.",
                 "exp": 40,
                 "art": "gen_train_talkingAW",
                 "can_have_stat": [
@@ -4881,7 +4881,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life.",
+                "text": "It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel — the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life.",
                 "exp": 40,
                 "art": "gen_speaking_cat_w3",
                 "can_have_stat": [
@@ -5334,7 +5334,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "p_l is out on a clear night, enjoying the starlight twinkling above, when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across the fresh scent of a coyote. Dangerous - not just to p_l, but to all of c_n.",
+        "intro_text": "p_l is out on a clear night, enjoying the starlight twinkling above, when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across the fresh scent of a coyote. Dangerous — not just to p_l, but to all of c_n.",
         "decline_text": "p_l decides not to pursue such a dangerous creature, especially with the knowledge that coyotes often feast on cats.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -5601,7 +5601,7 @@
                 "frequency": 3
             },
             {
-                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified — but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "art": "gen_coyote_danger2_w2",
                 "injury": [

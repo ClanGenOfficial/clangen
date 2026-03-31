@@ -148,7 +148,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l goes to a known herb patch - but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it.",
+                "text": "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -158,7 +158,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l goes to a known herb patch - but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground.",
+                "text": "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground.",
                 "exp": 0,
                 "frequency": 4
             }

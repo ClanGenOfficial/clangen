@@ -154,7 +154,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "m_c has been poaching some of c_n's prey - all the more infuriating given m_c has kittypet food waiting at home. c_n retaliates by chasing {PRONOUN/m_c/object} out and making sure {PRONOUN/m_c/subject} never {VERB/m_c/return/returns}.",
+    "event_text": "m_c has been poaching some of c_n's prey — all the more infuriating given m_c has kittypet food waiting at home. c_n retaliates by chasing {PRONOUN/m_c/object} out and making sure {PRONOUN/m_c/subject} never {VERB/m_c/return/returns}.",
     "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
@@ -348,7 +348,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "When m_c sees c_n coming, {PRONOUN/m_c/subject} {VERB/m_c/bolt/bolts}, using {PRONOUN/m_c/poss} long legs to outpace {PRONOUN/m_c/poss} pursuer. But c_n knows m_c's tricks and has set up another patrol further along to cut m_c off - and cut {PRONOUN/m_c/poss} life short.",
+    "event_text": "When m_c sees c_n coming, {PRONOUN/m_c/subject} {VERB/m_c/bolt/bolts}, using {PRONOUN/m_c/poss} long legs to outpace {PRONOUN/m_c/poss} pursuer. But c_n knows m_c's tricks and has set up another patrol further along to cut m_c off — and cut {PRONOUN/m_c/poss} life short.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
@@ -481,7 +481,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "c_n is prepared for a fight when they find m_c, but m_c quickly realizes the odds are not in {PRONOUN/m_c/poss} favor and flees - just not fast enough.",
+    "event_text": "c_n is prepared for a fight when they find m_c, but m_c quickly realizes the odds are not in {PRONOUN/m_c/poss} favor and flees — just not fast enough.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
@@ -526,7 +526,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "c_n knows that there is no territory far enough to drive m_c out to - {PRONOUN/m_c/subject} must be driven out of this life. {PRONOUN/m_c/subject/CAP} {VERB/m_c/see/sees} {PRONOUN/m_c/poss} old Clanmates coming, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}'nt have time to run.",
+    "event_text": "c_n knows that there is no territory far enough to drive m_c out to — {PRONOUN/m_c/subject} must be driven out of this life. {PRONOUN/m_c/subject/CAP} {VERB/m_c/see/sees} {PRONOUN/m_c/poss} old Clanmates coming, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}'nt have time to run.",
     "reputation": ["any"],
     "rep_change": -3,
     "m_c": {
@@ -549,7 +549,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "Exiling m_c wasn't enough - {PRONOUN/m_c/subject} must be driven far out of the surrounding territory. m_c only stands {PRONOUN/m_c/poss} ground for a heartbeat when {PRONOUN/m_c/poss} old Clanmates find {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} outnumbered, and {PRONOUN/m_c/subject} {VERB/m_c/flee/flees}.",
+    "event_text": "Exiling m_c wasn't enough — {PRONOUN/m_c/subject} must be driven far out of the surrounding territory. m_c only stands {PRONOUN/m_c/poss} ground for a heartbeat when {PRONOUN/m_c/poss} old Clanmates find {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} outnumbered, and {PRONOUN/m_c/subject} {VERB/m_c/flee/flees}.",
     "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
@@ -745,7 +745,7 @@
   },
   {
     "interaction_type": "search",
-    "event_text": "c_n turns the world upside down searching for their lost Clanmate. They cannot rest until m_c is safely home - and they don't. When they come upon {PRONOUN/m_c/object} at last, c_n is overjoyed to bring {PRONOUN/m_c/object} back to camp where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
+    "event_text": "c_n turns the world upside down searching for their lost Clanmate. They cannot rest until m_c is safely home — and they don't. When they come upon {PRONOUN/m_c/object} at last, c_n is overjoyed to bring {PRONOUN/m_c/object} back to camp where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {

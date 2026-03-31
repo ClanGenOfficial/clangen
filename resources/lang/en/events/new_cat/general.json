@@ -1280,7 +1280,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 2,
-        "event_text": "m_c slinks into o_c_n's nursery in the dead of night, making off with an entire litter of their kits. Rumour has it that their parent abandoned their Clan to try and track down the kits - even better for c_n!",
+        "event_text": "m_c slinks into o_c_n's nursery in the dead of night, making off with an entire litter of their kits. Rumour has it that their parent abandoned their Clan to try and track down the kits — even better for c_n!",
         "m_c": {
             "status": [
                 "leader",

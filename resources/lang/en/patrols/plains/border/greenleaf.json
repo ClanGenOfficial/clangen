@@ -95,11 +95,11 @@
         "min_max_status": {},
         "frequency": 4,
         "intro_text": "Here on the plains, the reaches of c_n's territory is vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. The greenleaf sun beats down strongly.",
-        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp - border marking will wait til later.",
+        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The grass has gone to seed in this area. p_l makes a note to share the knowledge back at camp - there'll be good hunting here, even if it's a trek to come out so far. c_n will need to send out another patrol to finish the task, there's still more ground to cover here.",
+                "text": "The grass has gone to seed in this area. p_l makes a note to share the knowledge back at camp — there'll be good hunting here, even if it's a trek to come out so far. c_n will need to send out another patrol to finish the task, there's still more ground to cover here.",
                 "exp": 30,
                 "art": "gen_train_talkingWW",
                 "relationships": [
@@ -119,7 +119,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c isn't just talented at running fast - on the plains, you also need to cover lots of ground too, and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c.",
+                "text": "s_c isn't just talented at running fast — on the plains, you also need to cover lots of ground too, and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c.",
                 "exp": 40,
                 "art": "fst_hunt_fun3",
                 "can_have_stat": [
@@ -517,7 +517,7 @@
                 "frequency": 2
             },
             {
-                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon - from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
+                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon — from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
                 "exp": 40,
                 "art": "gen_coyote_danger1",
                 "relationships": [
@@ -971,7 +971,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings - so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the tall greenleaf grass.",
+        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the tall greenleaf grass.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "chance_of_success": 10,
         "success_outcomes": [

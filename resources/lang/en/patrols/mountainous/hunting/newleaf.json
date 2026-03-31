@@ -418,7 +418,7 @@
             "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
-        "intro_text": "p_l tastes the air and perks up - there's a squirrel nearby, nibbling the delicate new plant growth near the base of a tree!",
+        "intro_text": "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the delicate new plant growth near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -431,7 +431,7 @@
                 "frequency": 4
             },
             {
-                "text": "Though it tries to escape, p_l is faster and smarter - {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease.",
+                "text": "Though it tries to escape, p_l is faster and smarter — {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease.",
                 "exp": 10,
                 "prey": [
                     "medium"
@@ -453,7 +453,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced - and by then it's far too late for the squirrel to do anything about it.",
+                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced — and by then it's far too late for the squirrel to do anything about it.",
                 "exp": 10,
                 "stat_skill": [
                     "HUNTER,1"
@@ -516,7 +516,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to — {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -548,7 +548,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct - by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
+                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct — by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
                 "exp": 0,
                 "prey": [
                     "very_small"
@@ -581,12 +581,12 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Early newleaf squirrels are always a good target - p_l softly murmurs tips to app1 and asks what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
+        "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. Early newleaf squirrels are always a good target — p_l softly murmurs tips to app1 and asks what {PRONOUN/app1/subject} {VERB/app1/want/wants} to do.",
         "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to — {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -727,7 +727,7 @@
                 "frequency": 4
             },
             {
-                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only {VERB/r_c/do/does} {PRONOUN/r_c/subject} have the squirrel, but {PRONOUN/r_c/subject} now also {VERB/r_c/have/has} a pawful of oak leaves for the medicine cat!",
+                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates — whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only {VERB/r_c/do/does} {PRONOUN/r_c/subject} have the squirrel, but {PRONOUN/r_c/subject} now also {VERB/r_c/have/has} a pawful of oak leaves for the medicine cat!",
                 "exp": 40,
                 "herbs": [
                     "oak_leaves"
@@ -946,7 +946,7 @@
                 "frequency": 1
             },
             {
-                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
+                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap — with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
                 "exp": 20,
                 "stat_skill": [
                     "HUNTER,1",

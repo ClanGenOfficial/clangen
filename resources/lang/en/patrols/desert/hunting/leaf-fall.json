@@ -26,7 +26,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
+                "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day — except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
                 "exp": 15,
                 "prey": [
                     "small"
@@ -97,7 +97,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
+                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day — except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
                 "exp": 15,
                 "prey": [
                     "small"

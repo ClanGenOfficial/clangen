@@ -153,7 +153,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shoots backwards, sprinting back to camp to warn everyone.",
+                "text": "Feeling ever so alone on {PRONOUN/r_c/poss} solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable — a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shoots backwards, sprinting back to camp to warn everyone.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -195,7 +195,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in - one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/search/searches} the scrubland around the sett thoroughly, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in — one that doesn't involve sticking {PRONOUN/s_c/poss} head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/search/searches} the scrubland around the sett thoroughly, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 30,
                 "stat_skill": [
                     "CLEVER,1"
@@ -292,7 +292,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same, so they try to creep just a little closer - but the floor drops away steeply below their paws, and they lose their grip, skidding downwards into a disturbed and lethal badger.",
+                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same, so they try to creep just a little closer — but the floor drops away steeply below their paws, and they lose their grip, skidding downwards into a disturbed and lethal badger.",
                 "exp": 0,
                 "dead_cats": [
                     "r_c"
@@ -589,7 +589,7 @@
                 "frequency": 4
             },
             {
-                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own - this patrol is too important to wait for some mouse-brain who got stuck.",
+                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own — this patrol is too important to wait for some mouse-brain who got stuck.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -785,7 +785,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out the paths through a rocky maze {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "frequency": 4
             },
@@ -1136,7 +1136,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 looks horrified - scorpions? They don't care that the bugs glow, ewww!",
+                "text": "Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 looks horrified — scorpions? They don't care that the bugs glow, ewww!",
                 "exp": 0,
                 "relationships": [
                     {
@@ -1247,7 +1247,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are — this goes on all afternoon.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -1484,7 +1484,7 @@
         "decline_text": "The queue doesn't take as long as p_l or r_c were expecting, and the patrol is soon off to other things.",
         "success_outcomes": [
             {
-                "text": "Instead of working together, blood was spilled over every drop of water. Eventually, the medicine cats and mediators of the Clans were forced by StarClan to step in and end the carnage. But the damage was already done. The c_n cats can learn from their mistakes - they had no choice but to live with them.",
+                "text": "Instead of working together, blood was spilled over every drop of water. Eventually, the medicine cats and mediators of the Clans were forced by StarClan to step in and end the carnage. But the damage was already done. The c_n cats can learn from their mistakes — they had no choice but to live with them.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -1629,7 +1629,7 @@
         "decline_text": "app1 doesn't want a story, {PRONOUN/app1/subject} {VERB/app1/want/wants} a hunt.",
         "success_outcomes": [
             {
-                "text": "p_l weaves a tale of the runnerbird and the coyote, of hijinks and hazards, highlights and humour, {PRONOUN/p_l/poss} words making the apprentices first crouch in suspense then nearly fall over laughing, leaning on each other to stay upright. It's fun and games and entertainment - and also a lesson in how hard runnerbirds are to catch.",
+                "text": "p_l weaves a tale of the runnerbird and the coyote, of hijinks and hazards, highlights and humour, {PRONOUN/p_l/poss} words making the apprentices first crouch in suspense then nearly fall over laughing, leaning on each other to stay upright. It's fun and games and entertainment — and also a lesson in how hard runnerbirds are to catch.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -1775,7 +1775,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l starts telling the story of the deadly chupacabra - but s_c interrupts. {PRONOUN/s_c/subject/CAP} {VERB/s_c/think/thinks}, personally, that this particular tall tale is driven by a real concern. No, not a monster - mange, the hairloss that can leave an animal mindless with itch and reptilian in appearance. Worth thinking about.",
+                "text": "p_l starts telling the story of the deadly chupacabra — but s_c interrupts. {PRONOUN/s_c/subject/CAP} {VERB/s_c/think/thinks}, personally, that this particular tall tale is driven by a real concern. No, not a monster — mange, the hairloss that can leave an animal mindless with itch and reptilian in appearance. Worth thinking about.",
                 "exp": 60,
                 "stat_skill": [
                     "HEALER,1"
@@ -1874,7 +1874,7 @@
             "STORY,1",
             "LORE,1"
         ],
-        "intro_text": "Today is a day for learning the best times to ambush lizards - early in the morning, while they're sitting on the basking rocks caught up in their daily ritual.",
+        "intro_text": "Today is a day for learning the best times to ambush lizards — early in the morning, while they're sitting on the basking rocks caught up in their daily ritual.",
         "decline_text": "app1 is also interested in this basking ritual, instead of in hunting lessons.",
         "success_outcomes": [
             {
@@ -2125,7 +2125,7 @@
             "STORY,1",
             "LORE,1"
         ],
-        "intro_text": "Come here a second, p_l knows a really cool feature tucked into this canyon. {PRONOUN/p_l/subject/CAP} lead the patrol down, stopping in front of the lower half of an eroding rock face. Look - bones.",
+        "intro_text": "Come here a second, p_l knows a really cool feature tucked into this canyon. {PRONOUN/p_l/subject/CAP} lead the patrol down, stopping in front of the lower half of an eroding rock face. Look — bones.",
         "decline_text": "Weird, but not dangerous. The patrol moves on.",
         "success_outcomes": [
             {
@@ -2243,7 +2243,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and — ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
                 "exp": 20,
                 "frequency": 4
             },
@@ -2268,7 +2268,7 @@
                 "frequency": 4
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off — but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "injury": [
                     {

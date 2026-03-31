@@ -503,7 +503,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's frustrating that it only wins them a single minnow, but the patrol drives out the kit fox, and s_c reminds them that's what matters - that now the fox won't keep poaching from c_n's hunting grounds in the future.",
+                "text": "It's frustrating that it only wins them a single minnow, but the patrol drives out the kit fox, and s_c reminds them that's what matters — that now the fox won't keep poaching from c_n's hunting grounds in the future.",
                 "exp": 10,
                 "stat_trait": [
                     "responsible",
@@ -926,7 +926,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's a kingfisher, p_l whispers. Go on, give it a shot. app1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under app1's paw, and the bird flees - but it leaves the frog behind for app1 to take!",
+                "text": "It's a kingfisher, p_l whispers. Go on, give it a shot. app1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under app1's paw, and the bird flees — but it leaves the frog behind for app1 to take!",
                 "exp": 30,
                 "art": "gen_train_sneakprey",
                 "prey": [

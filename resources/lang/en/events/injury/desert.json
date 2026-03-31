@@ -572,7 +572,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c must've landed wrong after a jump or something - {PRONOUN/m_c/poss} bones are reminding {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} age. Painfully.",
+        "event_text": "m_c must've landed wrong after a jump or something — {PRONOUN/m_c/poss} bones are reminding {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} age. Painfully.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -1986,7 +1986,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "Climbing the highest rock in the territory was not, in fact, a good idea. m_c doesn't know what's worse - that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} now confined to the medicine den, or that everyone {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to show off to <i>saw</i> {PRONOUN/m_c/object} fall.",
+        "event_text": "Climbing the highest rock in the territory was not, in fact, a good idea. m_c doesn't know what's worse — that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} now confined to the medicine den, or that everyone {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to show off to <i>saw</i> {PRONOUN/m_c/object} fall.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -2025,7 +2025,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c isn't proud of all of {PRONOUN/m_c/poss} scars - one, for example, is from falling off the highest rock in the territory while trying to show off as an apprentice.",
+                "scar": "m_c isn't proud of all of {PRONOUN/m_c/poss} scars — one, for example, is from falling off the highest rock in the territory while trying to show off as an apprentice.",
                 "death": "The consequences of showing off took m_c's life when {PRONOUN/m_c/subject} fell from the highest rock in the territory."
             }
         ]
@@ -4890,7 +4890,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c and r_c make a raid into o_c_n territory - with such huge borders, no desert Clan can watch everything. But on unfamiliar ground and in the heat of the day, the two ambitious c_n warriors find only sunstroke.",
+        "event_text": "m_c and r_c make a raid into o_c_n territory — with such huge borders, no desert Clan can watch everything. But on unfamiliar ground and in the heat of the day, the two ambitious c_n warriors find only sunstroke.",
         "m_c": {
             "status": [
                 "apprentice",

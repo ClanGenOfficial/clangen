@@ -924,7 +924,7 @@
         },
         "frequency": 1,
         "intro_text": "As r_c pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/r_c/subject} {VERB/r_c/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes...",
-        "decline_text": "This is no creature for mortal eyes. r_c screws {PRONOUN/r_c/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself - and when {PRONOUN/r_c/subject} {VERB/r_c/open/opens} them again, the moth-Twoleg is gone.",
+        "decline_text": "This is no creature for mortal eyes. r_c screws {PRONOUN/r_c/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself — and when {PRONOUN/r_c/subject} {VERB/r_c/open/opens} them again, the moth-Twoleg is gone.",
         "chance_of_success": 25,
         "success_outcomes": [
             {
@@ -998,7 +998,7 @@
                 "frequency": 4
             },
             {
-                "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter - but the mountain itself seems to be against {PRONOUN/r_c/object} tonight, collapsing beneath {PRONOUN/r_c/poss} feet.",
+                "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter — but the mountain itself seems to be against {PRONOUN/r_c/object} tonight, collapsing beneath {PRONOUN/r_c/poss} feet.",
                 "exp": 0,
                 "dead_cats": [
                     "r_c"
@@ -1035,7 +1035,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream - one mirrored by p_l as p_l shrieks and runs.",
+                "text": "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream — one mirrored by p_l as p_l shrieks and runs.",
                 "exp": 0,
                 "injury": [
                     {
@@ -1145,7 +1145,7 @@
                 "frequency": 3
             },
             {
-                "text": "The potential wolf scent makes p_l nervous enough to dance in place - and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake.",
+                "text": "The potential wolf scent makes p_l nervous enough to dance in place — and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake.",
                 "exp": 40,
                 "stat_trait": [
                     "insecure",
@@ -1325,7 +1325,7 @@
                 "frequency": 3
             },
             {
-                "text": "r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified — but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "injury": [
                     {

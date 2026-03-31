@@ -17,7 +17,7 @@
         "min_max_status": {},
         "frequency": 4,
         "intro_text": "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's newleaf minimum, they can see where they're going.",
-        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp - border marking will wait til later.",
+        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -41,7 +41,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c isn't just talented at running fast - {PRONOUN/s_c/subject} {VERB/s_c/have/has} some very good advice and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they make it the entire length of that far off border thanks to s_c.",
+                "text": "s_c isn't just talented at running fast — {PRONOUN/s_c/subject} {VERB/s_c/have/has} some very good advice and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they make it the entire length of that far off border thanks to s_c.",
                 "exp": 40,
                 "art": "fst_hunt_fun3",
                 "can_have_stat": [
@@ -200,7 +200,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack - but it's all worth it, because this nursing mother's pup will die with her.",
+                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but it's all worth it, because this nursing mother's pup will die with her.",
                 "exp": 60,
                 "art": "gen_coyote1",
                 "relationships": [
@@ -258,7 +258,7 @@
                 "frequency": 2
             },
             {
-                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon - from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
+                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon — from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
                 "exp": 40,
                 "art": "gen_coyote_danger1",
                 "relationships": [
@@ -383,7 +383,7 @@
                 "frequency": 4
             },
             {
-                "text": "The scat smells like the coyote has recently given birth, s_c hisses. It's as good a chance as they can ask for - killing her will save c_n from her new pups in seasons to come.",
+                "text": "The scat smells like the coyote has recently given birth, s_c hisses. It's as good a chance as they can ask for — killing her will save c_n from her new pups in seasons to come.",
                 "exp": 50,
                 "art": "gen_coyote1",
                 "can_have_stat": [
@@ -472,7 +472,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack - but an adult coyote is too much for so few warriors, and she escapes having given as good as she got.",
+                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors, and she escapes having given as good as she got.",
                 "exp": 0,
                 "art": "gen_coyote_danger1",
                 "injury": [
@@ -516,7 +516,7 @@
                 "frequency": 4
             },
             {
-                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack - but an adult coyote is too much for so few warriors. s_c has to fight like an entire patrol just to keep anyone from taking major injury.",
+                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors. s_c has to fight like an entire patrol just to keep anyone from taking major injury.",
                 "exp": 0,
                 "art": "gen_coyote_danger2_w2",
                 "can_have_stat": [
@@ -709,7 +709,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings - so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the misty morning haze.",
+        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the misty morning haze.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -942,7 +942,7 @@
                 "frequency": 4
             },
             {
-                "text": "That's the scent of a nursing female, s_c hisses. At {PRONOUN/s_c/poss} direction, the patrol heads out to ambush her, striking to injure the coyote and send her limping and yelping into the distance - hopefully wounded badly enough to prevent her raising those pups.",
+                "text": "That's the scent of a nursing female, s_c hisses. At {PRONOUN/s_c/poss} direction, the patrol heads out to ambush her, striking to injure the coyote and send her limping and yelping into the distance — hopefully wounded badly enough to prevent her raising those pups.",
                 "exp": 50,
                 "art": "gen_coyote1",
                 "can_have_stat": [

@@ -167,7 +167,7 @@
         "decline_text": "Squabbling kittypets is no business of c_n's. p_l carries on with the patrol.",
         "success_outcomes": [
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful look.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful look.",
                 "exp": 20,
                 "outsider_rep": 2,
                 "relationships": [
@@ -258,7 +258,7 @@
                 "frequency": 1
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border.",
                 "exp": 20,
                 "outsider_rep": -1,
                 "relationships": [
@@ -331,7 +331,7 @@
                 "frequency": 1
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
                 "exp": 20,
                 "outsider_rep": 4,
                 "stat_trait": [
@@ -417,7 +417,7 @@
                 "frequency": 4
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
                 "exp": 20,
                 "outsider_rep": 4,
                 "stat_skill": [
@@ -502,7 +502,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l steps in and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c:0 catches that glance, jealousy in {PRONOUN/n_c:0/poss} eyes.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l steps in and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c:0 catches that glance, jealousy in {PRONOUN/n_c:0/poss} eyes.",
                 "exp": 20,
                 "outsider_rep": 0,
                 "relationships": [
@@ -614,7 +614,7 @@
                 "frequency": 1
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l steps in and lectures n_c:0, but it just seems to annoy both kittypets. Maybe they just like to argue.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l steps in and lectures n_c:0, but it just seems to annoy both kittypets. Maybe they just like to argue.",
                 "exp": 20,
                 "outsider_rep": -1,
                 "relationships": [
@@ -772,7 +772,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram - and to go tell all their kittypet friends to keep their personal lives on the other side of the border.",
+                "text": "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram — and to go tell all their kittypet friends to keep their personal lives on the other side of the border.",
                 "exp": 20,
                 "outsider_rep": -3,
                 "relationships": [
@@ -916,7 +916,7 @@
                 "frequency": 4
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l interrupts to tell n_c:1 that an ugly mangepelt like {PRONOUN/n_c:1/self} should be pleased that any cat at all has shown an interest.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:1 that an ugly mangepelt like {PRONOUN/n_c:1/self} should be pleased that any cat at all has shown an interest.",
                 "exp": 20,
                 "outsider_rep": -3,
                 "relationships": [
@@ -992,7 +992,7 @@
                 "frequency": 4
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l interrupts to tell n_c:0 that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:0 that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this.",
                 "exp": 20,
                 "outsider_rep": -3,
                 "relationships": [
@@ -1144,7 +1144,7 @@
                 "frequency": 4
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l interrupts to tell n_c:1 that {PRONOUN/n_c:1/subject}{VERB/n_c:1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c:1 bats {PRONOUN/n_c:1/poss} eyelashes at p_l and giggles. n_c:0 looks on jealously.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:1 that {PRONOUN/n_c:1/subject}{VERB/n_c:1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c:1 bats {PRONOUN/n_c:1/poss} eyelashes at p_l and giggles. n_c:0 looks on jealously.",
                 "exp": 20,
                 "outsider_rep": 0,
                 "relationships": [
@@ -1902,7 +1902,7 @@
                 "frequency": 4
             },
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c reminds the patrol of the story of Tigger - they have a responsibility to help this cat.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c reminds the patrol of the story of Tigger — they have a responsibility to help this cat.",
                 "exp": 30,
                 "stat_skill": [
                     "LORE,1",
@@ -1945,7 +1945,7 @@
                 "frequency": 4
             },
             {
-                "text": "Swerving to follow the scent trail, the patrol almost falls over a hissing queen. Reeling with surprise, no one hears exactly what {PRONOUN/n_c:0/subject} {VERB/n_c:0/spit/spits} out - but {PRONOUN/n_c:0/subject} {VERB/n_c:0/grab/grabs} something and {VERB/n_c:0/flee/flees}. It's only as the patrol regroups that they hear the distressed calls of {PRONOUN/n_c:0/poss} other kittens.",
+                "text": "Swerving to follow the scent trail, the patrol almost falls over a hissing queen. Reeling with surprise, no one hears exactly what {PRONOUN/n_c:0/subject} {VERB/n_c:0/spit/spits} out — but {PRONOUN/n_c:0/subject} {VERB/n_c:0/grab/grabs} something and {VERB/n_c:0/flee/flees}. It's only as the patrol regroups that they hear the distressed calls of {PRONOUN/n_c:0/poss} other kittens.",
                 "exp": 20,
                 "new_cat": [
                     [
@@ -2026,7 +2026,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drag the kittypet back to camp - but the elderly cat is too weak.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drag the kittypet back to camp — but the elderly cat is too weak.",
                 "exp": 0,
                 "outsider_rep": -1,
                 "new_cat": [
@@ -2043,7 +2043,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness - but cursing the necessity of doing so.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness — but cursing the necessity of doing so.",
                 "exp": 10,
                 "outsider_rep": -2,
                 "new_cat": [
@@ -2083,12 +2083,12 @@
             ]
         },
         "frequency": 3,
-        "intro_text": "Padding along the border, p_l checks once - twice - three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
+        "intro_text": "Padding along the border, p_l checks once — twice — three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
         "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l tastes the air in the hope of picking up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} {VERB/n_c:0/spot/spots} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up to happily touch noses with {PRONOUN/p_l/object}.",
+                "text": "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area — so p_l tastes the air in the hope of picking up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} {VERB/n_c:0/spot/spots} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up to happily touch noses with {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -2211,7 +2211,7 @@
                 "frequency": 4
             },
             {
-                "text": "n_c:0 - p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer - but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c:0, come back to c_n. Stay.",
+                "text": "n_c:0 — p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer — but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c:0, come back to c_n. Stay.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -2271,7 +2271,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is - p_l can go with {PRONOUN/n_c:0/object}.",
+                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is — p_l can go with {PRONOUN/n_c:0/object}.",
                 "exp": 0,
                 "new_cat": [
                     [
@@ -2319,7 +2319,7 @@
                 "frequency": 4
             },
             {
-                "text": "{PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} gone. p_l swallows, pulling scent over the roof of {PRONOUN/p_l/poss} mouth, desperately searching - but n_c:0 has moved on from the lands just outside c_n's borders. It's not like p_l wasn't warned; n_c:0 {PRONOUN/n_c:0/self} said {PRONOUN/n_c:0/subject} could only stay for so long, but...",
+                "text": "{PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} gone. p_l swallows, pulling scent over the roof of {PRONOUN/p_l/poss} mouth, desperately searching — but n_c:0 has moved on from the lands just outside c_n's borders. It's not like p_l wasn't warned; n_c:0 {PRONOUN/n_c:0/self} said {PRONOUN/n_c:0/subject} could only stay for so long, but...",
                 "exp": 0,
                 "new_cat": [
                     [
@@ -2431,7 +2431,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. Freedom isn't given up so lightly. This - this can't be true. p_l's heart is breaking.",
+                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. Freedom isn't given up so lightly. This — this can't be true. p_l's heart is breaking.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -3493,7 +3493,7 @@
                 "frequency": 4
             },
             {
-                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil — as the kits grow older, they'll have questions about their parent.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -3747,7 +3747,7 @@
                 "frequency": 4
             },
             {
-                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil — as the kits grow older, they'll have questions about their parent.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -4164,7 +4164,7 @@
                 "frequency": 1
             },
             {
-                "text": "Furious, high-pitched yowls greet the patrol as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior - they can't leave them here. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better.",
+                "text": "Furious, high-pitched yowls greet the patrol as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior — they can't leave them here. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -4409,7 +4409,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "The patrol is checking along the border lines when they hear a startling sound - a hiss of pain? They quickly follow the sound to the source. It's a loner, one who appears to be injured.",
+        "intro_text": "The patrol is checking along the border lines when they hear a startling sound — a hiss of pain? They quickly follow the sound to the source. It's a loner, one who appears to be injured.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -4589,7 +4589,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound - a hiss of pain? {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured.",
+        "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound — a hiss of pain? {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured.",
         "decline_text": "It's probably nothing. p_l leaves the noise alone and continues on {PRONOUN/p_l/poss} way.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -4986,7 +4986,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c sees the Twoleg, the bag they are holding, the stones they are putting inside - it's now or never to save this poor cat. Signaling the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/call/calls} commands to claw at the Twoleg's legs and distract them for as long as possible. As soon as the rest of the patrol jumps into action, s_c sneaks over to the bag, opening it and carefully carrying the old fragile cat inside into a safe hiding space. Yowling the retreat to the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/spend/spends}, the rest of the walk back to camp reassuring the old cat that {PRONOUN/n_c:0/subject} {VERB/n_c:0/aren't/isn't} a burden, and they all would be happy to have {PRONOUN/n_c:0/poss} wisdom and knowledge be a part of c_n.",
+                "text": "s_c sees the Twoleg, the bag they are holding, the stones they are putting inside — it's now or never to save this poor cat. Signaling the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/call/calls} commands to claw at the Twoleg's legs and distract them for as long as possible. As soon as the rest of the patrol jumps into action, s_c sneaks over to the bag, opening it and carefully carrying the old fragile cat inside into a safe hiding space. Yowling the retreat to the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/spend/spends}, the rest of the walk back to camp reassuring the old cat that {PRONOUN/n_c:0/subject} {VERB/n_c:0/aren't/isn't} a burden, and they all would be happy to have {PRONOUN/n_c:0/poss} wisdom and knowledge be a part of c_n.",
                 "exp": 10,
                 "stat_trait": [
                     "wise",
@@ -5361,7 +5361,7 @@
                 "frequency": 1
             },
             {
-                "text": "A loner? Interesting. Never one to pass up a good conversation, s_c saunters up to the outsider and begins chatting with {PRONOUN/n_c:0/object}. The two cats end up talking as though they're old friends - which, by the time they part ways, it feels like they are.",
+                "text": "A loner? Interesting. Never one to pass up a good conversation, s_c saunters up to the outsider and begins chatting with {PRONOUN/n_c:0/object}. The two cats end up talking as though they're old friends — which, by the time they part ways, it feels like they are.",
                 "exp": 10,
                 "stat_trait": [
                     "charismatic",
@@ -5609,7 +5609,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l hisses out a warning, but the loner refuses to leave without a fight - which {PRONOUN/n_c:0/subject} promptly {VERB/n_c:0/lose/loses}.",
+                "text": "p_l hisses out a warning, but the loner refuses to leave without a fight — which {PRONOUN/n_c:0/subject} promptly {VERB/n_c:0/lose/loses}.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -6285,7 +6285,7 @@
                 "frequency": 4
             },
             {
-                "text": "The charming loner explains that {PRONOUN/n_c:0/poss} kittens need food. s_c is touched and approaches to offer help - when the loner suddenly attacks. s_c fights {PRONOUN/n_c:0/object} off, newly wary of smooth-talking strangers.",
+                "text": "The charming loner explains that {PRONOUN/n_c:0/poss} kittens need food. s_c is touched and approaches to offer help — when the loner suddenly attacks. s_c fights {PRONOUN/n_c:0/object} off, newly wary of smooth-talking strangers.",
                 "exp": 0,
                 "art": "gen_battle_warrior_loner",
                 "can_have_stat": [

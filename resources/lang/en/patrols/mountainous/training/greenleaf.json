@@ -18,7 +18,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}.",
+                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion — weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -50,7 +50,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
+                "text": "p_l tells app1 to watch carefully — not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -220,7 +220,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing app2.",
+                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion — weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing app2.",
                 "exp": 20,
                 "relationships": [
                     {
@@ -252,7 +252,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
+                "text": "p_l tells the apprentices to watch carefully — not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
                 "exp": 20,
                 "relationships": [
                     {
@@ -498,7 +498,7 @@
                 "frequency": 1
             },
             {
-                "text": "app1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/app1/object}. s_c watches {PRONOUN/app1/object} indulgently, and when {PRONOUN/app1/subject} {VERB/app1/slow/slows} down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
+                "text": "app1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/app1/object}. s_c watches {PRONOUN/app1/object} indulgently, and when {PRONOUN/app1/subject} {VERB/app1/slow/slows} down s_c explains about how c_n uses hunting the agile birds as the ultimate test — it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
                 "exp": 15,
                 "stat_skill": [
                     "TEACHER,1"
@@ -682,7 +682,7 @@
                 "frequency": 1
             },
             {
-                "text": "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
+                "text": "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test — it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
                 "exp": 15,
                 "stat_skill": [
                     "TEACHER,1"
@@ -801,7 +801,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and — ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
                 "exp": 20,
                 "frequency": 4
             },
@@ -826,7 +826,7 @@
                 "frequency": 4
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off — but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "injury": [
                     {
@@ -1068,7 +1068,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death - but her Clan's evil leader lived on.",
+                "text": "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death — but her Clan's evil leader lived on.",
                 "exp": 30,
                 "can_have_stat": [
                     "not_pl_rc"

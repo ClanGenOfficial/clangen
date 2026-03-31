@@ -202,7 +202,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or swift?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -238,7 +238,7 @@
                 "frequency": 4
             },
             {
-                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den - a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders.",
+                "text": "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den — a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -930,7 +930,7 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "app1 catches scent of a mouse nearby. p_l points out the little path the mouse has trod in the dirt at the base of the grass stalks - that's what it'll try to use as an escape path.",
+        "intro_text": "app1 catches scent of a mouse nearby. p_l points out the little path the mouse has trod in the dirt at the base of the grass stalks — that's what it'll try to use as an escape path.",
         "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -1078,7 +1078,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path - that was too close!",
+                "text": "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path — that was too close!",
                 "exp": 5,
                 "prey": [
                     "very_small"

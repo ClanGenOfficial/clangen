@@ -691,7 +691,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol tries to drive the cat away, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/trip/trips} and {VERB/n_c:0/stumble/stumbles} over a loose twig. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/lie/lies} on the ground and {VERB/n_c:0/don't/doesn't} get back up. The patrol takes a bit of time to bury {PRONOUN/n_c:0/object} - just to keep the scavengers away.",
+                "text": "The patrol tries to drive the cat away, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/trip/trips} and {VERB/n_c:0/stumble/stumbles} over a loose twig. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/lie/lies} on the ground and {VERB/n_c:0/don't/doesn't} get back up. The patrol takes a bit of time to bury {PRONOUN/n_c:0/object} — just to keep the scavengers away.",
                 "exp": 0,
                 "outsider_rep": -1,
                 "new_cat": [
@@ -793,7 +793,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "p_l tries to drive the cat away, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/trip/trips} and {VERB/n_c:0/stumble/stumbles} over a loose twig. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/lie/lies} on the ground and {VERB/n_c:0/don't/doesn't} get back up. p_l takes a bit of time to bury {PRONOUN/n_c:0/object} - just to keep the scavengers away.",
+                "text": "p_l tries to drive the cat away, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/trip/trips} and {VERB/n_c:0/stumble/stumbles} over a loose twig. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/lie/lies} on the ground and {VERB/n_c:0/don't/doesn't} get back up. p_l takes a bit of time to bury {PRONOUN/n_c:0/object} — just to keep the scavengers away.",
                 "exp": 0,
                 "outsider_rep": -1,
                 "new_cat": [
@@ -843,7 +843,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. Begrudgingly, p_l orders the patrol to drag {PRONOUN/n_c:0/object} back to camp - this cat needs medicinal attention.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. Begrudgingly, p_l orders the patrol to drag {PRONOUN/n_c:0/object} back to camp — this cat needs medicinal attention.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -886,7 +886,7 @@
                 "frequency": 4
             },
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c gets between the patrol (furious at the intrusion) and the hapless intruder - in Tigger's name, this cat deserves their help.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c gets between the patrol (furious at the intrusion) and the hapless intruder — in Tigger's name, this cat deserves their help.",
                 "exp": 30,
                 "stat_skill": [
                     "LORE,1",
@@ -936,7 +936,7 @@
                 "frequency": 4
             },
             {
-                "text": "Swerving to follow the scent trail, the patrol almost falls over a hissing queen. Reeling with surprise, no one hears exactly what she spits out about never letting herself be taken - but she grabs something and flees. It's only as the patrol regroups that they hear the distressed calls of her other kittens.",
+                "text": "Swerving to follow the scent trail, the patrol almost falls over a hissing queen. Reeling with surprise, no one hears exactly what she spits out about never letting herself be taken — but she grabs something and flees. It's only as the patrol regroups that they hear the distressed calls of her other kittens.",
                 "exp": 20,
                 "new_cat": [
                     [
@@ -1024,7 +1024,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drive the kittypet off - but {PRONOUN/n_c:0/poss} too weak, and the warriors too practiced at strong battle.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drive the kittypet off — but {PRONOUN/n_c:0/poss} too weak, and the warriors too practiced at strong battle.",
                 "exp": 0,
                 "outsider_rep": -4,
                 "new_cat": [
@@ -1041,7 +1041,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness - no mercy for intruders.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness — no mercy for intruders.",
                 "exp": 10,
                 "outsider_rep": -2,
                 "new_cat": [
@@ -1081,12 +1081,12 @@
             ]
         },
         "frequency": 1,
-        "intro_text": "Padding along the border, p_l checks once - twice - three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
+        "intro_text": "Padding along the border, p_l checks once — twice — three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
         "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} {VERB/n_c:0/spot/spots} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up, happily touching noses with p_l.",
+                "text": "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area — so p_l's ears perk up to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} {VERB/n_c:0/spot/spots} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up, happily touching noses with p_l.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -1219,7 +1219,7 @@
                 "frequency": 4
             },
             {
-                "text": "n_c:0 - p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c:0, come back to c_n. Stay.",
+                "text": "n_c:0 — p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c:0, come back to c_n. Stay.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -1285,7 +1285,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is - p_l can go with {PRONOUN/n_c:0/object}.",
+                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is — p_l can go with {PRONOUN/n_c:0/object}.",
                 "exp": 0,
                 "new_cat": [
                     [
@@ -2196,7 +2196,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_from can't believe how selfish Clan cats can be, not only did they not help {PRONOUN/cat_from/object} escape the dog, but they had the audacity to say they don't owe outsiders anything - even if the outsider was in danger.",
+                            "cats_from": "cat_from can't believe how selfish Clan cats can be, not only did they not help {PRONOUN/cat_from/object} escape the dog, but they had the audacity to say they don't owe outsiders anything — even if the outsider was in danger.",
                             "cats_to": "cat_to heard about that the loner, cat_from, scowled to the patrol who watched {PRONOUN/cat_from/object} get chased by a dog."
                         }
                     }
@@ -2560,7 +2560,7 @@
                 "frequency": 1
             },
             {
-                "text": "Furious, high-pitched yowls greet the patrol as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior, wondering what to do with them - s_c doesn't particularly want to hurt them, even if they aren't a Clancat. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better, and such a fierce heart shouldn't be left to wither in a soft kittypet life.",
+                "text": "Furious, high-pitched yowls greet the patrol as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior, wondering what to do with them — s_c doesn't particularly want to hurt them, even if they aren't a Clancat. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better, and such a fierce heart shouldn't be left to wither in a soft kittypet life.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -3427,7 +3427,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's probably dangerous. But curiosity leads app1 on, where {PRONOUN/app1/subject} carefully {VERB/app1/peek/peeks} over a ridge as the source of the cries. A pampered helpless kittypet runs back and forth over the Thunderpath, pleading fearfully for Twolegs, again and again and again. It isn't until their voice has gone hoarse and scratchy that app1 leaps out to surprise them - those Twolegs aren't coming back, and the kittypet can either follow app1, or freeze.",
+                "text": "It's probably dangerous. But curiosity leads app1 on, where {PRONOUN/app1/subject} carefully {VERB/app1/peek/peeks} over a ridge as the source of the cries. A pampered helpless kittypet runs back and forth over the Thunderpath, pleading fearfully for Twolegs, again and again and again. It isn't until their voice has gone hoarse and scratchy that app1 leaps out to surprise them — those Twolegs aren't coming back, and the kittypet can either follow app1, or freeze.",
                 "exp": 20,
                 "new_cat": [
                     [
@@ -3472,7 +3472,7 @@
                 "frequency": 4
             },
             {
-                "text": "StarClan, but the cat {PRONOUN/app1/subject} {VERB/app1/find/finds} is weird, {PRONOUN/n_c:0/poss} fur soft and thin, {PRONOUN/n_c:0/poss} cries desperate as {PRONOUN/n_c:0/subject} {VERB/n_c:0/call/calls} in confusion. app1 watches until {PRONOUN/app1/poss} paws are cold and uncomfortable, crouched behind cover, but the dumb outsider doesn't even try to steal prey. {PRONOUN/n_c:0/subject/CAP} just {VERB/n_c:0/wail/wails} for help, quieter and quieter as {PRONOUN/n_c:0/subject} {VERB/n_c:0/begin/begins} to lose {PRONOUN/n_c:0/poss} voice. Finally, app1 can't take it anymore. Striding out, {PRONOUN/app1/subject} {VERB/app1/tell/tells} the cat to follow {PRONOUN/app1/object} - lead_name will know what to do with this.",
+                "text": "StarClan, but the cat {PRONOUN/app1/subject} {VERB/app1/find/finds} is weird, {PRONOUN/n_c:0/poss} fur soft and thin, {PRONOUN/n_c:0/poss} cries desperate as {PRONOUN/n_c:0/subject} {VERB/n_c:0/call/calls} in confusion. app1 watches until {PRONOUN/app1/poss} paws are cold and uncomfortable, crouched behind cover, but the dumb outsider doesn't even try to steal prey. {PRONOUN/n_c:0/subject/CAP} just {VERB/n_c:0/wail/wails} for help, quieter and quieter as {PRONOUN/n_c:0/subject} {VERB/n_c:0/begin/begins} to lose {PRONOUN/n_c:0/poss} voice. Finally, app1 can't take it anymore. Striding out, {PRONOUN/app1/subject} {VERB/app1/tell/tells} the cat to follow {PRONOUN/app1/object} — lead_name will know what to do with this.",
                 "exp": 20,
                 "new_cat": [
                     [

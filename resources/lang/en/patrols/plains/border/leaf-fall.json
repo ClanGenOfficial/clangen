@@ -68,7 +68,7 @@
         "min_max_status": {},
         "frequency": 4,
         "intro_text": "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's leaf-fall maximum, the sun isn't going to be able to touch p_l's pelt.",
-        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp - border marking will wait til later.",
+        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -92,7 +92,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c isn't just talented at running fast - {PRONOUN/s_c/subject} {VERB/s_c/have/has} some very good advice about finding paths in thick grass too and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c.",
+                "text": "s_c isn't just talented at running fast — {PRONOUN/s_c/subject} {VERB/s_c/have/has} some very good advice about finding paths in thick grass too and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c.",
                 "exp": 40,
                 "art": "fst_hunt_fun3",
                 "can_have_stat": [
@@ -309,7 +309,7 @@
                 "frequency": 2
             },
             {
-                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon - from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
+                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon — from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
                 "exp": 40,
                 "art": "gen_coyote_danger1",
                 "relationships": [
@@ -434,7 +434,7 @@
                 "frequency": 4
             },
             {
-                "text": "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c hisses. It's as good a chance as they can ask for - best to teach this youngster to fear cats, rather than prey on them.",
+                "text": "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c hisses. It's as good a chance as they can ask for — best to teach this youngster to fear cats, rather than prey on them.",
                 "exp": 50,
                 "art": "gen_coyote1",
                 "can_have_stat": [
@@ -761,7 +761,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings - so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the misty morning haze.",
+        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the misty morning haze.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "chance_of_success": 10,
         "success_outcomes": [
@@ -873,7 +873,7 @@
                 "frequency": 4
             },
             {
-                "text": "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c hisses. It's as good a chance as they can ask for - best to teach this youngster to fear cats, rather than prey on them.",
+                "text": "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c hisses. It's as good a chance as they can ask for — best to teach this youngster to fear cats, rather than prey on them.",
                 "exp": 50,
                 "art": "gen_coyote1",
                 "can_have_stat": [
@@ -1337,7 +1337,7 @@
                 "frequency": 4
             },
             {
-                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. This coyote won't see the first day of leaf-bare - but it lashes out as the patrol finishes it off.",
+                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. This coyote won't see the first day of leaf-bare — but it lashes out as the patrol finishes it off.",
                 "exp": 0,
                 "art": "gen_coyote1",
                 "injury": [

@@ -768,7 +768,7 @@
       "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "m_c holds {PRONOUN/m_c/poss} head high as r_c approaches. r_c looks mildly amused - or is that annoyance? The starry cat offers m_c a life for [virtue], saying that {PRONOUN/m_c/subject} could definitely use it. m_c scoffs internally at the implication.",
+          "text": "m_c holds {PRONOUN/m_c/poss} head high as r_c approaches. r_c looks mildly amused — or is that annoyance? The starry cat offers m_c a life for [virtue], saying that {PRONOUN/m_c/subject} could definitely use it. m_c scoffs internally at the implication.",
           "virtue": ["humility", "honesty", "honor", "integrity", "selflessness", "good sense"]
         }
       ]

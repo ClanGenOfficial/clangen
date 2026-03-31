@@ -139,7 +139,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} find a smaller overlooked patch that still has leaves on it.",
+                "text": "app1 goes to a known herb patch — but the plant has died! {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} find a smaller overlooked patch that still has leaves on it.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -149,7 +149,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} give up and return to camp, feeling terrible.",
+                "text": "app1 goes to a known herb patch — but the plant has died! {PRONOUN/app1/subject/CAP} give up and return to camp, feeling terrible.",
                 "exp": 0,
                 "frequency": 4
             }
@@ -410,7 +410,7 @@
                 "frequency": 4
             },
             {
-                "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
+                "text": "Night falls, and still s_c insists they keep going — lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "stat_trait": [
                     "thoughtful",
@@ -522,7 +522,7 @@
                 "frequency": 4
             },
             {
-                "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
+                "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going — {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
                 "exp": 20,
                 "stat_trait": [
                     "thoughtful",
@@ -731,7 +731,7 @@
                 "frequency": 4
             },
             {
-                "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
+                "text": "Night falls, and still s_c insists they keep going — they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "herbs": [
                     "many_herbs",
@@ -1173,7 +1173,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
+                "text": "p_l and r_c decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"

@@ -16,7 +16,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or swift?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or swift?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -625,7 +625,7 @@
                 1, 1]
         },
         "frequency": 4,
-        "intro_text": "app1 catches scent of a mouse nearby. All the grass that the newleaf sun has brought to the world probably seems like a banquet to mice - app1 has meatier tastes.",
+        "intro_text": "app1 catches scent of a mouse nearby. All the grass that the newleaf sun has brought to the world probably seems like a banquet to mice — app1 has meatier tastes.",
         "decline_text": "app1 ignores the mouse.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -709,7 +709,7 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "app1 catches scent of a mouse nearby. p_l points out the little path developing between the growing strands of grass - the mouse comes this way often.",
+        "intro_text": "app1 catches scent of a mouse nearby. p_l points out the little path developing between the growing strands of grass — the mouse comes this way often.",
         "decline_text": "The patrol ignores the mouse.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -815,7 +815,7 @@
         "min_max_status": {},
         "frequency": 3,
         "intro_text": "r_c suggests that the patrol might consider going out to a distant spot on the plains. With slightly higher ground, it should be drier, proving better footing for hunting, and {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} the grass there will be lush enough to attract mice.",
-        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -863,7 +863,7 @@
                 "frequency": 1
             },
             {
-                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - {PRONOUN/s_c/subject} really {VERB/s_c/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
+                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol — {PRONOUN/s_c/subject} really {VERB/s_c/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
                 "exp": 20,
                 "stat_skill": [
                     "HUNTER,1"

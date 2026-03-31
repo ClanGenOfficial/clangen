@@ -770,7 +770,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "r_c sniffs carefully - no, the scent is definitely here. {PRONOUN/r_c/subject/CAP} {VERB/r_c/creep/creeps} round the edge of the snowdrift, {VERB/r_c/spot/spots} a little burrow entrance, and {VERB/r_c/settle/settles} down to wait. When {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back into camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} cold and stiff - but with mice to add to the fresh-kill pile.",
+                "text": "r_c sniffs carefully — no, the scent is definitely here. {PRONOUN/r_c/subject/CAP} {VERB/r_c/creep/creeps} round the edge of the snowdrift, {VERB/r_c/spot/spots} a little burrow entrance, and {VERB/r_c/settle/settles} down to wait. When {PRONOUN/r_c/subject} {VERB/r_c/pad/pads} back into camp, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} cold and stiff — but with mice to add to the fresh-kill pile.",
                 "exp": 10,
                 "prey": [
                     "medium"
@@ -866,12 +866,12 @@
             "apprentice": [ 1, 1]
         },
         "frequency": 4,
-        "intro_text": "app1 catches scent of a mouse nearby. But {PRONOUN/app1/subject} {VERB/app1/lash/lashes} {PRONOUN/app1/poss} tail, confused - everything is covered in snow, where could the prey be?",
+        "intro_text": "app1 catches scent of a mouse nearby. But {PRONOUN/app1/subject} {VERB/app1/lash/lashes} {PRONOUN/app1/poss} tail, confused — everything is covered in snow, where could the prey be?",
         "decline_text": "app1 is too irritated to follow the scent.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "Hold on - the mouse must be under the snow, not on top of it. app1 patiently waits for a sound, listening to the near silence of a snow-covered world, however something underpaw starts to skitter close by. Pouncing blindly forward, {PRONOUN/app1/subject} {VERB/app1/sink/sinks} into the snow well over {PRONOUN/app1/poss} head - but {PRONOUN/app1/subject} can feel prey in {PRONOUN/app1/poss} paws!",
+                "text": "Hold on — the mouse must be under the snow, not on top of it. app1 patiently waits for a sound, listening to the near silence of a snow-covered world, however something underpaw starts to skitter close by. Pouncing blindly forward, {PRONOUN/app1/subject} {VERB/app1/sink/sinks} into the snow well over {PRONOUN/app1/poss} head — but {PRONOUN/app1/subject} can feel prey in {PRONOUN/app1/poss} paws!",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -988,7 +988,7 @@
                 "frequency": 4
             },
             {
-                "text": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions {PRONOUN/app1/self} and launches up, diving gracefully into the snow. After a heartbeat, {PRONOUN/app1/subject} {VERB/app1/pop/pops} back up, sending a flurry of snow everywhere and laughing excitedly - {PRONOUN/app1/subject} can feel a mouse pinned under {PRONOUN/app1/poss} paws!",
+                "text": "Oh. This is what those lessons with the high hunting pounce were for. app1 positions {PRONOUN/app1/self} and launches up, diving gracefully into the snow. After a heartbeat, {PRONOUN/app1/subject} {VERB/app1/pop/pops} back up, sending a flurry of snow everywhere and laughing excitedly — {PRONOUN/app1/subject} can feel a mouse pinned under {PRONOUN/app1/poss} paws!",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -1075,11 +1075,11 @@
         },
         "frequency": 3,
         "intro_text": "The patrol heads out at sunhigh, trying to press the weak warmth of the sun into their pelts. p_l is a little irritated to see that app1 is more focused on app2 than the challenge of hunting during leaf-bare.",
-        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "While p_l was right - app1 definitely cares more about how {PRONOUN/app1/subject} {VERB/app1/look/looks} to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out trying to navigate the recent snowfalls, and p_l indulgently tells app1 {PRONOUN/app1/poss} reaction speed was very good within earshot of app2.",
+                "text": "While p_l was right — app1 definitely cares more about how {PRONOUN/app1/subject} {VERB/app1/look/looks} to app2 than hunting — it turns out fine. The patrol picks up a good haul of mice that were out trying to navigate the recent snowfalls, and p_l indulgently tells app1 {PRONOUN/app1/poss} reaction speed was very good within earshot of app2.",
                 "exp": 20,
                 "prey": [
                     "medium" ],
@@ -1222,7 +1222,7 @@
                 "frequency": 1
             },
             {
-                "text": "There is a time and a place for app1 to try {PRONOUN/app1/poss} luck looking good in front of app2 - and that time is now! {PRONOUN/app1/subject/CAP} {VERB/app1/trot/trots} back to camp at the front of the hunting patrol, carrying the mice {PRONOUN/app1/subject} caught with slightly more than the right amount of pride.",
+                "text": "There is a time and a place for app1 to try {PRONOUN/app1/poss} luck looking good in front of app2 — and that time is now! {PRONOUN/app1/subject/CAP} {VERB/app1/trot/trots} back to camp at the front of the hunting patrol, carrying the mice {PRONOUN/app1/subject} caught with slightly more than the right amount of pride.",
                 "exp": 20,
                 "stat_trait": [
                     "bold",
@@ -1278,7 +1278,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 is so busy watching if app2 is watching <i>{PRONOUN/app1/object}</i> that {PRONOUN/app1/subject} {VERB/app1/forget/forgets} to watch {PRONOUN/app1/poss} own paws - and falling into the cold river impressed nobody.",
+                "text": "app1 is so busy watching if app2 is watching <i>{PRONOUN/app1/object}</i> that {PRONOUN/app1/subject} {VERB/app1/forget/forgets} to watch {PRONOUN/app1/poss} own paws — and falling into the cold river impressed nobody.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -1323,8 +1323,8 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 4,
-        "intro_text": "r_c suggests the patrol hunts close to home - there's no use exhausting themselves pushing through the high snowdrifts.",
-        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "intro_text": "r_c suggests the patrol hunts close to home — there's no use exhausting themselves pushing through the high snowdrifts.",
+        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -1368,7 +1368,7 @@
                 "frequency": 1
             },
             {
-                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - {PRONOUN/s_c/subject} really {VERB/s_c/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
+                "text": "These are the times that it really pays to have a hunter of s_c's caliber on the patrol — {PRONOUN/s_c/subject} really {VERB/s_c/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice.",
                 "exp": 20,
                 "stat_skill": [
                     "HUNTER,1"
@@ -1454,7 +1454,7 @@
         "decline_text": "First the cold, and the snow, and now a fox? This is too much for one day, p_l decides. Back to camp, another patrol can try again later.",
         "success_outcomes": [
             {
-                "text": "s_c watches, copying how the fox walks close to the snow, ears down, imagining what it might be listening for until- that's it! s_c leaps into the air, diving headfirst into the snow. The patrol snickers as {PRONOUN/s_c/poss} rear flails above the snow, but that snickering turns to praise when s_c pops back up with a fat mouse hanging from {PRONOUN/s_c/poss} jaws.",
+                "text": "s_c watches, copying how the fox walks close to the snow, ears down, imagining what it might be listening for until — that's it! s_c leaps into the air, diving headfirst into the snow. The patrol snickers as {PRONOUN/s_c/poss} rear flails above the snow, but that snickering turns to praise when s_c pops back up with a fat mouse hanging from {PRONOUN/s_c/poss} jaws.",
                 "exp": 25,
                 "prey": [
                     "medium"

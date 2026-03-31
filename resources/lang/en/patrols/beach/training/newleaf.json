@@ -106,7 +106,7 @@
                 "frequency": 1
             },
             {
-                "text": "As the \"rocks\" wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk versus the comparatively smaller females.",
+                "text": "As the \"rocks\" wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them — they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk versus the comparatively smaller females.",
                 "exp": 20,
                 "stat_skill": [
                     "TEACHER,1"
@@ -362,7 +362,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c laughs. No, they're here for something way cooler - literally. Wetter, too. Here the rockpools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
+                "text": "s_c laughs. No, they're here for something way cooler — literally. Wetter, too. Here the rockpools are of deceptively different depths, so s_c's going to teach app1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/app1/poss} belly fur wet.",
                 "exp": 30,
                 "art": "gen_train_soggykitty_happy_app",
                 "stat_skill": [
@@ -410,7 +410,7 @@
                 "frequency": 4
             },
             {
-                "text": "If app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, {PRONOUN/app1/subject}'ll have to prove it - and catch s_c. app1 scrambles after {PRONOUN/s_c/object}, around and around the slick rocks. But s_c is always a fox-length away, taunting and encouraging by turns, and app1 is left panting, exhausted, and admiring.",
+                "text": "If app1 thinks {PRONOUN/app1/subject} {VERB/app1/know/knows} how to walk on the rocks, {PRONOUN/app1/subject}'ll have to prove it — and catch s_c. app1 scrambles after {PRONOUN/s_c/object}, around and around the slick rocks. But s_c is always a fox-length away, taunting and encouraging by turns, and app1 is left panting, exhausted, and admiring.",
                 "exp": 30,
                 "art": "fst_hunt_fun1",
                 "stat_skill": [

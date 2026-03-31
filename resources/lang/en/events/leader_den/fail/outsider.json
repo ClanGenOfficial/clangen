@@ -276,7 +276,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "A c_n patrol confronts m_c and tells {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not welcome anywhere near c_n's territory. m_c agrees - and is scented trespassing <i>again</i> within the quarter-moon.",
+    "event_text": "A c_n patrol confronts m_c and tells {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not welcome anywhere near c_n's territory. m_c agrees — and is scented trespassing <i>again</i> within the quarter-moon.",
     "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
@@ -1174,7 +1174,7 @@
   },
   {
     "interaction_type": "invite",
-    "event_text": "Apparently, c_n is getting a reputation with the local rogues - every time c_n visits one of them, they go missing. m_c is nowhere to be found.",
+    "event_text": "Apparently, c_n is getting a reputation with the local rogues — every time c_n visits one of them, they go missing. m_c is nowhere to be found.",
     "reputation": ["welcoming"],
     "rep_change": 0,
     "m_c": {

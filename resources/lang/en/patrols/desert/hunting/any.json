@@ -112,7 +112,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The cats try to knock over a metal leaf. It works, but several members of the patrol spring backward, yowling in pain - the Twolegs have trapped the leaf, storing fire that does not burn in it!",
+                "text": "The cats try to knock over a metal leaf. It works, but several members of the patrol spring backward, yowling in pain — the Twolegs have trapped the leaf, storing fire that does not burn in it!",
                 "exp": 0,
                 "frequency": 4
             }
@@ -163,7 +163,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c leads them to some rabbit droppings in the scrubland - it's not clean, but it's extremely effective, and the patrol hunts well.",
+                "text": "s_c leads them to some rabbit droppings in the scrubland — it's not clean, but it's extremely effective, and the patrol hunts well.",
                 "exp": 20,
                 "stat_skill": [
                     "CLEVER,2"
@@ -228,7 +228,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c finds some rabbit droppings in the scrublands - it's not clean, but it's extremely effective, and the hunt goes well.",
+                "text": "s_c finds some rabbit droppings in the scrublands — it's not clean, but it's extremely effective, and the hunt goes well.",
                 "exp": 20,
                 "stat_skill": [
                     "CLEVER,2"
@@ -776,7 +776,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focus on bringing its meat back for the Clan.",
+                "text": "s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point — the peccary carcass is the real prize here, and the patrol should focus on bringing its meat back for the Clan.",
                 "exp": 20,
                 "stat_skill": [
                     "CLEVER,1"
@@ -1086,7 +1086,7 @@
                 "frequency": 4
             },
             {
-                "text": "The kit fox locks eyes with r_c as {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from the grass, weighing up its options against the bigger cat. r_c doesn't hesitate, leaps to attack it, and with {PRONOUN/r_c/poss} skill {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} able to bring down the kit fox. It should have run from {PRONOUN/r_c/object} - trying to keep its mouse means r_c will be able to add both to the fresh-kill pile.",
+                "text": "The kit fox locks eyes with r_c as {PRONOUN/r_c/subject} {VERB/r_c/emerge/emerges} from the grass, weighing up its options against the bigger cat. r_c doesn't hesitate, leaps to attack it, and with {PRONOUN/r_c/poss} skill {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} able to bring down the kit fox. It should have run from {PRONOUN/r_c/object} — trying to keep its mouse means r_c will be able to add both to the fresh-kill pile.",
                 "exp": 25,
                 "prey": ["large"],
                 "relationships": [
@@ -1824,7 +1824,7 @@
                         }
                     ],
                     "history_text": {
-                        "scar": "m_c was permanently marked by the bite of a gila monster as an apprentice - but {PRONOUN/m_c/subject} survived.",
+                        "scar": "m_c was permanently marked by the bite of a gila monster as an apprentice — but {PRONOUN/m_c/subject} survived.",
                         "death": "m_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice."
                         },
                     "frequency": 4
@@ -1846,7 +1846,7 @@
         },
         "frequency": 4,
         "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!",
-        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -1889,7 +1889,7 @@
                 ]
             },
             {
-                "text": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting - and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!",
+                "text": "It turns out s_c has really been listening to {PRONOUN/s_c/poss} mentor's tips for hunting — and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} willing to pass it on!",
                 "exp": 20,
                 "frequency": 4,
                 "stat_skill": ["HUNTER,0"],
@@ -1988,7 +1988,7 @@
         },
         "frequency": 4,
         "intro_text": "The clouds are out, making the world murky. And just like the clouds, app1 and {PRONOUN/app1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
-        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -2078,7 +2078,7 @@
         },
         "frequency": 4,
         "intro_text": "The siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!",
-        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -2201,7 +2201,7 @@
         },
         "frequency": 4,
         "intro_text": "The clouds are out, making the world murky. And just like the clouds, app1 and {PRONOUN/app1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
-        "decline_text": "Their mentors hold them back with a gentle word - the warriors have other plans for the apprentices today.",
+        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
         "chance_of_success": 40,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -2325,7 +2325,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small — surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 20,
                 "frequency": 4,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -2399,7 +2399,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Giving in and accepting that {PRONOUN/app1/subject}{VERB/app1/'re/'s} just going to look stupid in front of {PRONOUN/app1/poss} cool older sibling, app1 tells p_l about the trouble {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been having with {PRONOUN/app1/poss} pounce. It's such a simple thing - {PRONOUN/app1/subject} should have it by now! But p_l is actually super helpful and reassuring about it - it's nice.",
+                "text": "Giving in and accepting that {PRONOUN/app1/subject}{VERB/app1/'re/'s} just going to look stupid in front of {PRONOUN/app1/poss} cool older sibling, app1 tells p_l about the trouble {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been having with {PRONOUN/app1/poss} pounce. It's such a simple thing — {PRONOUN/app1/subject} should have it by now! But p_l is actually super helpful and reassuring about it — it's nice.",
                 "exp": 20,
                 "frequency": 4,
                 "prey": ["medium"],
@@ -2417,7 +2417,7 @@
                 ]
             },
             {
-                "text": "If app1 ever wanted help - s_c knows they're not littermates, but they're still siblings, and s_c is totally here for {PRONOUN/app1/object} if app1 ever wants extra training. It's still an awkward offer. But it's nice.",
+                "text": "If app1 ever wanted help — s_c knows they're not littermates, but they're still siblings, and s_c is totally here for {PRONOUN/app1/object} if app1 ever wants extra training. It's still an awkward offer. But it's nice.",
                 "exp": 20,
                 "frequency": 4,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -2474,7 +2474,7 @@
         },
         "frequency": 4,
         "intro_text": "app1 bounds out of camp, determined to show off to p_l!",
-        "decline_text": "And both are immediately recalled - the camp needs new nesting materials, not more prey.",
+        "decline_text": "And both are immediately recalled — the camp needs new nesting materials, not more prey.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -2596,7 +2596,7 @@
                 ]
             },
             {
-                "text": "Watching s_c's displays of athleticism makes app1 feel small - surely {PRONOUN/app1/subject}'ll never be able to do that?",
+                "text": "Watching s_c's displays of athleticism makes app1 feel small — surely {PRONOUN/app1/subject}'ll never be able to do that?",
                 "exp": 30,
                 "frequency": 4,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -2665,7 +2665,7 @@
         },
         "frequency": 4,
         "intro_text": "app1 bounds out of camp, determined to show off to {PRONOUN/app1/poss} older siblings!",
-        "decline_text": "And everyone is immediately recalled - the camp needs new nesting materials, not more prey.",
+        "decline_text": "And everyone is immediately recalled — the camp needs new nesting materials, not more prey.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -2812,7 +2812,7 @@
                 ]
             },
             {
-                "text": "s_c nets them two healthy d_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to even try for a pounce - {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
+                "text": "s_c nets them two healthy d_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} sibling. r_c never even got the chance to even try for a pounce — {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
                 "exp": 20,
                 "frequency": 4,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -2872,13 +2872,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It isn't a very successful hunt - they'll have to head out again for more soon.",
+                "text": "It isn't a very successful hunt — they'll have to head out again for more soon.",
                 "exp": 0,
                 "frequency": 4,
                 "prey": ["very_small"]
             },
             {
-                "text": "They don't manage anything like the number of catches they were both expecting to get - a bit disappointing, even if they're not entirely empty-pawed.",
+                "text": "They don't manage anything like the number of catches they were both expecting to get — a bit disappointing, even if they're not entirely empty-pawed.",
                 "exp": 0,
                 "frequency": 4,
                 "prey": ["very_small"]
@@ -2898,8 +2898,8 @@
             "all apprentices": [-1, -1]
         },
         "frequency": 4,
-        "intro_text": "The sun's out, and r_c has been assigned a moderately tolerable hunting partner - {PRONOUN/r_c/poss} sibling!",
-        "decline_text": "Cancel that - a border patrol needs backup.",
+        "intro_text": "The sun's out, and r_c has been assigned a moderately tolerable hunting partner — {PRONOUN/r_c/poss} sibling!",
+        "decline_text": "Cancel that — a border patrol needs backup.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -2938,7 +2938,7 @@
                 ]
             },
             {
-                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from scorpions, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/scuttle/scuttles} over the dunes without putting a paw wrong.",
+                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c — clearly s_c was born from scorpions, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/scuttle/scuttles} over the dunes without putting a paw wrong.",
                 "exp": 20,
                 "frequency": 4,
                 "stat_skill": ["RUNNER,1"],
@@ -2976,7 +2976,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c sees a d_tp_s {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but the chase goes badly - {PRONOUN/r_c/poss} paw slips into an unseen hole in the sand, wrenching {PRONOUN/r_c/poss} foreleg out of socket. Fleas and ticks!",
+                "text": "r_c sees a d_tp_s {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but the chase goes badly — {PRONOUN/r_c/poss} paw slips into an unseen hole in the sand, wrenching {PRONOUN/r_c/poss} foreleg out of socket. Fleas and ticks!",
                 "exp": 0,
                 "frequency": 2,
                 "injury": [
@@ -3096,7 +3096,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Together, they collect a d_tp_s, a couple d_tp_p, an old d_mp_s and two d_mp_p. It should be a great patrol, returning with so much prey - but r_c is acting obnoxious and {PRONOUN/r_c/poss} sibling has little time or patience for it.",
+                "text": "Together, they collect a d_tp_s, a couple d_tp_p, an old d_mp_s and two d_mp_p. It should be a great patrol, returning with so much prey — but r_c is acting obnoxious and {PRONOUN/r_c/poss} sibling has little time or patience for it.",
                 "exp": 20,
                 "frequency": 4,
                 "prey": ["large"],
@@ -3114,7 +3114,7 @@
                 ]
             },
             {
-                "text": "r_c makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c/poss/CAP} sibling works with {PRONOUN/r_c/object} long enough to bring back a great haul of prey - but no longer.",
+                "text": "r_c makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c/poss/CAP} sibling works with {PRONOUN/r_c/object} long enough to bring back a great haul of prey — but no longer.",
                 "exp": 20,
                 "frequency": 1,
                 "prey": ["large"],
@@ -3263,7 +3263,7 @@
                 ]
             },
             {
-                "text": "s_c nets them four healthy d_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} siblings. r_c never even got the chance to even try for a pounce - {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
+                "text": "s_c nets them four healthy d_mp_p to take back to camp, but it only irritates {PRONOUN/s_c/poss} siblings. r_c never even got the chance to even try for a pounce — {VERB/r_c/are/is} {PRONOUN/r_c/subject} only there to carry around s_c's prey?",
                 "exp": 20,
                 "frequency": 4,
                 "stat_skill": ["CLIMBER,1", "HUNTER,1", "RUNNER,1", "SWIMMER,1"],
@@ -3284,13 +3284,13 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It isn't a very successful hunt - they'll have to head out again for more soon.",
+                "text": "It isn't a very successful hunt — they'll have to head out again for more soon.",
                 "exp": 0,
                 "frequency": 4,
                 "prey": ["very_small"]
             },
             {
-                "text": "They don't manage anything like the number of catches they were all expecting to get - a bit disappointing, even if they're not entirely empty-pawed.",
+                "text": "They don't manage anything like the number of catches they were all expecting to get — a bit disappointing, even if they're not entirely empty-pawed.",
                 "exp": 0,
                 "frequency": 4,
                 "prey": ["very_small"]
@@ -3310,8 +3310,8 @@
             "all apprentices": [-1, -1]
         },
         "frequency": 4,
-        "intro_text": "The sun's out, and r_c has been assigned a moderately tolerable hunting patrol - {PRONOUN/r_c/poss} siblings!",
-        "decline_text": "Cancel that - a border patrol needs backup.",
+        "intro_text": "The sun's out, and r_c has been assigned a moderately tolerable hunting patrol — {PRONOUN/r_c/poss} siblings!",
+        "decline_text": "Cancel that — a border patrol needs backup.",
         "chance_of_success": 50,
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
@@ -3350,7 +3350,7 @@
                 ]
             },
             {
-                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c - clearly s_c was born from scorpions, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/scuttle/scuttles} over the dunes without putting a paw wrong.",
+                "text": "r_c jokes that {PRONOUN/r_c/subject} can't possibly be related to s_c — clearly s_c was born from scorpions, not cats, with the way {PRONOUN/s_c/subject} {VERB/s_c/scuttle/scuttles} over the dunes without putting a paw wrong.",
                 "exp": 20,
                 "frequency": 4,
                 "stat_skill": ["RUNNER,1"],
@@ -3387,7 +3387,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "r_c sees a d_tp_s {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but the chase goes badly - {PRONOUN/r_c/poss} paw slips into an unseen hole in the sand, wrenching {PRONOUN/r_c/poss} foreleg out of socket. Fleas and ticks!",
+                "text": "r_c sees a d_tp_s {PRONOUN/r_c/subject}'d like for the fresh-kill pile, but the chase goes badly — {PRONOUN/r_c/poss} paw slips into an unseen hole in the sand, wrenching {PRONOUN/r_c/poss} foreleg out of socket. Fleas and ticks!",
                 "exp": 0,
                 "frequency": 2,
                 "injury": [
@@ -3419,7 +3419,7 @@
         "relationship_constraint": ["siblings"],
         "success_outcomes": [
             {
-                "text": "Together, they collect a d_tp_s, a couple d_tp_p, an old d_mp_s and two d_mp_p. It should be a great patrol, returning with so much prey - but r_c is acting obnoxious and {PRONOUN/r_c/poss} siblings have little time or patience for it.",
+                "text": "Together, they collect a d_tp_s, a couple d_tp_p, an old d_mp_s and two d_mp_p. It should be a great patrol, returning with so much prey — but r_c is acting obnoxious and {PRONOUN/r_c/poss} siblings have little time or patience for it.",
                 "exp": 20,
                 "frequency": 4,
                 "prey": ["large"],
@@ -3437,7 +3437,7 @@
                 ]
             },
             {
-                "text": "r_c makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c/poss/CAP} siblings work with {PRONOUN/r_c/object} long enough to bring back a great haul of prey - but no longer.",
+                "text": "r_c makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c/poss/CAP} siblings work with {PRONOUN/r_c/object} long enough to bring back a great haul of prey — but no longer.",
                 "exp": 20,
                 "frequency": 1,
                 "prey": ["large"],

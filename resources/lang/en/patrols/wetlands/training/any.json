@@ -284,7 +284,7 @@
                 "frequency": 4
             },
             {
-                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own - this patrol is too important to wait for some mouse-brain who fell in the water.",
+                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own — this patrol is too important to wait for some mouse-brain who fell in the water.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -460,7 +460,7 @@
                 "frequency": 4
             },
             {
-                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own - this patrol is too important to wait for some mouse-brain who got stuck.",
+                "text": "Harshly, s_c tells {PRONOUN/s_c/poss} Clanmate that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on {PRONOUN/r_c/poss} own — this patrol is too important to wait for some mouse-brain who got stuck.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -655,7 +655,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out the paths of solid ground through a boggy area {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out the paths of solid ground through a boggy area {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/r_c/poss} home turf, and it's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "frequency": 4
             },
@@ -836,7 +836,7 @@
                         "values": ["romance", "like"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "app1 met with app2 to spend time together - just the two of them."
+                            "cats_from": "app1 met with app2 to spend time together — just the two of them."
                         }
                     }
                 ],
@@ -946,7 +946,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, sp r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, sp r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are — this goes on all afternoon.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -1180,7 +1180,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and... Ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes - EWWWWW!",
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and... Ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes — EWWWWW!",
                 "exp": 20,
                 "frequency": 4
             },
@@ -1205,7 +1205,7 @@
                 "frequency": 4
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off — but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "injury": [
                     {
@@ -1261,7 +1261,7 @@
         "decline_text": "app1 scurries away before the moose draws near, leaving the reeking scent of fear in {PRONOUN/app1/poss} wake. p_l sighs in annoyance and follows after {PRONOUN/p_l/poss} apprentice.",
         "success_outcomes": [
             {
-                "text": "Once upon a time, p_l murmurs, voice barely a whisper, Twolegs attacked the wetlands, ripping down trees, choking off rivers, and reshaping the earth itself. Seeing the destruction, the stars blessed the fallen trees to rise, undead and massive, and drive the Twolegs from the swamps. Moose are very dangerous - but their presence shields c_n.",
+                "text": "Once upon a time, p_l murmurs, voice barely a whisper, Twolegs attacked the wetlands, ripping down trees, choking off rivers, and reshaping the earth itself. Seeing the destruction, the stars blessed the fallen trees to rise, undead and massive, and drive the Twolegs from the swamps. Moose are very dangerous — but their presence shields c_n.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -1370,7 +1370,7 @@
         "pl_skill_constraint": [
             "LORE,1"
         ],
-        "intro_text": "It's been a hard swimming lesson - app1 has just fallen back in, and {PRONOUN/app1/subject} {VERB/app1/try/tries} to clamber out with {PRONOUN/app1/poss} claws dug into a tree root. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} looking particularly sorry for {PRONOUN/app1/self}, so p_l suggests they take a break; {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to share. Does app1 know why c_n lives in the quagmire?",
+        "intro_text": "It's been a hard swimming lesson — app1 has just fallen back in, and {PRONOUN/app1/subject} {VERB/app1/try/tries} to clamber out with {PRONOUN/app1/poss} claws dug into a tree root. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} looking particularly sorry for {PRONOUN/app1/self}, so p_l suggests they take a break; {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to share. Does app1 know why c_n lives in the quagmire?",
         "decline_text": "No, and though {PRONOUN/app1/subject}{VERB/app1/'re/'s} polite, app1 doesn't want to hear about it. {PRONOUN/app1/subject/CAP}{VERB/app1/'d/'s} just like some help drying off.",
         "success_outcomes": [
             {
@@ -1400,7 +1400,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l tries to share the ancient history of the safe refuge the swamps offered - but app1 throws back {PRONOUN/app1/poss} head and yowls. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} <i>care</i> what some ancient cat did; {PRONOUN/app1/subject} <i>{VERB/app1/hate/hates}</i> this. Water is awful!",
+                "text": "p_l tries to share the ancient history of the safe refuge the swamps offered — but app1 throws back {PRONOUN/app1/poss} head and yowls. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} <i>care</i> what some ancient cat did; {PRONOUN/app1/subject} <i>{VERB/app1/hate/hates}</i> this. Water is awful!",
                 "exp": 0,
                 "art": "gen_train_argue",
                 "relationships": [
@@ -1440,7 +1440,7 @@
                 "frequency": 4
             },
             {
-                "text": "Long ago, rebels were driven from their former Clans and sought a new life, p_l begins. But s_c interrupts {PRONOUN/p_l/object} - so these rebels were too cowardly to fight? The exiles should've attacked and taken over, not surrendered and run.",
+                "text": "Long ago, rebels were driven from their former Clans and sought a new life, p_l begins. But s_c interrupts {PRONOUN/p_l/object} — so these rebels were too cowardly to fight? The exiles should've attacked and taken over, not surrendered and run.",
                 "exp": 0,
                 "art": "gen_train_argue",
                 "can_have_stat": [
