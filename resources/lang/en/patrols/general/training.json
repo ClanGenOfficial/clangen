@@ -10300,6 +10300,127 @@
                     }
                 ],
                 "frequency": 1
+            },
+            {
+                "text": "p_l shows app1 the maneuver over and over again, but app1 just can't get the hang of it, and p_l starts to lose {PRONOUN/p_l/poss} patience.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from showed cat_to a fighting move, but cat_to just couldn't get the hang of it.",
+                            "cats_to": "cat_from did a poor job of explaining a fighting move to cat_to."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to's impatience with app1 when app1 wasn't picking up a battle move quickly enough."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+            {
+                "text": "p_l and r_c enjoy chatting so much that app1 gets left behind, tail raised in outrage. They were supposed to be training, not gossiping!",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l", "r_c"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was annoyed when p_l and r_c gossiped instead of training {PRONOUN/cat_from/object}."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed a chat during a training session."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+            {
+                "text": "s_c insists {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for a more complicated maneuver, and despite {PRONOUN/p_l/poss} doubts, p_l agrees. Though s_c is talented, the move proves more challenging than expected. In {PRONOUN/s_c/poss} pursuit of perfecting the move, s_c goes down hard.",
+                "exp": 0,
+                "can_have_stat": ["app1"],
+                "stat_skill": ["FIGHTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from saw how cat_to wanted to challenge {PRONOUN/cat_to/self} during a training session."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from avoided cat_to after embarrassing {PRONOUN/cat_from/self} during training and failing to master a challenging move."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from thought cat_to was at fault for app1 getting injured during training by giving {PRONOUN/app1/object} a move that was too challenging for {PRONOUN/app1/poss} skill level."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": [
+                            "minor_injury"
+                        ]
+                    }
+                ],
+                "frequency": 4
             }
         ]
     },
