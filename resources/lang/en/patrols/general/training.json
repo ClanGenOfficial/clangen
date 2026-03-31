@@ -4897,7 +4897,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueWW",
+                "art": "gen_train_argue",
                 "frequency": 4
             },
             {
@@ -5424,6 +5424,7 @@
                         }
                     }
                 ],
+                "art": "gen_bump_heads_warriors",
                 "frequency": 1
             },
             {
@@ -5444,6 +5445,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny7",
                 "frequency": 1
             },
             {
@@ -5471,6 +5473,7 @@
                         }
                     }
                 ],
+                "art": "gen_bump_heads_warriors",
                 "frequency": 4
             },
             {
@@ -5500,6 +5503,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunset",
                 "frequency": 4
             },
             {
@@ -5527,6 +5531,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_playbite_2warriors",
                 "frequency": 4
             },
             {
@@ -5567,6 +5572,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny3",
                 "frequency": 4
             },
             {
@@ -5605,6 +5611,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunset",
                 "frequency": 4
             },
             {
@@ -5630,6 +5637,7 @@
                         }
                     }
                 ],
+                "art": "fst_hunt_fun3",
                 "frequency": 4
             },
             {
@@ -5657,6 +5665,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_talkingWW",
                 "frequency": 4
             },
             {
