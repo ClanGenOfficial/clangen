@@ -10047,7 +10047,7 @@
         "max_cats": 2,
         "min_max_status": {
             "medicine cat apprentice": [1, 1],
-            "healer cats": [1, 1]
+            "medicine cat": [1, 1]
         },
         "frequency": 4,
         "intro_text": "p_l heads out on an herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores. app1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves.",

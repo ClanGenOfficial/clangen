@@ -2057,7 +2057,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to worked together to use an eagle as a scout for their own hunt."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2080,7 +2083,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to stole a giant fish from an eagle together."
+                        }
                     },
                     {
                         "cats_to": [
@@ -2093,7 +2099,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to led cat_from in an effort to scare an eagle off of its prey."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2104,50 +2113,15 @@
                 "stat_skill": [
                     "FIGHTER,3"
                 ],
-                "prey": [
-                    "huge"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "As the rest of the patrol discusses whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. {PRONOUN/s_c/subject/CAP} {VERB/s_c/win/wins} both the fish and the predator as prey for c_n.",
-                "exp": 20,
                 "stat_trait": [
                     "ambitious",
                     "arrogant",
                     "fierce",
                     "bloodthirsty",
                     "daring",
-                    "competitive"
+                    "competitive",
+                    "confident",
+                    "shameless"
                 ],
                 "prey": [
                     "huge"
@@ -2155,7 +2129,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2165,20 +2139,26 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was astonished when cat_to brought down an eagle in the shallows on a hunting patrol."
+                        }
                     },
                     {
                         "cats_to": [
                             "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_social", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from heard about how cat_to brought down an eagle."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2200,7 +2180,18 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to failed to steal an eagle's prey during a hunting patrol."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["multi"],
+                        "injuries": [
+                            "bruises"
+                        ]
                     }
                 ],
                 "prey": [
@@ -2220,7 +2211,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol", "-r_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -2229,7 +2220,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from and cat_to tried to steal an eagle's prey, but it ended with r_c's death."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -2263,7 +2257,10 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to tried to steal an eagle's prey, but it ended with r_c in the medicine cat den."
+                        }
                     }
                 ],
                 "prey": [
