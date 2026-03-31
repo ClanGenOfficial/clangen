@@ -23,7 +23,7 @@ from scripts.events_module.consequences import (
     gather_cat_objects,
     unpack_rel_block,
 )
-from scripts.events_module.event_filters import filter_relationship_type
+from scripts.events_module.event_filters import filter_relationship_type, event_for_cat
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
 from scripts.game_structure import game
 from scripts.cat.skills import SkillPath
@@ -425,10 +425,13 @@ class PatrolOutcome:
 
         actual_stat_cats = []
         for kitty in possible_stat_cats:
-            if kitty.personality.trait in self.stat_trait:
-                actual_stat_cats.append(kitty)
-
-            if kitty.skills.check_skill_requirement_list(self.stat_skill):
+            if event_for_cat(
+                {
+                    "skill": self.stat_skill,
+                    "trait": self.stat_trait,
+                },
+                kitty,
+            ):
                 actual_stat_cats.append(kitty)
 
         if actual_stat_cats:
