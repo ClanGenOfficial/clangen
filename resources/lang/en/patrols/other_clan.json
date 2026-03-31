@@ -4732,12 +4732,12 @@
                     "MEDIATOR,1"
                 ],
                 "can_have_stat": [
-                    "adult"
+                    "p_l"
                 ],
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -4760,24 +4760,6 @@
             {
                 "text": "The patrol waits patiently at the border for any o_c_n cat to appear but they are out of luck that day. p_l decides to continue the patrol as {PRONOUN/p_l/subject} {VERB/p_l/have/has} tried waiting long enough.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "some_clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from heard about cat_to's efforts to ensure no cat gets caught unawares by a badger."
-                        }
-                    }
-                ],
                 "frequency": 4
             }
         ],
