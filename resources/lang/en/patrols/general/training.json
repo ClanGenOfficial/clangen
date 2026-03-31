@@ -2384,6 +2384,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny7",
                 "frequency": 1
             },
             {
@@ -2437,6 +2438,7 @@
                         }
                     }
                 ],
+                "art": "gen_happy_cat",
                 "frequency": 4
             },
             {
@@ -2490,6 +2492,7 @@
                         }
                     }
                 ],
+                "art": "fst_hunt_fun3",
                 "frequency": 4
             },
             {
@@ -2544,6 +2547,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_speakingromance1",
                 "frequency": 4
             },
             {
@@ -2585,6 +2589,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_speakingromance1",
                 "frequency": 4
             },
             {
@@ -2640,6 +2645,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_starclanromance1",
                 "frequency": 4
             },
             {
@@ -2694,6 +2700,7 @@
                         }
                     }
                 ],
+                "art": "gen_bump_heads_warriors",
                 "frequency": 4
             },
             {
@@ -2734,6 +2741,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_starclanromance1",
                 "frequency": 4
             }
         ],
@@ -2755,6 +2763,7 @@
                         }
                     }
                 ],
+                "art": "gen_cat_looking_up3",
                 "frequency": 1
             },
             {
@@ -2780,6 +2789,7 @@
                         }
                     }
                 ],
+                "art": "gen_solo",
                 "frequency": 4
             },
             {
@@ -2805,6 +2815,7 @@
                         }
                     }
                 ],
+                "art": "gen_anxious2",
                 "frequency": 4
             }
         ]
@@ -2850,6 +2861,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w2",
                 "frequency": 4
             },
             {
@@ -2869,6 +2881,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w3",
                 "frequency": 1
             },
             {
@@ -2893,6 +2906,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w1",
                 "frequency": 4
             },
             {
@@ -2925,6 +2939,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunset",
                 "frequency": 4
             },
             {
@@ -2951,6 +2966,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w1",
                 "frequency": 4
             },
             {
@@ -2977,6 +2993,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_speakingromance1",
                 "frequency": 4
             },
             {
@@ -3003,6 +3020,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w3",
                 "frequency": 4
             },
             {
@@ -3030,6 +3048,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_speakingromance1",
                 "frequency": 4
             },
             {
@@ -3056,6 +3075,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w1",
                 "frequency": 4
             },
             {
@@ -3084,6 +3104,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w2",
                 "frequency": 4
             },
             {
@@ -3111,6 +3132,7 @@
                         }
                     }
                 ],
+                "art": "gen_happy_cat",
                 "frequency": 4
             }
         ],
@@ -3132,10 +3154,11 @@
                         }
                     }
                 ],
+                "art": "gen_embarrassed1",
                 "frequency": 4
             },
             {
-                "text": "s_c rudely reminds the patrol cats to focus on their stars-damned jobs and stop quarreling like kittens.",
+                "text": "s_c rudely reminds the patrol cats to focus on their StarClan-forsaken jobs and stop quarreling like kittens.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -3165,6 +3188,7 @@
                         }
                     }
                 ],
+                "art": "gen_angry_cat_warrior",
                 "frequency": 4
             },
             {
@@ -3196,6 +3220,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argue",
                 "frequency": 4
             },
             {
@@ -3227,6 +3252,7 @@
                         }
                     }
                 ],
+                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
                 "frequency": 4
             }
         ]
@@ -3243,7 +3269,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_argue",
+        "patrol_art": "gen_train_argueWA",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3284,6 +3310,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w1",
                 "frequency": 4
             },
             {
@@ -3327,6 +3354,7 @@
                         }
                     }
                 ],
+                "art": "gen_embarrassed1_warrior_app",
                 "frequency": 1
             },
             {
@@ -3364,6 +3392,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w2",
                 "frequency": 4
             },
             {
@@ -3409,6 +3438,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionfail",
                 "frequency": 4
             },
             {
@@ -3455,6 +3485,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionfail",
                 "frequency": 4
             }
         ],
@@ -3501,10 +3532,11 @@
                         }
                     }
                 ],
+                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
                 "frequency": 4
             },
             {
-                "text": "Well, s_c won't be teaching app1, not until the apprentice comes back with a proper apology. That was some stars-damned disrespect if s_c has ever seen it!",
+                "text": "Well, s_c won't be teaching app1, not until the apprentice comes back with a proper apology. That was some StarClan-forsaken disrespect if s_c has ever seen it!",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -3546,6 +3578,7 @@
                         }
                     }
                 ],
+                "art": "gen_angry_cat_warrior",
                 "frequency": 4
             },
             {
@@ -3577,6 +3610,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueWA",
                 "frequency": 4
             }
         ]
@@ -3621,6 +3655,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_speakingromance1",
                 "frequency": 4
             },
             {
@@ -3640,10 +3675,11 @@
                         }
                     }
                 ],
+                "art": "gen_train_starclanromance1",
                 "frequency": 1
             },
             {
-                "text": "s_c chooses to train with r_c, and the spiritual warrior gently guides the conversation. r_c feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c/object}.",
+                "text": "s_c chooses to train with r_c, and the spiritual warrior guides the conversation. r_c feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c/object}.",
                 "exp": 20,
                 "stat_skill": [
                     "STAR,1"
@@ -3687,6 +3723,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunset",
                 "frequency": 4
             }
         ],
@@ -3708,6 +3745,7 @@
                         }
                     }
                 ],
+                "art": "gen_embarrassed1",
                 "frequency": 4
             },
             {
@@ -3739,6 +3777,7 @@
                         }
                     }
                 ],
+                "art": "gen_cat_looking_up3",
                 "frequency": 4
             }
         ]
@@ -3767,11 +3806,13 @@
             {
                 "text": "It definitely distracts {PRONOUN/r_c/object} from {PRONOUN/r_c/poss} training, but r_c uses the time by {PRONOUN/r_c/self} to put {PRONOUN/r_c/poss} thoughts in order. It was a sign from {PRONOUN/r_c/poss} ancestors. Now {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to figure out what to do next.",
                 "exp": 20,
+                "art": "gen_solo",
                 "frequency": 4
             },
             {
                 "text": "Repetitive training brings r_c to an almost meditative state. Not only {VERB/r_c/are/is} {PRONOUN/r_c/subject} fairly confident of {PRONOUN/r_c/poss} next steps having been given this vision, but {PRONOUN/r_c/subject} also {VERB/r_c/take/takes} the opportunity to improve on a skill {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} weak at.",
                 "exp": 20,
+                "art": "gen_train_solo",
                 "frequency": 1
             },
             {
@@ -3780,6 +3821,7 @@
                     "STAR,1"
                 ],
                 "exp": 30,
+                "art": "gen_train_solo",
                 "frequency": 4
             }
         ],
@@ -3787,6 +3829,7 @@
             {
                 "text": "r_c can't make sense of the vision.",
                 "exp": 0,
+                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
                 "frequency": 4
             }
         ]
@@ -3833,6 +3876,7 @@
                         }
                     }
                 ],
+                "art": "gen_bump_heads_apps",
                 "frequency": 4
             },
             {
@@ -3852,6 +3896,7 @@
                         }
                     }
                 ],
+                "art": "gen_bump_heads_apps",
                 "frequency": 1
             }
         ],
@@ -3873,6 +3918,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueAA",
                 "frequency": 4
             }
         ]
@@ -3919,6 +3965,7 @@
                         }
                     }
                 ],
+                "art": "gen_comfort_warrior_app",
                 "frequency": 4
             },
             {
@@ -3939,6 +3986,7 @@
                         }
                     }
                 ],
+                "art": "gen_comfort_warrior_app",
                 "frequency": 1
             },
             {
@@ -3980,6 +4028,7 @@
                         }
                     }
                 ],
+                "art": "gen_comfort_warrior_app",
                 "frequency": 4
             },
             {
@@ -4010,6 +4059,7 @@
                         }
                     }
                 ],
+                "art": "gen_comfort_warrior_app",
                 "frequency": 4
             }
         ],
@@ -4045,6 +4095,7 @@
                         }
                     }
                 ],
+                "art": "app_cat_looking_up",
                 "frequency": 4
             },
             {
@@ -4085,6 +4136,7 @@
                         }
                     }
                 ],
+                "art": "app_cat_looking_up",
                 "frequency": 4
             }
         ]
@@ -4129,6 +4181,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny7",
                 "frequency": 4
             },
             {
@@ -4148,6 +4201,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_ghost",
                 "frequency": 1
             },
             {
@@ -4171,6 +4225,7 @@
                         }
                     }
                 ],
+                "art": "gen_bord_story",
                 "frequency": 4
             }
         ],
@@ -4192,6 +4247,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argue",
                 "frequency": 4
             }
         ]
@@ -4249,6 +4305,7 @@
                         }
                     }
                 ],
+                "art": "gen_app_siblings",
                 "frequency": 4
             },
             {
@@ -4280,6 +4337,7 @@
                         }
                     }
                 ],
+                "art": "gen_comfort_warrior_app",
                 "frequency": 1
             },
             {
@@ -4322,6 +4380,7 @@
                         }
                     }
                 ],
+                "art": "gen_happy_cat",
                 "frequency": 4
             }
         ],
@@ -4343,6 +4402,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionfail",
                 "frequency": 4
             },
             {
@@ -4387,6 +4447,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny5",
                 "frequency": 4
             }
         ]
@@ -4419,7 +4480,8 @@
             {
                 "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/eat/eats} the prey without anyone noticing and {VERB/app1/return/returns} to camp thrilled with {PRONOUN/app1/poss} little transgression.",
                 "exp": 20,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_train_soloapp"
             },
             {
                 "text": "Whatever, it's not a big deal and s_c's hungry. {PRONOUN/s_c/subject/CAP} {VERB/s_c/polish/polishes} off the little snack and {VERB/s_c/keep/keeps} working on {PRONOUN/s_c/poss} pounce.",
@@ -4439,6 +4501,7 @@
                 "can_have_stat": [
                     "app"
                 ],
+                "art": "gen_train_soloapp",
                 "frequency": 4
             },
             {
@@ -4461,6 +4524,7 @@
                 "can_have_stat": [
                     "app"
                 ],
+                "art": "gen_train_soloapp",
                 "frequency": 4
             },
             {
@@ -4481,7 +4545,8 @@
                 "can_have_stat": [
                     "app"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_train_soloapp"
             },
             {
                 "text": "s_c ignores {PRONOUN/s_c/poss} rumbling belly and dutifully brings the prey back to camp. {PRONOUN/s_c/poss/CAP} mentor congratulates {PRONOUN/s_c/object} on the catch, and {PRONOUN/s_c/subject} {VERB/s_c/get/gets} to share it with all {PRONOUN/s_c/poss} friends, feeling a warm glow in {PRONOUN/s_c/poss} heart at feeding {PRONOUN/s_c/poss} Clan.",
@@ -4512,6 +4577,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_patrolapprenticesessionsuccess",
                 "frequency": 4
             }
         ],
@@ -4519,6 +4585,7 @@
             {
                 "text": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
                 "exp": 0,
+                "art": "gen_train_patrolapprenticesessionfail",
                 "frequency": 4
             },
             {
@@ -4549,6 +4616,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueWA",
                 "frequency": 4
             },
             {
@@ -4579,6 +4647,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueWA",
                 "frequency": 4
             },
             {
@@ -4595,6 +4664,7 @@
                 "can_have_stat": [
                     "app"
                 ],
+                "art": "app_cat_looking_up",
                 "frequency": 4
             },
             {
@@ -4625,6 +4695,7 @@
                         }
                     }
                 ],
+                "art": "app_cat_looking_up",
                 "frequency": 4
             }
         ]
@@ -19851,7 +19922,7 @@
                 "frequency": 4
             },
             {
-                "text": "Now wait just a stars-damned minute, since when has s_c allowed other cats' opinions to affect {PRONOUN/s_c/object} so much? {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} s_c for StarClan's sake, best apprentice in all of c_n! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} not going to sit around moping! No, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} going to walk <i>straight</i> back to camp with {PRONOUN/s_c/poss} head held high!",
+                "text": "Now wait just a StarClan-forsaken minute, since when has s_c allowed other cats' opinions to affect {PRONOUN/s_c/object} so much? {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} s_c for StarClan's sake, best apprentice in all of c_n! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} not going to sit around moping! No, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} going to walk <i>straight</i> back to camp with {PRONOUN/s_c/poss} head held high!",
                 "exp": 20,
                 "stat_trait": [
                     "confident",
