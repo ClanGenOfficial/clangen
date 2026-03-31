@@ -6098,7 +6098,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is stunned into silence by the loner's suave charm. That gives the loner a chance to pick up the dead rabbit {PRONOUN/n_c:0/subject} stole from c_n territory and run off. p_l curses and yowls after {PRONOUn/n_c:0/object} to no avail.",
+                "text": "p_l is stunned into silence by the loner's suave charm. That gives the loner a chance to pick up the dead rabbit {PRONOUN/n_c:0/subject} stole from c_n territory and run off. p_l curses and yowls after {PRONOUN/n_c:0/object} to no avail.",
                 "exp": 0,
                 "art": "gen_happy_cat3",
                 "new_cat": [
@@ -6432,7 +6432,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "p_l caught n_c:0 trespassing and attacked {PRONOUn/n_c:0/object}."
+                            "cats_from": "p_l caught n_c:0 trespassing and attacked {PRONOUN/n_c:0/object}."
                         }
                     }
                 ],

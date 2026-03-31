@@ -5155,7 +5155,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c is much more interesting in sharing gossip than focusing on the teamwork exercise. The rest of the patrol is not in the mood to chat, and s_c's lines of inquiry on the love lives and future plans of {PRONOUN/s_c/poss} Clanmates begin to make the others uncomfortable.",
+                "text": "s_c is much more interesting in sharing gossip than focusing on the teamwork exercise. The rest of the patrol is not in the mood to chat, and s_c's lines of inquiry into the love lives and future plans of {PRONOUN/s_c/poss} Clanmates begin to make the others uncomfortable.",
                 "exp": 0,
                 "stat_trait": [
                     "charismatic", "playful", "shameless", "bold", "flamboyant", "loving", "troublesome"
@@ -5753,7 +5753,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c is much more interesting in sharing gossip than focusing on the teamwork exercise. p_l isn't in the mood to chat, and s_c's lines of inquiry on {PRONOUN/p_l/poss} love life and future plans begins to make {PRONOUN/p_l/object} uncomfortable.",
+                "text": "s_c is much more interesting in sharing gossip than focusing on the teamwork exercise. p_l isn't in the mood to chat, and s_c's lines of inquiry into {PRONOUN/p_l/poss} love life and future plans begins to make {PRONOUN/p_l/object} uncomfortable.",
                 "exp": 0,
                 "stat_trait": [
                     "charismatic", "playful", "shameless", "bold", "flamboyant", "loving", "troublesome"
@@ -7106,7 +7106,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l is so distracted by r_c that {PRONOUN/p_l/subject} {VERB/p_l/struggle/struggles} to focus on the training. r_c suggests ending the training session early, and p_l watches {PRONOUn/r_c/object} go, kicking {PRONOUN/p_l/self}.",
+                "text": "p_l is so distracted by r_c that {PRONOUN/p_l/subject} {VERB/p_l/struggle/struggles} to focus on the training. r_c suggests ending the training session early, and p_l watches {PRONOUN/r_c/object} go, kicking {PRONOUN/p_l/self}.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -10488,7 +10488,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l is so distracted by r_c that {PRONOUN/p_l/subject} {VERB/p_l/struggle/struggles} to focus on the training. r_c suggests ending the training session early, and p_l watches {PRONOUn/r_c/object} go, kicking {PRONOUN/p_l/self}.",
+                "text": "p_l is so distracted by r_c that {PRONOUN/p_l/subject} {VERB/p_l/struggle/struggles} to focus on the training. r_c suggests ending the training session early, and p_l watches {PRONOUN/r_c/object} go, kicking {PRONOUN/p_l/self}.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -12363,7 +12363,7 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "While trying to clear the air, cat_to and cat_from just started arguing again.",
-                            "cats_to": "Though p_l was trying to apologize, r_c felt that {PRONOUn/p_l/subject} was treating {PRONOUN/r_c/object} like a kit."
+                            "cats_to": "Though p_l was trying to apologize, r_c felt that {PRONOUN/p_l/subject} was treating {PRONOUN/r_c/object} like a kit."
                         }
                     }
                 ],
@@ -18760,7 +18760,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l suggests that {PRONOUN/p_l/subject} and r_c team up against s_c. As soon as they attack, s_c turns tail and sprints off. When p_l calls {PRONOUN/s_c/object} back, confused, {PRONOUn/s_c/subject} {VERB/s_c/explain/explains} that's what {PRONOUN/s_c/subject}'d do if {PRONOUN/s_c/subject} were outnumbered in a fight. p_l sighs.",
+                "text": "p_l suggests that {PRONOUN/p_l/subject} and r_c team up against s_c. As soon as they attack, s_c turns tail and sprints off. When p_l calls {PRONOUN/s_c/object} back, confused, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} that's what {PRONOUN/s_c/subject}'d do if {PRONOUN/s_c/subject} were outnumbered in a fight. p_l sighs.",
                 "exp": 0,
                 "stat_trait": [
                     "troublesome",
