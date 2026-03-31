@@ -10321,7 +10321,7 @@
                     },
                     {
                         "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_from": ["patrol", "-app1"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -10519,6 +10519,112 @@
                     }
                 ],
                 "frequency": 1
+            },
+            {
+                "text": "s_c insists {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for a more complicated maneuver, and despite {PRONOUN/p_l/poss} doubts, p_l agrees. Though s_c is talented, the move proves more challenging than expected. In {PRONOUN/s_c/poss} pursuit of perfecting the move, s_c goes down hard.",
+                "exp": 0,
+                "can_have_stat": ["app1"],
+                "stat_skill": ["FIGHTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from saw how cat_to wanted to challenge {PRONOUN/cat_to/self} during a training session."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from avoided cat_to after embarrassing {PRONOUN/cat_from/self} during training and failing to master a challenging move."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": [
+                            "minor_injury"
+                        ]
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l shows app1 the maneuver over and over again, but app1 just can't get the hang of it, and p_l starts to lose {PRONOUN/p_l/poss} patience.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from showed cat_to a fighting move, but cat_to just couldn't get the hang of it.",
+                            "cats_to": "cat_from did a poor job of explaining a fighting move to cat_to."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+            {
+                "text": "s_c tells app1 {PRONOUN/app1/subject}{VERB/app1/'re/'s} ready for the next level of sparring — with unsheathed claws. app1 is excited for {PRONOUN/app1/poss} first real fight. When {PRONOUN/app1/subject} {VERB/app1/get/gets} back to camp, {PRONOUN/app1/subject} {VERB/app1/show/shows} off {PRONOUN/app1/poss} torn ear proudly, hoping it'll scar. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} notice some Clanmates exchanging worried looks.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l showed app1 to spar with claws unsheathed."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["clan", "high_social", "high_lawful"],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from began to suspect cat_to was training app1 with claws unsheathed."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["torn ear"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred after sparring with claws unsheathed as an apprentice.",
+                    "death": "m_c died of an injury inflicted by a Clanmate during a spar with claws unsheathed."
+                },
+                "frequency": 3
             }
         ]
     },
