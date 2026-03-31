@@ -1038,6 +1038,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny4",
                 "frequency": 4
             },
             {
@@ -1058,6 +1059,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny4",
                 "frequency": 4
             },
             {
@@ -1090,6 +1092,7 @@
                         }
                     }
                 ],
+                "art": "gen_romanticstroll_app",
                 "frequency": 4
             }
         ],
@@ -1112,6 +1115,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueAA",
                 "frequency": 4
             },
             {
@@ -1142,10 +1146,11 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to's whole patrol fell asleep instead of training."
+                            "cats_from": "cat_from heard that app1 and app2 fell asleep instead of training."
                         }
                     }
                 ],
+                "art": "gen_train_sunny4",
                 "frequency": 1
             },
             {
@@ -1203,7 +1208,8 @@
                             "cats_from": "cat_from heard that cat_to's whole patrol fell asleep instead of training."
                         }
                     }
-                ]
+                ],
+                "art": "gen_train_vision4"
             }
         ]
     },
@@ -1251,6 +1257,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny8",
                 "frequency": 4
             },
             {
@@ -1273,6 +1280,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny8",
                 "frequency": 1
             },
             {
@@ -1306,6 +1314,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny8",
                 "frequency": 4
             },
             {
@@ -1330,6 +1339,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny6",
                 "frequency": 4
             },
             {
@@ -1354,6 +1364,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny6",
                 "frequency": 1
             },
             {
@@ -1389,6 +1400,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny6",
                 "frequency": 4
             }
         ],
@@ -1413,6 +1425,7 @@
                         }
                     }
                 ],
+                "art": "gen_embarrassed1_warrior_app",
                 "frequency": 4
             },
             {
@@ -1436,6 +1449,7 @@
                         }
                     }
                 ],
+                "art": "gen_embarrassed1_warrior_app",
                 "frequency": 4
             },
             {
@@ -1466,6 +1480,7 @@
                         }
                     }
                 ],
+                "art": "app_cat_looking_up",
                 "frequency": 4
             }
         ]
@@ -1511,6 +1526,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny3",
                 "frequency": 1
             },
             {
@@ -1530,6 +1546,7 @@
                         }
                     }
                 ],
+                "art": "fst_hunt_fun3",
                 "frequency": 1
             },
             {
@@ -1559,6 +1576,7 @@
                         }
                     }
                 ],
+                "art": "gen_cat_looking_up3",
                 "frequency": 4
             },
             {
@@ -1612,6 +1630,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunset",
                 "frequency": 4
             },
             {
@@ -1640,6 +1659,7 @@
                         }
                     }
                 ],
+                "art": "fst_hunt_fun3",
                 "frequency": 4
             }
         ],
@@ -1673,6 +1693,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argue",
                 "frequency": 4
             },
             {
@@ -1713,6 +1734,7 @@
                         }
                     }
                 ],
+                "art": "gen_embarrassed1",
                 "frequency": 4
             },
             {
@@ -1756,6 +1778,7 @@
                         }
                     }
                 ],
+                "art": "fst_train_newleafmatesonadates_70locked1",
                 "frequency": 4
             },
             {
@@ -1795,6 +1818,7 @@
                         }
                     }
                 ],
+                "art": "gen_cat_looking_up1",
                 "frequency": 4
             }
         ]
@@ -1840,6 +1864,7 @@
                         }
                     }
                 ],
+                "art": "gen_bump_heads_warriors",
                 "frequency": 1
             },
             {
@@ -1880,6 +1905,7 @@
                         }
                     }
                 ],
+                "art": "gen_big_fight_all_warriors",
                 "frequency": 4
             },
             {
@@ -1942,6 +1968,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunset",
                 "frequency": 4
             },
             {
@@ -1992,6 +2019,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunset",
                 "frequency": 4
             },
             {
@@ -2031,6 +2059,7 @@
                         }
                     }
                 ],
+                "art": "Halloween_patrol_sneakyprank",
                 "frequency": 4
             },
             {
@@ -2071,6 +2100,7 @@
                         }
                     }
                 ],
+                "art": "gen_speaking_cat_w3",
                 "frequency": 4
             }
         ],
@@ -2090,6 +2120,7 @@
                         }
                     }
                 ],
+                "art": "gen_cat_looking_up2",
                 "frequency": 1
             },
             {
@@ -2111,6 +2142,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argue",
                 "frequency": 1
             },
             {
@@ -2137,6 +2169,7 @@
                         }
                     }
                 ],
+                "art": "gen_cat_looking_up1",
                 "frequency": 4
             },
             {
@@ -2167,6 +2200,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueWW",
                 "frequency": 4
             },
             {
@@ -2213,6 +2247,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueWW",
                 "frequency": 4
             },
             {
@@ -2251,6 +2286,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argue",
                 "frequency": 4
             },
             {
@@ -2288,6 +2324,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argue",
                 "frequency": 4
             }
         ]
