@@ -198,7 +198,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_solo",
+        "patrol_art": "gen_train_starclanromance1",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -550,6 +550,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny7",
                 "frequency": 4
             },
             {
@@ -569,6 +570,7 @@
                         }
                     }
                 ],
+                "art": "train_general_intro",
                 "frequency": 1
             },
             {
@@ -596,6 +598,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny3",
                 "frequency": 4
             },
             {
@@ -618,6 +621,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny7",
                 "frequency": 4
             },
             {
@@ -640,6 +644,7 @@
                         }
                     }
                 ],
+                "art": "gen_bord_story",
                 "frequency": 4
             }
         ],
@@ -661,6 +666,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argue",
                 "frequency": 4
             },
             {
@@ -716,6 +722,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny3",
                 "frequency": 4
             },
             {
@@ -749,6 +756,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny3",
                 "frequency": 4
             }
         ]
@@ -777,12 +785,14 @@
             {
                 "text": "The sunlight energizes r_c for a solo training session. {PRONOUN/r_c/subject/CAP} {VERB/r_c/know/knows} just what to work on!",
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_train_solo"
             },
             {
                 "text": "r_c ignores the dangerously tempting napping opportunity, trotting off to sharpen {PRONOUN/r_c/poss} claws.",
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_train_solo"
             },
             {
                 "text": "Just the place to warm up! r_c stretches, claws digging into the ground as {PRONOUN/r_c/subject} {VERB/r_c/soak/soaks} up the warmth into {PRONOUN/r_c/poss} muscles.",
@@ -821,7 +831,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "apprentice": [ -1, -1 ]
         },
         "frequency": 1,
         "intro_text": "p_l and r_c find a nice spot to sun themselves.",
@@ -846,6 +856,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny7",
                 "frequency": 4
             },
             {
@@ -866,6 +877,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny7",
                 "frequency": 4
             },
             {
@@ -895,6 +907,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny7",
                 "frequency": 4
             }
         ],
@@ -917,6 +930,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_argueWW",
                 "frequency": 4
             },
             {
@@ -974,6 +988,7 @@
                         }
                     }
                 ],
+                "art": "gen_train_sunny3",
                 "frequency": 4
             }
         ]
