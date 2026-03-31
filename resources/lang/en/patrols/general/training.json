@@ -6050,9 +6050,9 @@
         ],
         "fail_outcomes": [
             {
-                "art": "gen_embarrassed1",
                 "text": "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties.",
                 "exp": 0,
+                "art": "gen_embarrassed1",
                 "frequency": 1,
                 "relationships": [
                     {
@@ -6068,10 +6068,10 @@
                 ]
             },
             {
-                "art": "gen_embarrassed1",
                 "text": "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their cooperation...? Great StarClan, that was a terrible performance.",
                 "exp": 0,
                 "frequency": 4,
+                "art": "gen_embarrassed1",
                 "relationships": [
                     {
                         "cats_from": ["p_l"],
@@ -6086,10 +6086,10 @@
                 ]
             },
             {
-                "art": "gen_train_patrolapprenticesessionfail",
                 "text": "app1 does a terrible job, but p_l isn't willing to call {PRONOUN/app1/object} out on it. It's the wrong move for a patrol leader to make, and no cat learns anything from the experience.",
                 "exp": 0,
                 "frequency": 4,
+                "art": "gen_train_patrolapprenticesessionfail",
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -6118,10 +6118,10 @@
                 ]
             },
             {
-                "art": "gen_train_patrolapprenticesessionfail",
                 "text": "app1 screws up the teamwork exercise, making a decision that betrays {PRONOUN/app1/poss} lack of experience, and while p_l smooths everything over between everyone, the exercise is concluded early.",
                 "exp": 0,
                 "frequency": 4,
+                "art": "gen_train_patrolapprenticesessionfail",
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -6150,10 +6150,10 @@
                 ]
             },
             {
-                "art": "gen_train_patrolapprenticesessionfail",
                 "text": "app1 doesn't enjoy being singled out for attention and doesn't engage with the learning opportunity. Nothing goes drastically wrong, but p_l doubts anyone learned anything from this afternoon.",
                 "exp": 0,
                 "frequency": 4,
+                "art": "gen_train_patrolapprenticesessionfail",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -6196,7 +6196,6 @@
                 "frequency": 4
             },
             {
-                "art": "gen_train_patrolapprenticesessionfail",
                 "text": "app1, trying to show off, is too busy checking to see if p_l is watching to check where {PRONOUN/app1/poss} own paws are. app1 falls over with a comical thump and cloud of dust.",
                 "exp": 0,
                 "injury": [
@@ -6209,6 +6208,7 @@
                     }
                 ],
                 "frequency": 4,
+                "art": "gen_train_patrolapprenticesessionfail",
                 "relationships": [
                     {
                         "cats_from": ["app1"],
