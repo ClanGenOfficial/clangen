@@ -9790,7 +9790,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c orders the patrol to train with claws unsheathed. Though the others exchange uneasy looks, they obey. r_c spars with s_c, trying to avoid actually clawing {PRONOUN/r_c/poss} Clanmate, but s_c has no such compunctions. {PRONOUN/s_c/subject} {VERB/s_c/leave/leaves} r_c dripping blood on the training ground by the end of the session.",
+                "text": "s_c orders the patrol to train with claws unsheathed. Though the others exchange uneasy looks, they obey. r_c spars with s_c, trying to avoid actually clawing {PRONOUN/r_c/poss} Clanmate, but s_c has no such compunctions. {PRONOUN/s_c/subject/CAP} {VERB/s_c/leave/leaves} r_c dripping blood on the training ground by the end of the session.",
                 "exp": 0,
                 "can_have_stat": ["p_l"],
                 "stat_trait": ["bloodthirsty"],
@@ -9949,6 +9949,180 @@
                         }
                     }
                 ],
+                "frequency": 1
+            },
+            {
+                "text": "p_l tries and fails to explain the complicated training exercise {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to execute. r_c stares at {PRONOUN/p_l/object}, puzzled.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was confused by cat_to's complicated plan for a training session."
+                        }
+                    }
+                ],
+                "frequency": 2
+            },
+            {
+                "text": "r_c makes a comment about p_l's choice of exercise that p_l doesn't appreciate. The cats exchange more passive aggressive comments than sheathed blows for the rest of the afternoon.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": [
+                            "like", "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to traded passive aggressive comments during a training session."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+            {
+                "text": "r_c and p_l end up hanging out and chatting much more than training. They don't sharpen their skills, but they do end the day feeling closer to each other.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed hanging out and chatting during a training session."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+            {
+                "text": "s_c orders r_c to train with claws unsheathed. r_c refuses outright and returns to camp. When s_c follows, {PRONOUN/s_c/subject} {VERB/s_c/see/sees} {PRONOUN/r_c/object} with a group of Clanmates, casting suspicious looks in s_c's direction.",
+                "exp": 0,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["bloodthirsty"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort", "trust"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_to told cat_from to spar with claws unsheathed."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan", "high_lawful", "high_social"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort", "trust"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from heard a rumor that cat_to told r_c to spar with claws unsheathed."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "s_c orders r_c to train with claws unsheathed, and r_c doesn't refuse. r_c spars with s_c, and {PRONOUN/s_c/subject} {VERB/s_c/leave/leaves} r_c dripping blood on the training ground by the end of the session.",
+                "exp": 0,
+                "can_have_stat": ["p_l"],
+                "stat_trait": ["bloodthirsty"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c", "high_lawful"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort", "trust"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_to told cat_from to spar with claws unsheathed."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c", "low_lawful", "low_aggress"],
+                        "mutual": false,
+                        "values": [
+                            "like", "comfort", "trust"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_to told cat_from to spar with claws unsheathed."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c", "low_lawful", "high_aggress"],
+                        "mutual": false,
+                        "values": [
+                            "respect", "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from approved of cat_to's plan to train with claws unsheathed."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "respect", "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from sparred with claws unsheathed with cat_to."
+                        }
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to injured cat_from during a spar by unsheathing {PRONOUN/cat_to/poss} claws."
+                        }
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["claw-wound"]
+                    },
+                    {
+                        "cats": ["multi"],
+                        "injuries": ["small cut", "scrapes"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred from a wound inflicted by a Clanmate who insisted on training with claws unsheathed.",
+                    "death": "m_c died from a wound inflicted by a Clanmate who insisted on training with claws unsheathed."
+                },
                 "frequency": 1
             }
         ]
