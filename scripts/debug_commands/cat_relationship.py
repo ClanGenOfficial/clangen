@@ -11,11 +11,11 @@ def set_cat_relationship_to_cat(cat_a: Cat, rel_type: str, cat_b: Cat, rel_value
     Sets the specified relationship type (rel_type)
     of cat_a towards cat_b to a specified value (rel_value)
     """
-    from_cat_relationship: Relationship = cat_a.relationships.get(cat_b.ID)
-    if not from_cat_relationship:
+    cat_from_relationship: Relationship = cat_a.relationships.get(cat_b.ID)
+    if not cat_from_relationship:
         return
 
-    setattr(from_cat_relationship, rel_type, rel_value)
+    setattr(cat_from_relationship, rel_type, rel_value)
 
     add_output_line_to_log(
         f"Successfully set {str(cat_a.name)}'s {rel_type} towards {str(cat_b.name)} to {rel_value}"
@@ -25,7 +25,7 @@ def set_cat_relationship_to_cat(cat_a: Cat, rel_type: str, cat_b: Cat, rel_value
 class SetRelationshipCommand(Command):
     name = "set"
     description = "Set the relationship values of a cat towards another cat."
-    usage = "<from_cat name|id> <romance|like|respect|trust|comfort> <to_cat name|id> [number] <mutual>"
+    usage = "<cat_from name|id> <romance|like|respect|trust|comfort> <cat_to name|id> [number] <mutual>"
     aliases = ["s"]
 
     def callback(self, args):
@@ -37,8 +37,8 @@ class SetRelationshipCommand(Command):
             add_output_line_to_log("Missing more than one required argument")
             return
 
-        from_cat = None
-        to_cat = None
+        cat_from = None
+        cat_to = None
         rel_type = args[1].lower()
 
         if not args[3].isdigit():
@@ -55,30 +55,30 @@ class SetRelationshipCommand(Command):
             return
 
         for cat in Cat.all_cats_list:
-            if from_cat and to_cat:
+            if cat_from and cat_to:
                 break
             cat_name = str(cat.name).lower()
             if cat_name == args[0].lower() or cat.ID == args[0]:
-                from_cat = cat
+                cat_from = cat
                 continue
             if cat_name == args[2].lower() or cat.ID == args[2]:
-                to_cat = cat
+                cat_to = cat
                 continue
 
-        if not from_cat:
+        if not cat_from:
             add_output_line_to_log(
-                "Failed to retrieve from_cat, did you specify a valid cat name or ID?"
+                "Failed to retrieve cat_from, did you specify a valid cat name or ID?"
             )
             return
-        if not to_cat:
+        if not cat_to:
             add_output_line_to_log(
-                "Failed to retrieve to_cat, did you specify a valid cat name or ID?"
+                "Failed to retrieve cat_to, did you specify a valid cat name or ID?"
             )
             return
 
-        set_cat_relationship_to_cat(from_cat, rel_type, to_cat, rel_value)
+        set_cat_relationship_to_cat(cat_from, rel_type, cat_to, rel_value)
         if len(args) == 5:
-            set_cat_relationship_to_cat(to_cat, rel_type, from_cat, rel_value)
+            set_cat_relationship_to_cat(cat_to, rel_type, cat_from, rel_value)
 
 
 class RelationshipsCommand(Command):

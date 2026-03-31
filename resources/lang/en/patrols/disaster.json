@@ -39,7 +39,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat gained trust in each other after persevering on a border patrol despite gray skies."
+                            "cats_from": "cat_from and cat_to gained trust in each other after persevering on a border patrol despite gray skies."
                         }
                     }
                 ],
@@ -62,7 +62,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat gained trust in each other after persevering on a rainy border patrol."
+                            "cats_from": "cat_from and cat_to gained trust in each other after persevering on a rainy border patrol."
                         }
                     }
                 ],
@@ -89,14 +89,14 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated that to_cat led their border patrol to higher ground during a rainstorm."
+                            "cats_from": "cat_from appreciated that cat_to led their border patrol to higher ground during a rainstorm."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "text": "It's not worth the risk — s_c convinces the patrol to head for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -117,7 +117,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was glad that to_cat didn't decide to risk a border patrol in poor weather."
+                            "cats_from": "cat_from was glad that cat_to didn't decide to risk a border patrol in poor weather."
                         }
                     },
                     {
@@ -133,7 +133,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wasn't happy that to_cat canceled a border patrol over a few dark clouds."
+                            "cats_from": "cat_from wasn't happy that cat_to canceled a border patrol over a few dark clouds."
                         }
                     }
                 ],
@@ -196,7 +196,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c heads for home.",
+                "text": "It's not worth the risk — s_c heads for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -291,7 +291,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     },
                     {
@@ -307,14 +307,14 @@
                         ],
                         "amount": 25,
                         "log": {
-                            "cats_from": "to_cat saved from_cat's life in a rogue ambush."
+                            "cats_from": "cat_to saved cat_from's life in a rogue ambush."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -420,14 +420,14 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat tried to ambush and kill to_cat, but to_cat escaped."
+                            "cats_from": "cat_from tried to ambush and kill cat_to, but cat_to escaped."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -519,7 +519,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     },
                     {
@@ -535,14 +535,14 @@
                         ],
                         "amount": 25,
                         "log": {
-                            "cats_from": "to_cat saved from_cat's life in a rogue ambush."
+                            "cats_from": "cat_to saved cat_from's life in a rogue ambush."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -648,14 +648,14 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat tried to ambush and kill to_cat, but to_cat escaped."
+                            "cats_from": "cat_from tried to ambush and kill cat_to, but cat_to escaped."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -736,7 +736,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
                 ],
@@ -779,7 +779,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
                 ],
@@ -824,7 +824,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     },
                     {
@@ -840,7 +840,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat was astounded by how fiercely to_cat fought when their patrol was ambushed by rogues."
+                            "cats_from": "cat_from was astounded by how fiercely cat_to fought when their patrol was ambushed by rogues."
                         }
                     }
                 ],
@@ -906,7 +906,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
                 ],
@@ -984,7 +984,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
                 ],
@@ -1027,7 +1027,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     },
                     {
@@ -1043,7 +1043,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's skill in battle when their patrol was ambushed by rogues."
+                            "cats_from": "cat_from was impressed by cat_to's skill in battle when their patrol was ambushed by rogues."
                         }
                     }
                 ],
@@ -1088,7 +1088,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     },
                     {
@@ -1104,7 +1104,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat was astounded by how fiercely to_cat fought when their patrol was ambushed by rogues."
+                            "cats_from": "cat_from was astounded by how fiercely cat_to fought when their patrol was ambushed by rogues."
                         }
                     }
                 ],
@@ -1155,7 +1155,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat and to_cat lost faith in each other after a rogue ambush forced them to retreat."
+                            "cats_from": "cat_from and cat_to lost faith in each other after a rogue ambush forced them to retreat."
                         }
                     },
                     {
@@ -1173,7 +1173,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into a vicious fight when they encountered one another along the border."
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
                 ],

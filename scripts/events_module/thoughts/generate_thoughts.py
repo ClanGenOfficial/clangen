@@ -395,7 +395,7 @@ def _constraints_fulfilled(main_cat: "Cat", random_cat: "Cat", thought) -> bool:
         if "m_c" in thought["has_injuries"]:
             if main_cat.injuries or main_cat.illnesses:
                 injuries_and_illnesses = list(main_cat.injuries.keys()) + list(
-                    main_cat.injuries.keys()
+                    main_cat.illnesses.keys()
                 )
                 if (
                     not [
@@ -412,7 +412,7 @@ def _constraints_fulfilled(main_cat: "Cat", random_cat: "Cat", thought) -> bool:
         if "r_c" in thought["has_injuries"] and random_cat:
             if random_cat.injuries or random_cat.illnesses:
                 injuries_and_illnesses = list(random_cat.injuries.keys()) + list(
-                    random_cat.injuries.keys()
+                    random_cat.illnesses.keys()
                 )
                 if (
                     not [

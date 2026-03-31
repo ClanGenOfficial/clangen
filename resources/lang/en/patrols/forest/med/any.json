@@ -51,8 +51,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat listened to to_cat attentively during an herb-gathering patrol.",
-                            "cats_to": "to_cat felt a measure of confidence in from_cat's attentiveness during an herb-gathering patrol."
+                            "cats_from": "cat_from listened to cat_to attentively during an herb-gathering patrol.",
+                            "cats_to": "cat_to felt a measure of confidence in cat_from's attentiveness during an herb-gathering patrol."
                         }
                     }
                 ],
@@ -79,8 +79,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat found a hidden herb patch during a lesson, impressing to_cat.",
-                            "cats_to": "to_cat was impressed by from_cat's keen observation by finding a hidden herb patch."
+                            "cats_from": "cat_from found a hidden herb patch during a lesson, impressing cat_to.",
+                            "cats_to": "cat_to was impressed by cat_from's keen observation by finding a hidden herb patch."
                         }
                     }
                 ],
@@ -106,7 +106,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "Frustrated by to_cat's inattention, from_cat ended {PRONOUN/from_cat/poss} gathering lesson early."
+                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN/cat_from/poss} gathering lesson early."
                         }
                     }
                 ],
@@ -148,7 +148,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l goes to a known herb patch - but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it.",
+                "text": "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -158,7 +158,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l goes to a known herb patch - but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground.",
+                "text": "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground.",
                 "exp": 0,
                 "frequency": 4
             }
@@ -227,7 +227,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated how to_cat checked {PRONOUN/from_cat/object} over when {PRONOUN/from_cat/subject} tripped on patrol."
+                            "cats_from": "cat_from appreciated how cat_to checked {PRONOUN/cat_from/object} over when {PRONOUN/cat_from/subject} tripped on patrol."
                         }
                     }
                 ],
@@ -289,7 +289,7 @@
                         ],
                         "amount": -6,
                         "log": {
-                            "cats_from": "from_cat watched to_cat embarrass {PRONOUN/to_cat/self} in front of {PRONOUN/from_cat/object} by tripping on a root."
+                            "cats_from": "cat_from watched cat_to embarrass {PRONOUN/cat_to/self} in front of {PRONOUN/cat_from/object} by tripping on a root."
                         }
                     },
                     {
@@ -305,7 +305,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
+                            "cats_from": "cat_from embarrassed {PRONOUN/cat_from/self} in front of cat_to by tripping on a root, and avoided {PRONOUN/cat_to/object} afterward."
                         }
                     }
                 ],
@@ -338,7 +338,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat was abrasive and unfeeling when from_cat tripped over a root in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_to was abrasive and unfeeling when cat_from tripped over a root in front of {PRONOUN/cat_to/object}."
                         }
                     },
                     {
@@ -354,7 +354,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was unimpressed by how to_cat made a big deal out of tripping over a root."
+                            "cats_from": "cat_from was unimpressed by how cat_to made a big deal out of tripping over a root."
                         }
                     }
                 ],
@@ -409,7 +409,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat shared a laugh when they both tripped over the same root."
+                            "cats_from": "cat_from and cat_to shared a laugh when they both tripped over the same root."
                         }
                     }
                 ],
@@ -451,7 +451,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was upset that to_cat laughed at {PRONOUN/from_cat/object} when from_cat tripped on a root."
+                            "cats_from": "cat_from was upset that cat_to laughed at {PRONOUN/cat_from/object} when cat_from tripped on a root."
                         }
                     }
                 ],
@@ -540,7 +540,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated how to_cat checked {PRONOUN/from_cat/object} over when {PRONOUN/from_cat/subject} tripped on patrol."
+                            "cats_from": "cat_from appreciated how cat_to checked {PRONOUN/cat_from/object} over when {PRONOUN/cat_from/subject} tripped on patrol."
                         }
                     }
                 ],
@@ -602,7 +602,7 @@
                         ],
                         "amount": -6,
                         "log": {
-                            "cats_from": "from_cat watched to_cat embarrass {PRONOUN/to_cat/self} in front of {PRONOUN/from_cat/object} by tripping on a root."
+                            "cats_from": "cat_from watched cat_to embarrass {PRONOUN/cat_to/self} in front of {PRONOUN/cat_from/object} by tripping on a root."
                         }
                     },
                     {
@@ -618,7 +618,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
+                            "cats_from": "cat_from embarrassed {PRONOUN/cat_from/self} in front of cat_to by tripping on a root, and avoided {PRONOUN/cat_to/object} afterward."
                         }
                     }
                 ],
@@ -651,7 +651,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat was abrasive and unfeeling when from_cat tripped over a root in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_to was abrasive and unfeeling when cat_from tripped over a root in front of {PRONOUN/cat_to/object}."
                         }
                     },
                     {
@@ -667,7 +667,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was unimpressed by how to_cat made a big deal out of tripping over a root."
+                            "cats_from": "cat_from was unimpressed by how cat_to made a big deal out of tripping over a root."
                         }
                     }
                 ],
@@ -722,7 +722,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat shared a laugh when they both tripped over the same root."
+                            "cats_from": "cat_from and cat_to shared a laugh when they both tripped over the same root."
                         }
                     }
                 ],
@@ -764,7 +764,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was upset that to_cat laughed at {PRONOUN/from_cat/object} when from_cat tripped on a root."
+                            "cats_from": "cat_from was upset that cat_to laughed at {PRONOUN/cat_from/object} when cat_from tripped on a root."
                         }
                     }
                 ],
@@ -899,7 +899,7 @@
                         ],
                         "amount": -6,
                         "log": {
-                            "cats_from": "from_cat watched to_cat embarrass {PRONOUN/to_cat/self} in front of {PRONOUN/from_cat/object} by tripping on a root."
+                            "cats_from": "cat_from watched cat_to embarrass {PRONOUN/cat_to/self} in front of {PRONOUN/cat_from/object} by tripping on a root."
                         }
                     },
                     {
@@ -915,7 +915,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat embarrassed {PRONOUN/from_cat/self} in front of to_cat by tripping on a root, and avoided {PRONOUN/to_cat/object} afterward."
+                            "cats_from": "cat_from embarrassed {PRONOUN/cat_from/self} in front of cat_to by tripping on a root, and avoided {PRONOUN/cat_to/object} afterward."
                         }
                     }
                 ],
@@ -948,7 +948,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat was abrasive and unfeeling when from_cat tripped over a root in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_to was abrasive and unfeeling when cat_from tripped over a root in front of {PRONOUN/cat_to/object}."
                         }
                     },
                     {
@@ -964,7 +964,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was unimpressed by how to_cat made a big deal out of tripping over a root."
+                            "cats_from": "cat_from was unimpressed by how cat_to made a big deal out of tripping over a root."
                         }
                     }
                 ],
@@ -1019,7 +1019,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat shared a laugh when they both tripped over the same root."
+                            "cats_from": "cat_from and cat_to shared a laugh when they both tripped over the same root."
                         }
                     }
                 ],
@@ -1061,7 +1061,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was upset that to_cat laughed at {PRONOUN/from_cat/object} when from_cat tripped on a root."
+                            "cats_from": "cat_from was upset that cat_to laughed at {PRONOUN/cat_from/object} when cat_from tripped on a root."
                         }
                     }
                 ],

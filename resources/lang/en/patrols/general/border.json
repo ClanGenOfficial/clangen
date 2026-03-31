@@ -90,7 +90,7 @@
                         "values": ["respect", "like"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat noticed to_cat's half-hearted job on a border patrol caused more work for others."
+                            "cats_from": "cat_from noticed cat_to's half-hearted job on a border patrol caused more work for others."
                         }
                     }
                 ]
@@ -218,7 +218,7 @@
                         "values": ["respect"],
                         "amount": 3,
                         "log": {
-                            "cats_from": "from_cat appreciated that to_cat warned the Clan of Twoleg tracks."
+                            "cats_from": "cat_from appreciated that cat_to warned the Clan of Twoleg tracks."
                         }
                     }
                 ]
@@ -327,7 +327,7 @@
                 "frequency": 4
             },
             {
-                "text": "Frankly, extra limbs or not (bat wings, at that - this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them.",
+                "text": "Frankly, extra limbs or not (bat wings, at that — this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them.",
                 "exp": 15,
                 "outsider_rep": 1,
                 "frequency": 3,
@@ -339,7 +339,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story of a kittypet with bat wings who got stuck."
+                            "cats_from": "cat_from enjoyed cat_to's story of a kittypet with bat wings who got stuck."
                         }
                     }
                 ]
@@ -375,7 +375,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was amused by to_cat's trophy of bat wings ripped from a strange kittypet."
+                            "cats_from": "cat_from was amused by cat_to's trophy of bat wings ripped from a strange kittypet."
                         }
                     }
                 ]
@@ -451,7 +451,7 @@
                         "values": ["trust", "respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's knowledge of Twolegs' strange pumpkin-based rituals."
+                            "cats_from": "cat_from was impressed by cat_to's knowledge of Twolegs' strange pumpkin-based rituals."
                         }
                     }
                 ]
@@ -490,7 +490,7 @@
                         "values": ["like", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was embarrassed when to_cat called {PRONOUN/from_cat/object} a mouse-heart for being freaked out by a mysterious smoking pumpkin."
+                            "cats_from": "cat_from was embarrassed when cat_to called {PRONOUN/cat_from/object} a mouse-heart for being freaked out by a mysterious smoking pumpkin."
                         }
                     },
                     {
@@ -500,7 +500,7 @@
                         "values": ["respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was contemptuous of to_cat's fear of a pumpkin."
+                            "cats_from": "cat_from was contemptuous of cat_to's fear of a pumpkin."
                         }
                     }
                 ]
@@ -523,7 +523,7 @@
                         "values": ["like", "respect"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat was irritated when to_cat knocked over the mysterious pumpkin the patrol was investigating."
+                            "cats_from": "cat_from was irritated when cat_to knocked over the mysterious pumpkin the patrol was investigating."
                         }
                     }
                 ]
@@ -570,7 +570,7 @@
                         "values": ["like", "respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was interested in the shiny Twoleg object to_cat brought back to camp."
+                            "cats_from": "cat_from was interested in the shiny Twoleg object cat_to brought back to camp."
                         }
                     }
                 ]
@@ -587,7 +587,7 @@
                         "values": ["like", "respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was interested in the morsel of Twoleg food to_cat brought back to camp."
+                            "cats_from": "cat_from was interested in the morsel of Twoleg food cat_to brought back to camp."
                         }
                     }
                 ]
@@ -649,7 +649,7 @@
                         "values": ["like", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was very impressed to hear that to_cat took down a Twoleg."
+                            "cats_from": "cat_from was very impressed to hear that cat_to took down a Twoleg."
                         }
                     },
                     {
@@ -659,7 +659,7 @@
                         "values": ["like", "respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat thought to_cat's story of taking down a Twoleg is utter fox-dung."
+                            "cats_from": "cat_from thought cat_to's story of taking down a Twoleg is utter fox-dung."
                         }
                     }
                 ]
@@ -680,7 +680,7 @@
                         "values": ["respect", "trust"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's knowledge of how Twolegs use \"scarecrows\" to keep their fields safe."
+                            "cats_from": "cat_from was impressed by cat_to's knowledge of how Twolegs use \"scarecrows\" to keep their fields safe."
                         }
                     }
                 ]
@@ -751,7 +751,7 @@
                         ],
                         "amount": 3,
                         "log": {
-                            "cats_from": "from_cat and to_cat gained a bit of respect for each other despite their bickering on a border patrol."
+                            "cats_from": "cat_from and cat_to gained a bit of respect for each other despite their bickering on a border patrol."
                         }
                     }
                 ],
@@ -790,7 +790,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "Despite their arguing, to_cat saved from_cat from a rogue on a border patrol."
+                            "cats_from": "Despite their arguing, cat_to saved cat_from from a rogue on a border patrol."
                         }
                     }
                 ],
@@ -847,7 +847,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "to_cat hurt from_cat's feelings on patrol..."
+                            "cats_from": "cat_to hurt cat_from's feelings on patrol..."
                         }
                     }
                 ],
@@ -880,7 +880,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "After a dispute on patrol, from_cat and to_cat enjoyed a bug-catching contest with each other."
+                            "cats_from": "After a dispute on patrol, cat_from and cat_to enjoyed a bug-catching contest with each other."
                         }
                     }
                 ],
@@ -900,7 +900,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat and to_cat got so frustrated with each other during a patrol that r_c stormed off, cutting it short."
+                            "cats_from": "cat_from and cat_to got so frustrated with each other during a patrol that r_c stormed off, cutting it short."
                         }
                     }
                 ]
@@ -932,7 +932,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat snickered at from_cat when {PRONOUN/from_cat/subject} fell over on patrol."
+                            "cats_from": "cat_to snickered at cat_from when {PRONOUN/cat_from/subject} fell over on patrol."
                         }
                     }
                 ],
@@ -985,7 +985,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "to_cat hurt from_cat's feelings on patrol and wouldn't apologize when from_cat began to cry."
+                            "cats_from": "cat_to hurt cat_from's feelings on patrol and wouldn't apologize when cat_from began to cry."
                         }
                     },
                     {
@@ -1002,7 +1002,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "to_cat ran off on patrol, claiming from_cat hurt {PRONOUN/to_cat/poss} feelings."
+                            "cats_from": "cat_to ran off on patrol, claiming cat_from hurt {PRONOUN/cat_to/poss} feelings."
                         }
                     }
                 ],
@@ -1034,7 +1034,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into an argument on patrol about bugs and having fun."
+                            "cats_from": "cat_from and cat_to got into an argument on patrol about bugs and having fun."
                         }
                     }
                 ],
@@ -1072,7 +1072,7 @@
                         "amount": 10,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun splashing each other on a soggy border patrol."
+                            "cats_from": "cat_from and cat_to had fun splashing each other on a soggy border patrol."
                         }
                     }
                 ],
@@ -1090,7 +1090,7 @@
                         "amount": 10,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun splashing each other on a soggy border patrol."
+                            "cats_from": "cat_from and cat_to had fun splashing each other on a soggy border patrol."
                         }
                     },
                     {
@@ -1100,7 +1100,7 @@
                         "amount": 5,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat noticed to_cat practicing a tricky battle move in a play-fight with app2."
+                            "cats_from": "cat_from noticed cat_to practicing a tricky battle move in a play-fight with app2."
                         }
                     }
                 ],
@@ -1120,7 +1120,7 @@
                         "amount": 15,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat and to_cat had lots of fun splashing each other on a soggy border patrol."
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other on a soggy border patrol."
                         }
                     }
                 ],
@@ -1140,7 +1140,7 @@
                         "amount": 15,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat and to_cat had lots of fun splashing each other on a soggy border patrol."
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other on a soggy border patrol."
                         }
                     }
                 ],
@@ -1160,7 +1160,7 @@
                         "amount": 8,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat and to_cat had lots of fun splashing each other on a soggy border patrol."
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other on a soggy border patrol."
                         }
                     },
                     {
@@ -1170,7 +1170,7 @@
                         "amount": 5,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat enjoyed splashing to_cat on a border patrol."
+                            "cats_from": "cat_from enjoyed splashing cat_to on a border patrol."
                         }
                     },
                     {
@@ -1180,7 +1180,7 @@
                         "amount": -3,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat felt mildly annoyed that to_cat derailed a border patrol by getting into a splash-fight."
+                            "cats_from": "cat_from felt mildly annoyed that cat_to derailed a border patrol by getting into a splash-fight."
                         }
                     }
                 ],
@@ -1200,7 +1200,7 @@
                         "amount": -5,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat and to_cat got annoyed with each other while having a splash-fight on a border patrol."
+                            "cats_from": "cat_from and cat_to got annoyed with each other while having a splash-fight on a border patrol."
                         }
                     }
                 ],
@@ -1218,7 +1218,7 @@
                         "amount": -10,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat and to_cat got annoyed with each other while having a splash-fight on a border patrol."
+                            "cats_from": "cat_from and cat_to got annoyed with each other while having a splash-fight on a border patrol."
                         }
                     },
                     {
@@ -1228,7 +1228,7 @@
                         "amount": -10,
                         "mutual": false,
                         "log": {
-                            "cats_from": "to_cat wanted p_l to intervene when from_cat was splashing {PRONOUN/to_cat/object}, and from_cat thought {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} acting like a kit."
+                            "cats_from": "cat_to wanted p_l to intervene when cat_from was splashing {PRONOUN/cat_to/object}, and cat_from thought {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} acting like a kit."
                         }
                     }
                 ],
@@ -1248,7 +1248,7 @@
                         "amount": 8,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat and to_cat had lots of fun splashing each other despite p_l and r_c's bad moods."
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other despite p_l and r_c's bad moods."
                         }
                     },
                     {
@@ -1258,7 +1258,7 @@
                         "amount": -3,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat was annoyed when app1 and app2 goofed off during a border patrol."
+                            "cats_from": "cat_from was annoyed when app1 and app2 goofed off during a border patrol."
                         }
                     },
                     {
@@ -1268,7 +1268,7 @@
                         "amount": -3,
                         "mutual": true,
                         "log": {
-                            "cats_from": "from_cat was annoyed when app1 and app2 goofed off during a border patrol."
+                            "cats_from": "cat_from was annoyed when app1 and app2 goofed off during a border patrol."
                         }
                     }
                 ],
@@ -1288,7 +1288,7 @@
                         "amount": -15,
                         "mutual": false,
                         "log": {
-                            "cats_from": "to_cat took a game way too far and from_cat got hurt."
+                            "cats_from": "cat_to took a game way too far and cat_from got hurt."
                         }
                     }
                 ],

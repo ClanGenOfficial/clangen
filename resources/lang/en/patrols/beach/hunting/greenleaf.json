@@ -57,7 +57,7 @@
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ]
@@ -113,7 +113,7 @@
                     "amount": 8,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ]
@@ -134,7 +134,7 @@
                     "amount": 8,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ]
@@ -189,7 +189,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat watched to_cat's hunting improve under {PRONOUN/from_cat/poss} tutelage."
+                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN/cat_from/poss} tutelage."
                         }
                     },
                     {
@@ -199,7 +199,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat got great hunting advice from to_cat."
+                            "cats_from": "cat_from got great hunting advice from cat_to."
                         }
                     }
                 ],
@@ -219,7 +219,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat witnessed first-paw how to_cat's hunting training has paid off."
+                            "cats_from": "cat_from witnessed first-paw how cat_to's hunting training has paid off."
                         }
                     },
                     {
@@ -229,7 +229,7 @@
                         "values": ["comfort", "like"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat felt great when to_cat praised {PRONOUN/from_cat/poss} hunting."
+                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN/cat_from/poss} hunting."
                         }
                     }
                 ],
@@ -248,7 +248,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat for a bit after messing up in a hunt in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -276,7 +276,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 4,
-        "intro_text": "As the patrol crosses the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it - there's a rattlesnake, staring down a ground squirrel!",
+        "intro_text": "As the patrol crosses the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it — there's a rattlesnake, staring down a ground squirrel!",
         "decline_text": "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake, even if there's a squirrel to be caught.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -300,7 +300,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat caught a squirrel fighting with a rattlesnake."
+                            "cats_from": "cat_from was impressed by how cat_to caught a squirrel fighting with a rattlesnake."
                         }
                     }
                 ],
@@ -326,7 +326,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat caught a squirrel fighting with a rattlesnake."
+                            "cats_from": "cat_from was impressed by how cat_to caught a squirrel fighting with a rattlesnake."
                         }
                     }
                 ],
@@ -355,7 +355,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was highly impressed by how to_cat used a squirrel and rattlesnake's fight to sneakily kill both pieces of prey."
+                            "cats_from": "cat_from was highly impressed by how cat_to used a squirrel and rattlesnake's fight to sneakily kill both pieces of prey."
                         }
                     }
                 ],
@@ -380,7 +380,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat stood around watching a squirrel and a rattlesnake fight instead of catching any prey."
+                            "cats_from": "cat_from and cat_to stood around watching a squirrel and a rattlesnake fight instead of catching any prey."
                         }
                     }
                 ],
@@ -416,7 +416,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to stop a rattlesnake from biting r_c."
+                            "cats_from": "cat_from and cat_to were unable to stop a rattlesnake from biting r_c."
                         }
                     }
                 ],
@@ -465,7 +465,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat successfully hunted ground squirrels together."
+                            "cats_from": "cat_from and cat_to successfully hunted ground squirrels together."
                         }
                     }
                 ],
@@ -491,7 +491,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat trusted to_cat to block ground squirrels' burrows so the patrol could trap them."
+                            "cats_from": "cat_from trusted cat_to to block ground squirrels' burrows so the patrol could trap them."
                         }
                     }
                 ],
@@ -519,7 +519,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat's plan to pick off ground squirrels and enjoyed a successful hunt."
+                            "cats_from": "cat_from approved of cat_to's plan to pick off ground squirrels and enjoyed a successful hunt."
                         }
                     }
                 ],
@@ -544,7 +544,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat silently blamed to_cat for alerting squirrels to the patrol's presence and spoiling a hunt."
+                            "cats_from": "cat_from silently blamed cat_to for alerting squirrels to the patrol's presence and spoiling a hunt."
                         }
                     }
                 ],
@@ -631,7 +631,7 @@
     "decline_text": "p_l decides messing with Twolegs isn't worth the trouble. c_n should have no trouble with traditional hunting in greenleaf.",
     "success_outcomes": [
         {
-            "text": "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c snatches up the prize - a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever learn they were there.",
+            "text": "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c snatches up the prize — a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever learn they were there.",
             "exp": 30,
             "frequency": 4,
             "prey": ["medium"],
@@ -643,7 +643,7 @@
                     "values": ["trust"],
                     "amount": 8,
                     "log": {
-                        "cats_from": "from_cat and to_cat worked together to steal food from Twolegs on the beach."
+                        "cats_from": "cat_from and cat_to worked together to steal food from Twolegs on the beach."
                     }
                 },
                 {
@@ -653,7 +653,7 @@
                     "values": ["like"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat was excited to taste the Twoleg food that to_cat stole on patrol."
+                        "cats_from": "cat_from was excited to taste the Twoleg food that cat_to stole on patrol."
                     }
                 },
                 {
@@ -663,7 +663,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat disapproved of to_cat stealing Twoleg food for the fresh-kill pile."
+                        "cats_from": "cat_from disapproved of cat_to stealing Twoleg food for the fresh-kill pile."
                     }
                 }
             ],
@@ -682,7 +682,7 @@
                     "values": ["trust"],
                     "amount": 8,
                     "log": {
-                        "cats_from": "from_cat and to_cat worked together to steal strangely delicious fruit from Twolegs on the beach."
+                        "cats_from": "cat_from and cat_to worked together to steal strangely delicious fruit from Twolegs on the beach."
                     }
                 },
                 {
@@ -692,7 +692,7 @@
                     "values": ["like"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat was excited to taste the mysteriously delicious Twoleg fruit that to_cat stole on patrol."
+                        "cats_from": "cat_from was excited to taste the mysteriously delicious Twoleg fruit that cat_to stole on patrol."
                     }
                 },
                 {
@@ -702,7 +702,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat disapproved of to_cat stealing Twoleg food for the fresh-kill pile."
+                        "cats_from": "cat_from disapproved of cat_to stealing Twoleg food for the fresh-kill pile."
                     }
                 }
             ],
@@ -722,7 +722,7 @@
                     "values": ["trust"],
                     "amount": 8,
                     "log": {
-                        "cats_from": "from_cat and to_cat worked together to steal strange Twoleg food from Twolegs on the beach."
+                        "cats_from": "cat_from and cat_to worked together to steal strange Twoleg food from Twolegs on the beach."
                     }
                 },
                 {
@@ -732,7 +732,7 @@
                     "values": ["like"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat was excited to taste the mysterious Twoleg food that to_cat stole on patrol."
+                        "cats_from": "cat_from was excited to taste the mysterious Twoleg food that cat_to stole on patrol."
                     }
                 },
                 {
@@ -742,7 +742,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat disapproved of to_cat stealing Twoleg food for the fresh-kill pile."
+                        "cats_from": "cat_from disapproved of cat_to stealing Twoleg food for the fresh-kill pile."
                     }
                 }
             ],
@@ -762,7 +762,7 @@
                     "values": ["trust"],
                     "amount": 8,
                     "log": {
-                        "cats_from": "from_cat and to_cat worked together to steal tuna from Twolegs on the beach."
+                        "cats_from": "cat_from and cat_to worked together to steal tuna from Twolegs on the beach."
                     }
                 }
             ],
@@ -770,7 +770,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "r_c strolls down the beach, meowing sweetly. The Twolegs screech and run over, and the patrol snatches as much Twoleg food as they can. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches and the patrol returns to camp, they share all sorts of mysteries with their Clanmates - creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque.",
+            "text": "r_c strolls down the beach, meowing sweetly. The Twolegs screech and run over, and the patrol snatches as much Twoleg food as they can. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches and the patrol returns to camp, they share all sorts of mysteries with their Clanmates — creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque.",
             "exp": 30,
             "frequency": 3,
             "prey": ["medium"],
@@ -792,7 +792,7 @@
                     "values": ["like"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat was excited to taste the mysterious Twoleg food that to_cat stole on patrol."
+                        "cats_from": "cat_from was excited to taste the mysterious Twoleg food that cat_to stole on patrol."
                     }
                 },
                 {
@@ -802,7 +802,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat disapproved of to_cat stealing Twoleg food for the fresh-kill pile."
+                        "cats_from": "cat_from disapproved of cat_to stealing Twoleg food for the fresh-kill pile."
                     }
                 }
             ],
@@ -822,7 +822,7 @@
                     "values": ["trust", "respect"],
                     "amount": 8,
                     "log": {
-                        "cats_from": "from_cat was impressed by how easily to_cat distracted some Twolegs while from_cat stole their food."
+                        "cats_from": "cat_from was impressed by how easily cat_to distracted some Twolegs while cat_from stole their food."
                     }
                 },
                 {
@@ -832,7 +832,7 @@
                     "values": ["trust", "respect"],
                     "amount": -8,
                     "log": {
-                        "cats_from": "from_cat was suspicious about how comfortable to_cat seemed with Twolegs."
+                        "cats_from": "cat_from was suspicious about how comfortable cat_to seemed with Twolegs."
                     }
                 },
                 {
@@ -842,7 +842,7 @@
                     "values": ["like"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat was excited to taste the Twoleg food that to_cat stole on patrol."
+                        "cats_from": "cat_from was excited to taste the Twoleg food that cat_to stole on patrol."
                     }
                 },
                 {
@@ -852,7 +852,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat disapproved of to_cat stealing Twoleg food for the fresh-kill pile."
+                        "cats_from": "cat_from disapproved of cat_to stealing Twoleg food for the fresh-kill pile."
                     }
                 }
             ],
@@ -860,7 +860,7 @@
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
-            "text": "As the patrol strategizes, they slowly turn to s_c. s_c growls - no, no chance. But it's decided. The patrol waits as s_c bushes {PRONOUN/s_c/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c/poss} discomfort as they run their smooth paws over {PRONOUN/s_c/poss} bristling fur - and they certainly don't notice the rest of the patrol making off with their feast.",
+            "text": "As the patrol strategizes, they slowly turn to s_c. s_c growls — no, no chance. But it's decided. The patrol waits as s_c bushes {PRONOUN/s_c/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c/poss} discomfort as they run their smooth paws over {PRONOUN/s_c/poss} bristling fur — and they certainly don't notice the rest of the patrol making off with their feast.",
             "exp": 30,
             "frequency": 3,
             "prey": ["large"],
@@ -874,7 +874,7 @@
                     "values": ["trust", "respect"],
                     "amount": 10,
                     "log": {
-                        "cats_from": "from_cat was impressed to_cat could put aside {PRONOUN/to_cat/poss} discomfort around Twolegs to distract them while from_cat stole their food."
+                        "cats_from": "cat_from was impressed cat_to could put aside {PRONOUN/cat_to/poss} discomfort around Twolegs to distract them while cat_from stole their food."
                     }
                 },
                 {
@@ -884,7 +884,7 @@
                     "values": ["like", "comfort"],
                     "amount": -8,
                     "log": {
-                        "cats_from": "from_cat wasn't happy that to_cat and the rest of the patrol forced {PRONOUN/from_cat/object} to be the distraction while the patrol stole food from Twolegs."
+                        "cats_from": "cat_from wasn't happy that cat_to and the rest of the patrol forced {PRONOUN/cat_from/object} to be the distraction while the patrol stole food from Twolegs."
                     }
                 },
                 {
@@ -894,7 +894,7 @@
                     "values": ["like"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat was excited to taste the Twoleg food that to_cat stole on patrol."
+                        "cats_from": "cat_from was excited to taste the Twoleg food that cat_to stole on patrol."
                     }
                 },
                 {
@@ -904,7 +904,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat disapproved of to_cat stealing Twoleg food for the fresh-kill pile."
+                        "cats_from": "cat_from disapproved of cat_to stealing Twoleg food for the fresh-kill pile."
                     }
                 }
             ],
@@ -913,7 +913,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c can steal the Twoleg food - but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed.",
+            "text": "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c can steal the Twoleg food — but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed.",
             "exp": 0,
             "frequency": 3,
             "art": "mtn_hunt_kea_leafbare_parentchildapprentice1"
@@ -953,8 +953,8 @@
                     "values": ["like", "trust"],
                     "amount": -8,
                     "log": {
-                        "cats_from": "from_cat was frustrated that to_cat agreed to act as a distraction when the patrol was trying to steal Twoleg food but then ran off.",
-                        "cats_to": "to_cat was ashamed that {PRONOUN/to_cat/subject} failed when from_cat asked {PRONOUN/to_cat/object} to distract Twolegs so from_cat could steal their food."
+                        "cats_from": "cat_from was frustrated that cat_to agreed to act as a distraction when the patrol was trying to steal Twoleg food but then ran off.",
+                        "cats_to": "cat_to was ashamed that {PRONOUN/cat_to/subject} failed when cat_from asked {PRONOUN/cat_to/object} to distract Twolegs so cat_from could steal their food."
                     }   
                 }
             ],
@@ -973,7 +973,7 @@
                     "values": ["like", "trust"],
                     "amount": -8,
                     "log": {
-                        "cats_from": "from_cat disapproved of to_cat taking a swipe at a Twoleg kit while acting as a distraction."
+                        "cats_from": "cat_from disapproved of cat_to taking a swipe at a Twoleg kit while acting as a distraction."
                     }
                 }
             ],
@@ -997,7 +997,7 @@
             "art": "gen_angry_cat_warrior"
         },
         {
-            "text": "The patrol has arrived too late - the Twolegs pack their food back into the woven nest and gather up their pelt. s_c follows the Twolegs back to their monster, ignoring p_l's order to return to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c leaps into the monster after it! The belly snaps shut, and the patrol watches in horror as the monster takes off with their trapped Clanmate.",
+            "text": "The patrol has arrived too late — the Twolegs pack their food back into the woven nest and gather up their pelt. s_c follows the Twolegs back to their monster, ignoring p_l's order to return to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c leaps into the monster after it! The belly snaps shut, and the patrol watches in horror as the monster takes off with their trapped Clanmate.",
             "exp": 0,
             "frequency": 1,
             "stat_trait": ["fierce", "arrogant", "ambitious", "competitive", "rebellious", "confident", "adventurous", "daring", "bold", "shameless", "troublesome"],
@@ -1018,8 +1018,8 @@
                     "values": ["respect", "trust"],
                     "amount": -8,
                     "log": {
-                        "cats_from": "from_cat was displeased that to_cat suggested stealing food from Twolegs.",
-                        "cats_to": "to_cat was annoyed that from_cat shot down {PRONOUN/to_cat/poss} suggestion to steal food from Twolegs."
+                        "cats_from": "cat_from was displeased that cat_to suggested stealing food from Twolegs.",
+                        "cats_to": "cat_to was annoyed that cat_from shot down {PRONOUN/cat_to/poss} suggestion to steal food from Twolegs."
                     }
                 }
             ],

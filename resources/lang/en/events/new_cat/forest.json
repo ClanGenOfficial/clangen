@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c returned to camp with a kitten tottering behind {PRONOUN/m_c/object}, and explains that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} wandering - lost - around the forest, no parent in sight.",
+        "event_text": "m_c returned to camp with a kitten tottering behind {PRONOUN/m_c/object}, and explains that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} wandering — lost — around the forest, no parent in sight.",
         "m_c": {
             "age": [
                 "young adult",

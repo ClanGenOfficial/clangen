@@ -143,7 +143,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was badly injured when to_cat dared {PRONOUN/from_cat/object} to climb a tree and {PRONOUN/from_cat/subject} fell."
+                    "cats_from": "cat_from was badly injured when cat_to dared {PRONOUN/cat_from/object} to climb a tree and {PRONOUN/cat_from/subject} fell."
                 }
             },
             {
@@ -159,7 +159,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was impressed by to_cat's bravery when from_cat dared {PRONOUN/to_cat/object} to climb a tree, even though things ended in the medicine den."
+                    "cats_from": "cat_from was impressed by cat_to's bravery when cat_from dared {PRONOUN/cat_to/object} to climb a tree, even though things ended in the medicine den."
                 }
             }
         ]
@@ -364,7 +364,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was rescued from a burning nursery by to_cat, even at the expense of to_cat's pelt."
+                    "cats_from": "cat_from was rescued from a burning nursery by cat_to, even at the expense of cat_to's pelt."
                 }
             }
         ]
@@ -458,7 +458,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from drowning in a frozen pond."
+                    "cats_from": "cat_to saved cat_from from drowning in a frozen pond."
                 }
             }
         ]
