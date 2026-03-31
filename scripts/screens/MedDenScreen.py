@@ -146,6 +146,7 @@ class MedDenScreen(Screens):
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
+            starting_height=2,
         )
         self.last_med = UISurfaceImageButton(
             ui_scale(pygame.Rect((600, 278), (34, 34))),
@@ -153,6 +154,7 @@ class MedDenScreen(Screens):
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
+            starting_height=2,
         )
 
         if game.clan.game_mode != "classic":
