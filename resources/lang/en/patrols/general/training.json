@@ -11178,7 +11178,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l and r_c really struggle to work together on their hunting. They end the training session early, feeling irritated with each other.",
+                "text": "p_l and r_c really struggle to work together on their sparring. They end the training session early, feeling irritated with each other.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -11189,6 +11189,25 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "cat_from and cat_to questioned their compatibility after struggling to practice their hunting together on a training patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "s_c turns the spar into a competition, as always, and it makes the whole session tense.",
+                "exp": 0,
+                "can_have_stat": ["any"],
+                "stat_trait": ["competitive", "ambitious", "arrogant", "confident"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["like", "romance"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was annoyed that cat_to turned a romantic training session into a competition like always."
                         }
                     }
                 ],
