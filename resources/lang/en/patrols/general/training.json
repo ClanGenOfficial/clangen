@@ -23,12 +23,14 @@
             {
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/find/finds} peace within {PRONOUN/r_c/self} and {VERB/r_c/enjoy/enjoys} {PRONOUN/r_c/poss} solitude. r_c may not be flawless, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} trying hard and {VERB/r_c/believe/believes} in the path {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} taking.",
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_happy_cat"
             },
             {
                 "text": "{PRONOUN/r_c/poss/CAP} thoughts are plagued with bad memories. r_c decides that means what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing currently is clearly not working. {PRONOUN/r_c/subject/CAP} {VERB/r_c/spend/spends} {PRONOUN/r_c/poss} time coming up with new solutions and {VERB/r_c/return/returns} to camp a little saddened, but also reinvigorated and ready to do better.",
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_train_warrior_rainy"
             },
             {
                 "text": "s_c considers {PRONOUN/s_c/poss} current place in the Clan. No, this isn't where {PRONOUN/s_c/subject}'d like to be. {PRONOUN/s_c/subject/CAP} {VERB/s_c/start/starts} planning what {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to do next.",
@@ -41,7 +43,8 @@
                     "cunning"
                 ],
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_warrior_crouching"
             },
             {
                 "text": "Blissfully avoiding any self-reflection, s_c decides {PRONOUN/s_c/subject}{VERB/r_c/'re/'s} doing a fantastic job and that it's worthless to ever consider otherwise.",
@@ -52,19 +55,22 @@
                     "arrogant"
                 ],
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_hunt_heat"
             }
         ],
         "fail_outcomes": [
             {
                 "text": "{PRONOUN/r_c/poss/CAP} thoughts are plagued with bad memories and {PRONOUN/r_c/subject} {VERB/r_c/end/ends} up spiraling, unable to reflect on anything constructively and driving {PRONOUN/r_c/self} to misery and despair.",
                 "exp": 0,
-                "frequency": 3
+                "frequency": 3,
+                "art": "gen_train_warrior_rainy"
             },
             {
                 "text": "r_c just isn't very good at this 'self-reflection' thing.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_anxious2"
             }
         ]
     },
@@ -92,12 +98,14 @@
             {
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/take/takes} a moment to collect {PRONOUN/r_c/poss} thoughts, and then {PRONOUN/r_c/subject} {VERB/r_c/continue/continues} on successfully.",
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "fst_hunt_fun1"
             },
             {
                 "text": "Independence is a skill that needs practice, just like everything else, and this is the work r_c needs to put in to get better, {PRONOUN/r_c/subject} {VERB/r_c/acknowledge/acknowledges}.",
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_anxious1"
             },
             {
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} let {PRONOUN/r_c/poss} nerves get to {PRONOUN/r_c/object}, and {PRONOUN/r_c/subject} successfully {VERB/r_c/go/goes} out to train on {PRONOUN/r_c/poss} own.",
@@ -107,7 +115,8 @@
                     "nervous",
                     "insecure"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_happy_cat"
             },
             {
                 "text": "No - this is exactly what {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to work on. s_c acknowledges the feeling, letting it pass around {PRONOUN/s_c/object} like water flowing over a stone, not letting it pull {PRONOUN/s_c/object} in or consume {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} determined to be more independent.",
@@ -117,7 +126,8 @@
                     "insecure"
                 ],
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "running_warrior2"
             },
             {
                 "text": "With a shake of {PRONOUN/s_c/poss} pelt, {PRONOUN/s_c/subject} {VERB/s_c/brush/brushes} the feeling off. s_c isn't going to let a few nerves get in the way of a good solo training session.",
@@ -129,7 +139,8 @@
                     "cold"
                 ],
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "running_warrior2"
             },
             {
                 "text": "No - this is exactly what {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to work on. s_c acknowledges the feeling, letting it pass around {PRONOUN/r_c/object} like water flowing over a stone, not letting it pull {PRONOUN/s_c/object} in or consume {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} determined to be more independent.",
@@ -137,14 +148,16 @@
                     "CLEVER,1"
                 ],
                 "exp": 15,
-                "frequency": 4
+                "frequency": 4,
+                "art": "running_warrior2"
             }
         ],
         "fail_outcomes": [
             {
                 "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/force/forces} {PRONOUN/r_c/self} to go out, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} manage to accomplish anything.",
                 "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_anxious1"
             },
             {
                 "text": "s_c tries to shake it off and force {PRONOUN/s_c/self} to go out anyway, but ignoring {PRONOUN/s_c/poss} unease doesn't help {PRONOUN/s_c/object} focus on training, and {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} get anything done.",
@@ -155,16 +168,21 @@
                     "arrogant",
                     "troublesome"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_anxious1"
             },
             {
                 "text": "s_c tries to calm {PRONOUN/s_c/self} and center {PRONOUN/s_c/poss} emotions, but {PRONOUN/s_c/poss} nerves overwhelm {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} get anything done on {PRONOUN/s_c/poss} solo training session.",
                 "exp": 0,
                 "stat_trait": [
                     "lonesome",
-                    "childish"
+                    "childish",
+                    "nervous",
+                    "careful",
+                    "insecure"
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "art": "gen_anxious2"
             }
         ]
     },
