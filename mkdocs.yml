@@ -51,6 +51,9 @@ nav:
         - dev/art/camp-backgrounds.md
     - Audio:
         - dev/audio/index.md
+    - Senior Developers:
+      - dev/senior/index.md
+      
   - User Guides:
     - user-guides/index.md
     - user-guides/removing-palette-maps.md

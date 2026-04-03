@@ -31,4 +31,10 @@ Basic information regarding the ClanGen project as a whole can be found in [Proj
 
     Information about creating new audio for ClanGen.
 
+- __[Senior Developer Related](senior/index.md)__
+
+    ---
+
+    Guides intended for Senior Developers.
+
 </div>
