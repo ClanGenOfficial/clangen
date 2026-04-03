@@ -1375,12 +1375,7 @@ class Pregnancy_Events:
 
         # CURRENT KIT COUNT
         # increases inverse chance according to number of existing children (ex. 5 kids will multiply by 1.5)
-        inverse_chance = int(
-            inverse_chance
-            * (
-                1.0 + (len(first_parent.get_children()) * 0.1)
-            )  # each kid adds .1 to the multiplier
-        )
+        inverse_chance += int(inverse_chance * len(first_parent.get_children()) * 0.1)
 
         # 'INBREED' counter
         # - increase inverse chance if one of the current cats belongs in the biggest family
