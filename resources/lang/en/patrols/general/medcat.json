@@ -9566,7 +9566,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "It's absolutely miserable weather to gather herbs in, and p_l wishes {PRONOUN/r_c/subject} didn't have to. Despite r_c nearly slipping and falling over on more than one occasion and the rest of the patrol getting absolutely soaked to the bone, {PRONOUN/r_c/subject} {VERB/r_c/do/does} — somehow — still manage to bring back some herbs.",
+                "text": "It's absolutely miserable weather to gather herbs in, and p_l wishes {PRONOUN/p_l/subject} didn't have to. Despite r_c nearly slipping and falling over on more than one occasion and the rest of the patrol getting absolutely soaked to the bone, they do — somehow — still manage to bring back some herbs.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -9624,7 +9624,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only {VERB/r_c/do/does} {PRONOUN/p_l/subject} have to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day.",
+                "text": "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only {VERB/p_l/do/does} {PRONOUN/p_l/subject} have to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day.",
                 "exp": 0,
                 "relationships": [
                     {
