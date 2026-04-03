@@ -53,7 +53,7 @@ nav:
         - dev/audio/index.md
     - Senior Developers:
       - dev/senior/index.md
-      
+
   - User Guides:
     - user-guides/index.md
     - user-guides/removing-palette-maps.md
@@ -146,6 +146,9 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: True
+  - pymdownx.tasklist:
+      custom_checkbox: false
+      clickable_checkbox: true
 
 watch:
   - docs-resources/includes
