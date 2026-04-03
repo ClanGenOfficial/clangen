@@ -3404,7 +3404,6 @@ class Cat:
                 "scars": self.pelt.scars or [],
                 "accessory": self.pelt.accessory,
                 "experience": self.experience,
-                "dead_moons": self.dead_for,
                 "current_apprentice": list(self.apprentice),
                 "former_apprentices": list(self.former_apprentices),
                 "faded_offspring": self.faded_offspring,
