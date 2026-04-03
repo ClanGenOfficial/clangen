@@ -279,7 +279,7 @@ def json_load():
                     if cat.get("driven_out"):
                         new_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
 
-            if "dead_moons" in cat and cat["dead_moons"] is not None:
+            if cat.get("dead_moons"):
                 new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]
