@@ -42,4 +42,4 @@ This is a list of requirements and instructions for performing a release.
 ### Post-release Checklist
 
 - [ ] Contact moderators to announce update on Discord and social media
-- [ ] Check to make sure that the release has been successfully uploaded to itch.io, clangen.io, and GitHub.
+- [ ] Check to make sure that the release has been successfully uploaded to itch.io, clangen.io, and GitHub
