@@ -40,5 +40,6 @@ This is a list of requirements and instructions for performing a release.
 - [ ] Press `Publish Release`
 
 ### Post-release Checklist
-- [ ] Post on Discord and ping `@Clangen Announcements`
-- [ ] Post on official Tumblr
+
+- [ ] Contact moderators to announce update on Discord and social media
+- [ ] Check to make sure that the release has been successfully uploaded to itch.io, clangen.io, and GitHub.
