@@ -61,7 +61,7 @@ class _DiscordRPC(threading.Thread):
             print("Discord RPC is supported")
         except ImportError:
             print("Pypresence not installed, Discord RPC isn't supported.")
-            print("To enable rpc, run 'pip install pypresence' in your terminal.")
+            print("To enable rpc, run 'uv add pypresence' in your terminal.")
             return
         # Check if Discord is running.
         try:
@@ -123,11 +123,11 @@ class _DiscordRPC(threading.Thread):
             try:
                 self._rpc.update(
                     state=state_text,
-                    details=f"Managing {clan_name} for {clan_age} moons",
+                    details=f"{clan_name} ({clan_age} moons)",
                     large_image=img_str.lower(),
                     large_text=img_text,
                     small_image="discord",
-                    small_text=f"Managing {cats_amount} cats",
+                    small_text=f"{cats_amount} cats",
                     start=self._start_time,
                     buttons=[
                         {
@@ -145,5 +145,6 @@ class _DiscordRPC(threading.Thread):
 
     def close(self):
         if self._connected:
+            self._rpc.clear()
             self._rpc.close()
             self._connected = False
