@@ -47,8 +47,16 @@ class _DiscordRPC(threading.Thread):
         self.connect()
         while not self.close_rpc.is_set():
             self.update_rpc.wait()
-            self.update()
-        self.close()
+            if not self.close_rpc.is_set():
+                self.update()
+        if self._connected:
+            try:
+                self._rpc.clear()
+                self._rpc.close()
+            except Exception:
+                pass
+            finally:
+                self._connected = False
 
     def get_rpc(self):
         # Check if pypresence is available.
@@ -144,7 +152,5 @@ class _DiscordRPC(threading.Thread):
         self.update_rpc.clear()
 
     def close(self):
-        if self._connected:
-            self._rpc.clear()
-            self._rpc.close()
-            self._connected = False
+        self.close_rpc.set()
+        self.update_rpc.set()
