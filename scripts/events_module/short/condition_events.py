@@ -482,6 +482,7 @@ class Condition_Events:
             "lasting grief",
             "persistent headaches",
             "selective mutism",
+            "absent",
         )
 
         got_condition = False
