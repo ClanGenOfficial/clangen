@@ -812,6 +812,7 @@ class Condition_Events:
                             )
                         ]
                         del translated_condition, translated_injury
+                    
                     # choose event string and ensure Clan's med cat number aligns with event text
 
                     med_list = find_alive_cats_with_rank(
@@ -819,8 +820,8 @@ class Condition_Events:
                         [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
                         working=True,
                     )
-                    # If the cat is a med cat, don't consider them as one for the event.
 
+                    # If the cat is a med cat, don't consider them as one for the event.
                     if cat in med_list:
                         med_list.remove(cat)
 
@@ -829,20 +830,22 @@ class Condition_Events:
                         med_cat = random.choice(med_list)
                     else:
                         med_cat = None
-                        
+
                     accepted_events = []
-                    # Ensure Clan's med cat number aligns with event text
-                    if ( not med_cat ):
-                            for string_event in possible_string_list:
-                                if "r_c" not in string_event: 
-                                    accepted_events.append(string_event)   
-                    else:  accepted_events = possible_string_list 
+                    # Ensure that the Clan's med cat number aligns with event text
+                    if not med_cat:
+                        for string_event in possible_string_list:
+                            if "r_c" not in string_event:
+                                accepted_events.append(string_event)
+                    else:
+                        accepted_events = possible_string_list
 
                     random_index = random.randrange(0, len(accepted_events))
                     event = accepted_events[random_index]
 
-                    if "r_c" in event: cat_dict["r_c"] = med_cat
-                        
+                    if "r_c" in event:
+                        cat_dict["r_c"] = med_cat
+
                     event = event_text_adjust(
                         Cat, event, main_cat=cat, random_cat=med_cat
                     )  # adjust the text
