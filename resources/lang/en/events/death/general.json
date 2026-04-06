@@ -7303,7 +7303,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": [],
+        "tags": ["all_lives"],
         "frequency": 1,
         "event_text": "A thick fog descended on c_n for days. m_c vanished into it, never to be seen again.",
         "m_c": {

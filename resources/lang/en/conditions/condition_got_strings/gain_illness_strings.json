@@ -13,10 +13,10 @@
         "m_c has been scratching and itching all day. It seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} fleas."
     ],
     "heat exhaustion": [
-        "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat exhaustion."
+        "m_c spent too long out in the sun. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} gotten heat exhaustion."
     ],
     "heat stroke": [
-        "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat stroke."
+        "m_c spent too long out in the sun. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} gotten heat stroke."
     ],
     "kittencough": [
         "m_c has gotten kittencough.",
