@@ -828,7 +828,7 @@ class Condition_Events:
                     # Choose med cat, if you can
                     if med_list:
                         med_cat = random.choice(med_list)
-                        cat_dict["r_c"] = med_cat
+                        # cat_dict["r_c"] = med_cat
                     else:
                         med_cat = None
 
@@ -838,6 +838,8 @@ class Condition_Events:
                         and len(possible_string_list) >= 3
                     ):
                         random_index = 2
+                    elif random_index < 2:
+                        cat_dict["r_c"] = med_cat
 
                     event = possible_string_list[random_index]
                     event = event_text_adjust(
