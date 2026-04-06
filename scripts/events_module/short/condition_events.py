@@ -812,7 +812,7 @@ class Condition_Events:
                             )
                         ]
                         del translated_condition, translated_injury
-                    
+
                     # choose event string and ensure Clan's med cat number aligns with event text
 
                     med_list = find_alive_cats_with_rank(
