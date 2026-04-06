@@ -30,8 +30,12 @@ Basic information regarding the ClanGen project as a whole can be found in [Proj
     ---
 
     Information about creating new audio for ClanGen.
+</div>
 
-- __[Senior Developer Related](senior/index.md)__
+--- 
+
+<div class="grid cards" markdown>
+- __[Senior Developer Guides](senior/index.md)__
 
     ---
 
