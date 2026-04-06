@@ -145,7 +145,8 @@
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -191,7 +192,8 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -416,21 +418,14 @@
 			"m_c tells someone to get r_c away from {PRONOUN/m_c/object}."
 		],
 		"main_status_constraint": [
-			"elder",
-			"apprentice",
-			"warrior",
-			"mediator apprentice",
-			"mediator",
-			"medicine cat apprentice",
-			"medicine cat",
-			"deputy",
-			"leader"
+			"-kitten"
 		],
 		"random_status_constraint": [
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -475,7 +470,8 @@
 			"apprentice"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -495,7 +491,8 @@
 			"medicine cat"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -524,7 +521,7 @@
 			"m_c had a fight with r_c.",
 			"m_c had a heated argument with r_c and said some very hurtful things.",
 			"m_c and r_c nearly got in a bloody fight if it weren't for the intervention of a Clanmate.",
-			"m_c and r_c are always backtalking to each other.",
+			"m_c and r_c are always back-talking to each other.",
 			"m_c and r_c snarl at one another over something trivial.",
 			"r_c told all of m_c's friends something embarrassing about {PRONOUN/m_c/object}.",
 			"m_c accuses r_c of lying about something important.",
@@ -534,7 +531,8 @@
 			"m_c argues with r_c in front of other cats and reveals something embarrassing."
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -595,7 +593,8 @@
 			"deputy"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"trust": "decrease"
 		}
 	},
 	{

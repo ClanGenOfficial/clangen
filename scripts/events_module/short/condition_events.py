@@ -919,8 +919,10 @@ class Condition_Events:
 
                 # add to death history
                 cat.history.add_death(
-                    death_text=i18n.t("defaults.complications_death_history"),
-                    condition=translated_condition,
+                    death_text=i18n.t(
+                        "defaults.complications_death_history",
+                        condition=translated_condition,
+                    )
                 )
 
                 game.herb_events_list.append(event)

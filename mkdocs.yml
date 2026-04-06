@@ -13,6 +13,8 @@ nav:
         - dev/project-basics/index.md
         - dev/project-basics/development-team-roles.md
         - dev/project-basics/getting-started-with-github-and-clangen.md
+        - Senior Developer Guides:
+            - dev/senior/index.md
     - Code:
         - dev/code/index.md
         - dev/code/cat-status.md
@@ -51,6 +53,7 @@ nav:
         - dev/art/camp-backgrounds.md
     - Audio:
         - dev/audio/index.md
+
   - User Guides:
     - user-guides/index.md
     - user-guides/removing-palette-maps.md
@@ -143,6 +146,9 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: True
+  - pymdownx.tasklist:
+      custom_checkbox: false
+      clickable_checkbox: true
 
 watch:
   - docs-resources/includes

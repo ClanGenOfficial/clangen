@@ -829,10 +829,20 @@ def gather_cat_objects(
         # OVERALL CLAN CATS
         elif abbr == "clan":
             found_cat_list.update(clan_cats)
+            # exclude cats involved in the event
+            found_cat_list.discard(getattr(event, "main_cat", None))
+            found_cat_list.discard(getattr(event, "random_cat", None))
+            if getattr(event, "patrol_cats", None):
+                found_cat_list.difference_update(set(event.patrol_cats))
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
             found_cat_list.update(
                 sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
             )
+            # exclude cats involved in the event
+            found_cat_list.discard(getattr(event, "main_cat", None))
+            found_cat_list.discard(getattr(event, "random_cat", None))
+            if getattr(event, "patrol_cats", None):
+                found_cat_list.difference_update(set(event.patrol_cats))
 
         # add/remove cats if found and then continue for loop
         if is_exclusionary and found_cat_list:
@@ -1022,7 +1032,7 @@ def change_relationship_values(
     :param int comfort: amount to change comfort, default 0
     :param int trust: amount to change trust, default 0
     :param str log: the string to append to the relationship log of cats involved
-    :param bool flip_log: If True, this will "flip" the cats used for to_cat and from_cat abbreviation replacements. This should really only be used for mutual relationship changes from events.
+    :param bool flip_log: If True, this will "flip" the cats used for cat_to and cat_from abbreviation replacements. This should really only be used for mutual relationship changes from events.
     """
 
     # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
@@ -1073,34 +1083,34 @@ def change_relationship_values(
                 log = i18n.t("relationships.relationship_log")
             if log and isinstance(log, str):
                 replace_dict = {}
-                from_cat = single_cat_to if flip_log else single_cat_from
-                to_cat = single_cat_from if flip_log else single_cat_to
-                if "from_cat" in log:
-                    replace_dict["from_cat"] = (
-                        str(from_cat.name),
-                        choice(from_cat.pronouns),
+                cat_from = single_cat_to if flip_log else single_cat_from
+                cat_to = single_cat_from if flip_log else single_cat_to
+                if "cat_from" in log:
+                    replace_dict["cat_from"] = (
+                        str(cat_from.name),
+                        choice(cat_from.pronouns),
                     )
-                if "to_cat" in log:
-                    replace_dict["to_cat"] = (
-                        str(to_cat.name),
-                        choice(to_cat.pronouns),
+                if "cat_to" in log:
+                    replace_dict["cat_to"] = (
+                        str(cat_to.name),
+                        choice(cat_to.pronouns),
                     )
                 if replace_dict:
                     processed_log = process_text(log, replace_dict)
                 else:
                     processed_log = log
 
-                if from_cat in created_rel_logs:
-                    created_rel_logs[from_cat] = "<br><br>".join(
-                        [created_rel_logs[from_cat], processed_log]
+                if single_cat_from in created_rel_logs:
+                    created_rel_logs[single_cat_from] = "<br><br>".join(
+                        [created_rel_logs[single_cat_from], processed_log]
                     )
                 else:
-                    created_rel_logs.update({from_cat: processed_log})
+                    created_rel_logs.update({single_cat_from: processed_log})
 
                 log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
-                    name=str(from_cat.name),
-                    count=from_cat.moons,
+                    name=str(single_cat_from.name),
+                    count=single_cat_from.moons,
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)

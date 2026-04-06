@@ -14,29 +14,32 @@
 			"m_c_to_r_c1": {
 				"comfort": "increase"
 			},
+			"r_c1_to_m_c": {
+				"comfort": "increase"
+			},
 			"m_c_to_r_c2": {
-				"like": "decrease"
+				"respect": "decrease"
 			},
 			"r_c1_to_r_c2": {
-				"like": "decrease"
+				"respect": "decrease"
 			},
 			"r_c2_to_m_c":{
-				"like": "decrease"
+				"comfort": "decrease"
 			},
 			"r_c2_to_r_c1":{
-				"like": "decrease"
+				"comfort": "decrease"
 			},
 			"m_c_to_r_c3": {
-				"like": "decrease"
+				"respect": "decrease"
 			},
 			"r_c1_to_r_c3": {
-				"like": "decrease"
+				"respect": "decrease"
 			},
 			"r_c3_to_m_c":{
-				"like": "decrease"
+				"comfort": "decrease"
 			},
 			"r_c3_to_r_c1":{
-				"like": "decrease"
+				"comfort": "decrease"
 			}
 		}
 	}

@@ -48,8 +48,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat listened to to_cat attentively during an herb-gathering patrol.",
-                            "cats_to": "to_cat felt a measure of confidence in from_cat's attentiveness during an herb-gathering patrol."
+                            "cats_from": "cat_from listened to cat_to attentively during an herb-gathering patrol.",
+                            "cats_to": "cat_to felt a measure of confidence in cat_from's attentiveness during an herb-gathering patrol."
                         }
                     }
                 ],
@@ -73,8 +73,8 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat found a hidden herb patch during a lesson, impressing to_cat.",
-                            "cats_to": "to_cat was impressed by from_cat's keen observation by finding a hidden herb patch."
+                            "cats_from": "cat_from found a hidden herb patch during a lesson, impressing cat_to.",
+                            "cats_to": "cat_to was impressed by cat_from's keen observation by finding a hidden herb patch."
                         }
                     }
                 ],
@@ -100,7 +100,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "Frustrated by to_cat's inattention, from_cat ended {PRONOUN/from_cat/poss} gathering lesson early."
+                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN/cat_from/poss} gathering lesson early."
                         }
                     }
                 ],
@@ -140,14 +140,14 @@
                 "frequency": 4
             },
             {
-                "text": "app1 goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
+                "text": "app1 goes to a known herb patch — but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "frequency": 1
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible.",
+                "text": "app1 goes to a known herb patch — but the plant has died! They give up and return to camp, feeling terrible.",
                 "exp": 0,
                 "frequency": 4
             }
@@ -197,14 +197,14 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat had a productive time searching an island in the swamp for herbs."
+                            "cats_from": "cat_to and cat_from had a productive time searching an island in the swamp for herbs."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
+                "text": "p_l and r_c decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -224,7 +224,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat had fun during an impromptu herb-gathering competition."
+                            "cats_from": "cat_to and cat_from had fun during an impromptu herb-gathering competition."
                         }
                     }
                 ],
@@ -250,7 +250,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat and from_cat became irritated with each other after a fruitless herb-gathering patrol."
+                            "cats_from": "cat_to and cat_from became irritated with each other after a fruitless herb-gathering patrol."
                         }
                     }
                 ],

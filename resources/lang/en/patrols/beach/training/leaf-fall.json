@@ -38,7 +38,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat speculated about the origin of a mysterious ginger cat statue on the beach."
+                            "cats_from": "cat_from and cat_to speculated about the origin of a mysterious ginger cat statue on the beach."
                         }
                     }
                 ],
@@ -62,7 +62,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat speculated about the origin of a mysterious ginger cat statue on the beach."
+                            "cats_from": "cat_from and cat_to speculated about the origin of a mysterious ginger cat statue on the beach."
                         }
                     }
                 ],
@@ -91,7 +91,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat was very impressed that to_cat knew the origin of the mysterious ginger cat statue on the beach."
+                            "cats_from": "cat_from was very impressed that cat_to knew the origin of the mysterious ginger cat statue on the beach."
                         }
                     }
                 ],
@@ -119,7 +119,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat was very impressed that to_cat knew the origin of the mysterious ginger cat statue on the beach."
+                            "cats_from": "cat_from was very impressed that cat_to knew the origin of the mysterious ginger cat statue on the beach."
                         }
                     }
                 ],
@@ -146,7 +146,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wasn't impressed that to_cat got so freaked out by a ginger cat statue {PRONOUN/to_cat/subject} ran back to camp and spoiled a training patrol."
+                            "cats_from": "cat_from wasn't impressed that cat_to got so freaked out by a ginger cat statue {PRONOUN/cat_to/subject} ran back to camp and spoiled a training patrol."
                         }
                     }
                 ],
@@ -174,7 +174,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat speculated that to_cat had something to do with the strange ginger cat statues washing up on the beach."
+                            "cats_from": "cat_from speculated that cat_to had something to do with the strange ginger cat statues washing up on the beach."
                         }
                     }
                 ],
@@ -235,7 +235,7 @@
                         "values": ["like", "respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat fell victim to to_cat's fake lizard prank."
+                            "cats_from": "cat_from fell victim to cat_to's fake lizard prank."
                         }
                     }
                 ]
@@ -255,7 +255,7 @@
                         "values": ["respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard to_cat contemplate naming a kit Legokit and thought it was a ridiculous name."
+                            "cats_from": "cat_from heard cat_to contemplate naming a kit Legokit and thought it was a ridiculous name."
                         }
                     }
                 ]
@@ -324,7 +324,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat both cheered and warmed from_cat up on a training patrol during a lesson about rescuing other cats from the water."
+                            "cats_from": "cat_to both cheered and warmed cat_from up on a training patrol during a lesson about rescuing other cats from the water."
                         }
                     },
                     {
@@ -341,7 +341,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat practiced rescuing cats from the water."
+                            "cats_from": "cat_from and cat_to practiced rescuing cats from the water."
                         }
                     }
                 ],
@@ -372,7 +372,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat listened intently to to_cat's story of how a c_n warrior rescued a kitten from the water."
+                            "cats_from": "cat_from listened intently to cat_to's story of how a c_n warrior rescued a kitten from the water."
                         }
                     },
                     {
@@ -389,7 +389,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat practiced rescuing cats from the water."
+                            "cats_from": "cat_from and cat_to practiced rescuing cats from the water."
                         }
                     }
                 ],
@@ -420,7 +420,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was convinced of the importance of learning to rescue cats from the water by to_cat's stories of ocean dancers."
+                            "cats_from": "cat_from was convinced of the importance of learning to rescue cats from the water by cat_to's stories of ocean dancers."
                         }
                     },
                     {
@@ -437,7 +437,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat practiced rescuing cats from the water."
+                            "cats_from": "cat_from and cat_to practiced rescuing cats from the water."
                         }
                     }
                 ],
@@ -464,14 +464,14 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat appreciated that to_cat was willing to cut a training session short to warm {PRONOUN/from_cat/object} up."
+                            "cats_from": "cat_from appreciated that cat_to was willing to cut a training session short to warm {PRONOUN/cat_from/object} up."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "app1 is right - this is far, far too cold of a pool to train in, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here.",
+                "text": "app1 is right — this is far, far too cold of a pool to train in, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_app",
                 "relationships": [
@@ -489,7 +489,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat thought to_cat's choice of freezing cold water for lifeguarding training was at fault for app1's shivering."
+                            "cats_from": "cat_from thought cat_to's choice of freezing cold water for lifeguarding training was at fault for app1's shivering."
                         }
                     }
                 ],

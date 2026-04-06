@@ -13,10 +13,10 @@
         "m_c has been scratching and itching all day. It seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} fleas."
     ],
     "heat exhaustion": [
-        "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat exhaustion."
+        "m_c spent too long out in the sun. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} gotten heat exhaustion."
     ],
     "heat stroke": [
-        "m_c spent too long out in the sun, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} gotten heat stroke."
+        "m_c spent too long out in the sun. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} gotten heat stroke."
     ],
     "kittencough": [
         "m_c has gotten kittencough.",
@@ -42,8 +42,7 @@
         "m_c is starving."
     ],
     "tick fever": [
-        "r_c worries over m_c, looking for any tick-heads an apprentice might have left, but {PRONOUN/r_c/subject} can only find a distinctive rash. m_c knows what it means- tick fever.",
-        "m_c's heart sinks as {PRONOUN/m_c/poss} fur starts falling out. The apprentices must have missed a tick- r_c confirms it's tick fever.",
-        "m_c complains about a new rash, going silent when r_c finds a tick-head. {PRONOUN/m_c/subject/CAP} has tick fever."
+        "m_c missed a tick while grooming, and is now suffering the consequences — {PRONOUN/m_c/subject} {VERB/m_c/have/has} tick fever.",
+        "Even if {PRONOUN/m_c/subject} can't find the exact bug responsible, m_c's new rash and fever clearly point to tick-borne illness."
     ]
     }

@@ -765,7 +765,7 @@ class Cat:
                     high_types.extend(rel_type)
                 elif tier.is_extreme_neg:
                     very_low_types.extend(rel_type)
-                elif tier.is_mid_neg and randint(1, 4) == 1:
+                elif tier.is_mid_neg and randint(1, 6) == 1:
                     very_low_types.extend(rel_type)
                 continue
 
@@ -774,7 +774,12 @@ class Cat:
                 # major grief eligible cats.
 
                 major_chance = 3
+                # the less stable the cat, the more likely to grieve
                 if cat.personality.stability < 5:
+                    major_chance -= 1
+
+                # if considered family, grief more likely
+                if family_relation != "general":
                     major_chance -= 1
 
                 # decrease major grief chance if grave herbs are used
@@ -815,7 +820,7 @@ class Cat:
                 cat.get_ill("grief stricken", event_triggered=True, severity="major")
 
             # If major grief fails, but there are still very_high or high values,
-            # it can fail to minor grief. If they have a family relation, bypass the roll.
+            # it can fail to minor grief. If they have a family relation, bypass the roll and guarantee it
             elif (very_high_types or high_types) and (
                 family_relation != "general" or not int(random() * 5)
             ):
@@ -870,6 +875,8 @@ class Cat:
             return "parent"
         elif dead_cat.is_sibling(living_cat):
             return "sibling"
+        elif dead_cat.ID in living_cat.mate:
+            return "mate"
         else:
             return "general"
 
@@ -2768,20 +2775,47 @@ class Cat:
 
                         # converting old saves
                         if "platonic_like" in rel:
+                            old_rel = rel.copy()
+                            rel = {}
+                            rel["log"] = old_rel["log"]
+                            rel["mates"] = old_rel["mates"]
+                            rel["family"] = old_rel["family"]
+                            rel["cat_to_id"] = old_rel["cat_to_id"]
+
                             # romance
-                            rel["romance"] = rel["romantic_love"]
-                            rel.pop("romantic_love")
-                            # like
-                            rel["like"] = rel["platonic_like"] - rel["dislike"]
-                            rel.pop("platonic_like")
-                            rel.pop("dislike")
-                            # respect
-                            rel["respect"] = rel["admiration"] - rel["jealousy"]
-                            rel.pop("admiration")
-                            rel.pop("jealousy")
-                            # comfort
-                            rel["comfort"] = rel["comfortable"]
-                            rel.pop("comfortable")
+                            rel["romance"] = old_rel["romantic_love"]
+
+                            # attempts to convert "complex" relationships by
+                            #   using the "negative" value for the lower of
+                            #   platonic_like/comfort and trust/admiration.
+                            # if the relationship isn't complex
+                            #   (<= 5 for negative values; this is an arbitrary value),
+                            #   then it just takes the value without considering the negative.
+                            if old_rel["platonic_like"] > old_rel["comfortable"]:
+                                rel["like"] = old_rel["platonic_like"]
+                                if old_rel["dislike"] <= 5:
+                                    rel["comfort"] = old_rel["comfortable"]
+                                else:
+                                    rel["comfort"] = -old_rel["dislike"]
+                            else:  # old_rel["platonic_like"] < old_rel["comfort"]
+                                rel["comfort"] = old_rel["comfortable"]
+                                if old_rel["dislike"] <= 5:
+                                    rel["like"] = old_rel["platonic_like"]
+                                else:
+                                    rel["like"] = -old_rel["dislike"]
+
+                            if old_rel["trust"] > old_rel["admiration"]:
+                                rel["trust"] = old_rel["trust"]
+                                if old_rel["jealousy"] <= 5:
+                                    rel["respect"] = old_rel["admiration"]
+                                else:
+                                    rel["respect"] = -old_rel["jealousy"]
+                            else:  # old_rel["trust"] < old_rel["admiration"]
+                                rel["respect"] = old_rel["admiration"]
+                                if old_rel["jealousy"] <= 5:
+                                    rel["trust"] = old_rel["trust"]
+                                else:
+                                    rel["trust"] = -old_rel["jealousy"]
 
                         # create relationship
                         new_rel = Relationship(
@@ -3370,7 +3404,6 @@ class Cat:
                 "scars": self.pelt.scars or [],
                 "accessory": self.pelt.accessory,
                 "experience": self.experience,
-                "dead_moons": self.dead_for,
                 "current_apprentice": list(self.apprentice),
                 "former_apprentices": list(self.former_apprentices),
                 "faded_offspring": self.faded_offspring,

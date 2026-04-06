@@ -56,7 +56,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c comes back to camp with a sodden kit in {PRONOUN/m_c/poss} jaws, explaining that {PRONOUN/m_c/subject} spotted {PRONOUN/n_c:0/object} floundering in the water - no parents in sight - and couldn't just leave the little scrap to die.",
+        "event_text": "m_c comes back to camp with a sodden kit in {PRONOUN/m_c/poss} jaws, explaining that {PRONOUN/m_c/subject} spotted {PRONOUN/n_c:0/object} floundering in the water — no parents in sight — and couldn't just leave the little scrap to die.",
         "m_c": {
             "age": [
                 "young adult",
@@ -83,7 +83,7 @@
                 "values": ["comfort", "like"],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat saved to_cat from drowning as a kit."
+                    "cats_from": "cat_from saved cat_to from drowning as a kit."
                 }
             },
             {
@@ -93,7 +93,7 @@
                 "values": ["trust", "like", "respect"],
                 "amount": 50,
                 "log": {
-                    "cats_from": "from_cat saved to_cat from drowning as a kit."
+                    "cats_from": "cat_from saved cat_to from drowning as a kit."
                 }
             }
         ],
@@ -139,7 +139,7 @@
                 "values": ["comfort", "like"],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat found to_cat abandoned under a rocky ledge as a kit."
+                    "cats_from": "cat_from found cat_to abandoned under a rocky ledge as a kit."
                 }
             },
             {
@@ -149,7 +149,7 @@
                 "values": ["trust", "like", "respect"],
                 "amount": 50,
                 "log": {
-                    "cats_from": "from_cat brought to_cat to the Clan after {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} abandoned as a kit."
+                    "cats_from": "cat_from brought cat_to to the Clan after {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} abandoned as a kit."
                 }
             }
         ],

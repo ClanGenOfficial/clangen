@@ -31,6 +31,79 @@
         ]
     },
     {
+        "event_id": "gen_injury_medmessup1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c mixed up the herb dosages for r_c, poisoning {PRONOUN/r_c/object}.",
+        "m_c": {
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "r_c": {},
+        "history": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "death": "m_c died after the medicine cat accidentally poisoned {PRONOUN/m_c/object}."
+            }
+        ],
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "poisoned"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_to accidentally poisoned cat_from by mixing up the herb dosages."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from's confidence in cat_to's abilities as a medicine cat was shaken after {PRONOUN/m_c/subject} accidentally poisoned r_c."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_injury_bruises_anykitten2",
         "location": [
             "any"
@@ -68,7 +141,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was amused and impressed that m_c managed to sneak out of camp."
+                    "cats_from": "cat_from was amused and impressed that m_c managed to sneak out of camp."
                 }
             }
         ]
@@ -175,7 +248,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was amused and impressed that m_c managed to sneak out of camp."
+                    "cats_from": "cat_from was amused and impressed that m_c managed to sneak out of camp."
                 }
             }
         ]
@@ -356,7 +429,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "from_cat had lots of fun play-fighting with to_cat."
+                    "cats_from": "cat_from had lots of fun play-fighting with cat_to."
                 }
             }
         ]
@@ -457,7 +530,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c spent the day tending to the dens and might have worked a bit too hard - {PRONOUN/m_c/poss} joints are now quite sore.",
+        "event_text": "m_c spent the day tending to the dens and might have worked a bit too hard — {PRONOUN/m_c/poss} joints are now quite sore.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -770,7 +843,7 @@
                 ],
                 "amount": -20,
                 "log": {
-                    "cats_from": "from_cat tried to break up to_cat's argument with a Clanmate and got a clawed pelt for {PRONOUN/from_cat/poss} trouble."
+                    "cats_from": "cat_from tried to break up cat_to's argument with a Clanmate and got a clawed pelt for {PRONOUN/cat_from/poss} trouble."
                 }
             }
         ]
@@ -850,7 +923,7 @@
                 ],
                 "amount": 25,
                 "log": {
-                    "cats_from": "to_cat leaped to from_cat's defense when {PRONOUN/to_cat/subject} saw a rogue attacking {PRONOUN/from_cat/object}."
+                    "cats_from": "cat_to leaped to cat_from's defense when {PRONOUN/cat_to/subject} saw a rogue attacking {PRONOUN/cat_from/object}."
                 }
             },
             {
@@ -956,7 +1029,7 @@
                 ],
                 "amount": 25,
                 "log": {
-                    "cats_from": "to_cat leaped to from_cat's defense when {PRONOUN/to_cat/subject} saw a dog attacking {PRONOUN/from_cat/object}."
+                    "cats_from": "cat_to leaped to cat_from's defense when {PRONOUN/cat_to/subject} saw a dog attacking {PRONOUN/cat_from/object}."
                 }
             }
         ]
@@ -1163,7 +1236,7 @@
                 "values": ["respect"],
                 "amount": -5,
                 "log": {
-                    "cats_from": "from_cat was unimpressed to hear that to_cat impulsively attacked a o_c_n patrol."
+                    "cats_from": "cat_from was unimpressed to hear that cat_to impulsively attacked a o_c_n patrol."
                 }
             }
         ]
@@ -1224,7 +1297,7 @@
                 "values": ["respect", "trust"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "from_cat saw how fiercely to_cat defended the nursery in a battle with o_c_n."
+                    "cats_from": "cat_from saw how fiercely cat_to defended the nursery in a battle with o_c_n."
                 }
             }
         ]
@@ -1356,7 +1429,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "to_cat saved from_cat's life when a hawk tried to carry {PRONOUN/from_cat/object} off."
+                    "cats_from": "cat_to saved cat_from's life when a hawk tried to carry {PRONOUN/cat_from/object} off."
                 }
             }
         ]
@@ -1701,7 +1774,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c survived a vicious eagle attack - with the claw marks to prove it!",
+        "event_text": "m_c survived a vicious eagle attack — with the claw marks to prove it!",
         "m_c": {
             "status": [
                 "kitten",
@@ -1846,7 +1919,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "from_cat and to_cat got into a fight."
+                    "cats_from": "cat_from and cat_to got into a fight."
                 }
             },
             {
@@ -1860,7 +1933,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a rogue with only a few bruises."
+                    "cats_from": "cat_from was impressed by how cat_to came out of a fight with a rogue with only a few bruises."
                 }
             }
         ]
@@ -1917,7 +1990,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a fox with only a few bruises."
+                    "cats_from": "cat_from was impressed by how cat_to came out of a fight with a fox with only a few bruises."
                 }
             }
         ]
@@ -1974,7 +2047,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a dog with only a few bruises."
+                    "cats_from": "cat_from was impressed by how cat_to came out of a fight with a dog with only a few bruises."
                 }
             }
         ]
@@ -2050,7 +2123,7 @@
                 "amount": 25,
                 "mutual": false,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from an enemy warrior, and both of them made it out without a scratch."
+                    "cats_from": "cat_to saved cat_from from an enemy warrior, and both of them made it out without a scratch."
                 }
             }
         ]
@@ -2121,7 +2194,7 @@
                 "amount": 25,
                 "mutual": false,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from a dog, and both of them made it out without a scratch."
+                    "cats_from": "cat_to saved cat_from from a dog, and both of them made it out without a scratch."
                 }
             }
         ]
@@ -2223,7 +2296,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "from_cat and to_cat got into a fight."
+                    "cats_from": "cat_from and cat_to got into a fight."
                 }
             },
             {
@@ -2237,7 +2310,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a rogue with only a few scrapes."
+                    "cats_from": "cat_from was impressed by how cat_to came out of a fight with a rogue with only a few scrapes."
                 }
             }
         ]
@@ -2294,7 +2367,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat was impressed by how to_cat came out of a fight with a fox with only a few scrapes."
+                    "cats_from": "cat_from was impressed by how cat_to came out of a fight with a fox with only a few scrapes."
                 }
             }
         ]
@@ -2369,7 +2442,7 @@
                 "amount": 25,
                 "mutual": false,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from a fox, and both of them made it out with just a few scrapes."
+                    "cats_from": "cat_to saved cat_from from a fox, and both of them made it out with just a few scrapes."
                 }
             }
         ]
@@ -2540,7 +2613,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from a fox."
+                    "cats_from": "cat_to saved cat_from from a fox."
                 }
             }
         ]
@@ -2617,7 +2690,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from a fox."
+                    "cats_from": "cat_to saved cat_from from a fox."
                 }
             },
             {
@@ -2632,7 +2705,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat gained a greater respect for to_cat's loyalty when {PRONOUN/to_cat/subject} saved r_c from a fox."
+                    "cats_from": "cat_from gained a greater respect for cat_to's loyalty when {PRONOUN/cat_to/subject} saved r_c from a fox."
                 }
             }
         ]
@@ -2707,7 +2780,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "to_cat protected from_cat from a rogue."
+                    "cats_from": "cat_to protected cat_from from a rogue."
                 }
             },
             {
@@ -2722,7 +2795,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "from_cat gained a greater respect for to_cat's loyalty when {PRONOUN/to_cat/subject} protected r_c from a rogue."
+                    "cats_from": "cat_from gained a greater respect for cat_to's loyalty when {PRONOUN/cat_to/subject} protected r_c from a rogue."
                 }
             },
             {
@@ -2817,7 +2890,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "from_cat and to_cat got into a fight."
+                    "cats_from": "cat_from and cat_to got into a fight."
                 }
             }
         ]
@@ -2954,7 +3027,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from a big dog."
+                    "cats_from": "cat_to saved cat_from from a big dog."
                 }
             }
         ]
@@ -3091,7 +3164,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from a hawk."
+                    "cats_from": "cat_to saved cat_from from a hawk."
                 }
             }
         ]
@@ -3162,7 +3235,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was injured during a harsh training exercise led by r_c."
+                    "cats_from": "cat_from was injured during a harsh training exercise led by r_c."
                 }
             }
         ]
@@ -3238,7 +3311,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was injured by a o_c_n warrior when r_c ordered {PRONOUN/from_cat/object} to cross the border."
+                    "cats_from": "cat_from was injured by a o_c_n warrior when r_c ordered {PRONOUN/cat_from/object} to cross the border."
                 }
             }
         ],
@@ -3329,7 +3402,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "to_cat encouraged a fight between from_cat and a Clanmate, and from_cat ended up injured."
+                    "cats_from": "cat_to encouraged a fight between cat_from and a Clanmate, and cat_from ended up injured."
                 }
             }
         ]
@@ -3414,7 +3487,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "While trying to follow r_c's orders, from_cat was injured by a fox."
+                    "cats_from": "While trying to follow r_c's orders, cat_from was injured by a fox."
                 }
             }
         ]
@@ -3494,7 +3567,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "While trying to follow r_c's orders, from_cat was injured by a dog."
+                    "cats_from": "While trying to follow r_c's orders, cat_from was injured by a dog."
                 }
             }
         ]
@@ -3727,7 +3800,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "to_cat encouraged an unnecessary fight between from_cat and n_c:0, and from_cat was hurt."
+                    "cats_from": "cat_to encouraged an unnecessary fight between cat_from and n_c:0, and cat_from was hurt."
                 }
             },
             {
@@ -3832,7 +3905,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "to_cat encouraged an unnecessary fight between from_cat and an enemy warrior, and from_cat was hurt."
+                    "cats_from": "cat_to encouraged an unnecessary fight between cat_from and an enemy warrior, and cat_from was hurt."
                 }
             }
         ],
@@ -3919,7 +3992,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "to_cat encouraged from_cat to attack a dog, and from_cat was hurt."
+                    "cats_from": "cat_to encouraged cat_from to attack a dog, and cat_from was hurt."
                 }
             }
         ]
@@ -4000,7 +4073,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "to_cat encouraged from_cat to attack a fox, and from_cat was hurt."
+                    "cats_from": "cat_to encouraged cat_from to attack a fox, and cat_from was hurt."
                 }
             }
         ]
@@ -4088,7 +4161,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "to_cat's harsh training left from_cat injured."
+                    "cats_from": "cat_to's harsh training left cat_from injured."
                 }
             }
         ]
@@ -4143,7 +4216,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was impressed by to_cat's hard work as of late but wished it hadn't cost to_cat some bruises."
+                    "cats_from": "cat_from was impressed by cat_to's hard work as of late but wished it hadn't cost cat_to some bruises."
                 }
             }
         ]
@@ -4321,7 +4394,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was impressed by to_cat's hard work as of late but wished it hadn't cost to_cat a sprained paw."
+                    "cats_from": "cat_from was impressed by cat_to's hard work as of late but wished it hadn't cost cat_to a sprained paw."
                 }
             }
         ]
@@ -4482,7 +4555,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was impressed by to_cat's hard work as of late but wished it hadn't cost to_cat cracked pads."
+                    "cats_from": "cat_from was impressed by cat_to's hard work as of late but wished it hadn't cost cat_to cracked pads."
                 }
             }
         ]
@@ -4537,7 +4610,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was impressed by to_cat's hard work as of late but wished it hadn't cost to_cat strained and sore muscles."
+                    "cats_from": "cat_from was impressed by cat_to's hard work as of late but wished it hadn't cost cat_to strained and sore muscles."
                 }
             }
         ]
@@ -4623,7 +4696,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "to_cat hurt from_cat for not defending the territory well enough."
+                    "cats_from": "cat_to hurt cat_from for not defending the territory well enough."
                 }
             }
         ]
@@ -4698,7 +4771,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "to_cat hurt from_cat for accidentally wandering over the border."
+                    "cats_from": "cat_to hurt cat_from for accidentally wandering over the border."
                 }
             }
         ]
@@ -4785,7 +4858,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "to_cat hurt from_cat for messing with a Twoleg object."
+                    "cats_from": "cat_to hurt cat_from for messing with a Twoleg object."
                 }
             }
         ]
@@ -4862,7 +4935,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "from_cat got hurt in training after to_cat insisted they train with their claws out."
+                    "cats_from": "cat_from got hurt in training after cat_to insisted they train with their claws out."
                 }
             }
         ]
@@ -4941,7 +5014,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "to_cat hurt from_cat as punishment for disobedience."
+                    "cats_from": "cat_to hurt cat_from as punishment for disobedience."
                 }
             }
         ]
@@ -5019,7 +5092,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "to_cat and from_cat got into a fight, and from_cat got hurt."
+                    "cats_from": "cat_to and cat_from got into a fight, and cat_from got hurt."
                 }
             }
         ]
@@ -5104,7 +5177,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "from_cat got hurt during r_c's harsh training session."
+                    "cats_from": "cat_from got hurt during r_c's harsh training session."
                 }
             }
         ]
@@ -5176,7 +5249,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "from_cat got hurt by a Twoleg trap that to_cat used for training."
+                    "cats_from": "cat_from got hurt by a Twoleg trap that cat_to used for training."
                 }
             }
         ]
@@ -5732,7 +5805,7 @@
                 ],
                 "amount": -20,
                 "log": {
-                    "cats_from": "from_cat and to_cat got into a vicious fight."
+                    "cats_from": "cat_from and cat_to got into a vicious fight."
                 }
             }
         ],
@@ -5874,7 +5947,7 @@
                 ],
                 "amount": -25,
                 "log": {
-                    "cats_from": "from_cat was maimed by to_cat for questioning {PRONOUN/to_cat/poss} leadership."
+                    "cats_from": "cat_from was maimed by cat_to for questioning {PRONOUN/cat_to/poss} leadership."
                 }
             }
         ]
@@ -6043,7 +6116,7 @@
                 ],
                 "amount": -25,
                 "log": {
-                    "cats_from": "from_cat was hurt by to_cat for disobeying orders."
+                    "cats_from": "cat_from was hurt by cat_to for disobeying orders."
                 }
             }
         ]
@@ -6120,7 +6193,7 @@
                 ],
                 "amount": -25,
                 "log": {
-                    "cats_from": "from_cat was hurt by to_cat for speaking out against {PRONOUN/to_cat/object}."
+                    "cats_from": "cat_from was hurt by cat_to for speaking out against {PRONOUN/cat_to/object}."
                 }
             }
         ]
@@ -6195,7 +6268,7 @@
                 ],
                 "amount": -25,
                 "log": {
-                    "cats_from": "from_cat was hurt by to_cat to make an example of {PRONOUN/from_cat/object}."
+                    "cats_from": "cat_from was hurt by cat_to to make an example of {PRONOUN/cat_from/object}."
                 }
             }
         ]
@@ -6268,7 +6341,7 @@
             "newleaf"
         ],
         "frequency": 4,
-        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} {VERB/m_c/bend/bends} down and {VERB/m_c/take/takes} a big bite-- Yowch! A bee! {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} home with a swollen face...",
+        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} {VERB/m_c/bend/bends} down and {VERB/m_c/take/takes} a big bite- — Yowch! A bee! {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} home with a swollen face...",
         "m_c": {
             "age": [
                 "any"
@@ -6558,6 +6631,87 @@
         ]
     },
     {
+        "event_id": "gen_injury_sorethroat_anyany",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c almost choked on a prey-bone, but r_c hit {PRONOUN/m_c/poss} back hard enough to make it fly out. m_c can taste blood at the back of {PRONOUN/m_c/poss} throat; the bone must have nicked {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "-kitten",
+                "-adolescent"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "values": ["respect", "trust"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_to saved cat_from from choking on a prey-bone."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_drownedbyaduck",
+        "location": ["beach", "forest", "wetlands"],
+        "season": ["-leaf-bare"],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 1,
+        "event_text": "m_c fought with a duck in the water, trying to kill it for the fresh-kill pile, but was knocked below the surface of the water and inhaled a lot of water.",
+        "m_c": {
+            "rank": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died from water in {PRONOUN/m_c/poss} lungs after a fight with a duck."
+            }
+        ]
+    },
+    {
         "event_id": "gen_injury_mangledleg_anymultistatusnotcareful1",
         "location": [
             "any"
@@ -6687,7 +6841,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "to_cat took a blow meant for from_cat in a fight with o_c_n."
+                    "cats_from": "cat_to took a blow meant for cat_from in a fight with o_c_n."
                 }
             }
         ],
@@ -6771,7 +6925,7 @@
                 "values": ["respect"],
                 "amount": 8,
                 "log": {
-                    "cats_from": "from_cat saw to_cat defend the fresh-kill pile from a horde of rats."
+                    "cats_from": "cat_from saw cat_to defend the fresh-kill pile from a horde of rats."
                 }
             }
         ]
@@ -6830,7 +6984,7 @@
                 "values": ["respect"],
                 "amount": 8,
                 "log": {
-                    "cats_from": "from_cat saw to_cat defend the fresh-kill pile from a horde of rats."
+                    "cats_from": "cat_from saw cat_to defend the fresh-kill pile from a horde of rats."
                 }
             }
         ]
@@ -6959,7 +7113,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat heard that to_cat tried to bring herbs to o_c_n, even during a war."
+                    "cats_from": "cat_from heard that cat_to tried to bring herbs to o_c_n, even during a war."
                 }
             },
             {
@@ -6969,7 +7123,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat wasn't happy to hear that to_cat tried to bring herbs to o_c_n, even during a war."
+                    "cats_from": "cat_from wasn't happy to hear that cat_to tried to bring herbs to o_c_n, even during a war."
                 }
             }
         ]
@@ -7040,7 +7194,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat heard that to_cat tried to bring herbs to o_c_n, even during a war."
+                    "cats_from": "cat_from heard that cat_to tried to bring herbs to o_c_n, even during a war."
                 }
             },
             {
@@ -7050,7 +7204,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat heard that to_cat tried to bring herbs to o_c_n, even though c_n's own herb stores were low."
+                    "cats_from": "cat_from heard that cat_to tried to bring herbs to o_c_n, even though c_n's own herb stores were low."
                 }
             }
         ]
@@ -7267,7 +7421,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat heard that to_cat saved an enemy warrior during a fight."
+                    "cats_from": "cat_from heard that cat_to saved an enemy warrior during a fight."
                 }
             }
         ]

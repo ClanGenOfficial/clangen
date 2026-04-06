@@ -41,7 +41,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about spotted towhees."
+                            "cats_from": "cat_from taught cat_to about spotted towhees."
                         }
                     },
                     {
@@ -58,7 +58,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about spotted towhees."
+                            "cats_from": "cat_to taught cat_from about spotted towhees."
                         }
                     }
                 ],
@@ -82,7 +82,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about spotted towhees."
+                            "cats_from": "cat_from taught cat_to about spotted towhees."
                         }
                     },
                     {
@@ -99,7 +99,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about spotted towhees."
+                            "cats_from": "cat_to taught cat_from about spotted towhees."
                         }
                     }
                 ],
@@ -131,7 +131,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat told to_cat the story of how a towhee stole a StarClan cat's voice."
+                            "cats_from": "cat_from told cat_to the story of how a towhee stole a StarClan cat's voice."
                         }
                     },
                     {
@@ -148,7 +148,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat told from_cat the story of how a towhee stole a StarClan cat's voice."
+                            "cats_from": "cat_to told cat_from the story of how a towhee stole a StarClan cat's voice."
                         }
                     }
                 ],
@@ -178,7 +178,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about how spotted towhees imitate cats' meows."
+                            "cats_from": "cat_from taught cat_to about how spotted towhees imitate cats' meows."
                         }
                     },
                     {
@@ -195,7 +195,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about how spotted towhees imitate cats' meows."
+                            "cats_from": "cat_to taught cat_from about how spotted towhees imitate cats' meows."
                         }
                     }
                 ],
@@ -264,7 +264,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about spotted towhees."
+                            "cats_from": "cat_from taught cat_to about spotted towhees."
                         }
                     },
                     {
@@ -281,7 +281,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about spotted towhees."
+                            "cats_from": "cat_to taught cat_from about spotted towhees."
                         }
                     }
                 ],
@@ -305,7 +305,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about spotted towhees."
+                            "cats_from": "cat_from taught cat_to about spotted towhees."
                         }
                     },
                     {
@@ -322,7 +322,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about spotted towhees."
+                            "cats_from": "cat_to taught cat_from about spotted towhees."
                         }
                     }
                 ],
@@ -354,7 +354,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat told to_cat the story of how a towhee stole a StarClan cat's voice."
+                            "cats_from": "cat_from told cat_to the story of how a towhee stole a StarClan cat's voice."
                         }
                     },
                     {
@@ -371,7 +371,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat told from_cat the story of how a towhee stole a StarClan cat's voice."
+                            "cats_from": "cat_to told cat_from the story of how a towhee stole a StarClan cat's voice."
                         }
                     }
                 ],
@@ -401,7 +401,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about how spotted towhees imitate cats' meows."
+                            "cats_from": "cat_from taught cat_to about how spotted towhees imitate cats' meows."
                         }
                     },
                     {
@@ -418,7 +418,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about how spotted towhees imitate cats' meows."
+                            "cats_from": "cat_to taught cat_from about how spotted towhees imitate cats' meows."
                         }
                     }
                 ],

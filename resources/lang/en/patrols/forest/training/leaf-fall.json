@@ -20,7 +20,7 @@
             "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
-        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
+        "intro_text": "p_l thinks r_c is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
         "relationship_constraint": [
@@ -43,7 +43,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the colorful leaf-fall forest together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the colorful leaf-fall forest together."
                         }
                     }
                 ],
@@ -64,7 +64,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the colorful leaf-fall forest together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the colorful leaf-fall forest together."
                         }
                     }
                 ],
@@ -100,7 +100,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out - and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone.",
+                "text": "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out — and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -170,7 +170,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun tussling in the piles of leaf-fall leaves."
+                            "cats_from": "cat_from and cat_to had fun tussling in the piles of leaf-fall leaves."
                         }
                     }
                 ],
@@ -229,7 +229,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun tussling in the piles of leaf-fall leaves."
+                            "cats_from": "cat_from and cat_to had fun tussling in the piles of leaf-fall leaves."
                         }
                     },
                     {
@@ -245,7 +245,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat got quite close when app1 knocked p_l into r_c."
+                            "cats_from": "cat_from and cat_to got quite close when app1 knocked p_l into r_c."
                         }
                     }
                 ],
@@ -306,7 +306,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had fun tussling and flirting in the piles of leaf-fall leaves."
+                            "cats_from": "cat_from and cat_to had fun tussling and flirting in the piles of leaf-fall leaves."
                         }
                     },
                     {
@@ -322,7 +322,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat were amused to see app1 and app2 flirting on patrol."
+                            "cats_from": "cat_from and cat_to were amused to see app1 and app2 flirting on patrol."
                         }
                     }
                 ],

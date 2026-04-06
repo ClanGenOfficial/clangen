@@ -44,8 +44,8 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was proud of to_cat's attentiveness when from_cat showed to_cat where to find herbs below ground.",
-                            "cats_to": "from_cat learned from to_cat about where to find herbs below ground."
+                            "cats_from": "cat_from was proud of cat_to's attentiveness when cat_from showed cat_to where to find herbs below ground.",
+                            "cats_to": "cat_from learned from cat_to about where to find herbs below ground."
                         }
                     }
                 ],
@@ -72,8 +72,8 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat was able to locate some unusual herbs below ground.",
-                            "cats_to": "from_cat learned from to_cat about where to find herbs below ground."
+                            "cats_from": "cat_from was impressed by how cat_to was able to locate some unusual herbs below ground.",
+                            "cats_to": "cat_from learned from cat_to about where to find herbs below ground."
                         }
                     }
                 ],
@@ -99,7 +99,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat wasn't happy with to_cat's inattention during a training session."
+                            "cats_from": "cat_from wasn't happy with cat_to's inattention during a training session."
                         }
                     }
                 ],
@@ -139,7 +139,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} find a smaller overlooked patch that still has leaves on it.",
+                "text": "app1 goes to a known herb patch — but the plant has died! {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} give up, hunting around in the area until {PRONOUN/app1/subject} find a smaller overlooked patch that still has leaves on it.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -149,7 +149,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 goes to a known herb patch - but the plant has died! {PRONOUN/app1/subject/CAP} give up and return to camp, feeling terrible.",
+                "text": "app1 goes to a known herb patch — but the plant has died! {PRONOUN/app1/subject/CAP} give up and return to camp, feeling terrible.",
                 "exp": 0,
                 "frequency": 4
             }
@@ -196,7 +196,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat consulted StarClan on c_n's future."
+                            "cats_from": "cat_from heard that cat_to consulted StarClan on c_n's future."
                         }
                     }
                 ],
@@ -282,7 +282,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat questioned if to_cat's connection to StarClan is really that strong."
+                            "cats_from": "cat_from questioned if cat_to's connection to StarClan is really that strong."
                         }
                     }
                 ],
@@ -343,7 +343,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat spent a whole day searching for lungwort and celebrated when they finally found it."
+                            "cats_from": "cat_from and cat_to spent a whole day searching for lungwort and celebrated when they finally found it."
                         }
                     }
                 ],
@@ -400,7 +400,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat gained an appreciation for to_cat's talents in hunting down rare herbs when they searched for lungwort together."
+                            "cats_from": "cat_from gained an appreciation for cat_to's talents in hunting down rare herbs when they searched for lungwort together."
                         }
                     }
                 ],
@@ -410,7 +410,7 @@
                 "frequency": 4
             },
             {
-                "text": "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
+                "text": "Night falls, and still s_c insists they keep going — lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "stat_trait": [
                     "thoughtful",
@@ -433,7 +433,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat gained an appreciation for to_cat's perseverance when they searched for lungwort together."
+                            "cats_from": "cat_from gained an appreciation for cat_to's perseverance when they searched for lungwort together."
                         }
                     }
                 ],
@@ -462,7 +462,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat wasn't pleased by how distracted to_cat was when they trying to find lungwort."
+                            "cats_from": "cat_from wasn't pleased by how distracted cat_to was when they trying to find lungwort."
                         }
                     }
                 ],
@@ -522,7 +522,7 @@
                 "frequency": 4
             },
             {
-                "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
+                "text": "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going — {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves.",
                 "exp": 20,
                 "stat_trait": [
                     "thoughtful",
@@ -545,7 +545,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat noticed to_cat left camp for a long time to scour the territory for herbs."
+                            "cats_from": "cat_from noticed cat_to left camp for a long time to scour the territory for herbs."
                         }
                     }
                 ],
@@ -617,7 +617,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat gained a greater respect for to_cat's role after seeing {PRONOUN/to_cat/object} persevere in a search for lungwort."
+                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN/cat_to/object} persevere in a search for lungwort."
                         }
                     },
                     {
@@ -633,7 +633,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat's help in searching for lungwort."
+                            "cats_from": "cat_from appreciated cat_to's help in searching for lungwort."
                         }
                     }
                 ],
@@ -661,7 +661,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat gained a greater respect for to_cat's role after seeing {PRONOUN/to_cat/object} persevere in a search for lungwort."
+                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN/cat_to/object} persevere in a search for lungwort."
                         }
                     },
                     {
@@ -677,7 +677,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat's help in searching for lungwort."
+                            "cats_from": "cat_from appreciated cat_to's help in searching for lungwort."
                         }
                     }
                 ],
@@ -708,7 +708,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat gained a greater respect for to_cat's role after seeing {PRONOUN/to_cat/poss} clever mind at work in a search for lungwort."
+                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN/cat_to/poss} clever mind at work in a search for lungwort."
                         }
                     },
                     {
@@ -724,14 +724,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat's help in searching for lungwort."
+                            "cats_from": "cat_from appreciated cat_to's help in searching for lungwort."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
+                "text": "Night falls, and still s_c insists they keep going — they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves.",
                 "exp": 20,
                 "herbs": [
                     "many_herbs",
@@ -758,7 +758,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat gained a greater respect for to_cat's role after seeing {PRONOUN/to_cat/object} persevere into nightfall during a search for lungwort."
+                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN/cat_to/object} persevere into nightfall during a search for lungwort."
                         }
                     },
                     {
@@ -774,7 +774,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat's help in searching for lungwort."
+                            "cats_from": "cat_from appreciated cat_to's help in searching for lungwort."
                         }
                     }
                 ],
@@ -803,7 +803,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was furious with to_cat for sidetracking an herb-gathering patrol with childish questions."
+                            "cats_from": "cat_from was furious with cat_to for sidetracking an herb-gathering patrol with childish questions."
                         }
                     }
                 ],
@@ -871,8 +871,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was curious about herbs and enjoyed learning from to_cat.",
-                            "cats_to": "from_cat was pleased by the interest to_cat showed in the herbs they were gathering."
+                            "cats_from": "cat_from was curious about herbs and enjoyed learning from cat_to.",
+                            "cats_to": "cat_from was pleased by the interest cat_to showed in the herbs they were gathering."
                         }
                     }
                 ],
@@ -904,7 +904,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat felt completely carefree and at ease with each other."
+                            "cats_from": "cat_from and cat_to felt completely carefree and at ease with each other."
                         }
                     }
                 ],
@@ -931,7 +931,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a tense herb-gathering patrol when they discovered they don't have much in common."
+                            "cats_from": "cat_from and cat_to had a tense herb-gathering patrol when they discovered they don't have much in common."
                         }
                     }
                 ],
@@ -963,7 +963,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat found gathering herbs with to_cat completely unbearable because of to_cat's childish behavior."
+                            "cats_from": "cat_from found gathering herbs with cat_to completely unbearable because of cat_to's childish behavior."
                         }
                     }
                 ],
@@ -1055,7 +1055,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat felt completely carefree and at ease with each other."
+                            "cats_from": "cat_from and cat_to felt completely carefree and at ease with each other."
                         }
                     }
                 ],
@@ -1082,7 +1082,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a tense herb-gathering patrol when they discovered they don't have much in common."
+                            "cats_from": "cat_from and cat_to had a tense herb-gathering patrol when they discovered they don't have much in common."
                         }
                     }
                 ],
@@ -1114,7 +1114,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat found gathering herbs with to_cat completely unbearable because of to_cat's childish behavior."
+                            "cats_from": "cat_from found gathering herbs with cat_to completely unbearable because of cat_to's childish behavior."
                         }
                     }
                 ],
@@ -1166,14 +1166,14 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was proud of to_cat for persevering during a hot herb-gathering patrol."
+                            "cats_from": "cat_from was proud of cat_to for persevering during a hot herb-gathering patrol."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
+                "text": "p_l and r_c decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -1193,7 +1193,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed a friendly competition while gathering herbs."
+                            "cats_from": "cat_from and cat_to enjoyed a friendly competition while gathering herbs."
                         }
                     }
                 ],
@@ -1219,7 +1219,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were short with each other after failing to gathering any herbs."
+                            "cats_from": "cat_from and cat_to were short with each other after failing to gathering any herbs."
                         }
                     }
                 ],

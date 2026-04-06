@@ -165,7 +165,7 @@
                 "values": ["comfort"],
                 "amount": -10,
                 "log": {
-                    "cats_from": "from_cat was too slow to save to_cat from an owl."
+                    "cats_from": "cat_from was too slow to save cat_to from an owl."
                 }
             }
         ]

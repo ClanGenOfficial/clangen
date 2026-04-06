@@ -35,7 +35,7 @@
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat and to_cat had a fun hunt on a hot greenleaf day."
+                        "cats_from": "cat_from and cat_to had a fun hunt on a hot greenleaf day."
                     }
                 }
             ],
@@ -56,7 +56,7 @@
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat and to_cat had a fun hunt on a hot greenleaf day."
+                        "cats_from": "cat_from and cat_to had a fun hunt on a hot greenleaf day."
                     }
                 }
             ],
@@ -76,7 +76,7 @@
                     "amount": -3,
                     "log":
                     {
-                        "cats_from": "from_cat and to_cat gave up on a hunt because of the weather."
+                        "cats_from": "cat_from and cat_to gave up on a hunt because of the weather."
                     }
                 }
             ],

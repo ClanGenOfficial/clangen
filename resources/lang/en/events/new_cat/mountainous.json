@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c found an injured loner while out on a walk - clearly, {PRONOUN/n_c:0/subject}'d been attacked by an eagle. {PRONOUN/m_c/subject/CAP} rushes {PRONOUN/n_c:0/object} back to camp to be treated.",
+        "event_text": "m_c found an injured loner while out on a walk — clearly, {PRONOUN/n_c:0/subject}'d been attacked by an eagle. {PRONOUN/m_c/subject/CAP} rushes {PRONOUN/n_c:0/object} back to camp to be treated.",
         "m_c": {
             "age": [
                 "young adult",

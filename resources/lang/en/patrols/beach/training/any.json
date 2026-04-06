@@ -35,7 +35,7 @@
                         "amount": 10,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat learned about hunting in tide pools from to_cat."
+                            "cats_from": "cat_from learned about hunting in tide pools from cat_to."
                         }
                     }
                 ]
@@ -52,7 +52,7 @@
                         "amount": 10,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat learned about hunting in tide pools from to_cat."
+                            "cats_from": "cat_from learned about hunting in tide pools from cat_to."
                         }
                     }
                 ]
@@ -79,7 +79,7 @@
                         "amount": 10,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat learned about hunting in tide pools from to_cat."
+                            "cats_from": "cat_from learned about hunting in tide pools from cat_to."
                         }
                     },
                     {
@@ -89,7 +89,7 @@
                         "amount": 8,
                         "mutual": false,
                         "log": {
-                            "cats_from": "While practicing hunting in tide pools, from_cat discovered to_cat is a quick study."
+                            "cats_from": "While practicing hunting in tide pools, cat_from discovered cat_to is a quick study."
                         }
                     }
                 ]
@@ -121,7 +121,7 @@
                         "amount": -3,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat's afternoon was ruined by to_cat goofing off during hunting training."
+                            "cats_from": "cat_from's afternoon was ruined by cat_to goofing off during hunting training."
                         }
                     }
                 ]
@@ -160,7 +160,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/lag/lags} behind on patrol, the dune r_c's crossing shifts beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/lag/lags} behind on patrol, the dune r_c's crossing shifts beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -178,7 +178,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat helped rescue from_cat when sand caved in under {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to helped rescue cat_from when sand caved in under {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -196,7 +196,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when sand caved in under {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to rescued cat_from when sand caved in under {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -213,7 +213,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when sand caved in under {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to rescued cat_from when sand caved in under {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -233,7 +233,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when sand caved in under {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to rescued cat_from when sand caved in under {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -258,7 +258,7 @@
                         "values": [ "like", "comfort", "trust" ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat kept from_cat calm when sand caved in under {PRONOUN/r_c/object}."
+                            "cats_from": "cat_to kept cat_from calm when sand caved in under {PRONOUN/r_c/object}."
                         }
                     }
                 ],
@@ -277,7 +277,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when sand caved in under {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to rescued cat_from when sand caved in under {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -304,7 +304,7 @@
                         "values": ["like", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} out for it."
+                            "cats_from": "cat_from got stuck on patrol, and cat_to chewed {PRONOUN/cat_from/object} out for it."
                         }
                     },
                     {
@@ -314,7 +314,7 @@
                         "values": ["like", "respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat got stuck on patrol, and from_cat had no patience for it."
+                            "cats_from": "cat_to got stuck on patrol, and cat_from had no patience for it."
                         }
                     }
                 ],
@@ -408,7 +408,7 @@
         "max_cats": 2,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "As r_c trails behind p_l, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "intro_text": "As r_c trails behind p_l, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -510,7 +510,7 @@
                         "values": ["trust", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat when sand caved in under {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to rescued cat_from when sand caved in under {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -540,7 +540,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat got stuck on patrol, and to_cat chewed {PRONOUN/from_cat/object} out for it."
+                            "cats_from": "cat_from got stuck on patrol, and cat_to chewed {PRONOUN/cat_from/object} out for it."
                         }
                     },
                     {
@@ -550,7 +550,7 @@
                         "values": ["romance", "like", "respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat got stuck on patrol, and from_cat had no patience for it."
+                            "cats_from": "cat_to got stuck on patrol, and cat_from had no patience for it."
                         }
                     }
                 ],
@@ -606,7 +606,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "frequency": 1,
-        "intro_text": "r_c is training alone out on the coast when suddenly, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing on shifts beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing - just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
+        "intro_text": "r_c is training alone out on the coast when suddenly, the dune {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} standing on shifts beneath {PRONOUN/r_c/poss} paws. {PRONOUN/r_c/subject/CAP} {VERB/r_c/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c/object} and the world goes dark.",
         "decline_text": "Thankfully, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} on the edge of the obstruction and {VERB/r_c/wriggle/wriggles} {PRONOUN/r_c/poss} way clear.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -776,7 +776,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators - it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels like work though, and it isn't the peaceful break {PRONOUN/r_c/subject} hoped for.",
+                "text": "r_c heads off to map out a field of sand dunes {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/r_c/poss} home turf. It's always worth making sure {PRONOUN/r_c/poss} mental map is up to date. It feels like work though, and it isn't the peaceful break {PRONOUN/r_c/subject} hoped for.",
                 "exp": 20,
                 "frequency": 4
             },
@@ -910,7 +910,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat learned about octopi from to_cat."
+                            "cats_from": "cat_from learned about octopi from cat_to."
                         }
                     },
                     {
@@ -922,7 +922,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about octopi."
+                            "cats_from": "cat_to taught cat_from about octopi."
                         }
                     }
                 ],
@@ -946,7 +946,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat learned about octopi from to_cat."
+                            "cats_from": "cat_from learned about octopi from cat_to."
                         }
                     },
                     {
@@ -958,7 +958,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about octopi."
+                            "cats_from": "cat_to taught cat_from about octopi."
                         }
                     }
                 ],
@@ -986,7 +986,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat learned about octopi from to_cat with a story about a Dark Forest cat being turned into an octopus."
+                            "cats_from": "cat_from learned about octopi from cat_to with a story about a Dark Forest cat being turned into an octopus."
                         }
                     },
                     {
@@ -998,7 +998,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about octopi with a story about a Dark Forest cat being turned into an octopus."
+                            "cats_from": "cat_to taught cat_from about octopi with a story about a Dark Forest cat being turned into an octopus."
                         }
                     }
                 ],
@@ -1024,7 +1024,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat warned from_cat about how dangerous octopi can be."
+                            "cats_from": "cat_to warned cat_from about how dangerous octopi can be."
                         }
                     },
                     {
@@ -1036,7 +1036,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat warned to_cat about how dangerous octopi can be."
+                            "cats_from": "cat_from warned cat_to about how dangerous octopi can be."
                         }
                     }
                 ],
@@ -1061,7 +1061,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat goofed off during a lesson about octopi, irritating from_cat."
+                            "cats_from": "cat_to goofed off during a lesson about octopi, irritating cat_from."
                         }
                     }
                 ],
@@ -1084,7 +1084,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into an argument while p_l tried to teach app1 about octopi."
+                            "cats_from": "cat_from and cat_to got into an argument while p_l tried to teach app1 about octopi."
                         }
                     }
                 ],
@@ -1130,7 +1130,7 @@
                         "values": ["trust", "respect"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about octopi."
+                            "cats_from": "cat_to taught cat_from about octopi."
                         }
                     },
                     {
@@ -1141,7 +1141,7 @@
                         "values": ["comfort", "respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about octopi."
+                            "cats_from": "cat_from taught cat_to about octopi."
                         }
                     }
                 ],
@@ -1161,7 +1161,7 @@
                         "values": ["trust", "respect"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about octopi."
+                            "cats_from": "cat_to taught cat_from about octopi."
                         }
                     },
                     {
@@ -1172,7 +1172,7 @@
                         "values": ["comfort", "respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about octopi."
+                            "cats_from": "cat_from taught cat_to about octopi."
                         }
                     }
                 ],
@@ -1197,7 +1197,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about octopi with a story about a Dark Forest Cat."
+                            "cats_from": "cat_to taught cat_from about octopi with a story about a Dark Forest Cat."
                         }
                     },
                     {
@@ -1207,7 +1207,7 @@
                         "values": ["respect", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about octopi with a story about a Dark Forest cat."
+                            "cats_from": "cat_from taught cat_to about octopi with a story about a Dark Forest cat."
                         }
                     },
                     {
@@ -1217,7 +1217,7 @@
                         "values": ["like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat wondered at p_l's story about a Dark Forest cat who became an octopus."
+                            "cats_from": "cat_from and cat_to wondered at p_l's story about a Dark Forest cat who became an octopus."
                         }
                     }
                 ],
@@ -1240,7 +1240,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about octopi and showed {PRONOUN/from_cat/object} how it can be dangerous in a fight."
+                            "cats_from": "cat_to taught cat_from about octopi and showed {PRONOUN/cat_from/object} how it can be dangerous in a fight."
                         }
                     },
                     {
@@ -1250,7 +1250,7 @@
                         "values": ["respect", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about octopi and showed {PRONOUN/from_cat/object} how it can be dangerous in a fight."
+                            "cats_from": "cat_from taught cat_to about octopi and showed {PRONOUN/cat_from/object} how it can be dangerous in a fight."
                         }
                     }
                 ],
@@ -1290,7 +1290,7 @@
                         "values": ["like", "comfort"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat goofed off together during p_l's lesson about octopi."
+                            "cats_from": "cat_from and cat_to goofed off together during p_l's lesson about octopi."
                         }
                     }
                 ],
@@ -1311,7 +1311,7 @@
                         "values": ["trust", "comfort"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat and to_cat got into an argument when p_l tried to teach app1 about how dangerous octopi can be."
+                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach app1 about how dangerous octopi can be."
                         }
                     },
                     {
@@ -1374,7 +1374,7 @@
                         "values": ["romance", "like"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat and to_cat watched waves break against the cliff, just the two of them."
+                            "cats_from": "cat_from and cat_to watched waves break against the cliff, just the two of them."
                         }
                     }
                 ],
@@ -1395,7 +1395,7 @@
                         "values": ["romance", "like"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat and to_cat watched waves break against the cliff during a storm and snuggled for warmth."
+                            "cats_from": "cat_from and cat_to watched waves break against the cliff during a storm and snuggled for warmth."
                         }
                     }
                 ],
@@ -1429,7 +1429,7 @@
                         "values": ["romance", "like"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "app1 met with app2 to spend time together - just the two of them."
+                            "cats_from": "app1 met with app2 to spend time together — just the two of them."
                         }
                     }
                 ],
@@ -1448,7 +1448,7 @@
                         "values": ["romance", "like"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat was confused and annoyed when to_cat asked to meet alone and then ran off."
+                            "cats_from": "cat_from was confused and annoyed when cat_to asked to meet alone and then ran off."
                         }
                     },
                     {
@@ -1458,7 +1458,7 @@
                         "values": ["comfort"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat wanted to meet to_cat alone, but lost {PRONOUN/from_cat/poss} nerve and ran off."
+                            "cats_from": "cat_from wanted to meet cat_to alone, but lost {PRONOUN/cat_from/poss} nerve and ran off."
                         }
                     }
                 ],
@@ -1475,7 +1475,7 @@
                         "values": ["romance", "comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wanted to show to_cat how the waves crash against the cliffs during a storm, but to_cat refused the offer."
+                            "cats_from": "cat_from wanted to show cat_to how the waves crash against the cliffs during a storm, but cat_to refused the offer."
                         }
                     }
                 ],
@@ -1524,7 +1524,7 @@
                         "values": ["romance", "like"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat and to_cat tussled and played, enjoying some time alone together."
+                            "cats_from": "cat_from and cat_to tussled and played, enjoying some time alone together."
                         }
                     }
                 ],
@@ -1545,7 +1545,7 @@
                         "values": ["romance", "like"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat and to_cat found a hermit crab and chased it around together."
+                            "cats_from": "cat_from and cat_to found a hermit crab and chased it around together."
                         }
                     }
                 ],
@@ -1650,7 +1650,7 @@
                         "values": ["romance", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed a romantic evening training session together."
+                            "cats_from": "cat_from and cat_to enjoyed a romantic evening training session together."
                         }
                     }
                 ],
@@ -1671,7 +1671,7 @@
                         "values": ["romance", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed a romantic evening training session together."
+                            "cats_from": "cat_from and cat_to enjoyed a romantic evening training session together."
                         }
                     }
                 ],
@@ -1730,7 +1730,7 @@
                         "values": ["romance", "like"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat had so much fun training alone with to_cat that {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} surprised by how late it got.",
+                            "cats_from": "cat_from had so much fun training alone with cat_to that {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} surprised by how late it got.",
                             "cats_to": "p_l was happy to have s_c all to {PRONOUN/p_l/self} during a romantic evening training session."
                         }
                     }
@@ -1750,7 +1750,7 @@
                         "values": [ "romance", "like", "comfort" ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat realized to_cat may have had ulterior motives in asking to train alone together."
+                            "cats_from": "cat_from realized cat_to may have had ulterior motives in asking to train alone together."
                         }
                     }
                 ],
@@ -1767,7 +1767,7 @@
                         "values": [ "romance", "like" ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat's romantic evening training session was cut short when tempers flared."
+                            "cats_from": "cat_from and cat_to's romantic evening training session was cut short when tempers flared."
                         }
                     }
                 ],
@@ -1817,7 +1817,7 @@
                             "romance", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat found tiny sparkly crabs and ate them, enjoying a glowing night on the beach together."
+                            "cats_from": "cat_from and cat_to found tiny sparkly crabs and ate them, enjoying a glowing night on the beach together."
                         }
                     }
                 ],
@@ -1839,7 +1839,7 @@
                             "romance", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat watched light ripple through the waves of the sea at night and cuddled to stay warm."
+                            "cats_from": "cat_from and cat_to watched light ripple through the waves of the sea at night and cuddled to stay warm."
                         }
                     }
                 ],
@@ -1875,7 +1875,7 @@
                             "romance", "like"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat watched light ripple through the waves of the sea at night and cuddled to stay warm."
+                            "cats_from": "cat_from and cat_to watched light ripple through the waves of the sea at night and cuddled to stay warm."
                         }
                     }
                 ],
@@ -1932,14 +1932,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "As irritating as they find each other, from_cat and to_cat enjoyed one-upping each other in training."
+                            "cats_from": "As irritating as they find each other, cat_from and cat_to enjoyed one-upping each other in training."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are - this goes on all afternoon.",
+                "text": "r_c shows off how far {PRONOUN/r_c/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c shows off how sharp {PRONOUN/r_c/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c shows off how long {PRONOUN/r_c/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are — this goes on all afternoon.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -1951,7 +1951,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "As irritating as they find each other, from_cat and to_cat enjoyed one-upping each other in training."
+                            "cats_from": "As irritating as they find each other, cat_from and cat_to enjoyed one-upping each other in training."
                         }
                     }
                 ],
@@ -1976,7 +1976,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a stiffly polite training session together."
+                            "cats_from": "cat_from and cat_to had a stiffly polite training session together."
                         }
                     }
                 ],
@@ -2026,7 +2026,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was touched by to_cat's story of how dolphins saved a tiny white and red cat."
+                            "cats_from": "cat_from was touched by cat_to's story of how dolphins saved a tiny white and red cat."
                         }
                     }
                 ],
@@ -2050,7 +2050,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was touched by to_cat's story of how dolphins saved a tiny white and red cat."
+                            "cats_from": "cat_from was touched by cat_to's story of how dolphins saved a tiny white and red cat."
                         }
                     }
                 ],
@@ -2203,7 +2203,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about how sea otters came to be."
+                            "cats_from": "cat_from enjoyed cat_to's story about how sea otters came to be."
                         }
                     }
                 ],
@@ -2239,7 +2239,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated that to_cat promised to wait to tell {PRONOUN/to_cat/poss} story until from_cat was able to listen."
+                            "cats_from": "cat_from appreciated that cat_to promised to wait to tell {PRONOUN/cat_to/poss} story until cat_from was able to listen."
                         }
                     }
                 ],
@@ -2271,11 +2271,11 @@
         "pl_skill_constraint": [
             "LORE,1"
         ],
-        "intro_text": "p_l notices app1 fall awkwardly again and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the Fox Warrior - have they heard this piece of Clan history?",
+        "intro_text": "p_l notices app1 fall awkwardly again and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the Fox Warrior — have they heard this piece of Clan history?",
         "decline_text": "app1, surly and embarrassed, stalks off away from the training grounds before p_l can offer the comfort of {PRONOUN/p_l/poss} story.",
         "success_outcomes": [
             {
-                "text": "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion - a true warrior, never forgotten.",
+                "text": "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion — a true warrior, never forgotten.",
                 "exp": 30,
                 "art": "gen_hunt_vision",
                 "relationships": [
@@ -2293,7 +2293,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the Fox Warrior."
+                            "cats_from": "cat_from enjoyed cat_to's story about the Fox Warrior."
                         }
                     }
                 ],
@@ -2302,7 +2302,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 can't sit still and listen to p_l's story, not when {PRONOUN/app1/poss} ego's smarting from {PRONOUN/app1/poss} failures. p_l doesn't push it, instead letting app1 go and run off {PRONOUN/app1/poss} energy - there'll be time enough for listening another day, and app1's persistence is as Fox Warrior-like as anyone could wish.",
+                "text": "app1 can't sit still and listen to p_l's story, not when {PRONOUN/app1/poss} ego's smarting from {PRONOUN/app1/poss} failures. p_l doesn't push it, instead letting app1 go and run off {PRONOUN/app1/poss} energy — there'll be time enough for listening another day, and app1's persistence is as Fox Warrior-like as anyone could wish.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -2540,7 +2540,7 @@
         "decline_text": "No one seems interested in p_l's story.",
         "success_outcomes": [
             {
-                "text": "Though they wash over the land, the tides are connected to the moon, p_l meows. At night this becomes obvious - the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide.",
+                "text": "Though they wash over the land, the tides are connected to the moon, p_l meows. At night this becomes obvious — the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide.",
                 "exp": 30,
                 "art": "gen_hunt_vision",
                 "relationships": [
@@ -2579,7 +2579,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Learning about the tides is boring - shoving each other into the water, now <i>that's</i> training! p_l is not pleased.",
+                "text": "Learning about the tides is boring — shoving each other into the water, now <i>that's</i> training! p_l is not pleased.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_warrior",
                 "relationships": [
@@ -2633,7 +2633,7 @@
                         "amount": 8,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat appreciated that to_cat gave {PRONOUN/from_cat/object} a heads-up about deathberries on patrol."
+                            "cats_from": "cat_from appreciated that cat_to gave {PRONOUN/cat_from/object} a heads-up about deathberries on patrol."
                         }
                     }
                 ],
@@ -2653,14 +2653,14 @@
                         "amount": 8,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat was impressed that to_cat recognized raspberries on a training patrol and brought them back for the herb stores."
+                            "cats_from": "cat_from was impressed that cat_to recognized raspberries on a training patrol and brought them back for the herb stores."
                         }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "Astutely, s_c recognizes the raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
+                "text": "Astutely, s_c recognizes the raspberries, and carefully chews off a branch laden with them to bring back to camp — the herb stocks can use this odd fruit.",
                 "exp": 20,
                 "stat_skill": [
                     "CLEVER,2"
@@ -2676,7 +2676,7 @@
                         "amount": 10,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat was very impressed that to_cat recognized cranberries on a training patrol and brought them back for the herb stores."
+                            "cats_from": "cat_from was very impressed that cat_to recognized cranberries on a training patrol and brought them back for the herb stores."
                         }
                     }
                 ],
@@ -2713,7 +2713,7 @@
                         "amount": 15,
                         "mutual": false,
                         "log": {
-                            "cats_from": "to_cat rushed from_cat back to camp when from_cat ate deathberries on patrol."
+                            "cats_from": "cat_to rushed cat_from back to camp when cat_from ate deathberries on patrol."
                         }
                     }
                 ],
@@ -2764,7 +2764,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat admired to_cat's muscular frame and sleek fur during a swim together."
+                            "cats_from": "cat_from admired cat_to's muscular frame and sleek fur during a swim together."
                         }
                     }
                 ],
@@ -2787,7 +2787,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat's heart fluttered at the sound of to_cat's laugh during a swim together."
+                            "cats_from": "cat_from's heart fluttered at the sound of cat_to's laugh during a swim together."
                         }
                     }
                 ],
@@ -2812,7 +2812,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat didn't want to go for a swim with to_cat because it was too chilly."
+                            "cats_from": "cat_from didn't want to go for a swim with cat_to because it was too chilly."
                         }
                     }
                 ],
@@ -2842,7 +2842,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat tried to show off for to_cat on a swim together, but to_cat was too focused on {PRONOUN/to_cat/poss} own swimming."
+                            "cats_from": "cat_from tried to show off for cat_to on a swim together, but cat_to was too focused on {PRONOUN/cat_to/poss} own swimming."
                         }
                     }
                 ],
@@ -2887,7 +2887,7 @@
                         "amount": 8,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat appreciated that to_cat gave {PRONOUN/from_cat/object} a heads-up about deathberries on patrol."
+                            "cats_from": "cat_from appreciated that cat_to gave {PRONOUN/cat_from/object} a heads-up about deathberries on patrol."
                         }
                     }
                 ],

@@ -31,7 +31,7 @@
         "decline_text": "Time to go back home and wait it out.",
         "success_outcomes": [
             {
-                "text": "The patrol staggers towards the nearest pond and flops into it - not to hunt, solely for the cool water. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a splash-fight.",
+                "text": "The patrol staggers towards the nearest pond and flops into it — not to hunt, solely for the cool water. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a splash-fight.",
                 "exp": 20,
                 "art": "gen_train_soggykitty_happy_warrior",
                 "relationships": [
@@ -49,7 +49,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a relaxing time in the water after a dreadfully hot patrol."
+                            "cats_from": "cat_from and cat_to had a relaxing time in the water after a dreadfully hot patrol."
                         }
                     },
                     {
@@ -65,14 +65,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a fun water fight after a dreadfully hot patrol."
+                            "cats_from": "cat_from and cat_to had a fun water fight after a dreadfully hot patrol."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The patrol staggers towards the nearest pond and flops into it - not to hunt, solely for the cool water. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour, batting back in splash-fight. The rest of the patrol fades away. The two of them are in their own little world",
+                "text": "The patrol staggers towards the nearest pond and flops into it — not to hunt, solely for the cool water. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour, batting back in splash-fight. The rest of the patrol fades away. The two of them are in their own little world",
                 "exp": 20,
                 "art": "fst_train_newleafmatesonadates_70locked1",
                 "relationships": [
@@ -90,7 +90,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a relaxing time in the water after a dreadfully hot patrol."
+                            "cats_from": "cat_from and cat_to had a relaxing time in the water after a dreadfully hot patrol."
                         }
                     },
                     {
@@ -108,7 +108,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a fun water fight after a dreadfully hot patrol."
+                            "cats_from": "cat_from and cat_to had a fun water fight after a dreadfully hot patrol."
                         }
                     }
                 ],
