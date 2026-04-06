@@ -20,7 +20,7 @@
             "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
-        "intro_text": "p_l thinks r_c is, well, really, just - uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
+        "intro_text": "p_l thinks r_c is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
         "chance_of_success": 60,
         "relationship_constraint": [
@@ -43,7 +43,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the frosty leaf-bare forest together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the frosty leaf-bare forest together."
                         }
                     }
                 ],
@@ -64,7 +64,7 @@
                         "values": ["romance", "like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat took a romantic stroll in the frosty leaf-bare forest together."
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the frosty leaf-bare forest together."
                         }
                     }
                 ],
@@ -100,7 +100,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out - and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone.",
+                "text": "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out — and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -153,7 +153,7 @@
             "STORY,1"
         ],
         "intro_text": "Snow swirls around c_n's camp, piling up in unusually deep snowdrifts. p_l gathers some apprentices to {PRONOUN/p_l/object} for a story.",
-        "decline_text": "Trying to get apprentices to do anything is like - well, herding cats.",
+        "decline_text": "Trying to get apprentices to do anything is like — well, herding cats.",
         "success_outcomes": [
             {
                 "text": "See those bright, pure white drifts? That's stardust, swept down from StarClan as they clean out their nests in deep leaf-bare.",
@@ -172,7 +172,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about how StarClan cats cleaning out their nests creates snowfall"
+                            "cats_from": "cat_from enjoyed cat_to's story about how StarClan cats cleaning out their nests creates snowfall"
                         }
                     }
                 ],
@@ -211,7 +211,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat was a casualty in to_cat's snowball fight."
+                            "cats_from": "cat_from was a casualty in cat_to's snowball fight."
                         }
                     },
                     {
@@ -227,14 +227,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a snowball fight on patrol."
+                            "cats_from": "cat_from and cat_to had a snowball fight on patrol."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c/object} more chores - and misses out on p_l's excellent storytelling as a result.",
+                "text": "s_c, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c/object} more chores — and misses out on p_l's excellent storytelling as a result.",
                 "exp": 0,
                 "can_have_stat": [
                     "app"
@@ -262,7 +262,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat to get out of more work."
+                            "cats_from": "cat_from avoided cat_to to get out of more work."
                         }
                     },
                     {
@@ -278,7 +278,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat wanted to tell to_cat and some other apprentices a story, but to_cat ran off."
+                            "cats_from": "cat_from wanted to tell cat_to and some other apprentices a story, but cat_to ran off."
                         }
                     }
                 ],
@@ -330,7 +330,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the lake cat."
+                            "cats_from": "cat_from enjoyed cat_to's story about the lake cat."
                         }
                     }
                 ],
@@ -339,7 +339,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Hearing p_l describe the Underwater Panther, how she's always waiting, just out of reach, ready to pull cats down - app1 starts shivering, and p_l calls the whole thing off to go get {PRONOUN/app1/object} warmed up.",
+                "text": "Hearing p_l describe the Underwater Panther, how she's always waiting, just out of reach, ready to pull cats down — app1 starts shivering, and p_l calls the whole thing off to go get {PRONOUN/app1/object} warmed up.",
                 "exp": 0,
                 "injury": [
                     {
@@ -369,7 +369,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was chilled to the bone by to_cat's story of the Underwater Panther."
+                            "cats_from": "cat_from was chilled to the bone by cat_to's story of the Underwater Panther."
                         }
                     }
                 ],

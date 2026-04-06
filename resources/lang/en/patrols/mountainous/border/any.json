@@ -64,7 +64,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -86,7 +86,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -107,7 +107,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                            "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
                         }
                     }
                 ],
@@ -134,7 +134,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                            "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
                         }
                     }
                 ],
@@ -159,7 +159,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat couldn't help feeling unsettled at how easily to_cat fought off a whole group of rogues."
+                            "cats_from": "cat_from couldn't help feeling unsettled at how easily cat_to fought off a whole group of rogues."
                         }
                     },
                     {
@@ -169,7 +169,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat drove rogues off the territory."
+                            "cats_from": "cat_from was impressed when cat_to drove rogues off the territory."
                         }
                     }
                 ],
@@ -185,8 +185,7 @@
                     "multi"
                 ],
                 "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
                 "art": "gen_bord_otherclan_hostile",
                 "frequency": 4
@@ -201,15 +200,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "FACE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/poss} patrol was ambushed by rogues."
                 },
                 "frequency": 4
             }
@@ -268,7 +264,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
+                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                 },
                 "frequency": 3
             }
@@ -310,7 +306,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -331,7 +327,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -356,7 +352,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                            "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
                         }
                     }
                 ],
@@ -381,7 +377,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                            "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
                         }
                     }
                 ],
@@ -396,8 +392,7 @@
                     "multi"
                 ],
                 "history_text": {
-                    "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
+                    "death": "m_c was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                 },
                 "art": "gen_bord_otherclan_hostile",
                 "frequency": 4
@@ -412,15 +407,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/poss} patrol was attacked by rogues."
                 },
                 "relationships": [
                     {
@@ -437,7 +429,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat failed to drive away rogues while on patrol with from_cat."
+                            "cats_from": "cat_to failed to drive away rogues while on patrol with cat_from."
                         }
                     }
                 ],
@@ -526,7 +518,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
+                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                 },
                 "art": "gen_bord_otherclan_hostile",
                 "frequency": 3
@@ -565,7 +557,7 @@
                         "values": ["respect", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed listening to to_cat's story on patrol."
+                            "cats_from": "cat_from enjoyed listening to cat_to's story on patrol."
                         }
                     }
                 ],
@@ -587,7 +579,7 @@
                         "values": ["respect", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed listening to to_cat's story on patrol."
+                            "cats_from": "cat_from enjoyed listening to cat_to's story on patrol."
                         }
                     }
                 ],
@@ -611,7 +603,7 @@
                         "values": ["like", "respect", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat spent a patrol laughing and chatting with to_cat."
+                            "cats_from": "cat_from spent a patrol laughing and chatting with cat_to."
                         }
                     }
                 ],
@@ -630,7 +622,7 @@
                         "values": ["respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat tried to tell a story during a patrol, but couldn't quite keep it going."
+                            "cats_from": "cat_to tried to tell a story during a patrol, but couldn't quite keep it going."
                         }
                     }
                 ],
@@ -654,8 +646,8 @@
                         "values": ["like", "respect", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat tried to waste time during patrol by telling stories.",
-                            "cats_to": "from_cat scolded to_cat for trying to entertain the patrol with a story."
+                            "cats_from": "cat_to tried to waste time during patrol by telling stories.",
+                            "cats_to": "cat_from scolded cat_to for trying to entertain the patrol with a story."
                         }
                     }
                 ],
@@ -715,7 +707,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat saved from_cat from being washed away by a strong river current."
+                            "cats_from": "cat_to saved cat_from from being washed away by a strong river current."
                         }
                     }
                 ],
@@ -744,7 +736,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat saved from_cat from being washed away by a strong river current."
+                            "cats_from": "cat_to saved cat_from from being washed away by a strong river current."
                         }
                     }
                 ],
@@ -785,7 +777,7 @@
                     "values": ["respect", "trust"],
                     "amount": 15,
                     "log": {
-                        "cats_from": "to_cat saved from_cat from being washed away by a strong river current."
+                        "cats_from": "cat_to saved cat_from from being washed away by a strong river current."
                     }
                 }
                 ]
@@ -797,7 +789,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "death": "This cat died trying to cross a dangerous river."
+                    "death": "m_c died trying to cross a dangerous river."
                 },
                 "frequency": 2
             },
@@ -808,7 +800,7 @@
                     "multi"
                 ],
                 "history_text": {
-                    "death": "This cat died trying to cross a dangerous river."
+                    "death": "m_c died trying to cross a dangerous river."
                 },
                 "frequency": 2
             },
@@ -839,7 +831,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from the injuries obtained by trying to cross a dangerous river.",
-                    "death": "This cat died from injuries obtained by trying to cross a dangerous river."
+                    "death": "m_c died from injuries obtained by trying to cross a dangerous river."
                 },
                 "frequency": 4
             },
@@ -854,7 +846,7 @@
                     "multi"
                 ],
                 "history_text": {
-                    "death": "This cat died trying to cross a dangerous river."
+                    "death": "m_c died trying to cross a dangerous river."
                 },
                 "frequency": 2
             },
@@ -893,7 +885,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred from the injuries obtained by trying to cross a dangerous river.",
-                    "death": "This cat died from injuries obtained by trying to cross a dangerous river."
+                    "death": "m_c died from injuries obtained by trying to cross a dangerous river."
                 },
                 "frequency": 4
             }
@@ -924,7 +916,7 @@
         },
         "frequency": 1,
         "intro_text": "As r_c pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/r_c/subject} {VERB/r_c/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes...",
-        "decline_text": "This is no creature for mortal eyes. r_c screws {PRONOUN/r_c/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself - and when {PRONOUN/r_c/subject} {VERB/r_c/open/opens} them again, the moth-Twoleg is gone.",
+        "decline_text": "This is no creature for mortal eyes. r_c screws {PRONOUN/r_c/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself — and when {PRONOUN/r_c/subject} {VERB/r_c/open/opens} them again, the moth-Twoleg is gone.",
         "chance_of_success": 25,
         "success_outcomes": [
             {
@@ -998,7 +990,7 @@
                 "frequency": 4
             },
             {
-                "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter - but the mountain itself seems to be against {PRONOUN/r_c/object} tonight, collapsing beneath {PRONOUN/r_c/poss} feet.",
+                "text": "The vast moth-Twoleg flies off, and r_c tries to shake off the encounter — but the mountain itself seems to be against {PRONOUN/r_c/object} tonight, collapsing beneath {PRONOUN/r_c/poss} feet.",
                 "exp": 0,
                 "dead_cats": [
                     "r_c"
@@ -1035,7 +1027,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream - one mirrored by p_l as p_l shrieks and runs.",
+                "text": "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream — one mirrored by p_l as p_l shrieks and runs.",
                 "exp": 0,
                 "injury": [
                     {
@@ -1114,7 +1106,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat brought valuable news of possible wolves back to camp."
+                            "cats_from": "cat_to brought valuable news of possible wolves back to camp."
                         }
                     }
                 ],
@@ -1138,14 +1130,14 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat brought valuable news of possible wolves back to camp."
+                            "cats_from": "cat_to brought valuable news of possible wolves back to camp."
                         }
                     }
                 ],
                 "frequency": 3
             },
             {
-                "text": "The potential wolf scent makes p_l nervous enough to dance in place - and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake.",
+                "text": "The potential wolf scent makes p_l nervous enough to dance in place — and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake.",
                 "exp": 40,
                 "stat_trait": [
                     "insecure",
@@ -1166,7 +1158,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was able to escape a wolf's clutches, impressing from_cat."
+                            "cats_from": "cat_to was able to escape a wolf's clutches, impressing cat_from."
                         }
                     }
                 ],
@@ -1194,7 +1186,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat brought valuable news of a wolf in the territory back to camp."
+                            "cats_from": "cat_to brought valuable news of a wolf in the territory back to camp."
                         }
                     }
                 ],
@@ -1214,7 +1206,7 @@
                   "values": ["trust", "respect"],
                   "amount": 15,
                     "log": {
-                        "cats_from": "to_cat was quick enough to beat a wolf back to camp, giving the Clan time to prepare for a fight."
+                        "cats_from": "cat_to was quick enough to beat a wolf back to camp, giving the Clan time to prepare for a fight."
                     }
                 },
                   {
@@ -1224,7 +1216,7 @@
                   "values": ["trust", "respect", "comfort"],
                   "amount": -15,
                     "log": {
-                        "cats_from": "Though it didn't end in disaster, from_cat doesn't approve of to_cat leading a wolf back to camp."
+                        "cats_from": "Though it didn't end in disaster, cat_from doesn't approve of cat_to leading a wolf back to camp."
                     }
                 }
               ],
@@ -1251,7 +1243,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "to_cat confronted a wolf and won!"
+                            "cats_from": "cat_to confronted a wolf and won!"
                         }
                     }
                 ],
@@ -1286,7 +1278,7 @@
                         ],
                         "amount": 25,
                         "log": {
-                            "cats_from": "to_cat confronted a wolf and won!"
+                            "cats_from": "cat_to confronted a wolf and won!"
                         }
                     }
                 ],
@@ -1301,7 +1293,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "death": "This cat died to keep c_n safe from a wolf."
+                    "death": "m_c died to keep c_n safe from a wolf."
                 },
                 "relationships": [
                     {
@@ -1318,14 +1310,14 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "to_cat valiantly sacrificed {PRONOUN/to_cat/poss} life to lead a wolf away from camp."
+                            "cats_from": "cat_to valiantly sacrificed {PRONOUN/cat_to/poss} life to lead a wolf away from camp."
                         }
                     }
                 ],
                 "frequency": 3
             },
             {
-                "text": "r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified — but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "injury": [
                     {
@@ -1334,15 +1326,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending c_n against a wolf.",
-                    "death": "This cat died to keep c_n safe from a large wolf."
+                    "scar": "m_c was scarred defending c_n against a wolf.",
+                    "death": "m_c died of injuries inflicted by a large wolf."
                 },
                 "relationships": [
                     {
@@ -1359,7 +1348,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "to_cat valiantly risked {PRONOUN/to_cat/poss} life to lead a wolf away from camp."
+                            "cats_from": "cat_to valiantly risked {PRONOUN/cat_to/poss} life to lead a wolf away from camp."
                         }
                     }
                 ],
@@ -1379,15 +1368,12 @@
                         ],
                         "injuries": [
                             "mangled leg"
-                        ],
-                        "scars": [
-                            "MANLEG"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat bears a mangled leg from a confrontation with a large wolf.",
-                    "death": "This cat died from a confrontation with a large wolf."
+                    "scar": "m_c bears a mangled leg after thinking {PRONOUN/m_c/subject} could take on a wolf by {PRONOUN/m_c/self}",
+                    "death": "m_c died from {PRONOUN/m_c/poss} injuries after trying to take on a wolf alone."
                 },
                 "relationships": [
                     {
@@ -1418,7 +1404,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "death": "This cat died from a confrontation with a large wolf."
+                    "death": "m_c died after trying to take on a wolf alone."
                 },
                 "frequency": 3
             },
@@ -1433,7 +1419,7 @@
                     "s_c"
                 ],
                 "history_text": {
-                    "death": "This cat died from a confrontation with a large wolf."
+                    "death": "m_c died to a wolf after freezing up."
                 },
                 "frequency": 3
             },
@@ -1449,13 +1435,13 @@
                             "mangled tail"
                         ],
                         "scars": [
-                            "HALFTAIL"
+                            "HALFTAIL","NOTAIL"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat's tail was mangled by a wolf.",
-                    "death": "This cat died from the wounds suffered in a confrontation with a large wolf."
+                    "scar": "m_c lost {PRONOUN/m_c/poss} tail to a wolf.",
+                    "death": "m_c died of an injury inflicted by a wolf."
                 },
                 "frequency": 4
             },
@@ -1473,7 +1459,7 @@
                     "oblivious"
                 ],
                 "history_text": {
-                    "death": "This cat died due to a large wolf."
+                    "death": "m_c died due to not paying attention to {PRONOUN/m_c/poss} surroundings."
                 },
                 "frequency": 4
             }

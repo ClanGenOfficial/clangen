@@ -127,7 +127,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "from_cat was impressed by the fine warrior {PRONOUN/from_cat/poss} kit, to_cat, grew into."
+                    "cats_from": "cat_from was impressed by the fine warrior {PRONOUN/cat_from/poss} kit, cat_to, grew into."
                 }
             }
         ]
@@ -206,7 +206,7 @@
                 "amount": 5,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat approved of how to_cat bolstered the camp walls with brambles."
+                    "cats_from": "cat_from approved of how cat_to bolstered the camp walls with brambles."
                 }
             }
         ]

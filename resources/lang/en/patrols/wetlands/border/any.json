@@ -42,7 +42,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a brief chat when they encountered each other near an abandoned Twoleg nest."
+                            "cats_from": "cat_from and cat_to had a brief chat when they encountered each other near an abandoned Twoleg nest."
                         }
                     }
                 ]
@@ -66,7 +66,7 @@
                             "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat into c_n when {PRONOUN/to_cat/subject} found {PRONOUN/from_cat/object} singing alone on the territory."
+                            "cats_from": "cat_to invited cat_from into c_n when {PRONOUN/cat_to/subject} found {PRONOUN/cat_from/object} singing alone on the territory."
                         }
                     }
                 ],
@@ -109,7 +109,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat and a group of rogues ambushed from_cat's patrol."
+                            "cats_from": "cat_to and a group of rogues ambushed cat_from's patrol."
                         }
                     },
                     {
@@ -119,14 +119,14 @@
                         "values": ["respect", "trust"],
                         "amount": 30,
                         "log": {
-                            "cats_from": "to_cat saved from_cat's life when their patrol was attacked by rogues."
+                            "cats_from": "cat_to saved cat_from's life when their patrol was attacked by rogues."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c signals for the patrol to stop. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation in a murmur. Maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation in a murmur. Maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -142,7 +142,7 @@
                         "values": ["trust", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat's cautious nature saved from_cat and the patrol from being ambushed by rogues."
+                            "cats_from": "cat_to's cautious nature saved cat_from and the patrol from being ambushed by rogues."
                         }
                     }
                 ]
@@ -195,7 +195,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat's scent was found on the bodies of from_cat's ambushed Clanmates."
+                            "cats_from": "cat_to's scent was found on the bodies of cat_from's ambushed Clanmates."
                         }
                     }
                 ]
@@ -245,7 +245,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a brief chat when they encountered each other near an abandoned Twoleg nest."
+                            "cats_from": "cat_from and cat_to had a brief chat when they encountered each other near an abandoned Twoleg nest."
                         }
                     }
                 ]
@@ -270,7 +270,7 @@
                             "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat into c_n when {PRONOUN/to_cat/subject} found {PRONOUN/from_cat/object} singing alone on the territory."
+                            "cats_from": "cat_to invited cat_from into c_n when {PRONOUN/cat_to/subject} found {PRONOUN/cat_from/object} singing alone on the territory."
                         }
                     }
                 ]
@@ -311,14 +311,14 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat and a group of rogues ambushed from_cat on patrol."
+                            "cats_from": "cat_to and a group of rogues ambushed cat_from on patrol."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -375,7 +375,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat's scent was found on the bodies of from_cat's ambushed Clanmates."
+                            "cats_from": "cat_to's scent was found on the bodies of cat_from's ambushed Clanmates."
                         }
                     }
                 ]
@@ -415,7 +415,7 @@
                             "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat persevered despite the overcast day and had a successful border patrol."
+                            "cats_from": "cat_from and cat_to persevered despite the overcast day and had a successful border patrol."
                         }
                     }
                 ],
@@ -433,7 +433,7 @@
                             "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat persevered despite the rainy day and had a successful border patrol."
+                            "cats_from": "cat_from and cat_to persevered despite the rainy day and had a successful border patrol."
                         }
                     }
                 ],
@@ -454,14 +454,14 @@
                             "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat's choice to stick to high ground on a border patrol on a rainy day."
+                            "cats_from": "cat_from approved of cat_to's choice to stick to high ground on a border patrol on a rainy day."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "text": "It's not worth the risk — s_c convinces the patrol to head for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -476,7 +476,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated that to_cat spoke up and suggested the patrol go home early on an overcast day."
+                            "cats_from": "cat_from appreciated that cat_to spoke up and suggested the patrol go home early on an overcast day."
                         }
                     }
                 ],
@@ -502,7 +502,7 @@
                             "trust"],
                         "amount": -20,
                         "log": {
-                            "cats_from": "to_cat made the choice to continue a patrol on an overcast day, and cats lost their lives in the ensuing flash flood."
+                            "cats_from": "cat_to made the choice to continue a patrol on an overcast day, and cats lost their lives in the ensuing flash flood."
                         }
                     }
                 ],
@@ -526,7 +526,7 @@
                             "trust"],
                         "amount": -15,
                         "log": {
-                            "cats_from": "to_cat made the choice to continue a patrol on an overcast day, and r_c lost {PRONOUN/r_c/poss} life in the ensuing flash flood."
+                            "cats_from": "cat_to made the choice to continue a patrol on an overcast day, and r_c lost {PRONOUN/r_c/poss} life in the ensuing flash flood."
                         }
                     }
                 ],
@@ -574,7 +574,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c heads for home.",
+                "text": "It's not worth the risk — s_c heads for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -615,7 +615,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "As a shivering r_c crosses a muddy bog, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
+        "intro_text": "As a shivering r_c crosses a muddy bog, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave — but the swamp shouldn't have any waves.",
         "decline_text": "r_c decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -628,7 +628,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+                "text": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris — and a large dead sheep. s_c pounces on the opportunity to scavenge.",
                 "exp": 20,
                 "stat_skill": [
                     "CLEVER,3"
@@ -645,7 +645,7 @@
                         "values": ["respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was impressed to_cat used a flash flood as an opportunity to scavenge."
+                            "cats_from": "cat_from was impressed cat_to used a flash flood as an opportunity to scavenge."
                         }
                     }
                 ]
@@ -717,7 +717,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off the territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off the territory."
                         }
                     },
                     {
@@ -758,7 +758,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off the territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off the territory."
                         }
                     },
                     {
@@ -793,7 +793,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off the territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off the territory."
                         }
                     },
                     {
@@ -845,7 +845,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat seeing a rogue off the territory."
+                            "cats_from": "cat_from approved of cat_to seeing a rogue off the territory."
                         }
                     },
                     {
@@ -906,7 +906,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat's scent was found on r_c's cold body."
+                            "cats_from": "cat_to's scent was found on r_c's cold body."
                         }
                     }
                 ]
@@ -982,7 +982,7 @@
                         "values": ["respect"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off the territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off the territory."
                         }
                     },
                     {
@@ -1078,7 +1078,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat's scent was found on app1's cold body."
+                            "cats_from": "cat_to's scent was found on app1's cold body."
                         }
                     }
                 ]
@@ -1126,7 +1126,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off of c_n's territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off of c_n's territory."
                         }
                     },
                     {
@@ -1136,7 +1136,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
                         }
                     },
                     {
@@ -1146,7 +1146,7 @@
                         "values": ["trust", "respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove a rogue off the territory together."
+                            "cats_from": "cat_from and cat_to drove a rogue off the territory together."
                         }
                     }
                 ]
@@ -1177,7 +1177,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off of c_n's territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off of c_n's territory."
                         }
                     },
                     {
@@ -1187,7 +1187,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
                 ]
@@ -1213,7 +1213,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat seeing a rogue off of c_n's territory."
+                            "cats_from": "cat_from approved of cat_to seeing a rogue off of c_n's territory."
                         }
                     },
                     {
@@ -1233,7 +1233,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's plan to ambush a trespassing rogue."
+                            "cats_from": "cat_from was impressed by cat_to's plan to ambush a trespassing rogue."
                         }
                     }
                 ]
@@ -1275,7 +1275,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat seeing a rogue off of c_n's territory."
+                            "cats_from": "cat_from approved of cat_to seeing a rogue off of c_n's territory."
                         }
                     },
                     {
@@ -1285,7 +1285,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
                 ]
@@ -1327,7 +1327,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat seeing a rogue off of c_n's territory."
+                            "cats_from": "cat_from approved of cat_to seeing a rogue off of c_n's territory."
                         }
                     },
                     {
@@ -1337,7 +1337,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
                 ]
@@ -1357,7 +1357,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake {PRONOUN/to_cat/poss} own pawprints for signs of trespassing."
+                            "cats_from": "cat_from saw cat_to mistake {PRONOUN/cat_to/poss} own pawprints for signs of trespassing."
                         }
                     }
                 ]
@@ -1374,7 +1374,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake {PRONOUN/to_cat/poss} own pawprints for signs of trespassing."
+                            "cats_from": "cat_from saw cat_to mistake {PRONOUN/cat_to/poss} own pawprints for signs of trespassing."
                         }
                     }
                 ]
@@ -1401,7 +1401,7 @@
                         "values": ["like", "comfort"],
                         "amount": -20,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and tried to drive {PRONOUN/n_c:0/object} off the territory, but n_c:0 escaped."
+                            "cats_from": "cat_to caught n_c:0 trespassing and tried to drive {PRONOUN/n_c:0/object} off the territory, but n_c:0 escaped."
                         }
                     }
                 ]
@@ -1428,7 +1428,7 @@
                         "values": ["like", "comfort"],
                         "amount": -20,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and tried to ambush {PRONOUN/n_c:0/object}, but n_c:0 escaped."
+                            "cats_from": "cat_to caught n_c:0 trespassing and tried to ambush {PRONOUN/n_c:0/object}, but n_c:0 escaped."
                         }
                     },
                     {
@@ -1438,7 +1438,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's attempt to ambush a rogue on patrol failed in front of from_cat."
+                            "cats_from": "cat_to's attempt to ambush a rogue on patrol failed in front of cat_from."
                         }
                     }
                 ]
@@ -1489,7 +1489,7 @@
                         "values": ["respect"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off of c_n's territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off of c_n's territory."
                         }
                     },
                     {
@@ -1499,7 +1499,7 @@
                         "values": ["trust", "respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove a rogue off the territory together."
+                            "cats_from": "cat_from and cat_to drove a rogue off the territory together."
                         }
                     },
                     {
@@ -1509,7 +1509,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
                 ]
@@ -1559,7 +1559,7 @@
                         "values": ["respect"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off of c_n's territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off of c_n's territory."
                         }
                     },
                     {
@@ -1569,7 +1569,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
                 ]
@@ -1614,7 +1614,7 @@
                         "values": ["respect"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat driving a rogue off of c_n's territory."
+                            "cats_from": "cat_from approved of cat_to driving a rogue off of c_n's territory."
                         }
                     },
                     {
@@ -1624,7 +1624,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
                 ]
@@ -1644,7 +1644,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake {PRONOUN/to_cat/poss} own pawprints for signs of trespassing."
+                            "cats_from": "cat_from saw cat_to mistake {PRONOUN/cat_to/poss} own pawprints for signs of trespassing."
                         }
                     }
                 ]
@@ -1662,7 +1662,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake {PRONOUN/to_cat/poss} own pawprints for signs of trespassing."
+                            "cats_from": "cat_from saw cat_to mistake {PRONOUN/cat_to/poss} own pawprints for signs of trespassing."
                         }
                     }
                 ]
@@ -1707,7 +1707,7 @@
                         "values": ["like", "comfort"],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat caught n_c:0 trespassing and demanded {PRONOUN/n_c:0/subject} leave the territory, but n_c:0 ignored {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_to caught n_c:0 trespassing and demanded {PRONOUN/n_c:0/subject} leave the territory, but n_c:0 ignored {PRONOUN/cat_to/object}."
                         }
                     }
                 ]
@@ -1749,7 +1749,7 @@
                             "respect"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat telling a story on a border patrol to keep everyone's minds off their damp paws."
+                            "cats_from": "cat_from appreciated cat_to telling a story on a border patrol to keep everyone's minds off their damp paws."
                         }
                     }
                 ],
@@ -1772,7 +1772,7 @@
                             "respect"],
                         "amount": 12,
                         "log": {
-                            "cats_from": "During a border patrol, from_cat enjoyed to_cat's story about an ancient war."
+                            "cats_from": "During a border patrol, cat_from enjoyed cat_to's story about an ancient war."
                         }
                     }
                 ],
@@ -1801,7 +1801,7 @@
                             "trust"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed the story that to_cat told during a long border patrol."
+                            "cats_from": "cat_from enjoyed the story that cat_to told during a long border patrol."
                         }
                     },
                     {
@@ -1815,7 +1815,7 @@
                             "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat chatted and grew closer on a border patrol."
+                            "cats_from": "cat_from and cat_to chatted and grew closer on a border patrol."
                         }
                     }
                 ],
@@ -1873,12 +1873,12 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down — they do not share territory with foxes.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -1888,7 +1888,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive a vixen out of their territory."
+                            "cats_from": "cat_from and cat_to worked together to drive a vixen out of their territory."
                         }
                     },
                     {
@@ -1898,7 +1898,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove a vixen out of their territory."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove a vixen out of their territory."
                         }
                     }
                 ],
@@ -1915,7 +1915,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a vixen and kill her cubs."
+                            "cats_from": "cat_from and cat_to worked together to drive off a vixen and kill her cubs."
                         }
                     },
                     {
@@ -1925,7 +1925,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ],
@@ -1943,7 +1943,7 @@
                         "values": ["respect", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was extremely impressed by to_cat's skill in battle against a vixen."
+                            "cats_from": "cat_from was extremely impressed by cat_to's skill in battle against a vixen."
                         }
                     },
                     {
@@ -1953,7 +1953,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a vixen."
                         }
                     }
                 ],
@@ -1981,7 +1981,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat's bravery in a fight against a vixen greatly impressed from_cat."
+                            "cats_from": "cat_to's bravery in a fight against a vixen greatly impressed cat_from."
                         }
                     }
                 ],
@@ -2001,7 +2001,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a vixen and kill her cubs."
+                            "cats_from": "cat_from and cat_to worked together to drive off a vixen and kill her cubs."
                         }
                     },
                     {
@@ -2011,7 +2011,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ],
@@ -2031,7 +2031,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to kill a vixen and her cubs."
+                            "cats_from": "cat_from and cat_to worked together to kill a vixen and her cubs."
                         }
                     },
                     {
@@ -2041,7 +2041,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol killed a vixen and her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol killed a vixen and her cubs."
                         }
                     }
                 ],
@@ -2063,7 +2063,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to drive off a vixen together."
+                            "cats_from": "cat_from and cat_to were unable to drive off a vixen together."
                         }
                     }
                 ],
@@ -2089,14 +2089,14 @@
                         "values": ["respect", "trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                            "cats_from": "cat_to's overconfident move in a fight against a vixen cost cat_from's patrol the battle."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+                "text": "Never threaten a mother's young — the red vixen kills r_c in the skirmish.",
                 "exp": 0,
                 "dead_cats": ["r_c"],
                 "history_text": {
@@ -2111,7 +2111,7 @@
                         "values": ["trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat was unable to save r_c in a fight with a red vixen."
+                            "cats_from": "cat_from heard that cat_to was unable to save r_c in a fight with a red vixen."
                         }
                     },
                     {
@@ -2148,7 +2148,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat and from_cat were unable to drive off a vixen together."
+                            "cats_from": "cat_to and cat_from were unable to drive off a vixen together."
                         }
                     }
                 ],
@@ -2176,7 +2176,7 @@
                         "values": ["respect", "trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                            "cats_from": "cat_to's overconfident move in a fight against a vixen cost cat_from's patrol the battle."
                         }
                     }
                 ],
@@ -2198,7 +2198,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2213,7 +2213,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive a vixen out of their territory."
+                            "cats_from": "cat_from and cat_to worked together to drive a vixen out of their territory."
                         }
                     },
                     {
@@ -2223,7 +2223,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove a vixen out of their territory."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove a vixen out of their territory."
                         }
                     }
                 ],
@@ -2240,7 +2240,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a vixen and kill her cubs."
+                            "cats_from": "cat_from and cat_to worked together to drive off a vixen and kill her cubs."
                         }
                     },
                     {
@@ -2250,14 +2250,14 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters — a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
@@ -2268,7 +2268,7 @@
                         "values": ["respect", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was extremely impressed by to_cat's skill in battle against a vixen."
+                            "cats_from": "cat_from was extremely impressed by cat_to's skill in battle against a vixen."
                         }
                     },
                     {
@@ -2278,7 +2278,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's bravery in battle against a vixen."
+                            "cats_from": "cat_from heard about cat_to's bravery in battle against a vixen."
                         }
                     }
                 ],
@@ -2323,7 +2323,7 @@
                         "values": ["respect", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was extremely impressed by to_cat's skill in battle against a vixen."
+                            "cats_from": "cat_from was extremely impressed by cat_to's skill in battle against a vixen."
                         }
                     },
                     {
@@ -2333,7 +2333,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a vixen."
                         }
                     }
                 ],
@@ -2354,7 +2354,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive out a vixen and kill her cubs."
+                            "cats_from": "cat_from and cat_to worked together to drive out a vixen and kill her cubs."
                         }
                     },
                     {
@@ -2364,7 +2364,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ]
@@ -2397,7 +2397,7 @@
                         "values": ["respect", "trust"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat chased a gray vixen up into a tree."
+                            "cats_from": "cat_from was impressed by how cat_to chased a gray vixen up into a tree."
                         }
                     },
                     {
@@ -2407,7 +2407,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a vixen."
                         }
                     }
                 ]
@@ -2425,7 +2425,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to drive a gray vixen off their territory together."
+                            "cats_from": "cat_from and cat_to were unable to drive a gray vixen off their territory together."
                         }
                     }
                 ],
@@ -2443,7 +2443,7 @@
                         "values": ["respect", "trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                            "cats_from": "cat_to's overconfident move in a fight against a vixen cost cat_from's patrol the battle."
                         }
                     }
                 ],
@@ -2471,7 +2471,7 @@
                         "values": ["respect", "trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                            "cats_from": "cat_to's overconfident move in a fight against a vixen cost cat_from's patrol the battle."
                         }
                     }
                 ],

@@ -324,7 +324,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"like": "decrease:",
+			"like": "decrease",
 			"comfort": "decrease"
 		}
 	},
@@ -421,7 +421,7 @@
 			"m_c and r_c gossip about drama nobody else knows.",
 			"m_c talks to r_c about a mutual friend they have both been worrying about.",
 			"m_c asks r_c to look at a little cut on {PRONOUN/m_c/poss} leg.",
-			"After something happens, m_c and r_c find comfort in one another's company."
+			"After something unsettling happens, m_c and r_c find comfort in one another's company."
 		],
 		"reaction_random_cat": {
 			"comfort": "increase"

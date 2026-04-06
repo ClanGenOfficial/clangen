@@ -79,7 +79,8 @@
 			"Only m_c and r_c know the details about a specific piece of Clan drama."
 		],
 		"reaction_random_cat": {
-			"trust": "increase"
+			"trust": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -189,7 +190,8 @@
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
-			"trust": "increase"
+			"trust": "increase",
+			"like": "increase"
 		}
 	},
 	{
@@ -218,7 +220,7 @@
 			"leader"
 		],
 		"reaction_random_cat": {
-			"trust": "increase"
+			"like": "increase"
 		}
 	},
 	{
@@ -266,6 +268,8 @@
 			"m_c and r_c agree on something the rest of the Clan finds contentious.",
 			"m_c tells r_c to count on {PRONOUN/m_c/object} in a difficult situation."
 		],
+		"main_status_constraint": ["-kitten"],
+		"random_status_constraint": ["-kitten"],
 		"reaction_random_cat": {
 			"trust": "increase"
 		}
@@ -282,26 +286,11 @@
 			"During a patrol, m_c and r_c have a long conversation about their beliefs and agree on many things.",
 			"During the last gathering, m_c and r_c defended their Clan against another Clan's heckling."
 		],
-		"main_status_constraint": [
-			"apprentice",
-			"warrior",
-			"mediator",
-			"medicine cat",
-			"deputy",
-			"medicine cat apprentice",
-			"leader"
-		],
-		"random_status_constraint": [
-			"apprentice",
-			"warrior",
-			"mediator",
-			"medicine cat",
-			"deputy",
-			"leader",
-			"medicine cat apprentice"
-		],
+		"main_status_constraint": ["-kitten"],
+		"random_status_constraint": ["-kitten"],
 		"reaction_random_cat": {
-			"trust": "increase"
+			"trust": "increase",
+			"comfort": "increase"
 		}
 	},
 	{

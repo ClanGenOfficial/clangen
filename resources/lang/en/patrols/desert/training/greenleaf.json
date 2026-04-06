@@ -54,7 +54,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about how, in a distant land, the sun brings relief and growth instead of searing death."
+                            "cats_from": "cat_from enjoyed cat_to's story about how, in a distant land, the sun brings relief and growth instead of searing death."
                         }
                     }
                 ],
@@ -85,7 +85,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's tales of distant Clans for whom greenleaf is the season of plenty."
+                            "cats_from": "cat_from enjoyed cat_to's tales of distant Clans for whom greenleaf is the season of plenty."
                         }
                     }
                 ],

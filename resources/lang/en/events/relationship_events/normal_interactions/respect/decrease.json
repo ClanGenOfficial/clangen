@@ -316,7 +316,7 @@
 			"m_c was noticeably distracted while r_c was trying to tell a story.",
 			"m_c asks r_c about something complicated and regrets it when r_c misses the point.",
 			"m_c spent a long time talking with r_c but was disappointed by r_c's lack of interest.",
-			"m_c scolds r_c about something {PRONOUN/r_c/object} did, but r_c doesn't take {PRONOUN/m_c/object} seriously.",
+			"m_c scolds r_c about something {PRONOUN/r_c/subject} did, but r_c doesn't take {PRONOUN/m_c/object} seriously.",
 			"r_c laughs at m_c's embarrassing mistake.",
 			"m_c told r_c to shut up.",
 			"m_c called r_c lazy, and r_c has retaliated by nitpicking everything that m_c does.",

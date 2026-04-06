@@ -1373,6 +1373,10 @@ class Pregnancy_Events:
         if avg_age > 80:
             inverse_chance = int(inverse_chance * 0.8)
 
+        # CURRENT KIT COUNT
+        # increases inverse chance according to number of existing children (ex. 5 kids will multiply by 1.5)
+        inverse_chance += int(inverse_chance * len(first_parent.get_children()) * 0.1)
+
         # 'INBREED' counter
         # - increase inverse chance if one of the current cats belongs in the biggest family
         if not Pregnancy_Events.biggest_family:  # set the family if not already

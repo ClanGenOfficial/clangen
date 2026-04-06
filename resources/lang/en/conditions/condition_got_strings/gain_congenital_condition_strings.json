@@ -1,7 +1,7 @@
 {
     "born without a leg": [
         "m_c mewls, snuggling up to {PRONOUN/m_c/poss} parent as they anxiously await the verdict. r_c is confident that m_c's lack of a leg won't slow {PRONOUN/m_c/object} down. The new family is left to bond, relieved and purring.",
-        "It's immediately clear that m_c might take longer to find {PRONOUN/m_c/poss} feet - {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been born without one of the usual set."
+        "It's immediately clear that m_c might take longer to find {PRONOUN/m_c/poss} feet — {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been born without one of the usual set."
     ],
     "weak leg": [
         "As m_c toddles around the nursery, r_c watches and m_c's parent waits in suspense. Finally, r_c nods and confirms that one of m_c's legs isn't developing at the same rate as the others.",
@@ -16,7 +16,7 @@
         "m_c is fluffy and full of yelling and the want for milk, but {PRONOUN/m_c/subject}'ll never be able to lash {PRONOUN/m_c/poss} tail like the other kittens, having been born without one."
     ],
     "paralyzed": [
-        "r_c soothes m_c's frantically worried parent - their kit will never walk, but it's still possible for {PRONOUN/m_c/object} to have a happy, healthy life.",
+        "r_c soothes m_c's frantically worried parent — their kit will never walk, but it's still possible for {PRONOUN/m_c/object} to have a happy, healthy life.",
         "It's immediately clear that m_c can't feel {PRONOUN/m_c/poss} hindlegs as soon as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} born, but {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} like a happy bundle of newborn fluff anyway."
     ],
     "raspy lungs": [
@@ -37,8 +37,8 @@
         "m_c has become good at not letting things approaching on {PRONOUN/m_c/poss} bad side startle {PRONOUN/m_c/object}, except it turns out that's not a normal universal experience for a kitten to have."
     ],
     "failing eyesight": [
-        "When m_c complains how dark it's been recently, r_c checks {PRONOUN/m_c/poss} eyesight over - only to find it near gone.",
-        "m_c doesn't understand how everyone else seems to see so far - and is sad to find out {PRONOUN/m_c/poss} eyesight is failing."
+        "When m_c complains how dark it's been recently, r_c checks {PRONOUN/m_c/poss} eyesight over — only to find it near gone.",
+        "m_c doesn't understand how everyone else seems to see so far — and is sad to find out {PRONOUN/m_c/poss} eyesight is failing."
     ],
     "partial hearing loss": [
         "r_c is called in to assess m_c's hearing. While it's still present, m_c definitely isn't hearing clearly.",
@@ -81,6 +81,6 @@
     "absent": [
             "m_c has been getting more and more forgetful lately. {PRONOUN/m_c/subject/CAP} is starting to fade.",
             "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, quietly concerned about how long it takes {PRONOUN/m_c/object} to respond.",
-            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note- m_c has been fading fast."
+            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note — m_c has been fading fast."
         ]
 }

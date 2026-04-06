@@ -122,7 +122,7 @@
           "values": ["like", "trust"],
           "amount": 5,
           "log": {
-            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+            "cats_from": "cat_to was one of the first cats cat_from met in c_n."
           }
         },
         {
@@ -132,7 +132,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat heard of to_cat's hunting skills and was glad to hear {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} joining c_n."
+            "cats_from": "cat_from heard of cat_to's hunting skills and was glad to hear {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} joining c_n."
           }
         }
       ]
@@ -154,7 +154,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "m_c has been poaching some of c_n's prey - all the more infuriating given m_c has kittypet food waiting at home. c_n retaliates by chasing {PRONOUN/m_c/object} out and making sure {PRONOUN/m_c/subject} never {VERB/m_c/return/returns}.",
+    "event_text": "m_c has been poaching some of c_n's prey — all the more infuriating given m_c has kittypet food waiting at home. c_n retaliates by chasing {PRONOUN/m_c/object} out and making sure {PRONOUN/m_c/subject} never {VERB/m_c/return/returns}.",
     "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
@@ -220,7 +220,7 @@
           "values": ["like", "trust"],
           "amount": 5,
           "log": {
-            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+            "cats_from": "cat_to was one of the first cats cat_from met in c_n."
           }
         },
         {
@@ -230,7 +230,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat heard of to_cat's hunting skills and was glad to hear {PRONOUN/to_cat/subject} {VERB/to_cat/were/was} joining c_n."
+            "cats_from": "cat_from heard of cat_to's hunting skills and was glad to hear {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} joining c_n."
           }
         }
       ]
@@ -275,7 +275,7 @@
           "values": ["like", "trust"],
           "amount": 5,
           "log": {
-            "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+            "cats_from": "cat_to was one of the first cats cat_from met in c_n."
           }
         }
       ]
@@ -301,7 +301,7 @@
           "values": ["like", "trust"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was glad to be welcomed back into the Clan by to_cat."
+            "cats_from": "cat_from was glad to be welcomed back into the Clan by cat_to."
           }
         },
         {
@@ -311,7 +311,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat recognized the wisdom of allowing a skilled hunter like to_cat back into the Clan."
+            "cats_from": "cat_from recognized the wisdom of allowing a skilled hunter like cat_to back into the Clan."
           }
         }
       ]
@@ -348,7 +348,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "When m_c sees c_n coming, {PRONOUN/m_c/subject} {VERB/m_c/bolt/bolts}, using {PRONOUN/m_c/poss} long legs to outpace {PRONOUN/m_c/poss} pursuer. But c_n knows m_c's tricks and has set up another patrol further along to cut m_c off - and cut {PRONOUN/m_c/poss} life short.",
+    "event_text": "When m_c sees c_n coming, {PRONOUN/m_c/subject} {VERB/m_c/bolt/bolts}, using {PRONOUN/m_c/poss} long legs to outpace {PRONOUN/m_c/poss} pursuer. But c_n knows m_c's tricks and has set up another patrol further along to cut m_c off — and cut {PRONOUN/m_c/poss} life short.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
@@ -393,7 +393,7 @@
           "values": ["like", "comfort"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+            "cats_from": "cat_from was overjoyed to see the familiar face of cat_to after being lost."
           }
         }
       ]
@@ -481,7 +481,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "c_n is prepared for a fight when they find m_c, but m_c quickly realizes the odds are not in {PRONOUN/m_c/poss} favor and flees - just not fast enough.",
+    "event_text": "c_n is prepared for a fight when they find m_c, but m_c quickly realizes the odds are not in {PRONOUN/m_c/poss} favor and flees — just not fast enough.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
@@ -526,7 +526,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "c_n knows that there is no territory far enough to drive m_c out to - {PRONOUN/m_c/subject} must be driven out of this life. {PRONOUN/m_c/subject/CAP} {VERB/m_c/see/sees} {PRONOUN/m_c/poss} old Clanmates coming, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}'nt have time to run.",
+    "event_text": "c_n knows that there is no territory far enough to drive m_c out to — {PRONOUN/m_c/subject} must be driven out of this life. {PRONOUN/m_c/subject/CAP} {VERB/m_c/see/sees} {PRONOUN/m_c/poss} old Clanmates coming, but {PRONOUN/m_c/subject} {VERB/m_c/do/does}'nt have time to run.",
     "reputation": ["any"],
     "rep_change": -3,
     "m_c": {
@@ -549,7 +549,7 @@
   },
   {
     "interaction_type": "drive",
-    "event_text": "Exiling m_c wasn't enough - {PRONOUN/m_c/subject} must be driven far out of the surrounding territory. m_c only stands {PRONOUN/m_c/poss} ground for a heartbeat when {PRONOUN/m_c/poss} old Clanmates find {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} outnumbered, and {PRONOUN/m_c/subject} {VERB/m_c/flee/flees}.",
+    "event_text": "Exiling m_c wasn't enough — {PRONOUN/m_c/subject} must be driven far out of the surrounding territory. m_c only stands {PRONOUN/m_c/poss} ground for a heartbeat when {PRONOUN/m_c/poss} old Clanmates find {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} outnumbered, and {PRONOUN/m_c/subject} {VERB/m_c/flee/flees}.",
     "reputation": ["any"],
     "rep_change": -1,
     "m_c": {
@@ -574,7 +574,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       },
       {
@@ -583,7 +583,7 @@
         "values": ["trust"],
         "amount": -5,
         "log": {
-          "cats_from": "from_cat was skeptical of allowing a kittypet like to_cat into the Clan."
+          "cats_from": "cat_from was skeptical of allowing a kittypet like cat_to into the Clan."
         }
       }
     ]
@@ -606,7 +606,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -629,7 +629,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -651,7 +651,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -673,7 +673,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -695,7 +695,7 @@
         "values": ["like", "comfort"],
         "amount": 5,
         "log": {
-          "cats_from": "Despite the bad blood over {PRONOUN/from_cat/poss} exile, from_cat was glad to see to_cat again."
+          "cats_from": "Despite the bad blood over {PRONOUN/cat_from/poss} exile, cat_from was glad to see cat_to again."
         }
       }
     ]
@@ -717,7 +717,7 @@
         "values": ["like", "trust"],
         "amount": 5,
         "log": {
-          "cats_from": "to_cat was one of the first cats from_cat met in c_n."
+          "cats_from": "cat_to was one of the first cats cat_from met in c_n."
         }
       }
     ]
@@ -745,7 +745,7 @@
   },
   {
     "interaction_type": "search",
-    "event_text": "c_n turns the world upside down searching for their lost Clanmate. They cannot rest until m_c is safely home - and they don't. When they come upon {PRONOUN/m_c/object} at last, c_n is overjoyed to bring {PRONOUN/m_c/object} back to camp where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
+    "event_text": "c_n turns the world upside down searching for their lost Clanmate. They cannot rest until m_c is safely home — and they don't. When they come upon {PRONOUN/m_c/object} at last, c_n is overjoyed to bring {PRONOUN/m_c/object} back to camp where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
@@ -760,7 +760,7 @@
         "values": ["like", "comfort"],
         "amount": 5,
         "log": {
-          "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+          "cats_from": "cat_from was overjoyed to see the familiar face of cat_to after being lost."
         }
       }
     ]
@@ -783,7 +783,7 @@
         "values": ["like", "comfort"],
         "amount": 5,
         "log": {
-          "cats_from": "from_cat was overjoyed to see the familiar face of to_cat after being lost."
+          "cats_from": "cat_from was overjoyed to see the familiar face of cat_to after being lost."
         }
       }
     ]

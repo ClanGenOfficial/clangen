@@ -69,7 +69,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from drowning."
+                    "cats_from": "cat_to saved cat_from from drowning."
                 }
             }
         ]
@@ -237,7 +237,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat dared to_cat to swim in freezing water alone, and to_cat actually did."
+                    "cats_from": "cat_from dared cat_to to swim in freezing water alone, and cat_to actually did."
                 }
             }
         ]
@@ -303,7 +303,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "to_cat ignored from_cat's warnings about salt water and became dehydrated."
+                    "cats_from": "cat_to ignored cat_from's warnings about salt water and became dehydrated."
                 }
             }
         ]
@@ -371,7 +371,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "to_cat saved from_cat's life when a seagull tried to carry {PRONOUN/from_cat/object} off."
+                    "cats_from": "cat_to saved cat_from's life when a seagull tried to carry {PRONOUN/cat_from/object} off."
                 }
             }
         ]
@@ -439,7 +439,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "to_cat saved from_cat's life when a pelican tried to carry {PRONOUN/from_cat/object} off."
+                    "cats_from": "cat_to saved cat_from's life when a pelican tried to carry {PRONOUN/cat_from/object} off."
                 }
             }
         ]
@@ -511,7 +511,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat dared to_cat to swim out of camp and was impressed when {PRONOUN/to_cat/subject} actually tried."
+                    "cats_from": "cat_from dared cat_to to swim out of camp and was impressed when {PRONOUN/cat_to/subject} actually tried."
                 }
             },
             {
@@ -526,7 +526,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "to_cat dared from_cat to swim out of camp, and from_cat almost drowned."
+                    "cats_from": "cat_to dared cat_from to swim out of camp, and cat_from almost drowned."
                 }
             }
         ]
@@ -598,7 +598,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat dared to_cat to swim out of camp and was impressed when {PRONOUN/to_cat/subject} actually tried."
+                    "cats_from": "cat_from dared cat_to to swim out of camp and was impressed when {PRONOUN/cat_to/subject} actually tried."
                 }
             },
             {
@@ -613,7 +613,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "to_cat dared from_cat to swim out of camp, and from_cat almost drowned."
+                    "cats_from": "cat_to dared cat_from to swim out of camp, and cat_from almost drowned."
                 }
             }
         ]
@@ -895,7 +895,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat heard that to_cat saved an enemy warrior during a fight."
+                    "cats_from": "cat_from heard that cat_to saved an enemy warrior during a fight."
                 }
             }
         ]

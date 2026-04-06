@@ -15,7 +15,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
           }
         }
       ]
@@ -36,7 +36,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat noticed a c_n patrol trailing {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from noticed a c_n patrol trailing {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -78,7 +78,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
           }
         }
       ]
@@ -99,7 +99,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
           }
         }
       ]
@@ -120,7 +120,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
           }
         }
       ]
@@ -141,7 +141,7 @@
           "values": ["like"],
           "amount": -20,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
           }
         }
       ]
@@ -162,7 +162,7 @@
           "values": ["like"],
           "amount": -20,
           "log": {
-            "cats_from": "from_cat narrowly escaped a c_n patrol."
+            "cats_from": "cat_from narrowly escaped a c_n patrol."
           }
         }
       ]
@@ -183,7 +183,7 @@
           "values": ["like"],
           "amount": -20,
           "log": {
-            "cats_from": "from_cat narrowly escaped a c_n patrol."
+            "cats_from": "cat_from narrowly escaped a c_n patrol."
           }
         }
       ]
@@ -205,7 +205,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat was confronted by a c_n patrol but persuaded them letting {PRONOUN/from_cat/object} go."
+            "cats_from": "cat_from was confronted by a c_n patrol but persuaded them letting {PRONOUN/cat_from/object} go."
           }
         }
       ]
@@ -227,7 +227,7 @@
           "values": ["like"],
           "amount": -40,
           "log": {
-            "cats_from": "from_cat swore revenge on the whole of c_n after a c_n patrol attacked {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from swore revenge on the whole of c_n after a c_n patrol attacked {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -248,7 +248,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n wants {PRONOUN/from_cat/object} off their territory."
+            "cats_from": "cat_from heard that c_n wants {PRONOUN/cat_from/object} off their territory."
           }
         }
       ]
@@ -269,14 +269,14 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat was driven beyond the borders by a c_n patrol, but {PRONOUN/from_cat/subject} won't be gotten rid of so easily."
+            "cats_from": "cat_from was driven beyond the borders by a c_n patrol, but {PRONOUN/cat_from/subject} won't be gotten rid of so easily."
           }
         }
       ]
   },
   {
     "interaction_type": "drive",
-    "event_text": "A c_n patrol confronts m_c and tells {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not welcome anywhere near c_n's territory. m_c agrees - and is scented trespassing <i>again</i> within the quarter-moon.",
+    "event_text": "A c_n patrol confronts m_c and tells {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not welcome anywhere near c_n's territory. m_c agrees — and is scented trespassing <i>again</i> within the quarter-moon.",
     "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
@@ -290,7 +290,7 @@
           "values": ["like", "respect"],
           "amount": -10,
           "log": {
-            "cats_from": "A c_n patrol told from_cat to stop crossing the border, but {PRONOUN/from_cat/subject} {VERB/from_cat/have/has} no intention of listening."
+            "cats_from": "A c_n patrol told cat_from to stop crossing the border, but {PRONOUN/cat_from/subject} {VERB/cat_from/have/has} no intention of listening."
           }
         }
       ]
@@ -311,7 +311,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was looking for {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -332,7 +332,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was looking for {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -353,7 +353,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was looking for {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -374,7 +374,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was looking for {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -436,7 +436,7 @@
           "values": ["like"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat heard that {PRONOUN/m_c/poss} old Clan has been looking for {PRONOUN/m_c/object}."
+            "cats_from": "cat_from heard that {PRONOUN/m_c/poss} old Clan has been looking for {PRONOUN/m_c/object}."
           }
         }
       ]
@@ -459,7 +459,7 @@
           "values": ["like"],
           "amount": -5,
           "log": {
-            "cats_from": "from_cat was approached by some of {PRONOUN/m_c/poss} old Clanmates, but {PRONOUN/from_cat/subject} won't forgive so easily."
+            "cats_from": "cat_from was approached by some of {PRONOUN/m_c/poss} old Clanmates, but {PRONOUN/cat_from/subject} won't forgive so easily."
           }
         }
       ]
@@ -590,7 +590,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
           }
         }
       ]
@@ -612,7 +612,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
           }
         }
       ]
@@ -635,7 +635,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat received a paranormal warning that c_n means {PRONOUN/from_cat/object} harm."
+            "cats_from": "cat_from received a paranormal warning that c_n means {PRONOUN/cat_from/object} harm."
           }
         }
       ]
@@ -657,7 +657,7 @@
           "values": ["like"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat caught a rumor from rogues that c_n is looking for {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from caught a rumor from rogues that c_n is looking for {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -683,7 +683,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was impressed by to_cat's hunting skill, even though it meant to_cat remained on c_n territory."
+            "cats_from": "cat_from was impressed by cat_to's hunting skill, even though it meant cat_to remained on c_n territory."
           }
         }
       ]
@@ -709,7 +709,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was grudgingly impressed by how to_cat eluded c_n's pursuit."
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
           }
         },
         {
@@ -719,7 +719,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was looking for {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -745,7 +745,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was grudgingly impressed by how to_cat eluded c_n's pursuit."
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
           }
         },
         {
@@ -755,7 +755,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat heard that c_n was hunting {PRONOUN/from_cat/object} down."
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
           }
         }
       ]
@@ -781,7 +781,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat narrowly escaped a c_n patrol."
+            "cats_from": "cat_from narrowly escaped a c_n patrol."
           }
         }
     ]
@@ -807,7 +807,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat felt contempt for c_n after outhunting their best hunters and earning the right to remain on their territory."
+            "cats_from": "cat_from felt contempt for c_n after outhunting their best hunters and earning the right to remain on their territory."
           }
         },
         {
@@ -817,7 +817,7 @@
           "values": ["respect"],
           "amount": 10,
           "log": {
-            "cats_from": "from_cat was grudgingly impressed by to_cat's hunting skill."
+            "cats_from": "cat_from was grudgingly impressed by cat_to's hunting skill."
           }
         }
       ]
@@ -843,7 +843,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was grudgingly impressed by how to_cat eluded c_n's pursuit."
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
           }
         },
         {
@@ -853,7 +853,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat heard that c_n was looking for {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -879,7 +879,7 @@
           "values": ["respect"],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat was grudgingly impressed by how to_cat evaded c_n's trap."
+            "cats_from": "cat_from was grudgingly impressed by how cat_to evaded c_n's trap."
           }
         },
         {
@@ -889,7 +889,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat evaded the trap that c_n set for {PRONOUN/from_cat/object}."
+            "cats_from": "cat_from evaded the trap that c_n set for {PRONOUN/cat_from/object}."
           }
         }
       ]
@@ -911,7 +911,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat felt contempt for c_n after the c_n patrol that came to kill {PRONOUN/from_cat/object} found {PRONOUN/from_cat/object} in {PRONOUN/from_cat/poss} Twoleg nest."
+            "cats_from": "cat_from felt contempt for c_n after the c_n patrol that came to kill {PRONOUN/cat_from/object} found {PRONOUN/cat_from/object} in {PRONOUN/cat_from/poss} Twoleg nest."
           }
         }
       ]
@@ -933,7 +933,7 @@
           "values": ["like"],
           "amount": -10,
           "log": {
-            "cats_from": "from_cat felt contempt for c_n after the c_n patrol that came to drive {PRONOUN/from_cat/object} out found {PRONOUN/from_cat/object} in {PRONOUN/from_cat/poss} Twoleg nest."
+            "cats_from": "cat_from felt contempt for c_n after the c_n patrol that came to drive {PRONOUN/cat_from/object} out found {PRONOUN/cat_from/object} in {PRONOUN/cat_from/poss} Twoleg nest."
           }
         }
       ]
@@ -1025,7 +1025,7 @@
           "values": ["like", "trust"],
           "amount": -30,
           "log": {
-            "cats_from": "from_cat realized c_n may not want {PRONOUN/from_cat/object} back."
+            "cats_from": "cat_from realized c_n may not want {PRONOUN/cat_from/object} back."
           }
         }
       ]
@@ -1047,7 +1047,7 @@
           "values": ["like", "trust"],
           "amount": -30,
           "log": {
-            "cats_from": "from_cat realized c_n may not want {PRONOUN/from_cat/object} back."
+            "cats_from": "cat_from realized c_n may not want {PRONOUN/cat_from/object} back."
           }
         }
       ]
@@ -1079,7 +1079,7 @@
           "values": ["trust"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat knew of c_n's reputation for dealing harshly with outsiders."
+            "cats_from": "cat_from knew of c_n's reputation for dealing harshly with outsiders."
           }
         }
       ]
@@ -1101,7 +1101,7 @@
           "values": ["trust"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat knew of c_n's reputation for dealing harshly with outsiders."
+            "cats_from": "cat_from knew of c_n's reputation for dealing harshly with outsiders."
           }
         }
       ]
@@ -1123,7 +1123,7 @@
           "values": ["like"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat was stunned to be attacked by c_n, who {PRONOUN/from_cat/subject} previously thought was friendly to outsiders."
+            "cats_from": "cat_from was stunned to be attacked by c_n, who {PRONOUN/cat_from/subject} previously thought was friendly to outsiders."
           }
         }
       ]
@@ -1145,7 +1145,7 @@
           "values": ["trust"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat knew of c_n's reputation for dealing harshly with outsiders."
+            "cats_from": "cat_from knew of c_n's reputation for dealing harshly with outsiders."
           }
         }
       ]
@@ -1167,14 +1167,14 @@
           "values": ["trust"],
           "amount": -15,
           "log": {
-            "cats_from": "from_cat knew of c_n's reputation for dealing harshly with outsiders."
+            "cats_from": "cat_from knew of c_n's reputation for dealing harshly with outsiders."
           }
         }
       ]
   },
   {
     "interaction_type": "invite",
-    "event_text": "Apparently, c_n is getting a reputation with the local rogues - every time c_n visits one of them, they go missing. m_c is nowhere to be found.",
+    "event_text": "Apparently, c_n is getting a reputation with the local rogues — every time c_n visits one of them, they go missing. m_c is nowhere to be found.",
     "reputation": ["welcoming"],
     "rep_change": 0,
     "m_c": {

@@ -24,10 +24,10 @@
             "STORY,1"
         ],
         "intro_text": "Ugh. r_c loves the plains, but the baking hot sun isn't its best look.",
-        "decline_text": "It's too hot for this - let's head back to camp.",
+        "decline_text": "It's too hot for this — let's head back to camp.",
         "success_outcomes": [
             {
-                "text": "Many generations ago, it wasn't always like this, p_l murmurs. This land has always been plains - trees wound round the rivers and bushes clung to sheltered dips in the land. Twolegs caused a hideous drought of swirling dust that killed off the patchy trees. It's their fault.",
+                "text": "Many generations ago, it wasn't always like this, p_l murmurs. This land has always been plains — trees wound round the rivers and bushes clung to sheltered dips in the land. Twolegs caused a hideous drought of swirling dust that killed off the patchy trees. It's their fault.",
                 "exp": 30,
                 "art": "gen_med_gatheringoakleaves_leaf-fall1",
                 "stat_skill": [
@@ -50,14 +50,14 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat learned from to_cat about how the plains used to be much more verdant land before the Twolegs ruined it."
+                            "cats_from": "cat_from learned from cat_to about how the plains used to be much more verdant land before the Twolegs ruined it."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "It's not much, s_c huffs apologetically, but hold on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} a little nest under to a huge clump of grass, right near the stems, and {VERB/s_c/offer/offers} it to r_c. There - the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down.",
+                "text": "It's not much, s_c huffs apologetically, but hold on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} a little nest under to a huge clump of grass, right near the stems, and {VERB/s_c/offer/offers} it to r_c. There — the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down.",
                 "exp": 30,
                 "art": "gen_train_vision4",
                 "stat_skill": [
@@ -81,7 +81,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat finding a cool, shady spot for the patrol to take a break."
+                            "cats_from": "cat_from appreciated cat_to finding a cool, shady spot for the patrol to take a break."
                         }
                     },
                     {
@@ -97,7 +97,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was grateful to to_cat for finding {PRONOUN/from_cat/object} a place to cool off on patrol."
+                            "cats_from": "cat_from was grateful to cat_to for finding {PRONOUN/cat_from/object} a place to cool off on patrol."
                         }
                     }
                 ],
@@ -127,7 +127,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story of The Earth-Cat's ticks."
+                            "cats_from": "cat_from enjoyed cat_to's story of The Earth-Cat's ticks."
                         }
                     }
                 ],
