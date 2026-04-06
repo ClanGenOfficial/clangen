@@ -19715,7 +19715,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "While neither blackberry nor the similarly-brambled raspberry lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance both the plant's and the Clan's needs as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} what leaves {PRONOUN/p_l/subject} can with frozen paws. The patrol sees {PRONOUN/p_l/poss} stress and gathers around to support {PRONOUN/p_l/object}.",
+                "text": "While neither blackberry nor the similarly-brambled raspberry lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance both the plant's and the Clan's needs as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} what leaves {PRONOUN/p_l/subject} can with frozen paws.",
                 "exp": 10,
                 "herbs": [
                     "raspberry",
