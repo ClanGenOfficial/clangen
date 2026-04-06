@@ -813,7 +813,6 @@ class Condition_Events:
                         ]
                         del translated_condition, translated_injury
                     # choose event string and ensure Clan's med cat number aligns with event text
-                    random_index = random.randrange(0, len(possible_string_list))
 
                     med_list = find_alive_cats_with_rank(
                         Cat,
@@ -830,18 +829,20 @@ class Condition_Events:
                         med_cat = random.choice(med_list)
                     else:
                         med_cat = None
-
+                        
+                    accepted_events = []
                     # Ensure Clan's med cat number aligns with event text
-                    if (
-                        not med_cat
-                        and random_index < 2
-                        and len(possible_string_list) >= 3
-                    ):
-                        random_index = 2
-                    elif random_index < 2:
-                        cat_dict["r_c"] = med_cat
+                    if ( not med_cat ):
+                            for string_event in possible_string_list:
+                                if "r_c" not in string_event: 
+                                    accepted_events.append(string_event)   
+                    else:  accepted_events = possible_string_list 
 
-                    event = possible_string_list[random_index]
+                    random_index = random.randrange(0, len(accepted_events))
+                    event = accepted_events[random_index]
+
+                    if "r_c" in event: cat_dict["r_c"] = med_cat
+                        
                     event = event_text_adjust(
                         Cat, event, main_cat=cat, random_cat=med_cat
                     )  # adjust the text
