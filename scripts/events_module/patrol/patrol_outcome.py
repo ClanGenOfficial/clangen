@@ -231,12 +231,11 @@ class PatrolOutcome:
 
         return outcome_list
 
-	
     @staticmethod
     def _profile_link(cat: Cat) -> str:
         """Create a hyperlink to a cat profile from patrol results."""
         return f'<a href="cat://{cat.ID}">{escape(str(cat.name))}</a>'
-    
+
     def execute_outcome(self, patrol: "Patrol") -> Tuple[str, str, list, Optional[str]]:
         """
         Executes the outcome. Returns a tuple with the final outcome text, the results text, and any outcome art
@@ -691,7 +690,9 @@ class PatrolOutcome:
                     for given_condition in given_conditions:
                         self.__handle_condition_history(_cat, given_condition, patrol)
                     combined_conditions = ", ".join(given_conditions)
-                    results.append(f"{self._profile_link(_cat)} got: {combined_conditions}.")
+                    results.append(
+                        f"{self._profile_link(_cat)} got: {combined_conditions}."
+                    )
                 else:
                     # If no results are shown, assume the cat didn't get the patrol history. Default override.
                     self.__handle_condition_history(

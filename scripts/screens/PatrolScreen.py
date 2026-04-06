@@ -84,7 +84,7 @@ class PatrolScreen(Screens):
                     switch_set_value(Switch.cat, cat.ID)
                     game.last_screen_forProfile = GameScreen.PATROL
                     self.change_screen(GameScreen.PROFILE)
-                    
+
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)
@@ -1353,13 +1353,13 @@ class PatrolScreen(Screens):
                     if 10 <= len(name):  # check name length
                         short_name = name[0:9]
                         name = short_name + ".."
-                    self.elements[
-                        "app_mentor_name"
-                    ] = pygame_gui.elements.ui_label.UILabel(
-                        ui_scale(pygame.Rect((553, 300), (95, 30))),
-                        name,
-                        object_id=get_text_box_theme(),
-                        manager=MANAGER,
+                    self.elements["app_mentor_name"] = (
+                        pygame_gui.elements.ui_label.UILabel(
+                            ui_scale(pygame.Rect((553, 300), (95, 30))),
+                            name,
+                            object_id=get_text_box_theme(),
+                            manager=MANAGER,
+                        )
                     )
                     self.elements["app_mentor_info"] = pygame_gui.elements.UITextBox(
                         relation,
@@ -1393,22 +1393,22 @@ class PatrolScreen(Screens):
 
                     # Buttons to cycle between apprentices
                     if self.selected_cat.mentor == None:
-                        self.elements[
-                            "cycle_app_mentor_left_button"
-                        ] = UISurfaceImageButton(
-                            ui_scale(pygame.Rect((548, 390), (34, 34))),
-                            Icon.ARROW_LEFT,
-                            get_button_dict(ButtonStyles.ICON, (34, 34)),
-                            object_id="@buttonstyles_icon",
+                        self.elements["cycle_app_mentor_left_button"] = (
+                            UISurfaceImageButton(
+                                ui_scale(pygame.Rect((548, 390), (34, 34))),
+                                Icon.ARROW_LEFT,
+                                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                                object_id="@buttonstyles_icon",
+                            )
                         )
-                        self.elements[
-                            "cycle_app_mentor_right_button"
-                        ] = UISurfaceImageButton(
-                            ui_scale(pygame.Rect((618, 390), (34, 34))),
-                            Icon.ARROW_RIGHT,
-                            get_button_dict(ButtonStyles.ICON, (34, 34)),
-                            object_id="@buttonstyles_icon",
-                            manager=MANAGER,
+                        self.elements["cycle_app_mentor_right_button"] = (
+                            UISurfaceImageButton(
+                                ui_scale(pygame.Rect((618, 390), (34, 34))),
+                                Icon.ARROW_RIGHT,
+                                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                                object_id="@buttonstyles_icon",
+                                manager=MANAGER,
+                            )
                         )
                         self.update_button()
 
