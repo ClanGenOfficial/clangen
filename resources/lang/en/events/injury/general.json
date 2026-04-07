@@ -31,6 +31,79 @@
         ]
     },
     {
+        "event_id": "gen_injury_medmessup1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c mixed up the herb dosages for r_c, poisoning {PRONOUN/r_c/object}.",
+        "m_c": {
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "r_c": {},
+        "history": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "death": "m_c died after the medicine cat accidentally poisoned {PRONOUN/m_c/object}."
+            }
+        ],
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "poisoned"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_to accidentally poisoned cat_from by mixing up the herb dosages."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from's confidence in cat_to's abilities as a medicine cat was shaken after {PRONOUN/m_c/subject} accidentally poisoned r_c."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_injury_bruises_anykitten2",
         "location": [
             "any"
@@ -6554,6 +6627,87 @@
                 "injuries": [
                     "severe headache"
                 ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_sorethroat_anyany",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c almost choked on a prey-bone, but r_c hit {PRONOUN/m_c/poss} back hard enough to make it fly out. m_c can taste blood at the back of {PRONOUN/m_c/poss} throat; the bone must have nicked {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "-kitten",
+                "-adolescent"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "values": ["respect", "trust"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_to saved cat_from from choking on a prey-bone."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_drownedbyaduck",
+        "location": ["beach", "forest", "wetlands"],
+        "season": ["-leaf-bare"],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 1,
+        "event_text": "m_c fought with a duck in the water, trying to kill it for the fresh-kill pile, but was knocked below the surface of the water and inhaled a lot of water.",
+        "m_c": {
+            "rank": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died from water in {PRONOUN/m_c/poss} lungs after a fight with a duck."
             }
         ]
     },

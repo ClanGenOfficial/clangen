@@ -280,7 +280,7 @@ class PatrolOutcome:
                 Cat, self.relationship_effects, patrol, stat_cat=self.stat_cat
             )
         )
-        if self.relationship_effects:
+        if self.relationship_effects and rel_results:
             results.append(i18n.t(f"screens.patrol.relationship_changed"))
 
         results.append(self._handle_rep_changes())

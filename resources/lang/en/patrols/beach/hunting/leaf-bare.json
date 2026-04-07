@@ -722,7 +722,7 @@
                         "values": ["comfort", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from's gentle presence helped cat_to's patrol stay focused during a difficult snowy hunt."
+                            "cats_from": "cat_to's gentle presence helped cat_from's patrol stay focused during a difficult snowy hunt."
                         }
                     },
                     {

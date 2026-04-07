@@ -2163,8 +2163,6 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "respect",
-                    "like",
                     "trust"
                 ],
                 "amount": -15,
@@ -9999,7 +9997,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a herb-gathering dispute with o_c_n."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve an herb-gathering dispute with o_c_n."
                 }
             }
         ]

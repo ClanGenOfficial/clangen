@@ -2625,7 +2625,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from was impressed when cat_to found a huge patch of herbs on a herb-gathering patrol."
+                            "cats_from": "cat_from was impressed when cat_to found a huge patch of herbs on an herb-gathering patrol."
                         }
                     }
                 ],
@@ -2711,7 +2711,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "cat_from and cat_to enjoyed a herb-gathering contest on patrol."
+                            "cats_from": "cat_from and cat_to enjoyed an herb-gathering contest on patrol."
                         }
                     }
                 ],
@@ -2783,7 +2783,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l enjoyed bossing r_c around on a herb-gathering patrol, and r_c indulged {PRONOUN/p_l/object}."
+                            "cats_from": "p_l enjoyed bossing r_c around on an herb-gathering patrol, and r_c indulged {PRONOUN/p_l/object}."
                         }
                     }
                 ],
@@ -2806,7 +2806,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l enjoyed bossing r_c around on a herb-gathering patrol, and r_c indulged {PRONOUN/p_l/object}, remembering what it was like to be young."
+                            "cats_from": "p_l enjoyed bossing r_c around on an herb-gathering patrol, and r_c indulged {PRONOUN/p_l/object}, remembering what it was like to be young."
                         }
                     }
                 ],
@@ -3674,7 +3674,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_to was no help to cat_from on a herb-gathering patrol."
+                            "cats_from": "cat_to was no help to cat_from on an herb-gathering patrol."
                         }
                     }
                 ],
@@ -3710,7 +3710,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from found cat_to's questions on a herb-gathering patrol obnoxious."
+                            "cats_from": "cat_from found cat_to's questions on an herb-gathering patrol obnoxious."
                         }
                     }
                 ],
@@ -3954,7 +3954,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from and cat_to spent a herb-gathering patrol discussing the possibility of taking on another medicine cat apprentice."
+                            "cats_from": "cat_from and cat_to spent an herb-gathering patrol discussing the possibility of taking on another medicine cat apprentice."
                         }
                     }
                 ],
@@ -3977,7 +3977,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from and cat_to spent a herb-gathering patrol discussing the possibility of taking on another medicine cat apprentice."
+                            "cats_from": "cat_from and cat_to spent an herb-gathering patrol discussing the possibility of taking on another medicine cat apprentice."
                         }
                     }
                 ],
@@ -4384,7 +4384,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from and cat_to both harvested many herbs while on a herb-gathering patrol together."
+                            "cats_from": "cat_from and cat_to both harvested many herbs while on an herb-gathering patrol together."
                         }
                     }
                 ],
@@ -4460,7 +4460,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to argued on a herb-gathering patrol after s_c blamed r_c for distracting {PRONOUN/s_c/object}."
+                            "cats_from": "cat_from and cat_to argued on an herb-gathering patrol after s_c blamed r_c for distracting {PRONOUN/s_c/object}."
                         }
                     }
                 ],
@@ -4531,7 +4531,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l and r_c enjoyed some catmint stems on a herb-gathering patrol."
+                            "cats_from": "p_l and r_c enjoyed some catmint stems on an herb-gathering patrol."
                         }
                     }
                 ],
@@ -6156,7 +6156,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c was flustered by s_c's surprising reflexes when s_c killed a snake lurking around a juniper bush during a herb-gathering patrol."
+                            "cats_from": "r_c was flustered by s_c's surprising reflexes when s_c killed a snake lurking around a juniper bush during an herb-gathering patrol."
                         }
                     }
                 ],
@@ -6499,7 +6499,7 @@
                         ],
                         "amount": -13,
                         "log": {
-                            "cats_from": "app1 bossed app2 around the whole time on a herb-gathering patrol, and to make matters worse, the patrol was highly successful."
+                            "cats_from": "app1 bossed app2 around the whole time on an herb-gathering patrol, and to make matters worse, the patrol was highly successful."
                         }
                     }
                 ],
@@ -7323,7 +7323,7 @@
                         ],
                         "amount": -13,
                         "log": {
-                            "cats_from": "app1 bossed cat_to around the whole time on a herb-gathering patrol, and to make matters worse, the patrol was highly successful."
+                            "cats_from": "app1 bossed cat_to around the whole time on an herb-gathering patrol, and to make matters worse, the patrol was highly successful."
                         }
                     }
                 ],
@@ -11857,7 +11857,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from and cat_to had little to chat about during a herb-gathering patrol."
+                            "cats_from": "cat_from and cat_to had little to chat about during an herb-gathering patrol."
                         }
                     }
                 ],
@@ -12176,7 +12176,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs app1 to follow their industrious example as {PRONOUN/app1/subject} {VERB/app1/gather/gathers}. app1/subject/CAP prune back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
+                "text": "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs app1 to follow their industrious example as {PRONOUN/app1/subject} {VERB/app1/gather/gathers}. {PRONOUN/app1/subject/CAP} {VERB/app1/prune/prunes} back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest.",
                 "exp": 20,
                 "herbs": [
                     "goldenrod",
@@ -19715,7 +19715,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "While neither blackberry nor the similarly-brambled raspberry lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance both the plant's and the Clan's needs as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} what leaves {PRONOUN/p_l/subject} can with frozen paws. The patrol sees {PRONOUN/p_l/poss} stress and gathers around to support {PRONOUN/p_l/object}.",
+                "text": "While neither blackberry nor the similarly-brambled raspberry lose their leaves completely, leaf-bare is hard on every plant. p_l has to balance both the plant's and the Clan's needs as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} what leaves {PRONOUN/p_l/subject} can with frozen paws.",
                 "exp": 10,
                 "herbs": [
                     "raspberry",
@@ -23054,7 +23054,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from and cat_to had little to chat about during a herb-gathering patrol."
+                            "cats_from": "cat_from and cat_to had little to chat about during an herb-gathering patrol."
                         }
                     }
                 ],
@@ -30380,7 +30380,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from and cat_to had little to chat about during a herb-gathering patrol."
+                            "cats_from": "cat_from and cat_to had little to chat about during an herb-gathering patrol."
                         }
                     }
                 ],

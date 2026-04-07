@@ -458,10 +458,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["random_background"]:
             # Select a random biome and background
             self.biome_selected = self.random_biome_selection()
-            if self.biome_selected in ("Forest", "Mountainous", "Beach"):
-                self.selected_camp_tab = randrange(1, 5)
-            else:
-                self.selected_camp_tab = randrange(1, 4)
+            self.selected_camp_tab = randrange(1, 5)
             self.refresh_selected_camp()
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements["next_step"]:
@@ -935,6 +932,20 @@ class MakeClanScreen(Screens):
                     "right": "right",
                     "right_target": self.elements["art_frame"],
                     "top_target": self.tabs["tab2"],
+                },
+            )
+            tab_rect = ui_scale(pygame.Rect((0, 0), (80, 30)))
+            tab_rect.topright = ui_scale_offset((5, 5))
+            self.tabs["tab4"] = UISurfaceImageButton(
+                tab_rect,
+                "screens.make_clan.camp_bridge",
+                get_button_dict(ButtonStyles.VERTICAL_TAB, (80, 30)),
+                object_id="@buttonstyles_vertical_tab",
+                manager=MANAGER,
+                anchors={
+                    "right": "right",
+                    "right_target": self.elements["art_frame"],
+                    "top_target": self.tabs["tab3"],
                 },
             )
         elif self.biome_selected == "Beach":
@@ -1884,7 +1895,7 @@ class MakeClanScreen(Screens):
             object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="screens.make_clan.season_tooltip",
-            tool_tip_text_kwargs={"season": i18n.t("general.leafbare").capitalize()},
+            tool_tip_text_kwargs={"season": i18n.t("general.leaf-bare").capitalize()},
             anchors={"top_target": self.tabs["leaffall_tab"]},
         )
         # Random background

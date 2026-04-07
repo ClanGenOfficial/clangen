@@ -1073,7 +1073,7 @@ class Pregnancy_Events:
         all_relatives = [
             Cat.fetch_cat(c)
             for c in all_relatives
-            if c not in parents and c not in all_kitten
+            if c not in list(parents) and c not in [k.ID for k in all_kitten]
         ]
         all_relatives = [c for c in all_relatives if c.status.alive_in_player_clan]
 

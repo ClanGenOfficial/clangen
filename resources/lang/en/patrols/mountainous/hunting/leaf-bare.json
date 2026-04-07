@@ -66,10 +66,10 @@
                     },
                     {
                         "cats_to": [
-                            "some_clan"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "clan", "high_social", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
@@ -286,10 +286,10 @@
                     },
                     {
                         "cats_to": [
-                            "some_clan"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "clan", "high_aggress", "high_social"
                         ],
                         "mutual": false,
                         "values": [
@@ -541,7 +541,7 @@
                         "values": ["comfort", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from's gentle presence helped cat_to's patrol stay focused during a difficult snowy hunt."
+                            "cats_from": "cat_to's gentle presence helped cat_from's patrol stay focused during a difficult snowy hunt."
                         }
                     },
                     {
