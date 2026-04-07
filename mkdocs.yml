@@ -60,6 +60,8 @@ nav:
   - Contributing to the Wiki:
       - contributing/index.md
       - contributing/documentation-resources.md
+  - Blog:
+      - blog/index.md
 
 theme:
   name: material
@@ -161,3 +163,4 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
+  - blog
