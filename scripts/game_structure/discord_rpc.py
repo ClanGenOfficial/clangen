@@ -33,7 +33,7 @@ class _DiscordRPC(threading.Thread):
         self._rpc = None
         self._client_id = client_id
         self._connected = False
-        self._start_time = round(time() * 1000)
+        self._start_time = int(time())
         self._rpc_supported = False
         self._event_loop = asyncio.new_event_loop()
 
@@ -44,7 +44,6 @@ class _DiscordRPC(threading.Thread):
     def run(self):
         self.start_rpc.wait()
         self.get_rpc()
-        self.connect()
         while not self.close_rpc.is_set():
             self.update_rpc.wait()
             if not self.close_rpc.is_set():
