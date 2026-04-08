@@ -2040,8 +2040,7 @@
                 "text": "p_l lunges for the common buzzard, only for the buzzard to spread their wings too much, much larger than they look folded and startle the cat right off the cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} never seen again.",
                 "exp": 0,
                 "dead_cats": [
-                    "r_c",
-                    "all_lives"
+                    "p_l"
                 ],
                 "history_text": {
                     "death": "m_c was scared off a cliff by a large bird."
@@ -2054,7 +2053,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "p_l"
                         ],
                         "injuries": [
                             "beak_bite"
@@ -2068,7 +2067,7 @@
                 "frequency": 3
             },
             {
-                "text": "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird — but the bird flies off, and s_c slips on the cold, icy cliff, never to be seen again.",
+                "text": "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird — but the bird flies off, and s_c slips off the cold, icy cliff, never to be seen again.",
                 "exp": 0,
                 "stat_trait": [
                     "childish",
@@ -2077,12 +2076,8 @@
                     "troublesome",
                     "insecure"
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
                 "dead_cats": [
-                    "s_c",
-                    "all_lives"
+                    "s_c"
                 ],
                 "history_text": {
                     "death": "m_c slipped off a cliff while trying to catch a buzzard."
