@@ -9914,6 +9914,18 @@
                     },
                     {
                         "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "like", "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was irritated when cat_to refused to unsheathe {PRONOUN/cat_to/poss} claws and train with cat_from."
+                        }
+                    },
+                    {
+                        "cats_to": ["r_c"],
                         "cats_from": ["patrol", "-s_c"],
                         "mutual": false,
                         "values": [
@@ -10178,6 +10190,18 @@
                         }
                     },
                     {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "like", "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was irritated when cat_to refused to unsheathe {PRONOUN/cat_to/poss} claws and train with cat_from."
+                        }
+                    },
+                    {
                         "cats_to": ["s_c"],
                         "cats_from": ["clan", "high_lawful", "high_social"],
                         "mutual": false,
@@ -10187,6 +10211,18 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "cat_from heard a rumor that cat_to told r_c to spar with claws unsheathed."
+                        }
+                    },
+                    {
+                        "cats_to": ["clan", "high_lawful", "high_social"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "comfort", "respect"
+                        ],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from suspected cat_to was gossiping about {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -10201,18 +10237,6 @@
                     {
                         "cats_to": ["s_c"],
                         "cats_from": ["r_c", "high_lawful"],
-                        "mutual": false,
-                        "values": [
-                            "like", "comfort", "trust"
-                        ],
-                        "amount": -20,
-                        "log": {
-                            "cats_from": "cat_to told cat_from to spar with claws unsheathed and then injured {PRONOUN/cat_from/object} in the spar."
-                        }
-                    },
-                    {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c", "low_lawful", "low_aggress"],
                         "mutual": false,
                         "values": [
                             "like", "comfort", "trust"
@@ -10736,6 +10760,7 @@
             {
                 "text": "s_c tells app1 {PRONOUN/app1/subject}{VERB/app1/'re/'s} ready for the next level of sparring — with unsheathed claws. app1 is excited for {PRONOUN/app1/poss} first real fight. When {PRONOUN/app1/subject} {VERB/app1/get/gets} back to camp, {PRONOUN/app1/subject} {VERB/app1/show/shows} off {PRONOUN/app1/poss} torn ear proudly, hoping it'll scar. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} notice some Clanmates exchanging worried looks.",
                 "exp": 0,
+                "stat_trait": ["bloodthirsty"],
                 "relationships": [
                     {
                         "cats_to": ["app1"],
