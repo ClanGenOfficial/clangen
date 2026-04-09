@@ -5957,7 +5957,7 @@
             },
             {
                 "min_max_status": {"leader": [1, 1]},
-                "text": "p_l sighs as r_c turns to {PRONOUN/p_l/object}, as always. For once, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want to dole out orders and organize everything. But r_c came to the training area expecting {PRONOUN/p_l/object} to lead, so {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have any ideas for how to fill the afternoon.",
+                "text": "p_l sighs as r_c turns to {PRONOUN/p_l/object}, as always. For once, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want to dole out orders and organize everything. But r_c came to the training area expecting {PRONOUN/p_l/object} to lead, so r_c doesn't have any ideas for how to fill the afternoon.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -7535,7 +7535,7 @@
                 "frequency": 4
             },
             {
-                "text": "In the midst of training, p_l brings up a bad habit of r_c's, and r_c scowls. Is this really the time?.",
+                "text": "In the midst of training, p_l brings up a bad habit of r_c's, and r_c scowls. Is this really the time?",
                 "exp": 0,
                 "relationships": [
                     {
@@ -8811,7 +8811,7 @@
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["p_l"],
-                        "mutual": false,
+                        "mutual": true,
                         "values": ["like", "respect"],
                         "amount": -10,
                         "log": {
@@ -9442,7 +9442,7 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "cat_from was disappointed in cat_to for {PRONOUN/cat_to/poss} distraction during a training exercise.",
-                            "cats_to": "cat_to was annoyed that cat_from wouldn't let {PRONOUN/cat_to/object} practice hunting instead of teamwork."
+                            "cats_to": "cat_to was annoyed that cat_from wouldn't let {PRONOUN/cat_to/object} practice fighting instead of hunting."
                         }
                     }
                 ],
@@ -9709,7 +9709,7 @@
                         "values": ["like", "respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from and cat_to squabbled on a training patrol when they couldn't agree what they wanted to work on."
+                            "cats_from": "cat_from and cat_to squabbled on a training patrol when they couldn't agree on what they wanted to work on."
                         }
                     }
                 ],
@@ -9907,7 +9907,7 @@
                         "values": [
                             "like", "comfort", "trust"
                         ],
-                        "amount": -20,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_to told cat_from to spar with claws unsheathed."
                         }
@@ -9919,7 +9919,7 @@
                         "values": [
                             "respect", "trust"
                         ],
-                        "amount": 20,
+                        "amount": 15,
                         "log": {
                             "cats_from": "cat_from was relieved that cat_to spoke up when s_c told the patrol to spar with claws unsheathed."
                         }
@@ -9931,7 +9931,7 @@
                         "values": [
                             "like", "comfort", "trust"
                         ],
-                        "amount": -15,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_from heard a rumor that cat_to told {PRONOUN/cat_to/poss} patrol to spar with claws unsheathed."
                         }
@@ -9954,7 +9954,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_to told cat_from to spar with claws unsheathed."
+                            "cats_from": "cat_to told cat_from to spar with claws unsheathed and then left r_c bleeding after a spar."
                         }
                     },
                     {
@@ -9964,7 +9964,7 @@
                         "values": [
                             "respect", "trust"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from sparred with claws unsheathed with cat_to."
                         }
@@ -9976,7 +9976,7 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -10,
+                        "amount": -20,
                         "log": {
                             "cats_from": "cat_to injured cat_from during a spar by unsheathing {PRONOUN/cat_to/poss} claws."
                         }
@@ -10172,7 +10172,7 @@
                         "values": [
                             "like", "comfort", "trust"
                         ],
-                        "amount": -20,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_to told cat_from to spar with claws unsheathed."
                         }
@@ -10184,7 +10184,7 @@
                         "values": [
                             "like", "comfort", "trust"
                         ],
-                        "amount": -15,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_from heard a rumor that cat_to told r_c to spar with claws unsheathed."
                         }
@@ -10207,7 +10207,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_to told cat_from to spar with claws unsheathed."
+                            "cats_from": "cat_to told cat_from to spar with claws unsheathed and then injured {PRONOUN/cat_from/object} in the spar."
                         }
                     },
                     {
@@ -10219,7 +10219,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_to told cat_from to spar with claws unsheathed."
+                            "cats_from": "cat_to told cat_from to spar with claws unsheathed and then injured {PRONOUN/cat_from/object} in the spar."
                         }
                     },
                     {
@@ -10229,7 +10229,7 @@
                         "values": [
                             "respect", "trust"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from approved of cat_to's plan to train with claws unsheathed."
                         }
@@ -10241,7 +10241,7 @@
                         "values": [
                             "respect", "trust"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from sparred with claws unsheathed with cat_to."
                         }
@@ -10758,7 +10758,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -15,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_from began to suspect cat_to was training app1 with claws unsheathed."
                         }
@@ -11168,7 +11168,7 @@
                 "text": "p_l playfully pounces on s_c when s_c isn't looking, and on instinct, s_c whips around and lashes {PRONOUN/s_c/poss} claws across p_l's face. s_c is horrified and apologizes, but the damage is done, and s_c has to hurry {PRONOUN/p_l/object} back to camp to seek treatment.",
                 "exp": 0,
                 "can_have_stat": ["r_c"],
-                "stat_trait": ["gloomy", "lonesome", "nervous", "careful", "insecure", "fierce", "strange"],
+                "stat_trait": ["gloomy", "lonesome", "nervous", "careful", "insecure", "fierce", "strange", "bloodthirsty"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
