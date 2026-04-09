@@ -829,10 +829,20 @@ def gather_cat_objects(
         # OVERALL CLAN CATS
         elif abbr == "clan":
             found_cat_list.update(clan_cats)
+            # exclude cats involved in the event
+            found_cat_list.discard(getattr(event, "main_cat", None))
+            found_cat_list.discard(getattr(event, "random_cat", None))
+            if getattr(event, "patrol_cats", None):
+                found_cat_list.difference_update(set(event.patrol_cats))
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
             found_cat_list.update(
                 sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
             )
+            # exclude cats involved in the event
+            found_cat_list.discard(getattr(event, "main_cat", None))
+            found_cat_list.discard(getattr(event, "random_cat", None))
+            if getattr(event, "patrol_cats", None):
+                found_cat_list.difference_update(set(event.patrol_cats))
 
         # add/remove cats if found and then continue for loop
         if is_exclusionary and found_cat_list:

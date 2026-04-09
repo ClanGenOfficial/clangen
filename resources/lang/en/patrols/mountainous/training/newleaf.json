@@ -24,7 +24,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "This close to the nest, the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's an opportunity to observe a side of the birds birds that app1 never expected to see - to learn their body language and watch them with their chicks.",
+                "text": "This close to the nest, the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's an opportunity to observe a side of the birds birds that app1 never expected to see — to learn their body language and watch them with their chicks.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -57,7 +57,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l tells app1 to watch carefully as the parents arrive at and leave the nest - this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
+                "text": "p_l tells app1 to watch carefully as the parents arrive at and leave the nest — this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -130,7 +130,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c shows app1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive - if scary - lesson, and app1 learns a lot.",
+                "text": "s_c shows app1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive — if scary — lesson, and app1 learns a lot.",
                 "exp": 15,
                 "stat_skill": [
                     "TEACHER,1"
@@ -278,7 +278,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l tells the apprentices to watch carefully as the parents arrive at and leave the nest - this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
+                "text": "p_l tells the apprentices to watch carefully as the parents arrive at and leave the nest — this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
                 "exp": 20,
                 "relationships": [
                     {
@@ -351,7 +351,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c shows app1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive - if scary - lesson, and app1 learns a lot.",
+                "text": "s_c shows app1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive — if scary — lesson, and app1 learns a lot.",
                 "exp": 15,
                 "stat_skill": [
                     "TEACHER,1"

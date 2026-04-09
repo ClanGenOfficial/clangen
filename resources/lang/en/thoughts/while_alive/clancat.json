@@ -6678,10 +6678,10 @@
     {
         "id": "gen_to_bloodthirsty_vengeful",
         "thoughts": [
-			"Seems to be oblivious to m_c glaring from across camp",
-			"Wonders when m_c learned so much about cat anatomy",
-			"Has to snap m_c out of staring darkly at a Clanmate",
-			"Wonders why m_c knows so much about a Clanmate {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like"
+			"Seems oblivious to r_c glaring from across camp",
+			"Wonders when r_c learned so much about cat anatomy",
+			"Has to snap r_c out of staring darkly at a Clanmate",
+			"Wonders why r_c knows so much about a Clanmate {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like"
         ],
         "random_trait_constraint": [
             "bloodthirsty",

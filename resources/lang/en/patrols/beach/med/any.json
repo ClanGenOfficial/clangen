@@ -133,7 +133,7 @@
         "chance_of_success": 65,
         "success_outcomes": [
             {
-                "text": "app1 is focused, determined to prove {PRONOUN/app1/poss} independence. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} the herbs easily and bring them back to camp with {PRONOUN/app1/poss} head held up high - no sweat, no stress, no fuss.",
+                "text": "app1 is focused, determined to prove {PRONOUN/app1/poss} independence. {PRONOUN/app1/subject/CAP} {VERB/app1/find/finds} the herbs easily and bring them back to camp with {PRONOUN/app1/poss} head held up high — no sweat, no stress, no fuss.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"
@@ -208,7 +208,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
+                "text": "p_l and r_c decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"

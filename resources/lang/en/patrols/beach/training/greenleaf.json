@@ -26,7 +26,7 @@
         "decline_text": "Clearly there'll be no using this part of their territory today then. The patrol goes to report this back to camp.",
         "success_outcomes": [
             {
-                "text": "This is the history p_l is here to teach - every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
+                "text": "This is the history p_l is here to teach — every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
                 "exp": 30,
                 "art": "bch_hunt_twolegsobject",
                 "relationships": [

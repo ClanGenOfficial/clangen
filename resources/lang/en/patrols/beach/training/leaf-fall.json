@@ -471,7 +471,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 is right - this is far, far too cold of a pool to train in, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here.",
+                "text": "app1 is right — this is far, far too cold of a pool to train in, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_app",
                 "relationships": [

@@ -31,7 +31,7 @@
                 "frequency": 1
             },
             {
-                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
+                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way — {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -88,7 +88,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by an invading rogue.",
                     "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
@@ -103,15 +102,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of injuries inflicted by an invading rogue."
                 },
                 "frequency": 3
             },
@@ -203,7 +199,6 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by an invading rogue.",
                     "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
@@ -218,15 +213,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of injuries inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -269,7 +261,7 @@
                 "frequency": 1
             },
             {
-                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
+                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} a warning and the rogue scrambles out of the way — {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -411,13 +403,13 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
-                "history_text": {"scar": "m_c was scarred by an invading rogue."},
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "death": "m_c died of injuries inflicted by an invading rogue."
+                },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -555,14 +547,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SNOUT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by an invading rogue."
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "death": "m_c died of injuries inflicted by an invading rogue."
                 },
                 "relationships": [
                     {
@@ -644,7 +634,7 @@
                 ]
             },
             {
-                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c's patrol is impressed by {PRONOUN/s_c/poss} cunning.",
+                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way — {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c's patrol is impressed by {PRONOUN/s_c/poss} cunning.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"

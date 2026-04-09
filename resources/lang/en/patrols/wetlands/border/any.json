@@ -126,7 +126,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c signals for the patrol to stop. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation in a murmur. Maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation in a murmur. Maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -318,7 +318,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -461,7 +461,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "text": "It's not worth the risk — s_c convinces the patrol to head for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -574,7 +574,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c heads for home.",
+                "text": "It's not worth the risk — s_c heads for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -615,7 +615,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "As a shivering r_c crosses a muddy bog, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
+        "intro_text": "As a shivering r_c crosses a muddy bog, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave — but the swamp shouldn't have any waves.",
         "decline_text": "r_c decides to head back early.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -628,7 +628,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+                "text": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris — and a large dead sheep. s_c pounces on the opportunity to scavenge.",
                 "exp": 20,
                 "stat_skill": [
                     "CLEVER,3"
@@ -1873,12 +1873,12 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down — they do not share territory with foxes.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -2096,7 +2096,7 @@
                 "frequency": 4
             },
             {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+                "text": "Never threaten a mother's young — the red vixen kills r_c in the skirmish.",
                 "exp": 0,
                 "dead_cats": ["r_c"],
                 "history_text": {
@@ -2198,7 +2198,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -2257,7 +2257,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters — a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [

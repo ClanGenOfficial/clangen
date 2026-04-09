@@ -438,7 +438,7 @@
                         "values": ["comfort", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from's gentle presence helped cat_to's patrol stay focused during a difficult snowy hunt."
+                            "cats_from": "cat_to's gentle presence helped cat_from's patrol stay focused during a difficult snowy hunt."
                         }
                     },
                     {
@@ -483,14 +483,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c caught a chill while hunting in leaf-fall."
+                    "scar": "m_c caught a chill while hunting in leaf-fall.",
+                    "death": "m_c died to a chill {PRONOUN/m_c/subject} caught while hunting in leaf-fall."
                 },
                 "relationships": [
                     {
@@ -592,14 +590,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTFACE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c caught a chill while hunting in leaf-fall."
+                    "scar": "m_c caught a chill while hunting in leaf-fall.",
+                    "death": "m_c died to a chill {PRONOUN/m_c/subject} caught while hunting in leaf-fall."
                 },
                 "frequency": 3
             }
@@ -721,14 +717,12 @@
                         ],
                         "injuries": [
                             "cold_injury"
-                        ],
-                        "scars": [
-                            "FROSTTAIL"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c caught a chill while hunting in leaf-fall."
+                    "scar": "m_c caught a chill while hunting in leaf-fall.",
+                    "death": "m_c died to a chill {PRONOUN/m_c/subject} caught while hunting in leaf-fall."
                 },
                 "frequency": 4
             }
@@ -753,7 +747,7 @@
             "all apprentices": [ -1, -1 ]
         },
         "frequency": 4,
-        "intro_text": "p_l tastes the air and perks up - there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
+        "intro_text": "p_l tastes the air and perks up — there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -766,7 +760,7 @@
                 "frequency": 4
             },
             {
-                "text": "Though it tries to escape, p_l is faster and smarter - {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease.",
+                "text": "Though it tries to escape, p_l is faster and smarter — {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease.",
                 "exp": 10,
                 "prey": [
                     "medium"
@@ -788,7 +782,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced - and by then it's far too late for the squirrel to do anything about it.",
+                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced — and by then it's far too late for the squirrel to do anything about it.",
                 "exp": 10,
                 "stat_skill": [
                     "HUNTER,1"
@@ -851,7 +845,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to — {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
                 "exp": 30,
                 "prey": [
                     "medium"
@@ -883,7 +877,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct - by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
+                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct — by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
                 "exp": 0,
                 "prey": [
                     "very_small"
@@ -921,7 +915,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to - {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
+                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to — {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
                 "exp": 20,
                 "prey": [
                     "medium"
@@ -1062,7 +1056,7 @@
                 "frequency": 4
             },
             {
-                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only {VERB/r_c/do/does} {PRONOUN/r_c/subject} have the squirrel, but {PRONOUN/r_c/subject} now also {VERB/r_c/have/has} a pawful of oak leaves for the medicine cat!",
+                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates — whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only {VERB/r_c/do/does} {PRONOUN/r_c/subject} have the squirrel, but {PRONOUN/r_c/subject} now also {VERB/r_c/have/has} a pawful of oak leaves for the medicine cat!",
                 "exp": 40,
                 "herbs": [
                     "oak_leaves"
@@ -1185,9 +1179,9 @@
                     }
                 ],
                 "history_text": {
-                        "death": "m_c succumbed to a broken bone after falling out of a tree.",
-                        "scar": "m_c carries a scar after falling out of a tree and breaking a bone."
-                    },
+                    "scar": "m_c was scarred after falling out of a tree on a hunt.",
+                    "death": "m_c succumbed to a broken bone after falling out of a tree."
+                },
                 "relationships": [
                     {
                         "cats_to": [
@@ -1281,7 +1275,7 @@
                 "frequency": 1
             },
             {
-                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
+                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap — with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
                 "exp": 20,
                 "stat_skill": [
                     "HUNTER,1",
@@ -1344,10 +1338,13 @@
                         ],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c caught a chill while hunting in leaf-bare.",
+                    "death": "m_c died to a chill {PRONOUN/m_c/subject} caught while hunting in leaf-fall."
+                },
                 "relationships": [
                     {
                         "cats_to": [
@@ -1554,10 +1551,17 @@
             ],
             "injury": [
                 {
-                    "cats": ["s_c"],
-                    "injuries": ["water in their lungs"]
+                    "cats": [
+                        "s_c"
+                    ],
+                    "injuries": [
+                        "water in their lungs"
+                    ]
                 }
             ],
+            "history_text": {
+                "death": "m_c died to complications caused by water in {PRONOUN/m_c/poss} lungs."
+            },
             "art": "gen_fallenwater_cat2"
         },
         {
@@ -1622,7 +1626,7 @@
             	"prey": ["medium"]
         	},
         	{
-            	"text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats - but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
+            	"text": "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats — but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else.",
             	"exp": 20,
             	"frequency": 4,
                 "relationships": [

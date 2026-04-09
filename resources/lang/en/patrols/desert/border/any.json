@@ -140,7 +140,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously, {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing safely. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously, {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing safely. r_c is injured, desperate, and terrified — but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "injury": [
                     {
@@ -497,7 +497,7 @@
                 "min_max_status": {
                     "normal adult": [2, 3]
                 },
-                "text": "The patrol tries to keep watch over the dog from a distance, but it spots the cats and forces them to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere - still out there, lurking, waiting to attack.",
+                "text": "The patrol tries to keep watch over the dog from a distance, but it spots the cats and forces them to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere — still out there, lurking, waiting to attack.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -524,7 +524,7 @@
                 "min_max_status": {
                     "normal adult": [2, 3]
                 },
-                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} - the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting the patrol short. Everyone knows the dog could still be lurking on their borders.",
+                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} — the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting the patrol short. Everyone knows the dog could still be lurking on their borders.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -1275,7 +1275,7 @@
                 "frequency": 4
             },
             {
-                "text": "The three cats stalk forward, fur bristling and hackles raised, ready for a possible fight- but p_l's tail flicks up in sudden amusement. Across the clearing, the alpha mother of the wild dog pack scolds her offspring in swirling squeaks and chirps, her youngling apologetically licking its lips and tucking tail. From their posture, this pup has just failed a hunt, and the cat's hearts prick with the sympathy of fellow carnivores.",
+                "text": "The three cats stalk forward, fur bristling and hackles raised, ready for a possible fight — but p_l's tail flicks up in sudden amusement. Across the clearing, the alpha mother of the wild dog pack scolds her offspring in swirling squeaks and chirps, her youngling apologetically licking its lips and tucking tail. From their posture, this pup has just failed a hunt, and the cat's hearts prick with the sympathy of fellow carnivores.",
                 "exp": 10,
                 "frequency": 4
             }

@@ -140,14 +140,14 @@
                 "frequency": 4
             },
             {
-                "text": "app1 goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
+                "text": "app1 goes to a known herb patch — but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
                 "exp": 10,
                 "frequency": 1
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible.",
+                "text": "app1 goes to a known herb patch — but the plant has died! They give up and return to camp, feeling terrible.",
                 "exp": 0,
                 "frequency": 4
             }
@@ -204,7 +204,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l and r_c decide on a little friendly competition - one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
+                "text": "p_l and r_c decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
                 "exp": 10,
                 "herbs": [
                     "random_herbs"

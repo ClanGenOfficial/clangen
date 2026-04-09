@@ -707,7 +707,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected -  m_c was the one responsible for mur_c's death.",
+        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected —  m_c was the one responsible for mur_c's death.",
         "m_c": {
             "age": [
                 "any"
@@ -2163,8 +2163,6 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "respect",
-                    "like",
                     "trust"
                 ],
                 "amount": -15,
@@ -3938,7 +3936,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c is just too cute - r_c gives {PRONOUN/m_c/object} a pretty acc_singular as a gift.",
+        "event_text": "m_c is just too cute — r_c gives {PRONOUN/m_c/object} a pretty acc_singular as a gift.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -6555,7 +6553,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c is conversing with r_c about ways to potentially end this war - though not without bloodshed.",
+        "event_text": "m_c is conversing with r_c about ways to potentially end this war — though not without bloodshed.",
         "m_c": {
             "status": [
                 "mediator",
@@ -9999,7 +9997,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a herb-gathering dispute with o_c_n."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve an herb-gathering dispute with o_c_n."
                 }
             }
         ]

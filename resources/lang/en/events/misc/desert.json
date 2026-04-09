@@ -797,7 +797,7 @@
       "location": ["desert"],
       "season": ["any"],
       "frequency": 4,
-      "event_text": "m_c sneaks out at night - r_c follows. But {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} tattle on m_c, instead joining {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/run/runs} through the cool sharp night air.",
+      "event_text": "m_c sneaks out at night — r_c follows. But {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} tattle on m_c, instead joining {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/run/runs} through the cool sharp night air.",
       "m_c": {
           "age": ["adolescent"]
       },
@@ -822,7 +822,7 @@
     "location": ["desert"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "The sun rises over the desert - and over m_c and r_c, who definitely aren't allowed out of camp this early and alone.",
+    "event_text": "The sun rises over the desert — and over m_c and r_c, who definitely aren't allowed out of camp this early and alone.",
     "m_c": {
         "age": ["adolescent"]
     },
@@ -1068,7 +1068,7 @@
             "r_c"
         ],
     "frequency": 1,
-    "event_text": "The sun withers all it touches - and the herb stores have unfortunately caught its gaze. Many of the supplies are little more than withered kindling now.",
+    "event_text": "The sun withers all it touches — and the herb stores have unfortunately caught its gaze. Many of the supplies are little more than withered kindling now.",
     "supplies": [
       {
           "type": "all_herb",

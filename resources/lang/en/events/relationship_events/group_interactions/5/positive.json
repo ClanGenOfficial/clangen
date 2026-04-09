@@ -25,40 +25,29 @@
 	"specific_reaction": {
 		"r_c3_to_r_c4": {
 			"romance": "increase",
-			"like": "increase",
-			"comfort": "increase",
-			"trust": "increase"
+			"comfort": "increase"
 		},
-        	"r_c4_to_r_c3": {
+		"r_c4_to_r_c3": {
 			"romance": "increase",
-			"like": "increase",
-			"respect": "increase",
-			"comfort": "increase",
-			"trust": "increase"
+			"comfort": "increase"
 		},
         "m_c_to_r_c1": {
-			"comfort": "increase",
-			"trust": "increase"
+			"comfort": "increase"
 		},
         "m_c_to_r_c2": {
-			"comfort": "increase",
-			"trust": "increase"
+			"comfort": "increase"
 		},
 		"r_c1_to_r_c2": {
-			"comfort": "increase",
-			"trust": "increase"
+			"comfort": "increase"
 		},
         "r_c1_to_m_c": {
-			"comfort": "increase",
-			"trust": "increase"
+			"comfort": "increase"
 		},
         "r_c2_to_m_c": {
-			"comfort": "increase",
-			"trust": "increase"
+			"comfort": "increase"
 		},
         "r_c2_to_r_c1": {
-			"comfort": "increase",
-			"trust": "increase"
+			"comfort": "increase"
 		}
         
 	}

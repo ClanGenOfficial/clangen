@@ -109,7 +109,7 @@
         "id": "arrogant_elder",
         "thoughts": [
             "Yells at anycat within earshot to bring {PRONOUN/m_c/object} fresh moss",
-            "Is telling stories - only about {PRONOUN/m_c/self}, of course"
+            "Is telling stories — only about {PRONOUN/m_c/self}, of course"
         ],
         "main_age_constraint": [
             "senior adult",

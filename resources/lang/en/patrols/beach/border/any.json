@@ -502,7 +502,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "text": "It's not worth the risk — s_c convinces the patrol to head for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -596,7 +596,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c heads for home.",
+                "text": "It's not worth the risk — s_c heads for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -1633,12 +1633,12 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down — they do not share territory with foxes.",
                 "exp": 30,
                 "frequency": 4,
                 "relationships": [
@@ -1890,7 +1890,7 @@
                 ]
             },
             {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+                "text": "Never threaten a mother's young — the red vixen kills r_c in the skirmish.",
                 "exp": 0,
                 "frequency": 2,
                 "dead_cats": ["r_c"],
@@ -1964,7 +1964,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 40,
         "success_outcomes": [

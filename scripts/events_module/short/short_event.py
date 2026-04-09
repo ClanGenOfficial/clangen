@@ -458,6 +458,7 @@ class ShortEvent:
 
             if extra_text:
                 self.text = self.text + " " + extra_text
+                extra_text = None
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition

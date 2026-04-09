@@ -96,7 +96,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "text": "It's not worth the risk — s_c convinces the patrol to head for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -196,7 +196,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c heads for home.",
+                "text": "It's not worth the risk — s_c heads for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -314,7 +314,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -427,7 +427,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -542,7 +542,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -655,7 +655,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",

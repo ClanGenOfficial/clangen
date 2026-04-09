@@ -1288,7 +1288,7 @@ def _describe_pattern(cat, short=False):
         if cat.pelt.white_patches == "FULLWHITE":
             # If the cat is fullwhite, discard all other information. They are just white
             color_name = i18n.t("cat.pelts.FULLWHITE")
-            pelt_name = ""
+            pelt_name = f"cat.pelts.SingleColour_long"
         elif cat.pelt.name != "Calico":
             white = i18n.t("cat.pelts.FULLWHITE")
             if i18n.t("cat.pelts.WHITE", count=1) in color_name:
@@ -1340,9 +1340,9 @@ def _describe_torties(cat, color_name, short=False) -> (str, str):
             "rosette",
             "speckled",
         ):
-            base = f"cat.pelts.{cat.pelt.tortie_base.capitalize()}_long"  # the extra space is intentional
+            base = f"cat.pelts.{cat.pelt.name}_tabby"
         else:
-            base = "cat.pelts.TwoColour_long"
+            base = f"cat.pelts.{cat.pelt.name}"
         return base, color_name
 
 
