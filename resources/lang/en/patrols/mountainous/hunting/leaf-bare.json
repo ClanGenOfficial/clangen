@@ -1836,7 +1836,7 @@
                         "cats_to": [
                             "p_l"
                         ],
-                        "cats_from": ["clan", "low_stable"],
+                        "cats_from": ["some_clan", "low_stable"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -1851,7 +1851,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan", "high_stable"
+                            "some_clan", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -1876,7 +1876,7 @@
                         "cats_to": [
                             "p_l"
                         ],
-                        "cats_from": ["clan", "low_stable"],
+                        "cats_from": ["some_clan", "low_stable"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -1891,7 +1891,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan", "high_stable"
+                            "some_clan", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -1925,7 +1925,7 @@
                         "cats_to": [
                             "p_l"
                         ],
-                        "cats_from": ["clan", "low_stable"],
+                        "cats_from": ["some_clan", "low_stable"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -1940,7 +1940,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan", "high_stable"
+                            "some_clan", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -1977,7 +1977,7 @@
                         "cats_to": [
                             "p_l"
                         ],
-                        "cats_from": ["clan", "low_stable"],
+                        "cats_from": ["some_clan", "low_stable"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -1992,7 +1992,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan", "high_stable"
+                            "some_clan", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
