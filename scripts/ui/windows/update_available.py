@@ -37,7 +37,7 @@ class UpdateAvailableWindow(GameWindow):
         current_version_number = "{:.16}".format(get_version_info().version_number)
 
         self.game_over_message = UITextBoxTweaked(
-            "update_available",
+            "windows.update_available",
             ui_scale(pygame.Rect((10, 80), (400, -1))),
             line_spacing=0.8,
             object_id="#update_popup_title",
