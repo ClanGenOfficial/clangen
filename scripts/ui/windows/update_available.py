@@ -118,9 +118,6 @@ class UpdateAvailableWindow(GameWindow):
                     webbrowser.open("https://clangen.io/download-development")
                 else:
                     webbrowser.open("https://clangen.io/download")
-                #self.x = UpdateWindow(
-                #    switch_get_value(Switch.cur_screen), self.announce_restart_callback
-                #)
                 self.kill()
             elif event.ui_element == self.cancel_button:
                 self.kill()
