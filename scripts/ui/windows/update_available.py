@@ -1,4 +1,5 @@
 import os
+import webbrowser
 
 import pygame
 import pygame_gui
@@ -112,9 +113,11 @@ class UpdateAvailableWindow(GameWindow):
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.continue_button:
-                self.x = UpdateWindow(
-                    switch_get_value(Switch.cur_screen), self.announce_restart_callback
-                )
+                # open link to game in browser while updater is being repaired
+                webbrowser.open("https://clangen.io/download")
+                #self.x = UpdateWindow(
+                #    switch_get_value(Switch.cur_screen), self.announce_restart_callback
+                #)
                 self.kill()
             elif event.ui_element == self.cancel_button:
                 self.kill()
