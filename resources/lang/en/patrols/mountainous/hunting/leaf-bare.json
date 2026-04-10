@@ -2029,7 +2029,6 @@
                 "frequency": 4
             },
             {
-                "min_max_status": {"leader": [-1, -1]},
                 "text": "p_l lunges for the common buzzard, only for the buzzard to spread their wings too much, much larger than they look folded and startle the cat right off the cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} never seen again.",
                 "exp": 0,
                 "dead_cats": [
@@ -2060,7 +2059,6 @@
                 "frequency": 3
             },
             {
-                "min_max_status": {"leader": [-1, -1]},
                 "text": "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird — but the bird flies off, and s_c slips off the cold, icy cliff, never to be seen again.",
                 "exp": 0,
                 "stat_trait": [
