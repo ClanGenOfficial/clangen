@@ -112,9 +112,12 @@ class UpdateAvailableWindow(GameWindow):
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            # open link to game in browser while updater is being repaired
             if event.ui_element == self.continue_button:
-                # open link to game in browser while updater is being repaired
-                webbrowser.open("https://clangen.io/download")
+                if get_version_info().is_dev():
+                    webbrowser.open("https://clangen.io/download-development")
+                else:
+                    webbrowser.open("https://clangen.io/download")
                 #self.x = UpdateWindow(
                 #    switch_get_value(Switch.cur_screen), self.announce_restart_callback
                 #)
