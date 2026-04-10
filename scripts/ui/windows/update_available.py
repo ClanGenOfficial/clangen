@@ -140,6 +140,5 @@ class UpdateAvailableWindow(GameWindow):
         return super().process_event(event)
 
     def announce_restart_callback(self):
-        self.x.kill()
         y = RestartAnnouncementWindow(switch_get_value(Switch.cur_screen))
         y.update(1)
