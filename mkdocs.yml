@@ -60,7 +60,7 @@ nav:
   - Contributing to the Wiki:
       - contributing/index.md
       - contributing/documentation-resources.md
-  - Blog:
+  - Development Blog:
       - blog/index.md
 
 theme:
