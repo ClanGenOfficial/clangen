@@ -56,7 +56,7 @@ class UpdateAvailableWindow(GameWindow):
 
         self.game_over_message = UITextBoxTweaked(
             "windows.install_update",
-            ui_scale(pygame.Rect((10, 131), (200, -1))),
+            ui_scale(pygame.Rect((10, 131), (300, -1))),
             line_spacing=0.8,
             object_id="#text_box_30",
             container=self,
