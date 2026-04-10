@@ -2032,7 +2032,8 @@
                 "text": "p_l lunges for the common buzzard, only for the buzzard to spread their wings too much, much larger than they look folded and startle the cat right off the cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} never seen again.",
                 "exp": 0,
                 "dead_cats": [
-                    "p_l"
+                    "p_l",
+                    "all_lives"
                 ],
                 "history_text": {
                     "death": "m_c was scared off a cliff by a large bird."
@@ -2069,7 +2070,8 @@
                     "insecure"
                 ],
                 "dead_cats": [
-                    "s_c"
+                    "s_c",
+                    "all_lives"
                 ],
                 "history_text": {
                     "death": "m_c slipped off a cliff while trying to catch a buzzard."
