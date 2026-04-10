@@ -429,7 +429,7 @@
 		"intensity": "medium",
 		"interactions": [
 			"m_c is telling r_c about a hunting technique.",
-			"m_c is thinking about how much r_c reminds {PRONOUN/m_c/subject} of {PRONOUN/m_c/poss} own apprentice days.",
+			"m_c is thinking about how much r_c reminds {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} own apprentice days.",
 			"m_c is telling r_c about {PRONOUN/m_c/poss} own days as an apprentice.",
 			"m_c promises to teach r_c a new technique later."
 		],
