@@ -338,6 +338,7 @@ def event_for_cat(
     :param cat_info: cat's dict of constraints
     :param cat: the cat object of the cat being checked
     :param cat_group: the group of cats being included within the event
+    :param cat_dict: dict of involved cats
     :param event_id: if event comes with an id, include it here
     :param p_l: if event is a patrol, include patrol leader object here
     :param injuries: list of injuries that the event may give this cat
@@ -369,6 +370,10 @@ def event_for_cat(
             raise TypeError(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
+
+    if cat_info.get("group"):
+        if not _check_cat_group(cat, cat_info["group"], cat_dict):
+            return False
 
     # checking injuries
     if injuries:
@@ -532,6 +537,54 @@ def _check_cat_skills(cat, skills: list[str]) -> bool:
             return not is_exclusionary
 
     return is_exclusionary
+
+
+def _check_cat_group(cat, groups: List[str], cat_dict: dict) -> bool:
+    """
+    Checks if the cat is in one of the required groups
+    """
+    if not groups:
+        return True
+
+    is_exclusionary = _check_for_exclusionary_value(groups)
+
+    groups = [x.replace("-", "") for x in groups if "-" in x]
+    remaining_tags = groups.copy()
+
+    for tag in groups:
+        if "match" in tag:  # checks if group matches with the tagged cat
+            cat_to_match = tag.replace("match:", "")
+            if (
+                is_exclusionary
+                and cat.status.group == cat_dict[cat_to_match].status.group
+            ):
+                return False
+            elif (
+                not is_exclusionary
+                and cat.status.group != cat_dict[cat_to_match].status.group
+            ):
+                return False
+            remaining_tags.remove(tag)
+
+        elif tag == "afterlife":  # checks if group is an afterlife
+            if is_exclusionary and cat.status.group.is_afterlife():
+                return False
+            elif not is_exclusionary and not cat.status.group.is_afterlife():
+                return False
+            remaining_tags.remove(tag)
+
+        elif tag == "no_group":  # checks if the cat has no group
+            if is_exclusionary and cat.status.group:
+                return False
+            elif not is_exclusionary and not cat.status.group:
+                return False
+            remaining_tags.remove(tag)
+
+    # checks all the plain group tags that will match the CatGroup enums
+    if remaining_tags and cat.status.group not in remaining_tags:
+        return is_exclusionary
+
+    return True
 
 
 def _check_cat_backstory(cat, backstories: list) -> bool:
