@@ -329,6 +329,7 @@ def event_for_cat(
     cat_info: dict,
     cat,
     cat_group: list = None,
+    cat_dict: dict = None,  # TODO: this eventually replaces cat_group
     event_id: str = None,
     p_l=None,
     injuries: list = None,
@@ -348,6 +349,7 @@ def event_for_cat(
         "age": _check_cat_age,
         "status": _check_cat_status,
         "status_history": _check_cat_status_history,
+        "stat": _check_cat_stat,  # TODO: should eventually replace "trait" and "skill"
         "trait": _check_cat_trait,
         "skill": _check_cat_skills,
         "backstory": _check_cat_backstory,
@@ -483,6 +485,30 @@ def _check_cat_status_history(cat, statuses: list) -> bool:
                 return True
 
     return is_exclusionary
+
+
+def _check_cat_stat(cat, stat: dict) -> bool:
+    """
+    Checks if the cat matches up with the given stat dict.
+    """
+    has_skill = True
+    has_trait = True
+
+    if stat.get("skill"):
+        if _check_cat_skills(cat, stat["skill"]):
+            has_skill = True
+        else:
+            has_skill = False
+    if stat.get("trait"):
+        if _check_cat_trait(cat, stat["trait"]):
+            has_trait = True
+        else:
+            has_trait = False
+
+    if stat.get("must_have_both"):
+        return has_skill and has_trait
+    else:
+        return has_skill or has_trait
 
 
 def _check_cat_trait(cat, traits: list) -> bool:
