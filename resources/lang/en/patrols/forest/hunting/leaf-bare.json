@@ -542,7 +542,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+                "text": "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
                 "exp": 40,
                 "prey": [
                     "medium"
@@ -550,7 +550,7 @@
             "relationships": [
                 {
                     "cats_from": ["some_clan"],
-                    "cats_to": ["r_c"],
+                    "cats_to": ["app1"],
                     "values": ["trust", "respect"],
                     "mutual": false,
                     "amount": 8,
@@ -3352,7 +3352,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+                "text": "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
                 "exp": 40,
                 "prey": [
                     "medium"
