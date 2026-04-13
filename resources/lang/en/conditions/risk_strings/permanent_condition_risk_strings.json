@@ -174,7 +174,7 @@
     },
     "absent": {
         "joint pain": [
-            "m_c's joints hurt lately. {PRONOUN/m_c/object/CAP} must have been walking around more than {PRONOUN/m_c/object} thought.",
+            "m_c's joints hurt lately. {PRONOUN/m_c/subject/CAP} must have been walking around more than {PRONOUN/m_c/subject} thought.",
             "m_c isn't moving as much today, mumbling about being sore."
         ],
         "torn pelt": [ 
