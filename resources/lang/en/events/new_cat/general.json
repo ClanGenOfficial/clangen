@@ -796,7 +796,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new kittypet friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new kittypet friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
@@ -990,7 +990,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new rogue friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new rogue friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
