@@ -284,7 +284,7 @@ def new_death_thought(
 def _constraints_fulfilled(main_cat: "Cat", random_cat: "Cat", thought) -> bool:
     """Check if thought constraints are fulfilled"""
 
-    if "biome" in thought:
+    if "location" in thought:
         if not event_for_location(thought["biome"]):
             return False
 

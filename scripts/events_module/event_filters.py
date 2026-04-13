@@ -348,7 +348,7 @@ def event_for_cat(
     func_lookup = {
         "age": _check_cat_age,
         "status": _check_cat_status,
-        "status_history": _check_cat_status_history,
+        "past_status": _check_cat_status_history,
         "stat": _check_cat_stat,  # TODO: should eventually replace "trait" and "skill"
         "trait": _check_cat_trait,
         "skill": _check_cat_skills,
@@ -373,6 +373,7 @@ def event_for_cat(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
 
+    # checking groups
     if cat_info.get("group"):
         if not _check_cat_group(cat, cat_info["group"], cat_dict):
             return False
