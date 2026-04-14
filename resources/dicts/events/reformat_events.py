@@ -514,6 +514,7 @@ def reformat(path):
                     "quilled by a porcupine",
                     "broken back",
                     "poisoned",
+                    "envenomated",
                     "bee sting",
                     "headache",
                     "severe headache",
