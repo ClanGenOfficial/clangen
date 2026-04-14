@@ -181,6 +181,16 @@
             "r_c watches as the inevitable happens and m_c begins to cough and choke on {PRONOUN/m_c/poss} own blood. The end is coming quickly for {PRONOUN/m_c/object}.",
             "m_c has been left weak and barely responsive from the poison... and now {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} begun to cough up blood. That can't be a good sign.",
             "m_c hacks and sputters on {PRONOUN/m_c/poss} own blood. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} the end is soon."
+        ],
+     "envenomated": {
+        "an infected wound":[
+            "Despite the hardwork of r_c, an infection has found it's way into m_c's wound.",
+            "To make matters worse m_c's wound has become infected.",
+            "m_c grows weaker - an infection has set in {PRONOUN/m_c/object} wound. ",
+            "Left weak from the venom, m_c barely has the energy to notice the growing infection. "
+        ],
+        "seizure": [
+            "m_c is having seizures as a side effect of the venom."
         ]
     },
     "broken back": {
