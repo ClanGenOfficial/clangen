@@ -8223,12 +8223,13 @@
         ]
     },
     {
-        {
+  {
         "event_id": "gen_death_stalactite",
         "location": [
-            "mountainous_camp2_camp3",
-            "beach_camp2",
-            "forest_camp3"
+            "mountainous_camp2",
+            "mountainous_camp3",
+            "forest_camp3",
+            "beach_camp2"
         ],
         "season": [
             "any"
@@ -8251,5 +8252,5 @@
                 "death": "m_c was killed by stalactite."
             }
         ]
-    } 
+    }
 ]
