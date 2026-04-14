@@ -2539,6 +2539,22 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "patrol", "-p_l"
+                        ],
+                        "cats_from": [
+                            "patrol", "-p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to listened to p_l's story together."
+                        }
+                    },
+                    {
+                        "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
@@ -2552,22 +2568,6 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from learned from cat_to about how the moon controls the tides."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "patrol", "-p_l"
-                        ],
-                        "cats_from": [
-                            "patrol", "-p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to listened to p_l's story together."
                         }
                     }
                 ],
