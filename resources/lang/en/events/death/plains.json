@@ -25,6 +25,10 @@
         "-grumpy",
         "-cunning",
         "-careful"
+        "-nervous",
+        "-thoughtful",
+        "-cold",
+        "-calm"
       ],
       "dies": true
     },
