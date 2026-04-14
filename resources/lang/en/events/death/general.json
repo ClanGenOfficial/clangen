@@ -8225,7 +8225,7 @@
     {
         "event_id": "gen_death_stalactite",
         "location": [
-            "mountainous:camp2_camp3",
+            "mountainous:camp2_camp3"
         ],
         "season": [
             "any"
