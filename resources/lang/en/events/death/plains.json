@@ -17,18 +17,10 @@
         "-newborn",
         "-kitten"
       ],
-      "status": [
-        "-newborn",
-        "-kitten"
-      ],
       "dies": true
     },
     "r_c": {
       "age": [
-        "-newborn",
-        "-kitten"
-      ],
-      "status": [
         "-newborn",
         "-kitten"
       ],
