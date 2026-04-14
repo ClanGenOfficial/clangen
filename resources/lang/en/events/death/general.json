@@ -8221,5 +8221,32 @@
                 "death": "m_c died after disappearing mysteriously."
             }
         ]
-    }
+    },
+    {
+        "event_id": "gen_death_stalactite",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c was killed by a falling stalactite in the middle of camp.",
+        "m_c": {
+            "status": [
+                "any"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed by stalactite."
+            }
+        ]
+    } 
 ]
