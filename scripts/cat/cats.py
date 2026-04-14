@@ -3438,6 +3438,18 @@ class Cat:
                 for check_cat in sorted_specific_list
                 if check_cat.status.group_ID == self.status.group_ID
             ]
+        elif (
+            self.status.is_outsider or self.status.is_other_clancat
+        ) and self.status.is_near(CatGroup.PLAYER_CLAN_ID):
+            # Mirror the Cats Outside The Clan tab: only include outsiders who
+            # are still near the player clan. Driven-off cats (near=False) are
+            # filtered out of that tab, so next/prev navigation from a cat in
+            # that tab should not walk into them either (issue #4767).
+            sorted_specific_list = [
+                check_cat
+                for check_cat in sorted_specific_list
+                if check_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            ]
 
         if filter_func is not None:
             sorted_specific_list = [
