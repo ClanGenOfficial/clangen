@@ -8225,10 +8225,7 @@
     {
         "event_id": "gen_death_stalactite",
         "location": [
-            "mountainous_camp2",
-            "mountainous_camp3",
-            "forest_camp3",
-            "beach_camp2"
+            "mountainous:camp2_camp3",
         ],
         "season": [
             "any"
@@ -8236,7 +8233,7 @@
         "sub_type": [],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c was killed by a falling stalactite in the middle of camp.",
+        "event_text": "m_c was killed by a stalactite falling in the middle of camp.",
         "m_c": {
             "status": [
                 "any"
