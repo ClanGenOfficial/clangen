@@ -609,7 +609,10 @@ class Patrol:
             elif value_check > 0:
                 chance_of_romance_patrol += 2
 
-        if romantic_event.patrol_id == game.constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]:
+        if (
+            romantic_event.patrol_id
+            == game.constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]
+        ):
             chance_of_romance_patrol = 1
 
         if chance_of_romance_patrol <= 0:
