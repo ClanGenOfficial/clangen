@@ -17,6 +17,15 @@
         "-newborn",
         "-kitten"
       ],
+       "trait": [
+        "-strict",
+        "-gloomy",
+        "-responsible",
+        "-wise",
+        "-grumpy",
+        "-cunning",
+        "-careful"
+      ],
       "dies": true
     },
     "r_c": {
