@@ -12,10 +12,10 @@
         "large": [
             "m_c is hoping for a big litter!",
             "m_c feels heavy and bloated, {PRONOUN/m_c/poss} joints hurting with the extra weight of the litter held snugly inside. Very snugly. Uncomfortably snugly.",
-            "{PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} endearingly proud to be carrying the next generation — it's all m_c can talk about.",
             "m_c thinks {PRONOUN/m_c/subject}'ll have a large litter.",
             "m_c hopes {PRONOUN/m_c/subject}'ll have a large litter. m_c always wanted a big family after all.",
-            "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a big litter."
+            "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a big litter.",
+            "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} eating enough at each meal to feed the whole Clan — {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} predicting a big litter. Or perhaps one very plump kit."
         ],
         "unsure": [
             "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have.",
@@ -25,11 +25,11 @@
             "m_c feels like {PRONOUN/m_c/poss} entire existence is one long trip between water and the dirtplace, again and again. This pregnancy is so much harder than {PRONOUN/m_c/subject} {VERB/m_c/were/was} expecting.",
             "m_c curls up, purring at {PRONOUN/m_c/poss} belly, hoping the unknown number of kittens within can hear {PRONOUN/m_c/poss} love for them. {PRONOUN/m_c/subject/CAP} can't wait to meet them.",
             "All the old tales about queens fighting to the death to protect their babies suddenly make sense to m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} up to fighting the sun itself, powered by the love {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} for {PRONOUN/m_c/poss} yet-to-arrive litter.",
-            "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} eating enough at each meal to feed the whole Clan — {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} predicting a big litter. Or perhaps one very plump kit.",
             "m_c has begun hoarding little trinkets, stashing bits of fluff and feather and shiny smooth rocks into {PRONOUN/m_c/poss} birthing nest to stock it with kitten toys.",
             "m_c invites {PRONOUN/m_c/poss} friends to feel {PRONOUN/m_c/poss} litter kick — surely these kittens are going to be talented warriors, because, well — <i>ow</i>.",
             "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have, nor {VERB/m_c/do/does} {PRONOUN/m_c/subject} care. As long as they're happy and healthy, that's all that matters.",
-            "m_c doesn't know or care how many kits {PRONOUN/m_c/subject}'ll have."
+            "m_c doesn't know or care how many kits {PRONOUN/m_c/subject}'ll have.",
+            "{PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} endearingly proud to be carrying the next generation — it's all m_c can talk about."
         ]
     },
     "major_severity": [
