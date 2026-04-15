@@ -7054,6 +7054,29 @@
             ]
         }
     },
+      {
+    "event_id": "multi_death_massdeath_mistery1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [
+      "mass_death"
+    ],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A thick fog covers c_n for days. When it finally lifts, multi_cat are found dead out in the territory.",
+    "history": [
+      {
+        "cats": [
+          "multi_cat"
+        ],
+        "death": "m_c died after being consumed by mysterious fog."
+      }
+    ]
+  },
     {
         "event_id": "gen_death_freshkill_anyfox1",
         "location": [
@@ -8221,5 +8244,171 @@
                 "death": "m_c died after disappearing mysteriously."
             }
         ]
-    }
+    },
+      {
+    "event_id": "gen_death_swiftpawreference_any1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "There have been rumors around camp that dogs are roaming the Clan's territory. m_c goes out on {PRONOUN/m_c/poss} own to investigate. The c_n search party discovers m_c's mauled body the next day.",
+    "m_c": {
+      "age": [
+        "young adult"
+      ],
+      "status": [
+        "apprentice"
+      ],
+      "trait": [
+        "troublesome",
+        "fierce",
+        "bloodthirsty",
+        "bold",
+        "daring",
+        "righteous",
+        "ambitious",
+        "confident",
+        "adventurous",
+        "shameless",
+        "sneaky",
+        "arrogant",
+        "competitive",
+        "cunning",
+        "rebellious"
+      ],
+      "dies": true
+    },
+    "history": [
+      {
+        "cats": [
+          "m_c"
+        ],
+        "death": "m_c was mauled by dogs after sneaking out of camp."
+      }
+    ]
+  },
+      {
+    "event_id": "gen_death_prankgonewrong_any1",
+    "location": [
+      "forest",
+      "mountainous",
+      "plains",
+      "wetlands"
+    ],
+    "season": [
+      "-leaf-bare"
+    ],
+    "tags": [
+      "all_lives",
+      "no_body"
+    ],
+    "frequency": 1,
+    "event_text": "While training with m_c near the river, r_c playfully shoves m_c. However, {PRONOUN/r_c/subject} {VERB/r_c/push/pushes} too hard and m_c loses {PRONOUN/m_c/poss} balance. Before r_c can save {PRONOUN/m_c/object}, the current sweeps m_c away.",
+    "m_c": {
+      "age": [
+        "-kitten"
+      ],
+      "status": [
+        "-elder"
+      ],
+      "dies": true
+    },
+    "r_c": {
+      "age": [
+        "adolescent",
+        "young adult",
+        "adult",
+        "senior adult"
+      ],
+      "status": [
+        "-elder"
+      ],
+      "trait": [
+        "childish",
+        "playful",
+        "charismatic",
+        "daring",
+        "fierce",
+        "troublesome",
+        "adventurous",
+        "shameless",
+        "sneaky",
+        "strange",
+        "competitive",
+        "cunning",
+        "flamboyant",
+        "rebellious"
+      ],
+      "skill": [
+        "FIGHTER,1"
+      ],
+      "dies": false
+    },
+    "history": [
+      {
+        "cats": [
+          "m_c"
+        ],
+        "death": "m_c was swept away by the river after a prank by r_c went horribly wrong."
+      }
+    ]
+  },
+ {
+    "event_id": "gen_death_doubledisappearance_any1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "tags": [
+      "all_lives",
+      "no_body"
+    ],
+    "frequency": 2,
+    "event_text": "m_c mysteriously disappeared one night. r_c noticed before anyone else and went looking for {PRONOUN/m_c/object} {PRONOUN/r_c/self}. c_n never saw either of them again.",
+    "m_c": {
+      "age": [
+        "any"
+      ],
+      "status": [
+        "any"
+      ],
+      "dies": true
+    },
+    "r_c": {
+      "age": [
+        "young adult",
+        "adult",
+        "senior adult"
+      ],
+      "status": [
+        "any"
+      ],
+      "trait": [
+        "bold",
+        "daring",
+        "sneaky",
+        "loyal",
+        "confident",
+        "thoughtful",
+        "adventurous",
+        "responsible"
+      ],
+      "dies": true
+    },
+    "history": [
+      {
+        "cats": [
+          "m_c",
+          "r_c"
+        ],
+        "death": "m_c disappeared alongside a Clanmate, never to be seen again."
+      }
+    ]
+  }
 ]

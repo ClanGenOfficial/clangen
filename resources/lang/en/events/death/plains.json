@@ -1,1 +1,57 @@
-[]
+[
+  {
+    "event_id": "pln_death_trainvehicle",
+    "location": [
+      "plains:camp4"
+    ],
+    "season": [
+      "any"
+    ],
+    "tags": [
+      "all_lives"
+    ],
+    "frequency": 1,
+    "event_text": "r_c dares m_c to leap across the Silverpath in front of a Thundersnake near camp and is horrified when {PRONOUN/m_c/subject} stumbles and is struck.",
+    "m_c": {
+      "age": [
+        "-newborn",
+        "-kitten"
+      ],
+       "trait": [
+        "-strict",
+        "-gloomy",
+        "-responsible",
+        "-wise",
+        "-grumpy",
+        "-cunning",
+        "-careful",
+        "-nervous",
+        "-thoughtful",
+        "-cold",
+        "-calm"
+      ],
+      "dies": true
+    },
+    "r_c": {
+      "age": [
+        "-newborn"
+      ],
+      "trait": [
+        "childish",
+        "playful",
+        "daring",
+        "shameless",
+        "competitive"
+      ],
+      "dies": false
+    },
+    "history:": [
+      {
+        "cats": [
+          "m_c"
+        ],
+        "death": "m_c died from being struck by a Thundersnake."
+      }
+    ]
+  }
+]

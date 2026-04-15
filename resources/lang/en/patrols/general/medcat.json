@@ -10652,7 +10652,8 @@
             "herb_gathering"
         ],
         "tags": [
-            "rom_two_apps"
+            "rom_two_apps",
+            "romance"
         ],
         "patrol_art": "gen_med_cobwebapps",
         "min_cats": 2,
@@ -10778,7 +10779,8 @@
             "herb_gathering"
         ],
         "tags": [
-            "rom_two_apps"
+            "rom_two_apps",
+            "romance"
         ],
         "patrol_art": "gen_med_cobwebapps",
         "min_cats": 3,
@@ -10889,7 +10891,8 @@
             "herb_gathering"
         ],
         "tags": [
-            "rom_two_apps"
+            "rom_two_apps",
+            "romance"
         ],
         "patrol_art": "gen_med_cobwebapps",
         "min_cats": 4,

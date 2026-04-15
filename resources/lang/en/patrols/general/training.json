@@ -6800,7 +6800,8 @@
             "training"
         ],
         "tags": [
-            "rom_two_apps"
+            "rom_two_apps",
+            "romance"
         ],
         "patrol_art": "gen_train_teamwork5",
         "min_cats": 4,
@@ -13395,7 +13396,8 @@
             "training"
         ],
         "tags": [
-            "rom_two_apps"
+            "rom_two_apps",
+            "romance"
         ],
         "patrol_art": "train_general_intro",
         "min_cats": 3,
@@ -17659,7 +17661,8 @@
             "training"
         ],
         "tags": [
-            "rom_two_apps"
+            "rom_two_apps",
+            "romance"
         ],
         "patrol_art": "train_general_intro",
         "min_cats": 3,

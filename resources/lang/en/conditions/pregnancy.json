@@ -97,6 +97,8 @@
             "m_c gave birth to a {insert} with r_c and is looking forward to co-parenting.",
 			"After a bit of fumbling, r_c finally just blurts that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} want to be a parent. m_c and {PRONOUN/m_c/poss} new {insert} are left alone in the nursery.",
 			"m_c isn't cruel about it, but after r_c's done meeting {PRONOUN/r_c/poss} new {insert}, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} {PRONOUN/m_c/poss} intention to be the <i>primary parent</i> clear.",
+			"r_c bluntly tells m_c that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} intend to help raise the {insert} that {PRONOUN/m_c/subject} just gave birth to. {PRONOUN/r_c/subject/CAP} {VERB/r_c/walk/walks} out of the nursery, leaving m_c alone and heartbroken.",
+			"m_c waits with bated breath for r_c to visit the nursery and finally meet {PRONOUN/r_c/poss} new {insert}, but {PRONOUN/r_c/subject} never {VERB/r_c/do/does}. m_c is left wondering what {PRONOUN/m_c/subject} did wrong.",
             "r_c sheepishly peeks into the nursery to see {PRONOUN/r_c/poss} {insert}. m_c looks surprised but not unhappy to see {PRONOUN/r_c/object} there, and welcomes {PRONOUN/r_c/object} in with a purr.",
             "m_c purrs loudly as r_c grooms {PRONOUN/m_c/poss} pelt. As their new {insert} squirms around m_c's belly, the two cats think about their new responsibilities together.",
             "m_c gazes lovingly at {PRONOUN/m_c/poss} new {insert}. r_c looks nervous and awkward in the nursery, but m_c calls {PRONOUN/r_c/object} forward to meet the litter.",
@@ -108,7 +110,8 @@
             "r_c goes to visit m_c in the nursery with {PRONOUN/m_c/poss} new {insert}, on a completely innocent mission to deliver food to the new parent.",
             "The newly arrived {insert} that m_c has just given birth to looks suspiciously like r_c. ",
             "No one wants to ruin such a happy occasion, but... it doesn't take a genius to notice how m_c's {insert} looks suspiciously like r_c...",
-            "Ever since the birth, rumor's gone around that m_c's {insert} belongs to r_c and, while no one wants to confirm anything, no one really has to when the evidence is mewling right there..."
+            "Ever since the birth, rumor's gone around that m_c's {insert} belongs to r_c and, while no one wants to confirm anything, no one really has to when the evidence is mewling right there...",
+			"r_c adamantly denies that m_c's newly born {insert} belongs to {PRONOUN/r_c/object} when questioned, but it's hard to believe {PRONOUN/r_c/object} when they're so similar..."
         ],
         "affair_mated": [
             "m_c's mate is such a wonderful cat, deserving of being a parent... so why does m_c's {insert} look more like r_c instead?",
