@@ -1,55 +1,784 @@
 [
     {
-	"id": "much_ado_about_nothing",
-	"biome": ["any"],
-	"season": ["any"],
-	"intensity": "high",
-	"cat_amount": 5,
-	"interactions": [
-		"m_c, r_c1, and r_c2 decide they're going to get r_c3 and r_c4 together. They talk about how much r_c3 loves r_c4 in front of r_c4, and, to their pleasure, find the two talking later."
-	],
-	"status_constraint": {
-		"m_c": ["warrior", "elder", "mediator"],
-		"r_c1": ["warrior", "elder", "mediator"],
-		"r_c2": ["warrior", "elder", "mediator"]
+		"id": "much_ado_about_nothing",
+		"biome": ["any"],
+		"season": ["any"],
+		"intensity": "high",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c, r_c1, and r_c2 decide they're going to get r_c3 and r_c4 together. They talk about how much r_c3 loves r_c4 in front of r_c4, and, to their pleasure, find the two talking later."
+		],
+		"status_constraint": {
+			"m_c": ["warrior", "elder", "mediator"],
+			"r_c1": ["warrior", "elder", "mediator"],
+			"r_c2": ["warrior", "elder", "mediator"]
+		},
+		"relationship_constraint": {
+			"m_c_to_r_c3": ["likes"],
+	        "m_c_to_r_c4": ["likes"],
+	        "r_c1_to_r_c3": ["likes"],
+	        "r_c1_to_r_c4": ["likes"],
+	        "r_c2_to_r_c3": ["likes"],
+	        "r_c2_to_r_c4": ["likes"],
+			"r_c3_to_r_c4": ["-mates", "fancies"]
+		},
+		"specific_reaction": {
+			"r_c3_to_r_c4": {
+				"romance": "increase",
+				"comfort": "increase"
+			},
+			"r_c4_to_r_c3": {
+				"romance": "increase",
+				"comfort": "increase"
+			},
+	        "m_c_to_r_c1": {
+				"comfort": "increase"
+			},
+	        "m_c_to_r_c2": {
+				"comfort": "increase"
+			},
+			"r_c1_to_r_c2": {
+				"comfort": "increase"
+			},
+	        "r_c1_to_m_c": {
+				"comfort": "increase"
+			},
+	        "r_c2_to_m_c": {
+				"comfort": "increase"
+			},
+	        "r_c2_to_r_c1": {
+				"comfort": "increase"
+			}
+	        
+		}
 	},
-	"relationship_constraint": {
-		"m_c_to_r_c3": ["likes"],
-        "m_c_to_r_c4": ["likes"],
-        "r_c1_to_r_c3": ["likes"],
-        "r_c1_to_r_c4": ["likes"],
-        "r_c2_to_r_c3": ["likes"],
-        "r_c2_to_r_c4": ["likes"],
-		"r_c3_to_r_c4": ["-mates", "fancies"]
+	{
+		"id": "group_5_pos_hunterbrag",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"r_c1, r_c2, r_c3, and r_c4 are impressed by m_c's recent catch.",
+			"m_c offers r_c1, r_c2, r_c3, and r_c4 hunting tips.",
+			"m_c brags about {PRONOUN/m_c/poss} recent catches and impresses r_c1, r_c2, r_c3, and r_c4.",
+			"m_c's latest catch is the talk of the Clan, and r_c1, r_c2, r_c3, and r_c4 compliment {PRONOUN/m_c/object}.",
+			"r_c1, r_c2, r_c3, and r_c4 congratulate m_c on {PRONOUN/m_c/poss} latest catch."
+		],
+		"status_constraint": {
+			"m_c": [
+				"deputy",
+				"leader",
+				"warrior"
+			]
+		},
+		"skill_constraint": {
+			"m_c": [
+				"HUNTER,1"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c2_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c3_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c4_to_m_c": {
+				"respect": "increase"
+			}   
+		}
 	},
-	"specific_reaction": {
-		"r_c3_to_r_c4": {
-			"romance": "increase",
-			"comfort": "increase"
+	{
+		"id": "group_5_pos_fighterbrag",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"r_c1, r_c2, r_c3, and r_c4 talk about m_c's combat prowess during a skirmish.",
+			"m_c regales r_c1, r_c2, r_c3, and r_c4 about {PRONOUN/m_c/poss} latest fight.",
+			"m_c gives r_c1, r_c2, r_c3, and r_c4 fighting tips.",
+			"r_c1, r_c2, r_c3, and r_c4 congratulate m_c on {PRONOUN/m_c/poss} win during a border skirmish.",
+			"After hearing about m_c's combat prowess, r_c1, r_c2, r_c3, and r_c4's respect for m_c increases."
+		],
+		"status_constraint": {
+			"m_c": [
+				"deputy",
+				"leader",
+				"warrior"
+			]
 		},
-		"r_c4_to_r_c3": {
-			"romance": "increase",
-			"comfort": "increase"
+		"skill_constraint": {
+			"m_c": [
+				"FIGHTER,1"
+			]
 		},
-        "m_c_to_r_c1": {
-			"comfort": "increase"
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c2_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c3_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c4_to_m_c": {
+				"respect": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_speakerbrag",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c has a way with words that impresses r_c1, r_c2, r_c3, and r_c4.",
+			"r_c1, r_c2, r_c3, and r_c4 are enthralled by m_c's eloquence.",
+			"r_c1, r_c2, r_c3, and r_c4 listen intently to m_c's well-phrased point.",
+			"r_c1, r_c2, r_c3, and r_c4 talk about how m_c effortlessly diffused a border skirmish with {PRONOUN/m_c/poss} words.",
+			"m_c slips into r_c1, r_c2, r_c3, and r_c4's conversation seamlessly and provides a new point of view."
+		],
+		"status_constraint": {
+			"r_c1": [
+				"-kitten"
+			],
+			"r_c2": [
+				"-kitten"
+			],
+			"r_c3": [
+				"-kitten"
+			],
+			"r_c4": [
+				"-kitten"
+			]
 		},
-        "m_c_to_r_c2": {
-			"comfort": "increase"
+		"skill_constraint": {
+			"m_c": [
+				"SPEAKER,1"
+			]
 		},
-		"r_c1_to_r_c2": {
-			"comfort": "increase"
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c2_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c3_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c4_to_m_c": {
+				"respect": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_medcathealerbrag",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c's knowledge surrounding herbs impresses r_c1, r_c2, r_c3, and r_c4.",
+			"r_c1, r_c2, r_c3, and r_c4 are amazed when m_c teaches them about the intricacies of herbs.",
+			"m_c's vast knowledge of the territory and how plants grow astounds r_c1, r_c2, r_c3, and r_c4.",
+			"m_c warns r_c1, r_c2, r_c3, and r_c4 about a plant they were discussing and teaches them about its dangers.",
+			"r_c1, r_c2, r_c3, and r_c4 listen to m_c explain the process of storing herbs and gain a newfound respect for m_c's craft."
+		],
+		"status_constraint": {
+			"m_c": [
+				"medicine cat"
+			],
+			"r_c1": [
+				"-medicine cat"
+			],
+			"r_c2": [
+				"-medicine cat"
+			],
+			"r_c3": [
+				"-medicine cat"
+			],
+			"r_c4": [
+				"-medicine cat"
+			]
 		},
-        "r_c1_to_m_c": {
-			"comfort": "increase"
+		"skill_constraint": {
+			"m_c": [
+				"HEALER,1"
+			],
+			"r_c1": [
+				"-HEALER,1"
+			],
+			"r_c2": [
+				"-HEALER,1"
+			],
+			"r_c3": [
+				"-HEALER,1"
+			],
+			"r_c4": [
+				"-HEALER,1"
+			]
 		},
-        "r_c2_to_m_c": {
-			"comfort": "increase"
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c2_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c3_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c4_to_m_c": {
+				"respect": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_kit_kitsitting",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"r_c1, r_c2, r_c3, and r_c4 are on their best behavior around m_c.",
+			"After kitsitting r_c1, r_c2, r_c3, and r_c4, m_c gushes about their perfect behavior.",
+			"m_c rewards r_c1, r_c2, r_c3, and r_c4 for being perfectly behaved for {PRONOUN/m_c/object}.",
+			"r_c1, r_c2, r_c3, and r_c4 don't fuss when m_c tells them it's time to take a nap.",
+			"r_c1, r_c2, r_c3, and r_c4 settle down when reminded to by m_c.",
+			"A fight between r_c1, r_c2, r_c3, and r_c4 over a toy is short-lived when m_c intervenes.",
+			"r_c1, r_c2, r_c3, and r_c4 are excited to hear that m_c will be kitsitting them.",
+			"m_c encourages r_c1, r_c2, r_c3, and r_c4 to stretch their imaginations while playing."
+		],
+		"status_constraint": {
+			"r_c1": [
+				"kitten"
+			],
+			"r_c2": [
+				"kitten"
+			],
+			"r_c3": [
+				"kitten"
+			],
+			"r_c4": [
+				"kitten"
+			]
 		},
-        "r_c2_to_r_c1": {
+		"skill_constraint": {
+			"m_c": [
+				"KIT,1"
+			]
+		},
+		"relationship_constraint": {
+			"m_c_to_r_c1": [
+				"-parent/child"
+			],
+			"m_c_to_r_c2": [
+				"-parent/child"
+			],
+			"m_c_to_r_c3": [
+				"-parent/child"
+			],
+			"m_c_to_r_c4": [
+				"-parent/child"
+			]
+		},
+		"general_reaction": {
+			"like": "increase",
 			"comfort": "increase"
 		}
-        
+	},
+	{
+		"id": "group_5_pos_teacherwithkits",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c teaches r_c1, r_c2, r_c3, and r_c4 the fundamentals of stretching to help them burn off energy.",
+			"After r_c1, r_c2, r_c3, and r_c4 get in trouble, m_c helps them understand what they did wrong through a lesson.",
+			"m_c teaches r_c1, r_c2, r_c3, and r_c4 what to do during an emergency.",
+			"m_c teaches r_c1, r_c2, r_c3, and r_c4 about the seasons their territory experiences.",
+			"m_c spends the day teaching r_c1, r_c2, r_c3, and r_c4 {PRONOUN/m_c/poss} favorite facts.",
+			"m_c teaches r_c1, r_c2, r_c3, and r_c4 a few tricks {PRONOUN/m_c/subject} {VERB/m_c/know/knows}."
+		],
+		"status_constraint": {
+			"r_c1": [
+				"kitten"
+			],
+			"r_c2": [
+				"kitten"
+			],
+			"r_c3": [
+				"kitten"
+			],
+			"r_c4": [
+				"kitten"
+			]
+		},
+		"skill_constraint": {
+			"m_c": [
+				"TEACHER,1"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"like": "increase",
+				"respect": "increase"
+			},
+			"r_c2_to_m_c": {
+				"like": "increase",
+				"respect": "increase"
+			},
+			"r_c3_to_m_c": {
+				"like": "increase",
+				"respect": "increase"
+			},
+			"r_c4_to_m_c": {
+				"like": "increase",
+				"respect": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_mediatorteachingkits",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"After r_c1, r_c2, r_c3, and r_c4 are caught in a lie, m_c teaches them the importance of honesty.",
+			"m_c explains the importance of being honest but tactful to r_c1, r_c2, r_c3, and r_c4.",
+			"m_c helps r_c1, r_c2, r_c3, and r_c4 work through their challenging emotions.",
+			"m_c helps r_c1, r_c2, r_c3, and r_c4 cope with something difficult.",
+			"Being young is a challenge, so m_c provides r_c1, r_c2, r_c3, and r_c4 a judgment-free space to talk about their feelings.",
+			"m_c settles a disagreement between r_c1, r_c2, r_c3, and r_c4 before it can spark a fight.",
+			"r_c1, r_c2, r_c3, and r_c4 cannot be consoled until m_c helps them work through their emotions."
+		],
+		"status_constraint": {
+			"m_c": [
+				"mediator"
+			],
+			"r_c1": [
+				"kitten"
+			],
+			"r_c2": [
+				"kitten"
+			],
+			"r_c3": [
+				"kitten"
+			],
+			"r_c4": [
+				"kitten"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"comfort": "increase",
+				"respect": "increase"
+			},
+			"r_c2_to_m_c": {
+				"comfort": "increase",
+				"respect": "increase"
+			},
+			"r_c3_to_m_c": {
+				"comfort": "increase",
+				"respect": "increase"
+			},
+			"r_c4_to_m_c": {
+				"comfort": "increase",
+				"respect": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_mediatorwithkits",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"When r_c1, r_c2, r_c3, and r_c4 come to m_c after a fight, m_c teaches them how to tactfully discuss their feelings.",
+			"m_c hosts a group exercise to help r_c1, r_c2, r_c3, and r_c4 understand each other better.",
+			"m_c talks r_c1, r_c2, r_c3, and r_c4 through their grievances with each other and finds them playing together later.",
+			"m_c gives r_c1, r_c2, r_c3, and r_c4 a space to be honest with each other.",
+			"m_c makes sure r_c1, r_c2, r_c3, and r_c4 all get to have their turn during a game."
+		],
+		"status_constraint": {
+			"m_c": [
+				"mediator"
+			],
+			"r_c1": [
+				"kitten"
+			],
+			"r_c2": [
+				"kitten"
+			],
+			"r_c3": [
+				"kitten"
+			],
+			"r_c4": [
+				"kitten"
+			]
+		},
+		"general_reaction": {
+			"comfort": "increase",
+			"trust": "increase"
+		}
+	},
+	{
+		"id": "group_5_pos_notkit_kitsitting",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"At first, m_c wasn't certain about watching r_c1, r_c2, r_c3, and r_c4. However, the kits surprise {PRONOUN/m_c/object} by being on their best behavior.",
+			"m_c doesn't think it's usually this easy to convince r_c1, r_c2, r_c3, and r_c4 to settle down, but it is today.",
+			"Shockingly, r_c1, r_c2, r_c3, and r_c4 listen to m_c with little fuss or complaint.",
+			"When m_c tells r_c1, r_c2, r_c3, and r_c4 it's time to take a nap, {PRONOUN/m_c/subject} {VERB/m_c/expect/expects} whining. Instead, the kits obediently listen to m_c.",
+			"m_c assumes that kitsitting r_c1, r_c2, r_c3, and r_c4 will be a nightmare, but it goes well!"
+		],
+		"status_constraint": {
+			"m_c": [
+				"-kitten"
+			],
+			"r_c1": [
+				"kitten"
+			],
+			"r_c2": [
+				"kitten"
+			],
+			"r_c3": [
+				"kitten"
+			],
+			"r_c4": [
+				"kitten"
+			]
+		},
+		"skill_constraint": {
+			"m_c": [
+				"-KIT,0"
+			]
+		},
+		"relationship_constraint": {
+			"m_c_to_r_c1": [
+				"-parent/child"
+			],
+			"m_c_to_r_c2": [
+				"-parent/child"
+			],
+			"m_c_to_r_c3": [
+				"-parent/child"
+			],
+			"m_c_to_r_c4": [
+				"-parent/child"
+			]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"like": "increase",
+				"respect": "increase"
+			},
+			"m_c_to_r_c2": {
+				"like": "increase",
+				"respect": "increase"
+			},
+			"m_c_to_r_c3": {
+				"like": "increase",
+				"respect": "increase"
+			},
+			"m_c_to_r_c4": {
+				"like": "increase",
+				"respect": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_medteachingapps",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c is proud of how productive and attentive r_c1, r_c2, r_c3, and r_c4 are during a lesson about poisonous plants.",
+			"r_c1, r_c2, r_c3, and r_c4 listen intently to m_c's lecture about basic first aid.",
+			"After giving r_c1, r_c2, r_c3, and r_c4 a lecture about the basic herbs, m_c quizzes them and is proud of the results.",
+			"m_c appreciates how r_c1, r_c2, r_c3, and r_c4 don't goof around during {PRONOUN/m_c/poss} lecture about herbs.",
+			"After conducting a lesson about basic first aid, m_c raves about r_c1, r_c2, r_c3, and r_c4's fantastic behavior.",
+			"m_c assumed that {PRONOUN/m_c/poss} lesson about poisonous plants would go unheard, but r_c1, r_c2, r_c3, and r_c4 are diligent listeners.",
+			"m_c is impressed by r_c1, r_c2, r_c3, and r_c4's attitudes during a short lesson about illnesses, their symptoms, and when to worry.",
+			"During a lecture about the severity of injuries, r_c1, r_c2, r_c3, and r_c4 wow m_c with their maturity."
+		],
+		"status_constraint": {
+			"m_c": [
+				"medicine cat"
+			],
+			"r_c1": [
+				"apprentice",
+				"mediator apprentice"
+			],
+			"r_c2": [
+				"apprentice",
+				"mediator apprentice"
+			],
+			"r_c3": [
+				"apprentice",
+				"mediator apprentice"
+			],
+			"r_c4": [
+				"apprentice",
+				"mediator apprentice"
+			]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"respect": "increase"
+			},
+			"m_c_to_r_c2": {
+				"respect": "increase"
+			},
+			"m_c_to_r_c3": {
+				"respect": "increase"
+			},
+			"m_c_to_r_c4": {
+				"respect": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_mediatorcommunity",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c beckons r_c1, r_c2, r_c3, and r_c4 to relax with {PRONOUN/m_c/object} and chat.",
+			"At first, r_c1, r_c2, r_c3, and r_c4 are unsure about m_c's bonding exercise, but it goes wonderfully.",
+			"m_c has noticed tensions in the Clan, so {PRONOUN/m_c/subject} {VERB/m_c/organize/organizes} time for r_c1, r_c2, r_c3, and r_c4 to relax and have others to talk to.",
+			"r_c1, r_c2, r_c3, and r_c4 attend a get-together m_c hosts and have a newfound appreciation for each other.",
+			"m_c invites r_c1, r_c2, r_c3, and r_c4 to share what's been on their minds and to have an honest talk with each other."
+		],
+		"status_constraint": {
+			"m_c": [
+				"mediator"
+			]
+		},
+		"general_reaction": {
+			"like": "increase",
+			"comfort": "increase"
+		}
+	},
+	{
+		"id": "group_5_pos_elderstory",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c tells r_c1, r_c2, r_c3, and r_c4 about days long past.",
+			"m_c recalls {PRONOUN/m_c/poss} kithood to r_c1, r_c2, r_c3, and r_c4.",
+			"r_c1, r_c2, r_c3, and r_c4 fondly think about one of m_c's stories.",
+			"r_c1, r_c2, r_c3, and r_c4 think that m_c has the best stories.",
+			"m_c imparts onto r_c1, r_c2, r_c3, and r_c4 how {PRONOUN/m_c/subject} navigated the toughest moments of {PRONOUN/m_c/poss} life.",
+			"r_c1, r_c2, r_c3, and r_c4 take m_c's lesson to heart.",
+			"The way m_c weaves {PRONOUN/m_c/poss} wisdom into {PRONOUN/m_c/poss} stories astounds r_c1, r_c2, r_c3, and r_c4."
+		],
+		"age_constraint": {
+			"m_c": [
+				"senior adult",
+				"senior"
+			],
+			"r_c1": [
+				"-senior"
+			],
+			"r_c2": [
+				"-senior"
+			],
+			"r_c3": [
+				"-senior"
+			],
+			"r_c4": [
+				"-senior"
+			]
+		},
+		"status_constraint": {
+			"m_c": [
+				"elder"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"like": "increase"
+			},
+			"r_c2_to_m_c": {
+				"like": "increase"
+			},
+			"r_c3_to_m_c": {
+				"like": "increase"
+			},
+			"r_c4_to_m_c": {
+				"like": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_leaderdecision_fouradultcats",
+		"intensity": "high",
+		"cat_amount": 5,
+		"interactions": [
+			"r_c1, r_c2, r_c3, and r_c4 approve of a recent decision m_c made.",
+			"r_c1, r_c2, r_c3, and r_c4 discuss a recent change m_c made and approve of it.",
+			"r_c1, r_c2, r_c3, and r_c4 think that m_c has been leading the Clan well.",
+			"m_c's leadership impresses r_c1, r_c2, r_c3, and r_c4.",
+			"r_c1, r_c2, r_c3, and r_c4 respect m_c for making a tough decision as the leader."
+		],
+		"status_constraint": {
+			"m_c": [
+				"leader"
+			],
+			"r_c1": [
+				"warrior",
+				"medicine cat",
+				"mediator",
+				"elder"
+			],
+			"r_c2": [
+				"warrior",
+				"medicine cat",
+				"mediator",
+				"elder"
+			],
+			"r_c3": [
+				"warrior",
+				"medicine cat",
+				"mediator",
+				"elder"
+			],
+			"r_c4": [
+				"warrior",
+				"medicine cat",
+				"mediator",
+				"elder"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c2_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c3_to_m_c": {
+				"respect": "increase"
+			},
+			"r_c4_to_m_c": {
+				"respect": "increase"
+			}   
+		}
+	},
+	{
+		"id": "group_5_pos_chillstretches",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"Late into the evening, m_c invites r_c1, r_c2, r_c3, and r_c4 to stretch with {PRONOUN/m_c/object} and enjoy each other's company.",
+			"m_c convinces r_c1, r_c2, r_c3, and r_c4 to wind down and stretch with {PRONOUN/m_c/object}.",
+			"m_c's eagerness to do early morning stretches rubs off on r_c1, r_c2, and r_c4.",
+			"m_c appreciates r_c1, r_c2, r_c3, and r_c4 joining {PRONOUN/m_c/object} to stretch late into the night so {PRONOUN/m_c/subject} wouldn't be alone.",
+			"m_c, r_c1, r_c2, r_c3, and r_c4 hang out while stretching.",
+			"m_c, r_c1, r_c2, r_c3, and r_c4 blow off steam by stretching with and venting to each other.",
+			"The moonlight encourages m_c, r_c1, r_c2, r_c3, and r_c4 to slow down and stretch."
+		],
+		"status_constraint": {
+			"m_c": [
+				"leader",
+				"deputy",
+				"warrior",
+				"elder",
+				"medicine cat",
+				"mediator"
+			],
+			"r_c1": [
+				"-kitten"
+			],
+			"r_c2": [
+				"-kitten"
+			],
+			"r_c3": [
+				"-kitten"
+			],
+			"r_c4": [
+				"-kitten"
+			]
+		},
+		"general_reaction": {
+			"like": "increase",
+			"comfort": "increase"
+		}
+	},
+	{
+		"id": "group_5_pos_leaderlistens",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c listens to r_c1, r_c2, r_c3, and r_c4's feedback regarding to a recent change.",
+			"m_c understands r_c1, r_c2, r_c3, and r_c4's concern about a decision and explains {PRONOUN/m_c/poss} reasoning behind it.",
+			"r_c1, r_c2, r_c3, and r_c4 approach m_c about a concern and feel reassured by the end of the discussion.",
+			"While m_c doesn't change {PRONOUN/m_c/poss} mind about a decision {PRONOUN/m_c/subject} made, r_c1, r_c2, r_c3, and r_c4 appreciate m_c listening to their opinions.",
+			"m_c allows r_c1, r_c2, r_c3, and r_c4 to voice their opinions about a decision without judgment.",
+			"m_c doesn't boss r_c1, r_c2, r_c3, or r_c4 around with {PRONOUN/m_c/poss} authority during a discussion about Clan policies.",
+			"r_c1, r_c2, r_c3, and r_c4 feel comfortable talking to m_c about recent events."
+		],
+		"status_constraint": {
+			"m_c": [
+				"leader"
+			],
+			"r_c1": [
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator",
+				"elder"
+			],
+			"r_c2": [
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator",
+				"elder"
+			],
+			"r_c3": [
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator",
+				"elder"
+			],
+			"r_c4": [
+				"deputy",
+				"warrior",
+				"medicine cat",
+				"mediator",
+				"elder"
+			]
+		},
+		"trait_constraint": {
+			"m_c": [
+				"-ambitious",
+				"-arrogant",
+				"-bloodthirsty",
+				"-bold",
+				"-childish",
+				"-cold",
+				"-fierce",
+				"-shameless",
+				"-troublesome",
+				"-rebellious",
+				"-righteous",
+				"-strict"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"respect": "increase",
+				"trust": "increase"
+			},
+			"r_c2_to_m_c": {
+				"respect": "increase",
+				"trust": "increase"
+			},
+			"r_c3_to_m_c": {
+				"respect": "increase",
+				"trust": "increase"
+			},
+			"r_c4_to_m_c": {
+				"respect": "increase",
+				"trust": "increase"
+			}   
+		}
 	}
-}
 ]
