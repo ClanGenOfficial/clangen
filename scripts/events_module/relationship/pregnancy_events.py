@@ -364,14 +364,22 @@ class Pregnancy_Events:
 
         if thinking_amount[0] == "correct":
             if correct_guess == "small":
-                text = choice(Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["small"])
+                text = choice(
+                    Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["small"]
+                )
             else:
-                text = choice(Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["large"])
+                text = choice(
+                    Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["large"]
+                )
         elif thinking_amount[0] == "incorrect":
             if correct_guess == "small":
-                text = choice(Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["large"])
+                text = choice(
+                    Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["large"]
+                )
             else:
-                text = choice(Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["small"])
+                text = choice(
+                    Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["small"]
+                )
         else:
             text = choice(Pregnancy_Events.PREGNANT_STRINGS["litter_guess"]["unsure"])
 
