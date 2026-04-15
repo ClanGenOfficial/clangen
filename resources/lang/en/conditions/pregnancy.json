@@ -1,6 +1,10 @@
 {
     "announcement": [
-        "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits."
+        "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits.",
+        "m_c has suspicions of being pregnant and is overjoyed by confirmation!",
+        "m_c is shocked to be told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant.",
+        "m_c worries when {PRONOUN/m_c/subject} {VERB/m_c/are/is} told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant — {PRONOUN/m_c/subject} just {VERB/m_c/are/is}n't ready.",
+        "m_c's eyes sparkle with determination when {PRONOUN/m_c/subject} {VERB/m_c/are/is} informed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant."
     ],
     "litter_guess": {
         "small": [
