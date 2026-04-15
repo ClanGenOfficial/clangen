@@ -508,9 +508,9 @@ class Patrol:
             for _pat in final_patrols + final_romance_patrols:
                 if _pat.patrol_id == self.debug_patrol:
                     patrol_type = choice(_pat.types) if _pat.types != [] else "general"
+                    rom = "non-romance"
                     if _pat in final_patrols:
                         final_patrols = [_pat]
-                        rom = "non-romance"
                     elif _pat in final_romance_patrols:
                         final_romance_patrols = [_pat]
                         rom = "romance"
