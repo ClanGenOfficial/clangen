@@ -749,9 +749,9 @@ def _get_cats_with_status(cat_list: list, statuses: tuple) -> list:
 
     if is_exclusionary:
         statuses = [x.replace("-", "") for x in statuses]
-        return [kitty for kitty in cat_list if kitty.age not in statuses]
+        return [kitty for kitty in cat_list if kitty.status.rank not in statuses]
     else:
-        return [kitty for kitty in cat_list if kitty.age in statuses]
+        return [kitty for kitty in cat_list if kitty.status.rank in statuses]
 
 
 def _get_cats_with_skill(cat_list: list, skills: tuple) -> list:

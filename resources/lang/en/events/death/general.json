@@ -8423,12 +8423,14 @@
             "war"
         ],
         "frequency": 3,
-        "event_text": "m_c and r_c spent the night by the o_c_n border, and catch a o_c_n patrol sneaking into c_n territory. While r_c rushed to get reinforcement, m_c tried to hold them off and died for it.",
+        "event_text": "m_c and r_c spend the night by the o_c_n border, and catch a o_c_n patrol sneaking into c_n territory. While r_c rushes to get reinforcement, m_c tries to hold them off and dies for it.",
         "m_c": {
             "status": [
                 "warrior",
-                "deputy"
-            ]
+                "deputy",
+                "leader"
+            ],
+            "dies": true
         },
         "r_c": {
             "status": [
