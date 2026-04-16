@@ -7220,7 +7220,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 4,
+        "frequency": 1,
         "event_text": "m_c gazes fearfully up at the o_c_n warrior, whose teeth are bared and ready to deliver the killing blow. Something in {PRONOUN/m_c/poss} eyes must have shaken them, however, as they bound away without finishing the job.",
         "m_c": {
             "status": [
