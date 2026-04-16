@@ -752,6 +752,28 @@ class Pregnancy_Events:
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
+        # the birthing cat's mate can choose to either help their cheating mate raise the new litter or 
+        # not be involved with their mate's kits at all 
+        if cheated_mate and other_cat and other_cat.ID not in cat.mate:
+            if mate_claimed_kits:
+                extra_text = i18n.t(
+                    "conditions.pregnancy.mate_claims_kits",
+                    insert=insert,
+                )
+            else:
+                extra_text = i18n.t(
+                    "conditions.pregnancy.mate_disowns_kits",
+                    insert=insert,
+                )
+            extra_text = event_text_adjust(
+                Cat,
+                extra_text,
+                main_cat=cat,
+                random_cat=cheated_mate,
+                clan=game.clan,
+            )
+            event_list.append(extra_text)
+        
         # add naming choice text here
         if extra_naming_text:
             event_list.append(extra_naming_text)
