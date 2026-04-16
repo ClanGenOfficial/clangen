@@ -2417,7 +2417,7 @@
         "decline_text": "It could be some kind of disease. The patrol decides not to go after the squirrel.",
         "success_outcomes": [
             {
-                "text": "Whatever the squirrel is up to, it's completely distracted. r_c prowls closer, pounces, and kills it easily",
+                "text": "Whatever the squirrel is up to, it's completely distracted. r_c prowls closer, pounces, and kills it easily.",
                 "exp": 30,
                 "frequency": 4,
                 "prey": ["medium"],
