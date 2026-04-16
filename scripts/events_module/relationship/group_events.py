@@ -19,6 +19,7 @@ from scripts.events_module.event_filters import (
     event_for_season,
     event_for_cat,
     filter_relationship_type,
+    _check_cat_skills,
 )
 from scripts.events_module.text_adjust import process_text
 from scripts.events_module.consequences import change_relationship_values
@@ -316,7 +317,9 @@ class GroupEvents:
                     skill_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.skill in interact.skill_constraint[abbreviation]
+                        if _check_cat_skills(
+                            cat, interact.skill_constraint[abbreviation]
+                        )
                     ]
                 else:
                     skill_ids = [cat.ID for cat in interact_cats]
