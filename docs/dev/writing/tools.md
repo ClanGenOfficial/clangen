@@ -2,7 +2,7 @@ Tools that may help with writing for ClanGen.
 
 ## IDE Tools
 ### Visual Studio Code
-Visual Studio Code (VSC) will do simple checks and autocompletion for certain types of JSON files:
+Visual Studio Code will do simple checks and autocompletion for certain types of JSON files:
 
 * Thoughts
 * Short events
