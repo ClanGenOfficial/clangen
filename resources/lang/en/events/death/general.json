@@ -8410,5 +8410,174 @@
         "death": "m_c disappeared alongside a Clanmate, never to be seen again."
       }
     ]
-  }
+  },
+  {
+        "event_id": "gen_death_lynx1",
+        "location": [
+            "forest:camp1_camp2", 
+            "plains:camp1_camp3_camp_4", 
+            "mountain:camp1_camp2_camp4"],
+        "season": [
+            "any"
+        ],
+        "tags": [  
+            "no_body"
+        ],
+        "frequency": 1,
+        "event_text": "m_c sneaks out of camp. c_n's search parties find the scent of lynx and no sign of the missing kit.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history":[
+            {   
+                "cats": ["m_c"],
+                "death": "m_c was eaten by a lynx."
+            }
+        ]
+    },
+        {
+        "event_id": "gen_death_lynx2",
+        "location": [
+            "forest:camp1_camp2", 
+            "plains:camp1_camp3_camp_4", 
+            "mountain:camp1_camp2_camp4"],
+        "season": [
+            "any"
+        ],
+        "tags": [  
+            "no_body",
+            "low_lives",
+            "all_lives"
+        ],
+        "frequency": 2,
+        "event_text": "While out on the territory, m_c vanishes. All that can be found is {PRONOUN/m_c/poss} fading scent and the stronger scent of lynx. ",
+        "m_c": {
+            "age": [
+                "-kitten"
+            ],
+            "skill": [
+                "-FIGHTER,3",
+                "-CLAIRVOYANT,1",
+                "-DREAM,1",
+                "-PROPHET,1"
+            ]
+            "dies": true
+        },
+        "history":[
+            {   
+                "cats": ["m_c"],
+                "death": "m_c was eaten by a lynx."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_heron",
+        "location": [
+            "forest:camp_4",
+            "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [  
+            "no_body"
+        ],
+        "frequency": 2,
+        "event_text": "A heron snatched m_c when {PRONOUN/m_c/subject} {VERB/m_c/were/was} too close to the water's edge.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history":[
+            {   
+                "cats": ["m_c"],
+                "death": "m_c was swallowed by a heron."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_dare_kit",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [   ],
+        "frequency": 1,
+        "event_text": "m_c slips out of camp on a dare. c_n finds m_c's cooling body encircled by o_c_n scent.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "trait": [
+                "attention-seeker",
+                "self-conscious",
+                "unruly",
+                "know-it-all",
+                "noisy",
+                "fearless",
+                "daydreamer"
+            ],
+            "dies": true
+        },
+        "history":[
+            {   
+                "cats": ["m_c"],
+                "death": "m_c was murdered by a o_c_n patrol after trespassing."
+            }
+        ],
+        "other_clan": {
+        "current_rep": [
+            "hostile",
+            "neutral"
+        ],
+        "changed": -2
+    },
+    {
+        "event_id": "gen_death_rooster_spur",
+        "location": [
+            "forest", 
+            "plains"
+            ],
+        "season": [
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "tags": [ 
+        ],
+        "frequency": 2,
+        "event_text": "m_c entered a Twoleg's chicken roost and attacked the hens. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} killed by a rooster eager to defend his flock.",
+        "m_c": {
+            "age": [
+                "-kitten"
+            ],
+            "trait": [
+                "adventurous",
+                "ambitious",
+                "bold",
+                "daring",
+                "competitive",
+                "fierce",
+                "loyal",
+                "bloodthirsty",
+                "strange",
+                "arrogant",
+                "rebellious",
+                "troublesome"
+            ],
+            "dies": true
+        },
+        "history":[
+            {   
+                "cats": "m_c",
+                "death": "m_c was killed by a rooster defending his flock."
+            }
+        ]
+    }
 ]
