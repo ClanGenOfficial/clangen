@@ -875,12 +875,142 @@ class Pregnancy_Events:
         if extra_cat_dict:
             print_event = process_text(print_event, extra_cat_dict)
 
+        # relationship changes for affair births
+        # this outcome here happens if the birthing cat cheated on their mate
+        # here, the cheated mate loses relationship to the birthing cat
+        if other_cat and len(cat.mate) > 0 and other_cat.ID not in cat.mate:
+            for mate_id in cat.mate:
+                mate = Cat.fetch_cat(mate_id)
+                if not mate:
+                    continue
+
+                rel = mate.relationships.get(cat.ID)
+                if rel:
+                    rel.romance -= 50
+                    rel.trust -= 30
+                    rel.like -= 40
+                    rel.log.append(
+                        process_text(
+                            i18n.t("conditions.pregnancy.affair_rel_log"),
+                            {
+                                "m_c": (str(mate.name), choice(mate.pronouns)),
+                                "r_c": (str(cat.name), choice(cat.pronouns)),
+                            },
+                        )
+                        + i18n.t("relationships.negative_postscript")
+                        + i18n.t(
+                            "relationships.age_postscript",
+                            name=str(cat.name),
+                            count=cat.moons,
+                        )
+                    )
+
+        # if the other cat had a mate, their mate also lose relationship with them
+        if other_cat and len(other_cat.mate) > 0 and cat.ID not in other_cat.mate:
+            for mate_id in other_cat.mate:
+                mate = Cat.fetch_cat(mate_id)
+                if not mate:
+                    continue
+
+                rel = mate.relationships.get(other_cat.ID)
+                if rel:
+                    rel.romance -= 50
+                    rel.trust -= 30
+                    rel.like -= 40
+                    rel.log.append(
+                        process_text(
+                            i18n.t("conditions.pregnancy.affair_rel_log"),
+                            {
+                                "m_c": (str(mate.name), choice(mate.pronouns)),
+                                "r_c": (str(other_cat.name), choice(other_cat.pronouns)),
+                            },
+                        )
+                        + i18n.t("relationships.negative_postscript")
+                        + i18n.t(
+                            "relationships.age_postscript",
+                            name=str(other_cat.name),
+                            count=other_cat.moons,
+                        )
+                    )
+
+        # relationship changes for unmated co-parenting births
+        if (
+            other_cat
+            and len(cat.mate) < 1
+            and len(other_cat.mate) < 1
+            and not other_cat.dead
+            and coparenting_outcome
+        ):
+            for first_cat, second_cat in ((cat, other_cat), (other_cat, cat)):
+                rel = first_cat.relationships.get(second_cat.ID)
+                if not rel:
+                    rel = Relationship(first_cat, second_cat)
+                    first_cat.relationships[second_cat.ID] = rel
+
+                if coparenting_outcome == "negative":
+                    rel.comfort -= 30
+                    rel.trust -= 25
+                    if rel.romance > 0:
+                        rel.romance -= 20
+                    rel.log.append(
+                        process_text(
+                            i18n.t("conditions.pregnancy.coparenting_rel_log_neg"),
+                            {
+                                "m_c": (str(first_cat.name), choice(first_cat.pronouns)),
+                                "r_c": (str(second_cat.name), choice(second_cat.pronouns)),
+                            },
+                        )
+                        + i18n.t("relationships.negative_postscript")
+                        + i18n.t(
+                            "relationships.age_postscript",
+                            name=str(second_cat.name),
+                            count=second_cat.moons,
+                        )
+                    )
+                elif coparenting_outcome == "positive":
+                    rel.comfort += 20
+                    rel.trust += 20
+                    rel.log.append(
+                        process_text(
+                            i18n.t("conditions.pregnancy.coparenting_rel_log_pos"),
+                            {
+                                "m_c": (str(first_cat.name), choice(first_cat.pronouns)),
+                                "r_c": (str(second_cat.name), choice(second_cat.pronouns)),
+                            },
+                        )
+                        + i18n.t("relationships.positive_postscript")
+                        + i18n.t(
+                            "relationships.age_postscript",
+                            name=str(second_cat.name),
+                            count=second_cat.moons,
+                        )
+                    )
+
         # display event
         game.cur_events_list.append(
             Single_Event(
                 print_event, ["health", "birth_death"], involved_cats, cat_dict=cat_dict
             )
         )
+
+        # chance to break up the cat and their mate 
+        # if the mate doesn't want to anything to do with the affair litter
+        if cheated_mate and not mate_claimed_kits:
+            Pregnancy_Events.handle_affair_discovery_breakup(cat, cheated_mate)
+
+            if other_cat and other_cat.mate:
+                other_cat_mate = None
+                for mate_id in other_cat.mate:
+                    if mate_id != cat.ID:
+                        other_cat_mate = Cat.fetch_cat(mate_id)
+                        if other_cat_mate and not other_cat_mate.dead:
+                            break
+                        other_cat_mate = None
+                # break up the other cat and their mate
+                if other_cat_mate:
+                    Pregnancy_Events.handle_affair_discovery_breakup(
+                        other_cat, other_cat_mate
+                    )
 
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
