@@ -11751,5 +11751,140 @@
             }
         }
     ]
+    },
+    {
+        "event_id": "gen_misc_war_onwatch",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c and r_c spent the night by the o_c_n border, on watch for an attack that never comes.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+       "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c and r_c spent the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "m_c and r_c spent the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight and offer to keep them company instead.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c and r_c spent the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen to trade insults than blows.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -1
+        }
     }
 ]
