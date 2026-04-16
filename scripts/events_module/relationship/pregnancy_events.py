@@ -22,7 +22,11 @@ from scripts.events_module.short.condition_events import Condition_Events
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+    adjust_list_text,
+    process_text,
+)
 from scripts.events_module.consequences import (
     create_new_cat,
     change_relationship_values,
@@ -40,6 +44,7 @@ class Pregnancy_Events:
     biggest_family = {}
     PREGNANT_STRINGS: Optional[Dict[str, Union[List, Dict[str, List]]]] = {}
     NEWBORN_REL_REACTIONS: Dict = {}
+    BREAKUP_STRINGS: Dict = {}
     currently_loaded_lang: str = None
 
     @staticmethod
@@ -53,9 +58,80 @@ class Pregnancy_Events:
         Pregnancy_Events.NEWBORN_REL_REACTIONS = load_lang_resource(
             "events/relationship_events/newborn_relative_logs.json"
         )
-
+        
+        Pregnancy_Events.BREAKUP_STRINGS = load_lang_resource(
+            "events/relationship_events/breakup_mates.json"
+        )
+        
         Pregnancy_Events.currently_loaded_lang = i18n.config.get("locale")
 
+    @staticmethod
+    def append_second_parent_if_mentioned(
+        involved_cats: List[str], event_text: str, mentioned_cat: Optional[Cat]
+    ) -> List[str]:
+        """Appends the second parent/mate ID only if the event text mentions r_c."""
+        if mentioned_cat and "r_c" in event_text and mentioned_cat.ID not in involved_cats:
+            involved_cats.append(mentioned_cat.ID)
+        return involved_cats
+
+    @staticmethod
+    def get_cheated_mate(subject_cat: Cat, include_dead: bool = False):
+        """ Gets cheating cat's mate for the events"""
+        for mate_id in subject_cat.mate:
+            mate = Cat.fetch_cat(mate_id)
+            if not mate:
+                continue
+            if include_dead or not mate.dead:
+                return mate
+        return None
+        
+    @staticmethod
+    def should_claim_affair_kits(mate: Cat, pregnant_cat: Cat) -> bool:
+        """Determines if the mate chooses to claim kits after an affair birth."""
+        if not mate or mate.dead:
+            return False
+        rel = mate.relationships.get(pregnant_cat.ID)
+        romance = rel.romance if rel else 0
+        if romance >= 85:
+            claim_chance = 9
+        elif romance >= 65:
+            claim_chance = 6
+        elif romance >= 45:
+            claim_chance = 4
+        elif romance >= 25:
+            claim_chance = 2
+        else:
+            claim_chance = 1
+        return random.randint(1, 10) <= claim_chance
+        
+    @staticmethod
+    def handle_affair_discovery_breakup(cheating_cat: Cat, mate_cat: Cat):
+        """Handles a chance for a breakup event after an affair is discovered."""
+        if not cheating_cat or not mate_cat:
+            return
+        if cheating_cat.ID not in mate_cat.mate:
+            return
+        if random.random() <= 0.8:
+            mate_cat.unset_mate(cheating_cat, breakup=True, fight=True)
+            breakup_text = choice(
+                Pregnancy_Events.BREAKUP_STRINGS["affair_discovery_breakup"]
+            )
+            breakup_text = event_text_adjust(
+                Cat,
+                breakup_text,
+                main_cat=mate_cat,
+                random_cat=cheating_cat,
+                clan=game.clan,
+            )
+            game.cur_events_list.append(
+                Single_Event(
+                    breakup_text,
+                    ["relation", "misc"],
+                    [mate_cat.ID, cheating_cat.ID],
+                    cat_dict={"m_c": mate_cat, "r_c": cheating_cat},
+                )
+            )
+    
     @staticmethod
     def set_biggest_family():
         """Gets the biggest family of the clan."""
