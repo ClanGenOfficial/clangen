@@ -593,7 +593,24 @@ class Pregnancy_Events:
         kits_amount = len(kits)
         Pregnancy_Events.set_biggest_family()
         extra_naming_text = None
-
+        has_afab_mate = any(
+            Cat.fetch_cat(mate_id)
+            and Cat.fetch_cat(mate_id).gender == "female"
+            for mate_id in cat.mate
+        )
+        adoptive_parents = []
+        cheated_mate = None
+        mate_claimed_kits = False
+        if other_cat and cat.mate and other_cat.ID not in cat.mate:
+            cheated_mate = Pregnancy_Events.get_cheated_mate(cat)
+            if cheated_mate:
+                mate_claimed_kits = Pregnancy_Events.should_claim_affair_kits(
+                    cheated_mate, cat
+                )
+                if mate_claimed_kits:
+                    adoptive_parents.append(cheated_mate.ID)
+        coparenting_outcome = None
+        
         # delete the cat out of the pregnancy dictionary
         del clan.pregnancy_data[cat.ID]
 
@@ -646,8 +663,11 @@ class Pregnancy_Events:
         Pregnancy_Events.rebuild_strings()
         events = Pregnancy_Events.PREGNANT_STRINGS
         event_list = []
+        # single parent strings
         if not cat.status.is_outsider and other_cat is None:
             event_list.append(choice(events["birth"]["unmated_parent"]))
+
+        # outsider birth strings
         elif cat.status.is_outsider:
             adding_text = choice(events["birth"]["outside_alone"])
             if cat.status.is_lost(CatGroup.PLAYER_CLAN):
@@ -655,33 +675,80 @@ class Pregnancy_Events:
             if other_cat and not other_cat.status.is_outsider:
                 adding_text = choice(events["birth"]["outside_in_clan"])
             event_list.append(adding_text)
+
+        # two parents strings
         elif other_cat.ID in cat.mate and other_cat.status.alive_in_player_clan:
             involved_cats.append(other_cat.ID)
             cat_dict["r_c"] = other_cat
             event_list.append(choice(events["birth"]["two_parents"]))
+
+        # dead mate strings
         elif (
-            other_cat.ID in cat.mate and other_cat.dead or other_cat.status.is_outsider
+            other_cat.ID in cat.mate and other_cat.dead
         ):
             involved_cats.append(other_cat.ID)
             cat_dict["r_c"] = other_cat
             # TODO: this seems odd, outsider mates are also treated as dead?
             event_list.append(choice(events["birth"]["dead_mate"]))
-        elif len(cat.mate) < 1 and len(other_cat.mate) < 1 and not other_cat.dead:
-            involved_cats.append(other_cat.ID)
-            cat_dict["r_c"] = other_cat
-            event_list.append(choice(events["birth"]["both_unmated"]))
+            
+        # the long awaited outsider mate event strings
         elif (
-            len(cat.mate) > 0 and other_cat.ID not in cat.mate and not other_cat.dead
-        ) or (
-            len(other_cat.mate) > 0
-            and cat.ID not in other_cat.mate
-            and not other_cat.dead
+            other_cat.ID in cat.mate and other_cat.status.is_outsider
         ):
             involved_cats.append(other_cat.ID)
             cat_dict["r_c"] = other_cat
-            event_list.append(choice(events["birth"]["affair"]))
-            if len(cat.mate) > 0:
+            event_list.append(choice(events["birth"]["outside_mate"]))
+
+        # unmated strings
+        elif len(cat.mate) < 1 and len(other_cat.mate) < 1 and not other_cat.dead:
+            involved_cats.append(other_cat.ID)
+            cat_dict["r_c"] = other_cat
+            # 50% chance for the parents to be positive or negative towards co-parenting
+            if random.randint(0, 1):
+                coparenting_outcome = "positive"
+                event_list.append(choice(events["birth"]["both_unmated_pos"]))
+            else:
+                coparenting_outcome = "negative"
+                event_list.append(choice(events["birth"]["both_unmated_neg"]))
+
+        # affair birth strings (same sex)
+        elif not get_clan_setting("same sex birth") and has_afab_mate and other_cat.ID not in cat.mate:        
+            involved_cats.append(other_cat.ID)
+            cat_dict["r_c"] = other_cat
+            chosen_mate = Pregnancy_Events.get_cheated_mate(cat)
+            if chosen_mate:
+                cat_dict["mc_mate"] = chosen_mate
+                involved_cats.append(chosen_mate.ID)
+            event_list.append(choice(events["birth"]["affair_mated_samesex"]))
+            
+        # affair birth strings (the main cat cheated on their mate)
+        elif len(cat.mate) > 0 and other_cat.ID not in cat.mate and not other_cat.dead:
+            living_mate = Pregnancy_Events.get_cheated_mate(cat)
+            dead_mate = Pregnancy_Events.get_cheated_mate(cat, include_dead=True)
+            involved_cats.append(other_cat.ID)
+            cat_dict["r_c"] = other_cat
+            if living_mate:
+                cat_dict["mc_mate"] = living_mate
+                involved_cats.append(living_mate.ID)
                 event_list.append(choice(events["birth"]["affair_mated"]))
+            # including the dead mate version 
+            # because of a bug where the game can't find any birthing events 
+            # if the cheated mate is dead
+            elif dead_mate:
+                cat_dict["mc_mate"] = dead_mate
+                involved_cats.append(dead_mate.ID)
+                event_list.append(choice(events["birth"]["affair_mated_dead_mate"]))
+
+        # affair birth strings (the other_cat cheated on their mate)
+        elif len(other_cat.mate) > 0 and cat.ID not in other_cat.mate and not other_cat.dead:        
+            other_mate = Pregnancy_Events.get_cheated_mate(other_cat)
+            if other_mate:
+                involved_cats.append(other_cat.ID)
+                cat_dict["r_c"] = other_cat
+                cat_dict["rc_mate"] = other_mate
+                involved_cats.append(other_mate.ID)
+                event_list.append(choice(events["birth"]["affair"]))
+                
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
