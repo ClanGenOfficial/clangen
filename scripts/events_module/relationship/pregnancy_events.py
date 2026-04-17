@@ -155,7 +155,7 @@ class Pregnancy_Events:
         if "pregnant" not in pregnant_cat.injuries:
             return None
         return pregnant_cat.injuries["pregnant"].get("affair_known")
-    
+
     @staticmethod
     def set_biggest_family():
         """Gets the biggest family of the clan."""
@@ -691,7 +691,7 @@ class Pregnancy_Events:
         if other_cat and cat.mate and other_cat.ID not in cat.mate:
             cheated_mate = Pregnancy_Events.get_cheated_mate(cat)
             if cheated_mate:
-                # if the mate at first didn't know they were cheated on, 
+                # if the mate at first didn't know they were cheated on,
                 # there's a chance they will find out
                 if affair_known is False and random.randint(0, 1):
                     secret_affair_birth = True
