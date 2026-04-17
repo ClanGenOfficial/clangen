@@ -1,2 +1,170 @@
 [
+    {
+    "patrol_id": "bch_med_greenleaflungwort1",
+    "biome": ["beach"],
+    "season": ["greenleaf"],
+    "types": ["herb_gathering"],
+    "tags": [],
+    "patrol_art": "fst_med_herblocation2",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "apprentice": [
+            -1,
+            -1
+        ],
+        "medicine cat apprentice": [
+            -1,
+            -1
+        ],
+        "medicine cat": [
+            1,
+            1
+        ],
+        "normal adult": [
+            -1,
+            -1
+        ]
+    },
+    "frequency": 3,
+    "chance_of_success": 50,
+    "intro_text": "The ocean quiets to a dull murmur behind p_l as {PRONOUN/p_l/subject} {VERB/p_l/trek/treks} up the hill to the heathlands under the blazing sun. Vibrant, violet heather in full bloom surrounds {PRONOUN/p_l/object}, scattered with evergreen crowberry shrubs. But p_l only has eyes for one plant today.",
+    "decline_text": "A warrior catches up with p_l, explaining that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} needed in camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} around.",
+    "success_outcomes": [
+        {
+    "text": "Nestled in a shaded nook next to a hillside, the magenta flowers and characteristic speckled leaves catch p_l almost by surprise. Quickly, {PRONOUN/p_l/subject} {VERB/p_l/work/works} to harvest as much as {PRONOUN/p_l/subject} {VERB/p_l/dare/dares}, as if the lungwort could evaporate like dew in greenleaf.",
+    "exp": 20,
+    "frequency": 4,
+    "herbs": ["lungwort"],
+    "art": "gen_med_gatheringlungwort"
+}
+    ],
+    "fail_outcomes": [
+        {
+    "text": "There are so many flowers here, both rare and beautiful. But none they find have speckled leaves. None are lungwort. The sun has moved far when p_l finally gives up and heads home, tail drooping.",
+    "exp": 0,
+    "frequency": 4,
+    "art": "fst_hunt_heat_solo_medcat"
+    },
+     {
+    "text": "That plant is lungwort, as invaluable as it is elusive. p_l searches, without luck, until the greenleaf heat grows too oppressive. Then {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back to camp on unsteady paws, panting. Maybe {PRONOUN/p_l/subject} stayed out there a little too long.",
+    "exp": 0,
+    "frequency": 2,
+    "injury": [
+        {
+            "cats": ["p_l"],
+            "injuries": ["heat exhaustion"],
+            "scars": [],
+            "no_results": false
+        }
+    ],
+    "history_text": {
+        "death": "p_l died from heat exhaustion after searching for lungwort in the greenleaf heat.",
+        "scars": "p_l was scarred on patrol"
+    },
+    "art": "fst_hunt_heat_solo_medcat"
+},
+
+     {
+    "text": "That plant is lungwort, as invaluable as it is elusive. p_l searches stubbornly, without luck, even as the greenleaf heat grows ever more oppressive. It's only after {PRONOUN/p_l/poss} paws get unsteady that {PRONOUN/p_l/subject} stumble{VERB/p_l//s} back to camp, panting.",
+    "exp": 0,
+    "frequency": 2,
+    "stat_trait": ["rebellious","oblivious","flamboyant","fierce","competitive","bold","daring","adventurous","ambitious","confident","arrogant","righteous"],
+    "injury": [
+        {
+            "cats": ["p_l"],
+            "injuries": ["heat stroke"],
+            "scars": [],
+            "no_results": false
+        }
+    ],
+    "history_text": {
+        "death": "p_l died from heat stroke after searching for lungwort in the greenleaf heat."
+    },
+    "art": "fst_hunt_heat_solo_medcat"
+}
+]
+},
+
+
+    {
+    "patrol_id": "bch_med_greenleaflungwort2",
+    "biome": ["beach"],
+    "season": ["greenleaf"],
+    "types": ["herb_gathering"],
+    "tags": [],
+    "patrol_art": "gen_med_and_app",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "apprentice": [
+            -1,
+            -1
+        ],
+        "medicine cat apprentice": [
+            1,
+            1
+        ],
+        "medicine cat": [
+            1,
+            1
+        ],
+        "normal adult": [
+            -1,
+            -1
+        ]
+    },
+    "frequency": 3,
+    "chance_of_success": 50,
+    "intro_text": "The ocean quiets to a dull murmur behind p_l as {PRONOUN/p_l/subject} {VERB/p_l/trek/treks} up the hill to the heathlands. app1 pants behind {PRONOUN/p_l/object} under the blazing sun. Vibrant, violet heather in full bloom surrounds them, scattered with evergreen crowberry shrubs. But p_l only has eyes for one plant today and won't let app1 get distracted by the rare orchids or wolf's bane.",
+    "decline_text": "A warrior catches up with p_l, explaining that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} needed in camp. They turn around.",
+    "success_outcomes": [
+        {
+    "text": "They are here for lungwort, and eventually find a small patch in a large heather shrub's shade. But no matter how small it is, a medicine cat always leaves some plants untouched, p_l teaches. They ought to be able to regenerate. Else app1 will stand there, next greenleaf, without lungwort. And c_n cannot afford to be without lungwort.",
+    "exp": 25,
+    "frequency": 4,
+    "herbs": ["lungwort"],
+    
+    "relationships": [
+    { 
+    "cats_from": ["app1"],
+    "cats_to": ["p_l"],
+    "mutual": false,
+    "values": ["trust","respect"],
+    "amount": 8,
+    "log": {
+    "cats_from": "cat_from learned about the importance of leaving some plants alone to regenerate, and gained new insights into the responsibilities of a medicine cat."
+    }
+    }
+    ],
+    "art": "gen_med_gatheringlungwort"
+}
+    ],
+    "fail_outcomes": [
+        {
+    "text": "There are so many flowers here, both rare and beautiful. app1 recites their names as they pass them. But none they find have speckled leaves. None are lungwort. The sun has moved far when p_l finally gives up and they turn home, tails drooping.",
+    "exp": 0,
+    "frequency": 4,
+    "art": "gen_med_and_app"
+    },
+     {
+    "text": "The noonday sun beats down on p_l and app1, casting a shimmer across the heath. They take more and more frequent breaks but are unable to find any shade in the treeless expanse. At some point, p_l takes a closer look at app1 and decides they are heading back. That's a clear case of heat exhaustion.",
+    "exp": 0,
+    "frequency": 2,
+    "injury": [
+        {
+            "cats": ["app1"],
+            "injuries": ["heat exhaustion"],
+            "scars": [],
+            "no_results": false
+        }
+    ],
+    "history_text": {
+        "death": "app1 died from heat exhaustion after searching for lungwort in the greenleaf heat."
+    },
+    "art": "fst_hunt_heat_app_medcat"
+}
+]
+}
+
 ]
