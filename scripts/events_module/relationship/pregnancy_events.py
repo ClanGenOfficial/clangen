@@ -1004,9 +1004,9 @@ class Pregnancy_Events:
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
         if "mc_mate" in cat_dict:
-            print_event = print_event.replace("{mc_mate}", "mc_mate")
+            print_event = print_event.replace("mc_mate", "mc_mate")
         if "rc_mate" in cat_dict:
-            print_event = print_event.replace("{rc_mate}", "rc_mate")
+            print_event = print_event.replace("rc_mate", "rc_mate")
 
         print_event = event_text_adjust(
             Cat, print_event, main_cat=cat, random_cat=other_cat, clan=game.clan
