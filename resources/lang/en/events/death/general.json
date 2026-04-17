@@ -8463,7 +8463,7 @@
                 "-CLAIRVOYANT,1",
                 "-DREAM,1",
                 "-PROPHET,1"
-            ]
+            ],
             "dies": true
         },
         "history":[
@@ -8533,11 +8533,12 @@
             }
         ],
         "other_clan": {
-        "current_rep": [
-            "hostile",
-            "neutral"
-        ],
-        "changed": -2
+            "current_rep": [
+                "hostile",
+                "neutral"
+            ],
+            "changed": -2
+        }
     },
     {
         "event_id": "gen_death_rooster_spur",
