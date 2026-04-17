@@ -1632,7 +1632,7 @@ class Pregnancy_Events:
                 # If both parents couldn't agree on co-parenting, 
                 # the second parent distances themselves from the litter 
                 # while the litter will not feel much towards their other parent
-                for kit in kits:
+                for kit in all_kitten:
                     other_to_kit = other_cat.relationships.get(kit.ID)
                     if not other_to_kit:
                         other_to_kit = Relationship(other_cat, kit)
