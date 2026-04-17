@@ -1160,7 +1160,7 @@ class Pregnancy_Events:
                             count=second_cat.moons,
                         )
                     )
-        
+
         # display event
         game.cur_events_list.append(
             Single_Event(
@@ -1398,7 +1398,12 @@ class Pregnancy_Events:
 
     @staticmethod
     def get_kits(
-        kits_amount, cat=None, other_cat=None, clan=game.clan, adoptive_parents=None, coparenting_outcome=None
+        kits_amount,
+        cat=None,
+        other_cat=None,
+        clan=game.clan,
+        adoptive_parents=None,
+        coparenting_outcome=None,
     ):
         """Create some amount of kits
         No parents are specified, it will create a blood parents for all the
@@ -1629,8 +1634,8 @@ class Pregnancy_Events:
                         kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
 
             if other_cat and coparenting_outcome == "negative":
-                # If both parents couldn't agree on co-parenting, 
-                # the second parent distances themselves from the litter 
+                # If both parents couldn't agree on co-parenting,
+                # the second parent distances themselves from the litter
                 # while the litter will not feel much towards their other parent
                 for kit in all_kitten:
                     other_to_kit = other_cat.relationships.get(kit.ID)
