@@ -11751,5 +11751,32 @@
             }
         }
     ]
+    },
+    {
+    "event_id": "gen_misc_waraggro",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c is eager to sink {PRONOUN/m_c/poss} claws into o_c_n during the next skirmish.",
+    "m_c": {
+        "status": [
+          "apprentice",
+          "warrior",
+          "deputy",
+          "leader"
+        ],
+        "trait": [
+          "ambitious",
+          "arrogant",
+          "bloodthirsty",
+          "bold",
+          "cold",
+          "confident",
+          "daring",
+          "vengeful"
+        ]
     }
+}
 ]

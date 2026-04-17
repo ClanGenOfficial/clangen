@@ -539,5 +539,31 @@
                 ]
             }
         ]
-    }
+    },
+    {
+    "event_id": "fst_injury_fireflies",
+    "location": [
+        "forest:camp1"
+    ],
+    "season": [
+        "-leaf-bare"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c got hurt while chasing fireflies through camp.",
+    "new_accessory": [],
+    "m_c": {
+        "age": [
+            "kitten",
+            "adolescent"
+        ]
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["minor_injury"]
+        }
+    ]
+}
 ]

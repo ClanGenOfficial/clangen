@@ -2188,8 +2188,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep c_n safe from a large dog."
+                    "death": "m_c died to keep c_n safe from a large dog."
                 },
                 "relationships": [
                     {
@@ -2212,7 +2211,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives them speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified — but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified — but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "injury": [
                     {
@@ -2221,9 +2220,6 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
@@ -2652,8 +2648,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "death": "m_c died to keep the Clan safe from a large dog."
                 },
                 "relationships": [
                     {
@@ -2795,8 +2790,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "death": "m_c died to keep the Clan safe from a large dog."
                 },
                 "relationships": [
                     {

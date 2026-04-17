@@ -172,5 +172,31 @@
                 "sincere"
             ]
         }
-    }
+    },
+    {
+  "event_id": "mtn_misc_crystalreflection_supernaturalskills",
+  "location": [
+    "mountainous:camp3"
+  ],
+  "season": [
+    "any"
+  ],
+  "frequency": 2,
+  "event_text": "For a heartbeat, m_c thought the reflection staring back at {PRONOUN/m_c/object} in the crystals around camp was not {PRONOUN/m_c/poss} own.",
+  "m_c": {
+    "age": [
+      "any"
+    ],
+    "status": [
+      "any"
+    ],
+    "skill": [
+      "GHOST,2",
+      "CLAIRVOYANT,1",
+      "OMEN,1",
+      "DARK,2",
+      "STAR,2"
+    ]
+  }
+}
 ]

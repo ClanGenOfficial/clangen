@@ -668,5 +668,57 @@
                 }
             }
         ]
+    },
+    {
+  "event_id": "bch_death_kitappshipwreckfall",
+  "location": [
+    "beach:camp3"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "frequency": 1,
+  "event_text": "m_c climbed aboard the broken ship in camp, playing pretend as a Twoleg. No cat noticed what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing until the floorboards beneath {PRONOUN/m_c/object} gave way and {PRONOUN/m_c/subject} fell into the nothingness below.",
+  "m_c": {
+    "age": [
+      "kitten",
+      "adolescent"
+    ],
+    "skill": [
+      "-CLIMBER,0"
+    ],
+    "trait": [
+      "unruly",
+      "impulsive",
+      "attention-seeker",
+      "charming",
+      "skittish",
+      "daydreamer",
+      "fearless",
+      "bossy",
+      "troublesome",
+      "childish",
+      "playful",
+      "charismatic",
+      "bold",
+      "daring",
+      "confident",
+      "adventurous",
+      "shameless",
+      "sneaky",
+      "strange",
+      "rebellious"
+    ],
+    "dies": true
+  },
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c fell through the floorboards of the broken ship."
     }
+  ]
+}
 ]

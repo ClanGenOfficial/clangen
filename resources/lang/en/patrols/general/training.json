@@ -11287,7 +11287,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "Cats_from": "p_l was impressed with and a little flustered by r_c's skill in battle when they sparred."
+                            "cats_from": "p_l was impressed with and a little flustered by r_c's skill in battle when they sparred."
                         }
                     }
                 ],
@@ -18930,6 +18930,361 @@
                         }
                     }
                 ],
+                "frequency": 4
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_train_notmentor",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [
+            "app1_mentored"
+        ],
+        "patrol_art": "gen_hunt_mentor_app",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "normal adult": [1, 1],
+            "apprentice": [1, 1]
+        },
+        "relationship_status": [
+            "-mentor/app",
+            "-parent/child"
+        ],
+        "frequency": 4,
+        "chance_of_success": 60,
+        "intro_text": "Though p_l isn't app1's mentor, {PRONOUN/p_l/subject} will be training app1 today.",
+        "decline_text": "p_l isn't sure where app1 is in {PRONOUN/app1/poss} training, so {PRONOUN/p_l/subject} {VERB/p_l/send/sends} {PRONOUN/app1/object} off to clean the warriors' den.",
+        "success_outcomes": [
+            {
+                "text": "p_l isn't sure where app1 is in {PRONOUN/app1/poss} training, so p_l helps {PRONOUN/app1/object} strengthen {PRONOUN/app1/poss} fundamentals of stalking and pouncing. app1 is attentive, and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus.",
+                "exp": 25,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "Though p_l wasn't app1's mentor, they had a productive training session together."
+                        }
+                    }
+                ],
+                "art": "gen_train_talkingWA",
+                "frequency": 1
+            },
+            {
+                "text": "p_l has an unconventional training session in mind; {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to pass on {PRONOUN/p_l/poss} skill for teaching younger cats to app1. To app1's amusement, p_l tells app1 to treat {PRONOUN/p_l/object} as {PRONOUN/app1/poss} apprentice for the day. app1 takes on the challenge with relish.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["TEACHER,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["like", "trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from taught cat_to the best techniques for mentoring younger cats by allowing {PRONOUN/cat_to/object} to pretend to be a mentor for a day.",
+                            "cats_to": "cat_to enjoyed treating cat_from as {PRONOUN/cat_to/poss} apprentice for a day."
+                        }
+                    }
+                ],
+                "art": "gen_train_patrolapprenticesessionsuccess",
+                "frequency": 4
+            },
+            {
+                "text": "app1 is excited to learn from a hunter like p_l, hanging onto {PRONOUN/p_l/poss} every word in {PRONOUN/app1/poss} eagerness to soak up p_l's hunting tricks. p_l shows {PRONOUN/app1/object} a particular move for catching birds and points out to app1 that ground prey and water prey might go in any direction — birds will always go up.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["HUNTER,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from taught cat_to tricks for catching birds."
+                        }
+                    }
+                ],
+                "art": "mtn_train_thrush",
+                "frequency": 4
+            },
+            {
+                "text": "app1 is thrilled to spar against a fighter like p_l, studying {PRONOUN/p_l/poss} every move as {PRONOUN/p_l/subject} {VERB/p_l/crouch/crouches}, {VERB/p_l/leap/leaps}, and {VERB/p_l/twist/twists}. When app1 finally lands a blow on p_l, app1 puffs up with pride, knowing {PRONOUN/app1/subject} really worked for it!",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["HUNTER,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from helped cat_to develop {PRONOUN/cat_to/poss} fighting skills by sparring with {PRONOUN/cat_to/object}."
+                        }
+                    }
+                ],
+                "art": "gen_train_patrolapprenticesessionsuccess",
+                "frequency": 4
+            },
+            {
+                "text": "app1 is confused when p_l tells {PRONOUN/app1/object} they're going to practice running. What cat needs to practice <i>running?</i> app1 does, as it turns out. The afternoon of running sprints with p_l leaves {PRONOUN/app1/object} collapsed and panting.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["RUNNER,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to ran sprints together during a training session."
+                        }
+                    }
+                ],
+                "art": "running_app_warrior",
+                "frequency": 4
+            },
+            {
+                "text": "p_l explains that the life of a warrior requires many skills besides hunting and fighting. Today, p_l wants to roleplay a border confrontation with app1 to test {PRONOUN/app1/poss} ability to confront an intruder and resolve conflict. app1, intrigued by the unusual challenge, rises to the occasion.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["SPEAKER,1", "MEDIATOR,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from taught cat_to how to confront intruders at the border and resolve conflict."
+                        }
+                    }
+                ],
+                "art": "gen_train_talkingAW",
+                "frequency": 4
+            },
+            {
+                "text": "Their training session takes them all over the territory — p_l shows app1 how to track a fading scent, how to pick a scent back up after crossing a body of water, where to look for clumps of fur caught in undergrowth, what kinds of earth will leave distinct pawprints, how to differentiate between similar herb-scents, and how to keep one's head (and ears) on a swivel. When they return to camp, app1 looks at the world with a new level of clarity.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["SENSE,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from taught cat_to all sorts of skills for better observing the world around {PRONOUN/cat_to/object}."
+                        }
+                    }
+                ],
+                "art": "gen_warrior_app_meadow",
+                "frequency": 4
+            },
+            {
+                "text": "When app1 hears what p_l has in mind for the training session, {PRONOUN/app1/subject}{VERB/app1/'re/'s} doubtful. How much work can looking after kits be? When app1's finished patching the nursery, playing ten rounds of moss ball, begging p_l to go down for {PRONOUN/p_l/poss} nap, and answering the same question over and over again, {PRONOUN/app1/subject} {VERB/app1/concede/concedes} {PRONOUN/app1/subject} greatly underestimated it.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["KIT,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from instructed cat_to on the high art of kitsitting."
+                        }
+                    }
+                ],
+                "art": "fst_hunt_heat_solo_app",
+                "frequency": 4
+            },
+            {
+                "text": "p_l chooses a quiet, sheltered place in the territory for {PRONOUN/p_l/poss} lesson. app1 enjoys a long stretch, happy to lie there and listen as p_l tells {PRONOUN/app1/object} the names of past leaders, deputies, and famous medicine cats, as well as those more unsavory figures in c_n's history.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["LORE,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from taught cat_to about c_n's history and past famous cats."
+                        }
+                    }
+                ],
+                "art": "gen_app_sunny",
+                "frequency": 4
+            },
+            {
+                "text": "p_l takes app1 to the fresh-kill pile, and app1 licks {PRONOUN/app1/poss} lips. But instead of a snack, app1 gets a lesson on stripping feathers from avian fresh-kill to line nests, tossing out stale or rotting prey, collecting mouse-bile for the medicine den, and tidying up the prey-bones left behind by careless Clanmates. app1 never realized how much work went into maintaining the fresh-kill pile!",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["CAMP,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from showed cat_to the ins and outs of managing the fresh-kill pile.",
+                            "cats_to": "cat_to gained respect for cat_from upon realizing how much {PRONOUN/cat_from/subject} {VERB/cat_from/do/does} to manage the fresh-kill pile."
+                        }
+                    }
+                ],
+                "art": "gen_train_sneakprey", 
+                "frequency": 4
+            },
+            {
+                "text": "p_l and app1 tour the camp, taking out old bedding, weaving fresh bracken and brambles into the camp's walls, patching drafts, and lining nests with fresh, soft moss and ferns. p_l even pokes {PRONOUN/p_l/poss} head into the medicine den to fetch withered sweet-scented herbs to freshen the air in the big dens. Even though it's a day of chores, app1 is impressed by how careful and detail-oriented p_l is about each task.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["CAMP,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from showed cat_to the ins and outs of camp management.",
+                            "cats_to": "cat_to gained respect for cat_from upon realizing how much {PRONOUN/cat_from/subject} {VERB/cat_from/do/does} to keep the dens pristine."
+                        }
+                    }
+                ],
+                "art": "fst_med_herblocation2",
+                "frequency": 4
+            },
+            {
+                "text": "Though p_l isn't a medicine cat, and app1 isn't training to become one, there are certain skills that are useful for any cat to know. p_l takes app1 through the basics of wound treatment: how to tell if a wound is getting better or worse, how to distinguish between types of pain, where to find cobwebs on the territory in an emergency, and how to treat minor scrapes and bruises.",
+                "exp": 35,
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["HEALER,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["app1"],
+                        "mutual": true,
+                        "values": ["trust", "respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from taught cat_to some basic healing skills."
+                        }
+                    }
+                ],
+                "frequency": 4,
+                "art": "pln_med_herblocation2"
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l is awkward and uncertain with app1, and app1 takes advantage of that to get out of training for the day.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from lost respect for cat_to after {PRONOUN/cat_to/subject} let {PRONOUN/cat_from/object} weasel {PRONOUN/cat_from/poss} way out of training.",
+                            "cats_to": "cat_to was disappointed by how cat_from avoided training just because cat_to wasn't {PRONOUN/cat_from/poss} mentor."
+                        }
+                    }
+                ],
+                "art": "gen_embarrassed1_warrior_app",
+                "frequency": 4
+            },
+            {
+                "text": "To every word out of p_l's mouth, app1 replies that this isn't how {PRONOUN/app1/poss} mentor usually does things. Eventually, p_l snaps that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} in charge of the training session, not app1's mentor. app1 is sullen and uncooperative for the rest of the day.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was annoyed that cat_to didn't seem to care how cat_from's mentor usually did things.",
+                            "cats_to": "cat_to was irritated that cat_from wasn't willing to go along with {PRONOUN/cat_to/poss} plans for a training session because {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} so insistent on doing everything {PRONOUN/cat_from/poss} mentor's way."
+                        }
+                    }
+                ],
+                "art": "gen_cat_looking_up1",
+                "frequency": 3
+            },
+            {
+                "text": "s_c is very reserved, and though p_l tries to establish a connection with {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} never {VERB/s_c/say/says} more than a few words. p_l ends the session early, feeling discouraged.",
+                "exp": 0,
+                "can_have_stat": ["app1"],
+                "stat_trait": ["nervous", "lonesome", "careful", "insecure", "strange"],
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was too shy to talk to cat_to very much when cat_to took {PRONOUN/cat_from/object} out for training.",
+                            "cats_to": "cat_to struggled to connect with cat_from when {PRONOUN/cat_to/subject} took {PRONOUN/cat_from/object} out for training."
+                        }
+                    }
+                ],
+                "art": "gen_embarrassed1_warrior_app",
+                "frequency": 4
+            },
+            {
+                "text": "p_l feels in over {PRONOUN/p_l/poss} head, trying to deal with the absolute pawful that is s_c. Eventually, p_l admits defeat and ends the session early, wondering how s_c's mentor manages it.",
+                "exp": 0,
+                "can_have_stat": ["app1"],
+                "stat_trait": ["ambitious", "arrogant", "confident", "charismatic", "rebellious", "troublesome", "fierce", "bloodthirsty", "flamboyant", "bold", "daring", "shameless", "adventurous"],
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": ["comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was disappointed that cat_to didn't teach {PRONOUN/cat_from/object} anything new during a training session.",
+                            "cats_to": "cat_to struggled to deal with cat_from when {PRONOUN/cat_to/subject} took {PRONOUN/cat_from/object} out for training."
+                        }
+                    }
+                ],
+                "art": "gen_cat_looking_up3",
                 "frequency": 4
             }
         ]

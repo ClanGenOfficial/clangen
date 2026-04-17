@@ -1,214 +1,432 @@
 [
-    {
-        "event_id": "fst_misc_war_anyapps1",
-        "location": [
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [
-            "clan:apprentice"
-        ],
-        "frequency": 3,
-        "event_text": "The apprentices are learning how to ambush enemies from tall trees.",
-        "m_c": {
-            "status": [
-                "apprentice"
-            ]
-        }
-    },
-    {
-        "event_id": "fst_misc_multiprophecymedcatprophet1",
-        "location": [
-            "forest"
-        ],
-        "season": [
-            "newleaf",
-            "greenleaf",
-            "leaf-fall"
-        ],
-        "frequency": 4,
-        "event_text": "As a storm rages and the branches of the forest whip around outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
-        "m_c": {
-            "status": [
-                "medicine cat",
-                "medicine cat apprentice"
-            ],
-            "skill": [
-                "PROPHET,2"
-            ]
-        }
-    },
-    {
-        "event_id": "fst_misc_multiomenmedcatomen1",
-        "location": [
-            "forest"
-        ],
-        "season": [
-            "newleaf",
-            "greenleaf",
-            "leaf-fall"
-        ],
-        "frequency": 4,
-        "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... m_c conceals {PRONOUN/m_c/self} in a hidden alcove under branches that drip all the way to the ground, needing privacy as {PRONOUN/m_c/subject} {VERB/m_c/consider/considers} what these new omens foretell.",
-        "m_c": {
-            "status": [
-                "medicine cat",
-                "medicine cat apprentice"
-            ],
-            "skill": [
-                "OMEN,2"
-            ]
-        }
-    },
-    {
-        "event_id": "fst_misc_ceremony_parent_child_acc1",
-        "location": [
-            "forest:camp3"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "ceremony",
-            "accessory"
-        ],
-        "frequency": 4,
-        "event_text": "Like a seed just beginning to sprout, m_c is now on {PRONOUN/m_c/poss} journey to becoming a full warrior of c_n. With a proud gaze, r_c presents {PRONOUN/r_c/poss} kit with acc_singular. r_c knows that one day m_c will grow big and strong, just like a little seed can grow into a strong tree.",
-        "new_accessory": [
-            "MAPLE SEED"
-        ],
-        "m_c": {
-            "status": [
-                "apprentice"
-            ],
-            "relationship_status": [
-                "child/parent"
-            ]
-        },
-        "r_c": {
-            "status": [
-                "any"
-            ]
-        },
-        "relationships": [
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "like",
-                    "comfort",
-                    "trust"
-                ],
-                "amount": 10,
-                "log": {
-                    "cats_from": "r_c presented m_c with a maple seed to celebrate {PRONOUN/m_c/poss} warrior ceremony."
-                }
-            },
-            {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "respect"
-                ],
-                "amount": 10,
-                "log": {
-                    "cats_from": "cat_from was impressed by the fine warrior {PRONOUN/cat_from/poss} kit, cat_to, grew into."
-                }
-            }
-        ]
-    },
-    {
-        "event_id": "fst_misc_sparrow_accessory",
-        "location": [
-            "forest"
-        ],
-        "season": [
-            "newleaf",
-            "greenleaf"
-        ],
-        "sub_type": [
-            "accessory"
-        ],
-        "frequency": 4,
-        "event_text": "A small flock of sparrows has decided to start frequenting the branches high above camp. To the annoyance of many, their preening has dropped plenty of feathers around camp; m_c thinks they're pretty, though, and decides to keep some.",
-        "new_accessory": [
-            "SPARROW FEATHERS"
-        ]
-    },
-    {
-        "event_id": "fst_misc_war_leadercontemplates",
-        "location": [
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "frequency": 4,
-        "event_text": "m_c watched the sun set over the forest, wondering at how the sky gleamed despite the war.",
-        "m_c": {
-            "status": [
-                "leader"
-            ],
-            "trait": [
-                "thoughtful",
-                "wise",
-                "righteous",
-                "lonesome",
-                "playful",
-                "childish",
-                "compassionate",
-                "calm",
-                "loving",
-                "gloomy",
-                "sincere"
-            ]
-        }
-    },
-    {
-        "event_id": "fst_misc_war_bolster1",
-        "location": [
-            "forest_camp1"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "frequency": 4,
-        "event_text": "m_c has been bolstering the edges of camp with new brambles.",
-        "m_c": {
-            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
-        },
-        "relationships": [
-            {
-                "cats_from": ["clan", "high_aggress"],
-                "cats_to": ["m_c"],
-                "values": ["respect"],
-                "amount": 5,
-                "mutual": false,
-                "log": {
-                    "cats_from": "cat_from approved of how cat_to bolstered the camp walls with brambles."
-                }
-            }
-        ]
+  {
+    "event_id": "fst_misc_war_anyapps1",
+    "location": [
+      "forest"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [
+      "war"
+    ],
+    "tags": [
+      "clan:apprentice"
+    ],
+    "frequency": 3,
+    "event_text": "The apprentices are learning how to ambush enemies from tall trees.",
+    "m_c": {
+      "status": [
+        "apprentice"
+      ]
     }
+  },
+  {
+    "event_id": "fst_misc_multiprophecymedcatprophet1",
+    "location": [
+      "forest"
+    ],
+    "season": [
+      "newleaf",
+      "greenleaf",
+      "leaf-fall"
+    ],
+    "frequency": 4,
+    "event_text": "As a storm rages and the branches of the forest whip around outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
+    "m_c": {
+      "status": [
+        "medicine cat",
+        "medicine cat apprentice"
+      ],
+      "skill": [
+        "PROPHET,2"
+      ]
+    }
+  },
+  {
+    "event_id": "fst_misc_multiomenmedcatomen1",
+    "location": [
+      "forest"
+    ],
+    "season": [
+      "newleaf",
+      "greenleaf",
+      "leaf-fall"
+    ],
+    "frequency": 4,
+    "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... m_c conceals {PRONOUN/m_c/self} in a hidden alcove under branches that drip all the way to the ground, needing privacy as {PRONOUN/m_c/subject} {VERB/m_c/consider/considers} what these new omens foretell.",
+    "m_c": {
+      "status": [
+        "medicine cat",
+        "medicine cat apprentice"
+      ],
+      "skill": [
+        "OMEN,2"
+      ]
+    }
+  },
+  {
+    "event_id": "fst_misc_ceremony_parent_child_acc1",
+    "season": [
+      "any"
+    ],
+    "sub_type": [
+      "ceremony",
+      "accessory"
+    ],
+    "frequency": 4,
+    "event_text": "Like a seed just beginning to sprout, m_c is now on {PRONOUN/m_c/poss} journey to becoming a full warrior of c_n. With a proud gaze, r_c presents {PRONOUN/r_c/poss} kit with acc_singular. r_c knows that one day m_c will grow big and strong as a tree.",
+    "new_accessory": [
+      "MAPLE SEED"
+    ],
+    "m_c": {
+      "status": [
+        "apprentice"
+      ],
+      "relationship_status": [
+        "child/parent"
+      ]
+    },
+    "r_c": {
+      "status": [
+        "any"
+      ]
+    },
+    "relationships": [
+      {
+        "cats_to": [
+          "r_c"
+        ],
+        "cats_from": [
+          "m_c"
+        ],
+        "mutual": true,
+        "values": [
+          "like",
+          "comfort",
+          "trust"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "r_c presented m_c with a maple seed to celebrate {PRONOUN/m_c/poss} warrior ceremony."
+        }
+      },
+      {
+        "cats_to": [
+          "m_c"
+        ],
+        "cats_from": [
+          "r_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from was impressed by the fine warrior {PRONOUN/cat_from/poss} kit, cat_to, grew into."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "fst_misc_sparrow_accessory",
+    "location": [
+      "forest"
+    ],
+    "season": [
+      "newleaf",
+      "greenleaf"
+    ],
+    "sub_type": [
+      "accessory"
+    ],
+    "frequency": 4,
+    "event_text": "A small flock of sparrows has decided to start frequenting the branches high above camp. To the annoyance of many, their preening has dropped plenty of feathers around camp; m_c thinks they're pretty, though, and decides to keep some.",
+    "new_accessory": [
+      "SPARROW FEATHERS"
+    ]
+  },
+  {
+    "event_id": "fst_misc_war_leadercontemplates",
+    "location": [
+      "forest"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [
+      "war"
+    ],
+    "frequency": 4,
+    "event_text": "m_c watched the sun set over the forest, wondering at how the sky gleamed despite the war.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "thoughtful",
+        "wise",
+        "righteous",
+        "lonesome",
+        "playful",
+        "childish",
+        "compassionate",
+        "calm",
+        "loving",
+        "gloomy",
+        "sincere"
+      ]
+    }
+  },
+  {
+    "event_id": "fst_misc_war_bolster1",
+    "location": [
+      "forest_camp1"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [
+      "war"
+    ],
+    "frequency": 4,
+    "event_text": "m_c has been bolstering the edges of camp with new brambles.",
+    "m_c": {
+      "age": [
+        "adolescent",
+        "young adult",
+        "adult",
+        "senior adult",
+        "senior"
+      ]
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_aggress"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "values": [
+          "respect"
+        ],
+        "amount": 5,
+        "mutual": false,
+        "log": {
+          "cats_from": "cat_from approved of how cat_to bolstered the camp walls with brambles."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "fst_misc_corvid_steal",
+    "location": [
+      "forest:camp1"
+    ],
+    "season": [
+      "-leaf-bare"
+    ],
+    "frequency": 3,
+    "event_text": "m_c sees a flock of corvids swarm the fresh-kill pile and rushes to chase them off, though they've already made off with valuable prey. Mouse-dung!",
+    "m_c": {
+      "age": [
+        "adolescent",
+        "young adult",
+        "adult",
+        "senior adult",
+        "senior"
+      ]
+    },
+    "supplies": [
+      {
+        "type": "freshkill",
+        "trigger": [
+          "full",
+          "excess"
+        ],
+        "adjust": "reduce_eighth"
+      }
+    ]
+  },
+  {
+    "event_id": "fst_misc_corvid_stealaccessory",
+    "location": [
+      "forest:camp1"
+    ],
+    "season": [
+      "-leaf-bare"
+    ],
+    "sub_type": [
+      "accessory"
+    ],
+    "frequency": 3,
+    "event_text": "m_c sees a flock of corvids swarm the fresh-kill pile and rushes to chase them off, though they've already made off with valuable prey. At least {PRONOUN/m_c/subject} {VERB/m_c/were/was} able to grab hold of some of their tail feathers.",
+    "new_accessory": [
+      "BLUE FEATHERS"
+    ],
+    "m_c": {
+      "age": [
+        "adolescent",
+        "young adult",
+        "adult",
+        "senior adult",
+        "senior"
+      ]
+    },
+    "supplies": [
+      {
+        "type": "freshkill",
+        "trigger": [
+          "full",
+          "excess"
+        ],
+        "adjust": "reduce_eighth"
+      }
+    ]
+  },
+  {
+    "event_id": "fst_misc_corvid_stealinjury",
+    "location": [
+      "forest:camp1"
+    ],
+    "season": [
+      "-leaf-bare"
+    ],
+    "frequency": 3,
+    "event_text": "m_c sees a flock of corvids swarm the fresh-kill pile and rushes to chase them off. Though successful, {PRONOUN/m_c/subject} {VERB/m_c/were/was} nearly pecked to death!",
+    "m_c": {
+      "age": [
+        "adolescent",
+        "young adult",
+        "adult",
+        "senior adult",
+        "senior"
+      ]
+    },
+    "injury": [
+      {
+        "cats": [
+          "m_c"
+        ],
+        "injuries": [
+          "beak_bite"
+        ]
+      }
+    ],
+    "history": [
+      {
+        "cats": [
+          "m_c"
+        ],
+        "scar": "m_c {VERB/m_c/were/was} hurt while defending the fresh-kill pile from corvids.",
+        "death": "m_c died from {PRONOUN/m_c/poss} wounds after defending the fresh-kill pile from corvids."
+      }
+    ],
+    "supplies": [
+      {
+        "type": "freshkill",
+        "trigger": [
+          "full",
+          "excess"
+        ],
+        "adjust": "reduce_eighth"
+      }
+    ],
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_aggress"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "values": [
+          "respect"
+        ],
+        "amount": 8,
+        "log": {
+          "cats_from": "cat_from saw cat_to defend the fresh-kill pile from a flock of corvids."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "fst_misc_campclean",
+    "location": [
+      "forest"
+    ],
+    "season": [],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "After a storm blows into camp, m_c recruits r_c to help clean up fallen branches and leaf litter.",
+    "new_accessory": [],
+    "m_c": {
+      "status": [
+        "warrior",
+        "deputy",
+        "leader",
+        "mediator"
+      ],
+      "relationship_status": [
+        "acknowledges"
+      ],
+      "skill": [
+        "CAMP,2"
+      ],
+      "trait": [],
+      "backstory": [],
+      "dies": false
+    },
+    "r_c": {
+      "status": [
+        "warrior",
+        "apprentice",
+        "deputy",
+        "mediator",
+        "mediator apprentice"
+      ],
+      "relationship_status": [
+        "acknowledges"
+      ],
+      "skill": [],
+      "trait": [
+        "-troublesome",
+        "-lonesome",
+        "-bloodthirsty",
+        "-cold",
+        "-vengeful",
+        "-arrogant",
+        "-grumpy",
+        "-gloomy",
+        "-rebellious"
+      ]
+    },
+    "exclude_involved": [],
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high stable"
+        ],
+        "cats_to": [
+          "m_c",
+          "r_c"
+        ],
+        "mutual": false,
+        "values": [
+          "trust",
+          "respect"
+        ],
+        "amount": 8,
+        "log": {
+          "cats_from": "cat_from respected m_c and r_c's diligence in looking after camp."
+        }
+      }
+    ]
+  }
 ]

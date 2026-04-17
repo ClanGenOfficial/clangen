@@ -115,8 +115,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep c_n safe from a large dog."
+                    "death": "m_c died to keep c_n safe from a large dog."
                 },
                 "relationships": [
                     {
@@ -578,8 +577,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "death": "m_c died to keep the Clan safe from a large dog."
                 },
                 "relationships": [
                     {
@@ -721,8 +719,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "death": "m_c died to keep the Clan safe from a large dog."
                 },
                 "relationships": [
                     {

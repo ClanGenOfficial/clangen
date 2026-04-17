@@ -1,1 +1,203 @@
-[]
+[
+    {
+    "patrol_id": "bch_med_newleafplantain1",
+    "biome": ["beach"],
+    "season": ["newleaf"],
+    "types": ["herb_gathering"],
+    "tags": [],
+    "patrol_art": "pln_med_herblocation2",
+    "min_cats": 1,
+    "max_cats": 1,
+    "min_max_status": {
+        "apprentice": [
+            -1,
+            -1
+        ],
+        "medicine cat apprentice": [
+            -1,
+            -1
+        ],
+        "medicine cat": [
+            1,
+            1
+        ],
+        "normal adult": [
+            -1,
+            -1
+        ]
+    },
+    "frequency": 3,
+    "chance_of_success": 50,
+    "intro_text": "Sea-scented mist blows across the salt meadow in damp gusts. p_l's whiskers bead with water as {PRONOUN/p_l/subject} {VERB/p_l/stalk/stalks} through the growing grass, fixating on each plant in turn, scanning for the right herb.",
+    "decline_text": "The fog thickens, and p_l turns right around. {PRONOUN/p_l/subject/CAP} won't find any herbs like this.",
+    "success_outcomes": [
+        {
+    "text": "The long, pointed narrow leaves, the characteristic brown bulbs with tiny white flowers... Sea plantain isn't hard to recognize, once newleaf arrives. p_l is relieved to find it nonetheless and chews off as many leaves as {PRONOUN/p_l/subject} can fit in {PRONOUN/p_l/poss} mouth. ",
+    "exp": 20,
+    "frequency": 4,
+    "herbs": ["plantain"],
+    "art": "gen_med_gatheringplantain_greenleaf1"
+}
+    ],
+    "fail_outcomes": [
+        {
+    "text": "Not long into {PRONOUN/p_l/poss} search, the fog thickens, obscuring p_l's own paws and dappling {PRONOUN/p_l/poss} pelt. Last night's rain, caught in the meadow, rises into haze under the strengthening newleaf sun. p_l can't see anything like this, and sea plantain only has a faint smell. Best to wait for the sun to burn the fog away.",
+    "exp": 0,
+    "frequency": 4,
+    "art": "pln_med_herblocation2"
+    },
+     {
+    "text": "Not long into {PRONOUN/p_l/poss} search, the fog thickens, obscuring p_l's own paws and dappling {PRONOUN/p_l/poss} pelt. In the haze, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} see them coming. Hooves crunching fresh grass are the only warning before a flock of sheep push and jostle against p_l on all sides. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bruised and disoriented by the time {PRONOUN/p_l/subject} {VERB/p_l/get/gets} away.",
+    "exp": 0,
+    "frequency": 3,
+    "injury": [
+        {
+            "cats": ["p_l"],
+            "injuries": ["bruises"],
+            "scars": [],
+            "no_results": false
+        }
+    ],
+    "art": "running_med"
+},
+
+     {
+    "text": "Not long into {PRONOUN/p_l/poss} search, the fog thickens, obscuring p_l's own paws and dappling {PRONOUN/p_l/poss} pelt. In the haze, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} see them coming. Hooves crunching fresh grass are the only warning before a flock of sheep envelop p_l, trampling {PRONOUN/p_l/object} underhoof. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} battered and panicked by the time {PRONOUN/p_l/subject} finally {VERB/p_l/get/gets} away.",
+    "exp": 0,
+    "frequency": 1,
+    "injury": [
+        {
+            "cats": ["p_l"],
+            "injuries": ["blunt_force_injury"],
+            "scars": [],
+            "no_results": false
+        }
+    ],
+    "history_text": {
+        "death": "p_l died from {PRONOUN/app1/poss} injuries after being trampled by a flock of sheep.",
+        "scars": "p_l was scarred after being trampled by a flock of sheep."
+    },
+    "art": "running_med2"
+}
+    ]
+},
+    
+    
+    {
+    "patrol_id": "bch_med_newleafplantain2",
+    "biome": ["beach"],
+    "season": ["newleaf"],
+    "types": ["herb_gathering"],
+    "tags": [],
+    "patrol_art": "gen_app_med_meadow",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "apprentice": [
+            -1,
+            -1
+        ],
+        "medicine cat apprentice": [
+            1,
+            1
+        ],
+        "medicine cat": [
+            1,
+            1
+        ],
+        "normal adult": [
+            -1,
+            -1
+        ]
+    },
+    "frequency": 3,
+    "chance_of_success": 50,
+    "intro_text": "Sea-scented mist blows across the salt meadow in damp gusts. p_l and app1's whiskers bead with water as they stalk through the growing grass, fixating on each plant in turn, scanning for the right herb.",
+    "decline_text": "The fog thickens, and p_l turns right around. They won't find any herbs like this.",
+    "success_outcomes": [
+        {
+    "text": "Plantain is especially good against the insect bites common in greenleaf. The days are still lengthening, but a medicine cat always has to look toward the next season as well as the Clan's present needs. app1 can only twitch an ear in agreement, carrying the bulk of the leaves home while p_l teaches.",
+    "exp": 25,
+    "frequency": 4,
+    "herbs": ["plantain"],
+    "relationships": [
+    { 
+    "cats_from": ["p_l"],
+    "cats_to": ["app1"],
+    "mutual": false,
+    "values": ["like","trust","respect"],
+    "amount": 5,
+    "log": {
+    "cats_from": "cat_to listened attentively to cat_from and carried most of the plantain for {PRONOUN/cat_from/object}."
+    }
+    }
+    ],
+    "art": "gen_med_gatheringplantain_greenleaf1"
+}
+    ],
+    "fail_outcomes": [
+        {
+    "text": "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. Last night's rain, caught in the meadow, rises into haze under the strengthening newleaf sun. p_l can't see anything like this, and sea plantain only has a faint smell. Best to wait for the sun to burn the fog away.",
+    "exp": 0,
+    "frequency": 4,
+    "art": "gen_app_med_meadow"
+    },
+     {
+    "text": "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. In the haze, the two of them drift apart. Hooves crunching fresh grass are their only warning before a flock of sheep push and jostle against app1 on all sides. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} bruised and panicked by the time {PRONOUN/app1/subject} {VERB/app1/get/gets} away.",
+    "exp": 0,
+    "frequency": 3,
+    "injury": [
+        {
+            "cats": ["app1"],
+            "injuries": ["bruises"],
+            "scars": [],
+            "no_results": false
+        }
+    ],
+    "relationships": [
+    { 
+    "cats_from": ["app1"],
+    "cats_to": ["p_l"],
+    "mutual": false,
+    "values": ["trust"],
+    "amount": -10,
+    "log": {
+    "cats_from": "The bruises from the sheep flock were a painful reminder for cat_from that {PRONOUN/cat_from/subject} couldn't rely on cat_to to warn {PRONOUN/cat_from/object}."
+    }
+    }
+    ],
+    "art": "running_med_app"
+},
+     {
+    "text": "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. In the haze, the two of them drift apart and p_l doesn't see it coming. Hooves crunching fresh grass are the only warning before a flock of sheep envelop app1, trampling {PRONOUN/app1/object} underhoof. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} battered and panicked by the time {PRONOUN/app1/subject} finally {VERB/app1/get/gets} away.",
+    "exp": 0,
+    "frequency": 1,
+    "injury": [
+        {
+            "cats": ["app1"],
+            "injuries": ["blunt_force_injury"],
+            "scars": [],
+            "no_results": false
+        }
+    ],
+    "history_text": {
+        "death": "app1 died from {PRONOUN/app1/poss} injuries after being trampled by a flock of sheep.",
+        "scars": "app1 was scarred after being trampled by a flock of sheep."
+    },
+    "relationships": [
+    { 
+    "cats_from": ["app1"],
+    "cats_to": ["p_l"],
+    "mutual": false,
+    "values": ["trust"],
+    "amount": -16,
+    "log": {
+    "cats_from": "The injury from being trampled by a flock of sheep was a painful reminder for cat_from that {PRONOUN/cat_from/subject} couldn't rely on cat_to to warn {PRONOUN/cat_from/object}."
+    }
+    }
+    ],
+    "art": "gen_train_patrolapprenticesessionfail"
+}
+]
+}
+]

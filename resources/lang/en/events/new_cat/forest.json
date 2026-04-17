@@ -85,7 +85,56 @@
             ],
             "changed": 1
         }
+    },
+    {
+    "event_id": "fst_new_cat_birdsong",
+    "location": [
+      "forest:camp1"
+    ],
+    "season": [
+      "newleaf",
+      "greenleaf"
+    ],
+    "frequency": 2,
+    "event_text": "m_c hears a swallow's call and discovers a loner perfectly mimicking birdsong. The strange cat chirps that {PRONOUN/m_c/subject} ruined {PRONOUN/n_c:0/poss} hunt and stalks off.",
+    "m_c": {
+      "age": [],
+      "status": [
+        "-newborn",
+        "-kitten",
+        "-elder"
+      ]
+    },
+    "new_cat": [
+      [
+        "meeting",
+        "loner",
+        "exists"
+      ]
+    ],
+    "relationships": [
+      {
+        "cats_from": [
+          "m_c"
+        ],
+        "cats_to": [
+          "n_c:0"
+        ],
+        "mutual": true,
+        "values": [
+          "like"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "m_c interrupted n_c:0 while {PRONOUN/n_c:0/subject} {VERB/n_c:0/was/were} vocalizing to attract prey."
+        }
+      }
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -1
     }
-
-
+  }
 ]

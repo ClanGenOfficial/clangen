@@ -899,5 +899,73 @@
                 }
             }
         ]
+    },
+    {
+  "event_id": "bch_injury_shipwreckfall_anymultiage1",
+  "location": [
+    "beach:camp3"
+  ],
+  "season": [
+    "any"
+  ],
+  "frequency": 1,
+  "event_text": "While trying to climb the broken ship in camp, m_c's paw slipped and {PRONOUN/m_c/subject} fell to the ground with a nasty thump.",
+  "m_c": {
+    "age": [
+      "kitten",
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ],
+      "trait": [
+"unruly",
+"impulsive",
+"attention-seeker",
+"charming",
+"skittish",
+"daydreamer",
+"fearless",
+"bossy",
+"troublesome",
+"childish",
+"playful",
+"charismatic",
+"bold",
+"daring",
+"confident",
+"adventurous",
+"shameless",
+"sneaky",
+"strange",
+"rebellious"
+],
+    "skill": [
+      "-CLIMBER,2"
+    ],
+    "status": [
+      "any"
+    ]
+  },
+  "injury": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "injuries": [
+        "broken bone"
+      ]
     }
+  ],
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c died from {PRONOUN/m_c/poss} wounds after failing to climb the broken ship.",
+      "scar": "m_c was scarred after failing to climb the broken ship."
+    }
+  ]
+}
 ]
