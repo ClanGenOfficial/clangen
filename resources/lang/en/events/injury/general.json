@@ -7470,7 +7470,7 @@
             "war"
         ],
         "frequency": 3,
-        "event_text": "m_c and r_c spend the night by the o_c_n border, and catch a o_c_n patrol sneaking into c_n territory. While r_c rushes to get reinforcement, m_c keeps them occupied.",
+        "event_text": "m_c and r_c spend the night by the o_c_n border, and catch a o_c_n patrol sneaking into c_n territory. While r_c gets reinforcements, m_c keeps them occupied.",
         "m_c": {
             "status": [
                 "warrior",
@@ -7501,7 +7501,7 @@
                     "m_c"
                 ],
                 "scar": "m_c gained a scar from holding off an ambush.",
-                "death": "m_c died to {PRONOUN/m_c/poss} injuries from holding off an ambush."
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after holding off o_c_n's ambush."
             }
         ],
         "other_clan": {

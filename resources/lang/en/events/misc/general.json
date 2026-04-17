@@ -11779,6 +11779,18 @@
                 "leader"
             ]
         },
+        "relationships": [
+            {
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": true,
+                "values": [ "trust" ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from and cat_to spent the night on watch for a potential attack."
+                }
+            }
+        ],
         "other_clan": {
             "current_rep": [
                 "hostile"
@@ -11796,7 +11808,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight.",
         "m_c": {
             "status": [
@@ -11830,7 +11842,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight and offer to keep them company instead.",
         "m_c": {
             "status": [
@@ -11864,7 +11876,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 4,
+        "frequency": 3,
         "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen to trade insults than blows.",
         "m_c": {
             "status": [
