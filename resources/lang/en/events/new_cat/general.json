@@ -2094,5 +2094,46 @@
         "current_rep": ["hostile"],
         "changed": 3
     }
+},
+{
+    "event_id": "gen_new_cat_queenseekinghelp",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": ["clan:medicine cat"],
+    "frequency": 4,
+    "event_text": "n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} so grateful for c_n's aid that {PRONOUN/n_c:0/subject} {VERB/n_c:0/give/gives} {PRONOUN/n_c:0/poss} kittens c_n names.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn",
+            "meeting",
+            "unknown"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from sought cat_to's help when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} giving birth."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 2
+    }
 }
 ]
