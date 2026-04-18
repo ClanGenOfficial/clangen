@@ -19,7 +19,7 @@
 		},
         "frequency": 2,
         "intro_text": "p_l asks r_c if {PRONOUN/r_c/subject} needs any help with anything, now that {PRONOUN/p_l/subject} has the time.",
-        "decline_text": "r_c shakes {PRONOUN/r_c/poss} head. {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} good right now, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to go on patrol soon, anyways.",
+        "decline_text": "r_c shakes {PRONOUN/r_c/poss} head. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} good right now, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to go on patrol soon, anyways.",
         "chance_of_success": 60,
 	    "relationship_constraint": [
 		    "likes"
@@ -204,7 +204,7 @@
     	],
         "fail_outcomes": [
             {
-                "text": "r_c hums, before perking up. Would p_l like to go with {PRONOUN/r_c/object} to this new hunting spot? {PRONOUN/r_c/subject} {VERB/r_c/need/needs} someone to check it out! p_l agrees, and the two start chatting. Caught up in their conversation, p_l misses a hole in the ground and trips. Ouch! r_c helps {PRONOUN/p_l/object} up. Maybe they should just go home.",
+                "text": "r_c hums, before perking up. Would p_l like to go with {PRONOUN/r_c/object} to this new hunting spot? {PRONOUN/r_c/subject/CAP} {VERB/r_c/need/needs} someone to check it out! p_l agrees, and the two start chatting. Caught up in their conversation, p_l misses a hole in the ground and trips. Ouch! r_c helps {PRONOUN/p_l/object} up. Maybe they should just go home.",
                 "exp": 0,
                 "frequency": 4,
 		        "injury": [
@@ -222,7 +222,7 @@
                 "art": "gen_train_talkingWW"
             },
             {
-                "text": "r_c hums, before perking up. Would p_l like to go with {PRONOUN/r_c/object} to this new hunting spot? {PRONOUN/r_c/subject} {VERB/r_c/need/needs} someone to check it out! p_l agrees, and the two start chatting. Caught up in their conversation, p_l misses a hole in the ground and makes a <i>nasty<i> fall. Panicked, r_c helps {PRONOUN/p_l/object} up, and carefully helps {PRONOUN/p_l/object} to camp to get treated.",
+                "text": "r_c hums, before perking up. Would p_l like to go with {PRONOUN/r_c/object} to this new hunting spot? {PRONOUN/r_c/subject/CAP} {VERB/r_c/need/needs} someone to check it out! p_l agrees, and the two start chatting. Caught up in their conversation, p_l misses a hole in the ground and makes a <i>nasty<i> fall. Panicked, r_c helps {PRONOUN/p_l/object} up, and carefully helps {PRONOUN/p_l/object} to camp to get treated.",
                 "exp": 0,
                 "frequency": 1,
 		        "injury": [
