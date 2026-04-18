@@ -29,8 +29,7 @@
 	"injury": [
         {
             "cats": ["n_c:0"],
-            "injuries": ["blunt_force_injury"],
-            "scars": ["THREE", "FACE"]
+            "injuries": ["blunt_force_injury"]
         }
         ],
 	"history": [
