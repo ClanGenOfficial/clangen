@@ -139,7 +139,7 @@
     {
         "event_id": "bch_death_abyss_any1",
         "location": [
-            "beach:camp3"
+            "beach"
         ],
         "season": [
             "any"
