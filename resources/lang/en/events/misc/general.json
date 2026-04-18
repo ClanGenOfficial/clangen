@@ -4819,6 +4819,206 @@
         }
     },
     {
+        "event_id": "gen_misc_any_welcoming_strangermeeting1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "A stranger limped into camp this moon, knowing c_n was friendly, and requested a few nights of shelter while {PRONOUN/n_c:0/poss} wounds healed. c_n obliged.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "loner",
+                "rogue"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "outsider": {
+        "current_rep": [
+            "welcoming"
+        ],
+        "changed": 5
+        }
+    },
+    {
+        "event_id": "gen_misc_any_welcoming_strangermeeting2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "A wandering healer was found on the border, hoping to learn from Clan medicine cats. {PRONOUN/n_c:0/subject/CAP} left a moon later, grateful and armed with new knowledge.",
+        "m_c": {
+            "status": [
+                "medicine cat"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "loner",
+                "rogue",
+                "status:medicine cat",
+                "backstory:wandering_healer1, wandering_healer2"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "outsider": {
+        "current_rep": [
+            "welcoming"
+        ],
+        "changed": 5
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect",
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c spent a moon sharing {PRONOUN/m_c/poss} healing knowledge with n_c:0.",
+                    "cats_to": "n_c:0 spent a moon learning healing knowledge from m_c."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_nothostile_strangermeeting1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "A stranger requested a few days of shelter in c_n's sturdy camp while the incoming storm blew over. c_n obliged.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "loner",
+                "rogue"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "outsider": {
+        "current_rep": [
+            "welcoming",
+            "neutral"
+        ],
+        "changed": 5
+        }
+    },
+    {
+        "event_id": "gen_misc_any_nothostile_otherclanapp1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "A o_c_n apprentice asked to join c_n after having apparently forsaken {PRONOUN/n_c:0/poss} original Clan loyalties. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/stay/stays} for only a few days before sheepishly requesting to return home.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "clancat",
+                "age:adolescent"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "other_clan": {
+        "current_rep": [
+            "ally",
+            "neutral"
+        ],
+        "changed": 3
+        }
+    },
+    {
+        "event_id": "gen_misc_any_nothostile_strangermeeting2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "A kittypet asked to join c_n but returned to Twolegplace after only a few days, realizing {PRONOUN/n_c:0/poss} distaste for outdoor living.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "kittypet"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "outsider": {
+        "current_rep": [
+            "welcoming",
+            "neutral"
+        ],
+        "changed": 5
+        }
+    },
+    {
         "event_id": "multi_misc_any_scandalous_kittypet1",
         "location": [
             "forest",
@@ -9452,7 +9652,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cat_from wished cat_to that {PRONOUN/cat_from/poss} mentor had give {PRONOUN/cat_from/object} an accessory normally instead of ambushing PPRONOUN/cat_from/object}."
+                    "cats_from": "cat_from wished that {PRONOUN/cat_from/poss} mentor, cat_to, had given {PRONOUN/cat_from/object} an accessory normally instead of ambushing {PRONOUN/cat_from/object}."
                 }
             },
             {

@@ -6,7 +6,7 @@ import ujson
 
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatAge
 from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
@@ -181,7 +181,9 @@ class Relation_Events:
             chosen_type = "all"
         possible_interaction_cats = list(
             filter(
-                lambda cat: (cat.status.alive_in_player_clan),
+                lambda cat: (
+                    cat.status.alive_in_player_clan and not cat.age == CatAge.NEWBORN
+                ),
                 Cat.all_cats.values(),
             )
         )

@@ -1640,7 +1640,7 @@
             "greenleaf"
         ],
         "frequency": 4,
-        "event_text": "m_c sneaked out of camp and was later found wandering in the full noon sun, confused and disoriented.",
+        "event_text": "m_c snuck out of camp and was later found wandering in the full noon sun, confused and disoriented.",
         "m_c": {
             "status": [
                 "kitten"
@@ -1667,7 +1667,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died after {PRONOUN/m_c/subject} sneaked out of camp and got sunstroke."
+                "death": "m_c died after {PRONOUN/m_c/subject} snuck out of camp and got sunstroke."
             }
         ]
     },

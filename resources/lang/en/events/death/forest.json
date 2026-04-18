@@ -40,7 +40,7 @@
         ],
         "tags": [],
         "frequency": 3,
-        "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around {PRONOUN/m_c/object}.",
+        "event_text": "m_c was found dead underneath a clawed oak tree surrounded by the stench of dog.",
         "m_c": {
             "skill": [
                 "-CLIMBER,2"

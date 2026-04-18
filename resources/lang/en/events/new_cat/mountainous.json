@@ -23,37 +23,36 @@
         "new_cat": [
             [
                 "exists",
-		"loner"
+		    "loner"
             ]
         ],
-	"injury": [
-        {
+	      "injury": [
+            {
+                "cats": ["n_c:0"],
+                "injuries": ["blunt_force_injury"]
+            }
+        ],
+	      "history": [
+            {
             "cats": ["n_c:0"],
-            "injuries": ["blunt_force_injury"],
-            "scars": ["THREE", "FACE"]
-        }
+            "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+            "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
+            }
         ],
-	"history": [
-        {
-        "cats": ["n_c:0"],
-        "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
-        }
-        ],
-	"relationships": [
-          {
-            "cats_from": ["m_c"],
-            "cats_to": ["n_c:0"],
-            "mutual": true,
-            "values": ["comfort", "like"],
-            "amount": 5
-          },
-          {
-            "cats_from": ["n_c:0"],
-            "cats_to": ["m_c"],
-            "values": ["trust"],
-            "amount": 10
-          }
+        "relationships": [
+            {
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:0"],
+              "mutual": true,
+              "values": ["comfort", "like"],
+              "amount": 5
+            },
+            {
+              "cats_from": ["n_c:0"],
+              "cats_to": ["m_c"],
+              "values": ["trust"],
+              "amount": 10
+            }
         ],
         "outsider": {
             "current_rep": [

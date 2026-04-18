@@ -828,7 +828,7 @@ def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
         return [kitty for kitty in cat_list if kitty.backstory in allowed_stories]
 
 
-def _check_for_exclusionary_value(possible_values) -> bool:
+def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     """
     Checks the given list for an exclusionary value and returns True or False
     """
