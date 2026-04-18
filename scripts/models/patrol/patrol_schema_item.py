@@ -16,7 +16,7 @@ from scripts.models.patrol.patrol_type import PatrolType
 
 
 class PatrolSchemaItem(BaseModel):
-    model_config = ConfigDict(extra='forbid')
+    model_config = ConfigDict(extra="forbid")
     patrol_id: str = Field(
         ..., description="Unique string used to identify the patrol."
     )
