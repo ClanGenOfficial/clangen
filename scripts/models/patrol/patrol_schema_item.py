@@ -59,7 +59,7 @@ class PatrolSchemaItem(BaseModel):
         ...,
         description="Controls chance to succeed. Higher number is higher chance to succeed.",
     )
-    relationship_status: Union[List[RelationshipStatus], MISSING] = Field(
+    relationship_constraint: Union[List[RelationshipStatus], MISSING] = Field(
         MISSING,
         description="Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
     )
