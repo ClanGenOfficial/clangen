@@ -654,9 +654,10 @@ class Patrol:
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         while not filtered_patrols:
             for patrol in possible_patrols:
-                if patrol.frequency != chosen_frequency and not (
-                    patrol.patrol_id
-                    == constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]
+                if (
+                    patrol.frequency != chosen_frequency
+                    and patrol.patrol_id
+                    != constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]
                 ):
                     continue
                 if not self._check_constraints(patrol):
