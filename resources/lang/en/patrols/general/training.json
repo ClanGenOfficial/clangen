@@ -1,5 +1,247 @@
 [
     {
+        "patrol_id": "gen_train_instarsandtime1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [],
+        "patrol_art": "gen_speaking_cat_w1",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+		"normal_adult": [1, 2]
+		},
+        "frequency": 2,
+        "intro_text": "p_l asks r_c if {PRONOUN/r_c/subject} needs any help with anything, now that {PRONOUN/p_l/subject} has the time.",
+        "decline_text": "r_c shakes {PRONOUN/r_c/poss} head. {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} good right now, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to go on patrol soon, anyways.",
+        "chance_of_success": 60,
+	    "relationship_constraint": [
+		    "likes"
+	    ],
+        "success_outcomes": [
+            {
+                "text": "r_c thinks for a second, before suddenly seeming a little flustered. Yes, {PRONOUN/r_c/subject}'d like p_l to help her out! {PRONOUN/r_c/subject/CAP} {VERB/r_c/lead/leads} p_l to a clearing in the territory, with the stars shining brightly in the sky. Confused, p_l asks what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} supposed to do, and r_c shyly asks {PRONOUN/p_l/object} to just sit with {PRONOUN/r_c/object}, and look up? p_l does, and finds {PRONOUN/p_l/self} gasping at the beauty of Silverpelt and the constellations {PRONOUN/p_l/subject} {VERB/r_c/know/knows}. {PRONOUN/p_l/subject/CAP} {VERB/r_c/start/starts} pointing them out quietly, though r_c's gaze is locked on p_l.",
+                "exp": 15,
+                "frequency": 2,
+				"relationship_constraint": [
+					"adores",
+					"loves"
+		],
+		"relationships": [
+			{
+    			"cats_from": [
+					"p_l"
+			],
+    			"cats_to": [
+				    "r_c"
+			],
+    			"mutual": false,
+    			"values": [
+				    "romance"
+			],
+    			"amount": 12,
+    			"log": {
+				    "cats_from": "cat_to took cat_from stargazing."
+				}
+			},
+			{
+    				"cats_from": [
+					    "r_c"
+				],
+    				"cats_to": [
+					    "p_l"
+				],
+    				"mutual": false,
+    				"values": [
+					    "romance",
+					    "respect"
+				],
+    				"amount": 12,
+    				"log": {
+					    "cats_from": "cat_from took cat_to stargazing, and cat_to knew more about the stars than cat_from knew."
+				}
+			}
+		],
+                "art": "gen_speaking_cat_w1"
+            },
+            {
+		"min_max_status": {
+			"apprentice": [1, 1],
+			"normal adult": [1, 1]
+		},
+                "text": "r_c scoffs, saying {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} need help from p_l. The warrior gasps, feigning offence. How dare r_c be so mean to {PRONOUN/p_l/object}! r_c rolls {PRONOUN/r_c/poss} eyes, and after a little back and forth begrudgingly mumbles if p_l can maybe teach {PRONOUN/r_c/subject} a little bit extra about fighting. p_l accepts, and even if r_c is anxious, the two end up having a great training session.",
+                "exp": 15,
+                "frequency": 4,
+		"relationships": [
+			{
+    				"cats_from": [
+					    "p_l"
+				],
+    				"cats_to": [
+					    "r_c"
+				],
+    				"mutual": false,
+    				"values": [
+					    "comfort",
+					    "like"
+				],
+    				"amount": 10,
+    				"log": {
+					    "cats_from": "cat_from took cat_to out training after cat_to admitted {PRONOUN/cat_to/subject} could use it."
+				}
+			},
+			{
+    				"cats_from": [
+					    "r_c"
+				],
+    				"cats_to": [
+					    "p_l"
+				],
+    				"mutual": false,
+    				"values": [
+					    "trust",
+					    "comfort",
+					    "like"
+				],
+    				"amount": 12,
+    				"log": {
+					    "cats_from": "cat_to managed to convince cat_from to go out training, and it was nice."
+				}
+			}
+		],
+                "art": "gen_train_fightingskill"
+		
+            },
+            {
+		"min_max_status": {
+			"normal adult": [2, 2],
+			"apprentice": [-1, -1]
+		},
+                "text": "r_c laughs. p_l, up at the crack of dawn, asking if {PRONOUN/p_l/subject} can do extra work? But if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} serious, which r_c realizes {PRONOUN/p_l/subject} {VERB/p_l/are/is}, {PRONOUN/r_c/subject} <i>would</i> like help with something. Has p_l ever seen one of those Twoleg ruins in the territory? Yes, the ones with weird symbols covering the walls. r_c tells p_l {PRONOUN/r_c/subject} thinks {PRONOUN/r_c/subject} could learn more about the territory's history there. Perhaps {PRONOUN/p_l/subject} would like to accompany r_c on the way?",
+                "exp": 15,
+                "frequency": 4,
+		        "relationships": [
+			{
+    				"cats_from": [
+					    "p_l"
+				],
+    				"cats_to": [
+					    "r_c"
+				],
+    				"mutual": true,
+    				"values": [
+					"comfort",
+					"like"
+				],
+    				"amount": 10,
+    				"log": {
+					    "cats_from": "cat_from and cat_to had a great time exploring some old Twoleg ruins!"
+				}
+			}
+        ],
+                "art": "gen_bump_heads_warriors"
+            },
+            {
+		"min_max_status": {
+			"normal adult": [2, 2],
+			"apprentice": [-1, -1]
+		},
+                "text": "r_c stays quiet, so p_l lightly teases {PRONOUN/p_l/poss} friend about the walks out of camp {PRONOUN/r_c/subject} {VERB/r_c/have/has} been taking. r_c defensively insists it's nothing, but p_l's unconvinced stare eventually gets through. Fine, yes, there IS a reason, and no it is NOT a secret mate. After a deep breath, r_c asks p_l if {PRONOUN/p_l/subject} ever {VERB/p_l/feel/feels} like {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not enough. Surprised, p_l blinks, but immediately launches into a spiel about how r_c is <i>more</i> than enough, and {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} need to change {PRONOUN/r_c/self} if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} want to! r_c is smiling brightly at the end of it, and p_l knows {PRONOUN/p_l/subject} did {PRONOUN/p_l/poss} job right.",
+                "stat_trait": [
+                    "insecure",
+					"nervous"
+                ],
+		"can_have_stat": [
+			"not_pl"
+		],
+		"relationships": [
+			{
+    				"cats_from": [
+					"p_l"
+				],
+    			"cats_to": [
+					"r_c"
+				],
+    			"mutual": false,
+    			"values": [
+				    "comfort",
+				    "like"
+				],
+    			"amount": 12,
+    			"log": {
+				    "cats_from": "cat_from managed to comfort cat_to about {PRONOUN/cat_to/poss} unnecessary insecurities."
+				}
+			},
+			{
+    			"cats_from": [
+				    "r_c"
+				],
+    			"cats_to": [
+				    "p_l"
+				],
+    			"mutual": false,
+    			"values": [
+				    "trust",
+				    "comfort",
+				    "like"
+				],
+    			"amount": 14,
+    			"log": {
+				    "cats_from": "cat_from had a great talk with cat_to, and felt much more confident after."
+			}
+		}
+	],
+                "exp": 15,
+                "frequency": 4,
+                "art": "gen_bump_heads_warriors"
+            }
+    	],
+        "fail_outcomes": [
+            {
+                "text": "r_c hums, before perking up. Would p_l like to go with {PRONOUN/r_c/object} to this new hunting spot? {PRONOUN/r_c/subject} {VERB/r_c/need/needs} someone to check it out! p_l agrees, and the two start chatting. Caught up in their conversation, p_l misses a hole in the ground and trips. Ouch! r_c helps {PRONOUN/p_l/object} up. Maybe they should just go home.",
+                "exp": 0,
+                "frequency": 4,
+		        "injury": [
+			{
+				"cats": [
+					"p_l"
+				],
+				"injuries": [
+					"minor_injury"
+				],
+				"scars": [],
+				"no_results": false
+			}
+		],
+                "art": "gen_train_talkingWW"
+            },
+            {
+                "text": "r_c hums, before perking up. Would p_l like to go with {PRONOUN/r_c/object} to this new hunting spot? {PRONOUN/r_c/subject} {VERB/r_c/need/needs} someone to check it out! p_l agrees, and the two start chatting. Caught up in their conversation, p_l misses a hole in the ground and makes a <i>nasty<i> fall. Panicked, r_c helps {PRONOUN/p_l/object} up, and carefully helps {PRONOUN/p_l/object} to camp to get treated.",
+                "exp": 0,
+                "frequency": 1,
+		        "injury": [
+			{
+				"cats": [
+					"p_l"
+				],
+				"injuries": [
+					"blunt_force_injury"
+				],
+				"scars": [],
+				"no_results": false
+			}
+		],
+                "art": "gen_train_talkingWW"
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_train_soloreflect1",
         "biome": [
             "any"
