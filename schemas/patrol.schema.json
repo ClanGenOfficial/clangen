@@ -304,6 +304,7 @@
       "type": "string"
     },
     "PatrolSchemaItem": {
+      "additionalProperties": false,
       "properties": {
         "patrol_id": {
           "description": "Unique string used to identify the patrol.",
@@ -417,12 +418,12 @@
           "title": "Chance Of Success",
           "type": "integer"
         },
-        "relationship_status": {
+        "relationship_constraint": {
           "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
           "items": {
             "$ref": "common.schema.json#/$defs/RelationshipStatus"
           },
-          "title": "Relationship Status",
+          "title": "Relationship Constraint",
           "type": "array"
         },
         "pl_skill_constraint": {
