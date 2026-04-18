@@ -980,7 +980,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         if len(group) != 2:
             return False
         # test for parentage
-        if not group[0].ID in group[1].apprentice:
+        if not group[1].ID in group[0].apprentice:
             if "mentor/app" in exclusionary_values:
                 qualifies = True
             else:
