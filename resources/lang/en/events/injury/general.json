@@ -530,7 +530,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c spent the day tending to the dens and might have worked a bit too hard — {PRONOUN/m_c/poss} joints are now quite sore.",
+        "event_text": "m_c spent the day tending to the dens and might have worked a bit too hard. {PRONOUN/m_c/poss/CAP} joints are now quite sore.",
         "m_c": {
             "age": [
                 "adolescent",
