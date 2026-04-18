@@ -870,6 +870,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     qualifies = False
 
     if "strangers" in filter_types:
+        qualifies = False
         if any([inter_cat.ID in test_cat.relationships for inter_cat in testing_cats]):
             if "strangers" in exclusionary_values:
                 qualifies = True
@@ -883,6 +884,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         filter_types.remove("strangers")
 
     if "siblings" in filter_types:
+        qualifies = False
         if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             if "siblings" in exclusionary_values:
                 qualifies = True
@@ -893,6 +895,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         filter_types.remove("siblings")
 
     if "littermates" in filter_types:
+        qualifies = False
         if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             if "littermates" in exclusionary_values:
                 qualifies = True
@@ -908,6 +911,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
             return False
 
         # then if cats don't have the needed number of mates
+        qualifies = False
         if not all(len(i.mate) >= (len(group) - 1) for i in group):
             if "mates" in exclusionary_values:
                 qualifies = True
@@ -934,6 +938,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
             return False
 
         # Check each cat to see if it is mates with the patrol leader
+        qualifies = False
         for cat in group:
             if cat.ID == patrol_leader.ID:
                 continue
@@ -952,6 +957,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         if len(group) != 2:
             return False
         # test for parentage
+        qualifies = False
         if not group[0].is_parent(group[1]):
             if "parent/child" in exclusionary_values:
                 qualifies = True
@@ -966,6 +972,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         if len(group) != 2:
             return False
         # test for parentage
+        qualifies = False
         if not group[1].is_parent(group[0]):
             if "child/parent" in exclusionary_values:
                 qualifies = True
@@ -977,6 +984,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
     if "mentor/app" in filter_types:
         # It should be exactly two cats for a "mentor/app" event
+        qualifies = False
         if len(group) != 2:
             return False
         # test for parentage
@@ -994,6 +1002,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         if len(group) != 2:
             return False
         # test for parentage
+        qualifies = False
         if not group[0].ID in group[1].apprentice:
             if "app/mentor" in exclusionary_values:
                 qualifies = True
