@@ -538,7 +538,9 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         )
 
         app.update_mentor(new_mentor=mentor.ID)
-        with self.subTest("are mentor/app, expected not mentor/app and not parent/child"):
+        with self.subTest(
+            "are mentor/app, expected not mentor/app and not parent/child"
+        ):
             self.assertFalse(
                 event_for_cat(
                     cat_info={"relationship_status": ["-mentor/app", "-parent/child"]},
@@ -546,6 +548,7 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
                     cat_group=[mentor, app],
                 )
             )
+
 
 class TestRelationshipTiers(unittest.TestCase):
     @classmethod
