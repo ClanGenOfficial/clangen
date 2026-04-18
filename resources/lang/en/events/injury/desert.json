@@ -1,36 +1,5 @@
 [
     {
-        "event_id": "dst_injury_bruises_kitten1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "frequency": 4,
-        "event_text": "While batting a shiny skitter-pebble around m_c misjudged a pounce and smashed {PRONOUN/m_c/poss} tiny little snout into it.",
-        "m_c": {
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "unruly",
-                "impulsive",
-                "fearless"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises"
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "dst_injury_heat_anykitten2",
         "location": [
             "desert"
@@ -89,14 +58,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "bruises"
-                ]
-            },
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
+                    "bruises",
                     "dehydrated"
                 ]
             }
@@ -316,7 +278,7 @@
         "event_id": "dst_injury_bruisessore_anymultiage2",
         "location": ["desert"],
         "season": ["any"],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c took a bad tumble over a rock hidden by the dusty ground.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
@@ -386,65 +348,6 @@
                 "injuries": [
                     "hot_injury"
                 ]
-            }
-        ]
-    },
-    {
-        "event_id": "dst_injury_bruisessore_clankits1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [
-            "clan:kitten"
-        ],
-        "frequency": 4,
-        "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/subject} {VERB/m_c/decline/declines} giving another badger ride, ready to nap off the happy soreness that comes with being the kits' favorite chew toy at the moment.",
-        "m_c": {
-            "age": [
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "KIT,1"
-            ]
-        },
-        "r_c": {
-            "status": [
-                "kitten"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises",
-                    "sore"
-                ]
-            }
-        ],
-        "relationships": [
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": 10
             }
         ]
     },
@@ -965,7 +868,7 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c has been trying to keep {PRONOUN/m_c/poss} fluids up, but staying healthy in the oppressive heat of greenleaf was definitely easier in {PRONOUN/m_c/poss} prime. Sunstroke is the result.",
+        "event_text": "m_c has been trying to keep {PRONOUN/m_c/poss} fluids up, but staying healthy in the oppressive heat of greenleaf was definitely easier to manage in {PRONOUN/m_c/poss} prime resulting in sunstroke.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -1071,7 +974,7 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "On one of the hottest days of the year r_c spends all {PRONOUN/r_c/poss} energy making sure that the older members of c_n keep drinking. Only m_c gets touched by sunstroke, and it's only a mild case of dehydration.",
+        "event_text": "On one of the hottest days of the year r_c spends all {PRONOUN/r_c/poss} energy making sure that the older members of c_n keep drinking. Only m_c gets touched by sunstroke, though luckily it's a mild case of dehydration.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -3008,44 +2911,6 @@
             ],
             "changed": -3
         }
-    },
-    {
-        "event_id": "dst_injury_bruises_anyapprentice2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "frequency": 4,
-        "event_text": "m_c says {PRONOUN/m_c/poss} bruises are from battle training. m_c is lying, they're actually from a misjudged pounce.",
-        "m_c": {
-            "status": [
-                "apprentice"
-            ],
-            "trait": [
-                "ambitious",
-                "arrogant",
-                "charismatic",
-                "competitive",
-                "cunning",
-                "fierce",
-                "insecure",
-                "grumpy",
-                "shameless",
-                "sneaky"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises"
-                ]
-            }
-        ]
     },
     {
         "event_id": "dst_injury_bruises_anyapprentice1",
