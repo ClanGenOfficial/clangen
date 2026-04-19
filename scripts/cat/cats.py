@@ -3443,7 +3443,6 @@ class Cat:
             sorted_specific_list = [
                 check_cat
                 for check_cat in sorted_specific_list
-                # pretty sure a cat is considered "near" their own group
                 if check_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
             ]
 
