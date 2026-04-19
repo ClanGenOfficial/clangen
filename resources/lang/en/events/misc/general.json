@@ -12135,7 +12135,7 @@
       "any"
     ],
     "frequency": 4,
-    "event_text": "m_c accidentally fell asleep when {PRONOUN/m_c/subject} {VERB/m_c/were/was} supposed to be guarding camp.",
+    "event_text": "m_c fell asleep when {PRONOUN/m_c/subject} {VERB/m_c/were/was} supposed to be guarding camp.",
     "m_c": {
         "status": [
           "warrior",
