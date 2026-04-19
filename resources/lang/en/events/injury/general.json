@@ -7427,35 +7427,88 @@
         ]
     },
     {
-  "event_id": "gen_injury_fireflies",
-  "location": [
-    "forest:camp2,camp4",
-    "mountainous:camp4",
-    "plains:camp1"
-  ],
-  "season": [
-    "greenleaf"
-  ],
-  "sub_type": [],
-  "tags": [],
-  "frequency": 2,
-  "event_text": "m_c got hurt while chasing fireflies through camp.",
-  "new_accessory": [],
-  "m_c": {
-    "age": [
-      "kitten",
-      "adolescent"
-    ]
-  },
-  "injury": [
+        "event_id": "gen_injury_fireflies",
+        "location": [
+            "forest:camp2,camp4",
+            "mountainous:camp4",
+            "plains:camp1"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c got hurt while chasing fireflies through camp.",
+        "new_accessory": [],
+        "m_c": {
+            "age": [
+                "kitten",
+                "adolescent"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "minor_injury"
+                ]
+            }
+        ]
+    },
     {
-      "cats": [
-        "m_c"
-      ],
-      "injuries": [
-        "minor_injury"
-      ]
+        "event_id": "gen_injury_war_onwatch",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 3,
+        "event_text": "m_c and r_c spend the night by the o_c_n border and catch a o_c_n patrol sneaking into c_n territory. While r_c gets reinforcements, m_c keeps them occupied.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "battle_injury"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c gained a scar from holding off an ambush.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after holding off o_c_n's ambush."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -2
+        }
     }
-  ]
-}
 ]
