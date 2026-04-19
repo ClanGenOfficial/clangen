@@ -295,7 +295,7 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "m_c woke up with a mild headache, but got up to play anyways, trying to ignore the nagging pain.",
+        "event_text": "m_c woke up with a mild headache, but got up to play anyway, trying to ignore the nagging pain.",
         "m_c": {
             "status": [
                 "kitten"
