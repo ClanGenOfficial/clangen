@@ -96,7 +96,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk — s_c convinces the patrol to head for home.",
+                "text": "It's not worth the risk. s_c convinces the patrol to head for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -196,7 +196,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk — s_c heads for home.",
+                "text": "It's not worth the risk. s_c heads home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
