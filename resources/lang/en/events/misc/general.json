@@ -12125,5 +12125,43 @@
                 "vengeful"
             ]
         }
-    }
+    },
+      {
+    "event_id": "gen_misc_guardasleep",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 4,
+    "event_text": "m_c accidentally fell asleep when {PRONOUN/m_c/subject} {VERB/m_c/were/was} supposed to be guarding camp.",
+    "m_c": {
+        "status": [
+          "warrior",
+          "deputy"
+        ],
+        "relationship_status": [],
+        "skill": [],
+        "trait": ["-strict", "-responsible"],
+        "backstory": [],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": [
+              "clan", "high_lawful"
+            ],
+            "cats_to": [
+              "m_c"
+            ],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": -5,
+            "log": {
+              "cats_from": "cat_from heard cat_to fell asleep guarding camp."
+                }
+        }
+    ]
+}
 ]
