@@ -3438,6 +3438,14 @@ class Cat:
                 for check_cat in sorted_specific_list
                 if check_cat.status.group_ID == self.status.group_ID
             ]
+        # driven off cats
+        else:
+            sorted_specific_list = [
+                check_cat
+                for check_cat in sorted_specific_list
+                # pretty sure a cat is considered "near" their own group
+                if check_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            ]
 
         if filter_func is not None:
             sorted_specific_list = [
