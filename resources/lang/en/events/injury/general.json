@@ -7534,7 +7534,7 @@
             "clan:kitten"
         ],
         "frequency": 4,
-        "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/subject} {VERB/m_c/decline/declines} giving another badger ride, ready to nap off the happy soreness that comes with being the kits' favorite chew toy at the moment.",
+        "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/subject} {VERB/m_c/decline/declines} giving another badger ride to nap off the happy soreness that comes with being the kits' current favorite chew toy.",
         "m_c": {
             "age": [
                 "senior adult",
