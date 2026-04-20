@@ -81,6 +81,6 @@
     "absent": [
             "m_c has been getting more and more forgetful lately. {PRONOUN/m_c/subject/CAP} is starting to fade.",
             "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, quietly concerned about how long it takes {PRONOUN/m_c/object} to respond.",
-            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note — m_c has been fading fast."
+            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note; m_c has been fading fast."
         ]
 }

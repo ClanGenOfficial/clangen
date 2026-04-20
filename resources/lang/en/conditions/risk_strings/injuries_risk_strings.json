@@ -155,7 +155,7 @@
     },
     "dehydrated": {
         "heat exhaustion": [
-            "r_c has managed to get some water into m_c, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} showing signs of confusion and fatigue — clear indications of heat exhaustion.",
+            "r_c has managed to get some water into m_c, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} showing signs of confusion and fatigue: clear indications of heat exhaustion.",
             "m_c pants, helplessly searching for a cooler place to lie and nap. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} utterly exhausted by this heat."
         ],
         "sore throat": [

@@ -32,7 +32,7 @@
         "lost a leg": [
             "The leg is too mangled. r_c sighs and prepares the poppy seeds to knock m_c out while it's removed.",
             "When m_c wakes up from {PRONOUN/m_c/poss} poppy-induced sleep, r_c breaks the news that m_c's leg had to be removed.",
-            "m_c wakes up one leg less than {PRONOUN/m_c/subject} went to sleep with, and it's both upsetting and a relief. {PRONOUN/m_c/poss/CAP} leg was so mangled — and m_c in so much pain — that this might be for the best. But it's still a loss.",
+            "m_c wakes up one leg less than {PRONOUN/m_c/subject} went to sleep with, and it's both upsetting and a relief. {PRONOUN/m_c/poss/CAP} leg was so mangled, and m_c in so much pain, that this might be for the best. But it's still a loss.",
             "The damage to m_c's leg has turned out to be too great. {PRONOUN/m_c/poss/CAP} leg had to be removed for any hope of recovery.",
             "m_c has healed from {PRONOUN/m_c/poss} mangled leg, but the leg had to be removed completely."
         ],

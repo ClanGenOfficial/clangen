@@ -163,7 +163,7 @@
         "m_c feels much better and is no longer suffering from shock.",
         "m_c's shock is gone.",
         "m_c is no longer in shock.",
-      "m_c finally feels more like {PRONOUN/m_c/self} — {PRONOUN/m_c/poss} shock is gone."
+      "m_c finally feels more like {PRONOUN/m_c/self}. {PRONOUN/m_c/poss/CAP} shock is gone."
     ],
     "lingering shock": [
         "It took a little while, but m_c finally feels normal again.",
