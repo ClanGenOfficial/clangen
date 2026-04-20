@@ -1437,7 +1437,7 @@
             "plains",
             "mountainous",
             "beach",
-            "forest_camp4"
+            "forest:camp4"
         ],
         "season": [
             "newleaf",
@@ -10884,8 +10884,8 @@
     {
         "event_id": "gen_misc_war_guards1",
         "location": [
-            "forest_camp2_camp4",
-            "plains_camp1_camp3"
+            "forest:camp2_camp4",
+            "plains:camp1_camp3"
         ],
         "season": [
             "any"
@@ -10897,7 +10897,7 @@
             "clan:warrior"
         ],
         "frequency": 4,
-        "event_text": "More warriors have been posted around the edges of camp to keep watch on m_c's order",
+        "event_text": "More warriors have been posted around the edges of camp to keep watch on m_c's order.",
         "m_c": {
             "status": [
                 "leader"
@@ -10930,10 +10930,10 @@
     {
         "event_id": "gen_misc_war_guards2",
         "location": [
-            "forest_camp4",
-            "plains_camp3_camp1",
+            "forest:camp4",
+            "plains:camp3_camp1",
             "mountainous",
-            "beach_camp3_camp4_camp1",
+            "beach:camp3_camp4_camp1",
             "wetlands",
             "desert"
         ],
