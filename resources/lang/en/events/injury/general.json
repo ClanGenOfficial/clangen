@@ -7632,7 +7632,7 @@
             "clan:kitten"
         ],
         "frequency": 4,
-        "event_text": "m_c plays with a kit after training instead of resting. It's kind of {PRONOUN/m_c/object}, but the lack of downtime leaves {PRONOUN/m_c/object} sore and aching.",
+        "event_text": "m_c plays with a kit after training instead of resting. The lack of downtime leaves {PRONOUN/m_c/object} sore and aching.",
         "m_c": {
             "status": [
                 "apprentice"
