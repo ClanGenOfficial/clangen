@@ -17815,6 +17815,7 @@
             {
                 "text": "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. The rest of the patrol, knowing how important poppy seeds are as a painkiller, work hard, both for s_c and all of c_n.",
                 "exp": 10,
+                "can_have_stat": ["p_l"],
                 "stat_skill": [
                     "SENSE,2"
                 ],
@@ -28841,6 +28842,7 @@
             {
                 "text": "s_c uses the bright red flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. The rest of the patrol, knowing how important poppy seeds are as a painkiller, work hard, both for s_c and all of c_n.",
                 "exp": 10,
+                "can_have_stat": ["p_l"],
                 "stat_skill": [
                     "SENSE,2"
                 ],
