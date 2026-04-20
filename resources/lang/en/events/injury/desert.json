@@ -868,7 +868,7 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c has been trying to keep {PRONOUN/m_c/poss} fluids up, but staying healthy in the oppressive heat of greenleaf was definitely easier to manage in {PRONOUN/m_c/poss} prime resulting in sunstroke.",
+        "event_text": "m_c tried to keep {PRONOUN/m_c/poss} fluids up, but staying healthy in the oppressive heat of greenleaf was definitely easier to manage in {PRONOUN/m_c/poss} prime, resulting in sunstroke.",
         "m_c": {
             "age": [
                 "senior adult",
