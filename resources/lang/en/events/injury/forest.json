@@ -212,7 +212,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c's tail was badly injured by a falling tree.",
+        "event_text": "m_c's tail was badly injured by a falling bough.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -240,8 +240,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred by a falling tree.",
-                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}."
+                "scar": "m_c was scarred by a falling bough.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a bough fell on {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -378,7 +378,7 @@
             "leaf-bare"
         ],
         "frequency": 2,
-        "event_text": "m_c and r_c played on the ice-covered pond near camp. They weren't quick enough to react to the sound of cracking beneath them, but m_c managed to drag r_c out of the freezing water.",
+        "event_text": "m_c and r_c were playing on the ice-covered pond near camp. The ice broke beneath them, but m_c managed to drag r_c out of the freezing water.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -513,7 +513,7 @@
             "leaf-fall"
         ],
         "frequency": 4,
-        "event_text": "m_c was left scratched and scraped after pushing through thorny, bare undergrowth.",
+        "event_text": "m_c was left scratched and scraped after pushing through dense thorny undergrowth.",
         "m_c": {
             "age": [
                 "any",
