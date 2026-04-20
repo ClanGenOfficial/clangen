@@ -7747,7 +7747,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred after o_c_n attempted to ambush {PRONOUN/m_c/object}."
+                "scar": "m_c was scarred after o_c_n attempted to ambush {PRONOUN/m_c/object}.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after a o_c_n patrol attempted to ambush {PRONOUN/m_c/object}."
             }
         ],
         "other_clan": {
@@ -7983,7 +7984,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred after fighting o_c_n's leader."
+                "scar": "m_c was scarred after fighting o_c_n's leader.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after fighting o_c_n's leader."
             }
         ],
         "relationships": [
