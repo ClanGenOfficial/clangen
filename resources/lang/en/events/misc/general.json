@@ -10897,7 +10897,7 @@
             "clan:warrior"
         ],
         "frequency": 4,
-        "event_text": "More warriors have been posted around the edges of camp to keep watch on m_c's order",
+        "event_text": "More warriors have been posted around the edges of camp to keep watch on m_c's order.",
         "m_c": {
             "status": [
                 "leader"
