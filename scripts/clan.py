@@ -482,9 +482,11 @@ class Clan:
         if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
 
-        safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
+        safe_save(f"{get_save_dir()}/{self.name}/clan.json", clan_data)
 
-        if os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (
+        if os.path.exists(f"{get_save_dir()}/{self.name}clan.json"):
+            os.remove(f"{get_save_dir()}/{self.name}clan.json")
+        elif os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (
             self.name != "current"
         ):
             os.remove(get_save_dir() + f"/{self.name}clan.txt")
@@ -497,6 +499,8 @@ class Clan:
         version_info = None
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
+        ) or os.path.exists(
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
         ):
             version_info = self.load_clan_json()
         elif os.path.exists(
@@ -716,10 +720,11 @@ class Clan:
         switch_set_value(
             Switch.error_message, "There was an error loading the clan.json"
         )
-        with open(
-            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json",
-            "r",
-            encoding="utf-8",
+        filename = get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
+        if not os.exists(filename):
+            # legacy
+            filename = get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
+        with open(filename, "r", encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
             clan_data = ujson.loads(read_file.read())
 
