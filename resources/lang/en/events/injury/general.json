@@ -7666,7 +7666,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c smacked into a boulder. Ow.",
+        "event_text": "m_c walked into a boulder. Ow.",
         "m_c": {
             "age": [
                 "senior",
