@@ -162,7 +162,7 @@
                 "frequency": 3
             },
             {
-                "text": "The skua isn't just after the petrel — anyone who nears the border gets a shrieking dive for their trouble, too. After their third attempt, p_l gets an idea, signaling to the others with {PRONOUN/p_l/poss} tail. The rest of the cats keep the bird's attention while p_l marks the border, leading to a successful, <i>mostly</i> skua-free patrol.",
+                "text": "The skua isn't just after the petrel; anyone who nears the border gets a shrieking dive for their trouble, too. After their third attempt, p_l gets an idea, signaling to the others with {PRONOUN/p_l/poss} tail. The rest of the cats keep the bird's attention while p_l marks the border, leading to a successful, <i>mostly</i> skua-free patrol.",
                 "exp": 50,
                 "art": "gen_bord_pissed_warrior",
                 "relationships": [
@@ -329,7 +329,7 @@
                 "frequency": 3
             },
             {
-                "text": "The patrol lunges at the kill, intending to steal it before the skua can even blink — but the skua is faster. It snatches up the petrel and is airborne before anyone can even reach its prey, leaving the cats skidding across wet rocks, flustered and empty-pawed.",
+                "text": "The patrol lunges at the kill, intending to steal it before the skua can even blink, but the skua is faster. It snatches up the petrel and is airborne before anyone can even reach its prey, leaving the cats skidding across wet rocks, flustered and empty-pawed.",
                 "exp": 0,
                 "art": "gen_train_soggykitty_mad_warrior",
                 "relationships": [

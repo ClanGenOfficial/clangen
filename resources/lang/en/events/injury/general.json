@@ -1779,7 +1779,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c survived a vicious eagle attack — with the claw marks to prove it!",
+        "event_text": "m_c survived a vicious eagle attack with the claw marks to prove it!",
         "m_c": {
             "status": [
                 "kitten",
@@ -6319,7 +6319,7 @@
             "newleaf"
         ],
         "frequency": 4,
-        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} {VERB/m_c/bend/bends} down and {VERB/m_c/take/takes} a big bite- — Yowch! A bee! {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} home with a swollen face...",
+        "event_text": "m_c found a patch of flowering catmint! No one else is around, so {PRONOUN/m_c/subject} {VERB/m_c/bend/bends} down and {VERB/m_c/take/takes} a big bite. Yowch! A bee! {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} home with a swollen face...",
         "m_c": {
             "age": [
                 "any"

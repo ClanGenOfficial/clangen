@@ -261,7 +261,7 @@
 		"cat_amount": 3,
 		"intensity": "high",
 		"interactions": [
-			"m_c knows r_c1 better than anyone — and can tell {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} interested in r_c2.",
+			"m_c knows r_c1 better than anyone and can tell {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} interested in r_c2.",
 			"m_c keeps a mental count of how often r_c1 brings up r_c2's name.",
 			"m_c knows r_c1 is {PRONOUN/m_c/poss} mate and not r_c2's, but {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} jealous seeing them together.",
 			"m_c wonders if r_c1 is flirting with r_c2 because {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} bored of m_c.",

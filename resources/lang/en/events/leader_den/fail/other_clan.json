@@ -618,7 +618,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "At the Gathering, m_c flexes {PRONOUN/m_c/poss} claws and prepares some threatening remarks — but gets distracted by an otherworldly presence and misses {PRONOUN/m_c/poss} chance to insult o_c_n.",
+    "event_text": "At the Gathering, m_c flexes {PRONOUN/m_c/poss} claws and prepares some threatening remarks but gets distracted by an otherworldly presence and misses {PRONOUN/m_c/poss} chance to insult o_c_n.",
     "rel_change": 0,
     "m_c": {
       "skill": ["GHOST,1"]
@@ -1506,7 +1506,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "m_c dreams the night before the Gathering, hearing the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} at the Gathering, o_c_n's leader shows open disdain — only for clouds to begin covering the moon. The Gathering ends quickly, though the enemy leader still leaves with their head held high.",
+    "event_text": "m_c dreams the night before the Gathering, hearing the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} at the Gathering, o_c_n's leader shows open disdain, only for clouds to begin covering the moon. The Gathering ends quickly, though the enemy leader still leaves with their head held high.",
     "rel_change": 0,
     "m_c": {
       "skill": ["STAR,3"]

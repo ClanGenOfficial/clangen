@@ -481,7 +481,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "c_n is prepared for a fight when they find m_c, but m_c quickly realizes the odds are not in {PRONOUN/m_c/poss} favor and flees — just not fast enough.",
+    "event_text": "c_n is prepared for a fight when they find m_c, but m_c quickly realizes the odds are not in {PRONOUN/m_c/poss} favor and flees. Just not fast enough.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {

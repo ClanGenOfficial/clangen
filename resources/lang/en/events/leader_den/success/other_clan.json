@@ -791,7 +791,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "During the Gathering, m_c sits apart from the other leaders and watches the sky. When {PRONOUN/m_c/subject} {VERB/m_c/notice/notices} a wisp of cloud drift over the full moon, {PRONOUN/m_c/subject} {VERB/m_c/interrupt/interrupts} and {VERB/m_c/warn/warns} that StarClan is displeased — in the middle of the o_c_n leader's speech.",
+    "event_text": "During the Gathering, m_c sits apart from the other leaders and watches the sky. When {PRONOUN/m_c/subject} {VERB/m_c/notice/notices} a wisp of cloud drift over the full moon, {PRONOUN/m_c/subject} {VERB/m_c/interrupt/interrupts} and {VERB/m_c/warn/warns} that StarClan is displeased, in the middle of the o_c_n leader's speech.",
     "rel_change": -5,
     "m_c": {
       "skill": [ "SENSE,1" ],
@@ -1099,7 +1099,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "Being a quiet observer means m_c notices things other cats don't — such as the tense looks between o_c_n's leader and deputy. In the middle of the Gathering, m_c pipes up and asks if something's wrong in o_c_n's leadership.",
+    "event_text": "Being a quiet observer means m_c notices things other cats don't, such as the tense looks between o_c_n's leader and deputy. In the middle of the Gathering, m_c pipes up and asks if something's wrong in o_c_n's leadership.",
     "rel_change": -5,
     "m_c": { 
       "skill": [ "CLEVER,1" ],
@@ -1287,7 +1287,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "m_c brings a piece of willow bark with strange grooves on it to the Gathering. {PRONOUN/m_c/subject/CAP} {VERB/m_c/explain/explains} to the other leaders that this is a sign of future prosperity for o_c_n and c_n — and only them.",
+    "event_text": "m_c brings a piece of willow bark with strange grooves on it to the Gathering. {PRONOUN/m_c/subject/CAP} {VERB/m_c/explain/explains} to the other leaders that this is a sign of future prosperity for o_c_n and c_n, and <i>only</i> them.",
     "rel_change": -5,
     "m_c": {
       "skill": ["OMEN,1"],
@@ -2502,7 +2502,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "The night before the Gathering, m_c dreams vividly of a glorious battle between o_c_n and c_n — in which c_n comes out victorious. At the Gathering, o_c_n's leader keeps a wary distance; it seems these dreams of war did not suit their palate.",
+    "event_text": "The night before the Gathering, m_c dreams vividly of a glorious battle between o_c_n and c_n, in which c_n comes out victorious. At the Gathering, o_c_n's leader keeps a wary distance; it seems these dreams of war did not suit their palate.",
     "rel_change": 5,
     "m_c": {
       "skill": ["DREAM,1"],
