@@ -11953,30 +11953,215 @@
     ]
     },
     {
-    "event_id": "gen_misc_waraggro",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["war"],
-    "tags": [],
-    "frequency": 2,
-    "event_text": "m_c is eager to sink {PRONOUN/m_c/poss} claws into o_c_n during the next skirmish.",
+        "event_id": "gen_misc_war_onwatch1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c and r_c spend the night by the o_c_n border, on watch for an attack that never comes.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+       "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": true,
+                "values": [ "trust" ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from and cat_to spent the night on watch for a potential attack."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight and offer to keep them company instead.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch4",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 3,
+        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen to trade insults than blows.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_misc_waraggro",
+        "location": [ "any" ],
+        "season": [ "any" ],
+        "sub_type": [ "war" ],
+        "tags": [ ],
+        "frequency": 2,
+        "event_text": "m_c is eager to sink {PRONOUN/m_c/poss} claws into o_c_n during the next skirmish.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "ambitious",
+                "arrogant",
+                "bloodthirsty",
+                "bold",
+                "cold",
+                "confident",
+                "daring",
+                "vengeful"
+            ]
+        }
+    },
+      {
+    "event_id": "gen_misc_guardasleep",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 4,
+    "event_text": "m_c fell asleep when {PRONOUN/m_c/subject} {VERB/m_c/were/was} supposed to be guarding camp.",
     "m_c": {
         "status": [
-          "apprentice",
           "warrior",
-          "deputy",
-          "leader"
+          "deputy"
         ],
-        "trait": [
-          "ambitious",
-          "arrogant",
-          "bloodthirsty",
-          "bold",
-          "cold",
-          "confident",
-          "daring",
-          "vengeful"
-        ]
-    }
+        "relationship_status": [],
+        "skill": [],
+        "trait": ["-strict", "-responsible"],
+        "backstory": [],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": [
+              "clan", "high_lawful"
+            ],
+            "cats_to": [
+              "m_c"
+            ],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": -5,
+            "log": {
+              "cats_from": "cat_from heard cat_to fell asleep guarding camp."
+                }
+        }
+    ]
 }
 ]
