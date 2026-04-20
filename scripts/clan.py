@@ -721,7 +721,7 @@ class Clan:
             Switch.error_message, "There was an error loading the clan.json"
         )
         filename = get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
-        if not os.exists(filename):
+        if not os.path.exists(filename):
             # legacy
             filename = get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
         with open(filename, "r", encoding="utf-8",
