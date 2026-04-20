@@ -7591,7 +7591,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c says {PRONOUN/m_c/poss} bruises are from battle training. m_c is lying, they're actually from a misjudged pounce.",
+        "event_text": "m_c claims {PRONOUN/m_c/poss} bruises are from battle training. m_c is lying; they're actually from a misjudged pounce.",
         "m_c": {
             "status": [
                 "apprentice"
