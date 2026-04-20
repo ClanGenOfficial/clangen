@@ -18955,7 +18955,7 @@
             "normal adult": [1, 1],
             "apprentice": [1, 1]
         },
-        "relationship_status": [
+        "relationship_constraint": [
             "-mentor/app",
             "-parent/child"
         ],

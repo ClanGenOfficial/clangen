@@ -1244,7 +1244,11 @@ def perform_ceremonies(cat):
             game.clan.leader_lives = 9
             text = ""
             if game.clan.deputy.personality.trait == "bloodthirsty":
-                text = i18n.t("hardcoded.ceremony_leader_bloodthirsty")
+                text = i18n.t(
+                    "hardcoded.ceremony_leader_bloodthirsty",
+                    oldname=game.clan.deputy.name,
+                    newname=cat.name,
+                )
             else:
                 c = random.randint(1, 3)
                 text = i18n.t(
