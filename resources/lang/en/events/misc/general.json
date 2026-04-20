@@ -12178,7 +12178,7 @@
             "r_c"
         ],
         "frequency": 2,
-        "event_text": "A blistering greenleaf heatwave has caused some of c_n's fresh-kill pile to turn rancid. They have no choice but to throw it away instead of risking consuming crowfood.",
+        "event_text": "A blistering greenleaf heatwave has turned some of c_n's fresh-kill rancid. They have no choice but to throw it away instead of risking consuming crowfood.",
         "supplies": [
             {
                 "type": "freshkill",
