@@ -378,7 +378,7 @@
             "leaf-bare"
         ],
         "frequency": 2,
-        "event_text": "m_c and r_c were playing on the ice-covered pond near camp. They weren't quick enough to react to the sound of cracking beneath them, but m_c managed to drag r_c out of the freezing water.",
+        "event_text": "m_c and r_c were playing on the ice-covered pond near camp. The ice broke beneath them, but m_c managed to drag r_c out of the freezing water.",
         "m_c": {
             "status": [
                 "apprentice",
