@@ -1437,7 +1437,7 @@
             "plains",
             "mountainous",
             "beach",
-            "forest_camp4"
+            "forest:camp4"
         ],
         "season": [
             "newleaf",
@@ -4816,6 +4816,206 @@
                 "-ambitious",
                 "-arrogant"
             ]
+        }
+    },
+    {
+        "event_id": "gen_misc_any_welcoming_strangermeeting1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "A stranger limped into camp this moon, knowing c_n was friendly, and requested a few nights of shelter while {PRONOUN/n_c:0/poss} wounds healed. c_n obliged.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "loner",
+                "rogue"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "outsider": {
+        "current_rep": [
+            "welcoming"
+        ],
+        "changed": 5
+        }
+    },
+    {
+        "event_id": "gen_misc_any_welcoming_strangermeeting2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "A wandering healer was found on the border, hoping to learn from Clan medicine cats. {PRONOUN/n_c:0/subject/CAP} left a moon later, grateful and armed with new knowledge.",
+        "m_c": {
+            "status": [
+                "medicine cat"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "loner",
+                "rogue",
+                "status:medicine cat",
+                "backstory:wandering_healer1, wandering_healer2"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "outsider": {
+        "current_rep": [
+            "welcoming"
+        ],
+        "changed": 5
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect",
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c spent a moon sharing {PRONOUN/m_c/poss} healing knowledge with n_c:0.",
+                    "cats_to": "n_c:0 spent a moon learning healing knowledge from m_c."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_nothostile_strangermeeting1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "A stranger requested a few days of shelter in c_n's sturdy camp while the incoming storm blew over. c_n obliged.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "loner",
+                "rogue"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "outsider": {
+        "current_rep": [
+            "welcoming",
+            "neutral"
+        ],
+        "changed": 5
+        }
+    },
+    {
+        "event_id": "gen_misc_any_nothostile_otherclanapp1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "A o_c_n apprentice asked to join c_n after having apparently forsaken {PRONOUN/n_c:0/poss} original Clan loyalties. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/stay/stays} for only a few days before sheepishly requesting to return home.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "clancat",
+                "age:adolescent"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "other_clan": {
+        "current_rep": [
+            "ally",
+            "neutral"
+        ],
+        "changed": 3
+        }
+    },
+    {
+        "event_id": "gen_misc_any_nothostile_strangermeeting2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "A kittypet asked to join c_n but returned to Twolegplace after only a few days, realizing {PRONOUN/n_c:0/poss} distaste for outdoor living.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "kittypet"
+            ]
+        ],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "outsider": {
+        "current_rep": [
+            "welcoming",
+            "neutral"
+        ],
+        "changed": 5
         }
     },
     {
@@ -9452,7 +9652,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cat_from wished cat_to that {PRONOUN/cat_from/poss} mentor had give {PRONOUN/cat_from/object} an accessory normally instead of ambushing PPRONOUN/cat_from/object}."
+                    "cats_from": "cat_from wished that {PRONOUN/cat_from/poss} mentor, cat_to, had given {PRONOUN/cat_from/object} an accessory normally instead of ambushing {PRONOUN/cat_from/object}."
                 }
             },
             {
@@ -10684,8 +10884,8 @@
     {
         "event_id": "gen_misc_war_guards1",
         "location": [
-            "forest_camp2_camp4",
-            "plains_camp1_camp3"
+            "forest:camp2_camp4",
+            "plains:camp1_camp3"
         ],
         "season": [
             "any"
@@ -10697,7 +10897,7 @@
             "clan:warrior"
         ],
         "frequency": 4,
-        "event_text": "More warriors have been posted around the edges of camp to keep watch on m_c's order",
+        "event_text": "More warriors have been posted around the edges of camp to keep watch on m_c's order.",
         "m_c": {
             "status": [
                 "leader"
@@ -10730,10 +10930,10 @@
     {
         "event_id": "gen_misc_war_guards2",
         "location": [
-            "forest_camp4",
-            "plains_camp3_camp1",
+            "forest:camp4",
+            "plains:camp3_camp1",
             "mountainous",
-            "beach_camp3_camp4_camp1",
+            "beach:camp3_camp4_camp1",
             "wetlands",
             "desert"
         ],
@@ -11753,30 +11953,242 @@
     ]
     },
     {
-    "event_id": "gen_misc_waraggro",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["war"],
-    "tags": [],
-    "frequency": 2,
-    "event_text": "m_c is eager to sink {PRONOUN/m_c/poss} claws into o_c_n during the next skirmish.",
+        "event_id": "gen_misc_war_onwatch1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c and r_c spend the night by the o_c_n border, on watch for an attack that never comes.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+       "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [ "m_c" ],
+                "cats_to": [ "r_c" ],
+                "mutual": true,
+                "values": [ "trust" ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from and cat_to spent the night on watch for a potential attack."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight and offer to keep them company instead.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_misc_war_onwatch4",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 3,
+        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen to trade insults than blows.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_misc_waraggro",
+        "location": [ "any" ],
+        "season": [ "any" ],
+        "sub_type": [ "war" ],
+        "tags": [ ],
+        "frequency": 2,
+        "event_text": "m_c is eager to sink {PRONOUN/m_c/poss} claws into o_c_n during the next skirmish.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "ambitious",
+                "arrogant",
+                "bloodthirsty",
+                "bold",
+                "cold",
+                "confident",
+                "daring",
+                "vengeful"
+            ]
+        }
+    },
+      {
+    "event_id": "gen_misc_guardasleep",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 4,
+    "event_text": "m_c fell asleep when {PRONOUN/m_c/subject} {VERB/m_c/were/was} supposed to be guarding camp.",
     "m_c": {
         "status": [
-          "apprentice",
           "warrior",
-          "deputy",
-          "leader"
+          "deputy"
         ],
-        "trait": [
-          "ambitious",
-          "arrogant",
-          "bloodthirsty",
-          "bold",
-          "cold",
-          "confident",
-          "daring",
-          "vengeful"
+        "relationship_status": [],
+        "skill": [],
+        "trait": ["-strict", "-responsible"],
+        "backstory": [],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": [
+              "clan", "high_lawful"
+            ],
+            "cats_to": [
+              "m_c"
+            ],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": -5,
+            "log": {
+              "cats_from": "cat_from heard cat_to fell asleep guarding camp."
+                }
+        }
+    ]
+},
+     {
+        "event_id": "gen_freshkill_heatwave",
+        "location": [
+            "plains",
+            "desert"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
+        "frequency": 2,
+        "event_text": "A blistering greenleaf heatwave has turned some of c_n's fresh-kill rancid. They have no choice but to throw it away instead of risking consuming crowfood.",
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "adequate",
+                    "full",
+                    "excess"
+                ],
+                "adjust": "reduce_half"
+            }
         ]
     }
-}
 ]

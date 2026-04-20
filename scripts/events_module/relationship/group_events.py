@@ -19,6 +19,11 @@ from scripts.events_module.event_filters import (
     event_for_season,
     event_for_cat,
     filter_relationship_type,
+    _check_cat_skills,
+    _check_cat_trait,
+    _check_cat_status,
+    _check_cat_backstory,
+    _check_cat_age,
 )
 from scripts.events_module.text_adjust import process_text
 from scripts.events_module.consequences import change_relationship_values
@@ -299,13 +304,27 @@ class GroupEvents:
             for abbreviation in dictionary:
                 dictionary[abbreviation] = []
 
+                # if the abbreviation has a age constraint, check in details
+                if abbreviation in interact.age_constraint:
+                    # if the cat status is in the age constraint, add the id to the list
+                    age_ids = [
+                        cat.ID
+                        for cat in interact_cats
+                        if _check_cat_age(cat, interact.age_constraint[abbreviation])
+                    ]
+                else:
+                    # if there is no constraint, add all ids to the list
+                    age_ids = [cat.ID for cat in interact_cats]
+
                 # if the abbreviation has a status constraint, check in details
                 if abbreviation in interact.status_constraint:
                     # if the cat status is in the status constraint, add the id to the list
                     status_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.status.rank in interact.status_constraint[abbreviation]
+                        if _check_cat_status(
+                            cat, interact.status_constraint[abbreviation]
+                        )
                     ]
                 else:
                     # if there is no constraint, add all ids to the list
@@ -316,7 +335,9 @@ class GroupEvents:
                     skill_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.skill in interact.skill_constraint[abbreviation]
+                        if _check_cat_skills(
+                            cat, interact.skill_constraint[abbreviation]
+                        )
                     ]
                 else:
                     skill_ids = [cat.ID for cat in interact_cats]
@@ -325,8 +346,9 @@ class GroupEvents:
                     trait_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.personality.trait
-                        in interact.trait_constraint[abbreviation]
+                        if _check_cat_trait(
+                            cat, interact.trait_constraint[abbreviation]
+                        )
                     ]
                 else:
                     trait_ids = [cat.ID for cat in interact_cats]
@@ -337,6 +359,7 @@ class GroupEvents:
                         cat_id in status_ids
                         and cat_id in skill_ids
                         and cat_id in trait_ids
+                        and cat_id in age_ids
                     ):
                         dictionary[abbreviation].append(cat_id)
 
@@ -453,7 +476,20 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if relevant_cat.status.rank not in constraint:
+            if not _check_cat_status(relevant_cat, constraint):
+                all_fulfilled = False
+        if not all_fulfilled:
+            return False
+
+        # check cats fulfill age constraint
+        all_fulfilled = True
+        for abbr, constraint in interaction.age_constraint.items():
+            # main cat is already filtered
+            if abbr == "m_c":
+                continue
+            # check if the current abbreviations cat fulfill the constraint
+            relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
+            if not _check_cat_age(relevant_cat, constraint):
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -466,7 +502,7 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if not relevant_cat.skills.check_skill_requirement_list(constraint):
+            if not _check_cat_skills(relevant_cat, constraint):
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -479,7 +515,7 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if relevant_cat.personality.trait not in constraint:
+            if not _check_cat_trait(relevant_cat, constraint):
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -492,7 +528,7 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if relevant_cat.backstory not in constraint:
+            if not _check_cat_backstory(relevant_cat, constraint):
                 all_fulfilled = False
         if not all_fulfilled:
             return False

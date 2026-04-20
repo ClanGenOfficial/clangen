@@ -2400,6 +2400,283 @@
         ]
     },
     {
+        "patrol_id": "fst_hunt_leaffall_squirrelsubterfuge",
+        "biome": ["forest"],
+        "season": ["leaf-fall"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_squirrel",
+        "min_cats": 2,
+        "max_cats": 6,
+        "frequency": 3,
+        "chance_of_success": 50,
+        "min_max_status": {
+            "normal adult": [1, 6]
+        },
+        "intro_text": "The patrol follows a squirrel-scent to a copse of oak trees, where a fat gray squirrel scrabbles at the earth between the roots. As the cats creep closer, p_l holds up {PRONOUN/p_l/poss} tail to halt their approach. It looks like the squirrel is burying... nothing?",
+        "decline_text": "It could be some kind of disease. The patrol decides not to go after the squirrel.",
+        "success_outcomes": [
+            {
+                "text": "Whatever the squirrel is up to, it's completely distracted. r_c prowls closer, pounces, and kills it easily.",
+                "exp": 30,
+                "frequency": 4,
+                "prey": ["medium"],
+                "art": "gen_happy_cat"
+            },
+            {
+                "text": "p_l and r_c murmur theories to each other, then realize the squirrel is almost done \"burying\" nothing. r_c takes advantage of its distraction to catch it.",
+                "exp": 30,
+                "frequency": 3,
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "mutual": true,
+                        "values": ["comfort"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from and cat_to theorized about weird squirrel behavior while hunting together."
+                        }
+                    }
+                ],
+                "art": "gen_warrior_crouching_perplexed"
+            },
+            {
+                "text": "s_c's eyes narrow thoughtfully. This must be related to how squirrels bury nuts for leaf-bare. Perhaps this clever squirrel is trying to mislead other squirrels. Too bad the squirrel is not clever enough to escape p_l's pounce!",
+                "exp": 30,
+                "frequency": 4,
+                "stat_skill": ["CLEVER,2"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever explanation for weird squirrel behavior."
+                        }
+                    }
+                ],
+                "art": "gen_warrior_crouching"
+            },
+            {
+                "text": "s_c explains to the patrol in a low voice how squirrels steal each other's nut caches in leaf-bare. This clever squirrel is trying to throw its rivals off by creating fake caches. p_l is impressed by the squirrel's ingenuity, but not enough to spare it from the fresh-kill pile.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_skill": ["LORE,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed that cat_to had an explanation for weird squirrel behavior."
+                        }
+                    }
+                ],
+                "art": "gen_speaking_cat_w1"
+            },
+            {
+                "text": "s_c reasons that the squirrel must be pretending to bury nuts to trick other squirrels. If squirrels can be tricked so easily, c_n might be able to catch more squirrels in leaf-bare by creating more nut caches. After a successful hunt, p_l agrees to help s_c bury some acorns.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_skill": ["INSIGHTFUL,3"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's plot to bury nuts and lure more squirrels out of hiding in leaf-bare."
+                        }
+                    }
+                ],
+                "art": "gen_train_sunset"
+            },
+            {
+                "text": "Only StarClan knows why squirrels do the things they do. s_c is here to hunt, not solve squirrel puzzles. Though s_c makes an impressive number of catches, the squirrel's burial of nothing remains a mystery.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["large"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how many squirrels cat_to caught in leaf-fall."
+                        }
+                    }
+                ],
+                "art": "gen_hunt_strange"
+            },
+            {
+                "min_max_status": {"normal adult": [3, 6]},
+                "text": "s_c is confused by the patrol's confusion. The squirrel is obviously pretending to bury nuts to trick other thieving squirrels in leaf-bare. The patrol exchanges doubtful glances. Could a squirrel be that smart? It's certainly not smart enough to escape p_l's pounce.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_trait": ["strange", "wise", "thoughtful"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever explanation for weird squirrel behavior."
+                        }
+                    }
+                ],
+                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1"
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol spends so long studying the squirrel that they forget to stalk it. The squirrel finishes its burial and scurries up the trunk of an oak, leaving the cats empty-pawed.",
+                "exp": 0,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to were annoyed with each other for letting a squirrel escape during a leaf-fall hunt."
+                        }
+                    }
+                ],
+                "art": "gen_cat_looking_up2"
+            },
+            {
+                "text": "r_c catches that squirrel, but the patrol spends the rest of the afternoon wondering what it was up to, and catch nothing else.",
+                "exp": 0,
+                "frequency": 3,
+                "prey": ["very_small"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "...even though they were supposed to be hunting."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to spent an afternoon theorizing about weird squirrel behavior..."
+                        }
+                    }
+                ],
+                "art": "gen_warrior_crouching_perplexed"
+            },
+            {
+                "text": "s_c bounds up to get a closer look at what the squirrel is doing and inadvertently scares it off. p_l is none too pleased.",
+                "exp": 0,
+                "frequency": 3,
+                "stat_trait": ["-calm", "-careful", "-wise", "-thoughtful", "-sneaky", "-cunning"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was irritated that cat_to carelessly scared off a squirrel during a hunt."
+                        }
+                    }
+                ],
+                "art": "gen_train_argueWW"
+            },
+            {
+                "text": "s_c pleads with the patrol not to hunt this one. {PRONOUN/s_c/subject/CAP} {VERB/s_c/want/wants} to watch it and figure out what it's doing! p_l rolls {PRONOUN/p_l/poss} eyes. They're here to <i>hunt</i>, not study squirrels.",
+                "exp": 0,
+                "frequency": 3,
+                "prey": ["very_small"],
+                "stat_trait": ["thoughtful", "strange", "adventurous", "wise", "playful", "childish", "sincere"],
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["s_c"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from was irritated that cat_to wanted to watch a squirrel's behavior instead of hunt.",
+                            "cats_to": "cat_to was upset that cat_from wanted to hunt an odd squirrel instead of studying its behavior."
+                        }
+                    }
+                ],
+                "art": "gen_train_argueWW"
+            },
+            {
+                "min_max_status": {"apprentice": [1, 5]},
+                "text": "As s_c begins to explain to the patrol why the squirrel is pretending to bury something, app1 groans aloud. Not another lecture! They were supposed to be <i>hunting</i>. app1's outburst scares off the squirrel, ruining both the lecture and the hunt.",
+                "exp": 0,
+                "frequency": 3,
+                "can_have_stat": ["any", "adult"],
+                "stat_skill": ["LORE,1"],
+                "relationships": [
+                    {
+                        "cats_from": ["app1"],
+                        "cats_to": ["s_c"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was annoyed that cat_to tried to start a lecture about squirrel behavior during a hunt.",
+                            "cats_to": "cat_to was annoyed that cat_from's outburst on a hunt scared off a squirrel."
+                        }
+                    }
+                ],
+                "art": "app_cat_looking_up"
+            },
+            {
+                "text": "s_c reasons that the squirrel must be pretending to bury nuts to trick other squirrels. To help hunting in leaf-bare, s_c suggests that the patrol bury acorns themselves now instead of hunting. p_l rejects the idea, prioritizing hunting in the short-term over potentially baiting squirrels moons from now.",
+                "exp": 30,
+                "frequency": 4,
+                "stat_skill": ["INSIGHTFUL,3"],
+                "prey": ["very_small"],
+                "relationships": [
+                    {
+                        "cats_from": ["s_c"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": ["respect", "like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frustrated that cat_to shot down {PRONOUN/cat_from/poss} idea for luring squirrels in leaf-bare by burying acorns in leaf-fall."
+                        }
+                    }
+                ],
+                "art": "gen_cat_looking_up1"
+            }
+        ]
+    },
+    {
         "patrol_id": "fst_hunt_pipistrellebats1",
         "biome": [
             "forest"

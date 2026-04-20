@@ -75,6 +75,7 @@ class GroupInteraction:
         get_injuries=None,
         has_injuries=None,
         status_constraint=None,
+        age_constraint=None,
         trait_constraint=None,
         skill_constraint=None,
         relationship_constraint=None,
@@ -99,6 +100,7 @@ class GroupInteraction:
         )
         self.backstory_constraint = backstory_constraint if backstory_constraint else {}
         self.status_constraint = status_constraint if status_constraint else {}
+        self.age_constraint = age_constraint if age_constraint else {}
         self.trait_constraint = trait_constraint if trait_constraint else {}
         self.skill_constraint = skill_constraint if skill_constraint else {}
         self.specific_reaction = specific_reaction if specific_reaction else {}
@@ -212,6 +214,9 @@ def create_group_interaction(inter_list) -> list:
                 has_injuries=inter["has_injuries"] if "has_injuries" in inter else None,
                 status_constraint=(
                     inter["status_constraint"] if "status_constraint" in inter else {}
+                ),
+                age_constraint=(
+                    inter["age_constraint"] if "age_constraint" in inter else {}
                 ),
                 trait_constraint=(
                     inter["trait_constraint"] if "trait_constraint" in inter else {}
