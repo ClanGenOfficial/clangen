@@ -79,6 +79,17 @@ class Pregnancy_Events:
         return involved_cats
 
     @staticmethod
+    def remove_unmentioned_mate_ids(
+        involved_cats: List[str], event_text: str, cat_dict: Dict
+    ) -> List[str]:
+        """Removes the cheated mate's ID if mc/rc_mate isn't present in the affair birth event text."""
+        for placeholder in ("mc_mate", "rc_mate"):
+            cat = cat_dict.get(placeholder)
+            if cat and placeholder not in event_text and cat.ID in involved_cats:
+                involved_cats.remove(cat.ID)
+        return involved_cats
+    
+    @staticmethod
     def get_cheated_mate(subject_cat: Cat, include_dead: bool = False):
         """Gets cheating cat's mate for the events"""
         for mate_id in subject_cat.mate:
@@ -1015,6 +1026,11 @@ class Pregnancy_Events:
         if "rc_mate" in cat_dict:
             print_event = print_event.replace("rc_mate", "rc_mate")
 
+        # if the event doesn't mention mc/rc_mate, remove the cheated mate's ID from the event
+        involved_cats = Pregnancy_Events.remove_unmentioned_mate_ids(
+            involved_cats, print_event, cat_dict
+        )
+        
         print_event = event_text_adjust(
             Cat, print_event, main_cat=cat, random_cat=other_cat, clan=game.clan
         )
