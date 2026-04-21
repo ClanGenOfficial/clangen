@@ -1805,7 +1805,7 @@
     ]
     },
     {
-        "event_id":  "any_misc_any_misc1",
+        "event_id":  "gen_misc_any_misc1",
         "location": [
             "any"
         ],
@@ -5388,7 +5388,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_hardtofind_kittypet2",
+        "event_id": "gen_misc_any_hardtofind_kittypet2",
         "location": [
             "any"
         ],
@@ -5415,7 +5415,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_hardtofind_outsider1",
+        "event_id": "gen_misc_any_hardtofind_outsider1",
         "location": [
             "any"
         ],
@@ -5442,7 +5442,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_hardtofind_outsider2",
+        "event_id": "gen_misc_any_hardtofind_outsider2",
         "location": [
             "any"
         ],
@@ -5472,7 +5472,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_hardtofind_outsider3",
+        "event_id": "gen_misc_any_hardtofind_outsider3",
         "location": [
             "any"
         ],
@@ -5502,7 +5502,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_hardtofind_rogue1",
+        "event_id": "gen_misc_any_hardtofind_rogue1",
         "location": [
             "any"
         ],
@@ -5564,7 +5564,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_hardtofind_rogue3",
+        "event_id": "gen_misc_any_hardtofind_rogue3",
         "location": [
             "any"
         ],
@@ -5594,7 +5594,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_hardtofind_rogue4",
+        "event_id": "gen_misc_any_hardtofind_rogue4",
         "location": [
             "any"
         ],
@@ -5624,7 +5624,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_scandalous_other_clan1",
+        "event_id": "gen_misc_any_scandalous_other_clan1",
         "location": [
             "any"
         ],
@@ -5667,7 +5667,7 @@
         "changed": 1
     },
     {
-        "event_id": "multi_misc_any_scandalous_other_clan2",
+        "event_id": "gen_misc_any_scandalous_other_clan2",
         "location": [
             "any"
         ],
@@ -5687,7 +5687,7 @@
         }
     },
     {
-        "event_id": "multi_misc_any_scandalous_other_clan3",
+        "event_id": "gen_misc_any_scandalous_other_clan3",
         "location": [
             "any"
         ],
@@ -5713,7 +5713,7 @@
         }
     },
     {
-        "event_id": "multi_misc_any_scandalous_other_clan4",
+        "event_id": "gen_misc_any_scandalous_other_clan4",
         "location": [
             "any"
         ],
@@ -5740,7 +5740,7 @@
         }
     },
     {
-        "event_id": "multi_misc_any_scandalous_other_clan5",
+        "event_id": "gen_misc_any_scandalous_other_clan5",
         "location": [
             "any"
         ],
@@ -5766,7 +5766,7 @@
         }
     },
     {
-        "event_id": "multi_misc_any_distant_other_clan1",
+        "event_id": "gen_misc_any_distant_other_clan1",
         "location": [
             "any"
         ],
@@ -5852,7 +5852,7 @@
         }
     },
     {
-        "event_id": "multi_misc_any_distant_other_clan4",
+        "event_id": "gen_misc_any_distant_other_clan4",
         "location": [
             "any"
         ],
@@ -5882,7 +5882,7 @@
         }
     },
     {
-        "event_id": "multi_misc_any_distant_other_clan4",
+        "event_id": "gen_misc_any_distant_other_clan5",
         "location": [
             "any"
         ],
@@ -5912,7 +5912,7 @@
         }
     },
     {
-        "event_id": "multi_misc_any_scandalous_loner1",
+        "event_id": "gen_misc_any_scandalous_loner1",
         "location": [
             "any"
         ],
@@ -5963,7 +5963,7 @@
         }
     },
     {
-        "event_id": "multi_misc_any_scandalous_loner2",
+        "event_id": "gen_misc_any_scandalous_loner2",
         "location": [
             "any"
         ],
@@ -6030,7 +6030,7 @@
         "changed": 5
     },
     {
-        "event_id": "multi_misc_any_scandalous_loner3",
+        "event_id": "gen_misc_any_scandalous_loner3",
         "location": [
             "any"
         ],
@@ -6137,7 +6137,7 @@
         ]
     },
     {
-        "event_id": "multi_misc_any_scandalous_rogue1",
+        "event_id": "gen_misc_any_scandalous_rogue1",
         "location": [
             "any"
         ],
@@ -6272,7 +6272,7 @@
         "changed": 5
     },
     {
-        "event_id": "multi_misc_any_scandalous_rogue3",
+        "event_id": "gen_misc_any_scandalous_rogue3",
         "location": [
             "any"
         ],
