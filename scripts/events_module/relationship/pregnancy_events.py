@@ -408,8 +408,8 @@ class Pregnancy_Events:
                 involved_cats = Pregnancy_Events.append_second_parent_if_mentioned(
                     involved_cats, event_text, other_cat
                 )
-            # if the pregnant cat is single and had a fling with a random cat, let them 
-            # announce their surprise pregnancy and leave the Clan and player pointing 
+            # if the pregnant cat is single and had a fling with a random cat, let them
+            # announce their surprise pregnancy and leave the Clan and player pointing
             # fingers on who the second parent may be
             elif allow_coparenting is True and len(cat.mate) == 0:
                 text = choice(
@@ -429,7 +429,7 @@ class Pregnancy_Events:
                 involved_cats = [cat.ID]
 
             # and lastly, if the pregnant cat got knocked up by another cat who ISN'T their mate,
-            # let the player guess whether it's an affair or not, sometimes the events will tell you, 
+            # let the player guess whether it's an affair or not, sometimes the events will tell you,
             # sometimes they won't...
             elif (
                 allow_affair is True
@@ -537,8 +537,8 @@ class Pregnancy_Events:
                 involved_cats = Pregnancy_Events.append_second_parent_if_mentioned(
                     involved_cats, event_text, other_cat
                 )
-            # if the pregnant cat is single and had a fling with a random cat, let them 
-            # announce their surprise pregnancy and leave the Clan and player pointing 
+            # if the pregnant cat is single and had a fling with a random cat, let them
+            # announce their surprise pregnancy and leave the Clan and player pointing
             # fingers on who the second parent may be
             elif allow_coparenting is True and len(pregnant_cat.mate) == 0:
                 text = choice(
@@ -551,7 +551,7 @@ class Pregnancy_Events:
                 )
                 text = event_text_adjust(Cat, text, main_cat=pregnant_cat, clan=clan)
                 involved_cats = [pregnant_cat.ID]
-            # if the pregnant cat is in a same-sex relationship and they get knocked-up 
+            # if the pregnant cat is in a same-sex relationship and they get knocked-up
             # by another cat, let there be some drama for that!
             elif (
                 allow_affair is True
@@ -577,7 +577,7 @@ class Pregnancy_Events:
                     involved_cats, event_text, random_cat
                 )
             # and lastly, if the pregnant cat got knocked up by another cat who ISN'T their mate,
-            # let the player guess whether it's an affair or not, sometimes the events will tell you, 
+            # let the player guess whether it's an affair or not, sometimes the events will tell you,
             # sometimes they won't...
             elif (
                 allow_affair is True
