@@ -470,7 +470,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "cat_from lived in fear of cat_to after witnessing {PRONOUN/cat_to/object} murder mur_c."
+                    "cats_from": "cat_from lives in fear of cat_to after witnessing {PRONOUN/cat_to/object} murder mur_c."
                 }
             }
         ]
@@ -1807,9 +1807,7 @@
     {
         "event_id": "multi_misc_any_misc1",
         "location": [
-            "forest",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -1909,7 +1907,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small trunk, but came out of it with only {PRONOUN/m_c/poss} pride bruised.",
+        "event_text": "m_c wasn't looking where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going and tripped over a small stump, but came out of it with only {PRONOUN/m_c/poss} pride bruised.",
         "m_c": {
             "age": [
                 "any"
@@ -1959,7 +1957,7 @@
             "wetlands"
         ],
         "season": [
-            "any"
+            "-leaf-bare"
         ],
         "frequency": 3,
         "event_text": "m_c tossed a snake out of the camp before it could bite someone.",
@@ -2219,7 +2217,7 @@
         "season": [
             "any"
         ],
-        "frequency": 4,
+        "frequency": 3,
         "event_text": "m_c considers, as {PRONOUN/m_c/subject} {VERB/m_c/look/looks} out over the Clan, if perhaps this isn't where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}.",
         "m_c": {
             "age": [
@@ -2838,7 +2836,7 @@
             "clan:kitten"
         ],
         "frequency": 2,
-        "event_text": "m_c listens bashfully as r_c tells the story of how {PRONOUN/r_c/subject} fell in love with {PRONOUN/r_c/poss} mate to a group of starry-eyed kits.",
+        "event_text": "m_c listens as r_c tells the story of how {PRONOUN/r_c/subject} fell in love with {PRONOUN/r_c/poss} mate to a group of starry-eyed kits.",
         "m_c": {
             "age": [
                 "any"
@@ -2913,6 +2911,14 @@
                 "leader",
                 "medicine cat",
                 "mediator"
+            ],
+            "trait": [
+                "-troublesome",
+                "-bloodthirsty",
+                "-cold",
+                "-arrogant",
+                "-grumpy",
+                "-gloomy"
             ]
         },
         "relationships": [
@@ -2985,7 +2991,7 @@
             "romance"
         ],
         "frequency": 3,
-        "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
+        "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise together.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5356,7 +5362,8 @@
         "location": [
             "plains",
             "mountainous",
-            "desert"
+            "desert",
+            "beach"
         ],
         "season": [
             "any"
@@ -5383,9 +5390,7 @@
     {
         "event_id": "multi_misc_any_hardtofind_kittypet2",
         "location": [
-            "plains",
-            "mountainous",
-            "desert"
+            "any"
         ],
         "season": [
             "any"
@@ -5412,9 +5417,7 @@
     {
         "event_id": "multi_misc_any_hardtofind_outsider1",
         "location": [
-            "plains",
-            "mountainous",
-            "desert"
+            "any"
         ],
         "season": [
             "any"
@@ -5441,9 +5444,7 @@
     {
         "event_id": "multi_misc_any_hardtofind_outsider2",
         "location": [
-            "plains",
-            "mountainous",
-            "desert"
+            "any"
         ],
         "season": [
             "any"
@@ -5473,9 +5474,7 @@
     {
         "event_id": "multi_misc_any_hardtofind_outsider3",
         "location": [
-            "plains",
-            "mountainous",
-            "desert"
+            "any"
         ],
         "season": [
             "any"
@@ -5505,9 +5504,7 @@
     {
         "event_id": "multi_misc_any_hardtofind_rogue1",
         "location": [
-            "plains",
-            "mountainous",
-            "desert"
+            "any"
         ],
         "season": [
             "any"
@@ -5569,9 +5566,7 @@
     {
         "event_id": "multi_misc_any_hardtofind_rogue3",
         "location": [
-            "plains",
-            "mountainous",
-            "desert"
+            "any"
         ],
         "season": [
             "any"
@@ -5601,9 +5596,7 @@
     {
         "event_id": "multi_misc_any_hardtofind_rogue4",
         "location": [
-            "plains",
-            "mountainous",
-            "desert"
+            "any"
         ],
         "season": [
             "any"
@@ -5633,10 +5626,7 @@
     {
         "event_id": "multi_misc_any_scandalous_other_clan1",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -5679,10 +5669,7 @@
     {
         "event_id": "multi_misc_any_scandalous_other_clan2",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -5702,10 +5689,7 @@
     {
         "event_id": "multi_misc_any_scandalous_other_clan3",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -5731,10 +5715,7 @@
     {
         "event_id": "multi_misc_any_scandalous_other_clan4",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -5761,10 +5742,7 @@
     {
         "event_id": "multi_misc_any_scandalous_other_clan5",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -5790,15 +5768,13 @@
     {
         "event_id": "multi_misc_any_distant_other_clan1",
         "location": [
-            "plains",
-            "desert",
-            "mountainous"
+            "any"
         ],
         "season": [
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c sees that o_c_n has been cleaning the border trackways and adds {PRONOUN/m_c/poss} own paws to the effort.",
+        "event_text": "m_c sees that o_c_n has been cleaning the border pathways and adds {PRONOUN/m_c/poss} own paws to the effort.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -5878,9 +5854,7 @@
     {
         "event_id": "multi_misc_any_distant_other_clan4",
         "location": [
-            "plains",
-            "desert",
-            "mountainous"
+            "any"
         ],
         "season": [
             "any"
@@ -5910,9 +5884,7 @@
     {
         "event_id": "multi_misc_any_distant_other_clan4",
         "location": [
-            "plains",
-            "desert",
-            "mountainous"
+            "any"
         ],
         "season": [
             "any"
@@ -5942,10 +5914,7 @@
     {
         "event_id": "multi_misc_any_scandalous_loner1",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -5996,10 +5965,7 @@
     {
         "event_id": "multi_misc_any_scandalous_loner2",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -6066,10 +6032,7 @@
     {
         "event_id": "multi_misc_any_scandalous_loner3",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -6176,10 +6139,7 @@
     {
         "event_id": "multi_misc_any_scandalous_rogue1",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -6314,10 +6274,7 @@
     {
         "event_id": "multi_misc_any_scandalous_rogue3",
         "location": [
-            "forest",
-            "plains",
-            "beach",
-            "wetlands"
+            "any"
         ],
         "season": [
             "any"
@@ -6999,7 +6956,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_medicinecatdream1",
+        "event_id": "gen_misc_any_dream1",
         "location": [
             "any"
         ],
@@ -7010,7 +6967,7 @@
         "event_text": "m_c walks into the dreams of {PRONOUN/m_c/poss} Clanmates while everyone sleeps.",
         "m_c": {
             "status": [
-                "medicine cat"
+                "any"
             ],
             "skill": [
                 "DREAM,2"
@@ -7018,7 +6975,7 @@
         }
     },
     {
-        "event_id": "gen_misc_any_medicinecatdream2",
+        "event_id": "gen_misc_any_dream2",
         "location": [
             "any"
         ],
@@ -7029,8 +6986,7 @@
         "event_text": "m_c tosses in {PRONOUN/m_c/poss} sleep as {PRONOUN/m_c/poss} dream-self pads through the thoughts of {PRONOUN/m_c/poss} Clanmates, picking up snippets of dream_list/m_c. {PRONOUN/m_c/subject/CAP} slowly {VERB/m_c/blink/blinks} awake, wondering whose dreams {PRONOUN/m_c/subject} walked in.",
         "m_c": {
             "status": [
-                "medicine cat apprentice",
-                "medicine cat"
+                "any"
             ],
             "skill": [
                 "DREAM,2"
@@ -7038,7 +6994,7 @@
         }
     },
     {
-        "event_id": "gen_misc_any_medicinecatclairvoy1",
+        "event_id": "gen_misc_any_clairvoy1",
         "location": [
             "any"
         ],
@@ -7049,7 +7005,7 @@
         "event_text": "m_c correctly warns the leader of an ambush, thanks to {PRONOUN/m_c/poss} clairvoyant nature.",
         "m_c": {
             "status": [
-                "medicine cat"
+                "any"
             ],
             "skill": [
                 "CLAIRVOYANT,2"
@@ -8929,7 +8885,7 @@
             "any"
         ],
         "season": [
-            "greenleaf"
+            "any"
         ],
         "exclude_involved": [
             "m_c",
@@ -10624,7 +10580,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! Despite the reminder that the two Clans are far from allies, m_c loudly declares that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not giving up {PRONOUN/m_c/poss} friend over some dumb war.",
+        "event_text": "m_c is discovered frolicking along the border with an apprentice from o_c_n! Despite the reminder that the two Clans are far from allies, m_c loudly declares that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not giving up {PRONOUN/m_c/poss} friend over some dumb war.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -10697,7 +10653,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! m_c's tail twitches as {PRONOUN/m_c/subject} {VERB/m_c/apologize/apologizes}, plucking up the courage to insist that {PRONOUN/m_c/poss} friend isn't like the rest of o_c_n at all! This war sucks.",
+        "event_text": "m_c is discovered frolicking along the border with an apprentice from o_c_n! m_c's tail twitches as {PRONOUN/m_c/subject} {VERB/m_c/apologize/apologizes}, plucking up the courage to insist that {PRONOUN/m_c/poss} friend isn't like the rest of o_c_n at all! This war sucks.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -10766,7 +10722,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is plagued by strange dreams where the leaders of o_c_n and c_n come together peacefully to trade fresh-kill.",
+        "event_text": "m_c has a strange dream where the leaders of o_c_n and c_n come together peacefully to trade fresh-kill.",
         "m_c": {
             "status": [
                 "any"
@@ -10802,7 +10758,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is discovered gambolling along the border with an apprentice from o_c_n! m_c deflates as {PRONOUN/m_c/subject} {VERB/m_c/are/is} berated in front of the entire Clan for consorting with the enemy in the middle of a war... but it's clear that nobody really blames m_c for something as innocent as friendship in such difficult times.",
+        "event_text": "m_c is discovered frolicking along the border with an apprentice from o_c_n! m_c deflates as {PRONOUN/m_c/subject} {VERB/m_c/are/is} berated in front of the entire Clan for consorting with the enemy in the middle of a war... but it's clear that nobody really blames m_c for something as innocent as friendship in such difficult times.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -10884,8 +10840,7 @@
     {
         "event_id": "gen_misc_war_guards1",
         "location": [
-            "forest:camp2_camp4",
-            "plains:camp1_camp3"
+            "any"
         ],
         "season": [
             "any"
@@ -10930,12 +10885,7 @@
     {
         "event_id": "gen_misc_war_guards2",
         "location": [
-            "forest:camp4",
-            "plains:camp3_camp1",
-            "mountainous",
-            "beach:camp3_camp4_camp1",
-            "wetlands",
-            "desert"
+            "any"
         ],
         "season": [
             "any"
@@ -11464,7 +11414,7 @@
         "frequency": 4,
         "event_text": "Not all dreams are freshkill and frolicking. m_c woke with the words of the already-forgotten warrior echoing in {PRONOUN/m_c/poss} head: r_c is a threat to c_n.",
         "m_c": {
-            "trait": ["righteous"]
+            "trait": ["righteous", "loyal"]
         },
         "relationships": [
             {
@@ -12163,5 +12113,83 @@
                 }
         }
     ]
-}
+},
+      {
+    "event_id": "dst_misc_any_traitmisc2_aloof",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 4,
+    "event_text": "m_c holds {PRONOUN/m_c/self} apart from the Clan, {PRONOUN/m_c/poss} mood strange and irritable.",
+    "m_c": {
+      "age": ["any"],
+      "status": ["any"],
+      "trait": ["cold", "gloomy", "grumpy", "strange"]
+    },
+    "relationships": [
+      {
+        "cats_from": ["clan", "high_social"],
+        "cats_to": ["m_c"],
+        "values": ["comfort", "like"],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from noticed that cat_to was in a foul mood."
+        }
+      }
+    ]
+  },
+        {
+        "event_id": "gen_misc_kitkit1_thunder",
+        "location": [
+          "-desert"
+        ],
+        "season": ["leaf-fall", "newleaf", "greenleaf"],
+      "tags": ["clan:warrior"],
+        "frequency": 4,
+        "event_text": "m_c doesn't care what the warriors say, thunder is definitely dangerous and horrible. r_c agrees, the kittens finding comfort in each other.",
+        "m_c": {
+            "status": ["kitten"]
+        },
+        "r_c": {
+          "status": ["kitten"]
+        },
+        "relationships": [
+          {
+            "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["like", "comfort", "trust"],
+            "amount": 15,
+            "log": {
+              "cats_from": "cat_from and cat_to agree that thunder is scary."
+            }
+          }
+        ]
+    },
+      {
+    "event_id": "gen_misc_any_apprentice4_mousebile",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 4,
+    "event_text": "m_c and r_c bond over how much they both hate mouse bile.",
+    "m_c": {
+      "age": ["adolescent"],
+      "status": ["apprentice"]
+    },
+    "r_c": {
+      "age": ["adolescent"],
+      "status": ["apprentice"]
+    },
+    "relationships": [
+        {
+          "cats_to": ["m_c"],
+            "cats_from": ["r_c"],
+            "mutual": true,
+            "values": ["like", "comfort"],
+          "amount": 15,
+          "log": {
+            "cats_from": "cat_from and cat_to bonded over hating mouse bile."
+          }
+        }
+    ]
+  }
 ]
