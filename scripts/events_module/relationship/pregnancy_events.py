@@ -453,7 +453,7 @@ class Pregnancy_Events:
                     Cat,
                     text,
                     main_cat=cat,
-                    random_cat=other_cat,
+                    random_cat=random_cat,
                     clan=game.clan,
                 )
                 involved_cats = [cat.ID]
