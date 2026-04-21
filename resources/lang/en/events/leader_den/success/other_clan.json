@@ -600,7 +600,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, m_c tells the story of a Clan that supported another through the darkest time in their shared history, even to great personal cost. {PRONOUN/m_c/subject/CAP} {VERB/m_c/announce/announces} that just like the mythical Clan, c_n will never abandon their ally.",
+    "event_text": "At the Gathering, m_c tells the story of a Clan that supported another through the darkest time in their shared history, even at great personal cost. {PRONOUN/m_c/subject/CAP} {VERB/m_c/announce/announces} that just like the mythical Clan, c_n will never abandon their ally.",
     "rel_change": 10,
     "m_c": {
       "trait": ["loyal"],
