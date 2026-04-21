@@ -470,7 +470,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "cat_from lives in fear of cat_to after witnessing {PRONOUN/cat_to/object} murder mur_c."
+                    "cats_from": "cat_from lived in fear of cat_to after witnessing {PRONOUN/cat_to/object} murder mur_c."
                 }
             }
         ]
