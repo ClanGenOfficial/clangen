@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, Union
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.new_cat import NewCat
@@ -19,6 +19,7 @@ from scripts.models.shortevent.tag import Tag
 
 
 class ShortEventSchemaItem(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     event_id: Union[str, MISSING] = Field(
         MISSING, description="Unique string used to identify the event."
     )
