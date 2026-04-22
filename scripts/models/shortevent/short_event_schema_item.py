@@ -62,7 +62,7 @@ class ShortEventSchemaItem(BaseModel):
         MISSING, description="Adds a new cat."
     )
     injury: Union[List[InjuryItem], MISSING] = MISSING
-    history: Union[HistoryText, MISSING] = MISSING
+    history: Union[List[HistoryText], MISSING] = MISSING
     relationships: Union[List[Relationship], MISSING] = MISSING
     exclude_involved: Union[List[Cat], MISSING] = MISSING
     outsider: Union[Outsider, MISSING] = Field(
