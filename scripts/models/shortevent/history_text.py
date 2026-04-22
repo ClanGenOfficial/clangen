@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, Literal
 
 from pydantic import BaseModel, Field
 from pydantic_core import MISSING
@@ -10,7 +10,7 @@ from scripts.models.shortevent.cat import Cat
 
 class HistoryText(BaseModel):
     cats: Union[
-        List[Cat],
+        List[Union[Cat, Literal["multi_cat"]]],
         MISSING,
     ] = Field(
         MISSING, description="List of cats for whom the history will be assigned."
