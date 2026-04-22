@@ -7117,7 +7117,7 @@
             "clan:kitten"
         ],
         "frequency": 4,
-        "event_text": "While o_c_n attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery, no matter how injured {PRONOUN/m_c/subject} became.",
+        "event_text": "While o_c_n attempted a surprise attack on the c_n camp, m_c guarded the nursery, no matter how injured {PRONOUN/m_c/subject} became.",
         "m_c": {
             "age": [
                 "-kitten"
