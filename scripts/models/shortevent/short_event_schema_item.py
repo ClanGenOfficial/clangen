@@ -16,6 +16,7 @@ from scripts.models.shortevent.outsider import Outsider
 from scripts.models.shortevent.rc import RC
 from scripts.models.shortevent.supply import Supply
 from scripts.models.shortevent.tag import Tag
+from scripts.models.shortevent.cat import Cat
 from scripts.models.common.relationship import Relationship
 
 
@@ -63,6 +64,7 @@ class ShortEventSchemaItem(BaseModel):
     injury: Union[List[InjuryItem], MISSING] = MISSING
     history: Union[HistoryText, MISSING] = MISSING
     relationships: Union[List[Relationship], MISSING] = MISSING
+    exclude_involved: Union[List[Cat], MISSING] = MISSING
     outsider: Union[Outsider, MISSING] = Field(
         MISSING,
         description="Dictates what reputation the clan is required to have with outsiders as well as how that reputation changes due to the event.",
