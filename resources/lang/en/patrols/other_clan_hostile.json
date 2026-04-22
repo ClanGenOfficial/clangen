@@ -247,7 +247,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is cautious, but n_c:0’s exile was controversial, and information can make the difference between life and death. n_c:0 is brought back to camp.",
+                "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is cautious, but n_c:0’s exile was controversial, and information can make the difference between life and death. n_c:0 is ultimately brought back to camp.",
                 "exp": 10,
                 "art": "gen_speaking_cat_outsider",
                 "new_cat": [
@@ -546,7 +546,7 @@
                 "frequency": 4
             },
             {
-                "text": "n_c:0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/manage/manages} to injure r_c before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for the dangerous vagrant.",
+                "text": "n_c:0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/manage/manages} to injure r_c before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for this dangerous vagrant.",
                 "exp": 0,
                 "other_clan_rep": 0,
                 "patrol_art": "gen_battle_warrior_loner",
