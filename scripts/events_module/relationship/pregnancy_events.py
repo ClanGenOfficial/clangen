@@ -471,6 +471,26 @@ class Pregnancy_Events:
                 involved_cats = Pregnancy_Events.append_second_parent_if_mentioned(
                     involved_cats, event_text, random_cat
                 )
+            # if all else fails, just a regular announcement happens
+            else:
+                text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
+                event_text = text
+                severity = random.choices(["minor", "major"], [3, 1], k=1)
+                cat.get_injured("pregnant", severity=severity[0])
+                text += choice(
+                    Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"]
+                )
+                text = event_text_adjust(
+                    Cat,
+                    text,
+                    main_cat=cat,
+                    random_cat=other_cat,
+                    clan=game.clan,
+                )
+                involved_cats = [cat.ID]
+                involved_cats = Pregnancy_Events.append_second_parent_if_mentioned(
+                    involved_cats, event_text, random_cat
+                )
             game.cur_events_list.append(
                 Single_Event(text, "birth_death", involved_cats)
             )
@@ -616,7 +636,7 @@ class Pregnancy_Events:
                 involved_cats = Pregnancy_Events.append_second_parent_if_mentioned(
                     involved_cats, event_text, random_cat
                 )
-            # if all else fails, just a regular announcemet happens
+            # if all else fails, just a regular announcement happens
             else:
                 text = choice(Pregnancy_Events.PREGNANT_STRINGS["announcement"])
                 event_text = text
