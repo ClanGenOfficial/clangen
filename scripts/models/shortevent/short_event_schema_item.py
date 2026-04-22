@@ -60,7 +60,7 @@ class ShortEventSchemaItem(BaseModel):
         MISSING, description="Adds a new cat."
     )
     injury: Union[List[InjuryItem], MISSING] = MISSING
-    history_text: Union[HistoryText, MISSING] = MISSING
+    history: Union[HistoryText, MISSING] = MISSING
     outsider: Union[Outsider, MISSING] = Field(
         MISSING,
         description="Dictates what reputation the clan is required to have with outsiders as well as how that reputation changes due to the event.",
