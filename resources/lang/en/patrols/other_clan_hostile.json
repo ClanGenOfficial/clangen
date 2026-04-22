@@ -237,10 +237,16 @@
         "types": [
             "border"
         ],
+        "tags": [],
         "patrol_art": "gen_gen_newcat_hostile",
         "min_cats": 3,
         "max_cats": 6,
-        "min_max_status": {},
+        "min_max_status": {
+            "normal adult": [
+                2,
+                6
+            ]
+        },
         "frequency": 4,
         "intro_text": "A o_c_n scent is found clearly crossing the border. The patrol tracks it to its source, expecting a foolhardy young provocateur, and are instead surprised by their rival's most recent exile.",
         "decline_text": "The patrol decides not to confront the cat.",
