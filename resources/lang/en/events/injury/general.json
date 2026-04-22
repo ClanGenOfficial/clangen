@@ -7158,7 +7158,7 @@
                 "values": ["respect", "trust"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cat_from saw how fiercely cat_to defended the nursery in a battle with o_c_n."
+                    "cats_from": "cat_from saw cat_to defended the nursery in a battle with o_c_n."
                 }
             }
         ]
