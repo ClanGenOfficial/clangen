@@ -747,8 +747,7 @@ class Pregnancy_Events:
                     secret_affair_birth = True
                     adoptive_parents.append(cheated_mate.ID)
                 else:
-                    # they will never find out that the litter isn't theirs and treats
-                    # the litter as their own
+                    # if they knew, they can still choose to help raise the kits or not
                     mate_claimed_kits = Pregnancy_Events.should_claim_affair_kits(
                         cheated_mate, cat
                     )
