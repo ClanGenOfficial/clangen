@@ -487,7 +487,7 @@
                 "frequency": 2
             },
             {
-                "text": "When the patrol confronts n_c:0, they’re shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn’t deserve banishment. n_c:0’s exile was already controversial, p_l thinks, the kits are innocent. Perhaps c_n could accept n_c:0... if {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} willing to divulge a few of {PRONOUN/n_c:0/poss} former Clan’s secrets.",
+                "text": "When the patrol confronts n_c:0, they’re shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn’t deserve banishment. n_c:0’s exile was already controversial, p_l thinks, and the kits are innocent. Perhaps c_n could accept n_c:0... if {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} willing to divulge a few of {PRONOUN/n_c:0/poss} former Clan’s secrets.",
                 "exp": 10,
                 "new_cat": [
                     [
