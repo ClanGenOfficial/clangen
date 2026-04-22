@@ -52,7 +52,7 @@ class ThoughtSchemaItem(BaseModel):
         MISSING,
         description='Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use "any" to allow the thought to occur if the cat has any permanent condition.',
     )
-    relationship_status: Union[List[RelationshipStatus], MISSING] = Field(
+    relationship_constraint: Union[List[RelationshipStatus], MISSING] = Field(
         MISSING,
         description="Constrains the thought to only occur if m_c and r_c fulfill the tag requirements.",
     )
