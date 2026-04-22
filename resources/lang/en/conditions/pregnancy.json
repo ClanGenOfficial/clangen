@@ -165,7 +165,7 @@
         "affair_secret": [
             "m_c secretly had a {insert} with r_c.",
             "m_c hopes that {PRONOUN/m_c/poss} {insert} doesn't look too much like r_c, otherwise questions might follow.",
-			"rc_mate refuses believe any the rumors about m_c's new {insert} belonging to {PRONOUN/rc_mate/poss} mate, r_c, even if there are strong resemblances.",
+			"rc_mate refuses believe any of the rumors about m_c's new {insert} belonging to {PRONOUN/rc_mate/poss} mate, r_c, even if there are strong resemblances.",
             "r_c goes to visit m_c in the nursery with {PRONOUN/m_c/poss} new {insert}, on a completely innocent mission to deliver food to the new parent."
         ],
         "affair_mated": [
@@ -176,7 +176,7 @@
         ],
         "affair_mated_secret": [
 			"m_c secretly had a {insert} with r_c instead of mc_mate. m_c doesn't plan on telling mc_mate about this — ever.",
-			"mc_mate refuses believe any the rumors about m_c's new {insert} belonging to r_c, even if there are strong resemblances.",
+			"mc_mate refuses believe any of the rumors about m_c's new {insert} belonging to r_c, even if there are strong resemblances.",
 			"m_c stresses over how much the new {insert} looks so much like mc_mate to avoid raising suspicion of them having r_c's features.",
 			"mc_mate happily crawls into the nursery to see m_c and the new {insert}, completely unaware that this {insert} was made from m_c and r_c.",
 			"Watching mc_mate look over {PRONOUN/m_c/poss} new {insert}, m_c silently vows to make sure that {PRONOUN/mc_mate/subject} never {VERB/mc_mate/find/finds} out that this {insert} is actually r_c's.",
