@@ -565,5 +565,48 @@
             "injuries": ["minor_injury"]
         }
     ]
-}
+},
+       {
+    "event_id": "fst_mushroom_injury",
+    "location": ["forest:camp1"],
+    "season": ["newleaf", "greenleaf"],
+    "frequency": 2,
+    "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN/m_c/subject/CAP} falls ill later that evening.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "-CLEVER,1",
+                "-SENSE,2",
+                "-HEALER,1"
+            ],
+            "trait": [
+               "-nervous",
+                "-strict",
+                "-thoughtful",
+                "-calm",
+                "-responsible",
+                "-wise",
+                "-cunning",
+                "-careful"
+            ],
+            "dies": false
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was poisoned by a beautiful but deadly mushroom."
+            }
+        ],
+          "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["poisoned"],
+            "scars": []
+        }
+    ]
+    }
 ]
