@@ -835,7 +835,6 @@ class Pregnancy_Events:
         elif other_cat.ID in cat.mate and other_cat.dead:
             involved_cats.append(other_cat.ID)
             cat_dict["r_c"] = other_cat
-            # TODO: this seems odd, outsider mates are also treated as dead?
             event_list.append(choice(events["birth"]["dead_mate"]))
 
         # the long awaited outsider mate event strings
@@ -1425,7 +1424,6 @@ class Pregnancy_Events:
         other_cat=None,
         clan=game.clan,
         adoptive_parents=None,
-        coparenting_outcome=None,
     ):
         """Create some amount of kits
         No parents are specified, it will create a blood parents for all the
