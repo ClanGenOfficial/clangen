@@ -16,7 +16,7 @@ from scripts.models.patrol.injury_item import InjuryItem
 from scripts.models.patrol.leader_lives_lost import LeaderLivesLost
 from scripts.models.patrol.patrol_herb import PatrolHerb
 from scripts.models.patrol.prey import Prey
-from scripts.models.patrol.relationship import Relationship
+from scripts.models.common.relationship import Relationship
 
 
 class Outcome(BaseModel):
