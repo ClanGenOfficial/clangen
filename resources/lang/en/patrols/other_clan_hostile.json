@@ -575,7 +575,7 @@
                  "relationships": [
                     {
                         "cats_from": [
-                            "patrol"
+                            "patrol", "-r_c"
                         ],
                         "cats_to": [
                             "n_c:0"
