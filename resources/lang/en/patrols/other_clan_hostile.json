@@ -552,7 +552,7 @@
                 "frequency": 4
             },
             {
-                "text": "n_c:0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/manage/manages} to injure r_c before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for this dangerous vagrant.",
+                "text": "n_c:0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/injure/injures} r_c before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for this dangerous vagrant.",
                 "exp": 0,
                 "other_clan_rep": 0,
                 "patrol_art": "gen_battle_warrior_loner",
