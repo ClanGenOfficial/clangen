@@ -8,11 +8,8 @@ from pydantic_core import MISSING
 
 class HistoryText(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    reg_death: Union[str, MISSING] = Field(
-        MISSING, description="Death history text for non-leaders. Whole sentence."
-    )
-    lead_death: Union[str, MISSING] = Field(
-        MISSING, description="Death history text for leaders. Sentence fragment."
+    death: Union[str, MISSING] = Field(
+        MISSING, description="Death history. Whole sentence."
     )
     scar: Union[str, MISSING] = Field(
         MISSING, description="Scar history. Whole sentence."
