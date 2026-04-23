@@ -2,13 +2,14 @@ from __future__ import annotations
 
 from typing import List, Union, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.shortevent.cat import Cat
 
 
 class HistoryText(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     cats: Union[
         List[Union[Cat, Literal["multi_cat"]]],
         MISSING,
