@@ -10,10 +10,7 @@ from scripts.models.shortevent.cat import Cat
 
 class HistoryText(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    cats: Union[
-        List[Union[Cat, Literal["multi_cat"]]],
-        MISSING,
-    ] = Field(
+    cats: List[Union[Cat, Literal["multi_cat"]]] = Field(
         MISSING, description="List of cats for whom the history will be assigned."
     )
     death: Union[str, MISSING] = Field(

@@ -94,4 +94,7 @@ class ShortEventSchemaItem(BaseModel):
         MISSING,
         description="Dictates what reputation the clan is required to have with the other clan as well as how that reputation changes due to the event.",
     )
-    supplies: Union[List[Supply], MISSING] = MISSING
+    supplies: Union[List[Supply], MISSING] = Field(
+        MISSING,
+        description="Dictates how this event changes the various supply pools of the clan."
+    )
