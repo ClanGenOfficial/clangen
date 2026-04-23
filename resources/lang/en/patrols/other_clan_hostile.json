@@ -782,7 +782,7 @@
                         "amount": -30,
                         "log": {
                             "cats_from": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory.",
-                            "cats_to": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack and {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory."
+                            "cats_to": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory."
                         }
                     }
                 ],
