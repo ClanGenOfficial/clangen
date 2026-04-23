@@ -6,6 +6,7 @@ class NewGenderEnum(Enum):
     trans_male = "trans male"
     trans_female = "trans female"
 
+
 class GenderEnum(Enum):
     male = "male"
     female = "female"
