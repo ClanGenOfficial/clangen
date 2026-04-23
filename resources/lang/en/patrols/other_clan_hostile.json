@@ -789,7 +789,7 @@
                 "frequency": 4
             },
             {
-                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and while the initial intention was merely removal from Clan territory, no one is sad to see {PRONOUN/n_c:0/object} dead.",
+                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and while the intention was merely removal from Clan territory, no one is sad to see {PRONOUN/n_c:0/object} dead.",
                 "exp": 10,
                 "other_clan_rep": 2,
                 "patrol_art": "gen_battle_warrior_loner",
