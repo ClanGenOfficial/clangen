@@ -297,7 +297,7 @@
                 "frequency": 4
             },
             {
-                "text": "It turns out {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} actually innocent. At least that’s what n_c:0 feverishly insists, as {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join c_n in exchange for o_c_n secrets. The patrol is slightly unnerved by n_c:0's wild-eyed expression, but it seems like vengeance against o_c_n is {PRONOUN/n_c:0/poss} only motive, and o_c_n is a fierce enemy. n_c:0 is brought back to camp.",
+                "text": "It turns out {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} actually innocent. At least that’s what n_c:0 feverishly insists, as {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join c_n in exchange for o_c_n secrets. The patrol is unnerved by n_c:0's wild-eyed expression, but it seems like vengeance against o_c_n is {PRONOUN/n_c:0/poss} only motive, and o_c_n is a fierce enemy. n_c:0 is brought back to camp.",
                 "exp": 10,
                 "art": "gen_speaking_cat_outsider",
                 "new_cat": [
