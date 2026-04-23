@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from typing import List, Union
+from typing import Annotated, List, Literal, Union
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints
 from pydantic_core import MISSING
 
+from scripts.models.common.biome import Biome
 from scripts.models.common.new_cat import NewCat
 from scripts.models.common.season import Season
 from scripts.models.shortevent.event_subtype import EventSubtype
@@ -23,14 +24,15 @@ from scripts.models.common.future_event import FutureEvent
 
 class ShortEventSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    event_id: Union[str, MISSING] = Field(
-        MISSING, description="Unique string used to identify the event."
+    event_id: str = Field(
+        ...,
+        description="Unique string used to identify the event."
     )
-    location: Union[List[str], MISSING] = Field(
-        MISSING, description="Controls the biome and camp the event appears in."
+    location: List[str] = Field(
+        ..., description="Controls the biome and camp the event appears in."
     )
-    season: Union[List[Season], MISSING] = Field(
-        MISSING, description="List of seasons in which the event may occur."
+    season: List[Season] = Field(
+        ..., description="List of seasons in which the event may occur."
     )
     sub_type: Union[List[EventSubtype], MISSING] = Field(
         MISSING, description="List of sub_types for this event."
@@ -39,12 +41,12 @@ class ShortEventSchemaItem(BaseModel):
         List[Tag],
         MISSING,
     ] = Field(MISSING, description="Used for some filtering purposes")
-    frequency: Union[int, MISSING] = Field(
-        MISSING,
+    frequency: int = Field(
+        ...,
         description="Controls how common an event is. 4 == Common, 3 == Uncommon, 2 == Rare, 3 == Very Rare. Consider this in the terms of 'If an event of this type happened every moon for 10 moons, on how many of those moons should this sort of event appear?'",
     )
-    event_text: Union[str, MISSING] = Field(
-        MISSING,
+    event_text: str = Field(
+        ...,
         description="Text that appears within the event list when the event occurs.",
     )
     new_accessory: Union[List[str], MISSING] = Field(
