@@ -28,7 +28,7 @@ class ShortEventSchemaItem(BaseModel):
         ...,
         description="Unique string used to identify the event."
     )
-    location: List[str] = Field(
+    location: Location = Field(
         ..., description="Controls the biome and camp the event appears in."
     )
     season: List[Season] = Field(
