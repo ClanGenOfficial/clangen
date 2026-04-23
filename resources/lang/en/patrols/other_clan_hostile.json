@@ -724,9 +724,6 @@
                 ],
                 "other_clan_rep": -7,
                 "history_text": {
-                    "cats": [
-                        "p_l"
-                    ],
                     "death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                 },
                 "relationships": [
@@ -887,9 +884,6 @@
                 ],
                 "other_clan_rep": -7,
                 "history_text": {
-                    "cats": [
-                        "n_c:0"
-                    ],
                     "death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                 },
                 "relationships": [

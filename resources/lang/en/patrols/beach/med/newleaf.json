@@ -75,7 +75,7 @@
     ],
     "history_text": {
         "death": "p_l died from {PRONOUN/app1/poss} injuries after being trampled by a flock of sheep.",
-        "scars": "p_l was scarred after being trampled by a flock of sheep."
+        "scar": "p_l was scarred after being trampled by a flock of sheep."
     },
     "art": "running_med2"
 }
@@ -182,7 +182,7 @@
     ],
     "history_text": {
         "death": "app1 died from {PRONOUN/app1/poss} injuries after being trampled by a flock of sheep.",
-        "scars": "app1 was scarred after being trampled by a flock of sheep."
+        "scar": "app1 was scarred after being trampled by a flock of sheep."
     },
     "relationships": [
     { 
