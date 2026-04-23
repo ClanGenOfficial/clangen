@@ -19,7 +19,7 @@ from scripts.models.shortevent.supply import Supply
 from scripts.models.shortevent.tag import Tag
 from scripts.models.shortevent.cat import Cat
 from scripts.models.common.relationship import Relationship
-from scripts.models.shortevent.future_event import FutureEvent
+from scripts.models.common.future_event import FutureEvent
 
 class ShortEventSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
