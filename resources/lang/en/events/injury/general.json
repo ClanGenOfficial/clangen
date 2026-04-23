@@ -6397,7 +6397,7 @@
         "frequency": 1,
         "event_text": "m_c fought with a duck in the water, trying to kill it for the fresh-kill pile, but was knocked below the surface of the water and inhaled a lot of water.",
         "m_c": {
-            "rank": [
+            "status": [
                 "apprentice",
                 "warrior",
                 "deputy",
@@ -7665,7 +7665,7 @@
     {
         "event_id": "gen_injury_fireflies",
         "location": [
-            "forest:camp2,camp4",
+            "forest:camp2_camp4",
             "mountainous:camp4",
             "plains:camp1"
         ],

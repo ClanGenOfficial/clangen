@@ -729,10 +729,11 @@
     {
         "event_id": "gen_death_snake_any2",
         "location": [
-            "-leaf-bare"
+           "any"
         ],
         "season": [
-            "any"
+            "any",
+            "-leaf-bare"
         ],
         "frequency": 3,
         "event_text": "m_c saved r_c from a snake but was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
@@ -8118,7 +8119,7 @@
             {
                 "event_type": "misc",
                 "pool": {
-                    "event_id": "gen_misc_murderreveal_leader"
+                    "event_id": ["gen_misc_murderreveal_leader"]
                 },
                 "moon_delay": [
                     1, 1
@@ -8548,7 +8549,7 @@
         "event_id": "gen_death_lynx1",
         "location": [
             "forest:camp1_camp2",
-            "plains:camp1_camp3_camp_4",
+            "plains:camp1_camp3_camp4",
             "mountain:camp1_camp2_camp4" ],
         "season": [
             "any"
@@ -8575,7 +8576,7 @@
         "event_id": "gen_death_lynx2",
         "location": [
             "forest:camp1_camp2",
-            "plains:camp1_camp3_camp_4",
+            "plains:camp1_camp3_camp4",
             "mountain:camp1_camp2_camp4" ],
         "season": [
             "any"
@@ -8609,7 +8610,7 @@
     {
         "event_id": "gen_death_heron",
         "location": [
-            "forest:camp_4",
+            "forest:camp4",
             "wetlands"
         ],
         "season": [
@@ -8709,7 +8710,7 @@
         },
         "history": [
             {
-                "cats": "m_c",
+                "cats": ["m_c"],
                 "death": "m_c was killed by a rooster defending his flock."
             }
         ]
