@@ -809,6 +809,7 @@
           "type": "array"
         },
         "injury": {
+          "description": "Indicates which cats get injured, and how.",
           "items": {
             "$ref": "#/$defs/InjuryItem"
           },
@@ -816,6 +817,7 @@
           "type": "array"
         },
         "history": {
+          "description": "Controls the history-text for scars and death.",
           "items": {
             "$ref": "#/$defs/HistoryText"
           },
@@ -823,6 +825,7 @@
           "type": "array"
         },
         "relationships": {
+          "description": "Indicates effect on cat relationships.",
           "items": {
             "$ref": "#/$defs/Relationship"
           },
@@ -830,6 +833,7 @@
           "type": "array"
         },
         "exclude_involved": {
+          "description": "Excludes certain cats from showing up in the \"involved cats\" list of the event, meaning their button will not be present on the events screen.",
           "items": {
             "$ref": "#/$defs/Cat"
           },
@@ -862,6 +866,7 @@
           "title": "Other Clan"
         },
         "supplies": {
+          "description": "Dictates how this event changes the various supply pools of the clan.",
           "items": {
             "$ref": "#/$defs/Supply"
           },
