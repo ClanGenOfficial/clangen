@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Annotated, Dict, List, Tuple, Union
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.herb import Herb
@@ -20,6 +20,7 @@ from scripts.models.common.relationship import Relationship
 
 
 class Outcome(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     text: str = Field(..., description="Displayed outcome text.")
     frequency: Annotated[
         int,

@@ -2,11 +2,12 @@ from __future__ import annotations
 
 from typing import Union
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 
 class HistoryText(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     reg_death: Union[str, MISSING] = Field(
         MISSING, description="Death history text for non-leaders. Whole sentence."
     )
