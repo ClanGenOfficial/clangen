@@ -19,7 +19,7 @@ from scripts.models.shortevent.supply import Supply
 from scripts.models.shortevent.tag import Tag
 from scripts.models.shortevent.cat import Cat
 from scripts.models.common.relationship import Relationship
-
+from scripts.models.shortevent.future_event import FutureEvent
 
 class ShortEventSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -69,6 +69,10 @@ class ShortEventSchemaItem(BaseModel):
     new_gender: Union[List[GenderEnum], MISSING] = Field(
         MISSING,
         description="New gender for cats who are transitioning.",
+    )
+    future_event: Union[List[FutureEvent], MISSING] = Field(
+        MISSING,
+        description="Schedules another event to happen in the future."
     )
     outsider: Union[Outsider, MISSING] = Field(
         MISSING,
