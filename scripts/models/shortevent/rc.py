@@ -11,6 +11,7 @@ from scripts.models.common.backstory import Backstory
 from scripts.models.common.skill import Skill
 from scripts.models.common.status import Status
 from scripts.models.shortevent.rc_relationship_status import RcRelationshipStatus
+from scripts.models.shortevent.gender import GenderEnum
 
 
 class RC(BaseModel):
@@ -39,4 +40,7 @@ class RC(BaseModel):
     )
     dies: Union[bool, MISSING] = Field(
         MISSING, description="r_c will die due to this event. Default is False."
+    )
+    gender: Union[List[GenderEnum], MISSING] = Field(
+        MISSING, description="r_c will have this gender."
     )

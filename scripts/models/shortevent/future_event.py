@@ -12,6 +12,7 @@ from scripts.models.common.status import Status
 
 from scripts.models.shortevent.event_subtype import EventSubtype
 from scripts.models.shortevent.cat import Cat
+from scripts.models.shortevent.gender import GenderEnum
 
 
 class EventType(Enum):
@@ -52,6 +53,9 @@ class FutureCat(BaseModel):
     trait: Union[List[Union[AllTrait, Literal["any"]]], MISSING] = Field(
         MISSING,
         description='The cat must possess at least one trait from this list. If they can be anything, use "any".',
+    )
+    gender: Union[List[GenderEnum], MISSING] = Field(
+        MISSING, description="The cat will have this gender."
     )
 
 

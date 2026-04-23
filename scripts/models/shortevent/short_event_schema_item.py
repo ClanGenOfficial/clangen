@@ -8,7 +8,7 @@ from pydantic_core import MISSING
 from scripts.models.common.new_cat import NewCat
 from scripts.models.common.season import Season
 from scripts.models.shortevent.event_subtype import EventSubtype
-from scripts.models.shortevent.gender import GenderEnum
+from scripts.models.shortevent.gender import NewGenderEnum
 from scripts.models.shortevent.history_text import HistoryText
 from scripts.models.shortevent.injury_item import InjuryItem
 from scripts.models.shortevent.mc import MC
@@ -66,7 +66,7 @@ class ShortEventSchemaItem(BaseModel):
     history: Union[List[HistoryText], MISSING] = MISSING
     relationships: Union[List[Relationship], MISSING] = MISSING
     exclude_involved: Union[List[Cat], MISSING] = MISSING
-    new_gender: Union[List[GenderEnum], MISSING] = Field(
+    new_gender: Union[List[NewGenderEnum], MISSING] = Field(
         MISSING,
         description="New gender for cats who are transitioning.",
     )
