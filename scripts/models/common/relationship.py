@@ -13,12 +13,13 @@ class Log(BaseModel):
     model_config = ConfigDict(extra="forbid")
     cats_from: Union[MISSING, str] = Field(
         MISSING,
-        description="This string will be added to the relationship logs of all cats in cats_from."
+        description="This string will be added to the relationship logs of all cats in cats_from.",
     )
     cats_to: Union[MISSING, str] = Field(
         MISSING,
-        description="This string will be added to the relationship logs of all cats in cats_to."
+        description="This string will be added to the relationship logs of all cats in cats_to.",
     )
+
 
 class Relationship(BaseModel):
     model_config = ConfigDict(extra="forbid")
