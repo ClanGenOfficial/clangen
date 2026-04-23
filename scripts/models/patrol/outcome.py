@@ -8,6 +8,8 @@ from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.herb import Herb
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.new_cat import NewCat
+from scripts.models.common.future_event import FutureEvent
+from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.skill import Skill
 from scripts.models.common.trait import Trait
 from scripts.models.patrol.can_have_status import CanHaveStat
@@ -69,6 +71,10 @@ class Outcome(BaseModel):
     relationships: Union[List[Relationship], MISSING] = Field(
         MISSING, description="Indicates effect on cat relationships."
     )
+    relationship_constraint: Union[List[RelationshipStatus], MISSING] = Field(
+        MISSING,
+        description="Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
+    )
     new_cat: Union[List[NewCat], MISSING] = Field(
         MISSING,
         description="Adds new cat(s), either joining the clan or as outside cats. The {index} value corresponds to their index value on this list (e.g. n_c:0 refers to the first cat in this list).",
@@ -89,3 +95,4 @@ class Outcome(BaseModel):
         MISSING,
         description="How much reputation with other Clan will change. Can be positive or negative.",
     )
+    future_event: Union[FutureEvent, MISSING] = MISSING
