@@ -448,7 +448,7 @@
                 "frequency": 4
             },
             {
-                "text": "When the patrol confronts n_c:0, they’re shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn’t deserve banishment. Cautious but sympathetic — how horrible could o_c_n be, to exile kits? — the patrol brings the litter home, and escorts n_c:0 from Clan territory.",
+                "text": "When the patrol confronts n_c:0, they’re shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn’t deserve banishment. Cautious but sympathetic — how horrible could o_c_n be, to exile kits? — p_l escorts n_c:0 from Clan territory while the others bring the litter to their new home.",
                 "exp": 10,
                 "new_cat": [
                     [
