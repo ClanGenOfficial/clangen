@@ -747,10 +747,6 @@
           },
           "title": "Antag Fail Outcomes",
           "type": "array"
-        },
-        "future_event": {
-          "$ref": "#/$defs/FutureEvent",
-          "title": "Future Event"
         }
       },
       "required": [

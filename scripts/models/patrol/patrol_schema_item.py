@@ -6,7 +6,6 @@ from typing import Dict, List, Literal, Optional, Tuple, Union
 from pydantic import BaseModel, Field, ConfigDict
 from pydantic_core import MISSING
 from scripts.models.common.biome import Biome
-from scripts.models.common.future_event import FutureEvent
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.season import Season
@@ -80,4 +79,3 @@ class PatrolSchemaItem(BaseModel):
     fail_outcomes: List[Outcome]
     antag_success_outcomes: Union[List[Outcome], MISSING] = MISSING
     antag_fail_outcomes: List[Outcome] = MISSING
-    future_event: Union[FutureEvent, MISSING] = MISSING
