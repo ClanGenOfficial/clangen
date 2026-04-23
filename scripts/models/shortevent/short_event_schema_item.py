@@ -62,10 +62,22 @@ class ShortEventSchemaItem(BaseModel):
     new_cat: Union[List[NewCat], MISSING] = Field(
         MISSING, description="Adds a new cat."
     )
-    injury: Union[List[InjuryItem], MISSING] = MISSING
-    history: Union[List[HistoryText], MISSING] = MISSING
-    relationships: Union[List[Relationship], MISSING] = MISSING
-    exclude_involved: Union[List[Cat], MISSING] = MISSING
+    injury: Union[List[InjuryItem], MISSING] = Field(
+        MISSING,
+        description="Indicates which cats get injured, and how."
+    )
+    history: Union[List[HistoryText], MISSING] = Field(
+        MISSING,
+        description="Controls the history-text for scars and death."
+    )
+    relationships: Union[List[Relationship], MISSING] = Field(
+        MISSING,
+        description="Indicates effect on cat relationships."
+    )
+    exclude_involved: Union[List[Cat], MISSING] = Field(
+        MISSING,
+        description="Excludes certain cats from showing up in the \"involved cats\" list of the event, meaning their button will not be present on the events screen."
+    )
     new_gender: Union[List[NewGenderEnum], MISSING] = Field(
         MISSING,
         description="New gender for cats who are transitioning.",
