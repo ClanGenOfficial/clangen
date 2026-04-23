@@ -376,6 +376,23 @@
       "title": "LeaderLivesLost",
       "type": "string"
     },
+    "Log": {
+      "additionalProperties": false,
+      "properties": {
+        "cats_from": {
+          "description": "This string will be added to the relationship logs of all cats in cats_from.",
+          "title": "Cats From",
+          "type": "string"
+        },
+        "cats_to": {
+          "description": "This string will be added to the relationship logs of all cats in cats_to.",
+          "title": "Cats To",
+          "type": "string"
+        }
+      },
+      "title": "Log",
+      "type": "object"
+    },
     "MinMaxStatusDictKey": {
       "enum": [
         "medicine cat",
@@ -823,6 +840,7 @@
       "type": "string"
     },
     "Relationship": {
+      "additionalProperties": false,
       "properties": {
         "cats_from": {
           "description": "The cat's whose relationship values are being edited. You are changing how the \"cats_from\" feels.",
@@ -865,6 +883,10 @@
           "description": "Exact amount the relationship value will be affected. Can be positive or negative.",
           "title": "Amount",
           "type": "integer"
+        },
+        "log": {
+          "$ref": "#/$defs/Log",
+          "description": "The string that will display within the relationship logs."
         }
       },
       "required": [
