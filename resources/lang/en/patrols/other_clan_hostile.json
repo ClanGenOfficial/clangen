@@ -410,7 +410,7 @@
                         "mutual": true,
                         "log": {
                             "cats_from": "cat_from cursed cat_to out for not letting {PRONOUN/cat_from/object} into c_n.",
-                            "cats_to": "cat_from cursed cat_to out for not letting {PRONOUN/cat_from/object} into c_n."
+                            "cats_to": "cat_from cursed cat_to for not letting {PRONOUN/cat_from/object} into c_n."
                         }
                     }
                 ],
