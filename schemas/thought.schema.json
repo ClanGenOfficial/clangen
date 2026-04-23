@@ -110,6 +110,7 @@
       "title": "PermConditionAny"
     },
     "PermConditions": {
+      "additionalProperties": false,
       "properties": {
         "m_c": {
           "items": {
@@ -166,6 +167,7 @@
       "title": "StatusAny"
     },
     "ThoughtSchemaItem": {
+      "additionalProperties": false,
       "properties": {
         "id": {
           "description": "Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
@@ -214,12 +216,12 @@
           "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use \"any\" to allow the thought to occur if the cat has any permanent condition.",
           "title": "Perm Conditions"
         },
-        "relationship_status": {
+        "relationship_constraint": {
           "description": "Constrains the thought to only occur if m_c and r_c fulfill the tag requirements.",
           "items": {
             "$ref": "common.schema.json#/$defs/RelationshipStatus"
           },
-          "title": "Relationship Status",
+          "title": "Relationship Constraint",
           "type": "array"
         },
         "main_backstory_constraint": {

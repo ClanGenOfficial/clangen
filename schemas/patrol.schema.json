@@ -1,5 +1,25 @@
 {
   "$defs": {
+    "Age": {
+      "enum": [
+        "newborn",
+        "-newborn",
+        "kitten",
+        "-kitten",
+        "adolescent",
+        "-adolescent",
+        "young adult",
+        "-young adult",
+        "adult",
+        "-adult",
+        "senior adult",
+        "-senior adult",
+        "senior",
+        "-senior"
+      ],
+      "title": "Age",
+      "type": "string"
+    },
     "Biome": {
       "enum": [
         "mountainous",
@@ -35,16 +55,258 @@
       "title": "CanHaveStat",
       "type": "string"
     },
-    "HistoryText": {
-      "properties": {
-        "reg_death": {
-          "description": "Death history text for non-leaders. Whole sentence.",
-          "title": "Reg Death",
-          "type": "string"
+    "Cat": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CatEnum"
         },
-        "lead_death": {
-          "description": "Death history text for leaders. Sentence fragment.",
-          "title": "Lead Death",
+        {
+          "pattern": "^n_c:[0-9]+$",
+          "type": "string"
+        }
+      ],
+      "title": "Cat"
+    },
+    "CatEnum": {
+      "enum": [
+        "m_c",
+        "r_c"
+      ],
+      "title": "CatEnum",
+      "type": "string"
+    },
+    "EventSubtype": {
+      "enum": [
+        "war",
+        "murder",
+        "old_age",
+        "mass_death",
+        "murder_reveal",
+        "hidden_murder_reveal",
+        "failed_murder",
+        "accessory",
+        "ceremony",
+        "transition",
+        "mediator"
+      ],
+      "title": "EventSubtype",
+      "type": "string"
+    },
+    "EventType": {
+      "enum": [
+        "death",
+        "injury",
+        "new_cat",
+        "misc"
+      ],
+      "title": "EventType",
+      "type": "string"
+    },
+    "FutureCat": {
+      "properties": {
+        "age": {
+          "description": "List of ages the cat can be. If they can be anything, use \"any\".",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Age"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Age",
+          "type": "array"
+        },
+        "status": {
+          "description": "List of statuses the cat can be. If they can be anything, use \"any\".",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/Status"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Status",
+          "type": "array"
+        },
+        "skill": {
+          "description": "The cat must possess at least one skill from this list. If they can be anything, use \"any\".",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/Skill"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Skill",
+          "type": "array"
+        },
+        "trait": {
+          "description": "The cat must possess at least one trait from this list. If they can be anything, use \"any\".",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/AllTrait"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Trait",
+          "type": "array"
+        },
+        "gender": {
+          "description": "The cat will have this gender.",
+          "items": {
+            "$ref": "#/$defs/GenderEnum"
+          },
+          "title": "Gender",
+          "type": "array"
+        }
+      },
+      "title": "FutureCat",
+      "type": "object"
+    },
+    "FutureEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "event_type": {
+          "$ref": "#/$defs/EventType",
+          "description": "Specify which ShortEvent type the future event will be."
+        },
+        "moon_delay": {
+          "description": "How many moons must pass before the first event appears (inclusive). The first value is the smallest possible delay and the second value is the largest.",
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Moon Delay",
+          "type": "array"
+        },
+        "pool": {
+          "$ref": "#/$defs/FutureEventPool",
+          "description": "Pool of events to be chosen from. Only one event from the pool will be chosen."
+        },
+        "involved_cats": {
+          "$ref": "#/$defs/FutureEventInvolvedCats",
+          "description": "Specifies which cats can fill the roles within the future event."
+        }
+      },
+      "required": [
+        "event_type",
+        "moon_delay",
+        "pool",
+        "involved_cats"
+      ],
+      "title": "FutureEvent",
+      "type": "object"
+    },
+    "FutureEventInvolvedCats": {
+      "additionalProperties": false,
+      "properties": {
+        "m_c": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FutureCat"
+            },
+            {
+              "$ref": "#/$defs/Cat"
+            }
+          ],
+          "description": "This cat in the current event will be m_c in the future event.",
+          "title": "Main Cat"
+        },
+        "mur_c": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FutureCat"
+            },
+            {
+              "$ref": "#/$defs/Cat"
+            }
+          ],
+          "description": "This cat in the current event will be the murdered cat in the future event.",
+          "title": "Murdered Cat"
+        },
+        "r_c": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FutureCat"
+            },
+            {
+              "$ref": "#/$defs/Cat"
+            }
+          ],
+          "description": "Parameters for a new random cat, chosen from the currently living cats.",
+          "title": "Random Cat"
+        }
+      },
+      "title": "FutureEventInvolvedCats",
+      "type": "object"
+    },
+    "FutureEventPool": {
+      "properties": {
+        "subtype": {
+          "description": "Events to be added to the pool will contain all subtypes specified.",
+          "items": {
+            "$ref": "#/$defs/EventSubtype"
+          },
+          "title": "Subtype",
+          "type": "array"
+        },
+        "event_id": {
+          "description": "Only events with the specified event_ids will be added to the pool.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Event Id",
+          "type": "array"
+        },
+        "excluded_event_id": {
+          "description": "All events with the specified event_ids will be removed from the pool.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Excluded Event Id",
+          "type": "array"
+        }
+      },
+      "title": "FutureEventPool",
+      "type": "object"
+    },
+    "GenderEnum": {
+      "enum": [
+        "male",
+        "female"
+      ],
+      "title": "GenderEnum",
+      "type": "string"
+    },
+    "HistoryText": {
+      "additionalProperties": false,
+      "properties": {
+        "death": {
+          "description": "Death history. Whole sentence.",
+          "title": "Death",
           "type": "string"
         },
         "scar": {
@@ -57,6 +319,7 @@
       "type": "object"
     },
     "InjuryItem": {
+      "additionalProperties": false,
       "properties": {
         "cats": {
           "description": "Which cats are injured.",
@@ -129,6 +392,7 @@
       "type": "string"
     },
     "Outcome": {
+      "additionalProperties": false,
       "properties": {
         "text": {
           "description": "Displayed outcome text.",
@@ -258,6 +522,14 @@
           "title": "Relationships",
           "type": "array"
         },
+        "relationship_constraint": {
+          "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
+          "items": {
+            "$ref": "common.schema.json#/$defs/RelationshipStatus"
+          },
+          "title": "Relationship Constraint",
+          "type": "array"
+        },
         "new_cat": {
           "description": "Adds new cat(s), either joining the clan or as outside cats. The {index} value corresponds to their index value on this list (e.g. n_c:0 refers to the first cat in this list).",
           "items": {
@@ -285,6 +557,10 @@
           "description": "How much reputation with other Clan will change. Can be positive or negative.",
           "title": "Other Clan Rep",
           "type": "integer"
+        },
+        "future_event": {
+          "$ref": "#/$defs/FutureEvent",
+          "title": "Future Event"
         }
       },
       "required": [
@@ -471,6 +747,10 @@
           },
           "title": "Antag Fail Outcomes",
           "type": "array"
+        },
+        "future_event": {
+          "$ref": "#/$defs/FutureEvent",
+          "title": "Future Event"
         }
       },
       "required": [
