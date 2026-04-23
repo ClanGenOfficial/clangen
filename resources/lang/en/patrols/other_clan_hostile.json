@@ -540,7 +540,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "n_c:0, holding a mouse, startles and bolts at sight of the patrol. c_n hopes {PRONOUN/n_c:0/poss} trespassing was just for prey...",
+                "text": "n_c:0, holding a mouse, bolts at sight of the patrol. c_n hopes {PRONOUN/n_c:0/poss} trespassing was just for prey...",
                 "exp": 0,
                 "other_clan_rep": 0,
                 "new_cat": [
