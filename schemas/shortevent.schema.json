@@ -786,7 +786,8 @@
         "cats_from",
         "cats_to",
         "values",
-        "amount"
+        "amount",
+        "log"
       ],
       "title": "Relationship",
       "type": "object"

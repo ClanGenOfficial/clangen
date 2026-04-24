@@ -42,7 +42,7 @@ class Relationship(BaseModel):
         ...,
         description="Exact amount the relationship value will be affected. Can be positive or negative.",
     )
-    log: Union[Log, MISSING] = Field(
-        MISSING,
+    log: Log = Field(
+        ...,
         description="The string that will display within the relationship logs.",
     )
