@@ -555,7 +555,7 @@
                 "text": "n_c:0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/injure/injures} r_c before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for this dangerous vagrant.",
                 "exp": 0,
                 "other_clan_rep": 0,
-                "patrol_art": "gen_battle_warrior_loner",
+                "art": "gen_battle_warrior_loner",
                 "injury": [
                     {
                         "cats": [
@@ -758,7 +758,7 @@
                 "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and only by luck does n_c:0 escape with {PRONOUN/n_c:0/poss} life.",
                 "exp": 15,
                 "other_clan_rep": 2,
-                "patrol_art": "gen_battle_warrior_loner",
+                "art": "gen_battle_warrior_loner",
                 "new_cat": [
                     [
                         "meeting",
@@ -792,7 +792,7 @@
                 "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and while the intention was merely removal from Clan territory, no one is sad to see {PRONOUN/n_c:0/object} dead.",
                 "exp": 15,
                 "other_clan_rep": 2,
-                "patrol_art": "gen_battle_warrior_loner",
+                "art": "gen_battle_warrior_loner",
                 "dead_cats": ["n_c:0"],
                 "new_cat": [
                     [
