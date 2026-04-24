@@ -5586,10 +5586,10 @@
                 "herbs": [
                     "random_herbs"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "values": [
                             "trust",
                             "comfort"
@@ -5609,10 +5609,10 @@
                 "herbs": [
                     "random_herbs"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "values": [
                             "trust",
                             "comfort"
@@ -5638,10 +5638,10 @@
                 "herbs": [
                     "random_herbs"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["s_c"],
-                        "cat_from": ["app2"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["app2"],
                         "values": [
                             "like",
                             "respect"
@@ -5670,10 +5670,10 @@
                 "herbs": [
                     "random_herbs"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "values": [
                             "trust",
                             "comfort"
@@ -5692,10 +5692,10 @@
             {
                 "text": "p_l hesitates. Maybe {PRONOUN/p_l/subject} {VERB/p_l/have/has} time to gather herbs <i>and</i> satisfy app2's curiosity? p_l leads {PRONOUN/app2/object} quickly to a sheltered copse where the yew grows. Before app2 can linger, p_l hustles {PRONOUN/app2/object} away again to more fruitful patches of herbs, but their detour has already wasted too much time; c_n is expecting them back.",
                 "exp": 0,
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app2"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": [
                             "trust"
@@ -5718,10 +5718,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app2"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": [
                             "trust"
@@ -5744,10 +5744,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["p_l"],
-                        "cat_from": ["app2"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app2"],
                         "mutual": true,
                         "values": [
                             "trust"
@@ -5770,10 +5770,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5798,10 +5798,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5831,10 +5831,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like"
@@ -5858,10 +5858,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5888,10 +5888,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "trust",
@@ -5923,10 +5923,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "like",
@@ -5949,10 +5949,10 @@
                 "can_have_stat": [
                     "r_c"
                 ],
-                "relationship": [
+                "relationships": [
                     {
-                        "cat_to": ["app2"],
-                        "cat_from": ["p_l"],
+                        "cats_to": ["app2"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -6248,7 +6248,7 @@
                 ],
                 "history_text": {
                     "death": "m_c died after being bitten by a snake on patrol.",
-                    "scars": "m_c was scarred after being bitten by a snake on patrol"
+                    "scar": "m_c was scarred after being bitten by a snake on patrol"
                 },
                 "relationships": [
                     {
@@ -6323,7 +6323,7 @@
                 ],
                 "history_text": {
                     "death": "m_c died from a snake bite while gathering herbs.",
-                    "scars": "m_c was scarred after being bitten by a snake on patrol"
+                    "scar": "m_c was scarred after being bitten by a snake on patrol"
                 },
                 "relationships": [
                     {

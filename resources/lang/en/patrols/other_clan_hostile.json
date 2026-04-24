@@ -227,6 +227,605 @@
         ]
     },
     {
+        "patrol_id": "gen_bord_hostile_otherclanexile1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [],
+        "patrol_art": "gen_gen_newcat_hostile",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [
+                2,
+                6
+            ]
+        },
+        "frequency": 2,
+        "intro_text": "A o_c_n scent is found clearly crossing the border. The patrol tracks it to its source, expecting a foolhardy young provocateur, and are instead surprised by their rival's most recent exile.",
+        "decline_text": "The patrol decides not to confront the cat.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is cautious, but n_c:0’s exile was controversial, and information can make the difference between life and death. n_c:0 is ultimately brought back to camp.",
+                "exp": 20,
+                "art": "gen_speaking_cat_outsider",
+                "new_cat": [
+                    [
+                        "backstory:disgraced1,disgraced2,disgraced3"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to was part of the patrol that allowed n_c:0 into c_n."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "clan", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "values": ["trust", "comfort"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from is uncomfortable with the idea of living with cat_to, a o_c_n exile."
+                        }
+                    }
+                ],
+                "other_clan_rep": -3,
+                "frequency": 4
+            },
+            {
+                "text": "It turns out {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} actually innocent. At least that’s what n_c:0 feverishly insists, as {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join c_n in exchange for o_c_n secrets. The patrol is unnerved by n_c:0's wild-eyed expression, but it seems like vengeance against o_c_n is {PRONOUN/n_c:0/poss} only motive, and o_c_n is a fierce enemy. n_c:0 is brought back to camp.",
+                "exp": 20,
+                "art": "gen_speaking_cat_outsider",
+                "new_cat": [
+                    [
+                        "backstory:disgraced1,disgraced2,disgraced3"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to was part of the patrol that allowed n_c:0 into c_n."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "clan","high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "values": ["trust", "comfort"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from is uncomfortable with the idea of living alongside cat_to, a o_c_n exile."
+                        }
+                    }
+                ],
+                "other_clan_rep": -3,
+                "frequency": 4
+            },
+            {
+                "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The things n_c:0 did were monstrous, but the patrol is eager to both capitalize on an opportunity for information and spite their hated enemy. With the caveat of a constant guard, n_c:0 is brought back to camp.",
+                "exp": 20,
+                "art": "gen_speaking_cat_outsider",
+                "new_cat": [
+                    [
+                        "backstory:disgraced1,disgraced3"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to was part of the patrol that allowed n_c:0 into c_n."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "clan", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "values": ["trust", "comfort"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from is uncomfortable with the idea of living alongside cat_to, a despised o_c_n exile."
+                        }
+                    }
+                ],
+                "other_clan_rep": -5,
+                "frequency": 4
+            },
+            {
+                "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is appalled: {VERB/n_c:0/do/does} {PRONOUN/n_c:0/subject} really think c_n would let such a monstrous cat into the camp they sleep in, for a little o_c_n hearsay? n_c:0 curses every cat in the patrol as {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} chased from Clan territory.",
+                "exp": 10,
+                "art": "gen_speaking_cat_outsider",
+                "new_cat": [
+                    [
+                        "meeting",
+                        "former clancat"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from cursed cat_to for not letting {PRONOUN/cat_from/object} into c_n.",
+                            "cats_to": "cat_from cursed cat_to for not letting {PRONOUN/cat_from/object} into c_n."
+                        }
+                    }
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "text": "n_c:0 offers o_c_n secrets in exchange for a place in c_n. With how unstable their relations have been lately, those secrets could be crucial — which is exactly why c_n won’t escalate the situation by sheltering a o_c_n exile. n_c:0 is chased far from the territory.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "former clancat"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to chased cat_from from the territory after {PRONOUN/n_c:0/subject} asked to join c_n."
+                        }
+                    }
+                ],
+                "other_clan_rep": 2,
+                "frequency": 4
+            },
+            {
+                "text": "When the patrol confronts n_c:0, they’re shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn’t deserve banishment. Cautious but sympathetic — how horrible could o_c_n be, to exile kits? — p_l escorts n_c:0 from Clan territory while the others bring the litter to their new home.",
+                "exp": 15,
+                "new_cat": [
+                    [
+                        "age:has_kits",
+                        "meeting",
+                        "former clancat"
+                    ],
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:abandoned3"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to was part of the patrol that brought n_c:0's kits into c_n."
+                        }
+                    }
+                ],
+                "art": "gen_cat_with_kit_loner",
+                "other_clan_rep": -3,
+                "frequency": 2
+            },
+            {
+                "text": "When the patrol confronts n_c:0, they’re shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn’t deserve banishment. n_c:0’s exile was already controversial, p_l thinks, and the kits are innocent. Perhaps c_n could accept n_c:0... if {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} willing to divulge a few of {PRONOUN/n_c:0/poss} former Clan’s secrets.",
+                "exp": 20,
+                "new_cat": [
+                    [
+                        "backstory:disgraced1,disgraced2,disgraced3",
+                        "age:has_kits"
+                    ],
+                    [
+                        "litter",
+                        "parent:0",
+                        "status:kitten",
+                        "backstory:outsider_roots2"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to was part of the patrol that brought n_c:0 and {PRONOUN/n_c:0/poss} kits into c_n."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "clan", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "values": ["trust", "comfort"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from is uncomfortable with the idea of living alongside cat_to, a o_c_n exile."
+                        }
+                    }
+                ],
+                "art": "gen_cat_with_kit_loner",
+                "other_clan_rep": -3,
+                "frequency": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "n_c:0, holding a mouse, bolts at sight of the patrol. c_n hopes {PRONOUN/n_c:0/poss} trespassing was just for prey...",
+                "exp": 0,
+                "other_clan_rep": 0,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "former clancat"
+                    ]
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "n_c:0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/injure/injures} r_c before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for this dangerous vagrant.",
+                "exp": 0,
+                "other_clan_rep": 0,
+                "art": "gen_battle_warrior_loner",
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ]
+                    }
+                ],
+                "new_cat": [
+                    [
+                        "meeting",
+                        "former clancat"
+                    ]
+                ],
+                 "relationships": [
+                    {
+                        "cats_from": [
+                            "patrol", "-r_c"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to, a o_c_n exile, randomly attacked cat_from's patrol while screaming nonsensically about {PRONOUN/cat_to/poss} innocence."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_to, a o_c_n exile, randomly attacked and injured cat_from patrol while screaming nonsensically about {PRONOUN/cat_to/poss} innocence."
+                        }
+                    }
+                ],
+                "frequency": 3
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. But when p_l begins the attack, n_c:0 sweeps {PRONOUN/p_l/poss} legs out from under {PRONOUN/p_l/object} so swiftly and smoothly p_l and {PRONOUN/p_l/poss} Clanmates are too stunned to retaliate until n_c:0 is cackling far, far away.",
+                "exp": 0,
+                "frequency": 4,
+                "other_clan_rep": 0,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "former clancat"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_to tried attacking cat_from for trespassing on c_n territory, only to be defeated humiliatingly.",
+                            "cats_to": "cat_to tried attacking cat_from for trespassing on c_n territory, only to be defeated humiliatingly."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from is disgusted by the crimes cat_from was exiled from o_c_n for."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from watched n_c:0 humiliatingly defeat cat_to on patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. But when p_l begins the attack, n_c:0 proves a formidable enemy; {PRONOUN/n_c:0/subject} {VERB/n_c:0/cackle/cackles} as {PRONOUN/n_c:0/subject} {VERB/n_c:0/dash/dashes} away, a bloody p_l's concerned Clanmates still helping {PRONOUN/p_l/poss} to {PRONOUN/p_l/poss} feet.",
+                "exp": 0,
+                "frequency": 4,
+                "other_clan_rep": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "battle_injury"
+                        ]
+                    }
+                ],
+                "new_cat": [
+                    [
+                        "meeting",
+                        "former clancat"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_to tried attacking cat_from for trespassing on c_n territory, only to be easily defeated.",
+                            "cats_to": "cat_to tried attacking cat_from for trespassing on c_n territory, only to be easily defeated."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from is disgusted by the crimes cat_from was exiled from o_c_n for."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from watched n_c:0 easily defeat cat_to on patrol."
+                        }
+                    }
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and only by luck does n_c:0 escape with {PRONOUN/n_c:0/poss} life.",
+                "exp": 15,
+                "other_clan_rep": 2,
+                "art": "gen_battle_warrior_loner",
+                "new_cat": [
+                    [
+                        "meeting",
+                        "former clancat"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory.",
+                            "cats_to": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and while the intention was merely removal from Clan territory, no one is sad to see {PRONOUN/n_c:0/object} dead.",
+                "exp": 15,
+                "other_clan_rep": 2,
+                "art": "gen_battle_warrior_loner",
+                "dead_cats": ["n_c:0"],
+                "new_cat": [
+                    [
+                        "meeting",
+                        "former clancat"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack and kill {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory.",
+                            "cats_to": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack and kill {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory."
+                        }
+                    }
+                ],
+                "frequency": 3
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_border_romeo_and_juliet",
         "biome": [
             "any"
@@ -724,9 +1323,6 @@
                 ],
                 "other_clan_rep": -7,
                 "history_text": {
-                    "cats": [
-                        "p_l"
-                    ],
                     "death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                 },
                 "relationships": [
@@ -887,9 +1483,6 @@
                 ],
                 "other_clan_rep": -7,
                 "history_text": {
-                    "cats": [
-                        "n_c:0"
-                    ],
                     "death": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                 },
                 "relationships": [

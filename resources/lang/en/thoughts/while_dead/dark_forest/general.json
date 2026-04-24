@@ -82,7 +82,7 @@
             "Wonders if there's anyone here {PRONOUN/m_c/subject} can actually trust",
             "Tried crossing the border into StarClan to no avail"
         ],
-        "main_trait_status": [
+        "main_trait_constraint": [
             "careful",
             "compassionate",
             "loving",

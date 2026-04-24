@@ -1074,13 +1074,13 @@
                 "text": "p_l doesn't care about kittypet drama. {PRONOUN/p_l/subject/CAP} {VERB/p_l/interrupt/interrupts} and {VERB/p_l/tell/tells} the kittypets to get lost. One kittypet doesn't appreciate p_l's tone and takes a swipe at {PRONOUN/p_l/object}. r_c jumps in to help a humiliated p_l drive off the kittypets.",
                 "exp": 20,
                 "outsider_rep": -3,
-                "injuries": [
+                "injury": [
                     {
                         "cats": [
                             "p_l"
                         ],
-                        "injury": [
-                            "cat_bite"
+                        "injuries": [
+                            "cat bite"
                         ],
                         "scars": [
                             "CATBITETWO"

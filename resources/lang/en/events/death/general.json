@@ -729,9 +729,10 @@
     {
         "event_id": "gen_death_snake_any2",
         "location": [
-            "any"
+           "any"
         ],
         "season": [
+            "any",
             "-leaf-bare"
         ],
         "frequency": 3,
@@ -7944,9 +7945,7 @@
         "event_text": "A warning from StarClan gave m_c enough knowledge to survive r_c's attack. r_c could not say the same.",
         "m_c": {
             "status": [
-                "leader",
-                "deputy",
-                "warrior"
+                "leader"
             ],
             "skill": [
                 "OMEN,1",
