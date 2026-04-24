@@ -1848,7 +1848,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to worked together to drive off a trespassing rogue."
+                        }
                     }
                 ],
                 "frequency": 4
