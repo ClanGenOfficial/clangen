@@ -7944,9 +7944,7 @@
         "event_text": "A warning from StarClan gave m_c enough knowledge to survive r_c's attack. r_c could not say the same.",
         "m_c": {
             "status": [
-                "leader",
-                "deputy",
-                "warrior"
+                "leader"
             ],
             "skill": [
                 "OMEN,1",

@@ -5154,14 +5154,17 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust",
                             "romance",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from is flattered p_l recognized {PRONOUN/r_c/poss} talent."
+                        }
                     }
                 ],
                 "art": "gen_happy_cat",
