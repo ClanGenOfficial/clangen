@@ -12337,8 +12337,8 @@
             "cats_from": ["m_c"],
             "cats_to": ["r_c"],
             "mutual": true,
-            "values": [],
-            "amount": 0,
+            "values": ["trust", "respect", "like"],
+            "amount": 5,
             "log": {
                 "cats_from": "cat_from and cat_to's bond is stronger now after their victory against o_c_n."
             }
