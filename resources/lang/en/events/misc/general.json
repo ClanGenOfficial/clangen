@@ -12297,7 +12297,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "m_c is confident that o_c_n's leader lost a life during the last battle",
+    "event_text": "m_c is confident that o_c_n's leader lost a life during the last battle.",
     "m_c": {
         "status": ["leader", "deputy"]
     },
