@@ -8044,7 +8044,10 @@
                             "romance"
                         ],
                         "amount": 10,
-                        "log": "s_c expressed {PRONOUN/s_c/poss} devotion to {PRONOUN/s_c/poss} mates while training together."
+                        "log": 
+                            {
+                            "cats_from": "s_c expressed {PRONOUN/s_c/poss} devotion to {PRONOUN/s_c/poss} mates while training together."
+                            }
                     }
                 ],
                 "frequency": 4
