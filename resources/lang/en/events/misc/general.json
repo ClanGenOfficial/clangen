@@ -12185,7 +12185,7 @@
         }
     ]
     },
-      {
+    {
     "event_id": "gen_misc_guardasleep",
     "location": [
       "any"
@@ -12249,5 +12249,110 @@
                 "adjust": "reduce_half"
             }
         ]
+    },
+    {
+        "event_id": "gen_misc_war_pitcaught",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "frequency": 1,
+        "event_text": "c_n catches o_c_n digging a pit trap.",
+        "other_clan": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": -1
+        }
+    },
+      {
+    "event_id": "gen_misc_war_skirmishvictory",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 4,
+    "event_text": "c_n drove off o_c_n in their most recent skirmish with no notable injuries.",
+    "other_clan": {
+        "current_rep": ["any"],
+        "changed": -1
     }
+},
+      {
+    "event_id": "multi_misc_war_ambush",
+    "location": ["forest", "wetlands"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 3,
+    "event_text": "c_n uses the dense foliage to their favor, lurking in the undergrowth to ambush o_c_n and scatter their scouting patrol.",
+    "other_clan": {
+        "current_rep": ["any"],
+        "changed": -1
+    }
+},
+      {
+    "event_id": "gen_misc_war_oncleaddeath",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "m_c is confident that o_c_n's leader lost a life during the last battle",
+    "m_c": {
+        "status": ["leader", "deputy"]
+    },
+    "other_clan": {
+        "current_rep": ["any"],
+        "changed": -1
+    }
+},
+    {
+    "event_id": "gen_misc_war_skirmishvictory2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 4,
+    "event_text": "m_c and r_c return to camp, worn but triumphant after their victory against o_c_n.",
+
+    "m_c": {
+        "status": ["leader", "deputy", "warrior"]
+    },
+
+    "r_c": {
+        "status": ["leader", "deputy", "warrior", "apprentice"]
+    },
+
+    "other_clan": {
+        "current_rep": ["any"],
+        "changed": -1
+    },
+
+    "injury": [
+        {
+            "cats": ["m_c", "r_c"],
+            "injuries": ["minor_injury"],
+            "scars": []
+        }
+    ],
+
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": true,
+            "values": [],
+            "amount": 0,
+            "log": {
+                "cats_from": "cat_from and cat_to's bond is stronger now after their victory against o_c_n."
+            }
+        },
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["r_c", "m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 4,
+            "log": {
+                "cats_from": "cat_from is glad they can count on cat_to to protect the clan during wartime."
+            }
+        }
+    ]
+}
 ]
