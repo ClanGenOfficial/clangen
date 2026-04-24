@@ -8368,7 +8368,7 @@
             {
                 "text": "p_l tells the patrol to practice their hunting crouches, but no one takes that suggestion well. They're fully trained warriors, not apprentices, and they expected more challenging exercises from p_l.",
                 "exp": 0,
-                "relationship": [
+                "relationships": [
                     {
                         "cats_from": ["patrol"],
                         "cats_to": ["p_l"],
@@ -8385,7 +8385,7 @@
             {
                 "text": "p_l and r_c disagree about what the patrol should focus on, and the training session is sidetracked by their bickering.",
                 "exp": 0,
-                "relationship": [
+                "relationships": [
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["p_l"],
@@ -8403,7 +8403,7 @@
                 "text": "Whether s_c is actually showing off or {PRONOUN/s_c/poss} talent just makes it seem like {PRONOUN/s_c/subject} {VERB/s_c/are/is}, the others have no patience for it and end the training session early.",
                 "exp": 0,
                 "stat_skill": ["HUNTER,1"],
-                "relationship": [
+                "relationships": [
                     {
                         "cats_from": ["patrol"],
                         "cats_to": ["s_c"],
@@ -8791,7 +8791,7 @@
             {
                 "text": "p_l tells r_c to practice {PRONOUN/r_c/poss} hunting crouch, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} take that suggestion well. r_c thinks p_l is casting aspersions on {PRONOUN/r_c/poss} hunting ability by suggesting such a basic exercise, and {PRONOUN/r_c/subject} {VERB/r_c/end/ends} the session early.",
                 "exp": 0,
-                "relationship": [
+                "relationships": [
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["p_l"],
@@ -8808,7 +8808,7 @@
             {
                 "text": "p_l and r_c disagree about what the patrol should focus on, and the training session is sidetracked by their bickering.",
                 "exp": 0,
-                "relationship": [
+                "relationships": [
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["p_l"],
@@ -8827,7 +8827,7 @@
                 "exp": 0,
                 "stat_skill": ["HUNTER,1"],
                 "can_have_stat": ["p_l"],
-                "relationship": [
+                "relationships": [
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["s_c"],
