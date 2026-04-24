@@ -12262,7 +12262,8 @@
                 "any"
             ],
             "changed": -1
-        }
+        },
+        "exclude_involved": ["m_c"]
     },
       {
     "event_id": "gen_misc_war_skirmishvictory",
@@ -12274,7 +12275,8 @@
     "other_clan": {
         "current_rep": ["any"],
         "changed": -1
-    }
+    },
+     "exclude_involved": ["m_c"]
 },
       {
     "event_id": "multi_misc_war_ambush",
@@ -12286,7 +12288,8 @@
     "other_clan": {
         "current_rep": ["any"],
         "changed": -1
-    }
+    },
+     "exclude_involved": ["m_c"]
 },
       {
     "event_id": "gen_misc_war_oncleaddeath",
