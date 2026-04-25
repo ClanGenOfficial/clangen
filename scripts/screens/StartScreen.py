@@ -134,7 +134,7 @@ class StartScreen(Screens):
         for btn in self.social_buttons:
             self.social_buttons[btn].kill()
 
-    def reload_error(self):
+    def reload_errors(self):
         if switch_get_value(Switch.error_message):
             self.continue_button.disable()
             error_text = "screens.start.error_text"
@@ -423,7 +423,7 @@ class StartScreen(Screens):
         else:
             self.switch_clan_button.disable()
 
-        self.reload_error()
+        self.reload_errors()
 
         if game.clan is not None:
             key_copy = tuple(Cat.all_cats.keys())
