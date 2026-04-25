@@ -12284,7 +12284,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 3,
-    "event_text": "c_n uses the dense foliage to their favor, lurking in the undergrowth to ambush o_c_n and scatter their scouting patrol.",
+    "event_text": "c_n uses the dense foliage to their favor by ambushing o_c_n from the undergrowth and forcing their scouting patrol to scatter.",
     "other_clan": {
         "current_rep": ["any"],
         "changed": -1
@@ -12292,7 +12292,7 @@
      "exclude_involved": ["m_c"]
 },
       {
-    "event_id": "gen_misc_war_oncleaddeath",
+    "event_id": "gen_misc_war_ocnleaddeath",
     "location": ["any"],
     "season": ["any"],
     "sub_type": ["war"],
@@ -12305,57 +12305,5 @@
         "current_rep": ["any"],
         "changed": -1
     }
-},
-    {
-    "event_id": "gen_misc_war_skirmishvictory2",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["war"],
-    "frequency": 4,
-    "event_text": "m_c and r_c return to camp, worn but triumphant after their victory against o_c_n.",
-
-    "m_c": {
-        "status": ["leader", "deputy", "warrior"]
-    },
-
-    "r_c": {
-        "status": ["leader", "deputy", "warrior", "apprentice"]
-    },
-
-    "other_clan": {
-        "current_rep": ["any"],
-        "changed": -1
-    },
-
-    "injury": [
-        {
-            "cats": ["m_c", "r_c"],
-            "injuries": ["minor_injury"],
-            "scars": []
-        }
-    ],
-
-    "relationships": [
-        {
-            "cats_from": ["m_c"],
-            "cats_to": ["r_c"],
-            "mutual": true,
-            "values": ["trust", "respect", "like"],
-            "amount": 4,
-            "log": {
-                "cats_from": "cat_from and cat_to's bond is stronger now after a recent victory during war."
-            }
-        },
-        {
-            "cats_from": ["clan"],
-            "cats_to": ["r_c", "m_c"],
-            "mutual": false,
-            "values": ["trust", "respect"],
-            "amount": 4,
-            "log": {
-                "cats_from": "cat_from is glad they can count on cat_to to protect the clan during wartime."
-            }
-        }
-    ]
 }
 ]

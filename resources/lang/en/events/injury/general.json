@@ -7693,5 +7693,57 @@
                 ]
             }
         ]
-    }
+    },
+        {
+    "event_id": "gen_misc_war_skirmishvictory2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 4,
+    "event_text": "m_c and r_c return to camp, worn but triumphant after their victory against o_c_n.",
+
+    "m_c": {
+        "status": ["leader", "deputy", "warrior"]
+    },
+
+    "r_c": {
+        "status": ["leader", "deputy", "warrior", "apprentice"]
+    },
+
+    "other_clan": {
+        "current_rep": ["any"],
+        "changed": -1
+    },
+
+    "injury": [
+        {
+            "cats": ["m_c", "r_c"],
+            "injuries": ["minor_injury"],
+            "scars": []
+        }
+    ],
+
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": true,
+            "values": ["trust", "respect", "like"],
+            "amount": 4,
+            "log": {
+                "cats_from": "cat_from and cat_to's bond strengthened after a victory during war."
+            }
+        },
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["r_c", "m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 4,
+            "log": {
+                "cats_from": "cat_from is glad {PRONOUN/cat_from/subject} can count on cat_to to protect the Clan during wartime."
+            }
+        }
+    ]
+}
 ]
