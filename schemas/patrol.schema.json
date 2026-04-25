@@ -243,7 +243,7 @@
               "$ref": "#/$defs/Cat"
             }
           ],
-          "description": "This cat in the current event will be m_c in the future event.",
+          "description": "m_c in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
           "title": "Main Cat"
         },
         "mur_c": {
@@ -255,7 +255,7 @@
               "$ref": "#/$defs/Cat"
             }
           ],
-          "description": "This cat in the current event will be the murdered cat in the future event.",
+          "description": "The murdered cat in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
           "title": "Murdered Cat"
         },
         "r_c": {
@@ -267,7 +267,7 @@
               "$ref": "#/$defs/Cat"
             }
           ],
-          "description": "Parameters for a new random cat, chosen from the currently living cats.",
+          "description": "r_c in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
           "title": "Random Cat"
         }
       },
