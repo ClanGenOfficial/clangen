@@ -136,6 +136,7 @@ class StartScreen(Screens):
 
     def reload_error(self):
         if switch_get_value(Switch.error_message):
+            self.continue_button.disable()
             error_text = "screens.start.error_text"
             traceback_text = ""
             if switch_get_value(Switch.traceback):
@@ -168,6 +169,19 @@ class StartScreen(Screens):
             self.closebtn.show()
 
             self.error_open = True
+        else:
+            self.continue_button.enable()
+            self.error_box.hide()
+            self.error_label.hide()
+            self.error_gethelp.hide()
+            self.open_data_directory_button.hide()
+
+            if get_version_info().is_sandboxed:
+                self.open_data_directory_button.hide()
+
+            self.closebtn.hide()
+
+            self.error_open = False
 
     def screen_switches(self):
         """
