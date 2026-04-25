@@ -64,17 +64,17 @@ class FutureEventInvolvedCats(BaseModel):
     m_c: Union[FutureCat, Cat, MISSING] = Field(
         MISSING,
         title="Main Cat",
-        description="This cat in the current event will be m_c in the future event.",
+        description="m_c in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
     )
     mur_c: Union[FutureCat, Cat, MISSING] = Field(
         MISSING,
         title="Murdered Cat",
-        description="This cat in the current event will be the murdered cat in the future event.",
+        description="The murdered cat in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
     )
     r_c: Union[FutureCat, Cat, MISSING] = Field(
         MISSING,
         title="Random Cat",
-        description="Parameters for a new random cat, chosen from the currently living cats.",
+        description="r_c in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
     )
 
 
