@@ -15,7 +15,7 @@ class HistoryText(BaseModel):
     )
     death: Union[str, MISSING] = Field(
         MISSING,
-        description="Death history text. Whole sentence. Must be included if the cat is dead or injured.",
+        description="Death history text. Whole sentence. Must be included if the cat is dead or injured. If the cat is being injured, write this as though they have died from the injuries.",
     )
     scar: Union[str, MISSING] = Field(
         MISSING,
