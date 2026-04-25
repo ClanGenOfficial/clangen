@@ -962,9 +962,6 @@ def one_moon_outside_cat(cat, other_clan_cats: list = None):
 
     handle_outside_EX(cat)
 
-    cat.skills.progress_skill(cat)
-    Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
-
     # handling the rank changes for Other Clan cats
     # this is SUPER rudimentary rn, really just a temp patch to handle our current little edge-cases
     if cat.status.is_other_clancat:
@@ -988,6 +985,10 @@ def one_moon_outside_cat(cat, other_clan_cats: list = None):
             # exclude the roles that don't really retire
             if cat.status.rank not in (CatRank.LEADER, CatRank.MEDICINE_CAT):
                 cat.status._change_rank(CatRank.ELDER)
+
+    # skill progression needs to be after rank progression
+    cat.skills.progress_skill(cat)
+    Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
 
     if not cat.dead:
         OutsiderEvents.killing_outsiders(cat)
