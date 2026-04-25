@@ -984,7 +984,7 @@ def one_moon_outside_cat(cat, other_clan_cats: list = None):
             if cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
                 cat.status._change_rank(CatRank.MEDIATOR)
         # cat to elder
-        if cat.moon >= cat_class.age_moons[CatAge.SENIOR][0]:
+        if cat.moons >= cat_class.age_moons[CatAge.SENIOR][0]:
             # exclude the roles that don't really retire
             if cat.status.rank not in (CatRank.LEADER, CatRank.MEDICINE_CAT):
                 cat.status._change_rank(CatRank.ELDER)
