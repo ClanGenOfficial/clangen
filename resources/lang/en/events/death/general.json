@@ -1680,7 +1680,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c fell into a pit trap set by o_c_n's warriors.",
         "m_c": {
             "age": [

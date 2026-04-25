@@ -7222,7 +7222,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_mangledtail_war_anyapprenticehostile1",
+        "event_id": "gen_injury_war_battleinjury1",
         "location": [
             "any"
         ],
@@ -7279,7 +7279,7 @@
         }
     },
     {
-        "event_id": "gen_injury_mangledleg_anymultistatusnotcareful1",
+        "event_id": "gen_injury_war_pittrap",
         "location": [
             "any"
         ],
@@ -7557,7 +7557,7 @@
         ],
         "other_clan": {
             "current_rep": ["hostile"],
-            "changed": -1
+            "changed": 1
         }
     },
     {
@@ -7600,7 +7600,7 @@
         ],
         "other_clan": {
             "current_rep": ["hostile"],
-            "changed": -2
+            "changed": -1
         }
     },
     {

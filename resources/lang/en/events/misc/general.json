@@ -10057,7 +10057,7 @@
         }
     },
     {
-        "event_id": "gen_misc_war_kill",
+        "event_id": "gen_misc_war_kill1",
         "location": [
             "any"
         ],
@@ -10096,7 +10096,7 @@
         }
     },
     {
-        "event_id": "gen_misc_war_kill",
+        "event_id": "gen_misc_war_kill2",
         "location": [
             "any"
         ],
@@ -10571,7 +10571,9 @@
         "m_c": {
             "status": [
                 "mediator",
-                "mediator apprentice"
+                "mediator apprentice",
+                "deputy",
+                "elder"
             ]
         },
         "r_c": {
@@ -10881,7 +10883,11 @@
             "trait": [
                 "insecure",
                 "lonesome",
-                "nervous"
+                "nervous",
+                "wise",
+                "thoughtful",
+                "sincere",
+                "responsible"
             ]
         },
         "r_c": {
@@ -10890,8 +10896,8 @@
             ],
             "skill": [
                 "INSIGHTFUL,1",
-                "TEACHER,3",
-                "CLEVER,3",
+                "TEACHER,1",
+                "CLEVER,2",
                 "CAMP,3"
             ]
         },
@@ -11095,7 +11101,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["clan", "high_stable"],
+                "cats_from": ["clan", "high_stable", "high_lawful"],
                 "cats_to": ["m_c"],
                 "values": ["respect"],
                 "amount": -20,
