@@ -3,6 +3,7 @@ from random import choice, randint
 from typing import Dict, List, Union, Optional
 
 import i18n
+import math
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import (
@@ -1091,7 +1092,8 @@ class Pregnancy_Events:
                     "ext_relative_modifier"
                 ]
                 rel_reflection = ext_relative_modifier * len(parents)
-                y = random.randrange(-10, 10)
+                variation_range = math.ceil(20 / len(parents))
+                y = random.randrange(-variation_range, variation_range)
 
                 # this finds what the relative's relationship is toward each parent and applies a reflection of that
                 # relationship to the kit. reflection values will be divided by 4 by default and then modified
