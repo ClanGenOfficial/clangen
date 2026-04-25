@@ -1087,7 +1087,10 @@ class Pregnancy_Events:
 
         for kit in all_kitten:
             for c in all_relatives:
-                rel_reflection = constants.CONFIG["new_cat"]["ext_relative_modifier"]
+                ext_relative_modifier = constants.CONFIG["new_cat"][
+                    "ext_relative_modifier"
+                ]
+                rel_reflection = ext_relative_modifier * len(parents)
                 y = random.randrange(-10, 10)
 
                 # this finds what the relative's relationship is toward each parent and applies a reflection of that
