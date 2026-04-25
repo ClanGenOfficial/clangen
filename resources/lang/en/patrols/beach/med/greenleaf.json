@@ -60,7 +60,7 @@
     ],
     "history_text": {
         "death": "p_l died from heat exhaustion after searching for lungwort in the greenleaf heat.",
-        "scars": "p_l was scarred on patrol"
+        "scar": "p_l was scarred on patrol"
     },
     "art": "fst_hunt_heat_solo_medcat"
 },

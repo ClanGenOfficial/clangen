@@ -2596,6 +2596,7 @@
                 "text": "s_c bounds up to get a closer look at what the squirrel is doing and inadvertently scares it off. p_l is none too pleased.",
                 "exp": 0,
                 "frequency": 3,
+                "can_have_stat": ["r_c"],
                 "stat_trait": ["-calm", "-careful", "-wise", "-thoughtful", "-sneaky", "-cunning"],
                 "relationships": [
                     {
