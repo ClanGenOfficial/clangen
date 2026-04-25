@@ -185,6 +185,7 @@ while 1:
 
     if switch_get_value(Switch.switch_clan):
         load_game()
+        game.all_screens[GameScreen.START].reload_error()
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
