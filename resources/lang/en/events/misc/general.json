@@ -12318,5 +12318,78 @@
         "current_rep": ["any"],
         "changed": -1
     }
+},
+{
+  "event_id": "gen_misc_guardsneakout",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "frequency": 3,
+  "event_text": "m_c caught r_c trying to sneak out of camp while on guard duty.",
+  "m_c": {
+    "status": [
+      "warrior",
+      "deputy"
+    ],
+    "relationship_status": [],
+    "skill": [],
+    "trait": [
+      "-oblivious"
+    ],
+    "backstory": [],
+    "dies": false
+  },
+  "r_c": {
+    "status": [
+      "apprentice",
+      "leader",
+      "warrior",
+      "elder"
+    ],
+    "relationship_status": [],
+    "skill": [],
+    "trait": [
+      "-sneaky"
+    ],
+    "backstory": [],
+    "dies": false
+  },
+  "relationships": [
+    {
+      "cats_from": [
+        "m_c"
+      ],
+      "cats_to": [
+        "r_c"
+      ],
+      "mutual": false,
+      "values": [
+        "trust"
+      ],
+      "amount": -10,
+      "log": {
+        "cats_from": "cat_from became suspicious of cat_to after catching {PRONOUN/cat_to/object} trying to sneak out of camp."
+      }
+    },
+    {
+      "cats_from": [
+        "r_c"
+      ],
+      "cats_to": [
+        "m_c"
+      ],
+      "mutual": false,
+      "values": [
+        "like"
+      ],
+      "amount": -10,
+      "log": {
+        "cats_from": "cat_from was annoyed that cat_to caught {PRONOUN/cat_from/object} trying to sneak out of camp."
+      }
+    }
+  ]
 }
 ]
