@@ -10,7 +10,6 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 !!! tip
     For more information on how specific herbs are used in-game, refer to the files located [HERE.](https://github.com/ClanGenOfficial/clangen/tree/development/resources/dicts/conditions)
 
-# Herbs
 ## Betony
 
 <div class="grid" markdown>
@@ -32,6 +31,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Ingested by cat
 </div>
 
+***
 
 ## Blackberry
 
@@ -51,6 +51,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Leaves are crushed into a poultice, then applied to the affected area
 </div>
 
+***
 
 ## Burdock
 
@@ -73,6 +74,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Root is cleaned of soil, then chewed into a pulp and applied topically
 </div>
 
+***
 
 ## Catmint
 
@@ -94,6 +96,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Ingested by cat
 </div>
 
+***
 
 ## Cobwebs
 
@@ -115,6 +118,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Pressed onto or wrapped around affected areas
 </div>
 
+***
 
 ## Daisy
 
@@ -136,6 +140,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Chewed into a paste, then applied topically
 </div>
 
+***
 
 ## Dandelion
 
@@ -158,6 +163,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Leaves are chewed and ingested
 </div>
 
+***
 
 ## Elder Leaves
 
@@ -178,6 +184,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Made into a poultice and applied topically
 </div>
 
+***
 
 ## Goldenrod
 
@@ -198,6 +205,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Chewed into a poultice, then applied to the wound
 </div>
 
+***
 
 ## Horsetail
 
@@ -221,6 +229,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Chewed into a poultice, then applied to the wound
 </div>
 
+***
 
 ## Juniper
 
@@ -245,6 +254,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Typically eaten, though can be used in a poultice to relieve joint pain
 </div>
 
+***
 
 ## Lungwort
 
@@ -266,6 +276,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Ingested by cat
 </div>
 
+***
 
 ## Mallow
 
@@ -289,6 +300,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Leaves are eaten
 </div>
 
+***
 
 ## Marigold
 
@@ -312,6 +324,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Chewed into a poultice and applied to the affected area
 </div>
 
+***
 
 ## Moss
 
@@ -334,6 +347,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Used to drink fluid from
 </div>
 
+***
 
 ## Mullein
 
@@ -354,6 +368,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Leaves are chewed and eaten
 </div>
 
+***
 
 ## Oak Leaves
 
@@ -374,6 +389,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Chewed and eaten
 </div>
 
+***
 
 ## Plantain
 
@@ -397,6 +413,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Made into a poultice and applied to a cat's fur to fight external parasites
 </div>
 
+***
 
 ## Poppy
 
@@ -422,6 +439,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Not recommended for nursing queens or in large/long-term doses
 </div>
 
+***
 
 ## Ragwort
 
@@ -446,6 +464,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Ingested by cat
 </div>
 
+***
 
 ## Raspberry
 
@@ -468,6 +487,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Leaves are chewed into a pulp, then eaten
 </div>
 
+***
 
 ## Rosemary
 
@@ -491,6 +511,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Eaten by cat when used for medicinal purposes
 </div>
 
+***
 
 ## Tansy
 
@@ -515,6 +536,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - Stems are chewed
 </div>
 
+***
 
 ## Thyme
 
@@ -542,6 +564,7 @@ Herbs play an important role in ensuring the health of your Clans. Below, we hav
 - When used to treat shock or anxiety, the scent can alternatively be breathed in
 </div>
 
+***
 
 ## Wild Garlic
 
