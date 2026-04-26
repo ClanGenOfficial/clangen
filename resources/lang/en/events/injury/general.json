@@ -7488,7 +7488,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["war"],
-        "tags": [],
+        "tags": ["clan:leader"],
         "frequency": 2,
         "event_text": "lead_name sends m_c to strengthen the markings along the border with o_c_n, but o_c_n had the same idea. m_c and r_c are injured in the ensuing fight.",
         "m_c": {
