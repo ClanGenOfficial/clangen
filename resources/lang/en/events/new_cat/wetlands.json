@@ -18,7 +18,10 @@
             "cats_to": ["n_c:0"],
             "mutual": true,
             "values": ["comfort", "like"],
-            "amount": 10
+            "amount": 10,
+            "log": {
+                "cats_from": "m_c found n_c:0 as a kitten and brought {PRONOUN/n_c:0/object} into the Clan."
+            }
           }
         ],
         "outsider": {
@@ -46,13 +49,19 @@
             "cats_to": ["n_c:0"],
             "mutual": true,
             "values": ["comfort", "like"],
-            "amount": 10
+            "amount": 10,
+            "log": {
+                "cats_from": "m_c found n_c:0 as a kitten and brought {PRONOUN/n_c:0/object} into the Clan."
+            }
           },
 	  {
             "cats_from": ["clan"],
             "cats_to": ["m_c", "n_c:0"],
             "values": ["like"],
-            "amount": -5
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from wasn't pleased when m_c brought n_c:0 back to the Clan."
+            }
 	  }
 
 
