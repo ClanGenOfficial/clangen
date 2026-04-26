@@ -1300,7 +1300,8 @@
                 "age:has_kits",
                 "former clancat",
                 "meeting",
-                "new_name"
+                "new_name",
+                "backstory:stolenkit2"
             ],
             [
                 "litter",
@@ -1965,7 +1966,7 @@
     "relationships": [
         {
             "cats_from": ["clan"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": 10,
@@ -1975,7 +1976,7 @@
         },
         {
             "cats_from": ["clan", "high_aggress"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": -10,
@@ -2021,7 +2022,7 @@
     "relationships": [
         {
             "cats_from": ["clan"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": -10,
@@ -2067,7 +2068,7 @@
     "relationships": [
         {
             "cats_from": ["clan"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": 10,
@@ -2077,7 +2078,7 @@
         },
         {
             "cats_from": ["clan", "high_lawful"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": -15,

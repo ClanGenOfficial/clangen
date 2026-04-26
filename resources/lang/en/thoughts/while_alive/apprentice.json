@@ -168,12 +168,12 @@
         "thoughts": [
             "Wonders if r_c was a good apprentice"
         ],
-        "backstory_constraint": {
-            "r_c": ["clan_founder_backstories",
-                    "clanborn_backstories",
-                    "outsider_roots_backstories",
-                    "half_clan_backstories"]
-        },
+        "random_backstory_constraint": [
+            "clan_founder_backstories",
+            "clanborn_backstories",
+            "outsider_roots_backstories",
+            "half_clan_backstories"
+        ],
         "random_living_status": [
             "living"
         ],
@@ -221,14 +221,12 @@
             "Is jumpy about a particular spot in the apprentices' den r_c claimed was haunted",
             "Is listening to a story r_c heard when {PRONOUN/r_c/subject} {VERB/r_c/were/was} a kit"
         ],
-        "backstory_constraint": {
-            "r_c": [
+        "random_backstory_constraint": [
                 "clan_founder_backstories",
                 "clanborn_backstories",
                 "outsider_roots_backstories",
                 "half_clan_backstories"
-            ]
-        },
+        ],
         "random_living_status": [
             "living"
         ],

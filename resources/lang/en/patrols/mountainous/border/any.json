@@ -1381,14 +1381,17 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_stable", "low_aggress"
                         ],
                         "mutual": false,
                         "values": [
                             "trust",
                             "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to foolishly believed {PRONOUN/cat_to/self} a match for a wolf."
+                        }
                     }
                 ],
                 "frequency": 4

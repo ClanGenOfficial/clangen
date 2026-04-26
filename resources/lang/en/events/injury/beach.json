@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "r_c had to rescue m_c from drowning after the apprentice headed out to practice alone.",
+        "event_text": "r_c rescued m_c from drowning after the apprentice headed out to practice alone.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -86,7 +86,7 @@
         "event_text": "m_c's paw pads have become cracked and sore from walking through salty water.",
         "m_c": {
             "status": [
-                "apprentice"
+                "any"
             ]
         },
         "injury": [
@@ -765,8 +765,7 @@
     {
         "event_id": "bch_injury_crackedpads_any1",
         "location": [
-            "beach:camp1_camp3"
-        ],
+            "any"],
         "season": [
             "any"
         ],

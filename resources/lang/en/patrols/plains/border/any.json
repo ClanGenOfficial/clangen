@@ -2169,11 +2169,14 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "patrol", "r_c"],
-                        "cats_from": ["clan", "clan", "patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to's patrol failed to drive off a red vixen."
+                        }
                     }
                 ]
             },
@@ -2188,23 +2191,13 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["clan"],
+                        "cats_to": ["patrol", "-r_c"],
+                        "cats_from": ["clan", "high_aggress"],
                         "mutual": false,
                         "values": ["trust"],
                         "amount": -10,
                         "log": {
                             "cats_from": "cat_from heard that cat_to was unable to save r_c in a fight with a red vixen."
-                        }
-                    },
-                    {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["clan"],
-                        "mutual": false,
-                        "values": ["trust"],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "This is intended to balance the negative value associated with this cat's death. Report this text as a bug if you see it."
                         }
                     }
                 ]
@@ -2291,7 +2284,6 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "art": "gen_dirt_tunnel",
                 "text": "They don't know this tunnel — but it knows them, marked by scent and claw as one of the safe refuges in the network c_n constantly maintains and expands in their territory. Thrilled with the illicit discovery, the apprentices have a great adventure crawling in and exploring every inch.",
                 "exp": 20,
                 "art": "pln_bord_tunnel2",
@@ -2474,7 +2466,6 @@
                 "frequency": 4
             },
             {
-                "art": "gen_dirt_tunnel",
                 "text": "The apprentices huddle around the burrow entrance. It'll be okay, s_c reassures. They've had lessons on burrows and this one has no tracks at the front, so it's empty. Together, everyone plucks up just enough bravery to explore it and run home, whispering the story of what it was like that night to each other in the apprentice den.",
                 "exp": 20,
                 "art": "gen_med_warappmedapp_herbcontest",
@@ -2740,7 +2731,6 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "art": "gen_dirt_tunnel",
                 "text": "app1 pokes {PRONOUN/app1/poss} head into the shallow cave, one whisker at a time, eyes wide. Huh. Well, there's no one home, and from the look of the debris blown in by the wind, no one has been home in a while. There's also no c_n scent though. Perhaps because this is too shallow to be a refuge from predators?",
                 "exp": 20,
                 "art": "pln_bord_tunnel",
@@ -2808,7 +2798,6 @@
                 "frequency": 4
             },
             {
-                "art": "gen_dirt_tunnel",
                 "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush normally conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
                 "exp": 20,
                 "art": "pln_bord_tunnel",
@@ -2831,7 +2820,6 @@
                 "frequency": 4
             },
             {
-                "art": "gen_dirt_tunnel",
                 "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
                 "exp": 20,
                 "art": "gen_train_patrolapprenticesessionsuccess",
@@ -3072,7 +3060,6 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "art": "gen_dirt_tunnel",
                 "text": "This shallow cave smells of badger, and claw marks show recent construction efforts. p_l is fortunate that the owner isn't home, and {PRONOUN/p_l/poss} pelt bristles with unease as {PRONOUN/p_l/subject} {VERB/p_l/trot/trots} home.",
                 "exp": 20,
                 "art": "running_warrior2",
