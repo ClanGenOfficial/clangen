@@ -1311,18 +1311,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c",
-                            "r_c"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to failed to catch any rats after raiding the Rat King's lair."
+                        }
                     }
                 ],
                 "prey": [
@@ -1353,18 +1354,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c",
-                            "r_c"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": -5
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from and cat_to lost faith in each other after being wounded while raiding the Rat King's lair."
+                        }
                     }
                 ],
                 "prey": [

@@ -1022,7 +1022,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
@@ -1068,7 +1071,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
@@ -1128,11 +1134,14 @@
                             "like",
                             "romance"
                         ],
-                        "amount": 50
+                        "amount": 50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
-                            "high_lawful"
+                            "clan", "high_lawful"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1178,7 +1187,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
@@ -1237,7 +1249,10 @@
                             "like",
                             "romance"
                         ],
-                        "amount": 50
+                        "amount": 50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     }
                 ],
                 "outsider_rep": 0,
@@ -4100,7 +4115,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was grudgingly impressedy by cat_to's ferocity in a fight."
+                        }
                     },
                     {
                         "cats_to": [
@@ -4120,7 +4138,7 @@
                         }
                     }
                 ],
-                "       injury": [
+                "injury": [
                     {
                         "cats": [
                             "p_l"
@@ -4482,9 +4500,6 @@
                     "p_l"
                 ],
                 "history_text": {
-                    "cats": [
-                        "p_l"
-                    ],
                     "death": "m_c died when {PRONOUN/m_c/subject} picked a fight {PRONOUN/m_c/subject} couldn't win."
                 },
                 "outsider_rep": -1,
@@ -5400,13 +5415,13 @@
                 "text": "p_l doesn't care about kittypet drama. {PRONOUN/p_l/subject/CAP} {VERB/p_l/interrupt/interrupts} and {VERB/p_l/tell/tells} the kittypets to get lost. One kittypet doesn't appreciate p_l's tone and takes a swipe at {PRONOUN/p_l/object}. r_c jumps in to help a humiliated p_l drive off the kittypets.",
                 "exp": 20,
                 "outsider_rep": -3,
-                "injuries": [
+                "injury": [
                     {
                         "cats": [
                             "p_l"
                         ],
-                        "injury": [
-                            "cat_bite"
+                        "injuries": [
+                            "cat bite"
                         ],
                         "scars": [
                             "CATBITETWO"
@@ -7559,8 +7574,7 @@
             ]
             ],
     "art": "gen_dead_cat_ghost_EXPLICIT",
-    "art_clean": "gen_dead_cat",
-    "future_event": []
+    "art_clean": "gen_dead_cat"
 }
     ],
     "antag_success_outcomes": [
@@ -7633,7 +7647,7 @@
     ],
     "history_text": {
         "death": "m_c died from an injury sustained when r_c attacked {PRONOUN/m_c/object} by mistake.",
-        "scars": "m_c was scarred when r_c attacked {PRONOUN/m_c/object} by mistake."
+        "scar": "m_c was scarred when r_c attacked {PRONOUN/m_c/object} by mistake."
     },
     "relationships": [
         {

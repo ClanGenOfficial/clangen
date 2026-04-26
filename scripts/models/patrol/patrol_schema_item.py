@@ -3,7 +3,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Dict, List, Literal, Optional, Tuple, Union
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from pydantic_core import MISSING
 from scripts.models.common.biome import Biome
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
@@ -16,6 +16,7 @@ from scripts.models.patrol.patrol_type import PatrolType
 
 
 class PatrolSchemaItem(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     patrol_id: str = Field(
         ..., description="Unique string used to identify the patrol."
     )
@@ -59,7 +60,7 @@ class PatrolSchemaItem(BaseModel):
         ...,
         description="Controls chance to succeed. Higher number is higher chance to succeed.",
     )
-    relationship_status: Union[List[RelationshipStatus], MISSING] = Field(
+    relationship_constraint: Union[List[RelationshipStatus], MISSING] = Field(
         MISSING,
         description="Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
     )
