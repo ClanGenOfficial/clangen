@@ -70,6 +70,9 @@
     "season": [
       "any"
     ],
+    "location": [
+      "any"
+    ],
     "sub_type": [
       "ceremony",
       "accessory"
@@ -182,7 +185,7 @@
   {
     "event_id": "fst_misc_war_bolster1",
     "location": [
-      "forest_camp1"
+      "forest:camp1"
     ],
     "season": [
       "any"
@@ -411,7 +414,7 @@
       {
         "cats_from": [
           "clan",
-          "high stable"
+          "high_stable"
         ],
         "cats_to": [
           "m_c",

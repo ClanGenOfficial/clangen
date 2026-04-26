@@ -251,10 +251,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to weren't able to find any prey while hunting together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -272,10 +274,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to tried to cover their scent on a hunting patrol, but it backfired and scared off the prey."
+                        }
                     }
                 ],
                 "frequency": 4

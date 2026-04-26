@@ -163,7 +163,7 @@
     {
         "event_id": "pln_misc_war_bolster1",
         "location": [
-            "plains_camp2"
+            "plains:camp2"
         ],
         "season": [
             "any"
