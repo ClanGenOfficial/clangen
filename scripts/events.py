@@ -648,7 +648,7 @@ def handle_focus():
         - raid other clans
         - hoarding
     Focus which are not able to be handled here:
-        rest and recover - handled in:
+        rest_and_recover - handled in:
             - 'handle_outbreaks'
             - 'condition_events.handle_injuries'
             - 'condition_events.handle_illnesses'
@@ -2341,8 +2341,8 @@ def handle_outbreaks(cat):
             ):
                 continue
 
-            if get_clan_setting("rest and recover"):
-                stopping_chance = constants.CONFIG["focus"]["rest and recover"][
+            if get_clan_setting("rest_and_recover"):
+                stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                     "outbreak_prevention"
                 ]
                 if not int(random.random() * stopping_chance):
