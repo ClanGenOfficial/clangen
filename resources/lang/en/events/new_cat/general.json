@@ -1300,7 +1300,8 @@
                 "age:has_kits",
                 "former clancat",
                 "meeting",
-                "new_name"
+                "new_name",
+                "backstory:stolenkit2"
             ],
             [
                 "litter",
