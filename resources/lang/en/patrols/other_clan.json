@@ -4677,16 +4677,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_lawful", "high_social"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to warned a o_c_n patrol about a badger sett on their border."
+                        }
                     }
                 ],
                 "other_clan_rep": 2,

@@ -3395,14 +3395,8 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [1, 1],
+            "normal adult": [1, 1]
         },
         "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/app1/object} and tries to prepare app1 for the stalk as best {PRONOUN/app1/subject} can — if app1 can catch this mouse, this is the season where it will be most valuable for the Clan.",
@@ -3418,17 +3412,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "trust",
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was proud of cat_to for catching a mouse during a hunting patrol.",
+                            "cats_to": "cat_to was pleased to catch a mouse in front of cat_from."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3442,17 +3440,22 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "comfort",
-                            "trust"
+                            "trust",
+                            "respect",
+                            "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from praised cat_to for catching a mouse during a hunting patrol.",
+                            "cats_to": "cat_to caught a mouse in front of cat_from and was pleased when cat_from praised {PRONOUN/cat_to/object}."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -3465,17 +3468,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "app1"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was embarrassed to miss a mouse in front of cat_to."
+                        }
                     }
                 ],
                 "prey": [

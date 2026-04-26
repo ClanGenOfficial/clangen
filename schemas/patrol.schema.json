@@ -1,5 +1,36 @@
 {
   "$defs": {
+    "Age": {
+      "enum": [
+        "newborn",
+        "-newborn",
+        "kitten",
+        "-kitten",
+        "adolescent",
+        "-adolescent",
+        "young adult",
+        "-young adult",
+        "adult",
+        "-adult",
+        "senior adult",
+        "-senior adult",
+        "senior",
+        "-senior"
+      ],
+      "title": "Age",
+      "type": "string"
+    },
+    "AllTrait": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Trait"
+        },
+        {
+          "$ref": "#/$defs/KitTrait"
+        }
+      ],
+      "title": "AllTrait"
+    },
     "Biome": {
       "enum": [
         "mountainous",
@@ -35,16 +66,351 @@
       "title": "CanHaveStat",
       "type": "string"
     },
-    "HistoryText": {
-      "properties": {
-        "reg_death": {
-          "description": "Death history text for non-leaders. Whole sentence.",
-          "title": "Reg Death",
-          "type": "string"
+    "Cat": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CatEnum"
         },
-        "lead_death": {
-          "description": "Death history text for leaders. Sentence fragment.",
-          "title": "Lead Death",
+        {
+          "pattern": "^n_c:[0-9]+$",
+          "type": "string"
+        }
+      ],
+      "title": "Cat"
+    },
+    "CatEnum": {
+      "enum": [
+        "m_c",
+        "r_c"
+      ],
+      "title": "CatEnum",
+      "type": "string"
+    },
+    "EventSubtype": {
+      "enum": [
+        "war",
+        "murder",
+        "old_age",
+        "mass_death",
+        "murder_reveal",
+        "hidden_murder_reveal",
+        "failed_murder",
+        "accessory",
+        "ceremony",
+        "transition",
+        "mediator"
+      ],
+      "title": "EventSubtype",
+      "type": "string"
+    },
+    "EventType": {
+      "enum": [
+        "death",
+        "injury",
+        "new_cat",
+        "misc"
+      ],
+      "title": "EventType",
+      "type": "string"
+    },
+    "FutureCat": {
+      "properties": {
+        "age": {
+          "description": "List of ages the cat can be. If they can be anything, use \"any\".",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Age"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Age",
+          "type": "array"
+        },
+        "status": {
+          "description": "List of statuses the cat can be. If they can be anything, use \"any\".",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Status"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Status",
+          "type": "array"
+        },
+        "skill": {
+          "description": "The cat must possess at least one skill from this list. If they can be anything, use \"any\".",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Skill"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Skill",
+          "type": "array"
+        },
+        "trait": {
+          "description": "The cat must possess at least one trait from this list. If they can be anything, use \"any\".",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/AllTrait"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Trait",
+          "type": "array"
+        },
+        "gender": {
+          "description": "The cat will have this gender.",
+          "items": {
+            "$ref": "#/$defs/GenderEnum"
+          },
+          "title": "Gender",
+          "type": "array"
+        }
+      },
+      "title": "FutureCat",
+      "type": "object"
+    },
+    "FutureEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "event_type": {
+          "$ref": "#/$defs/EventType",
+          "description": "Specify which ShortEvent type the future event will be."
+        },
+        "moon_delay": {
+          "description": "How many moons must pass before the first event appears (inclusive). The first value is the smallest possible delay and the second value is the largest.",
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Moon Delay",
+          "type": "array"
+        },
+        "pool": {
+          "$ref": "#/$defs/FutureEventPool",
+          "description": "Pool of events to be chosen from. Only one event from the pool will be chosen."
+        },
+        "involved_cats": {
+          "$ref": "#/$defs/FutureEventInvolvedCats",
+          "description": "Specifies which cats can fill the roles within the future event."
+        }
+      },
+      "required": [
+        "event_type",
+        "moon_delay",
+        "pool",
+        "involved_cats"
+      ],
+      "title": "FutureEvent",
+      "type": "object"
+    },
+    "FutureEventInvolvedCats": {
+      "additionalProperties": false,
+      "properties": {
+        "m_c": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FutureCat"
+            },
+            {
+              "$ref": "#/$defs/Cat"
+            }
+          ],
+          "description": "m_c in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
+          "title": "Main Cat"
+        },
+        "mur_c": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FutureCat"
+            },
+            {
+              "$ref": "#/$defs/Cat"
+            }
+          ],
+          "description": "The murdered cat in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
+          "title": "Murdered Cat"
+        },
+        "r_c": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FutureCat"
+            },
+            {
+              "$ref": "#/$defs/Cat"
+            }
+          ],
+          "description": "r_c in the future event. Can either be a cat in the current event or constraints for a newly chosen cat.",
+          "title": "Random Cat"
+        }
+      },
+      "title": "FutureEventInvolvedCats",
+      "type": "object"
+    },
+    "FutureEventPool": {
+      "properties": {
+        "subtype": {
+          "description": "Events to be added to the pool will contain all subtypes specified.",
+          "items": {
+            "$ref": "#/$defs/EventSubtype"
+          },
+          "title": "Subtype",
+          "type": "array"
+        },
+        "event_id": {
+          "description": "Only events with the specified event_ids will be added to the pool.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Event Id",
+          "type": "array"
+        },
+        "excluded_event_id": {
+          "description": "All events with the specified event_ids will be removed from the pool.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Excluded Event Id",
+          "type": "array"
+        }
+      },
+      "title": "FutureEventPool",
+      "type": "object"
+    },
+    "GatherCat": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GatherCatEnum"
+        },
+        {
+          "pattern": "^n_c:[0-9]+$",
+          "type": "string"
+        }
+      ],
+      "title": "GatherCat"
+    },
+    "GatherCatEnum": {
+      "enum": [
+        "m_c",
+        "-m_c",
+        "r_c",
+        "-r_c",
+        "p_l",
+        "-p_l",
+        "s_c",
+        "-s_c",
+        "app1",
+        "-app1",
+        "app2",
+        "-app2",
+        "app3",
+        "-app3",
+        "app4",
+        "-app4",
+        "app5",
+        "-app5",
+        "app6",
+        "-app6",
+        "clan",
+        "-clan",
+        "some_clan",
+        "-some_clan",
+        "patrol",
+        "-patrol",
+        "multi",
+        "-multi",
+        "high_lawful",
+        "-high_lawful",
+        "low_lawful",
+        "-low_lawful",
+        "high_social",
+        "-high_social",
+        "low_social",
+        "-low_social",
+        "high_stable",
+        "-high_stable",
+        "low_stable",
+        "-low_stable",
+        "high_aggress",
+        "-high_aggress",
+        "low_aggress",
+        "-low_aggress"
+      ],
+      "title": "GatherCatEnum",
+      "type": "string"
+    },
+    "GenderEnum": {
+      "enum": [
+        "male",
+        "female"
+      ],
+      "title": "GenderEnum",
+      "type": "string"
+    },
+    "Herb": {
+      "enum": [
+        "elder_leaves",
+        "cobwebs",
+        "daisy",
+        "horsetail",
+        "juniper",
+        "lungwort",
+        "mallow",
+        "marigold",
+        "moss",
+        "oak_leaves",
+        "ragwort",
+        "raspberry",
+        "tansy",
+        "thyme",
+        "wild_garlic",
+        "dandelion",
+        "mullein",
+        "rosemary",
+        "burdock",
+        "blackberry",
+        "betony",
+        "goldenrod",
+        "poppy",
+        "plantain",
+        "catmint"
+      ],
+      "title": "Herb",
+      "type": "string"
+    },
+    "HistoryText": {
+      "additionalProperties": false,
+      "properties": {
+        "death": {
+          "description": "Death history. Whole sentence.",
+          "title": "Death",
           "type": "string"
         },
         "scar": {
@@ -56,12 +422,95 @@
       "title": "HistoryText",
       "type": "object"
     },
+    "Illness": {
+      "enum": [
+        "seizure",
+        "diarrhea",
+        "fleas",
+        "greencough",
+        "kittencough",
+        "an infected wound",
+        "carrionplace disease",
+        "redcough",
+        "running nose",
+        "whitecough",
+        "yellowcough",
+        "a festering wound",
+        "heat stroke",
+        "heat exhaustion",
+        "stomachache",
+        "constant nightmares",
+        "grief stricken",
+        "malnourished",
+        "starving"
+      ],
+      "title": "Illness",
+      "type": "string"
+    },
+    "Injury": {
+      "enum": [
+        "claw-wound",
+        "bite-wound",
+        "cat bite",
+        "beak bite",
+        "snake bite",
+        "rat bite",
+        "tick bites",
+        "blood loss",
+        "broken jaw",
+        "broken bone",
+        "mangled leg",
+        "dislocated joint",
+        "joint pain",
+        "sprain",
+        "mangled tail",
+        "bruises",
+        "cracked pads",
+        "sore",
+        "phantom pain",
+        "scrapes",
+        "small cut",
+        "torn pelt",
+        "torn ear",
+        "frostbite",
+        "recovering from birth",
+        "water in their lungs",
+        "burn",
+        "severe burn",
+        "shock",
+        "lingering shock",
+        "shivering",
+        "dehydrated",
+        "head damage",
+        "damaged eyes",
+        "quilled by a porcupine",
+        "broken back",
+        "poisoned",
+        "bee sting",
+        "headache",
+        "severe headache",
+        "pregnant",
+        "battle_injury",
+        "minor_injury",
+        "blunt_force_injury",
+        "hot_injury",
+        "cold_injury",
+        "big_bite_injury",
+        "small_bite_injury",
+        "beak_bite",
+        "rat_bite",
+        "sickness"
+      ],
+      "title": "Injury",
+      "type": "string"
+    },
     "InjuryItem": {
+      "additionalProperties": false,
       "properties": {
         "cats": {
           "description": "Which cats are injured.",
           "items": {
-            "$ref": "common.schema.json#/$defs/GatherCat"
+            "$ref": "#/$defs/GatherCat"
           },
           "title": "Cats",
           "type": "array"
@@ -71,13 +520,13 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "common.schema.json#/$defs/Injury"
+                "$ref": "#/$defs/Injury"
               },
               {
-                "$ref": "common.schema.json#/$defs/Illness"
+                "$ref": "#/$defs/Illness"
               },
               {
-                "$ref": "common.schema.json#/$defs/PermCondition"
+                "$ref": "#/$defs/PermCondition"
               },
               {
                 "const": "non_lethal",
@@ -91,7 +540,7 @@
         "scars": {
           "description": "Pool of scars to draw from in Classic. Currently non-functional.",
           "items": {
-            "$ref": "common.schema.json#/$defs/Scar"
+            "$ref": "#/$defs/Scar"
           },
           "title": "Scars",
           "type": "array"
@@ -105,6 +554,44 @@
       "title": "InjuryItem",
       "type": "object"
     },
+    "KitTrait": {
+      "enum": [
+        "unruly",
+        "-unruly",
+        "shy",
+        "-shy",
+        "impulsive",
+        "-impulsive",
+        "bullying",
+        "-bullying",
+        "attention-seeker",
+        "-attention-seeker",
+        "daydreamer",
+        "-daydreamer",
+        "charming",
+        "-charming",
+        "fearless",
+        "-fearless",
+        "skittish",
+        "-skittish",
+        "quiet",
+        "-quiet",
+        "self-conscious",
+        "-self-conscious",
+        "know-it-all",
+        "-know-it-all",
+        "sweet",
+        "-sweet",
+        "polite",
+        "-polite",
+        "bossy",
+        "-bossy",
+        "noisy",
+        "-noisy"
+      ],
+      "title": "KitTrait",
+      "type": "string"
+    },
     "LeaderLivesLost": {
       "enum": [
         "some_lives",
@@ -112,6 +599,23 @@
       ],
       "title": "LeaderLivesLost",
       "type": "string"
+    },
+    "Log": {
+      "additionalProperties": false,
+      "properties": {
+        "cats_from": {
+          "description": "This string will be added to the relationship logs of all cats in cats_from.",
+          "title": "Cats From",
+          "type": "string"
+        },
+        "cats_to": {
+          "description": "This string will be added to the relationship logs of all cats in cats_to.",
+          "title": "Cats To",
+          "type": "string"
+        }
+      },
+      "title": "Log",
+      "type": "object"
     },
     "MinMaxStatusDictKey": {
       "enum": [
@@ -128,7 +632,64 @@
       "title": "MinMaxStatusDictKey",
       "type": "string"
     },
+    "NewCat": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/NewCatTag"
+          },
+          {
+            "pattern": "^status:(.+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^age:(.+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^backstory:(.+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^parent:([,0-9]+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^adoptive:([_,0-9a-zA-Z]+)$",
+            "type": "string"
+          },
+          {
+            "pattern": "^mate:([_,0-9a-zA-Z]+)$",
+            "type": "string"
+          }
+        ]
+      },
+      "title": "NewCat",
+      "type": "array"
+    },
+    "NewCatTag": {
+      "enum": [
+        "male",
+        "female",
+        "can_birth",
+        "new_name",
+        "old_name",
+        "kittypet",
+        "loner",
+        "rogue",
+        "clancat",
+        "former clancat",
+        "meeting",
+        "exists",
+        "unknown",
+        "litter",
+        "dead"
+      ],
+      "title": "NewCatTag",
+      "type": "string"
+    },
     "Outcome": {
+      "additionalProperties": false,
       "properties": {
         "text": {
           "description": "Displayed outcome text.",
@@ -149,7 +710,7 @@
         "stat_skill": {
           "description": "Makes this a stat outcome which can occur if a stat cat can be found.",
           "items": {
-            "$ref": "common.schema.json#/$defs/Skill"
+            "$ref": "#/$defs/Skill"
           },
           "title": "Stat Skill",
           "type": "array"
@@ -157,7 +718,7 @@
         "stat_trait": {
           "description": "Makes this a stat outcome which can occur if a stat cat can be found.",
           "items": {
-            "$ref": "common.schema.json#/$defs/Trait"
+            "$ref": "#/$defs/Trait"
           },
           "title": "Stat Trait",
           "type": "array"
@@ -183,7 +744,7 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "common.schema.json#/$defs/Herb"
+                "$ref": "#/$defs/Herb"
               },
               {
                 "$ref": "#/$defs/PatrolHerb"
@@ -196,7 +757,7 @@
         "lost_cats": {
           "description": "Indicates which cats will become lost.",
           "items": {
-            "$ref": "common.schema.json#/$defs/GatherCat"
+            "$ref": "#/$defs/GatherCat"
           },
           "title": "Lost Cats",
           "type": "array"
@@ -206,7 +767,7 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "common.schema.json#/$defs/GatherCat"
+                "$ref": "#/$defs/GatherCat"
               },
               {
                 "$ref": "#/$defs/LeaderLivesLost"
@@ -258,10 +819,18 @@
           "title": "Relationships",
           "type": "array"
         },
+        "relationship_constraint": {
+          "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
+          "items": {
+            "$ref": "#/$defs/RelationshipStatus"
+          },
+          "title": "Relationship Constraint",
+          "type": "array"
+        },
         "new_cat": {
           "description": "Adds new cat(s), either joining the clan or as outside cats. The {index} value corresponds to their index value on this list (e.g. n_c:0 refers to the first cat in this list).",
           "items": {
-            "$ref": "common.schema.json#/$defs/NewCat"
+            "$ref": "#/$defs/NewCat"
           },
           "title": "New Cat",
           "type": "array"
@@ -285,6 +854,10 @@
           "description": "How much reputation with other Clan will change. Can be positive or negative.",
           "title": "Other Clan Rep",
           "type": "integer"
+        },
+        "future_event": {
+          "$ref": "#/$defs/FutureEvent",
+          "title": "Future Event"
         }
       },
       "required": [
@@ -330,7 +903,7 @@
         "season": {
           "description": "Controls the season(s) the patrol appears in.",
           "items": {
-            "$ref": "common.schema.json#/$defs/Season"
+            "$ref": "#/$defs/Season"
           },
           "title": "Season",
           "type": "array"
@@ -421,7 +994,7 @@
         "relationship_constraint": {
           "description": "Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
           "items": {
-            "$ref": "common.schema.json#/$defs/RelationshipStatus"
+            "$ref": "#/$defs/RelationshipStatus"
           },
           "title": "Relationship Constraint",
           "type": "array"
@@ -429,7 +1002,7 @@
         "pl_skill_constraint": {
           "description": "Only allow this patrol if the patrol leader (p_l) meets at least one of these skill requirements.",
           "items": {
-            "$ref": "common.schema.json#/$defs/Skill"
+            "$ref": "#/$defs/Skill"
           },
           "title": "Pl Skill Constraint",
           "type": "array"
@@ -535,6 +1108,34 @@
       "title": "PatrolType",
       "type": "string"
     },
+    "PermCondition": {
+      "enum": [
+        "crooked jaw",
+        "lost a leg",
+        "born without a leg",
+        "weak leg",
+        "twisted leg",
+        "lost their tail",
+        "born without a tail",
+        "paralyzed",
+        "raspy lungs",
+        "wasting disease",
+        "blind",
+        "one bad eye",
+        "failing eyesight",
+        "partial hearing loss",
+        "deaf",
+        "constant joint pain",
+        "seizure prone",
+        "allergies",
+        "constantly dizzy",
+        "recurring shock",
+        "lasting grief",
+        "persistent headaches"
+      ],
+      "title": "PermCondition",
+      "type": "string"
+    },
     "Prey": {
       "enum": [
         "very_small",
@@ -547,11 +1148,12 @@
       "type": "string"
     },
     "Relationship": {
+      "additionalProperties": false,
       "properties": {
         "cats_from": {
           "description": "The cat's whose relationship values are being edited. You are changing how the \"cats_from\" feels.",
           "items": {
-            "$ref": "common.schema.json#/$defs/GatherCat"
+            "$ref": "#/$defs/GatherCat"
           },
           "title": "Cats From",
           "type": "array"
@@ -559,7 +1161,7 @@
         "cats_to": {
           "description": "The target of the relationship. You are changing how \"cats_from\" feels about \"cats_to\".",
           "items": {
-            "$ref": "common.schema.json#/$defs/GatherCat"
+            "$ref": "#/$defs/GatherCat"
           },
           "title": "Cats To",
           "type": "array"
@@ -589,16 +1191,313 @@
           "description": "Exact amount the relationship value will be affected. Can be positive or negative.",
           "title": "Amount",
           "type": "integer"
+        },
+        "log": {
+          "$ref": "#/$defs/Log",
+          "description": "The string that will display within the relationship logs."
         }
       },
       "required": [
         "cats_from",
         "cats_to",
         "values",
-        "amount"
+        "amount",
+        "log"
       ],
       "title": "Relationship",
       "type": "object"
+    },
+    "RelationshipStatus": {
+      "enum": [
+        "strangers",
+        "siblings",
+        "-siblings",
+        "littermates",
+        "-littermates",
+        "mates",
+        "mates_with_pl",
+        "-mates",
+        "parent/child",
+        "-parent/child",
+        "child/parent",
+        "-child/parent",
+        "mentor/app",
+        "-mentor/app",
+        "app/mentor",
+        "-app/mentor",
+        "fancies",
+        "adores",
+        "loves",
+        "loathes",
+        "hates",
+        "dislikes",
+        "knows_of",
+        "likes",
+        "enjoys",
+        "cherishes",
+        "resents",
+        "envies",
+        "begrudges",
+        "acknowledges",
+        "praises",
+        "respects",
+        "admires",
+        "discredits",
+        "distrusts",
+        "doubts",
+        "observes",
+        "listens_to",
+        "trusts",
+        "confides_in",
+        "runs_from",
+        "fears",
+        "avoids",
+        "considers",
+        "relates_to",
+        "understands",
+        "knows_deeply",
+        "fancies_only",
+        "adores_only",
+        "delights_in_only",
+        "loathes_only",
+        "hates_only",
+        "dislikes_only",
+        "knows_of_only",
+        "likes_only",
+        "enjoys_only",
+        "loves_only",
+        "resents_only",
+        "envies_only",
+        "begrudges_only",
+        "acknowledges_only",
+        "praises_only",
+        "respects_only",
+        "admires_only",
+        "discredits_only",
+        "distrusts_only",
+        "doubts_only",
+        "observes_only",
+        "listens_to_only",
+        "trusts_only",
+        "confides_in_only",
+        "runs_from_only",
+        "fears_only",
+        "avoids_only",
+        "considers_only",
+        "relates_to_only",
+        "understands_only",
+        "knows_deeply_only"
+      ],
+      "title": "RelationshipStatus",
+      "type": "string"
+    },
+    "Scar": {
+      "enum": [
+        "ONE",
+        "TWO",
+        "THREE",
+        "TAILSCAR",
+        "SNOUT",
+        "CHEEK",
+        "SIDE",
+        "THROAT",
+        "TAILBASE",
+        "BELLY",
+        "LEGBITE",
+        "NECKBITE",
+        "FACE",
+        "MANLEG",
+        "BRIGHTHEART",
+        "MANTAIL",
+        "BRIDGE",
+        "RIGHTBLIND",
+        "LEFTBLIND",
+        "BOTHBLIND",
+        "BEAKCHEEK",
+        "BEAKLOWER",
+        "CATBITE",
+        "RATBITE",
+        "QUILLCHUNK",
+        "QUILLSCRATCH",
+        "HINDLEG",
+        "BACK",
+        "QUILLSIDE",
+        "SCRATCHSIDE",
+        "BEAKSIDE",
+        "CATBITETWO",
+        "FOUR",
+        "LEFTEAR",
+        "RIGHTEAR",
+        "NOTAIL",
+        "HALFTAIL",
+        "NOPAW",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "NOEAR",
+        "SNAKE",
+        "TOETRAP",
+        "BURNPAWS",
+        "BURNTAIL",
+        "BURNBELLY",
+        "BURNRUMP",
+        "FROSTFACE",
+        "FROSTTAIL",
+        "FROSTMITT",
+        "FROSTSOCK",
+        "TOE",
+        "SNAKETWO"
+      ],
+      "title": "Scar",
+      "type": "string"
+    },
+    "Season": {
+      "enum": [
+        "greenleaf",
+        "-greenleaf",
+        "leaf-fall",
+        "-leaf-fall",
+        "leaf-bare",
+        "-leaf-bare",
+        "newleaf",
+        "-newleaf",
+        "any"
+      ],
+      "title": "Season",
+      "type": "string"
+    },
+    "Skill": {
+      "pattern": "^-?[A-Z]+,\\s*[0-4]$",
+      "title": "Skill",
+      "type": "string"
+    },
+    "Status": {
+      "enum": [
+        "newborn",
+        "-newborn",
+        "kitten",
+        "-kitten",
+        "apprentice",
+        "-apprentice",
+        "mediator apprentice",
+        "-mediator apprentice",
+        "medicine cat apprentice",
+        "-medicine cat apprentice",
+        "warrior",
+        "-warrior",
+        "mediator",
+        "-mediator",
+        "medicine cat",
+        "-medicine cat",
+        "deputy",
+        "-deputy",
+        "leader",
+        "-leader",
+        "elder",
+        "-elder",
+        "any",
+        "living",
+        "starclan",
+        "darkforest",
+        "unknownresidence",
+        "kittypet",
+        "-kittypet",
+        "loner",
+        "-loner",
+        "rogue",
+        "-rogue",
+        "former Clancat",
+        "exiled",
+        "lost",
+        "-lost",
+        "outside cat",
+        "clancat"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "Trait": {
+      "enum": [
+        "troublesome",
+        "lonesome",
+        "fierce",
+        "bloodthirsty",
+        "cold",
+        "childish",
+        "playful",
+        "charismatic",
+        "bold",
+        "daring",
+        "nervous",
+        "righteous",
+        "insecure",
+        "strict",
+        "compassionate",
+        "thoughtful",
+        "ambitious",
+        "confident",
+        "adventurous",
+        "calm",
+        "careful",
+        "faithful",
+        "loving",
+        "loyal",
+        "responsible",
+        "shameless",
+        "sneaky",
+        "strange",
+        "vengeful",
+        "wise",
+        "arrogant",
+        "competitive",
+        "grumpy",
+        "cunning",
+        "oblivious",
+        "gloomy",
+        "sincere",
+        "flamboyant",
+        "rebellious",
+        "-troublesome",
+        "-lonesome",
+        "-fierce",
+        "-bloodthirsty",
+        "-cold",
+        "-childish",
+        "-playful",
+        "-charismatic",
+        "-bold",
+        "-daring",
+        "-nervous",
+        "-righteous",
+        "-insecure",
+        "-strict",
+        "-compassionate",
+        "-thoughtful",
+        "-ambitious",
+        "-confident",
+        "-adventurous",
+        "-calm",
+        "-careful",
+        "-faithful",
+        "-loving",
+        "-loyal",
+        "-responsible",
+        "-shameless",
+        "-sneaky",
+        "-strange",
+        "-vengeful",
+        "-wise",
+        "-arrogant",
+        "-competitive",
+        "-grumpy",
+        "-cunning",
+        "-oblivious",
+        "-gloomy",
+        "-sincere",
+        "-flamboyant",
+        "-rebellious"
+      ],
+      "title": "Trait",
+      "type": "string"
     },
     "Value": {
       "enum": [
