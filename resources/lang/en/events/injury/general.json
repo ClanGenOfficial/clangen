@@ -7524,7 +7524,7 @@
         "sub_type": ["war"],
         "tags": [],
         "frequency": 1,
-        "event_text": "To settle a piece of disputed land in the ongoing war with o_c_n, m_c is chosen to fight one o_c_n warrior. m_c loses the duel, and the strip of territory goes to o_c_n.",
+        "event_text": "To settle a piece of disputed land in the ongoing war with o_c_n, m_c is chosen to fight one-on-one with a o_c_n warrior. m_c loses the duel, and the strip of territory goes to o_c_n.",
         "m_c": {
             "status": ["warrior", "deputy"],
             "skill": ["-FIGHTER,2"],
