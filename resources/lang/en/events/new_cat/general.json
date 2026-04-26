@@ -2102,7 +2102,7 @@
     "season": ["any"],
     "tags": ["clan:medicine cat"],
     "frequency": 1,
-    "event_text": "n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} so grateful for c_n's aid that {PRONOUN/n_c:0/subject} {VERB/n_c:0/give/gives} {PRONOUN/n_c:0/poss} kittens c_n names.",
+    "event_text": "An outsider named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. A half-moon after the birth, n_c:0 bids farewell to the Clan and thanks m_c again for {PRONOUN/m_c/poss} help.",
     "m_c": {
         "status": ["medicine cat"]
     },
