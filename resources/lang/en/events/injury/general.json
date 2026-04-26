@@ -7117,7 +7117,7 @@
             "clan:kitten"
         ],
         "frequency": 4,
-        "event_text": "While o_c_n attempted a surprise attack on the c_n camp, m_c fiercely guarded the nursery, no matter how injured {PRONOUN/m_c/subject} became.",
+        "event_text": "While o_c_n attempted a surprise attack on the c_n camp, m_c guarded the nursery, no matter how injured {PRONOUN/m_c/subject} became.",
         "m_c": {
             "age": [
                 "-kitten"
@@ -7158,7 +7158,7 @@
                 "values": ["respect", "trust"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cat_from saw how fiercely cat_to defended the nursery in a battle with o_c_n."
+                    "cats_from": "cat_from saw cat_to defend the nursery in a battle with o_c_n."
                 }
             }
         ]
@@ -7222,7 +7222,7 @@
         ]
     },
     {
-        "event_id": "gen_injury_mangledtail_war_anyapprenticehostile1",
+        "event_id": "gen_injury_war_battleinjury1",
         "location": [
             "any"
         ],
@@ -7279,7 +7279,7 @@
         }
     },
     {
-        "event_id": "gen_injury_mangledleg_anymultistatusnotcareful1",
+        "event_id": "gen_injury_war_pittrap",
         "location": [
             "any"
         ],
@@ -7416,6 +7416,663 @@
             "current_rep": [
                 "hostile"
             ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_outnumbered1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c is badly outnumbered in a fight with a o_c_n patrol and sustains grave injuries.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after being outnumbered in a fight with o_c_n.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after being outnumbered in a fight with o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_outnumbered2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c and r_c are badly outnumbered in a fight with a o_c_n patrol and sustain grave injuries.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "r_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c", "r_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "scar": "m_c was scarred after being outnumbered in a fight with o_c_n.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after being outnumbered in a fight with o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_surpriseskirmish",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": ["clan:leader"],
+        "frequency": 2,
+        "event_text": "lead_name sends m_c to strengthen the markings along the border with o_c_n, but o_c_n had the same idea. m_c and r_c are injured in the ensuing fight.",
+        "m_c": {
+            "status": ["deputy"],
+            "dies": false
+        },
+        "r_c": {
+            "status": ["warrior"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c", "r_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "scar": "m_c was scarred after a fight with o_c_n.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after a fight with o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_mudfuradderfangduel1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 1,
+        "event_text": "To settle a piece of disputed land in the ongoing war with o_c_n, m_c is chosen to fight one-on-one with a o_c_n warrior. m_c loses the duel, and the strip of territory goes to o_c_n.",
+        "m_c": {
+            "status": ["warrior", "deputy"],
+            "skill": ["-FIGHTER,2"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after losing a duel with a o_c_n warrior.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after losing a duel with a o_c_n warrior."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from lost respect for cat_to after cat_to lost a piece of c_n territory in a one-on-one duel with an enemy Clan's warrior."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_mudfuradderfangduel2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "To settle a piece of disputed land in the ongoing war with o_c_n, m_c is chosen to fight one-on-one with a o_c_n warrior. m_c wins the duel, and the strip of territory goes to c_n.",
+        "m_c": {
+            "status": ["warrior", "deputy"],
+            "skill": ["FIGHTER,2"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["small_bite_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after winning a duel with a o_c_n warrior.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after winning a duel with a o_c_n warrior."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from gained respect for cat_to after cat_to won a piece of territory for c_n in a one-on-one duel with an enemy Clan's warrior."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_campraid",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 1,
+        "event_text": "m_c leads a raid on o_c_n's camp. r_c is badly injured in the fight.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "age": ["senior adult"],
+            "dies": false
+        },
+        "r_c": {
+            "status": ["apprentice", "warrior"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "scar": "m_c was scarred during a raid on o_c_n's camp.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after a raid on o_c_n's camp."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_infamouswarrior",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c battles one of o_c_n's most feared warriors and winds up in the medicine den.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "trait": ["confident", "daring", "bold", "arrogant", "fierce", "bloodthirsty", "ambitious", "arrogant", "shameless", "adventurous", "loyal", "rebellious", "troublesome", "vengeful"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after taking on one of o_c_n's most feared warriors in a fight.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after taking on one of o_c_n's most feared warriors in a fight."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_minorinjury_nervoustrait",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 4,
+        "event_text": "m_c is relieved to sustain only minor injuries in a fight with o_c_n.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "trait": ["nervous", "careful", "wise", "calm", "insecure", "gloomy", "thoughtful", "sincere", "compassionate"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["minor_injury"]
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_tornear_fighterskill",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c leads a patrol to skirmish with o_c_n at the border. When o_c_n's patrol retreats, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} unscathed, save for {PRONOUN/m_c/poss} torn ear.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "skill": ["FIGHTER,1"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["torn ear"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after winning a skirmish against o_c_n.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries sustained in a battle {PRONOUN/m_c/subject} won."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -2
+        }
+    },
+    {
+        "event_id": "gen_injury_war_minorinjury_senseskill",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c's sharp reflexes while patrolling the o_c_n border save {PRONOUN/m_c/object} and r_c from an ambush. They escape with only minor injuries.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "skill": ["SENSE,1"],
+            "dies": false
+        },
+        "r_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c", "r_c"],
+                "injuries": ["minor_injury", "torn ear"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after o_c_n attempted to ambush {PRONOUN/m_c/object}.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after a o_c_n patrol attempted to ambush {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_ocnambush",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "A o_c_n patrol ambushes c_n's patrol when they renew the border markings. r_c and m_c are badly wounded in the fight.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "r_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c", "r_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after o_c_n ambushed {PRONOUN/m_c/object}.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after o_c_n attempted to ambush {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_cnambushfail",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "c_n tries to ambush o_c_n at the border, but o_c_n is prepared. c_n loses the element of surprise and must retreat, m_c and r_c wounded.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "r_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c", "r_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after ambushing a o_c_n patrol.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after ambushing a o_c_n patrol."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -2
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_cnambushstruggle",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "c_n ambushes o_c_n at the border. Though they drive off the patrol, m_c and r_c are injured in the battle.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "r_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c", "r_c"],
+                "injuries": ["battle_injury", "minor_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after ambushing a o_c_n patrol.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after ambushing a o_c_n patrol."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -2
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_cnambushsuccess",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "c_n ambushes o_c_n at the border. m_c and r_c sustain minor injuries in the fight, but the o_c_n patrol is driven off successfully.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "r_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c", "r_c"],
+                "injuries": ["minor_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after ambushing a o_c_n patrol.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after ambushing a o_c_n patrol."
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -2
+        }
+    },
+    {
+        "event_id": "gen_injury_war_tornear_fighterskill",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c sneaks onto o_c_n territory to poach prey. o_c_n catches {PRONOUN/m_c/object} and claws at {PRONOUN/m_c/poss} tail as {PRONOUN/m_c/subject} {VERB/m_c/flee/flees}.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "trait": ["rebellious", "troublesome", "vengeful"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["mangled tail"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after a o_c_n patrol caught {PRONOUN/m_c/object} poaching prey.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after a o_c_n patrol caught {PRONOUN/m_c/object} poaching prey."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress", "low_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from approved of cat_to stealing an enemy Clan's prey during a war."
+                }
+            },
+            {
+                "cats_from": ["clan", "low_aggress", "high_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from disapproved of cat_to stealing an enemy Clan's prey during a war."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -2
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_leadervsleader1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c confronts o_c_n's leader in battle. The warring Clans hold their breath as the leaders battle, and c_n is aggrieved when m_c is defeated.",
+        "m_c": {
+            "status": ["leader"],
+            "skill": ["-FIGHTER,1"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after fighting o_c_n's leader.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after fighting o_c_n's leader."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from doubted cat_to after {PRONOUN/cat_to/subject} lost in a one-on-one fight with an enemy Clan's leader."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_leadervsleader2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c confronts o_c_n's leader in battle. The warring Clans hold their breath as the leaders battle, and c_n is elated when m_c emerges victorious.",
+        "m_c": {
+            "status": ["leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["small_bite_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after fighting o_c_n's leader.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after fighting o_c_n's leader."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "trust"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from felt more confident in cat_to's leadership after {PRONOUN/cat_to/subject} defeated an enemy Clan's leader in a fight."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_injury_war_battleinjury_leadervsleader3",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c confronts o_c_n's leader in battle. The warring Clans hold their breath as the leaders battle, and c_n is elated when m_c emerges victorious.",
+        "m_c": {
+            "status": ["leader"],
+            "skill": ["FIGHTER,1"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["torn ear"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after fighting o_c_n's leader.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after fighting o_c_n's leader."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect", "trust"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from felt more confident in cat_to's leadership after {PRONOUN/cat_to/subject} defeated an enemy Clan's leader in a fight."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
             "changed": -1
         }
     },
