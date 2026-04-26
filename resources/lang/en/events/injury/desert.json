@@ -405,10 +405,12 @@
                 "mutual": true,
                 "values": [
                     "like",
-                    "trust",
                     "comfort"
                 ],
-                "amount": 10
+                "amount": 6,
+                "log": {
+                    "cats_from": "m_c chatted with r_c while reinforcing the wall of the nursery."
+                }
             }
         ]
     },
@@ -658,92 +660,7 @@
         ],
         "season": [
             "leaf-fall",
-            "newleaf"
-        ],
-        "tags": [
-            "clan:kitten"
-        ],
-        "frequency": 1,
-        "event_text": "A piece of stray Twoleg trash ignites in the dry heat of the sun, threatening the nursery. m_c leads the efforts to rescue the kits, and will happily trade {PRONOUN/m_c/poss} singed coat and the acrid smell of burned fur for the safety of the young ones.",
-        "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "any"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "burn"
-                ]
-            },
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "scrapes"
-                ]
-            },
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "dehydrated"
-                ]
-            },
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sore"
-                ]
-            }
-        ],
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c died from wounds taken while defending the nursery from fire."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "respect"
-                ],
-                "amount": 15
-            }
-        ]
-    },
-    {
-        "event_id": "dst_injury_flame_anymultiage2",
-        "location": [
-            "desert"
-        ],
-        "season": [
+            "newleaf",
             "greenleaf"
         ],
         "tags": [
@@ -773,9 +690,6 @@
                 ],
                 "injuries": [
                     "burn"
-                ],
-                "scars":[
-                    "BURNBELLY", "BURNPAWS", "BURNRUMP"
                 ]
             },
             {
@@ -823,7 +737,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_to impressed cat_from when {PRONOUN/cat_to/subject} rescued the kits from the burning nursery."
+                }
             }
         ]
     },
@@ -947,7 +864,10 @@
                     "trust",
                     "like"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from appreciated cat_to bringing {PRONOUN/cat_from/object} water-soaked moss when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} dehydrated."
+                }
             },
             {
                 "cats_from": [
@@ -961,7 +881,10 @@
                     "respect",
                     "comfort"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from wanted to make sure cat_to was okay when {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} dehydrated."
+                }
             }
         ]
     },
@@ -1012,7 +935,10 @@
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from noticed cat_to's commitment to caring for the older cats in the Clan during a heatwave."
+                }
             },
             {
                 "cats_from": [
@@ -1021,11 +947,14 @@
                 "cats_to": [
                     "m_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "comfort"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "When cat_from became dehydrated, cat_to cared for {PRONOUN/cat_from/object}."
+                }
             }
         ]
     },
@@ -1115,11 +1044,12 @@
                 "mutual": false,
                 "values": [
                     "respect",
-                    "trust",
-                    "comfort",
-                    "like"
+                    "trust"
                 ],
-                "amount": 20
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to saved cat_from's life when a scorpion nearly stung {PRONOUN/cat_from/object}."
+                }
             }
         ]
     },
@@ -1216,7 +1146,10 @@
                     "trust",
                     "comfort"
                 ],
-                "amount": 20
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from and cat_to went on an adventure in the far reaches of the Clan's territory."
+                }
             }
         ]
     },
@@ -1499,7 +1432,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_from heard of cat_to's bravery in defending the nursery from an enemy Clan's invasion."
+                }
             }
         ],
         "other_clan": {
@@ -1634,15 +1570,17 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to saved cat_from from a red-tailed hawk."
+                }
             },
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "r_c"
@@ -1651,7 +1589,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to saved m_c from a red-tailed hawk."
+                }
             }
         ]
     },
@@ -2108,12 +2049,13 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to rescued cat_from from a dingo."
+                }
             }
         ]
     },
@@ -2191,12 +2133,13 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to saved cat_from from a coyote."
+                }
             }
         ]
     },
@@ -2347,16 +2290,17 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_to prevented cat_from from bleeding out after a coyote attack."
+                }
             },
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "m_c"
@@ -2364,7 +2308,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to treated r_c's wounds after a coyote attack."
+                }
             }
         ]
     },
@@ -2443,16 +2390,19 @@
         "relationships": [
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "m_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to tricked a coyote into running through a cacti patch."
+                }
             }
         ]
     },
@@ -2579,12 +2529,13 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c rescued r_c from a coyote, and the two cats worked together to drive it off."
+                }
             }
         ]
     },
@@ -2712,12 +2663,13 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to rescued cat_from from a red-tailed hawk."
+                }
             }
         ]
     },
@@ -2782,11 +2734,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from wasn't happy with cat_to for challenging a coyote and forcing {PRONOUN/cat_from/object} to help drive it off."
+                }
             }
         ]
     },
@@ -3474,26 +3427,16 @@
                     "clan"
                 ],
                 "cats_to": [
-                    "m_c"
+                    "m_c", "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "respect"
                 ],
-                "amount": 10
-            },
-            {
-                "cats_from": [
-                    "clan"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "respect"
-                ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to was burned trying to clear dangerous flaming bushes out of the Clan's way."
+                }
             }
         ]
     },
@@ -3814,18 +3757,21 @@
         ],
         "relationships": [
             {
-                "cats_from": [
+                "cats_to": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cats_from": [
                     "n_c:0"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "trust",
                     "like"
                 ],
-                "amount": 30
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to offered cat_from a lifesaving water source while {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} wandering the desert."
+                }
             }
         ],
         "injury": [
@@ -3854,7 +3800,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c is almost killed by a roving dingo, and it's only r_c tracking skills that allow c_n to find m_c's refuge before {PRONOUN/m_c/subject} {VERB/m_c/bleed/bleeds} out.",
+        "event_text": "m_c is almost killed by a roving dingo, and it's only r_c's tracking skills that allow c_n to find m_c's refuge before {PRONOUN/m_c/subject} {VERB/m_c/bleed/bleeds} out.",
         "m_c": {
             "age": [
                 "senior",
@@ -3922,15 +3868,17 @@
                     "r_c"
                 ],
                 "values": [
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_from would have bled out in the wake of a coyote attack if it weren't for cat_to tracking down {PRONOUN/cat_from/poss} location and saving {PRONOUN/cat_from/object}."
+                }
             },
             {
                 "cats_from": [
-                    "clan"
+                    "clan", "-m_c"
                 ],
                 "cats_to": [
                     "r_c"
@@ -3938,7 +3886,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to's tracking skills saved m_c's life in the wake of a coyote attack."
+                }
             }
         ]
     },
@@ -4757,10 +4708,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "trust",
-                    "respect"
+                    "trust"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_from and cat_to raided an enemy Clan's territory together."
+                }
             }
         ],
         "other_clan": {
