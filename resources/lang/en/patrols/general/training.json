@@ -17294,7 +17294,7 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "cat_from wasn't impressed by cat_to's failure on a tracking assessment.",
-                            "cats_to": "cat_from spotted cat_to looking amused by cat_from's failure on a tracking assessment."
+                            "cats_to": "cat_to spotted cat_from looking amused by cat_to's failure on a tracking assessment."
                         }
                     }
                 ],
