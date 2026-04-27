@@ -626,7 +626,7 @@ def create_new_cat(
         # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
         # little babies will take a clancat name, we love indoctrination
         if (
-            kit or litter or moons < 12
+            (kit or litter or moons < 12) and not outside
         ) and original_group not in game.clan.other_clan_IDs:
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()
