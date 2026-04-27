@@ -2730,7 +2730,7 @@
             "Hisses extra loudly at Twolegs on patrol",
             "Stiffens when a Clanmate mentions how lazy kittypets are",
             "Shudders at the memory of the medicine {PRONOUN/m_c/poss} Twolegs used to give {PRONOUN/m_c/object}",
-            "Gazes wistfully at the Twolegsplace",
+            "Gazes wistfully at the Twolegplace",
             "Demonstrates to r_c how {PRONOUN/m_c/poss} old Twolegs used to stroke {PRONOUN/m_c/object}"
         ],
         "main_backstory_constraint": [
