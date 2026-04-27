@@ -5555,7 +5555,7 @@
             "Is assuring r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren/isn}'t sick, it's just allergies",
             "Is unsure if {PRONOUN/m_c/subject} should apologize when r_c complains about {PRONOUN/m_c/poss} allergies",
             "Is rolling {PRONOUN/m_c/poss} eyes when r_c insists {PRONOUN/m_c/subject} should talk to the medicine cat",
-            "Playfully swats r_c when {PRONOUN/r_c/subject} {VERB/r_c/say/says} {PRONOUN/m_c/subject} sounds like an elder"
+            "Playfully swats r_c when {PRONOUN/r_c/subject} {VERB/r_c/say/says} {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like an elder"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5698,7 +5698,7 @@
             "Asks r_c to check if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if it's just {PRONOUN/m_c/poss} allergies",
             "Is reassuring r_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine and it's just {PRONOUN/m_c/poss} allergies being especially bad today",
             "Is working with r_c to try and find something to relieve {PRONOUN/m_c/poss} allergies",
-            "Ignores r_c's worried look when {PRONOUN/m_c/subject} devolves into a sneezing fit",
+            "Ignores r_c's worried look when {PRONOUN/m_c/subject} {VERB/m_c/devolve/devolves} into a sneezing fit",
             "Is joking with r_c about how {PRONOUN/m_c/poss} herby scent is why {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} so sneezy",
             "Is hiding {PRONOUN/m_c/poss} sorrow at knowing r_c can't do anything to truly fix {PRONOUN/m_c/poss} allergies",
             "Is wishing StarClan could give r_c herbs to help {PRONOUN/m_c/poss} allergies",
