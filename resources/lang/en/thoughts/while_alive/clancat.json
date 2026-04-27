@@ -2336,7 +2336,7 @@
         "thoughts": [
             "Feels a tingle of premonition",
             "Gets a wave of deja vu",
-            "Pre-empts r_c when {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} {PRONOUN/m_c/object}",
+            "Preempts r_c when {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} {PRONOUN/m_c/object}",
             "Guesses what r_c has planned today",
             "Suddenly thinks of clair_list_emotional/m_c",
             "Suddenly scents clair_list_smell/m_c",
