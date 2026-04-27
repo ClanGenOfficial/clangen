@@ -329,7 +329,7 @@ def event_for_cat(
     cat_info: dict,
     cat,
     cat_group: list = None,
-    cat_dict: dict = None,  # TODO: this eventually replaces cat_group
+    involved_cat_dict: dict = None,  # TODO: this eventually replaces cat_group
     event_id: str = None,
     p_l=None,
     injuries: list = None,
@@ -339,7 +339,7 @@ def event_for_cat(
     :param cat_info: cat's dict of constraints
     :param cat: the cat object of the cat being checked
     :param cat_group: the group of cats being included within the event
-    :param cat_dict: dict of involved cats
+    :param involved_cat_dict: dict of involved cats, key is event abbreviation and value is cat object
     :param event_id: if event comes with an id, include it here
     :param p_l: if event is a patrol, include patrol leader object here
     :param injuries: list of injuries that the event may give this cat
@@ -375,7 +375,7 @@ def event_for_cat(
 
     # checking groups
     if cat_info.get("group"):
-        if not _check_cat_group(cat, cat_info["group"], cat_dict):
+        if not _check_cat_group(cat, cat_info["group"], involved_cat_dict):
             return False
 
     # checking injuries
@@ -566,7 +566,7 @@ def _check_cat_skills(cat, skills: list[str]) -> bool:
     return is_exclusionary
 
 
-def _check_cat_group(cat, groups: List[str], cat_dict: dict) -> bool:
+def _check_cat_group(cat, groups: List[str], already_involved_cats: dict) -> bool:
     """
     Checks if the cat is in one of the required groups
     """
@@ -583,12 +583,12 @@ def _check_cat_group(cat, groups: List[str], cat_dict: dict) -> bool:
             cat_to_match = tag.replace("match:", "")
             if (
                 is_exclusionary
-                and cat.status.group == cat_dict[cat_to_match].status.group
+                and cat.status.group == already_involved_cats[cat_to_match].status.group
             ):
                 return False
             elif (
                 not is_exclusionary
-                and cat.status.group != cat_dict[cat_to_match].status.group
+                and cat.status.group != already_involved_cats[cat_to_match].status.group
             ):
                 return False
             remaining_tags.remove(tag)
@@ -667,6 +667,7 @@ def _check_cat_gender(cat, genders: list) -> bool:
 def cat_for_event(
     constraint_dict: dict,
     possible_cats: list,
+    involved_cat_dict: dict = None,  # TODO: this could likely replace comparison cat, eventually
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
     injuries: list = None,
@@ -677,6 +678,7 @@ def cat_for_event(
     Returns a single cat ID chosen from eligible cats.
     :param constraint_dict: Can include age, status, skill, not_skill, trait, not_trait, relationship_status, and backstory lists
     :param possible_cats: List of possible cat objects
+    :param involved_cat_dict: dict of involved cats, key is event abbreviation and value is cat object
     :param comparison_cat: If you need to search for cats with a specific relationship status, then include a comparison
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
@@ -699,6 +701,16 @@ def cat_for_event(
         if param not in constraint_dict:
             continue
         allowed_cats = func_dict[param](allowed_cats, tuple(constraint_dict.get(param)))
+
+        # if the list is emptied, return
+        if not allowed_cats:
+            return None
+
+    # checking groups
+    if constraint_dict.get("group"):
+        allowed_cats = _get_cats_from_group(
+            allowed_cats, constraint_dict["group"], involved_cat_dict
+        )
 
         # if the list is emptied, return
         if not allowed_cats:
@@ -834,6 +846,7 @@ def _get_cats_with_status(cat_list: list, statuses: tuple) -> list:
     else:
         return [kitty for kitty in cat_list if kitty.age in statuses]
 
+
 def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
     """
     Returns list of cats with the required stats
@@ -853,6 +866,7 @@ def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
         return list(set(skill_cats).intersection(set(trait_cats)))
     else:
         return skill_cats + trait_cats
+
 
 def _get_cats_with_skill(cat_list: list, skills: tuple) -> list:
     """
@@ -902,6 +916,63 @@ def _get_cats_with_trait(cat_list: list, traits: tuple) -> list:
         return [kitty for kitty in cat_list if kitty.personality.trait not in traits]
     else:
         return [kitty for kitty in cat_list if kitty.personality.trait in traits]
+
+
+def _get_cats_from_group(
+    cat_list: list, groups: List[str], already_involved_cats: dict
+) -> list:
+    """
+    Returns list of cats who match given group constraints
+    """
+    if not groups:
+        return cat_list
+
+    is_exclusionary = _check_for_exclusionary_value(groups)
+
+    groups = [x.replace("-", "") for x in groups if "-" in x]
+    remaining_tags = groups.copy()
+
+    for tag in groups:
+        if "match" in tag:  # checks if group matches with the tagged cat
+            cat_to_match = tag.replace("match:", "")
+            if is_exclusionary:
+                cat_list = [
+                    c
+                    for c in cat_list
+                    if c.status.group
+                    == already_involved_cats[cat_to_match].status.group
+                ]
+            else:
+                cat_list = [
+                    c
+                    for c in cat_list
+                    if c.status.group
+                    != already_involved_cats[cat_to_match].status.group
+                ]
+            remaining_tags.remove(tag)
+
+        elif tag == "afterlife":  # checks if group is an afterlife
+            if is_exclusionary:
+                cat_list = [c for c in cat_list if c.status.group.is_afterlife()]
+            else:
+                cat_list = [c for c in cat_list if not c.status.group.is_afterlife()]
+            remaining_tags.remove(tag)
+
+        elif tag == "no_group":  # checks if the cat has no group
+            if is_exclusionary:
+                cat_list = [c for c in cat_list if c.status.group]
+            else:
+                cat_list = [c for c in cat_list if not c.status.group]
+            remaining_tags.remove(tag)
+
+    # checks all the plain group tags that will match the CatGroup enums
+    if remaining_tags:
+        if is_exclusionary:
+            return [c for c in cat_list if c.status.group not in remaining_tags]
+        else:
+            return [c for c in cat_list if c.status.group in remaining_tags]
+
+    return cat_list
 
 
 def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
