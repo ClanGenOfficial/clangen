@@ -2095,5 +2095,57 @@
         "current_rep": ["hostile"],
         "changed": 3
     }
+},
+{
+    "event_id": "gen_new_cat_queenseekinghelp",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. A half-moon after the birth, n_c:0 bids farewell to the Clan and thanks m_c again for {PRONOUN/m_c/poss} help.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn",
+            "meeting",
+            "unknown"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from sought cat_to's help when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} giving birth."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from heard stories about how cat_to helped n_c:0 when {PRONOUN/n_c:0/subject} gave birth to cat_from."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 2
+    }
 }
 ]

@@ -1328,7 +1328,7 @@ class OtherClan:
         self,
         name: str = "",
         relations: int = 0,
-        temperament: tuple[str, str] = ("", ""),
+        temperament: tuple[str, str] = None,
         chosen_symbol: str = "",
         ID: int = 0,
     ):
