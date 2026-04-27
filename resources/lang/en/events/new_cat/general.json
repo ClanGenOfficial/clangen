@@ -2547,7 +2547,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, r_c insists it is only fair for n_c:0 to leave a kit with c_n as payment. n_c:0 is in disbelief but is outnumbered, so {PRONOUN/n_c:0/subject} {VERB/n_c:0/surrender/surrenders} n_c:2 to the Clan.",
+    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, r_c insists n_c:0 leave a kit with c_n as payment. n_c:0 is in disbelief but is outnumbered, so {PRONOUN/n_c:0/subject} {VERB/n_c:0/surrender/surrenders} n_c:2 to the Clan.",
     "m_c": {
         "status": ["medicine cat"]
     },
