@@ -2187,7 +2187,7 @@
             "cats_to": ["n_c:0"],
             "mutual": false,
             "values": ["comfort"],
-            "amount": 5,
+            "amount": 10,
             "log": {
                 "cats_from": "cat_from felt sympathetic thinking about the terrible circumstances that must have convinced cat_to to give up {PRONOUN/cat_to/poss} kits."
             }
