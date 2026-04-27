@@ -8446,7 +8446,7 @@
         "sub_type": ["war"],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c hides in a cramped nook, planning to ambush the next o_c_n patrol. When no one shows, {PRONOUN/m_c/object} returns to camp aching and stiff.",
+        "event_text": "m_c hides in a cramped nook, planning to ambush the next o_c_n patrol. When no one shows, {PRONOUN/m_c/subject} {VERB/return/returns} to camp aching and stiff.",
         "new_accessory": [],
         "m_c": {
             "status": [
@@ -8459,7 +8459,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "sprain"
+                    "sore"
                 ]
             }
         ]
