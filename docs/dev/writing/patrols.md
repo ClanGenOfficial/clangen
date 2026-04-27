@@ -609,7 +609,15 @@ What each parameter does, and what the options are for outcomes.
 
 #### exp: int
 >The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given. 
+> 
+> There are a few things to keep in mind when determining patrol EXP. First is that the EXP per outcome is split between every cat in the patrol. Second is the difficulty of the patrol itself. If it involves dangerous scenarios (outsiders, predators, or risk of death) and has a lower success rate, the higher the EXP gain typically is. Likewise, failure outcomes typically result in 0 EXP gained, though there are some border patrols and training patrols that will still grant 5 EXP depending on the circumstance. The EXP granted by failed patrols, average successes, and uncommon extreme successes for each patrol type is as follows:
 >
+|          | failure | average success | extreme scenarios |
+|:--------:|:-------:|:---------------:|:-----------------:|
+|  hunting |    0    |      10-20      |        40         |
+|  border  |   0-5   |      0-15       |       20-40       |
+|  medcat  |    0    |      10-20      |        30         |
+| training |   0-5   |       30        |        40         |
 
 ***
 
