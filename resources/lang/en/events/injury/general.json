@@ -8381,6 +8381,13 @@
                 "injuries": ["minor_injury"]
             }
         ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after defending {PRONOUN/m_c/poss} apprentice in a battle with an enemy Clan.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after defending {PRONOUN/m_c/poss} apprentice in a battle with an enemy Clan."
+            }
+        ],
         "relationships": [
             {
                 "cats_from": ["r_c"],
