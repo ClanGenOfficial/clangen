@@ -8758,7 +8758,7 @@
   ],
   "tags": [],
   "frequency": 2,
-  "event_text": "The Clan grows concerned after m_c doesn't return from guard duty. {PRONOUN/m_c/poss/CAP} body is later found out in the territory with a familiar scent reeking off {PRONOUN/m_c/object}.",
+  "event_text": "The Clan grows concerned after m_c doesn't return from guard duty. {PRONOUN/m_c/poss/CAP} body is later found out in the territory with a rogue's scent wreathing around {PRONOUN/m_c/object}.",
   "m_c": {
     "skill": [
       "-FIGHTER,2"
