@@ -8187,7 +8187,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "tags": ["romance"],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "m_c saves r_c in a battle with o_c_n. r_c can't stop thinking about the act of heroism in the following days.",
         "m_c": {
             "status": ["leader", "deputy", "warrior"],
