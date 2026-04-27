@@ -2730,10 +2730,12 @@
             "parent:0",
             "litter",
             "age:newborn",
-            "meeting"
+            "meeting",
+            "unknown"
         ],
         [
             "parent:0",
+            "adoptive:r_c",
             "litter",
             "age:newborn"
         ]
