@@ -2224,7 +2224,7 @@
         }
     },
     {
-        "event_id": "gen_death_war_appmentor",
+        "event_id": "gen_death_war_mentorapp",
         "location": [
             "any"
         ],
@@ -2235,36 +2235,36 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "r_c is killed by a o_c_n warrior in front of {PRONOUN/r_c/poss} apprentice, m_c.",
-        "m_c": {
+        "event_text": "m_c is killed by a o_c_n warrior in front of {PRONOUN/m_c/poss} apprentice, r_c.",
+        "r_c": {
             "status": [
                 "apprentice"
             ],
-            "relationship_status": ["app/mentor"],
             "dies": false
         },
-        "r_c": {
+        "m_c": {
             "status": [
                 "warrior", "deputy", "leader"
             ],
+            "relationship_status": ["mentor/app"],
             "dies": true
         },
         "injury": [
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "injuries": ["shock"]
             }
         ],
         "history": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
                 ],
                 "death": "m_c was killed in a battle with a warring Clan."
             },
             {
                 "cats": [
-                    "m_c"
+                    "r_c"
                 ],
                 "death": "m_c could not recover from the shock of {PRONOUN/m_c/poss} mentor being killed in front of {PRONOUN/m_c/object}."
             }
@@ -2277,7 +2277,7 @@
         }
     },
     {
-        "event_id": "gen_death_war_mentorapp",
+        "event_id": "gen_death_war_appmentor",
         "location": [
             "any"
         ],
@@ -2288,16 +2288,16 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "r_c is killed by a o_c_n warrior in front of {PRONOUN/r_c/poss} mentor, m_c.",
-        "m_c": {
+        "event_text": "m_c is killed by a o_c_n warrior in front of {PRONOUN/m_c/poss} mentor, r_c.",
+        "r_c": {
             "status": [
                 "warrior", "deputy", "leader"
             ],
-            "relationship_status": ["mentor/app"],
             "dies": false
         },
-        "r_c": {
+        "m_c": {
             "status": ["apprentice"],
+            "relationship_status": ["app/mentor"],
             "dies": true
         },
         "history": [
@@ -2327,17 +2327,17 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "r_c and m_c match each other blow for blow in a fight with a o_c_n patrol. The tide of battle turns against the littermates, and r_c is killed in front of m_c.",
+        "event_text": "r_c and m_c match each other blow for blow in a fight with a o_c_n patrol. The tide of battle turns against the littermates, and m_c is killed in front of r_c.",
         "m_c": {
             "status": [
                 "warrior", "apprentice", "deputy", "leader"
             ],
             "relationship_status": ["littermates", "trusts"],
-            "dies": false
+            "dies": true
         },
         "r_c": {
             "status": ["warrior", "apprentice", "deputy", "leader"],
-            "dies": true
+            "dies": false
         },
         "injury": [
             {
@@ -2348,12 +2348,12 @@
         "history": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
                 ],
                 "death": "m_c was killed in a battle with a warring Clan."
             },
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} littermate die in front of {PRONOUN/m_c/object}."
             }
         ],
@@ -2376,85 +2376,36 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "m_c tries to protect {PRONOUN/m_c/poss} little sibling in a fight with o_c_n, but r_c is killed by enemy warriors.",
-        "m_c": {
+        "event_text": "r_c tries to protect {PRONOUN/r_c/poss} little sibling in a fight with o_c_n, but m_c is killed by enemy warriors.",
+        "r_c": {
             "status": [
                 "warrior", "deputy", "leader"
             ],
             "age": ["young adult", "adult", "senior adult"],
-            "relationship_status": ["siblings"],
             "dies": false
         },
-        "r_c": {
+        "m_c": {
             "status": ["apprentice"],
             "age": ["adolescent"],
+            "relationship_status": ["siblings"],
             "dies": true
         },
         "injury": [
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "injuries": ["shock"]
             }
         ],
         "history": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
                 ],
                 "death": "m_c was killed in a battle with a warring Clan."
             },
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} little sibling die in front of {PRONOUN/m_c/object}."
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -5
-        }
-    },
-    {
-        "event_id": "gen_death_war_parentchild",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "frequency": 1,
-        "event_text": "In a battle with o_c_n, m_c acts too late to save r_c and watches {PRONOUN/m_c/poss} kit die.",
-        "m_c": {
-            "status": [
-                "warrior", "deputy", "leader"
-            ],
-            "relationship_status": ["parent/child"],
-            "dies": false
-        },
-        "r_c": {
-            "status": ["warrior", "apprentice", "deputy", "leader"],
-            "dies": true
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["shock"]
-            }
-        ],
-        "history": [
-            {
-                "cats": [
-                    "r_c"
-                ],
-                "death": "m_c was killed in a battle with a warring Clan."
-            },
-            {
-                "cats": ["m_c"],
-                "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} kit die in front of {PRONOUN/m_c/object}."
             }
         ],
         "other_clan": {
@@ -2476,34 +2427,83 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "In a battle with o_c_n, m_c sees an enemy warrior kill {PRONOUN/m_c/poss} parent, r_c.",
-        "m_c": {
+        "event_text": "In a battle with o_c_n, r_c acts too late to save m_c and watches {PRONOUN/r_c/poss} kit die.",
+        "r_c": {
             "status": [
-                "apprentice", "warrior", "deputy", "leader"
+                "warrior", "deputy", "leader"
             ],
-            "relationship_status": ["child/parent"],
             "dies": false
         },
-        "r_c": {
-            "status": ["warrior", "deputy", "leader"],
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "relationship_status": ["child/parent"],
             "dies": true
         },
         "injury": [
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "injuries": ["shock"]
             }
         ],
         "history": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            },
+            {
+                "cats": ["r_c"],
+                "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} kit die in front of {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_death_war_parentchild",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "In a battle with o_c_n, r_c sees an enemy warrior kill {PRONOUN/r_c/poss} parent, m_c.",
+        "r_c": {
+            "status": [
+                "warrior", "deputy", "leader"
+            ],
+            "dies": false
+        },
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "relationship_status": ["parent/child"],
+            "dies": true
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["shock"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
                 ],
                 "death": "m_c was killed in a battle with a warring Clan."
             },
             {
                 "cats": [
-                    "m_c"
+                    "r_c"
                 ],
                 "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} parent be killed in front of {PRONOUN/m_c/object}."
             }
@@ -2527,33 +2527,33 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "In the haze of battle, m_c is separated from r_c. When the dust settles, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} r_c's cooling body.",
-        "m_c": {
+        "event_text": "In the haze of battle, r_c is separated from m_c. When the dust settles, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} m_c's cooling body.",
+        "r_c": {
             "status": [
                 "warrior", "deputy", "leader"
             ],
-            "relationship_status": ["mates"],
             "dies": false
         },
-        "r_c": {
+        "m_c": {
             "status": ["warrior", "deputy", "leader"],
+            "relationship_status": ["mates"],
             "dies": true
         },
         "injury": [
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "injuries": ["shock"]
             }
         ],
         "history": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
                 ],
                 "death": "m_c was killed in a battle with a warring Clan."
             },
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "death": "m_c could not recover from the shock of finding {PRONOUN/m_c/poss} mate's body after a battle with o_c_n."
             }
         ],
@@ -2576,22 +2576,20 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "As r_c leaves camp with the battle patrol, m_c pleads for {PRONOUN/r_c/object} to return to {PRONOUN/m_c/object} safely. r_c does not keep {PRONOUN/r_c/poss} promise.",
+        "event_text": "As m_c leaves camp with the battle patrol, r_c pleads for {PRONOUN/m_c/object} to return to {PRONOUN/r_c/object} safely. m_c does not keep {PRONOUN/m_c/poss} promise.",
         "m_c": {
-            "status": [
-                "any"
-            ],
+            "status": ["warrior", "deputy", "leader"],
             "relationship_status": ["mates"],
-            "dies": false
+            "dies": true
         },
         "r_c": {
-            "status": ["warrior", "deputy", "leader"],
-            "dies": true
+            "status": ["any"],
+            "dies": false
         },
         "history": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
                 ],
                 "death": "m_c was killed in a battle with a warring Clan."
             }
@@ -2615,22 +2613,22 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "In a battle with o_c_n, m_c's mate r_c is killed. m_c vows the war will never end until o_c_n pays.",
-        "m_c": {
+        "event_text": "In a battle with o_c_n, r_c's mate m_c is killed. r_c vows the war will never end until o_c_n pays.",
+        "r_c": {
             "status": [
                 "leader"
             ],
-            "relationship_status": ["mates"],
             "dies": false
         },
-        "r_c": {
+        "m_c": {
             "status": ["warrior", "deputy"],
+            "relationship_status": ["mates"],
             "dies": true
         },
         "history": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
                 ],
                 "death": "m_c was killed in a battle with a warring Clan."
             }
@@ -2654,34 +2652,35 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "Despite m_c's talent in battle, {PRONOUN/m_c/subject} and r_c are overwhelmed by waves of invading o_c_n warriors. Three hold m_c down as a fourth kills r_c in front of {PRONOUN/m_c/object}.",
-        "m_c": {
+        "event_text": "Despite r_c's talent in battle, {PRONOUN/r_c/subject} and m_c are overwhelmed by waves of invading o_c_n warriors. Three hold r_c down as a fourth kills m_c in front of {PRONOUN/r_c/object}.",
+        "r_c": {
             "status": [
                 "warrior", "deputy", "leader"
             ],
             "skill": ["FIGHTER,1"],
-            "relationship_status": ["mates"],
             "dies": false
         },
-        "r_c": {
+        "m_c": {
             "status": ["warrior", "deputy", "leader"],
+            "relationship_status": ["mates"],
             "dies": true
         },
         "injury": [
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "injuries": ["battle_injury", "shock"]
             }
         ],
         "history": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
                 ],
                 "death": "m_c was killed in a battle with a warring Clan."
             },
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
+                "scar": "m_c was scarred after a battle in which an enemy Clan's warriors killed {PRONOUN/m_c/poss} mate in front of {PRONOUN/m_c/object}.",
                 "death": "m_c died after a battle in which an enemy Clan's warriors killed {PRONOUN/m_c/poss} mate in front of {PRONOUN/m_c/object}."
             }
         ],
