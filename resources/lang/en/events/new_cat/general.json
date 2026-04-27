@@ -2097,7 +2097,7 @@
     }
 },
 {
-    "event_id": "gen_new_cat_queenseekinghelp",
+    "event_id": "gen_new_cat_queenhelp",
     "location": ["any"],
     "season": ["any"],
     "tags": [],
@@ -2146,6 +2146,233 @@
     "outsider": {
         "current_rep": ["neutral", "welcoming"],
         "changed": 2
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpabandon",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. The night after the birth, the Clan awakes to helpless mewls and the fading scent of the loner.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan", "high_social", "high_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "respect"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from was disgusted that cat_to would abandon {PRONOUN/cat_to/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "high_social", "low_aggress", "high_stable"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["comfort"],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_from felt sympathetic thinking about the terrible circumstances that must have convinced cat_to to give up {PRONOUN/cat_to/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_to helped care for cat_from after {PRONOUN/cat_from/poss} parent abandoned {PRONOUN/cat_from/object}."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "high_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -30,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "low_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit, though {PRONOUN/cat_from/subject} believed there must have been a reason."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": -2
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpdeath",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. As n_c:0 feared, the birth is hard, and even m_c's knowledge cannot save {PRONOUN/n_c:0/object}. The Clan is left with n_c:0's litter.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner",
+        "dead"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_to cared for cat_from after {PRONOUN/cat_from/poss} parent died giving birth to {PRONOUN/cat_from/object}."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 0
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpdeath",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. As n_c:0 feared, the birth is hard. m_c watches {PRONOUN/n_c:0/object} struggle and bleed out. The Clan could use more kits, after all.",
+    "m_c": {
+        "status": ["medicine cat"],
+        "trait": ["bloodthirsty", "cold"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner",
+        "dead"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_to cared for cat_from after {PRONOUN/cat_from/poss} parent died giving birth to {PRONOUN/cat_from/object}."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -3
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpdeath",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, n_c:0 admits {PRONOUN/n_c:0/subject} cannot care for them. r_c steps up to take them as {PRONOUN/r_c/poss} own.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "adoptive:r_c",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from grew up hearing about how m_c helped {PRONOUN/cat_from/poss} biological parent give birth to {PRONOUN/cat_from/object}."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "high_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -30,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "low_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit, though {PRONOUN/cat_from/subject} believed there must have been a reason."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -3
     }
 }
 ]
