@@ -354,6 +354,7 @@ def event_for_cat(
         "skill": _check_cat_skills,
         "backstory": _check_cat_backstory,
         "gender": _check_cat_gender,
+        "health": _check_cat_health,
     }
 
     for param, func in func_lookup.items():
@@ -662,6 +663,69 @@ def _check_cat_gender(cat, genders: list) -> bool:
         return True
 
     return False
+
+
+def _check_cat_health(cat, health_constraints: dict) -> bool:
+    """
+    Checks if the cat has the required conditions
+    """
+
+    # structuring like this intentionally instead of using .get()
+    # so that a missing value and a False value will be treated differently
+    if "working" in health_constraints:
+        # "working" equals True and cat isn't working
+        if health_constraints["working"] and cat.not_working():
+            return False
+        # "working" equals False and cat IS working
+        elif not health_constraints["working"] and not cat.not_working():
+            return False
+
+    if health_constraints.get("condition"):
+        required_conditions = health_constraints["condition"]
+
+        is_exclusionary = _check_for_exclusionary_value(required_conditions)
+        if is_exclusionary:
+            required_conditions = [x.replace("-", "") for x in required_conditions]
+
+        current_conditions = set(cat.illnesses.keys())
+        current_conditions.update(cat.injuries.keys())
+
+        if current_conditions.intersection(set(required_conditions)):
+            if is_exclusionary:
+                return False
+        else:
+            if not is_exclusionary:
+                return False
+
+        # need to check if the perm conditions were congenital
+        if health_constraints.get("must_be_congenital", False):
+            perm_conditions = set(cat.permanent_condition.keys())
+            # gathering conditions to check
+            if is_exclusionary:
+                matching = perm_conditions
+            else:
+                matching = perm_conditions.intersection(set(required_conditions))
+            # checking if they're congenital
+            if matching:
+                for cond in matching:
+                    if not cat.permanent_condition[cond].born_with:
+                        return False
+
+        # need to check if the perm conditions were NOT congenital
+        elif health_constraints.get("must_be_acquired", False):
+            perm_conditions = set(cat.permanent_condition.keys())
+            # gathering conditions to check
+            if is_exclusionary:
+                matching = perm_conditions
+            else:
+                matching = perm_conditions.intersection(set(required_conditions))
+            # checking if they're NOT congenital
+            if matching:
+                for cond in matching:
+                    if cat.permanent_condition[cond].born_with:
+                        return False
+
+    return True
 
 
 def cat_for_event(
