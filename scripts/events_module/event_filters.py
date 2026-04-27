@@ -687,6 +687,7 @@ def cat_for_event(
     func_dict = {
         "age": _get_cats_with_age,
         "status": _get_cats_with_status,
+        "stat": _get_cats_with_stat,
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
         "backstory": _get_cats_with_backstory,
@@ -833,6 +834,25 @@ def _get_cats_with_status(cat_list: list, statuses: tuple) -> list:
     else:
         return [kitty for kitty in cat_list if kitty.age in statuses]
 
+def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
+    """
+    Returns list of cats with the required stats
+    """
+    if not stat:
+        return cat_list
+
+    skill_cats = []
+    trait_cats = []
+
+    if stat.get("skill"):
+        skill_cats = _get_cats_with_age(cat_list, stat["skill"])
+    if stat.get("trait"):
+        trait_cats = _get_cats_with_trait(cat_list, stat["trait"])
+
+    if stat.get("must_have_both"):
+        return list(set(skill_cats).intersection(set(trait_cats)))
+    else:
+        return skill_cats + trait_cats
 
 def _get_cats_with_skill(cat_list: list, skills: tuple) -> list:
     """
