@@ -174,12 +174,12 @@
     },
     "absent": {
         "joint pain": [
-            "m_c's joints hurt lately. {PRONOUN/m_c/object/CAP} must have been walking around more than {PRONOUN/m_c/object} thought.",
+            "m_c's joints hurt lately. {PRONOUN/m_c/subject/CAP} must have been walking around more than {PRONOUN/m_c/subject} thought.",
             "m_c isn't moving as much today, mumbling about being sore."
         ],
         "torn pelt": [ 
             "m_c has no idea where these scratches came from, but they're certainly there.",
-            "m_c accidentally tore {PRONOUN/m_c/poss} pelt when {PRONOUN/m_c/object} {VERB/m_c/were/was} wandering the territory."
+            "m_c accidentally tore {PRONOUN/m_c/poss} pelt when {PRONOUN/m_c/subject} {VERB/m_c/were/was} wandering the territory."
         ]
     },
     "strange lump": {

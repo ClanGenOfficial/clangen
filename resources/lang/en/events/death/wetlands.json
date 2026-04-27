@@ -4,7 +4,7 @@
         "location": ["wetlands"],
         "season": ["any"],
         "tags": [],
-        "weight": 10,
+        "frequency": 2,
         "event_text": "m_c got stuck in quicksand and wasn't found in time.",
         "m_c": {
             "status": ["apprentice", "warrior", "deputy", "leader"],
@@ -22,7 +22,7 @@
         "location": ["wetlands"],
         "season": ["greenleaf", "newleaf", "leaf-fall"],
         "tags": [],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c was killed by a snake with a strikingly white mouth.",
         "m_c": {
             "status": ["apprentice"],

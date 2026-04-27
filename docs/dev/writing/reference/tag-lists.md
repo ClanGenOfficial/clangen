@@ -455,3 +455,21 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 
 !!! warning
     Within ShortEvents, these should only be used in m_c's relationship constraints.
+
+***
+
+## Clan Temperaments
+> These tags are used to indicate what type of Clan can receive an event.
+
+|                 | low aggression | mid aggression | high aggression  |
+|-----------------|----------------|----------------|------------------|
+| **low social**  | cunning        | proud          | bloodthirsty     |
+| **mid social**  | amiable        | stoic          | wary             |
+| **high social** | gracious       | mellow         | logical          |
+
+
+|                 | low stability | mid stability | high stability |
+|-----------------|---------------|---------------|----------------|
+| **low lawful**  | chaotic       | mercurial     | calculating    |
+| **mid lawful**  | eager         | observant     | adaptable      |
+| **high lawful** | decisive      | methodical    | steadfast      |

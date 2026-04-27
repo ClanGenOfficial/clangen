@@ -242,7 +242,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to the m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
+                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
                 }
             },
             {
@@ -296,7 +296,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to the m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
+                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
                 }
             },
             {
@@ -342,7 +342,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to the m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
+                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
                 }
             },
             {
@@ -378,7 +378,8 @@
                 "old_name",
                 "loner",
                 "status:warrior",
-                "mate:m_c,r_c"
+                "mate:m_c,r_c",
+                "age:mate"
             ]
         ],
         "relationships": [
@@ -796,7 +797,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new kittypet friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new kittypet friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
@@ -990,7 +991,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new rogue friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n",
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new rogue friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
     "m_c": {
         "age": ["adolescent"],
         "status": ["any"]
@@ -1299,7 +1300,8 @@
                 "age:has_kits",
                 "former clancat",
                 "meeting",
-                "new_name"
+                "new_name",
+                "backstory:stolenkit2"
             ],
             [
                 "litter",
@@ -1964,7 +1966,7 @@
     "relationships": [
         {
             "cats_from": ["clan"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": 10,
@@ -1974,7 +1976,7 @@
         },
         {
             "cats_from": ["clan", "high_aggress"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": -10,
@@ -2020,7 +2022,7 @@
     "relationships": [
         {
             "cats_from": ["clan"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": -10,
@@ -2066,7 +2068,7 @@
     "relationships": [
         {
             "cats_from": ["clan"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": 10,
@@ -2076,7 +2078,7 @@
         },
         {
             "cats_from": ["clan", "high_lawful"],
-            "cats_to": ["n_c:0, n_c:1, n_c:2"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
             "mutual": false,
             "values": ["trust", "like"],
             "amount": -15,
@@ -2092,6 +2094,58 @@
     "other_clan": {
         "current_rep": ["hostile"],
         "changed": 3
+    }
+},
+{
+    "event_id": "gen_new_cat_queenseekinghelp",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. A half-moon after the birth, n_c:0 bids farewell to the Clan and thanks m_c again for {PRONOUN/m_c/poss} help.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn",
+            "meeting",
+            "unknown"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from sought cat_to's help when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} giving birth."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from heard stories about how cat_to helped n_c:0 when {PRONOUN/n_c:0/subject} gave birth to cat_from."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 2
     }
 }
 ]

@@ -35,7 +35,7 @@
 
         ],
         "sore throat": [
-            "m_c's congestion has left {PRONOUN/m_c/poss} throat inflammed and sore.",
+            "m_c's congestion has left {PRONOUN/m_c/poss} throat inflamed and sore.",
             "As if a running nose wasn't enough trouble, now m_c's throat is sore as well."
         ]
     },

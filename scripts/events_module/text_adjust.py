@@ -562,8 +562,9 @@ def _replace_clan_name(text, abbreviation, clan_name):
                     if f"{abbreviation}." in modify:
                         pos = modify.index(f"{abbreviation}.")
                     if modify[pos - 1] == "a":
-                        modify.remove("a")
-                        modify.insert(pos - 1, "an")
+                        modify[pos - 1] = "an"
+                    if modify[pos - 1] == "A":
+                        modify[pos - 1] = "An"
                     text = " ".join(modify)
                     break
 

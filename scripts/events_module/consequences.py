@@ -210,7 +210,7 @@ def create_new_cat_block(
     elif rank == CatRank.MEDICINE_CAT:
         chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
     else:
-        if cat_social == CatSocial.CLANCAT:
+        if cat_social in (CatSocial.CLANCAT, "former clancat"):
             x = "former_clancat"
         else:
             x = cat_social
@@ -247,7 +247,11 @@ def create_new_cat_block(
             BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
             + BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
         ):
-            cat_social = CatSocial.CLANCAT
+            cat_social = (
+                CatSocial.CLANCAT
+                if cat_social != "former clancat"
+                else "former clancat"
+            )
         elif chosen_backstory in (
             BACKSTORIES["backstory_categories"]["baby_loner_backstories"]
             + BACKSTORIES["backstory_categories"]["loner_backstories"]
@@ -622,7 +626,7 @@ def create_new_cat(
         # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
         # little babies will take a clancat name, we love indoctrination
         if (
-            kit or litter or moons < 12
+            (kit or litter or moons < 12) and not outside
         ) and original_group not in game.clan.other_clan_IDs:
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()

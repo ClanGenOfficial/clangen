@@ -2189,7 +2189,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
-                        "amount": 5,
+                        "amount": -3,
                         "log": {
                             "cats_from": "cat_from and cat_to were unable to drive a gray vixen off their territory together."
                         }

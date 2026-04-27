@@ -297,11 +297,11 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 40
+                "chance": 30
             },
             {
                 "name": "tick fever",
-                "chance": 60
+                "chance": 50
             }
         ],
         "also_got": [],

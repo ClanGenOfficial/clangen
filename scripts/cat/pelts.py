@@ -1340,9 +1340,9 @@ def _describe_torties(cat, color_name, short=False) -> (str, str):
             "rosette",
             "speckled",
         ):
-            base = f"cat.pelts.{cat.pelt.name}_tabby"
+            base = f"cat.pelts.{cat.pelt.name}_tabby_long"
         else:
-            base = f"cat.pelts.{cat.pelt.name}"
+            base = f"cat.pelts.{cat.pelt.name}_long"
         return base, color_name
 
 

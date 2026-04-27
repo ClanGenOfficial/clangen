@@ -242,9 +242,11 @@ def generate_event_objects(event_triggered, biome, frequency) -> list:
     :param frequency: The frequency to pull events for
     """
     debug_freq = constants.CONFIG["event_generation"]["debug_override_frequency"]
+    if debug_freq:
+        frequency = debug_freq
 
     file_path = f"{event_triggered}/{biome}.json"
-    load_name = f"{file_path}_{debug_freq if debug_freq else frequency}"
+    load_name = f"{file_path}_{frequency}"
 
     try:
         if file_path in loaded_events:

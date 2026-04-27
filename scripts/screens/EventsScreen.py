@@ -783,6 +783,13 @@ class EventsScreen(Screens):
 
         anchor = {"top": "top"}
 
+        default_color = pygame.Color(
+            constants.CONFIG["theme"][
+                ("dark" if game_setting_get("dark mode") else "light")
+                + "_mode_background"
+            ]
+        )
+
         alternate_color = (
             pygame.Color(87, 76, 55)
             if game_setting_get("dark mode")
@@ -810,9 +817,10 @@ class EventsScreen(Screens):
 
             self.event_display_containers.append(display_element_container)
 
-            if i % 2 == 0:
-                display_element_container.background_colour = alternate_color
-                display_element_container.rebuild()
+            display_element_container.background_colour = (
+                alternate_color if i % 2 else default_color
+            )
+            display_element_container.rebuild()
 
             # TEXT BOX
             display_element_event = pygame_gui.elements.UITextBox(

@@ -1836,9 +1836,7 @@
                         "cats_to": [
                             "p_l"
                         ],
-                        "cats_from": [
-                            "low_stable"
-                        ],
+                        "cats_from": ["some_clan", "low_stable"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -1853,7 +1851,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_stable"
+                            "some_clan", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -1878,9 +1876,7 @@
                         "cats_to": [
                             "p_l"
                         ],
-                        "cats_from": [
-                            "low_stable"
-                        ],
+                        "cats_from": ["some_clan", "low_stable"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -1895,7 +1891,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_stable"
+                            "some_clan", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -1929,9 +1925,7 @@
                         "cats_to": [
                             "p_l"
                         ],
-                        "cats_from": [
-                            "low_stable"
-                        ],
+                        "cats_from": ["some_clan", "low_stable"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -1946,7 +1940,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_stable"
+                            "some_clan", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -1983,9 +1977,7 @@
                         "cats_to": [
                             "p_l"
                         ],
-                        "cats_from": [
-                            "low_stable"
-                        ],
+                        "cats_from": ["some_clan", "low_stable"],
                         "mutual": false,
                         "values": [
                             "comfort"
@@ -2000,7 +1992,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_stable"
+                            "some_clan", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
@@ -2040,7 +2032,7 @@
                 "text": "p_l lunges for the common buzzard, only for the buzzard to spread their wings too much, much larger than they look folded and startle the cat right off the cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} never seen again.",
                 "exp": 0,
                 "dead_cats": [
-                    "r_c",
+                    "p_l",
                     "all_lives"
                 ],
                 "history_text": {
@@ -2054,7 +2046,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "p_l"
                         ],
                         "injuries": [
                             "beak_bite"
@@ -2068,7 +2060,7 @@
                 "frequency": 3
             },
             {
-                "text": "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird — but the bird flies off, and s_c slips on the cold, icy cliff, never to be seen again.",
+                "text": "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird — but the bird flies off, and s_c slips off the cold, icy cliff, never to be seen again.",
                 "exp": 0,
                 "stat_trait": [
                     "childish",
@@ -2076,9 +2068,6 @@
                     "nervous",
                     "troublesome",
                     "insecure"
-                ],
-                "can_have_stat": [
-                    "adult"
                 ],
                 "dead_cats": [
                     "s_c",
