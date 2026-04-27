@@ -2270,7 +2270,7 @@
     }
 },
 {
-    "event_id": "gen_new_cat_queenhelpdeath",
+    "event_id": "gen_new_cat_queenhelpmurder",
     "location": ["any"],
     "season": ["any"],
     "tags": [],
@@ -2278,7 +2278,7 @@
     "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. As n_c:0 feared, the birth is hard. m_c watches {PRONOUN/n_c:0/object} struggle and bleed out. The Clan could use more kits, after all.",
     "m_c": {
         "status": ["medicine cat"],
-        "trait": ["bloodthirsty", "cold"]
+        "trait": ["bloodthirsty", "cold", "cunning", "sneaky"]
     },
     "new_cat": [
         ["can_birth",
@@ -2312,7 +2312,7 @@
     }
 },
 {
-    "event_id": "gen_new_cat_queenhelpdeath",
+    "event_id": "gen_new_cat_queenhelpadopt",
     "location": ["any"],
     "season": ["any"],
     "tags": [],
@@ -2372,7 +2372,7 @@
     ],
     "outsider": {
         "current_rep": ["any"],
-        "changed": -3
+        "changed": 1
     }
 }
 ]
