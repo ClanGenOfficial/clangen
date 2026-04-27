@@ -6788,18 +6788,10 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "m_c gazes fearfully up at the o_c_n warrior, whose teeth are bared and ready to deliver the killing blow. Something in {PRONOUN/m_c/poss} eyes must have shaken them, however, as they bound away without finishing the job.",
+        "event_text": "In a brutal battle, a o_c_n warrior shows m_c mercy.",
         "m_c": {
             "status": [
-                "any"
-            ],
-            "age": [
-                "kitten",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
+                "warrior", "apprentice", "deputy", "leader"
             ]
         },
         "injury": [
@@ -6819,6 +6811,39 @@
                 ],
                 "scar": "m_c was scarred after a vicious attack from a warring Clan.",
                 "death": "m_c died from {PRONOUN/m_c/poss} wounds after a vicious attack from a warring Clan."
+            }
+        ],
+        "other_clan": {
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_injury_war_showmercy2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "o_c_n raids the camp, and an enemy warrior breaks into the nursery. At the sight of m_c's terror, the warrior's resolve breaks down, and they leave m_c with hardly a scratch on {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "scrapes",
+                    "small cut"
+                ]
             }
         ],
         "other_clan": {
