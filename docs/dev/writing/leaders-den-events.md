@@ -85,24 +85,12 @@ These should be flavored as occurring during the Gathering and should specify as
 ***
 
 #### player_clan_temper: list[str]
-> List of allowed player clan temperaments.  Possible tempers are as follows:
-
-|                 | low aggression | mid aggression | high aggression  |
-|-----------------|----------------|----------------|------------------|
-| **low social**  | cunning        | proud          | bloodthirsty     |
-| **mid social**  | amiable        | stoic          | wary             |
-| **high social** | gracious       | mellow         | logical          |
+> List of allowed player clan temperaments.  [Possible Tempers](reference/tag-lists.md/#clan-temperaments)
 
 ***
 
 #### other_clan_temper: list[str]
-> List of allowed other clan temperaments.  Possible tempers are same as above.
-
-|                 | low aggression | mid aggression | high aggression  |
-|-----------------|----------------|----------------|------------------|
-| **low social**  | cunning        | proud          | bloodthirsty     |
-| **mid social**  | amiable        | stoic          | wary             |
-| **high social** | gracious       | mellow         | logical          |
+> List of allowed other clan temperaments.  [Possible Tempers](reference/tag-lists.md/#clan-temperaments)
 
 ***
 
