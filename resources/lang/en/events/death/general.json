@@ -2682,7 +2682,7 @@
             },
             {
                 "cats": ["m_c"],
-                "death": "m_c died after a battle in which an enemy Clan's warriors killed {RPONOUN/m_c/poss} mate in front of {PRONOUN/m_c/object}."
+                "death": "m_c died after a battle in which an enemy Clan's warriors killed {PRONOUN/m_c/poss} mate in front of {PRONOUN/m_c/object}."
             }
         ],
         "other_clan": {
