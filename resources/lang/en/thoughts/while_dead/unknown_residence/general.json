@@ -70,7 +70,7 @@
             "Wonders whether {PRONOUN/m_c/poss} Clanmates wonder what happened to {PRONOUN/m_c/object}",
             "Wonders if {PRONOUN/m_c/subject}'ll be remembered even if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not in StarClan",
             "Thought {PRONOUN/m_c/subject} caught a c_n scent but was wrong",
-            "Has forgotten just how long {PRONOUN/m_c/subject}[VERB/m_c/'ve/'s} been wandering, searching for c_n",
+            "Has forgotten just how long {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been wandering, searching for c_n",
             "Wonders why StarClan wasn't watching over {PRONOUN/m_c/object}",
             "Feels lost knowing StarClan was not guiding {PRONOUN/m_c/poss} every step home...",
             "Wonders if StarClan rejected {PRONOUN/m_c/object}, leaving {PRONOUN/m_c/object} here...",
