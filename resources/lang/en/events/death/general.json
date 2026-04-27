@@ -8783,6 +8783,30 @@
       ],
       "death": "m_c was killed by a rogue while on guard duty."
     }
-  ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["clan"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+	        "comfort",
+	        "trust"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "cat_from felt outraged after hearing that cat_to killed m_c while on guard duty."
+                }
+            }
+        ],
+  "outsider": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": -3
+  }
 }
 ]
