@@ -8422,6 +8422,11 @@
         "m_c": {
             "status": [
                 "warrior"
+            ],
+            "trait": [
+                "oblivious",
+                "childish",
+                "playful",
             ]
         },
         "injury": [
