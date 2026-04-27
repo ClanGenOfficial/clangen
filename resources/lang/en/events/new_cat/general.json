@@ -2102,7 +2102,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. A half-moon after the birth, n_c:0 bids farewell to the Clan and thanks m_c again for {PRONOUN/m_c/poss} help.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. A half-moon after the birth, n_c:0 bids farewell to the Clan and thanks m_c again for {PRONOUN/m_c/poss} help.",
     "m_c": {
         "status": ["medicine cat"]
     },
@@ -2154,7 +2154,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. The night after the birth, the Clan awakes to helpless mewls and the fading scent of the loner.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. The night after the birth, the Clan awakes to helpless mewls and the fading scent of the loner.",
     "m_c": {
         "status": ["medicine cat"]
     },
@@ -2234,7 +2234,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. As n_c:0 feared, the birth is hard, and even m_c's knowledge cannot save {PRONOUN/n_c:0/object}. The Clan is left with n_c:0's litter.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard, and even m_c's knowledge cannot save {PRONOUN/n_c:0/object}. The Clan is left with n_c:0's litter.",
     "m_c": {
         "status": ["medicine cat"]
     },
@@ -2275,7 +2275,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. As n_c:0 feared, the birth is hard. m_c watches {PRONOUN/n_c:0/object} struggle and bleed out. The Clan could use more kits, after all.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard. m_c watches {PRONOUN/n_c:0/object} struggle and bleed out. The Clan could use more kits, after all.",
     "m_c": {
         "status": ["medicine cat"],
         "trait": ["bloodthirsty", "cold", "cunning", "sneaky"]
@@ -2317,7 +2317,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, n_c:0 admits {PRONOUN/n_c:0/subject} cannot care for them. r_c steps up to take them as {PRONOUN/r_c/poss} own.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, n_c:0 admits {PRONOUN/n_c:0/subject} cannot care for them. r_c steps up to take them as {PRONOUN/r_c/poss} own.",
     "m_c": {
         "status": ["medicine cat"]
     },
@@ -2381,7 +2381,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, r_c orders n_c:0 to leave camp. These kits belong to c_n, now.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, r_c orders n_c:0 to leave camp. These kits belong to c_n, now.",
     "m_c": {
         "status": ["medicine cat"],
         "trait": ["-bloodthirsty", "-cold", "-fierce"]
@@ -2466,7 +2466,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, r_c orders n_c:0 to leave camp. These kits belong to c_n, now. n_c:0 fights with all the fury of a new parent, but {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} weak from the birth. The body is buried far from camp, where the kits will never find it.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, r_c orders n_c:0 to leave camp. These kits belong to c_n, now. n_c:0 fights with all the fury of a new parent, but {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} weak from the birth. The body is buried far from camp, where the kits will never find it.",
     "m_c": {
         "status": ["medicine cat"]
     },
@@ -2534,6 +2534,26 @@
             "log": {
                 "cats_from": "cat_from aided a loner in giving birth and was horrified when cat_to killed the loner and stole {PRONOUN/n_c:0/poss} kits."
             }
+        },
+        {
+            "cats_from": ["clan", "high_social", "high_stable"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "comfort"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from thought it was fox-hearted of cat_to to steal kits from a loner."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_social", "low_stable", "high_aggress"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from approved of cat_to strengthening c_n by taking kits from a loner."
+            }
         }
     ],
     "outsider": {
@@ -2547,7 +2567,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, r_c insists n_c:0 leave a kit with c_n as payment. n_c:0 is in disbelief but is outnumbered, so {PRONOUN/n_c:0/subject} {VERB/n_c:0/surrender/surrenders} n_c:2 to the Clan.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, r_c insists n_c:0 leave a kit with c_n as payment. n_c:0 is in disbelief but is outnumbered, so {PRONOUN/n_c:0/subject} {VERB/n_c:0/surrender/surrenders} n_c:2 to the Clan.",
     "m_c": {
         "status": ["medicine cat"]
     },
@@ -2646,7 +2666,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, m_c breaks the news to n_c:0 that one kit was stillborn. Once n_c:0 has left the territory, m_c allows n_c:2 out of the medicine den to join {PRONOUN/n_c:2/poss} new Clan.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, m_c breaks the news to n_c:0 that one kit was stillborn. Once n_c:0 has left the territory, m_c allows n_c:2 out of the medicine den to join {PRONOUN/n_c:2/poss} new Clan.",
     "m_c": {
         "status": ["medicine cat"],
         "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning", "sneaky"]
@@ -2699,6 +2719,46 @@
             "log": {
                 "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
             }
+        },
+        {
+            "cats_from": ["clan", "high_aggress", "low_stable", "low_social"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from was disgusted that cat_to would abandon one of {PRONOUN/cat_to/poss} own kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_aggress", "low_stable"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from didn't understand why cat_to would abandon one of {PRONOUN/cat_to/poss} own kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_aggress", "high_stable", "high_social"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from suspected cat_to wasn't being entirely honest about how n_c:2 was abandoned by {PRONOUN/n_c:2/poss} parent."
+            }
+        },
+        {
+            "cats_from": ["clan", "high_aggress", "low_stable", "high_social", "low_lawful"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from concluded that cat_to's story about n_c:0 abandoning n_c:2 was an excuse to keep a kit and strengthen c_n. cat_from approved of cat_to's plan and told no one."
+            }
         }
     ],
     "outsider": {
@@ -2712,7 +2772,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. As n_c:0 feared, the birth is hard; {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} an enormous litter and begs c_n to raise some of the kits. r_c agrees to adopt them.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard; {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} an enormous litter and begs c_n to raise some of the kits. r_c agrees to adopt them.",
     "m_c": {
         "status": ["medicine cat"]
     },
@@ -2783,7 +2843,7 @@
     "season": ["any"],
     "tags": [],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. As n_c:0 feared, the birth is hard, and m_c cannot save {PRONOUN/n_c:0/object}. r_c organizes a search party to track down any cat who knew n_c:0. c_n finds n_c:1, who agrees to raise the kits in n_c:0's memory.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard, and m_c cannot save {PRONOUN/n_c:0/object}. r_c organizes a search party to track down any cat who knew n_c:0. c_n finds n_c:1, who agrees to raise the kits in n_c:0's memory.",
     "m_c": {
         "status": ["medicine cat"]
     },
@@ -2802,7 +2862,7 @@
             "meeting",
             "exists",
             "loner",
-            "age:young adult, adult, senior adult"
+            "age:senior adult"
         ],
         [
             "parent:0",
@@ -2832,6 +2892,36 @@
             "log": {
                 "cats_from": "cat_from appreciated that cat_to reached out to {PRONOUN/cat_from/object} after n_c:0 died in kitting."
             }
+        },
+        {
+            "cats_from": ["clan", "high_social", "high_lawful"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from approved of cat_to seeking out the living relatives of an outsider to raise {PRONOUN/n_c:0/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_social", "high_lawful"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -8,
+            "log": {
+                "cats_from": "cat_from thought it was a waste of time for cat_to to track down the living relatives of a dead outsider to raise {PRONOUN/n_c:0/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_social", "low_lawful", "high_aggress"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -12,
+            "log": {
+                "cats_from": "cat_from thought cat_to should have kept the kits of a dead outsider to strengthen c_n instead of leaving them to another outsider."
+            }
         }
     ],
     "outsider": {
@@ -2846,7 +2936,7 @@
     "tags": [],
     "exclude_involved": ["r_c"],
     "frequency": 1,
-    "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. After the birth, n_c:0 demands that c_n take in and raise the kits, insisting that they have Clan heritage.",
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, n_c:0 demands that c_n take in and raise the kits, insisting that they have Clan heritage.",
     "m_c": {
         "status": ["medicine cat"]
     },
