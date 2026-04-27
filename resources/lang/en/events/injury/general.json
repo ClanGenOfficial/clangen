@@ -6787,8 +6787,8 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
-        "event_text": "In a brutal battle, a o_c_n warrior shows m_c mercy.",
+        "frequency": 2,
+        "event_text": "In a brutal battle, a o_c_n warrior spares m_c's life.",
         "m_c": {
             "status": [
                 "warrior", "apprentice", "deputy", "leader"
