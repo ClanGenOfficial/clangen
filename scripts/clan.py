@@ -39,7 +39,10 @@ from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
-from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
+from scripts.clan_package.get_clan_cats import (
+    get_living_clan_cat_count,
+    find_alive_cats_with_rank,
+)
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 
@@ -126,7 +129,7 @@ class Clan:
         # and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
         self._reputation = 80
 
-        self.all_other_clans = []
+        self.all_other_clans: list[OtherClan] = []
         self.other_clan_IDs = []
 
         self.starting_members = starting_members
@@ -1209,18 +1212,12 @@ class Clan:
             self._reputation = 0
 
     @property
-    def temperament(self):
+    def temperament(self) -> tuple[str, str]:
         """Temperament is determined whenever it's accessed. This makes sure it's always accurate to the
         current cats in the Clan. However, determining Clan temperament is slow!
         Clan temperament should be used as sparsely as possible, since
         it's pretty resource-intensive to determine it."""
 
-        all_cats = [
-            i
-            for i in Cat.all_cats_list
-            if i.status.rank not in (CatRank.LEADER, CatRank.DEPUTY)
-            and i.status.alive_in_player_clan
-        ]
         leader = (
             Cat.fetch_cat(self.leader)
             if isinstance(Cat.fetch_cat(self.leader), Cat)
@@ -1231,49 +1228,78 @@ class Clan:
             if isinstance(Cat.fetch_cat(self.deputy), Cat)
             else None
         )
+        medicine_cats = find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT])
 
-        weight = 0.3
+        all_other_cats = [
+            i
+            for i in Cat.all_cats_list
+            if i.status.rank
+            not in (CatRank.LEADER, CatRank.DEPUTY, CatRank.MEDICINE_CAT)
+            and i.status.alive_in_player_clan
+        ]
 
-        if (leader or deputy) and all_cats:
-            clan_sociability = round(
-                weight
-                * statistics.mean(
-                    [i.personality.sociability for i in (leader, deputy) if i]
-                )
-                + (1 - weight)
-                * statistics.median([i.personality.sociability for i in all_cats])
-            )
-            clan_aggression = round(
-                weight
-                * statistics.mean(
-                    [i.personality.aggression for i in (leader, deputy) if i]
-                )
-                + (1 - weight)
-                * statistics.median([i.personality.aggression for i in all_cats])
-            )
-        elif leader or deputy:
-            clan_sociability = round(
-                statistics.mean(
-                    [i.personality.sociability for i in (leader, deputy) if i]
-                )
-            )
-            clan_aggression = round(
-                statistics.mean(
-                    [i.personality.aggression for i in (leader, deputy) if i]
-                )
-            )
-        elif all_cats:
-            clan_sociability = round(
-                statistics.median([i.personality.sociability for i in all_cats])
-            )
-            clan_aggression = round(
-                statistics.median([i.personality.aggression for i in all_cats])
-            )
-        else:
-            print("returned default temper: stoic")
-            return "stoic"
+        sociability_list = []
+        aggression_list = []
+        lawfulness_list = []
+        stability_list = []
 
-        return get_temper_alignment(clan_sociability, clan_aggression)
+        # 3x influence
+        if leader:
+            sociability_list += [leader.personality.sociability] * 3
+            aggression_list += [leader.personality.aggression] * 3
+            lawfulness_list += [leader.personality.lawfulness] * 3
+            stability_list += [leader.personality.stability] * 3
+
+        # 2x influence
+        if deputy:
+            sociability_list += [deputy.personality.sociability] * 2
+            aggression_list += [deputy.personality.aggression] * 2
+            lawfulness_list += [deputy.personality.lawfulness] * 2
+            stability_list += [deputy.personality.stability] * 2
+
+        # collective influence
+        if medicine_cats:
+            sociability_list.append(
+                statistics.median([i.personality.sociability for i in medicine_cats])
+            )
+            aggression_list.append(
+                statistics.median([i.personality.aggression for i in medicine_cats])
+            )
+            lawfulness_list.append(
+                statistics.median([i.personality.lawfulness for i in medicine_cats])
+            )
+            stability_list.append(
+                statistics.median([i.personality.stability for i in medicine_cats])
+            )
+
+        # collective influence
+        if all_other_cats:
+            sociability_list.append(
+                statistics.median([i.personality.sociability for i in all_other_cats])
+            )
+            aggression_list.append(
+                statistics.median([i.personality.aggression for i in all_other_cats])
+            )
+            lawfulness_list.append(
+                statistics.median([i.personality.lawfulness for i in all_other_cats])
+            )
+            stability_list.append(
+                statistics.median([i.personality.stability for i in all_other_cats])
+            )
+
+        # mean of [leader, leader, leader, deputy, deputy, medicine_cats, all_other_cats]
+        clan_sociability = round(statistics.mean(sociability_list))
+        clan_aggression = round(statistics.mean(aggression_list))
+        clan_lawfulness = round(statistics.mean(lawfulness_list))
+        clan_stability = round(statistics.mean(stability_list))
+
+        if not leader and not deputy and not all_other_cats:
+            print("returned default temper: stoic, observant")
+            return "stoic", "observant"
+
+        return get_temper_alignment(
+            clan_sociability, clan_aggression, clan_lawfulness, clan_stability
+        )
 
     @temperament.setter
     def temperament(self, val):
@@ -1291,20 +1317,20 @@ class OtherClan:
         "hostile": ["antagonize", "appease", "declare"],
     }
 
-    temperament_list = [
-        "cunning",
-        "wary",
-        "logical",
-        "proud",
-        "stoic",
-        "mellow",
-        "bloodthirsty",
-        "amiable",
-        "gracious",
-    ]
+    first_temper_list = []
+    second_temper_list = []
+    for _l in constants.TEMPERAMENT_DICTS[0].values():
+        first_temper_list.extend(_l)
+    for _l in constants.TEMPERAMENT_DICTS[1].values():
+        second_temper_list.extend(_l)
 
     def __init__(
-        self, name="", relations=0, temperament="", chosen_symbol="", ID: int = 0
+        self,
+        name: str = "",
+        relations: int = 0,
+        temperament: tuple[str, str] = ("", ""),
+        chosen_symbol: str = "",
+        ID: int = 0,
     ):
         self.group_ID = ID
         if not self.group_ID:
@@ -1315,9 +1341,32 @@ class OtherClan:
         clan_names.extend(names.names_dict["clan_prefixes"])
         self.name = name or choice(clan_names)
         self.relations = relations or randint(8, 12)
-        self.temperament = temperament or choice(self.temperament_list)
-        if self.temperament not in self.temperament_list:
-            self.temperament = choice(self.temperament_list)
+
+        self.temperament: tuple[str, str]
+
+        # detect old saves and convert
+        if isinstance(temperament, str):
+            used_tempers = []
+            for clan in game.clan.all_other_clans:
+                used_tempers.extend(clan.temperament)
+
+            self.temperament = (
+                temperament,
+                choice([x for x in self.second_temper_list if x not in used_tempers]),
+            )
+        # assign if a saved temper exists
+        elif temperament:
+            self.temperament = temperament
+        # find temperament
+        else:
+            used_tempers = []
+            for clan in game.clan.all_other_clans:
+                used_tempers.extend(clan.temperament)
+
+            self.temperament = (
+                choice([x for x in self.first_temper_list if x not in used_tempers]),
+                choice([x for x in self.second_temper_list if x not in used_tempers]),
+            )
 
         self.chosen_symbol = (
             None  # have to establish None first so that clan_symbol_sprite works
@@ -1403,8 +1452,10 @@ class Afterlife:
         )
 
     @property
-    def temperament(self) -> str:
-        return get_temper_alignment(self.sociability, self.aggression)
+    def temperament(self) -> (str, str):
+        return get_temper_alignment(
+            self.sociability, self.aggression, self.lawfulness, self.stability
+        )
 
     def adjust_facets_by_cat(self, cat: Cat, do_removal: bool = False):
         """
@@ -1466,25 +1517,44 @@ class Afterlife:
         return total // num_of_influencers
 
 
-def get_temper_alignment(sociability: int, aggression: int) -> str:
+def get_temper_alignment(
+    sociability: int, aggression: int, lawfulness: int, stability: int
+) -> tuple[str, str]:
     """
-    Returns the temperament string associated with given sociability and aggression values
+    Returns the temperament strings associated with given values
     """
-    if 11 <= sociability:
-        _temperament = constants.TEMPERAMENT_DICT["high_social"]
-    elif 7 <= sociability:
-        _temperament = constants.TEMPERAMENT_DICT["mid_social"]
-    else:
-        _temperament = constants.TEMPERAMENT_DICT["low_social"]
+    first_temper = _find_alignment(
+        constants.TEMPERAMENT_DICTS[0], sociability, aggression
+    )
+    second_temper = _find_alignment(
+        constants.TEMPERAMENT_DICTS[1], lawfulness, stability
+    )
 
-    if 11 <= aggression:
-        _temperament = _temperament[2]
-    elif 7 <= aggression:
-        _temperament = _temperament[1]
-    else:
-        _temperament = _temperament[0]
+    return first_temper, second_temper
 
-    return _temperament
+
+def _find_alignment(temper_dict: dict, first_value: int, second_value: int) -> str:
+    """
+    Helper function that returns the string on a temper alignment chart for the first and second values.
+    :param temper_dict: The temper alignment chart dictionary.
+    :param first_value: The first value to find the alignment for. This is the chart's "y_value", or when viewing it as a dictionary: its keys.
+    :param second_value: The second value to find the alignment for. This is the chart's "x-value", or when viewing it as a dictionary: its values.
+    """
+    if 11 <= first_value:
+        temper = list(temper_dict.values())[0]
+    elif 7 <= first_value:
+        temper = list(temper_dict.values())[1]
+    else:
+        temper = list(temper_dict.values())[2]
+
+    if 11 <= second_value:
+        temper = temper[2]
+    elif 7 <= second_value:
+        temper = temper[1]
+    else:
+        temper = temper[0]
+
+    return temper
 
 
 clan_class = Clan()
