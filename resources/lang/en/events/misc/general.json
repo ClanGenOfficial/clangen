@@ -11475,7 +11475,11 @@
                     "cats_from": "cat_from defended cat_to's extreme actions during a war with o_c_n."
                 }
             }
-        ]
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -8
+        }
     },
     {
         "event_id": "gen_misc_failedmurder1",

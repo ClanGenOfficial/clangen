@@ -8192,7 +8192,7 @@
         }
     },
     {
-        "event_id": "gen_injury_war_siblings",
+        "event_id": "gen_injury_war_battleinjury_siblings",
         "location": [
             "any"
         ],
@@ -8203,7 +8203,7 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "m_c protects {PRONOUN/m_c/poss} little sibling r_c in a fight with o_c_n..",
+        "event_text": "m_c protects {PRONOUN/m_c/poss} little sibling r_c in a fight with o_c_n.",
         "m_c": {
             "status": [
                 "warrior", "deputy", "leader"
