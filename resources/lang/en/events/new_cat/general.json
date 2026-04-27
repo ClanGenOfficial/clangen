@@ -2100,7 +2100,7 @@
     "event_id": "gen_new_cat_queenseekinghelp",
     "location": ["any"],
     "season": ["any"],
-    "tags": ["clan:medicine cat"],
+    "tags": [],
     "frequency": 1,
     "event_text": "A loner named n_c:0 seeks m_c's help for giving birth to {PRONOUN/n_c:0/poss} kits. A half-moon after the birth, n_c:0 bids farewell to the Clan and thanks m_c again for {PRONOUN/m_c/poss} help.",
     "m_c": {
