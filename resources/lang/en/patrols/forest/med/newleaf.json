@@ -12,7 +12,6 @@
         ],
         "tags": [],
         "patrol_art": "gen_herbs",
-        "patrol_art_clean": null,
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -66,8 +65,6 @@
         "herbs": [
             "random_herbs"
         ],
-        "outsider_rep": null,
-        "other_clan_rep": null,
         "injury": [
             {
                 "cats": [
@@ -92,8 +89,6 @@
         "herbs": [
             "random_herbs"
         ],
-        "outsider_rep": null,
-        "other_clan_rep": null,
         "injury": [
             {
                 "cats": [
@@ -118,8 +113,6 @@
         "frequency": 4,
         "prey": [],
         "herbs": [],
-        "outsider_rep": null,
-        "other_clan_rep": null,
         "injury": [
             {
                 "cats": [
