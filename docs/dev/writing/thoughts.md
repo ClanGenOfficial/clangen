@@ -45,6 +45,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
 
 ## Thought Format
 
+### Full Format
 ```json
     {
         "id": "test",
@@ -89,7 +90,19 @@ Within the game, all cats take a new thought each timeskip. However, there are a
     }
 ```
 !!! note "Important"
-    If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable.
+    If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable. Check out the below "Minimum Required" to see what parameters are always required.
+
+### Minimum Required
+>The smallest amount of information you're required to include in this format. 
+
+```json
+{
+    "id": "test",
+    "thoughts": [
+        "Is thinking"
+    ]
+}
+```
 
 ***
 
@@ -109,7 +122,7 @@ This controls the biome and camp the event appears in. [Tagging Instructions](re
 
 ### season: list[str]
 List of seasons in which the event may occur. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
-You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or "any"
+You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or remove the parameter altogether to allow for any season.
 
 ***
 
@@ -142,7 +155,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 > [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
 > 
-> You can also use the tag "any" to allow the thought to occur for all roles except "newborns", who are only allowed if specifically tagged as such.
+> You can also remove the parameter to allow the thought to occur for all roles except "newborns", who are only allowed if specifically tagged as such.
 
 ***
 
@@ -157,7 +170,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 > [Age Tag List](reference/tag-lists.md#__tabbed_2_1)
 > 
-> You can also use the tag "any" to allow the thought to occur for all ages except "newborns", who are only allowed if specifically tagged as such.
+> You can also remove the parameter to allow the thought to occur for all ages except "newborns", who are only allowed if specifically tagged as such.
 
 ***
 
@@ -200,8 +213,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
 | `unknown` | cat is not part of the group and is not known to them |
 
 >**`"past"`** - standings the cat used to have with this group. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. this uses the same tags as `currently`.
-> 
-> 
+
 
 ***
 
