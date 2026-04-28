@@ -78,7 +78,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
                 "backstory": []
             }
         },
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": [],
                 "cats_to": [],
@@ -251,49 +251,35 @@ Each entry is an individual cat, with the key being their event designation (`r_
 > [Backstory Tag List](reference/tag-lists.md#backstories)
 
 
-### relationship_constraint: list
-Constrains the thought to only occur if m_c and r_c fulfill the tags requirements. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
-
-
-
-
-### random_living_status: list[str] & random_outside_status: list[str]:
-Constrains the thought if r_c has a specific place of death (first set of tags) or outside role (second set of tags).
-
-> [Other Status Tag List](reference/tag-lists.md#__tabbed_2_3)
-
-## Examples
-Some examples of thoughts include:
-
-    {
-        "id": "gen_dead_exiled",
-        "thoughts": [
-            "Wishes {PRONOUN/m_c/subject} had the chance to fix {PRONOUN/m_c/poss} mistakes while alive",
-            "Curses c_n for making {PRONOUN/m_c/object} die alone",
-            "Wonders what is happening in StarClan",
-            "Regrets not trying to join a different Clan before {PRONOUN/m_c/subject} died",
-            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/have/has} a purpose anymore",
-            "Is thinking bitterly about {PRONOUN/m_c/poss} former Clanmates"
-        ],
-        "main_status_constraint": [
-            "exiled"
+### relationship_constraint: list[dict]
+Constrains the thought to only occur is the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
+```json
+        "relationship_constraint": [
+            {
+                "cats_from": [],
+                "cats_to": [],
+                "mutual": false,
+                "constraints": []
+            }
         ]
-    }
+```
+**cats_from:list**
+>The cats from whom the relationship originates. Use the designations (`m_c`, `r_c`, etc.) of cats listed in `involved_cats`.
 
-_Found in `while_dead/unknown_residence/exiled.json`_
+**cats_to:list**
+>The cats who are the target of the relationship. Use the designations (`m_c`, `r_c`, etc.) of cats listed in `involved_cats`.
 
-    {
-        "id": "fierce_deputy",
-        "thoughts": [
-            "Is sternly instructing a patrol about the importance of strength in defending the Clan",
-            "Feels a rush of adrenaline at the thought of an upcoming battle",
-            "Impressed {PRONOUN/m_c/poss} Clanmates by scaring off an intruder"
-        ],
-        "main_trait_constraint": [
-            "fierce"
-        ]
-    }
+!!! caution "For example"
+    If we want to ensure that `m_c` trusts `r_c`, we would put `m_c` in the `cats_from` list and `r_c` in the `cats_to` list. The feeling of trust is going *from* `m_c` *to* `r_c`.
 
-_Found in `while_alive/deputy.json`_
+**mutual:bool**
+>Defaults to `true`. Set this to `false` if the constraints should be mutual between the `cats_from` and `cats_to` groups.
+
+!!! caution "For example"
+    To work off of our earlier example: if we want `r_c` to *also* trust `m_c`, then we would set `mutual` to `true`.
+
+**constrains:list**
+>The list of required relationships. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships). For the purposes of tag use explanations in those references: `cats_from` is considered "cat1" and `cats_to` is considered "cat2".
+
 
 
