@@ -2315,8 +2315,8 @@
       "any"
     ],
     "changed": 0
-  }
-=======
+  },
+    {
     "event_id": "gen_new_cat_queenhelpabandon",
     "location": ["any"],
     "season": ["any"],
@@ -3163,6 +3163,5 @@
         "current_rep": ["any"],
         "changed": 1
     }
->>>>>>> development
 }
 ]
