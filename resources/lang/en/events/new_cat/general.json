@@ -2159,7 +2159,6 @@
   "tags": [],
   "exclude_involved": [
     "m_c",
-    "r_c",
     "n_c:0"
   ],
   "frequency": 2,
@@ -2183,6 +2182,22 @@
       "new_name"
     ]
   ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan for something terrible."
+                }
+            }
+        ],
   "other_clan": {
     "current_rep": [
       "any"
@@ -2201,7 +2216,6 @@
   "tags": [],
   "exclude_involved": [
     "m_c",
-    "r_c",
     "n_c:0"
   ],
   "frequency": 1,
@@ -2225,6 +2239,22 @@
       "new_name"
     ]
   ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was driven out of {PRONOUN/n_c:0/poss} old Clan and is no longer its leader."
+                }
+            }
+        ],
   "other_clan": {
     "current_rep": [
       "any"
@@ -2243,7 +2273,6 @@
   "tags": [],
   "exclude_involved": [
     "m_c",
-    "r_c",
     "n_c:0"
   ],
   "frequency": 1,
@@ -2267,6 +2296,22 @@
       "new_name"
     ]
   ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust", "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan for something terrible."
+                }
+            }
+        ],
   "other_clan": {
     "current_rep": [
       "any"
@@ -2285,7 +2330,6 @@
   "tags": [],
   "exclude_involved": [
     "m_c",
-    "r_c",
     "n_c:0"
   ],
   "frequency": 1,
@@ -2309,6 +2353,22 @@
       "new_name"
     ]
   ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan and is no longer its deputy."
+                }
+            }
+        ],
   "other_clan": {
     "current_rep": [
       "any"
