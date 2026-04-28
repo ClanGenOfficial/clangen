@@ -78,8 +78,7 @@
             }
         ],
         "new_cat": [],
-        "art": "gen_herbs",
-        "future_event": []
+        "art": "gen_herbs"
         },
             {
         "text": "p_l doesn't see r_c having a running nose as a burden. In fact, to p_l, it's an opportunity. Sure, it's very unhelpful when it comes to finding the herbs, but in terms of collecting the herbs that have a less pleasant smell, it makes r_c the perfect collector. When the  patrol comes across a patch of some pungent-scented herbs, r_c is sent to collect them.",
@@ -102,8 +101,7 @@
             }
         ],
         "new_cat": [],
-        "art": "gen_embarrassed1",
-        "future_event": []
+        "art": "gen_embarrassed1"
             }
         ],
         "fail_outcomes": [
@@ -126,8 +124,7 @@
             }
         ],
         "new_cat": [],
-        "art": "fst_med_stumble1",
-        "future_event": []   
+        "art": "fst_med_stumble1"
             }
         ]
     }
