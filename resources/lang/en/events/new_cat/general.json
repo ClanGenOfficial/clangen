@@ -356,7 +356,7 @@
                 }
             }
         ]
-    },  
+    },
     {
         "event_id": "gen_new_cat_anypolymate1",
         "location": ["any"],
@@ -1103,8 +1103,8 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan", 
+            "old_name",
+            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan",
             "status:warrior"
           ]
         ],
@@ -1149,8 +1149,8 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan", 
+            "old_name",
+            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan",
             "status:warrior"
           ]
         ],
@@ -1195,8 +1195,8 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:medicine_cat", 
+            "old_name",
+            "backstory:medicine_cat",
             "status:medicine_cat"
           ]
         ],
@@ -2149,7 +2149,6 @@
     }
 },
 {
-<<<<<<< otherclan-exile-events
   "event_id": "gen_new_cat_otherclanexile1_unknown",
   "location": [
     "any"
@@ -2315,7 +2314,7 @@
       "any"
     ],
     "changed": 0
-  },
+  }},
     {
     "event_id": "gen_new_cat_queenhelpabandon",
     "location": ["any"],
