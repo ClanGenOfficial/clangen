@@ -10,7 +10,7 @@
             "leaf-fall"
         ],
         "frequency": 2,
-        "event_text": "Naive to the dangers of the sun, m_c falls asleep while sunbathing. Though {PRONOUN/m_c/subject} {VERB/m_c/are/is} retrieved promptly, the young are vulerable to the desert heat.",
+        "event_text": "Naive to the dangers of the sun, m_c falls asleep while sunbathing. Though {PRONOUN/m_c/subject} {VERB/m_c/are/is} retrieved promptly, the young are vulnerable to the desert heat.",
         "m_c": {
             "status": [
                 "kitten"
