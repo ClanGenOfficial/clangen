@@ -11661,7 +11661,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "m_c dreamed of a cat just out of sight warning {PRONOUN/m_c/object} of the danger r_c poses to the Clan. {PRONOUN/m_c/subject/CAP} know what must be done.",
+        "event_text": "m_c dreamed of a cat just out of sight warning {PRONOUN/m_c/object} of the danger r_c poses to the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} what must be done.",
         "m_c": {},
         "r_c": {
             "skill": [
