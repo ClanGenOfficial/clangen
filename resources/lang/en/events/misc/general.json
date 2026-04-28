@@ -12471,7 +12471,7 @@
         "season": ["leaf-fall", "newleaf", "greenleaf"],
       "tags": ["clan:warrior"],
         "frequency": 4,
-        "event_text": "m_c doesn't care what the warriors say, thunder is definitely dangerous and horrible. r_c agrees, the kittens finding comfort in each other.",
+        "event_text": "m_c doesn't care what the warriors say; thunder is definitely dangerous and horrible. r_c agrees, the kittens finding comfort in each other.",
         "m_c": {
             "status": ["kitten"]
         },
