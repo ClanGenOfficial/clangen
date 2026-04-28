@@ -218,7 +218,6 @@
     "sub_type": ["mass_death"],
     "frequency": 2,
     "event_text": "multi_cat were killed after a shelter-seeking bear lumbered into the grotto and discovered it was occupied.",
-    "exclude_involved": ["m_c"],
     "history": [
       {
         "cats": ["multi_cat"],
