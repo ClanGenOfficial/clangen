@@ -18,7 +18,7 @@ As this is allowed in some but *not all* tags, parameters that allow exclusionar
 
 
 ### Locations
->This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
+>This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  You can utilize [exclusionary tags](tag-lists.md#exclusionary-tags).
 
 | string        | use                              |
 |---------------|----------------------------------|
@@ -30,7 +30,7 @@ As this is allowed in some but *not all* tags, parameters that allow exclusionar
 | "desert"      | appears in the desert biome      |
 | "any"         | appears in any biome             |
 
-Please have a look at the [full biome differences list](reference/biomes.md) when thinking about writing patrols. 
+Please have a look at the [full biome differences list](biomes.md) when thinking about writing patrols. 
 
 
 ## Conditions and Scars

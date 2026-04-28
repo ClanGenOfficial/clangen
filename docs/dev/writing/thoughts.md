@@ -155,7 +155,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 ***
 
-**standing: dict[str: var]
+**standing: dict[str: var]**
 >Constrains the thought to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or a member.
 
 ```json
@@ -182,7 +182,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 >**`"currently"`** - the standing the cat should currently possess with this group. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings.
 > 
-> possible tags:
+> Possible Tags:
 > 
 | tag       | meaning                                               |
 |-----------|-------------------------------------------------------|
@@ -201,7 +201,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 
 **stat: dict[str: list]**
-> Constrains the thought to only occur if the cat holds specific skills or traits.. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+> Constrains the thought to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 ```json
     "stat": {
@@ -278,8 +278,9 @@ Constrains the thought to only occur is the specified relationships exist. Multi
 !!! caution "For example"
     To work off of our earlier example: if we want `r_c` to *also* trust `m_c`, then we would set `mutual` to `true`.
 
-**constrains:list**
+**constraints:list**
 >The list of required relationships. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships). For the purposes of tag use explanations in those references: `cats_from` is considered "cat1" and `cats_to` is considered "cat2".
 
-
+!!! caution "For example"
+    To work off of our earlier example: we would list `trusts` in our `constraints`
 
