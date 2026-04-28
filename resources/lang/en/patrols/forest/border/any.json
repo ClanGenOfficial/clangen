@@ -4174,7 +4174,7 @@
       ],
       "history_text": {
         "death": "m_c was killed by a brown bear.",
-        "scars": "m_c was scarred on patrol"
+        "scar": "m_c was scarred on patrol"
       },
       "art": "gen_dead_cat_ghost_EXPLICIT",
       "art_clean": "gen_dead_cat"
