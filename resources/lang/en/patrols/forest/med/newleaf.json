@@ -1,1 +1,141 @@
-[]
+[
+  {
+        "patrol_id": "frst_med_newleaf_allergies",
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "gen_herbs",
+        "patrol_art_clean": null,
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [
+                0,
+                6
+            ],
+            "medicine cat apprentice": [
+                0,
+                6
+            ],
+            "medicine cat": [
+                1,
+                6
+            ],
+            "deputy": [
+                0,
+                6
+            ],
+            "warrior": [
+                0,
+                6
+            ],
+            "leader": [
+                0,
+                6
+            ],
+            "healer cats": [
+                0,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ],
+            "all apprentices": [
+                0,
+                6
+            ]
+        },
+        "frequency": 2,
+        "chance_of_success": 60,
+        "intro_text": "p_l didn't exactly plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject} {VERB/p_l/were/was} grateful for the help anyway, especially with the amount of blooming plants. That is, until r_c started sneezing. Clearly, the pollen from the trees was affecting {PRONOUN/r_c/object} somewhat.",
+        "decline_text": "Due to r_c clearly not being fully up to a patrol in such a pollen-filled forest, the patrol returns to camp with no new herbs. At least r_c seems to have stopped sneezing for now.",
+        "success_outcomes": [
+            {
+        "text": "p_l doesn't acknowledge r_c sneezing, opting to continue the patrol. Despite the circumstances, the fresh newleaf plants are bountiful for the group, and the patrol returns with an average collection of herbs.",
+        "exp": 10,
+        "frequency": 4,
+        "prey": [],
+        "herbs": [
+            "random_herbs"
+        ],
+        "outsider_rep": null,
+        "other_clan_rep": null,
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "running_nose"
+                ],
+                "scars": [],
+                "no_results": true
+            }
+        ],
+        "new_cat": [],
+        "art": "fst_canopy",
+        "future_event": []
+        },
+            {
+        "text": "p_l doesn't see r_c having a running nose as a burden. In fact, to p_l, it's an opportunity. Sure, it's very unhelpful when it comes to finding the herbs, but in terms of collecting the herbs that have a less pleasant smell, it makes r_c the perfect collector. When the patrol comes across a patch of some particularly pungent-scented herbs at the root of a tree, r_c is sent to collect them.",
+        "exp": 15,
+        "frequency": 2,
+        "prey": [],
+        "herbs": [
+            "random_herbs"
+        ],
+        "outsider_rep": null,
+        "other_clan_rep": null,
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "running_nose"
+                ],
+                "scars": [],
+                "no_results": true
+            }
+        ],
+        "new_cat": [],
+        "art": "gen_embarrassed1",
+        "future_event": []
+            }
+        ],
+        "fail_outcomes": [
+            {
+        "text": "The patrol continues their search for herbs, despite r_c and their plight. Unfortunately, the group doesn’t get very far. r_c stumbles mid sneeze, tripping over a particularly large tree root and tumbling forward, knocking over other cats in their wake.",
+        "exp": 0,
+        "frequency": 4,
+        "prey": [],
+        "herbs": [],
+        "outsider_rep": null,
+        "other_clan_rep": null,
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "running_nose"
+                ],
+                "scars": [],
+                "no_results": true
+            }
+        ],
+        "new_cat": [],
+        "art": "fst_med_stumble1",
+        "future_event": []   
+            }
+        ]
+    }
+]
