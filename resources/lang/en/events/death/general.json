@@ -2341,7 +2341,7 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
+                "cats": ["r_c"],
                 "injuries": ["shock"]
             }
         ],
