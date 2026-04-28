@@ -181,7 +181,7 @@
       "leaf-fall"
     ],
     "frequency": 4,
-    "event_text": "Sunset splays the red of life's blood across the sky, as m_c softly tells of The Dreaming.",
+    "event_text": "Sunset bleeds red across the sky, as m_c tells {PRONOUN/m_c/poss} gathered audience the story of The Dreaming.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -222,7 +222,7 @@
     ],
     "season": ["leaf-bare"],
     "frequency": 3,
-    "event_text": "m_c stands guard over camp, miserably enduring the endless wet heartbeat of the rain.",
+    "event_text": "m_c stands guard over camp, enduring the roaring downpour of rain.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["warrior"]
@@ -376,7 +376,7 @@
     ],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c watches the kangaroo mob leap across the landscape from {PRONOUN/m_c/poss} guarding perch near camp.",
+    "event_text": "m_c watches a mob of kangaroo leap across the landscape from {PRONOUN/m_c/poss} guarding perch near camp.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["warrior"]
@@ -389,7 +389,7 @@
     ],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "From the guard post above camp, m_c lets out a warning chitter as a hawk passes overhead.",
+    "event_text": "m_c lets out a warning chitter from {PRONOUN/m_c/poss} guard post as a hawk passes overhead.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["warrior"]
@@ -475,29 +475,6 @@
       "status": ["any"],
       "trait": ["adventurous","daring", "rebellious", "strange"]
     }
-  },
-  {
-    "event_id": "dst_misc_any_traitmisc2",
-    "location": ["desert"],
-    "season": ["any"],
-    "frequency": 4,
-    "event_text": "m_c holds {PRONOUN/m_c/self} apart from the Clan, {PRONOUN/m_c/poss} mood strange and irritable.",
-    "m_c": {
-      "age": ["any"],
-      "status": ["any"],
-      "trait": ["cold", "gloomy", "grumpy", "strange"]
-    },
-    "relationships": [
-      {
-        "cats_from": ["clan", "high_social"],
-        "cats_to": ["m_c"],
-        "values": ["comfort", "like"],
-        "amount": -5,
-        "log": {
-          "cats_from": "cat_from noticed that cat_to was in a foul mood."
-        }
-      }
-    ]
   },
   {
     "event_id": "dst_misc_any_dreaming1",
@@ -601,7 +578,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 4,
-    "event_text": "Along the border with o_c_n, c_n quietly prepares the cacti and thornbushes to work to their advantage.",
+    "event_text": "c_n quietly prepares the cacti and thornbushes along the border with o_c_n to work to their advantage.",
     "m_c": {},
     "other_clan": {
         "current_rep": ["hostile"],
@@ -627,7 +604,7 @@
     "season": ["greenleaf"],
     "tags": ["clan:warrior"],
     "frequency": 3,
-    "event_text": "As the adults catch the evening breeze on their hot pelts, m_c emerges from the nursery, finally allowed to play once the sun's rays slip from the sky.",
+    "event_text": "m_c emerges from the nursery, finally allowed to play now the glaring sun has set.",
     "m_c": {
       "status": ["kitten"]
     }
@@ -664,7 +641,7 @@
         ],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c and r_c try to climb the rocks around camp, to limited success.",
+        "event_text": "m_c and r_c try to climb the rocks around camp to limited success.",
         "m_c": {
           "status": ["kitten"]
         },
@@ -690,7 +667,7 @@
         "season": ["greenleaf"],
         "tags": ["clan:warrior"],
         "frequency": 4,
-        "event_text": "m_c and r_c emerge from the nursery as the cool of the night takes over, their bouncy energy contrasting the tired warriors napping on the sun-warmed rocks.",
+        "event_text": "m_c and r_c emerge from the nursery as the chill of night takes over, their energy contrasting the tired warriors napping on the sun-warmed rocks.",
         "m_c": {
             "status": ["kitten"]
         },
@@ -868,40 +845,13 @@
       ]
   },
   {
-    "event_id": "dst_misc_any_apprentice4",
-    "location": ["desert"],
-    "season": ["any"],
-    "frequency": 4,
-    "event_text": "m_c and r_c bond over how much they both hate mouse bile.",
-    "m_c": {
-      "age": ["adolescent"],
-      "status": ["apprentice"]
-    },
-    "r_c": {
-      "age": ["adolescent"],
-      "status": ["apprentice"]
-    },
-    "relationships": [
-        {
-          "cats_to": ["m_c"],
-            "cats_from": ["r_c"],
-            "mutual": true,
-            "values": ["like", "comfort"],
-          "amount": 15,
-          "log": {
-            "cats_from": "cat_from and cat_to bonded over hating mouse bile."
-          }
-        }
-    ]
-  },
-  {
     "event_id": "dst_misc_any_loner1",
     "location": [
       "desert"
     ],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "On the border, a loner has sprayed a shrub with {PRONOUN/n_c:0/poss} scent.",
+    "event_text": "A loner has sprayed a shrub near the border with {PRONOUN/n_c:0/poss} scent.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
@@ -1050,7 +1000,7 @@
             "r_c"
         ],
     "frequency": 1,
-    "event_text": "Ants, desperate to establish a nest before the dry season fully kicks in, try to do so in c_n's herb stores. No one is pleased at the results.",
+    "event_text": "Ants, desperate to establish a nest before the dry season fully kicks in, try to do so in c_n's herb stores. No one is pleased with the results.",
     "supplies": [
       {
           "type": "all_herb",

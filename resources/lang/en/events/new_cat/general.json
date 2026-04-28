@@ -356,7 +356,7 @@
                 }
             }
         ]
-    },  
+    },
     {
         "event_id": "gen_new_cat_anypolymate1",
         "location": ["any"],
@@ -1103,8 +1103,8 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan", 
+            "old_name",
+            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan",
             "status:warrior"
           ]
         ],
@@ -1149,8 +1149,8 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan", 
+            "old_name",
+            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan",
             "status:warrior"
           ]
         ],
@@ -1195,8 +1195,8 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:medicine_cat", 
+            "old_name",
+            "backstory:medicine_cat",
             "status:medicine_cat"
           ]
         ],
@@ -2149,6 +2149,233 @@
     }
 },
 {
+  "event_id": "gen_new_cat_otherclanexile1_unknown",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "exclude_involved": [
+    "m_c",
+    "n_c:0"
+  ],
+  "frequency": 2,
+  "event_text": "At the Gathering, o_c_n's leader announces they have exiled a warrior for an unforgivable crime. They advise the other Clans to keep their guards up.",
+  "m_c": {
+    "age": [
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ]
+  },
+  "new_cat": [
+    [
+      "former clancat",
+      "status:warrior",
+      "meeting",
+      "unknown",
+      "backstory:disgraced1, disgraced2",
+      "new_name"
+    ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan for something terrible."
+                }
+            }
+        ],
+  "other_clan": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": 0
+  }
+},
+{
+  "event_id": "gen_new_cat_otherclanexile2_unknown",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "exclude_involved": [
+    "m_c",
+    "n_c:0"
+  ],
+  "frequency": 1,
+  "event_text": "At the Gathering, o_c_n's deputy takes their place among the other leaders and declares the previous leader was driven out, but may still stalk the borders.",
+  "m_c": {
+    "age": [
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ]
+  },
+  "new_cat": [
+    [
+      "former clancat",
+      "status:warrior",
+      "meeting",
+      "unknown",
+      "backstory:disgraced3",
+      "new_name"
+    ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was driven out of {PRONOUN/n_c:0/poss} old Clan and is no longer its leader."
+                }
+            }
+        ],
+  "other_clan": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": 0
+  }
+},
+{
+  "event_id": "gen_new_cat_otherclanexile3_unknown",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "exclude_involved": [
+    "m_c",
+    "n_c:0"
+  ],
+  "frequency": 1,
+  "event_text": "At the Gathering, o_c_n's leader announces their medicine cat has been exiled for a terrible transgression. They warn the other Clans that the exiled cat is not to be trusted and should be killed on sight.",
+  "m_c": {
+    "age": [
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ]
+  },
+  "new_cat": [
+    [
+      "former clancat",
+      "status:medicine cat",
+      "meeting",
+      "unknown",
+      "backstory:disgraced2, disgraced3",
+      "new_name"
+    ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust", "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan for something terrible."
+                }
+            }
+        ],
+  "other_clan": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": 0
+  }
+},
+{
+  "event_id": "gen_new_cat_otherclanexile4_unknown",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "exclude_involved": [
+    "m_c",
+    "n_c:0"
+  ],
+  "frequency": 1,
+  "event_text": "At the Gathering, o_c_n's leader announces their deputy did something terrible and was exiled. They look mournful as they deliver the news and advise the others to watch their borders closely.",
+  "m_c": {
+    "age": [
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ]
+  },
+  "new_cat": [
+    [
+      "former clancat",
+      "status:warrior",
+      "meeting",
+      "unknown",
+      "backstory:disgraced3",
+      "new_name"
+    ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan and is no longer its deputy."
+                }
+            }
+        ],
+  "other_clan": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": 0
+  }},
+    {
     "event_id": "gen_new_cat_queenhelpabandon",
     "location": ["any"],
     "season": ["any"],
