@@ -146,6 +146,12 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 ***
 
+**past_status: list[str]**
+>Constrains the thought to only happen if the cat held a certain role in the past. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
+
+> [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
+
+***
 **age: list[str]**
 >Constrains the thought to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
