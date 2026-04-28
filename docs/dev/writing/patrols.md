@@ -617,7 +617,7 @@ What each parameter does, and what the options are for outcomes.
 |  hunting |    0    |      10-20      |        40         |
 |  border  |   0-5   |      0-15       |       20-40       |
 |  medcat  |    0    |      10-20      |        30         |
-| training |   0-5   |       30        |        40         |
+| training |   0-5   |       20        |        40         |
 
 ***
 
