@@ -3881,7 +3881,6 @@
   ],
   "tags": [],
   "patrol_art": "fst_canopy",
-  "patrol_art_clean": null,
   "min_cats": 2,
   "max_cats": 6,
   "frequency": 2,
