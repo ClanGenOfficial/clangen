@@ -4168,7 +4168,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died defending r_c from a hawk"
+                "death": "m_c died defending r_c from a hawk."
             }
         ],
         "relationships": [
@@ -5547,7 +5547,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died defending r_c from a dog"
+                "death": "m_c died defending r_c from a dog."
             }
         ],
         "relationships": [
@@ -5944,7 +5944,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died defending the kits from o_c_n warriors"
+                "death": "m_c died defending the kits from o_c_n warriors."
             }
         ],
         "other_clan": {
@@ -6158,7 +6158,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c succumbed to old age"
+                "death": "m_c succumbed to old age."
             }
         ]
     },
@@ -6192,7 +6192,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c succumbed to old age"
+                "death": "m_c succumbed to old age."
             }
         ]
     },
@@ -8652,7 +8652,7 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "death": "m_c died when a rogue attacked {PRONOUN/m_c/object} on r_c's orders"
+                "death": "m_c died when a rogue attacked {PRONOUN/m_c/object} on r_c's orders."
             }
         ],
         "relationships": [
