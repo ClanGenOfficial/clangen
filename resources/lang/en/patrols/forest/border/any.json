@@ -781,7 +781,7 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "battle_injury"
+                            "big_bite_injury"
                         ],
                         "scars": [
                             "SIDE"
@@ -3866,5 +3866,381 @@
                 }
             }
         ]
+    },
+{
+  "patrol_id": "fst_bord_notleafbare_bear",
+  "biome": [
+    "forest"
+  ],
+  "season": [
+    "-leaf-bare"
+  ],
+  "types": [
+    "border"
+  ],
+  "tags": [],
+  "patrol_art": "fst_canopy",
+  "min_cats": 2,
+  "max_cats": 6,
+    "min_max_status": {
+        "leader": [
+            -1, -1 ]
+    },
+  "frequency": 2,
+  "chance_of_success": 30,
+  "relationship_constraint": [],
+  "pl_skill_constraint": [],
+  "intro_text": "Through a copse of narrow trees p_l sees a robust figure and flicks {PRONOUN/p_l/poss} tail to alert the patrol to stop. A bear is nearby, though what kind is unclear; its pelt color is distorted by the shaded canopy.",
+  "decline_text": "The patrol retreats back to camp to report to lead_name. Learning more about the predators in the territory could be useful, though not at the cost of their lives.",
+  "success_outcomes": [
+    {
+      "text": "r_c sneaks forward and determines it's a black bear. It should be relatively harmless as long as the Clan keeps an eye on its whereabouts.",
+      "exp": 10,
+      "frequency": 4,
+      "can_have_stat": [
+        "any"
+      ],
+      "art": "gen_warrior_crouching"
+    },
+    {
+      "text": "r_c's pupils dilate as a ray of sunlight illuminates the bear's russet pelt. r_c realizes with alarm that it's a brown bear. The patrol slinks away without incident and lead_name warns patrols to stay away from the area.",
+      "exp": 10,
+      "frequency": 4,
+      "can_have_stat": [
+        "any"
+      ],
+      "art": "gen_warrior_crouching"
+    },
+    {
+      "text": "The patrol is deciding their next move when the black bear lumbers towards them, snorting and grumbling. As the patrol scatters, s_c lets out a bloodcurdling caterwaul and lunges at the beast. {PRONOUN/s_c/subject/CAP} {VERB/s_c/duck/ducks} beneath a massive swipe and {VERB/s_c/rake/rakes} {PRONOUN/s_c/poss} claws across its nose. Reeling back with a roar, the bear stumbles and retreats, giving s_c the chance to race back to the patrol. The cats regroup, shaken but relieved to have escaped with their pelts intact.",
+      "exp": 30,
+      "frequency": 2,
+      "stat_skill": [
+        "FIGHTER,2"
+      ],
+      "can_have_stat": [
+        "any"
+      ],
+      "relationships": [
+        {
+          "cats_to": [
+            "s_c"
+          ],
+          "cats_from": [
+            "patrol",
+            "some_clan"
+          ],
+          "mutual": false,
+          "values": [
+            "trust",
+            "like"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was impressed that cat_to stood {PRONOUN/cat_to/poss} ground to run off a black bear."
+          }
+        }
+      ],
+      "art": "gen_angry_cat_warrior"
+    },
+    {
+      "text": "As the patrol decides their next move, the brown bear suddenly charges, bellowing with fangs bared. s_c bounds forward with a howl and leaps onto the bear’s neck. The bear rears and clumsily swipes at itself as s_c clings on. Inspired by {PRONOUN/s_c/poss} courage, the patrol hisses and bristles in support. The bear starts to retreat, deciding they aren’t worth the trouble. s_c darts back to {PRONOUN/s_c/poss} Clanmates, pelt torn and a chunk of bear fur still caught in {PRONOUN/s_c/poss} teeth.",
+      "exp": 40,
+      "frequency": 2,
+      "stat_skill": [
+        "FIGHTER,3"
+      ],
+      "can_have_stat": [
+        "any"
+      ],
+      "injury": [
+        {
+          "cats": [
+            "s_c"
+          ],
+          "injuries": [
+            "torn pelt"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "scar": "s_c was scarred by a brown bear."
+      },
+      "relationships": [
+        {
+          "cats_to": [
+            "s_c"
+          ],
+          "cats_from": [
+            "patrol",
+            "some_clan"
+          ],
+          "mutual": false,
+          "values": [
+            "trust",
+            "like"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was baffled that cat_to attacked a brown bear and survived."
+          }
+        },
+        {
+          "cats_to": [
+            "patrol"
+          ],
+          "cats_from": [
+            "patrol"
+          ],
+          "mutual": false,
+          "values": [
+            "trust",
+            "like",
+            "comfort",
+            "respect"
+          ],
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from and cat_to bonded after surviving an encounter with a brown bear."
+          }
+        }
+      ],
+      "art": "gen_angry_cat_warrior"
     }
-]
+  ],
+  "fail_outcomes": [
+    {
+      "text": "r_c fails to identify its scent before the bear disappears further into the woods.",
+      "exp": 0,
+      "frequency": 4,
+      "relationships": [
+        {
+          "cats_to": [
+            "r_c"
+          ],
+          "cats_from": [
+            "some_clan",
+            "high_aggress"
+          ],
+          "mutual": false,
+          "values": [
+            "like",
+            "respect"
+          ],
+          "amount": -5,
+          "log": {
+            "cats_from": "cat_to wished cat_from had the guts to at least identify a bear on patrol."
+          }
+        }
+      ],
+      "art": "gen_found_scent_dangerous"
+    },
+    {
+      "text": "r_c freezes at the sight of the enormous bear and cannot tell what kind it is before it moves on.",
+      "exp": 0,
+      "frequency": 4,
+      "relationships": [
+        {
+          "cats_to": [
+            "r_c"
+          ],
+          "cats_from": [
+            "some_clan",
+            "high_aggress"
+          ],
+          "mutual": false,
+          "values": [
+            "like",
+            "respect"
+          ],
+          "amount": -5,
+          "log": {
+            "cats_from": "cat_to wished cat_from had the guts to at least identify a bear on patrol."
+          }
+        }
+      ],
+      "art": "gen_anxious1"
+    },
+    {
+      "text": "r_c creeps closer to identify the beast but is spotted. With a roar, the black bear swipes at {PRONOUN/r_c/object}, sending r_c tumbling across the leaf litter. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scramble/scrambles} to {PRONOUN/r_c/poss} feet, and p_l rushes to help {PRONOUN/r_c/object} to safety. Thankfully, the bear is uninterested in finishing the job and lumbers away..",
+      "exp": 0,
+      "frequency": 3,
+      "injury": [
+        {
+          "cats": [
+            "r_c"
+          ],
+          "injuries": [
+            "claw-wound",
+            "mangled leg",
+            "mangled tail",
+            "torn pelt",
+            "broken bone"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "scar": "m_c was scarred after being mauled by a black bear.",
+        "death": "m_c was killed by their injuries after being mauled by a black bear."
+      },
+      "relationships": [
+        {
+          "cats_to": [
+            "p_l"
+          ],
+          "cats_from": [
+            "r_c"
+          ],
+          "mutual": false,
+          "values": [
+            "comfort",
+            "trust"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was grateful that cat_to helped {PRONOUN/cat_from/object} flee from a black bear."
+          }
+        }
+      ],
+      "art": "gen_scared_cat_warrior"
+    },
+    {
+      "text": "r_c sneaks towards the bear to try to identify it. Before {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, {PRONOUN/r_c/subject} {VERB/r_c/are/is} snout to snout with an angry, slobbering brown bear who swings its massive paw toward {PRONOUN/r_c/object}. r_c wails as {PRONOUN/r_c/subject} {VERB/r_c/are/is} mauled and tossed to the side, attempting to scrabble to safety when p_l grabs {PRONOUN/r_c/poss} scruff and pulls them both to safety. Luckily the bear is uninterested in finishing the job. ",
+      "exp": 0,
+      "frequency": 3,
+      "injury": [
+        {
+          "cats": [
+            "r_c"
+          ],
+          "injuries": [
+            "claw-wound",
+            "mangled leg",
+            "mangled tail",
+            "torn pelt",
+            "broken bone"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "scar": "m_c was scarred after being mauled by a brown bear.",
+        "death": "m_c was killed by their injuries after being mauled by a brown bear."
+      },
+      "relationships": [
+        {
+          "cats_to": [
+            "p_l"
+          ],
+          "cats_from": [
+            "r_c"
+          ],
+          "mutual": false,
+          "values": [
+            "comfort",
+            "trust"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was grateful that cat_to helped {PRONOUN/cat_from/object} escape a brown bear."
+          }
+        }
+      ],
+      "art": "gen_scared_cat_warrior"
+    },
+    {
+      "text": "r_c sneaks towards the bear to try to identify it. Before {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, {PRONOUN/r_c/subject} {VERB/r_c/are/is} snout to snout with an angry, slobbering brown bear who swings its massive paw toward {PRONOUN/r_c/object} batting {PRONOUN/r_c/object} effortlessly into a nearby tree. The patrol scatters when they see r_c is no longer moving.",
+      "exp": 0,
+      "frequency": 3,
+      "dead_cats": [
+        "r_c"
+      ],
+      "history_text": {
+        "death": "m_c was killed by a brown bear."
+      },
+      "art": "gen_dead_cat_ghost_EXPLICIT",
+      "art_clean": "gen_dead_cat"
+    },
+    {
+      "text": "While the patrol decides what to do, the black bear scents them, charging through the undergrowth toward them. The beast lashes out wildly, leaving multiple injured before the patrol manages to escape.",
+      "exp": 0,
+      "frequency": 2,
+      "injury": [
+        {
+          "cats": [
+            "multi"
+          ],
+          "injuries": [
+            "claw-wound",
+            "mangled leg",
+            "mangled tail",
+            "torn pelt",
+            "broken bone"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "death": "m_c died of {PRONOUN/m_c/poss} injuries after a black bear attack.",
+        "scar": "m_c was scarred on patrol by a black bear."
+      },
+      "art": "gen_scared_cat_warrior"
+    },
+    {
+      "text": "While the patrol decides what to do, the brown bear scents them, charging through the undergrowth toward them with a mighty roar. The terrible beast mauls the patrol, razing their bodies with claw and fang before they are able to escape.",
+      "exp": 0,
+      "frequency": 2,
+      "injury": [
+        {
+          "cats": [
+            "patrol"
+          ],
+          "injuries": [
+            "claw-wound",
+            "mangled leg",
+            "mangled tail",
+            "torn pelt",
+            "broken bone"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "death": "m_c died of {PRONOUN/m_c/poss} injuries after a brown bear attack.",
+        "scar": "m_c was scarred on patrol by a brown bear."
+      },
+      "art": "gen_scared_cat_warrior"
+    },
+    {
+      "text": "While the patrol decides what to do, the brown bear scents them, charging through the undergrowth toward them with a mighty roar. The carnage is instant as the massive creature's teeth crunch down on poor r_c and its paws raze p_l. The survivors return to camp harrowed.",
+      "exp": 0,
+      "frequency": 2,
+      "dead_cats": [
+        "r_c",
+        "p_l"
+      ],
+      "injury": [
+        {
+          "cats": [
+            "patrol",
+            "-r_c",
+            "-p_l"
+          ],
+          "injuries": [
+            "shock"
+          ],
+          "scars": [],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "death": "m_c was killed by a brown bear."
+      },
+      "art": "gen_dead_cat_ghost_EXPLICIT",
+      "art_clean": "gen_dead_cat"
+    }
+  ]
+}
+  ]
