@@ -28270,7 +28270,7 @@
             "healer cats": [1, 1]
         },
         "frequency": 4,
-        "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves.",
+        "intro_text": "The plantain plants have reawakened, and p_l plans to go gather some of their leaves.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -28335,7 +28335,7 @@
             "medicine cat apprentice": [1, 1]
         },
         "frequency": 4,
-        "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves. app1 asks to come along!",
+        "intro_text": "The plantain plants have reawakened, and p_l plans to go gather some of their leaves. app1 asks to come along!",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts leaving {PRONOUN/p_l/poss} patients behind, especially with {PRONOUN/p_l/object} also bringing {PRONOUN/p_l/poss} apprentice, and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -28457,7 +28457,7 @@
             "normal adult": [2, 5]
         },
         "frequency": 4,
-        "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves with a gathering patrol.",
+        "intro_text": "The plantain plants have reawakened, and p_l plans to go gather some of their leaves with a gathering patrol.",
         "decline_text": "They're stopped before they leave camp — these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [

@@ -45,11 +45,18 @@ SEASON_CALENDAR = [
     "Leaf-bare",
 ]
 
-TEMPERAMENT_DICT = {
-    "low_social": ["cunning", "proud", "bloodthirsty"],
-    "mid_social": ["amiable", "stoic", "wary"],
-    "high_social": ["gracious", "mellow", "logical"],
-}
+TEMPERAMENT_DICTS = [
+    {
+        "low_social": ["cunning", "proud", "bloodthirsty"],
+        "mid_social": ["amiable", "stoic", "wary"],
+        "high_social": ["gracious", "mellow", "logical"],
+    },
+    {
+        "low_lawful": ["chaotic", "mercurial", "calculating"],
+        "mid_lawful": ["eager", "observant", "adaptable"],
+        "high_lawful": ["decisive", "methodical", "steadfast"],
+    },
+]
 
 facet_types = ["lawfulness", "sociability", "aggression", "stability"]
 facet_range = [0, 16]

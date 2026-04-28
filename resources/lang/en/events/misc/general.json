@@ -2991,7 +2991,7 @@
             "romance"
         ],
         "frequency": 3,
-        "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise together.",
+        "event_text": "m_c and r_c take a late night patrol out of camp to watch the sunrise.",
         "m_c": {
             "age": [
                 "young adult",
@@ -3021,7 +3021,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cat_from and cat_to went on a late night patrol to watch the sun rise together."
+                    "cats_from": "cat_from and cat_to went on a late night patrol to watch the sunrise together."
                 }
             }
         ]
@@ -4256,7 +4256,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c and r_c sneak out of camp to see the sun rise.",
+        "event_text": "m_c and r_c sneak out of camp to see the sunrise.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -4282,7 +4282,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cat_from and cat_to snuck out of camp to watch the sun rise together."
+                    "cats_from": "cat_from and cat_to snuck out of camp to watch the sunrise together."
                 }
             }
         ]
@@ -4726,7 +4726,7 @@
         "season": [
             "any"
         ],
-        "frequency": 3,
+        "frequency": 2,
         "event_text": "A stranger limped into camp this moon, knowing c_n was friendly, and requested a few nights of shelter while {PRONOUN/n_c:0/poss} wounds healed. c_n obliged.",
         "m_c": {
             "age": [
@@ -4739,6 +4739,7 @@
         },
         "new_cat": [
             [
+	     "exists",
                 "meeting",
                 "loner",
                 "rogue"
@@ -4762,7 +4763,7 @@
         "season": [
             "any"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "event_text": "A wandering healer was found on the border, hoping to learn from Clan medicine cats. {PRONOUN/n_c:0/subject/CAP} left a moon later, grateful and armed with new knowledge.",
         "m_c": {
             "status": [
@@ -4771,6 +4772,7 @@
         },
         "new_cat": [
             [
+	     "exists",
                 "meeting",
                 "loner",
                 "rogue",
@@ -4816,7 +4818,7 @@
         "season": [
             "any"
         ],
-        "frequency": 3,
+        "frequency": 2,
         "event_text": "A stranger requested a few days of shelter in c_n's sturdy camp while the incoming storm blew over. c_n obliged.",
         "m_c": {
             "age": [
@@ -4829,6 +4831,7 @@
         },
         "new_cat": [
             [
+	     "exists",
                 "meeting",
                 "loner",
                 "rogue"
@@ -4853,7 +4856,7 @@
         "season": [
             "any"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "A o_c_n apprentice asked to join c_n after having apparently forsaken {PRONOUN/n_c:0/poss} original Clan loyalties. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/stay/stays} for only a few days before sheepishly requesting to return home.",
         "m_c": {
             "age": [
@@ -4890,7 +4893,7 @@
         "season": [
             "any"
         ],
-        "frequency": 3,
+        "frequency": 2,
         "event_text": "A kittypet asked to join c_n but returned to Twolegplace after only a few days, realizing {PRONOUN/n_c:0/poss} distaste for outdoor living.",
         "m_c": {
             "age": [
@@ -4903,6 +4906,7 @@
         },
         "new_cat": [
             [
+	     "exists",
                 "meeting",
                 "kittypet"
             ]
@@ -10264,7 +10268,7 @@
         }
     },
     {
-        "event_id": "gen_misc_war_kill",
+        "event_id": "gen_misc_war_kill1",
         "location": [
             "any"
         ],
@@ -10303,7 +10307,7 @@
         }
     },
     {
-        "event_id": "gen_misc_war_kill",
+        "event_id": "gen_misc_war_kill2",
         "location": [
             "any"
         ],
@@ -10778,7 +10782,9 @@
         "m_c": {
             "status": [
                 "mediator",
-                "mediator apprentice"
+                "mediator apprentice",
+                "deputy",
+                "elder"
             ]
         },
         "r_c": {
@@ -11088,7 +11094,11 @@
             "trait": [
                 "insecure",
                 "lonesome",
-                "nervous"
+                "nervous",
+                "wise",
+                "thoughtful",
+                "sincere",
+                "responsible"
             ]
         },
         "r_c": {
@@ -11097,8 +11107,8 @@
             ],
             "skill": [
                 "INSIGHTFUL,1",
-                "TEACHER,3",
-                "CLEVER,3",
+                "TEACHER,1",
+                "CLEVER,2",
                 "CAMP,3"
             ]
         },
@@ -11302,7 +11312,7 @@
         },
         "relationships": [
             {
-                "cats_from": ["clan", "high_stable"],
+                "cats_from": ["clan", "high_stable", "high_lawful"],
                 "cats_to": ["m_c"],
                 "values": ["respect"],
                 "amount": -20,
@@ -11855,7 +11865,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "m_c dreamed of a cat just out of sight warning {PRONOUN/m_c/object} of the danger r_c poses to the Clan. {PRONOUN/m_c/subject/CAP} know what must be done.",
+        "event_text": "m_c dreamed of a cat just out of sight warning {PRONOUN/m_c/object} of the danger r_c poses to the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} what must be done.",
         "m_c": {},
         "r_c": {
             "skill": [
@@ -12563,5 +12573,78 @@
         "current_rep": ["any"],
         "changed": -1
     }
+},
+{
+  "event_id": "gen_misc_guardsneakout",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "frequency": 3,
+  "event_text": "m_c caught r_c trying to sneak out of camp while on guard duty.",
+  "m_c": {
+    "status": [
+      "warrior",
+      "deputy"
+    ],
+    "relationship_status": [],
+    "skill": [],
+    "trait": [
+      "-oblivious"
+    ],
+    "backstory": [],
+    "dies": false
+  },
+  "r_c": {
+    "status": [
+      "apprentice",
+      "leader",
+      "warrior",
+      "elder"
+    ],
+    "relationship_status": [],
+    "skill": [],
+    "trait": [
+      "-sneaky"
+    ],
+    "backstory": [],
+    "dies": false
+  },
+  "relationships": [
+    {
+      "cats_from": [
+        "m_c"
+      ],
+      "cats_to": [
+        "r_c"
+      ],
+      "mutual": false,
+      "values": [
+        "trust"
+      ],
+      "amount": -10,
+      "log": {
+        "cats_from": "cat_from became suspicious of cat_to after catching {PRONOUN/cat_to/object} trying to sneak out of camp."
+      }
+    },
+    {
+      "cats_from": [
+        "r_c"
+      ],
+      "cats_to": [
+        "m_c"
+      ],
+      "mutual": false,
+      "values": [
+        "like"
+      ],
+      "amount": -10,
+      "log": {
+        "cats_from": "cat_from was annoyed that cat_to caught {PRONOUN/cat_from/object} trying to sneak out of camp."
+      }
+    }
+  ]
 }
 ]
