@@ -152,6 +152,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: false
       clickable_checkbox: true
+  - pymdownx.blocks.caption
 
 watch:
   - docs-resources/includes

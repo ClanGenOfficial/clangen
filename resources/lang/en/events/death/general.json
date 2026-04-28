@@ -6343,7 +6343,7 @@
             "kit_manipulated"
         ],
         "frequency": 4,
-        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one noticed.",
+        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterward, but no one noticed.",
         "m_c": {
             "status": [
                 "leader"
@@ -8711,5 +8711,102 @@
                 "death": "m_c was killed by a rooster defending his flock."
             }
         ]
+    },
+{
+  "event_id": "gen_death_guarddisappearance_any1",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "frequency": 2,
+  "event_text": "The Clan grows concerned after m_c doesn't return from guard duty. {PRONOUN/m_c/poss/CAP} body is later found out in the territory, scent reeking of o_c_n.",
+  "m_c": {
+    "skill": [
+      "-FIGHTER,2"
+    ],
+    "status": [
+      "warrior",
+      "deputy"
+    ],
+    "dies": true
+  },
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c was killed by o_c_n warriors while on guard duty."
     }
+  ],
+  "other_clan": {
+    "current_rep": [
+      "hostile", "neutral"
+    ],
+    "changed": -3
+  }
+},
+{
+  "event_id": "gen_death_guarddisappearance_any2",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "frequency": 2,
+  "event_text": "The Clan grows concerned after m_c doesn't return from guard duty. {PRONOUN/m_c/poss/CAP} body is later found out in the territory with a rogue's scent wreathing around {PRONOUN/m_c/object}.",
+  "m_c": {
+    "skill": [
+      "-FIGHTER,2"
+    ],
+    "status": [
+      "warrior",
+      "deputy"
+    ],
+    "dies": true
+  },
+  "new_cat": [
+    [
+      "meeting",
+      "rogue",
+      "exists"
+    ]
+  ],
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c was killed by a rogue while on guard duty."
+    }
+  ],
+        "relationships": [
+            {
+                "cats_from": ["clan"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+	        "comfort",
+	        "trust"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "cat_from felt outraged after hearing that cat_to killed m_c while on guard duty."
+                }
+            }
+        ],
+  "outsider": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": -3
+  }
+}
 ]

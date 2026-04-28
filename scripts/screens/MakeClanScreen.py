@@ -19,6 +19,7 @@ from .screens_core.screens_core import rebuild_top_menu_buttons
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
 from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_blit
 from .Screens import Screens
@@ -1377,13 +1378,12 @@ class MakeClanScreen(Screens):
                 "top_target": self.elements["random_clan_checkbox"],
             },
         )
-        self.elements["mode_details"] = pygame_gui.elements.UITextBox(
+        self.elements["mode_details"] = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((325, 160), (405, 461))),
-            object_id="#text_box_30_horizleft_pad_40_40",
+            ui_scale(pygame.Rect((345, 180), (365, 360))),
+            object_id="#text_box_30_horizleft",
             manager=MANAGER,
         )
-        self.elements["mode_details"].padding = (40, 40)
 
         self.elements["mode_name"] = pygame_gui.elements.UITextBox(
             "",

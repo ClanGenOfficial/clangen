@@ -5349,7 +5349,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l bolts back to camp, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} to tell {PRONOUN/p_l/poss} clanmates. {PRONOUN/p_l/subject/CAP} {VERB/p_l/burst/bursts} into camp yowling a warning!",
+                "text": "p_l bolts back to camp, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} to tell {PRONOUN/p_l/poss} Clanmates. {PRONOUN/p_l/subject/CAP} {VERB/p_l/burst/bursts} into camp yowling a warning!",
                 "exp": 40,
                 "art": "cat_running_solo",
                 "relationships": [

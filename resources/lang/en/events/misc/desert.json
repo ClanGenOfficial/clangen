@@ -53,7 +53,7 @@
     ],
     "sub_type": ["accessory"],
     "frequency": 4,
-    "event_text":  "m_c hunts down one of the first flowers that fortell the arrival of the coming rains, proudly wearing the acc_singular back to camp.",
+    "event_text":  "m_c hunts down one of the first flowers that foretell the arrival of the coming rains, proudly wearing the acc_singular back to camp.",
     "new_accessory": [
       "LAVENDER",
       "JUNIPER",
@@ -588,7 +588,7 @@
     "location": ["desert"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "m_c spotted a cat silouetted against the setting sun with the light shining partway through their semitransparent fur. Next blink, the figure is gone.",
+    "event_text": "m_c spotted a cat silhouetted against the setting sun with the light shining partway through their semitransparent fur. Next blink, the figure is gone.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
