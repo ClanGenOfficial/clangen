@@ -258,7 +258,7 @@
 		"id": "trust_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c is letting r_c share {PRONOUN/r_c/poss} troubles with {PRONOUN/m_c/object}, hoping {PRONOUN/r_c/subject}'ll feel better afterwards.",
+			"m_c is letting r_c share {PRONOUN/r_c/poss} troubles with {PRONOUN/m_c/object}, hoping {PRONOUN/r_c/subject}'ll feel better afterward.",
 			"m_c promises to always look out for r_c.",
 			"m_c trusts r_c with a very important task.",
 			"m_c often goes to r_c for guidance.",

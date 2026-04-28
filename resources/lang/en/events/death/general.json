@@ -6343,7 +6343,7 @@
             "kit_manipulated"
         ],
         "frequency": 4,
-        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one noticed.",
+        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterward, but no one noticed.",
         "m_c": {
             "status": [
                 "leader"
