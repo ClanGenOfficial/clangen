@@ -2289,7 +2289,7 @@
     "n_c:0"
   ],
   "frequency": 1,
-  "event_text": "At the Gathering, o_c_n's leader announces their deputy did something terrible and was exiled. They look mournful as they deliver the news, and advises the others to watch their borders closely.",
+  "event_text": "At the Gathering, o_c_n's leader announces their deputy did something terrible and was exiled. They look mournful as they deliver the news and advise the others to watch their borders closely.",
   "m_c": {
     "age": [
       "adolescent",
