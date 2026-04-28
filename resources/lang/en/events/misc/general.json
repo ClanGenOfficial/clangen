@@ -11422,7 +11422,7 @@
             "relationship_status": ["parent/child"]
         },
         "r_c": {
-            "status": ["apprentice"]
+            "status": ["apprentice", "kitten"]
         },
         "relationships": [
             {

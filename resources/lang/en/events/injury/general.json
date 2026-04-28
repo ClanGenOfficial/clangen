@@ -8354,7 +8354,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "When a fight breaks out between c_n and o_c_n, m_c fights to protect {PRONOUN/m_c/poss} apprentice, r_c, from the enemy Clan.",
         "m_c": {
             "status": [
@@ -8418,7 +8418,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "r_c and m_c match each other blow for blow in a fight with a o_c_n patrol. Though they are wounded, they protect each other.",
         "m_c": {
             "status": [
@@ -8476,7 +8476,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "m_c protects {PRONOUN/m_c/poss} little sibling, r_c, in a fight with o_c_n.",
         "m_c": {
             "status": [
@@ -8540,31 +8540,31 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
-        "event_text": "In a battle with o_c_n, m_c hauls an enemy warrior off r_c with the ferocity only a parent can show.",
+        "frequency": 2,
+        "event_text": "In a battle with o_c_n, r_c hauls an enemy warrior off m_c with the ferocity only a parent can show.",
         "m_c": {
             "status": [
-                "warrior", "deputy", "leader"
+                "warrior", "apprentice", "deputy", "leader"
             ],
-            "relationship_status": ["parent/child", "cherishes"],
+            "relationship_status": ["child/parent", "cherishes"],
             "dies": false
         },
         "r_c": {
-            "status": ["warrior", "apprentice", "deputy", "leader"],
+            "status": ["warrior", "deputy", "leader"],
             "dies": false
         },
         "injury": [
             {
                 "cats": [
-                    "r_c"
+                    "m_c"
                 ],
                 "injuries": ["minor_injury"]
             }
         ],
         "relationships": [
             {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
                 "values": ["respect", "trust"],
                 "amount": 15,
                 "mutual": false,
@@ -8591,7 +8591,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "In a battle with o_c_n, m_c sees an enemy warrior attack {PRONOUN/m_c/poss} parent, r_c. m_c leaps to r_c's defense and saves {PRONOUN/m_c/poss} life.",
         "m_c": {
             "status": [
@@ -8642,7 +8642,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "In a battle with o_c_n, {PRONOUN/m_c/subject} {VERB/m_c/save/saves} r_c's life. {PRONOUN/m_c/poss/CAP} mate is amazed by {PRONOUN/m_c/poss} skill in battle, and both cats escape with barely a scratch.",
         "m_c": {
             "status": [
@@ -8694,13 +8694,13 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
+        "frequency": 2,
         "event_text": "m_c defends r_c in a fight with o_c_n, heedless of {PRONOUN/m_c/poss} own injuries.",
         "m_c": {
             "status": [
                 "warrior", "deputy", "leader"
             ],
-            "relationship_status": ["mates"],
+            "relationship_status": ["adores"],
             "dies": false
         },
         "r_c": {
