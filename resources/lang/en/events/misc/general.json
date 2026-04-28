@@ -2985,7 +2985,7 @@
             "romance"
         ],
         "frequency": 3,
-        "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
+        "event_text": "m_c and r_c take a late night patrol out of camp to watch the sunrise.",
         "m_c": {
             "age": [
                 "young adult",
@@ -3015,7 +3015,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cat_from and cat_to went on a late night patrol to watch the sun rise together."
+                    "cats_from": "cat_from and cat_to went on a late night patrol to watch the sunrise together."
                 }
             }
         ]
@@ -4250,7 +4250,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c and r_c sneak out of camp to see the sun rise.",
+        "event_text": "m_c and r_c sneak out of camp to see the sunrise.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -4276,7 +4276,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cat_from and cat_to snuck out of camp to watch the sun rise together."
+                    "cats_from": "cat_from and cat_to snuck out of camp to watch the sunrise together."
                 }
             }
         ]
