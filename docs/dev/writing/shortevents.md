@@ -124,22 +124,7 @@ How to make sure your event_id is unique:
 
 ***
 ### location:list[str]
->This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
-
-| string        | use                              |
-|---------------|----------------------------------|
-| "mountainous" | appears in the mountainous biome |
-| "plains"      | appears in the plains biome      |
-| "forest"      | appears in the forest biome      |
-| "beach"       | appears in the beach biome       |
-| "wetlands"    | appears in the wetlands biome    |
-| "desert"      | appears in the desert biome      |
-| "any"         | appears in any biome             |
-
-!!! todo "TODO"
-    add a table listing various camps
-
-Please have a look at the [full biome differences list](reference/biomes.md) when thinking about writing patrols. 
+>This controls the biome and camp the event appears in. [Tagging Instructions](reference/tag-lists.md#locations)
 
 ### season:list[str]
 >List of seasons in which the event may occur. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).

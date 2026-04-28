@@ -15,6 +15,24 @@ As this is allowed in some but *not all* tags, parameters that allow exclusionar
     For most parameters, there's no use in including both exclusionary and non-exclusionary values. Such as in our example, where we exclude `calm`. All other traits are automatically available, since they aren't `calm`, so we don't need to tag any non-exclusionary values. If we were to use two tags like this: `"trait": ["-calm", "arrogant"]` to specify that `arrogant` is required and `calm` is disqualifying, then we might as well just remove `-calm`. The `arrogant` tag on its own will automatically disqualify `calm` cats.
 
     Where you can expect to utilize both types of values are in parameters with more intermixed tagging. For example, relationship constraints. Here, we may wish to specify that a pair of cats must NOT be child/parent as well as have the `dislikes` tier. As such we would tag: `["-child/parent", "dislikes"]`. This mixes exclusionary and non-exclusionary in a logical manner. 
+
+
+### Locations
+>This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
+
+| string        | use                              |
+|---------------|----------------------------------|
+| "mountainous" | appears in the mountainous biome |
+| "plains"      | appears in the plains biome      |
+| "forest"      | appears in the forest biome      |
+| "beach"       | appears in the beach biome       |
+| "wetlands"    | appears in the wetlands biome    |
+| "desert"      | appears in the desert biome      |
+| "any"         | appears in any biome             |
+
+Please have a look at the [full biome differences list](reference/biomes.md) when thinking about writing patrols. 
+
+
 ## Conditions and Scars
 
 === "Taggable Injury Pools"

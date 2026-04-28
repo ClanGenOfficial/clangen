@@ -682,6 +682,8 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
 
     if health_constraints.get("condition"):
         required_conditions = health_constraints["condition"]
+        if "any" in required_conditions:
+            return True
 
         is_exclusionary = _check_for_exclusionary_value(required_conditions)
         if is_exclusionary:
