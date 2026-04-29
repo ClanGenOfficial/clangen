@@ -12799,5 +12799,35 @@
       }
     }
   ]
-}
+},
+    {
+        "event_id": "gen_misc_otherclanhostilenewleader",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "frequency": 1,
+        "event_text": "At the Gathering, o_c_n's deputy announces they are its new leader. Claiming complete loyalty to o_c_n, they declare they are no longer allies with any Clan.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "ally"
+            ],
+            "changed": -15
+        }
+    }
 ]
