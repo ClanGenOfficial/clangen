@@ -25,15 +25,15 @@ def check_validity(range_dict, combination) -> bool:
             trait["lawfulness"][0], trait["lawfulness"][1] + 1
         ):
             continue
-        if combination[0] not in range(
+        if combination[1] not in range(
             trait["sociability"][0], trait["sociability"][1] + 1
         ):
             continue
-        if combination[0] not in range(
+        if combination[2] not in range(
             trait["aggression"][0], trait["aggression"][1] + 1
         ):
             continue
-        if combination[0] not in range(
+        if combination[3] not in range(
             trait["stability"][0], trait["stability"][1] + 1
         ):
             continue
