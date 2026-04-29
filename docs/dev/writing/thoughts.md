@@ -52,7 +52,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
         "location": [],
         "season": [],
         "tags": [],
-        "thoughts": [
+        "strings": [
             "Is thinking"
         ],
         "involved_cats": {
@@ -98,7 +98,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
 ```json
 {
     "id": "test",
-    "thoughts": [
+    "strings": [
         "Is thinking"
     ]
 }
@@ -126,12 +126,12 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 
 ***
 
-### thoughts: list[str]
+### strings: list[str]
 This is a list of thoughts applicable to the constraints on this thought block. You may include as many or as few thoughts here as you wish, but remember that the constraints will apply to *all* of them. 
 
 For example:
 ```json
-"thoughts": [
+"strings": [
         "Is wondering what r_c would think of current conflicts in the Clan",
         "Wishes r_c was alive to solve {PRONOUN/m_c/poss} problems",
         "Wonders if r_c is ending arguments in StarClan"
