@@ -11533,6 +11533,159 @@
         }
     },
     {
+        "event_id": "gen_misc_war_leadermate",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "exclude_involved": ["r_c"],
+        "frequency": 1,
+        "event_text": "Resentment builds as the Clan notices that m_c is almost never assigned to battle patrols.",
+        "m_c": {
+            "status": ["warrior", "deputy"],
+            "relationship_status": ["mates"]
+        },
+        "r_c": {
+            "status": ["leader"],
+            "trait": ["-wise", "-compassionate", "-responsible", "-strict", "-righteous"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": -15,
+                "log": {
+                    "cats_from": "cat_from suspected cat_to was being spared from battle patrols because {PRONOUN/cat_to/subject}{VERB/cat_to/'re/'s} the leader's mate."
+                }
+            },
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["r_c"],
+                "values": ["respect"],
+                "amount": -15,
+                "log": {
+                    "cats_from": "cat_from suspected cat_to was sparing {PRONOUN/cat_to/poss} mate from battle patrols."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_matesworried",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 3,
+        "event_text": "m_c and r_c fear for each other and their shared future as the war with o_c_n rages on.",
+        "m_c": {
+            "status": ["any"],
+            "relationship_status": ["mates"]
+        },
+        "r_c": {
+            "status": ["any"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["romance"],
+                "mutual": true,
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from and cat_to feared for each other during a war."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_parentchild",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 3,
+        "event_text": "m_c promises r_c that {PRONOUN/m_c/subject} will protect {PRONOUN/r_c/object} from o_c_n.",
+        "m_c": {
+            "status": ["any"],
+            "relationship_status": ["parent/child"]
+        },
+        "r_c": {
+            "status": ["apprentice", "kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "mutual": false,
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_to promised to protect cat_from from o_c_n."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_bloodthirstykitmurderer",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "m_c returns from a raid on o_c_n's camp with kit-blood on {PRONOUN/m_c/poss} claws.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "trait": ["bloodthirsty"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_social"],
+                "cats_to": ["m_c"],
+                "values": ["comfort"],
+                "mutual": false,
+                "amount": -20,
+                "log": {
+                    "cats_from": "cat_from was disturbed by the extreme lengths cat_to went to during a war."
+                }
+            },
+            {
+                "cats_from": ["clan", "high_aggress", "low_lawful", "low_stable", "low_social"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "mutual": true,
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from defended cat_to's extreme actions during a war with o_c_n."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": ["hostile"],
+            "changed": -8
+        }
+    },
+    {
         "event_id": "gen_misc_failedmurder1",
         "location": [
             "any"
