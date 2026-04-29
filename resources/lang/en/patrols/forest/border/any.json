@@ -3878,7 +3878,7 @@
   "types": [
     "border"
   ],
-  "tags": [],
+  "tags": ["clan:leader"],
   "patrol_art": "fst_canopy",
   "min_cats": 3,
   "max_cats": 6,
