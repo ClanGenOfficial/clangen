@@ -3,9 +3,10 @@ from itertools import combinations
 import ujson
 
 """
-This tool is meant to help us check if every possible facet combo is covered! Simply run this script. If any holes are 
-detected, a warning will be printed. Normal traits and kit traits are checked and warned for separately. When the script
-is done running, it will print a "Finished!" message.
+This tool is meant to help us check if every possible facet combo is covered! Simply run this script. 
+If any holes are detected, a warning will be printed. 
+Normal traits and kit traits are checked and warned for separately. 
+When the script is done running, it will print a "Finished!" message.
 """
 
 
