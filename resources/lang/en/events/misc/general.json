@@ -11698,9 +11698,7 @@
         ],
         "frequency": 4,
         "event_text": "At a gathering, m_c overhears cats from another Clan gossiping about the war between c_n and o_c_n.",
-        "m_c" : {
-            "status": ["-kitten","-newborn"]
-        },
+        "m_c" : {},
         "other_clan": {
             "current_rep": ["any"],
             "changed": 0
