@@ -170,7 +170,8 @@ class StartScreen(Screens):
 
             self.error_open = True
         else:
-            self.continue_button.enable()
+            if game.clan is not None:
+                self.continue_button.enable()
             self.error_box.hide()
             self.error_label.hide()
             self.error_gethelp.hide()

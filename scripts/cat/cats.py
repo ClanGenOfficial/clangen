@@ -1616,7 +1616,9 @@ class Cat:
         cats_to_choose = [
             iter_cat
             for iter_cat in Cat.all_cats.values()
-            if iter_cat.ID != self.ID and iter_cat.status.alive_in_player_clan
+            if iter_cat.ID != self.ID
+            and iter_cat.status.alive_in_player_clan
+            and iter_cat.age != CatAge.NEWBORN
         ]
         # if there are no cats to interact, stop
         if not cats_to_choose:

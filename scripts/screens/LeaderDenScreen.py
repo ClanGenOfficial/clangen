@@ -25,7 +25,7 @@ from scripts.ui.icon import Icon
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.ui.theme import get_text_box_theme
 from scripts.events_module.text_adjust import shorten_text_to_fit
-from scripts.clan_package.cotc import get_other_clan, get_other_clan_relation
+from scripts.clan_package.cotc import get_other_clan
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
@@ -504,7 +504,7 @@ class LeaderDenScreen(Screens):
                 f"clan_rel{i}"
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 2), (133, -1))),
-                text=f"screens.leader_den.{get_other_clan_relation(other_clan.relations).strip()}",
+                text=f"screens.leader_den.{other_clan.get_standing().strip()}",
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
@@ -624,7 +624,7 @@ class LeaderDenScreen(Screens):
 
         x_pos = 10
         y_pos = 182
-        relation = get_other_clan_relation(self.focus_clan.relations)
+        relation = self.focus_clan.get_standing()
 
         self.focus_clan_elements["clan_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 15), (215, -1))),
