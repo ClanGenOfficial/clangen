@@ -5309,7 +5309,7 @@
         ],
         "tags": [],
         "frequency": 4,
-        "event_text": "m_c fell from the top branches of a tree.",
+        "event_text": "m_c fell from the top branches of a tree. {PRONOUN/m_c/subject/CAP} never get up again.",
         "m_c": {
             "age": [
                 "-kitten"
