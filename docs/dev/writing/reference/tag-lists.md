@@ -264,14 +264,6 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 
     > You can utilize [#exclusionary tags](#exclusionary-tags).
 
-
-=== "Life/Death Statuses"
-
-    > * `living`
-    * `starclan`
-    * `darkforest`
-    * `unknownresidence`
-
 === "Affiliation Statuses"
 
     > * `kittypet`
@@ -287,10 +279,30 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
     
     Not all statuses are utilized in all formats, please check the relevant event format guide for information on what statuses are or are not valid.
 
+## Groups
+You can utilize [exclusionary tags](#exclusionary-tags).
 
+| tag                 | use                                                                                                                                      |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `match:{cat}`       | Ensures this cat will match with the given cat. For example, the tag `match:r_c` will require this cat to be in the same group as `r_c`. |
+| `no_group`          | This cat is not part of any group.                                                                                                       |
+| `afterlife`         | This cat must be part of one of the afterlives (StarClan, Unknown Residence, or Dark Forest)                                             |
+| `player_clan`       | This cat must be part of the player_clan                                                                                                 |
+| `other_clan`        | This cat must be part of a non-player clan                                                                                               |
+| `starclan`          | This cat must be part of StarClan                                                                                                        |
+| `unknown_residence` | This cat must be part of the Unknown Residence                                                                                           |
+| `dark_forest`       | This cat must be part of the Dark Forest                                                                                                 |
+
+## Standings
+
+| tag       | meaning                                               |
+|-----------|-------------------------------------------------------|
+| `left`    | cat voluntarily left the group                        |
+| `lost`    | cat became forcibly separated from the group          |
+| `exiled`  | cat was forced out of the group intentionally         |
 
 ## Traits and Skills
-You can utilize [#exclusionary tags](#exclusionary-tags).
+You can utilize [exclusionary tags](#exclusionary-tags).
 
 === "Skills"
 

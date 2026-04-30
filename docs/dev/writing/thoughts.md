@@ -60,6 +60,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
                 "status": [],
                 "past_status": [],
                 "age": [],
+                "group": [],
                 "standing": {
                     "with": [],
                     "currently": [],
@@ -174,8 +175,13 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 ***
 
+**group:list[str]**
+>Constraints the thought to only happen if the cat is a member of a listed group.
+
 **standing: dict[str: var]**
 >Constrains the thought to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or a member.
+> 
+> This is also how you can dictate that a cat must belong to *no* group.
 
 ```json
     "standing": {
@@ -184,35 +190,11 @@ Each entry is an individual cat, with the key being their event designation (`r_
         "past": []
       },
 ```
->**`"with"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups.
-> 
->Possible Tags:
-> 
-| tag                 | use                                                                                                                                      |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `match:{cat}`       | Ensures this cat will match with the given cat. For example, the tag `match:r_c` will require this cat to be in the same group as `r_c`. |
-| `no_group`          | Ensures this cat isn't part of any group at all.                                                                                         |
-| `afterlife`         | This cat must be part of one of the afterlives (StarClan, Unknown Residence, or Dark Forest)                                             |
-| `player_clan`       | This cat must be part of the player_clan                                                                                                 |
-| `other_clan`        | This cat must be part of a non-player clan                                                                                               |
-| `starclan`          | This cat must be part of StarClan                                                                                                        |
-| `unknown_residence` | This cat must be part of the Unknown Residence                                                                                           |
-| `dark_forest`       | This cat must be part of the Dark Forest                                                                                                 |
+>**`"with"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups)
 
->**`"currently"`** - the standing the cat should currently possess with this group. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings.
-> 
-> Possible Tags:
-> 
-| tag       | meaning                                               |
-|-----------|-------------------------------------------------------|
-| `member`  | cat is a member of the group                          |
-| `left`    | cat voluntarily left the group                        |
-| `lost`    | cat became forcibly separated from the group          |
-| `exiled`  | cat was forced out of the group intentionally         |
-| `known`   | cat is not part of the group, but is known to them    |
-| `unknown` | cat is not part of the group and is not known to them |
+>**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
 
->**`"past"`** - standings the cat used to have with this group. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. this uses the same tags as `currently`.
+>**`"past"`** - standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
 
 
 ***

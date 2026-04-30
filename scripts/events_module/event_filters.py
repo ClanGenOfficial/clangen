@@ -1,12 +1,12 @@
 import re
 from itertools import combinations
 from random import choice, randint
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
-from scripts.cat.enums import CatRank, CatAge, CatCompatibility
+from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
@@ -376,7 +376,7 @@ def event_for_cat(
 
     # checking groups
     if cat_info.get("group"):
-        if not _check_cat_group(cat, cat_info["group"], involved_cat_dict):
+        if not _check_cat_standing(cat, cat_info["group"], involved_cat_dict):
             return False
 
     # checking injuries
@@ -591,21 +591,21 @@ def _check_cat_group(cat, groups: List[str], already_involved_cats: dict) -> boo
                 not is_exclusionary
                 and cat.status.group != already_involved_cats[cat_to_match].status.group
             ):
-                return False
+                continue
             remaining_tags.remove(tag)
 
         elif tag == "afterlife":  # checks if group is an afterlife
             if is_exclusionary and cat.status.group.is_afterlife():
                 return False
             elif not is_exclusionary and not cat.status.group.is_afterlife():
-                return False
+                continue
             remaining_tags.remove(tag)
 
         elif tag == "no_group":  # checks if the cat has no group
             if is_exclusionary and cat.status.group:
                 return False
             elif not is_exclusionary and not cat.status.group:
-                return False
+                continue
             remaining_tags.remove(tag)
 
     # checks all the plain group tags that will match the CatGroup enums
@@ -613,6 +613,151 @@ def _check_cat_group(cat, groups: List[str], already_involved_cats: dict) -> boo
         return is_exclusionary
 
     return True
+
+
+def _check_cat_standing(
+    cat, standing: Dict[str, list], already_involved_cats: dict, other_clan_id: str
+) -> bool:
+    """
+    Checks if the cat is in one of the required groups
+    :param cat: cat to check
+    :param standing: dict of standing info
+    :param already_involved_cats: dict of cats already involved: key is cat abbr and value is cat object
+    :param other_clan_id: the ID of the other clan involved in this event
+    """
+    if not standing:
+        return True
+
+    qualifies = False
+
+    groups = standing["with"]
+    current_standings = standing["currently"]
+    past_standings = standing["past"]
+
+    group_is_exclusionary = _check_for_exclusionary_value(groups)
+    groups = [x.replace("-", "") for x in groups if "-" in x]
+
+    # unpack some of the group tags into something easier to filter for
+    for tag in standing["with"]:
+        if (
+            "match" in tag
+        ):  # we remove the match tag and replace it with the correct group tag
+            groups.remove(tag)
+            cat_to_match = tag.replace("match:", "")
+            groups.append(already_involved_cats[cat_to_match].status.group)
+        if tag == "afterlife":  # this just simplifies later checks
+            groups.remove(tag)
+            groups.extend(
+                [CatGroup.STARCLAN, CatGroup.DARK_FOREST, CatGroup.UNKNOWN_RESIDENCE]
+            )
+
+    # if it's exclusionary, then we "flip" the group list to be all the groups that weren't mentioned
+    # once again for ease of filtering
+    if group_is_exclusionary:
+        disallowed_groups = groups.copy()
+        groups.clear()
+        for group in [*CatGroup]:
+            if group not in disallowed_groups:
+                groups.append(group)
+
+    # if the cat qualifies for one of the tags, then we're good to go. we mark as qualified and break
+    # CURRENT STANDINGS
+    for tag in current_standings:
+        if tag == CatStanding.LEFT:
+            if _has_current_standing(cat, tag, groups, other_clan_id):
+                qualifies = True
+                break
+        elif tag == CatStanding.LOST:
+            if _has_current_standing(cat, tag, groups, other_clan_id):
+                qualifies = True
+                break
+        elif tag == CatStanding.EXILED:
+            if _has_current_standing(cat, tag, groups, other_clan_id):
+                qualifies = True
+                break
+
+    # PAST STANDINGS
+    for tag in past_standings:
+        if _has_past_standing(cat, tag, groups, other_clan_id):
+            qualifies = True
+            break
+        else:
+            # even if they qualified for current standings, they also need to have the past standings
+            qualifies = False
+
+    return qualifies
+
+
+def _has_current_standing(cat, standing, groups, other_clan_id: str) -> bool:
+    """
+    Checks if the cat currently has a certain standing
+    :param standing: the CatStanding to check for
+    :param groups: list of groups to check for the standing. cat only needs to qualify with one group.
+    :param other_clan_id: the ID of the other clan involved in this event
+    """
+    if standing == CatStanding.LEFT:
+        status_func = cat.status.left_group
+    elif standing == CatStanding.LOST:
+        status_func = cat.status.is_lost
+    elif standing == CatStanding.EXILED:
+        status_func = cat.status.is_exiled
+    else:
+        print(f"WARNING: {standing} is unsupported by the standing filter.")
+        return False
+
+    if CatGroup.OTHER_CLAN in groups:
+        if status_func(other_clan_id):
+            return True
+    if CatGroup.PLAYER_CLAN in groups:
+        if status_func(CatGroup.PLAYER_CLAN_ID):
+            return True
+    if CatGroup.STARCLAN in groups:
+        if status_func(CatGroup.STARCLAN_ID):
+            return True
+    if CatGroup.DARK_FOREST in groups:
+        if status_func(CatGroup.DARK_FOREST_ID):
+            return True
+    if CatGroup.UNKNOWN_RESIDENCE in groups:
+        if status_func(CatGroup.UNKNOWN_RESIDENCE_ID):
+            return True
+    if CatGroup.PLAYER_CLAN in groups:
+        if status_func(CatGroup.PLAYER_CLAN_ID):
+            return True
+
+    return False
+
+
+def _has_past_standing(cat, standing, groups, other_clan_id: str) -> bool:
+    """
+    Checks if the cat has had a certain standing
+    :param cat: the cat the check
+    :param standing: the CatStanding to check for
+    :param groups: list of groups to check for the standing. cat only needs to qualify with one group.
+    :param other_clan_id: the ID of the other clan involved in this event
+    """
+
+    if CatGroup.OTHER_CLAN in groups:
+        if standing in cat.status.get_standing_with_group(other_clan_id):
+            return True
+    if CatGroup.PLAYER_CLAN in groups:
+        if standing in cat.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID):
+            return True
+    if CatGroup.STARCLAN in groups:
+        if standing in cat.status.get_standing_with_group(CatGroup.STARCLAN_ID):
+            return True
+    if CatGroup.DARK_FOREST in groups:
+        if standing in cat.status.get_standing_with_group(CatGroup.DARK_FOREST_ID):
+            return True
+    if CatGroup.UNKNOWN_RESIDENCE in groups:
+        if standing in cat.status.get_standing_with_group(
+            CatGroup.UNKNOWN_RESIDENCE_ID
+        ):
+            return True
+    if CatGroup.PLAYER_CLAN in groups:
+        if standing in cat.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID):
+            return True
+
+    return False
 
 
 def _check_cat_backstory(cat, backstories: list) -> bool:
