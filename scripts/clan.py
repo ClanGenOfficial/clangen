@@ -11,6 +11,7 @@ TODO: Docs
 import os
 import statistics
 from random import choice, randint
+from typing import Literal
 
 import ujson
 
@@ -1379,6 +1380,18 @@ class OtherClan:
 
     def __repr__(self):
         return f"{self.name}Clan"
+
+    def get_standing(self) -> Literal["ally", "neutral", "hostile"]:
+        """
+        Gets if OtherClan is an ally, neutral, or hostile.
+
+        :return: One of "ally", "neutral" or "hostile".
+        """
+        if self.relations > 17:
+            return "ally"
+        elif 7 <= self.relations <= 17:
+            return "neutral"
+        return "hostile"  # self.relations < 7
 
 
 class Afterlife:
