@@ -243,13 +243,13 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     if not required_rel or "any" in required_rel:
         return True
 
-    current_rel = other_clan.relations
+    current_standing = other_clan.get_standing()
 
-    if "hostile" in required_rel and 0 <= current_rel <= 6:
+    if "hostile" in required_rel and current_standing == "hostile":
         return True
-    elif "neutral" in required_rel and 7 <= current_rel <= 17:
+    elif "neutral" in required_rel and current_standing == "neutral":
         return True
-    elif "ally" in required_rel and 18 <= current_rel:
+    elif "ally" in required_rel and current_standing == "ally":
         return True
 
     return False
