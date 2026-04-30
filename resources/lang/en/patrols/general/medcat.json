@@ -14300,6 +14300,7 @@
                 "stat_skill": [
                     "SENSE,2"
                 ],
+                "can_have_stat": ["p_l"],
                 "herbs": [
                     "many_herbs",
                     "dandelion",
@@ -25302,6 +25303,7 @@
                 "stat_skill": [
                     "SENSE,2"
                 ],
+                "can_have_stat": ["p_l"],
                 "herbs": [
                     "many_herbs",
                     "dandelion",
@@ -32648,6 +32650,7 @@
                 "stat_skill": [
                     "SENSE,2"
                 ],
+                "can_have_stat": ["p_l"],
                 "herbs": [
                     "many_herbs",
                     "dandelion",
