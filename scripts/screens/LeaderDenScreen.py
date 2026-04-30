@@ -224,7 +224,7 @@ class LeaderDenScreen(Screens):
                     for i in Cat.all_cats.values()
                     if i.status.alive_in_player_clan
                     and i.status.rank
-                    not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
+                    not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.is_any_apprentice_rank(), CatRank.LEADER]
                 ]
                 if adults:
                     self.helper_cat = random.choice(adults)
