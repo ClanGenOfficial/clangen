@@ -245,14 +245,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
 
     current_standing = other_clan.get_standing()
 
-    if "hostile" in required_rel and current_standing == "hostile":
-        return True
-    elif "neutral" in required_rel and current_standing == "neutral":
-        return True
-    elif "ally" in required_rel and current_standing == "ally":
-        return True
-
-    return False
+    return current_standing in required_rel
 
 
 def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
