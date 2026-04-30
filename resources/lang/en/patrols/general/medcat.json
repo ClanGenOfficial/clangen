@@ -14295,11 +14295,12 @@
                 "frequency": 1
             },
             {
-                "text": "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions and plentiful wild garlic to bring back to camp. {PRONOUN/p_l/subject/CAP} help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery, and don't even have the heart to get annoyed when the warriors decline to help carry the wild garlic.",
+                "text": "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions and plentiful wild garlic to bring back to camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/help/helps} the warriors pluck fluffy dandelions heads to bring back for the nursery and {VERB/p_l/do/does}n't even have the heart to get annoyed when the warriors decline to help carry the wild garlic.",
                 "exp": 10,
                 "stat_skill": [
                     "SENSE,2"
                 ],
+                "can_have_stat": ["p_l"],
                 "herbs": [
                     "many_herbs",
                     "dandelion",
@@ -25302,6 +25303,7 @@
                 "stat_skill": [
                     "SENSE,2"
                 ],
+                "can_have_stat": ["p_l"],
                 "herbs": [
                     "many_herbs",
                     "dandelion",
@@ -32648,6 +32650,7 @@
                 "stat_skill": [
                     "SENSE,2"
                 ],
+                "can_have_stat": ["p_l"],
                 "herbs": [
                     "many_herbs",
                     "dandelion",
