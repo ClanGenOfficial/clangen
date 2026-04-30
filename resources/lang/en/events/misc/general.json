@@ -11704,6 +11704,28 @@
             "changed": 0
         }
     },
+        {
+        "event_id": "gen_misc_war_nosywarrior",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 3,
+        "event_text": "While on a border patrol, m_c meets a warrior from another Clan who demands to know why c_n is at war with o_c_n.",
+        "m_c" : {},
+        "new_cat": [
+            ["meeting","clancat"]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": 0
+        }
+    },
     {
         "event_id": "gen_misc_failedmurder1",
         "location": [
