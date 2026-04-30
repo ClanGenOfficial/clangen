@@ -261,7 +261,7 @@
   {
     "interaction_type": "offend",
     "event_text": "m_c is intentional with {PRONOUN/m_c/poss} comments during the Gathering. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to make it clear to o_c_n that c_n is no longer their ally — without being outright insulting.",
-    "rel_change": -7,
+    "rel_change": -10,
     "m_c": {
       "trait": ["wise", "sincere", "cunning", "calm", "careful", "loving", "responsible", "righteous", "strict", "compassionate", "thoughtful"]
     },
