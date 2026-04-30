@@ -11704,7 +11704,7 @@
             "changed": 0
         }
     },
-        {
+    {
         "event_id": "gen_misc_war_nosywarrior",
         "location": [
             "any"
@@ -11727,17 +11727,9 @@
         },
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "n_c:0"
-                ],
-                "values": [
-                    "like",
-                    "trust",
-                    "respect"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "values": ["like","trust","respect"],
                 "mutual": false,
                 "amount": -10,
                 "log": {
