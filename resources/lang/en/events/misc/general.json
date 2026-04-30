@@ -11727,14 +11727,23 @@
         },
         "relationships": [
             {
-                "cats_from": ["m_c"],
-                "cats_to": ["n_c:0"],
-                "values": ["like","trust","respect"],
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "values": [
+                    "like",
+                    "trust",
+                    "respect"
+                ],
                 "mutual": false,
                 "amount": -10,
                 "log": {
                     "cats_from": "m_c was baffled about why n_c:0 thought c_n's war against o_c_n was any of their business."
-                },
+                }
+            }
         ]
     },
     {
