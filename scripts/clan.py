@@ -11,7 +11,7 @@ TODO: Docs
 import os
 import statistics
 from random import choice, randint
-from typing import Literal, Union
+from typing import Literal
 
 import ujson
 
