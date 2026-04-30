@@ -11724,7 +11724,18 @@
         "other_clan": {
             "current_rep": ["any"],
             "changed": 0
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "values": ["like","trust","respect"],
+                "mutual": false,
+                "amount": -10,
+                "log": {
+                    "cats_from": "m_c was baffled about why n_c:0 thought c_n's war against o_c_n was any of their business."
+                },
+        ]
     },
     {
         "event_id": "gen_misc_failedmurder1",
