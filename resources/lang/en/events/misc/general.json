@@ -11696,14 +11696,10 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 1,
-        "event_text": "test test test test test",
-        "m_c": {},
-        "relationships": [
-
-            {
+        "frequency": 4,
+        "event_text": "test test test test test o_c_n",
         "other_clan": {
-            "current_rep": ["-hostile"],
+            "current_rep": ["ally","neutral"],
             "changed": 0
         }
     },
