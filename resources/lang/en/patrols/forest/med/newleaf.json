@@ -81,7 +81,7 @@
         "art": "fst_canopy"
         },
             {
-        "text": "p_l doesn't see r_c having a running nose as a burden. In fact, to p_l, it's an opportunity. Sure, it's very unhelpful when it comes to finding the herbs, but in terms of collecting the herbs that have a less pleasant smell, it makes r_c the perfect collector. When the patrol comes across a patch of some particularly pungent-scented herbs at the root of a tree, r_c is sent to collect them.",
+        "text": "p_l doesn't see r_c having a running nose as a burden. In fact, to p_l, it's an opportunity. Sure, it's very unhelpful when it comes to finding the herbs, but when it comes to collecting the herbs with a less pleasant smell, it makes r_c the perfect collector. When the patrol comes across a patch of some particularly pungent-scented herbs at the root of a tree, r_c is sent to collect them.",
         "exp": 15,
         "frequency": 2,
         "prey": [],
@@ -106,7 +106,7 @@
         ],
         "fail_outcomes": [
             {
-        "text": "The patrol continues their search for herbs, despite r_c and their plight. Unfortunately, the group doesn’t get very far. r_c stumbles mid sneeze, tripping over a particularly large tree root and tumbling forward, knocking over other cats in their wake.",
+        "text": "The patrol continues their search for herbs, despite r_c and their plight. Unfortunately, the group doesn’t get very far. r_c stumbles mid-sneeze, tripping over a particularly large tree root and tumbling forward, knocking over other cats in their wake.",
         "exp": 0,
         "frequency": 4,
         "prey": [],
