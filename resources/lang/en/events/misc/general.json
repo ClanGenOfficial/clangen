@@ -11836,7 +11836,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 3,
-        "event_text": "While on a patrol, m_c encounters a kittypet. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/bounce/bounces} up to {PRONOUN/m_c/object}, and {VERB/n_c:0/ask/asks} if {PRONOUN/n_c:0/subject} can join the war– it sounds like a fun game!",
+        "event_text": "While on a patrol, m_c encounters a kittypet. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/bounce/bounces} up to {PRONOUN/m_c/object} and {VERB/n_c:0/ask/asks} if {PRONOUN/n_c:0/subject} can join the war. It sounds like a fun game!",
         "m_c": { "status": ["leader","deputy","warrior","apprentice"]
             },
         "new_cat": ["meeting","kittypet"],
