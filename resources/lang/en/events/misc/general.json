@@ -11776,7 +11776,7 @@
         "season": ["any"],
         "sub_type":["war"],
         "frequency": 1,
-        "event_text": "While on a patrol, m_c encounters a kittypet. {PRONOUN/n_c:0/subject/CAP} immediately {VERB/n_c:0/demand/demands} c_n ends the war– it's interrupting {PRONOUN/n_c:0/poss} beauty sleep with all the noise!",
+        "event_text": "While on a patrol, m_c encounters a kittypet. {PRONOUN/n_c:0/subject/CAP} immediately {VERB/n_c:0/demand/demands} c_n ends the war. All the noise is interrupting {PRONOUN/n_c:0/poss} beauty sleep!",
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"]
         },
