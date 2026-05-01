@@ -9211,7 +9211,7 @@
             "cats": [
                 "m_c"
             ],
-            "scar": "m_c was scarred when r_c punished them for holding back against the enemy clan.",
+            "scar": "m_c was scarred when r_c punished {PRONOUN/m_c/object} for holding back against the enemy Clan.",
             "death": "m_c died from the injuries they got when r_c punished them for holding back against the enemy clan."
         }
     ],
