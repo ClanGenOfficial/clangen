@@ -123,6 +123,22 @@
                 "no_results": true
             }
         ],
+              {
+    "cats_from": [
+      "p_l"
+    ],
+    "cats_to": [
+      "patrol"
+    ],
+    "mutual": false,
+    "values": [
+      "respect"
+    ],
+    "amount": 5,
+    "log": {
+        "cats_from": "cats_from lost respect for cats_to after a sidetracked patrol."
+    }
+},
         "new_cat": [],
         "art": "fst_med_stumble1"
             }
