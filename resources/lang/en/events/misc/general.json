@@ -11848,7 +11848,7 @@
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["n_c:0"],
-                "values": ["like","trust"],
+                "values": ["like","comfort"],
                 "mutual": false,
                 "amount": -5,
                 "log": {
