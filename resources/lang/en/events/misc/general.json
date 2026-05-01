@@ -12899,21 +12899,6 @@
         "changed": -1
     }
 },
-      {
-    "event_id": "gen_misc_war_ocnleaddeath",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["war"],
-    "frequency": 2,
-    "event_text": "m_c is confident that o_c_n's leader lost a life during the last battle.",
-    "m_c": {
-        "status": ["leader", "deputy"]
-    },
-    "other_clan": {
-        "current_rep": ["any"],
-        "changed": -1
-    }
-},
 {
   "event_id": "gen_misc_guardsneakout",
   "location": [
