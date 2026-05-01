@@ -12915,6 +12915,10 @@
         "status": [
 			"apprentice"
 		],
+		"trait:" [
+			"-bloodthirsty",
+			
+		]
     },
     "future_event": []
 }
