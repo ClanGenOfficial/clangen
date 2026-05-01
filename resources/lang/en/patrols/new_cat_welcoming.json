@@ -282,7 +282,24 @@
                     ]
                 ],
                 "outsider_rep": 1,
-                "frequency": 4
+                "frequency": 3
+            },
+            {
+                "text": "The two are parent and child who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "loner"
+                    ],
+                    [
+                        "age:young adult",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "outsider_rep": 1,
+                "frequency": 3
             },
             {
                 "text": "One of them, n_c:0, is a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills if {PRONOUN/n_c:0/subject} and {PRONOUN/n_c:0/poss} child could join c_n. The two are brought back to camp.",
