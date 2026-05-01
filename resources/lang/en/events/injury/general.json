@@ -9229,7 +9229,7 @@
             ],
             "amount": -15,
             "log": {
-        "cats_from": "cats_from lost respect for cats_to when cats_to punished them for holding back in a battle."
+        "cats_from": "cat_from lost respect for cat_to when cat_to punished {PRONOUN/cat_from/object} for holding back in a battle."
             }
         },
         {
