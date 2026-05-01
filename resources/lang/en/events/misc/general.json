@@ -11697,12 +11697,165 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "At a gathering, m_c overhears cats from another Clan gossiping about the war between c_n and o_c_n.",
+        "event_text": "At a Gathering, m_c overhears cats from another Clan gossiping about the war between c_n and o_c_n.",
         "m_c" : {},
         "other_clan": {
             "current_rep": ["any"],
             "changed": 0
         }
+    },
+    {
+        "event_id": "gen_misc_war_nosyloner",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "While on a border patrol m_c meets a loner named n_c:0, {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/demand/demands} to know why c_n is at war with o_c_n.",
+        "m_c" : {
+            "status": ["leader","deputy","warrior","apprentice"]
+        },
+        "new_cat": [
+            ["meeting","loner"]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": 0
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "values": ["like","trust","respect"],
+                "mutual": false,
+                "amount": -10,
+                "log": {
+                    "cats_from": "m_c was baffled about why n_c:0 thought c_n's war against o_c_n was any of their business."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_nosykittypet",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type":["war"],
+        "frequency": 2,
+        "event_text": "While on a patrol, m_c encounters n_c:0, a kittypet, who complains about c_n's war with o_c_n being annoying. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/demand/demands} to know why c_n is involved in it in the first place.",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"]
+        },
+        "new_cat": [
+            ["meeting","loner"]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": 0
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "values": ["like","trust","respect"],
+                "mutual": false,
+                "amount": -10,
+                "log": {
+                    "cats_from": "m_c was baffled about why n_c:0 thought c_n's war against o_c_n was any of their business."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_kittypetendwar",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type":["war"],
+        "frequency": 1,
+        "event_text": "While on a patrol, m_c encounters n_c:0, a kittypet. {PRONOUN/n_c:0/subject/CAP} immediately {VERB/n_c:0/demand/demands} c_n ends the war– it's interrupting {PRONOUN/n_c:0/poss} beauty sleep with all the noise!",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"]
+        },
+        "new_cat": [
+            ["meeting","kittypet"]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": 0
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "values": ["like","trust","respect"],
+                "mutual": false,
+                "amount": -15,
+                "log": {
+                    "cats_from": "m_c was angered that n_c:0 thought {PRONOUN/n_c:0/subject} had the right to stick {PRONOUN/n_c:0/poss} nose in Clan business."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_lonerendwar",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type":["war"],
+        "frequency": 1,
+        "event_text": "While on a patrol, m_c encounters n_c:0, a loner. {PRONOUN/n_c:0/subject/CAP} immediately {VERB/n_c:0/demand/demands} c_n ends the war– it's making it difficult for n_c:0 to hunt with all the noise!",
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"]
+        },
+        "new_cat": [
+            ["meeting","loner"]
+        ],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": 0
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "values": ["like","trust","respect"],
+                "mutual": false,
+                "amount": -15,
+                "log": {
+                    "cats_from": "m_c was angered that n_c:0 thought {PRONOUN/n_c:0/subject} had the right to stick {PRONOUN/n_c:0/poss} nose in Clan business."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_kittypetnaive",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "frequency": 3,
+        "event_text": "While on a patrol, m_c encounters n_c:0, a kittypet. {PRONOUN/n_c:/subject/CAP} {VERB/n_c:0/bounce/bounces} up to {PRONOUN/m_c/object}, and {VERB/n_c:0/ask/asks} if {PRONOUN/n_c:0/subject} can join the war– it sounds like a fun game!",
+        "m_c": { "status": ["leader","deputy","warrior","apprentice"]
+            },
+        "new_cat": ["meeting","kittypet"],
+        "other_clan": {
+            "current_rep": ["any"],
+            "changed": 0
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "values": ["like","trust"],
+                "mutual": false,
+                "amount": -5,
+                "log": {
+                    "cats_from": "m_c was disturbed that n_c:0 {VERB/n_c:0/think/thinks} war is a game."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_failedmurder1",
