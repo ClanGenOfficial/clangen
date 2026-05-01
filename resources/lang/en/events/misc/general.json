@@ -11765,7 +11765,7 @@
                 "mutual": false,
                 "amount": -10,
                 "log": {
-                    "cats_from": "m_c was baffled about why n_c:0 thought c_n's war was any of their business."
+                    "cats_from": "m_c was baffled about why n_c:0 thought c_n's war was any of {PRONOUN/n_c:0/poss} business."
                 }
             }
         ]
