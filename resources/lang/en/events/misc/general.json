@@ -12852,7 +12852,8 @@
 			"any"
 		]
     },
-		"relationships": [
+    
+    	"relationships": [
         {
             "cats_from": [
 				"m_c"
@@ -12865,7 +12866,11 @@
 				"like",
 				"trust"
 			],
-            "amount": 10
+            "amount": 10,
+        "log": {
+        "cats_from": "cat_from believes that cat_to's guidance will make them strong enough to fight off any foe!",
+        "cats_to": "cat_to admires and cherishes cat_from's eagerness to learn."
+      }
         }
     ]
 },
