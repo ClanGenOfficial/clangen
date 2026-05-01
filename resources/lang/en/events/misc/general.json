@@ -1839,7 +1839,7 @@
             "amount": -5,
             "mutual": false,
             "log": {
-                "cats_from": "cat_from heard that cat_to trespassed on o_c_n's territory."
+                "cats_from": "cat_from heard that cat_to trespassed on another Clan's territory."
             }
         }
         ]
@@ -6593,7 +6593,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cat_from consulted cat_to about how to end the war with o_c_n."
+                    "cats_from": "cat_from consulted cat_to about how to end the war."
                 }
             }
         ]
@@ -6865,7 +6865,7 @@
                 "mutual": false,
                 "log": {
                     "cats_from": "cat_to's clairvoyance saved cat_from from an ambush."
-                } 
+                }
             }
         ]
     },
@@ -9211,7 +9211,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a border dispute with o_c_n."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a border dispute with another Clan."
                 }
             }
         ]
@@ -9275,7 +9275,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease o_c_n."
+                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease another Clan."
                 }
             }
         ]
@@ -9339,7 +9339,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a hunting dispute with o_c_n."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a hunting dispute with another Clan."
                 }
             }
         ]
@@ -9403,7 +9403,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease o_c_n."
+                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease another Clan."
                 }
             }
         ]
@@ -9467,7 +9467,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from was impressed by how cat_to was able to resolve an herb-gathering dispute with o_c_n."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve an herb-gathering dispute with another Clan."
                 }
             }
         ]
@@ -9531,7 +9531,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease o_c_n."
+                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease another Clan."
                 }
             }
         ]
@@ -9595,7 +9595,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a personal dispute with o_c_n."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a personal dispute with another Clan."
                 }
             }
         ]
@@ -9659,7 +9659,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease o_c_n."
+                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease another Clan."
                 }
             }
         ]
@@ -9931,7 +9931,7 @@
             ],
             "amount": -10,
             "log": {
-                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with a o_c_n apprentice during the war."
+                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             },
             {
@@ -9947,7 +9947,7 @@
             ],
             "amount": 10,
             "log": {
-                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with a o_c_n apprentice during the war."
+                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             }
         ],
@@ -10000,7 +10000,7 @@
             ],
                 "amount": -10,
                 "log": {
-                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with a o_c_n apprentice during the war."
+                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             },
             {
@@ -10016,7 +10016,7 @@
             ],
             "amount": 10,
             "log": {
-                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with a o_c_n apprentice during the war."
+                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             }
         ],
@@ -10097,7 +10097,7 @@
             ],
             "amount": -10,
             "log": {
-                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with a o_c_n apprentice during the war."
+                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             },
             {
@@ -10113,7 +10113,7 @@
             ],
             "amount": 10,
             "log": {
-                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with a o_c_n apprentice during the war."
+                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             }
         ]
@@ -10295,7 +10295,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from heard about how cat_to killed a o_c_n warrior in battle."
+                    "cats_from": "cat_from heard about how cat_to killed a warrior from another Clan in battle."
                 }
             }
         ],
@@ -10335,7 +10335,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from heard about how cat_to killed a o_c_n apprentice in battle."
+                    "cats_from": "cat_from heard about how cat_to killed an apprentice from another Clan in battle."
                 }
             }
         ],
@@ -10387,7 +10387,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "cat_from was comforted by cat_to after a nightmare about o_c_n."
+                    "cats_from": "cat_from was comforted by cat_to after a nightmare about the war."
                 }
             }
         ],
@@ -10439,7 +10439,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "cat_from was comforted by cat_to after a nightmare about o_c_n."
+                    "cats_from": "cat_from was comforted by cat_to after a nightmare about the war."
                 }
             }
         ],
@@ -10540,7 +10540,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from approved of how cat_to persuaded o_c_n to withdraw from c_n's territory."
+                    "cats_from": "cat_from approved of how cat_to persuaded an enemy Clan to withdraw from c_n's territory."
                 }
             }
         ]
@@ -10636,7 +10636,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from thought cat_to's mediation efforts in the war with o_c_n were a waste of time."
+                    "cats_from": "cat_from thought cat_to's mediation efforts in the war with an enemy Clan were a waste of time."
                 }
             }
         ]
@@ -10761,7 +10761,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cat_from consulted cat_to about how to end the war with o_c_n."
+                    "cats_from": "cat_from consulted cat_to about how to end the war with an enemy Clan."
                 }
             }
         ]
@@ -10823,7 +10823,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cat_from consulted cat_to about how to end the war with o_c_n."
+                    "cats_from": "cat_from consulted cat_to about how to end the war with an enemy Clan."
                 }
             }
         ]
@@ -11318,7 +11318,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from thought it was fox-hearted of cat_to to order {PRONOUN/cat_from/object} to steal from o_c_n's herb stores."
+                    "cats_from": "cat_from thought it was fox-hearted of cat_to to order {PRONOUN/cat_from/object} to steal from another Clan's herb stores."
                 }
             }
         ]
@@ -11636,7 +11636,7 @@
                 "mutual": false,
                 "amount": 15,
                 "log": {
-                    "cats_from": "cat_to promised to protect cat_from from o_c_n."
+                    "cats_from": "cat_to promised to protect cat_from from an enemy Clan."
                 }
             }
         ]
@@ -11676,7 +11676,7 @@
                 "mutual": true,
                 "amount": 10,
                 "log": {
-                    "cats_from": "cat_from defended cat_to's extreme actions during a war with o_c_n."
+                    "cats_from": "cat_from defended cat_to's extreme actions during a war with an enemy Clan."
                 }
             }
         ],
@@ -12546,7 +12546,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "Rumors spread that cat_to stood by while r_c was attacked in a battle with o_c_n."
+                    "cats_from": "Rumors spread that cat_to stood by while r_c was attacked in a battle with an enemy Clan."
                 }
             }
         ]
