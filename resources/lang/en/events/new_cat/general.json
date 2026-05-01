@@ -3234,7 +3234,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 1,
-    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 meows that {PRONOUN/n_c:0/subject} {VERB/n_c:0/regret/regrets} any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} caused c_n in the past and {VERB/n_c:0/want/wants} to join the Clan. m_c accepts.",
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c accepts.",
     "m_c": {
       "status": [
         "leader"
@@ -3242,7 +3242,8 @@
       "trait": [
         "-bloodthirsty",
         "-cold",
-        "-strict"
+        "-strict",
+        "-vengeful"  
       ],
       "dies": false
     },
@@ -3274,7 +3275,25 @@
         ],
         "amount": 10,
         "log": {
-          "cats_from": "cat_from is impressed that cat_from gave an old loner a chance to join the clan."
+          "cats_from": "cat_from was impressed that cat_to gave an old rogue a chance to join the clan."
+        }
+      },
+     {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c",
+            "some_clan"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+            "comfort"
+        ],
+        "amount": 5,
+        "log": {
+          "cats_from": "cat_from was grateful to be welcomed into c_n by cat_to."
         }
       }
     ]
@@ -3290,7 +3309,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 1,
-    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 meows that {PRONOUN/n_c:0/subject} {VERB/n_c:0/regret/regrets} any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} caused c_n in the past and {VERB/n_c:0/want/wants} to join the Clan. m_c accepts.",
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c accepts.",
     "m_c": {
       "status": [
         "leader"
@@ -3298,7 +3317,8 @@
       "trait": [
         "-bloodthirsty",
         "-cold",
-        "-strict"
+        "-strict", 
+        "-vengeful"
       ],
       "dies": false
     },
@@ -3330,7 +3350,25 @@
         ],
         "amount": 10,
         "log": {
-          "cats_from": "cat_from is impressed that cat_from gave an old loner a chance to join the clan."
+          "cats_from": "cat_from was impressed that cat_to gave an old rogue a chance to join the clan."
+        }
+      },
+      {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c",
+            "some_clan"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+            "comfort"
+        ],
+        "amount": 5,
+        "log": {
+          "cats_from": "cat_from was grateful to be welcomed into c_n by cat_to."
         }
       }
     ]
@@ -3346,15 +3384,13 @@
     "sub_type": [],
     "tags": [],
     "frequency": 1,
-    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 meows that {PRONOUN/n_c:0/subject} {VERB/n_c:0/regret/regrets} any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} caused c_n in the past and {VERB/n_c:0/want/wants} to join the Clan. m_c turns {PRONOUN/n_c:0/object} away.",
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c turns {PRONOUN/n_c:0/object} away.",
     "m_c": {
       "status": [
         "leader"
       ],
       "trait": [
-        "-bloodthirsty",
-        "-cold",
-        "-strict"
+        "-bloodthirsty"
       ],
       "dies": false
     },
@@ -3389,7 +3425,43 @@
         ],
         "amount": -5,
         "log": {
-          "cats_from": "cat_from thought cat_from should've given a old loner a chance to join the clan."
+          "cats_from": "cat_from thought cat_to should've given an old rogue a chance to join the clan."
+        }
+      },
+                        {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "Though cat_from understood, {PRONOUN/n_c:0/subject} were still disappointed that cat_to shunned them."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0",
+            "high_aggress",
+            "low_stable"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from regretted ever offering c_n their forgiveness."
         }
       }
     ]
@@ -3405,15 +3477,13 @@
     "sub_type": [],
     "tags": [],
     "frequency": 1,
-    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 meows that {PRONOUN/n_c:0/subject} {VERB/n_c:0/regret/regrets} any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} caused c_n in the past and {VERB/n_c:0/want/wants} to join the Clan. m_c turns {PRONOUN/n_c:0/object} away.",
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c turns {PRONOUN/n_c:0/object} away.",
     "m_c": {
       "status": [
         "leader"
       ],
       "trait": [
-        "-bloodthirsty",
-        "-cold",
-        "-strict"
+        "-bloodthirsty"
       ],
       "dies": false
     },
@@ -3448,7 +3518,43 @@
         ],
         "amount": -5,
         "log": {
-          "cats_from": "cat_from thought cat_from should've given a old loner a chance to join the clan."
+          "cats_from": "cat_from thought cat_from should've given an old rogue a chance to join the clan."
+        }
+      },
+                {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "Though cat_from understood, {PRONOUN/n_c:0/subject} were still disappointed that cat_to shunned them."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0",
+            "high_aggress",
+            "low_stable"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from regretted ever offering c_n their forgiveness."
         }
       }
     ]
@@ -3464,13 +3570,14 @@
     "sub_type": [],
     "tags": [],
     "frequency": 1,
-    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 meows that {PRONOUN/n_c:0/subject} {VERB/n_c:0/regret/regrets} any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} caused c_n in the past and {VERB/n_c:0/want/wants} to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
     "m_c": {
       "status": [
         "leader"
       ],
       "trait": [
-        "bloodthirsty"
+        "bloodthirsty",
+          "vengeful"
       ],
       "dies": false
     },
@@ -3513,7 +3620,25 @@
       {
         "cats_from": [
           "clan",
-          "high_aggress"
+          "high_aggress",
+            "low_lawful"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "trust",
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from approved of cat_to killing an old loner who once wronged c_n."
+        }
+      },
+                {
+        "cats_from": [
+          "n_c:0"
         ],
         "cats_to": [
           "m_c"
@@ -3521,11 +3646,29 @@
         "mutual": false,
         "values": [
           "like",
-          "respect"
+          "trust"
         ],
-        "amount": 10,
+        "amount": -10,
         "log": {
-          "cats_from": "cat_from approved of cat_to killing an old loner who once wronged c_n."
+          "cats_from": "cat_from never imagined that m_c would kill {PRONOUN/n_c:0/object} during an apology."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0",
+            "high_aggress"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -20,
+        "log": {
+          "cats_from": "cat_from vows to curse m_c and c_n from beyond the grave."
         }
       }
     ]
@@ -3541,13 +3684,14 @@
     "sub_type": [],
     "tags": [],
     "frequency": 1,
-    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 meows that {PRONOUN/n_c:0/subject} {VERB/n_c:0/regret/regrets} any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} caused c_n in the past and {VERB/n_c:0/want/wants} to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
     "m_c": {
       "status": [
         "leader"
       ],
       "trait": [
-        "bloodthirsty"
+        "bloodthirsty",
+          "vengeful"
       ],
       "dies": false
     },
@@ -3590,7 +3734,8 @@
       {
         "cats_from": [
           "clan",
-          "high_aggress"
+          "high_aggress",
+            "low_lawful"
         ],
         "cats_to": [
           "m_c"
@@ -3603,6 +3748,41 @@
         "amount": 10,
         "log": {
           "cats_from": "cat_from approved of cat_to killing an old loner who once wronged c_n."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -10,
+        "log": {
+          "cats_from": "cat_from never imagined that m_c would kill {PRONOUN/n_c:0/object} during an apology."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0",
+            "high_aggress"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -20,
+        "log": {
+          "cats_from": "cat_from vows to curse m_c and c_n from beyond the grave."
         }
       }
     ]
