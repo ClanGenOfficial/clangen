@@ -11699,7 +11699,7 @@
         "frequency": 4,
         "event_text": "At a Gathering, m_c overhears cats from another Clan gossiping about the war between c_n and o_c_n.",
         "m_c" : {
-			"status": ["-newborn","-kitten"]
+			"age": ["-newborn","-kitten"]
 		},
         "other_clan": {
             "current_rep": ["any"],
