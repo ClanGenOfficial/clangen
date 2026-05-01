@@ -6052,7 +6052,7 @@
             ],
             "history_text": {
                 "death": "m_c died from a wound sustained from a gannet's beak.",
-                "scars": "m_c was scarred by a gannet's beak."
+                "scar": "m_c was scarred by a gannet's beak."
             }
         },
         {
@@ -6069,7 +6069,7 @@
             ],
             "history_text": {
                 "death": "m_c died from a broken bone after being chased off a cliff by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid.",
-                "scars": "m_c was scarred by a broken bone after being chased off a cliff by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid."
+                "scar": "m_c was scarred by a broken bone after being chased off a cliff by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid."
             },
             "art": "mtn_train_stuck"
         },
