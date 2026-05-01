@@ -12813,7 +12813,7 @@
 	],
     "tags": [],
     "frequency": 4,
-    "event_text": "m_c wakes up suddenly from a nightmare, sobbing about a mysterious evil cat.",
+    "event_text": "m_c wakes up from a nightmare, sobbing about a mysterious evil cat.",
     "new_accessory": [],
     "m_c": {
         "age": [

@@ -9267,7 +9267,7 @@
     ],
     "tags": [],
     "frequency": 3,
-    "event_text": "m_c and r_c get into a slight scuffle during an argument regarding o_c_n.",
+    "event_text": "m_c and r_c get into a scuffle during an argument regarding o_c_n.",
     "m_c": {
         "status": [
             "apprentice",
@@ -9318,7 +9318,7 @@
             ],
             "amount": -10,
             "log": {
-        "cats_from": "cats_from lost respect for cats_to due to an argument regarding another clan."
+        "cats_from": "cat_from lost respect for cat_to due to an argument regarding another Clan."
             }
         }
     ],
