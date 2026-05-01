@@ -448,7 +448,7 @@
                         "amount": 25,
                         "mutual": true,
                         "log": {
-                          "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} friend, n_c:0, transfered easily to {PRONOUN/n_c:0/poss} child, cat_to.",
+                          "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} friend, n_c:0, transferred easily to {PRONOUN/n_c:0/poss} child, cat_to.",
                           "cats_to": "Having spent every moment of {PRONOUN/cat_to/poss} life alongside cat_from, cat_to nearly considers {PRONOUN/cat_from/object} a secondary parent."
                         }
                      }
