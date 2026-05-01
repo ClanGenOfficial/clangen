@@ -9248,7 +9248,7 @@
             ],
             "amount": -15,
             "log": {
-        "cats_from": "cats_from punished cats_to for holding back during a battle."
+        "cats_from": "cat_from punished cat_to for holding back during a battle."
             }
         }
     ],
