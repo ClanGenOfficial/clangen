@@ -5912,7 +5912,6 @@
             }
         ]
     },
-
     {
     "patrol_id": "bch_hunt_gannet_eggtheft",
     "biome": ["beach"],
@@ -5981,9 +5980,19 @@
                     "cats_to": ["patrol"],
                     "mutual": true,
                     "values": ["trust","respect"],
-                    "amount": 10,
+                    "amount": 12,
                     "log": {
                         "cats_from": "cat_from took down a gannet thanks to excellent teamwork with cat_to."
+                        }
+                },
+                {
+                    "cats_from": ["clan"],
+                    "cats_to": ["p_l"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from heard about cat_to taking down a full-grown gannet together with {PRONOUN/cat_to/poss} patrol."
                         }
                 }
             ],
@@ -6002,12 +6011,11 @@
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust","respect"],
-                    "amount": 12,
+                    "amount": 14,
                     "log": {
                         "cats_from": "cat_from witnessed cat_to take down a full-grown gannet on {PRONOUN/cat_to/poss} own."
                         }
                 },
-                
                 {
                     "cats_from": ["clan"],
                     "cats_to": ["s_c"],
@@ -6021,7 +6029,6 @@
             ],
             "art": "gen_angry_cat_warrior"
             }
-
     ],
     "fail_outcomes": [
         {
