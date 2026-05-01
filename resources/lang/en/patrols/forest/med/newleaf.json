@@ -58,7 +58,7 @@
         "decline_text": "Due to r_c clearly not being fully up to a patrol in such a pollen-filled forest, the patrol returns to camp with no new herbs. At least r_c seems to have stopped sneezing for now.",
         "success_outcomes": [
             {
-        "text": "p_l doesn't acknowledge r_c sneezing, opting to continue the patrol. Despite the circumstances, the fresh newleaf plants are bountiful for the group, and the patrol returns with an average collection of herbs.",
+        "text": "p_l continues the patrol without acknowledging r_c sneezing. Despite the circumstances, the fresh newleaf plants are bountiful for the group, and the patrol returns with an average collection of herbs.",
         "exp": 10,
         "frequency": 4,
         "prey": [],
