@@ -89,7 +89,6 @@
                 "no_results": true
             }
         ],
-              {
     "cats_from": [
       "p_l"
     ],
@@ -104,10 +103,9 @@
     "log": {
         "cats_from": "cats_from lost respect for cats_to after a sidetracked patrol."
     }
-},
+        }
+    ],
         "new_cat": [],
         "art": "fst_med_stumble1"
             }
         ]
-    }
-]
