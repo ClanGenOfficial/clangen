@@ -251,7 +251,7 @@
                 "frequency": 3
             },
             {
-                "text": "One of them, n_c:0, is learning to be a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills for a place in c_n. Considering their age, the patrol feels somewhat of an obligation to bring the young cats back to camp.",
+                "text": "One of them, n_c:0, is learning to be a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills for a place in c_n. Considering their age, the patrol feels obligated to bring the young cats back to camp.",
                 "exp": 10,
                 "new_cat": [
                     [
