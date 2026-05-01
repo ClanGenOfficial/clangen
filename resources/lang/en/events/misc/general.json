@@ -11806,7 +11806,7 @@
         "season": ["any"],
         "sub_type":["war"],
         "frequency": 1,
-        "event_text": "While on a patrol, m_c encounters a loner. {PRONOUN/n_c:0/subject/CAP} immediately {VERB/n_c:0/demand/demands} c_n ends the war– it's making it difficult for n_c:0 to hunt with all the noise!",
+        "event_text": "While on a patrol, m_c encounters a loner. {PRONOUN/n_c:0/subject/CAP} immediately {VERB/n_c:0/demand/demands} c_n ends the war. All the noise is making it difficult for n_c:0 to hunt.",
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"]
         },
