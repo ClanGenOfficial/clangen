@@ -12812,7 +12812,7 @@
 		"war"
 	],
     "tags": [],
-    "frequency": 2,
+    "frequency": 4,
     "event_text": "m_c wakes up suddenly from a nightmare, sobbing about a mysterious evil cat.",
     "new_accessory": [],
     "m_c": {
@@ -12833,7 +12833,7 @@
 		"war"
 	],
     "tags": [],
-    "frequency": 3,
+    "frequency": 4,
     "event_text": "m_c begs {PRONOUN/m_c/poss} mentor to practice fighting, claiming {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to be stronger to fight o_c_n.",
     "new_accessory": [],
     "m_c": {
@@ -12887,7 +12887,7 @@
 		"war"
 	],
     "tags": [],
-    "frequency": 3,
+    "frequency": 4,
     "event_text": "m_c spends all night sorting the herb stores, wanting to help as much as {PRONOUN/m_c/subject} can.",
     "m_c": {
         "status": [
@@ -12909,7 +12909,7 @@
 		"war"
 	],
     "tags": [],
-    "frequency": 2,
+    "frequency": 3,
     "event_text": "m_c is caught holding back when in a fight against an o_c_n apprentice. ",
     "m_c": {
         "status": [
