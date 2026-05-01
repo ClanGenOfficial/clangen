@@ -93,7 +93,7 @@
       "p_l"
     ],
     "cats_to": [
-      "patrol"
+      "r_c"
     ],
     "mutual": false,
     "values": [
@@ -104,7 +104,7 @@
         "cats_from": "cats_from lost respect for cats_to after a sidetracked patrol."
     }
         }
-    ],
+        ],
         "new_cat": [],
         "art": "fst_med_stumble1"
             }
