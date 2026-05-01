@@ -12849,9 +12849,25 @@
     },
     "r_c": {
         "status": [
-			"warrior"
+			"any"
 		]
     }
+		"relationships": [
+        {
+            "cats_from": [
+				"m_c"
+			],
+            "cats_to": [
+				"r_c"
+			],
+            "mutual": true,
+            "values": [
+				"like",
+				"trust"
+			],
+            "amount": 10
+        }
+    ]
 },
 	{
     "event_id": "gen_misc_war_medstudy",
@@ -12916,7 +12932,10 @@
                 "apprentice"
             ],
             "trait": [
-                "-bloodthirsty"
+                "-bloodthirsty",
+				"-fierce",
+				"-arrogant",
+				"-vengeful"
             ]
     },
     "future_event": []
