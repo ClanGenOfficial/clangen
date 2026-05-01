@@ -95,7 +95,7 @@
         }
     },
   {
-    "event_id": "plns_newcat_bridge_traincat",
+    "event_id": "pln_newcat_bridge_traincat",
     "location": [
       "plains:camp4"
     ],
