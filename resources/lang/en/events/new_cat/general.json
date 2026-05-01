@@ -3635,41 +3635,6 @@
         "log": {
           "cats_from": "cat_from approved of cat_to killing an old loner who once wronged c_n."
         }
-      },
-                {
-        "cats_from": [
-          "n_c:0"
-        ],
-        "cats_to": [
-          "m_c"
-        ],
-        "mutual": false,
-        "values": [
-          "like",
-          "trust"
-        ],
-        "amount": -10,
-        "log": {
-          "cats_from": "cat_from never imagined that m_c would kill {PRONOUN/n_c:0/object} during an apology."
-        }
-      },
-        {
-        "cats_from": [
-          "n_c:0",
-            "high_aggress"
-        ],
-        "cats_to": [
-          "m_c"
-        ],
-        "mutual": false,
-        "values": [
-          "like",
-          "trust"
-        ],
-        "amount": -20,
-        "log": {
-          "cats_from": "cat_from vows to curse m_c and c_n from beyond the grave."
-        }
       }
     ]
   },
@@ -3748,41 +3713,6 @@
         "amount": 10,
         "log": {
           "cats_from": "cat_from approved of cat_to killing an old rogue who once wronged c_n."
-        }
-      },
-        {
-        "cats_from": [
-          "n_c:0"
-        ],
-        "cats_to": [
-          "m_c"
-        ],
-        "mutual": false,
-        "values": [
-          "like",
-          "trust"
-        ],
-        "amount": -10,
-        "log": {
-          "cats_from": "cat_from never imagined that m_c would kill {PRONOUN/n_c:0/object} during an apology."
-        }
-      },
-        {
-        "cats_from": [
-          "n_c:0",
-            "high_aggress"
-        ],
-        "cats_to": [
-          "m_c"
-        ],
-        "mutual": false,
-        "values": [
-          "like",
-          "trust"
-        ],
-        "amount": -20,
-        "log": {
-          "cats_from": "cat_from vows to curse m_c and c_n from beyond the grave."
         }
       }
     ]
