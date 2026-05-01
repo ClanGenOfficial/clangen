@@ -11841,7 +11841,9 @@
         "event_text": "While on a patrol, m_c encounters a kittypet. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/bounce/bounces} up to {PRONOUN/m_c/object} and {VERB/n_c:0/ask/asks} if {PRONOUN/n_c:0/subject} can join the war. It sounds like a fun game!",
         "m_c": { "status": ["leader","deputy","warrior","apprentice"]
             },
-        "new_cat": ["meeting","kittypet"],
+        "new_cat": [
+        ["meeting","kittypet"]
+        ],
         "other_clan": {
             "current_rep": ["any"],
             "changed": 0
