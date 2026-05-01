@@ -3535,7 +3535,7 @@
         ],
         "amount": -5,
         "log": {
-          "cats_from": "Though cat_from understood, {PRONOUN/n_c:0/subject} were still disappointed that cat_to shunned them."
+          "cats_from": "cat_from was disappointed that cat_to shunned {PRONOUN/cat_from/object}."
         }
       },
         {
