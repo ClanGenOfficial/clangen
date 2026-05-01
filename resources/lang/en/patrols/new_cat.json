@@ -494,7 +494,7 @@
                         "mutual": true,
                         "log": {
                           "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend...",
-                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend..."
                         }
                      }
                 ],
