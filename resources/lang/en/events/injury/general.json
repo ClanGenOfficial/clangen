@@ -9225,9 +9225,12 @@
             ],
             "mutual": false,
             "values": [
-                "comfort"
+                "respect"
             ],
-            "amount": -15
+            "amount": -15,
+            "log": {
+        "cats_from": "cats_from lost respect for cats_to when {PRONOUN/cats_from/subject} {VERB/cats_from/were/was} punished by cats_to for holding back in a battle."
+            }
         },
         {
             "cats_from": [
@@ -9240,7 +9243,10 @@
             "values": [
                 "like"
             ],
-            "amount": -15
+            "amount": -15,
+            "log": {
+        "cats_from": "cats_from punished cats_to for holding back during a battle."
+            }
         }
     ],
     "future_event": []
@@ -9307,7 +9313,10 @@
             "values": [
                 "respect"
             ],
-            "amount": -10
+            "amount": -10,
+            "log": {
+        "cats_from": "cats_from lost respect for cats_to due to an argument regarding another clan."
+            }
         }
     ],
     "future_event": []
