@@ -54,7 +54,7 @@
         },
         "frequency": 2,
         "chance_of_success": 60,
-        "intro_text": "p_l didn't exactly plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject} {VERB/p_l/were/was} grateful for the help anyway, especially with the amount of blooming plants. That is, until r_c started sneezing. Clearly, the pollen from the trees was affecting {PRONOUN/r_c/object} somewhat.",
+        "intro_text": "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming plants. That is, until r_c starts sneezing. Clearly, the pollen from the trees is affecting {PRONOUN/r_c/object} somewhat.",
         "decline_text": "Due to r_c clearly not being fully up to a patrol in such a pollen-filled forest, the patrol returns to camp with no new herbs. At least r_c seems to have stopped sneezing for now.",
         "success_outcomes": [
             {
