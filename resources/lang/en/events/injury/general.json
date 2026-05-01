@@ -9177,23 +9177,24 @@
         "status": [
             "apprentice",
             "warrior",
-            "-kitten",
-            "-newborn",
-            "-leader"
         ]
     },
     "r_c": {
         "status": [
             "deputy",
             "leader",
-            "-kitten",
-            "-newborn",
-            "-apprentice"
         ],
         "trait": [
             "-compassionate",
             "-thoughtful",
-            "-loving"
+            "-loving",
+            "-wise",
+            "-calm",
+            "-responsible",
+            "-playful",
+            "-nervous",
+            "-careful",
+            "-sincere"
         ]
     },
     "injury": [
@@ -9225,7 +9226,8 @@
             ],
             "mutual": false,
             "values": [
-                "respect"
+                "respect",
+                "comfort"
             ],
             "amount": -15,
             "log": {
@@ -9241,7 +9243,8 @@
             ],
             "mutual": false,
             "values": [
-                "like"
+                "like",
+                "trust"
             ],
             "amount": -15,
             "log": {
