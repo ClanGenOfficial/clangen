@@ -5929,7 +5929,7 @@
     },
     "frequency": 3,
     "chance_of_success": 50,
-    "intro_text": "Wind whips around p_l and r_c's pelts as they work their way up the cliffside. Above, the ledges are covered in gannets. Loud calls cacophony as parents return to the bustling colony. The cats weave around the occupied nests, staying just out of reach of the brooding birds, in search of unguarded eggs.",
+    "intro_text": "Wind whips around p_l and r_c's pelts as they work their way up the cliffside. Above, the ledges are covered in gannets. A cacophony of calls heralds the parents' return to the bustling colony. The cats weave around the occupied nests, staying just out of reach of the brooding birds, in search of unguarded eggs.",
     "decline_text": "The wind gusts intensify, threatening to push the cats off the cliffside. It's too dangerous, and p_l orders the patrol to turn around.",
     "success_outcomes": [
         {
@@ -5943,7 +5943,7 @@
             "exp": 25,
             "frequency": 3,
             "stat_skill": ["HUNTER,1","LORE,1"],
-            "can_have_stat": ["adult"],
+            "can_have_stat": ["any"],
             "prey": ["large"],
             "relationships": [
                 {
@@ -5962,7 +5962,7 @@
             "text": "From a ledge above the patrol, many fledglings leap into the air. A sudden gust of wind sends some crashing into a low part of the cliff. Many tumble off, but a few limp bodies are caught on the rocks. p_l instructs {PRONOUN/p_l/poss} patrol to find a way to climb down. That's a feast for the taking.",
             "exp": 30,
             "frequency": 2,
-            "prey": ["huge"]
+            "prey": ["large"]
         },
         {
             "min_max_status": {"normal adult": [4,6]},
