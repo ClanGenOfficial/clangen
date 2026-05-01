@@ -9363,5 +9363,48 @@
     ],
     "changed": -3
   }
-}
+},
+	{
+    "event_id": "gen_death_war_holdbackpunish",
+    "location": [
+		"any"
+	],
+    "season": [
+		"any"
+	],
+    "sub_type": [
+		"war"
+	],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is killed by r_c for holding back against an o_c_n cat",
+    "m_c": {
+        "status": [
+			"apprentice",
+			"warrior"
+		],
+        "dies": true
+    },
+    "r_c": {
+        "status": [
+            "deputy",
+            "leader"
+        ],
+        "trait": [
+            "-compassionate",
+            "-thoughtful",
+            "-loving"
+        ],
+    },
+    "exclude_involved": [],
+    "history": [
+        {
+            "cats": [
+				"m_c"
+			],
+            "death": "m_c was killed by r_c as punishment for holding back against the enemy clan."
+        }
+    ],
+    "future_event": []
+    }
 ]
