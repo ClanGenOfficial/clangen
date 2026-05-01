@@ -93,7 +93,37 @@
             ],
             "changed": 1
         }
+    },
+  {
+    "event_id": "pln_newcat_bridge_traincat",
+    "location": [
+      "plains:camp4"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "A stranger hops down from a slow-moving Thundersnake near camp, curious about the group of cats. When m_c explains, n_c:0 asks to stick around and see what clan life is all about.",
+    "m_c": {
+      "age": [],
+      "status": [
+        "-kitten",
+        "-apprentice"
+      ]
+    },
+    "new_cat": [
+      [
+        "old_name",
+        "age:young adult"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": 1
     }
-
-
-]
+  }
+  ]
