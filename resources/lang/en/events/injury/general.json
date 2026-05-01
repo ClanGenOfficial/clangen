@@ -9158,6 +9158,156 @@
                 ]
             }
         ]
-    }
+    },
+    {
+    "event_id": "gen_injury_war_holdbackpunish",
+    "location": [
+        "any"
+    ],
+    "season": [
+        "any"
+    ],
+    "sub_type": [
+        "war"
+    ],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c is punished by r_c for holding back against an o_c_n cat",
+    "m_c": {
+        "status": [
+            "apprentice",
+            "warrior"
+        ],
+    },
+    "r_c": {
+        "status": [
+            "deputy",
+            "leader"
+        ],
+        "trait": [
+            "-compassionate",
+            "-thoughtful",
+            "-loving"
+        ],
+    },
+    ],
+    "injury": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "injuries": [
+                "battle_injury"
+            ],
+        }
+    ],
+    "history": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "scar": "m_c was scarred when r_c punished them for holding back against the enemy clan.",
+            "death": "m_c died from the injuries they got when r_c punished them for holding back against the enemy clan."
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": [
+                "m_c"
+            ],
+            "cats_to": [
+                "r_c"
+            ],
+            "mutual": false,
+            "values": [
+                "comfort"
+            ],
+            "amount": -15
+        },
+        {
+            "cats_from": [
+                "r_c"
+            ],
+            "cats_to": [
+                "m_c"
+            ],
+            "mutual": false,
+            "values": [
+                "like"
+            ],
+            "amount": -15
+        },
+    ],
+    "future_event": []
+},
+    {
+    "event_id": "gen_injury_war_argument",
+    "location": [
+        "any"
+    ],
+    "season": [
+        "any"
+    ],
+    "sub_type": [
+        "war"
+    ],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "m_c and r_c get into a slight scuffle during an argument regarding o_c_n",
+    "m_c": {
+        "status": [
+            "apprentice",
+            "warrior",
+            "leader",
+            "deputy"
+            }
+    },
+    "r_c": {
+        "status": [
+            "apprentice",
+            "warrior",
+            "leader",
+            "deputy"
+        ]
+    },
+    "injury": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "injuries": [
+                "minor_injury"
+            ],
+            "scars": []
+        },
+        {
+            "cats": [
+                "r_c"
+            ],
+            "injuries": [
+                "minor_injury"
+            ],
+            "scars": []
+        }
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": [
+                "m_c"
+            ],
+            "cats_to": [
+                "r_c"
+            ],
+            "mutual": true,
+            "values": [
+                "respect"
+            ],
+            "amount": -10
+        }
+    ],
+    "future_event": []
+}
+
 ]
 
