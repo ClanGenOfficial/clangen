@@ -3541,7 +3541,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 1,
-    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 meows that {PRONOUN/n_c:0/subject} {VERB/n_c:0/regret/regrets} any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} caused c_n in the past and {VERB/n_c:0/want/wants} to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
     "m_c": {
       "status": [
         "leader"
