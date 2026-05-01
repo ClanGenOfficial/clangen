@@ -81,7 +81,7 @@
         "art": "fst_canopy"
         },
             {
-        "text": "p_l doesn't see r_c having a running nose as a burden. In fact, to p_l, it's an opportunity. Sure, it's very unhelpful when it comes to finding the herbs, but when it comes to collecting the herbs with a less pleasant smell, it makes r_c the perfect collector. When the patrol comes across a patch of some particularly pungent-scented herbs at the root of a tree, r_c is sent to collect them.",
+        "text": "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c from finding herbs, it makes r_c the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs at the root of a tree, r_c is sent to collect them.",
         "exp": 15,
         "frequency": 2,
         "prey": [],
