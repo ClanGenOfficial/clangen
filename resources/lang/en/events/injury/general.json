@@ -9176,13 +9176,13 @@
     "m_c": {
         "status": [
             "apprentice",
-            "warrior",
+            "warrior"
         ]
     },
     "r_c": {
         "status": [
             "deputy",
-            "leader",
+            "leader"
         ],
         "trait": [
             "-compassionate",
