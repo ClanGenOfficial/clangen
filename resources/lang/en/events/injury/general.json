@@ -9177,7 +9177,7 @@
         "status": [
             "apprentice",
             "warrior"
-        ],
+        ]
     },
     "r_c": {
         "status": [
@@ -9188,9 +9188,8 @@
             "-compassionate",
             "-thoughtful",
             "-loving"
-        ],
+        ]
     },
-    ],
     "injury": [
         {
             "cats": [
@@ -9198,7 +9197,7 @@
             ],
             "injuries": [
                 "battle_injury"
-            ],
+            ]
         }
     ],
     "history": [
@@ -9236,7 +9235,7 @@
                 "like"
             ],
             "amount": -15
-        },
+        }
     ],
     "future_event": []
 },
@@ -9260,8 +9259,8 @@
             "warrior",
             "leader",
             "deputy"
-            }
-    },
+        ]
+            },
     "r_c": {
         "status": [
             "apprentice",
@@ -9289,7 +9288,6 @@
             ],
             "scars": []
         }
-    ]
     ],
     "relationships": [
         {

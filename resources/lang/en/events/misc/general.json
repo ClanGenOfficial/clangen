@@ -12850,7 +12850,7 @@
     "r_c": {
         "status": [
 			"warrior"
-		],
+		]
     }
 },
 	{
@@ -12871,7 +12871,7 @@
         "status": [
 			"medicine cat apprentice",
 			"medicine cat"
-		],
+		]
     },
     "future_event": []
 },
@@ -12893,7 +12893,7 @@
         "status": [
 			"medicine cat apprentice",
 			"medicine cat"
-		],
+		]
     },
     "future_event": []
 },
@@ -12915,8 +12915,8 @@
         "status": [
 			"apprentice"
 		],
-		"trait:" [
-			"-bloodthirsty",
+		"trait:": [
+			"-bloodthirsty"
 			
 		]
     },
