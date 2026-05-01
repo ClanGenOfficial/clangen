@@ -15,43 +15,9 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                0,
-                6
-            ],
-            "medicine cat apprentice": [
-                0,
-                6
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "deputy": [
-                0,
-                6
-            ],
-            "warrior": [
-                0,
-                6
-            ],
-            "leader": [
-                0,
-                6
-            ],
-            "healer cats": [
-                0,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                0,
-                6
-            ]
-        },
+"normal adult": [1, 5],
+"medicine cat": [1, 5]
+      },
         "frequency": 2,
         "chance_of_success": 60,
         "intro_text": "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming plants. That is, until r_c starts sneezing. Clearly, the pollen from the trees is affecting {PRONOUN/r_c/object} somewhat.",
