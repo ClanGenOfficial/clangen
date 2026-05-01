@@ -5314,6 +5314,38 @@
             "age": [
                 "-kitten"
             ],
+            "status": [
+            "-leader"
+          ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c fell from a tall tree."
+            }
+        ]
+    },
+       {
+        "event_id": "gen_death_tree_any2",
+        "location": [
+            "beach",
+            "forest",
+            "mountainous",
+            "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 4,
+        "event_text": "m_c fell from the top branches of a tree. The fall was too great, and {PRONOUN/m_c/subject} could not recover.",
+        "m_c": {
+            "status": [
+            "leader"
+          ],
             "dies": true
         },
         "history": [
