@@ -12913,11 +12913,11 @@
     "event_text": "m_c is caught holding back when in a fight against an o_c_n apprentice. ",
     "m_c": {
         "status": [
-			"apprentice"
-		],
-		"trait:": [
-			"-bloodthirsty"
-		]
+                "apprentice"
+            ],
+            "trait": [
+                "-bloodthirsty"
+            ]
     },
     "future_event": []
 }
