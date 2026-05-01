@@ -89,6 +89,8 @@
                 "no_results": true
             }
         ],
+"relationships": [
+    {
     "cats_from": [
       "p_l"
     ],
@@ -109,3 +111,5 @@
         "art": "fst_med_stumble1"
             }
         ]
+    }
+    ]
