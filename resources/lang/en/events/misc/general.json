@@ -12910,7 +12910,7 @@
 	],
     "tags": [],
     "frequency": 3,
-    "event_text": "m_c is caught holding back when in a fight against an o_c_n apprentice. ",
+    "event_text": "m_c is caught holding back when in a fight against a o_c_n apprentice. ",
     "m_c": {
         "status": [
                 "apprentice"
