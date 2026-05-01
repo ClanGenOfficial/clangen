@@ -9172,17 +9172,22 @@
     ],
     "tags": [],
     "frequency": 2,
-    "event_text": "m_c is punished by r_c for holding back against an o_c_n cat",
+    "event_text": "m_c is punished by r_c for holding back against an o_c_n cat.",
     "m_c": {
         "status": [
             "apprentice",
-            "warrior"
+            "warrior",
+            "-kitten",
+            "-newborn"
         ]
     },
     "r_c": {
         "status": [
             "deputy",
-            "leader"
+            "leader",
+            "-kitten",
+            "-newborn",
+            "-apprentice"
         ],
         "trait": [
             "-compassionate",
