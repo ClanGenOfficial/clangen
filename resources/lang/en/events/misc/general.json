@@ -12834,7 +12834,7 @@
 	],
     "tags": [],
     "frequency": 4,
-    "event_text": "m_c begs {PRONOUN/m_c/poss} mentor to practice fighting, claiming {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to be stronger to fight o_c_n.",
+    "event_text": "m_c begs {PRONOUN/m_c/poss} mentor for more battle training, claiming {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to be stronger to fight o_c_n.",
     "new_accessory": [],
     "m_c": {
         "status": [
