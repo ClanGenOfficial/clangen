@@ -1391,7 +1391,7 @@
                 ],
                 "amount": 40,
                 "log": {
-                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against o_c_n."
+                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against an enemy Clan."
                 }
             }
         ],
@@ -1453,7 +1453,7 @@
                 ],
                 "amount": 40,
                 "log": {
-                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against o_c_n."
+                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against an enemy Clan."
                 }
             }
         ],
@@ -1515,7 +1515,7 @@
                 ],
                 "amount": 40,
                 "log": {
-                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against o_c_n."
+                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against an enemy Clan."
                 }
             }
         ],
@@ -1578,7 +1578,7 @@
                 ],
                 "amount": 40,
                 "log": {
-                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a o_c_n ambush."
+                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in an ambush during war."
                 }
             }
         ],
@@ -3598,7 +3598,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from heard that cat_to died trying to save o_c_n's medicine cat."
+                    "cats_from": "cat_from heard that cat_to died trying to save an enemy Clan's medicine cat."
                 }
             }
         ]
@@ -4916,7 +4916,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_to was killed by o_c_n while trying to drag cat_from out of battle, and cat_from will always remember {PRONOUN/cat_to/poss} sacrifice."
+                    "cats_from": "cat_to was killed by an enemy Clan while trying to drag cat_from out of battle, and cat_from will always remember {PRONOUN/cat_to/poss} sacrifice."
                 }
             }
         ],
@@ -5993,7 +5993,7 @@
                 "amount": 20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from will always remember that cat_to gave {PRONOUN/cat_to/poss} life to save kits from o_c_n warriors."
+                    "cats_from": "cat_from will always remember that cat_to gave {PRONOUN/cat_to/poss} life to save kits from warriors of an enemy Clan."
                 }
             }
         ]
@@ -6065,7 +6065,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "cat_to died defending cat_from from o_c_n warriors, and cat_from will always remember {PRONOUN/cat_to/poss} sacrifice."
+                    "cats_from": "cat_to died defending cat_from from warriors of an enemy Clan, and cat_from will always remember {PRONOUN/cat_to/poss} sacrifice."
                 }
             }
         ],
@@ -8346,7 +8346,7 @@
                 "amount": -30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_to stood by and watched as o_c_n's deputy killed cat_from."
+                    "cats_from": "cat_to stood by and watched as an enemy Clan's deputy killed cat_from."
                 }
             }
         ],
