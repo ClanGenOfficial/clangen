@@ -5922,10 +5922,6 @@
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
-        "apprentice": [
-            0,
-            5
-        ],
         "normal adult": [
             1,
             6
