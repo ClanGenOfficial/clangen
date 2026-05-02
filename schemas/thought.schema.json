@@ -174,7 +174,9 @@
         "baby_loner_backstories",
         "-baby_loner_backstories",
         "baby_kittypet_backstories",
-        "-baby_kittypet_backstories"
+        "-baby_kittypet_backstories",
+        "stolenkit1",
+        "stolenkit2"
       ],
       "title": "Backstory",
       "type": "string"
