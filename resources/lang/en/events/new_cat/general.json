@@ -1887,7 +1887,7 @@
             "values": ["trust", "like"],
             "amount": 20,
                 "log": {
-                    "cats_from": "cat_from was thankful that cat_to prevented a bloody battle against o_c_n."
+                    "cats_from": "cat_from was thankful that cat_to prevented a bloody battle against an enemy Clan."
                 }
         }
     ],
@@ -2027,7 +2027,7 @@
             "values": ["trust", "like"],
             "amount": -10,
             "log": {
-                    "cats_from": "cat_from will remember the rogue who dared to attack c_n so brazenly during a battle against o_c_n."
+                    "cats_from": "cat_from will remember the rogue who dared to attack c_n so brazenly during a battle against an enemy Clan."
                 }
         }
     ],
@@ -2073,7 +2073,7 @@
             "values": ["trust", "like"],
             "amount": 10,
             "log": {
-                    "cats_from": "cat_from will remember the kittypet who dared to stop an entire battle against o_c_n."
+                    "cats_from": "cat_from will remember the kittypet who dared to stop an entire battle against an enemy Clan."
                 }
         },
         {
