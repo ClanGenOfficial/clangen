@@ -2658,7 +2658,7 @@
                     "m_c", "r_c"
                 ],
                 "values": [ "like" ],
-                "amount": 10,
+                "amount": -10,
                 "mutual": true,
                 "log": {
                     "cats_from": "n_c:0 attacked r_c, but m_c fought {PRONOUN/n_c:0/object} off."
