@@ -258,6 +258,7 @@
       "type": "string"
     },
     "FutureCat": {
+      "additionalProperties": false,
       "properties": {
         "age": {
           "description": "List of ages the cat can be. If they can be anything, use \"any\".",
@@ -419,6 +420,7 @@
       "type": "object"
     },
     "FutureEventPool": {
+      "additionalProperties": false,
       "properties": {
         "subtype": {
           "description": "Events to be added to the pool will contain all subtypes specified.",
