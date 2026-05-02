@@ -1104,7 +1104,7 @@
         "new_cat": [
           [
             "old_name",
-            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan",
+            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan1",
             "status:warrior"
           ]
         ],
@@ -1150,7 +1150,7 @@
         "new_cat": [
           [
             "old_name",
-            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan",
+            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan1",
             "status:warrior"
           ]
         ],
@@ -1197,7 +1197,7 @@
           [
             "old_name",
             "backstory:medicine_cat",
-            "status:medicine_cat"
+            "status:medicine cat"
           ]
         ],
         "other_clan": {

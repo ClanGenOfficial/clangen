@@ -2710,7 +2710,7 @@
             "any"
         ],
         "season": [
-            "any"
+            "-leaf-bare"
         ],
         "types": [
             "hunting"
@@ -2722,7 +2722,7 @@
         "min_max_status": {
             "normal adult": [
                 1,
-                6
+                3
             ]
         },
         "frequency": 1,
@@ -2731,7 +2731,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It's the perfect time of day, the cats melting in and out of their territory's shadowy cover as their successes begin to pile up. At first there's only a couple pieces of prey, then more, and more, and more, until finally p_l calls off the patrol: not because the prey has escaped them, but because they're going to have trouble carrying it all home.",
+                "text": "It's the perfect time of day, the cats melting in and out of the shadows, piling up fresh-kill. Finally, p_l calls off the patrol: not because the prey has escaped them, but because they're going to have trouble carrying it all home.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -2751,7 +2751,7 @@
                 "frequency": 3
             },
             {
-                "text": "With their diurnal prey tired and headed to their homes, their crepuscular counterparts come out in full force! As their nocturnal prey still blinks away the sleep in their eyes, the patrol has a truly premium number of opportunities to catch food, enough so that the entire Clan comes to comment on the patrol's success when they return.",
+                "text": "As the day's prey heads home, the evening's prey awakens. The patrol capitalizes on the animals' sleepiness, so much so that the entire Clan comes to comment on the patrol's success when they return.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -2762,6 +2762,16 @@
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from and cat_to had a successful hunt together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from noticed how successful cat_to's hunting patrol was."
                         }
                     }
                 ],
@@ -7299,5 +7309,268 @@
                 "frequency": 4
             }
         ]
-    }
+    },
+    {
+    "patrol_id": "gen_hunt_harshleafbare",
+    "biome": ["-desert"],
+    "season": ["leaf-bare"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "gen_hunt_leafbaresnowstorm",
+    "min_cats": 2,
+    "max_cats": 6,
+    "frequency": 4,
+    "chance_of_success": 40,
+    "intro_text": "After a recent heavy snowfall, the patrol heads out with little hope of finding prey.",
+    "decline_text": "The patrol weighs the danger of frostbite against the need for prey. p_l chooses caution.",
+    "success_outcomes": [
+        {
+            "text": "Prey is scarce, but the patrol manages a few meager catches.",
+            "exp": 15,
+            "frequency": 4,
+            "art": "fst_hunt_vole",
+            "prey": ["small"]
+        },
+        {
+            "text": "The cold air deadens scent trails, and the snow mutes all sound. Nevertheless, the patrol perseveres and catches a few scrawny pieces of fresh-kill.",
+            "exp": 15,
+            "frequency": 3,
+            "prey": ["small"],
+            "art": "gen_hunt_bird"
+        },
+        {
+            "text": "Most of the patrol returns empty-pawed. This has been a harsh leaf-bare.",
+            "exp": 15,
+            "frequency": 2,
+            "prey": ["very_small"],
+            "art": "gen_hunt_strange"
+        },
+        {
+            "text": "s_c's determination in the face of slim hunting odds inspires the rest of the patrol. They stay out in the cold longer than is wise, but they have something to show for it at the end of the day.",
+            "exp": 20,
+            "frequency": 4,
+            "prey": ["medium"],
+            "can_have_stat": ["any"],
+            "stat_trait": ["confident", "competitive", "arrogant", "shameless", "righteous", "fierce", "adventurous", "bold", "daring", "faithful", "loyal", "strict"],
+            "injury": [
+                {
+                    "cats": ["multi"],
+                    "injuries": ["shivering"]
+                }
+            ],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from noticed cat_to's dedication to feeding the Clan during leaf-bare."
+                    }
+                }
+            ],
+            "art": "gen_hunt_mouse"
+        },
+        {
+            "text": "In the face of adversity, the cats' trust in each other becomes paramount. They work in teams to ensure that what little prey they do find isn't able to escape them.",
+            "exp": 25,
+            "frequency": 4,
+            "prey": ["medium"],
+            "relationship_constraint": ["trusts"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["trust"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from and cat_to's trust in each other grew when they worked together to feed the Clan during leaf-bare."
+                    }
+                }
+            ],
+            "art": "gen_bump_heads_warriors"
+        },
+        {
+            "text": "In leaf-bare, the Clan relies on s_c more than ever. {PRONOUN/s_c/subject/CAP} {VERB/s_c/rise/rises} to the challenge and ensures the hunt succeeds against the odds.",
+            "exp": 20,
+            "frequency": 4,
+            "prey": ["medium"],
+            "stat_skill": ["HUNTER,1"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["trust", "respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from was grateful to have cat_to hunt for c_n in leaf-bare."
+                    }
+                }
+            ],
+            "art": "gen_hunt_mouse"
+        },
+        {
+            "text": "s_c's sharp senses are critical to the patrol's success. Without {PRONOUN/s_c/object}, it would be nigh impossible to follow any scent trail in the cold.",
+            "exp": 20,
+            "frequency": 4,
+            "prey": ["medium"],
+            "stat_skill": ["SENSE,1"],
+            "can_have_stat": ["any"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["trust", "respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from was grateful for cat_to's skill in tracking prey during a leaf-bare hunt."
+                    }
+                }
+            ],
+            "art": "gen_hunt_mouse"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "p_l knew hunting would be difficult, but the complete lack of prey is disheartening. The patrol returns to camp empty-pawed.",
+            "exp": 0,
+            "frequency": 4,
+            "art": "gen_solo"
+        },
+        {
+            "text": "The snowfall obscures any scent or sound that might lead the patrol to prey. After a long, fruitless search, p_l calls off the patrol with a heavy heart.",
+            "exp": 0,
+            "frequency": 4,
+            "art": "gen_solo"
+        },
+        {
+            "text": "All the skill, patience, and teamwork in the world cannot catch prey that isn't there. The patrol returns to camp with nothing to show for it.",
+            "exp": 0,
+            "frequency": 4,
+            "art": "gen_solo"
+        },
+        {
+            "text": "The lack of prey prompts a joke from s_c about how leaf-bare should really be called <i>prey</i>-bare. The rest of the patrol is not amused.",
+            "exp": 0,
+            "frequency": 4,
+            "can_have_stat": ["any"],
+            "stat_trait": ["playful", "childish"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["like"],
+                    "amount": -8,
+                    "mutual": false,
+                    "log": {
+                        "cats_from": "cat_from was irritated by cat_to's joke during a failed hunting patrol."
+                    }
+                }
+            ],
+            "art": "gen_train_argueWW"
+        },
+        {
+            "text": "The patrol finds no prey. Their failure and their empty bellies make their tempers short, and they shoot each other resentful looks on the way back to camp.",
+            "exp": 0,
+            "frequency": 2,
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "values": ["like", "respect"],
+                    "amount": -8,
+                    "mutual": false,
+                    "log": {
+                        "cats_from": "cat_from and cat_to felt resentful toward each other after a failed hunting patrol in leaf-bare left them hungry."
+                    }
+                }
+            ],
+            "art": "gen_train_argueWW"
+        },
+        {
+            "text": "s_c refuses to allow the patrol to end in failure. No matter how numb the cats' paws become, s_c persists in the hunt. They don't return completely empty-pawed, but they pay the price for it.",
+            "exp": 0,
+            "frequency": 2,
+            "prey": ["very_small"],
+            "can_have_stat": ["adult"],
+            "stat_trait": ["confident", "competitive", "arrogant", "shameless", "righteous", "fierce", "adventurous", "bold", "daring", "faithful", "loyal", "strict"],
+            "injury": [
+                {
+                    "cats": ["multi"],
+                    "injuries": ["frostbite"]
+                }
+            ],
+            "history_text": {
+                "scar": "m_c was scarred after hunting in leaf-bare.",
+                "death": "m_c died of frostbite after hunting in leaf-bare."
+            },
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from noticed cat_to's dedication to feeding the Clan during leaf-bare."
+                    }
+                },
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["comfort"],
+                    "amount": -5,
+                    "log": {
+                        "cats_from": "cat_from realized cat_to was willing to sacrifice both {PRONOUN/cat_to/poss} own health and the health of others to feed the Clan in leaf-bare."
+                    }
+                }
+            ],
+            "art": "gen_snowpatrol_warrior_app"
+        },
+        {
+            "text": "As the patrol searches in vain for prey scents, s_c becomes worked up. The Clan relies on {PRONOUN/s_c/poss} skill to feed them, and s_c is failing them! The patrol comforts s_c as they return with empty, cold paws.",
+            "exp": 0,
+            "frequency": 4,
+            "can_have_stat": ["any"],
+            "stat_skill": ["HUNTER,1", "SENSE,1"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "values": ["comfort"],
+                    "amount": 8,
+                    "mutual": true,
+                    "log": {
+                        "cats_from": "cat_from comforted cat_to after a failed hunt in leaf-bare upset {PRONOUN/cat_to/object}."
+                    }
+                }
+            ],
+            "art": "gen_comfort_warrior_warrior"
+        },
+        {
+            "text": "p_l realizes the snowfall will make tracking prey impossible and calls off the patrol. s_c insists on continuing alone; the Clan is relying on {PRONOUN/s_c/object}. The next day, a search party finds {PRONOUN/s_c/poss} body next to a cache of stiff, frozen prey.",
+            "exp": 0,
+            "frequency": 1,
+            "prey": ["medium"],
+            "can_have_stat": ["not_pl"],
+            "stat_skill": ["HUNTER,1"],
+            "dead_cats": ["s_c"],
+            "history_text": {
+                "death": "m_c froze to death while hunting in leaf-bare."
+            },
+            "relationships": [
+                {
+                    "cats_from": ["clan"],
+                    "cats_to": ["s_c"],
+                    "values": ["respect"],
+                    "amount": 15,
+                    "log": {
+                        "cats_from": "cat_from honored cat_to's death hunting in leaf-bare to feed the Clan."
+                    }
+                }
+            ],
+            "art": "gen_dead_cat"
+        }
+    ]
+}
 ]
