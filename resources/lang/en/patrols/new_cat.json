@@ -4543,7 +4543,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "cat_running_two",
+        "patrol_art": "running_two_warriors",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -7457,7 +7457,7 @@
             }
         }
     ],
-    "art": "cat_running_two"
+    "art": "running_two_warriors"
         },
         {
             "text": "r_c follows the voice and finds three mysterious loners, but before {PRONOUN/r_c/subject} can find out how these loners know {PRONOUN/r_c/poss} name, p_l reappears and the loners vanish. p_l and r_c return to camp, a tension hanging between them.",

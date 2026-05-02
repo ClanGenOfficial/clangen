@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -186,7 +186,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -269,7 +269,7 @@
         "season": [ "leaf-bare" ],
         "types": [ "hunting" ],
         "tags": [ "romance" ],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1660,7 +1660,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
