@@ -24,7 +24,7 @@ class EventType(Enum):
 
 class FutureEventPool(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    subtype: Union[List[EventSubtype], MISSING] = Field(
+    sub_type: Union[List[EventSubtype], MISSING] = Field(
         MISSING,
         description="Events to be added to the pool will contain all subtypes specified.",
     )

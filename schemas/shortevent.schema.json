@@ -422,12 +422,12 @@
     "FutureEventPool": {
       "additionalProperties": false,
       "properties": {
-        "subtype": {
+        "sub_type": {
           "description": "Events to be added to the pool will contain all subtypes specified.",
           "items": {
             "$ref": "#/$defs/EventSubtype"
           },
-          "title": "Subtype",
+          "title": "Sub Type",
           "type": "array"
         },
         "event_id": {
