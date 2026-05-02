@@ -9134,7 +9134,7 @@
         "location": [
             "forest:camp1_camp2",
             "plains:camp1_camp3_camp4",
-            "mountain:camp1_camp2_camp4" ],
+            "mountainous:camp1_camp2_camp4" ],
         "season": [
             "any"
         ],
@@ -9161,7 +9161,7 @@
         "location": [
             "forest:camp1_camp2",
             "plains:camp1_camp3_camp4",
-            "mountain:camp1_camp2_camp4" ],
+            "mountainous:camp1_camp2_camp4" ],
         "season": [
             "any"
         ],
