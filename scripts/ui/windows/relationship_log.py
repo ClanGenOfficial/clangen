@@ -74,7 +74,7 @@ class RelationshipLogWindow(GameWindow):
         else:
             self.log = pygame_gui.elements.UITextBox(
                 log_string,
-                ui_scale(pygame.Rect((15, 45), (476, 250))),
+                ui_scale(pygame.Rect((15, 45), (476, 240))),
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
                 container=self,

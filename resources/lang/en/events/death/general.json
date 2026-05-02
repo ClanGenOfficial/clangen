@@ -5944,7 +5944,7 @@
             "any"
         ],
         "tags": [
-            "clan:kits"
+            "clan:kitten"
         ],
         "frequency": 4,
         "event_text": "m_c was killed defending the kits during a o_c_n raid.",
@@ -8068,7 +8068,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["clan: medicine cat"],
+        "tags": ["clan:medicine cat"],
         "frequency": 1,
         "event_text": "m_c seemed hale and healthy on patrol until {PRONOUN/m_c/subject} had trouble speaking and began to limp. By the time {PRONOUN/m_c/poss} Clanmates came back with the medicine cat, m_c was dead.",
         "m_c": {
@@ -9134,7 +9134,7 @@
         "location": [
             "forest:camp1_camp2",
             "plains:camp1_camp3_camp4",
-            "mountain:camp1_camp2_camp4" ],
+            "mountainous:camp1_camp2_camp4" ],
         "season": [
             "any"
         ],
@@ -9161,7 +9161,7 @@
         "location": [
             "forest:camp1_camp2",
             "plains:camp1_camp3_camp4",
-            "mountain:camp1_camp2_camp4" ],
+            "mountainous:camp1_camp2_camp4" ],
         "season": [
             "any"
         ],

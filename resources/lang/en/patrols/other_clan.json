@@ -4597,7 +4597,8 @@
                     [
                         "age:kitten",
                         "backstory:stolenkit3"
-                    ]
+                    ],
+               
                 ],
                 "frequency": 4
             },
@@ -4617,7 +4618,7 @@
                         "backstory:stolenkit3"
                     ],
                     [
-                        "age: kitten",
+                        "age:kitten",
                         "backstory:stolenkit3"
                     ]
                 ],
