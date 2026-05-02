@@ -2654,7 +2654,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_warappmedapp_herbcontest",
+        "patrol_art": "gen_train_talkingAA",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2846,7 +2846,7 @@
         "tags": [
             "app2_mentored"
         ],
-        "patrol_art": "gen_med_warappmedapp_herbcontest",
+        "patrol_art": "gen_train_talkingAA",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4126,14 +4126,14 @@
         ]
     },
     {
-        "patrol_id": "gen_med_warappmedapp_herbcontest1",
+        "patrol_id": "gen_train_talkingAA1",
         "biome": ["any"],
         "season": ["any"],
         "types": [
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_warappmedapp_herbcontest",
+        "patrol_art": "gen_train_talkingAA",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -6392,7 +6392,7 @@
                         }
                     }
                 ],
-                "art": "gen_med_warappmedapp_herbcontest",
+                "art": "gen_train_talkingAA",
                 "frequency": 1
             },
             {
@@ -6430,7 +6430,7 @@
                         }
                     }
                 ],
-                "art": "gen_med_warappmedapp_herbcontest",
+                "art": "gen_train_talkingAA",
                 "frequency": 1
             },
             {
@@ -7216,7 +7216,7 @@
                         }
                     }
                 ],
-                "art": "gen_med_warappmedapp_herbcontest",
+                "art": "gen_train_talkingAA",
                 "frequency": 1
             },
             {
@@ -7254,7 +7254,7 @@
                         }
                     }
                 ],
-                "art": "gen_med_warappmedapp_herbcontest",
+                "art": "gen_train_talkingAA",
                 "frequency": 1
             },
             {
