@@ -4592,11 +4592,11 @@
                 "new_cat": [
                     [
                         "age:kitten",
-                        "backstory:stolenkit2"
+                        "backstory:stolenkit3"
                     ],
                     [
                         "age:kitten",
-                        "backstory:stolenkit2"
+                        "backstory:stolenkit3"
                     ]
                 ],
                 "frequency": 4
@@ -4614,11 +4614,11 @@
                 "new_cat": [
                     [
                         "age:kitten",
-                        "backstory:stolenkit2"
+                        "backstory:stolenkit3"
                     ],
                     [
                         "age: kitten",
-                        "backstory:stolenkit2"
+                        "backstory:stolenkit3"
                     ]
                 ],
                 "frequency": 4,
