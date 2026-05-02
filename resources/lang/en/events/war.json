@@ -86,7 +86,7 @@
   },
   "conclusion_events": [
     "c_n will fall apart if this war lasts any longer. Desperate and demoralized, they admit defeat to o_c_n.",
-    "o_c_n is an unrelenting enemy. c_n, exhausted, admits their victory, and begins peace terms.",
+    "o_c_n is an unrelenting enemy. c_n, exhausted, admits their enemy's victory, and begins peace negotiations.",
     "o_c_n's victory seems increasingly inevitable. Not wanting any more bloodshed, c_n agrees to a truce.",
     "lead_name looks o_c_n's leader in the eye as {PRONOUN/lead_name/subject} {VERB/lead_name/surrender/surrenders}. c_n may be defeated, but they will not lose their dignity.",
     "Both lead_name and o_c_n's leader wear the haggard look of wartime rulers. As lead_name admits c_n's defeat, {PRONOUN/lead_name/subject} {VERB/lead_name/hope/hopes} that mutual understanding might one day bloom into goodwill.",
