@@ -47,7 +47,6 @@
         "-outsider_roots1",
         "outsider_roots2",
         "-outsider_roots2",
-        
         "half_clan_backstories",
         "-half_clan_backstories",
         "halfclan1",
@@ -181,9 +180,7 @@
         "baby_loner_backstories",
         "-baby_loner_backstories",
         "baby_kittypet_backstories",
-        "-baby_kittypet_backstories",
-        "stolenkit1",
-        "stolenkit2"
+        "-baby_kittypet_backstories"
       ],
       "title": "Backstory",
       "type": "string"

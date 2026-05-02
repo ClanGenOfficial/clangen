@@ -150,5 +150,3 @@ class Backstory(Enum):
     not_baby_loner_backstories = "-baby_loner_backstories"
     baby_kittypet_backstories = "baby_kittypet_backstories"
     not_baby_kittypet_backstories = "-baby_kittypet_backstories"
-    stolenkit1 = "stolenkit1"
-    stolenkit2 = "stolenkit2"
