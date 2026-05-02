@@ -2710,7 +2710,7 @@
             "any"
         ],
         "season": [
-            "any"
+            "-leaf-bare"
         ],
         "types": [
             "hunting"
@@ -2722,7 +2722,7 @@
         "min_max_status": {
             "normal adult": [
                 1,
-                6
+                3
             ]
         },
         "frequency": 1,
@@ -2731,7 +2731,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It's the perfect time of day, the cats melting in and out of their territory's shadowy cover as their successes begin to pile up. At first there's only a couple pieces of prey, then more, and more, and more, until finally p_l calls off the patrol: not because the prey has escaped them, but because they're going to have trouble carrying it all home.",
+                "text": "It's the perfect time of day, the cats melting in and out of the shadows, piling up fresh-kill. Finally, p_l calls off the patrol: not because the prey has escaped them, but because they're going to have trouble carrying it all home.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -2751,7 +2751,7 @@
                 "frequency": 3
             },
             {
-                "text": "With their diurnal prey tired and headed to their homes, their crepuscular counterparts come out in full force! As their nocturnal prey still blinks away the sleep in their eyes, the patrol has a truly premium number of opportunities to catch food, enough so that the entire Clan comes to comment on the patrol's success when they return.",
+                "text": "As the day's prey heads home, the evening's prey awakens. The patrol capitalizes on the animals' sleepiness, so much so that the entire Clan comes to comment on the patrol's success when they return.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -2762,6 +2762,16 @@
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from and cat_to had a successful hunt together."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from noticed how successful cat_to's hunting patrol was."
                         }
                     }
                 ],
