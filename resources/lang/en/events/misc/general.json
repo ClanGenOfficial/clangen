@@ -4823,7 +4823,7 @@
         "event_id": "gen_misc_any_attentionseekingkitfreshkillpile2",
         "location": ["any"],
         "season": ["any"],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "r_c discovers m_c made a mess of the fresh-kill pile. m_c grins at {PRONOUN/r_c/object} through {PRONOUN/r_c/poss} scolding. Later, when the fresh-kill pile is being fixed, it's discovered some of the prey is no longer edible.",
         "m_c": {
             "age": ["kitten"],
@@ -5064,7 +5064,7 @@
         "event_id": "gen_misc_any_attentionseekingkitmedicineden",
         "location": ["any"],
         "season": ["any"],
-        "frequency": 2,
+        "frequency": 3,
         "event_text": "r_c discovers m_c made a mess of {PRONOUN/r_c/poss} herbs. m_c grins at {PRONOUN/r_c/object} through {PRONOUN/r_c/poss} scolding. Later, while r_c is fixing {PRONOUN/r_c/poss} herb stock, {PRONOUN/r_c/subject} discover some of the herbs are missing.",
         "m_c": {
             "age": ["kitten"],
