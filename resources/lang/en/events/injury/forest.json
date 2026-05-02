@@ -571,7 +571,7 @@
     "location": ["forest:camp1"],
     "season": ["newleaf", "greenleaf"],
     "frequency": 2,
-    "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN/m_c/subject/CAP} falls ill later that evening.",
+    "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN/m_c/subject/CAP} {VERB/m_c/fall/falls} ill later that evening.",
         "m_c": {
             "age": [
                 "any"

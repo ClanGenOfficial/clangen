@@ -284,8 +284,8 @@ class Condition_Events:
                 and not event_string
             ):
                 # CLAN FOCUS!
-                if get_clan_setting("rest and recover"):
-                    stopping_chance = constants.CONFIG["focus"]["rest and recover"][
+                if get_clan_setting("rest_and_recover"):
+                    stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                         "illness_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
@@ -410,8 +410,8 @@ class Condition_Events:
 
             if triggered:
                 # CLAN FOCUS!
-                if get_clan_setting("rest and recover"):
-                    stopping_chance = constants.CONFIG["focus"]["rest and recover"][
+                if get_clan_setting("rest_and_recover"):
+                    stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                         "injury_prevent"
                     ]
                     if not int(random.random() * stopping_chance):

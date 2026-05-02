@@ -42,7 +42,7 @@ class Relation_Events:
         Returns
         -------
         """
-        if not cat.relationships:
+        if not cat.relationships or cat.age == CatAge.NEWBORN:
             return
         Relation_Events.had_one_event = False
 

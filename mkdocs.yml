@@ -33,6 +33,7 @@ nav:
           - dev/writing/reference/trait-dictionary.md
           - dev/writing/reference/biomes.md
           - dev/writing/reference/animals.md
+          - dev/writing/reference/herbs.md
           - dev/writing/reference/common-errors.md
         - dev/writing/patrols.md
         - dev/writing/shortevents.md
@@ -151,6 +152,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: false
       clickable_checkbox: true
+  - pymdownx.blocks.caption
 
 watch:
   - docs-resources/includes
