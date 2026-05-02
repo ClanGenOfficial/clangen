@@ -151,7 +151,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "cat_running_two",
+        "patrol_art": "running_two_warriors",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

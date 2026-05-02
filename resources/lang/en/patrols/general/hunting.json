@@ -3475,7 +3475,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_med_warappmedapp_herbcontest",
+        "patrol_art": "gen_train_talkingAA",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -3630,7 +3630,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_med_warappmedapp_herbcontest",
+        "patrol_art": "gen_train_talkingAA",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -3796,7 +3796,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_med_warappmedapp_herbcontest",
+        "patrol_art": "gen_train_talkingAA",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -3972,7 +3972,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_med_warappmedapp_herbcontest",
+        "patrol_art": "gen_train_talkingAA",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -4136,7 +4136,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_med_warappmedapp_herbcontest",
+        "patrol_art": "gen_train_talkingAA",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -5039,7 +5039,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "cat_running_two",
+        "patrol_art": "running_two_warriors",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

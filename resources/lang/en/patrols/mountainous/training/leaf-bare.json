@@ -991,7 +991,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
