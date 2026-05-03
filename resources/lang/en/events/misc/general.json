@@ -4748,7 +4748,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
