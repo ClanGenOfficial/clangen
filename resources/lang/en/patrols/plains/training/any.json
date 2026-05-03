@@ -4102,14 +4102,14 @@
                 "text": "app1 doesn't quite understand, and {PRONOUN/app1/subject} {VERB/app1/ask/asks} why {PRONOUN/app1/subject} {VERB/app1/have/has} to stay so far back. p_l snaps back that {PRONOUN/app1/subject} just {VERB/app1/do/does}, and an argument breaks out. It lasts so long that everyone's pawpads crack from walking on the asphalt.",
                 "exp": 15,
                 "frequency": 4,
-                "injury": {
+                "injury": [
+                    {
                     "cats": [
                         "patrol"
                     ],
-                    "injuries": "cracked pads",
-                    "scars": [],
-                    "no_results": false
-                },
+                    "injuries": ["cracked pads"]
+                }
+            ],
                 "relationships": [
                     {
                         "cats_from": [
