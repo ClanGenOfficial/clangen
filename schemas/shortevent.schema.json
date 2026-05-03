@@ -47,7 +47,6 @@
         "-outsider_roots1",
         "outsider_roots2",
         "-outsider_roots2",
-        
         "half_clan_backstories",
         "-half_clan_backstories",
         "halfclan1",
@@ -263,6 +262,7 @@
       "type": "string"
     },
     "FutureCat": {
+      "additionalProperties": false,
       "properties": {
         "age": {
           "description": "List of ages the cat can be. If they can be anything, use \"any\".",
@@ -424,13 +424,14 @@
       "type": "object"
     },
     "FutureEventPool": {
+      "additionalProperties": false,
       "properties": {
-        "subtype": {
+        "sub_type": {
           "description": "Events to be added to the pool will contain all subtypes specified.",
           "items": {
             "$ref": "#/$defs/EventSubtype"
           },
-          "title": "Subtype",
+          "title": "Sub Type",
           "type": "array"
         },
         "event_id": {
