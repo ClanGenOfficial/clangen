@@ -4634,6 +4634,27 @@
                         "log": {
                             "cats_from": "cat_from questions why p_l bought back o_c_n kits."
                         }
+                    },
+                      {
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "n_c:1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "like",
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 60,
+                        "log": {
+                            "cats_to": "cat_to is glad cat_from is with {PRONOUN/cat_to/object} in a strange place.",
+                            "cats_from": "cat_from is glad cat_to is with {PRONOUN/cat_to/object} in a strange place."
+                            
+                        }
                     }
                 ]
             },
