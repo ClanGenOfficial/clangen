@@ -4600,7 +4600,41 @@
                     ]
                
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                        "patrol"
+                        ],
+                    "cats_from": [
+                        "n_c:0",
+                        "n_c:1"
+                    ],
+                    "mutual": false,
+                    "values": [
+                        "like", 
+                        "trust"                       
+                    ],
+                    "amount": -30,
+                    "log": {
+                        "cats_from": "p_l ordered the partol to kidnap {PRONOUN/cat_from/object}."
+                    }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "some_clan",
+                            "-patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from questions why p_l bought back o_c_n kits."
+                        }
+                        ]
             },
             {
                 "text": "p_l gasps at seeing the two kits, how did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before keeping silent as they steal the kits from o_c_n.",
