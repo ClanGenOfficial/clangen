@@ -224,10 +224,12 @@ class LeaderDenScreen(Screens):
                     for i in Cat.all_cats.values()
                     if i.status.alive_in_player_clan
                     and i.status.rank
-                    not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.LEADER]
+                    not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
+                adults = sorted(adults, key=lambda x: x.experience, reverse=True)
+
                 if adults:
-                    self.helper_cat = random.choice(adults)
+                    self.helper_cat = adults[0]
 
             if self.helper_cat:
                 self.screen_elements["helper_image"] = pygame_gui.elements.UIImage(
