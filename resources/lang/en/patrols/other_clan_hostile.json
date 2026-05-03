@@ -6191,7 +6191,41 @@
                         "backstory:stolenkit3"
                     ]
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                      {
+                        "cats_to": [
+                            "patrol"
+                            ],
+                        "cats_from": [
+                            "n_c:0",
+                            "n_c:1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like", 
+                            "trust"                       
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "p_l ordered the partol to kidnap {PRONOUN/cat_from/object}."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "some_clan",
+                            "-patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from learns that cat_to abducted kits from their rival."
+                        }
+                        ]
             }
         ]
     }
