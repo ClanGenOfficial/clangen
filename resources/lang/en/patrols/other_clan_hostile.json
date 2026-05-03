@@ -6225,8 +6225,11 @@
                         "log": {
                             "cats_from": "cat_from learns that cat_to abducted kits from their rival."
                         }
-                        
+                    }
+                ]
             }
         ]
     }
-]
+]   
+            
+
