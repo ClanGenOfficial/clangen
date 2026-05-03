@@ -383,7 +383,6 @@
                 "mutual": false,
                 "values": [
                     "like",
-                    "respect",
                     "comfort",
                     "trust"
                 ],
@@ -1298,7 +1297,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -50,
@@ -1401,7 +1399,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -15,
