@@ -6211,6 +6211,24 @@
                             "cats_from": "p_l ordered the partol to kidnap {PRONOUN/cat_from/object}."
                         }
                     },
+                     "cats_to": [
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "n_c:1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "like",
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 60,
+                        "log": {
+                            "cats_to": "cat_to is glad cat_from is with {PRONOUN/cat_to/object} in a hostile place.",
+                            "cats_from": "cat_from is glad cat_to is with {PRONOUN/cat_to/object} in a hostile place."
+                    },
                     {
                         "cats_to": ["p_l"],
                         "cats_from": [
@@ -6223,7 +6241,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from learns that cat_to abducted kits from their rival."
+                            "cats_from": "cat_from has learnt that cat_to abducted kits from their rival."
                         }
                     }
                 ]
