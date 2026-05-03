@@ -3222,5 +3222,499 @@
         "current_rep": ["any"],
         "changed": 1
     }
-}
+},
+ {
+    "event_id": "gen_new_cat_rogueredemption_success1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c accepts.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "-bloodthirsty",
+        "-cold",
+        "-strict",
+        "-vengeful"  
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior adult",
+        "exists"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": 1
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from was impressed that cat_to gave an old rogue a chance to join the clan."
+        }
+      },
+     {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c",
+            "some_clan"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+            "comfort"
+        ],
+        "amount": 5,
+        "log": {
+          "cats_from": "cat_from was grateful to be welcomed into c_n by cat_to."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_success2",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c accepts.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "-bloodthirsty",
+        "-cold",
+        "-strict", 
+        "-vengeful"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior",
+        "exists"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": 1
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from was impressed that cat_to gave an old rogue a chance to join the clan."
+        }
+      },
+      {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c",
+            "some_clan"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+            "comfort"
+        ],
+        "amount": 5,
+        "log": {
+          "cats_from": "cat_from was grateful to be welcomed into c_n by cat_to."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_deny1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c turns {PRONOUN/n_c:0/object} away.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "-bloodthirsty"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior adult",
+        "exists",
+         "old_name",
+          "meeting",
+          "unknown"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -1
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from thought cat_to should've given an old rogue a chance to join the clan."
+        }
+      },
+                        {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from was disappointed that cat_to shunned {PRONOUN/cat_from/object}."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0",
+            "high_aggress",
+            "low_stable"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from regretted ever offering c_n their forgiveness."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_deny2",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c turns {PRONOUN/n_c:0/object} away.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "-bloodthirsty"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior",
+        "exists",
+        "old_name",
+          "meeting",
+          "unknown"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -1
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from thought cat_from should've given an old rogue a chance to join the clan."
+        }
+      },
+                {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from was disappointed that cat_to shunned {PRONOUN/cat_from/object}."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0",
+            "high_aggress",
+            "low_stable"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from regretted ever offering c_n their forgiveness."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_kill1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "bloodthirsty",
+          "vengeful"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior adult",
+        "exists",
+        "dead",
+          "old_name"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -3
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social",
+          "low_aggress"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "comfort",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from was stunned to see cat_to ruthlessly kill an old rogue who sought c_n's forgiveness."
+        }
+      },
+      {
+        "cats_from": [
+          "clan",
+          "high_aggress",
+            "low_lawful"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "trust",
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from approved of cat_to killing an old loner who once wronged c_n."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_kill2",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "bloodthirsty",
+          "vengeful"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior",
+        "exists",
+        "dead",
+          "old_name"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -3
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social",
+          "low_aggress"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "comfort",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from was stunned to see cat_to ruthlessly kill an old rogue who sought c_n's forgiveness."
+        }
+      },
+      {
+        "cats_from": [
+          "clan",
+          "high_aggress",
+            "low_lawful"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from approved of cat_to killing an old rogue who once wronged c_n."
+        }
+      }
+    ]
+  }
 ]
