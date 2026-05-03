@@ -1676,8 +1676,8 @@
         ],
             "2": [],
             "3": []
-        },
-            
+        }
+    },    
  "envenomated":{
         "duration": 3,
         "severity": "major",
@@ -1724,8 +1724,8 @@
                 "poppy"
 
             ]
+        }
     },
-    
     "pregnant": {
         "duration": 2,
         "severity": "major",
@@ -1752,7 +1752,6 @@
             "3": []
         }
     }
-    
 }
 
     

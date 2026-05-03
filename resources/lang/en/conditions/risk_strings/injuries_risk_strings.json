@@ -181,7 +181,8 @@
             "r_c watches as the inevitable happens and m_c begins to cough and choke on {PRONOUN/m_c/poss} own blood. The end is coming quickly for {PRONOUN/m_c/object}.",
             "m_c has been left weak and barely responsive from the poison... and now {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} begun to cough up blood. That can't be a good sign.",
             "m_c hacks and sputters on {PRONOUN/m_c/poss} own blood. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} the end is soon."
-        ],
+        ]
+    },
      "envenomated": {
         "an infected wound":[
             "Despite the hardwork of r_c, an infection has found it's way into m_c's wound.",
@@ -210,3 +211,4 @@
         ]
     }
 }
+
