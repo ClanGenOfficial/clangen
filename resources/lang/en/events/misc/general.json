@@ -40,7 +40,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -58,7 +57,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -121,7 +119,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -256,7 +253,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -307,7 +303,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -325,7 +320,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -464,7 +458,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -523,7 +516,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -626,7 +618,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -685,7 +676,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -40,
@@ -739,7 +729,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -40,
@@ -857,7 +846,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -30,
@@ -1013,7 +1001,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -1075,7 +1062,6 @@
                 "mutual": true,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -1093,7 +1079,6 @@
                 "mutual": true,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -1151,7 +1136,6 @@
                 "mutual": false,
                 "values": [
                     "trust",
-                    "respect",
                     "comfort",
                     "like"
                 ],
@@ -1221,7 +1205,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -60,
@@ -1239,7 +1222,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -30,
@@ -1334,7 +1316,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -25,
@@ -1403,7 +1384,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -30,
@@ -1480,7 +1460,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -40,
@@ -1498,7 +1477,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -20,
@@ -1543,7 +1521,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -60,
@@ -1561,7 +1538,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -30,
@@ -1616,7 +1592,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -20,
@@ -1682,7 +1657,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -60,
@@ -1700,7 +1674,6 @@
                 "values": [
                     "like",
                     "trust",
-                    "respect",
                     "comfort"
                 ],
                 "amount": -30,
