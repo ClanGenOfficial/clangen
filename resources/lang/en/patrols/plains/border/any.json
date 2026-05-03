@@ -2286,7 +2286,7 @@
             {
                 "text": "They don't know this tunnel — but it knows them, marked by scent and claw as one of the safe refuges in the network c_n constantly maintains and expands in their territory. Thrilled with the illicit discovery, the apprentices have a great adventure crawling in and exploring every inch.",
                 "exp": 20,
-                "art": "pln_bord_tunnel2",
+                "art": "pln_bord_tunnel",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2335,7 +2335,7 @@
             {
                 "text": "app1 has found a wonderful set of tunnels — not one anyone knew existed, but the entrance is still marked with c_n scent, so these are safe to explore. It's very cool! But it's hard not to feel a bit envious at the discovery — this'll be all the apprentice den gossips about for the next moon.",
                 "exp": 20,
-                "art": "gen_med_warappmedapp_herbcontest",
+                "art": "gen_train_talkingAA",
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -2468,7 +2468,7 @@
             {
                 "text": "The apprentices huddle around the burrow entrance. It'll be okay, s_c reassures. They've had lessons on burrows and this one has no tracks at the front, so it's empty. Together, everyone plucks up just enough bravery to explore it and run home, whispering the story of what it was like that night to each other in the apprentice den.",
                 "exp": 20,
-                "art": "gen_med_warappmedapp_herbcontest",
+                "art": "gen_train_talkingAA",
                 "can_have_stat": [
                     "any"
                 ],
@@ -5328,7 +5328,7 @@
             {
                 "text": "p_l bolts back to camp, eyes wide. It takes a moment for {PRONOUN/p_l/object} to catch {PRONOUN/p_l/poss} breath before {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to manage to gasp out a single word. <i>Coyote!</i>",
                 "exp": 40,
-                "art": "cat_running_solo",
+                "art": "running_warrior",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -5351,7 +5351,7 @@
             {
                 "text": "p_l bolts back to camp, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} to tell {PRONOUN/p_l/poss} Clanmates. {PRONOUN/p_l/subject/CAP} {VERB/p_l/burst/bursts} into camp yowling a warning!",
                 "exp": 40,
-                "art": "cat_running_solo",
+                "art": "running_warrior",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -5473,7 +5473,7 @@
             {
                 "text": "s_c bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c/subject/CAP} {VERB/s_c/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away.",
                 "exp": 40,
-                "art": "cat_running_solo",
+                "art": "running_warrior",
                 "stat_skill": [
                     "RUNNER,3"
                 ],
