@@ -1374,7 +1374,6 @@
                         "log": {
                             "cats_from": "p_l ordered the partol to kidnap {PRONOUN/cat_from/object}."
                         },
-                        {
                         "cats_to": [
                             "n_c:0"
                         ],
@@ -1411,6 +1410,7 @@
                             "cats_from": "cat_from has learnt that cat_to abducted kits from their ally."
                         }
                     }
+                ]
             },
             {
                 "text": "p_l gasps at seeing the two kits — how did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before keeping silent as they steal the kits from o_c_n.",
