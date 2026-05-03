@@ -2447,7 +2447,7 @@
             {
                 "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. It's a new set of tunnels, yes. But all the excavations in the cold leave them both shivering.",
                 "exp": 0,
-                "art": "mtn_hunt_newleafsnowstorm",
+                "art": "gen_hunt_leafbaresnowstorm",
                 "injury": [
                     {
                         "cats": [
@@ -2901,7 +2901,7 @@
             {
                 "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. p_l gives up when {PRONOUN/p_l/subject} {VERB/p_l/see/sees} app1 starting to shiver and takes the younger cat back to camp before the cold starts to truly bite.",
                 "exp": 0,
-                "art": "mtn_hunt_newleafsnowstorm",
+                "art": "gen_hunt_leafbaresnowstorm",
                 "relationships": [
                     {
                         "cats_to": [
@@ -2925,7 +2925,7 @@
             {
                 "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. They clear the shallow hideaway, but by the time they return to camp, p_l is shivering and app1 can't feel {PRONOUN/app1/poss} paws anymore.",
                 "exp": 0,
-                "art": "mtn_hunt_newleafsnowstorm",
+                "art": "gen_hunt_leafbaresnowstorm",
                 "injury": [
                     {
                         "cats": [
@@ -2976,7 +2976,7 @@
             {
                 "text": "It's a good thing p_l spotted the entrance, but a bad, <i>bad</i> day to be out in the borderlands. The weather closes in, and though both cats huddle close, with just the two of them neither escapes the bite of the wind, even if the sleet can't touch them.",
                 "exp": 0,
-                "art": "mtn_hunt_newleafsnowstorm",
+                "art": "gen_hunt_leafbaresnowstorm",
                 "injury": [
                     {
                         "cats": [
