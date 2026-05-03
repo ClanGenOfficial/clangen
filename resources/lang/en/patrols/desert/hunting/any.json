@@ -1390,7 +1390,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed.",
                 "exp": 20,
                 "prey": [
                     "large"
@@ -1398,25 +1398,26 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c",
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan",
-                            "patrol"
+                            "some_clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to bring prey back to camp for cats who can't hunt."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile.",
+                "text": "After all, {PRONOUN/r_c/subject} {VERB/r_c/have/has} caught enough on this solo hunt that {PRONOUN/r_c/subject} won't be able to carry it all back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} for a quick snack and {VERB/r_c/return/returns} to camp laden with prey for the fresh-kill pile.",
                 "exp": 20,
                 "prey": [
                     "huge"
@@ -1427,14 +1428,17 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "some_clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back to camp."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1450,14 +1454,17 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to ate prey while {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} supposed to be hunting for the Clan."
+                        }
                     }
                 ],
                 "prey": [
@@ -1483,15 +1490,15 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "all apprentices": [ -1, -1 ]
+            "normal adult": [1, 6]
         },
         "frequency": 2,
-        "intro_text": "r_c is tempted to eat the prey they just caught.",
+        "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
         "decline_text": "r_c decides against breaking the Warrior Code",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed.",
                 "exp": 20,
                 "prey": [
                     "large"
@@ -1499,19 +1506,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c",
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan",
-                            "patrol"
+                            "some_clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to bring prey back to camp for cats who can't hunt."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1525,19 +1533,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c",
-                            "r_c"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "clan",
-                            "patrol"
+                            "some_clan", "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back to camp."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -1545,16 +1554,15 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c gives in to their grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on their lips they feel the suspicious stares of the other warriors on their pelt.",
+                "text": "r_c gives in to {PRONOUN/r_c/poss} grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives empty-pawed with blood on {PRONOUN/r_c/poss} lips {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} the suspicious stares of the other warriors on {PRONOUN/r_c/poss} pelt.",
                 "exp": 0,
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c",
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan",
+                            "clan", "high_lawful",
                             "patrol"
                         ],
                         "mutual": false,
@@ -1562,7 +1570,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to ate prey while {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} supposed to be hunting for the Clan."
+                        }
                     }
                 ],
                 "prey": [
@@ -1576,11 +1587,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c",
                             "r_c"
                         ],
                         "cats_from": [
-                            "clan",
+                            "clan", "high_lawful",
                             "patrol"
                         ],
                         "mutual": false,
@@ -1588,115 +1598,10 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -5
-                    }
-                ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "dst_hunt_sneakprey4",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [
-                1,
-                6
-            ]
-        },
-        "frequency": 2,
-        "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the Warrior Code",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "They eat the prey without anyone noticing.",
-                "exp": 20,
-                "prey": [
-                    "small"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "After all, the patrol has caught enough on this hunt that they'll have trouble carrying it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the Clan's dirtplace; r_c prickles with humiliation and terrible smells.",
-                "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c",
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to ate prey on a hunting patrol and was sent to dig a new dirtplace trench."
+                        }
                     }
                 ],
                 "prey": [
@@ -1740,7 +1645,7 @@
         "decline_text": "There'll be smaller, easy prey lured into this trap. The patrol lets the monster pass without a fight.",
         "success_outcomes": [
             {
-                "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember the venom in the fangs of that monster. Don't count your prey until it's on the fresh-kill pile. r_c nods, and apologizes. Every hunt deserves respect.",
+                "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember the venom in the fangs of that monster. Don't count your prey until it's on the fresh-kill pile. r_c nods and apologizes. Every hunt deserves respect.",
                 "exp": 30,
                 "prey": [
                     "medium"
@@ -1755,11 +1660,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust",
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from was embarrassed when cat_to had to scold {PRONOUN/cat_from/object} into taking a gila monster seriously."
+                        }
                     },
                     {
                         "cats_to": [
@@ -1770,22 +1676,29 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "trust",
+                            "respect"
                         ],
-                        "amount": -10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to warned {PRONOUN/cat_from/object} to be careful around a gila monster."
+                        }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "app1"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "like"
+                            "respect"
                         ],
-                        "amount": 10
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from wasn't happy with cat_to for mocking a gila monster."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1805,10 +1718,13 @@
                         ],
                         "mutual": true,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": -10
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from wished cat_to had protected {PRONOUN/cat_from/object} from a gila monster.",
+                            "cats_to": "cat_to saw cat_from foolishly attack a gila monster."
+                        }
                     }
                 ],
                 "injury": [

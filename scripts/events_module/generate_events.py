@@ -166,8 +166,8 @@ class GenerateEvents:
         event_type: str,
         interaction_type: str,
         success: bool,
-        other_clan_temper=None,
-        player_clan_temper=None,
+        other_clan_temper: tuple = None,
+        player_clan_temper: tuple = None,
     ) -> list:
         """
         finds and generates a list of possible leader den events
@@ -185,16 +185,20 @@ class GenerateEvents:
             if event["interaction_type"] != interaction_type:
                 continue
 
-            if "other_clan_temper" in event or "player_clan_temper" in event:
-                if (
-                    other_clan_temper not in event["other_clan_temper"]
-                    and "any" not in event["other_clan_temper"]
-                ):
+            if "any" not in event.get("other_clan_temper", ["any"]):
+                not_allowed = True
+                for temper in other_clan_temper:
+                    if temper in event["other_clan_temper"]:
+                        not_allowed = False
+                if not_allowed:
                     continue
-                if (
-                    player_clan_temper not in event["player_clan_temper"]
-                    and "any" not in event["player_clan_temper"]
-                ):
+
+            if "any" not in event.get("player_clan_temper", ["any"]):
+                not_allowed = True
+                for temper in player_clan_temper:
+                    if temper in event["player_clan_temper"]:
+                        not_allowed = False
+                if not_allowed:
                     continue
 
             elif "reputation" in event:

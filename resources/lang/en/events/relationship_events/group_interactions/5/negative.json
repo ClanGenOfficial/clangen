@@ -112,8 +112,7 @@
 			"m_c had an informative lecture planned for r_c1, r_c2, r_c3, and r_c4, but gives up midway because the apprentices ignore {PRONOUN/m_c/object}.",
 			"r_c1, r_c2, r_c3, and r_c4 will not stop talking to each other during m_c's lesson, and m_c calls it off.",
 			"m_c spent an entire day planning a lesson for r_c1, r_c2, r_c3, and r_c4, but it goes to waste as the apprentices are distracted by each other.",
-			"m_c cannot believe how disrespectful r_c1, r_c2, r_c3, and r_c4 are while {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to give a lecture.",
-			"m_c wanted this training exercise to be a success, but r_c1, r_c2, r_c3, and r_c4 refuse to listen and cause m_c to give up."
+			"m_c cannot believe how disrespectful r_c1, r_c2, r_c3, and r_c4 are while {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to give a lecture."
 		],
 		"age_constraint": {
 			"m_c": [
@@ -299,6 +298,9 @@
 			"After kitsitting r_c1, r_c2, r_c3, and r_c4, m_c takes time to recover from the four kits' endless mischief."
 		],
 		"status_constraint": {
+			"m_c": [
+				"-kitten"
+			],
 			"r_c1": [
 				"kitten"
 			],
