@@ -1,4 +1,64 @@
 [
+                {
+		"min_max_status": {
+			"normal adult": [2, 2],
+			"apprentice": [-1, -1]
+		},
+                "text": "r_c notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and elsewhere with {PRONOUN/p_l/poss} thoughts. When r_c asks if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} okay, p_l snaps back at r_c, and the patrol ends in an argument.",
+                "exp": 0,
+                "frequency": 2,
+		"stat_trait": [
+			"-calm",
+			"-charismatic",
+			"-compassionate",
+			"-flamboyant",
+			"-loving",
+			"-responsible",
+			"-sincere",
+			"-thoughtful",
+			"-wise"
+		],
+		"can_have_stat": [
+			"p_l"
+		],
+    		"relationships": [
+        		{
+    				"cats_from": [
+					    "r_c"
+				],
+    				"cats_to": [
+					    "p_l"
+				],
+    				"mutual": false,
+    				"values": [
+					"trust",
+					"like"
+				],
+    				"amount": -10,
+    				"log": {
+					    "cats_from": "cat_to was tired and snappy after {PRONOUN/cat_to/subject} promised cat_from {PRONOUN/cat_to/subject} were fine to explore."
+				    }
+                },
+        		{
+    				"cats_from": [
+					    "p_l"
+				],
+    				"cats_to": [
+					    "r_c"
+				],
+    				"mutual": false,
+    				"values": [
+					"trust",
+					"comfort"
+				],
+    				"amount": -8,
+    				"log": {
+					    "cats_from": "cat_from and cat_to argued on what was supposed to be a fun outing."
+				}
+			}
+    		],	
+                "art": "gen_train_argueWW"
+    },
     {
         "patrol_id": "gen_train_soloreflect1",
         "biome": [
