@@ -4106,8 +4106,7 @@
                     "cats": [
                         "patrol"
                     ],
-                    "injuries": "cracked pads",
-                    "scars": [],
+                    "injuries": ["cracked pads"],
                     "no_results": false
                 },
                 "relationships": [
