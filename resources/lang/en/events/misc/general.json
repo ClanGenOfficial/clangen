@@ -4853,7 +4853,7 @@
             },
             {
                 "cat_from": [
-                    "r_c","some_clan"
+                    "r_c"
                 ],
                 "cat_to": [
                     "m_c"
@@ -5094,7 +5094,7 @@
             },
             {
                 "cat_from": [
-                    "r_c","some_clan"
+                    "r_c"
                 ],
                 "cat_to": [
                     "m_c"
