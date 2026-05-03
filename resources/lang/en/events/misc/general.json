@@ -46,7 +46,7 @@
                 ],
                 "amount": -60,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn cats_to murdered mur_c."
+                    "cats_from": "cat_from was horrified to learn cat_to murdered mur_c."
                 }
             },
             {
@@ -64,7 +64,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was unsettled to learn cats_to murdered mur_c."
+                    "cats_from": "cat_from was unsettled to learn cat_to murdered mur_c."
                 }
             }
         ]
@@ -127,7 +127,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was horrified to overhear cats_to bragging about murdering mur_c."
+                    "cats_from": "cat_from was horrified to overhear cat_to bragging about murdering mur_c."
                 }
             }
         ]
@@ -189,7 +189,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was horrified and conflicted to hear that cats_to murdered mur_c, even though cats_to claims {PRONOUN/mur_c/poss} death was justified."
+                    "cats_from": "cat_from was horrified and conflicted to hear that cat_to murdered mur_c, even though cat_to claims {PRONOUN/mur_c/poss} death was justified."
                 }
             },
             {
@@ -206,7 +206,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_to questioned cats_from about mur_c's death, and cats_from admitted the truth. {PRONOUN/cats_from/subject/CAP} feared what cats_to might do with the information."
+                    "cats_from": "cat_to questioned cat_from about mur_c's death, and cat_from admitted the truth. {PRONOUN/cat_from/subject/CAP} feared what cat_to might do with the information."
                 }
             }
         ]
@@ -262,7 +262,7 @@
                 ],
                 "amount": -20,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to murdered mur_c, even though cats_to claims {PRONOUN/mur_c/poss} death was justified."
+                    "cats_from": "cat_from was horrified to learn that cat_to murdered mur_c, even though cat_to claims {PRONOUN/mur_c/poss} death was justified."
                 }
             }
         ]
@@ -313,7 +313,7 @@
                 ],
                 "amount": -60,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to murdered mur_c."
+                    "cats_from": "cat_from was horrified to learn that cat_to murdered mur_c."
                 }
             },
             {
@@ -331,7 +331,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was unsettled to learn that cats_to murdered mur_c."
+                    "cats_from": "cat_from was unsettled to learn that cat_to murdered mur_c."
                 }
             }
         ]
@@ -395,7 +395,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "cats_from was horrified to hear that cats_to murdered mur_c."
+                    "cats_from": "cat_from was horrified to hear that cat_to murdered mur_c."
                 }
             },
             {
@@ -411,7 +411,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_to accused cats_from of mur_c's murder."
+                    "cats_from": "cat_to accused cat_from of mur_c's murder."
                 }
             }
         ]
@@ -470,7 +470,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "cats_from lived in fear of cats_to after witnessing {PRONOUN/cats_to/object} murder mur_c."
+                    "cats_from": "cat_from lived in fear of cat_to after witnessing {PRONOUN/cat_to/object} murder mur_c."
                 }
             }
         ]
@@ -529,7 +529,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "cats_from lived in fear of cats_to after uncovering {PRONOUN/cats_to/poss} murder of mur_c."
+                    "cats_from": "cat_from lived in fear of cat_to after uncovering {PRONOUN/cat_to/poss} murder of mur_c."
                 }
             },
             {
@@ -545,7 +545,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from planned to murder cats_to if {PRONOUN/cats_to/subject} revealed the truth of mur_c's murder."
+                    "cats_from": "cat_from planned to murder cat_to if {PRONOUN/cat_to/subject} revealed the truth of mur_c's murder."
                 }
             }
         ],
@@ -632,7 +632,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "cats_from lived in fear of cats_to after uncovering {PRONOUN/cats_to/poss} murder of mur_c."
+                    "cats_from": "cat_from lived in fear of cat_to after uncovering {PRONOUN/cat_to/poss} murder of mur_c."
                 }
             }
         ]
@@ -690,7 +690,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "cats_from was horrified when cats_to confessed {PRONOUN/cats_to/poss} murder of mur_c to {PRONOUN/cats_from/object}."
+                    "cats_from": "cat_from was horrified when cat_to confessed {PRONOUN/cat_to/poss} murder of mur_c to {PRONOUN/cat_from/object}."
                 }
             }
         ]
@@ -744,7 +744,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "cats_from overheard cats_to reliving {PRONOUN/cats_to/poss} murder of mur_c in {PRONOUN/cats_to/poss} dream."
+                    "cats_from": "cat_from overheard cat_to reliving {PRONOUN/cat_to/poss} murder of mur_c in {PRONOUN/cat_to/poss} dream."
                 }
             }
         ]
@@ -806,7 +806,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to murdered mur_c, even though cats_to claimed {PRONOUN/cats_to/subject} never wanted to hurt mur_c."
+                    "cats_from": "cat_from was horrified to learn that cat_to murdered mur_c, even though cat_to claimed {PRONOUN/cat_to/subject} never wanted to hurt mur_c."
                 }
             }
         ]
@@ -862,7 +862,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to murdered mur_c, regardless of the reasons {PRONOUN/cats_to/subject} might have had."
+                    "cats_from": "cat_from was horrified to learn that cat_to murdered mur_c, regardless of the reasons {PRONOUN/cat_to/subject} might have had."
                 }
             },
             {
@@ -877,7 +877,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from gained respect for cats_from after hearing that {PRONOUN/cats_from/subject} killed mur_c to protect c_n."
+                    "cats_from": "cat_from gained respect for cat_from after hearing that {PRONOUN/cat_from/subject} killed mur_c to protect c_n."
                 }
             }
         ]
@@ -939,7 +939,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "cats_to promised to keep the secret of cats_from's murder of mur_c, but cats_from wasn't sure whether {PRONOUN/cats_from/subject} could trust {PRONOUN/cats_to/object}."
+                    "cats_from": "cat_to promised to keep the secret of cat_from's murder of mur_c, but cat_from wasn't sure whether {PRONOUN/cat_from/subject} could trust {PRONOUN/cat_to/object}."
                 }
             },
             {
@@ -955,7 +955,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from was impressed that cats_to took it upon {PRONOUN/cats_to/self} to murder mur_c."
+                    "cats_from": "cat_from was impressed that cat_to took it upon {PRONOUN/cat_to/self} to murder mur_c."
                 }
             }
         ]
@@ -1019,7 +1019,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "cats_from confronted cats_to's over the truth of mur_c's death and insisted {PRONOUN/cats_to/subject} come clean to the Clan."
+                    "cats_from": "cat_from confronted cat_to's over the truth of mur_c's death and insisted {PRONOUN/cat_to/subject} come clean to the Clan."
                 }
             },
             {
@@ -1035,7 +1035,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from was impressed that cats_to had the guts to confront cats_from alone about mur_c's death."
+                    "cats_from": "cat_from was impressed that cat_to had the guts to confront cat_from alone about mur_c's death."
                 }
             }
         ]
@@ -1099,7 +1099,7 @@
                 ],
                 "amount": -20,
                 "log": {
-                    "cats_from": "lead_name revealed cats_to's crimes to the Clan, and cats_from was disgusted and horrified."
+                    "cats_from": "lead_name revealed cat_to's crimes to the Clan, and cat_from was disgusted and horrified."
                 }
             }
         ]
@@ -1157,7 +1157,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "cats_from discovered cats_to's murder of mur_c when {PRONOUN/cats_from/subject} stumbled into {PRONOUN/cats_to/poss} dream."
+                    "cats_from": "cat_from discovered cat_to's murder of mur_c when {PRONOUN/cat_from/subject} stumbled into {PRONOUN/cat_to/poss} dream."
                 }
             }
         ]
@@ -1226,7 +1226,7 @@
                 ],
                 "amount": -60,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to murdered mur_c."
+                    "cats_from": "cat_from was horrified to learn that cat_to murdered mur_c."
                 }
             },
             {
@@ -1244,7 +1244,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was unsettled to learn that cats_to murdered mur_c."
+                    "cats_from": "cat_from was unsettled to learn that cat_to murdered mur_c."
                 }
             },
             {
@@ -1260,7 +1260,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_to forced cats_from to confess to the murder of mur_c."
+                    "cats_from": "cat_to forced cat_from to confess to the murder of mur_c."
                 }
             }
         ]
@@ -1321,7 +1321,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to lost {PRONOUN/cats_to/poss} temper and murdered mur_c."
+                    "cats_from": "cat_from was horrified to learn that cat_to lost {PRONOUN/cat_to/poss} temper and murdered mur_c."
                 }
             },
             {
@@ -1339,7 +1339,7 @@
                 ],
                 "amount": -25,
                 "log": {
-                    "cats_from": "cats_from was unsettled to learn that cats_to lost {PRONOUN/cats_to/poss} temper and murdered mur_c."
+                    "cats_from": "cat_from was unsettled to learn that cat_to lost {PRONOUN/cat_to/poss} temper and murdered mur_c."
                 }
             }
         ]
@@ -1408,7 +1408,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was disturbed by cats_to's confession that {PRONOUN/cats_to/subject} could have saved mur_c, but didn't."
+                    "cats_from": "cat_from was disturbed by cat_to's confession that {PRONOUN/cat_to/subject} could have saved mur_c, but didn't."
                 }
             },
             {
@@ -1426,7 +1426,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "cats_from felt uneasy about cats_to's confession that {PRONOUN/cats_to/subject} could have saved mur_c, but didn't."
+                    "cats_from": "cat_from felt uneasy about cat_to's confession that {PRONOUN/cat_to/subject} could have saved mur_c, but didn't."
                 }
             }
         ]
@@ -1485,7 +1485,7 @@
                 ],
                 "amount": -40,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to murdered mur_c, even though cats_to clearly regretted {PRONOUN/cats_to/poss} actions."
+                    "cats_from": "cat_from was horrified to learn that cat_to murdered mur_c, even though cat_to clearly regretted {PRONOUN/cat_to/poss} actions."
                 }
             },
             {
@@ -1503,7 +1503,7 @@
                 ],
                 "amount": -20,
                 "log": {
-                    "cats_from": "cats_from was unsettled to learn that cats_to murdered mur_c, even though cats_to clearly regretted {PRONOUN/cats_to/poss} actions."
+                    "cats_from": "cat_from was unsettled to learn that cat_to murdered mur_c, even though cat_to clearly regretted {PRONOUN/cat_to/poss} actions."
                 }
             }
         ]
@@ -1548,7 +1548,7 @@
                 ],
                 "amount": -60,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to murdered mur_c."
+                    "cats_from": "cat_from was horrified to learn that cat_to murdered mur_c."
                 }
             },
             {
@@ -1566,7 +1566,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was unsettled to learn that cats_to murdered mur_c."
+                    "cats_from": "cat_from was unsettled to learn that cat_to murdered mur_c."
                 }
             }
         ]
@@ -1621,7 +1621,7 @@
                 ],
                 "amount": -20,
                 "log": {
-                    "cats_from": "cats_from was disturbed to hear that cats_to murdered mur_c, even though r_c assured everyone that mur_c has posthumously forgiven {PRONOUN/cats_to/object}."
+                    "cats_from": "cat_from was disturbed to hear that cat_to murdered mur_c, even though r_c assured everyone that mur_c has posthumously forgiven {PRONOUN/cat_to/object}."
                 }
             },
             {
@@ -1687,7 +1687,7 @@
                 ],
                 "amount": -60,
                 "log": {
-                    "cats_from": "cats_from was horrified to learn that cats_to murdered mur_c."
+                    "cats_from": "cat_from was horrified to learn that cat_to murdered mur_c."
                 }
             },
             {
@@ -1705,7 +1705,7 @@
                 ],
                 "amount": -30,
                 "log": {
-                    "cats_from": "cats_from was unsettled to learn that cats_to murdered mur_c."
+                    "cats_from": "cat_from was unsettled to learn that cat_to murdered mur_c."
                 }
             },
             {
@@ -1720,7 +1720,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cats_from felt uneasy at the reminder of cats_to's unearthly powers."
+                    "cats_from": "cat_from felt uneasy at the reminder of cat_to's unearthly powers."
                 }
             },
             {
@@ -1736,7 +1736,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from was glad cats_to could put {PRONOUN/cats_to/poss} unearthly powers to good use in uncovering the truth of mur_c's death."
+                    "cats_from": "cat_from was glad cat_to could put {PRONOUN/cat_to/poss} unearthly powers to good use in uncovering the truth of mur_c's death."
                 }
             }
         ]
@@ -1799,7 +1799,7 @@
             "amount": -10,
             "mutual": false,
             "log": {
-                "cats_from": "cats_from disapproved of cats_to wearing a collar."
+                "cats_from": "cat_from disapproved of cat_to wearing a collar."
             }
         }
     ]
@@ -1839,7 +1839,7 @@
             "amount": -5,
             "mutual": false,
             "log": {
-                "cats_from": "cats_from heard that cats_to trespassed on another Clan's territory."
+                "cats_from": "cat_from heard that cat_to trespassed on another Clan's territory."
             }
         }
         ]
@@ -1874,7 +1874,7 @@
             "amount": 5,
             "mutual": false,
             "log": {
-                "cats_from": "cats_from enjoyed spending an evening listening to cats_to's stories."
+                "cats_from": "cat_from enjoyed spending an evening listening to cat_to's stories."
             }
         }
         ]
@@ -1943,7 +1943,7 @@
                 "amount": 3,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from noticed cats_to's dexterity when {PRONOUN/cats_to/object} slipped."
+                    "cats_from": "cat_from noticed cat_to's dexterity when {PRONOUN/cat_to/object} slipped."
                 }
             }
         ]
@@ -1981,7 +1981,7 @@
                 "amount": 5,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from saw cats_to toss a snake out of camp."
+                    "cats_from": "cat_from saw cat_to toss a snake out of camp."
                 }
             }
         ]
@@ -2027,7 +2027,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was appalled by cats_to's suggestion that they run away together."
+                    "cats_from": "cat_from was appalled by cat_to's suggestion that they run away together."
                 }
             },
             {
@@ -2037,7 +2037,7 @@
                 "amount": -8,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was unhappy with cats_to for suggesting they run away together."
+                    "cats_from": "cat_from was unhappy with cat_to for suggesting they run away together."
                 }
             },
             {
@@ -2047,7 +2047,7 @@
                 "amount": 8,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was touched by cats_to's desire to run away together, but talked cats_to out of it."
+                    "cats_from": "cat_from was touched by cat_to's desire to run away together, but talked cat_to out of it."
                 }
             },
             {
@@ -2057,7 +2057,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from seriously considered cats_to's suggestion that they run away together."
+                    "cats_from": "cat_from seriously considered cat_to's suggestion that they run away together."
                 }
             }
         ]
@@ -2126,7 +2126,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from wondered where cats_to went when {PRONOUN/cats_to/subject} disappeared for a few days."
+                    "cats_from": "cat_from wondered where cat_to went when {PRONOUN/cat_to/subject} disappeared for a few days."
                 }
             }
         ]
@@ -2165,7 +2165,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "cats_from was deeply disappointed to hear that cats_to broke the Code."
+                    "cats_from": "cat_from was deeply disappointed to hear that cat_to broke the Code."
                 }
             }
         ]
@@ -2204,7 +2204,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from was not happy to hear that cats_to was caught outside of the Clan's territory."
+                    "cats_from": "cat_from was not happy to hear that cat_to was caught outside of the Clan's territory."
                 }
             }
         ]
@@ -2286,7 +2286,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was woken up in the middle of the night by cats_to screaming."
+                    "cats_from": "cat_from was woken up in the middle of the night by cat_to screaming."
                 }
             }
         ]
@@ -2383,7 +2383,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to had a snowball fight while on guard duty."
+                    "cats_from": "cat_from and cat_to had a snowball fight while on guard duty."
                 }
             }
         ]
@@ -2434,7 +2434,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to played in the snow on patrol."
+                    "cats_from": "cat_from and cat_to played in the snow on patrol."
                 }
             }
         ]
@@ -2604,7 +2604,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cats_from saw cats_to get a gift at {PRONOUN/cats_to/poss} ceremony and felt jealous."
+                    "cats_from": "cat_from saw cat_to get a gift at {PRONOUN/cat_to/poss} ceremony and felt jealous."
                 }
             }
         ]
@@ -2935,7 +2935,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from saw cats_to give an elder the best piece of prey on the pile."
+                    "cats_from": "cat_from saw cat_to give an elder the best piece of prey on the pile."
                 }
             }
         ]
@@ -2974,7 +2974,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to watched the Clan's kits play together."
+                    "cats_from": "cat_from and cat_to watched the Clan's kits play together."
                 }
             }
         ]
@@ -3021,7 +3021,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to went on a late night patrol to watch the sunrise together."
+                    "cats_from": "cat_from and cat_to went on a late night patrol to watch the sunrise together."
                 }
             }
         ]
@@ -3120,7 +3120,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "During a particularly hot greenleaf, cats_from and cats_to spent their evenings cooling down together."
+                    "cats_from": "During a particularly hot greenleaf, cat_from and cat_to spent their evenings cooling down together."
                 }
             }
         ]
@@ -3414,7 +3414,7 @@
                 "values": ["like"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from was charmed when cats_to brought flowers to the medicine den."
+                    "cats_from": "cat_from was charmed when cat_to brought flowers to the medicine den."
                 }
             }
         ]
@@ -3473,7 +3473,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from and cats_to tried to sneak out of camp together."
+                    "cats_from": "cat_from and cat_to tried to sneak out of camp together."
                 }
             }
         ]
@@ -3517,7 +3517,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from and cats_to snuck out of camp together to chase butterflies."
+                    "cats_from": "cat_from and cat_to snuck out of camp together to chase butterflies."
                 }
             }
         ]
@@ -3560,7 +3560,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from and cats_to stayed up past their bedtimes to chase fireflies together."
+                    "cats_from": "cat_from and cat_to stayed up past their bedtimes to chase fireflies together."
                 }
             }
         ]
@@ -3604,7 +3604,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from and cats_to led a leaf-gathering hunt together."
+                    "cats_from": "cat_from and cat_to led a leaf-gathering hunt together."
                 }
             }
         ]
@@ -3645,7 +3645,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from and cats_to played in the leaves together."
+                    "cats_from": "cat_from and cat_to played in the leaves together."
                 }
             }
         ]
@@ -3685,7 +3685,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from and cats_to made snow lumps in camp together."
+                    "cats_from": "cat_from and cat_to made snow lumps in camp together."
                 }
             }
         ]
@@ -3730,7 +3730,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from and cats_to flicked snow at the warriors together."
+                    "cats_from": "cat_from and cat_to flicked snow at the warriors together."
                 }
             }
         ]
@@ -3820,7 +3820,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was amused by cats_to's daring adventure out of camp."
+                    "cats_from": "cat_from was amused by cat_to's daring adventure out of camp."
                 }
             }
         ]
@@ -4023,7 +4023,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "cats_from got jealous when cats_to started wearing something new in {PRONOUN/cats_to/poss} fur."
+                    "cats_from": "cat_from got jealous when cat_to started wearing something new in {PRONOUN/cat_to/poss} fur."
                 }
             }
         ]
@@ -4111,7 +4111,7 @@
                 "amount": 20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from wanted to impress cats_to."
+                    "cats_from": "cat_from wanted to impress cat_to."
                 }
             }
         ]
@@ -4140,7 +4140,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was amused and impressed that cats_to snuck out of camp."
+                    "cats_from": "cat_from was amused and impressed that cat_to snuck out of camp."
                 }
             }
         ]
@@ -4187,7 +4187,7 @@
                 ],
                 "amount": 50,
                 "log": {
-                    "cats_from": "cats_to saved cats_from's life when cats_from fell in a river."
+                    "cats_from": "cat_to saved cat_from's life when cat_from fell in a river."
                 }
             },
             {
@@ -4202,7 +4202,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from heard how cats_to saved m_c from a river."
+                    "cats_from": "cat_from heard how cat_to saved m_c from a river."
                 }
             }
         ]
@@ -4242,7 +4242,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to snuck out of camp together."
+                    "cats_from": "cat_from and cat_to snuck out of camp together."
                 }
             }
         ]
@@ -4282,7 +4282,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to snuck out of camp to watch the sunrise together."
+                    "cats_from": "cat_from and cat_to snuck out of camp to watch the sunrise together."
                 }
             }
         ]
@@ -4322,7 +4322,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to snuck out of camp to see the moon rise together."
+                    "cats_from": "cat_from and cat_to snuck out of camp to see the moon rise together."
                 }
             }
         ]
@@ -4368,7 +4368,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to tried to sneak out of camp together."
+                    "cats_from": "cat_from and cat_to tried to sneak out of camp together."
                 }
             }
         ]
@@ -4412,7 +4412,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to practiced climbing together and found strange eggs."
+                    "cats_from": "cat_from and cat_to practiced climbing together and found strange eggs."
                 }
             }
         ]
@@ -4458,7 +4458,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to snuck out of camp to go bird watching together."
+                    "cats_from": "cat_from and cat_to snuck out of camp to go bird watching together."
                 }
             }
         ]
@@ -4500,7 +4500,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to snuck out of camp to play in the leaves together."
+                    "cats_from": "cat_from and cat_to snuck out of camp to play in the leaves together."
                 }
             }
         ]
@@ -4542,7 +4542,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to snuck out of camp to play in the snow together."
+                    "cats_from": "cat_from and cat_to snuck out of camp to play in the snow together."
                 }
             }
         ]
@@ -4736,10 +4736,10 @@
         },
         "relationships": [
             {
-                "cats_from": [
+                "cat_from": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4748,14 +4748,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cats_from": [
+                "cat_from": [
                     "r_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4764,7 +4764,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "r_c was annoyed that m_c made a mess in the nursery."
+                    "cat_from": "r_c was annoyed that m_c made a mess in the nursery."
                 }
             }
             ]
@@ -4786,10 +4786,10 @@
         },
         "relationships": [
             {
-                "cats_from": [
+                "cat_from": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4798,14 +4798,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cats_from": [
+                "cat_from": [
                     "r_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4814,7 +4814,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "r_c was annoyed that m_c made a mess of the fresh-kill pile."
+                    "cat_from": "r_c was annoyed that m_c made a mess of the fresh-kill pile."
                 }
             }
             ]
@@ -4836,10 +4836,10 @@
         },
         "relationships": [
             {
-                "cats_from": [
+                "cat_from": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4848,14 +4848,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cats_from": [
+                "cat_from": [
                     "r_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4864,7 +4864,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cats_from was annoyed that m_c made a mess of the fresh-kill pile and ruined some of the prey."
+                    "cat_from": "cat_from was annoyed that m_c made a mess of the fresh-kill pile and ruined some of the prey."
                 }
             }
             ],
@@ -4893,10 +4893,10 @@
         },
         "relationships": [
             {
-                "cats_from": [
+                "cat_from": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4905,14 +4905,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cats_from": [
+                "cat_from": [
                     "r_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4921,7 +4921,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "r_c was annoyed that m_c wouldn't leave {PRONOUN/r_c/object} alone."
+                    "cat_from": "r_c was annoyed that m_c wouldn't leave {PRONOUN/r_c/object} alone."
                 }
             }
             ]
@@ -4943,10 +4943,10 @@
         },
         "relationships": [
             {
-                "cats_from": [
+                "cat_from": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4955,14 +4955,14 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "m_c was upset r_c didn't want to see {PRONOUN/m_c/poss} trick."
+                    "cat_from": "m_c was upset r_c didn't want to see {PRONOUN/m_c/poss} trick."
                 }
             },
             {
-                "cats_from": [
+                "cat_from": [
                     "r_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4971,7 +4971,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "r_c was annoyed that m_c bothered {PRONOUN/r_c/object} with something silly."
+                    "cat_from": "r_c was annoyed that m_c bothered {PRONOUN/r_c/object} with something silly."
                 }
             }
             ]
@@ -4993,10 +4993,10 @@
         },
         "relationships": [
             {
-                "cats_from": [
+                "cat_from": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -5005,14 +5005,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "m_c was pleased r_c watched {PRONOUN/m_c/poss} trick."
+                    "cat_from": "m_c was pleased r_c watched {PRONOUN/m_c/poss} trick."
                 }
             },
             {
-                "cats_from": [
+                "cat_from": [
                     "r_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -5021,7 +5021,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "r_c was glad to watch m_c's new trick."
+                    "cat_from": "r_c was glad to watch m_c's new trick."
                 }
             }
             ]
@@ -5043,10 +5043,10 @@
         },
         "relationships": [
             {
-                "cats_from": [
+                "cat_from": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -5055,7 +5055,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "m_c was upset r_c didn't have time to play."
+                    "cat_from": "m_c was upset r_c didn't have time to play."
                 }
             }
             ]
@@ -5077,10 +5077,10 @@
         },
         "relationships": [
             {
-                "cats_from": [
+                "cat_from": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -5089,14 +5089,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cats_from": [
+                "cat_from": [
                     "r_c"
                 ],
-                "cats_to": [
+                "cat_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -5105,7 +5105,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cats_from was annoyed that m_c made a mess of {PRONOUN/r_c/poss} herbs and ruined some of them."
+                    "cat_from": "cat_from was annoyed that m_c made a mess of {PRONOUN/r_c/poss} herbs and ruined some of them."
                 }
             }
             ],
@@ -5364,7 +5364,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to shared some prey together."
+                    "cats_from": "cat_from and cat_to shared some prey together."
                 }
             },
             {
@@ -5380,7 +5380,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from heard about how cats_to shared prey with a kittypet."
+                    "cats_from": "cat_from heard about how cat_to shared prey with a kittypet."
                 }
             }
         ],
@@ -5433,7 +5433,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to touched noses."
+                    "cats_from": "cat_from and cat_to touched noses."
                 }
             },
             {
@@ -5449,7 +5449,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to touched noses with a kittypet."
+                    "cats_from": "cat_from heard that cat_to touched noses with a kittypet."
                 }
             }
         ],
@@ -5503,7 +5503,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to played together on c_n's border."
+                    "cats_from": "cat_from and cat_to played together on c_n's border."
                 }
             },
             {
@@ -5519,7 +5519,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to played with a kittypet on c_n's border."
+                    "cats_from": "cat_from heard that cat_to played with a kittypet on c_n's border."
                 }
             }
         ],
@@ -5588,7 +5588,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to chased a kittypet off the territory."
+                    "cats_from": "cat_from heard that cat_to chased a kittypet off the territory."
                 }
             }
         ],
@@ -5642,7 +5642,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to had a serious conversation until a c_n patrol interrupted."
+                    "cats_from": "cat_from and cat_to had a serious conversation until a c_n patrol interrupted."
                 }
             },
             {
@@ -5652,7 +5652,7 @@
                 "values": ["trust"],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to had a serious conversation with a kittypet."
+                    "cats_from": "cat_from heard that cat_to had a serious conversation with a kittypet."
                 }
             }
         ]
@@ -5959,7 +5959,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from was disappointed to hear m_c was fraternizing with another Clan."
+                    "cats_from": "cat_from was disappointed to hear m_c was fraternizing with another Clan."
                 }
             }
         ],
@@ -6255,7 +6255,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "cats_from and cats_to got into an argument that nearly escalated into a fight."
+                    "cats_from": "cat_from and cat_to got into an argument that nearly escalated into a fight."
                 }
             }
         ],
@@ -6305,7 +6305,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to touched noses."
+                    "cats_from": "cat_from and cat_to touched noses."
                 }
             },
             {
@@ -6323,7 +6323,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to touched noses with a loner."
+                    "cats_from": "cat_from heard that cat_to touched noses with a loner."
                 }
             }
         ],
@@ -6375,7 +6375,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "cats_from and cats_to had a calm chat with each other."
+                    "cats_from": "cat_from and cat_to had a calm chat with each other."
                 }
             },
             {
@@ -6393,7 +6393,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to was seen chatting with a loner."
+                    "cats_from": "cat_from heard that cat_to was seen chatting with a loner."
                 }
             }
         ]
@@ -6436,7 +6436,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cats_from was not happy to hear that cats_to took food from a Twoleg."
+                    "cats_from": "cat_from was not happy to hear that cat_to took food from a Twoleg."
                 }
             }
         ]
@@ -6481,7 +6481,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to shared prey together before a patrol chased n_c:0 off."
+                    "cats_from": "cat_from and cat_to shared prey together before a patrol chased n_c:0 off."
                 }
             },
             {
@@ -6499,7 +6499,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to shared prey with a rogue."
+                    "cats_from": "cat_from heard that cat_to shared prey with a rogue."
                 }
             }
         ],
@@ -6549,7 +6549,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from and cats_to touched noses."
+                    "cats_from": "cat_from and cat_to touched noses."
                 }
             },
             {
@@ -6567,7 +6567,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to touched noses with a rogue."
+                    "cats_from": "cat_from heard that cat_to touched noses with a rogue."
                 }
             }
         ],
@@ -6649,7 +6649,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "cats_from heard that cats_to chased a rogue off the territory."
+                    "cats_from": "cat_from heard that cat_to chased a rogue off the territory."
                 }
             }
         ]
@@ -6697,7 +6697,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_from was embarrassed but grateful that cats_to helped {PRONOUN/cats_from/object} sort out {PRONOUN/cats_from/poss} feelings for a Clanmate."
+                    "cats_from": "cat_from was embarrassed but grateful that cat_to helped {PRONOUN/cat_from/object} sort out {PRONOUN/cat_from/poss} feelings for a Clanmate."
                 }
             }
         ]
@@ -6738,7 +6738,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from was grateful that cats_to let {PRONOUN/cats_from/object} tag along and watch {PRONOUN/cats_to/object} do {PRONOUN/cats_to/poss} duties."
+                    "cats_from": "cat_from was grateful that cat_to let {PRONOUN/cat_from/object} tag along and watch {PRONOUN/cat_to/object} do {PRONOUN/cat_to/poss} duties."
                 }
             }
         ]
@@ -6935,7 +6935,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "cats_from and cats_to discussed an omen's potential meaning."
+                    "cats_from": "cat_from and cat_to discussed an omen's potential meaning."
                 }
             }
         ]
@@ -6992,7 +6992,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from consulted cats_to about how to end the war."
+                    "cats_from": "cat_from consulted cat_to about how to end the war."
                 }
             }
         ]
@@ -7189,7 +7189,7 @@
                 "amount": 20,
                 "mutual": true,
                 "log": {
-                    "cats_from": "cats_from and cats_to discussed an omen's potential meaning."
+                    "cats_from": "cat_from and cat_to discussed an omen's potential meaning."
                 }
             }
         ]
@@ -7263,7 +7263,7 @@
                 "amount": 20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_to's clairvoyance saved cats_from from an ambush."
+                    "cats_from": "cat_to's clairvoyance saved cat_from from an ambush."
                 }
             }
         ]
@@ -7322,7 +7322,7 @@
                 "amount": 20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from enjoyed sitting with cats_to and learning from {PRONOUN/cats_to/object}."
+                    "cats_from": "cat_from enjoyed sitting with cat_to and learning from {PRONOUN/cat_to/object}."
                 }
             },
             {
@@ -7332,7 +7332,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from appreciated that cats_to took the time to sit with {PRONOUN/cats_from/object} and listen to {PRONOUN/cats_to/poss} experiences."
+                    "cats_from": "cat_from appreciated that cat_to took the time to sit with {PRONOUN/cat_from/object} and listen to {PRONOUN/cat_to/poss} experiences."
                 }
             }
         ]
@@ -7396,7 +7396,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "cats_from and cats_to discussed something when they met each other on the border."
+                    "cats_from": "cat_from and cat_to discussed something when they met each other on the border."
                 }
             }
         ]
@@ -7442,7 +7442,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cats_from was unhappy with cats_to for bothering {PRONOUN/cats_from/object} with trivialities."
+                    "cats_from": "cat_from was unhappy with cat_to for bothering {PRONOUN/cat_from/object} with trivialities."
                 }
             }
         ]
@@ -7520,7 +7520,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from took cats_to's advice on how best to fortify the camp."
+                    "cats_from": "cat_from took cat_to's advice on how best to fortify the camp."
                 }
             }
         ]
@@ -7554,7 +7554,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from appreciated that cats_to reinforced the dens in camp."
+                    "cats_from": "cat_from appreciated that cat_to reinforced the dens in camp."
                 }
             }
         ]
@@ -7588,7 +7588,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from appreciated that cats_to reinforced the dens in camp."
+                    "cats_from": "cat_from appreciated that cat_to reinforced the dens in camp."
                 }
             }
         ]
@@ -7622,7 +7622,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from appreciated that cats_to kept an eye on the camp."
+                    "cats_from": "cat_from appreciated that cat_to kept an eye on the camp."
                 }
             }
         ]
@@ -7666,7 +7666,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from loved cats_to's stories of the Clan's past."
+                    "cats_from": "cat_from loved cat_to's stories of the Clan's past."
                 }
             }
         ]
@@ -7717,7 +7717,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from saw cats_to telling stories to the kits."
+                    "cats_from": "cat_from saw cat_to telling stories to the kits."
                 }
             },
             {
@@ -7733,7 +7733,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from loved cats_to's stories of the Clan's past."
+                    "cats_from": "cat_from loved cat_to's stories of the Clan's past."
                 }
             }
         ]
@@ -9321,7 +9321,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from wished that {PRONOUN/cats_from/poss} mentor, cats_to, had given {PRONOUN/cats_from/object} an accessory normally instead of ambushing {PRONOUN/cats_from/object}."
+                    "cats_from": "cat_from wished that {PRONOUN/cat_from/poss} mentor, cat_to, had given {PRONOUN/cat_from/object} an accessory normally instead of ambushing {PRONOUN/cat_from/object}."
                 }
             },
             {
@@ -9513,7 +9513,7 @@
                 ],
                 "amount": -20,
                 "log": {
-                    "cats_from": "cats_from suspected StarClan was trying to warn {PRONOUN/cats_from/object} about cats_to."
+                    "cats_from": "cat_from suspected StarClan was trying to warn {PRONOUN/cat_from/object} about cat_to."
                 }
             }
         ]
@@ -9610,7 +9610,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was impressed by how cats_to was able to resolve a border dispute with another Clan."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a border dispute with another Clan."
                 }
             }
         ]
@@ -9674,7 +9674,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from thought cats_to wasted {PRONOUN/cats_to/poss} time trying to appease another Clan."
+                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease another Clan."
                 }
             }
         ]
@@ -9738,7 +9738,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was impressed by how cats_to was able to resolve a hunting dispute with another Clan."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a hunting dispute with another Clan."
                 }
             }
         ]
@@ -9802,7 +9802,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from thought cats_to wasted {PRONOUN/cats_to/poss} time trying to appease another Clan."
+                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease another Clan."
                 }
             }
         ]
@@ -9866,7 +9866,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was impressed by how cats_to was able to resolve an herb-gathering dispute with another Clan."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve an herb-gathering dispute with another Clan."
                 }
             }
         ]
@@ -9930,7 +9930,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from thought cats_to wasted {PRONOUN/cats_to/poss} time trying to appease another Clan."
+                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease another Clan."
                 }
             }
         ]
@@ -9994,7 +9994,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from was impressed by how cats_to was able to resolve a personal dispute with another Clan."
+                    "cats_from": "cat_from was impressed by how cat_to was able to resolve a personal dispute with another Clan."
                 }
             }
         ]
@@ -10058,7 +10058,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from thought cats_to wasted {PRONOUN/cats_to/poss} time trying to appease another Clan."
+                    "cats_from": "cat_from thought cat_to wasted {PRONOUN/cat_to/poss} time trying to appease another Clan."
                 }
             }
         ]
@@ -10330,7 +10330,7 @@
             ],
             "amount": -10,
             "log": {
-                "cats_from": "cats_from disapproved of cats_to clinging to {PRONOUN/cats_to/poss} friendship with an apprentice from another Clan during the war."
+                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             },
             {
@@ -10346,7 +10346,7 @@
             ],
             "amount": 10,
             "log": {
-                "cats_from": "cats_from was touched that cats_to kept {PRONOUN/cats_to/poss} friendship with an apprentice from another Clan during the war."
+                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             }
         ],
@@ -10399,7 +10399,7 @@
             ],
                 "amount": -10,
                 "log": {
-                "cats_from": "cats_from disapproved of cats_to clinging to {PRONOUN/cats_to/poss} friendship with an apprentice from another Clan during the war."
+                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             },
             {
@@ -10415,7 +10415,7 @@
             ],
             "amount": 10,
             "log": {
-                "cats_from": "cats_from was touched that cats_to kept {PRONOUN/cats_to/poss} friendship with an apprentice from another Clan during the war."
+                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             }
         ],
@@ -10496,7 +10496,7 @@
             ],
             "amount": -10,
             "log": {
-                "cats_from": "cats_from disapproved of cats_to clinging to {PRONOUN/cats_to/poss} friendship with an apprentice from another Clan during the war."
+                "cats_from": "cat_from disapproved of cat_to clinging to {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             },
             {
@@ -10512,7 +10512,7 @@
             ],
             "amount": 10,
             "log": {
-                "cats_from": "cats_from was touched that cats_to kept {PRONOUN/cats_to/poss} friendship with an apprentice from another Clan during the war."
+                "cats_from": "cat_from was touched that cat_to kept {PRONOUN/cat_to/poss} friendship with an apprentice from another Clan during the war."
             }
             }
         ]
@@ -10590,7 +10590,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from approved of cats_to stepping up camp-guarding during the war."
+                    "cats_from": "cat_from approved of cat_to stepping up camp-guarding during the war."
                 }
             }
         ]
@@ -10633,7 +10633,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from approved of cats_to stepping up camp-guarding during the war."
+                    "cats_from": "cat_from approved of cat_to stepping up camp-guarding during the war."
                 }
             }
         ]
@@ -10694,7 +10694,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from heard about how cats_to killed a warrior from another Clan in battle."
+                    "cats_from": "cat_from heard about how cat_to killed a warrior from another Clan in battle."
                 }
             }
         ],
@@ -10734,7 +10734,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from heard about how cats_to killed an apprentice from another Clan in battle."
+                    "cats_from": "cat_from heard about how cat_to killed an apprentice from another Clan in battle."
                 }
             }
         ],
@@ -10786,7 +10786,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "cats_from was comforted by cats_to after a nightmare about the war."
+                    "cats_from": "cat_from was comforted by cat_to after a nightmare about the war."
                 }
             }
         ],
@@ -10838,7 +10838,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "cats_from was comforted by cats_to after a nightmare about the war."
+                    "cats_from": "cat_from was comforted by cat_to after a nightmare about the war."
                 }
             }
         ],
@@ -10939,7 +10939,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from approved of how cats_to persuaded an enemy Clan to withdraw from c_n's territory."
+                    "cats_from": "cat_from approved of how cat_to persuaded an enemy Clan to withdraw from c_n's territory."
                 }
             }
         ]
@@ -10997,7 +10997,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cats_from": "cats_from appreciated cats_to checking in on {PRONOUN/cats_from/object} in the midst of the war."
+                    "cats_from": "cat_from appreciated cat_to checking in on {PRONOUN/cat_from/object} in the midst of the war."
                 }
             }
         ]
@@ -11035,7 +11035,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from thought cats_to's mediation efforts in the war with an enemy Clan were a waste of time."
+                    "cats_from": "cat_from thought cat_to's mediation efforts in the war with an enemy Clan were a waste of time."
                 }
             }
         ]
@@ -11101,7 +11101,7 @@
                 ],
                 "amount": -20,
                 "log": {
-                    "cats_from": "cats_from suspected that cats_to intentionally gave {PRONOUN/cats_from/object} bad advice about an ongoing war."
+                    "cats_from": "cat_from suspected that cat_to intentionally gave {PRONOUN/cat_from/object} bad advice about an ongoing war."
                 }
             }
         ]
@@ -11160,7 +11160,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from consulted cats_to about how to end the war with an enemy Clan."
+                    "cats_from": "cat_from consulted cat_to about how to end the war with an enemy Clan."
                 }
             }
         ]
@@ -11222,7 +11222,7 @@
                 ],
                 "amount": 20,
                 "log": {
-                    "cats_from": "cats_from consulted cats_to about how to end the war with an enemy Clan."
+                    "cats_from": "cat_from consulted cat_to about how to end the war with an enemy Clan."
                 }
             }
         ]
@@ -11300,7 +11300,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from appreciated cats_to's foresight in preparing small bundles of herbs for use during battle."
+                    "cats_from": "cat_from appreciated cat_to's foresight in preparing small bundles of herbs for use during battle."
                 }
             }
         ]
@@ -11464,7 +11464,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "Knowing the war might take cats_to away from {PRONOUN/cats_from/object}, cats_from realized what an incredible leader cats_to is."
+                    "cats_from": "Knowing the war might take cat_to away from {PRONOUN/cat_from/object}, cat_from realized what an incredible leader cat_to is."
                 }
             }
         ]
@@ -11526,7 +11526,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "During a war, cats_from relied heavily on the wisdom of cats_to."
+                    "cats_from": "During a war, cat_from relied heavily on the wisdom of cat_to."
                 }
             }
         ]
@@ -11575,7 +11575,7 @@
                 "values": ["trust", "respect"],
                 "amount": 20,
                 "log": {
-                    "cats_from": "During a war, cats_from put all {PRONOUN/cats_from/poss} faith in m_c."
+                    "cats_from": "During a war, cat_from put all {PRONOUN/cat_from/poss} faith in m_c."
                 }
             },
             {
@@ -11584,7 +11584,7 @@
                 "values": ["trust", "respect"],
                 "amount": -20,
                 "log": {
-                    "cats_from": "During a war, cats_from seriously reconsidered whether cats_to was the right cat to lead the Clan."
+                    "cats_from": "During a war, cat_from seriously reconsidered whether cat_to was the right cat to lead the Clan."
                 }
             }
         ]
@@ -11615,7 +11615,7 @@
                 "amount": 20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from recognized how hard m_c worked to be a symbol of strength and unity for c_n during a war."
+                    "cats_from": "cat_from recognized how hard m_c worked to be a symbol of strength and unity for c_n during a war."
                 }
             }
         ]
@@ -11717,7 +11717,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from thought it was fox-hearted of cats_to to order {PRONOUN/cats_from/object} to steal from another Clan's herb stores."
+                    "cats_from": "cat_from thought it was fox-hearted of cat_to to order {PRONOUN/cat_from/object} to steal from another Clan's herb stores."
                 }
             }
         ]
@@ -11757,7 +11757,7 @@
                 "values": [ "trust" ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to spent the night on watch for a potential attack."
+                    "cats_from": "cat_from and cat_to spent the night on watch for a potential attack."
                 }
             }
         ],
@@ -11960,7 +11960,7 @@
                 "values": ["respect"],
                 "amount": -15,
                 "log": {
-                    "cats_from": "cats_from suspected cats_to was being spared from battle patrols because {PRONOUN/cats_to/subject}{VERB/cats_to/'re/'s} the leader's mate."
+                    "cats_from": "cat_from suspected cat_to was being spared from battle patrols because {PRONOUN/cat_to/subject}{VERB/cat_to/'re/'s} the leader's mate."
                 }
             },
             {
@@ -11969,7 +11969,7 @@
                 "values": ["respect"],
                 "amount": -15,
                 "log": {
-                    "cats_from": "cats_from suspected cats_to was sparing {PRONOUN/cats_to/poss} mate from battle patrols."
+                    "cats_from": "cat_from suspected cat_to was sparing {PRONOUN/cat_to/poss} mate from battle patrols."
                 }
             }
         ]
@@ -12002,7 +12002,7 @@
                 "mutual": true,
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from and cats_to feared for each other during a war."
+                    "cats_from": "cat_from and cat_to feared for each other during a war."
                 }
             }
         ]
@@ -12035,7 +12035,7 @@
                 "mutual": false,
                 "amount": 15,
                 "log": {
-                    "cats_from": "cats_to promised to protect cats_from from an enemy Clan."
+                    "cats_from": "cat_to promised to protect cat_from from an enemy Clan."
                 }
             }
         ]
@@ -12065,7 +12065,7 @@
                 "mutual": false,
                 "amount": -20,
                 "log": {
-                    "cats_from": "cats_from was disturbed by the extreme lengths cats_to went to during a war."
+                    "cats_from": "cat_from was disturbed by the extreme lengths cat_to went to during a war."
                 }
             },
             {
@@ -12075,7 +12075,7 @@
                 "mutual": true,
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from defended cats_to's extreme actions during a war with an enemy Clan."
+                    "cats_from": "cat_from defended cat_to's extreme actions during a war with an enemy Clan."
                 }
             }
         ],
@@ -12283,7 +12283,7 @@
                 "amount": -5,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from kept catching cats_to watching {PRONOUN/cats_from/object}."
+                    "cats_from": "cat_from kept catching cat_to watching {PRONOUN/cat_from/object}."
                 }
             }
         ]
@@ -12311,7 +12311,7 @@
                 "values": ["comfort"],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cats_from couldn't shake an uneasy feeling around cats_to."
+                    "cats_from": "cat_from couldn't shake an uneasy feeling around cat_to."
                 }
             }
         ]
@@ -12414,7 +12414,7 @@
                 "values": ["trust", "comfort"],
                 "amount": -15,
                 "log": {
-                    "cats_from": "cats_from noticed cats_to following {PRONOUN/cats_from/object}, but cats_to lied about it when confronted."
+                    "cats_from": "cat_from noticed cat_to following {PRONOUN/cat_from/object}, but cat_to lied about it when confronted."
                 }
             }
         ]
@@ -12481,7 +12481,7 @@
                 "values": ["like", "comfort"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from had fun patrolling along a cliff with cats_to, even though cats_to kept nudging {PRONOUN/cats_from/object} closer to the edge."
+                    "cats_from": "cat_from had fun patrolling along a cliff with cat_to, even though cat_to kept nudging {PRONOUN/cat_from/object} closer to the edge."
                 }
             }
         ]
@@ -12576,7 +12576,7 @@
                 "amount": -30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from realized that {PRONOUN/cats_from/poss} ancestors were telling {PRONOUN/cats_from/object} to dispose of r_c."
+                    "cats_from": "cat_from realized that {PRONOUN/cat_from/poss} ancestors were telling {PRONOUN/cat_from/object} to dispose of r_c."
                 }
             }
         ]
@@ -12623,7 +12623,7 @@
                 "amount": -30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from received a vision telling {PRONOUN/cats_from/object} to dispose of r_c."
+                    "cats_from": "cat_from received a vision telling {PRONOUN/cat_from/object} to dispose of r_c."
                 }
             }
         ]
@@ -12652,7 +12652,7 @@
                 "amount": -30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from received a vision warning {PRONOUN/cats_from/object} that cats_to poses a danger to c_n."
+                    "cats_from": "cat_from received a vision warning {PRONOUN/cat_from/object} that cat_to poses a danger to c_n."
                 }
             }
         ]
@@ -12763,7 +12763,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "The spirits seemed agitated around cats_to, as if they were trying to warn cats_from of something."
+                    "cats_from": "The spirits seemed agitated around cat_to, as if they were trying to warn cat_from of something."
                 }
             }
         ]
@@ -12793,7 +12793,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "The spirits seemed agitated around cats_to, as if they were trying to warn cats_from of something."
+                    "cats_from": "The spirits seemed agitated around cat_to, as if they were trying to warn cat_from of something."
                 }
             }
         ]
@@ -12823,7 +12823,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from's gut warned {PRONOUN/cats_from/object} that cats_to had bad intentions."
+                    "cats_from": "cat_from's gut warned {PRONOUN/cat_from/object} that cat_to had bad intentions."
                 }
             }
         ]
@@ -12854,7 +12854,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cats_from had a terrifying dream of cats_to."
+                    "cats_from": "cat_from had a terrifying dream of cat_to."
                 }
             }
         ]
@@ -12902,7 +12902,7 @@
                 "values": ["respect", "trust"],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from thought it was strange that cats_to suggested {PRONOUN/cats_from/subject} cross the border to gather information during a war."
+                    "cats_from": "cat_from thought it was strange that cat_to suggested {PRONOUN/cat_from/subject} cross the border to gather information during a war."
                 }
             }
         ]
@@ -12945,7 +12945,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "Rumors spread that cats_to stood by while r_c was attacked in a battle with an enemy Clan."
+                    "cats_from": "Rumors spread that cat_to stood by while r_c was attacked in a battle with an enemy Clan."
                 }
             }
         ]
@@ -13083,7 +13083,7 @@
             "values": ["trust"],
             "amount": 10,
             "log": {
-                "cats_from": "cats_from hired cats_to to kill r_c."
+                "cats_from": "cat_from hired cat_to to kill r_c."
             }
         },
         {
@@ -13093,7 +13093,7 @@
             "values": ["like"],
             "amount": -20,
             "log": {
-                "cats_from": "cats_to seemed to be targeting cats_from in an attack on a c_n patrol."
+                "cats_from": "cat_to seemed to be targeting cat_from in an attack on a c_n patrol."
             }
         }
     ]
@@ -13125,7 +13125,7 @@
             "values": ["trust"],
             "amount": 10,
             "log": {
-                "cats_from": "cats_from hired cats_to to kill r_c."
+                "cats_from": "cat_from hired cat_to to kill r_c."
             }
         }
     ]
@@ -13163,7 +13163,7 @@
             "values": ["trust"],
             "amount": -5,
             "log": {
-              "cats_from": "cats_from heard cats_to fell asleep guarding camp."
+              "cats_from": "cat_from heard cat_to fell asleep guarding camp."
                 }
         }
     ]
@@ -13186,7 +13186,7 @@
         "values": ["comfort", "like"],
         "amount": -5,
         "log": {
-          "cats_from": "cats_from noticed that cats_to was in a foul mood."
+          "cats_from": "cat_from noticed that cat_to was in a foul mood."
         }
       }
     ]
@@ -13214,7 +13214,7 @@
             "values": ["like", "comfort", "trust"],
             "amount": 15,
             "log": {
-              "cats_from": "cats_from and cats_to agree that thunder is scary."
+              "cats_from": "cat_from and cat_to agree that thunder is scary."
             }
           }
         ]
@@ -13241,7 +13241,7 @@
             "values": ["like", "comfort"],
           "amount": 15,
           "log": {
-            "cats_from": "cats_from and cats_to bonded over hating mouse bile."
+            "cats_from": "cat_from and cat_to bonded over hating mouse bile."
           }
         }
     ]
@@ -13354,7 +13354,7 @@
       ],
       "amount": -10,
       "log": {
-        "cats_from": "cats_from became suspicious of cats_to after catching {PRONOUN/cats_to/object} trying to sneak out of camp."
+        "cats_from": "cat_from became suspicious of cat_to after catching {PRONOUN/cat_to/object} trying to sneak out of camp."
       }
     },
     {
@@ -13370,7 +13370,7 @@
       ],
       "amount": -10,
       "log": {
-        "cats_from": "cats_from was annoyed that cats_to caught {PRONOUN/cats_from/object} trying to sneak out of camp."
+        "cats_from": "cat_from was annoyed that cat_to caught {PRONOUN/cat_from/object} trying to sneak out of camp."
       }
     }
   ]
