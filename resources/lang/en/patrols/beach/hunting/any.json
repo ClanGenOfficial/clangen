@@ -5911,5 +5911,268 @@
                 "frequency": 4
             }
         ]
-    }
+    },
+    {
+    "patrol_id": "bch_hunt_nlgl_ganneteggtheft",
+    "biome": ["beach"],
+    "season": ["newleaf","greenleaf"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "bch_train_stormwaves",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [
+            1,
+            6
+        ]
+    },
+    "frequency": 3,
+    "chance_of_success": 50,
+    "intro_text": "Wind whips around p_l and r_c's pelts as they work their way up the cliffside. Above, the ledges are covered in gannets. A cacophony of calls heralds the parents' return to the bustling colony. The cats weave around the occupied nests, staying just out of reach of the brooding birds, in search of unguarded eggs.",
+    "decline_text": "The wind gusts intensify, threatening to push the cats off the cliffside. It's too dangerous, and p_l orders the patrol to turn around.",
+    "success_outcomes": [
+        {
+            "text": "r_c spots a lone egg in an unattended kelp nest and clambers over. p_l keeps an eye out for its parent and notices a panicking gannet down in the water, unable to take off due to the high waves. The patrol snatches the egg and leaves promptly.",
+            "exp": 20,
+            "frequency": 4,
+            "prey": ["medium"]
+        },   
+        {
+            "text": "s_c finds a broken egg in an abandoned kelp nest, a bluish-black, featherless dead chick half-hanging out of the shell. s_c explains it was likely crushed by its inexperienced parents' feet while hatching. Perfect prey for c_n.",
+            "exp": 25,
+            "frequency": 3,
+            "stat_skill": ["HUNTER,1","LORE,1"],
+            "can_have_stat": ["any"],
+            "prey": ["large"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "mutual": false,
+                    "values": ["trust","respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from was impressed by cat_to's knowledge of gannets while stealing their eggs."
+                    }
+                }
+                ]
+        }, 
+        {
+            "text": "From a ledge above the patrol, many fledglings leap into the air. A sudden gust of wind sends some crashing into a low part of the cliff. Many tumble off, but a few limp bodies are caught on the rocks. p_l instructs {PRONOUN/p_l/poss} patrol to find a way to climb down. That's a feast for the taking.",
+            "exp": 30,
+            "frequency": 2,
+            "prey": ["large"]
+        },
+        {
+            "min_max_status": {"normal adult": [4,6]},
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. p_l and {PRONOUN/p_l/poss} Clanmates react quickly, backing r_c up. r_c distracts the gannet, and p_l pounces, sinking {PRONOUN/s_c/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, r_c and p_l have to carry it together!",
+            "exp": 40,
+            "frequency": 2,
+            "prey": ["huge"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["patrol"],
+                    "mutual": true,
+                    "values": ["trust","respect"],
+                    "amount": 12,
+                    "log": {
+                        "cats_from": "cat_from took down a gannet thanks to excellent teamwork with cat_to."
+                        }
+                },
+                {
+                    "cats_from": ["some_clan"],
+                    "cats_to": ["p_l"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from heard about cat_to taking down a full-grown gannet together with {PRONOUN/cat_to/poss} patrol."
+                        }
+                }
+            ],
+            "art": "gen_angry_cat_warrior"
+        },        
+        {
+            "text": "s_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c/subject} VERB/s_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. s_c reacts lightning-fast, dodging its stabbing beak, then leaps onto its back and sinks {PRONOUN/s_c/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, s_c and p_l have to carry it together!",
+            "exp": 35,
+            "frequency": 1,
+            "stat_skill": ["FIGHTER,1"],
+            "can_have_stat": ["adult"],
+            "prey": ["huge"],
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "mutual": false,
+                    "values": ["trust","respect"],
+                    "amount": 14,
+                    "log": {
+                        "cats_from": "cat_from witnessed cat_to take down a full-grown gannet on {PRONOUN/cat_to/poss} own."
+                        }
+                },
+                {
+                    "cats_from": ["clan"],
+                    "cats_to": ["s_c"],
+                    "mutual": false,
+                    "values": ["respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from heard about cat_to taking down a full-grown gannet on {PRONOUN/cat_to/poss} own."
+                        }
+                }
+            ],
+            "art": "gen_angry_cat_warrior"
+            }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "As they climb higher, the ledge narrows. The next kelp nest is occupied, blocking the way. The gannet in it bristles, bowing to the cats, wings half-raised and head shaking. p_l recognizes the threat and orders retreat.",
+            "exp": 0,
+            "frequency": 4,
+            "prey": ["very_small"]
+        },
+        {
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c barely manages to scramble backward quickly enough to avoid being bitten.", 
+            "exp": 0,
+            "frequency": 4
+        },
+        {
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c isn't quick enough to avoid the bite, and the patrol has to help {PRONOUN/r_c/object} back to camp.",
+            "exp": 0,
+            "frequency": 2,
+            "prey": [],
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["beak_bite"],
+                    "no_results": false
+                }
+            ],
+            "history_text": {
+                "death": "m_c died from a wound inflicted by a gannet.",
+                "scar": "m_c was scarred by a gannet's beak."
+            }
+        },
+        {
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes down to find r_c lying on the low tide sandbank, barely able to limp back to camp.",
+            "exp": 0,
+            "frequency": 1,
+            "prey": [],
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["blunt_force_injury"],
+                    "no_results": false
+                }
+            ],
+            "history_text": {
+                "death": "m_c died from a broken bone after being chased off a cliff by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid.",
+                "scar": "m_c was scarred after being chased off a cliff by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid."
+            },
+            "art": "mtn_train_stuck"
+        },
+        {
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes down to find r_c clinging onto the rocks and coughing water.",
+            "exp": 0,
+            "frequency": 1,
+            "prey": [],
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["water in their lungs"],
+                    "no_results": false
+                }
+            ],
+            "history_text": {
+                "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after being chased off a cliff into the ocean by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid."
+                },
+            "art": "gen_fallenwater_cat2"
+        },
+        {
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes to climb down, and finds r_c sprawled on a rock. Motionless.",
+            "exp": 0,
+            "frequency": 1,
+            "dead_cats": ["r_c"],
+            "history_text": {
+                "death": "m_c fell onto a rock and died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} caught trying to raid a gannet's nest."
+            },
+            "art": "bch_train_stormwaves"
+        },
+        {
+            "text": "s_c spots a lone egg in an unattended kelp nest, but it's on an even higher ledge. No issue, s_c can reach it! Until {PRONOUN/s_c/subject} {VERB/s_c/slip/slips} and {VERB/s_c/plummet/plummets} with a howl. The patrol rushes to climb down and finds s_c clinging onto the rocks and coughing water.",
+            "exp": 0,
+            "frequency": 1,
+            "stat_skill": ["-CLIMBER,1"],
+            "stat_trait": ["troublesome", "childish", "arrogant", "shameless", "flamboyant", "daring", "bold", "competitive", "oblivious", "adventurous", "confident", "fierce"],
+            "injury": [
+                {
+                    "cats": ["s_c"],
+                    "injuries": ["water in their lungs"],
+                    "no_results": false
+                }
+            ],
+            "history_text": {
+                "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after overestimating {PRONOUN/m_c/self} and falling off a cliff."
+            },
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "mutual": false,
+                    "values": ["trust","respect"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "cat_from was annoyed by cat_to's recklessness getting {PRONOUN/cat_to/self} hurt and ending a hunt."
+                        }
+                }
+            ],
+            "art": "gen_fallenwater_cat2"
+        },
+        {
+            "text": "s_c spots a lone egg in an unattended kelp nest, but it's on an even higher ledge. No issue, s_c can reach it! Until {PRONOUN/s_c/subject} {VERB/s_c/slip/slips}, and {VERB/s_c/plummet/plummets} with a howl. The patrol rushes to climb down and finds s_c lying on the low tide sandbank, barely able to limp back to camp.", 
+            "exp": 0,
+            "frequency": 1,
+            "stat_skill": ["-CLIMBER,1"],
+            "stat_trait": ["troublesome", "childish", "arrogant", "shameless", "flamboyant", "daring", "bold", "competitive", "oblivious", "adventurous", "confident", "fierce"],
+            "injury": [
+                {
+                    "cats": ["s_c"],
+                    "injuries": ["broken bone"],
+                    "no_results": false
+                }
+            ],
+            "history_text": {
+                "death": "m_c died from {PRONOUN/m_c/poss} broken bone after overestimating {PRONOUN/m_c/self} and falling off a cliff.",
+                "scar": "m_c was scarred after breaking {PRONOUN/m_c/poss} bone falling off a cliff."
+            },
+            "relationships": [
+                {
+                    "cats_from": ["patrol"],
+                    "cats_to": ["s_c"],
+                    "mutual": false,
+                    "values": ["trust","respect"],
+                    "amount": -8,
+                    "log": {
+                        "cats_from": "cat_from was annoyed by cat_to's recklessness getting {PRONOUN/cat_to/self} hurt and ending a hunt."
+                        }
+                }
+            ],
+            "art": "mtn_train_stuck"
+        },     
+        {
+            "text": "s_c spots a lone egg in an unattended kelp nest, but it's on an even higher ledge. No issue, s_c can reach it! Until {PRONOUN/s_c/subject} {VERB/s_c/slip/slips} and {VERB/s_c/plummet/plummets} with a howl. The patrol rushes to climb down and finds s_c sprawled on a rock. Motionless.",
+            "exp": 0,
+            "frequency": 1,
+            "stat_skill": ["-CLIMBER,1"],
+            "stat_trait": ["troublesome", "childish", "arrogant", "shameless", "flamboyant", "daring", "bold", "competitive", "oblivious", "adventurous", "confident", "fierce"],
+            "dead_cats":["s_c"],
+            "history_text": {
+                "death": "m_c fell to {PRONOUN/m_c/poss} death off a cliff after overestimating {PRONOUN/m_c/self}."
+            },
+            "art": "bch_train_stormwaves"
+        }
+    ]
+}
 ]

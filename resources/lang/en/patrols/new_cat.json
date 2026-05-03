@@ -147,6 +147,543 @@
         ]
     },
     {
+        "patrol_id": "gen_bord_neutralnewcatpair1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "new_cat"
+        ],
+        "patrol_art": "gen_bord_newcat",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "The patrol finds a pair of cats interested in joining the Clan.",
+        "decline_text": "The patrol decides to leave the cats alone.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "The two are close friends and traveling companions who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:warrior"
+                    ],
+                    [
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 4
+            },
+            {
+                "text": "One of them, n_c:0, is a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills for a place in c_n. The two are brought back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:medicine cat"
+                    ],
+                    [
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two are close friends and traveling companions who want somewhere safe to live together. They promise to earn their keep, and, considering their age, the patrol feels obligated to bring the young cats back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:apprentice"
+                    ],
+                    [
+                        "status:apprentice"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 3
+            },
+            {
+                "text": "One of them, n_c:0, is learning to be a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills for a place in c_n. Considering their age, the patrol feels obligated to bring the young cats back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:medicine cat apprentice"
+                    ],
+                    [
+                        "status:apprentice"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two are parent and child who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner"
+                    ],
+                    [
+                        "status:apprentice",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "outsider_rep": 1,
+                "frequency": 3
+            },
+            {
+                "text": "The two are parent and child who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "loner"
+                    ],
+                    [
+                        "age:young adult",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "outsider_rep": 1,
+                "frequency": 3
+            },
+            {
+                "text": "One of them, n_c:0, is a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills if {PRONOUN/n_c:0/subject} and {PRONOUN/n_c:0/poss} child could join c_n. The two are brought back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "status:medicine cat",
+                        "loner"
+                    ],
+                    [
+                        "status:apprentice",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two are siblings who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "dead",
+                        "loner"
+                    ],
+                    [
+                        "age:adult",
+                        "parent:0",
+                        "loner"
+                    ],
+                    [
+                        "age:adolescent",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                     {
+                        "cats_from": ["n_c:2"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling as a sibling unit, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend and ally.",
+                          "cats_to": "After many moons of traveling as a sibling unit, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend and ally."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 4
+            },
+            {
+                "text": "One of them, n_c:1, is a healer, and {PRONOUN/n_c:1/subject}'d be happy to share {PRONOUN/n_c:1/poss} skills if {PRONOUN/n_c:1/subject} and {PRONOUN/n_c:1/poss} little sibling could join c_n. The two are brought back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "dead",
+                        "loner"
+                    ],
+                    [
+                        "age:adult",
+                        "status:medicine cat",
+                        "parent:0",
+                        "loner"
+                    ],
+                    [
+                        "age:adolescent",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                     {
+                        "cats_from": ["n_c:2"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling as a sibling unit, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend and ally.",
+                          "cats_to": "After many moons of traveling as a sibling unit, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend and ally."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two only met recently and decided to travel together after discovering their shared destination of c_n. They promise to earn their keep and are brought back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:warrior"
+                    ],
+                    [
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 19,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "cat_from and cat_to traveled to c_n together."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 4
+            },
+            {
+                "text": "The two friends have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "art": "gen_cat_with_kit_loner",
+                "new_cat": [
+                    [
+                        "age:has_kits",
+                        "can_birth"
+                    ],
+                    [
+                        "loner"
+                    ],
+                    [
+                        "litter",
+                        "parent:0",
+                        "backstory:outsider_roots2"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     },
+                     {
+                        "cats_from": ["n_c:1"],
+                        "cats_to": ["n_c:2"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 25,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} friend, n_c:0, transferred easily to {PRONOUN/n_c:0/poss} child, cat_to.",
+                          "cats_to": "Having spent every moment of {PRONOUN/cat_to/poss} life alongside cat_from, cat_to nearly considers {PRONOUN/cat_from/object} a secondary parent."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "art": "gen_cat_with_kit_loner",
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "can_birth"
+                    ],
+                    [
+                        "age:adult",
+                        "male"
+                    ],
+                    [
+                        "litter",
+                        "parent:0,1",
+                        "backstory:outsider_roots2"
+                    ]
+                ],
+                "relationships": [
+                     {
+                        "cats_from": ["n_c:1"],
+                        "cats_to": ["n_c:0"],
+                        "values": ["romance"],
+                        "amount": 15,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "...though a shared litter may evidence deeper feelings."
+                        }
+                     },
+                     {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend...",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend..."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two siblings have been looking for a safe place ever since n_c:1 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "art": "gen_cat_with_kit_loner",
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "male",
+                        "dead",
+                        "loner"
+                    ],
+                    [
+                        "age:adult",
+                        "can_birth",
+                        "loner",
+                        "parent:0"
+                    ],
+                    [
+
+                        "loner",
+                        "parent:0"
+                    ],
+                    [
+                        "litter",
+                        "parent:1",
+                        "backstory:outsider_roots2"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:1"],
+                        "cats_to": ["n_c:2"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling as a sibling unit, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend and ally.",
+                          "cats_to": "After many moons of traveling as a sibling unit, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend and ally."
+                        }
+                     },
+                     {
+                        "cats_from": ["n_c:2"],
+                        "cats_to": ["n_c:3"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 25,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} sibling, n_c:0, transferred easily to {PRONOUN/n_c:0/poss} child, cat_to.",
+                          "cats_to": "Having spent every moment of {PRONOUN/cat_to/poss} life alongside cat_from, cat_to nearly considers {PRONOUN/cat_from/object} a secondary parent."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The cats decide against joining after hearing more about Clan life.",
+                "exp": 0,
+                "outsider_rep": -1,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "loner"
+                    ],
+                    [
+                        "meeting",
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The cats decide against joining after hearing more about Clan life.",
+                "exp": 0,
+                "outsider_rep": -1,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "loner",
+                        "age:adult"
+                    ],
+                    [
+                        "meeting",
+                        "loner",
+                        "parent:0",
+                        "age:adolescent"
+                    ]
+                ],
+                "frequency": 3
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The cats are unimpressed by their hostility and decide this Clan is not for them.",
+                "exp": 0,
+                "outsider_rep": -1,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "loner"
+                    ],
+                    [
+                        "meeting",
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The cats are unimpressed by their hostility and decide this Clan is not for them.",
+                "exp": 0,
+                "outsider_rep": -1,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "loner",
+                        "age:adult"
+                    ],
+                    [
+                        "meeting",
+                        "loner",
+                        "parent:0",
+                        "age:adolescent"
+                    ]
+                ],
+                "frequency": 3
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The patrol drives the cats from the territory.",
+                "exp": 10,
+                "outsider_rep": -2,
+                "frequency": 4
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_bord_newcat3",
         "biome": [
             "any"
