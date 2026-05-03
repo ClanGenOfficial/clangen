@@ -4736,10 +4736,10 @@
         },
         "relationships": [
             {
-                "cat_from": [
+                "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4752,10 +4752,10 @@
                 }
             },
             {
-                "cat_from": [
+                "cats_from": [
                     "r_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4764,7 +4764,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cat_from": "r_c was annoyed that m_c made a mess in the nursery."
+                    "cats_from": "r_c was annoyed that m_c made a mess in the nursery."
                 }
             }
             ]
@@ -4786,10 +4786,10 @@
         },
         "relationships": [
             {
-                "cat_from": [
+                "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4798,14 +4798,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cat_from": [
+                "cats_from": [
                     "r_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4814,7 +4814,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cat_from": "r_c was annoyed that m_c made a mess of the fresh-kill pile."
+                    "cats_from": "r_c was annoyed that m_c made a mess of the fresh-kill pile."
                 }
             }
             ]
@@ -4836,10 +4836,10 @@
         },
         "relationships": [
             {
-                "cat_from": [
+                "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4848,14 +4848,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cat_from": [
+                "cats_from": [
                     "r_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4864,7 +4864,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cat_from": "cat_from was annoyed that m_c made a mess of the fresh-kill pile and ruined some of the prey."
+                    "cats_from": "cat_from was annoyed that m_c made a mess of the fresh-kill pile and ruined some of the prey."
                 }
             }
             ],
@@ -4893,10 +4893,10 @@
         },
         "relationships": [
             {
-                "cat_from": [
+                "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4905,14 +4905,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cat_from": [
+                "cats_from": [
                     "r_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4921,7 +4921,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cat_from": "r_c was annoyed that m_c wouldn't leave {PRONOUN/r_c/object} alone."
+                    "cats_from": "r_c was annoyed that m_c wouldn't leave {PRONOUN/r_c/object} alone."
                 }
             }
             ]
@@ -4943,10 +4943,10 @@
         },
         "relationships": [
             {
-                "cat_from": [
+                "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -4955,14 +4955,14 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cat_from": "m_c was upset r_c didn't want to see {PRONOUN/m_c/poss} trick."
+                    "cats_from": "m_c was upset r_c didn't want to see {PRONOUN/m_c/poss} trick."
                 }
             },
             {
-                "cat_from": [
+                "cats_from": [
                     "r_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -4971,7 +4971,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cat_from": "r_c was annoyed that m_c bothered {PRONOUN/r_c/object} with something silly."
+                    "cats_from": "r_c was annoyed that m_c bothered {PRONOUN/r_c/object} with something silly."
                 }
             }
             ]
@@ -4993,10 +4993,10 @@
         },
         "relationships": [
             {
-                "cat_from": [
+                "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -5005,14 +5005,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cat_from": "m_c was pleased r_c watched {PRONOUN/m_c/poss} trick."
+                    "cats_from": "m_c was pleased r_c watched {PRONOUN/m_c/poss} trick."
                 }
             },
             {
-                "cat_from": [
+                "cats_from": [
                     "r_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -5021,7 +5021,7 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cat_from": "r_c was glad to watch m_c's new trick."
+                    "cats_from": "r_c was glad to watch m_c's new trick."
                 }
             }
             ]
@@ -5043,10 +5043,10 @@
         },
         "relationships": [
             {
-                "cat_from": [
+                "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -5055,7 +5055,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cat_from": "m_c was upset r_c didn't have time to play."
+                    "cats_from": "m_c was upset r_c didn't have time to play."
                 }
             }
             ]
@@ -5077,10 +5077,10 @@
         },
         "relationships": [
             {
-                "cat_from": [
+                "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "r_c"
                 ],
                 "mutual": false,
@@ -5089,14 +5089,14 @@
                 ],
                 "amount": 5,
                 "log": {
-                    "cat_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
+                    "cats_from": "m_c was happy that r_c paid {PRONOUN/m_c/object} attention."
                 }
             },
             {
-                "cat_from": [
+                "cats_from": [
                     "r_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "m_c"
                 ],
                 "mutual": false,
@@ -5105,7 +5105,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cat_from": "cat_from was annoyed that m_c made a mess of {PRONOUN/r_c/poss} herbs and ruined some of them."
+                    "cats_from": "cat_from was annoyed that m_c made a mess of {PRONOUN/r_c/poss} herbs and ruined some of them."
                 }
             }
             ],
