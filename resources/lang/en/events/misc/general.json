@@ -4951,7 +4951,7 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 4,
-        "event_text": "m_c bounds up to r_c and begs {PRONOUN/r_c/object} to watch {PRONOUN/m_c/object} do a trick {PRONOUN/m_c/subject} just came up with. r_c sits and watches m_c do the trick, and cheers when {PRONOUN/m_c/subject} {VERB/m_c/are/is} done.",
+        "event_text": "m_c bounds up to r_c and begs {PRONOUN/r_c/object} to watch {PRONOUN/m_c/object} do a trick. r_c sits and watches, and cheers when {PRONOUN/m_c/subject} {VERB/m_c/finish/finishes}.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["attention-seeker"]
