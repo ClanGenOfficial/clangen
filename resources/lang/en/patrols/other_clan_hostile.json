@@ -6223,7 +6223,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from learnt that cat_to abducted kits from their rival."
+                            "cats_from": "cat_from learned that cat_to abducted kits from their rival."
                         }
                     },
                     {    
@@ -6242,8 +6242,8 @@
                         ],
                         "amount": 60,
                         "log": {
-                            "cats_to": "cat_to is glad cat_from was with {PRONOUN/cat_to/object} when they were brought to a hostile place.",
-                            "cats_from": "cat_from is glad cat_to was with {PRONOUN/cat_to/object} when they were brought to a hostile place."
+                            "cats_to": "cat_to was glad that cat_from was with {PRONOUN/cat_to/object} when they were brought to a hostile place.",
+                            "cats_from": "cat_from was glad that cat_to was with {PRONOUN/cat_to/object} when they were brought to a hostile place."
                             
                         }
                     }
