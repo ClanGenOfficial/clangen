@@ -11,7 +11,7 @@
         "shader_lighting",
         "shader_mask"
     ],
-    "sheet_layout": [3, 9],
+    "sheet_layout": [3, 11],
     "poses": [
         "newborn0",
         "newborn1",
@@ -19,6 +19,12 @@
         "kitten0",
         "kitten1",
         "kitten2",
+        "juvenile_short0",
+        "juvenile_short1",
+        "juvenile_short2",
+        "juvenile_long0",
+        "juvenile_long1",
+        "juvenile_long2",
         "adolescent_short0",
         "adolescent_short1",
         "adolescent_short2",
