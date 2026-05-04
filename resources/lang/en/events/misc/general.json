@@ -13033,7 +13033,7 @@
 	],
     "tags": [],
     "frequency": 3,
-    "event_text": "m_c spends all night studying herbs, wanting to help c_n as much as {PRONOUN/m_c/subject} can.",
+    "event_text": "m_c studies herbs all night, wanting to help c_n as much as {PRONOUN/m_c/subject} can.",
     "m_c": {
         "status": [
 			"medicine cat apprentice",
