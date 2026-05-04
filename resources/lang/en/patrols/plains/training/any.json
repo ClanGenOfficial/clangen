@@ -4006,7 +4006,7 @@
             "INSIGHTFUL,1"
         ],
         "intro_text": "Don't get too close, p_l warns the apprentices, well before they can even smell the tacky stink of the Thunderpath on the air. They're here to learn, <i>not</i> to take risks. Does every cat understand that?",
-        "decline_text": "p_l, worried that the apprentices aren't giving the patrol the focus it requires, calls it off early.",
+        "decline_text": "Worried that the apprentices aren't giving the patrol the focus it requires, p_l calls it off early.",
         "success_outcomes": [
             {
                 "text": "With plain, somber words, s_c recites the cats {PRONOUN/s_c/subject} {VERB/s_c/know/knows} who've been hurt by the Thunderpath, killed by the monsters, bodies twisted and broken, thrown about by inconceivable impacts. It's not to frighten. The apprentices need to know the realities of the danger of monsters. Only knowledge can protect them.",
@@ -4097,6 +4097,59 @@
                     }
                 ],
                 "frequency": 4
+            },
+            {
+                "text": "app1 doesn't quite understand, and {PRONOUN/app1/subject} {VERB/app1/ask/asks} why {PRONOUN/app1/subject} {VERB/app1/have/has} to stay so far back. p_l snaps back that {PRONOUN/app1/subject} just {VERB/app1/do/does}. app1 stubbornly decides to walk onto the thunderpath and stay there, and an argument breaks out. It lasts so long that everyone's pawpads crack from standing on the asphalt.",
+                "exp": 15,
+                "frequency": 4,
+                "injury": [
+                    {
+                    "cats": [
+                        "patrol"
+                    ],
+                    "injuries": ["cracked pads"]
+                }
+            ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "app1",
+                            "app2",
+                            "app3",
+                            "app4",
+                            "app5"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from is disappointed that cat_to didn't explain why thunderpaths are dangerous."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from is upset that cat_to wouldn't listen to {PRONOUN/cat_from/poss} instructions during a patrol."
+                        }
+                    }
+                    ],
+                "art": "gen_train_argueWAA"
             }
         ],
         "fail_outcomes": [
