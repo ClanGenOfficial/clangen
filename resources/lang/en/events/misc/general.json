@@ -13,7 +13,7 @@
         "tags": [
             "clan_wide"
         ],
-        "frequency": 1,
+        "frequency": 4,
         "event_text": "m_c can't keep this secret anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/request/requests} a Clan meeting, where {PRONOUN/m_c/subject} {VERB/m_c/reveal/reveals} the terrible secret {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} kept; {PRONOUN/m_c/subject} killed mur_c.",
         "m_c": {
             "age": [
@@ -12812,7 +12812,7 @@
 		"war"
 	],
     "tags": [],
-    "frequency": 4,
+    "frequency": 1,
     "event_text": "m_c wakes up from a nightmare, sobbing about a mysterious evil cat.",
     "new_accessory": [],
     "m_c": {
