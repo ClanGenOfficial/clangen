@@ -4859,7 +4859,16 @@
         "r_c": {
             "status": [
                 "elder"
-            ]
+            ],
+			"trait": [ "-playful",
+					"-compassionate","
+					"-thoughtful",
+					"-calm",
+					"-careful",
+					"-loving",
+					"-responsible",
+					"-wise",
+			]
         },
         "relationships": [
             {
@@ -4909,7 +4918,16 @@
         "r_c": {
             "age": [
                 "adolescent"
-            ]
+            ],
+			"trait": [ "-playful",
+					"-compassionate","
+					"-thoughtful",
+					"-calm",
+					"-careful",
+					"-loving",
+					"-responsible",
+					"-wise",
+			]
         },
         "relationships": [
             {
@@ -4959,7 +4977,21 @@
         "r_c": {
             "age": [
                 "adolescent"
-            ]
+            ],
+			"trait": [ "-troublesome",
+						"-lonesome",
+						"-fierce",
+						"-bloodthirsty",
+						"-cold",
+						"-strict",
+						"-ambitious",
+						"-shameless",
+						"-vengeful",
+						"-arrogant",
+						"-competitive",
+						"-grumpy",
+						"-gloomy",
+			]
         },
         "relationships": [
             {
