@@ -2847,7 +2847,7 @@ class Cat:
                 )
 
     @staticmethod
-    def edit_relationship(cat1, cat2, allow_romantic, sabotage=False):
+    def edit_relationship(cat1, cat2, allow_romantic, rel_edit_type=None, sabotage=False):
 
         # Gathering the relationships.
         if cat1.ID in cat2.relationships:
@@ -2871,25 +2871,18 @@ class Cat:
         if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
             rel_values.append(RelType.ROMANCE)
 
-        # Determine the number of traits to effect, and choose the traits
+        chosen_rel = rel_edit_type
 
-        chosen_rel = rel_values
+        # Determine the number of traits to effect, and choose the traits
         # Effects on traits
-        for rel_type in chosen_rel:
+        for rel_edit_type in chosen_rel:
 
             amount = 10  * (
                 -1 if sabotage else 1
             )
 
-            setattr(rel1, rel_type, getattr(rel1, rel_type) + amount)
-            setattr(rel2, rel_type, getattr(rel2, rel_type) + amount)
-
-            output += i18n.t(
-                f"screens.mediation.output_{'decrease' if sabotage else 'increase'}",
-                trait=i18n.t(f"screens.mediation.{rel_type}"),
-            )
-
-        return output
+            setattr(rel1, chosen_rel, getattr(rel1, chosen_rel) + amount)
+            setattr(rel2, chosen_rel, getattr(rel2, chosen_rel) + amount)
 
     @staticmethod
     def mediate_relationship(mediator, cat1, cat2, allow_romantic, sabotage=False):
