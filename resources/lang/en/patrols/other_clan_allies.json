@@ -1368,11 +1368,12 @@
                         "mutual": false,
                         "values": [
                             "like", 
-                            "trust"                       
+                            "comfort"                       
                         ],
-                        "amount": -30,
+                        "amount": -20,
                         "log": {
-                            "cats_from": "p_l ordered the partol to kidnap {PRONOUN/cat_from/object}."
+                            "cats_from": "p_l ordered the patrol to kidnap {PRONOUN/cat_from/object}."
+                            }
                         },
                         "cats_to": [
                             "n_c:0"
@@ -1385,9 +1386,8 @@
                             "comfort",
                             "like",
                             "trust",
-                            "respect"
                         ],
-                        "amount": 60,
+                        "amount": 20,
                         "log": {
                             "cats_to": "cat_to was glad that cat_from was with {PRONOUN/cat_to/object} when they were brought to a strange place.",
                             "cats_from": "cat_from was glad that cat_to was with {PRONOUN/cat_to/object} when they were brought to a strange place."
