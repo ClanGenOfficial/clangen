@@ -4794,7 +4794,7 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "r_c discovers m_c smushed a few pieces of fresh-kill. m_c grins at {PRONOUN/r_c/object} through {PRONOUN/r_c/poss} scolding.",
+        "event_text": "r_c discovers m_c ruined a few pieces of fresh-kill. m_c grins at {PRONOUN/r_c/object} through {PRONOUN/r_c/poss} scolding.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["attention-seeker"]
