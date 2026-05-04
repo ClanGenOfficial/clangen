@@ -4591,13 +4591,14 @@
                 "other_clan_rep": -8,
                 "new_cat": [
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ],
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ]
+               
                 ],
                 "frequency": 4
             },
@@ -4613,12 +4614,12 @@
                 "other_clan_rep": -8,
                 "new_cat": [
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ],
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ]
                 ],
                 "frequency": 4,

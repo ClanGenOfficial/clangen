@@ -1111,7 +1111,8 @@ class Clan:
             # else just start us with an empty herb supply
             else:
                 clan.herb_supply = HerbSupply()
-            clan.herb_supply.required_herb_count = get_living_clan_cat_count(Cat) * 2
+
+            clan.herb_supply.set_required_herb_count(get_living_clan_cat_count(Cat))
         except:
             clan.herb_supply = HerbSupply()
 

@@ -3878,9 +3878,9 @@
   "types": [
     "border"
   ],
-  "tags": [],
+  "tags": ["clan:leader"],
   "patrol_art": "fst_canopy",
-  "min_cats": 2,
+  "min_cats": 3,
   "max_cats": 6,
     "min_max_status": {
         "leader": [
@@ -3891,7 +3891,7 @@
   "relationship_constraint": [],
   "pl_skill_constraint": [],
   "intro_text": "Through a copse of narrow trees p_l sees a robust figure and flicks {PRONOUN/p_l/poss} tail to alert the patrol to stop. A bear is nearby, though what kind is unclear; its pelt color is distorted by the shaded canopy.",
-  "decline_text": "The patrol retreats back to camp to report to lead_name. Learning more about the predators in the territory could be useful, though not at the cost of their lives.",
+  "decline_text": "The patrol retreats back to camp to report to their leader. Learning more about the predators in the territory could be useful, though not at the cost of their lives.",
   "success_outcomes": [
     {
       "text": "r_c sneaks forward and determines it's a black bear. It should be relatively harmless as long as the Clan keeps an eye on its whereabouts.",
@@ -3903,7 +3903,7 @@
       "art": "gen_warrior_crouching"
     },
     {
-      "text": "r_c's pupils dilate as a ray of sunlight illuminates the bear's russet pelt. r_c realizes with alarm that it's a brown bear. The patrol slinks away without incident and lead_name warns patrols to stay away from the area.",
+      "text": "r_c's pupils dilate as a ray of sunlight illuminates the bear's russet pelt. r_c realizes with alarm that it's a brown bear. The patrol slinks away without incident and c_n's leader warns patrols to stay away from the area.",
       "exp": 10,
       "frequency": 4,
       "can_have_stat": [
@@ -4063,7 +4063,7 @@
       "art": "gen_anxious1"
     },
     {
-      "text": "r_c creeps closer to identify the beast but is spotted. With a roar, the black bear swipes at {PRONOUN/r_c/object}, sending r_c tumbling across the leaf litter. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scramble/scrambles} to {PRONOUN/r_c/poss} feet, and p_l rushes to help {PRONOUN/r_c/object} to safety. Thankfully, the bear is uninterested in finishing the job and lumbers away..",
+      "text": "r_c creeps closer to identify the beast but is spotted. With a roar, the black bear swipes at {PRONOUN/r_c/object}, sending r_c tumbling across the leaf litter. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scramble/scrambles} to {PRONOUN/r_c/poss} feet, and p_l rushes to help {PRONOUN/r_c/object} to safety. Thankfully, the bear is uninterested in finishing the job and lumbers away.",
       "exp": 0,
       "frequency": 3,
       "injury": [
@@ -4107,7 +4107,7 @@
       "art": "gen_scared_cat_warrior"
     },
     {
-      "text": "r_c sneaks towards the bear to try to identify it. Before {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, {PRONOUN/r_c/subject} {VERB/r_c/are/is} snout to snout with an angry, slobbering brown bear who swings its massive paw toward {PRONOUN/r_c/object}. r_c wails as {PRONOUN/r_c/subject} {VERB/r_c/are/is} mauled and tossed to the side, attempting to scrabble to safety when p_l grabs {PRONOUN/r_c/poss} scruff and pulls them both to safety. Luckily the bear is uninterested in finishing the job. ",
+      "text": "r_c sneaks towards the bear to try to identify it. Before {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, {PRONOUN/r_c/subject} {VERB/r_c/are/is} snout to snout with an angry, slobbering brown bear who swings its massive paw toward {PRONOUN/r_c/object}. r_c wails as {PRONOUN/r_c/subject} {VERB/r_c/are/is} mauled and tossed to the side, attempting to scrabble to safety when p_l grabs {PRONOUN/r_c/poss} scruff and pulls them both to safety. Luckily the bear is uninterested in finishing the job.",
       "exp": 0,
       "frequency": 3,
       "injury": [
@@ -4170,6 +4170,7 @@
       "injury": [
         {
           "cats": [
+              "r_c",
             "multi"
           ],
           "injuries": [
@@ -4229,7 +4230,8 @@
             "-p_l"
           ],
           "injuries": [
-            "shock"
+            "shock",
+              "non_lethal"
           ],
           "scars": [],
           "no_results": false
