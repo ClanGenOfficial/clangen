@@ -5001,7 +5001,7 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 4,
-        "event_text": "m_c bounds up to r_c, intending to ask {PRONOUN/r_c/object} to play. Before {PRONOUN/m_c/subject} can, r_c purrs and tells {PRONOUN/m_c/object} maybe another time, {PRONOUN/r_c/subject} {VERB/r_c/are/is} busy right now.",
+        "event_text": "m_c wants to play with r_c, but r_c is busy.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["attention-seeker"]
