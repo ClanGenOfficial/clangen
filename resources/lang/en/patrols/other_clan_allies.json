@@ -1391,7 +1391,6 @@
                         "log": {
                             "cats_to": "cat_to was glad that cat_from was with {PRONOUN/cat_to/object} when they were brought to a strange place.",
                             "cats_from": "cat_from was glad that cat_to was with {PRONOUN/cat_to/object} when they were brought to a strange place."
-                            
                         }
                     },
                     {
