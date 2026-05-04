@@ -4688,7 +4688,7 @@
             }
         ]
     },
-    {
+   {
         "event_id": "gen_misc_any_attentionseekingkitnursery",
         "location": ["any"],
         "season": ["any"],
@@ -4851,7 +4851,7 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 4,
-        "event_text": "r_c snaps at m_c to get out of the elder's den and to leave {PRONOUN/r_c/object} alone. m_c trots out of the den with {PRONOUN/m_c/poss} tail high.",
+        "event_text": "r_c snaps at m_c to get out of the elder's den and to leave {PRONOUN/r_c/object} alone. m_c trots out of the den with {PRONOUN/m_c/poss} tail high."
         "m_c": {
             "age": ["kitten"],
             "trait": ["attention-seeker"]
@@ -4861,7 +4861,7 @@
                 "elder"
             ],
 			"trait": [ "-playful",
-					"-compassionate","
+					"-compassionate",
 					"-thoughtful",
 					"-calm",
 					"-careful",
@@ -4920,7 +4920,7 @@
                 "adolescent"
             ],
 			"trait": [ "-playful",
-					"-compassionate","
+					"-compassionate",
 					"-thoughtful",
 					"-calm",
 					"-careful",
