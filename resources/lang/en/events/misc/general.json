@@ -12944,7 +12944,7 @@
         "cats_from": "cat_from was annoyed that cat_to caught {PRONOUN/cat_from/object} trying to sneak out of camp."
       }
     }
-  ]x
+  ]
 },
 	{
     "event_id": "gen_misc_war_nightmare",
