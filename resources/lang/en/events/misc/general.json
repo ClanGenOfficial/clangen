@@ -12944,7 +12944,7 @@
         "cats_from": "cat_from was annoyed that cat_to caught {PRONOUN/cat_from/object} trying to sneak out of camp."
       }
     }
-  ]
+  ]x
 },
 	{
     "event_id": "gen_misc_war_nightmare",
@@ -13036,8 +13036,7 @@
     "event_text": "m_c studies herbs all night, wanting to help c_n as much as {PRONOUN/m_c/subject} can.",
     "m_c": {
         "status": [
-			"medicine cat apprentice",
-			"medicine cat"
+			"medicine cat apprentice"
 		]
     },
     "future_event": []
@@ -13090,7 +13089,7 @@
             ]
     },
     "future_event": []
-}
+},
     {
         "event_id": "gen_misc_otherclannewleader1",
         "location": [
