@@ -741,7 +741,7 @@ class PatrolOutcome:
         if "many_herbs" in self.herbs:
             large_bonus = True
 
-        patrol_size_modifier = int(len(patrol.patrol_cats))
+        patrol_size_modifier = round(len(patrol.patrol_cats) * 0.80)
 
         if "random_herbs" in self.herbs:
             # get random herbs, add to storage, and get patrol outcome msg
