@@ -9107,7 +9107,7 @@
         "sub_type": ["war"],
         "tags": [],
         "frequency": 1,
-        "event_text": "After a victorious battle against an o_c_n cat, m_c returns to camp with pride… only to trip over at the entrance, spraining {PRONOUN/m_c/poss} paw.",
+        "event_text": "After a victorious battle against a o_c_n cat, m_c returns to camp with pride… only to trip over at the entrance, spraining {PRONOUN/m_c/poss} paw.",
         "new_accessory": [],
         "m_c": {
             "status": [
