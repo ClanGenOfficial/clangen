@@ -37655,7 +37655,7 @@
           "cats_to": ["patrol"],
           "cats_from": ["p_l"],
           "mutual": false,
-          "values": ["trust"],
+          "values": ["respect"],
           "amount": 10,
           "log": {
             "cats_from": "cat_from was impressed by cat_to's focus during an herb identification lesson."
