@@ -12813,7 +12813,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "At the Gathering, o_c_n's deputy announces they are its new leader. Claiming complete loyalty to o_c_n, they declare they are no longer allies with any Clan.",
+        "event_text": "At the Gathering, o_c_n's deputy announces they are its new leader. Declaring complete loyalty to o_c_n, they renounce all alliances."
         "m_c": {
             "age": [
                 "adolescent",
