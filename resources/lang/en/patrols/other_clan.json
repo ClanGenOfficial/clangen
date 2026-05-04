@@ -4617,7 +4617,7 @@
                     ],
                     "amount": -20,
                     "log": {
-                        "cats_from": "p_l ordered the patrol to kidnap {PRONOUN/cat_from/object}."
+                        "cats_from": "p_l kidnapped {PRONOUN/cat_from/object}."
                     }
                     },
                     {
@@ -4646,7 +4646,7 @@
                         "values": [
                             "comfort",
                             "like",
-                            "trust",
+                            "trust"
                         ],
                         "amount": 20,
                         "log": {
