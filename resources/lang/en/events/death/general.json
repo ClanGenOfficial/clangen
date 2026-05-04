@@ -9087,7 +9087,7 @@
             "all_lives",
             "no_body"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c mysteriously disappeared one night. r_c noticed before anyone else and went looking for {PRONOUN/m_c/object} {PRONOUN/r_c/self}. c_n never saw either of them again.",
         "m_c": {
             "age": [

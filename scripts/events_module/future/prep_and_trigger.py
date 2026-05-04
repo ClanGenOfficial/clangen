@@ -1,9 +1,13 @@
+import logging
 from random import randint
+from typing import Optional
 
 from scripts.cat.cats import Cat
 from scripts.events_module.event_filters import cat_for_event
 from scripts.events_module.future.future_event import FutureEvent
 from scripts.game_structure import game
+
+logger = logging.getLogger(__name__)
 
 
 def prep_future_event(event, event_id: str, possible_cats: dict):
@@ -19,6 +23,11 @@ def prep_future_event(event, event_id: str, possible_cats: dict):
     for event_info in event.future_event:
         # create dict of all cats that need to be involved in future event
         gathered_cat_dict = _collect_involved_cats(possible_cats, event_info)
+        if not gathered_cat_dict:
+            logger.info(
+                f"WARNING: couldn't find valid cats for the future event of event {event_id}. Future event wasn't created."
+            )
+            return
 
         # create future event and add it to the future event list
         game.clan.future_events.append(
@@ -34,7 +43,7 @@ def prep_future_event(event, event_id: str, possible_cats: dict):
         )
 
 
-def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
+def _collect_involved_cats(cat_dict: dict, future_info: dict) -> Optional[dict]:
     """
     collects involved cats and assigns their roles for the future event, then
     returns a dict associating their new role (key) with their cat ID (value)
@@ -59,7 +68,10 @@ def _collect_involved_cats(cat_dict: dict, future_info: dict) -> dict:
     for new_role, cat_involved in future_info["involved_cats"].items():
         # grab any cats that need to be newly gathered
         if isinstance(cat_involved, dict):
-            gathered_cat_dict[new_role] = cat_for_event(cat_involved, possible_cats)
+            new_cat = cat_for_event(cat_involved, possible_cats)
+            if not new_cat:
+                return None
+            gathered_cat_dict[new_role] = new_cat
             possible_cats.remove(Cat.fetch_cat(gathered_cat_dict[new_role]))
             continue
 
