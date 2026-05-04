@@ -11,17 +11,5 @@
             "Is snuggled safe in the nursery"
         ],
         "main_status_constraint": ["kitten", "newborn"]
-    },
-    {
-        "id": "stolen_kit",
-        "thoughts":[
-            "Is looking around nervously"
-        ],
-        "main_status_constraint": [
-            "kitten"
-        ],
-        "main_backstory_constraint": [
-            "stolenkit3"
-        ]
     }
 ]
