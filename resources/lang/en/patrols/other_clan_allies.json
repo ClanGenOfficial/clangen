@@ -1389,8 +1389,8 @@
                         ],
                         "amount": 60,
                         "log": {
-                            "cats_to": "cat_to is glad cat_from was with {PRONOUN/cat_to/object} when brought to a strange place.",
-                            "cats_from": "cat_from is glad cat_to was with {PRONOUN/cat_to/object} when brought to a strange place."
+                            "cats_to": "cat_to is glad cat_from was with {PRONOUN/cat_to/object} when they were brought to a strange place.",
+                            "cats_from": "cat_from is glad cat_to was with {PRONOUN/cat_to/object} when they were brought to a strange place."
                             
                         }
                     },
