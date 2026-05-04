@@ -6206,7 +6206,7 @@
                             "like", 
                             "comfort"                       
                         ],
-                        "amount": -30,
+                        "amount": -20,
                         "log": {
                             "cats_from": "p_l kidnapped {PRONOUN/cat_from/object}."
                         }
@@ -6223,7 +6223,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from learned that cat_to abducted kits from their rival."
+                            "cats_from": "cat_from heard that cat_to abducted kits from a rival clan."
                         }
                     },
                     {    
@@ -6238,9 +6238,8 @@
                             "comfort",
                             "like",
                             "trust",
-                            "respect"
                         ],
-                        "amount": 60,
+                        "amount": 20,
                         "log": {
                             "cats_to": "cat_to was glad that cat_from was with {PRONOUN/cat_to/object} when they were brought to a hostile place.",
                             "cats_from": "cat_from was glad that cat_to was with {PRONOUN/cat_to/object} when they were brought to a hostile place."
