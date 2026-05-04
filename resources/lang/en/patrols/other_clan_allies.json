@@ -1375,6 +1375,7 @@
                             "cats_from": "p_l ordered the patrol to kidnap {PRONOUN/cat_from/object}."
                             }
                         },
+                        {
                         "cats_to": [
                             "n_c:0"
                         ],
