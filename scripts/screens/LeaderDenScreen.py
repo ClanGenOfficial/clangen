@@ -223,6 +223,7 @@ class LeaderDenScreen(Screens):
                     i
                     for i in Cat.all_cats.values()
                     if i.status.alive_in_player_clan
+                    and not i.not_working()
                     and i.status.rank
                     not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
