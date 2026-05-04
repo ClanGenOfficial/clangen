@@ -4615,7 +4615,7 @@
                         "like", 
                         "trust"                       
                     ],
-                    "amount": -30,
+                    "amount": -20,
                     "log": {
                         "cats_from": "p_l ordered the partol to kidnap {PRONOUN/cat_from/object}."
                     }
