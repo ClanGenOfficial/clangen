@@ -6221,7 +6221,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from heard that cat_to abducted kits from a rival clan."
                         }
