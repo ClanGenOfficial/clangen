@@ -1407,7 +1407,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_from has learned that cat_to abducted kits from their ally."
+                            "cats_from": "cat_from heard that cat_to abducted kits from their ally."
                         }
                     }
                 ]
