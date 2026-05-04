@@ -2028,8 +2028,8 @@ class ProfileScreen(Screens):
             self.choose_mate_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 558), (172, 36))),
                 "screens.profile.mate",
-                get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
-                object_id="@buttonstyles_ladder_bottom",
+                get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+                object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
                 manager=MANAGER,
             )
