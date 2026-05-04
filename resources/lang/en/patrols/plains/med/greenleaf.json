@@ -1,2 +1,111 @@
 [
+  {
+        "patrol_id": "pln_med_greenleaf_allergies",
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "gen_herbs",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+"normal adult": [1, 5],
+"medicine cat": [1, 5]
+},
+        "frequency": 2,
+        "chance_of_success": 60,
+        "intro_text": "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming flowers. That is, until r_c started sneezing. Clearly, the pollen from the flowers and grasses is affecting {PRONOUN/r_c/object} somewhat.",
+        "decline_text": "Since r_c clearly isn't up for a patrol involving plants and pollen, the patrol returns to camp with no new herbs. At least r_c seems to have stopped sneezing for now.",
+        "success_outcomes": [
+            {
+        "text": "p_l continues the patrol without acknowledging r_c sneezing, opting to continue the patrol. Despite the circumstances, greenleaf is merciful to the group, and the patrol returns with an average collection of herbs.",
+        "exp": 10,
+        "frequency": 4,
+        "herbs": [
+            "random_herbs"
+        ],
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "running nose"
+                ],
+                "scars": [],
+                "no_results": true
+            }
+        ],
+        "new_cat": [],
+        "art": "gen_herbs"
+        },
+            {
+        "text": "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c from finding herbs, it makes r_c the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs hidden amongst some wildflowers, r_c is sent to collect them.",
+        "exp": 15,
+        "frequency": 2,
+        "herbs": [
+            "random_herbs"
+        ],
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "running nose"
+                ],
+                "scars": [],
+                "no_results": true
+            }
+        ],
+        "new_cat": [],
+        "art": "gen_embarrassed1"
+            }
+        ],
+        "fail_outcomes": [
+            {
+        "text": "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn't get very far. r_c stumbles mid-sneeze, tripping over a rabbit hole hidden amongst tall grass and tumbling forward, knocking over other cats in {PRONOUN/r_c/poss} wake.",
+        "exp": 0,
+        "frequency": 4,
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "running nose"
+                ],
+                "scars": [],
+                "no_results": true
+            }
+        ],
+        "relationships": [
+    {
+    "cats_from": [
+      "p_l"
+    ],
+    "cats_to": [
+      "r_c"
+    ],
+    "mutual": false,
+    "values": [
+      "respect"
+    ],
+    "amount": 5,
+    "log": {
+        "cats_from": "cat_from lost respect for cat_to after a sidetracked patrol."
+    }
+        }
+        ],
+        "new_cat": [],
+        "art": "fst_med_stumble1"
+            }
+        ]
+    }
 ]

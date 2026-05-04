@@ -20337,10 +20337,8 @@
                 "exp": 0,
                 "relationships": [
                     {
-                        "cats_to": [
-                            "clan", "high_lawful", "high_aggress"
-                        ],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan", "high_lawful", "high_aggress"],
                         "mutual": false,
                         "values": [
                             "like"
@@ -20367,10 +20365,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "clan", "high_lawful", "high_aggress"
-                        ],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan", "high_lawful", "high_aggress"],
                         "mutual": false,
                         "values": [
                             "like"
@@ -20409,10 +20405,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": [
-                            "clan", "high_lawful", "high_aggress"
-                        ],
-                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["clan", "high_lawful", "high_aggress"],
                         "mutual": false,
                         "values": [
                             "like"

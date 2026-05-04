@@ -37588,5 +37588,123 @@
                 "frequency": 4
             }
         ]
+    },
+{
+  "patrol_id": "gen_med_teachingwarriorapps",
+  "biome": [
+    "-desert"
+  ],
+  "season": [
+    "-leaf-bare"
+  ],
+  "types": [
+    "herb_gathering"
+  ],
+  "tags": [],
+  "min_cats": 2,
+  "max_cats": 6,
+  "patrol_art": "gen_app_crouching_perplexed",
+  "intro_text": "p_l takes the apprentices out to learn to identify common herbs. Regardless of their role, it is important to be able to recognize what grows in c_n's territory.",
+  "decline_text": "The apprentices get called away to other duties.",
+  "min_max_status": {
+    "normal adult": [-1, -1],
+    "medicine cat": [1, 1],
+    "apprentice": [2, 5]
+  },
+  "frequency": 4,
+  "chance_of_success": 50,
+  "success_outcomes": [
+    {
+      "text": "p_l leads the apprentices on through common routes through the territory, pointing out herbs along the way. The apprentices soak up the information as their pelts soak up the sun's rays. Late in the lesson, s_c even manages to find usable herbs on {PRONOUN/s_c/poss} own, bounding up to p_l to show {PRONOUN/p_l/object} the catmint clutched gently in {PRONOUN/s_c/poss} mouth.",
+      "exp": 20,
+      "frequency": 4,
+      "stat_skill": [
+        "SENSE,0",
+        "HEALER,0"
+      ],
+      "can_have_stat": ["app"],
+      "herbs": [
+        "random_herbs"
+      ],
+      "relationships": [
+        {
+          "cats_to": [
+            "s_c"
+          ],
+          "cats_from": [
+            "p_l"
+          ],
+          "mutual": false,
+          "values": [
+            "respect",
+            "like",
+            "trust"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was impressed by cat_to's diligence and natural talent for identifying herbs."
+          }
+        }
+      ],
+      "art": "gen_med_gatheringmallow_newleaf2"
+    },
+    {
+      "text": "p_l leads the apprentices along common routes, pointing out herbs along the way. Wild garlic, burdock root, even raspberry bunches can be found near the best hunting grounds or by the border. One should always keep one's eye out, though p_l reminds them never to ingest anything before it is identified by a medicine cat. The apprentices remain attentive throughout the patrol, taking in the lesson p_l offers.",
+      "exp": 20,
+      "frequency": 4,
+      "relationships": [
+        {
+          "cats_to": ["patrol"],
+          "cats_from": ["p_l"],
+          "mutual": false,
+          "values": ["respect"],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was impressed by cat_to's focus during an herb identification lesson."
+          }
+        }
+      ],
+      "art": "gen_showing_herbs_med_one_app"
     }
+  ],
+  "fail_outcomes": [
+    {
+      "text": "p_l sighs. The patrol is going exactly how {PRONOUN/p_l/subject} expected. None of the apprentices can focus and the warrior apprentices grumble that the information is useless. For StarClan's sake, they're as immature as kits!",
+      "exp": 0,
+      "frequency": 4,
+      "relationships": [
+        {
+          "cats_to": ["patrol"],
+          "cats_from": ["p_l"],
+          "mutual": true,
+          "values": ["like"],
+          "amount": -5,
+          "log": {
+            "cats_from": "cat_from was frustrated that cat_to seemed to dismiss {PRONOUN/cat_from/poss} advice and teaching.",
+            "cats_to": "cat_to didn't understand why anything cat_from was trying to teach {PRONOUN/cat_to/object} was relevant."
+          }
+        }
+      ],
+      "art": "med_cat_looking_up"
+    },
+    {
+      "text": "As the patrol sets out, a sudden rain pours from the sky. The apprentices whine and moan about getting their pelts wet. p_l doesn't have the patience for this and turns the patrol around.",
+      "exp": 0,
+      "frequency": 2,
+      "relationships": [
+        {
+          "cats_to": ["patrol", "-p_l"],
+          "cats_from": ["p_l"],
+          "mutual": false,
+          "values": ["like", "respect"],
+          "amount": -5,
+          "log": {
+            "cats_from": "cat_from was irritated that cat_to was more concerned with keeping {PRONOUN/cat_to/poss} pelt dry than with cat_from's important lesson."
+          }
+        }
+      ],
+      "art": "gen_med_rainygathering"
+    }
+  ]
+}
 ]
