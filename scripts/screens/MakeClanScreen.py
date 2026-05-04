@@ -312,11 +312,11 @@ class MakeClanScreen(Screens):
             self.refresh_cat_images_and_info()  # Refresh all the images.
             self.rolls_left -= 1
             if constants.CONFIG["clan_creation"]["rerolls"] == 3:
-                event.ui_element.disable()
+                event.ui_element.enable()
             else:
                 self.elements["reroll_count"].set_text(str(self.rolls_left))
             if self.rolls_left == 0:
-                event.ui_element.disable()
+                event.ui_element.enable()
             if constants.CONFIG["clan_creation"]["rerolls"] == -1:
                 event.ui_element.enable()
 
