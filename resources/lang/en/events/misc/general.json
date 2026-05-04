@@ -4851,7 +4851,7 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 4,
-        "event_text": "r_c snaps at m_c to get out of the elder's den and to leave {PRONOUN/r_c/object} alone. m_c trots out of the den with {PRONOUN/m_c/poss} tail high."
+        "event_text": "r_c snaps at m_c to get out of the elder's den and to leave {PRONOUN/r_c/object} alone. m_c trots out of the den with {PRONOUN/m_c/poss} tail high.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["attention-seeker"]
@@ -4867,7 +4867,7 @@
 					"-careful",
 					"-loving",
 					"-responsible",
-					"-wise",
+					"-wise"
 			]
         },
         "relationships": [
@@ -4926,7 +4926,7 @@
 					"-careful",
 					"-loving",
 					"-responsible",
-					"-wise",
+					"-wise"
 			]
         },
         "relationships": [
@@ -4990,7 +4990,7 @@
 						"-arrogant",
 						"-competitive",
 						"-grumpy",
-						"-gloomy",
+						"-gloomy"
 			]
         },
         "relationships": [
