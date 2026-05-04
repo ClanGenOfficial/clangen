@@ -5035,7 +5035,7 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "r_c discovers m_c made a mess of {PRONOUN/r_c/poss} herbs. m_c grins at {PRONOUN/r_c/object} through {PRONOUN/r_c/poss} scolding. Later, while r_c is fixing {PRONOUN/r_c/poss} herb stock, {PRONOUN/r_c/subject} discovers some of the herbs are missing.",
+        "event_text": "r_c discovers m_c made a mess of {PRONOUN/r_c/poss} herbs. m_c grins at {PRONOUN/r_c/object} through {PRONOUN/r_c/poss} scolding. When r_c later fixes {PRONOUN/r_c/poss} herb stock, {PRONOUN/r_c/subject} {VERB/r_c/discover/discovers} some missing.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["attention-seeker"]
