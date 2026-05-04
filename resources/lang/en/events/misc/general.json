@@ -4901,7 +4901,7 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 4,
-        "event_text": "m_c bounds up to r_c and begs {PRONOUN/r_c/object} to watch {PRONOUN/m_c/object} do a trick {PRONOUN/m_c/subject} just came up with. r_c snaps at {PRONOUN/m_c/object} to leave {PRONOUN/r_c/object} alone and stalks away.",
+        "event_text": "m_c bounds up to r_c and begs {PRONOUN/r_c/object} to watch {PRONOUN/m_c/object} do a trick. r_c snaps at {PRONOUN/m_c/object} to leave {PRONOUN/r_c/object} alone and stalks away.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["attention-seeker"]
