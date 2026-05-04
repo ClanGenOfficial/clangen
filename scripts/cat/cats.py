@@ -78,6 +78,7 @@ class Cat:
     age_moons = {
         CatAge.NEWBORN: constants.CONFIG["cat_ages"]["newborn"],
         CatAge.KITTEN: constants.CONFIG["cat_ages"]["kitten"],
+        CatAge.JUVENILE: constants.CONFIG["cat_ages"]["juvenile"],
         CatAge.ADOLESCENT: constants.CONFIG["cat_ages"]["adolescent"],
         CatAge.YOUNG_ADULT: constants.CONFIG["cat_ages"]["young adult"],
         CatAge.ADULT: constants.CONFIG["cat_ages"]["adult"],
@@ -89,7 +90,9 @@ class Cat:
     rank_sort_order = [
         CatRank.NEWBORN,
         CatRank.KITTEN,
+        CatRank.JUV_KITTEN,
         CatRank.ELDER,
+        CatRank.KIT_APPRENTICE,
         CatRank.APPRENTICE,
         CatRank.WARRIOR,
         CatRank.MEDIATOR_APPRENTICE,
@@ -283,9 +286,11 @@ class Cat:
                 self.age = CatAge.NEWBORN
             elif self.status.rank == CatRank.KITTEN:
                 self.age = CatAge.KITTEN
+            elif self.status.rank in (CatRank.JUV_KITTEN, CatRank.KIT_APPRENTICE):
+                self.age = CatAge.JUVENILE
             elif self.status.rank == CatRank.ELDER:
                 self.age = CatAge.SENIOR
-            elif self.status.rank.is_any_apprentice_rank():
+            elif self.status.rank in (CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE, CatRank.MEDIATOR_APPRENTICE):
                 self.age = CatAge.ADOLESCENT
             else:
                 self.age = choice(
@@ -459,6 +464,8 @@ class Cat:
         # experience and current patrol status
         if self.age.is_baby() or self.disable_random:
             self.experience = 0
+        elif self.age == CatAge.JUVENILE:
+            self.experience = 0
         elif self.age == CatAge.ADOLESCENT:
             m = self.moons
             self.experience = 0
@@ -520,7 +527,7 @@ class Cat:
                 pass
 
             # kits are auto-accepted
-            elif self.age in (CatAge.KITTEN, CatAge.NEWBORN):
+            elif self.age in (CatAge.JUVENILE, CatAge.KITTEN, CatAge.NEWBORN):
                 self.history.add_afterlife_acceptance(
                     game.clan.instructor.status.group,
                     is_kit=True,
@@ -976,6 +983,7 @@ class Cat:
 
         # updates mentors
         if self.status.rank in [
+            CatRank.KIT_APPRENTICE,
             CatRank.APPRENTICE,
             CatRank.MEDICINE_APPRENTICE,
             CatRank.MEDIATOR_APPRENTICE,
@@ -1003,11 +1011,12 @@ class Cat:
         if new_thought and new_rank not in (
             CatRank.NEWBORN,
             CatRank.KITTEN,
+            CatRank.JUV_KITTEN
         ):  # newborn and kitten aren't really "ranks" to be promoted to
             self.get_new_thought(CatThought.ON_RANK_CHANGE)
         # however we don't want kittens to somehow have a newborn thought, so we'll have them reset to a normal kitten thought
         # just in case
-        if new_thought and new_rank == CatRank.KITTEN:
+        if new_thought and new_rank in (CatRank.KITTEN, CatRank.JUV_KITTEN):
             self.get_new_thought()
 
         # update class dictionary
@@ -1565,7 +1574,7 @@ class Cat:
         self.personality.set_kit(self.age.is_baby())
         # Upon age-change
 
-        if self.status.rank.is_any_apprentice_rank():
+        if self.status.rank in (CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE, CatRank.MEDIATOR_APPRENTICE, CatRank.KIT_APPRENTICE):
             self.update_mentor()
 
     def get_new_thought(
@@ -1616,9 +1625,7 @@ class Cat:
         cats_to_choose = [
             iter_cat
             for iter_cat in Cat.all_cats.values()
-            if iter_cat.ID != self.ID
-            and iter_cat.status.alive_in_player_clan
-            and iter_cat.age != CatAge.NEWBORN
+            if iter_cat.ID != self.ID and iter_cat.status.alive_in_player_clan
         ]
         # if there are no cats to interact, stop
         if not cats_to_choose:
@@ -1664,7 +1671,7 @@ class Cat:
         moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
 
         # focus buff
-        recovery_buff = constants.CONFIG["focus"]["rest_and_recover"][
+        moons_prior = constants.CONFIG["focus"]["rest_and_recover"][
             "moons_earlier_healed"
         ]
 
@@ -1675,7 +1682,7 @@ class Cat:
         # CLAN FOCUS! - if the focus 'rest_and_recover' is selected
         elif (
             get_clan_setting("rest_and_recover")
-            and self.illnesses[illness]["duration"] - recovery_buff - moons_with <= 0
+            and self.illnesses[illness]["duration"] + moons_prior - moons_with <= 0
         ):
             self.healed_condition = True
             return False
@@ -1706,7 +1713,7 @@ class Cat:
         moons_with = game.clan.age - self.injuries[injury]["moon_start"]
 
         # focus buff
-        recovery_buff = constants.CONFIG["focus"]["rest_and_recover"][
+        moons_prior = constants.CONFIG["focus"]["rest_and_recover"][
             "moons_earlier_healed"
         ]
 
@@ -1722,7 +1729,7 @@ class Cat:
         elif (
             not self.injuries[injury]["complication"]
             and get_clan_setting("rest_and_recover")
-            and self.injuries[injury]["duration"] - recovery_buff - moons_with <= 0
+            and self.injuries[injury]["duration"] + moons_prior - moons_with <= 0
         ):
             self.healed_condition = True
             return False
@@ -2840,6 +2847,51 @@ class Cat:
                 )
 
     @staticmethod
+    def edit_relationship(cat1, cat2, allow_romantic, sabotage=False):
+
+        # Gathering the relationships.
+        if cat1.ID in cat2.relationships:
+            rel1 = cat1.relationships[cat2.ID]
+        else:
+            rel1 = cat1.create_one_relationship(cat2)
+
+        if cat2.ID in cat1.relationships:
+            rel2 = cat2.relationships[cat1.ID]
+        else:
+            rel2 = cat2.create_one_relationship(cat1)
+
+        # Output string.
+        output = ""
+
+        # determine the traits to effect
+        # Are they mates?
+        mates = rel1.cat_from.ID in rel1.cat_to.mate
+
+        rel_values = [v for v in [*RelType] if v != RelType.ROMANCE]
+        if allow_romantic and (mates or cat1.is_potential_mate(cat2)):
+            rel_values.append(RelType.ROMANCE)
+
+        # Determine the number of traits to effect, and choose the traits
+
+        chosen_rel = rel_values
+        # Effects on traits
+        for rel_type in chosen_rel:
+
+            amount = 10  * (
+                -1 if sabotage else 1
+            )
+
+            setattr(rel1, rel_type, getattr(rel1, rel_type) + amount)
+            setattr(rel2, rel_type, getattr(rel2, rel_type) + amount)
+
+            output += i18n.t(
+                f"screens.mediation.output_{'decrease' if sabotage else 'increase'}",
+                trait=i18n.t(f"screens.mediation.{rel_type}"),
+            )
+
+        return output
+
+    @staticmethod
     def mediate_relationship(mediator, cat1, cat2, allow_romantic, sabotage=False):
         # Gather some important info
 
@@ -2989,6 +3041,8 @@ class Cat:
         if self.age == CatAge.NEWBORN:
             file_name = "faded_newborn"
         elif self.age == CatAge.KITTEN:
+            file_name = "faded_kitten"
+        elif self.age == CatAge.JUVENILE:
             file_name = "faded_kitten"
         elif self.age in [
             CatAge.ADULT,
@@ -3385,6 +3439,7 @@ class Cat:
                 "pelt_length": self.pelt.length,
                 "sprite_newborn": self.pelt.cat_sprites["newborn"],
                 "sprite_kitten": self.pelt.cat_sprites["kitten"],
+                "sprite_juvenile": self.pelt.cat_sprites["juvenile"],
                 "sprite_adolescent": self.pelt.cat_sprites["adolescent"],
                 "sprite_adult": self.pelt.cat_sprites["adult"],
                 "sprite_senior": self.pelt.cat_sprites["senior"],
@@ -3514,6 +3569,7 @@ def create_example_cats():
             random_rank = choice(
                 [
                     CatRank.KITTEN,
+                    CatRank.JUV_KITTEN,
                     CatRank.APPRENTICE,
                     CatRank.WARRIOR,
                     CatRank.WARRIOR,

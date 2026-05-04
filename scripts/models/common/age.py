@@ -6,6 +6,8 @@ class Age(Enum):
     not_newborn = "-newborn"
     kitten = "kitten"
     not_kitten = "-kitten"
+    juvenile = "juvenile"
+    not_juvenile = "-juvenile"
     adolescent = "adolescent"
     not_adolescent = "-adolescent"
     young_adult = "young adult"

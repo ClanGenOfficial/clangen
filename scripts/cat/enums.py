@@ -9,6 +9,7 @@ from enum import Enum, auto
 class CatAge(StrEnum):
     NEWBORN = "newborn"
     KITTEN = "kitten"
+    JUVENILE = "juvenile"
     ADOLESCENT = "adolescent"
     YOUNG_ADULT = "young adult"
     ADULT = "adult"
@@ -19,7 +20,7 @@ class CatAge(StrEnum):
         return self in (CatAge.KITTEN, CatAge.NEWBORN)
 
     def can_have_mate(self):
-        return self not in (CatAge.KITTEN, CatAge.NEWBORN, CatAge.ADOLESCENT)
+        return self not in (CatAge.KITTEN, CatAge.NEWBORN, CatAge.JUVENILE, CatAge.ADOLESCENT)
 
 
 class CatSocial(StrEnum):
@@ -33,6 +34,8 @@ class CatRank(StrEnum):
     # clan ranks
     NEWBORN = "newborn"
     KITTEN = "kitten"
+    JUV_KITTEN = "juv kitten"
+    KIT_APPRENTICE = "kit apprentice"
     APPRENTICE = "apprentice"
     MEDICINE_APPRENTICE = "medicine cat apprentice"
     MEDIATOR_APPRENTICE = "mediator apprentice"
@@ -59,6 +62,7 @@ class CatRank(StrEnum):
 
     def is_any_apprentice_rank(self) -> bool:
         return self in (
+            self.KIT_APPRENTICE,
             self.APPRENTICE,
             self.MEDIATOR_APPRENTICE,
             self.MEDICINE_APPRENTICE,
@@ -72,6 +76,7 @@ class CatRank(StrEnum):
         if self.is_any_clancat_rank() and self not in (
             self.ELDER,
             self.KITTEN,
+            self.JUV_KITTEN,
             self.NEWBORN,
             self.MEDIATOR,
             self.MEDIATOR_APPRENTICE,
@@ -83,6 +88,7 @@ class CatRank(StrEnum):
         if self.is_any_clancat_rank() and self not in (
             self.ELDER,
             self.KITTEN,
+            self.JUV_KITTEN,
             self.NEWBORN,
         ):
             return True

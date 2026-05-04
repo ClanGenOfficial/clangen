@@ -371,7 +371,7 @@ class CatSkills:
 
         if rank == CatRank.NEWBORN or age == CatAge.NEWBORN:
             pass
-        elif rank == CatRank.KITTEN or age == CatAge.KITTEN:
+        elif rank == CatRank.KITTEN or age == CatAge.KITTEN or rank == CatRank.JUV_KITTEN or age == CatAge.JUVENILE:
             new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
         elif rank.is_any_apprentice_rank() or age == CatAge.ADOLESCENT:
             new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)

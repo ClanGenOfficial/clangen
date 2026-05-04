@@ -71,6 +71,8 @@ class ClanScreen(Screens):
                 self.change_screen(GameScreen.WARRIOR_DEN)
             if event.ui_element == self.leader_den_label:
                 self.change_screen(GameScreen.LEADER_DEN)
+            if event.ui_element == self.app_den_label:
+                self.change_screen(GameScreen.APP_DEN)
             else:
                 self.menu_button_pressed(event)
 
@@ -221,7 +223,6 @@ class ClanScreen(Screens):
             get_button_dict(ButtonStyles.ROUNDED_RECT, (147, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
-        self.app_den_label.disable()
 
         # Draw the toggle and text
         self.show_den_labels = pygame_gui.elements.UIImage(
@@ -421,7 +422,7 @@ class ClanScreen(Screens):
 
             if Cat.all_cats[x].status.rank in (
                 CatRank.APPRENTICE,
-                CatRank.MEDIATOR_APPRENTICE,
+                CatRank.MEDIATOR_APPRENTICE
             ):
                 [
                     Cat.all_cats[x].placement,
@@ -444,7 +445,7 @@ class ClanScreen(Screens):
                 ] = self.choose_nonoverlapping_positions(
                     first_choices, all_dens, [1, 1, 2000, 1, 1, 1, 1]
                 )
-            elif Cat.all_cats[x].status.rank == CatRank.KITTEN:
+            elif Cat.all_cats[x].status.rank in (CatRank.KITTEN, CatRank.JUV_KITTEN, CatRank.KIT_APPRENTICE):
                 [
                     Cat.all_cats[x].placement,
                     base_pos,

@@ -542,7 +542,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -552,34 +552,6 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was highly impressed by cat_to's genius idea for baiting squirrels."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol", "high_stable"
-                        ],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from was amazed by cat_to's hunting skill on patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol", "low_stable"
-                        ],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from envied cat_to's hunting skill on patrol."
                         }
                     }
                 ],
@@ -1339,19 +1311,18 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c",
+                            "r_c"
                         ],
                         "cats_from": [
+                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to failed to catch any rats after raiding the Rat King's lair."
-                        }
+                        "amount": -5
                     }
                 ],
                 "prey": [
@@ -1382,19 +1353,18 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "r_c",
+                            "r_c"
                         ],
                         "cats_from": [
+                            "clan",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_from and cat_to lost faith in each other after being wounded while raiding the Rat King's lair."
-                        }
+                        "amount": -5
                     }
                 ],
                 "prey": [

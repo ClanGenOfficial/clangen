@@ -166,6 +166,7 @@ def rebuild_top_menu_buttons():
             "screens.core.leader_den",
             "screens.core.medicine_cat_den",
             "screens.core.warriors_den",
+            "screens.core.apprentices_den",
             "screens.core.clearing",
         ],
         child_dimensions=(150, 30),

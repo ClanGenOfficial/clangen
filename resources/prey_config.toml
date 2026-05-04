@@ -31,10 +31,12 @@ condition_increase = 1
 feeding_order = [
         "newborn",
         "kitten",
+        "juv kitten",
         "queen/pregnant",
         "elder",
         "medicine cat",
         "medicine cat apprentice",
+        "kit apprentice",
         "apprentice",
         "mediator apprentice",
         "warrior",
@@ -60,7 +62,9 @@ feeding_order = [
     mediator = 2
     warrior = 3
     apprentice = 1.5
+    "kit apprentice" = 1.5
     elder = 1.5
+    "juv kitten" = 1
     "queen/pregnant" = 4
     kitten = 0.5
     newborn = 0.25

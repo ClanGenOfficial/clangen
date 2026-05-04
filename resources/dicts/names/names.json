@@ -2,6 +2,8 @@
   "special_suffixes": {
     "newborn": "kit",
     "kitten": "kit",
+    "juv kitten": "kit",
+    "kit apprentice": "paw",
     "apprentice": "paw",
     "medicine cat apprentice": "paw",
     "mediator apprentice": "paw",

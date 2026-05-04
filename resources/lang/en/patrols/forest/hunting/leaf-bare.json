@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "mtn_hunt_newleafsnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -186,7 +186,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "mtn_hunt_newleafsnowstorm",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -269,7 +269,7 @@
         "season": [ "leaf-bare" ],
         "types": [ "hunting" ],
         "tags": [ "romance" ],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "mtn_hunt_newleafsnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1564,7 +1564,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -1574,34 +1574,6 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was highly impressed by cat_to's genius idea for baiting squirrels."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol", "high_stable"
-                        ],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from was amazed by cat_to's hunting skill on patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol", "low_stable"
-                        ],
-                        "mutual": false,
-                        "values": ["respect"],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from envied cat_to's hunting skill on patrol."
                         }
                     }
                 ],
@@ -1660,7 +1632,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "mtn_hunt_newleafsnowstorm",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -3423,8 +3395,14 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
-            "apprentice": [1, 1],
-            "normal adult": [1, 1]
+            "apprentice": [
+                1,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
         "frequency": 4,
         "intro_text": "app1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/app1/object} and tries to prepare app1 for the stalk as best {PRONOUN/app1/subject} can — if app1 can catch this mouse, this is the season where it will be most valuable for the Clan.",
@@ -3440,21 +3418,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "trust",
-                            "respect"
+                            "comfort",
+                            "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was proud of cat_to for catching a mouse during a hunting patrol.",
-                            "cats_to": "cat_to was pleased to catch a mouse in front of cat_from."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -3468,22 +3442,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "app1"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "trust",
-                            "respect",
-                            "like"
+                            "comfort",
+                            "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from praised cat_to for catching a mouse during a hunting patrol.",
-                            "cats_to": "cat_to caught a mouse in front of cat_from and was pleased when cat_from praised {PRONOUN/cat_to/object}."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 1
@@ -3496,20 +3465,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "app1"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from was embarrassed to miss a mouse in front of cat_to."
-                        }
+                        "amount": -5
                     }
                 ],
                 "prey": [

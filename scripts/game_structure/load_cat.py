@@ -134,6 +134,11 @@ def json_load():
                     if "sprite_kitten" in cat
                     else cat["spirit_kitten"]
                 ),
+                juvenile_sprite=(
+                    cat["sprite_juvenile"]
+                    if "sprite_juvenile" in cat
+                    else cat["spirit_juvenile"]
+                ),
                 adol_sprite=(
                     cat["sprite_adolescent"]
                     if "sprite_adolescent" in cat
@@ -204,7 +209,7 @@ def json_load():
                 facets = [int(i) for i in cat["facets"].split(",")]
                 new_cat.personality = Personality(
                     trait=cat["trait"],
-                    kit_trait=new_cat.age in ["newborn", "kitten"],
+                    kit_trait=new_cat.age in ["newborn", "kitten", "juvenile"],
                     lawful=facets[0],
                     social=facets[1],
                     aggress=facets[2],
@@ -212,7 +217,7 @@ def json_load():
                 )
             else:
                 new_cat.personality = Personality(
-                    trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten"]
+                    trait=cat["trait"], kit_trait=new_cat.age in ["newborn", "kitten", "juvenile"]
                 )
 
             new_cat.mentor = cat["mentor"]
@@ -452,8 +457,9 @@ def csv_load(all_cats):
                 )
                 (
                     the_cat.pelt.cat_sprites["kitten"],
+                    the_cat.pelt.cat_sprites["juvenile"],
                     the_cat.pelt.cat_sprites["adolescent"],
-                ) = int(attr[13]), int(attr[14])
+                ) = int(attr[13]), int(attr[14]), int(attr[42])
                 switch_set_value(
                     Switch.error_message,
                     f"There was an error loading cat # {str(attr[0])} (code: 5)",

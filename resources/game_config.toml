@@ -164,9 +164,8 @@ dev_tools = false
   # number of welcoming events to add when a new cat joins
   cat_amount_welcoming = 3
 
-  # ext_relative_modifer * parents(len) is what will a relative's relation toward the parent 
-  # will by divided by when deciding on a relative's initial relationship toward a kit
-  ext_relative_modifier = 2
+  # this is the amount to divide a relative's relation toward the parent when deciding on a relative's initial relationship toward a kit
+  ext_relative_modifier = 4
   # relationship buffs represent "default" relationship values that are then lightly randomized
   # in order to create initial relationship values for cats
 
@@ -223,13 +222,13 @@ dev_tools = false
 
 [pregnancy]
   # cooldown for cats getting pregnant that applies after giving birth
-  birth_cooldown = 6
+  birth_cooldown = 2
 
   # 1/chance that kits, relationship and other factors will influence this chance
-  primary_chance_mated = 80
+  primary_chance_mated = 20
 
   # 1/chance that kits, relationship and other factors will influence this chance
-  primary_chance_unmated = 130
+  primary_chance_unmated = 50
 
   # 1/chance that a mated cat has an affair
   random_affair_chance = 50
@@ -408,7 +407,8 @@ dev_tools = false
   # these HAVE to be in the correct order: where one ends, the next one begins on the next number
   # if you DON'T DO THIS, your game WILL break
   newborn = [0, 0]
-  kitten = [1, 5]
+  kitten = [1, 2]
+  juvenile = [3,5]
   adolescent = [6, 11]
   "young adult" = [12, 47]
   adult = [48, 95]
@@ -514,7 +514,7 @@ dev_tools = false
 
 [clan_creation]
   # Set this to -1 for it to be infinite
-  rerolls = 3
+  rerolls = -1
 
 [graduation]
   # base possible experience gain for apprentices
@@ -524,10 +524,12 @@ dev_tools = false
   base_med_app_timeskip_ex = [[2, 7], [2, 3]]
 
   # minimum age required for a cat to graduate
-  min_graduating_age = 10
+  min_graduating_age = 2
 
   [graduation.max_apprentice_age]
-    # max apprentice ages. after this, they're forcibly promoted
+    # max apprentice ages. after this, they're forcibly promoted.
+    "kitten" = 2
+    "kit apprentice" = 4
     "medicine cat apprentice" = 30
     apprentice = 25
     "mediator apprentice" = 25
@@ -628,7 +630,7 @@ dev_tools = false
       "running nose" = 5
       whitecough = 1
 
-  [focus.rest_and_recover]
+  [focus."rest_and_recover"]
     # roughly 1/chance injuries will be prevented
     injury_prevent = 4
 

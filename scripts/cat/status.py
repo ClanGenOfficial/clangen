@@ -13,6 +13,8 @@ class Status:
     social_lookup = {
         CatRank.NEWBORN: CatSocial.CLANCAT,
         CatRank.KITTEN: CatSocial.CLANCAT,
+        CatRank.JUV_KITTEN: CatSocial.CLANCAT,
+        CatRank.KIT_APPRENTICE: CatSocial.CLANCAT,
         CatRank.APPRENTICE: CatSocial.CLANCAT,
         CatRank.MEDICINE_APPRENTICE: CatSocial.CLANCAT,
         CatRank.MEDIATOR_APPRENTICE: CatSocial.CLANCAT,
@@ -375,6 +377,8 @@ class Status:
             return CatRank.NEWBORN
         elif age == CatAge.KITTEN:
             return CatRank.KITTEN
+        elif age == CatAge.JUVENILE:
+            return CatRank.JUV_KITTEN
         elif age == CatAge.ADOLESCENT:
             return (
                 CatRank.APPRENTICE

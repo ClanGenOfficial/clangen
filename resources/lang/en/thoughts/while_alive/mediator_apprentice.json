@@ -97,7 +97,7 @@
         "random_living_status": [
             "living"
         ],
-        "relationship_constraint": [
+        "relationship_constraints": [
             "fancies_only"
         ]
     }

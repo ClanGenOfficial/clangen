@@ -1173,7 +1173,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
         "chance_of_success": 50,
@@ -2192,12 +2192,9 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed a successful hunt together near the Twolegs dens."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -2219,13 +2216,9 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "comfort",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had an adventure while hunting by the Twolegs dens and tasted kittypet food."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 1
@@ -2239,21 +2232,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's knowledge of Twoleg behavior.",
-                            "cats_to": "cat_to enjoyed showing off {PRONOUN/cat_to/poss} knowledge in front of cat_from."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -2284,10 +2273,7 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed a thrilling adventure by the Twolegs dens."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -2310,10 +2296,7 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to rescued cat_from from a Twoleg den after an adventure went sideways."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -2332,20 +2315,17 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's wisdom and wariness around a Twoleg object."
-                        }
+                        "amount": -5
                     }
                 ],
                 "prey": [
@@ -2367,15 +2347,12 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "romance",
-                            "trust"
+                            "like"
                         ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_to couldn't save cat_from from being abducted by Twolegs."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 3

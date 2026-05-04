@@ -24,7 +24,7 @@ from ..ui.generate_button import get_button_dict, ButtonStyles
 
 
 class SpriteInspectScreen(Screens):
-    cat_life_stages = ["newborn", "kitten", "adolescent", "adult", "senior"]
+    cat_life_stages = ["newborn", "kitten", "juvenile", "adolescent", "adult", "senior"]
 
     def __init__(self, name=None):
         self.back_button = None

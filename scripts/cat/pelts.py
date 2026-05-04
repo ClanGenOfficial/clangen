@@ -17,6 +17,8 @@ class Pelt:
     all_poses = sprites.POSE_DATA["poses"]
     newborn_poses = [x for x in all_poses if "newborn" in x]
     kitten_poses = [x for x in all_poses if "kitten" in x]
+    juvenile_long_poses = [x for x in all_poses if "juvenile_long" in x]
+    juvenile_short_poses = [x for x in all_poses if "juvenile" in x and "long" not in x]
     adolescent_long_poses = [x for x in all_poses if "adolescent_long" in x]
     adolescent_short_poses = [
         x for x in all_poses if "adolescent" in x and "long" not in x
@@ -216,6 +218,7 @@ class Pelt:
         white_patches_tint: str = "none",
         newborn_sprite: str = None,
         kitten_sprite: str = None,
+        juvenile_sprite: str = None,
         adol_sprite: str = None,
         adult_sprite: str = None,
         senior_sprite: str = None,
@@ -271,6 +274,7 @@ class Pelt:
                 "senior": senior_sprite if senior_sprite is not None else 12,
                 "para_adult": para_adult_sprite,
                 "newborn": 20,
+                "juvenile": 21,
             }
             for age, pose in self.cat_sprites.items():
                 # we only need to convert if it's using the old sprite pose numbers
@@ -294,6 +298,19 @@ class Pelt:
                     # since these were at the top of the sheet, the pose nums were 0, 1, 2. thus they'll naturally match this fstring
                     self.cat_sprites[age] = f"kitten{pose}"
                     continue
+                if age == CatAge.JUVENILE:
+                    if self.length == "long":
+                        fur = "long"
+                    else:
+                        fur = "short"
+                    if pose == 0:
+                        self.cat_sprites[age] = f"juvenile_{fur}0"
+                    elif pose == 1:
+                        self.cat_sprites[age] = f"juvenile_{fur}1"
+                    elif pose == 2:
+                        self.cat_sprites[age] = f"juvenile_{fur}2"
+                    continue
+
                 if age == CatAge.ADOLESCENT:
                     if self.length == "long":
                         fur = "long"
@@ -345,6 +362,8 @@ class Pelt:
                 else:
                     adol_sprite = f"adolescent_short{adol_sprite[-1]}"
 
+
+
             self.cat_sprites = {
                 "newborn": newborn_sprite
                 if newborn_sprite is not None and newborn_sprite in self.newborn_poses
@@ -352,6 +371,14 @@ class Pelt:
                 "kitten": kitten_sprite
                 if kitten_sprite is not None and kitten_sprite in self.kitten_poses
                 else "kitten0",
+                "juvenile": juvenile_sprite
+                if juvenile_sprite is not None
+                and (
+                    juvenile_sprite in self.juvenile_short_poses
+                    or juvenile_sprite in self.juvenile_long_poses
+                )
+                else "juvenile_short0",
+
                 "adolescent": adol_sprite
                 if adol_sprite is not None
                 and (
@@ -850,6 +877,11 @@ class Pelt:
         self.skin = choice(Pelt.skin_sprites)
 
         if self.length == "long":
+            self.cat_sprites["juvenile"] = random.choice(
+                self.juvenile_long_poses
+                if self.juvenile_long_poses
+                else self.juvenile_short_poses
+            )
             self.cat_sprites["adolescent"] = random.choice(
                 self.adolescent_long_poses
                 if self.adolescent_long_poses
@@ -862,6 +894,7 @@ class Pelt:
             )
             self.cat_sprites["para_adult"] = "para_adult_long0"
         else:
+            self.cat_sprites["juvenile"] = random.choice(self.juvenile_short_poses)
             self.cat_sprites["adolescent"] = random.choice(self.adolescent_short_poses)
             self.cat_sprites["adult"] = random.choice(self.adult_short_poses)
             self.cat_sprites["para_adult"] = "para_adult_short0"
@@ -873,7 +906,7 @@ class Pelt:
         if age == "newborn":
             return
 
-        if age in ("kitten", "adolescent"):
+        if age in ("kitten", "juvenile", "adolescent"):
             scar_choice = random.randint(0, 50)  # 2%
         elif age in ("young adult", "adult"):
             scar_choice = random.randint(0, 20)  # 5%
@@ -892,7 +925,7 @@ class Pelt:
             return
 
         acc_display_choice = random.randint(0, 80)
-        if age in ("kitten", "adolescent"):
+        if age in ("kitten", "juvenile", "adolescent"):
             acc_display_choice = random.randint(0, 180)
         elif age in ("young adult", "adult"):
             acc_display_choice = random.randint(0, 100)

@@ -10,6 +10,6 @@
         "thoughts": [
             "Is snuggled safe in the nursery"
         ],
-        "main_status_constraint": ["kitten", "newborn"]
+        "main_status_constraint": ["juv kitten", "kitten", "newborn"]
     }
 ]

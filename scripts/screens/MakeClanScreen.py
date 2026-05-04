@@ -19,7 +19,6 @@ from .screens_core.screens_core import rebuild_top_menu_buttons
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
-from ..ui.elements.text_box_tweaked import UITextBoxTweaked
 from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_blit
 from .Screens import Screens
@@ -316,8 +315,11 @@ class MakeClanScreen(Screens):
                 event.ui_element.disable()
             else:
                 self.elements["reroll_count"].set_text(str(self.rolls_left))
-                if self.rolls_left == 0:
-                    event.ui_element.disable()
+            if self.rolls_left == 0:
+                event.ui_element.disable()
+            if constants.CONFIG["clan_creation"]["rerolls"] == -1:
+                event.ui_element.enable()
+
 
         elif event.ui_element in (self.elements["cat" + str(u)] for u in range(0, 12)):
             if pygame.key.get_mods() & pygame.KMOD_SHIFT:
@@ -629,7 +631,7 @@ class MakeClanScreen(Screens):
                 self.elements["next_step"].enable()
         # Show the error message if you try to choose a child for leader, deputy, or med cat.
         elif self.sub_screen in ("choose leader", "choose deputy", "choose med cat"):
-            if self.selected_cat.age in ("newborn", "kitten", "adolescent"):
+            if self.selected_cat.age in ("newborn", "kitten", "juvenile", "adolescent"):
                 self.elements["select_cat"].hide()
                 self.elements[Switch.error_message].set_text(
                     self.elements[Switch.error_message].html_text,
@@ -1378,12 +1380,13 @@ class MakeClanScreen(Screens):
                 "top_target": self.elements["random_clan_checkbox"],
             },
         )
-        self.elements["mode_details"] = UITextBoxTweaked(
+        self.elements["mode_details"] = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((345, 180), (365, 360))),
-            object_id="#text_box_30_horizleft",
+            ui_scale(pygame.Rect((325, 160), (405, 461))),
+            object_id="#text_box_30_horizleft_pad_40_40",
             manager=MANAGER,
         )
+        self.elements["mode_details"].padding = (40, 40)
 
         self.elements["mode_name"] = pygame_gui.elements.UITextBox(
             "",
@@ -1559,6 +1562,13 @@ class MakeClanScreen(Screens):
                 self.elements["roll3"].disable()
             self.elements["dice"].hide()
             self.elements["reroll_count"].hide()
+        elif self.rolls_left == -1:
+            self.elements["dice"].enable()
+            if self.rolls_left == -1:
+                self.elements["reroll_count"].hide()
+            self.elements["roll1"].hide()
+            self.elements["roll2"].hide()
+            self.elements["roll3"].hide()
         else:
             if self.rolls_left == 0:
                 self.elements["dice"].disable()
@@ -2136,8 +2146,6 @@ class MakeClanScreen(Screens):
     def save_clan(self):
         game.mediated.clear()
         game.patrolled.clear()
-        game.just_died.clear()
-        game.dead_cats_to_grieve.clear()
         save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()

@@ -519,7 +519,7 @@ def handle_lead_den_event():
                         ):
                             invited_cat.status._change_rank(CatRank.MEDICINE_CAT)
                         # if cat is a little baby, check name
-                        elif invited_cat.age in (CatAge.NEWBORN, CatAge.KITTEN):
+                        elif invited_cat.age in (CatAge.NEWBORN, CatAge.KITTEN, CatAge.JUVENILE):
                             if not invited_cat.name.suffix:
                                 invited_cat.name = Name(
                                     invited_cat.name.prefix,
@@ -648,7 +648,7 @@ def handle_focus():
         - raid other clans
         - hoarding
     Focus which are not able to be handled here:
-        rest_and_recover - handled in:
+        rest and recover - handled in:
             - 'handle_outbreaks'
             - 'condition_events.handle_injuries'
             - 'condition_events.handle_illnesses'
@@ -849,7 +849,7 @@ def handle_lost_cats_return(predetermined_cat_IDs: list = None):
             return
 
         lost_cat = random.choice(eligible_cats)
-        if lost_cat.age in (CatAge.NEWBORN, CatAge.KITTEN):
+        if lost_cat.age in (CatAge.NEWBORN, CatAge.KITTEN, CatAge.JUVENILE):
             return
 
         cat_IDs.append(lost_cat.ID)
@@ -880,10 +880,15 @@ def handle_lost_cats_return(predetermined_cat_IDs: list = None):
             CatRank.APPRENTICE,
             CatRank.MEDICINE_APPRENTICE,
             CatRank.MEDIATOR_APPRENTICE,
+            CatRank.KIT_APPRENTICE,
+            CatRank.JUV_KITTEN,
             CatRank.KITTEN,
             CatRank.NEWBORN,
         ]:
-            if x.moons >= 15:
+            if x.moons >= 3:
+                if x.status.rank == CatRank.KITTEN:
+                    ceremony(x, CatRank.JUV_KITTEN)
+            elif x.moons >= 15:
                 if x.status.rank == CatRank.MEDICINE_APPRENTICE:
                     ceremony(x, CatRank.MEDICINE_CAT)
                 elif x.status.rank == CatRank.MEDIATOR_APPRENTICE:
@@ -962,31 +967,6 @@ def one_moon_outside_cat(cat, other_clan_cats: list = None):
 
     handle_outside_EX(cat)
 
-    # handling the rank changes for Other Clan cats
-    # this is SUPER rudimentary rn, really just a temp patch to handle our current little edge-cases
-    if cat.status.is_other_clancat:
-        # kitten to apprentice - for now it's going to be limited to warrior apprentices
-        if cat.moons == cat_class.age_moons[CatAge.ADOLESCENT][0]:
-            cat.status._change_rank(CatRank.APPRENTICE)
-            # we aren't going to worry about sourcing a mentor, we're gonna pretend it's "hidden" from the player
-        # apprentice to full
-        if cat.moons >= cat_class.age_moons[CatAge.YOUNG_ADULT][0]:
-            # warrior
-            if cat.status.rank == CatRank.APPRENTICE:
-                cat.status._change_rank(CatRank.WARRIOR)
-            # med cat
-            if cat.status.rank == CatRank.MEDICINE_APPRENTICE:
-                cat.status._change_rank(CatRank.MEDICINE_CAT)
-            # mediator (just in case)
-            if cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
-                cat.status._change_rank(CatRank.MEDIATOR)
-        # cat to elder
-        if cat.moons >= cat_class.age_moons[CatAge.SENIOR][0]:
-            # exclude the roles that don't really retire
-            if cat.status.rank not in (CatRank.LEADER, CatRank.MEDICINE_CAT):
-                cat.status._change_rank(CatRank.ELDER)
-
-    # skill progression needs to be after rank progression
     cat.skills.progress_skill(cat)
     Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
 
@@ -1071,6 +1051,7 @@ def one_moon_cat(cat):
 
     # newborns don't do much
     if cat.status.rank == CatRank.NEWBORN:
+        cat.relationship_interaction()
         return
 
     handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
@@ -1090,9 +1071,10 @@ def one_moon_cat(cat):
     if cat.dead:
         return
 
+    cat.relationship_interaction()
+
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:
-        cat.relationship_interaction()
         Relation_Events.handle_relationships(cat)
 
     # now we make sure ill and injured cats don't get interactions they shouldn't
@@ -1319,9 +1301,14 @@ def perform_ceremonies(cat):
                     game.clan.deputy = None
                 ceremony(cat, CatRank.ELDER)
 
+        #change kitten rank to juv_kitten rank when kittens reach 3 moons
+        if cat.moons == cat_class.age_moons[CatAge.JUVENILE][0]:
+            ceremony(cat, CatRank.JUV_KITTEN)
+            ceremony_accessory = True
+            gain_accessories(cat)
+
         # apprentice a kitten to either med or warrior
         if cat.moons == cat_class.age_moons[CatAge.ADOLESCENT][0]:
-            if cat.status.rank == CatRank.KITTEN:
                 if _is_suitable_medcat_app(cat):
                     ceremony(cat, CatRank.MEDICINE_APPRENTICE)
                     ceremony_accessory = True
@@ -1877,7 +1864,7 @@ def gain_accessories(cat):
     chance = acc_chances["base_acc_chance"]
     if cat.status.rank.is_any_medicine_rank():
         chance += acc_chances["med_modifier"]
-    if cat.age in [CatAge.KITTEN, CatAge.ADOLESCENT]:
+    if cat.age in [CatAge.KITTEN, CatAge.JUVENILE, CatAge.ADOLESCENT]:
         chance += acc_chances["baby_modifier"]
     elif cat.age in [CatAge.SENIOR_ADULT, CatAge.SENIOR]:
         chance += acc_chances["elder_modifier"]
@@ -1936,7 +1923,7 @@ def handle_outside_EX(cat):
         if cat.not_working() and int(random.random() * 3):
             return
 
-        if cat.age == CatAge.KITTEN:
+        if cat.age in (CatAge.JUVENILE, CatAge.KITTEN):
             return
 
         if cat.age == CatAge.ADOLESCENT:
@@ -2364,8 +2351,8 @@ def handle_outbreaks(cat):
             ):
                 continue
 
-            if get_clan_setting("rest_and_recover"):
-                stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
+            if get_clan_setting("rest and recover"):
+                stopping_chance = constants.CONFIG["focus"]["rest and recover"][
                     "outbreak_prevention"
                 ]
                 if not int(random.random() * stopping_chance):

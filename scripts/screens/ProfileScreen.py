@@ -192,6 +192,8 @@ class ProfileScreen(Screens):
                 and event.ui_element == self.profile_elements["leader_ceremony"]
             ):
                 self.change_screen(GameScreen.CEREMONY)
+            elif event.ui_element == self.profile_elements.get("app_den"):
+                self.change_screen(GameScreen.APP_DEN)
             elif event.ui_element == self.profile_elements.get("med_den"):
                 self.change_screen(GameScreen.MED_DEN)
             elif event.ui_element == self.profile_elements.get("mediation"):
@@ -243,6 +245,8 @@ class ProfileScreen(Screens):
                 self.change_screen(GameScreen.CHOOSE_MATE)
             elif event.ui_element == self.change_adoptive_parent_button:
                 self.change_screen(GameScreen.CHOOSE_ADOPTIVE_PARENT)
+            elif event.ui_element == self.relationship_editor_button:
+                self.change_screen(GameScreen.RELATIONSHIP_EDITOR)
 
         # Roles Tab
         elif self.open_tab == "roles":
@@ -651,6 +655,18 @@ class ProfileScreen(Screens):
             self.profile_elements["mediation"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((133, 380), (81, 28))),
                 "screens.core.clearing",
+                get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
+                object_id="@buttonstyles_rounded_rect",
+                manager=MANAGER,
+                starting_height=2,
+            )
+        elif (
+            self.the_cat.status.alive_in_player_clan
+            and self.the_cat.status.rank.is_any_apprentice_rank()
+        ):
+            self.profile_elements["apprentices_den"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((133, 380), (81, 28))),
+                "screens.core.apprentices_den",
                 get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
                 object_id="@buttonstyles_rounded_rect",
                 manager=MANAGER,
@@ -2017,6 +2033,14 @@ class ProfileScreen(Screens):
                 starting_height=2,
                 manager=MANAGER,
             )
+            self.relationship_editor_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((50, 594), (172, 36))),
+                "screens.profile.relationship_editor",
+                get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
+                object_id="@buttonstyles_ladder_bottom",
+                starting_height=2,
+                manager=MANAGER,
+            )
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -2441,6 +2465,7 @@ class ProfileScreen(Screens):
             self.see_relationships_button.kill()
             self.choose_mate_button.kill()
             self.change_adoptive_parent_button.kill()
+            self.relationship_editor_button.kill()
         elif self.open_tab == "roles":
             self.manage_roles.kill()
             self.change_mentor_button.kill()

@@ -264,7 +264,7 @@
         "relationship_constraint": [
             "parent/child"
         ],
-        "main_status_constraint": [
+        "main_living_status": [
             "living"
         ]
     },
@@ -279,14 +279,14 @@
             "darkforest",
             "unknownresidence"
         ],
-        "main_skill_constraint": [
+        "main_skill_constrict": [
             "STAR,1",
             "DREAM,1"
         ],
         "relationship_constraint": [
             "parent/child"
         ],
-        "main_status_constraint": [
+        "main_living_status": [
             "living"
         ]
     },
@@ -304,7 +304,7 @@
             "orphaned4",
             "orphaned5"
         ],
-        "main_status_constraint": [
+        "main_living_status": [
             "unknownresidence"
         ],
         "relationship_constraint": [

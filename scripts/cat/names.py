@@ -286,6 +286,7 @@ class Name:
             age_to_rank = {
                 CatAge.NEWBORN: CatRank.NEWBORN,
                 CatAge.KITTEN: CatRank.KITTEN,
+                CatAge.JUVENILE: CatRank.JUV_KITTEN,
                 CatAge.ADOLESCENT: CatRank.APPRENTICE,
             }
             if self.cat.age in age_to_rank:

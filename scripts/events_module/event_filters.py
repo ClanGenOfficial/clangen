@@ -179,6 +179,7 @@ def event_for_tags(
                 if not find_alive_cats_with_rank(
                     cat,
                     [
+                        CatRank.KIT_APPRENTICE,
                         CatRank.APPRENTICE,
                         CatRank.MEDIATOR_APPRENTICE,
                         CatRank.MEDICINE_APPRENTICE,
@@ -243,9 +244,16 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     if not required_rel or "any" in required_rel:
         return True
 
-    current_standing = other_clan.get_standing()
+    current_rel = other_clan.relations
 
-    return current_standing in required_rel
+    if "hostile" in required_rel and 0 <= current_rel <= 6:
+        return True
+    elif "neutral" in required_rel and 7 <= current_rel <= 17:
+        return True
+    elif "ally" in required_rel and 18 <= current_rel:
+        return True
+
+    return False
 
 
 def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:

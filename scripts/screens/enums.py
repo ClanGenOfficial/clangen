@@ -22,6 +22,7 @@ class GameScreen(StrEnum):
     MED_DEN = "med_den_screen"
     WARRIOR_DEN = "warrior_den_screen"
     MEDIATION = "mediation_screen"
+    APP_DEN = "app_den_screen"
 
     PROFILE = "profile_screen"
     # screens accessed through profile
@@ -34,3 +35,4 @@ class GameScreen(StrEnum):
     CHOOSE_MATE = "choose_mate_screen"
     CHOOSE_MENTOR = "choose_mentor_screen"
     CHOOSE_ADOPTIVE_PARENT = "choose_adoptive_parent_screen"
+    RELATIONSHIP_EDITOR = "relationship_editor_screen"

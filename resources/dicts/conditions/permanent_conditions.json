@@ -6,6 +6,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -29,6 +30,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -72,6 +74,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -110,6 +113,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -149,6 +153,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -190,6 +195,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -227,6 +233,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -250,6 +257,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -299,6 +307,7 @@
         "mortality": {
             "newborn": 20,
             "kitten": 20,
+            "juvenile": 20,
             "adolescent": 60,
             "young adult": 80,
             "adult": 90,
@@ -337,6 +346,7 @@
         "mortality": {
             "newborn": 10,
             "kitten": 10,
+            "juvenile": 10,
             "adolescent": 40,
             "young adult": 75,
             "adult": 65,
@@ -398,6 +408,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 10,
+            "juvenile": 10,
             "adolescent": 15,
             "young adult": 35,
             "adult": 55,
@@ -456,6 +467,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -479,6 +491,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -521,6 +534,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -547,6 +561,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -574,6 +589,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -601,6 +617,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -625,6 +642,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -660,6 +678,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -694,6 +713,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -723,6 +743,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -750,6 +771,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -787,6 +809,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -825,6 +848,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -862,6 +886,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
@@ -888,6 +913,7 @@
         "mortality": {
             "newborn": 0,
             "kitten": 0,
+            "juvenile": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,

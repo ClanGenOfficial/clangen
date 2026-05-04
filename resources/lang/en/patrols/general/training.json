@@ -8044,10 +8044,7 @@
                             "romance"
                         ],
                         "amount": 10,
-                        "log": 
-                            {
-                            "cats_from": "s_c expressed {PRONOUN/s_c/poss} devotion to {PRONOUN/s_c/poss} mates while training together."
-                            }
+                        "log": "s_c expressed {PRONOUN/s_c/poss} devotion to {PRONOUN/s_c/poss} mates while training together."
                     }
                 ],
                 "frequency": 4
@@ -8371,7 +8368,7 @@
             {
                 "text": "p_l tells the patrol to practice their hunting crouches, but no one takes that suggestion well. They're fully trained warriors, not apprentices, and they expected more challenging exercises from p_l.",
                 "exp": 0,
-                "relationships": [
+                "relationship": [
                     {
                         "cats_from": ["patrol"],
                         "cats_to": ["p_l"],
@@ -8388,7 +8385,7 @@
             {
                 "text": "p_l and r_c disagree about what the patrol should focus on, and the training session is sidetracked by their bickering.",
                 "exp": 0,
-                "relationships": [
+                "relationship": [
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["p_l"],
@@ -8406,7 +8403,7 @@
                 "text": "Whether s_c is actually showing off or {PRONOUN/s_c/poss} talent just makes it seem like {PRONOUN/s_c/subject} {VERB/s_c/are/is}, the others have no patience for it and end the training session early.",
                 "exp": 0,
                 "stat_skill": ["HUNTER,1"],
-                "relationships": [
+                "relationship": [
                     {
                         "cats_from": ["patrol"],
                         "cats_to": ["s_c"],
@@ -8794,7 +8791,7 @@
             {
                 "text": "p_l tells r_c to practice {PRONOUN/r_c/poss} hunting crouch, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} take that suggestion well. r_c thinks p_l is casting aspersions on {PRONOUN/r_c/poss} hunting ability by suggesting such a basic exercise, and {PRONOUN/r_c/subject} {VERB/r_c/end/ends} the session early.",
                 "exp": 0,
-                "relationships": [
+                "relationship": [
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["p_l"],
@@ -8811,7 +8808,7 @@
             {
                 "text": "p_l and r_c disagree about what the patrol should focus on, and the training session is sidetracked by their bickering.",
                 "exp": 0,
-                "relationships": [
+                "relationship": [
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["p_l"],
@@ -8830,7 +8827,7 @@
                 "exp": 0,
                 "stat_skill": ["HUNTER,1"],
                 "can_have_stat": ["p_l"],
-                "relationships": [
+                "relationship": [
                     {
                         "cats_from": ["r_c"],
                         "cats_to": ["s_c"],
@@ -17297,7 +17294,7 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "cat_from wasn't impressed by cat_to's failure on a tracking assessment.",
-                            "cats_to": "cat_to spotted cat_from looking amused by cat_to's failure on a tracking assessment."
+                            "cats_to": "cat_from spotted cat_to looking amused by cat_from's failure on a tracking assessment."
                         }
                     }
                 ],
@@ -20663,7 +20660,7 @@
                     }
                 }
             ],
-            "art": "gen_train_talkingAA"
+            "art": "gen_med_warappmedapp_herbcontest"
         },
         {
             "text": "s_c takes one look at the apprentices bouncing around and decides no one is learning anything until they get some energy out. A challenge is issued: beat s_c in a race and get the first pick of the fresh-kill pile. No apprentice is faster than s_c, but they do give it their all. After, s_c is able to run a proper training exercise with the now-panting apprentices.",

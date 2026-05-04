@@ -38,10 +38,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from appreciated cat_to's suggestion that they gather herbs for the medicine cat den even while hunting."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -63,7 +60,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol"
@@ -72,10 +69,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's wise decision to take some herbs back to camp to be identified on a hunting patrol."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -97,10 +91,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to brought back some herbs to camp for c_n, even though they weren't medicinal."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -137,20 +128,22 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "r_c",
+                            "p_l",
                             "patrol"
                         ],
                         "cats_from": [
+                            "patrol",
+                            "patrol",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
+                            "like",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to reveled in a downpour during a hunting patrol."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -167,9 +160,13 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c",
+                            "p_l",
+                            "patrol"
                         ],
                         "cats_from": [
+                            "patrol",
+                            "patrol",
                             "patrol"
                         ],
                         "mutual": false,
@@ -178,10 +175,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to led cat_from's patrol on a bountiful hunt in rainy weather."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -200,20 +194,22 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c",
+                            "p_l",
+                            "patrol"
                         ],
                         "cats_from": [
+                            "patrol",
+                            "patrol",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
                             "like",
-                            "comfort"
+                            "comfort",
+                            "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from appreciated cat_to's buoyant mood on a slippery hunting patrol."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -226,19 +222,22 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "r_c",
+                            "p_l",
                             "patrol"
                         ],
                         "cats_from": [
+                            "patrol",
+                            "patrol",
                             "patrol"
                         ],
                         "mutual": false,
                         "values": [
+                            "like",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to struggled to hunt together on a slippery hunting patrol."
-                        }
+                        "amount": -5
                     }
                 ],
                 "prey": [
@@ -312,7 +311,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [ -1, -1 ]
+            "all apprentices": [ -1, -1 ]
         },
         "frequency": 2,
         "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
@@ -330,16 +329,13 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "romance",
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to sheltered and snuggled during a downpour on patrol."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -364,27 +360,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to sheltered and snuggled in a tortoise den during a downpour."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from appreciated cat_to keeping every cat's spirits up while sheltering from a downpour."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -411,27 +387,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to sheltered and snuggled in a tortoise den during a downpour."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from appreciated cat_to keeping every cat's spirits up while sheltering from a downpour."
-                        }
+                        "amount": 5
                     }
                 ],
                 "frequency": 4
@@ -444,19 +400,18 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
+                            "romance",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to struggled to hunt together on a slippery hunting patrol."
-                        }
+                        "amount": -5
                     }
                 ],
                 "frequency": 4
@@ -593,12 +548,10 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "respect",
+                            "comfort"
                         ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to doubted each other's skills after a swift fox easily escaped them on patrol."
-                        }
+                        "amount": -5
                     }
                 ],
                 "prey": [

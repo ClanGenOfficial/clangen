@@ -2,7 +2,7 @@
     {
         "id": "becoming_apprentice",
         "thoughts": ["Looks forward to {PRONOUN/m_c/poss} apprenticeship"],
-        "main_status_constraint": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+        "main_status_constraint": ["apprentice", "mediator apprentice", "medicine cat apprentice", "kit apprentice"]
     },
 
     {

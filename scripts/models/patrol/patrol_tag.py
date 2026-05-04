@@ -3,8 +3,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Union, Annotated
 
-from pydantic import AfterValidator, RootModel, StringConstraints
-from scripts.models.common.rank import validate_clan_rank
+from pydantic import RootModel, StringConstraints
 
 
 class PatrolTagEnum(Enum):
@@ -27,10 +26,5 @@ class PatrolTagEnum(Enum):
 
 class PatrolTag(RootModel):
     root: Union[
-        PatrolTagEnum,
-        Annotated[
-            str,
-            StringConstraints(pattern=r"^clan:(.+)$"),
-            AfterValidator(validate_clan_rank),
-        ],
+        PatrolTagEnum, Annotated[str, StringConstraints(pattern=r"^clan:(.+)$")]
     ]

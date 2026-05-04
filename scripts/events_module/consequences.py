@@ -121,6 +121,7 @@ def create_new_cat_block(
         if match.group(1) in [
             CatRank.NEWBORN,
             CatRank.KITTEN,
+            CatRank.JUV_KITTEN,
             CatRank.ELDER,
             CatRank.APPRENTICE,
             CatRank.WARRIOR,
@@ -155,7 +156,12 @@ def create_new_cat_block(
             break
 
     if rank and not age:
-        if rank in [
+        if rank == CatRank.JUV_KITTEN:
+            age = randint(
+                Cat.age_moons[CatAge.JUVENILE][0],
+                Cat.age_moons[CatAge.JUVENILE][1]
+            )
+        elif rank in [
             CatRank.APPRENTICE,
             CatRank.MEDIATOR_APPRENTICE,
             CatRank.MEDICINE_APPRENTICE,
@@ -210,7 +216,7 @@ def create_new_cat_block(
     elif rank == CatRank.MEDICINE_CAT:
         chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
     else:
-        if cat_social in (CatSocial.CLANCAT, "former clancat"):
+        if cat_social == CatSocial.CLANCAT:
             x = "former_clancat"
         else:
             x = cat_social
@@ -247,11 +253,7 @@ def create_new_cat_block(
             BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
             + BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
         ):
-            cat_social = (
-                CatSocial.CLANCAT
-                if cat_social != "former clancat"
-                else "former clancat"
-            )
+            cat_social = CatSocial.CLANCAT
         elif chosen_backstory in (
             BACKSTORIES["backstory_categories"]["baby_loner_backstories"]
             + BACKSTORIES["backstory_categories"]["loner_backstories"]
@@ -269,7 +271,7 @@ def create_new_cat_block(
 
     thought = None
     # KITTEN THOUGHT
-    if rank in (CatRank.KITTEN, CatRank.NEWBORN):
+    if rank in (CatRank.JUV_KITTEN, CatRank.KITTEN, CatRank.NEWBORN):
         thought = CatThought.ON_JOIN
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
@@ -543,7 +545,9 @@ def create_new_cat(
         if rank == CatRank.NEWBORN:
             moons = 0
         elif litter or kit:
-            moons = randint(1, 5)
+            moons = randint(1, 2)
+        elif rank == CatRank.JUV_KITTEN:
+            moons = randint(3,5)
         elif rank in (
             CatRank.APPRENTICE,
             CatRank.MEDICINE_APPRENTICE,
@@ -563,8 +567,10 @@ def create_new_cat(
     if not rank and not outside:
         if moons == 0:
             rank = CatRank.NEWBORN
-        elif moons < 6:
+        elif moons < 3:
             rank = CatRank.KITTEN
+        elif moons < 6:
+            rank = CatRank.JUV_KITTEN
         elif 6 <= moons <= 11:
             rank = CatRank.APPRENTICE
         elif moons >= 120:
@@ -626,7 +632,7 @@ def create_new_cat(
         # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
         # little babies will take a clancat name, we love indoctrination
         if (
-            (kit or litter or moons < 12) and not outside
+            kit or litter or moons < 12
         ) and original_group not in game.clan.other_clan_IDs:
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()
@@ -839,17 +845,14 @@ def gather_cat_objects(
             if getattr(event, "patrol_cats", None):
                 found_cat_list.difference_update(set(event.patrol_cats))
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
-            if len(
-                clan_cats
-            ):  # to prevent crash if every cat in the clan died just before this
-                found_cat_list.update(
-                    sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
-                )
-                # exclude cats involved in the event
-                found_cat_list.discard(getattr(event, "main_cat", None))
-                found_cat_list.discard(getattr(event, "random_cat", None))
-                if getattr(event, "patrol_cats", None):
-                    found_cat_list.difference_update(set(event.patrol_cats))
+            found_cat_list.update(
+                sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
+            )
+            # exclude cats involved in the event
+            found_cat_list.discard(getattr(event, "main_cat", None))
+            found_cat_list.discard(getattr(event, "random_cat", None))
+            if getattr(event, "patrol_cats", None):
+                found_cat_list.difference_update(set(event.patrol_cats))
 
         # add/remove cats if found and then continue for loop
         if is_exclusionary and found_cat_list:

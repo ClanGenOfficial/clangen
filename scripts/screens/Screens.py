@@ -340,6 +340,15 @@ class Screens:
             ]
         ):
             self.change_screen(GameScreen.WARRIOR_DEN)
+
+        #OPEN APPRENTICE
+        elif (
+            event.ui_element
+            == Screens.menu_buttons["dens"].child_button_dicts[
+                "screens.core.apprentices_den"
+            ]
+        ):
+            self.change_screen(GameScreen.APP_DEN)
         # OPEN CLEARING/MEDIATOR
         elif (
             event.ui_element
