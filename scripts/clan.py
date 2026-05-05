@@ -1555,11 +1555,11 @@ def _find_alignment(temper_dict: dict, first_value: int, second_value: int) -> s
     :param second_value: The second value to find the alignment for. This is the chart's "x-value", or when viewing it as a dictionary: its values.
     """
     if 11 <= first_value:
-        temper = list(temper_dict.values())[0]
+        temper = list(temper_dict.values())[2]
     elif 7 <= first_value:
         temper = list(temper_dict.values())[1]
     else:
-        temper = list(temper_dict.values())[2]
+        temper = list(temper_dict.values())[0]
 
     if 11 <= second_value:
         temper = temper[2]
