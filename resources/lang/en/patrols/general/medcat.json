@@ -3633,8 +3633,8 @@
                         }
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["p_l"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "comfort"
