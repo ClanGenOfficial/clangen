@@ -1266,6 +1266,7 @@ class MakeClanScreen(Screens):
             random_rank = choice(
                 [
                     CatRank.KITTEN,
+                    CatRank.JUV_KITTEN,
                     CatRank.APPRENTICE,
                     CatRank.WARRIOR,
                     CatRank.WARRIOR,
@@ -1565,13 +1566,14 @@ class MakeClanScreen(Screens):
         elif self.rolls_left == -1:
             self.elements["dice"].enable()
             if self.rolls_left == -1:
+                self.elements["dice"].enable()
                 self.elements["reroll_count"].hide()
             self.elements["roll1"].hide()
             self.elements["roll2"].hide()
             self.elements["roll3"].hide()
         else:
             if self.rolls_left == 0:
-                self.elements["dice"].disable()
+                self.elements["dice"].enable()
             elif self.rolls_left == -1:
                 self.elements["reroll_count"].hide()
             self.elements["roll1"].hide()
