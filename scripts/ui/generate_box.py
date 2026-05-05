@@ -21,6 +21,7 @@ class BoxStyles(Enum):
     FRAME = "frame"
     ROUNDED_BOX = "rounded_box"
     SELECTION_BOX = "selection_box"
+    BUTTON_MIMIC_BOX = "button_mimic_box"
 
 
 boxstyles = {
@@ -33,6 +34,13 @@ boxstyles = {
         "selection_box",
         pygame.image.load(
             "resources/images/generated_boxes/selection_box.png"
+        ).convert_alpha(),
+        (3, 3),
+    ),
+    "button_mimic_box": BoxData(
+        "selection_box",
+        pygame.image.load(
+            "resources/images/generated_boxes/button_mimic_box.png"
         ).convert_alpha(),
         (3, 3),
     ),
