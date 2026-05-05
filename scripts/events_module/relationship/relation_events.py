@@ -230,8 +230,10 @@ class Relation_Events:
 
         for new_cat in new_cats:
             same_age_cats = get_cats_same_age(
-            Cat, new_cat, min(constants.CONFIG["mates"]["age_range"], int(new_cat.moons * 0.4))
-        )
+                Cat,
+                new_cat,
+                min(constants.CONFIG["mates"]["age_range"], int(new_cat.moons * 0.4)),
+            )
             alive_cats = [
                 i for i in new_cat.all_cats.values() if i.status.alive_in_player_clan
             ]
