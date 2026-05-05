@@ -285,14 +285,16 @@ class Ambiance:
         if not self.camp_overlay_playlist or camp != self.camp_playing:
             self.camp_playing = camp
             camp_name = camp.casefold().replace(" ", "_")
-            self.camp_overlay_playlist = self.overlay_dict.get(camp_name)
+            self.camp_overlay_playlist = self.overlay_dict.get(camp_name, [])
             for each in self.camp_overlay_playlist:
                 each.set_volume(self.overlay_volume)
 
         # then grab season specific sounds
         if not self.season_overlay_playlist or season != self.season_playing:
             self.season_playing = season
-            self.season_overlay_playlist = self.overlay_dict.get(f"{season.casefold()}")
+            self.season_overlay_playlist = self.overlay_dict.get(
+                f"{season.casefold()}", []
+            )
             for each in self.camp_overlay_playlist:
                 each.set_volume(self.overlay_volume)
 
