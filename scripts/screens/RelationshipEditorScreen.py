@@ -299,11 +299,21 @@ class RelationshipEditorScreen(Screens):
             self.rel_increase["like"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 41), (126, 38))),
                 "screens.relationship_editor.plus_icon_placeholder",
-                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (126, 38)),
-                object_id="@buttonstyles_horizontal_tab",
+                get_button_dict(ButtonStyles.VERTICAL_TAB, (126, 38)),
+                object_id="@buttonstyles_vertical_tab",
                 container=self.rel_button_container,
                 manager=MANAGER,
             )
+            self.rel_decrease["like"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((63, 41), (126, 38))),
+                "screens.relationship_editor.minus_icon_placeholder",
+                get_button_dict(ButtonStyles.VERTICAL_TAB, (126, 38)),
+                object_id="@buttonstyles_vertical_tab",
+                container=self.rel_button_container,
+                manager=MANAGER,
+            )
+
+
             self.rel_type_text["respect"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 73), (126, 38))),
                 "screens.relationship_editor.respect",
