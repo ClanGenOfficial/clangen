@@ -86,6 +86,79 @@ class RelationshipEditorScreen(Screens):
                     sabotage=True
                 )
                 self.update_selected_cats()
+
+            elif event.ui_element == self.rel_change_inc["respect_increase"]:
+                Cat.edit_relationship(
+                    self.selected_cat_1,
+                    self.selected_cat_2,
+                    self.allow_romance,
+                    rel_edit_type=RelType.RESPECT
+                )
+                self.update_selected_cats()
+            elif event.ui_element == self.rel_change_dec["respect_decrease"]:
+                Cat.edit_relationship(
+                    self.selected_cat_1,
+                    self.selected_cat_2,
+                    self.allow_romance,
+                    rel_edit_type=RelType.RESPECT,
+                    sabotage=True
+                )
+                self.update_selected_cats()
+
+            elif event.ui_element == self.rel_change_inc["trust_increase"]:
+                Cat.edit_relationship(
+                    self.selected_cat_1,
+                    self.selected_cat_2,
+                    self.allow_romance,
+                    rel_edit_type=RelType.TRUST
+                )
+                self.update_selected_cats()
+            elif event.ui_element == self.rel_change_dec["trust_decrease"]:
+                Cat.edit_relationship(
+                    self.selected_cat_1,
+                    self.selected_cat_2,
+                    self.allow_romance,
+                    rel_edit_type=RelType.TRUST,
+                    sabotage=True
+                )
+                self.update_selected_cats()
+
+            elif event.ui_element == self.rel_change_inc["comfort_increase"]:
+                Cat.edit_relationship(
+                    self.selected_cat_1,
+                    self.selected_cat_2,
+                    self.allow_romance,
+                    rel_edit_type=RelType.COMFORT
+                )
+                self.update_selected_cats()
+            elif event.ui_element == self.rel_change_dec["comfort_decrease"]:
+                Cat.edit_relationship(
+                    self.selected_cat_1,
+                    self.selected_cat_2,
+                    self.allow_romance,
+                    rel_edit_type=RelType.COMFORT,
+                    sabotage=True
+                )
+                self.update_selected_cats()
+
+            elif event.ui_element == self.rel_change_inc["romance_increase"]:
+                Cat.edit_relationship(
+                    self.selected_cat_1,
+                    self.selected_cat_2,
+                    self.allow_romance,
+                    rel_edit_type=RelType.ROMANCE
+                )
+                self.update_selected_cats()
+            elif event.ui_element == self.rel_change_dec["romance_decrease"]:
+                Cat.edit_relationship(
+                    self.selected_cat_1,
+                    self.selected_cat_2,
+                    self.allow_romance,
+                    rel_edit_type=RelType.ROMANCE,
+                    sabotage=True
+                )
+                self.update_selected_cats()
+
             elif event.ui_element == self.random1:
                 self.selected_cat_1 = self.random_cat()
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
