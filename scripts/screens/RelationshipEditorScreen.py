@@ -8,6 +8,7 @@ from pygame_gui.core import UIContainer
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game
+from scripts.ui.elements.cat_list_display import UICatListDisplay
 from ..ui.elements.relation_display import UIRelationDisplay
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
@@ -40,6 +41,7 @@ class RelationshipEditorScreen(Screens):
         self.rel_change_inc = {}
         self.rel_change_dec = {}
         self.cat_buttons = []
+        self.cat_display = None
         self.page = 1
         self.all_pages = 1
         self.selected_cat_elements = {}
@@ -50,7 +52,6 @@ class RelationshipEditorScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
-            self.update_page()
 
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
@@ -187,7 +188,6 @@ class RelationshipEditorScreen(Screens):
 
         self.page = 1
 
-
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
             "buttons.back",
@@ -287,6 +287,8 @@ class RelationshipEditorScreen(Screens):
         )
 
         self.update_buttons()
+        self.update_list_cats()
+        self.update_rel_choices()
 
     def random_cat(self):
         if self.selected_cat_list():
@@ -515,7 +517,6 @@ class RelationshipEditorScreen(Screens):
                             ui_scale(pygame.Rect((x, y), (50, 50))), _temp
                         )
                     )
-                    self.cat_buttons[-1].disable()
 
                 self.cat_buttons.append(
                     UISpriteButton(
