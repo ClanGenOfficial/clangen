@@ -28,6 +28,7 @@ class Ambiance:
         self.season_silence_timer: Optional[AudioTimer] = None
 
         self.playlist_dict: dict = {}
+        self.overlay_dict: dict = {}
 
         self.current_playlist: list = []
 
@@ -41,6 +42,7 @@ class Ambiance:
         self.queued_track = None
 
         self.load_playlists()
+        self.load_overlays()
 
     def load_playlists(self):
         """
@@ -58,6 +60,35 @@ class Ambiance:
             "resources/audio/ambiance/" + track
             for track in self.playlist_dict["menu_playlist"]
         ]
+
+    def load_overlays(self):
+        """
+        Loads the short ambiance overlays
+        """
+        try:
+            with open("resources/audio/ambiance.json", "r", encoding="utf-8") as f:
+                overlay_data = ujson.load(f)
+        except:
+            logger.exception("Failed to load snippet index")
+            return
+        for category in overlay_data:
+            if category == "menu_playlist":
+                continue
+            for name, tracks in overlay_data[category].items():
+                if name == "base":
+                    continue
+
+                self.overlay_dict[name] = []
+
+                try:
+                    for path in tracks:
+                        self.overlay_dict[name].append(
+                            pygame.mixer.Sound(f"resources/audio/ambiance/{path}")
+                        )
+                    for each in self.overlay_dict[name]:
+                        each.set_volume(self.overlay_volume)
+                except:
+                    logger.exception("Failed to load snippet")
 
     def check(self):
         """
@@ -254,23 +285,16 @@ class Ambiance:
         if not self.camp_overlay_playlist or camp != self.camp_playing:
             self.camp_playing = camp
             camp_name = camp.casefold().replace(" ", "_")
-            if self.playlist_dict[f"{biome.casefold()}"].get(camp_name):
-                for path in self.playlist_dict[biome.casefold()][camp_name]:
-                    self.camp_overlay_playlist.append(
-                        pygame.mixer.Sound(f"resources/audio/ambiance/" + path)
-                    )
-
-                for each in self.camp_overlay_playlist:
-                    each.set_volume(self.volume)
+            self.camp_overlay_playlist = self.overlay_dict.get(camp_name)
+            for each in self.camp_overlay_playlist:
+                each.set_volume(self.overlay_volume)
 
         # then grab season specific sounds
         if not self.season_overlay_playlist or season != self.season_playing:
             self.season_playing = season
-            self.season_overlay_playlist = []
-            for path in self.playlist_dict["seasonal"][f"{season.casefold()}"]:
-                self.season_overlay_playlist.append(
-                    pygame.mixer.Sound("resources/audio/ambiance/" + path)
-                )
+            self.season_overlay_playlist = self.overlay_dict.get(f"{season.casefold()}")
+            for each in self.camp_overlay_playlist:
+                each.set_volume(self.overlay_volume)
 
     @staticmethod
     def get_busy() -> bool:
@@ -284,7 +308,7 @@ class Ambiance:
         """
         Handles the volume for the ambiance overlay (not the base ambiance, but the short sounds relating to season/camp which we play intermittently). This just allows us to fine-tune the volume relationship between the two types of ambiance. This volume will still be affected by the overall ambiance volume assigned by the player.
         """
-        return int((self.volume * 100) / 2.5) / 100
+        return int((self.volume * 100) / 2) / 100
 
     def _start_season_overlay_timer(self, duration):
         """
@@ -354,7 +378,7 @@ class Ambiance:
         self.camp_sound.set_volume(self.overlay_volume)
         if pygame.mixer.find_channel():
             logger.info("played camp overlay")
-            self.camp_sound.play(fade_ms=4000)
+            self.camp_sound.play()
             self._start_camp_overlay_timer(self.camp_sound.get_length())
 
         # TODO: what happens if no channel found?
