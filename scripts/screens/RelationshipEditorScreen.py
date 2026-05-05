@@ -38,7 +38,8 @@ class RelationshipEditorScreen(Screens):
         self.search_bar_image = None
         self.rel_type_buttons = {}
         self.rel_type_text = {}
-        self.rel_change = {}
+        self.rel_change_inc = {}
+        self.rel_change_dec = {}
         self.mediators = []
         self.cat_buttons = []
         self.page = 1
@@ -68,7 +69,7 @@ class RelationshipEditorScreen(Screens):
             elif event.ui_element == self.deselect_2:
                 self.selected_cat_2 = None
                 self.update_selected_cats()
-            elif event.ui_element == self.rel_change["like_increase"]:
+            elif event.ui_element == self.rel_change_inc["like_increase"]:
                 Cat.edit_relationship(
                     self.selected_cat_1,
                     self.selected_cat_2,
@@ -76,7 +77,7 @@ class RelationshipEditorScreen(Screens):
                     rel_edit_type=RelType.LIKE
                 )
                 self.update_selected_cats()
-            elif event.ui_element == self.rel_change["like_decrease"]:
+            elif event.ui_element == self.rel_change_dec["like_decrease"]:
                 Cat.edit_relationship(
                     self.selected_cat_1,
                     self.selected_cat_2,
@@ -166,21 +167,6 @@ class RelationshipEditorScreen(Screens):
             ui_scale(pygame.Rect((368, 398), (100, 20))),
             "screens.relationship_editor.allow_romantic",
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            manager=MANAGER,
-        )
-
-        self.increase_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((410, 350), (105, 40))),
-            "screens.relationship_editor.plus_icon_placeholder",
-            get_button_dict(ButtonStyles.SQUOVAL, (40, 40)),
-            object_id="@buttonstyles_squoval",
-            manager=MANAGER,
-        )
-        self.decrease_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((280, 350), (109, 40))),
-            "screens.relationship_editor.minus_icon_placeholder",
-            get_button_dict(ButtonStyles.SQUOVAL, (40, 40)),
-            object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
 
@@ -274,8 +260,15 @@ class RelationshipEditorScreen(Screens):
         for ele in self.rel_type_buttons:
             self.rel_type_buttons[ele].kill()
         self.rel_type_buttons = {}
+        for ele in self.rel_type_text:
+            self.rel_type_text[ele].kill()
         self.rel_type_text = {}
-        self.rel_change = {}
+        for ele in self.rel_change_inc:
+            self.rel_change_inc[ele].kill()
+        self.rel_change_inc = {}
+        for ele in self.rel_change_dec:
+            self.rel_change_dec[ele].kill()
+        self.rel_change_dec = {}
 
 
         if (
@@ -300,7 +293,7 @@ class RelationshipEditorScreen(Screens):
                 object_id="@buttonstyles_horizontal_tab",
                 container=self.rel_button_container,
             )
-            self.rel_change["like_increase"] = UISurfaceImageButton(
+            self.rel_change_inc["like_increase"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 41), (126, 38))),
                 "screens.relationship_editor.plus_icon_placeholder",
                 get_button_dict(ButtonStyles.VERTICAL_TAB, (126, 38)),
@@ -309,7 +302,7 @@ class RelationshipEditorScreen(Screens):
                 manager=MANAGER,
                 anchors={"right": "right", "right_target": self.rel_type_text["like"]},
             )
-            self.rel_change["like_decrease"] = UISurfaceImageButton(
+            self.rel_change_dec["like_decrease"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 41), (126, 38))),
                 "screens.relationship_editor.minus_icon_placeholder",
                 get_button_dict(ButtonStyles.VERTICAL_TAB, (126, 38)),
@@ -709,23 +702,8 @@ class RelationshipEditorScreen(Screens):
         error_message = ""
 
         invalid_pair = False
-        if self.selected_cat_1 and self.selected_cat_2:
-            for x in game.mediated:
-                if self.selected_cat_1.ID in x and self.selected_cat_2.ID in x:
-                    invalid_pair = True
-                    error_message += i18n.t("screens.mediation.pair_already_mediated")
-                    break
-        else:
-            invalid_pair = True
 
         self.error.set_text(error_message)
-
-        if invalid_pair:
-            self.increase_button.disable()
-            self.decrease_button.disable()
-        else:
-            self.increase_button.enable()
-            self.decrease_button.enable()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -753,9 +731,22 @@ class RelationshipEditorScreen(Screens):
         self.selected_cat_1 = None
         self.selected_cat_2 = None
 
+
+
         for ele in self.rel_type_buttons:
             self.rel_type_buttons[ele].kill()
         self.rel_type_buttons = {}
+
+        for ele in self.rel_type_text:
+            self.rel_type_text[ele].kill()
+        self.rel_type_text = {}
+
+        for ele in self.rel_change_inc:
+            self.rel_change_inc[ele].kill()
+        self.rel_change_inc = {}
+        for ele in self.rel_change_dec:
+            self.rel_change_dec[ele].kill()
+        self.rel_change_dec = {}
 
         for cat in self.cat_buttons:
             cat.kill()
@@ -774,10 +765,6 @@ class RelationshipEditorScreen(Screens):
         del self.selected_frame_2
         self.cat_bg.kill()
         del self.cat_bg
-        self.increase_button.kill()
-        del self.increase_button
-        self.decrease_button.kill()
-        del self.decrease_button
         self.deselect_1.kill()
         del self.deselect_1
         self.deselect_2.kill()
