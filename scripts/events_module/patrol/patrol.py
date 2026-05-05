@@ -1000,12 +1000,12 @@ class Patrol:
 
             if is_exclusionary and not hits:
                 # if they don't have a disallowed skill, we decrease chance
-                success_chance -= (
+                success_chance += (
                     1 * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
                 )
             else:
                 # if they had the required skill, we decrease chance
-                success_chance -= (
+                success_chance += (
                     hits
                     * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
                 )
@@ -1040,7 +1040,7 @@ class Patrol:
             if (is_exclusionary and kitty.personality.trait not in trait_to_check) or (
                 kitty.personality.trait in trait_to_check
             ):
-                success_chance -= constants.CONFIG["patrol_generation"][
+                success_chance += constants.CONFIG["patrol_generation"][
                     "fail_stat_cat_modifier"
                 ]
 
