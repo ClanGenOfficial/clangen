@@ -817,10 +817,10 @@
 			"like": "increase"
 		},
 		"main_status_constraint": [
-			"-kitten"
+			"-kitten", "-newborn"
 		],
 		"random_status_constraint": [
-			"-kitten"
+			"-kitten", "-newborn"
 		]
 	},
 	{
