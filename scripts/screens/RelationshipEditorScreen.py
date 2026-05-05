@@ -37,6 +37,8 @@ class RelationshipEditorScreen(Screens):
         self.search_bar = None
         self.search_bar_image = None
         self.rel_type_buttons = {}
+        self.rel_type_text = {}
+        self.rel_change = {}
         self.mediators = []
         self.cat_buttons = []
         self.page = 1
@@ -66,7 +68,7 @@ class RelationshipEditorScreen(Screens):
             elif event.ui_element == self.deselect_2:
                 self.selected_cat_2 = None
                 self.update_selected_cats()
-            elif event.ui_element == self.rel_type_buttons["like"]:
+            elif event.ui_element == self.rel_change["like_increase"]:
                 Cat.edit_relationship(
                     self.selected_cat_1,
                     self.selected_cat_2,
@@ -74,7 +76,7 @@ class RelationshipEditorScreen(Screens):
                     rel_edit_type=RelType.LIKE
                 )
                 self.update_selected_cats()
-            elif event.ui_element == self.decrease_button:
+            elif event.ui_element == self.rel_change["like_decrease"]:
                 Cat.edit_relationship(
                     self.selected_cat_1,
                     self.selected_cat_2,
@@ -272,6 +274,9 @@ class RelationshipEditorScreen(Screens):
         for ele in self.rel_type_buttons:
             self.rel_type_buttons[ele].kill()
         self.rel_type_buttons = {}
+        self.rel_type_text = {}
+        self.rel_change = {}
+
 
         if (
             self.selected_mediator is not None
@@ -288,23 +293,23 @@ class RelationshipEditorScreen(Screens):
                 ui_scale(pygame.Rect((275, 80), (252, 252))),
                 manager=MANAGER,
             )
-            self.rel_type_text["like"] = UISurfaceImage(
+            self.rel_type_text["like"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 41), (126, 38))),
                 "screens.relationship_editor.like",
                 get_button_dict(ButtonStyles.HORIZONTAL_TAB, (126, 38)),
                 object_id="@buttonstyles_horizontal_tab",
                 container=self.rel_button_container,
-                manager=MANAGER,
             )
-            self.rel_increase["like"] = UISurfaceImageButton(
+            self.rel_change["like_increase"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 41), (126, 38))),
                 "screens.relationship_editor.plus_icon_placeholder",
                 get_button_dict(ButtonStyles.VERTICAL_TAB, (126, 38)),
                 object_id="@buttonstyles_vertical_tab",
                 container=self.rel_button_container,
                 manager=MANAGER,
+                anchors={"right": "right", "right_target": self.rel_type_text["like"]},
             )
-            self.rel_decrease["like"] = UISurfaceImageButton(
+            self.rel_change["like_decrease"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 41), (126, 38))),
                 "screens.relationship_editor.minus_icon_placeholder",
                 get_button_dict(ButtonStyles.VERTICAL_TAB, (126, 38)),
