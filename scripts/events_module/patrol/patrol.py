@@ -999,12 +999,12 @@ class Patrol:
             hits = kitty.skills.check_skill_requirement_list(skills_to_check)
 
             if is_exclusionary and not hits:
-                # if they don't have a disallowed skill, we decrease chance
+                # if they don't have a disallowed skill, we decrease chance (fail mod is a negative)
                 success_chance += (
                     1 * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
                 )
             else:
-                # if they had the required skill, we decrease chance
+                # if they had the required skill, we decrease chance (fail mod is a negative)
                 success_chance += (
                     hits
                     * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
