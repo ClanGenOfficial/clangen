@@ -96,7 +96,7 @@
 		"cat_amount": 5,
 		"interactions": [
 			"r_c1, r_c2, r_c3, and r_c4 talk about m_c's combat prowess during a skirmish.",
-			"m_c regales r_c1, r_c2, r_c3, and r_c4 about {PRONOUN/m_c/poss} latest fight.",
+			"m_c regales r_c1, r_c2, r_c3, and r_c4 with stories about {PRONOUN/m_c/poss} latest fight.",
 			"m_c gives r_c1, r_c2, r_c3, and r_c4 fighting tips.",
 			"r_c1, r_c2, r_c3, and r_c4 congratulate m_c on {PRONOUN/m_c/poss} win during a border skirmish.",
 			"After hearing about m_c's combat prowess, r_c1, r_c2, r_c3, and r_c4's respect for m_c increases."
