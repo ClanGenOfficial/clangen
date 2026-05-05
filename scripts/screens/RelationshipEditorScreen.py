@@ -322,6 +322,26 @@ class RelationshipEditorScreen(Screens):
                 container=self.rel_button_container,
                 manager=MANAGER,
             )
+            self.rel_change_inc["respect_increase"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((124, 72), (48, 36))),
+                "screens.relationship_editor.plus_icon_placeholder",
+                get_button_dict(ButtonStyles.PROFILE_RIGHT, (48, 36)),
+                object_id="@buttonstyles_profile_right",
+                manager=MANAGER,
+                anchors={"right": "right", "right_target": self.rel_type_text["respect"]},
+                container=self.rel_button_container,
+            )
+            self.rel_change_dec["respect_decrease"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-171,72), (48, 36))),
+                "screens.relationship_editor.minus_icon_placeholder",
+                get_button_dict(ButtonStyles.PROFILE_LEFT, (48, 36)),
+                object_id="@buttonstyles_profile_left",
+                manager=MANAGER,
+                anchors={"left": "left", "left_target": self.rel_type_text["respect"]},
+                container=self.rel_button_container,
+            )
+
+
             self.rel_type_text["trust"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 108), (126, 36))),
                 "screens.relationship_editor.trust",
@@ -330,6 +350,26 @@ class RelationshipEditorScreen(Screens):
                 container=self.rel_button_container,
                 manager=MANAGER,
             )
+            self.rel_change_inc["trust_increase"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((124, 108), (48, 36))),
+                "screens.relationship_editor.plus_icon_placeholder",
+                get_button_dict(ButtonStyles.PROFILE_RIGHT, (48, 36)),
+                object_id="@buttonstyles_profile_right",
+                manager=MANAGER,
+                anchors={"right": "right", "right_target": self.rel_type_text["trust"]},
+                container=self.rel_button_container,
+            )
+            self.rel_change_dec["trust_decrease"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-171,108), (48, 36))),
+                "screens.relationship_editor.minus_icon_placeholder",
+                get_button_dict(ButtonStyles.PROFILE_LEFT, (48, 36)),
+                object_id="@buttonstyles_profile_left",
+                manager=MANAGER,
+                anchors={"left": "left", "left_target": self.rel_type_text["trust"]},
+                container=self.rel_button_container,
+            )
+
+
             self.rel_type_text["comfort"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 144), (126, 36))),
                 "screens.relationship_editor.comfort",
@@ -338,13 +378,51 @@ class RelationshipEditorScreen(Screens):
                 container=self.rel_button_container,
                 manager=MANAGER,
             )
+            self.rel_change_inc["comfort_increase"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((124, 144), (48, 36))),
+                "screens.relationship_editor.plus_icon_placeholder",
+                get_button_dict(ButtonStyles.PROFILE_RIGHT, (48, 36)),
+                object_id="@buttonstyles_profile_right",
+                manager=MANAGER,
+                anchors={"right": "right", "right_target": self.rel_type_text["comfort"]},
+                container=self.rel_button_container,
+            )
+            self.rel_change_dec["comfort_decrease"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-171,144), (48, 36))),
+                "screens.relationship_editor.minus_icon_placeholder",
+                get_button_dict(ButtonStyles.PROFILE_LEFT, (48, 36)),
+                object_id="@buttonstyles_profile_left",
+                manager=MANAGER,
+                anchors={"left": "left", "left_target": self.rel_type_text["comfort"]},
+                container=self.rel_button_container,
+            )
+
+
             self.rel_type_text["romance"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((63, 180), (126, 36))),
                 "screens.relationship_editor.romance",
-                get_button_dict(ButtonStyles.PROFILE_MIDDLE, (126, 36)),
+                get_button_dict(ButtonStyles.PROFILE_MIDDLE, (126, 40)),
                 object_id="@buttonstyles_profile_middle",
                 container= self.rel_button_container,
                 manager=MANAGER,
+            )
+            self.rel_change_inc["romance_increase"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((124, 180), (48, 36))),
+                "screens.relationship_editor.plus_icon_placeholder",
+                get_button_dict(ButtonStyles.PROFILE_RIGHT, (48, 36)),
+                object_id="@buttonstyles_profile_right",
+                manager=MANAGER,
+                anchors={"right": "right", "right_target": self.rel_type_text["romance"]},
+                container=self.rel_button_container,
+            )
+            self.rel_change_dec["romance_decrease"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-171,180), (48, 36))),
+                "screens.relationship_editor.minus_icon_placeholder",
+                get_button_dict(ButtonStyles.PROFILE_LEFT, (48, 36)),
+                object_id="@buttonstyles_profile_left",
+                manager=MANAGER,
+                anchors={"left": "left", "left_target": self.rel_type_text["romance"]},
+                container=self.rel_button_container,
             )
 
         self.update_buttons()
