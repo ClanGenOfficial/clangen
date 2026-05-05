@@ -611,7 +611,7 @@
 		"cat_amount": 5,
 		"interactions": [
 			"r_c1, r_c2, r_c3, and r_c4 approve of a recent decision m_c made.",
-			"r_c1, r_c2, r_c3, and r_c4 discuss a recent change m_c made and approve of it.",
+			"r_c1, r_c2, r_c3, and r_c4 discuss their approval of a recent change m_c made.",
 			"r_c1, r_c2, r_c3, and r_c4 think that m_c has been leading the Clan well.",
 			"m_c's leadership impresses r_c1, r_c2, r_c3, and r_c4.",
 			"r_c1, r_c2, r_c3, and r_c4 respect m_c for making a tough decision as the leader."
