@@ -287,33 +287,35 @@ class RelationshipEditorScreen(Screens):
                 manager=MANAGER,
             )
             self.rel_type_text["like"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((63, 41), (126, 38))),
+                ui_scale(pygame.Rect((63, 36), (126, 36))),
                 "screens.relationship_editor.like",
-                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (126, 38)),
-                object_id="@buttonstyles_horizontal_tab",
+                get_button_dict(ButtonStyles.PROFILE_MIDDLE, (126, 36)),
+                object_id="@buttonstyles_profile_middle",
+                manager=MANAGER,
                 container=self.rel_button_container,
             )
             self.rel_change_inc["like_increase"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((63, 41), (126, 38))),
+                ui_scale(pygame.Rect((124, 36), (48, 36))),
                 "screens.relationship_editor.plus_icon_placeholder",
-                get_button_dict(ButtonStyles.VERTICAL_TAB, (126, 38)),
-                object_id="@buttonstyles_vertical_tab",
-                container=self.rel_button_container,
+                get_button_dict(ButtonStyles.PROFILE_RIGHT, (48, 36)),
+                object_id="@buttonstyles_profile_right",
                 manager=MANAGER,
                 anchors={"right": "right", "right_target": self.rel_type_text["like"]},
+                container=self.rel_button_container,
             )
             self.rel_change_dec["like_decrease"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((63, 41), (126, 38))),
+                ui_scale(pygame.Rect((-171,36), (48, 36))),
                 "screens.relationship_editor.minus_icon_placeholder",
-                get_button_dict(ButtonStyles.VERTICAL_TAB, (126, 38)),
-                object_id="@buttonstyles_vertical_tab",
-                container=self.rel_button_container,
+                get_button_dict(ButtonStyles.PROFILE_LEFT, (48, 36)),
+                object_id="@buttonstyles_profile_left",
                 manager=MANAGER,
+                anchors={"left": "left", "left_target": self.rel_type_text["like"]},
+                container=self.rel_button_container,
             )
 
 
             self.rel_type_text["respect"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((63, 73), (126, 38))),
+                ui_scale(pygame.Rect((63, 72), (126, 36))),
                 "screens.relationship_editor.respect",
                 get_button_dict(ButtonStyles.PROFILE_MIDDLE, (126, 36)),
                 object_id="@buttonstyles_profile_middle",
@@ -321,7 +323,7 @@ class RelationshipEditorScreen(Screens):
                 manager=MANAGER,
             )
             self.rel_type_text["trust"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((63, 108), (126, 38))),
+                ui_scale(pygame.Rect((63, 108), (126, 36))),
                 "screens.relationship_editor.trust",
                 get_button_dict(ButtonStyles.PROFILE_MIDDLE, (126, 36)),
                 object_id="@buttonstyles_profile_middle",
@@ -329,7 +331,7 @@ class RelationshipEditorScreen(Screens):
                 manager=MANAGER,
             )
             self.rel_type_text["comfort"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((63, 143), (126, 38))),
+                ui_scale(pygame.Rect((63, 144), (126, 36))),
                 "screens.relationship_editor.comfort",
                 get_button_dict(ButtonStyles.PROFILE_MIDDLE, (126, 36)),
                 object_id="@buttonstyles_profile_middle",
@@ -337,10 +339,10 @@ class RelationshipEditorScreen(Screens):
                 manager=MANAGER,
             )
             self.rel_type_text["romance"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((63, 176), (126, 38))),
+                ui_scale(pygame.Rect((63, 180), (126, 36))),
                 "screens.relationship_editor.romance",
-                get_button_dict(ButtonStyles.HORIZONTAL_TAB_MIRRORED, (126, 38)),
-                object_id="@buttonstyles_horizontal_tab_mirrored",
+                get_button_dict(ButtonStyles.PROFILE_MIDDLE, (126, 36)),
+                object_id="@buttonstyles_profile_middle",
                 container= self.rel_button_container,
                 manager=MANAGER,
             )
