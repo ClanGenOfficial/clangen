@@ -3,7 +3,7 @@
 		"id": "group_4_negative_gossip",
 		"cat_amount": 4,
 		"intensity": "low",
-		"interactions": ["m_c is gossiping with r_c1 about r_c2 and r_c3"],
+		"interactions": ["m_c is gossiping with r_c1 about r_c2 and r_c3."],
 		"relationship_constraint": {
 			"m_c_to_r_c2": ["dislikes"],
 			"r_c1_to_r_c2": ["dislikes"],

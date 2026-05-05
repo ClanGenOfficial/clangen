@@ -705,7 +705,7 @@
 		"intensity": "medium",
 		"cat_amount": 5,
 		"interactions": [
-			"m_c listens to r_c1, r_c2, r_c3, and r_c4's feedback regarding to a recent change.",
+			"m_c listens to r_c1, r_c2, r_c3, and r_c4's feedback regarding a recent change.",
 			"m_c understands r_c1, r_c2, r_c3, and r_c4's concern about a decision and explains {PRONOUN/m_c/poss} reasoning behind it.",
 			"r_c1, r_c2, r_c3, and r_c4 approach m_c about a concern and feel reassured by the end of the discussion.",
 			"While m_c doesn't change {PRONOUN/m_c/poss} mind about a decision {PRONOUN/m_c/subject} made, r_c1, r_c2, r_c3, and r_c4 appreciate m_c listening to their opinions.",
