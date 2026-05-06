@@ -24,6 +24,7 @@ from scripts.events_module.event_filters import (
     get_personality_compatibility,
     event_for_location,
     event_for_season,
+    cat_for_event,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
@@ -962,22 +963,83 @@ class Patrol:
 
         # Skill and trait stuff
         for kitty in self.patrol_cats:
-            hits = kitty.skills.check_skill_requirement_list(success_outcome.stat_skill)
-            success_chance += (
-                hits * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
+            # SUCCESS OUTCOME
+            is_exclusionary = any(
+                value.find("-") == 0 for value in success_outcome.stat_skill
             )
+            if is_exclusionary:
+                skills_to_check = [
+                    x.replace("-", "") for x in success_outcome.stat_skill
+                ]
+            else:
+                skills_to_check = success_outcome.stat_skill
 
-            hits = kitty.skills.check_skill_requirement_list(fail_outcome.stat_skill)
-            success_chance -= (
-                hits * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
+            hits = kitty.skills.check_skill_requirement_list(skills_to_check)
+
+            if is_exclusionary and not hits:
+                # if they don't have a disallowed skill, we increase the chance
+                success_chance += (
+                    1 * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
+                )
+            else:
+                # if they had a required skill, we increase
+                success_chance += (
+                    hits
+                    * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
+                )
+
+            # FAIL OUTCOME
+            is_exclusionary = any(
+                value.find("-") == 0 for value in fail_outcome.stat_skill
             )
+            if is_exclusionary:
+                skills_to_check = [x.replace("-", "") for x in fail_outcome.stat_skill]
+            else:
+                skills_to_check = fail_outcome.stat_skill
+            hits = kitty.skills.check_skill_requirement_list(skills_to_check)
 
-            if kitty.personality.trait in success_outcome.stat_trait:
+            if is_exclusionary and not hits:
+                # if they don't have a disallowed skill, we decrease chance (fail mod is a negative)
+                success_chance += (
+                    1 * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
+                )
+            else:
+                # if they had the required skill, we decrease chance (fail mod is a negative)
+                success_chance += (
+                    hits
+                    * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
+                )
+
+            # SUCCESS OUTCOME
+            is_exclusionary = any(
+                value.find("-") == 0 for value in success_outcome.stat_trait
+            )
+            if is_exclusionary:
+                trait_to_check = [
+                    x.replace("-", "") for x in success_outcome.stat_trait
+                ]
+            else:
+                trait_to_check = success_outcome.stat_trait
+
+            if (is_exclusionary and kitty.personality.trait not in trait_to_check) or (
+                kitty.personality.trait in trait_to_check
+            ):
                 success_chance += constants.CONFIG["patrol_generation"][
                     "win_stat_cat_modifier"
                 ]
 
-            if kitty.personality.trait in fail_outcome.stat_trait:
+            # FAIL OUTCOME
+            is_exclusionary = any(
+                value.find("-") == 0 for value in fail_outcome.stat_trait
+            )
+            if is_exclusionary:
+                trait_to_check = [x.replace("-", "") for x in fail_outcome.stat_trait]
+            else:
+                trait_to_check = fail_outcome.stat_trait
+
+            if (is_exclusionary and kitty.personality.trait not in trait_to_check) or (
+                kitty.personality.trait in trait_to_check
+            ):
                 success_chance += constants.CONFIG["patrol_generation"][
                     "fail_stat_cat_modifier"
                 ]

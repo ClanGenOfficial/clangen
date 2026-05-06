@@ -1476,6 +1476,12 @@ def get_temper_alignment(sociability: int, aggression: int) -> str:
         _temperament = constants.TEMPERAMENT_DICT["mid_social"]
     else:
         _temperament = constants.TEMPERAMENT_DICT["low_social"]
+    if 11 <= first_value:
+        temper = list(temper_dict.values())[2]
+    elif 7 <= first_value:
+        temper = list(temper_dict.values())[1]
+    else:
+        temper = list(temper_dict.values())[0]
 
     if 11 <= aggression:
         _temperament = _temperament[2]
