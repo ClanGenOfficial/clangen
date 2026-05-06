@@ -288,7 +288,6 @@ class RelationshipEditorScreen(Screens):
             manager=MANAGER,
         )
 
-        self.update_buttons()
         self.update_list_cats()
         self.update_rel_choices()
 
@@ -436,33 +435,32 @@ class RelationshipEditorScreen(Screens):
 
 
         self.rel_type_box["romance"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((63, 180), (126, 36))),
+            ui_scale(pygame.Rect((63, 180), (126, 46))),
             "Romantic Interest",
-            {"normal": get_button_dict(ButtonStyles.MENU_MIDDLE, (126, 36))["normal"]},
+            {"normal": get_button_dict(ButtonStyles.MENU_MIDDLE, (126, 46))["normal"]},
             object_id="@buttonstyles_menu_middle",
             container=self.rel_button_container,
             manager=MANAGER,
         )
         self.rel_change_inc["romance_increase"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((124, 180), (48, 36))),
+                ui_scale(pygame.Rect((124, 180), (48, 46))),
                 "screens.relationship_editor.plus_icon_placeholder",
-                get_button_dict(ButtonStyles.PROFILE_RIGHT, (48, 36)),
+                get_button_dict(ButtonStyles.PROFILE_RIGHT, (48, 46)),
                 object_id="@buttonstyles_profile_right",
                 manager=MANAGER,
                 anchors={"right": "right", "right_target": self.rel_type_box["romance"]},
                 container=self.rel_button_container,
             )
         self.rel_change_dec["romance_decrease"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((-171,180), (48, 36))),
+                ui_scale(pygame.Rect((-171,180), (48, 46))),
                 "screens.relationship_editor.minus_icon_placeholder",
-                get_button_dict(ButtonStyles.PROFILE_LEFT, (48, 36)),
+                get_button_dict(ButtonStyles.PROFILE_LEFT, (48, 46)),
                 object_id="@buttonstyles_profile_left",
                 manager=MANAGER,
                 anchors={"left": "left", "left_target": self.rel_type_box["romance"]},
                 container=self.rel_button_container,
             )
 
-        self.update_buttons()
         self.update_list_cats()
 
     def update_list_cats(self):
@@ -538,7 +536,6 @@ class RelationshipEditorScreen(Screens):
         self.draw_info_block(self.selected_cat_1, (50, 80))
         self.draw_info_block(self.selected_cat_2, (550, 80))
 
-        self.update_buttons()
 
     def draw_info_block(self, cat, starting_pos: tuple):
         if not cat:
@@ -787,6 +784,9 @@ class RelationshipEditorScreen(Screens):
             # even if they somehow have some. They should not be able to get any, but it never hurts to check.
             if not check_age or related:
                 allow_romance = False
+                self.rel_type_box["romance"].disable()
+                self.rel_change_inc["romance_increase"].disable()
+                self.rel_change_dec["romance_decrease"].disable()
                 # Print, just for bug checking. Again, they should not be able to get love towards their relative.
                 if the_relationship.romance and related:
                     print(
@@ -794,6 +794,9 @@ class RelationshipEditorScreen(Screens):
                     )
             else:
                 allow_romance = True
+                self.rel_type_box["romance"].enable()
+                self.rel_change_inc["romance_increase"].enable()
+                self.rel_change_dec["romance_decrease"].enable()
 
             self.selected_cat_elements[f"display{tag}"] = UIRelationDisplay(
                 position=(x + 50, 0),
@@ -813,19 +816,6 @@ class RelationshipEditorScreen(Screens):
             output.append(self.selected_cat_2.ID)
 
         return output
-
-    def update_buttons(self):
-        error_message = ""
-
-        if not self.allow_romance:
-            self.rel_type_box["romance"].disable()
-            self.rel_change_inc["romance_increase"].disable()
-            self.rel_change_dec["romance_decrease"].disable()
-
-
-        invalid_pair = False
-
-        self.error.set_text(error_message)
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
