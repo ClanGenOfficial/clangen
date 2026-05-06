@@ -99,7 +99,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["patrol" "-p_l"],
+                        "cats_from": ["patrol", "-p_l"],
                         "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
@@ -121,7 +121,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["patrol" "-s_c"],
+                        "cats_from": ["patrol", "-s_c"],
                         "cats_to": ["s_c"],
                         "mutual": false,
                         "values": [
@@ -135,7 +135,7 @@
                 ],
                 "prey": [
                     "small"
-                ],
+                ]
             },
             {
                 "text": "s_c ambles inside, sticking {PRONOUN/s_c/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c/subject} eventually {VERB/s_c/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand - as s_c soon demonstrates - will be an excellent border marker that no-one can pretend to overlook.",
@@ -147,7 +147,7 @@
                 "frequency": 3,
                 "relationships": [
                     {
-                        "cats_from": ["patrol" "-s_c"],
+                        "cats_from": ["patrol", "-s_c"],
                         "cats_to": ["s_c"],
                         "mutual": false,
                         "values": [
@@ -169,7 +169,7 @@
                 "frequency": 1,
                 "relationships": [
                     {
-                        "cats_from": ["patrol" "-s_c"],
+                        "cats_from": ["patrol", "-s_c"],
                         "cats_to": ["s_c"],
                         "mutual": false,
                         "values": [
@@ -209,7 +209,7 @@
                 "frequency": 3,
                 "relationships": [
                     {
-                        "cats_from": ["patrol" "-s_c"],
+                        "cats_from": ["patrol", "-s_c"],
                         "cats_to": ["s_c"],
                         "mutual": false,
                         "values": [
