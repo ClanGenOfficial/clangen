@@ -508,7 +508,7 @@ class LeaderDenScreen(Screens):
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 2), (133, -1))),
                 text=f"screens.leader_den.{other_clan.get_standing().strip()}",
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
                 anchors={
