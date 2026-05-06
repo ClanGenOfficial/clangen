@@ -939,6 +939,7 @@ class Cat:
                 not child.dead
                 and not child.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
                 and child.moons < 12
+                and not child.status.alive_in_player_clan
             ):
                 child.status.add_to_group(
                     new_group_ID=CatGroup.PLAYER_CLAN_ID, age=child.age
