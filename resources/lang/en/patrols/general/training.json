@@ -330,9 +330,8 @@
 					}
 				],
 				"history_text": {
-					"reg_death": "m_c died of injuries gained exploring the territory.",
-					"lead_death": "died from injuries gained exploring the territory.",
-					"scar": "m_c was scarred after gaining injuries exploring the territory."
+					"scar": "m_c was scarred after gaining injuries exploring the territory.",
+					"death": "m_c died of injuries gained exploring the territory."
 				},
 				"art": "gen_train_talkingWW"
 			},
