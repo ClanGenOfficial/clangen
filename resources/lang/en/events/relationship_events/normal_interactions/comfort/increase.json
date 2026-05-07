@@ -69,7 +69,7 @@
 			"m_c notices that r_c brought {PRONOUN/m_c/object} a big piece of prey.",
 			"r_c is the only one who gets m_c's joke.",
 			"m_c overhears something about r_c that {PRONOUN/m_c/subject} can relate to.",
-			"m_c calms down when realizing r_c is nearby.",
+			"m_c calms down when {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} r_c is nearby.",
 			"r_c's advice is more helpful than m_c expected.",
 			"r_c motivates m_c to do something difficult.",
 			"r_c doesn't laugh when m_c does something embarrassing.",
@@ -433,7 +433,7 @@
 		"interactions": [
 			"m_c feels most like {PRONOUN/m_c/self} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} around r_c.",
 			"m_c could recognize r_c just by the sound of {PRONOUN/r_c/poss} paw steps.",
-			"m_c finds peace in r_c's company where it can't be found anywhere else.",
+			"m_c finds peace in r_c's company when it can't be found anywhere else.",
 			"When m_c panics about something, {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} of r_c to feel better.",
 			"m_c wakes up r_c every morning so they're up together.",
 			"m_c and r_c share their prey with one another every day.",
@@ -450,7 +450,7 @@
 		"interactions": [
 			"m_c helps r_c work through something difficult that happened to {PRONOUN/r_c/object}.",
 			"m_c comforts r_c after a terrible nightmare.",
-			"When r_c gets sick for a few days, m_c brings {PRONOUN/r_c/object} yummy prey and nest bedding.",
+			"When r_c gets sick for a few days, m_c brings {PRONOUN/r_c/object} fresh-kill and bedding.",
 			"r_c knows secrets about m_c that {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} told anyone else.",
 			"m_c always goes to r_c first when {PRONOUN/m_c/subject} needs advice."
 		],

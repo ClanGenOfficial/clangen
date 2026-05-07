@@ -197,8 +197,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "r_c carried the marks of frostbite on {PRONOUN/r_c/poss} pelt from a freezing border patrol in leaf-bare.",
-                    "death": "r_c died from frostbite after a freezing border patrol in leaf-bare."
+                    "scar": "m_c carried the marks of frostbite on {PRONOUN/m_c/poss} pelt from a freezing border patrol in leaf-bare.",
+                    "death": "m_c died from frostbite after a freezing border patrol in leaf-bare."
                 },
                 "relationships": [
                     {
