@@ -1400,7 +1400,9 @@
                             "clan",
                             "high_social",
                             "high_lawful",
-                            "-patrol"
+                            "-patrol",
+                            "-n_c:0",
+                            "-n_c:1"
                         ],
                         "mutual": false,
                         "values": [
