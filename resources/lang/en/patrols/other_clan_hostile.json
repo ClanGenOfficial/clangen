@@ -6214,12 +6214,8 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan",
-                            "low_lawful",
-                            "high_aggress",
-                            "-patrol",
-                            "-n_c:0",
-                            "-n_c:1"
+                            "some_clan",
+                            "-patrol"
                         ],
                         "mutual": false,
                         "values": [
