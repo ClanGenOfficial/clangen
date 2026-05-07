@@ -1,6 +1,6 @@
 All CODE in this project falls under the Mozilla Public License Version 2.0 license 
 
-All SPRITES/ART/ICON in this project falls under the Creative Commons Attribution-NonCommercial 4.0 International License (https://creativecommons.org/licenses/by-nc/4.0/)
+All SPRITES/ART/ICON/AUDIO in this project falls under the Creative Commons Attribution-NonCommercial 4.0 International License (https://creativecommons.org/licenses/by-nc/4.0/)
 
 
 
