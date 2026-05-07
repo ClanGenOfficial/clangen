@@ -115,6 +115,7 @@
         "changed": 1
     }
 },
+  {
     "event_id": "pln_newcat_bridge_traincat",
     "location": [
       "plains:camp4"
