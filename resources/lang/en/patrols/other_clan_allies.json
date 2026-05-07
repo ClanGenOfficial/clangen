@@ -1397,12 +1397,8 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan",
-                            "high_social",
-                            "high_lawful",
-                            "-patrol",
-                            "-n_c:0",
-                            "-n_c:1"
+                            "some_clan",
+                            "-patrol"
                         ],
                         "mutual": false,
                         "values": [
