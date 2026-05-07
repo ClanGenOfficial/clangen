@@ -94,12 +94,12 @@
         "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
         "success_outcomes": [
             {
-                "text": "Undaunted, p_l investigates the interior of the washed-up floating nest. It appears to be lying on its side, with Twoleg stuff tumbled over and fallen in heaps. Giant, tough cobwebs lay next to a coil of thick, flexible vine. There is even a bright, shiny white-and-red striped ring, sized almost perfectly to nap within. But they have a task to do, and after noting the discovery, refresh the border markings without incident.",
+                "text": "p_l investigates the interior of the washed-up floating nest. It appears to be lying on its side, with Twoleg stuff tumbled over and fallen in heaps. Giant, tough cobwebs lie next to a coil of thick, flexible vine. There is even a bright, shiny white-and-red striped ring, sized almost perfectly to nap within. But they have a task to do, and after noting the discovery, refresh the border markings without incident.",
                 "exp": 10,
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["patrol", "-p_l"],
+                        "cats_from": ["patrol"],
                         "cats_to": ["p_l"],
                         "mutual": false,
                         "values": [
@@ -107,7 +107,7 @@
                         ],
                         "amount": 4,
                         "log": {
-                            "cats_from": "cat_from witnessed p_l's calm assessment of a wrecked floating Twoleg nest, and felt more secure afterward."
+                            "cats_from": "cat_from witnessed p_l's calm assessment of a wrecked floating Twoleg nest and felt more secure afterward."
                         }
                     }
                 ]
@@ -121,7 +121,7 @@
                 "frequency": 4,
                 "relationships": [
                     {
-                        "cats_from": ["patrol", "-s_c"],
+                        "cats_from": ["patrol"],
                         "cats_to": ["s_c"],
                         "mutual": false,
                         "values": [
@@ -129,7 +129,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from was impressed by s_c’s keen senses, and enjoyed sharing in the scavenged fishes from a wrecked floating Twoleg nest."
+                            "cats_from": "cat_from was impressed by s_c’s keen senses and enjoyed sharing in the scavenged fishes from a wrecked floating Twoleg nest."
                         }
                     }
                 ],
@@ -138,7 +138,7 @@
                 ]
             },
             {
-                "text": "s_c ambles inside, sticking {PRONOUN/s_c/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c/subject} eventually {VERB/s_c/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand - as s_c soon demonstrates - will be an excellent border marker that no-one can pretend to overlook.",
+                "text": "s_c ambles inside, sticking {PRONOUN/s_c/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c/subject} eventually {VERB/s_c/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand—as s_c soon demonstrates—will be an excellent border marker that no one can pretend to overlook.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1",
@@ -147,7 +147,7 @@
                 "frequency": 3,
                 "relationships": [
                     {
-                        "cats_from": ["patrol", "-s_c"],
+                        "cats_from": ["patrol"],
                         "cats_to": ["s_c"],
                         "mutual": false,
                         "values": [
@@ -161,7 +161,7 @@
                 ]
             },
             {
-                "text": "s_c slowly stalks closer, then freezes, eyes trained on a twisted carcass half-pinned under the wreckage. A great serpentine fish, eyes glazed and empty, flies starting to crawl over its smooth scales. s_c trembles, watching the oarfish's characteristic long, draped antennae fan out and ride on the lapping waves. This is an omen, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} to p_l. Grave danger is coming, but if c_n prepares now, they can weather the storm.",
+                "text": "s_c stalks closer, then freezes, eyes trained on a twisted carcass half-pinned under the wreckage. A great serpentine fish lies with eyes glazed and empty, flies starting to crawl over its smooth scales. s_c trembles, watching the oarfish's characteristic long, draped antennae fan out and ride on the lapping waves. This is an omen, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} to p_l. Grave danger is coming, but if c_n prepares now, they can weather the storm.",
                 "exp": 10,
                 "stat_skill": [
                     "OMEN,1"
@@ -177,7 +177,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from witnessed s_c calmly interpret the dire omen of a washed-up oarfish, and felt glad to have {PRONOUN/s_c/object} in the Clan."
+                            "cats_from": "cat_from witnessed s_c interpret the dire omen of a washed-up oarfish and felt glad to have {PRONOUN/s_c/object} in the Clan."
                         }
                     }
                 ]
@@ -190,7 +190,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c confidently strolls inside, only to trip on a loose board and tumble into a pile of giant, Twoleg-made cobwebs! The sun has moved significantly by the time the patrol manages to free the unfortunate s_c, whose time spent wrapped up with rotting fishes has not left {PRONOUN/s_c/poss} smell unaffected. The o_c_n patrol they encounter at the border a short while later is not amused, and quickly departs upwind",
+                "text": "s_c confidently strolls inside, only to trip on a loose board and tumble into a pile of giant, Twoleg-made cobwebs! The sun has moved significantly by the time the patrol frees s_c, whose time spent wrapped up with rotting fishes has left its mark. The o_c_n patrol they encounter at the border a short while later is not amused and quickly departs upwind.",
                 "exp": 0,
                 "stat_trait": [
                     "troublesome",
@@ -209,7 +209,7 @@
                 "frequency": 3,
                 "relationships": [
                     {
-                        "cats_from": ["patrol", "-s_c"],
+                        "cats_from": ["patrol"],
                         "cats_to": ["s_c"],
                         "mutual": false,
                         "values": [
@@ -217,7 +217,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from did not appreciate having to patrol beside a s_c stinking of rotting fish due to {PRONOUN/s_c/poss} own carelessness. Or the looks {PRONOUN/cat_from/subject} got from a o_c_n patrol because of it."
+                            "cats_from": "cat_from didn't enjoy patrolling beside a s_c stinking of rotting fish due to {PRONOUN/s_c/poss} own carelessness. Or the looks {PRONOUN/cat_from/subject} got from a o_c_n patrol because of it."
                         }
                     }
                 ]
