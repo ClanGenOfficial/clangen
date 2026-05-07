@@ -5586,7 +5586,7 @@
         "season": [
             "any"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c was maimed by r_c for questioning {PRONOUN/r_c/poss} leadership.",
         "m_c": {
             "age": [
@@ -5757,7 +5757,7 @@
         "season": [
             "any"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "m_c": {
             "status": [
@@ -5914,7 +5914,7 @@
         "season": [
             "any"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
