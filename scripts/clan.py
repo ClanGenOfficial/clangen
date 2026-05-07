@@ -11,6 +11,7 @@ TODO: Docs
 import os
 import statistics
 from random import choice, randint
+from typing import Literal
 
 import ujson
 
@@ -1110,7 +1111,8 @@ class Clan:
             # else just start us with an empty herb supply
             else:
                 clan.herb_supply = HerbSupply()
-            clan.herb_supply.required_herb_count = get_living_clan_cat_count(Cat) * 2
+
+            clan.herb_supply.set_required_herb_count(get_living_clan_cat_count(Cat))
         except:
             clan.herb_supply = HerbSupply()
 
@@ -1380,6 +1382,18 @@ class OtherClan:
     def __repr__(self):
         return f"{self.name}Clan"
 
+    def get_standing(self) -> Literal["ally", "neutral", "hostile"]:
+        """
+        Gets if OtherClan is an ally, neutral, or hostile.
+
+        :return: One of "ally", "neutral" or "hostile".
+        """
+        if self.relations > 17:
+            return "ally"
+        elif 7 <= self.relations <= 17:
+            return "neutral"
+        return "hostile"  # self.relations < 7
+
 
 class Afterlife:
     """
@@ -1541,11 +1555,11 @@ def _find_alignment(temper_dict: dict, first_value: int, second_value: int) -> s
     :param second_value: The second value to find the alignment for. This is the chart's "x-value", or when viewing it as a dictionary: its values.
     """
     if 11 <= first_value:
-        temper = list(temper_dict.values())[0]
+        temper = list(temper_dict.values())[2]
     elif 7 <= first_value:
         temper = list(temper_dict.values())[1]
     else:
-        temper = list(temper_dict.values())[2]
+        temper = list(temper_dict.values())[0]
 
     if 11 <= second_value:
         temper = temper[2]

@@ -3258,7 +3258,7 @@
         ]
     },
     {
-        "patrol_id": "fst_bord_solo1",
+        "patrol_id": "fst_bord_solohostile1",
         "biome": [
             "forest"
         ],
@@ -3703,9 +3703,9 @@
         ]
     },
     {
-        "patrol_id": "pln_bord_solo1",
+        "patrol_id": "pln_bord_solohostile1",
         "biome": [
-            "forest"
+            "plains"
         ],
         "season": [
             "any"
@@ -4148,9 +4148,9 @@
         ]
     },
     {
-        "patrol_id": "mtn_bord_solo1",
+        "patrol_id": "mtn_bord_solohostile1",
         "biome": [
-            "forest"
+            "mountainous"
         ],
         "season": [
             "any"
@@ -4593,9 +4593,9 @@
         ]
     },
     {
-        "patrol_id": "bch_bord_solo1",
+        "patrol_id": "bch_bord_solohostile1",
         "biome": [
-            "forest"
+            "beach"
         ],
         "season": [
             "any"
@@ -6183,12 +6183,12 @@
                 "other_clan_rep": -8,
                 "new_cat": [
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ],
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ]
                 ],
                 "frequency": 4

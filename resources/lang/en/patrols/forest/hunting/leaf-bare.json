@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -186,7 +186,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -269,7 +269,7 @@
         "season": [ "leaf-bare" ],
         "types": [ "hunting" ],
         "tags": [ "romance" ],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1564,7 +1564,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "r_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -1574,6 +1574,34 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was highly impressed by cat_to's genius idea for baiting squirrels."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol", "high_stable"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was amazed by cat_to's hunting skill on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol", "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from envied cat_to's hunting skill on patrol."
                         }
                     }
                 ],
@@ -1632,7 +1660,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_newleafsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
