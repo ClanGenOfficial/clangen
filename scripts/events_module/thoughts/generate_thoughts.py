@@ -115,16 +115,19 @@ def _load_group(thought_type: CatThought, main_cat: "Cat", other_cat: "Cat"):
 
     # LIVING CATS
     elif thought_type == CatThought.WHILE_ALIVE:
-        thoughts = load_lang_resource(f"{new_path}/{rank}.json")
+        if main_cat.age == CatAge.NEWBORN:  # accounting for non-clan newborns
+            thoughts = load_lang_resource(f"{new_path}/newborn.json")
+        else:
+            thoughts = load_lang_resource(f"{new_path}/{rank}.json")
 
         # make sure lost thoughts are included
         if main_cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
-            prior_rank = main_cat.status.find_prior_clan_rank(
-                CatGroup.PLAYER_CLAN_ID
-            ).replace(" ", "_")
-            thoughts.extend(
-                load_lang_resource(f"{start_path}/while_lost/{prior_rank}.json")
-            )
+            prior_rank = main_cat.status.find_prior_clan_rank(CatGroup.PLAYER_CLAN_ID)
+            if prior_rank:
+                prior_rank = prior_rank.replace(" ", "_")
+                thoughts.extend(
+                    load_lang_resource(f"{start_path}/while_lost/{prior_rank}.json")
+                )
 
         else:
             thoughts.extend(_load_general(main_cat, new_path))
@@ -395,7 +398,7 @@ def _constraints_fulfilled(main_cat: "Cat", random_cat: "Cat", thought) -> bool:
         if "m_c" in thought["has_injuries"]:
             if main_cat.injuries or main_cat.illnesses:
                 injuries_and_illnesses = list(main_cat.injuries.keys()) + list(
-                    main_cat.injuries.keys()
+                    main_cat.illnesses.keys()
                 )
                 if (
                     not [
@@ -412,7 +415,7 @@ def _constraints_fulfilled(main_cat: "Cat", random_cat: "Cat", thought) -> bool:
         if "r_c" in thought["has_injuries"] and random_cat:
             if random_cat.injuries or random_cat.illnesses:
                 injuries_and_illnesses = list(random_cat.injuries.keys()) + list(
-                    random_cat.injuries.keys()
+                    random_cat.illnesses.keys()
                 )
                 if (
                     not [

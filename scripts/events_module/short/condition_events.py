@@ -284,8 +284,8 @@ class Condition_Events:
                 and not event_string
             ):
                 # CLAN FOCUS!
-                if get_clan_setting("rest and recover"):
-                    stopping_chance = constants.CONFIG["focus"]["rest and recover"][
+                if get_clan_setting("rest_and_recover"):
+                    stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                         "illness_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
@@ -410,8 +410,8 @@ class Condition_Events:
 
             if triggered:
                 # CLAN FOCUS!
-                if get_clan_setting("rest and recover"):
-                    stopping_chance = constants.CONFIG["focus"]["rest and recover"][
+                if get_clan_setting("rest_and_recover"):
+                    stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                         "injury_prevent"
                     ]
                     if not int(random.random() * stopping_chance):
@@ -482,6 +482,8 @@ class Condition_Events:
             "lasting grief",
             "persistent headaches",
             "selective mutism",
+            "absent",
+            "crooked jaw",
         )
 
         got_condition = False
@@ -812,34 +814,40 @@ class Condition_Events:
                             )
                         ]
                         del translated_condition, translated_injury
+
                     # choose event string and ensure Clan's med cat number aligns with event text
-                    random_index = random.randrange(0, len(possible_string_list))
 
                     med_list = find_alive_cats_with_rank(
                         Cat,
                         [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
                         working=True,
                     )
-                    # If the cat is a med cat, don't consider them as one for the event.
 
+                    # If the cat is a med cat, don't consider them as one for the event.
                     if cat in med_list:
                         med_list.remove(cat)
 
                     # Choose med cat, if you can
                     if med_list:
                         med_cat = random.choice(med_list)
-                        cat_dict["r_c"] = med_cat
                     else:
                         med_cat = None
 
-                    if (
-                        not med_cat
-                        and random_index < 2
-                        and len(possible_string_list) >= 3
-                    ):
-                        random_index = 2
+                    accepted_events = []
+                    # Ensure that the Clan's med cat number aligns with event text
+                    if not med_cat:
+                        for string_event in possible_string_list:
+                            if "r_c" not in string_event:
+                                accepted_events.append(string_event)
+                    else:
+                        accepted_events = possible_string_list
 
-                    event = possible_string_list[random_index]
+                    random_index = random.randrange(0, len(accepted_events))
+                    event = accepted_events[random_index]
+
+                    if "r_c" in event:
+                        cat_dict["r_c"] = med_cat
+
                     event = event_text_adjust(
                         Cat, event, main_cat=cat, random_cat=med_cat
                     )  # adjust the text
@@ -919,8 +927,10 @@ class Condition_Events:
 
                 # add to death history
                 cat.history.add_death(
-                    death_text=i18n.t("defaults.complications_death_history"),
-                    condition=translated_condition,
+                    death_text=i18n.t(
+                        "defaults.complications_death_history",
+                        condition=translated_condition,
+                    )
                 )
 
                 game.herb_events_list.append(event)

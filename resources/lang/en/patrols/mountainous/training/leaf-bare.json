@@ -40,7 +40,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat and to_cat had a romp in the snow together."
+                            "cats_from": "cat_from and cat_to had a romp in the snow together."
                         }
                     }
                 ],
@@ -60,7 +60,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat and to_cat built a snow den together."
+                            "cats_from": "cat_from and cat_to built a snow den together."
                         }
                     }
                 ],
@@ -92,7 +92,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "from_cat and to_cat played in the snow, and when app1 got cold, app2 dug {PRONOUN/app1/object} a hollow to get cozy and warm in."
+                            "cats_from": "cat_from and cat_to played in the snow, and when app1 got cold, app2 dug {PRONOUN/app1/object} a hollow to get cozy and warm in."
                         }
                     }
                 ],
@@ -112,7 +112,7 @@
                         "values": ["like"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat and to_cat got frustrated when they went out in the snow to play and accidentally dug up a gross old dirtplace trench."
+                            "cats_from": "cat_from and cat_to got frustrated when they went out in the snow to play and accidentally dug up a gross old dirtplace trench."
                         }
                     }
                 ]
@@ -129,7 +129,7 @@
                         "values": ["comfort"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat after embarrassing {PRONOUN/from_cat/self} in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_from avoided cat_to after embarrassing {PRONOUN/cat_from/self} in front of {PRONOUN/cat_to/object}."
                         }
                     },
                     {
@@ -139,7 +139,7 @@
                         "values": ["romance"],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat saw to_cat embarrass {PRONOUN/to_cat/self} on patrol."
+                            "cats_from": "cat_from saw cat_to embarrass {PRONOUN/cat_to/self} on patrol."
                         }
                     }
                 ]
@@ -151,9 +151,8 @@
                     {
                         "cats": ["app1"],
                         "injuries": [
-                            "shivering"
-                        ],
-                        "scars": []
+                            "running nose"
+                        ]
                     }
                 ],
                 "relationships": [
@@ -164,7 +163,7 @@
                         "values": ["romance", "like"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat and to_cat enjoyed playing in the snow together, even though app1 ended up with a running nose."
+                            "cats_from": "cat_from and cat_to enjoyed playing in the snow together, even though app1 ended up with a running nose."
                         }
                     }
                 ],
@@ -210,7 +209,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about wolf behavior."
+                            "cats_from": "cat_from taught cat_to about wolf behavior."
                         }
                     },
                     {
@@ -224,7 +223,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about wolf behavior."
+                            "cats_from": "cat_to taught cat_from about wolf behavior."
                         }
                     }
                 ],
@@ -244,7 +243,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about wolf behavior."
+                            "cats_from": "cat_from taught cat_to about wolf behavior."
                         }
                     },
                     {
@@ -258,7 +257,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about wolf behavior."
+                            "cats_from": "cat_to taught cat_from about wolf behavior."
                         }
                     }
                 ],
@@ -286,7 +285,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about the history between ravens and wolves."
+                            "cats_from": "cat_from taught cat_to about the history between ravens and wolves."
                         }
                     },
                     {
@@ -300,7 +299,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about the history between ravens and wolves."
+                            "cats_from": "cat_to taught cat_from about the history between ravens and wolves."
                         }
                     }
                 ],
@@ -326,7 +325,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how wolves wear down large prey to kill it."
+                            "cats_from": "cat_from taught cat_to how wolves wear down large prey to kill it."
                         }
                     },
                     {
@@ -340,7 +339,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how wolves wear down large prey to kill it."
+                            "cats_from": "cat_to taught cat_from how wolves wear down large prey to kill it."
                         }
                     }
                 ],
@@ -393,7 +392,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about wolf behavior."
+                            "cats_from": "cat_from taught cat_to about wolf behavior."
                         }
                     },
                     {
@@ -407,7 +406,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about wolf behavior."
+                            "cats_from": "cat_to taught cat_from about wolf behavior."
                         }
                     }
                 ],
@@ -427,7 +426,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about wolf behavior."
+                            "cats_from": "cat_from taught cat_to about wolf behavior."
                         }
                     },
                     {
@@ -441,7 +440,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about wolf behavior."
+                            "cats_from": "cat_to taught cat_from about wolf behavior."
                         }
                     }
                 ],
@@ -469,7 +468,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about the history between ravens and wolves."
+                            "cats_from": "cat_from taught cat_to about the history between ravens and wolves."
                         }
                     },
                     {
@@ -483,7 +482,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about the history between ravens and wolves."
+                            "cats_from": "cat_to taught cat_from about the history between ravens and wolves."
                         }
                     }
                 ],
@@ -509,7 +508,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how wolves wear down large prey to kill it."
+                            "cats_from": "cat_from taught cat_to how wolves wear down large prey to kill it."
                         }
                     },
                     {
@@ -523,7 +522,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how wolves wear down large prey to kill it."
+                            "cats_from": "cat_to taught cat_from how wolves wear down large prey to kill it."
                         }
                     }
                 ],
@@ -566,7 +565,7 @@
         "decline_text": "A happier story, the cats ask, please. No one wants trouble sleeping tonight.",
         "success_outcomes": [
             {
-                "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan - but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty.",
+                "text": "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan — but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty.",
                 "exp": 30,
                 "relationships": [
                     {
@@ -579,7 +578,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the creation of the Dark Forest."
+                            "cats_from": "cat_from enjoyed cat_to's story about the creation of the Dark Forest."
                         }
                     }
                 ],
@@ -605,7 +604,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the creation of the Dark Forest."
+                            "cats_from": "cat_from enjoyed cat_to's story about the creation of the Dark Forest."
                         }
                     },
                     {
@@ -617,7 +616,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was flattered by how interested to_cat was in {PRONOUN/from_cat/poss} story about the creation of the Dark Forest."
+                            "cats_from": "cat_from was flattered by how interested cat_to was in {PRONOUN/cat_from/poss} story about the creation of the Dark Forest."
                         }
                     }
                 ],
@@ -646,7 +645,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the creation of the Dark Forest."
+                            "cats_from": "cat_from enjoyed cat_to's story about the creation of the Dark Forest."
                         }
                     },
                     {
@@ -658,7 +657,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was inspired by to_cat's story of a cat so powerful that StarClan themselves had to strike them down."
+                            "cats_from": "cat_from was inspired by cat_to's story of a cat so powerful that StarClan themselves had to strike them down."
                         }
                     }
                 ],
@@ -686,7 +685,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the creation of the Dark Forest."
+                            "cats_from": "cat_from enjoyed cat_to's story about the creation of the Dark Forest."
                         }
                     },
                     {
@@ -698,7 +697,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was inspired by to_cat's story of a cat so powerful that StarClan themselves had to strike them down."
+                            "cats_from": "cat_from was inspired by cat_to's story of a cat so powerful that StarClan themselves had to strike them down."
                         }
                     }
                 ],
@@ -714,14 +713,9 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "constant nightmares"
-                        ],
-                        "scars": [],
-                        "no_results": false
+                        ]
                     }
                 ],
-                "history_text": {
-                    "death": "m_c died from lack of sleep, {PRONOUN/m_c/poss} vision haunted by dark shadows."
-                },
                 "frequency": 4
             },
             {
@@ -744,7 +738,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the creation of the Dark Forest."
+                            "cats_from": "cat_from enjoyed cat_to's story about the creation of the Dark Forest."
                         }
                     },
                     {
@@ -756,7 +750,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was fascinated by to_cat's story of a cat so powerful that StarClan themselves had to strike them down."
+                            "cats_from": "cat_from was fascinated by cat_to's story of a cat so powerful that StarClan themselves had to strike them down."
                         }
                     },
                     {
@@ -768,7 +762,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat felt uneasy about how fascinated to_cat was by the story of the Dark Forest's creation."
+                            "cats_from": "cat_from felt uneasy about how fascinated cat_to was by the story of the Dark Forest's creation."
                         }
                     }
                 ],
@@ -852,7 +846,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the creation of the first Clan."
+                            "cats_from": "cat_from enjoyed cat_to's story about the creation of the first Clan."
                         }
                     }
                 ],
@@ -868,12 +862,11 @@
                         "cats": ["r_c"],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": [],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "history_text": {
+                    "scar": "m_c got frostbite while repairing some dens.",
                     "death": "m_c died after getting too cold while repairing some dens."
                 },
                 "frequency": 4
@@ -909,7 +902,7 @@
             "LORE,1"
         ],
         "intro_text": "Many seasons ago, p_l begins, there was born a powerful, StarClan-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill.",
-        "decline_text": "r_c doesn't have time to listen to p_l's story - {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
+        "decline_text": "r_c doesn't have time to listen to p_l's story — {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
         "success_outcomes": [
             {
                 "text": "After moons of having their Clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leaf-bare in their anger before fleeing the Clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
@@ -926,7 +919,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the creation of leaf-bare."
+                            "cats_from": "cat_from enjoyed cat_to's story about the creation of leaf-bare."
                         }
                     }
                 ],
@@ -978,7 +971,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "Though to_cat interrupted from_cat's story, {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} charmed by to_cat's concern for a character in the story."
+                            "cats_from": "Though cat_to interrupted cat_from's story, {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} charmed by cat_to's concern for a character in the story."
                         }
                     }
                 ],
@@ -998,7 +991,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_leaffallsnowstorm",
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -1018,7 +1011,7 @@
         "decline_text": "...Or they would, if the valley wasn't so misted over it's barely possible to see the other side.",
         "success_outcomes": [
             {
-                "text": "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run - not down, but to the side, away from where the snow will flow. Do they understand?",
+                "text": "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run — not down, but to the side, away from where the snow will flow. Do they understand?",
                 "exp": 30,
                 "art": "gen_train_ghost",
                 "stat_skill": [
@@ -1041,7 +1034,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat imparted a crucial lesson about avalanche safety to from_cat."
+                            "cats_from": "cat_to imparted a crucial lesson about avalanche safety to cat_from."
                         }
                     },
                     {
@@ -1053,7 +1046,7 @@
                         ],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat was unsettled by to_cat's frightening description of avalanches on patrol."
+                            "cats_from": "cat_from was unsettled by cat_to's frightening description of avalanches on patrol."
                         }
                     },
                     {
@@ -1065,7 +1058,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat listening attentively to {PRONOUN/from_cat/poss} lesson on avalanche safety."
+                            "cats_from": "cat_from appreciated cat_to listening attentively to {PRONOUN/cat_from/poss} lesson on avalanche safety."
                         }
                     }
                 ],
@@ -1095,7 +1088,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat imparted a crucial lesson about avalanche safety to from_cat."
+                            "cats_from": "cat_to imparted a crucial lesson about avalanche safety to cat_from."
                         }
                     },
                     {
@@ -1107,7 +1100,7 @@
                         ],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat was unsettled by to_cat's comprehensive list of cats killed in avalanches."
+                            "cats_from": "cat_from was unsettled by cat_to's comprehensive list of cats killed in avalanches."
                         }
                     },
                     {
@@ -1119,14 +1112,14 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat listening attentively to {PRONOUN/from_cat/poss} lesson on avalanche safety."
+                            "cats_from": "cat_from appreciated cat_to listening attentively to {PRONOUN/cat_from/poss} lesson on avalanche safety."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. Survival is a matter of luck if they get caught. So don't get caught - run to the side of the slope, out of the path of the flow, horizontal. Climb, climb anything. The tree will get swept away, but they might float.",
+                "text": "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. Survival is a matter of luck if they get caught. So don't get caught — run to the side of the slope, out of the path of the flow, horizontal. Climb, climb anything. The tree will get swept away, but they might float.",
                 "exp": 30,
                 "art": "gen_train_ghost",
                 "stat_skill": [
@@ -1151,7 +1144,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat imparted a crucial lesson about avalanche safety to from_cat."
+                            "cats_from": "cat_to imparted a crucial lesson about avalanche safety to cat_from."
                         }
                     },
                     {
@@ -1163,7 +1156,7 @@
                         ],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat was unsettled by to_cat's frightening description of avalanches on patrol."
+                            "cats_from": "cat_from was unsettled by cat_to's frightening description of avalanches on patrol."
                         }
                     },
                     {
@@ -1175,7 +1168,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat listening attentively to {PRONOUN/from_cat/poss} lesson on avalanche safety."
+                            "cats_from": "cat_from appreciated cat_to listening attentively to {PRONOUN/cat_from/poss} lesson on avalanche safety."
                         }
                     }
                 ],
@@ -1207,7 +1200,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat imparted a crucial lesson about avalanche safety to from_cat."
+                            "cats_from": "cat_to imparted a crucial lesson about avalanche safety to cat_from."
                         }
                     },
                     {
@@ -1219,7 +1212,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat's reassurance during a frightening lesson on avalanche safety."
+                            "cats_from": "cat_from appreciated cat_to's reassurance during a frightening lesson on avalanche safety."
                         }
                     },
                     {
@@ -1231,7 +1224,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat listening attentively to {PRONOUN/from_cat/poss} lesson on avalanche safety."
+                            "cats_from": "cat_from appreciated cat_to listening attentively to {PRONOUN/cat_from/poss} lesson on avalanche safety."
                         }
                     }
                 ],
@@ -1253,7 +1246,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was disappointed in to_cat when {PRONOUN/to_cat/subject} messed around during a lesson in avalanche safety."
+                            "cats_from": "cat_from was disappointed in cat_to when {PRONOUN/cat_to/subject} messed around during a lesson in avalanche safety."
                         }
                     },
                     {
@@ -1265,7 +1258,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was annoyed when to_cat assigned {PRONOUN/from_cat/object} to cleaning the dirtplace as a punishment for messing around during a lesson."
+                            "cats_from": "cat_from was annoyed when cat_to assigned {PRONOUN/cat_from/object} to cleaning the dirtplace as a punishment for messing around during a lesson."
                         }
                     }
                 ],
@@ -1279,8 +1272,7 @@
                         "cats": ["patrol"],
                         "injuries": [
                             "shivering"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "dead_cats": [
@@ -1301,7 +1293,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "from_cat led the patrol into an avalanche that killed multiple Clanmates."
+                            "cats_from": "cat_from led the patrol into an avalanche that killed multiple Clanmates."
                         }
                     }
                 ],

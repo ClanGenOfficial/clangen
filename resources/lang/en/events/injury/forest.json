@@ -143,7 +143,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was badly injured when to_cat dared {PRONOUN/from_cat/object} to climb a tree and {PRONOUN/from_cat/subject} fell."
+                    "cats_from": "cat_from was badly injured when cat_to dared {PRONOUN/cat_from/object} to climb a tree and {PRONOUN/cat_from/subject} fell."
                 }
             },
             {
@@ -159,7 +159,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was impressed by to_cat's bravery when from_cat dared {PRONOUN/to_cat/object} to climb a tree, even though things ended in the medicine den."
+                    "cats_from": "cat_from was impressed by cat_to's bravery when cat_from dared {PRONOUN/cat_to/object} to climb a tree, even though things ended in the medicine den."
                 }
             }
         ]
@@ -212,7 +212,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c's tail was badly injured by a falling tree.",
+        "event_text": "m_c's tail was badly injured by a falling bough.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -240,8 +240,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred by a falling tree.",
-                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a tree fell on {PRONOUN/m_c/object}."
+                "scar": "m_c was scarred by a falling bough.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a bough fell on {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -364,7 +364,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was rescued from a burning nursery by to_cat, even at the expense of to_cat's pelt."
+                    "cats_from": "cat_from was rescued from a burning nursery by cat_to, even at the expense of cat_to's pelt."
                 }
             }
         ]
@@ -378,7 +378,7 @@
             "leaf-bare"
         ],
         "frequency": 2,
-        "event_text": "m_c and r_c played on the ice-covered pond near camp. They weren't quick enough to react to the sound of cracking beneath them, but m_c managed to drag r_c out of the freezing water.",
+        "event_text": "m_c and r_c were playing on the ice-covered pond near camp. The ice broke beneath them, but m_c managed to drag r_c out of the freezing water.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -458,7 +458,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from drowning in a frozen pond."
+                    "cats_from": "cat_to saved cat_from from drowning in a frozen pond."
                 }
             }
         ]
@@ -513,7 +513,7 @@
             "leaf-fall"
         ],
         "frequency": 4,
-        "event_text": "m_c was left scratched and scraped after pushing through thorny, bare undergrowth.",
+        "event_text": "m_c was left scratched and scraped after pushing through dense thorny undergrowth.",
         "m_c": {
             "age": [
                 "any",
@@ -539,5 +539,74 @@
                 ]
             }
         ]
+    },
+    {
+    "event_id": "fst_injury_fireflies",
+    "location": [
+        "forest:camp1"
+    ],
+    "season": [
+        "-leaf-bare"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c got hurt while chasing fireflies through camp.",
+    "new_accessory": [],
+    "m_c": {
+        "age": [
+            "kitten",
+            "adolescent"
+        ]
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["minor_injury"]
+        }
+    ]
+},
+       {
+    "event_id": "fst_mushroom_injury",
+    "location": ["forest:camp1"],
+    "season": ["newleaf", "greenleaf"],
+    "frequency": 2,
+    "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN/m_c/subject/CAP} {VERB/m_c/fall/falls} ill later that evening.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "-CLEVER,1",
+                "-SENSE,2",
+                "-HEALER,1"
+            ],
+            "trait": [
+               "-nervous",
+                "-strict",
+                "-thoughtful",
+                "-calm",
+                "-responsible",
+                "-wise",
+                "-cunning",
+                "-careful"
+            ],
+            "dies": false
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was poisoned by a beautiful but deadly mushroom."
+            }
+        ],
+          "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["poisoned"],
+            "scars": []
+        }
+    ]
     }
 ]

@@ -18,7 +18,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}.",
+                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion — weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -31,7 +31,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about how hummingbirds nest in the shadows of eagles' nests."
+                            "cats_from": "cat_to taught cat_from about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     },
                     {
@@ -43,14 +43,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about how hummingbirds nest in the shadows of eagles' nests."
+                            "cats_from": "cat_from taught cat_to about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
+                "text": "p_l tells app1 to watch carefully — not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
                 "exp": 15,
                 "relationships": [
                     {
@@ -63,7 +63,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about how hummingbirds nest in the shadows of eagles' nests."
+                            "cats_from": "cat_to taught cat_from about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     },
                     {
@@ -75,7 +75,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about how hummingbirds nest in the shadows of eagles' nests."
+                            "cats_from": "cat_from taught cat_to about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     }
                 ],
@@ -101,7 +101,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how to tell seasons by the hummingbirds' arrival."
+                            "cats_from": "cat_to taught cat_from how to tell seasons by the hummingbirds' arrival."
                         }
                     },
                     {
@@ -113,7 +113,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how to tell seasons by the hummingbirds' arrival."
+                            "cats_from": "cat_from taught cat_to how to tell seasons by the hummingbirds' arrival."
                         }
                     }
                 ],
@@ -141,7 +141,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
+                            "cats_from": "cat_to taught cat_from how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
                         }
                     },
                     {
@@ -153,7 +153,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
+                            "cats_from": "cat_from taught cat_to how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
                         }
                     }
                 ],
@@ -174,7 +174,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/to_cat/subject} refused to go near an eagle nest."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} refused to go near an eagle nest."
                         }
                     }
                 ],
@@ -193,7 +193,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/to_cat/subject} wouldn't take a training session seriously."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} wouldn't take a training session seriously."
                         }
                     }
                 ],
@@ -220,7 +220,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing app2.",
+                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion — weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing app2.",
                 "exp": 20,
                 "relationships": [
                     {
@@ -233,7 +233,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about how hummingbirds nest in the shadows of eagles' nests."
+                            "cats_from": "cat_to taught cat_from about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     },
                     {
@@ -245,14 +245,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about how hummingbirds nest in the shadows of eagles' nests."
+                            "cats_from": "cat_from taught cat_to about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
+                "text": "p_l tells the apprentices to watch carefully — not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
                 "exp": 20,
                 "relationships": [
                     {
@@ -265,7 +265,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat about how hummingbirds nest in the shadows of eagles' nests."
+                            "cats_from": "cat_to taught cat_from about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     },
                     {
@@ -277,7 +277,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat about how hummingbirds nest in the shadows of eagles' nests."
+                            "cats_from": "cat_from taught cat_to about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     }
                 ],
@@ -303,7 +303,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how to tell seasons by the hummingbirds' arrival."
+                            "cats_from": "cat_to taught cat_from how to tell seasons by the hummingbirds' arrival."
                         }
                     },
                     {
@@ -315,7 +315,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how to tell seasons by the hummingbirds' arrival."
+                            "cats_from": "cat_from taught cat_to how to tell seasons by the hummingbirds' arrival."
                         }
                     }
                 ],
@@ -343,7 +343,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
+                            "cats_from": "cat_to taught cat_from how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
                         }
                     },
                     {
@@ -355,7 +355,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
+                            "cats_from": "cat_from taught cat_to how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
                         }
                     }
                 ],
@@ -376,7 +376,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/to_cat/subject} refused to go near an eagle nest."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} refused to go near an eagle nest."
                         }
                     },
                     {
@@ -407,7 +407,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat lost respect for to_cat when {PRONOUN/to_cat/subject} wouldn't take a training session seriously."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} wouldn't take a training session seriously."
                         }
                     }
                 ],
@@ -447,7 +447,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat showed from_cat the greenleaf hummingbirds."
+                            "cats_from": "cat_to showed cat_from the greenleaf hummingbirds."
                         }
                     },
                     {
@@ -459,7 +459,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat showed to_cat the greenleaf hummingbirds."
+                            "cats_from": "cat_from showed cat_to the greenleaf hummingbirds."
                         }
                     }
                 ],
@@ -479,7 +479,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how hummingbirds can lead cats to good hunting grounds."
+                            "cats_from": "cat_to taught cat_from how hummingbirds can lead cats to good hunting grounds."
                         }
                     },
                     {
@@ -491,14 +491,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how hummingbirds can lead cats to good hunting grounds."
+                            "cats_from": "cat_from taught cat_to how hummingbirds can lead cats to good hunting grounds."
                         }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "app1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/app1/object}. s_c watches {PRONOUN/app1/object} indulgently, and when {PRONOUN/app1/subject} {VERB/app1/slow/slows} down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
+                "text": "app1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/app1/object}. s_c watches {PRONOUN/app1/object} indulgently, and when {PRONOUN/app1/subject} {VERB/app1/slow/slows} down s_c explains about how c_n uses hunting the agile birds as the ultimate test — it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
                 "exp": 15,
                 "stat_skill": [
                     "TEACHER,1"
@@ -517,7 +517,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat told from_cat about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
+                            "cats_from": "cat_to told cat_from about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
                         }
                     },
                     {
@@ -529,7 +529,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat told to_cat about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
+                            "cats_from": "cat_from told cat_to about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
                         }
                     }
                 ],
@@ -557,7 +557,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat told from_cat the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
+                            "cats_from": "cat_to told cat_from the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
                         }
                     },
                     {
@@ -569,7 +569,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat told from_cat the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
+                            "cats_from": "cat_to told cat_from the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
                         }
                     }
                 ],
@@ -591,7 +591,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat was too busy chasing after hummingbirds to listen to from_cat's lesson."
+                            "cats_from": "cat_to was too busy chasing after hummingbirds to listen to cat_from's lesson."
                         }
                     }
                 ],
@@ -631,7 +631,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat showed from_cat the greenleaf hummingbirds."
+                            "cats_from": "cat_to showed cat_from the greenleaf hummingbirds."
                         }
                     },
                     {
@@ -643,7 +643,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat showed to_cat the greenleaf hummingbirds."
+                            "cats_from": "cat_from showed cat_to the greenleaf hummingbirds."
                         }
                     }
                 ],
@@ -663,7 +663,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat taught from_cat how hummingbirds can lead cats to good hunting grounds."
+                            "cats_from": "cat_to taught cat_from how hummingbirds can lead cats to good hunting grounds."
                         }
                     },
                     {
@@ -675,14 +675,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat taught to_cat how hummingbirds can lead cats to good hunting grounds."
+                            "cats_from": "cat_from taught cat_to how hummingbirds can lead cats to good hunting grounds."
                         }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
+                "text": "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test — it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
                 "exp": 15,
                 "stat_skill": [
                     "TEACHER,1"
@@ -701,7 +701,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat told from_cat about how the mark of a great c_n hunter is to catch a hummingbird with sheathed claws."
+                            "cats_from": "cat_to told cat_from about how the mark of a great c_n hunter is to catch a hummingbird with sheathed claws."
                         }
                     },
                     {
@@ -713,7 +713,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat told to_cat about how the mark of a great c_n hunter is to catch a hummingbird with sheathed claws."
+                            "cats_from": "cat_from told cat_to about how the mark of a great c_n hunter is to catch a hummingbird with sheathed claws."
                         }
                     }
                 ],
@@ -741,7 +741,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat told from_cat the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
+                            "cats_from": "cat_to told cat_from the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
                         }
                     },
                     {
@@ -753,7 +753,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat told from_cat the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
+                            "cats_from": "cat_to told cat_from the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
                         }
                     }
                 ],
@@ -775,7 +775,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat was too busy chasing after hummingbirds to listen to p_l's lesson and spoiled the training session."
+                            "cats_from": "cat_to was too busy chasing after hummingbirds to listen to p_l's lesson and spoiled the training session."
                         }
                     }
                 ],
@@ -801,7 +801,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and - ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
+                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and — ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
                 "exp": 20,
                 "frequency": 4
             },
@@ -826,7 +826,7 @@
                 "frequency": 4
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off — but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "injury": [
                     {
@@ -835,8 +835,7 @@
                         ],
                         "injuries": [
                             "stomachache"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "relationships": [
@@ -847,7 +846,7 @@
                         "amount": 5,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat was amused to hear that to_cat hunted and ate a beetle, then got a stomachache from it."
+                            "cats_from": "cat_from was amused to hear that cat_to hunted and ate a beetle, then got a stomachache from it."
                         }
                     }
                 ],
@@ -889,7 +888,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                            "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     }
                 ],
@@ -915,7 +914,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                            "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     }
                 ],
@@ -948,7 +947,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                            "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     },
                     {
@@ -960,7 +959,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was touched by to_cat's sympathy for a character in {PRONOUN/from_cat/poss} story."
+                            "cats_from": "cat_from was touched by cat_to's sympathy for a character in {PRONOUN/cat_from/poss} story."
                         }
                     }
                 ],
@@ -993,7 +992,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                            "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     },
                     {
@@ -1003,7 +1002,7 @@
                         "values": ["respect", "trust"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat gained a lot of respect for to_cat after hearing {PRONOUN/to_cat/subject} wouldn't hesitate to rebel against an unjust leader."
+                            "cats_from": "cat_from gained a lot of respect for cat_to after hearing {PRONOUN/cat_to/subject} wouldn't hesitate to rebel against an unjust leader."
                         }
                     }
                 ],
@@ -1033,7 +1032,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                            "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     },
                     {
@@ -1049,7 +1048,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "Even though from_cat initially protested the idea of hearing a story on patrol, {PRONOUN/from_cat/subject} enjoyed how to_cat told it."
+                            "cats_from": "Even though cat_from initially protested the idea of hearing a story on patrol, {PRONOUN/cat_from/subject} enjoyed how cat_to told it."
                         }
                     },
                     {
@@ -1061,14 +1060,14 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated that to_cat lightened up and was willing to listen to {PRONOUN/from_cat/poss} story on patrol."
+                            "cats_from": "cat_from appreciated that cat_to lightened up and was willing to listen to {PRONOUN/cat_from/poss} story on patrol."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death - but her Clan's evil leader lived on.",
+                "text": "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death — but her Clan's evil leader lived on.",
                 "exp": 30,
                 "can_have_stat": [
                     "not_pl_rc"
@@ -1093,7 +1092,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                            "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     },
                     {
@@ -1103,7 +1102,7 @@
                         "values": ["respect", "trust"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat gained a lot of respect for to_cat after hearing {PRONOUN/to_cat/subject} wouldn't hesitate to rebel against an unjust leader."
+                            "cats_from": "cat_from gained a lot of respect for cat_to after hearing {PRONOUN/cat_to/subject} wouldn't hesitate to rebel against an unjust leader."
                         }
                     }
                 ],
@@ -1133,7 +1132,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the origin of the sunset."
+                            "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     },
                     {
@@ -1143,7 +1142,7 @@
                         "values": ["like", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was flattered that to_cat took such an interest in {PRONOUN/from_cat/poss} stories."
+                            "cats_from": "cat_from was flattered that cat_to took such an interest in {PRONOUN/cat_from/poss} stories."
                         }
                     }
                 ],
@@ -1162,9 +1161,7 @@
                         "injuries": [
                             "scrapes",
                             "bruises"
-                        ],
-                        "scars": [],
-                        "no_results": false
+                        ]
                     }
                 ],
                 "frequency": 4
@@ -1197,7 +1194,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was disappointed that to_cat ruined {PRONOUN/from_cat/poss} story by yawning and walking off in the middle of it."
+                            "cats_from": "cat_from was disappointed that cat_to ruined {PRONOUN/cat_from/poss} story by yawning and walking off in the middle of it."
                         }
                     }
                 ],
@@ -1233,7 +1230,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was disappointed that to_cat didn't want to hear {PRONOUN/from_cat/poss} story."
+                            "cats_from": "cat_from was disappointed that cat_to didn't want to hear {PRONOUN/cat_from/poss} story."
                         }
                     }
                 ],
@@ -1266,7 +1263,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was grateful that to_cat changed the subject after starting to tell an unhappy story."
+                            "cats_from": "cat_from was grateful that cat_to changed the subject after starting to tell an unhappy story."
                         }
                     }
                 ],
@@ -1297,7 +1294,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was disappointed that to_cat left while {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} telling a story."
+                            "cats_from": "cat_from was disappointed that cat_to left while {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} telling a story."
                         }
                     }
                 ],
@@ -1330,7 +1327,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "from_cat was annoyed that to_cat interrupted to finish {PRONOUN/from_cat/poss} story for {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_from was annoyed that cat_to interrupted to finish {PRONOUN/cat_from/poss} story for {PRONOUN/cat_from/object}."
                         }
                     },
                     {
@@ -1346,7 +1343,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat loved to_cat's story so much that {PRONOUN/from_cat/subject} couldn't help filling in the ending."
+                            "cats_from": "cat_from loved cat_to's story so much that {PRONOUN/cat_from/subject} couldn't help filling in the ending."
                         }
                     }
                 ],

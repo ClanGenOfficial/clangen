@@ -40,7 +40,7 @@
         "lives_remaining_label": "remaining lives: %{count}",
         "experience_label": "experience: %{exp}",
         "backstory_label": "backstory: %{backstory}",
-        "subtab_favorite_tooltip": "favorite this sub-tab - it will be the default sub tab displayed when History is viewed",
+        "subtab_favorite_tooltip": "favorite this sub-tab — it will be the default sub tab displayed when History is viewed",
         "subtab_unfavorite_tooltip": "un-favorite this sub-tab",
         "no_moons_tooltip": "Show the Moon that certain history events occurred on",
         "show_moons_tooltip": "Stop showing the Moon that certain history events occurred on",

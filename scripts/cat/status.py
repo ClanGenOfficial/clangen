@@ -638,11 +638,11 @@ class Status:
                 return entry["standing"]
         return []
 
-    def find_prior_clan_rank(self, clan_ID: str = None) -> CatRank:
+    def find_prior_clan_rank(self, clan_ID: str = None) -> Optional[CatRank]:
         """
         Finds the last held clan rank of a current outsider
-        :param clan_ID: pass the ID of a clan to only return the cat's prior rank within that clan. Default is None, if
-        None then the last rank within any Clan will be returned.
+        :param clan_ID: pass the ID of a clan to only return the cat's prior rank within that Clan. Default is None, if
+        None then the last rank within any Clan will be returned. If the cat has never been in a Clan, None is returned.
         """
         if clan_ID:
             past_ranks = [
@@ -656,6 +656,8 @@ class Status:
                 for rank in self.all_ranks.keys()
                 if rank not in [CatRank.LONER, CatRank.KITTYPET, CatRank.ROGUE]
             ]
+        if not past_ranks:
+            return None
 
         return past_ranks[-1]
 

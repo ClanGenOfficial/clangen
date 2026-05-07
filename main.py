@@ -49,12 +49,13 @@ def load_data():
 
     # load audio
     try:
-        game.audio = AudioManager()
-        pygame.mixer.pre_init(buffer=44100)
-        pygame.mixer.init()
+        if not getattr(game, "audio", None):
+            game.audio = AudioManager()
+            pygame.mixer.pre_init(buffer=44100)
+            pygame.mixer.init()
 
-        # loading sounds here bc they depend on mixer being initialized
-        game.audio.sound.load_sounds()
+            # loading sounds here bc they depend on mixer being initialized
+            game.audio.sound.load_sounds()
     except pygame.error:
         print("Failed to initialize audio. Audio will be disabled.")
         game.audio.disabled = True
@@ -184,6 +185,8 @@ while 1:
 
     if switch_get_value(Switch.switch_clan):
         load_game()
+        # have to manually reload errors because it only happens when screen is switched to
+        game.all_screens[GameScreen.START].reload_errors()
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.

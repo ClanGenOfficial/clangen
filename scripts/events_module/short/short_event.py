@@ -458,6 +458,7 @@ class ShortEvent:
 
             if extra_text:
                 self.text = self.text + " " + extra_text
+                extra_text = None
 
         # Check to see if any young litters joined with alive parents.
         # If so, see if recovering from birth condition is needed and give the condition
@@ -570,10 +571,10 @@ class ShortEvent:
             body = True
         pass
 
-        if self.m_c["dies"] and self.main_cat not in dead_list:
+        if self.m_c.get("dies") and self.main_cat not in dead_list:
             dead_list.append(self.main_cat)
         if self.r_c:
-            if self.r_c["dies"] and self.random_cat not in dead_list:
+            if self.r_c.get("dies") and self.random_cat not in dead_list:
                 dead_list.append(self.random_cat)
 
         if not dead_list:

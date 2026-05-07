@@ -16,17 +16,15 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"like": "increase",
-				"comfort": "increase",
-				"trust": "increase"
+				"comfort": "increase"
 			},
 			"m_c_to_r_c2": {
 				"like": "increase",
-				"comfort": "increase",
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"like": "increase"
+				"like": "increase",
+				"trust": "increase"
 			}
 		}
 	},
@@ -71,7 +69,7 @@
 				"trust": "increase"
 			},
 			"r_c1_to_m_c": {
-				"trust": "increase"
+				"comfort": "increase"
 			}
 		}
 	},
@@ -80,7 +78,7 @@
 		"cat_amount": 3,
 		"intensity": "low",
 		"interactions": [
-			"m_c, r_c1, and r_c2 had a nice talk, while eating.",
+			"m_c, r_c1, and r_c2 had a nice talk while eating.",
 			"m_c, r_c1, and r_c2 took a sunbath and had a little small talk."
 		],
 		"general_reaction": {

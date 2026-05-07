@@ -42,7 +42,7 @@
                         "amount": 5,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat saw to_cat bring back a huge haul of prey from a solo-hunt."
+                            "cats_from": "cat_from saw cat_to bring back a huge haul of prey from a solo-hunt."
                         }
                     }
                 ],
@@ -65,7 +65,7 @@
                         "amount": 5,
                         "mutual": false,
                         "log": {
-                            "cats_from": "from_cat saw to_cat bring back a huge haul of prey from a solo-hunt."
+                            "cats_from": "cat_from saw cat_to bring back a huge haul of prey from a solo-hunt."
                         }
                     }
                 ],
@@ -88,10 +88,12 @@
                         ],
                         "injuries": [
                             "water in their lungs"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
+                "history_text": {
+                    "death": "m_c inhaled water during a hunt and died of the water in {PRONOUN/m_c/poss} lungs."
+                },
                 "frequency": 1
             },
             {
@@ -119,10 +121,12 @@
                         ],
                         "injuries": [
                             "water in their lungs"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
+                "history_text": {
+                    "death": "m_c died of the water in {PRONOUN/m_c/poss} lungs after slipping into the water during a hunt."
+                },
                 "frequency": 4
             }
         ]

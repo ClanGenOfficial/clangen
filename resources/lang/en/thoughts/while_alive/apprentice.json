@@ -83,7 +83,7 @@
             "Attempts to prove {PRONOUN/m_c/poss} worth to r_c",
             "Acts daring in hopes of gaining r_c's respect",
             "Finds r_c's work overwhelming to think about",
-            "Catalogues r_c's day-to-day in {PRONOUN/m_c/poss} head",
+            "Catalogs r_c's day-to-day in {PRONOUN/m_c/poss} head",
             "Is raring to join r_c on patrol",
             "Admires r_c's status in c_n",
             "Wonders what it would take to be in r_c's paws",
@@ -168,12 +168,12 @@
         "thoughts": [
             "Wonders if r_c was a good apprentice"
         ],
-        "backstory_constraint": {
-            "r_c": ["clan_founder_backstories",
-                    "clanborn_backstories",
-                    "outsider_roots_backstories",
-                    "half_clan_backstories"]
-        },
+        "random_backstory_constraint": [
+            "clan_founder_backstories",
+            "clanborn_backstories",
+            "outsider_roots_backstories",
+            "half_clan_backstories"
+        ],
         "random_living_status": [
             "living"
         ],
@@ -221,14 +221,12 @@
             "Is jumpy about a particular spot in the apprentices' den r_c claimed was haunted",
             "Is listening to a story r_c heard when {PRONOUN/r_c/subject} {VERB/r_c/were/was} a kit"
         ],
-        "backstory_constraint": {
-            "r_c": [
+        "random_backstory_constraint": [
                 "clan_founder_backstories",
                 "clanborn_backstories",
                 "outsider_roots_backstories",
                 "half_clan_backstories"
-            ]
-        },
+        ],
         "random_living_status": [
             "living"
         ],
@@ -431,7 +429,7 @@
             "Is glaring at r_c",
             "Is covered in prey-blood after hunting",
             "Is clawing up moss for fun",
-            "Is asking what deathberries look like - for safety reasons, of course...",
+            "Is asking what deathberries look like — for safety reasons, of course...",
             "Hopes to get a scar from battle"
         ],
         "main_trait_constraint": [

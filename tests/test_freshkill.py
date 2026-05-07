@@ -53,17 +53,20 @@ class FreshkillPileTest(unittest.TestCase):
         game.dark_forest = Afterlife()
 
         # set up clan members and some helpful lists for us to use later
+        self.leader = create_cat(CatRank.LEADER, moons=100)
+        self.deputy = create_cat(CatRank.DEPUTY, moons=139)
+        self.medicine_cat = create_cat(CatRank.MEDICINE_CAT, moons=78)
         self.warriors = [
-            create_cat(CatRank.WARRIOR),
-            create_cat(CatRank.WARRIOR),
-            create_cat(CatRank.WARRIOR),
+            create_cat(CatRank.WARRIOR, moons=90),
+            create_cat(CatRank.WARRIOR, moons=24),
+            create_cat(CatRank.WARRIOR, moons=60),
         ]
         self.apprentices = [
-            create_cat(CatRank.APPRENTICE),
-            create_cat(CatRank.APPRENTICE),
+            create_cat(CatRank.APPRENTICE, moons=7),
+            create_cat(CatRank.APPRENTICE, moons=11),
         ]
-        self.elder = create_cat(CatRank.ELDER)
-        self.kitten = create_cat(CatRank.KITTEN)
+        self.elder = create_cat(CatRank.ELDER, moons=126)
+        self.kitten = create_cat(CatRank.KITTEN, moons=3)
 
         members = [self.elder, self.kitten]
         members.extend(self.warriors)
@@ -74,9 +77,9 @@ class FreshkillPileTest(unittest.TestCase):
         game.clan = Clan(
             name=self.test_clan_name,
             displayname="Test",
-            leader=create_cat(CatRank.LEADER),
-            deputy=create_cat(CatRank.DEPUTY),
-            medicine_cat=create_cat(CatRank.MEDICINE_CAT),
+            leader=self.leader,
+            deputy=self.deputy,
+            medicine_cat=self.medicine_cat,
             biome="Forest",
             camp_bg="camp1",
             symbol="symbolADDER0",
