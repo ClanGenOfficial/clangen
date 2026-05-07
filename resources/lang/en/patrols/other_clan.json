@@ -4623,7 +4623,7 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": [
-                            "some_clan",
+                            "clan",
                             "-patrol"
                         ],
                         "mutual": false,
