@@ -220,7 +220,8 @@
                             "cats_from": "cat_from didn't enjoy patrolling beside a s_c stinking of rotting fish due to {PRONOUN/s_c/poss} own carelessness. Or the looks {PRONOUN/cat_from/subject} got from a o_c_n patrol because of it."
                         }
                     }
-                ]
+                ],
+                "other_clan_rep": -1
             }
         ]
     }
