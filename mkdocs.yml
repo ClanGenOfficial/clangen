@@ -58,6 +58,10 @@ nav:
   - User Guides:
     - user-guides/index.md
     - user-guides/removing-palette-maps.md
+    - Save File Editing:
+      - user-guides/save-file-editing/sfe.md
+      - user-guides/save-file-editing/clan_cats.md
+      - user-guides/save-file-editing/clan_json.md
   - Contributing to the Wiki:
       - contributing/index.md
       - contributing/documentation-resources.md
