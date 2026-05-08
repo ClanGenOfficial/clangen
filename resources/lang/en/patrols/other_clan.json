@@ -4617,14 +4617,18 @@
                     ],
                     "amount": -20,
                     "log": {
-                        "cats_from": "p_l ordered the patrol to kidnap {PRONOUN/cat_from/object}."
+                        "cats_from": "p_l kidnapped {PRONOUN/cat_from/object}."
                     }
                     },
                     {
                         "cats_to": ["p_l"],
                         "cats_from": [
-                            "some_clan",
-                            "-patrol"
+                            "clan",
+                            "-low_lawful",
+                            "-high_aggress",
+                            "-patrol",
+                            "-n_c:0",
+                            "-n_c:1"
                         ],
                         "mutual": false,
                         "values": [
@@ -4646,7 +4650,7 @@
                         "values": [
                             "comfort",
                             "like",
-                            "trust",
+                            "trust"
                         ],
                         "amount": 20,
                         "log": {
