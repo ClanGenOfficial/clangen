@@ -4623,7 +4623,7 @@
                     {
                         "cats_to": ["p_l"],
                         "cats_from": [
-                            "Clan",
+                            "clan",
                             "low_lawful",
                             "low_social",
                             "-patrol",
