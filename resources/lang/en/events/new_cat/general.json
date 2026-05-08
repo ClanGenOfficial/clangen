@@ -3320,7 +3320,7 @@
         "tags": [],
         "frequency": 3,
         "exclude_involved": ["m_c"],
-        "event_text": "An old loner pleads to join c_n. {PRONOUN/n_c:0/subject/CAP} always enjoyed {PRONOUN/n_c:0/poss} life of solitude... until now. n_c:0 is thrilled to take a new name when {PRONOUN/n_c:0/subject} {VERB/n_c:0/join/joins} the clan.",
+        "event_text": "An old loner pleads to join c_n. {PRONOUN/n_c:0/subject/CAP} always enjoyed {PRONOUN/n_c:0/poss} life of solitude... until now. n_c:0 is thrilled to take a new name when {PRONOUN/n_c:0/subject} {VERB/n_c:0/join/joins} the Clan.",
         "m_c": {
             "age": [],
             "status": [
