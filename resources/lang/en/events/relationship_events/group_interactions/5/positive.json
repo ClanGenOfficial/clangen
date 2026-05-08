@@ -96,7 +96,7 @@
 		"cat_amount": 5,
 		"interactions": [
 			"r_c1, r_c2, r_c3, and r_c4 talk about m_c's combat prowess during a skirmish.",
-			"m_c regales r_c1, r_c2, r_c3, and r_c4 about {PRONOUN/m_c/poss} latest fight.",
+			"m_c regales r_c1, r_c2, r_c3, and r_c4 with stories about {PRONOUN/m_c/poss} latest fight.",
 			"m_c gives r_c1, r_c2, r_c3, and r_c4 fighting tips.",
 			"r_c1, r_c2, r_c3, and r_c4 congratulate m_c on {PRONOUN/m_c/poss} win during a border skirmish.",
 			"After hearing about m_c's combat prowess, r_c1, r_c2, r_c3, and r_c4's respect for m_c increases."
@@ -611,7 +611,7 @@
 		"cat_amount": 5,
 		"interactions": [
 			"r_c1, r_c2, r_c3, and r_c4 approve of a recent decision m_c made.",
-			"r_c1, r_c2, r_c3, and r_c4 discuss a recent change m_c made and approve of it.",
+			"r_c1, r_c2, r_c3, and r_c4 discuss their approval of a recent change m_c made.",
 			"r_c1, r_c2, r_c3, and r_c4 think that m_c has been leading the Clan well.",
 			"m_c's leadership impresses r_c1, r_c2, r_c3, and r_c4.",
 			"r_c1, r_c2, r_c3, and r_c4 respect m_c for making a tough decision as the leader."
@@ -705,7 +705,7 @@
 		"intensity": "medium",
 		"cat_amount": 5,
 		"interactions": [
-			"m_c listens to r_c1, r_c2, r_c3, and r_c4's feedback regarding to a recent change.",
+			"m_c listens to r_c1, r_c2, r_c3, and r_c4's feedback regarding a recent change.",
 			"m_c understands r_c1, r_c2, r_c3, and r_c4's concern about a decision and explains {PRONOUN/m_c/poss} reasoning behind it.",
 			"r_c1, r_c2, r_c3, and r_c4 approach m_c about a concern and feel reassured by the end of the discussion.",
 			"While m_c doesn't change {PRONOUN/m_c/poss} mind about a decision {PRONOUN/m_c/subject} made, r_c1, r_c2, r_c3, and r_c4 appreciate m_c listening to their opinions.",
