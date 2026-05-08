@@ -3245,7 +3245,8 @@
         "new_cat": [
             [
                 "loner",
-                "age:senior"
+                "age:senior",
+                "old_name"
             ]
         ],
         "outsider": {
@@ -3295,9 +3296,9 @@
     "sub_type": [],
     "tags": [],
     "frequency": 3,
-    "event_text": "While out in the territory, m_c comes across a lost elderly kittypet. {PRONOUN/n_c:0/poss/CAP} owner is dead and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} looking for a new home. m_c meows that c_n would be be willing to care for {PRONOUN/n_c:0/object}.",
+    "event_text": "m_c finds a lost elderly kittypet. {PRONOUN/n_c:0/poss/CAP} owner is dead and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} looking for a new home. m_c meows that c_n would be be willing to care for {PRONOUN/n_c:0/object}.",
     "m_c": {
-        "status": ["-kitten", "-elder", "leader", "deputy", "medicine cat"]
+        "status": ["leader", "deputy", "medicine cat"]
     },
       "new_cat": [
         ["kittypet", "age:senior", "old_name"]
@@ -3318,7 +3319,8 @@
         "sub_type": [],
         "tags": [],
         "frequency": 3,
-        "event_text": "An old loner appears by the camp's entrance and pleads to join c_n. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/have/has} been alone {PRONOUN/n_c:0/poss} entire life and liked it that way... until now. n_c:0 is thrilled to take a new name when {PRONOUN/n_c:0/subject} {VERB/n_c:0/join/joins} the clan.",
+        "exclude_involved": ["m_c"],
+        "event_text": "An old loner pleads to join c_n. {PRONOUN/n_c:0/subject/CAP} always enjoyed {PRONOUN/n_c:0/poss} life of solitude... until now. n_c:0 is thrilled to take a new name when {PRONOUN/n_c:0/subject} {VERB/n_c:0/join/joins} the clan.",
         "m_c": {
             "age": [],
             "status": [
@@ -3376,7 +3378,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 3,
-    "event_text": "A old loner asks to join c_n, seeking community and security in their golden years. When welcomed in, the loner decides to adopt a clan-like name: n_c:0.",
+    "event_text": "An old loner asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the loner decides to adopt a clan-like name: n_c:0.",
     "new_cat": [
         ["loner", "age:senior", "new_name"]
     ],
@@ -3393,7 +3395,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 3,
-    "event_text": "A old rogue asks to join c_n, seeking community and security in their golden years. When welcomed in, the rogue decides to adopt a clan-like name: n_c:0.",
+    "event_text": "An old rogue asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the rogue decides to adopt a clan-like name: n_c:0.",
     "new_cat": [
         ["rogue", "age:senior", "new_name"]
     ],
