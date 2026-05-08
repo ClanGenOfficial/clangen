@@ -101,7 +101,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 3,
-    "event_text": "m_c encounters an aging kittypet near a Twoleg structure. n_c:0 is looking for a new home; {PRONOUN/n_c:0/subject} just can't mouse like {PRONOUN/n_c:0/subject} used to. In exchange, n_c:0 can show c_n all the tricks to hunting in and about these \"barns\".",
+    "event_text": "m_c encounters an aging kittypet near a Twoleg structure. n_c:0 is looking for a new home; {PRONOUN/n_c:0/subject} just can't mouse like {PRONOUN/n_c:0/subject} used to. In exchange, n_c:0 can show c_n all the tricks to hunting in and about these \"barns.\"",
     "m_c": {
         "age": [],
         "status": ["-kitten", "-apprentice", "-elder"],
