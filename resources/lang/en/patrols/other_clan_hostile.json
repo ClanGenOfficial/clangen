@@ -6217,9 +6217,7 @@
                             "clan",
                             "high_aggress",
                             "low_lawful",
-                            "-patrol",
-                            "-n_c:0",
-                            "-n_c:1"
+                            "-patrol"
                         ],
                         "mutual": false,
                         "values": [
