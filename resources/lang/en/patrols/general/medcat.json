@@ -3588,19 +3588,19 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was unsettled by cat_to's enthusiasm for blood and wounds."
+                            "cats_froms: "cat_from was unsettled by cat_to's enthusiasm for blood and wounds."
                         }
                     },
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["p_l"],
+                        "cats_to": ["p_l"],
+                        "cats_from": ["app1"],
                         "mutual": false,
                         "values": [
                             "trust"
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was disappointed cat_to didn't tell {PRONOUN/cat_from/object} about blood and wounds."
+                            "cats_to": "cat_to was disappointed cat_from didn't tell {PRONOUN/cat_from/object} about blood and wounds."
                         }
                     }
                 ],
