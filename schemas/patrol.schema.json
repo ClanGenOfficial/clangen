@@ -316,9 +316,6 @@
           "type": "string"
         },
         {
-          "$ref": "#/$defs/GatherCatEnum"
-        },
-        {
           "pattern": "^-n_c:[0-9]+$",
           "type": "string"
         }
