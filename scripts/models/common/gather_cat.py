@@ -56,5 +56,5 @@ class GatherCat(RootModel):
         GatherCatEnum,
         Annotated[str, StringConstraints(pattern=r"^n_c:[0-9]+$")],
         GatherCatEnum,
-        Annotated[str, StringConstraints(pattern=r"^-n_c:[0-9]+$")],
+        Annotated[str, StringConstraints(pattern=r"^-n_c:[0-9]+$")]
     ]
