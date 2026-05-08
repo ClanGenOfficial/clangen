@@ -5966,7 +5966,7 @@
         },
         {
             "min_max_status": {"normal adult": [4,6]},
-            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. p_l and {PRONOUN/p_l/poss} Clanmates react quickly, backing r_c up. r_c distracts the gannet, and p_l pounces, sinking {PRONOUN/s_c/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, r_c and p_l have to carry it together!",
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. p_l and {PRONOUN/p_l/poss} Clanmates react quickly, backing r_c up. r_c distracts the gannet, and p_l pounces, sinking {PRONOUN/s_c/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, r_c and p_l have to carry it together!",
             "exp": 40,
             "frequency": 2,
             "prey": ["huge"],
@@ -5995,7 +5995,7 @@
             "art": "gen_angry_cat_warrior"
         },        
         {
-            "text": "s_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c/subject} VERB/s_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. s_c reacts lightning-fast, dodging its stabbing beak, then leaps onto its back and sinks {PRONOUN/s_c/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, s_c and p_l have to carry it together!",
+            "text": "s_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c/subject} {VERB/s_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. s_c reacts lightning-fast, dodging its stabbing beak, then leaps onto its back and sinks {PRONOUN/s_c/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, s_c and p_l have to carry it together!",
             "exp": 35,
             "frequency": 1,
             "stat_skill": ["FIGHTER,1"],
@@ -6034,12 +6034,12 @@
             "prey": ["very_small"]
         },
         {
-            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c barely manages to scramble backward quickly enough to avoid being bitten.", 
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c barely manages to scramble backward quickly enough to avoid being bitten.",
             "exp": 0,
             "frequency": 4
         },
         {
-            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c isn't quick enough to avoid the bite, and the patrol has to help {PRONOUN/r_c/object} back to camp.",
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c isn't quick enough to avoid the bite, and the patrol has to help {PRONOUN/r_c/object} back to camp.",
             "exp": 0,
             "frequency": 2,
             "prey": [],
@@ -6056,7 +6056,7 @@
             }
         },
         {
-            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes down to find r_c lying on the low tide sandbank, barely able to limp back to camp.",
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes down to find r_c lying on the low tide sandbank, barely able to limp back to camp.",
             "exp": 0,
             "frequency": 1,
             "prey": [],
@@ -6091,7 +6091,7 @@
             "art": "gen_fallenwater_cat2"
         },
         {
-            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes to climb down, and finds r_c sprawled on a rock. Motionless.",
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes to climb down, and finds r_c sprawled on a rock. Motionless.",
             "exp": 0,
             "frequency": 1,
             "dead_cats": ["r_c"],
