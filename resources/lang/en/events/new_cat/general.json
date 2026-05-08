@@ -3234,7 +3234,7 @@
         "sub_type": [],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c encounters a loner who claims {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} heard tales of c_n from far, far away. n_c:0 has travelled far to reach here and wishes to join the Clan.",
+        "event_text": "m_c encounters a loner who claims {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} heard tales of c_n from far, far away. n_c:0 has long traveled to reach them and wishes to join the Clan.",
         "m_c": {
             "age": [],
             "status": [
@@ -3267,7 +3267,7 @@
         "sub_type": [],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c encounters a rogue who claims {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} heard tales of c_n from far, far away. n_c:0 has travelled far to reach here and wishes to join the Clan.",
+        "event_text": "m_c encounters a rogue who claims {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} heard tales of c_n from far, far away. n_c:0 has long traveled to reach them and wishes to join the Clan.",
         "m_c": {
             "age": [],
             "status": [
@@ -3378,7 +3378,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 3,
-    "event_text": "An old loner asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the loner decides to adopt a clan-like name: n_c:0.",
+    "event_text": "An old loner asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the loner decides to adopt a Clan-like name: n_c:0.",
     "new_cat": [
         ["loner", "age:senior", "new_name"]
     ],
@@ -3395,7 +3395,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 3,
-    "event_text": "An old rogue asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the rogue decides to adopt a clan-like name: n_c:0.",
+    "event_text": "An old rogue asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the rogue decides to adopt a Clan-like name: n_c:0.",
     "new_cat": [
         ["rogue", "age:senior", "new_name"]
     ],
