@@ -8201,5 +8201,138 @@
     "art": "gen_battle_warrior_warrior"
 }
     ]
-}
+},
+    {
+        "patrol_id": "bch_bord_greenleaf_chiefmouser",
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "new_cat"
+        ],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "frequency": 2,
+        "chance_of_success": 50,
+        "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm has washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing—a piece of a floating nest. Its jagged edges loom over the cats. A pitiful, low sound emanates from within, but the faint scent of Twoleg lingers in the air. p_l hesitates.",
+        "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
+        "success_outcomes": [
+            {
+                "text": "Wary, p_l slinks into the shadows. At the sound of a hiss, the patrol joins {PRONOUN/p_l/object} and comes face to face with a trapped cat! The patrol heaves the debris off the stranger, who thanks them between coughs of water. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/introduce/introduces} {PRONOUN/n_c:0/self} as n_c:0, \"chief mouser,\" recently shipwrecked. p_l suggests {PRONOUN/n_c:0/subject} accompany them to camp.",
+                "exp": 10,
+                "frequency": 4,
+                "new_cat": [
+                    [
+                        "age:has_kits",
+                        "backstory:kittypet2"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["patrol"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to was part of the patrol that rescued cat_from from a shipwreck and invited {PRONOUN/cat_from/object} to c_n."
+                        }
+                    }
+                ],
+                "outsider_rep": 1,
+                "art": "gen_train_soggykitty_happy_outsider"
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Wary, p_l slinks into shadow. At the sound of a hiss, the patrol joins {PRONOUN/p_l/object} and comes face to face with a trapped cat!  After much heaving and scratching, the debris is lifted, and the stranger drags {PRONOUN/n_c:0/self} free, only to stagger past the Clan cats and stumble away inland, eyes wide and fur bushed out. Well, at least {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} alive, p_l concludes. But the patrol lost a lot of time and heads back with the border unmarked.",
+                "exp": 0,
+                "frequency": 4,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "age:has_kits",
+                        "backstory:kittypet2"
+                    ]
+                ],
+                "outsider_rep": 0,
+                "art": "gen_train_soggykitty_mad_outsider"
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "p_l bristles and stalks inside, {PRONOUN/p_l/poss} patrol fanning out behind them. Inside, a wide-eyed kittypet is backed against the wooden boards, fur standing on end. How this stranger got into c_n's territory, {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't know - but {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't care. p_l corrals {PRONOUN/n_c:0/object} outside and chases {PRONOUN/n_c:0/object} across the border. The tide will take care of the rest of the Twoleg mess eventually.",
+                "exp": 10,
+                "frequency": 4,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "age:has_kits",
+                        "backstory:kittypet2"
+                    ]
+                ],
+                "outsider_rep": -2,
+                "art": "gen_train_soggykitty_mad_outsider"
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "p_l bristles and stalks inside, {PRONOUN/p_l/poss} patrol fanning out behind {PRONOUN/p_l/object}. Inside, a wide-eyed kittypet is backed up against the wooden boards, fur standing on end. But at the sight of the patrol, {PRONOUN/n_c:0/subject} {VERB/n_c:0/bare/bares} {PRONOUN/n_c:0/poss} teeth. The swatting, hissing whirlwind of a kittypet proves far more trouble than expected, and p_l eventually leaves {PRONOUN/n_c:0/object} there, {PRONOUN/p_l/poss} tail lashing in frustration.",
+                "exp": 0,
+                "frequency": 4,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "age:has_kits",
+                        "backstory:kittypet2"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from tried to chase cat_to out of the territory but failed."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from found out that cat_to failed to chase a kittypet out of the territory."
+                        }
+                    }
+                ],
+                "outsider_rep": -1,
+                "art": "gen_train_soggykitty_mad_outsider"
+            }
+        ]
+    }
+
 ]

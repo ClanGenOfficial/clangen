@@ -3223,6 +3223,188 @@
         "changed": 1
     }
 },
+    {
+        "event_id": "gen_newcat_senior_longwayloner",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c encounters a loner who claims {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} heard tales of c_n from far, far away. n_c:0 has long traveled to reach them and wishes to join the Clan.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "warrior"
+            ],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "loner",
+                "age:senior",
+                "old_name"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_newcat_senior_longwayrogue",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c encounters a rogue who claims {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} heard tales of c_n from far, far away. n_c:0 has long traveled to reach them and wishes to join the Clan.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "warrior"
+            ],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "rogue",
+                "age:senior",
+                "old_name"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 1
+        }
+    },
+    {
+    "event_id": "gen_newcat_senior_kittypetdeadowner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "m_c finds a lost elderly kittypet. {PRONOUN/n_c:0/poss/CAP} owner is dead and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} looking for a new home. m_c meows that c_n would be be willing to care for {PRONOUN/n_c:0/object}.",
+    "m_c": {
+        "status": ["leader", "deputy", "medicine cat"]
+    },
+      "new_cat": [
+        ["kittypet", "age:senior", "old_name"]
+    ],
+    "outsider": {
+        "current_rep": ["welcoming"],
+        "changed": 1
+    }
+},
+    {
+        "event_id": "gen_newcat_senior_loneliestloner",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 3,
+        "exclude_involved": ["m_c"],
+        "event_text": "An old loner pleads to join c_n. {PRONOUN/n_c:0/subject/CAP} always enjoyed {PRONOUN/n_c:0/poss} life of solitude... until now. n_c:0 is thrilled to take a new name when {PRONOUN/n_c:0/subject} {VERB/n_c:0/join/joins} the Clan.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "warrior"
+            ],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "loner",
+                "age:senior",
+                "new_name"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "neutral",
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_newcat_senior_hospiceloner",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "A elderly loner approaches c_n and announces {PRONOUN/n_c:0/subject} {VERB/n_c:0/think/thinks} {PRONOUN/n_c:0/subject} will die soon. n_c:0 asks if {PRONOUN/n_c:0/subject} can live out {PRONOUN/n_c:0/poss} last moons under the care of c_n and its medicine cats. The Clan obliges.",
+        "exclude_involved": [
+            "m_c"
+        ],
+        "new_cat": [
+            [
+                "loner",
+                "age:senior"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 2
+        }
+    },
+    {
+    "event_id": "gen_newcat_senior_securityloner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "An old loner asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the loner decides to adopt a Clan-like name: n_c:0.",
+    "new_cat": [
+        ["loner", "age:senior", "new_name"]
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 1
+    },
+        "exclude_involved": ["m_c"]
+    },
+        {
+    "event_id": "gen_newcat_senior_securityrogue",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "An old rogue asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the rogue decides to adopt a Clan-like name: n_c:0.",
+    "new_cat": [
+        ["rogue", "age:senior", "new_name"]
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 1
+    },
+        "exclude_involved": ["m_c"]
+    },
  {
     "event_id": "gen_new_cat_rogueredemption_success1",
     "location": [
