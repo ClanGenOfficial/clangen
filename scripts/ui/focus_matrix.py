@@ -83,10 +83,9 @@ def find_next_focus(
     if (
         prior_row is None or prior_col is None
     ):  # specifically NONE, using `if not x or x` will falsely pick up 0 indexes
-        # uh oh it must not be in the map and that's a problem!
         raise Exception(
             f"{last_element} not found in the matrix map. Use self.update_map() to add it. If this element shouldn't be interactable, then it was mistakenly given focus!"
-        )
+        )  # uh oh it must not be in the map and that's a problem!
 
     # where are we going?
     # if going left or right, let's check if we can!
@@ -94,9 +93,7 @@ def find_next_focus(
     change_to_lower_row = False
     if direction in (FocusDirection.LEFT, FocusDirection.RIGHT):
         # we need to see if there's a valid element to switch to
-        row_without_cur_element = current_map[prior_row].copy()
-        row_without_cur_element.remove(last_element)
-        if not any(row_without_cur_element):
+        if not _valid_row(current_map, last_element, prior_row):
             # there isn't! so we need to change our row too
             if direction == FocusDirection.LEFT:
                 # left will go upward
@@ -107,29 +104,32 @@ def find_next_focus(
 
     # going UP!
     if direction == FocusDirection.UP or change_to_higher_row:
-        # find the new row, wrapping if necessary
-        if prior_row - 1 >= 0:
-            new_row = prior_row - 1
-        else:
-            new_row = len(current_map) - 1
-            # we also move the column to be the farthest right
-            new_col = len(current_map[new_row]) - 1
-        # if we're changing bc of a wrap, we want to predetermine the column
-        if change_to_higher_row:
-            new_col = len(current_map[new_row]) - 1
+        while not _valid_row(current_map, last_element, new_row):
+            # find the new row, wrapping if necessary
+            if prior_row - 1 >= 0:
+                new_row = prior_row - 1
+            else:
+                new_row = len(current_map) - 1
+                # we also move the column to be the farthest right
+                new_col = len(current_map[new_row]) - 1
+            # if we're changing bc of a wrap, we want to predetermine the column
+            if change_to_higher_row:
+                new_col = len(current_map[new_row]) - 1
+                change_to_higher_row = False
 
     # going DOWN!
     elif direction == FocusDirection.DOWN or change_to_lower_row:
-        # find the new row, wrapping if necessary
-        if prior_row + 1 <= len(current_map) - 1:
-            new_row = prior_row + 1
-        else:
-            new_row = 0
-            # we also move the column to be the farthest left
-            new_col = 0
-        # if we're changing bc of a wrap, we want to predetermine the column
-        if change_to_lower_row:
-            new_col = 0
+        while not _valid_row(current_map, last_element, new_row):
+            # find the new row, wrapping if necessary
+            if prior_row + 1 <= len(current_map) - 1:
+                new_row = prior_row + 1
+            else:
+                new_row = 0
+                # we also move the column to be the farthest left
+                new_col = 0
+            # if we're changing bc of a wrap, we want to predetermine the column
+            if change_to_lower_row:
+                new_col = 0
 
     # if no new row, then the new row is our old one!
     if new_row is None:  # has to be `is None` so that it doesn't pick up 0 indexes
@@ -164,3 +164,26 @@ def find_next_focus(
 
     # return the element at the newly found indexes!
     return new_element
+
+
+def _valid_row(current_map, disallowed_element, possible_row) -> list:
+    """
+    Checks if the given row has a valid element option in it
+    :param current_map: The current matrix map
+    :param disallowed_element: Generally the currently focused element, this is an element we should ignore the presence of when trying to find a valid row
+    :param possible_row: The row we are searching
+    :return: The row with all invalid elements removed
+    """
+    # has to be written this way so that it doesn't misinterpret 0 index rows
+    if possible_row is None:
+        return []
+
+    row_without_cur_element = current_map[possible_row].copy()
+    if disallowed_element in row_without_cur_element:
+        row_without_cur_element.remove(disallowed_element)
+    for ele in row_without_cur_element.copy():
+        # remove any disabled ones, as we don't want to focus those
+        if not ele.is_enabled:
+            row_without_cur_element.remove(ele)
+
+    return row_without_cur_element
