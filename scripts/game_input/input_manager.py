@@ -218,12 +218,13 @@ class ControllerManager(InputManager):
         """
         Attempts to rumble the last used controller.
 
-        :param duration: Duration to rumble in milliseconds. Don't set duration to 0
-                         unless you want the controller to rumble FOREVER!!!
+        :param duration: Duration to rumble in milliseconds. 0 will do nothing and return False.
         :param low_freq: Lower bound of rumble frequency. Should be in range [0, 1].
         :param high_freq: Upper bound of rumble frequency. Should be in range [0, 1].
         :return: `True` if rumble attempt was successful.
         """
+        if duration == 0:
+            return False
         last_used_controller = self.get_last_used_controller()
         if last_used_controller:
             return last_used_controller.rumble(low_freq, high_freq, duration)
