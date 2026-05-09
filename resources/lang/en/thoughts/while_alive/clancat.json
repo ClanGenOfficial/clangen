@@ -283,7 +283,7 @@
             "Wants to speak to r_c about something",
             "Is relieved r_c sided with {PRONOUN/m_c/object} during an argument",
             "Is upset r_c said {PRONOUN/m_c/subject} {VERB/m_c/were/was} wrong during an argument",
-            "Is thanking r_c for what {PRONOUN/r_c/subject} {VERB/r_c/do/does} do for the Clan",
+            "Is thanking r_c for what {PRONOUN/r_c/subject} {VERB/r_c/do/does} for the Clan",
             "Is grateful to r_c for {PRONOUN/r_c/poss} mediation"
         ],
         "main_status_constraint": [
@@ -431,7 +431,7 @@
         "id": "ambitious_to_leader",
         "thoughts": [
             "Is asking the Clan leader what {PRONOUN/m_c/subject} can do to help out around camp",
-            "Has been imitating the Clan leader's behaviour recently",
+            "Has been imitating the Clan leader's behavior recently",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shoo-in for deputy",
             "Wonders if r_c talks about {PRONOUN/m_c/object} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not around",
             "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been doing a wonderful job leading",
@@ -771,7 +771,7 @@
             "Listens patiently to r_c's confidently wrong opinions",
             "Let {PRONOUN/m_c/poss} Clanmate have the last piece of fresh-kill on the pile this morning",
             "Is pleased by how well the Clan is looking after one another as of late",
-            "Is listening to a Clanmate's struggles with love",
+            "Helps a struggling Clanmate",
             "Lets a Clanmate cry on {PRONOUN/m_c/poss} shoulder",
             "Makes sure to check on a Clanmate who's been having a rough time",
             "Quickly forgives somebody after they snapped at {PRONOUN/m_c/object}",
@@ -1003,7 +1003,7 @@
     {
         "id": "gloomy_clan_gen",
         "thoughts": [
-            "Feels bad for staying in {PRONOUN/m_c/poss} nest a few minutes longer then usual",
+            "Feels bad for staying in {PRONOUN/m_c/poss} nest a few minutes longer than usual",
             "Is keeping to {PRONOUN/m_c/self}, not wanting to ruin {PRONOUN/m_c/poss} Clanmates' moods with {PRONOUN/m_c/poss} gloominess",
             "Is sitting quietly on the far side of camp",
             "Avoids {PRONOUN/m_c/poss} Clanmates",
@@ -1114,15 +1114,16 @@
     {
         "id": "loving_clan_gen",
         "thoughts": [
-            "Is trying to gently correct a Clanmate who is very wrong about something",
             "Purrs all night, so full of love for {PRONOUN/m_c/poss} fellow Clanmates",
+            "Is listening to a Clanmate's struggles with love",
             "Takes a Clanmate out to a beautiful spot in the territory, just for fun",
             "Wants to surprise a Clanmate with a gift",
             "Makes sure to include {PRONOUN/m_c/poss} Clanmates that don't participate much",
             "Quizzes {PRONOUN/m_c/poss} Clanmates on their favorite flowers... just 'cause",
-            "Helps a struggling Clanmate",
             "Compares r_c to a legendary StarClan warrior",
-            "Brings r_c {PRONOUN/r_c/poss} favorite prey"
+            "Brings r_c {PRONOUN/r_c/poss} favorite prey",
+            "Daydreams about a whirlwind romance",
+            "Feels giddy watching two Clanmates flirt"
         ],
         "main_trait_constraint": [
             "loving"
@@ -1171,6 +1172,30 @@
         ],
         "main_trait_constraint": [
             "loving"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "loving_to_mate",
+        "thoughts": [
+            "Is so glad {PRONOUN/m_c/subject} met r_c",
+            "Can't think of anything but r_c",
+            "Will destroy anyone who harms r_c",
+            "Wonders if r_c is thinking about other cats",
+            "Feels proud to be r_c's mate",
+            "Stares at a Clanmate who is getting too friendly with r_c",
+            "Wants to be with r_c forever and ever",
+            "Knows {PRONOUN/m_c/subject} will spend an eternity with r_c in StarClan one day",
+            "Wants to learn every little thing about r_c",
+            "Can't stand to be apart from r_c for long"
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ],
+        "relationship_constraint": [
+            "mates"
         ],
         "random_living_status": [
             "living"
@@ -1471,7 +1496,7 @@
         "id": "sincere_clan_gen",
         "thoughts": [
             "Makes the rounds around camp, checking in on every cat",
-            "Wonders if {PRONOUN/m_c/poss} bluntly correcting a Clanmate was too harsh",
+            "Wonders if {PRONOUN/m_c/poss} blunt correction of a Clanmate was too harsh",
             "Suggested a Clanmate speak with a mediator",
             "Was brutally honest with a Clanmate and feels bad about it"
         ],
@@ -2311,7 +2336,7 @@
         "thoughts": [
             "Feels a tingle of premonition",
             "Gets a wave of deja vu",
-            "Pre-empts r_c when {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} {PRONOUN/m_c/object}",
+            "Preempts r_c when {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} {PRONOUN/m_c/object}",
             "Guesses what r_c has planned today",
             "Suddenly thinks of clair_list_emotional/m_c",
             "Suddenly scents clair_list_smell/m_c",
@@ -2705,7 +2730,7 @@
             "Hisses extra loudly at Twolegs on patrol",
             "Stiffens when a Clanmate mentions how lazy kittypets are",
             "Shudders at the memory of the medicine {PRONOUN/m_c/poss} Twolegs used to give {PRONOUN/m_c/object}",
-            "Gazes wistfully at the Twolegsplace",
+            "Gazes wistfully at the Twolegplace",
             "Demonstrates to r_c how {PRONOUN/m_c/poss} old Twolegs used to stroke {PRONOUN/m_c/object}"
         ],
         "main_backstory_constraint": [
@@ -5530,7 +5555,7 @@
             "Is assuring r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren/isn}'t sick, it's just allergies",
             "Is unsure if {PRONOUN/m_c/subject} should apologize when r_c complains about {PRONOUN/m_c/poss} allergies",
             "Is rolling {PRONOUN/m_c/poss} eyes when r_c insists {PRONOUN/m_c/subject} should talk to the medicine cat",
-            "Playfully swats r_c when {PRONOUN/r_c/subject} {VERB/r_c/say/says} {PRONOUN/m_c/subject} sounds like an elder"
+            "Playfully swats r_c when {PRONOUN/r_c/subject} {VERB/r_c/say/says} {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like an elder"
         ],
         "perm_conditions": {
             "m_c": [
@@ -5582,7 +5607,7 @@
 	{
         "id": "allergies_gen_to_anycough",
         "thoughts": [
-            "Is nervous to be around r_c incase {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick too",
+            "Is nervous to be around r_c in case {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick too",
             "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
             "Is sharing stories of {PRONOUN/m_c/poss} own experiences to comfort r_c"
         ],
@@ -5673,8 +5698,8 @@
             "Asks r_c to check if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if it's just {PRONOUN/m_c/poss} allergies",
             "Is reassuring r_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine and it's just {PRONOUN/m_c/poss} allergies being especially bad today",
             "Is working with r_c to try and find something to relieve {PRONOUN/m_c/poss} allergies",
-            "Ignores r_c's worried look when {PRONOUN/m_c/subject} devolves into a sneezing fit",
-            "Is joking with r_c about how {PRONOUN/r_c/subject} herby scent is why {PRONOUN/m_c/object} is so sneezy",
+            "Ignores r_c's worried look when {PRONOUN/m_c/subject} {VERB/m_c/devolve/devolves} into a sneezing fit",
+            "Is joking with r_c about how {PRONOUN/m_c/poss} herby scent is why {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} so sneezy",
             "Is hiding {PRONOUN/m_c/poss} sorrow at knowing r_c can't do anything to truly fix {PRONOUN/m_c/poss} allergies",
             "Is wishing StarClan could give r_c herbs to help {PRONOUN/m_c/poss} allergies",
             "Laughs about being a regular visitor for r_c"
@@ -6653,10 +6678,10 @@
     {
         "id": "gen_to_bloodthirsty_vengeful",
         "thoughts": [
-			"Seems to be oblivious to m_c glaring from across camp",
-			"Wonders when m_c learned so much about cat anatomy",
-			"Has to snap m_c out of staring darkly at a Clanmate",
-			"Wonders why m_c knows so much about a Clanmate {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like"
+			"Seems oblivious to r_c glaring from across camp",
+			"Wonders when r_c learned so much about cat anatomy",
+			"Has to snap r_c out of staring darkly at a Clanmate",
+			"Wonders why r_c knows so much about a Clanmate {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like"
         ],
         "random_trait_constraint": [
             "bloodthirsty",

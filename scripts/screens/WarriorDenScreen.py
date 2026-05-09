@@ -95,15 +95,7 @@ class WarriorDenScreen(Screens):
                 if self.active_code in self.other_clan_settings:
                     SelectFocusClansWindow()
                 else:
-                    # change the setting
-                    switch_clan_setting(self.original_focus_code)
-                    switch_clan_setting(self.active_code)
-                    game.clan.last_focus_change = game.clan.age
-                    self.original_focus_code = self.active_code
-
-                    self.save_button.disable()
-                    self.update_buttons()
-                    self.create_top_info()
+                    self.change_setting()
 
     def screen_switches(self):
         """
@@ -376,10 +368,22 @@ class WarriorDenScreen(Screens):
             text_kwargs={"info": i18n.t(f"settings.{self.active_code}_tooltip")},
         )
 
+    def change_setting(self):
+        """
+        Handles changing the focus setting to match self.active_code
+        """
+        switch_clan_setting(self.original_focus_code)
+        switch_clan_setting(self.active_code)
+        game.clan.last_focus_change = game.clan.age
+        self.original_focus_code = self.active_code
+
+        self.save_button.disable()
+        self.update_buttons()
+        self.create_top_info()
+
     def save_focus(self):
         """
         Saves the focus when the clan to focus on in screen 'SelectFocusClan' are selected.
         """
         if len(game.clan.clans_in_focus) > 0:
-            game.clan.last_focus_change = game.clan.age
-            self.original_focus_code = self.active_code
+            self.change_setting()

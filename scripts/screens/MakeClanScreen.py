@@ -15,9 +15,11 @@ from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure import game
+from .screens_core.screens_core import rebuild_top_menu_buttons
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
 from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_blit
 from .Screens import Screens
@@ -457,10 +459,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["random_background"]:
             # Select a random biome and background
             self.biome_selected = self.random_biome_selection()
-            if self.biome_selected in ("Forest", "Mountainous", "Beach"):
-                self.selected_camp_tab = randrange(1, 5)
-            else:
-                self.selected_camp_tab = randrange(1, 4)
+            self.selected_camp_tab = randrange(1, 5)
             self.refresh_selected_camp()
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements["next_step"]:
@@ -936,6 +935,20 @@ class MakeClanScreen(Screens):
                     "top_target": self.tabs["tab2"],
                 },
             )
+            tab_rect = ui_scale(pygame.Rect((0, 0), (80, 30)))
+            tab_rect.topright = ui_scale_offset((5, 5))
+            self.tabs["tab4"] = UISurfaceImageButton(
+                tab_rect,
+                "screens.make_clan.camp_bridge",
+                get_button_dict(ButtonStyles.VERTICAL_TAB, (80, 30)),
+                object_id="@buttonstyles_vertical_tab",
+                manager=MANAGER,
+                anchors={
+                    "right": "right",
+                    "right_target": self.elements["art_frame"],
+                    "top_target": self.tabs["tab3"],
+                },
+            )
         elif self.biome_selected == "Beach":
             tab_rect = ui_scale(pygame.Rect((0, 0), (110, 30)))
             tab_rect.topright = ui_scale_offset((5, 180))
@@ -1365,13 +1378,12 @@ class MakeClanScreen(Screens):
                 "top_target": self.elements["random_clan_checkbox"],
             },
         )
-        self.elements["mode_details"] = pygame_gui.elements.UITextBox(
+        self.elements["mode_details"] = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((325, 160), (405, 461))),
-            object_id="#text_box_30_horizleft_pad_40_40",
+            ui_scale(pygame.Rect((345, 180), (365, 360))),
+            object_id="#text_box_30_horizleft",
             manager=MANAGER,
         )
-        self.elements["mode_details"].padding = (40, 40)
 
         self.elements["mode_name"] = pygame_gui.elements.UITextBox(
             "",
@@ -1883,7 +1895,7 @@ class MakeClanScreen(Screens):
             object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="screens.make_clan.season_tooltip",
-            tool_tip_text_kwargs={"season": i18n.t("general.leafbare").capitalize()},
+            tool_tip_text_kwargs={"season": i18n.t("general.leaf-bare").capitalize()},
             anchors={"top_target": self.tabs["leaffall_tab"]},
         )
         # Random background
@@ -2124,6 +2136,8 @@ class MakeClanScreen(Screens):
     def save_clan(self):
         game.mediated.clear()
         game.patrolled.clear()
+        game.just_died.clear()
+        game.dead_cats_to_grieve.clear()
         save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
@@ -2155,6 +2169,7 @@ class MakeClanScreen(Screens):
         game.clan.save_herb_supply(game.clan)
         game.clan.grief_strings.clear()
         Cat.sort_cats()
+        rebuild_top_menu_buttons()
 
     def get_camp_art_path(self, campnum) -> Optional[str]:
         if not campnum:

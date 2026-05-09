@@ -53,7 +53,7 @@
     ],
     "sub_type": ["accessory"],
     "frequency": 4,
-    "event_text":  "m_c hunts down one of the first flowers that fortell the arrival of the coming rains, proudly wearing the acc_singular back to camp.",
+    "event_text":  "m_c hunts down one of the first flowers that foretell the arrival of the coming rains, proudly wearing the acc_singular back to camp.",
     "new_accessory": [
       "LAVENDER",
       "JUNIPER",
@@ -167,7 +167,7 @@
         "values": ["respect", "like"],
         "amount": 3,
         "log": {
-          "cats_from": "from_cat enjoyed to_cat's stories of far off Clans."
+          "cats_from": "cat_from enjoyed cat_to's stories of far off Clans."
         }
       }
     ]
@@ -181,7 +181,7 @@
       "leaf-fall"
     ],
     "frequency": 4,
-    "event_text": "Sunset splays the red of life's blood across the sky, as m_c softly tells of The Dreaming.",
+    "event_text": "Sunset bleeds red across the sky, as m_c tells {PRONOUN/m_c/poss} gathered audience the story of The Dreaming.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -195,7 +195,7 @@
         "values": ["respect", "like"],
         "amount": 3,
         "log": {
-          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
+          "cats_from": "cat_from enjoyed cat_to's stories of The Dreaming."
         }
       }
     ]
@@ -222,7 +222,7 @@
     ],
     "season": ["leaf-bare"],
     "frequency": 3,
-    "event_text": "m_c stands guard over camp, miserably enduring the endless wet heartbeat of the rain.",
+    "event_text": "m_c stands guard over camp, enduring the roaring downpour of rain.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["warrior"]
@@ -240,7 +240,7 @@
           ],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat appreciated that to_cat stood guard over the camp in the pouring rain."
+            "cats_from": "cat_from appreciated that cat_to stood guard over the camp in the pouring rain."
           }
       }
   ]
@@ -274,7 +274,7 @@
           ],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat appreciated that to_cat stood guard over the camp in the scorching heat."
+            "cats_from": "cat_from appreciated that cat_to stood guard over the camp in the scorching heat."
           }
       }
   ]
@@ -304,7 +304,7 @@
           ],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat appreciated that to_cat raised the alarm about a monitor lizard close to camp."
+            "cats_from": "cat_from appreciated that cat_to raised the alarm about a monitor lizard close to camp."
           }
       }
   ]
@@ -334,7 +334,7 @@
           ],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat appreciated that to_cat tracked a dingo to make sure it left c_n territory."
+            "cats_from": "cat_from appreciated that cat_to tracked a dingo to make sure it left c_n territory."
           }
       }
   ]
@@ -364,7 +364,7 @@
           ],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat appreciated that to_cat scared a red-bellied black snake away from camp."
+            "cats_from": "cat_from appreciated that cat_to scared a red-bellied black snake away from camp."
           }
       }
   ]
@@ -376,7 +376,7 @@
     ],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c watches the kangaroo mob leap across the landscape from {PRONOUN/m_c/poss} guarding perch near camp.",
+    "event_text": "m_c watches a mob of kangaroo leap across the landscape from {PRONOUN/m_c/poss} guarding perch near camp.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["warrior"]
@@ -389,7 +389,7 @@
     ],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "From the guard post above camp, m_c lets out a warning chitter as a hawk passes overhead.",
+    "event_text": "m_c lets out a warning chitter from {PRONOUN/m_c/poss} guard post as a hawk passes overhead.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["warrior"]
@@ -407,7 +407,7 @@
           ],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat appreciated that to_cat raised the alarm about a hawk passing over the camp."
+            "cats_from": "cat_from appreciated that cat_to raised the alarm about a hawk passing over the camp."
           }
       }
   ]
@@ -437,7 +437,7 @@
           ],
           "amount": 5,
           "log": {
-            "cats_from": "from_cat appreciated that to_cat guarded camp when a hyena was prowling nearby."
+            "cats_from": "cat_from appreciated that cat_to guarded camp when a hyena was prowling nearby."
           }
       }
   ]
@@ -459,7 +459,7 @@
         "values": ["trust", "comfort"],
         "amount": -5,
         "log": {
-          "cats_from": "from_cat was unsettled to see to_cat's fur stained bright red."
+          "cats_from": "cat_from was unsettled to see cat_to's fur stained bright red."
         }
       }
     ]
@@ -475,29 +475,6 @@
       "status": ["any"],
       "trait": ["adventurous","daring", "rebellious", "strange"]
     }
-  },
-  {
-    "event_id": "dst_misc_any_traitmisc2",
-    "location": ["desert"],
-    "season": ["any"],
-    "frequency": 4,
-    "event_text": "m_c holds {PRONOUN/m_c/self} apart from the Clan, {PRONOUN/m_c/poss} mood strange and irritable.",
-    "m_c": {
-      "age": ["any"],
-      "status": ["any"],
-      "trait": ["cold", "gloomy", "grumpy", "strange"]
-    },
-    "relationships": [
-      {
-        "cats_from": ["clan", "high_social"],
-        "cats_to": ["m_c"],
-        "values": ["comfort", "like"],
-        "amount": -5,
-        "log": {
-          "cats_from": "from_cat noticed that to_cat was in a foul mood."
-        }
-      }
-    ]
   },
   {
     "event_id": "dst_misc_any_dreaming1",
@@ -554,7 +531,7 @@
         "values": ["respect", "like"],
         "amount": 3,
         "log": {
-          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
+          "cats_from": "cat_from enjoyed cat_to's stories of The Dreaming."
         }
       }
     ]
@@ -578,7 +555,7 @@
         "values": ["respect", "like"],
         "amount": 3,
         "log": {
-          "cats_from": "from_cat enjoyed to_cat's stories of The Dreaming."
+          "cats_from": "cat_from enjoyed cat_to's stories of The Dreaming."
         }
       }
     ]
@@ -588,7 +565,7 @@
     "location": ["desert"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "m_c spotted a cat silouetted against the setting sun with the light shining partway through their semitransparent fur. Next blink, the figure is gone.",
+    "event_text": "m_c spotted a cat silhouetted against the setting sun with the light shining partway through their semitransparent fur. Next blink, the figure is gone.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -601,7 +578,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 4,
-    "event_text": "Along the border with o_c_n, c_n quietly prepares the cacti and thornbushes to work to their advantage.",
+    "event_text": "c_n quietly prepares the cacti and thornbushes along the border with o_c_n to work to their advantage.",
     "m_c": {},
     "other_clan": {
         "current_rep": ["hostile"],
@@ -627,7 +604,7 @@
     "season": ["greenleaf"],
     "tags": ["clan:warrior"],
     "frequency": 3,
-    "event_text": "As the adults catch the evening breeze on their hot pelts, m_c emerges from the nursery, finally allowed to play once the sun's rays slip from the sky.",
+    "event_text": "m_c emerges from the nursery, finally allowed to play now the glaring sun has set.",
     "m_c": {
       "status": ["kitten"]
     }
@@ -652,7 +629,7 @@
             "values": ["like", "comfort"],
             "amount": 20,
             "log": {
-              "cats_from": "from_cat and to_cat had lots of fun playing predator-and-warrior."
+              "cats_from": "cat_from and cat_to had lots of fun playing predator-and-warrior."
             }
           }
         ]
@@ -664,7 +641,7 @@
         ],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c and r_c try to climb the rocks around camp, to limited success.",
+        "event_text": "m_c and r_c try to climb the rocks around camp to limited success.",
         "m_c": {
           "status": ["kitten"]
         },
@@ -679,7 +656,7 @@
             "values": ["like", "trust", "comfort"],
             "amount": 15,
             "log": {
-              "cats_from": "from_cat and to_cat did their best to climb the rocks around camp together."
+              "cats_from": "cat_from and cat_to did their best to climb the rocks around camp together."
             }
           }
         ]
@@ -690,7 +667,7 @@
         "season": ["greenleaf"],
         "tags": ["clan:warrior"],
         "frequency": 4,
-        "event_text": "m_c and r_c emerge from the nursery as the cool of the night takes over, their bouncy energy contrasting the tired warriors napping on the sun-warmed rocks.",
+        "event_text": "m_c and r_c emerge from the nursery as the chill of night takes over, their energy contrasting the tired warriors napping on the sun-warmed rocks.",
         "m_c": {
             "status": ["kitten"]
         },
@@ -705,7 +682,7 @@
             "values": ["like", "comfort"],
             "amount": 20,
             "log": {
-              "cats_from": "from_cat and to_cat had lots of fun playing in the cool night air together."
+              "cats_from": "cat_from and cat_to had lots of fun playing in the cool night air together."
             }
           }
         ]
@@ -733,7 +710,7 @@
             "values": ["like", "comfort", "trust"],
             "amount": 15,
             "log": {
-              "cats_from": "from_cat and to_cat agree that thunder is scary."
+              "cats_from": "cat_from and cat_to agree that thunder is scary."
             }
           }
         ]
@@ -760,7 +737,7 @@
             "values": ["like", "comfort"],
             "amount": 20,
             "log": {
-              "cats_from": "from_cat and to_cat have lots of fun playing on the icy camp floor."
+              "cats_from": "cat_from and cat_to have lots of fun playing on the icy camp floor."
             }
           }
         ]
@@ -787,7 +764,7 @@
             "values": ["like", "trust"],
             "amount": 10,
             "log": {
-              "cats_from": "to_cat pulled from_cat out of a pool of water when from_cat fell in while drinking."
+              "cats_from": "cat_to pulled cat_from out of a pool of water when cat_from fell in while drinking."
             }
           }
         ]
@@ -797,7 +774,7 @@
       "location": ["desert"],
       "season": ["any"],
       "frequency": 4,
-      "event_text": "m_c sneaks out at night - r_c follows. But {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} tattle on m_c, instead joining {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/run/runs} through the cool sharp night air.",
+      "event_text": "m_c sneaks out at night — r_c follows. But {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} tattle on m_c, instead joining {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/run/runs} through the cool sharp night air.",
       "m_c": {
           "age": ["adolescent"]
       },
@@ -812,7 +789,7 @@
               "values": ["trust", "like"],
               "amount": 20,
               "log": {
-                "cats_from": "from_cat and to_cat snuck out of camp and went for a run in the night together."
+                "cats_from": "cat_from and cat_to snuck out of camp and went for a run in the night together."
               }
           }
       ]
@@ -822,7 +799,7 @@
     "location": ["desert"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "The sun rises over the desert - and over m_c and r_c, who definitely aren't allowed out of camp this early and alone.",
+    "event_text": "The sun rises over the desert — and over m_c and r_c, who definitely aren't allowed out of camp this early and alone.",
     "m_c": {
         "age": ["adolescent"]
     },
@@ -837,7 +814,7 @@
               "values": ["trust", "like"],
               "amount": 20,
               "log": {
-                "cats_from": "from_cat and to_cat snuck out of camp to watch the sunrise together."
+                "cats_from": "cat_from and cat_to snuck out of camp to watch the sunrise together."
               }
           }
       ]
@@ -862,37 +839,10 @@
               "values": ["trust", "like"],
               "amount": 20,
               "log": {
-                "cats_from": "from_cat and to_cat snuck out of camp together."
+                "cats_from": "cat_from and cat_to snuck out of camp together."
               }
           }
       ]
-  },
-  {
-    "event_id": "dst_misc_any_apprentice4",
-    "location": ["desert"],
-    "season": ["any"],
-    "frequency": 4,
-    "event_text": "m_c and r_c bond over how much they both hate mouse bile.",
-    "m_c": {
-      "age": ["adolescent"],
-      "status": ["apprentice"]
-    },
-    "r_c": {
-      "age": ["adolescent"],
-      "status": ["apprentice"]
-    },
-    "relationships": [
-        {
-          "cats_to": ["m_c"],
-            "cats_from": ["r_c"],
-            "mutual": true,
-            "values": ["like", "comfort"],
-          "amount": 15,
-          "log": {
-            "cats_from": "from_cat and to_cat bonded over hating mouse bile."
-          }
-        }
-    ]
   },
   {
     "event_id": "dst_misc_any_loner1",
@@ -901,7 +851,7 @@
     ],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "On the border, a loner has sprayed a shrub with {PRONOUN/n_c:0/poss} scent.",
+    "event_text": "A loner has sprayed a shrub near the border with {PRONOUN/n_c:0/poss} scent.",
     "m_c": {
         "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
     },
@@ -916,7 +866,7 @@
         "values": ["like"],
         "amount": -5,
         "log": {
-          "cats_from": "from_cat found to_cat's scent on a shrub by the border."
+          "cats_from": "cat_from found cat_to's scent on a shrub by the border."
         }
       }
     ],
@@ -1050,7 +1000,7 @@
             "r_c"
         ],
     "frequency": 1,
-    "event_text": "Ants, desperate to establish a nest before the dry season fully kicks in, try to do so in c_n's herb stores. No one is pleased at the results.",
+    "event_text": "Ants, desperate to establish a nest before the dry season fully kicks in, try to do so in c_n's herb stores. No one is pleased with the results.",
     "supplies": [
       {
           "type": "all_herb",
@@ -1068,7 +1018,7 @@
             "r_c"
         ],
     "frequency": 1,
-    "event_text": "The sun withers all it touches - and the herb stores have unfortunately caught its gaze. Many of the supplies are little more than withered kindling now.",
+    "event_text": "The sun withers all it touches — and the herb stores have unfortunately caught its gaze. Many of the supplies are little more than withered kindling now.",
     "supplies": [
       {
           "type": "all_herb",
@@ -1106,7 +1056,7 @@
     "event_id": "dst_misc_any_angrylizard",
     "location": ["desert"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
-    "weight": 20,
+    "frequency": 4,
     "event_text": "m_c was nipped on the nose when {PRONOUN/m_c/subject} investigated an odd, lizard-shaped lump in the sand.",
     "m_c": {
       "status": ["warrior", "apprentice", "kitten", "elder"]
@@ -1118,7 +1068,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "tags": ["clan:apprentice"],
-    "weight": 15,
+    "frequency": 3,
     "event_text": "The apprentices of the Clan are taking special training to learn how to blind their enemies with dust from the ground.",
     "m_c": {
       "status": ["apprentice"]
@@ -1128,7 +1078,7 @@
     "event_id": "dst_misc_multiprophecymedcatprophet1",
     "location": ["desert"],
     "season": ["newleaf", "greenleaf"],
-    "weight": 20,
+    "frequency": 4,
     "event_text": "While out gathering valuable herbs, m_c sees a vision of prophecy_list_sight/m_c.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
@@ -1139,7 +1089,7 @@
     "event_id": "dst_misc_multiomenmedcatomen1",
     "location": ["desert"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
-    "weight": 20,
+    "frequency": 4,
     "event_text": "The things {PRONOUN/m_c/subject} saw in the sand today, omen_list_sight/m_c... {PRONOUN/m_c/subject/CAP} {VERB/m_c/consider/considers} what these omens may entail for c_n.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],

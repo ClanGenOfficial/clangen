@@ -64,6 +64,9 @@ dev_tools = false
   # 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)
   chance_friends_to_lovers = 170
 
+  # chance to move on from a dead or absent mate, fraction represents a percentage. default is 30% chance.
+  chance_to_move_on = 0.3
+
 
   # NOTE FOR RELATIONSHIP CONSTRAINTS
   #  0: no condition
@@ -161,8 +164,9 @@ dev_tools = false
   # number of welcoming events to add when a new cat joins
   cat_amount_welcoming = 3
 
-  # this is the amount to divide a relative's relation toward the parent when deciding on a relative's initial relationship toward a kit
-  ext_relative_modifier = 4
+  # ext_relative_modifer * parents(len) is what will a relative's relation toward the parent 
+  # will by divided by when deciding on a relative's initial relationship toward a kit
+  ext_relative_modifier = 2
   # relationship buffs represent "default" relationship values that are then lightly randomized
   # in order to create initial relationship values for cats
 
@@ -227,10 +231,10 @@ dev_tools = false
   # 1/chance that kits, relationship and other factors will influence this chance
   primary_chance_unmated = 130
 
-  # 1/chance that a mated cat to has an affair
+  # 1/chance that a mated cat has an affair
   random_affair_chance = 50
 
-  # special 1/chance for an unmated cat to have an affair
+  # 1/chance for an unmated cat to have an affair (coparenting)
   # for this check, only other unmated cats can be the affair partner
   unmated_random_affair_chance = 10
 
@@ -310,6 +314,13 @@ dev_tools = false
   # allows cats to be named after the color of their eyes
   allow_eye_names = true
 
+  # determines which list outsiders pull from: silly_names, human_names, loner_names, or normal_prefixes
+  # number / total for each control
+
+  kittypet = [30, 50, 10, 10]
+  loner = [5, 15, 50, 30]
+  rogue = [3, 7, 35, 55]
+
 [accessory_generation]
   # base 1/chance a cat generates with an accessory 
   base_acc_chance = 150
@@ -347,7 +358,7 @@ dev_tools = false
   #   i.e. 1/(chance + adolescent_modifier + older_modifier)
   # so SUBTRACTING will INCREASE the chance a cat transitions
 
-  # modifies transition chance based on if cat is an adolescent
+  # modifies transition chance based on if cat is a kitten or adolescent
   adolescent_modifier = -128
 
   # modifies transition chance based on if cat is an adult or older
@@ -369,6 +380,19 @@ dev_tools = false
 
   # base 1/chance that a cat will be chosen as a med cat apprentice
   base_medicine_app_chance = 41
+
+[roles."medicine cat apprentice"]
+  # maximum number of medicine cat apprentices to full medicine cats (e.g. 4 adult medcats can have 2 apps total)
+  max_medcats_to_apps = 2
+
+  # minimum percentage of medcat population that are seniors for buff to app chance
+  threshold_percentage_seniors = 30
+
+  # how many moons is considered "very old"
+  threshold_moons_ancient = 150
+
+  # minimum percentage of medcat population that are ancient for buff to app chance
+  threshold_percentage_ancient = 30
 
 [roles.become_mediator_chances]
   # 1/chance that a cat will switch to mediator. rolls every moon, so keep it high.
@@ -437,6 +461,9 @@ dev_tools = false
 
   # forces specified event to occur regardless of if requirements are met
   debug_override_requirements = false
+
+  # forces the given frequency, frequency can be a number from 1-4
+  debug_override_frequency = 0
 
 [death_related]
   # base 1/chance that leader will die
@@ -601,7 +628,7 @@ dev_tools = false
       "running nose" = 5
       whitecough = 1
 
-  [focus."rest_and_recover"]
+  [focus.rest_and_recover]
     # roughly 1/chance injuries will be prevented
     injury_prevent = 4
 

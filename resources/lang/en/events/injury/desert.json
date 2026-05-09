@@ -1,36 +1,5 @@
 [
     {
-        "event_id": "dst_injury_bruises_kitten1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "frequency": 4,
-        "event_text": "While batting a shiny skitter-pebble around m_c misjudged a pounce and smashed {PRONOUN/m_c/poss} tiny little snout into it.",
-        "m_c": {
-            "status": [
-                "kitten"
-            ],
-            "trait": [
-                "unruly",
-                "impulsive",
-                "fearless"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises"
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "dst_injury_heat_anykitten2",
         "location": [
             "desert"
@@ -41,7 +10,7 @@
             "leaf-fall"
         ],
         "frequency": 2,
-        "event_text": "Naive to the dangers of the sun, m_c falls asleep while sunbathing. Though {PRONOUN/m_c/subject} {VERB/m_c/are/is} retrieved promptly, the young are vulerable to the desert heat.",
+        "event_text": "Naive to the dangers of the sun, m_c falls asleep while sunbathing. Though {PRONOUN/m_c/subject} {VERB/m_c/are/is} retrieved promptly, the young are vulnerable to the desert heat.",
         "m_c": {
             "status": [
                 "kitten"
@@ -77,7 +46,6 @@
             ],
             "trait": [
                 "unruly",
-                "bouncy",
                 "bullying",
                 "impulsive",
                 "noisy",
@@ -90,14 +58,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "bruises"
-                ]
-            },
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
+                    "bruises",
                     "dehydrated"
                 ]
             }
@@ -154,7 +115,6 @@
             "trait": [
                 "impulsive",
                 "fearless",
-                "bouncy",
                 "bossy",
                 "unruly",
                 "attention-seeker"
@@ -318,7 +278,7 @@
         "event_id": "dst_injury_bruisessore_anymultiage2",
         "location": ["desert"],
         "season": ["any"],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "m_c took a bad tumble over a rock hidden by the dusty ground.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
@@ -392,65 +352,6 @@
         ]
     },
     {
-        "event_id": "dst_injury_bruisessore_clankits1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [
-            "clan:kitten"
-        ],
-        "frequency": 4,
-        "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/subject} {VERB/m_c/decline/declines} giving another badger ride, ready to nap off the happy soreness that comes with being the kits' favorite chew toy at the moment.",
-        "m_c": {
-            "age": [
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "KIT,1"
-            ]
-        },
-        "r_c": {
-            "status": [
-                "kitten"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises",
-                    "sore"
-                ]
-            }
-        ],
-        "relationships": [
-            {
-                "cats_to": [
-                    "r_c"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
-                "amount": 10
-            }
-        ]
-    },
-    {
         "event_id": "dst_injury_sore_camp_clankits1",
         "location": [
             "desert"
@@ -504,10 +405,12 @@
                 "mutual": true,
                 "values": [
                     "like",
-                    "trust",
                     "comfort"
                 ],
-                "amount": 10
+                "amount": 6,
+                "log": {
+                    "cats_from": "m_c chatted with r_c while reinforcing the wall of the nursery."
+                }
             }
         ]
     },
@@ -574,7 +477,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c must've landed wrong after a jump or something - {PRONOUN/m_c/poss} bones are reminding {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} age. Painfully.",
+        "event_text": "m_c must've landed wrong after a jump or something — {PRONOUN/m_c/poss} bones are reminding {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} age. Painfully.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -757,92 +660,7 @@
         ],
         "season": [
             "leaf-fall",
-            "newleaf"
-        ],
-        "tags": [
-            "clan:kitten"
-        ],
-        "frequency": 1,
-        "event_text": "A piece of stray Twoleg trash ignites in the dry heat of the sun, threatening the nursery. m_c leads the efforts to rescue the kits, and will happily trade {PRONOUN/m_c/poss} singed coat and the acrid smell of burned fur for the safety of the young ones.",
-        "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "any"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "burn"
-                ]
-            },
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "scrapes"
-                ]
-            },
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "dehydrated"
-                ]
-            },
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sore"
-                ]
-            }
-        ],
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c died from wounds taken while defending the nursery from fire."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "respect"
-                ],
-                "amount": 15
-            }
-        ]
-    },
-    {
-        "event_id": "dst_injury_flame_anymultiage2",
-        "location": [
-            "desert"
-        ],
-        "season": [
+            "newleaf",
             "greenleaf"
         ],
         "tags": [
@@ -872,9 +690,6 @@
                 ],
                 "injuries": [
                     "burn"
-                ],
-                "scars":[
-                    "BURNBELLY", "BURNPAWS", "BURNRUMP"
                 ]
             },
             {
@@ -922,7 +737,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_to impressed cat_from when {PRONOUN/cat_to/subject} rescued the kits from the burning nursery."
+                }
             }
         ]
     },
@@ -967,7 +785,7 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c has been trying to keep {PRONOUN/m_c/poss} fluids up, but staying healthy in the oppressive heat of greenleaf was definitely easier in {PRONOUN/m_c/poss} prime. Sunstroke is the result.",
+        "event_text": "m_c tried to keep {PRONOUN/m_c/poss} fluids up, but staying healthy in the oppressive heat of greenleaf was definitely easier to manage in {PRONOUN/m_c/poss} prime, resulting in sunstroke.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -1046,7 +864,10 @@
                     "trust",
                     "like"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from appreciated cat_to bringing {PRONOUN/cat_from/object} water-soaked moss when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} dehydrated."
+                }
             },
             {
                 "cats_from": [
@@ -1060,7 +881,10 @@
                     "respect",
                     "comfort"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from wanted to make sure cat_to was okay when {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} dehydrated."
+                }
             }
         ]
     },
@@ -1073,7 +897,7 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "On one of the hottest days of the year r_c spends all {PRONOUN/r_c/poss} energy making sure that the older members of c_n keep drinking. Only m_c gets touched by sunstroke, and it's only a mild case of dehydration.",
+        "event_text": "On one of the hottest days of the year r_c spends all {PRONOUN/r_c/poss} energy making sure that the older members of c_n keep drinking. Only m_c gets touched by sunstroke, though luckily it's a mild case of dehydration.",
         "m_c": {
             "age": [
                 "senior adult",
@@ -1111,7 +935,10 @@
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from noticed cat_to's commitment to caring for the older cats in the Clan during a heatwave."
+                }
             },
             {
                 "cats_from": [
@@ -1120,11 +947,14 @@
                 "cats_to": [
                     "m_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "comfort"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "When cat_from became dehydrated, cat_to cared for {PRONOUN/cat_from/object}."
+                }
             }
         ]
     },
@@ -1214,11 +1044,12 @@
                 "mutual": false,
                 "values": [
                     "respect",
-                    "trust",
-                    "comfort",
-                    "like"
+                    "trust"
                 ],
-                "amount": 20
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to saved cat_from's life when a scorpion nearly stung {PRONOUN/cat_from/object}."
+                }
             }
         ]
     },
@@ -1315,7 +1146,10 @@
                     "trust",
                     "comfort"
                 ],
-                "amount": 20
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from and cat_to went on an adventure in the far reaches of the Clan's territory."
+                }
             }
         ]
     },
@@ -1598,7 +1432,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_from heard of cat_to's bravery in defending the nursery from an enemy Clan's invasion."
+                }
             }
         ],
         "other_clan": {
@@ -1642,7 +1479,7 @@
             "greenleaf"
         ],
         "frequency": 4,
-        "event_text": "m_c sneaked out of camp and was later found wandering in the full noon sun, confused and disoriented.",
+        "event_text": "m_c snuck out of camp and was later found wandering in the full noon sun, confused and disoriented.",
         "m_c": {
             "status": [
                 "kitten"
@@ -1669,7 +1506,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died after {PRONOUN/m_c/subject} sneaked out of camp and got sunstroke."
+                "death": "m_c died after {PRONOUN/m_c/subject} snuck out of camp and got sunstroke."
             }
         ]
     },
@@ -1733,15 +1570,17 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to saved cat_from from a red-tailed hawk."
+                }
             },
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "r_c"
@@ -1750,7 +1589,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to saved m_c from a red-tailed hawk."
+                }
             }
         ]
     },
@@ -1988,7 +1830,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "Climbing the highest rock in the territory was not, in fact, a good idea. m_c doesn't know what's worse - that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} now confined to the medicine den, or that everyone {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to show off to <i>saw</i> {PRONOUN/m_c/object} fall.",
+        "event_text": "Climbing the highest rock in the territory was not, in fact, a good idea. m_c doesn't know what's worse — that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} now confined to the medicine den, or that everyone {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to show off to <i>saw</i> {PRONOUN/m_c/object} fall.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -2027,7 +1869,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c isn't proud of all of {PRONOUN/m_c/poss} scars - one, for example, is from falling off the highest rock in the territory while trying to show off as an apprentice.",
+                "scar": "m_c isn't proud of all of {PRONOUN/m_c/poss} scars — one, for example, is from falling off the highest rock in the territory while trying to show off as an apprentice.",
                 "death": "The consequences of showing off took m_c's life when {PRONOUN/m_c/subject} fell from the highest rock in the territory."
             }
         ]
@@ -2040,7 +1882,7 @@
         "season": [
             "any"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
@@ -2207,12 +2049,13 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to rescued cat_from from a dingo."
+                }
             }
         ]
     },
@@ -2290,12 +2133,13 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to saved cat_from from a coyote."
+                }
             }
         ]
     },
@@ -2446,16 +2290,17 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_to prevented cat_from from bleeding out after a coyote attack."
+                }
             },
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "m_c"
@@ -2463,7 +2308,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to treated r_c's wounds after a coyote attack."
+                }
             }
         ]
     },
@@ -2542,16 +2390,19 @@
         "relationships": [
             {
                 "cats_from": [
-                    "clan"
+                    "some_clan"
                 ],
                 "cats_to": [
                     "m_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to tricked a coyote into running through a cacti patch."
+                }
             }
         ]
     },
@@ -2678,12 +2529,13 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c rescued r_c from a coyote, and the two cats worked together to drive it off."
+                }
             }
         ]
     },
@@ -2811,12 +2663,13 @@
                     "m_c"
                 ],
                 "values": [
-                    "like",
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 10
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to rescued cat_from from a red-tailed hawk."
+                }
             }
         ]
     },
@@ -2881,11 +2734,12 @@
                 ],
                 "values": [
                     "like",
-                    "comfort",
-                    "trust",
-                    "respect"
+                    "comfort"
                 ],
-                "amount": -10
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from wasn't happy with cat_to for challenging a coyote and forcing {PRONOUN/cat_from/object} to help drive it off."
+                }
             }
         ]
     },
@@ -2970,7 +2824,7 @@
             "clan:medicine cat"
         ],
         "frequency": 4,
-        "event_text": "It's hard for border patrols to actually encounter each other in the desert. So o_c_n deliberately waits for a c_n patrol, each trading escalating insults until the situation explodes into violence. med_name patches up m_c and r_c afterwards, as the camp seethes with anger.",
+        "event_text": "It's hard for border patrols to actually encounter each other in the desert. So o_c_n deliberately waits for a c_n patrol, each trading escalating insults until the situation explodes into violence. med_name patches up m_c and r_c afterward, as the camp seethes with anger.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -3012,44 +2866,6 @@
         }
     },
     {
-        "event_id": "dst_injury_bruises_anyapprentice2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "frequency": 4,
-        "event_text": "m_c says {PRONOUN/m_c/poss} bruises are from battle training. m_c is lying, they're actually from a misjudged pounce.",
-        "m_c": {
-            "status": [
-                "apprentice"
-            ],
-            "trait": [
-                "ambitious",
-                "arrogant",
-                "charismatic",
-                "competitive",
-                "cunning",
-                "fierce",
-                "insecure",
-                "grumpy",
-                "shameless",
-                "sneaky"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises"
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "dst_injury_bruises_anyapprentice1",
         "location": [
             "desert"
@@ -3058,7 +2874,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c discovers it's <i>possible</i> to climb cacti. It's not a good idea, no, but sure, it's <i>possible</i>.",
+        "event_text": "m_c discovers it's <i>possible</i> to climb cacti. It's not a good idea, no, but it's <i>possible</i>.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -3222,8 +3038,8 @@
         "event_id": "dst_injury_scrapessmallcuts_appmultitrait1",
         "location": ["desert"],
         "season": ["any"],
-        "weight": 20,
-        "event_text": "m_c dashes off from {PRONOUN/m_c/poss} mentor and tumbles face first into a cactus! Thankfully r_c is able to remove the spines with little difficulty.",
+        "frequency": 4,
+        "event_text": "m_c dashes off from {PRONOUN/m_c/poss} mentor and tumbles face-first into a cactus! Thankfully r_c is able to remove the spines with little difficulty.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "trait": ["adventurous", "arrogant", "bold", "childish", "confident", "daring", "oblivious", "playful", "rebellious", "shameless", "troublesome"],
@@ -3236,45 +3052,6 @@
             {
                 "cats": ["m_c"],
                 "injuries": ["scrapes", "small cut"]
-            }
-        ]
-    },
-    {
-        "event_id": "dst_injury_soreapp_clankits",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [
-            "clan:kitten"
-        ],
-        "frequency": 4,
-        "event_text": "m_c plays with a kit after training instead of resting. It's kind of {PRONOUN/m_c/object}, but the lack of downtime leaves {PRONOUN/m_c/object} sore and aching.",
-        "m_c": {
-            "status": [
-                "apprentice"
-            ],
-            "trait": [
-                "charismatic",
-                "childish",
-                "compassionate",
-                "flamboyant",
-                "loving",
-                "loyal",
-                "playful",
-                "sincere"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "sore"
-                ]
             }
         ]
     },
@@ -3382,7 +3159,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "Bitten by a red bellied black snake, m_c shakes off the effects of the venom, cleaning the wound carefully.",
+        "event_text": "m_c is bitten by a red bellied snake but is able to shake off the effects of the venom and cleans the wound carefully.",
         "m_c": {
             "age": [
                 "senior",
@@ -3419,7 +3196,7 @@
         "event_id": "dst_injury_snake_any1",
         "location": ["desert"],
         "season": ["any"],
-        "weight": 20,
+        "frequency": 4,
         "event_text": "A snake managed to slither into camp and bite m_c.",
         "m_c": {
             "age": ["any"]
@@ -3435,39 +3212,6 @@
                 "cats": ["m_c"],
                 "scar": "m_c was scarred by a snake bite.",
                 "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by a snake."
-            }
-        ]
-    },
-    {
-        "event_id": "dst_injury_bruises_anymultisage2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "frequency": 4,
-        "event_text": "m_c smacked into a rock. Ow.",
-        "m_c": {
-            "age": [
-                "senior",
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult"
-            ],
-            "status": [
-                "any"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises"
-                ]
             }
         ]
     },
@@ -3516,7 +3260,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "A snake bite from an unknown species left a momentum on m_c's coat.",
+                "scar": "A snake bite from an unknown species left a memento on m_c's coat.",
                 "death": "The bite from an unknown species of snake took m_c's life."
             }
         ]
@@ -3683,26 +3427,16 @@
                     "clan"
                 ],
                 "cats_to": [
-                    "m_c"
+                    "m_c", "r_c"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "respect"
                 ],
-                "amount": 10
-            },
-            {
-                "cats_from": [
-                    "clan"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "respect"
-                ],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to was burned trying to clear dangerous flaming bushes out of the Clan's way."
+                }
             }
         ]
     },
@@ -3842,7 +3576,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c put a paw wrong running amongst the rocks, and {PRONOUN/m_c/poss} momentum wrenched {PRONOUN/m_c/poss} shoulder out of place.",
+        "event_text": "m_c stepped wrong running amongst the rocks, and {PRONOUN/m_c/poss} momentum wrenched {PRONOUN/m_c/poss} shoulder out of place.",
         "m_c": {
             "age": [
                 "senior",
@@ -3911,7 +3645,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c was called in to help repair some of the dens, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not good at it and end up spaining {PRONOUN/m_c/poss} muscles moving something in a stupid way.",
+        "event_text": "m_c was called in to help repair some of the dens, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not good at it and end up straining {PRONOUN/m_c/poss} muscles moving something in a stupid way.",
         "m_c": {
             "age": [
                 "senior",
@@ -4023,18 +3757,21 @@
         ],
         "relationships": [
             {
-                "cats_from": [
+                "cats_to": [
                     "m_c"
                 ],
-                "cats_to": [
+                "cats_from": [
                     "n_c:0"
                 ],
-                "mutual": true,
+                "mutual": false,
                 "values": [
                     "trust",
                     "like"
                 ],
-                "amount": 30
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_to offered cat_from a lifesaving water source while {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} wandering the desert."
+                }
             }
         ],
         "injury": [
@@ -4055,7 +3792,7 @@
         }
     },
     {
-        "event_id": "dst_injury_mangledtail_anynotskillfighter2",
+        "event_id": "dst_injury_dingoattack_anynotskillfighter2",
         "location": [
             "desert"
         ],
@@ -4063,7 +3800,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c is almost killed by a roving dingo, and it's only r_c tracking skills that allow c_n to find m_c's refuge before the blood loss is too great.",
+        "event_text": "m_c is almost killed by a roving dingo, and it's only r_c's tracking skills that allow c_n to find m_c's refuge before {PRONOUN/m_c/subject} {VERB/m_c/bleed/bleeds} out.",
         "m_c": {
             "age": [
                 "senior",
@@ -4131,15 +3868,17 @@
                     "r_c"
                 ],
                 "values": [
-                    "comfort",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_from would have bled out in the wake of a coyote attack if it weren't for cat_to tracking down {PRONOUN/cat_from/poss} location and saving {PRONOUN/cat_from/object}."
+                }
             },
             {
                 "cats_from": [
-                    "clan"
+                    "clan", "-m_c"
                 ],
                 "cats_to": [
                     "r_c"
@@ -4147,7 +3886,10 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 5
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from heard about how cat_to's tracking skills saved m_c's life in the wake of a coyote attack."
+                }
             }
         ]
     },
@@ -4761,7 +4503,7 @@
         ]
     },
     {
-        "event_id": "dst_injury_mangledleg_anymultistatusnotcareful1",
+        "event_id": "dst_injury_cactus_anymultistatusnotcareful1",
         "location": [
             "desert"
         ],
@@ -4892,7 +4634,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c and r_c make a raid into o_c_n territory - with such huge borders, no desert Clan can watch everything. But on unfamiliar ground and in the heat of the day, the two ambitious c_n warriors find only sunstroke.",
+        "event_text": "m_c and r_c make a raid into o_c_n territory — with such huge borders, no desert Clan can watch everything. But on unfamiliar ground and in the heat of the day, the two ambitious c_n warriors find only sunstroke.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -4966,10 +4708,12 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "trust",
-                    "respect"
+                    "trust"
                 ],
-                "amount": 15
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_from and cat_to raided an enemy Clan's territory together."
+                }
             }
         ],
         "other_clan": {

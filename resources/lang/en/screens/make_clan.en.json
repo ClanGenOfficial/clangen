@@ -1,9 +1,9 @@
 {
     "en": {
         "classic_label": "Classic Mode",
-        "classic_info": "This mode is Clan Generator at its most basic. The player will not be expected to manage the minutiae of Clan life. <br><br>Perfect for a relaxing game session or for focusing on storytelling. <br><br>With this mode you are the eye in the sky, watching the Clan as their story unfolds.",
+        "classic_info": "This mode is Clan Generator at its most basic. The player will not be expected to manage the minutiae of Clan life. <br><br>Perfect for a relaxing game session or for focusing on storytelling.<br><br>This mode features:<br>  - Lower injury/death rates<br>  - Simplified herb system with a randomly generated herb supply that isn't affected by events. All conditions are treated regardless of herb supply. Lack of medicine cats doesn't apply a debuff.<br>  - No fresh-kill management system.",
         "expanded_label": "Expanded Mode",
-        "expanded_info": "A more hands-on experience. This mode has everything in Classic Mode as well as more management-focused features.<br><br>Additional features include:<br>- Illnesses, Injuries, and Permanent Conditions<br>- Herb gathering and treatment<br>- Fresh-kill pile and nutrition system<br><br>With this mode you'll be making the important Clan-life decisions.",
+        "expanded_info": "A more hands-on experience. This mode has everything in Classic Mode as well as more management-focused features.<br><br>Additional features include:<br>  - Full herb and condition system.<br>  - Fresh-kill pile and nutrition system<br><br>With this mode you'll be making the important Clan-life decisions.",
         "cruel_season_label": "Cruel Season",
         "cruel_season_info": "This mode has all the features of Expanded mode, but is significantly more difficult. If you'd like a challenge with a bit of brutality, then this mode is for you.<br><br>You heard the warnings... a Cruel Season is coming. Will you survive?<br> <br>-COMING SOON-",
         "menu_warning": "Note: going back to main menu resets the generated cats.",
@@ -44,6 +44,7 @@
         "camp_grasslands": "Grasslands",
         "camp_tunnels": "Tunnels",
         "camp_wastelands": "Wastelands",
+        "camp_bridge": "Bridge",
         "camp_tidepools": "Tidepools",
         "camp_tidal_cave": "Tidal Cave",
         "camp_shipwreck": "Shipwreck",

@@ -381,7 +381,11 @@ class RomanticEvents:
                 )
             ):
                 # randint is a slow function, don't call it unless we have to.
-                if not cat_mate.no_mates and random.random() > 0.5:
+                if (
+                    not cat_mate.no_mates
+                    and random.random()
+                    <= constants.CONFIG["mates"]["chance_to_move_on"]
+                ):
                     text = i18n.t(
                         "hardcoded.move_on_dead_mate", mate=str(cat_mate.name)
                     )

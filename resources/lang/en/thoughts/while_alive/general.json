@@ -891,7 +891,7 @@
             "Is drawing symbols in the dirt with {PRONOUN/m_c/poss} claws",
             "Paces back and forth",
             "Is zoning out",
-            "Is barking like a dog - somehow",
+            "Is barking like a dog — somehow",
             "Was found talking to a tree the other day",
             "Was walking on {PRONOUN/m_c/poss} forelimbs for a bit",
             "Seems to have come up with {PRONOUN/m_c/poss} own secret language",
@@ -913,6 +913,8 @@
         "main_status_constraint": [
             "-kittypet"
         ],
+        "main_trait_constraint": ["strange"],
+
         "main_status_history": [
             "-kittypet"
         ]
@@ -1012,6 +1014,9 @@
             "Won't let r_c get away with it",
             "Whispers the names of cats who have wronged {PRONOUN/m_c/object} before {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}",
             "Is laughing because a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like got hurt"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
         ],
         "relationship_constraint": [
             "dislikes"

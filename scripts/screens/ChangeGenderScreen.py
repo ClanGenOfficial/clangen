@@ -91,9 +91,6 @@ class ChangeGenderScreen(Screens):
 
             elif event.ui_element == self.buttons["add_pronouns"]:
                 PronounCreationWindow(self.the_cat)
-                self.previous_cat_button.disable()
-                self.next_cat_button.disable()
-                self.back_button.disable()
 
             elif type(event.ui_element) is CatButton:
                 if event.ui_element.cat_id == "add":

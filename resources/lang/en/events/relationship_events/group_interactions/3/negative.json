@@ -3,7 +3,7 @@
 		"id": "group_3_negative_gossip",
 		"cat_amount": 3,
 		"intensity": "low",
-		"interactions": ["m_c is gossiping with r_c1 about r_c2"],
+		"interactions": ["m_c is gossiping with r_c1 about r_c2."],
 		"relationship_constraint": {
 			"m_c_to_r_c2": ["dislikes"],
 			"r_c1_to_r_c2": ["dislikes"]
@@ -13,16 +13,16 @@
 				"comfort": "increase"
 			},
 			"m_c_to_r_c2": {
-				"like": "decrease"
+				"respect": "decrease"
 			},
 			"r_c1_to_r_c2": {
-				"like": "decrease"
+				"respect": "decrease"
 			},
 			"r_c2_to_m_c":{
-				"like": "decrease"
+				"comfort": "decrease"
 			},
 			"r_c2_to_r_c1":{
-				"like": "decrease"
+				"comfort": "decrease"
 			}
 		}
 	},	
@@ -84,7 +84,6 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"like": "increase",
 				"comfort": "increase",
 				"trust": "increase"
 			},
@@ -94,7 +93,6 @@
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
-				"like": "decrease",
 				"comfort": "decrease",
 				"trust": "decrease"
 			},
@@ -131,29 +129,193 @@
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"like": "decrease",
-				"comfort": "increase",
-				"trust": "increase"
+				"comfort": "increase"
 			},
 			"r_c1_to_m_c": {
-				"like": "increase",
-				"comfort": "decrease",
-				"trust": "increase"
+				"comfort": "increase"
 			},
 			"r_c1_to_r_c2": {
 				"like": "decrease",
-				"comfort": "decrease",
-				"trust": "decrease"
+				"respect": "decrease"
 			},
 			"r_c2_to_r_c1": {
 				"like": "decrease",
 				"comfort": "decrease",
-				"trust": "decrease"
+				"respect": "decrease"
 			},
 			"r_c2_to_m_c": {
 				"like": "decrease",
 				"comfort": "decrease",
-				"trust": "decrease"
+				"respect": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_3_negative_romanticrivalslow",
+		"cat_amount": 3,
+		"intensity": "low",
+		"interactions": [
+			"m_c knows r_c2 is also interested in r_c1.",
+			"m_c is annoyed r_c1 paid more attention to r_c2 than {PRONOUN/r_c1/subject} did to {PRONOUN/m_c/object} recently.",
+			"m_c wants to bring r_c1 a gift, but {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} busy with r_c2.",
+			"m_c wishes r_c1 would lose interest in r_c2.",
+			"m_c wonders if r_c1 likes {PRONOUN/m_c/object} or r_c2 more.",
+			"m_c hopes r_c1 will choose {PRONOUN/m_c/object} over r_c2.",
+			"m_c would spend more time with r_c1 if it weren't for r_c2 always being in the way."
+		],
+		"relationship_constraint": {
+			"m_c_to_r_c1": ["fancies", "-mates"],
+			"r_c2_to_r_c1": ["fancies", "-mates"]
+		},
+		"specific_reaction":{
+			"m_c_to_r_c1": {
+				"romance": "increase"
+			},
+			"m_c_to_r_c2": {
+				"respect": "decrease"
+			},
+			"r_c2_to_r_c1":{
+				"romance": "increase"
+			}
+		}
+	},
+	{
+		"id": "group_3_negative_romanticrivalshigh",
+		"cat_amount": 3,
+		"intensity": "high",
+		"interactions": [
+			"m_c can't stand to see r_c1 and r_c2 together.",
+			"m_c fantasizes about r_c1 ending {PRONOUN/r_c1/poss} relationship with r_c2.",
+			"m_c feels both guilty and happy at the thought of something happening to r_c2 so r_c1 will move on.",
+			"m_c has a dream where r_c2 never existed and r_c1 became m_c's mate instead.",
+			"m_c thinks r_c1 would be happier in a relationship with {PRONOUN/m_c/object} instead of r_c2.",
+			"m_c sees r_c1 argue with r_c2 and hopes it's a sign they'll break up."
+		],
+		"relationship_constraint": {
+			"m_c_to_r_c1": ["adores", "-mates"],
+			"r_c1_to_r_c2": ["mates"]
+		},
+		"specific_reaction":{
+			"m_c_to_r_c1": {
+				"romance": "increase"
+			},
+			"m_c_to_r_c2": {
+				"respect": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_3_negative_romanticrivalshigh_jealousy",
+		"cat_amount": 3,
+		"intensity": "high",
+		"interactions": [
+			"m_c hopes something bad will happen to r_c2 so r_c1 will move on.",
+			"m_c wants to get rid of r_c2 and have r_c1 all to {PRONOUN/m_c/self}.",
+			"m_c watches r_c1 and r_c2 intently, {PRONOUN/m_c/poss} gaze turning dark when {PRONOUN/m_c/subject} {VERB/m_c/focus/focuses} on r_c2.",
+			"m_c knows the only thing standing between {PRONOUN/m_c/object} and r_c1 is r_c2.",
+			"Poisonous envy fills m_c's heart at the sight of r_c1 and r_c2 together."
+		],
+		"relationship_constraint": {
+			"m_c_to_r_c1": ["adores", "-mates"],
+			"m_c_to_r_c2": ["begrudges"],
+			"r_c1_to_r_c2": ["mates"]
+		},
+		"specific_reaction":{
+			"m_c_to_r_c1": {
+				"romance": "increase"
+			},
+			"m_c_to_r_c2": {
+				"respect": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_3_negative_romanticrivalshigh_jealousofmate",
+		"cat_amount": 3,
+		"intensity": "high",
+		"interactions": [
+			"m_c sees r_c2 flirt with r_c1 right in front of {PRONOUN/m_c/object}.",
+			"r_c1 brings a gift from r_c2 to {PRONOUN/r_c1/poss} shared nest with m_c, and m_c glowers.",
+			"m_c wishes r_c2 would stop complimenting r_c1 in such a flirtatious way.",
+			"m_c reminds r_c2 that r_c1 is <i>{PRONOUN/m_c/poss}</i> mate, not r_c2's.",
+			"m_c feels jealousy prickle on {PRONOUN/m_c/poss} spine at the way r_c2 talks to r_c1."
+		],
+		"relationship_constraint": {
+			"m_c_to_r_c1": ["mates"],
+			"r_c2_to_r_c1": ["fancies", "-mates"]
+		},
+		"specific_reaction":{
+			"m_c_to_r_c1": {
+				"respect": "decrease"
+			},
+			"r_c1_to_m_c": {
+				"comfort": "decrease"
+			},
+			"m_c_to_r_c2": {
+				"respect": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_3_negative_romanticrivalshigh_jealousofrival",
+		"cat_amount": 3,
+		"intensity": "high",
+		"interactions": [
+			"m_c knows r_c1 better than anyone — and can tell {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} interested in r_c2.",
+			"m_c keeps a mental count of how often r_c1 brings up r_c2's name.",
+			"m_c knows r_c1 is {PRONOUN/m_c/poss} mate and not r_c2's, but {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} jealous seeing them together.",
+			"m_c wonders if r_c1 is flirting with r_c2 because {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} bored of m_c.",
+			"m_c hopes r_c1's interest in r_c2 is just a crush and will go away soon."
+		],
+		"relationship_constraint": {
+			"m_c_to_r_c1": ["mates"],
+			"r_c1_to_r_c2": ["fancies", "-mates"]
+		},
+		"specific_reaction":{
+			"m_c_to_r_c1": {
+				"respect": "decrease"
+			},
+			"r_c1_to_m_c": {
+				"comfort": "decrease"
+			},
+			"r_c1_to_r_c2": {
+				"romance": "increase"
+			},
+			"m_c_to_r_c2": {
+				"respect": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_3_negative_romanticrivalshigh_extremejealousofrival",
+		"cat_amount": 3,
+		"intensity": "high",
+		"interactions": [
+			"The way r_c1 talks about r_c2, anyone would think r_c1 would prefer to be {PRONOUN/r_c2/poss} mate instead of m_c's.",
+			"r_c1 seems to spend more time with r_c2 than {PRONOUN/r_c1/poss} mate, m_c.",
+			"r_c1's interest in r_c2 is no secret — even m_c has noticed by now.",
+			"m_c can't sleep while curled up with r_c1 at night, wondering if r_c1 will leave {PRONOUN/m_c/object} for r_c2.",
+			"m_c craves more of r_c1's attention, but these days it's all going to r_c2.",
+			"m_c wonders if r_c1 has fallen more deeply in love with r_c2 than {PRONOUN/r_c1/subject} ever did with m_c.",
+			"m_c plots to win r_c1's attention back away from r_c2.",
+			"m_c hears r_c1 murmuring r_c2's name in {PRONOUN/r_c1/poss} sleep."
+		],
+		"relationship_constraint": {
+			"m_c_to_r_c1": ["mates"],
+			"r_c1_to_r_c2": ["adores", "-mates"]
+		},
+		"specific_reaction":{
+			"m_c_to_r_c1": {
+				"respect": "decrease"
+			},
+			"r_c1_to_m_c": {
+				"comfort": "decrease"
+			},
+			"r_c1_to_r_c2": {
+				"romance": "increase"
+			},
+			"m_c_to_r_c2": {
+				"respect": "decrease"
 			}
 		}
 	}

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Union, List
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.herb import Herb
@@ -12,6 +12,7 @@ from scripts.models.shortevent.supply_type import SupplyType
 
 
 class Supply(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     type: Union[Union[Herb, SupplyType], MISSING] = Field(
         MISSING, description="Indicates the supply being affected."
     )

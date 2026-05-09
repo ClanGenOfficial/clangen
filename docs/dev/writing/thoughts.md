@@ -50,7 +50,6 @@ Within the game, all cats take a new thought each timeskip. However, there are a
     "id": "",
     "biome": [],
     "season": [],
-    "camp": [],
     "thoughts": [],
     "has_injuries": {
         "m_c": [],
@@ -106,12 +105,6 @@ Constrains the thought to only occur if a player chooses a specific biome.
 ### season: list[str]
 Constrains the thought to only occur once the Clan is in a specific season.
 > "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare",
-
-***
-
-### camp: list[str]
-Constrains the thought to only occur if a specific camp type is chosen (IE “camp4”, which is the lake camp in the forest). Furthermore, you can check the image file names of the camps to find the which number they are.
-> "camp1", "camp2", "camp3","camp4",
 
 ***
 
@@ -176,28 +169,28 @@ Constrains the thought to only happen if m_c or r_c are in a certain role. You c
 ***
 
 ### main_status_history: list[str] & random_status_history: list[str]::
-Constrains the thought to only happen if m_c or r_c used to have a certain role, but are no longer that role. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
+Constrains the thought to only happen if m_c or r_c used to have a certain role, but are no longer that role. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 > [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
 
 ***
 
 ### main_age_constraint: list[str] & random_age_constraint: list[str]:
-Constrains the thought to only occur if m_c or r_c are within a certain age group. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
+Constrains the thought to only occur if m_c or r_c are within a certain age group. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 > [Age Tag List](reference/tag-lists.md#__tabbed_2_1)
 
 ***
 
 ### main_trait_constraint: list[str] & random_trait_constraint: list[str]:
-Constrains the thought to only occur if m_c or r_c has a specific trait. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
+Constrains the thought to only occur if m_c or r_c has a specific trait. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 > [Trait Tag List](reference/tag-lists.md#__tabbed_3_2)
 
 ***
 
 ### main_skill_constraint: list[str] & random_skill_constraint: list[str]:
-Constrains the thought to occur only if m_c or r_c has a specific skill. You can utilize [exclusionary values](reference/index.md#exclusionary-values).
+Constrains the thought to occur only if m_c or r_c has a specific skill. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 > [Skill Tag List](reference/tag-lists.md#__tabbed_3_1)
 

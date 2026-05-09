@@ -25,7 +25,7 @@
         "id": "med_cat_alive_apprentice",
         "thoughts": [
             "Wonders if r_c would have been a better healer",
-            "Wishes the other apprentices could understand how {PRONOUN/m_c/subject} feel",
+            "Wishes the other apprentices could understand how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels}",
             "Wishes {PRONOUN/m_c/subject} understood the apprentice's inside jokes",
             "Hopes r_c will come with {PRONOUN/m_c/object} to help gather herbs",
             "Is assuring r_c that everything is okay",

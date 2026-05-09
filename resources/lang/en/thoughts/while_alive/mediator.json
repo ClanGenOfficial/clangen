@@ -134,7 +134,8 @@
         "id": "loving_mediator",
         "thoughts": [
             "Wonders why everyone can't just get along",
-            "Sees all sides of the argument"
+            "Sees all sides of the argument",
+            "Considers {PRONOUN/m_c/self} an expert on matters of the heart"
         ],
         "main_trait_constraint": [
             "loving"

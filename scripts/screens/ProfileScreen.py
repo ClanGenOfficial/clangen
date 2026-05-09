@@ -694,6 +694,7 @@ class ProfileScreen(Screens):
                 "right": "right",
                 "right_target": self.profile_elements["cat_name"],
             },
+            sound_id="fav_cat",
         )
         self.profile_elements["favourite_button"].rebuild()
         del favorite_button_rect
@@ -1409,11 +1410,6 @@ class ProfileScreen(Screens):
 
                 if moons:
                     new_text += f" ({i18n.t('general.moon_date', moon=scar['moon'])})"
-
-                # checking to see if we can throw out a duplicate
-                if new_text in scar_text:
-                    i += 1
-                    continue
 
                 # the first event keeps the cat's name, consecutive events get to switch it up a bit
                 if i != 0:
