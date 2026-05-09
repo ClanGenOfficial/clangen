@@ -1,3 +1,6 @@
+from logging import exception
+from typing import Optional
+
 from pygame_gui.core import UIElement
 
 from scripts.screens.enums import FocusDirection
@@ -54,6 +57,37 @@ def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[l
             # insert it into the actual map according to how we've sorted
             new_row_index = row_positions.index(position.y)
             current_map.insert(new_row_index, [element])
+
+    return current_map
+
+
+def remove_from_map(
+    current_map: list[list], elements_to_remove: list[UIElement]
+) -> list[list]:
+    """
+    Takes the given elements and removes them from the map
+    :param current_map: The current matrix map
+    :param elements_to_remove: The list of interactable elements to remove
+    :return: The new map
+    """
+    for element in elements_to_remove:
+        # first find where the element is positioned
+        element_row:Optional[int] = None
+        for row in current_map:
+            if element in row:
+                element_row = current_map.index(row)
+
+        # if the element isn't present, we warn
+        if element_row is None:
+            raise Exception(
+                "WARNING: attempted to remove an element from the matrix map, but it wasn't present in the matrix map."
+            )
+
+        # then remove it
+        current_map[element_row].remove(element)
+        # check if it empties a row, if it does, remove the row
+        if not current_map[element_row]:
+            current_map.pop(element_row)
 
     return current_map
 
