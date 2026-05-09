@@ -9323,6 +9323,143 @@
         }
     ],
     "future_event": []
+},
+{
+    "event_id": "gen_injury_group3leaderneg",
+    "location": [
+        "any"
+    ],
+    "season": [
+        "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "After a Clanmate challenges {PRONOUN/m_c/object}, m_c commands r_c to help {PRONOUN/m_c/object} punish the protesting cat. Everyone ends up hurt, though m_c feels {PRONOUN/m_c/subject} can trust r_c more.",
+    "new_accessory": [],
+    "m_c": {
+        "status": [
+            "leader"
+        ],
+        "trait": [
+            "bloodthirsty",
+            "vengeful",
+            "fierce"
+        ]
+    },
+    "r_c": {
+        "status": [
+            "warrior",
+            "deputy"
+        ]
+    },
+    "injury": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "injuries": [
+                "battle_injury"
+            ],
+            "scars": [
+                "ONE",
+                "TWO",
+                "HINDLEG",
+                "FACE",
+                "SNOUT",
+                "CHEEK",
+                "BACK",
+                "CATBITE"
+            ]
+        },
+        {
+            "cats": [
+                "r_c"
+            ],
+            "injuries": [
+                "battle_injury"
+            ],
+            "scars": [
+                "ONE",
+                "TWO",
+                "HINDLEG",
+                "FACE",
+                "SNOUT",
+                "CHEEK",
+                "BACK",
+                "CATBITE"
+            ]
+        }
+    ],
+    "history": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "scar": "m_c got a scar after a Clanmate challenged {PRONOUN/m_c/object}.",
+            "death": "Died from their injuries after a Clanmate challenged {PRONOUN/m_c/object}."
+        },
+        {
+            "cats": [
+                "r_c"
+            ],
+            "scar": "Got a scar while punishing a Clanmate in the name of m_c.",
+            "death": "Died from their injuries after punishing a Clanmate in the name of m_c."
+        }
+        
+    ],
+    "relationships": [
+        {
+            "cats_from": [
+                "m_c"
+            ],
+            "cats_to": [
+                "r_c"
+            ],
+            "mutual": false,
+            "values": [
+                "comfort",
+                "trust"
+            ],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from feels like they can trust cat_to after {PRONOUN/cat_to/subject} followed orders to punish a clanmate."
+            }
+        },
+        {
+            "cats_from": [
+                "r_c"
+            ],
+            "cats_to": [
+                "m_c"
+            ],
+            "mutual": false,
+            "values": [
+                "like"
+            ],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_from is glad that cat_to trusts {PRONOUN/cat_from/object} to take {PRONOUN/cat_to/poss} side."
+            }
+        },
+        {
+            "cats_from": [
+                "r_c"
+            ],
+            "cats_to": [
+                "m_c"
+            ],
+            "mutual": false,
+            "values": [
+                "trust",
+                "comfort"
+            ],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from worries that cat_to views {PRONOUN/cat_from/object} as a tool."
+            }
+        }
+    ]
 }
 ]
 
