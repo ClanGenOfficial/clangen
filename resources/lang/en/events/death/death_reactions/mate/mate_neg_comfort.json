@@ -1,1 +1,10 @@
-{}
+{
+    "general": {
+        "body": [
+            "r_c knows that the other cats expect {PRONOUN/r_c/object} to be beside {PRONOUN/r_c/self} with grief, but {PRONOUN/r_c/subject} instead {VERB/r_c/feel/feels}… free. m_c was r_c’s mate, yes, but r_c always felt as though {PRONOUN/r_c/subject} could never quite relax around {PRONOUN/m_c/object}. Maybe things will be different now."
+        ],
+        "no_body": [
+            "r_c knows that the other cats expect {PRONOUN/r_c/object} to be beside {PRONOUN/r_c/self} with grief, but {PRONOUN/r_c/subject} instead {VERB/r_c/feel/feels}… free. m_c was r_c’s mate, yes, but r_c always felt as though {PRONOUN/r_c/subject} could never quite relax around {PRONOUN/m_c/object}. Maybe things will be different now."
+        ]
+    }
+}

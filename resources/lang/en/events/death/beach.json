@@ -131,7 +131,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "to_cat drowned trying to save r_c's life."
+                    "cats_from": "cat_to drowned trying to save r_c's life."
                 }
             }
         ]
@@ -139,7 +139,7 @@
     {
         "event_id": "bch_death_abyss_any1",
         "location": [
-            "beach:camp3"
+            "beach"
         ],
         "season": [
             "any"
@@ -440,7 +440,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "from_cat was shoved off a cliff by to_cat."
+                    "cats_from": "cat_from was shoved off a cliff by cat_to."
                 }
             }
         ],
@@ -450,7 +450,7 @@
                 "pool": {
                     "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [1,24],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
@@ -550,7 +550,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "from_cat was shoved off a cliff by to_cat, who made the death look like an accident."
+                    "cats_from": "cat_from was shoved off a cliff by cat_to, who made the death look like an accident."
                 }
             }
         ],
@@ -560,7 +560,7 @@
                 "pool": {
                     "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [1,24],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
@@ -648,7 +648,7 @@
                 ],
                 "amount": -50,
                 "log": {
-                    "cats_from": "from_cat drowned in the tides as to_cat stood by and watched."
+                    "cats_from": "cat_from drowned in the tides as cat_to stood by and watched."
                 }
             }
         ],
@@ -658,7 +658,7 @@
                 "pool": {
                     "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [1,24],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
@@ -668,5 +668,57 @@
                 }
             }
         ]
+    },
+    {
+  "event_id": "bch_death_kitappshipwreckfall",
+  "location": [
+    "beach:camp3"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "frequency": 1,
+  "event_text": "m_c climbed aboard the broken ship in camp, playing pretend as a Twoleg. No cat noticed what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing until the floorboards beneath {PRONOUN/m_c/object} gave way and {PRONOUN/m_c/subject} fell into the nothingness below.",
+  "m_c": {
+    "age": [
+      "kitten",
+      "adolescent"
+    ],
+    "skill": [
+      "-CLIMBER,0"
+    ],
+    "trait": [
+      "unruly",
+      "impulsive",
+      "attention-seeker",
+      "charming",
+      "skittish",
+      "daydreamer",
+      "fearless",
+      "bossy",
+      "troublesome",
+      "childish",
+      "playful",
+      "charismatic",
+      "bold",
+      "daring",
+      "confident",
+      "adventurous",
+      "shameless",
+      "sneaky",
+      "strange",
+      "rebellious"
+    ],
+    "dies": true
+  },
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c fell through the floorboards of the broken ship."
     }
+  ]
+}
 ]

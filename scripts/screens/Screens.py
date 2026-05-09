@@ -10,8 +10,11 @@ import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
 from scripts.game_structure import constants
 from scripts.cat.enums import CatGroup
-from scripts.game_structure.audio import music_manager
-from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure.game.settings import (
+    game_setting_get,
+    game_setting_set,
+    game_settings_save,
+)
 from scripts.game_structure.game.switches import (
     switch_set_value,
     switch_get_value,
@@ -51,12 +54,16 @@ class Screens:
         It will handle keeping track of the last screen and cur screen.
         Last screen must be tracked to ensure a clear transition between screens."""
 
-        music_manager.check_music(new_screen)
         # self.exit_screen()
         game.last_screen_forupdate = self.name
 
-        # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in [GameScreen.CAMP, GameScreen.LIST, GameScreen.EVENTS]:
+        # This keeps track of the last screen for the back button on cat profiles
+        # Only add screens to this if it's possible for the profile to be accessed from them
+        if self.name in (
+            GameScreen.CAMP,
+            GameScreen.LIST,
+            GameScreen.EVENTS,
+        ):
             game.last_screen_forProfile = self.name
 
         if new_screen not in [
@@ -79,6 +86,7 @@ class Screens:
             self.current_page = 1
 
         switch_set_value(Switch.cur_screen, new_screen)
+
         game.switch_screens = True
         game.rpc.update_rpc.set()
 
@@ -183,6 +191,16 @@ class Screens:
 
     def screen_switches(self):
         """Runs when this screen is switched to."""
+        # flipping between menu screens and not menu screens
+        if (
+            switch_get_value(Switch.cur_screen) in constants.MENU_SCREENS
+            and game.last_screen_forupdate not in constants.MENU_SCREENS
+        ) or (
+            switch_get_value(Switch.cur_screen) not in constants.MENU_SCREENS
+            and game.last_screen_forupdate in constants.MENU_SCREENS
+        ):
+            game.audio.check(should_fade_out=True)
+
         Screens.hide_mute_buttons()
         Screens.hide_menu_buttons()
         Screens.menu_buttons = scripts.screens.screens_core.screens_core.menu_buttons
@@ -280,10 +298,11 @@ class Screens:
     def show_mute_buttons(self):
         """This shows all mute buttons, and makes them interact-able."""
 
-        if music_manager.muted or music_manager.audio_disabled:
-            self.menu_buttons["unmute_button"].show()
-            self.menu_buttons["mute_button"].hide()
+        if game.audio.muted or game.audio.disabled or game_setting_get("audio_mute"):
+            cls.menu_buttons["unmute_button"].show()
+            cls.menu_buttons["mute_button"].hide()
             self.update_map([self.menu_buttons["unmute_button"]])
+
         else:
             self.menu_buttons["unmute_button"].hide()
             self.menu_buttons["mute_button"].show()
@@ -292,18 +311,26 @@ class Screens:
     def mute_button_pressed(self, event):
         """This is a short-up to deal with mute button presses.
         This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
+        if game.audio.disabled:
+            return False
+
         if event.type == pygame.KEYDOWN:
             element = self.current_selection
         else:
             element = event.ui_element
-        if element == Screens.menu_buttons["mute_button"]:
-            music_manager.mute_music()
-            self.show_mute_buttons()
+
+        if event.ui_element == Screens.menu_buttons["mute_button"]:
+            game.audio.mute()
+            game_setting_set("audio_mute", True)
+            game_settings_save(self)
+            Screens.show_mute_buttons()
             return True
-        elif element == Screens.menu_buttons["unmute_button"]:
-            out = music_manager.unmute_music(self.name)
-            self.show_mute_buttons()
-            return out
+        elif event.ui_element == Screens.menu_buttons["unmute_button"]:
+            game.audio.unmute()
+            game_setting_set("audio_mute", False)
+            game_settings_save(self)
+            Screens.show_mute_buttons()
+            return True
         else:
             return False
 
@@ -513,7 +540,7 @@ class Screens:
             )
         except (
             AttributeError
-        ):  # We haven't initialised a clan (fresh install) so there's no current season.
+        ):  # We haven't initialized a clan (fresh install) so there's no current season.
             season = "Newleaf"
             season_bg = (
                 scripts.screens.screens_core.screens_core.default_fullscreen_bgs[theme][

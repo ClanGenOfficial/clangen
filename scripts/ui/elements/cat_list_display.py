@@ -39,8 +39,10 @@ class UICatListDisplay(UIContainer):
         anchors: Optional[dict] = None,
         rows: int = None,
         show_names: bool = False,
+        tool_tip_text_list: list = None,
         tool_tip_name: bool = False,
         tool_tip_nutrition: bool = False,
+        custom_sprites_object_id: str = None,
         visible: bool = True,
         text_theme="#cat_list_text",
         y_px_between: int = None,
@@ -92,8 +94,10 @@ class UICatListDisplay(UIContainer):
         self.prev_button = prev_button
         self.first_button = first_button
         self.last_button = last_button
+        self.tool_tip_text = tool_tip_text_list
         self.tool_tip_name = tool_tip_name
         self.tool_tip_nutrition = tool_tip_nutrition
+        self.custom_sprites_object_id = custom_sprites_object_id
         self.text_theme = text_theme
         self.allow_selection = allow_selection
 
@@ -267,8 +271,13 @@ class UICatListDisplay(UIContainer):
             )
         elif self.tool_tip_name:
             tooltip_text = str(kitty.name)
+        elif self.tool_tip_text:
+            tooltip_text = self.tool_tip_text[
+                i + ((self.current_page - 1) * self.cats_displayed)
+            ]
         else:
             tooltip_text = None
+
         if self.allow_selection:
             self.selection_boxes[f"sprite{i}"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((0, 15), (56, 56))),
@@ -286,7 +295,9 @@ class UICatListDisplay(UIContainer):
             cat_id=kitty.ID,
             mask=None,
             container=container,
-            object_id=f"#sprite{str(i)}",
+            object_id=f"#sprite{str(i)}"
+            if not self.custom_sprites_object_id
+            else self.custom_sprites_object_id,
             tool_tip_text=tooltip_text,
             starting_height=1,
             anchors={"centerx": "centerx"},
@@ -377,8 +388,8 @@ class UICatListDisplay(UIContainer):
             box.hide()
         self.selected.clear()
 
-    def show(self):
-        super().show()
+    def show(self, show_contents: bool = True):
+        super().show(show_contents)
 
         if self.allow_selection:
             for sprite, button in self.cat_sprites.items():

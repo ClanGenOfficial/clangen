@@ -42,7 +42,7 @@ def load_cats():
 def json_load():
     Cat.all_cats.clear()
     Cat.all_cats_list.clear()
-    Cat.dead_cats.clear()
+
     all_cats = []
     clanname = switch_get_value(Switch.clan_list)[0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
@@ -279,7 +279,8 @@ def json_load():
                     if cat.get("driven_out"):
                         new_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
 
-            new_cat.dead_for = cat["dead_moons"]
+            if cat.get("dead_moons"):
+                new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]

@@ -140,7 +140,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c sat and watched the grass wave across the plain, wondering when times would feel that gentle again. ",
+        "event_text": "m_c watched the grass sway across the plains, wondering when times would feel that gentle again. ",
         "m_c": {
             "status": [
                 "leader"
@@ -163,7 +163,7 @@
     {
         "event_id": "pln_misc_war_bolster1",
         "location": [
-            "plains_camp2"
+            "plains:camp2"
         ],
         "season": [
             "any"
@@ -184,7 +184,7 @@
                 "amount": 5,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat approved of how to_cat disguised the camp tunnels' entrance."
+                    "cats_from": "cat_from approved of how cat_to disguised the camp tunnels' entrance."
                 }
             }
         ]
