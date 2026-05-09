@@ -71,8 +71,7 @@ class KeyboardManager(InputManager):
                 self._post_action(action, custom_events.INPUT_ACTION_PRESSED)
 
     def set_action_maps(self, pygame_key_to_action: Dict[int, Action]):
-        for pygame_key, action in pygame_key_to_action.items():
-            KeyboardManager.action_map[pygame_key] = action
+        KeyboardManager.action_map = pygame_key_to_action
 
 
 class ControllerManager(InputManager):
@@ -231,8 +230,7 @@ class ControllerManager(InputManager):
         return False
 
     def set_action_maps(self, pygame_key_to_action: Dict[int, Action]):
-        for pygame_key, action in pygame_key_to_action.items():
-            ControllerManager.action_map[pygame_key] = action
+        ControllerManager.action_map = pygame_key_to_action
 
     def set_led(self, color: pygame.Color):
         """
