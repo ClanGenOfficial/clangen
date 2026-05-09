@@ -432,7 +432,9 @@
 			"m_c": [
 				"-kitten"
 			],
-			"relationship_status": ["-littermates"],
+			"relationship_status": [
+				"-littermates"
+			],
 			"r_c1": [
 				"kitten"
 			],
