@@ -35,6 +35,8 @@ class InputManager(ABC):
     @abstractmethod
     def set_action_maps(self, pygame_key_to_action: Dict[int, Action]):
         """
+        Remaps controls. Will entirely replace the existing input map with the provided one,
+        so watch out.
         :param pygame_key_to_action: Map of Pygame Key events (e.g. pygame.K_DOWN) to Actions
         """
 
