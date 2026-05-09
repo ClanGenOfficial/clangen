@@ -299,8 +299,8 @@ class Screens:
         """This shows all mute buttons, and makes them interact-able."""
 
         if game.audio.muted or game.audio.disabled or game_setting_get("audio_mute"):
-            cls.menu_buttons["unmute_button"].show()
-            cls.menu_buttons["mute_button"].hide()
+            self.menu_buttons["unmute_button"].show()
+            self.menu_buttons["mute_button"].hide()
             self.update_map([self.menu_buttons["unmute_button"]])
 
         else:
@@ -319,17 +319,17 @@ class Screens:
         else:
             element = event.ui_element
 
-        if event.ui_element == Screens.menu_buttons["mute_button"]:
+        if element == Screens.menu_buttons["mute_button"]:
             game.audio.mute()
             game_setting_set("audio_mute", True)
             game_settings_save(self)
-            Screens.show_mute_buttons()
+            self.show_mute_buttons()
             return True
-        elif event.ui_element == Screens.menu_buttons["unmute_button"]:
+        elif element == Screens.menu_buttons["unmute_button"]:
             game.audio.unmute()
             game_setting_set("audio_mute", False)
             game_settings_save(self)
-            Screens.show_mute_buttons()
+            self.show_mute_buttons()
             return True
         else:
             return False
