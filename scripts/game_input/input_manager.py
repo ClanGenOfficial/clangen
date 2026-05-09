@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 import pygame
 from pygame._sdl2 import controller
 
-from typing import Literal, Union
+from typing import Literal, Union, Dict
 from abc import ABC, abstractmethod
 
 from scripts.game_structure.game.settings import game_setting_get
@@ -30,6 +30,12 @@ class InputManager(ABC):
     def process_event(self, event: pygame.Event):
         """
         :param event: Pygame Event to process.
+        """
+
+    @abstractmethod
+    def set_action_maps(self, pygame_key_to_action: Dict[int, Action]):
+        """
+        :param pygame_key_to_action: Map of Pygame Key events (e.g. pygame.K_DOWN) to Actions
         """
 
 
@@ -63,6 +69,10 @@ class KeyboardManager(InputManager):
             action = self._get_action_from_event(event)
             if action:
                 self._post_action(action, custom_events.INPUT_ACTION_PRESSED)
+
+    def set_action_maps(self, pygame_key_to_action: Dict[int, Action]):
+        for pygame_key, action in pygame_key_to_action.items():
+            KeyboardManager.action_map[pygame_key] = action
 
 
 class ControllerManager(InputManager):
@@ -218,6 +228,10 @@ class ControllerManager(InputManager):
         if last_used_controller:
             return last_used_controller.rumble(low_freq, high_freq, duration)
         return False
+
+    def set_action_maps(self, pygame_key_to_action: Dict[int, Action]):
+        for pygame_key, action in pygame_key_to_action.items():
+            ControllerManager.action_map[pygame_key] = action
 
     def set_led(self, color: pygame.Color):
         """
