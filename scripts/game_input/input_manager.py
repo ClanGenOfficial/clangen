@@ -21,7 +21,7 @@ class InputManager(ABC):
     def _post_action(self, action: Union[Action, None], event: int):
         """
         Posts Action to Pygame events.
-        Event should be one of INPUT_ACTION_PRESSED, BUTTON_PRESSED or BUTTON_RELEASED.
+        Event should be one of INPUT_ACTION_PRESSED, INPUT_ACTION_RELEASED.
         """
         posted_event = pygame.event.Event(event, {"action": action})
         pygame.event.post(posted_event)
