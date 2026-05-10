@@ -3,7 +3,35 @@
 "Save file editing" is the modification of ClanGen's save files. This can range from something as simple as changing the appearance of a cat to inserting a future event.
 
 !!! warning
-    Save file editing, while easily accessible and widely used by the ClanGen's community, is not officially supported by the ClanGen team. Do not report bugs or strange behavior experienced on edited saves. Reproduce on an unedited save first.
+    Save file editing, while easily accessible and widely used by ClanGen's community, is not officially supported by the ClanGen team. Do not report bugs or strange behavior experienced on edited saves. Reproduce on an unedited save first.
+
+<div class="grid cards" markdown>
+
+- _[clan_cats.json](user-guides/save-file-editing/clan_cats.md)_
+
+    Instructions on how to edit & utilize the file `clan_cats.json`. Includes cat template, and deleting and adding cats.
+
+- _[clan.json](user-guides/save-file-editing/clan_json.md)_
+
+    Instructions on how to edit & utilize the file `clan.json`. Includes temperament calculation.
+
+- _[conditions.json](user-guides/save-file-editing/conditions.md)_
+
+    Instructions on how to edit conditions within the saves. Includes condition templates and `pregnancy.json`.
+
+- _[relations.json](user-guides/save-file-editing/relations.md)_
+
+    Instructions on how to edit relations within the saves.
+
+- _[history.json](user-guides/save-file-editing/history.md)_
+
+    Instructions on how to edit & utilize the history files for cats.
+
+- _[Future Events](user-guides/save-file-editing/future-events.md)_
+
+    Instructions on how to utilize future events in the save files.
+
+</div> 
 
 ## READ ME
 
@@ -56,12 +84,12 @@ In the saves folder, you're going to have four major components:
 * **currentclan.txt**: Tracks which clan the game is currently continuing with.
 * **settings.json**: The menu settings file, aka settings that affect every clan.
 * **Clan save folder**: The main save folder for a clan.
+* **[CLANNAME]clan.json**: A clan's clan.json, which complies information like clan name, other_clans information, "clan_cats" list, etc.
 
 ### Clan Save Folder
 
 Within the Clan Save folder is many other folders and saves that are generated as the save processes. Please do not delete files (unless instructed to). Even if they appear empty, the code looks for specific files to generate the clan.
 
-* **[CLANNAME]clan.json**: A clan's clan.json, which complies information like clan name, other_clans information, "clan_cats" list, etc.
 * **conditions**: Holds every cat's individual conditions `JSON`. This will only generate if cats have conditions applied to them.
 * **disasters**: Keeps a record of Clan's disasters. You should have two files in this folder: primary.json and secondary.json (unimplemented feature)
 * **history**: Holds every cat's individual history `JSON`. Each cat, excluding cats outside of the clan, will have a history file connected to them.
@@ -76,25 +104,59 @@ Within the Clan Save folder is many other folders and saves that are generated a
 * **nutrition_info**: Holds the nutritional needs and status of each cat. (not available for classic)
 * **pregnancy**: Hold the pregnancy data for each pregnant cat, such as litter number and secondary parent.
 
-# (to-do) Common Player-Created Bugs
+## (to-do) Common Player-Created Bugs
 
 !!! warning
 	 Just because a bug is not listed here, does not mean it should be reported. Remember, replicate on unedited saves before reporting.
 
-## Malformed
+Does your game simply crash instead of giving you an error report? Please follow the instructions provided by [reporting a bug](https://clangen.io/docs/report-a-bug/#cant-open-the-game).
 
-The "malformed" error stems from a `JSON` file being invalid in its formatting. If you experience this error, do not fret! Input the `JSON` file into a json validator, such as jsonlint.com, to find the specific lines that are causing the file to be malformed.
+### Malformed
+
+The "malformed" error stems from a `JSON` file being invalid in its formatting. If you experience this error, do not fret! Input the `JSON` file into a json validator, such as [jsonlint.com](https://jsonlint.com/), to find the specific lines that are causing the file to be malformed.
 
 Edit in the json validator until it outputs as valid, then convert all the changes to your local `JSON` game file. Try to run the game.
 
-## Loading clan.json
+### Loading clan.json
 
 The error "error when loading clan.json" without a traceback is the default error popup when there's something incorrect with (primarily) `clan.json` or any file outside of `clan_cats.json`. Retrace your steps and double check your edits.
 
-## Keyword:
+### Keyword:
 
-"Keyword" errors specifically tackle info misspells or unrecognizable imported information, such as attempting to add a modded skill to the base game.
+"Keyword" errors specifically tackle info misspells or unrecognizable imported information, such as attempting to add a modded save to the base game.
 
+These errors are relatively straightforward. The "keyword" it mentions is the culprit, and typically you're able to just search it in the `clan_cats` file (or whichever file it errors for) and edit it from there.
+
+For 1.13 beyond: the error `keyword: 'pattern'` is due to trying to use a 1.13 save with an outdated version of clangen, such as 1.12. Since the save files were changed massively in 1.13, 1.13 saves can no longer be used across versions.
+
+### potential_history
+
+`potential_history` is an error that comes from the history files. In my experience, due to the lack of malformed error for these files, it throws out `potential_history` is a substitute. Follow the same directions provided by the "malformed" heading above.
+
+### "Leaf-bare"
+
+Same as `potential_history`. Due to the lack of malformed error for the clan.json, it throws out `"Leaf-bare"` as a substitute. Follow the same directions provided by the "malformed" heading above.
+
+### unmute_button
+
+Same as `potential_history`. Due to the lack of malformed error for the clan.json, it throws out `unmute_button` as a substitute. Follow the same directions provided by the "malformed" heading above.
+
+### AttributeErrors
+
+Here's a list of attribute errors for clangen and what they possibly mean.
+
+'NoneType' object has no attribute 'premul_alpha'
+
+- Check your cats sprite information. If they have a number in quotes rather than something similar to "newborn0", then you'll have to change them to reflect the new sprite data options for 1.13
+
+'NoneType' object has no attribute 'name'
+
+- somewhere in the file, there is an unrecognized ID being used in another cats information. This is commonly seen when a player deletes a cat but doesn't delete the mentions of the cats ID.
+- The TraceBack message normally mentions which is being affected. Inheritance? Parents. not_working? Mentors & apprentices. profile screen generate_column? ID was not added to clan.json
+
+'NoneType' object has no attribute 'status'
+
+- The player deleted a cat and did not also delete their ID from nutritional_info.json
 
 Planned:
 
@@ -108,3 +170,4 @@ hesitantly planned:
 
 - 'indexerror' errors
 - 'nonetype' errors and what they potentially mean
+- attribute errors
