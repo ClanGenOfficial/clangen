@@ -102,8 +102,7 @@
                 "relationships": [
                     {
                         "cats_from": [
-                            "patrol",
-                             "-s_c"
+                            "patrol"
                         ],
                         "cats_to": [
                             "s_c"
