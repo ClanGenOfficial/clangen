@@ -5,7 +5,8 @@ Screens need to be set up with this matrix map in order for the keybinding to wo
 
 1. Any interactable elements need to be added to the matrix map. Within the `screen_switches` func, you should compile all interactable elements into a list called `elements_list`. 
 2. This list can then be passed into the `self.update_map` function. The function will generate a new `self.matrix_map` for the screen.
-3. The `handle_event` func needs to properly detect `enter` key usage and pass the event as required. Generally, anywhere that we detect a `UI_BUTTON_START_PRESS` or similar actions, we also need to check for `KEYDOWN` actions like so:
+3. An element should be designated as the "starting" focus by setting the `self.current_selection` of the screen to the desired element.
+4. The `handle_event` func needs to properly detect `enter` key usage and pass the event as required. Generally, anywhere that we detect a `UI_BUTTON_START_PRESS` or similar actions, we also need to check for `KEYDOWN` actions like so:
 
 ```py
     def handle_event(self, event):
