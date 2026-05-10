@@ -258,12 +258,16 @@ class Screens:
     #   The menu is used very often, so I don't want to keep
     #   recreating and killing it. Lots of chances for bugs there.
 
-    def update_map(self, element_list: list[UIElement]):
+    def update_map(self, element_list: list[UIElement], remove=False):
         """
         Updates the matrix map with the given list of elements.
+        :param element_list: The list of elements to update.
+        :param remove: Default False, set to True if the list of elements should be removed from the matrix map instead of added.
         """
         if not self.matrix_map:
             self.matrix_map = focus_matrix.create_map(element_list)
+        elif remove:
+            self.matrix_map = focus_matrix.remove_from_map(element_list)
         else:
             self.matrix_map = focus_matrix.add_to_map(self.matrix_map, element_list)
 

@@ -77,6 +77,7 @@ class StartScreen(Screens):
                 element = self.current_selection
             else:
                 element = event.ui_element
+
             screens = {
                 self.continue_button: GameScreen.CAMP,
                 self.switch_clan_button: GameScreen.SWITCH_CLAN,

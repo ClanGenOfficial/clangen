@@ -72,7 +72,7 @@ def remove_from_map(
     """
     for element in elements_to_remove:
         # first find where the element is positioned
-        element_row:Optional[int] = None
+        element_row: Optional[int] = None
         for row in current_map:
             if element in row:
                 element_row = current_map.index(row)
