@@ -5840,7 +5840,7 @@
                     "TEACHER,1"
                 ],
                 "can_have_stat": [
-                    "any"
+                    "p_l"
                 ],
                 "relationships": [
                     {

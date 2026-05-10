@@ -452,16 +452,16 @@
 		},
 		"relationship_constraint": {
 			"m_c_to_r_c1": [
-				"-parent/child"
+				"-parent/child", "-littermates"
 			],
 			"m_c_to_r_c2": [
-				"-parent/child"
+				"-parent/child", "-littermates"
 			],
 			"m_c_to_r_c3": [
-				"-parent/child"
+				"-parent/child", "-littermates"
 			],
 			"m_c_to_r_c4": [
-				"-parent/child"
+				"-parent/child", "-littermates"
 			]
 		},
 		"specific_reaction": {
