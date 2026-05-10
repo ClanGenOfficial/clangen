@@ -13594,7 +13594,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "A o_c_n patrol brings news to c_n that their old leader is dead... and that the new one does not consider c_n a friend.",
+        "event_text": "A o_c_n patrol brings news to c_n that their old leader is dead... and that the new one does not considers c_n a friend.",
         "m_c": {
             "age": [
                 "adolescent",
