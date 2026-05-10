@@ -560,7 +560,10 @@
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
+                        "cats_from": [
+                            "patrol",
+                             "-r_c"
+                          ],
                         "mutual": false,
                         "values": ["respect", "comfort"],
                         "amount": 10,
