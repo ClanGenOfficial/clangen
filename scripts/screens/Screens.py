@@ -267,7 +267,9 @@ class Screens:
         if not self.matrix_map:
             self.matrix_map = focus_matrix.create_map(element_list)
         elif remove:
-            self.matrix_map = focus_matrix.remove_from_map(element_list)
+            self.matrix_map = focus_matrix.remove_from_map(
+                self.matrix_map, element_list
+            )
         else:
             self.matrix_map = focus_matrix.add_to_map(self.matrix_map, element_list)
 
