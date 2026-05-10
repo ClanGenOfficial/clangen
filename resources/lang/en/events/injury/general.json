@@ -3200,6 +3200,7 @@
             ]
         },
         "r_c": {
+            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
             "age": [
                 "any"
             ],
@@ -3213,7 +3214,6 @@
                 "bloodthirsty",
                 "bold",
                 "cold",
-                "daring",
                 "fierce",
                 "strict",
                 "vengeful"
@@ -5601,6 +5601,7 @@
             ]
         },
         "r_c": {
+            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
             "age": [
                 "any"
             ],
@@ -5612,7 +5613,6 @@
                 "bloodthirsty",
                 "bold",
                 "cold",
-                "daring",
                 "fierce",
                 "righteous",
                 "strict",
@@ -5772,6 +5772,7 @@
             ]
         },
         "r_c": {
+            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
             "age": [
                 "any"
             ],
@@ -5849,6 +5850,7 @@
             ]
         },
         "r_c": {
+            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
             "age": [
                 "any"
             ],
@@ -5925,6 +5927,7 @@
             ]
         },
         "r_c": {
+            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
             "age": [
                 "any"
             ],
