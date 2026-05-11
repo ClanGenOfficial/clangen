@@ -12124,7 +12124,7 @@
             "status": ["leader","deputy","warrior","apprentice"]
         },
         "new_cat": [
-            ["meeting","loner"]
+            ["exists","meeting","loner"]
         ],
         "other_clan": {
             "current_rep": ["any"],
@@ -12154,7 +12154,7 @@
             "status": ["leader", "deputy", "warrior", "apprentice"]
         },
         "new_cat": [
-            ["meeting","loner"]
+            ["exists","meeting","loner"]
         ],
         "other_clan": {
             "current_rep": ["any"],
@@ -12184,7 +12184,7 @@
             "status": ["leader", "deputy", "warrior", "apprentice"]
         },
         "new_cat": [
-            ["meeting","kittypet"]
+            ["exists","meeting","kittypet"]
         ],
         "other_clan": {
             "current_rep": ["any"],
@@ -12214,7 +12214,7 @@
             "status": ["leader", "deputy", "warrior", "apprentice"]
         },
         "new_cat": [
-            ["meeting","loner"]
+            ["exists","meeting","loner"]
         ],
         "other_clan": {
             "current_rep": ["any"],
@@ -12243,7 +12243,7 @@
         "m_c": { "status": ["leader","deputy","warrior","apprentice"]
             },
         "new_cat": [
-        ["meeting","kittypet"]
+        ["exists","meeting","kittypet"]
         ],
         "other_clan": {
             "current_rep": ["any"],
