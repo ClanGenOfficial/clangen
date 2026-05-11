@@ -3183,7 +3183,7 @@
         "season": [
             "any"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "event_text": "m_c was injured after a fight with a Clanmate that r_c encouraged.",
         "m_c": {
             "age": [
@@ -3200,7 +3200,7 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
+            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
@@ -5601,7 +5601,7 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
+            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
@@ -5772,7 +5772,7 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
+            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
@@ -5850,7 +5850,7 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
+            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
@@ -5927,7 +5927,7 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["-cherishes", "-knows_deeply", "-adores"],
+            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
