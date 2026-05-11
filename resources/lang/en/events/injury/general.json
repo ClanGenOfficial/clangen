@@ -5601,7 +5601,7 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
+            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to_only", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
