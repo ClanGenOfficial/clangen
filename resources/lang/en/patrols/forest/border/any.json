@@ -96,7 +96,6 @@
                     "multi"
                 ],
                 "history_text": {
-                    "scar": "This cat was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
                 "relationships": [
@@ -127,14 +126,10 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "death": "m_c died of an injury sustained in a rogue ambush."
                 },
                 "relationships": [
