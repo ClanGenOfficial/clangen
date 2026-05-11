@@ -3164,7 +3164,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "r_c finds some acc_plural and gifts {PRONOUN/r_c/poss} beloved m_c to wear some in {PRONOUN/m_c/poss} pelt.",
+        "event_text": "r_c finds some acc_plural and gifts them to {PRONOUN/r_c/poss} beloved m_c to wear some in {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "WILD",
             "PLANT"
