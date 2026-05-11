@@ -13670,5 +13670,141 @@
             ],
             "changed": -15
         }
+    },
+    {
+        "event_id": "gen_misc_otherclanhostilerelboost1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "frequency": 2,
+        "event_text": "o_c_n's deputy secretly meets with a patrol of c_n cats and talks their way out of a battle that would've caused pointless bloodshed.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 5
+        }
+    },
+    {
+        "event_id": "gen_misc_otherclanhostilerelboost2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c convenes with o_c_n's mediator to discuss peace. The meeting seems to go well, and m_c is optimistic o_c_n might end the conflict soon.",
+        "m_c": {
+            "status": [
+                "mediator"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 5
+        }
+    },
+    {
+        "event_id": "gen_misc_otherclanhostilerelboost3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 1,
+        "event_text": "o_c_n's medicine cat meets with m_c and tells {PRONOUN/m_c/object} of an omen they received that hopefully foretells of future peace.",
+        "m_c": {
+            "status": [
+                "medicine cat"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 10
+        }
+    },
+    {
+        "event_id": "gen_misc_otherclanhostilerelboost4",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "frequency": 1,
+        "event_text": "o_c_n's leader is killed in a battle with c_n. Their deputy takes over and promises to not follow in the pawsteps of their violent leader.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 15
+        }
+    },
+    {
+        "event_id": "gen_misc_otherclanhostilerelboost5",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "exclude_involved": [
+            "m_c"
+        ],
+        "frequency": 1,
+        "event_text": "A group of cats from o_c_n make their way to c_n's camp, where they explain that they've overthrown their leader to avoid any more battles between them and c_n.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 15
+        }
     }
 ]
