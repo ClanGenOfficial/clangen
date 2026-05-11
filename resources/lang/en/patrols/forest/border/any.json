@@ -3575,12 +3575,10 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a fox fight.",
                     "death": "m_c died of an injury inflicted by a fox."
                 }
             },
@@ -3742,12 +3740,10 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a fox fight.",
                     "death": "m_c died of an injury inflicted by a fox."
             },
                 "relationships": [
