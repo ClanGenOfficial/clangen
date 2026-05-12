@@ -42,46 +42,41 @@ class InheritanceDb:
     def __repr__(self):
         return str(self._cat_to_rels)
 
-    def load_inheritance(self, cat: Cat, cat_to_rel: Dict[str, FamilyRelations]):
+    def load_inheritance(self, cat: Cat):
         for parent_id in cat.adoptive_parents:
-            cat_to_rel[cat.ID].parents.append(
+            self._cat_to_rels[cat.ID].parents.append(
                 {"relation_type": RelationType.ADOPTIVE, "cat_id": parent_id}
             )
-            cat_to_rel[parent_id].children.append(
+            self._cat_to_rels[parent_id].children.append(
                 {"relation_type": RelationType.ADOPTIVE, "cat_id": cat.ID}
             )
 
         for parent_id in (cat.parent1, cat.parent2):
             if parent_id:
-                cat_to_rel[cat.ID].parents.append(
+                self._cat_to_rels[cat.ID].parents.append(
                     {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
                 )
-                cat_to_rel[parent_id].children.append(
+                self._cat_to_rels[parent_id].children.append(
                     {"relation_type": RelationType.BLOOD, "cat_id": cat.ID}
                 )
 
         for m in cat.mate:
-            cat_to_rel[cat.ID].mates.append(
+            self._cat_to_rels[cat.ID].mates.append(
                 {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
             )
 
     def load_inheritances(self, load_faded=False):
-        cat_to_rel: Dict[
-            str,
-            FamilyRelations,
-        ] = defaultdict(FamilyRelations)
+        self._cat_to_rels = defaultdict(FamilyRelations)
 
         for cat in Cat.all_cats_list:
-            self.load_inheritance(cat, cat_to_rel)
+            self.load_inheritance(cat)
 
         if load_faded:
             for cat_id in get_faded_ids():
                 cat = Cat.fetch_cat(cat_id)
                 if not cat:
                     continue
-                self.load_inheritance(cat, cat_to_rel)
-
-        self._cat_to_rels = cat_to_rel
+                self.load_inheritance(cat)
 
     def get_parents(self, cat_id: str) -> Set[str]:
         return {p["cat_id"] for p in self._cat_to_rels[cat_id].parents}
