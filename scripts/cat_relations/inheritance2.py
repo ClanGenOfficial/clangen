@@ -146,6 +146,24 @@ class InheritanceDb:
                 cousins.add(c)
         return cousins
 
+    def get_relatives(self, cat_id: str, cousin_allowed: bool) -> Set[str]:
+        get_relative_functions = (
+            self.get_parents,
+            self.get_children,
+            self.get_siblings,
+            self.get_grandparents,
+            self.get_grandchildren,
+            self.get_siblings_children,
+            self.get_parents_siblings,
+        )
+
+        relatives = set()
+        for get_relative_function in get_relative_functions:
+            relatives.update(get_relative_function(cat_id))
+        if cousin_allowed:
+            relatives.update(self.get_cousins(cat_id))
+        return relatives
+
     def is_related(self, cat_a: str, cat_b: str, cousin_allowed) -> bool:
         shared_parents = self.get_parents(cat_a).intersection(self.get_parents(cat_b))
         if not cousin_allowed:
