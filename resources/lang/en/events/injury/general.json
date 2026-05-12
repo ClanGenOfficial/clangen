@@ -3200,7 +3200,7 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to_only", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
+            "relationship_status": ["dislikes", "avoids"],
             "age": [
                 "any"
             ],
@@ -5592,6 +5592,7 @@
             "age": [
                 "-kitten"
             ],
+"relationship_status": ["doubts"],
             "status": [
                 "any"
             ],
@@ -5601,7 +5602,6 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to_only", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
@@ -5760,6 +5760,7 @@
         "frequency": 1,
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "m_c": {
+            "relationship_status": ["doubts"],
             "status": [
                 "-kitten",
                 "-leader"
@@ -5772,7 +5773,6 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to_only", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
@@ -5847,10 +5847,10 @@
             ],
             "trait": [
                 "-loyal"
-            ]
+            ],
+            "relationship_status": ["doubts"]
         },
         "r_c": {
-            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to_only", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
@@ -5919,6 +5919,7 @@
         "frequency": 1,
         "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/object}.",
         "m_c": {
+            "relationship_status": ["doubts"],
             "age": [
                 "any"
             ],
@@ -5927,7 +5928,6 @@
             ]
         },
         "r_c": {
-            "relationship_status": ["dislikes", "knows_of_only", "likes_only", "enjoys_only", "avoids", "considers_only", "relates_to_only", "understands_only", "uninterested_only", "fancies_only", "adores_only"],
             "age": [
                 "any"
             ],
