@@ -4,6 +4,7 @@ from enum import StrEnum
 from dataclasses import dataclass, field
 from collections import defaultdict
 
+
 class RelationType(StrEnum):
     """An enum representing the possible relationships of a cat"""
 
@@ -40,34 +41,37 @@ class InheritanceDb:
     def __repr__(self):
         return str(self._cat_to_rels)
 
+    def load_inheritance(self, cat: Cat, cat_to_rel: Dict[str, FamilyRelations]):
+        for parent_id in cat.adoptive_parents:
+            cat_to_rel[cat.ID].parents.append(
+                {"relation_type": RelationType.ADOPTIVE, "cat_id": parent_id}
+            )
+            cat_to_rel[parent_id].children.append(
+                {"relation_type": RelationType.ADOPTIVE, "cat_id": cat.ID}
+            )
+
+            for parent_id in (cat.parent1, cat.parent2):
+                if parent_id:
+                    cat_to_rel[cat.ID].parents.append(
+                        {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
+                    )
+                    cat_to_rel[parent_id].children.append(
+                        {"relation_type": RelationType.BLOOD, "cat_id": cat.ID}
+                    )
+
+            for m in cat.mate:
+                cat_to_rel[cat.ID].mates.append(
+                    {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
+                )
+
     def load_inheritances(self):
         cat_to_rel: Dict[
             str,
             FamilyRelations,
         ] = defaultdict(FamilyRelations)
 
-        for c in Cat.all_cats_list:
-            for parent_id in c.adoptive_parents:
-                cat_to_rel[c.ID].parents.append(
-                    {"relation_type": RelationType.ADOPTIVE, "cat_id": parent_id}
-                )
-                cat_to_rel[parent_id].children.append(
-                    {"relation_type": RelationType.ADOPTIVE, "cat_id": c.ID}
-                )
-
-            for parent_id in (c.parent1, c.parent2):
-                if parent_id:
-                    cat_to_rel[c.ID].parents.append(
-                        {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
-                    )
-                    cat_to_rel[parent_id].children.append(
-                        {"relation_type": RelationType.BLOOD, "cat_id": c.ID}
-                    )
-
-            for m in c.mate:
-                cat_to_rel[c.ID].mates.append(
-                    {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
-                )
+        for cat in Cat.all_cats_list:
+            self.load_inheritance(cat, cat_to_rel)
 
         self._cat_to_rels = cat_to_rel
 
