@@ -156,5 +156,20 @@ class InheritanceDb:
             return True
         return self.get_grandparents(cat_a).intersection(self.get_grandparents(cat_b))
 
+    def is_grandparent(self, cat_a: str, maybe_grandparent: str) -> bool:
+        return maybe_grandparent in self.get_grandparents(cat_a)
+
+    def is_parent(self, cat_a: str, maybe_parent: str) -> bool:
+        return maybe_parent in self.get_parents(cat_a)
+
+    def is_sibling(self, cat_a: str, maybe_sibling: str) -> bool:
+        return maybe_sibling in self.get_siblings(cat_a)
+
+    def is_uncle_aunt(self, cat_a: str, maybe_uncle_aunt: str) -> bool:
+        return cat_a in self.get_siblings_children(maybe_uncle_aunt)
+
+    def is_cousins(self, cat_a: str, maybe_cousin: str) -> bool:
+        return maybe_cousin in self.get_cousins(cat_a)
+
 
 inheritance_db = InheritanceDb()
