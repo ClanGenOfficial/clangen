@@ -51,19 +51,19 @@ class InheritanceDb:
                 {"relation_type": RelationType.ADOPTIVE, "cat_id": cat.ID}
             )
 
-            for parent_id in (cat.parent1, cat.parent2):
-                if parent_id:
-                    cat_to_rel[cat.ID].parents.append(
-                        {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
-                    )
-                    cat_to_rel[parent_id].children.append(
-                        {"relation_type": RelationType.BLOOD, "cat_id": cat.ID}
-                    )
-
-            for m in cat.mate:
-                cat_to_rel[cat.ID].mates.append(
-                    {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
+        for parent_id in (cat.parent1, cat.parent2):
+            if parent_id:
+                cat_to_rel[cat.ID].parents.append(
+                    {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
                 )
+                cat_to_rel[parent_id].children.append(
+                    {"relation_type": RelationType.BLOOD, "cat_id": cat.ID}
+                )
+
+        for m in cat.mate:
+            cat_to_rel[cat.ID].mates.append(
+                {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
+            )
 
     def load_inheritances(self, load_faded=False):
         cat_to_rel: Dict[
