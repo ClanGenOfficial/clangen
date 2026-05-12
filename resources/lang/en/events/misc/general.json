@@ -13711,7 +13711,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c convenes with o_c_n's mediator to discuss peace. The meeting seems to go well, and m_c is optimistic o_c_n might end the conflict soon.",
+        "event_text": "m_c convenes with o_c_n's mediator to discuss peace. The meeting goes well, and m_c is optimistic o_c_n might end the conflict soon.",
         "m_c": {
             "status": [
                 "mediator"
