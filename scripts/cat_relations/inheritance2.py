@@ -148,7 +148,7 @@ class InheritanceDb:
             for s in self.get_siblings(p):
                 parents_siblings.add(s)
         return parents_siblings
-    
+
     def get_cousins(self, cat_id: str) -> Set[str]:
         cousins = set()
         for ps in self.get_parents_siblings(cat_id):
@@ -162,7 +162,7 @@ class InheritanceDb:
             return shared_parents
 
         # checking for cousins
-        if shared_parents: # shared parents, don't have to check grandparents
+        if shared_parents:  # shared parents, don't have to check grandparents
             return True
         return self.get_grandparents(cat_a).intersection(self.get_grandparents(cat_b))
 
