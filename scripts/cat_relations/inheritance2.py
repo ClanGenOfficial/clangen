@@ -52,39 +52,33 @@ class InheritanceDb:
             if c.ID not in cat_to_rel:
                 cat_to_rel[c.ID] = FamilyRelations()
 
-            for p in c.adoptive_parents:
+            for parent_id in c.adoptive_parents:
                 cat_to_rel[c.ID].parents.append(
-                    {"relation_type": RelationType.ADOPTIVE, "cat_id": p}
+                    {"relation_type": RelationType.ADOPTIVE, "cat_id": parent_id}
                 )
-            for p in [c.parent1, c.parent2]:
-                if p:
+
+                if parent_id not in cat_to_rel:
+                    cat_to_rel[parent_id] = FamilyRelations()
+                cat_to_rel[parent_id].children.append(
+                    {"relation_type": RelationType.ADOPTIVE, "cat_id": c.ID}
+                )
+
+            for parent_id in [c.parent1, c.parent2]:
+                if parent_id:
                     cat_to_rel[c.ID].parents.append(
-                        {"relation_type": RelationType.BLOOD, "cat_id": p}
+                        {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
+                    )
+
+                    if parent_id not in cat_to_rel:
+                        cat_to_rel[parent_id] = FamilyRelations()
+                    cat_to_rel[parent_id].children.append(
+                        {"relation_type": RelationType.BLOOD, "cat_id": c.ID}
                     )
 
             for m in c.mate:
                 cat_to_rel[c.ID].mates.append(
                     {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
                 )
-
-        # add kits
-        # in a separate loop so that we're sure we already know about their parents
-        for c in Cat.all_cats_list:
-            for parent_rel in cat_to_rel[c.ID].parents:
-                parent_id = parent_rel["cat_id"]
-                parent = Cat.fetch_cat(parent_id)
-                if parent:
-                    rel: FamilyRelationLink = {"cat_id": c.ID}
-                    if parent_rel["relation_type"] == RelationType.BLOOD:
-                        rel["relation_type"] = RelationType.BLOOD
-                    else:  # RelationType.ADOPTIVE
-                        rel["relation_type"] = RelationType.ADOPTIVE
-
-                    # might not exist if you're faded, so we have to do. this.
-                    if parent_id not in cat_to_rel:
-                        cat_to_rel[parent_id] = FamilyRelations()
-
-                    cat_to_rel[parent_id].children.append(rel)
 
         self._cat_to_rels = cat_to_rel
 
