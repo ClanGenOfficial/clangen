@@ -1,5 +1,5 @@
 from scripts.cat.cats import Cat
-from typing import TypedDict, Dict, List, Literal, Set
+from typing import TypedDict, Dict, List, Literal, Set, Tuple
 from enum import StrEnum
 from dataclasses import dataclass, field
 
@@ -120,6 +120,41 @@ class InheritanceDb:
         if cat_id in siblings:
             siblings.remove(cat_id)
         return siblings
+
+    def get_siblings_mates(self, cat_id: str) -> Set[str]:
+        siblings_mates = set()
+        for s in self.get_siblings(cat_id):
+            for m in self.get_mates(s):
+                siblings_mates.add(m)
+        return siblings_mates
+
+    def get_childrens_mates(self, cat_id: str) -> Set[str]:
+        childrens_mates = set()
+        for c in self.get_children(cat_id):
+            for m in self.get_mates(c):
+                childrens_mates.add(m)
+        return childrens_mates
+
+    def get_siblings_children(self, cat_id: str) -> Set[str]:
+        siblings_children = set()
+        for s in self.get_siblings(cat_id):
+            for c in self.get_children(s):
+                siblings_children.add(c)
+        return siblings_children
+
+    def get_parents_siblings(self, cat_id: str) -> Set[str]:
+        parents_siblings = set()
+        for p in self.get_parents(cat_id):
+            for s in self.get_siblings(p):
+                parents_siblings.add(s)
+        return parents_siblings
+    
+    def get_cousins(self, cat_id: str) -> Set[str]:
+        cousins = set()
+        for ps in self.get_parents_siblings(cat_id):
+            for c in self.get_children(ps):
+                cousins.add(c)
+        return cousins
 
 
 inheritance_db = InheritanceDb()
