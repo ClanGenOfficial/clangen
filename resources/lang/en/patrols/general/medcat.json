@@ -31282,7 +31282,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when p_l comes across some. On the way home, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} some straggly-looking plantain near the path. {PRONOUN/p_l/subject/CAP} pick it, as well. The more herbs they have before leaf-bare, the better.",
+                "text": "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when p_l comes across some. On the way home, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} some straggly-looking plantain near the path. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pick/picks} it, as well. The more herbs they have before leaf-bare, the better.",
                 "exp": 10,
                 "herbs": [
                     "burdock",
