@@ -156,5 +156,15 @@ class InheritanceDb:
                 cousins.add(c)
         return cousins
 
+    def is_related(self, cat_a: str, cat_b: str, cousin_allowed) -> bool:
+        shared_parents = self.get_parents(cat_a).intersection(self.get_parents(cat_b))
+        if not cousin_allowed:
+            return shared_parents
+
+        # checking for cousins
+        if shared_parents: # shared parents, don't have to check grandparents
+            return True
+        return self.get_grandparents(cat_a).intersection(self.get_grandparents(cat_b))
+
 
 inheritance_db = InheritanceDb()
