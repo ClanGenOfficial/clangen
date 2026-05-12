@@ -5695,9 +5695,10 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Opportunity or trap — it's possible to succeed if it's either, or both. p_l charges across the border, straight into o_c_n territory and straight past the patrol lying in wait to ambush {PRONOUN/p_l/object}, but one of the patrol is just a little further to the side than all the others, just a little, just enough, and instead of springing the trap and getting away scot-free, p_l falls to it.",
+                "text": "Opportunity or trap — it's possible to succeed if it's either, or both. p_l charges across the border, straight into o_c_n territory and the claws of the waiting patrol. Alone, p_l is easily overcome and slaughtered.",
                 "exp": 0,
-                "other_clan_rep": -1,
+                "dead_cats": ["p_l"],
+                "other_clan_rep": -3,
                 "frequency": 4
             }
         ],
