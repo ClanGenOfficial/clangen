@@ -24,7 +24,6 @@ class FamilyRelationLink(TypedDict):
 class FamilyRelations:
     parents: List[FamilyRelationLink] = field(default_factory=lambda: [])
     children: List[FamilyRelationLink] = field(default_factory=lambda: [])
-    siblings: List[FamilyRelationLink] = field(default_factory=lambda: [])
     mates: List[FamilyRelationLink] = field(default_factory=lambda: [])
 
 
@@ -47,7 +46,6 @@ class InheritanceDb:
             FamilyRelations,
         ] = defaultdict(FamilyRelations)
 
-        # add parents
         for c in Cat.all_cats_list:
             for parent_id in c.adoptive_parents:
                 cat_to_rel[c.ID].parents.append(
