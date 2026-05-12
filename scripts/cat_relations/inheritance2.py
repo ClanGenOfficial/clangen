@@ -107,23 +107,23 @@ class InheritanceDb:
 
     def get_grandparents(self, cat_id: str) -> Set[str]:
         grandparents = set()
-        for p in self._cat_to_rel[cat_id]["parents"]:
-            for gp in self._cat_to_rel[p["cat_id"]]["parents"]:
-                grandparents.add(gp["cat_id"])
+        for p in self.get_parents(cat_id):
+            for gp in self.get_parents(p):
+                grandparents.add(gp)
         return grandparents
 
     def get_grandchildren(self, cat_id: str) -> Set[str]:
         grandchildren = set()
-        for c in self._cat_to_rel[cat_id]["children"]:
-            for gc in self._cat_to_rel[c["cat_id"]]["children"]:
-                grandchildren.add(gc["cat_id"])
+        for c in self.get_children(cat_id):
+            for gc in self.get_children(c):
+                grandchildren.add(gc)
         return grandchildren
 
     def get_siblings(self, cat_id: str) -> Set[str]:
         siblings = set()
-        for p in self._cat_to_rel[cat_id]["parents"]:
-            for c in self._cat_to_rel[p["cat_id"]]["children"]:
-                siblings.add(c["cat_id"])
+        for p in self.get_parents(cat_id):
+            for c in self.get_children(p):
+                siblings.add(c)
 
         if cat_id in siblings:
             siblings.remove(cat_id)
