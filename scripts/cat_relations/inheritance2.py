@@ -2,7 +2,7 @@ from scripts.cat.cats import Cat
 from typing import TypedDict, Dict, List, Literal, Set, Tuple
 from enum import StrEnum
 from dataclasses import dataclass, field
-
+from collections import defaultdict
 
 class RelationType(StrEnum):
     """An enum representing the possible relationships of a cat"""
@@ -45,20 +45,14 @@ class InheritanceDb:
         cat_to_rel: Dict[
             str,
             FamilyRelations,
-        ] = {}
+        ] = defaultdict(FamilyRelations)
 
         # add parents
         for c in Cat.all_cats_list:
-            if c.ID not in cat_to_rel:
-                cat_to_rel[c.ID] = FamilyRelations()
-
             for parent_id in c.adoptive_parents:
                 cat_to_rel[c.ID].parents.append(
                     {"relation_type": RelationType.ADOPTIVE, "cat_id": parent_id}
                 )
-
-                if parent_id not in cat_to_rel:
-                    cat_to_rel[parent_id] = FamilyRelations()
                 cat_to_rel[parent_id].children.append(
                     {"relation_type": RelationType.ADOPTIVE, "cat_id": c.ID}
                 )
@@ -68,9 +62,6 @@ class InheritanceDb:
                     cat_to_rel[c.ID].parents.append(
                         {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
                     )
-
-                    if parent_id not in cat_to_rel:
-                        cat_to_rel[parent_id] = FamilyRelations()
                     cat_to_rel[parent_id].children.append(
                         {"relation_type": RelationType.BLOOD, "cat_id": c.ID}
                     )
