@@ -80,9 +80,8 @@ class InheritanceDb:
                     else:  # RelationType.ADOPTIVE
                         rel["relation_type"] = RelationType.ADOPTIVE
 
-                    if (
-                        parent_id not in cat_to_rel
-                    ):  # might not exist if you're faded, so we have to do. this.
+                    # might not exist if you're faded, so we have to do. this.
+                    if parent_id not in cat_to_rel:
                         cat_to_rel[parent_id] = FamilyRelations()
 
                     cat_to_rel[parent_id].children.append(rel)
