@@ -5847,7 +5847,7 @@
             {
                 "text": "Opportunity or trap — it's possible to succeed if it's either, or both. The patrol charges across the border, p_l at the fore, straight into o_c_n territory and the claws of the patrol waiting to ambush them. p_l leads the patrol to their doom.",
                 "exp": 0,
-                "other_clan_rep": -1,
+                "other_clan_rep": -3,
                 "dead_cats": ["patrol"],
                 "frequency": 4
             }
