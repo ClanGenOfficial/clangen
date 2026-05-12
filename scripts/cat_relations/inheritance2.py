@@ -1,4 +1,5 @@
 from scripts.cat.cats import Cat
+from scripts.cat.save_load import get_faded_ids
 from typing import TypedDict, Dict, List, Literal, Set, Tuple
 from enum import StrEnum
 from dataclasses import dataclass, field
@@ -64,7 +65,7 @@ class InheritanceDb:
                     {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
                 )
 
-    def load_inheritances(self):
+    def load_inheritances(self, load_faded=False):
         cat_to_rel: Dict[
             str,
             FamilyRelations,
@@ -72,6 +73,13 @@ class InheritanceDb:
 
         for cat in Cat.all_cats_list:
             self.load_inheritance(cat, cat_to_rel)
+
+        if load_faded:
+            for cat_id in get_faded_ids():
+                cat = Cat.fetch_cat(cat_id)
+                if not cat:
+                    continue
+                self.load_inheritance(cat, cat_to_rel)
 
         self._cat_to_rels = cat_to_rel
 
