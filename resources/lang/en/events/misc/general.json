@@ -13734,7 +13734,7 @@
         ],
         "tags": [],
         "frequency": 1,
-        "event_text": "o_c_n's medicine cat meets with m_c and tells {PRONOUN/m_c/object} of an omen they received that hopefully foretells of future peace.",
+        "event_text": "o_c_n's medicine cat meets with m_c and shares an omen they received that foretells peace.",
         "m_c": {
             "status": [
                 "medicine cat"
