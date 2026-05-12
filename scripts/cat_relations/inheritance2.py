@@ -30,16 +30,16 @@ class FamilyRelations:
 
 class InheritanceDb:
     def __init__(self):
-        self._cat_to_rel: Dict[
+        self._cat_to_rels: Dict[
             str,
             FamilyRelations,
         ] = {}
 
     def __getitem__(self, arg: str):
-        return self._cat_to_rel.get(arg)
+        return self._cat_to_rels.get(arg)
 
     def __repr__(self):
-        return str(self._cat_to_rel)
+        return str(self._cat_to_rels)
 
     def load_inheritances(self):
         cat_to_rel: Dict[
@@ -87,16 +87,16 @@ class InheritanceDb:
 
                     cat_to_rel[parent_id].children.append(rel)
 
-        self._cat_to_rel = cat_to_rel
+        self._cat_to_rels = cat_to_rel
 
     def get_parents(self, cat_id: str) -> Set[str]:
-        return {p["cat_id"] for p in self._cat_to_rel[cat_id].parents}
+        return {p["cat_id"] for p in self._cat_to_rels[cat_id].parents}
 
     def get_mates(self, cat_id: str) -> Set[str]:
-        return {m["cat_id"] for m in self._cat_to_rel[cat_id].mates}
+        return {m["cat_id"] for m in self._cat_to_rels[cat_id].mates}
 
     def get_children(self, cat_id: str) -> Set[str]:
-        return {k["cat_id"] for k in self._cat_to_rel[cat_id].children}
+        return {k["cat_id"] for k in self._cat_to_rels[cat_id].children}
 
     def get_grandparents(self, cat_id: str) -> Set[str]:
         grandparents = set()
