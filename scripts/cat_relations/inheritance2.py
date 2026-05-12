@@ -55,7 +55,7 @@ class InheritanceDb:
                     {"relation_type": RelationType.ADOPTIVE, "cat_id": c.ID}
                 )
 
-            for parent_id in [c.parent1, c.parent2]:
+            for parent_id in (c.parent1, c.parent2):
                 if parent_id:
                     cat_to_rel[c.ID].parents.append(
                         {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
