@@ -58,10 +58,11 @@ class InheritanceDb:
                     {"relation_type": RelationType.BLOOD, "cat_id": cat.ID}
                 )
 
-        for m in cat.mate:
-            self._cat_to_rels[cat.ID].mates.append(
-                {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
-            )
+        for mates_list in (cat.mate, cat.previous_mates):
+            for m in mates_list:
+                self._cat_to_rels[cat.ID].mates.append(
+                    {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
+                )
 
     def load_inheritances(self, Cat, get_faded_ids=None):
         self._cat_to_rels = defaultdict(FamilyRelations)
