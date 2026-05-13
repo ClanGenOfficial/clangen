@@ -5167,6 +5167,150 @@
         }
     },
     {
+        "event_id": "gen_misc_any_greenleafdaydreamerkitten",
+        "location": ["any"],
+        "season": ["greenleaf"],
+        "frequency": 1,
+        "event_text": "r_c is trying to get m_c to play with {PRONOUN/r_c/object}, but m_c is too enamored with watching a beam of sunlight.",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"]
+        },
+        "r_c": {
+            "age": ["kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"],
+                "log": {
+                    "cats_from": "cat_from was annoyed with cat_to trying to get {PRONOUN/cat_from/object} to play when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} watching a beam of sunlight."
+                }
+            },
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"],
+                "log": {
+                    "cats_from": "cat_from was upset that cat_to wouldn't play with {PRONOUN/cat_from/object}."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_leaffalldaydreamerkitten",
+        "location": ["any"],
+        "season": ["leaf-fall"],
+        "frequency": 1,
+        "event_text": "r_c is trying to get m_c to play with {PRONOUN/r_c/object}, but m_c is too enamored with watching the falling leaves.",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"]
+        },
+        "r_c": {
+            "age": ["kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"],
+                "log": {
+                    "cats_from": "cat_from was annoyed with cat_to trying to get {PRONOUN/cat_from/object} to play when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} watching the falling leaves."
+                }
+            },
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"],
+                "log": {
+                    "cats_from": "cat_from was upset that cat_to wouldn't play with {PRONOUN/cat_from/object}."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_leafbaredaydreamerkitten",
+        "location": ["any"],
+        "season": ["leaf-bare"],
+        "frequency": 1,
+        "event_text": "r_c is trying to get m_c to play with {PRONOUN/r_c/object}, but m_c is too enamored with watching the falling snowflakes.",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"]
+        },
+        "r_c": {
+            "age": ["kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"],
+                "log": {
+                    "cats_from": "cat_from was annoyed with cat_to trying to get {PRONOUN/cat_from/object} to play when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} watching the falling snowflakes."
+                }
+            },
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"],
+                "log": {
+                    "cats_from": "cat_from was upset that cat_to wouldn't play with {PRONOUN/cat_from/object}."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_newleafdaydreamerkitten",
+        "location": ["any"],
+        "season": ["newleaf"],
+        "frequency": 1,
+        "event_text": "r_c is trying to get m_c to play with {PRONOUN/r_c/object}, but m_c is too enamored with watching the drifting pollen.",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"]
+        },
+        "r_c": {
+            "age": ["kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"],
+                "log": {
+                    "cats_from": "cat_from was annoyed with cat_to trying to get {PRONOUN/cat_from/object} to play when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} watching the drifting pollen."
+                }
+            },
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"],
+                "log": {
+                    "cats_from": "cat_from was upset that cat_to wouldn't play with {PRONOUN/cat_from/object}."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_misc_any_welcoming_strangermeeting1",
         "location": [
             "any"
