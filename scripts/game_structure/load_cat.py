@@ -7,6 +7,8 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.cat.save_load import get_faded_ids
 from ..cat.enums import CatGroup, CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
@@ -351,8 +353,11 @@ def json_load():
             switch_set_value(Switch.traceback, e)
             raise
 
-        cat.inheritance = Inheritance(cat)
+    # have to load before thoughts but after cats are done
+    inheritance_db.load_inheritances(Cat, get_faded_ids)
 
+    # requires info received from inheritance
+    for cat in all_cats:
         try:
             # initialization of thoughts
             cat.get_new_thought(other_clan_cats=other_clan_cats)
