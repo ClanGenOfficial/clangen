@@ -178,14 +178,14 @@ class InheritanceDb:
     def is_parent(self, cat_a: str, maybe_parent: str) -> bool:
         return maybe_parent in self.get_parents(cat_a)
 
-    def is_sibling(self, cat_a: str, maybe_sibling: str) -> bool:
-        return maybe_sibling in self.get_siblings(cat_a)
+    def is_sibling(self, cat_a: str, cat_b: str) -> bool:
+        return cat_b in self.get_siblings(cat_a)
 
     def is_uncle_aunt(self, cat_a: str, maybe_uncle_aunt: str) -> bool:
         return cat_a in self.get_siblings_children(maybe_uncle_aunt)
 
-    def is_cousins(self, cat_a: str, maybe_cousin: str) -> bool:
-        return maybe_cousin in self.get_cousins(cat_a)
+    def is_cousin(self, cat_a: str, cat_b: str) -> bool:
+        return cat_b in self.get_cousins(cat_a)
 
 
 inheritance_db = InheritanceDb()
