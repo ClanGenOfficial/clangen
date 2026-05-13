@@ -54,8 +54,12 @@ def generate_sprite(
         and age != CatAge.NEWBORN
         and constants.CONFIG["cat_sprites"]["sick_sprites"]
     ):
-        if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
-            cat_sprite = sprite_poses["sick_young0"]
+        if age == CatAge.KITTEN:
+            cat_sprite = sprite_poses["sick_kitten0"]
+        elif age == CatAge.ADOLESCENT:
+            cat_sprite = sprite_poses["sick_adolescent0"]
+        elif age == CatAge.SENIOR:
+            cat_sprite = sprite_poses["sick_senior0"]
         else:
             cat_sprite = sprite_poses["sick_adult0"]
 
