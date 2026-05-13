@@ -5120,6 +5120,42 @@
         ]
     },
     {
+        "event_id": "gen_misc_any_daydreamerkittenparent",
+        "location": ["any"],
+        "season": ["any"],
+        "frequency": 3,
+        "event_text": "r_c has to tap m_c multiple times to get {PRONOUN/m_c/object} to snap out of (PRONOUN/m_c/poss} daydream.",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"],
+            "relationship_status": ["child/parent"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from was mad when cat_to interrupted {PRONOUN/cat_from/poss} daydreaming."
+                }
+            },
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from was exasperated when it took several tries to get cat_to's attention."
+                }
+
+            }
+        ]
+    },
+
+    {
         "event_id": "gen_misc_any_welcoming_strangermeeting1",
         "location": [
             "any"
