@@ -21147,7 +21147,7 @@
             "normal adult": [2, 2]
         },
         "frequency": 4,
-        "chance_of_success": 50,
+        "chance_of_success": 60,
         "relationship_constraint": ["knows_of_only", "considers_only", "-mates", "-parent/child", "-siblings", "-littermates"],
         "intro_text": "As p_l and r_c reach the training grounds, an air of uncertainty hangs between them. After all, they don't know each other that well.",
         "decline_text": "p_l and r_c agree to train separately",
