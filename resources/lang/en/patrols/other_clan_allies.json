@@ -1356,7 +1356,7 @@
                     ]
                 ],
                 "frequency": 3,
-                "relationships":[
+                "relationships": [
                     {  
                         "cats_to": [
                             "patrol"
