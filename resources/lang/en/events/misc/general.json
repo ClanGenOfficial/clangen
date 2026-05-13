@@ -5155,7 +5155,17 @@
             }
         ]
     },
-
+    {
+        "event_id": "gen_misc_any_daydreamerkitten",
+        "location": ["any"],
+        "season": ["any"],
+        "frequency": 2,
+        "event_text": "m_c watches the clouds and imagines a world far, far away...",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"]
+        }
+    },
     {
         "event_id": "gen_misc_any_welcoming_strangermeeting1",
         "location": [
