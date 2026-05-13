@@ -142,6 +142,8 @@ class InheritanceDb:
         for ps in self.get_parents_siblings(cat_id):
             for c in self.get_children(ps):
                 cousins.add(c)
+        if cat_id in cousins:
+            cousins.remove(cat_id)
         return cousins
 
     def get_relatives(self, cat_id: str, cousin_allowed: bool) -> Set[str]:
