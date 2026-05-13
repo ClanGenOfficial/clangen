@@ -5124,12 +5124,13 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "r_c has to tap m_c multiple times to get {PRONOUN/m_c/object} to snap out of (PRONOUN/m_c/poss} daydream.",
+        "event_text": "r_c has to tap m_c multiple times to get {PRONOUN/m_c/object} to snap out of {PRONOUN/m_c/poss} daydream.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["daydreamer"],
             "relationship_status": ["child/parent"]
         },
+        "r_c": {},
         "relationships": [
             {
                 "cats_from": ["m_c"],
