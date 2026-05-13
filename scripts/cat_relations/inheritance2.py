@@ -58,7 +58,11 @@ class InheritanceDb:
                     {"relation_type": RelationType.BLOOD, "cat_id": cat.ID}
                 )
 
-        for mates_list in (cat.mate, cat.previous_mates):
+        try:
+            previous_mates = cat.previous_mates
+        except AttributeError:
+            previous_mates = []
+        for mates_list in (cat.mate, previous_mates):
             for m in mates_list:
                 self._cat_to_rels[cat.ID].mates.append(
                     {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
