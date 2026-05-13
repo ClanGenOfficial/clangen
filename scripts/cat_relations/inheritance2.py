@@ -1,6 +1,4 @@
-from scripts.cat.cats import Cat
-from scripts.cat.save_load import get_faded_ids
-from typing import TypedDict, Dict, List, Literal, Set, Tuple
+from typing import TypedDict, Dict, List, Set
 from enum import StrEnum
 from dataclasses import dataclass, field
 from collections import defaultdict
@@ -42,7 +40,7 @@ class InheritanceDb:
     def __repr__(self):
         return str(self._cat_to_rels)
 
-    def load_inheritance(self, cat: Cat):
+    def load_inheritance(self, cat):
         for parent_id in cat.adoptive_parents:
             self._cat_to_rels[cat.ID].parents.append(
                 {"relation_type": RelationType.ADOPTIVE, "cat_id": parent_id}
@@ -65,13 +63,13 @@ class InheritanceDb:
                 {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
             )
 
-    def load_inheritances(self, load_faded=False):
+    def load_inheritances(self, Cat, get_faded_ids=None):
         self._cat_to_rels = defaultdict(FamilyRelations)
 
         for cat in Cat.all_cats_list:
             self.load_inheritance(cat)
 
-        if load_faded:
+        if get_faded_ids:
             for cat_id in get_faded_ids():
                 cat = Cat.fetch_cat(cat_id)
                 if not cat:
