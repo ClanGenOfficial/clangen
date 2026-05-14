@@ -1372,7 +1372,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "p_l kidnapped {PRONOUN/cat_from/object}."
+                            "cats_from": "cat_to kidnapped cat_from."
                             }
                         },
                         {
