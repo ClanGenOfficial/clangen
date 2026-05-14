@@ -5,6 +5,7 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.game_structure import image_cache
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
@@ -490,7 +491,7 @@ class ChooseMateScreen(Screens):
         and the page"""
         self.all_offspring = [
             Cat.fetch_cat(i)
-            for i in list(self.the_cat.inheritance.kits)
+            for i in inheritance_db.get_children(self.the_cat.ID)
             if isinstance(Cat.fetch_cat(i), Cat)
         ]
         if self.selected_cat and self.kits_selected_pair:
