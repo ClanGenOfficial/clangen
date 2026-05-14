@@ -149,7 +149,7 @@
             "beach:camp1_camp2_camp4"
         ],
         "season": ["any"],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "A huge wave surges into camp, stirring up sand and washing away the once abundant fresh kill as it recedes. In its wake, the Clan is left with a dampened mood and soaked paws. ",
         "supplies": [
             {
@@ -169,6 +169,33 @@
         ],
         "season": ["any"],
         "frequency": 2,
-        "event_text": "A quick;y "
+        "event_text": "A wave splashes into camp, soaking an unlucky few. Wiping away the freshkill that c_n wasn't quick enough to save.",
+           "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "full"
+                ],
+                "adjust": "reduce_half"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_freshkill_storm",
+        "location": [
+            "beach:camp1_camp3_camp4"
+        ],
+        "season": ["any"],
+        "frequency": 2,
+        "event_text":"After a particularly rough storm, c_n discovers the freshkill pile didn't pull through undamaged",
+           "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "full"
+                ],
+                "adjust": "reduce_half"
+            }
+        ]
     }
 ]
