@@ -5156,11 +5156,22 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_daydreamerkitten",
+        "event_id": "gen_misc_any_daydreamerkitten1",
         "location": ["any"],
         "season": ["any"],
         "frequency": 2,
         "event_text": "m_c watches the clouds and imagines a world far, far away...",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"]
+        }
+    },
+    {
+        "event_id": "gen_misc_any_daydreamerkitten2",
+        "location": ["any"],
+        "season": ["any"],
+        "frequency": 2,
+        "event_text": "m_c watches a scuttling beetle and imagines it's on a great adventure.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["daydreamer"]
