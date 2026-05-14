@@ -6784,14 +6784,14 @@
         ],
         "main_status_constraint": [
             "leader",
-            "deputy",
-            "medicine cat"
+            "deputy"
         ],
 		"random_status_constraint": [
 			"apprentice",
 			"mediator apprentice",
 			"medicine cat apprentice",
 			"warrior",
+			"medicine cat",
 			"mediator"
 		],
         "random_living_status": [
