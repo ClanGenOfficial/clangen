@@ -23937,7 +23937,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, so it's not finding them that's hard — it's trying to carry all the roots back to camp all at once that proves difficult! On the way back, {PRONOUN/p_l/subject} spot some plantain and almost drop all of {PRONOUN/p_l/poss} roots when {PRONOUN/p_l/subject} attempt to collect it.",
+                "text": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, so it's not finding them that's hard — it's trying to carry all the roots back to camp all at once that proves difficult! On the way back, {PRONOUN/p_l/subject} spot some plantain and almost drops all of {PRONOUN/p_l/poss} roots when {PRONOUN/p_l/subject} attempt to collect it.",
                 "exp": 10,
                 "herbs": [
                     "burdock",
