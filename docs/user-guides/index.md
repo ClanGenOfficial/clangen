@@ -6,11 +6,11 @@ Information on utilizing our documentation system can be found in the [Contribut
 
 <div class="grid cards" markdown>
 
-- _[Palette Maps](user-guides/removing-palette-maps)_
+- _[Palette Maps](removing-palette-maps.md)_
 
     Instructions on how to remove Palette Maps (new collars rework).
 
-- _[Save File Editing](user-guides/save-file-editing/sfe.md)_
+- _[Save File Editing](save-file-editing/sfe.md)_
 
     Instructions on how to utilize and edit files within the Saves.
 

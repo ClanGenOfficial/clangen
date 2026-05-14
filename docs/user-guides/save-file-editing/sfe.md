@@ -7,27 +7,27 @@
 
 <div class="grid cards" markdown>
 
-- _[clan_cats.json](user-guides/save-file-editing/clan_cats.md)_
+- _[clan_cats.json](clan_cats.md)_
 
     Instructions on how to edit & utilize the file `clan_cats.json`. Includes cat template, and deleting and adding cats.
 
-- _[clan.json](user-guides/save-file-editing/clan_json.md)_
+- _[clan.json](clan_json.md)_
 
     Instructions on how to edit & utilize the file `clan.json`. Includes temperament calculation.
 
-- _[conditions.json](user-guides/save-file-editing/conditions.md)_
+- _[conditions.json](conditions.md)_
 
     Instructions on how to edit conditions within the saves. Includes condition templates and `pregnancy.json`.
 
-- _[relations.json](user-guides/save-file-editing/relations.md)_
+- _[relations.json](relations.md)_
 
     Instructions on how to edit relations within the saves.
 
-- _[history.json](user-guides/save-file-editing/history.md)_
+- _[history.json](history.md)_
 
     Instructions on how to edit & utilize the history files for cats.
 
-- _[Future Events](user-guides/save-file-editing/future-events.md)_
+- _[Future Events](future-events.md)_
 
     Instructions on how to utilize future events in the save files.
 
@@ -127,7 +127,7 @@ The error "error when loading clan.json" without a traceback is the default erro
 
 These errors are relatively straightforward. The "keyword" it mentions is the culprit, and typically you're able to just search it in the `clan_cats` file (or whichever file it errors for) and edit it from there.
 
-For 1.13 beyond: the error `keyword: 'pattern'` is due to trying to use a 1.13 save with an outdated version of clangen, such as 1.12. Since the save files were changed massively in 1.13, 1.13 saves can no longer be used across versions.
+For 1.13 beyond: the error `keyword: 'pattern'` is due to trying to use a 1.13 save with an outdated version of clangen. Since the save files were changed massively in 1.13, 1.13 saves can no longer be used across versions.
 
 ### potential_history
 
@@ -139,7 +139,15 @@ Same as `potential_history`. Due to the lack of malformed error for the clan.jso
 
 ### unmute_button
 
-Same as `potential_history`. Due to the lack of malformed error for the clan.json, it throws out `unmute_button` as a substitute. Follow the same directions provided by the "malformed" heading above.
+Same as `potential_history`. Due to the lack of malformed error for the events.json, it throws out `unmute_button` as a substitute. Follow the same directions provided by the "malformed" heading above.
+
+ONLY follow this if you edited the events.json. This error is used in many other places and can mean different things.
+
+### clan_bg
+
+This is a weird error with save file editing. It means the game could not load the clan, essentially, and it doesn't necessarily mean the clan_bg stuff has been edited incorrectly. Double check all your edited files to make sure their information is correct.
+
+For example, make sure all mentions of IDs have quotes, make sure you're using recognized ranks, etc etc.
 
 ### AttributeErrors
 
@@ -157,17 +165,3 @@ Here's a list of attribute errors for clangen and what they possibly mean.
 'NoneType' object has no attribute 'status'
 
 - The player deleted a cat and did not also delete their ID from nutritional_info.json
-
-Planned:
-
-- Malformed
-- error when loading clan.json
-- keyword
-- potential_history
-- "Leaf-bare"
-
-hesitantly planned:
-
-- 'indexerror' errors
-- 'nonetype' errors and what they potentially mean
-- attribute errors
