@@ -2515,10 +2515,7 @@ class Cat:
         if self.ID not in other_cat.previous_mates:
             other_cat.previous_mates.append(self.ID)
 
-        if other_cat.inheritance:
-            other_cat.inheritance.update_all_mates()
-        if self.inheritance:
-            self.inheritance.update_all_mates()
+        inheritance_db.load_inheritances(Cat)
 
     def set_mate(self, other_cat: Cat):
         """Sets up a mate relationship between self and other_cat."""
@@ -2533,10 +2530,7 @@ class Cat:
         if self.ID in other_cat.previous_mates:
             other_cat.previous_mates.remove(self.ID)
 
-        if other_cat.inheritance:
-            other_cat.inheritance.update_all_mates()
-        if self.inheritance:
-            self.inheritance.update_all_mates()
+        inheritance_db.load_inheritances(Cat)
 
         # Set starting relationship values
         if not self.dead:
@@ -2562,8 +2556,7 @@ class Cat:
     def unset_adoptive_parent(self, other_cat: Cat):
         """Unset the adoptive parent from self"""
         self.adoptive_parents.remove(other_cat.ID)
-        self.create_inheritance_new_cat()
-        other_cat.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
         if not self.dead:
             if other_cat.ID not in self.relationships:
                 self.create_one_relationship(other_cat)
@@ -2582,8 +2575,7 @@ class Cat:
 
     def set_adoptive_parent(self, other_cat: Cat):
         """Sets up a parent-child relationship between self and other_cat."""
-        self.adoptive_parents.append(other_cat.ID)
-        self.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
 
         # Set starting relationship values
         if not self.dead:
