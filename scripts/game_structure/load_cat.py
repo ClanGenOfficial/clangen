@@ -7,6 +7,7 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.save_load import load_faded_cat_ids
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat.save_load import get_faded_ids
 from ..cat.enums import CatGroup, CatRank
@@ -30,6 +31,7 @@ logger = logging.getLogger(__name__)
 
 
 def load_cats():
+    load_faded_cat_ids(switch_get_value(Switch.clan_name))
     try:
         json_load()
     except FileNotFoundError:
