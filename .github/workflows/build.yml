@@ -152,7 +152,7 @@ jobs:
         run: |
           rm -r dist/Clangen
           uv sync --group mac-build
-          uv run dmgbuild -s "Clangen" ${{ matrix.artifact_name }}
+          uv run dmgbuild -s appdmg.py "Clangen" ${{ matrix.artifact_name }}
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}
