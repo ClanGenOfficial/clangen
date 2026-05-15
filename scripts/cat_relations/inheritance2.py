@@ -80,6 +80,12 @@ class InheritanceDb:
                 }
 
     def load_inheritances(self, Cat, get_faded_ids=None):
+        """
+        Loads inheritance for every cat.
+
+        :Cat: The Cat object. Required for the all_cats_list and cat fetching.
+        :get_faded_ids: (Optional) A function that will return a list of all faded IDs. 
+        """
         self._cat_to_rels = defaultdict(FamilyRelations)
         self._cat_to_litter = {}
 
