@@ -43,7 +43,11 @@
         "greencough":[
             "r_c searches through {PRONOUN/r_c/poss} herb stores. m_c's whitecough has progressed to greencough, greatly worrying r_c.",
             "m_c coughs, feeling like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} hacking up half {PRONOUN/m_c/poss} lungs. This is definitely worse than whitecough ever gets."
-
+            
+        ],
+        "sore throat": [
+            "m_c's endless coughing has dried out {PRONOUN/m_c/poss} throat.",
+            "m_c's throat is sore from coughing."
         ]
     },
     "yellowcough": {

@@ -669,11 +669,15 @@ class HerbSupply:
                     condition_default["mortality"][treatment_cat.age], 20
                 ):
                     will_not_treat = True
-                for i, risk in enumerate(condition.get("risks", [])):
+                for risk in condition.get("risks", []):
                     # only treat if risk chance is worse than 20 or the risk's default chance (whichever is higher)
-                    if risk["chance"] > max(
-                        condition_default["risks"][i]["chance"], 20
-                    ):
+                    default_chance = 20
+                    for default_risk in condition_default.get("risks", []):
+                        if default_risk["name"] == risk["name"]:
+                            default_chance = risk["chance"]
+                            break
+
+                    if risk["chance"] > default_chance:
                         will_not_treat = True
                     else:  # if any risk needs treatment, then we'll treat
                         will_not_treat = False

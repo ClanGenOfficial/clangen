@@ -885,6 +885,8 @@ class ShortEvent:
         if increase_amount != 0:
             game.clan.freshkill_pile.add_freshkill(increase_amount)
 
+        game.freshkill_event_list.append(self.text)
+
     def handle_herb_supply(self, block):
         """
         handles adjusting herb supply according to info in event block

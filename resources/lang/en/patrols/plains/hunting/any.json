@@ -6640,5 +6640,92 @@
                 "frequency": 4
             }
         ]
+    },
+    {
+        "patrol_id": "pln_hunt_solo_pheasant",
+        "tags": [],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "patrol_art": "gen_hunt_strange",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "frequency": 4,
+        "intro_text": "While hunting, p_l sees the striking copper and teal head of a pheasant through the heath. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} to a crouch and {VERB/p_l/creep/creeps} forward. This is a rare opportunity, <i>if</i> {PRONOUN/p_l/subject} can pull it off.",
+        "decline_text": "The pheasant is spooked by a sudden rustle in the heath and bursts into flight before p_l can react.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "p_l lunges from the heath onto the pheasant’s back, sinking {PRONOUN/p_l/poss} claws into its wings before the bird can take flight. It isn't pretty; the pheasant squirms and squawks, desperately trying to throw p_l off before {PRONOUN/p_l/subject} {VERB/p_l/subdue/subdues} and {VERB/p_l/kill/kills} it, returning to camp with the prize in tow.",
+                "exp": 15,
+                "frequency": 4,
+                "prey": [
+                    "huge"
+                ]
+            },
+            {
+                "text": "s_c lunges from the heath onto the pheasant's back, sinking {PRONOUN/s_c/poss} teeth into the nape of its neck. <i>Crunch</i>. The pheasant doesn't even have time to cry out before it falls limp beneath s_c.",
+                "exp": 15,
+                "stat_skill": [
+                    "HUNTER,2"
+                ],
+                "prey": [
+                    "huge"
+                ],
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to drag a massive pheasant into camp."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l lunges from the heath but only manages to graze the pheasant's tail feathers before it takes to the sky in a cacophony of irate squawks.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "p_l lunges from the heath and onto the pheasant's back, but before {PRONOUN/p_l/subject} can find purchase, the pheasant throws {PRONOUN/p_l/object} to the ground and turns hunter into the hunted. p_l is left with a fresh wound to nurse as the pheasant flies off in a huff.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "beak bite",
+                            "claw-wound"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "death": "m_c died of {PRONOUN/m_c/poss} wounds after being attacked by a pheasant.",
+                    "scar": "m_c was scarred by a pheasant on patrol."
+                },
+                "frequency": 2
+            }
+        ]
     }
-]
+    ]

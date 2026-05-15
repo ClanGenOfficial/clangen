@@ -42,7 +42,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l wishes for something interesting to happen, but no, there was nothing to ease p_l's boredom as {PRONOUN/p_l/subject} mark the borders.",
+                "text": "p_l wishes for something interesting to happen, but no, there was nothing to ease p_l's boredom as {PRONOUN/p_l/subject} {VERB/p_l/mark/marks} the borders.",
                 "exp": 5,
                 "frequency": 4
             },

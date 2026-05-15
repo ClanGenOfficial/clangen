@@ -950,7 +950,7 @@
             },
             {
                 "min_max_status": {"warrior": [1, 1]},
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — at the worst possible moment, because a o_c_n patrol sees them doing it! {PRONOUN/r_c/subject/CAP} immediately {VERB/r_c/apologize/apologizes} to the o_c_n patrol for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} immediately {VERB/r_c/apologize/apologizes} to the o_c_n patrol for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
