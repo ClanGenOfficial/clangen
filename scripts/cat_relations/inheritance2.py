@@ -174,19 +174,19 @@ class InheritanceDb:
             cat_a, cousin_allowed
         ) or cat_a in self.get_relatives(cat_b, cousin_allowed)
 
-    def is_grandparent(self, cat_a: str, maybe_grandparent: str) -> bool:
+    def is_grandparent(self, maybe_grandparent: str, cat_a: str) -> bool:
         return maybe_grandparent in self.get_grandparents(cat_a)
 
-    def is_parent(self, cat_a: str, maybe_parent: str) -> bool:
+    def is_parent(self, maybe_parent: str, cat_a: str) -> bool:
         return maybe_parent in self.get_parents(cat_a)
 
-    def is_sibling(self, cat_a: str, cat_b: str) -> bool:
+    def is_sibling(self, cat_b: str, cat_a: str) -> bool:
         return cat_b in self.get_siblings(cat_a)
 
-    def is_uncle_aunt(self, cat_a: str, maybe_uncle_aunt: str) -> bool:
+    def is_uncle_aunt(self, maybe_uncle_aunt: str, cat_a: str) -> bool:
         return cat_a in self.get_siblings_children(maybe_uncle_aunt)
 
-    def is_cousin(self, cat_a: str, cat_b: str) -> bool:
+    def is_cousin(self, cat_b: str, cat_a: str) -> bool:
         return cat_b in self.get_cousins(cat_a)
 
 
