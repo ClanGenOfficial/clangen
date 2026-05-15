@@ -212,5 +212,26 @@ class InheritanceDb:
         except KeyError:
             return False
 
+    def compare_to_inheritance(self, cat_id: str, inheritance):
+        inheritance_db_to_inheritance_functions = [
+            (inheritance.get_parents, self.get_parents),
+            (inheritance.get_children, self.get_children),
+            (inheritance.get_siblings, self.get_siblings),
+            (inheritance.get_parents_siblings, self.get_parents_siblings),
+            (inheritance.get_cousins, self.get_cousins),
+            (inheritance.get_grandparents, self.get_grandparents),
+            (inheritance.get_grand_kits, self.get_grandchildren),
+            (inheritance.get_siblings_kits, self.get_siblings_children),
+            (inheritance.get_mates, self.get_mates),
+        ]
+
+        passes = True
+        for t in inheritance_db_to_inheritance_functions:
+            original = set(t[0]())
+            sequel = t[1](cat_id)
+            if not original.issubset(sequel):
+                passes = False
+        return passes
+
 
 inheritance_db = InheritanceDb()
