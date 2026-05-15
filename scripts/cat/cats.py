@@ -2568,6 +2568,7 @@ class Cat:
 
     def set_adoptive_parent(self, other_cat: Cat):
         """Sets up a parent-child relationship between self and other_cat."""
+        self.adoptive_parents.append(other_cat.ID)
         inheritance_db.load_inheritances(Cat)
 
         # Set starting relationship values
