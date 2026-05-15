@@ -2,7 +2,6 @@ import re
 from itertools import combinations
 from random import choice, randint
 from typing import List, Optional
-from line_profiler import profile
 
 
 from scripts.cat.constants import BACKSTORIES
@@ -830,7 +829,6 @@ def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     return any(value.find("-") == 0 for value in possible_values)
 
 
-@profile
 def filter_relationship_type(group: list, filter_types: List[str], patrol_leader=None):
     """
     filters for specific types of relationships between groups of cat objects, returns bool
