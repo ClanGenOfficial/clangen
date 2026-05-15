@@ -86,7 +86,7 @@ class InheritanceDb:
         Loads inheritance for every cat. Does NOT clear previous inheritances.
 
         :Cat: The Cat object. Required for the all_cats_list and cat fetching.
-        :get_faded_ids: (Optional) A function that will return a list of all faded IDs. 
+        :get_faded_ids: (Optional) A function that will return a list of all faded IDs.
         """
         for cat in Cat.all_cats_list:
             self._load_inheritance(cat)
