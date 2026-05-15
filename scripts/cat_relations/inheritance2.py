@@ -41,7 +41,7 @@ class InheritanceDb:
     def __repr__(self):
         return str(self._cat_to_rels)
 
-    def load_inheritance(self, cat):
+    def _load_inheritance(self, cat):
         for parent_id in cat.adoptive_parents:
             self._cat_to_rels[cat.ID].parents[parent_id] = {
                 "relation_type": RelationType.ADOPTIVE,
@@ -84,14 +84,14 @@ class InheritanceDb:
         self._cat_to_litter = {}
 
         for cat in Cat.all_cats_list:
-            self.load_inheritance(cat)
+            self._load_inheritance(cat)
 
         if get_faded_ids:
             for cat_id in get_faded_ids():
                 cat = Cat.fetch_cat(cat_id)
                 if not cat:
                     continue
-                self.load_inheritance(cat)
+                self._load_inheritance(cat)
 
     def get_parents(self, cat_id: str) -> Set[str]:
         return set(self._cat_to_rels[cat_id].parents.keys())
