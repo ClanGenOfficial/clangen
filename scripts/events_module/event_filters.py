@@ -2,6 +2,8 @@ import re
 from itertools import combinations
 from random import choice, randint
 from typing import List, Optional
+from line_profiler import profile
+
 
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
@@ -828,6 +830,7 @@ def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     return any(value.find("-") == 0 for value in possible_values)
 
 
+@profile
 def filter_relationship_type(group: list, filter_types: List[str], patrol_leader=None):
     """
     filters for specific types of relationships between groups of cat objects, returns bool
@@ -1020,11 +1023,11 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 # groups > 2 will require that all cats feel the same way toward each other.
                 continue
 
-            relevant_relationships = [
-                rel
-                for rel in inter_cat.relationships.values()
-                if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
-            ]
+            relevant_relationships = []
+            for cat_id in group_ids:
+                rel = inter_cat.relationships.get(cat_id)
+                if rel:
+                    relevant_relationships.append(rel)
 
             # list of every cat's tier list
             group_lists: list[RelTier] = [
