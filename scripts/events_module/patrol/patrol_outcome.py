@@ -635,7 +635,6 @@ class PatrolOutcome:
                 lethal = False
 
             # Injury or scar the cats
-            results = []
             for _cat in cats:
                 # give condition
                 if not possible_injuries:

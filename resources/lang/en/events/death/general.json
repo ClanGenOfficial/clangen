@@ -2157,7 +2157,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c and r_c spend the night by the o_c_n border and catch a o_c_n patrol sneaking into c_n territory. While r_c gets reinforcements, m_c tries to hold them off and is killed",
+        "event_text": "m_c and r_c spend the night by the o_c_n border and catch a o_c_n patrol sneaking into c_n territory. While r_c gets reinforcements, m_c tries to hold them off and is killed.",
         "m_c": {
             "status": [
                 "warrior",
