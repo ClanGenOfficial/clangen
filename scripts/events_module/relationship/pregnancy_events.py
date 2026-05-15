@@ -979,6 +979,8 @@ class Pregnancy_Events:
                 if other_cat and other_cat.status.group == cat.status.group:
                     relationships_to_update.append(other_cat.ID)
 
+            # otherwise, get_parents() won't get their parents.
+            inheritance_db.load_inheritances(Cat)
             if relationships_to_update:
                 for cat_id in relationships_to_update:
                     if cat_id == kit.ID:
@@ -1031,8 +1033,6 @@ class Pregnancy_Events:
                 start_relation.comfort += 10 + y
                 start_relation.trust += 10 + y
                 kitten.relationships[second_kitten.ID] = start_relation
-
-        inheritance_db.load_inheritances(Cat)  # Calculate inheritance.
 
         # check if the possible adoptive cat is not already in the family tree and
         # add them as adoptive parents if not
