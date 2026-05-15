@@ -138,6 +138,10 @@ class Clan:
             self.freshkill_pile = FreshkillPile()
         else:
             self.freshkill_pile = None
+        if game_mode in "cruel season":
+            self.cruel_season_cards = CruelSeasonCards()
+        else:
+            self.cruel_season_cards = None
         self.herb_supply = HerbSupply()
         self.primary_disaster = None
         self.secondary_disaster = None
