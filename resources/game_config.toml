@@ -447,6 +447,7 @@ dev_tools = false
   # set to true to remove all constraints for patrols regarding location, session, biomes, etc.
   debug_override_patrol_stat_requirements = false
 
+
   # set to true (NO QUOTES) to ensure the debug patrol succeeds
   # set to false (NO QUOTES) to ensure the debug patrol fails
   debug_ensure_patrol_outcome = ""
@@ -514,7 +515,7 @@ dev_tools = false
 
 [clan_creation]
   # Set this to -1 for it to be infinite
-  rerolls = 3
+  rerolls = -1
 
 [graduation]
   # base possible experience gain for apprentices
