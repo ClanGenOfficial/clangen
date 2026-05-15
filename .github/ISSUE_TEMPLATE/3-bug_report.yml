@@ -45,8 +45,8 @@ body:
         - Expanded Mode
         - Cruel Season
       default: 2
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     id: cards
     attributes:
