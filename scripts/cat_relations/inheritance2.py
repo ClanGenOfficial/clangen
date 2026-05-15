@@ -32,7 +32,7 @@ class InheritanceDb:
         self._cat_to_rels: Dict[
             str,
             FamilyRelations,
-        ] = {}
+        ] = defaultdict(FamilyRelations)
         self._cat_to_litter: Dict[str, Tuple] = {}
 
     def __getitem__(self, arg: str):
@@ -79,6 +79,10 @@ class InheritanceDb:
                     "cat_id": m,
                 }
 
+    def clear_inheritances(self):
+        self._cat_to_rels = defaultdict(FamilyRelations)
+        self._cat_to_litter = {}
+
     def load_inheritances(self, Cat, get_faded_ids=None):
         """
         Loads inheritance for every cat.
@@ -86,9 +90,6 @@ class InheritanceDb:
         :Cat: The Cat object. Required for the all_cats_list and cat fetching.
         :get_faded_ids: (Optional) A function that will return a list of all faded IDs. 
         """
-        self._cat_to_rels = defaultdict(FamilyRelations)
-        self._cat_to_litter = {}
-
         for cat in Cat.all_cats_list:
             self._load_inheritance(cat)
 

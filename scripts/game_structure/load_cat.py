@@ -356,6 +356,7 @@ def json_load():
             raise
 
     # have to load before thoughts but after cats are done
+    inheritance_db.clear_inheritances()
     inheritance_db.load_inheritances(Cat, get_faded_ids)
 
     # requires info received from inheritance
