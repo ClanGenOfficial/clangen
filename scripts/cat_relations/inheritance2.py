@@ -22,9 +22,9 @@ class FamilyRelationLink(TypedDict):
 
 @dataclass
 class FamilyRelations:
-    parents: List[FamilyRelationLink] = field(default_factory=lambda: [])
-    children: List[FamilyRelationLink] = field(default_factory=lambda: [])
-    mates: List[FamilyRelationLink] = field(default_factory=lambda: [])
+    parents: Dict[str, FamilyRelationLink] = field(default_factory=lambda: {})
+    children: Dict[str, FamilyRelationLink] = field(default_factory=lambda: {})
+    mates: Dict[str, FamilyRelationLink] = field(default_factory=lambda: {})
 
 
 class InheritanceDb:
@@ -43,21 +43,25 @@ class InheritanceDb:
 
     def load_inheritance(self, cat):
         for parent_id in cat.adoptive_parents:
-            self._cat_to_rels[cat.ID].parents.append(
-                {"relation_type": RelationType.ADOPTIVE, "cat_id": parent_id}
-            )
-            self._cat_to_rels[parent_id].children.append(
-                {"relation_type": RelationType.ADOPTIVE, "cat_id": cat.ID}
-            )
+            self._cat_to_rels[cat.ID].parents[parent_id] = {
+                "relation_type": RelationType.ADOPTIVE,
+                "cat_id": parent_id,
+            }
+            self._cat_to_rels[parent_id].children[cat.ID] = {
+                "relation_type": RelationType.ADOPTIVE,
+                "cat_id": cat.ID,
+            }
 
         for parent_id in (cat.parent1, cat.parent2):
             if parent_id:
-                self._cat_to_rels[cat.ID].parents.append(
-                    {"relation_type": RelationType.BLOOD, "cat_id": parent_id}
-                )
-                self._cat_to_rels[parent_id].children.append(
-                    {"relation_type": RelationType.BLOOD, "cat_id": cat.ID}
-                )
+                self._cat_to_rels[cat.ID].parents[parent_id] = {
+                    "relation_type": RelationType.BLOOD,
+                    "cat_id": parent_id,
+                }
+                self._cat_to_rels[parent_id].children[cat.ID] = {
+                    "relation_type": RelationType.BLOOD,
+                    "cat_id": cat.ID,
+                }
         if cat.parent1 or cat.parent2:
             self._cat_to_litter[cat] = (
                 frozenset((cat.parent1, cat.parent2)),
@@ -70,9 +74,10 @@ class InheritanceDb:
             previous_mates = []
         for mates_list in (cat.mate, previous_mates):
             for m in mates_list:
-                self._cat_to_rels[cat.ID].mates.append(
-                    {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
-                )
+                self._cat_to_rels[cat.ID].mates[m] = {
+                    "relation_type": RelationType.NOT_BLOOD,
+                    "cat_id": m,
+                }
 
     def load_inheritances(self, Cat, get_faded_ids=None):
         self._cat_to_rels = defaultdict(FamilyRelations)
@@ -89,13 +94,13 @@ class InheritanceDb:
                 self.load_inheritance(cat)
 
     def get_parents(self, cat_id: str) -> Set[str]:
-        return {p["cat_id"] for p in self._cat_to_rels[cat_id].parents}
+        return set(self._cat_to_rels[cat_id].parents.keys())
 
     def get_mates(self, cat_id: str) -> Set[str]:
-        return {m["cat_id"] for m in self._cat_to_rels[cat_id].mates}
+        return set(self._cat_to_rels[cat_id].mates.keys())
 
     def get_children(self, cat_id: str) -> Set[str]:
-        return {k["cat_id"] for k in self._cat_to_rels[cat_id].children}
+        return set(self._cat_to_rels[cat_id].children.keys())
 
     def get_siblings(self, cat_id: str) -> Set[str]:
         siblings = set()
