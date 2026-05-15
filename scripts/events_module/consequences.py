@@ -71,6 +71,8 @@ def create_new_cat_block(
             int(index) if index.isdigit() else index for index in adoptive_indexes
         ]
         for index in adoptive_indexes:
+            if isinstance(index, int):
+                index = f"n_c:{index}"
             if in_event_cats[index].ID not in adoptive_parents:
                 adoptive_parents.append(in_event_cats[index].ID)
                 adoptive_parents.extend(in_event_cats[index].mate)
