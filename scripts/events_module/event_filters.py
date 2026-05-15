@@ -1021,11 +1021,11 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 # groups > 2 will require that all cats feel the same way toward each other.
                 continue
 
-            relevant_relationships = []
-            for cat_id in group_ids:
-                rel = inter_cat.relationships.get(cat_id)
-                if rel:
-                    relevant_relationships.append(rel)
+            relevant_relationships = [
+                inter_cat.relationships[cat_id]
+                for cat_id in group_ids
+                if cat_id in inter_cat.relationships
+            ]
 
             # list of every cat's tier list
             group_lists: list[RelTier] = [
