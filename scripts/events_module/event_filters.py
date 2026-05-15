@@ -1059,19 +1059,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
                     # get the tier's index within the rel_types's list
                     index = rel_type_tiers[rel_type].index(rel_tier)
-                    allowed_tiers = []
+                    allowed_tiers = set()
                     # if it's a pos tier, we allow that index and higher
                     if rel_tier.is_any_pos:
-                        allowed_tiers = rel_type_tiers[rel_type][index:]
+                        allowed_tiers = set(rel_type_tiers[rel_type][index:])
                     # if it's a neg tier, we allow that index and lower
                     elif rel_tier.is_any_neg:
-                        allowed_tiers = rel_type_tiers[rel_type][0 : index + 1]
+                        allowed_tiers = set(rel_type_tiers[rel_type][0 : index + 1])
 
                     discard = True
-                    for _t in tier_list:
-                        if _t in allowed_tiers:
-                            discard = False
-                            break
+                    tier_set = set(tier_list)
+                    if allowed_tiers.intersection(tier_set):
+                        discard = False
                     if discard:
                         return False
 
