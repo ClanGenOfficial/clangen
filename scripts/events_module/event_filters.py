@@ -1012,13 +1012,13 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     # Filtering relationship values
     # these don't get exclusionary values because it's giving me a headache
     # each cat has to have relationships toward each other matching every level tag
+    group_ids = [cat.ID for cat in group]
     for tier in filter_types:
         for inter_cat in group:
             if len(group) == 2 and inter_cat == group[1]:
                 # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
                 # groups > 2 will require that all cats feel the same way toward each other.
                 continue
-            group_ids = [cat.ID for cat in group]
 
             relevant_relationships = [
                 rel
