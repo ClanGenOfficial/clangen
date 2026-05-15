@@ -150,7 +150,7 @@
         ],
         "season": ["any"],
         "frequency": 1,
-        "event_text": "A huge wave surges into camp, stirring up sand and washing away the once abundant fresh kill as it recedes. In its wake, the Clan is left with a dampened mood and soaked paws. ",
+        "event_text": "A huge wave surges into camp, stirring up sand and washing away the once abundant fresh-kill as it recedes. In its wake, the Clan is left with a dampened mood and soaked paws. ",
         "supplies": [
             {
                 "type": "freshkill",
@@ -187,7 +187,7 @@
         ],
         "season": ["any"],
         "frequency": 2,
-        "event_text":"After a particularly rough storm, c_n discovers the freshkill pile didn't pull through undamaged",
+        "event_text":"After a particularly rough storm, c_n discovers the fresh-kill pile didn't pull through undamaged",
            "supplies": [
             {
                 "type": "freshkill",
