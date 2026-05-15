@@ -3296,7 +3296,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 3,
-    "event_text": "m_c finds a lost elderly kittypet. {PRONOUN/n_c:0/poss/CAP} owner is dead and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} looking for a new home. m_c meows that c_n would be be willing to care for {PRONOUN/n_c:0/object}.",
+    "event_text": "m_c finds a lost, elderly kittypet whose owner is dead. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/are/is} looking for a new home and m_c meows that c_n would be willing to care for {PRONOUN/n_c:0/object}.",
     "m_c": {
         "status": ["leader", "deputy", "medicine cat"]
     },
