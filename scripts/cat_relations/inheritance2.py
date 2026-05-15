@@ -80,12 +80,15 @@ class InheritanceDb:
                 }
 
     def clear_inheritances(self):
+        """
+        Clears loaded inheritances. Make sure to call it when loading new Clans.
+        """
         self._cat_to_rels = defaultdict(FamilyRelations)
         self._cat_to_litter = {}
 
     def load_inheritances(self, Cat, get_faded_ids=None):
         """
-        Loads inheritance for every cat.
+        Loads inheritance for every cat. Does NOT clear previous inheritances.
 
         :Cat: The Cat object. Required for the all_cats_list and cat fetching.
         :get_faded_ids: (Optional) A function that will return a list of all faded IDs. 
