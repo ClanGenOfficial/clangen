@@ -292,6 +292,12 @@ class TestPointsOfInterest(unittest.TestCase):
                 self.assertIn(expected, get_poi_names_set())
                 self.assertNotIn(unexpected, get_poi_names_set())
 
+        with self.subTest(title="file loaded PoIs"):
+            clear_pois()
+            generate_and_add_new_poi(biome="Forest", category="gathering")
+            self.assertEqual(len(get_poi_names_set()), 1)
+            self.assertGreater(len(get_poi_tags_set()), 0)
+
     def test_error_forbid_duplicate_poi(self):
         poi_to_add = {
             "test_name": {
