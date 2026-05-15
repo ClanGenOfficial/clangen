@@ -63,7 +63,7 @@ class InheritanceDb:
                     "cat_id": cat.ID,
                 }
         if cat.parent1 or cat.parent2:
-            self._cat_to_litter[cat] = (
+            self._cat_to_litter[cat.ID] = (
                 frozenset((cat.parent1, cat.parent2)),
                 cat.moons + cat.dead_for,
             )
