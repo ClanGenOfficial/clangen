@@ -3,7 +3,6 @@ from itertools import combinations
 from random import choice, randint
 from typing import List, Optional
 
-
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
