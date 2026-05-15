@@ -1,4 +1,4 @@
-from typing import TypedDict, Dict, List, Set
+from typing import TypedDict, Dict, List, Set, Tuple
 from enum import StrEnum
 from dataclasses import dataclass, field
 from collections import defaultdict
@@ -33,6 +33,7 @@ class InheritanceDb:
             str,
             FamilyRelations,
         ] = {}
+        self._cat_to_litter: Dict[str, Tuple] = {}
 
     def __getitem__(self, arg: str):
         return self._cat_to_rels.get(arg)
@@ -57,6 +58,11 @@ class InheritanceDb:
                 self._cat_to_rels[parent_id].children.append(
                     {"relation_type": RelationType.BLOOD, "cat_id": cat.ID}
                 )
+        if cat.parent1 or cat.parent2:
+            self._cat_to_litter[cat] = (
+                frozenset((cat.parent1, cat.parent2)),
+                cat.moons + cat.dead_for,
+            )
 
         try:
             previous_mates = cat.previous_mates
@@ -70,6 +76,7 @@ class InheritanceDb:
 
     def load_inheritances(self, Cat, get_faded_ids=None):
         self._cat_to_rels = defaultdict(FamilyRelations)
+        self._cat_to_litter = {}
 
         for cat in Cat.all_cats_list:
             self.load_inheritance(cat)
@@ -188,6 +195,12 @@ class InheritanceDb:
 
     def is_cousin(self, cat_b: str, cat_a: str) -> bool:
         return cat_b in self.get_cousins(cat_a)
+
+    def is_littermate(self, cat_a: str, cat_b: str) -> bool:
+        try:
+            return self._cat_to_litter[cat_a] == self._cat_to_litter[cat_b]
+        except KeyError:
+            return False
 
 
 inheritance_db = InheritanceDb()

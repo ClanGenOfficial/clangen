@@ -1798,14 +1798,7 @@ class Cat:
         """Check if the cats are littermates."""
         if not self.is_sibling(other_cat):
             return False
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        litter_mates = [
-            key
-            for key, value in self.inheritance.siblings.items()
-            if "litter mates" in value["additional"]
-        ]
-        return other_cat.ID in litter_mates
+        return inheritance_db.is_littermate(self.ID, other_cat.ID)
 
     def is_uncle_aunt(self, other_cat: Cat):
         """Check if the cats are related as uncle/aunt and niece/nephew."""
