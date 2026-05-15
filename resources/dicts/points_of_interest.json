@@ -1,0 +1,52 @@
+{
+    "gather_fourtrees": {
+        "category": "gathering",
+        "biome": ["any"],
+        "tags": ["trees"]
+    },
+    "gather_island": {
+        "category": "gathering",
+        "biome": ["any"],
+        "tags": ["water"]
+    },
+    "gather_monster": {
+        "category": "gathering",
+        "biome": ["any"],
+        "tags": ["Twolegs:abandoned"]
+    },
+    "moon_meteor": {
+        "category": "moonplace",
+        "biome": ["any"],
+        "tags": []
+    },
+    "moon_pool": {
+        "category": "moonplace",
+        "biome": ["any"],
+        "tags": ["water"]
+    },
+    "moon_cave": {
+        "category": "moonplace",
+        "biome": ["any"],
+        "tags": ["cave", "rocks"]
+    },
+    "terrain_lake": {
+        "category": "terrain",
+        "biome": ["any"],
+        "tags": ["water", "prey:fish"]
+    },
+    "terrain_sunrocks": {
+        "category": "terrain",
+        "biome": ["any"],
+        "tags": ["rocks"]
+    },
+    "terrain_well": {
+        "category": "terrain",
+        "biome": ["any"],
+        "tags": ["Twolegs:abandoned", "water", "hole"]
+    },
+    "terrain_twolegplace": {
+        "category": "terrain",
+        "biome": ["any"],
+        "tags": ["Twolegs:active"]
+    }
+}
