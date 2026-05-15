@@ -27,6 +27,15 @@ def get_poi_tags_set():
     return _poi_tags
 
 
+def get_random_poi_by_tag(tag):
+    """
+    Return a random POI name that fits the requested tag/s.
+    :param tag:
+    :return: string name of POI that fits.
+    """
+    return choice(_poi_by_tags.get(tag, ["MISSING_POI"]))
+
+
 def add_poi(name, elements):
     """
     Add a new POI to the Clan
@@ -37,6 +46,13 @@ def add_poi(name, elements):
     _poi_names.update([name])
     _poi_tags.update(elements["tags"])
     _poi_tags.update(tag.split(":", 1)[0] for tag in elements["tags"] if ":" in tag)
+
+    global _poi_by_tags
+    for tag in elements["tags"]:
+        if tag in _poi_by_tags:
+            _poi_by_tags[tag].append(name)
+        else:
+            _poi_by_tags[tag] = [name]
 
 
 def clear_pois():

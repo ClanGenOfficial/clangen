@@ -48,5 +48,10 @@
         "category": "terrain",
         "biome": ["any"],
         "tags": ["Twolegs:active"]
+    },
+    "terrain_deepforest": {
+        "category": "terrain",
+        "biome": ["forest"],
+        "tags": ["trees", "prey"]
     }
 }

@@ -9,6 +9,7 @@
         "terrain_lake": "a large lake in the territory",
         "terrain_sunrocks": "the Sunrocks",
         "terrain_well": "a deep Twoleg hole",
-        "terrain_twolegplace": "a nearby Twolegplace"
+        "terrain_twolegplace": "a nearby Twolegplace",
+        "terrain_deepforest": "the densest part of the forest"
     }
 }
