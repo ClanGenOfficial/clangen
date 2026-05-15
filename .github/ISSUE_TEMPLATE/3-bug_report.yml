@@ -50,7 +50,8 @@ body:
   - type: textarea
     id: cards
     attributes:
-      label: Challenge cards chosen for cruel season
+      label: Challenge cards
+      description: If you were playing in Cruel Season mode, list the cards that were in use.
       placeholder: Neverending Cold, Persistent Twolegs, Lean Meat...
   - type: textarea
     id: reproduce
