@@ -61,6 +61,14 @@ def add_poi(name, elements):
             _poi_by_tags[tag] = [name]
 
 
+def get_poi_save_dict():
+    return {
+        "gathering": [name for name in _poi_names if name.startswith("gather_")],
+        "moonplace": [name for name in _poi_names if name.startswith("moon_")],
+        "terrain": [name for name in _poi_names if name.startswith("terrain_")],
+    }
+
+
 def load_pois(save_data: Dict[str, List[str]]):
     for category, data in save_data.items():
         for poi in data:
