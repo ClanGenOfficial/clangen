@@ -367,7 +367,8 @@
         "event_text": "Drift logs washing up on the shore is nothing new; m_c has crossed plenty of them without a second thought. This one looks no different. Yet, it rots underneath {PRONOUN/m_c/poss} paws without warning, and the lake takes {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
-                "any"
+                "any",
+                "-kitten"
             ],
             "trait": [
                 "-careful",
