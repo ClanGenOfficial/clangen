@@ -185,7 +185,7 @@ class SwitchClanScreen(Screens):
                         ),
                         (ui_scale_value(200), item_height),
                     ),
-                    clan_button_name,
+                    "general.clan",
                     get_button_dict(
                         ButtonStyles.DROPDOWN,
                         (
@@ -194,6 +194,7 @@ class SwitchClanScreen(Screens):
                             / scripts.game_structure.screen_settings.screen_scale,
                         ),
                     ),
+                    text_kwargs={"name": clan_button_name},
                     object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
                     manager=MANAGER,
                     anchors=(
