@@ -57,9 +57,9 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     # it's assumed that the text is going to be processed at some other point with that cat's info
     # (for example, this is required for rel log processing to be done correctly)
     if (
-        inner_details[0].upper() in ["PRONOUN", "VERB"]
+        inner_details[1].upper() != "PLURAL"
         and inner_details[1] not in cat_pronouns_dict
-    ):
+    ) and inner_details[0] != "POI":
         return m.group(0)
 
     try:
