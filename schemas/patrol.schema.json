@@ -926,6 +926,20 @@
           "title": "Tags",
           "type": "array"
         },
+        "poi": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description": "The relevant points of interest. Points of Interest never affect outcome.",
+          "propertyNames": {
+            "$ref": "#/$defs/PointsOfInterestGroup"
+          },
+          "title": "Poi",
+          "type": "object"
+        },
         "patrol_art": {
           "anyOf": [
             {
@@ -1054,6 +1068,7 @@
         "season",
         "types",
         "tags",
+        "poi",
         "patrol_art",
         "min_cats",
         "max_cats",
@@ -1136,6 +1151,14 @@
         "persistent headaches"
       ],
       "title": "PermCondition",
+      "type": "string"
+    },
+    "PointsOfInterestGroup": {
+      "enum": [
+        "name",
+        "tags"
+      ],
+      "title": "PointsOfInterestGroup",
       "type": "string"
     },
     "Prey": {
