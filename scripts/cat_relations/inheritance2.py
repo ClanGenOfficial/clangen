@@ -110,62 +110,51 @@ class InheritanceDb:
     def get_siblings(self, cat_id: str) -> Set[str]:
         siblings = set()
         for p in self.get_parents(cat_id):
-            for c in self.get_children(p):
-                siblings.add(c)
-
-        if cat_id in siblings:
-            siblings.remove(cat_id)
+            siblings.update(self.get_children(p))
+        siblings.discard(cat_id)
         return siblings
 
     def get_grandparents(self, cat_id: str) -> Set[str]:
         grandparents = set()
         for p in self.get_parents(cat_id):
-            for gp in self.get_parents(p):
-                grandparents.add(gp)
+            grandparents.update(self.get_parents(p))
         return grandparents
 
     def get_grandchildren(self, cat_id: str) -> Set[str]:
         grandchildren = set()
         for c in self.get_children(cat_id):
-            for gc in self.get_children(c):
-                grandchildren.add(gc)
+            grandchildren.update(self.get_children(c))
         return grandchildren
 
     def get_siblings_mates(self, cat_id: str) -> Set[str]:
         siblings_mates = set()
         for s in self.get_siblings(cat_id):
-            for m in self.get_mates(s):
-                siblings_mates.add(m)
+            siblings_mates.update(self.get_mates(s))
         return siblings_mates
 
     def get_childrens_mates(self, cat_id: str) -> Set[str]:
         childrens_mates = set()
         for c in self.get_children(cat_id):
-            for m in self.get_mates(c):
-                childrens_mates.add(m)
+            childrens_mates.update(self.get_mates(c))
         return childrens_mates
 
     def get_siblings_children(self, cat_id: str) -> Set[str]:
         siblings_children = set()
         for s in self.get_siblings(cat_id):
-            for c in self.get_children(s):
-                siblings_children.add(c)
+            siblings_children.update(self.get_children(s))
         return siblings_children
 
     def get_parents_siblings(self, cat_id: str) -> Set[str]:
         parents_siblings = set()
         for p in self.get_parents(cat_id):
-            for s in self.get_siblings(p):
-                parents_siblings.add(s)
+            parents_siblings.update(self.get_siblings(p))
         return parents_siblings
 
     def get_cousins(self, cat_id: str) -> Set[str]:
         cousins = set()
         for ps in self.get_parents_siblings(cat_id):
-            for c in self.get_children(ps):
-                cousins.add(c)
-        if cat_id in cousins:
-            cousins.remove(cat_id)
+            cousins.update(self.get_children(ps))
+        cousins.discard(cat_id)
         return cousins
 
     def get_relatives(self, cat_id: str, cousin_allowed: bool) -> Set[str]:
