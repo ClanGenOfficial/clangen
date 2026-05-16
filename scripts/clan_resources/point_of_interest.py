@@ -100,7 +100,7 @@ def generate_and_add_new_poi(
     :param random_choice_func: Optional, for testing only - replace RNG functions
     :return: None
     """
-    possible_pois = possible_pois if possible_pois else _poi_data
+    possible_pois = possible_pois if possible_pois else _poi_data.copy()
 
     # first, remove the POIs that are already in the Clan.
     for key in _poi_names:
