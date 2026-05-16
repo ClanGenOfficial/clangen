@@ -54,6 +54,7 @@ class SwitchClanScreen(Screens):
                         CheckDeletionWindow(
                             self.change_screen,
                             self.clan_name[self.page][page.index(event.ui_element)],
+                            self.clan_display_names[self.page][page.index(event.ui_element)],
                         )
 
                         return
@@ -143,6 +144,7 @@ class SwitchClanScreen(Screens):
 
         self.clan_buttons = [[]]
         self.clan_name = [[]]
+        self.clan_display_names = [[]]
         self.delete_buttons = [[]]
 
         # cursed math o clock!
@@ -170,6 +172,7 @@ class SwitchClanScreen(Screens):
                     clan_button_name = ujson.load(f).get("displayname", clan)
             except (FileNotFoundError, ujson.JSONDecodeError):
                 clan_button_name = clan
+            self.clan_display_names[-1].append(clan_button_name)
             self.clan_buttons[-1].append(
                 UISurfaceImageButton(
                     pygame.Rect(

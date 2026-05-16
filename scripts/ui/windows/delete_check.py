@@ -14,11 +14,11 @@ from scripts.ui.scale import ui_scale
 
 
 class CheckDeletionWindow(GameWindow):
-    def __init__(self, reloadscreen, clan_name):
+    def __init__(self, reloadscreen, clan_id, clan_display_name):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 180))),
         )
-        self.clan_name = clan_name
+        self.clan_name = clan_id
         self.reloadscreen = reloadscreen
 
         self.delete_check_message = UITextBoxTweaked(
@@ -27,7 +27,7 @@ class CheckDeletionWindow(GameWindow):
             line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
-            text_kwargs={"clan": str(self.clan_name + "Clan")},
+            text_kwargs={"clan": str(clan_display_name + "Clan"), "clan_id": clan_id},
         )
 
         self.delete_it_button = UISurfaceImageButton(
