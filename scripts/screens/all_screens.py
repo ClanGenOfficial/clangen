@@ -13,7 +13,6 @@ from .EventsScreen import EventsScreen
 from .FamilyTreeScreen import FamilyTreeScreen
 from .LeaderDenScreen import LeaderDenScreen
 from .ListScreen import ListScreen
-from .MakeClanScreen import MakeClanScreen
 from .MedDenScreen import MedDenScreen
 from .MediationScreen import MediationScreen
 from .PatrolScreen import PatrolScreen
@@ -27,6 +26,7 @@ from .StartScreen import StartScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .WarriorDenScreen import WarriorDenScreen
 from .enums import GameScreen
+from .make_clan_screens.ChooseCatsScreen import ChooseCatsScreen
 from .make_clan_screens.ChooseModeScreen import ChooseModeScreen
 from .make_clan_screens.ChooseNameScreen import ChooseNameScreen
 
@@ -62,9 +62,9 @@ def rebuild_all_screens():
         GameScreen.CEREMONY: CeremonyScreen,
         GameScreen.CHANGE_ROLE: RoleScreen,
         GameScreen.SPRITE_INSPECT: SpriteInspectScreen,
-        GameScreen.MAKE_CLAN: MakeClanScreen,
         GameScreen.CHOOSE_MODE: ChooseModeScreen,
         GameScreen.CHOOSE_NAME: ChooseNameScreen,
+        GameScreen.CHOOSE_CATS: ChooseCatsScreen,
         GameScreen.ALLEGIANCES: AllegiancesScreen,
         GameScreen.CAMP: ClanScreen,
         GameScreen.LIST: ListScreen,

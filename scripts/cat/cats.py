@@ -3515,12 +3515,13 @@ def create_cat(rank, moons=None, biome=None):
 
 
 # Twelve example cats
-def create_example_cats():
+def create_example_cats() -> list[Cat]:
     warrior_indices = sample(range(12), 3)
 
+    chosen_cats = []
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(rank=CatRank.WARRIOR)
+            chosen_cats.append(create_cat(rank=CatRank.WARRIOR))
         else:
             random_rank = choice(
                 [
@@ -3531,7 +3532,9 @@ def create_example_cats():
                     CatRank.ELDER,
                 ]
             )
-            game.choose_cats[cat_index] = create_cat(rank=random_rank)
+            chosen_cats.append(create_cat(rank=random_rank))
+
+    return chosen_cats
 
 
 def create_option_preview_cat(scar: str = None, acc: str = None):

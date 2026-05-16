@@ -45,23 +45,6 @@ last_screen_forupdate = GameScreen.START
 last_screen_forProfile = GameScreen.LIST
 last_list_forProfile = None
 
-choose_cats = {}
-
-"""cat_buttons = {
-    'cat0': None,
-    'cat1': None,
-    'cat2': None,
-    'cat3': None,
-    'cat4': None,
-    'cat5': None,
-    'cat6': None,
-    'cat7': None,
-    'cat8': None,
-    'cat9': None,
-    'cat10': None,
-    'cat11': None
-}"""
-
 patrol_cats = {}
 updated_afterlife_cats = set()
 patrolled = []

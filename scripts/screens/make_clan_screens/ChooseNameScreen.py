@@ -21,9 +21,6 @@ class ChooseNameScreen(MakeClanScreenBase):
     def screen_switches(self):
         super().screen_switches()
 
-        self.elements["previous_step"].enable()
-        self.elements["next_step"].disable()
-
         name_backdrop = image_cache.load_image(
             "resources/images/pick_clan_screen/name_clan_light.png"
         ).convert_alpha()
@@ -92,7 +89,7 @@ class ChooseNameScreen(MakeClanScreenBase):
                 self.elements["name_entry"].set_text("")
             elif event.ui_element == self.elements["next_step"]:
                 self.clan_name = self.elements["name_entry"].get_text().strip()
-                # TODO: open choose leader screen
+                self.change_screen(GameScreen.CHOOSE_CATS)
             elif event.ui_element == self.elements["previous_step"]:
                 self.clan_name = ""
                 self.change_screen(GameScreen.CHOOSE_MODE)

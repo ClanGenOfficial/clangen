@@ -3,7 +3,7 @@ from random import randrange, choice
 import pygame
 import pygame_gui
 
-from scripts.cat.cats import create_cat
+from scripts.cat.cats import create_cat, create_example_cats
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.game_structure import image_cache
@@ -25,7 +25,12 @@ class ChooseModeScreen(MakeClanScreenBase):
         super().__init__(name)
 
     def screen_switches(self):
+        self.possible_cats = create_example_cats()
+
         super().screen_switches()
+        self.elements["previous_step"].disable()
+        self.elements["next_step"].enable()
+
         self.set_mute_button_position("topright")
         self.show_mute_buttons()
         self.set_bg("default", "mainmenu_bg")

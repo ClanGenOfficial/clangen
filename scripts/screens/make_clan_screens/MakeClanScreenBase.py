@@ -49,6 +49,9 @@ class MakeClanScreenBase(Screens):
     med_cat: Optional[Cat] = None
     members: List[Cat] = []
 
+    # cats to choose from
+    possible_cats: List[Cat] = []
+
     def __init__(self, name="make_clan_screen"):
         super().__init__(name)
 
@@ -83,7 +86,6 @@ class MakeClanScreenBase(Screens):
             manager=MANAGER,
             starting_height=2,
         )
-        self.elements["previous_step"].disable()
         self.elements["next_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 620), (147, 30))),
             "buttons.next_step",
@@ -93,6 +95,7 @@ class MakeClanScreenBase(Screens):
             starting_height=2,
             anchors={"left_target": self.elements["previous_step"]},
         )
+        self.elements["next_step"].disable()
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
