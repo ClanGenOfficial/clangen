@@ -1,3 +1,4 @@
+from enum import StrEnum
 from random import choice
 
 import ujson
@@ -13,6 +14,12 @@ _undiscovered_poi_remaining = 3
 
 with open("resources/dicts/points_of_interest.json", "r", encoding="utf-8") as f:
     _poi_data = ujson.load(f)
+
+
+class PoiType(StrEnum):
+    GATHERING = "gathering"
+    MOONPLACE = "moonplace"
+    TERRAIN = "terrain"
 
 
 def get_poi_names_set():
@@ -72,7 +79,7 @@ def clear_pois():
 
 
 def generate_and_add_new_poi(
-    biome: str, category, possible_pois=None, random_choice_func=choice
+    biome: str, category: PoiType, possible_pois=None, random_choice_func=choice
 ):
     """
     Choose and add an appropriate POI from the pool, based on the Clan biome and whether they already have a given POI type
