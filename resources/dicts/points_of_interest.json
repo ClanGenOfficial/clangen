@@ -34,6 +34,11 @@
         "biome": ["any"],
         "tags": ["water", "prey:fish"]
     },
+    "terrain_carrionplace": {
+        "category": "terrain",
+        "biome": ["forest"],
+        "tags": ["Twolegs:present", "tainted", "prey:ground", "unstable", "covered"]
+    },
     "terrain_sunrocks": {
         "category": "terrain",
         "biome": ["any"],
@@ -47,11 +52,32 @@
     "terrain_twolegplace": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["Twolegs:active"]
+        "tags": ["Twolegs:present"]
     },
     "terrain_deepforest": {
         "category": "terrain",
         "biome": ["forest"],
         "tags": ["trees", "prey"]
+    },
+    "terrain_hugeboulder": {
+        "category": "terrain",
+        "biome": ["forest"],
+        "tags": ["rocks", "prey:ground"]
+    },
+    "terrain_waterfall": {
+        "category": "terrain",
+        "biome": ["mountainous"],
+        "tags": ["water", "prey:fish", "rocks", "fall_risk"]
+    },
+    "terrain_birdnests": {
+        "category": "terrain",
+        "biome": ["any"],
+        "tags": ["prey:bird"]
+    },
+    "terrain_carrionbeach": {
+        "category": "terrain",
+        "biome": ["beach"],
+        "tags": ["prey:fish", "Twolegs:present", "tainted"]
     }
+
 }

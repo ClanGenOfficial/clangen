@@ -7,9 +7,14 @@
         "moon_pool": "the Moonpool",
         "moon_cave": "the whispering cave",
         "terrain_lake": "a large lake in the territory",
+        "terrain_carrionplace": "the Carrionplace",
         "terrain_sunrocks": "the Sunrocks",
-        "terrain_well": "a deep Twoleg hole",
+        "terrain_well": "a Twoleg water pit",
         "terrain_twolegplace": "a nearby Twolegplace",
-        "terrain_deepforest": "the densest part of the forest"
+        "terrain_deepforest": "the densest part of the forest",
+        "terrain_hugeboulder": "the huge boulder",
+        "terrain_waterfall": "the waterfall",
+        "terrain_birdnests": "the bird nesting site",
+        "terrain_carrionbeach": "the carrion-beach"
     }
 }
