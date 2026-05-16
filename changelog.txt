@@ -21,7 +21,6 @@
 - Allowed more outsider events to pull from existing outsiders instead of generating new ones
 - Adjusted frequency of a variety of events
 
-
 <strong>v0.13.0</strong>
 
 After seasons of silence, StarClan has finally spoken!
