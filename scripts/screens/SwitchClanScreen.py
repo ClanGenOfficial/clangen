@@ -54,7 +54,9 @@ class SwitchClanScreen(Screens):
                         CheckDeletionWindow(
                             self.change_screen,
                             self.clan_name[self.page][page.index(event.ui_element)],
-                            self.clan_display_names[self.page][page.index(event.ui_element)],
+                            self.clan_display_names[self.page][
+                                page.index(event.ui_element)
+                            ],
                         )
 
                         return
