@@ -5,12 +5,11 @@ import pygame_gui
 
 from scripts.cat.cats import create_cat
 from scripts.cat.enums import CatRank
-from scripts.cat.names import names
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.game_structure import image_cache
-from scripts.game_structure.game import switch_get_value, Switch
 from scripts.game_structure.game.settings import game_setting_set
 from scripts.game_structure.screen_settings import MANAGER
+from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
 from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.image_button import UIImageButton
@@ -22,7 +21,7 @@ from scripts.ui.theme import get_text_box_theme
 
 
 class ChooseModeScreen(MakeClanScreenBase):
-    def __init__(self, name="choose_game_mode"):
+    def __init__(self, name="choose_mode_screen"):
         super().__init__(name)
 
     def screen_switches(self):
@@ -134,8 +133,7 @@ class ChooseModeScreen(MakeClanScreenBase):
                     self.save_clan()
                     # TODO: open saved clan screen
                 else:
-                    pass
-                    # TODO: open name clan screen
+                    self.change_screen(GameScreen.CHOOSE_NAME)
             elif event.ui_element == self.elements["random_clan_checkbox"]:
                 if self.elements["random_clan_checkbox"].checked:
                     self.elements["random_clan_checkbox"].uncheck()
@@ -143,9 +141,6 @@ class ChooseModeScreen(MakeClanScreenBase):
                     self.elements["random_clan_checkbox"].check()
 
         return super().handle_event(event)
-
-    def exit_screen(self):
-        super().exit_screen()
 
     def refresh_text_and_buttons(self):
         """Refreshes the button states and text boxes"""

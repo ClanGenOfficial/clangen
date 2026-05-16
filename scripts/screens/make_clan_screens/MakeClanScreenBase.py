@@ -93,25 +93,6 @@ class MakeClanScreenBase(Screens):
             starting_height=2,
             anchors={"left_target": self.elements["previous_step"]},
         )
-        self.elements["random_clan_checkbox"] = UIImageButton(
-            ui_scale(pygame.Rect((560, -32), (34, 34))),
-            "",
-            object_id="@unchecked_checkbox",
-            manager=MANAGER,
-            tool_tip_text="screens.make_clan.quick_start_tooltip",
-            anchors={"top_target": self.elements["previous_step"]},
-        )
-
-        self.elements["random_clan_checkbox_label"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((5, -28), (-1, -1))),
-            "screens.make_clan.quick_start",
-            manager=MANAGER,
-            object_id=get_text_box_theme("#text_box_30_horizleft"),
-            anchors={
-                "left_target": self.elements["random_clan_checkbox"],
-                "top_target": self.elements["random_clan_checkbox"],
-            },
-        )
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -123,6 +104,8 @@ class MakeClanScreenBase(Screens):
     def exit_screen(self):
         for ele in self.elements.values():
             ele.kill()
+        self.elements.clear()
+        return super().exit_screen()
 
     def save_clan(self):
         game.mediated.clear()
