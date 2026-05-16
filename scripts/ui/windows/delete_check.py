@@ -16,7 +16,7 @@ from scripts.ui.scale import ui_scale
 class CheckDeletionWindow(GameWindow):
     def __init__(self, reloadscreen, clan_id, clan_display_name):
         super().__init__(
-            ui_scale(pygame.Rect((250, 200), (300, 180))),
+            ui_scale(pygame.Rect((250, 200), (300, 250))),
         )
         self.clan_name = clan_id
         self.reloadscreen = reloadscreen
@@ -31,14 +31,14 @@ class CheckDeletionWindow(GameWindow):
         )
 
         self.delete_it_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((71, 100), (153, 30))),
+            ui_scale(pygame.Rect((71, 125), (153, 30))),
             "windows.delete_yes",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             container=self,
         )
         self.go_back_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((71, 145), (153, 30))),
+            ui_scale(pygame.Rect((71, 170), (153, 30))),
             "windows.delete_no",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
