@@ -951,21 +951,21 @@ def unpack_rel_block(
                     positive = True
 
         if positive:
-            effect = i18n.t("relationships.positive_postscript")
+            effect = "relationships.positive_postscript"
         else:
-            effect = i18n.t("relationships.negative_postscript")
+            effect = "relationships.negative_postscript"
 
         # Get log
         to_log = None
         from_log = None
         if "log" in block:
             to_log = (
-                block["log"].get("cats_to", "") + effect
+                i18n.t(effect, text=block["log"].get("cats_to", ""))
                 if "cats_to" in block["log"]
                 else None
             )
             from_log = (
-                block["log"].get("cats_from", "") + effect
+                i18n.t(effect, text=block["log"].get("cats_from", ""))
                 if "cats_from" in block["log"]
                 else None
             )
@@ -1116,8 +1116,9 @@ def change_relationship_values(
                 else:
                     created_rel_logs.update({single_cat_from: processed_log})
 
-                log_text = processed_log + i18n.t(
+                log_text = i18n.t(
                     "relationships.age_postscript",
+                    text=processed_log,
                     name=str(single_cat_from.name),
                     count=single_cat_from.moons,
                 )

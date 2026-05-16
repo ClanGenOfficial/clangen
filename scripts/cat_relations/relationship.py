@@ -219,17 +219,17 @@ class Relationship:
         # prepare string for display
         interaction_str = self.adjust_interaction_string(interaction_str)
 
-        effect = ""
+        effect = "relationships.neutral_postscript"
         if positive:
-            effect = i18n.t(f"relationships.positive_postscript_{intensity}")
+            effect = f"relationships.positive_postscript_{intensity}"
         elif not positive:
-            effect = i18n.t(f"relationships.negative_postscript_{intensity}")
+            effect = f"relationships.negative_postscript_{intensity}"
 
-        interaction_str = interaction_str + effect
+        interaction_str = i18n.t(effect, text=interaction_str)
         self.log.append(
-            interaction_str
-            + i18n.t(
+            i18n.t(
                 "relationships.age_postscript",
+                text=interaction_str,
                 name=str(self.cat_from.name),
                 count=self.cat_from.moons,
             )
