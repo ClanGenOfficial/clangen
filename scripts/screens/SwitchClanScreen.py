@@ -1,5 +1,6 @@
 import logging
 from math import ceil
+import ujson
 
 import pygame
 import pygame_gui
@@ -9,6 +10,7 @@ from pygame_gui.elements import UIImage
 import scripts.game_structure.screen_settings
 from scripts.clan import Clan
 from scripts.game_structure import game
+from scripts.housekeeping.datadir import get_save_dir
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.delete_check import CheckDeletionWindow
@@ -163,6 +165,11 @@ class SwitchClanScreen(Screens):
         i = 0
         for clan in self.clan_list[1:]:
             self.clan_name[-1].append(clan)
+            try:
+                with open(f"{get_save_dir()}/{clan}clan.json") as f:
+                    clan_button_name = ujson.load(f).get("displayname", clan)
+            except (FileNotFoundError, ujson.JSONDecodeError):
+                clan_button_name = clan
             self.clan_buttons[-1].append(
                 UISurfaceImageButton(
                     pygame.Rect(
@@ -173,7 +180,7 @@ class SwitchClanScreen(Screens):
                         ),
                         (ui_scale_value(200), item_height),
                     ),
-                    clan + "Clan",
+                    clan_button_name,
                     get_button_dict(
                         ButtonStyles.DROPDOWN,
                         (
