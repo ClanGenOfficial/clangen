@@ -27,6 +27,7 @@ from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
+from scripts.clan_resources.point_of_interest import load_pois
 from scripts.events_module.future.future_event import FutureEvent
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure import constants
@@ -748,6 +749,8 @@ class Clan:
             displayname = clan_data["displayname"]
         else:
             displayname = clan_data["clanname"]
+
+        load_pois(clan_data.get("poi", {"empty": []}))
 
         game.clan = Clan(
             name=clan_data["clanname"],

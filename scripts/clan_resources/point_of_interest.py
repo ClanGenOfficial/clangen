@@ -1,5 +1,6 @@
 from enum import StrEnum
 from random import choice
+from typing import Dict, Union, List
 
 import ujson
 
@@ -8,8 +9,6 @@ _poi_tags = set()
 
 _poi_by_tags = {}
 
-_gathering_poi = ""
-_moonplace_poi = ""
 _undiscovered_poi_remaining = 3
 
 with open("resources/dicts/points_of_interest.json", "r", encoding="utf-8") as f:
@@ -62,6 +61,12 @@ def add_poi(name, elements):
             _poi_by_tags[tag] = [name]
 
 
+def load_pois(save_data: Dict[str, List[str]]):
+    for category, data in save_data.items():
+        for poi in data:
+            add_poi(poi, _poi_data[poi])
+
+
 def clear_pois():
     """
     Clear the PoI system (e.g., when creating a new Clan or loading)
@@ -72,9 +77,7 @@ def clear_pois():
 
     _poi_by_tags.clear()
 
-    global _gathering_poi, _moonplace_poi, _undiscovered_poi_remaining
-    _gathering_poi = ""
-    _moonplace_poi = ""
+    global _undiscovered_poi_remaining
     _undiscovered_poi_remaining = 3
 
 
