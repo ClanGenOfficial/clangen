@@ -2,6 +2,7 @@ import os
 import shutil
 from pathlib import Path
 
+from scripts.clan_resources.point_of_interest import clear_pois
 from scripts.game_structure.game.save_load import read_clans
 from scripts.housekeeping.datadir import get_save_dir
 
@@ -73,6 +74,7 @@ class FreshkillPileTest(unittest.TestCase):
         members.extend(self.apprentices)
 
         self.test_clan_name = f"Test_{uuid4()}"
+        clear_pois()
 
         game.clan = Clan(
             name=self.test_clan_name,
