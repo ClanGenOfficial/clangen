@@ -233,13 +233,19 @@ class InheritanceDb:
             (inheritance.get_mates, self.get_mates),
         ]
 
-        passes = True
         for t in inheritance_db_to_inheritance_functions:
             original = set(t[0]())
             sequel = t[1](cat_id)
             if not original.issubset(sequel):
-                passes = False
-        return passes
+                return False
+
+        if not set(inheritance.all_involved).issubset(self.get_relatives(cat_id, True)):
+            return False
+        if not set(inheritance.all_but_cousins).issubset(
+            self.get_relatives(cat_id, False)
+        ):
+            return False
+        return True
 
 
 inheritance_db = InheritanceDb()
