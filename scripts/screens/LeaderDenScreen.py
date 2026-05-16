@@ -343,7 +343,6 @@ class LeaderDenScreen(Screens):
                     first_temper=i18n.t(f"screens.leader_den.{self.clan_temper[0]}"),
                     second_temper=i18n.t(f"screens.leader_den.{self.clan_temper[1]}"),
                 ),
-                "clan": game.clan.displayname,
             },
         )
 
