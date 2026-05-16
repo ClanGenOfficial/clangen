@@ -155,6 +155,32 @@ SUPPLY_ADJUSTMENTS = [
     "increase_#",
 ]
 
+ALL_CRUEL_CARDS: dict = {}
+with open(
+    "resources/dicts/cruel_season/behavior_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_BEHAVIOR_CARDS: dict = ujson.loads(read_file.read())
+ALL_CRUEL_CARDS.update(CRUEL_BEHAVIOR_CARDS)
+
+with open(
+    "resources/dicts/cruel_season/danger_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_DANGER_CARDS: dict = ujson.loads(read_file.read())
+ALL_CRUEL_CARDS.update(CRUEL_DANGER_CARDS)
+
+with open(
+    "resources/dicts/cruel_season/environment_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_ENVIRONMENT_CARDS: dict = ujson.loads(read_file.read())
+ALL_CRUEL_CARDS.update(CRUEL_ENVIRONMENT_CARDS)
+
+with open(
+    "resources/dicts/cruel_season/origin_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_ORIGIN_CARDS: dict = ujson.loads(read_file.read())
+ALL_CRUEL_CARDS.update(CRUEL_ORIGIN_CARDS)
+
+
 with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
     CONFIG = tomllib.loads(read_file.read())
 
