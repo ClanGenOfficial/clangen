@@ -117,6 +117,10 @@ class Clan:
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
+        if game_mode == "cruel season":
+            self.cruel_cards = []
+        else:
+            self.cruel_cards = None
         self.pregnancy_data = {}
         self.inheritance = {}
         self.custom_pronouns = {}
@@ -138,10 +142,6 @@ class Clan:
             self.freshkill_pile = FreshkillPile()
         else:
             self.freshkill_pile = None
-        if game_mode in "cruel season":
-            self.cruel_season_cards = CruelSeasonCards()
-        else:
-            self.cruel_season_cards = None
         self.herb_supply = HerbSupply()
         self.primary_disaster = None
         self.secondary_disaster = None
@@ -441,6 +441,7 @@ class Clan:
             "version_commit": get_version_info().version_number,
             "source_build": get_version_info().is_source_build,
             "custom_pronouns": self.custom_pronouns,
+            "cruel_card_IDs": self.cruel_cards,
         }
 
         # LEADER DATA
@@ -489,6 +490,11 @@ class Clan:
         save_clan_settings()
         if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
+
+        if game.clan.game_mode == "cruel season":
+            clan_data["cruel_card_IDs"] = self.cruel_cards
+        else:
+            clan_data["cruel_card_IDs"] = {}
 
         safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
