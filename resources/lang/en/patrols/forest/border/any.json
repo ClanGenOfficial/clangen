@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_angry_cat_danger",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -35,7 +35,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -55,7 +55,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                        "cats_from": "from_cat was impressed when to_cat drove rogues off the territory."
+                        "cats_from": "cat_from was impressed when cat_to drove rogues off the territory."
                         }
                     }
                 ],
@@ -81,7 +81,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                        "cats_from": "from_cat was impressed when to_cat drove rogues off the territory."
+                        "cats_from": "cat_from was impressed when cat_to drove rogues off the territory."
                         }
                     }
                 ],
@@ -96,7 +96,6 @@
                     "multi"
                 ],
                 "history_text": {
-                    "scar": "This cat was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
                 "relationships": [
@@ -111,7 +110,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat failed to drive away rogues while on patrol with from_cat."
+                            "cats_from": "cat_to failed to drive away rogues while on patrol with cat_from."
                         }
                     }
                 ],
@@ -127,14 +126,11 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "scar": "This cat was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "death": "m_c died of an injury sustained in a rogue ambush."
                 },
                 "relationships": [
@@ -149,7 +145,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat failed to drive away rogues while on patrol with from_cat."
+                            "cats_from": "cat_to failed to drive away rogues while on patrol with cat_from."
                         }
                     }
                 ],
@@ -169,7 +165,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_angry_cat_danger",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -189,7 +185,7 @@
                         "values": ["trust", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was impressed to hear to_cat escaped a rogue ambush."
+                            "cats_from": "cat_from was impressed to hear cat_to escaped a rogue ambush."
                         }
                     }
                 ],
@@ -213,7 +209,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was amazed to hear to_cat took on a gang of rogues single-pawed."
+                            "cats_from": "cat_from was amazed to hear cat_to took on a gang of rogues single-pawed."
                         }
                     }
                 ],
@@ -241,7 +237,7 @@
                         "values": ["trust", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's heroic death in battle against a rogue ambush."
+                            "cats_from": "cat_from honors cat_to's heroic death in battle against a rogue ambush."
                         }
                     }
                 ],
@@ -264,7 +260,7 @@
                         "values": ["trust", "respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat honors to_cat's death in battle against a rogue ambush."
+                            "cats_from": "cat_from honors cat_to's death in battle against a rogue ambush."
                         }
                     }
                 ],
@@ -284,7 +280,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_angry_cat_danger",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -304,7 +300,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's victory in battle against a gang of rogues."
+                            "cats_from": "cat_from heard about cat_to's victory in battle against a gang of rogues."
                         }
                     }
                 ],
@@ -325,7 +321,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's victory in battle against a gang of dangerous rogues."
+                            "cats_from": "cat_from heard about cat_to's victory in battle against a gang of dangerous rogues."
                         }
                     }
                 ],
@@ -345,7 +341,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                            "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
                         }
                     }
                 ],
@@ -366,7 +362,7 @@
                         "values": ["trust", "respect"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat convinced rogues to leave the territory."
+                            "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
                         }
                     }
                 ],
@@ -393,7 +389,7 @@
                         "amount": -10,
                         "log":
                         {
-                            "cats_from": "from_cat heard that to_cat failed to drive off a gang of rogues."
+                            "cats_from": "cat_from heard that cat_to failed to drive off a gang of rogues."
                         }
                     }
                 ],
@@ -427,7 +423,7 @@
                         "values": ["trust", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard how to_cat put {PRONOUN/to_cat/poss} life on the line in battle against some rogues."
+                            "cats_from": "cat_from heard how cat_to put {PRONOUN/cat_to/poss} life on the line in battle against some rogues."
                         }
                     }
                 ],
@@ -471,7 +467,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives}; its owner must be out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives {PRONOUN/r_c/poss} is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
+                "text": "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when {PRONOUN/r_c/subject} {VERB/r_c/arrive/arrives}; its owner must be out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks — but all it gives {PRONOUN/r_c/poss} is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
                 "exp": 40,
                 "frequency": 4,
                 "relationships": [
@@ -481,7 +477,7 @@
                     "values": ["respect"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat investigated a badger sett on {PRONOUN/to_cat/poss} own."
+                        "cats_from": "cat_from heard that cat_to investigated a badger sett on {PRONOUN/cat_to/poss} own."
                     }
                     }
                 ]
@@ -500,13 +496,13 @@
                     "values": ["respect"],
                     "amount": 10,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat fought a badger on {PRONOUN/to_cat/poss} own."
+                        "cats_from": "cat_from heard that cat_to fought a badger on {PRONOUN/cat_to/poss} own."
                     }
                     }
                 ]
             },
             {
-                "text": "s_c sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c expected. To confirm {PRONOUN/s_c/poss} theory, {PRONOUN/s_c/subject} {VERB/s_c/stake/stakes} out the sett itself, and when the beast pokes its head out at night, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to confirm it's a juvenile - young and inexperienced. s_c pads quietly back to camp with the intel.",
+                "text": "s_c sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c expected. To confirm {PRONOUN/s_c/poss} theory, {PRONOUN/s_c/subject} {VERB/s_c/stake/stakes} out the sett itself, and when the beast pokes its head out at night, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to confirm it's a juvenile — young and inexperienced. s_c pads quietly back to camp with the intel.",
                 "exp": 40,
                 "stat_trait": [
                     "responsible",
@@ -527,7 +523,7 @@
                     "values": ["respect"],
                     "amount": 10,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat staked out a badger sett on {PRONOUN/to_cat/poss} own."
+                        "cats_from": "cat_from heard that cat_to staked out a badger sett on {PRONOUN/cat_to/poss} own."
                     }
                     }
                 ]
@@ -535,7 +531,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Well, the only way to know is to check! Once {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the sett, s_c scrambles inside for a look - and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the sett, s_c scrambles inside for a look — and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "stat_trait": [
                     "adventurous",
@@ -561,13 +557,13 @@
                     "values": ["respect"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat stuck {PRONOUN/to_cat/poss} muzzle in a badger sett."
+                        "cats_from": "cat_from heard that cat_to stuck {PRONOUN/cat_to/poss} muzzle in a badger sett."
                     }
                     }
                 ]
             },
             {
-                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/r_c/subject/CAP} {VERB/r_c/try/tries} to creep just a little closer - but the ground drops away steeply beneath {PRONOUN/r_c/poss} paws and {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing, skidding right into the disturbed badger's lethal jaws.",
+                "text": "r_c carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/r_c/subject/CAP} {VERB/r_c/try/tries} to creep just a little closer — but the ground drops away steeply beneath {PRONOUN/r_c/poss} paws and {PRONOUN/r_c/subject} {VERB/r_c/lose/loses} {PRONOUN/r_c/poss} footing, skidding right into the disturbed badger's lethal jaws.",
                 "exp": 0,
                 "dead_cats": [
                     "r_c"
@@ -579,7 +575,7 @@
                 "frequency": 3
             },
             {
-                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/r_c/object}. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett; r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
+                "text": "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/r_c/object}. It's difficult to say who's more surprised — r_c or the badger. It charges for the sett; r_c leaps out of the way, but its claws catch {PRONOUN/r_c/poss} pelt. r_c limps back to camp with blood trailing in {PRONOUN/r_c/poss} wake to report the whole sorry adventure.",
                 "exp": 0,
                 "injury": [
                     {
@@ -596,7 +592,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "death": "m_c lost {PRONOUN/s_c/poss} life to a badger."
+                    "death": "m_c died of an injury inflicted by a badger."
                 },
                 "relationships": [
                     {"cats_from": ["some_clan"],
@@ -605,7 +601,7 @@
                     "values": ["respect"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat stuck {PRONOUN/to_cat/poss} muzzle in a badger sett."
+                        "cats_from": "cat_from heard that cat_to stuck {PRONOUN/cat_to/poss} muzzle in a badger sett."
                     }
                     }
                 ],
@@ -645,7 +641,7 @@
                         "values": ["respect", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's clever plan for dealing with a badger."
+                            "cats_from": "cat_from was impressed by cat_to's clever plan for dealing with a badger."
                         }
                     }
                 ],
@@ -663,14 +659,14 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat worked together on patrol on deal with a badger."
+                            "cats_from": "cat_from and cat_to worked together on patrol on deal with a badger."
                         }
                     }
                 ],
                 "frequency": 1
             },
             {
-                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+                "text": "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c/subject/CAP} {VERB/s_c/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat — stinky, horrible, and perfect proof of the new occupant of the sett.",
                 "exp": 40,
                 "stat_skill": [
                     "CLEVER,1"
@@ -684,7 +680,7 @@
                         "amount": 10,
                         "log":
                         {
-                            "cats_from": "from_cat was impressed by to_cat's quick thinking on patrol when investigating a badger sett."
+                            "cats_from": "cat_from was impressed by cat_to's quick thinking on patrol when investigating a badger sett."
                         }
                     }
                 ],
@@ -712,7 +708,7 @@
                         "values": ["respect", "trust"],
                         "amount": 10,
                         "log": {
-                            "from_cat": "from_cat respected to_cat's cautious and thoughtful approach to dealing with a badger on patrol."
+                            "cats_from": "cat_from respected cat_to's cautious and thoughtful approach to dealing with a badger on patrol."
                         }
                     }
                 ],
@@ -732,14 +728,14 @@
                         "amount": -10,
                         "log":
                         {
-                            "cats_from": "from_cat had a tiring, fruitless patrol with to_cat."
+                            "cats_from": "cat_from had a tiring, fruitless patrol with cat_to."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look - and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
+                "text": "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look — and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c/object} up the burrow tunnel.",
                 "exp": 0,
                 "stat_trait": [
                     "adventurous",
@@ -766,14 +762,14 @@
                         "amount": -10,
                         "log":
                         {
-                            "cats_from": "from_cat watched to_cat do something risky and mouse-brained on patrol."
+                            "cats_from": "cat_from watched cat_to do something risky and mouse-brained on patrol."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised - the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home in one piece... including the badger.",
+                "text": "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised — the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process, but everyone gets home in one piece... including the badger.",
                 "exp": 0,
                 "injury": [
                     {
@@ -781,7 +777,7 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "battle_injury"
+                            "big_bite_injury"
                         ],
                         "scars": [
                             "SIDE"
@@ -790,7 +786,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a badger.",
-                    "death": "m_c lost {PRONOUN/m_c/poss} life to a badger."
+                    "death": "m_c died of an injury inflicted by a badger."
                 },
                 "relationships": [
                     {
@@ -801,7 +797,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat failed to drive off a badger."
+                            "cats_from": "cat_from and cat_to failed to drive off a badger."
                         }
                     }
                 ],
@@ -843,7 +839,7 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat heard that to_cat drove a rogue off the territory."
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
                         }
                     }
                 ]
@@ -869,13 +865,13 @@
                         "amount": 8,
                         "log":
                         {
-                            "cats_from": "from_cat heard that to_cat drove a rogue off the territory."
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
                         }
                     }
                 ]
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -890,7 +886,7 @@
                         "amount": 8,
                         "log":
                         {
-                            "cats_from": "from_cat heard that to_cat drove a rogue off the territory."
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
                         }
                     }
                 ]
@@ -923,7 +919,7 @@
                         "amount": 8,
                         "log":
                         {
-                            "cats_from": "from_cat heard that to_cat scared a rogue off the territory."
+                            "cats_from": "cat_from heard that cat_to scared a rogue off the territory."
                         }
                     }
                 ],
@@ -982,7 +978,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of an injury inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -1028,7 +1024,7 @@
                         "amount": 10,
                         "log":
                         {
-                            "cats_from": "from_cat was impressed to hear to_cat drove a rogue off the territory."
+                            "cats_from": "cat_from was impressed to hear cat_to drove a rogue off the territory."
                         }
                     }
                 ],
@@ -1101,7 +1097,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of an injury inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -1143,7 +1139,7 @@
                         "values": ["like", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off a rogue together."
+                            "cats_from": "cat_from and cat_to drove off a rogue together."
                         }
                     }
                 ],
@@ -1173,7 +1169,7 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat drove off a rogue side by side."
+                            "cats_from": "cat_from and cat_to drove off a rogue side by side."
                         }
                     }
                 ],
@@ -1197,14 +1193,14 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat drove off a rogue side by side."
+                            "cats_from": "cat_from and cat_to drove off a rogue side by side."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with r_c to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with r_c to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -1221,14 +1217,14 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat set an ambush for a rogue together."
+                            "cats_from": "cat_from and cat_to set an ambush for a rogue together."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with p_l to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with p_l to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -1245,7 +1241,7 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat set an ambush for a rogue together."
+                            "cats_from": "cat_from and cat_to set an ambush for a rogue together."
                         }
                     }
                 ],
@@ -1282,7 +1278,7 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat saw a rogue off their territory together."
+                            "cats_from": "cat_from and cat_to saw a rogue off their territory together."
                         }
                     }
                 ],
@@ -1319,7 +1315,7 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat saw a rogue off their territory together."
+                            "cats_from": "cat_from and cat_to saw a rogue off their territory together."
                         }
                     }
                 ],
@@ -1339,7 +1335,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "from_cat watched to_cat make a mistake on patrol."
+                            "cats_from": "cat_from watched cat_to make a mistake on patrol."
                         }
 
                     }
@@ -1361,7 +1357,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "to_cat tried and failed to be clever on patrol with from_cat."
+                            "cats_from": "cat_to tried and failed to be clever on patrol with cat_from."
                         }
                     }
                 ],
@@ -1382,7 +1378,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "to_cat overestimated {PRONOUN/to_cat/poss} fighting skills on patrol with from_cat."
+                            "cats_from": "cat_to overestimated {PRONOUN/cat_to/poss} fighting skills on patrol with cat_from."
                         }
                     }
                 ],
@@ -1406,7 +1402,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of an injury inflicted by an invading rogue."
                 },
                 "relationships": [
                     {
@@ -1420,7 +1416,7 @@
                         "values": ["like", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat failed to drive off a rogue and lost confidence in each other."
+                            "cats_from": "cat_from and cat_to failed to drive off a rogue and lost confidence in each other."
                         }
                     }
                 ],
@@ -1472,7 +1468,7 @@
                         "amount": 10,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat worked together to drive off a rogue."
+                            "cats_from": "cat_from and cat_to worked together to drive off a rogue."
                         }
                     }
                 ],
@@ -1513,7 +1509,7 @@
                         "values": ["like", "respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was very impressed with how to_cat saw off a rogue on patrol."
+                            "cats_from": "cat_from was very impressed with how cat_to saw off a rogue on patrol."
                         }
                     }
                 ],
@@ -1537,7 +1533,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "from_cat watched to_cat make a mistake on patrol."
+                            "cats_from": "cat_from watched cat_to make a mistake on patrol."
                         }
                     }
                 ],
@@ -1574,7 +1570,7 @@
                         "values": ["like", "respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat watched to_cat fail to see a rogue off on patrol."
+                            "cats_from": "cat_from watched cat_to fail to see a rogue off on patrol."
                         }
                     }
                 ],
@@ -1598,7 +1594,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "death": "m_c was killed by an invading rogue."
+                    "death": "m_c died of an injury inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -1640,7 +1636,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat drove off a rogue together."
+                            "cats_from": "cat_to and cat_from drove off a rogue together."
                         }
                     }
                 ],
@@ -1669,14 +1665,14 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat drove off a rogue side by side."
+                            "cats_from": "cat_from and cat_to drove off a rogue side by side."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with {PRONOUN/s_c/poss} Clanmates to set up a trap, rigging a branch to fall on the rogue's head - and it works, sending the startled intruder yowling as they flee c_n territory.",
+                "text": "The pawprints lead to a trespassing rogue. s_c climbs into the trees with {PRONOUN/s_c/poss} Clanmates to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -1690,7 +1686,7 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat set an ambush for a rogue together."
+                            "cats_from": "cat_from and cat_to set an ambush for a rogue together."
                         }
                     }
                 ],
@@ -1727,7 +1723,7 @@
                         "amount": 5,
                         "log":
                         {
-                            "cats_from": "from_cat and to_cat saw a rogue off their territory together."
+                            "cats_from": "cat_from and cat_to saw a rogue off their territory together."
                         }
                     }
                 ],
@@ -1747,7 +1743,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "from_cat watched to_cat make a mistake on patrol."
+                            "cats_from": "cat_from watched cat_to make a mistake on patrol."
                         }
 
                     }
@@ -1772,7 +1768,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "to_cat tried and failed to be clever on patrol with from_cat."
+                            "cats_from": "cat_to tried and failed to be clever on patrol with cat_from."
                         }
                     }
                 ],
@@ -1797,7 +1793,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "to_cat overestimated {PRONOUN/to_cat/poss} fighting skills on patrol with from_cat."
+                            "cats_from": "cat_to overestimated {PRONOUN/cat_to/poss} fighting skills on patrol with cat_from."
                         }
                     }
                 ],
@@ -1848,7 +1844,10 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to worked together to drive off a trespassing rogue."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -1872,7 +1871,7 @@
                         "amount": -5,
                         "log":
                         {
-                            "cats_from": "from_cat watched to_cat make a mistake on patrol."
+                            "cats_from": "cat_from watched cat_to make a mistake on patrol."
                         }
                     }
                 ],
@@ -1913,7 +1912,7 @@
                     "mutual": false,
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat was amused to see to_cat confront a rogue during a patrol."
+                        "cats_from": "cat_from was amused to see cat_to confront a rogue during a patrol."
                     }
                 }
             ],
@@ -1953,7 +1952,7 @@
                         "values": ["like", "respect", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat enjoyed a story told by to_cat."
+                            "cats_from": "cat_from enjoyed a story told by cat_to."
                         }
                     }
                 ],
@@ -1966,6 +1965,7 @@
                     "SPEAKER,1",
                     "STORY,1"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1975,7 +1975,7 @@
                         "amount": 10,
                         "log":
                         {
-                            "cats_from": "from_cat really enjoyed a story told by to_cat."
+                            "cats_from": "cat_from really enjoyed a story told by cat_to."
                         }
                     }
                 ],
@@ -1990,6 +1990,7 @@
                     "playful",
                     "loving"
                 ],
+                "can_have_stat": ["p_l"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1998,7 +1999,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat chatted on patrol."
+                            "cats_from": "cat_from and cat_to chatted on patrol."
                         }
                     },
                     {
@@ -2008,7 +2009,7 @@
                         "values": ["like", "comfort"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat discovers to_cat is lots of fun to patrol with."
+                            "cats_from": "cat_from discovers cat_to is lots of fun to patrol with."
                         }
                     }
                 ],
@@ -2027,7 +2028,7 @@
                         "values": ["like", "respect", "comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat had to put up with to_cat trying to tell another story."
+                            "cats_from": "cat_from had to put up with cat_to trying to tell another story."
                         }
                     }
                 ],
@@ -2052,7 +2053,7 @@
                         "values": ["like", "comfort"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was rebuked by to_cat on patrol."
+                            "cats_from": "cat_from was rebuked by cat_to on patrol."
                         }
                     },
                     {
@@ -2062,7 +2063,7 @@
                         "values": ["like", "respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat was chatting and telling stories instead of focusing on the patrol with from_cat."
+                            "cats_from": "cat_to was chatting and telling stories instead of focusing on the patrol with cat_from."
                         }
                     }
                 ],
@@ -2082,7 +2083,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_dog",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2109,7 +2110,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's encounter with a dog."
+                            "cats_from": "cat_from heard about cat_to's encounter with a dog."
                         }
                     }
                 ],
@@ -2136,7 +2137,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard how to_cat took on a huge dog single-pawed!"
+                            "cats_from": "cat_from heard how cat_to took on a huge dog single-pawed!"
                         }
                     }
                 ],
@@ -2171,7 +2172,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard how to_cat risked {PRONOUN/to_cat/poss} life to lead a huge dog away from the Clan's territory."
+                            "cats_from": "cat_from heard how cat_to risked {PRONOUN/cat_to/poss} life to lead a huge dog away from the Clan's territory."
                         }
                     }
                 ],
@@ -2186,8 +2187,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep c_n safe from a large dog."
+                    "death": "m_c died to keep c_n safe from a large dog."
                 },
                 "relationships": [
                     {
@@ -2203,14 +2203,14 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's noble sacrifice to save the Clan from a large dog."
+                            "cats_from": "cat_from heard about cat_to's noble sacrifice to save the Clan from a large dog."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives them speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified — but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "injury": [
                     {
@@ -2219,15 +2219,12 @@
                         ],
                         "injuries": [
                             "big_bite_injury"
-                        ],
-                        "scars": [
-                            "BRIGHTHEART"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep c_n safe from a large dog."
+                    "scar": "m_c was scarred while defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a large dog."
                 },
                 "relationships": [
                     {
@@ -2243,7 +2240,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat was nearly killed leading a large dog away from the Clan's territory."
+                            "cats_from": "cat_from heard about how cat_to was nearly killed leading a large dog away from the Clan's territory."
                         }
                     }
                 ],
@@ -2263,7 +2260,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_border_dogscent_clanmember",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2296,7 +2293,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat and {PRONOUN/to_cat/poss} patrol tracked a large dog on patrol."
+                            "cats_from": "cat_from heard about how cat_to and {PRONOUN/cat_to/poss} patrol tracked a large dog on patrol."
                         }
                     }
                 ],
@@ -2323,7 +2320,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat and {PRONOUN/to_cat/poss} patrol tried to lead a large dog away from the territory."
+                            "cats_from": "cat_from heard about how cat_to and {PRONOUN/cat_to/poss} patrol tried to lead a large dog away from the territory."
                         }
                     }
                 ],
@@ -2352,7 +2349,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat ambushed a large dog on patrol."
+                            "cats_from": "cat_from heard about how cat_to ambushed a large dog on patrol."
                         }
                     },
                     {
@@ -2362,7 +2359,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat ambushed and drove off a huge dog before from_cat's eyes."
+                            "cats_from": "cat_to ambushed and drove off a huge dog before cat_from's eyes."
                         }
                     }
                 ],
@@ -2398,7 +2395,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat led a large dog off Clan territory on patrol."
+                            "cats_from": "cat_from heard about how cat_to led a large dog off Clan territory on patrol."
                         }
                     },
                     {
@@ -2408,7 +2405,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat led a big dog off Clan territory on patrol with from_cat."
+                            "cats_from": "cat_to led a big dog off Clan territory on patrol with cat_from."
                         }
                     }
                 ],
@@ -2434,7 +2431,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat was on the patrol that saved the Clan from a large dog."
+                            "cats_from": "cat_from heard that cat_to was on the patrol that saved the Clan from a large dog."
                         }
                     }
                 ],
@@ -2460,7 +2457,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat was on the patrol that bravely drove a large dog off the territory."
+                            "cats_from": "cat_from heard that cat_to was on the patrol that bravely drove a large dog off the territory."
                         }
                     }
                 ],
@@ -2489,7 +2486,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol drove off a large dog."
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol drove off a large dog."
                         }
                     },
                     {
@@ -2505,7 +2502,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's battle tactics in a fight against a large dog."
+                            "cats_from": "cat_from was impressed by cat_to's battle tactics in a fight against a large dog."
                         }
                     }
                 ],
@@ -2541,7 +2538,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol drove off a large dog."
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol drove off a large dog."
                         }
                     },
                     {
@@ -2557,7 +2554,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's bravery in a fight against a large dog."
+                            "cats_from": "cat_from was impressed by cat_to's bravery in a fight against a large dog."
                         }
                     }
                 ],
@@ -2586,7 +2583,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol failed to drive off a dog."
+                            "cats_from": "cat_from heard that cat_to's patrol failed to drive off a dog."
                         }
                     }
                 ],
@@ -2596,7 +2593,7 @@
                 "min_max_status": {
                     "normal adult": [2, 3]
                 },
-                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} - the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c/poss} borders.",
+                "text": "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} — the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c/poss} borders.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -2618,7 +2615,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat was the reason from_cat and {PRONOUN/from_cat/poss} patrol were unable to lead a dog off Clan territory."
+                            "cats_from": "cat_to was the reason cat_from and {PRONOUN/cat_from/poss} patrol were unable to lead a dog off Clan territory."
                         }
                     },
                     {
@@ -2634,7 +2631,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat's patrol failed to lead a dog off the territory."
+                            "cats_from": "cat_from heard that cat_to's patrol failed to lead a dog off the territory."
                         }
                     }
                 ],
@@ -2650,8 +2647,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "death": "m_c died to keep the Clan safe from a large dog."
                 },
                 "relationships": [
                     {
@@ -2667,7 +2663,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat failed to save {PRONOUN/to_cat/poss} Clanmate on a patrol with a dog."
+                            "cats_from": "cat_from heard that cat_to failed to save {PRONOUN/cat_to/poss} Clanmate on a patrol with a dog."
                         }
                     }
                 ],
@@ -2693,8 +2689,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "scar": "m_c was scarred while defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a large dog."
                 },
                 "relationships": [
                     {
@@ -2710,7 +2706,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol failed to lead a dog away from the Clan's territory."
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol failed to lead a dog away from the Clan's territory."
                         }
                     }
                 ],
@@ -2736,7 +2732,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol weren't able to drive off a dog."
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol weren't able to drive off a dog."
                         }
                     }
                 ],
@@ -2765,7 +2761,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol weren't able to drive off a dog."
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol weren't able to drive off a dog."
                         }
                     },
                     {
@@ -2777,7 +2773,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat's excessive caution caused from_cat and {PRONOUN/from_cat/poss} patrol to lose a fight."
+                            "cats_from": "cat_to's excessive caution caused cat_from and {PRONOUN/cat_from/poss} patrol to lose a fight."
                         }
                     }
                 ],
@@ -2793,8 +2789,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "death": "m_c died to keep the Clan safe from a large dog."
                 },
                 "relationships": [
                     {
@@ -2810,7 +2805,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol weren't able to drive off a dog."
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol weren't able to drive off a dog."
                         }
                     }
                 ],
@@ -2836,8 +2831,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a dog.",
-                    "death": "This cat died to keep the Clan safe from a large dog."
+                    "scar": "m_c was scarred while defending the Clan against a dog.",
+                    "death": "m_c died of injuries inflicted by a large dog."
                 },
                 "relationships": [
                     {
@@ -2853,7 +2848,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat and {PRONOUN/to_cat/poss} patrol weren't able to drive off a dog."
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol weren't able to drive off a dog."
                         }
                     }
                 ],
@@ -2873,7 +2868,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_smalldog",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2906,7 +2901,7 @@
                         "mutual": false,
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat drove off a dog."
+                            "cats_from": "cat_from heard about how cat_to drove off a dog."
                         }
                     }
                 ],
@@ -2925,7 +2920,7 @@
                         "mutual": false,
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat couldn't drive off a tiny dog."
+                            "cats_from": "cat_from heard about how cat_to couldn't drive off a tiny dog."
                         }
                     }
                 ],
@@ -2960,8 +2955,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
-                    "death": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}."
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "death": "m_c died of injuries inflicted by a small dog."
                 },
                 "relationships": [
                     {
@@ -2971,7 +2966,7 @@
                         "mutual": false,
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat couldn't drive off a tiny dog."
+                            "cats_from": "cat_from heard about how cat_to couldn't drive off a tiny dog."
                         }
                     }
                 ],
@@ -2991,7 +2986,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "gen_bord_smalldog",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3018,7 +3013,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat drove off a small dog on patrol together."
+                            "cats_from": "cat_to and cat_from drove off a small dog on patrol together."
                         }
                     }
                 ],
@@ -3042,7 +3037,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat drove off a small dog on patrol together."
+                            "cats_from": "cat_to and cat_from drove off a small dog on patrol together."
                         }
                     }
                 ],
@@ -3069,7 +3064,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's battle tactics in a fight with a small dog."
+                            "cats_from": "cat_from was impressed by cat_to's battle tactics in a fight with a small dog."
                         }
                     }
                 ],
@@ -3093,7 +3088,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat drove off a small dog on patrol together."
+                            "cats_from": "cat_to and cat_from drove off a small dog on patrol together."
                         }
                     }
                 ],
@@ -3123,7 +3118,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog."
+                    "scar": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
+                    "death": "m_c died of injuries inflicted by a small dog."
                 },
                 "frequency": 3
             }
@@ -3143,12 +3139,12 @@
             "apprentice": [-1, 2]
         },
         "frequency": 4,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+                "text": "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down — they do not share territory with foxes.",
                 "exp": 30,
                 "frequency": 4,
                 "relationships": [
@@ -3159,7 +3155,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive a vixen out of their territory."
+                            "cats_from": "cat_from and cat_to worked together to drive a vixen out of their territory."
                         }
                     },
                     {
@@ -3169,7 +3165,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove a vixen out of their territory."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove a vixen out of their territory."
                         }
                     }
                 ]
@@ -3186,7 +3182,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a vixen and kill her cubs."
+                            "cats_from": "cat_from and cat_to worked together to drive off a vixen and kill her cubs."
                         }
                     },
                     {
@@ -3196,7 +3192,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ]
@@ -3214,7 +3210,7 @@
                         "values": ["respect", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was extremely impressed by to_cat's skill in battle against a vixen."
+                            "cats_from": "cat_from was extremely impressed by cat_to's skill in battle against a vixen."
                         }
                     },
                     {
@@ -3224,7 +3220,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a vixen."
                         }
                     }
                 ]
@@ -3252,7 +3248,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat's bravery in a fight against a vixen greatly impressed from_cat."
+                            "cats_from": "cat_to's bravery in a fight against a vixen greatly impressed cat_from."
                         }
                     }
                 ]
@@ -3272,7 +3268,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a vixen and kill her cubs."
+                            "cats_from": "cat_from and cat_to worked together to drive off a vixen and kill her cubs."
                         }
                     },
                     {
@@ -3282,7 +3278,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ]
@@ -3302,7 +3298,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to kill a vixen and her cubs."
+                            "cats_from": "cat_from and cat_to worked together to kill a vixen and her cubs."
                         }
                     },
                     {
@@ -3312,7 +3308,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol killed a vixen and her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol killed a vixen and her cubs."
                         }
                     }
                 ]
@@ -3334,7 +3330,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to drive off a vixen together."
+                            "cats_from": "cat_from and cat_to were unable to drive off a vixen together."
                         }
                     }
                 ]
@@ -3354,7 +3350,7 @@
                         "values": ["trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to drive off a vixen together."
+                            "cats_from": "cat_from and cat_to were unable to drive off a vixen together."
                         }
                     }
                 ]
@@ -3372,13 +3368,13 @@
                         "values": ["respect", "trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                            "cats_from": "cat_to's overconfident move in a fight against a vixen cost cat_from's patrol the battle."
                         }
                     }
                 ]
             },
             {
-                "text": "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+                "text": "Never threaten a mother's young — the red vixen kills r_c in the skirmish.",
                 "exp": 0,
                 "frequency": 2,
                 "dead_cats": ["r_c"],
@@ -3394,7 +3390,7 @@
                         "values": ["trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat was unable to save r_c in a fight with a red vixen."
+                            "cats_from": "cat_from heard that cat_to was unable to save r_c in a fight with a red vixen."
                         }
                     },
                     {
@@ -3422,7 +3418,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "death": "m_c fell in battle with a fox."
+                    "death": "m_c died of an injury inflicted by a red vixen."
                 },
                 "relationships": [
                     {
@@ -3432,7 +3428,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat and from_cat were unable to drive off a vixen together."
+                            "cats_from": "cat_to and cat_from were unable to drive off a vixen together."
                         }
                     }
                 ]
@@ -3451,7 +3447,7 @@
                 ],
                 "history_text": {
                     "scar": "m_c carries a scar from a fox fight.",
-                    "death": "m_c fell in battle with a fox."
+                    "death": "m_c died of an injury inflicted by a fox."
                 },
                 "relationships": [
                     {
@@ -3461,7 +3457,7 @@
                         "values": ["respect", "trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                            "cats_from": "cat_to's overconfident move in a fight against a vixen cost cat_from's patrol the battle."
                         }
                     }
                 ]
@@ -3482,7 +3478,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 4,
-        "intro_text": "The patrol catches the scent of a fox - but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 60,
         "success_outcomes": [
@@ -3498,7 +3494,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive a vixen out of their territory."
+                            "cats_from": "cat_from and cat_to worked together to drive a vixen out of their territory."
                         }
                     },
                     {
@@ -3508,7 +3504,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove a vixen out of their territory."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove a vixen out of their territory."
                         }
                     }
                 ]
@@ -3525,7 +3521,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive off a vixen and kill her cubs."
+                            "cats_from": "cat_from and cat_to worked together to drive off a vixen and kill her cubs."
                         }
                     },
                     {
@@ -3535,13 +3531,13 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ]
             },
             {
-                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters - a gray fox is a dangerous competitor.",
+                "text": "s_c displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters — a gray fox is a dangerous competitor.",
                 "exp": 30,
                 "frequency": 4,
                 "stat_skill": ["FIGHTER,3"],
@@ -3553,7 +3549,7 @@
                         "values": ["respect", "trust"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was extremely impressed by to_cat's skill in battle against a vixen."
+                            "cats_from": "cat_from was extremely impressed by cat_to's skill in battle against a vixen."
                         }
                     },
                     {
@@ -3563,7 +3559,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's bravery in battle against a vixen."
+                            "cats_from": "cat_from heard about cat_to's bravery in battle against a vixen."
                         }
                     }
                 ]
@@ -3575,11 +3571,12 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." }
+                "history_text": {
+                    "death": "m_c died of an injury inflicted by a fox."
+                }
             },
             {
                 "text": "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} bravery and skill.",
@@ -3600,11 +3597,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c", "patrol"],
-                        "cats_from": ["patrol", "patrol"],
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was extremely impressed by cat_to's skill in battle against a gray vixen."
+                        }
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["some_clan", "high_aggress"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a gray vixen."
+                        }
                     }
                 ]
             },
@@ -3623,7 +3633,7 @@
                         "values": ["trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat worked together to drive out a vixen and kill her cubs."
+                            "cats_from": "cat_from and cat_to worked together to drive out a vixen and kill her cubs."
                         }
                     },
                     {
@@ -3633,7 +3643,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove out a vixen and killed her cubs."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove out a vixen and killed her cubs."
                         }
                     }
                 ]
@@ -3666,7 +3676,7 @@
                         "values": ["respect", "trust"],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat chased a gray vixen up into a tree."
+                            "cats_from": "cat_from was impressed by how cat_to chased a gray vixen up into a tree."
                         }
                     },
                     {
@@ -3676,7 +3686,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about how to_cat's patrol drove off a vixen."
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a vixen."
                         }
                     }
                 ]
@@ -3693,9 +3703,9 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["trust"],
-                        "amount": 5,
+                        "amount": -3,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to drive a gray vixen off their territory together."
+                            "cats_from": "cat_from and cat_to were unable to drive a gray vixen off their territory together."
                         }
                     }
                 ]
@@ -3713,7 +3723,7 @@
                         "values": ["respect", "trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                            "cats_from": "cat_to's overconfident move in a fight against a vixen cost cat_from's patrol the battle."
                         }
                     }
                 ]
@@ -3726,11 +3736,12 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
-                "history_text": { "scar": "m_c carries a scar from a fox fight." },
+                "history_text": {
+                    "death": "m_c died of an injury inflicted by a fox."
+            },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -3739,7 +3750,7 @@
                         "values": ["respect", "trust"],
                         "amount": -3,
                         "log": {
-                            "cats_from": "to_cat's overconfident move in a fight against a vixen cost from_cat's patrol the battle."
+                            "cats_from": "cat_to's overconfident move in a fight against a vixen cost cat_from's patrol the battle."
                         }
                     }
                 ]
@@ -3765,7 +3776,7 @@
         "relationship_constraint": [],
         "pl_skill_constraint": [],
         "intro_text": "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!",
-        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst possible thing happens - a warrior discovers them and sends them back to camp with a loud scolding.",
+        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst possible thing happens — a warrior discovers them and sends them back to camp with a loud scolding.",
         "success_outcomes": [
             {
                 "text": "Scrambling up the hill, app1 shoves app2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until app2 bumps into a huge pillar that blinks down with slow, glowing red eyes.",
@@ -3797,7 +3808,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The border patrol is immediately diverted to tracking this new unknown - with feet the size of a small dog, c_n needs to know what this thing is. It takes every bit of their talents at tracking through the woods, but the cats catch a glimpse of a giant, furred Twoleg, crossing a distant clearing and disappearing forever.",
+                "text": "The border patrol is immediately diverted to tracking this new unknown — with feet the size of a small dog, c_n needs to know what this thing is. It takes every bit of their talents at tracking through the woods, but the cats catch a glimpse of a giant, furred Twoleg, crossing a distant clearing and disappearing forever.",
                 "exp": 20,
                 "frequency": 4
             }
@@ -3826,7 +3837,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It leaps up onto a fallen log - whatever it is: bulbous head; long, spindly limbs; pale, hairless skin like a skink. r_c hisses, and it echoes in a whisper, skittering off into the woods.",
+                "text": "It leaps up onto a fallen log — whatever it is: bulbous head; long, spindly limbs; pale, hairless skin like a skink. r_c hisses, and it echoes in a whisper, skittering off into the woods.",
                 "exp": 20,
                 "frequency": 4
             }
@@ -3847,5 +3858,383 @@
                 }
             }
         ]
+    },
+{
+  "patrol_id": "fst_bord_notleafbare_bear",
+  "biome": [
+    "forest"
+  ],
+  "season": [
+    "-leaf-bare"
+  ],
+  "types": [
+    "border"
+  ],
+  "tags": ["clan:leader"],
+  "patrol_art": "fst_canopy",
+  "min_cats": 3,
+  "max_cats": 6,
+    "min_max_status": {
+        "leader": [
+            -1, -1 ]
+    },
+  "frequency": 2,
+  "chance_of_success": 30,
+  "relationship_constraint": [],
+  "pl_skill_constraint": [],
+  "intro_text": "Through a copse of narrow trees p_l sees a robust figure and flicks {PRONOUN/p_l/poss} tail to alert the patrol to stop. A bear is nearby, though what kind is unclear; its pelt color is distorted by the shaded canopy.",
+  "decline_text": "The patrol retreats back to camp to report to their leader. Learning more about the predators in the territory could be useful, though not at the cost of their lives.",
+  "success_outcomes": [
+    {
+      "text": "r_c sneaks forward and determines it's a black bear. It should be relatively harmless as long as the Clan keeps an eye on its whereabouts.",
+      "exp": 10,
+      "frequency": 4,
+      "can_have_stat": [
+        "any"
+      ],
+      "art": "gen_warrior_crouching"
+    },
+    {
+      "text": "r_c's pupils dilate as a ray of sunlight illuminates the bear's russet pelt. r_c realizes with alarm that it's a brown bear. The patrol slinks away without incident and c_n's leader warns patrols to stay away from the area.",
+      "exp": 10,
+      "frequency": 4,
+      "can_have_stat": [
+        "any"
+      ],
+      "art": "gen_warrior_crouching"
+    },
+    {
+      "text": "The patrol is deciding their next move when the black bear lumbers towards them, snorting and grumbling. As the patrol scatters, s_c lets out a bloodcurdling caterwaul and lunges at the beast. {PRONOUN/s_c/subject/CAP} {VERB/s_c/duck/ducks} beneath a massive swipe and {VERB/s_c/rake/rakes} {PRONOUN/s_c/poss} claws across its nose. Reeling back with a roar, the bear stumbles and retreats, giving s_c the chance to race back to the patrol. The cats regroup, shaken but relieved to have escaped with their pelts intact.",
+      "exp": 30,
+      "frequency": 2,
+      "stat_skill": [
+        "FIGHTER,2"
+      ],
+      "can_have_stat": [
+        "any"
+      ],
+      "relationships": [
+        {
+          "cats_to": [
+            "s_c"
+          ],
+          "cats_from": [
+            "patrol",
+            "some_clan"
+          ],
+          "mutual": false,
+          "values": [
+            "trust",
+            "like"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was impressed that cat_to stood {PRONOUN/cat_to/poss} ground to run off a black bear."
+          }
+        }
+      ],
+      "art": "gen_angry_cat_warrior"
+    },
+    {
+      "text": "As the patrol decides their next move, the brown bear suddenly charges, bellowing with fangs bared. s_c bounds forward with a howl and leaps onto the bear’s neck. The bear rears and clumsily swipes at itself as s_c clings on. Inspired by {PRONOUN/s_c/poss} courage, the patrol hisses and bristles in support. The bear starts to retreat, deciding they aren’t worth the trouble. s_c darts back to {PRONOUN/s_c/poss} Clanmates, pelt torn and a chunk of bear fur still caught in {PRONOUN/s_c/poss} teeth.",
+      "exp": 40,
+      "frequency": 2,
+      "stat_skill": [
+        "FIGHTER,3"
+      ],
+      "can_have_stat": [
+        "any"
+      ],
+      "injury": [
+        {
+          "cats": [
+            "s_c"
+          ],
+          "injuries": [
+            "torn pelt"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "scar": "s_c was scarred by a brown bear."
+      },
+      "relationships": [
+        {
+          "cats_to": [
+            "s_c"
+          ],
+          "cats_from": [
+            "patrol",
+            "some_clan"
+          ],
+          "mutual": false,
+          "values": [
+            "trust",
+            "like"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was baffled that cat_to attacked a brown bear and survived."
+          }
+        },
+        {
+          "cats_to": [
+            "patrol"
+          ],
+          "cats_from": [
+            "patrol"
+          ],
+          "mutual": false,
+          "values": [
+            "trust",
+            "like",
+            "comfort",
+            "respect"
+          ],
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from and cat_to bonded after surviving an encounter with a brown bear."
+          }
+        }
+      ],
+      "art": "gen_angry_cat_warrior"
     }
-]
+  ],
+  "fail_outcomes": [
+    {
+      "text": "r_c fails to identify its scent before the bear disappears further into the woods.",
+      "exp": 0,
+      "frequency": 4,
+      "relationships": [
+        {
+          "cats_to": [
+            "r_c"
+          ],
+          "cats_from": [
+            "some_clan",
+            "high_aggress"
+          ],
+          "mutual": false,
+          "values": [
+            "like",
+            "respect"
+          ],
+          "amount": -5,
+          "log": {
+            "cats_from": "cat_to wished cat_from had the guts to at least identify a bear on patrol."
+          }
+        }
+      ],
+      "art": "gen_found_scent_dangerous"
+    },
+    {
+      "text": "r_c freezes at the sight of the enormous bear and cannot tell what kind it is before it moves on.",
+      "exp": 0,
+      "frequency": 4,
+      "relationships": [
+        {
+          "cats_to": [
+            "r_c"
+          ],
+          "cats_from": [
+            "some_clan",
+            "high_aggress"
+          ],
+          "mutual": false,
+          "values": [
+            "like",
+            "respect"
+          ],
+          "amount": -5,
+          "log": {
+            "cats_from": "cat_to wished cat_from had the guts to at least identify a bear on patrol."
+          }
+        }
+      ],
+      "art": "gen_anxious1"
+    },
+    {
+      "text": "r_c creeps closer to identify the beast but is spotted. With a roar, the black bear swipes at {PRONOUN/r_c/object}, sending r_c tumbling across the leaf litter. {PRONOUN/r_c/subject/CAP} {VERB/r_c/scramble/scrambles} to {PRONOUN/r_c/poss} feet, and p_l rushes to help {PRONOUN/r_c/object} to safety. Thankfully, the bear is uninterested in finishing the job and lumbers away.",
+      "exp": 0,
+      "frequency": 3,
+      "injury": [
+        {
+          "cats": [
+            "r_c"
+          ],
+          "injuries": [
+            "claw-wound",
+            "mangled leg",
+            "mangled tail",
+            "torn pelt",
+            "broken bone"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "scar": "m_c was scarred after being mauled by a black bear.",
+        "death": "m_c was killed by their injuries after being mauled by a black bear."
+      },
+      "relationships": [
+        {
+          "cats_to": [
+            "p_l"
+          ],
+          "cats_from": [
+            "r_c"
+          ],
+          "mutual": false,
+          "values": [
+            "comfort",
+            "trust"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was grateful that cat_to helped {PRONOUN/cat_from/object} flee from a black bear."
+          }
+        }
+      ],
+      "art": "gen_scared_cat_warrior"
+    },
+    {
+      "text": "r_c sneaks towards the bear to try to identify it. Before {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, {PRONOUN/r_c/subject} {VERB/r_c/are/is} snout to snout with an angry, slobbering brown bear who swings its massive paw toward {PRONOUN/r_c/object}. r_c wails as {PRONOUN/r_c/subject} {VERB/r_c/are/is} mauled and tossed to the side, attempting to scrabble to safety when p_l grabs {PRONOUN/r_c/poss} scruff and pulls them both to safety. Luckily the bear is uninterested in finishing the job.",
+      "exp": 0,
+      "frequency": 3,
+      "injury": [
+        {
+          "cats": [
+            "r_c"
+          ],
+          "injuries": [
+            "claw-wound",
+            "mangled leg",
+            "mangled tail",
+            "torn pelt",
+            "broken bone"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "scar": "m_c was scarred after being mauled by a brown bear.",
+        "death": "m_c was killed by their injuries after being mauled by a brown bear."
+      },
+      "relationships": [
+        {
+          "cats_to": [
+            "p_l"
+          ],
+          "cats_from": [
+            "r_c"
+          ],
+          "mutual": false,
+          "values": [
+            "comfort",
+            "trust"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was grateful that cat_to helped {PRONOUN/cat_from/object} escape a brown bear."
+          }
+        }
+      ],
+      "art": "gen_scared_cat_warrior"
+    },
+    {
+      "text": "r_c sneaks towards the bear to try to identify it. Before {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, {PRONOUN/r_c/subject} {VERB/r_c/are/is} snout to snout with an angry, slobbering brown bear who swings its massive paw toward {PRONOUN/r_c/object} batting {PRONOUN/r_c/object} effortlessly into a nearby tree. The patrol scatters when they see r_c is no longer moving.",
+      "exp": 0,
+      "frequency": 3,
+      "dead_cats": [
+        "r_c"
+      ],
+      "history_text": {
+        "death": "m_c was killed by a brown bear."
+      },
+      "art": "gen_dead_cat_ghost_EXPLICIT",
+      "art_clean": "gen_dead_cat"
+    },
+    {
+      "text": "While the patrol decides what to do, the black bear scents them, charging through the undergrowth toward them. The beast lashes out wildly, leaving multiple injured before the patrol manages to escape.",
+      "exp": 0,
+      "frequency": 2,
+      "injury": [
+        {
+          "cats": [
+              "r_c",
+            "multi"
+          ],
+          "injuries": [
+            "claw-wound",
+            "mangled leg",
+            "mangled tail",
+            "torn pelt",
+            "broken bone"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "death": "m_c died of {PRONOUN/m_c/poss} injuries after a black bear attack.",
+        "scar": "m_c was scarred on patrol by a black bear."
+      },
+      "art": "gen_scared_cat_warrior"
+    },
+    {
+      "text": "While the patrol decides what to do, the brown bear scents them, charging through the undergrowth toward them with a mighty roar. The terrible beast mauls the patrol, razing their bodies with claw and fang before they are able to escape.",
+      "exp": 0,
+      "frequency": 2,
+      "injury": [
+        {
+          "cats": [
+            "patrol"
+          ],
+          "injuries": [
+            "claw-wound",
+            "mangled leg",
+            "mangled tail",
+            "torn pelt",
+            "broken bone"
+          ],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "death": "m_c died of {PRONOUN/m_c/poss} injuries after a brown bear attack.",
+        "scar": "m_c was scarred on patrol by a brown bear."
+      },
+      "art": "gen_scared_cat_warrior"
+    },
+    {
+      "text": "While the patrol decides what to do, the brown bear scents them, charging through the undergrowth toward them with a mighty roar. The carnage is instant as the massive creature's teeth crunch down on poor r_c and its paws raze p_l. The survivors return to camp harrowed.",
+      "exp": 0,
+      "frequency": 2,
+      "dead_cats": [
+        "r_c",
+        "p_l"
+      ],
+      "injury": [
+        {
+          "cats": [
+            "patrol",
+            "-r_c",
+            "-p_l"
+          ],
+          "injuries": [
+            "shock",
+              "non_lethal"
+          ],
+          "scars": [],
+          "no_results": false
+        }
+      ],
+      "history_text": {
+        "death": "m_c was killed by a brown bear."
+      },
+      "art": "gen_dead_cat_ghost_EXPLICIT",
+      "art_clean": "gen_dead_cat"
+    }
+  ]
+}
+  ]

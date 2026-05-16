@@ -242,7 +242,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to the m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
+                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
                 }
             },
             {
@@ -296,7 +296,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to the m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
+                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
                 }
             },
             {
@@ -342,7 +342,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to the m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
+                    "cats_from": "n_c:0 left {PRONOUN/n_c:0/poss} kit to m_c, trusting {PRONOUN/m_c/object} to raise {PRONOUN/n_c:1/object}."
                 }
             },
             {
@@ -356,7 +356,7 @@
                 }
             }
         ]
-    },  
+    },
     {
         "event_id": "gen_new_cat_anypolymate1",
         "location": ["any"],
@@ -378,7 +378,8 @@
                 "old_name",
                 "loner",
                 "status:warrior",
-                "mate:m_c,r_c"
+                "mate:m_c,r_c",
+                "age:mate"
             ]
         ],
         "relationships": [
@@ -567,6 +568,62 @@
             }
         ]
     },
+        {
+    "event_id": "gen_new_cat_lonerapp1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 4,
+    "event_text": "m_c finds a young cat who asks to join the Clan. The loner is welcomed into the Clan and renamed n_c:0.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "loner",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 20,
+            "log": {
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
+                }
+        }
+    ]
+},
+    {
+    "event_id": "gen_new_cat_lonerapp2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new loner friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
+    "m_c": {
+        "age": ["adolescent"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "loner",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "respect"],
+            "amount": 30,
+            "log": {
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
+                }
+        }
+    ]
+},
     {
         "event_id": "gen_new_cat_anykittypet1",
         "location": ["any"],
@@ -707,6 +764,62 @@
             }
         ]
     },
+            {
+    "event_id": "gen_new_cat_kittypetapp1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 4,
+    "event_text": "m_c finds a young cat who asks to join the Clan. The kittypet is welcomed into the Clan and renamed n_c:0.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "kittypet",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 20,
+            "log": {
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
+                }
+        }
+    ]
+},
+    {
+    "event_id": "gen_new_cat_kittypetapp2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new kittypet friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
+    "m_c": {
+        "age": ["adolescent"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "kittypet",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "respect"],
+            "amount": 30,
+            "log": {
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
+                }
+        }
+    ]
+},
     {
         "event_id": "gen_new_cat_anyrogue1",
         "location": ["any"],
@@ -845,7 +958,62 @@
             }
         ]
     },
-
+        {
+    "event_id": "gen_new_cat_rogueapp1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 4,
+    "event_text": "m_c finds a young cat who asks to join the Clan. The rogue is welcomed into the Clan and renamed n_c:0.",
+    "m_c": {
+        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "rogue",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 20,
+            "log": {
+                    "cats_from": "m_c found n_c:0 and brought {PRONOUN/n_c:0/object} into the Clan."
+                }
+        }
+    ]
+},
+    {
+    "event_id": "gen_new_cat_rogueapp2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "m_c couldn't keep {PRONOUN/m_c/poss} new rogue friend a secret forever. The two quietly came back to camp one day, m_c cheering the loudest when n_c:0 is welcomed as an apprentice of c_n.",
+    "m_c": {
+        "age": ["adolescent"],
+        "status": ["any"]
+    },
+    "new_cat": [
+        ["new_name",
+        "rogue",
+        "status:apprentice"]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "respect"],
+            "amount": 30,
+            "log": {
+                    "cats_from": "m_c and n_c:0 became friends along the border before the latter joined the Clan."
+                }
+        }
+    ]
+},
     {
         "event_id": "gen_new_cat_anyotherclancat1",
         "location": ["any"],
@@ -865,7 +1033,7 @@
             ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -905,7 +1073,7 @@
            }
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -935,13 +1103,13 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan", 
+            "old_name",
+            "backstory:ostracized_warrior,disgraced1,disgraced2,otherclan1",
             "status:warrior"
           ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -962,7 +1130,7 @@
                 "amount": -10,
                 "mutual": true,
                 "log": {
-                    "cats_from": "from_cat was suspicious of n_c:0 for defecting from {PRONOUN/n_c:0/poss} Clan during a war."
+                    "cats_from": "cat_from was suspicious of n_c:0 for defecting from {PRONOUN/n_c:0/poss} Clan during a war."
                 }
             }
         ]
@@ -981,13 +1149,13 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan", 
+            "old_name",
+            "backstory:ostracized_warrior,disgraced1,disgraced2,disgraced3,otherclan1",
             "status:warrior"
           ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1008,7 +1176,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was suspicious of to_cat for defecting from {PRONOUN/to_cat/poss} Clan during a war and abandoning {PRONOUN/to_cat/poss} post as deputy."
+                    "cats_from": "cat_from was suspicious of cat_to for defecting from {PRONOUN/cat_to/poss} Clan during a war and abandoning {PRONOUN/cat_to/poss} post as deputy."
                 }
             }
         ]
@@ -1027,13 +1195,13 @@
         },
         "new_cat": [
           [
-            "old_name", 
-            "backstory:medicine_cat", 
-            "status:medicine_cat"
+            "old_name",
+            "backstory:medicine_cat",
+            "status:medicine cat"
           ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1054,7 +1222,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat was suspicious of to_cat for defecting from {PRONOUN/to_cat/poss} Clan during a war and abandoning {PRONOUN/to_cat/poss} post as medicine cat."
+                    "cats_from": "cat_from was suspicious of cat_to for defecting from {PRONOUN/cat_to/poss} Clan during a war and abandoning {PRONOUN/cat_to/poss} post as medicine cat."
                 }
             }
         ]
@@ -1081,7 +1249,7 @@
             ]
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -1
         },
         "relationships": [
@@ -1102,7 +1270,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat realized how difficult it must have been for to_cat to join a warring Clan with newborn kits."
+                    "cats_from": "cat_from realized how difficult it must have been for cat_to to join a warring Clan with newborn kits."
                 }
             }
         ]
@@ -1113,7 +1281,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 2,
-        "event_text": "m_c slinks into o_c_n's nursery in the dead of night, making off with an entire litter of their kits. Rumour has it that their parent abandoned their Clan to try and track down the kits - even better for c_n!",
+        "event_text": "m_c slinks into o_c_n's nursery in the dead of night, making off with an entire litter of their kits. Rumor has it that their parent abandoned their Clan to try and track down the kits — even better for c_n!",
         "m_c": {
             "status": [
                 "leader",
@@ -1132,7 +1300,8 @@
                 "age:has_kits",
                 "former clancat",
                 "meeting",
-                "new_name"
+                "new_name",
+                "backstory:stolenkit2"
             ],
             [
                 "litter",
@@ -1150,12 +1319,12 @@
                 "values": ["trust", "like"],
                 "amount": -60,
                 "log": {
-                    "cats_from": "to_cat stole from_cat's kits, and from_cat will do anything to get them back."
+                    "cats_from": "cat_to stole cat_from's kits, and cat_from will do anything to get them back."
                 }
             }
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -5
         }
     },
@@ -1198,12 +1367,12 @@
                 "values": ["trust", "like"],
                 "amount": -60,
                 "log": {
-                    "cats_from": "to_cat stole from_cat's kits, and from_cat will do anything to get them back."
+                    "cats_from": "cat_to stole cat_from's kits, and cat_from will do anything to get them back."
                 }
             }
         ],
         "other_clan": {
-            "current_rep": ["any"],
+            "current_rep": ["hostile"],
             "changed": -5
         }
     },
@@ -1234,7 +1403,7 @@
                 "values": ["trust", "like"],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat was glad that to_cat shared some herbs with c_n during the war."
+                    "cats_from": "cat_from was glad that cat_to shared some herbs with c_n during the war."
                 }
             }
         ],
@@ -1291,7 +1460,7 @@
                 "values": ["trust", "like"],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat was glad that to_cat shared some herbs with c_n during the war."
+                    "cats_from": "cat_from was glad that cat_to shared some herbs with c_n during the war."
                 }
             }
         ],
@@ -1336,7 +1505,7 @@
                 "values": ["trust", "like"],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat was glad that to_cat shared some fresh-kill with c_n during the war."
+                    "cats_from": "cat_from was glad that cat_to shared some fresh-kill with c_n during the war."
                 }
             }
         ],
@@ -1393,7 +1562,7 @@
                 "values": ["trust", "like"],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat was glad that to_cat shared fresh-kill with c_n during the war."
+                    "cats_from": "cat_from was glad that cat_to shared fresh-kill with c_n during the war."
                 }
             }
         ],
@@ -1410,5 +1579,2324 @@
                 "adjust": "increase_30"
             }
         ]
+    },
+        {
+    "event_id": "gen_new_cat_war_sololoner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a loner caught in the crossfire and, working together, help get {PRONOUN/n_c:0/subject} to safety.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "cat_from helped cat_to get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
     }
+},
+    {
+    "event_id": "gen_new_cat_war_solorogue",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a rogue attempting to pick off wounded Clan cats and, working together, chase {PRONOUN/n_c:0/object} away.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "cat_from chased cat_to away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_solokittypet",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a kittypet caught in the crossfire and, working together, help get {PRONOUN/n_c:0/object} to safety.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "cat_from helped cat_to get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 1
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 1
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_duoloner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot two loners caught in the crossfire and, working together, help the pair get to safety.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "loner",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "cat_from helped cat_to get to safety during a battle against another Clan."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "cat_from helped cat_to get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_duorogue",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot two rogues attempting to pick off injured Clan cats and, working together, chase the pair away.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "rogue",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "cat_from chased cat_to away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "cat_from chased cat_to away after catching {PRONOUN/n_c:0/object} harming other Clan cats during a battle."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_duokittypet",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot two kittypets caught in the crossfire and, working together, help the pair get to safety.",
+    "m_c": {
+        "status": ["apprentice", "warrior", "deputy", "leader"]
+    },
+    "new_cat": [
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ],
+    [
+    "old_name",
+    "kittypet",
+    "meeting",
+    "exists"
+    ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "cat_from helped cat_to get to safety during a battle against another Clan."
+                }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:1"],
+            "mutual": true,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "cat_from helped cat_to get to safety during a battle against another Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+    },
+    {
+    "event_id": "gen_new_cat_war_mediator1",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "When a battle against o_c_n spills into a loner's territory, n_c:0 successfully mediates between the two battle patrols so no further harm would come to pass.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 20,
+                "log": {
+                    "cats_from": "cat_from was thankful that cat_to prevented a bloody battle against an enemy Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_mediator2",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 2,
+    "event_text": "When a battle against o_c_n spills into a loner's territory, n_c:0's attempts to mediate between the two Clans ends with {PRONOUN/n_c:0/poss} being chased away.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "cat_from thinks that cat_to shouldn't have stuck {PRONOUN/n_c:0/poss} nose in c_n's business."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -2
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 2
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_lonertruce",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "In the midst of a tense stalemate between c_n and o_c_n, it is the suggestion of a passing group of loners that allows for a night of peace between the two Clans.",
+    "new_cat": [
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "loner",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "cat_from will remember the loners who gave their Clan a night of badly needed respite during a war."
+                }
+        },
+        {
+            "cats_from": ["clan", "high_aggress"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "cat_from will remember the loners who foiled a perfectly good battle for their own bleeding hearts."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_rogueretaliate",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "In the midst of a vicious battle between c_n and o_c_n, a large group of rogues takes a chance to weaken both of their enemies in one fell swoop. They did not expect the two Clans to quickly make a temporary truce and retaliate.",
+    "new_cat": [
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "rogue",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -10,
+            "log": {
+                    "cats_from": "cat_from will remember the rogue who dared to attack c_n so brazenly during a battle against an enemy Clan."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
+},
+    {
+    "event_id": "gen_new_cat_war_kittypetpeace",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["war"],
+    "frequency": 1,
+    "event_text": "Before a major battle between c_n and o_c_n can take place, their battlefield is overrun by a group of kittypets who refuse to leave and let them fight. Instead, the two Clans intermingle under the hopeful eyes of the gathered cats.",
+    "new_cat": [
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"],
+        ["old_name",
+        "kittypet",
+        "meeting",
+        "exists"]
+    ],
+      "exclude_involved": [
+    "m_c",
+    "r_c"
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": 10,
+            "log": {
+                    "cats_from": "cat_from will remember the kittypet who dared to stop an entire battle against an enemy Clan."
+                }
+        },
+        {
+            "cats_from": ["clan", "high_lawful"],
+            "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
+            "mutual": false,
+            "values": ["trust", "like"],
+            "amount": -15,
+            "log": {
+                    "cats_from": "cat_from really thinks that this kittypet should have left the peacemaking for the mediators."
+                }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 3
+    },
+    "other_clan": {
+        "current_rep": ["hostile"],
+        "changed": 3
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelp",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. A half-moon after the birth, n_c:0 bids farewell to the Clan and thanks m_c again for {PRONOUN/m_c/poss} help.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn",
+            "meeting",
+            "unknown"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from sought cat_to's help when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} giving birth."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from heard stories about how cat_to helped n_c:0 when {PRONOUN/n_c:0/subject} gave birth to cat_from."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 2
+    }
+},
+{
+  "event_id": "gen_new_cat_otherclanexile1_unknown",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "exclude_involved": [
+    "m_c",
+    "n_c:0"
+  ],
+  "frequency": 2,
+  "event_text": "At the Gathering, o_c_n's leader announces they have exiled a warrior for an unforgivable crime. They advise the other Clans to keep their guards up.",
+  "m_c": {
+    "age": [
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ]
+  },
+  "new_cat": [
+    [
+      "former clancat",
+      "status:warrior",
+      "meeting",
+      "unknown",
+      "backstory:disgraced1, disgraced2",
+      "new_name"
+    ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan for something terrible."
+                }
+            }
+        ],
+  "other_clan": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": 0
+  }
+},
+{
+  "event_id": "gen_new_cat_otherclanexile2_unknown",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "exclude_involved": [
+    "m_c",
+    "n_c:0"
+  ],
+  "frequency": 1,
+  "event_text": "At the Gathering, o_c_n's deputy takes their place among the other leaders and declares the previous leader was driven out, but may still stalk the borders.",
+  "m_c": {
+    "age": [
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ]
+  },
+  "new_cat": [
+    [
+      "former clancat",
+      "status:warrior",
+      "meeting",
+      "unknown",
+      "backstory:disgraced3",
+      "new_name"
+    ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was driven out of {PRONOUN/n_c:0/poss} old Clan and is no longer its leader."
+                }
+            }
+        ],
+  "other_clan": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": 0
+  }
+},
+{
+  "event_id": "gen_new_cat_otherclanexile3_unknown",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "exclude_involved": [
+    "m_c",
+    "n_c:0"
+  ],
+  "frequency": 1,
+  "event_text": "At the Gathering, o_c_n's leader announces their medicine cat has been exiled for a terrible transgression. They warn the other Clans that the exiled cat is not to be trusted and should be killed on sight.",
+  "m_c": {
+    "age": [
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ]
+  },
+  "new_cat": [
+    [
+      "former clancat",
+      "status:medicine cat",
+      "meeting",
+      "unknown",
+      "backstory:disgraced2, disgraced3",
+      "new_name"
+    ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust", "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan for something terrible."
+                }
+            }
+        ],
+  "other_clan": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": 0
+  }
+},
+{
+  "event_id": "gen_new_cat_otherclanexile4_unknown",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "exclude_involved": [
+    "m_c",
+    "n_c:0"
+  ],
+  "frequency": 1,
+  "event_text": "At the Gathering, o_c_n's leader announces their deputy did something terrible and was exiled. They look mournful as they deliver the news and advise the others to watch their borders closely.",
+  "m_c": {
+    "age": [
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ]
+  },
+  "new_cat": [
+    [
+      "former clancat",
+      "status:warrior",
+      "meeting",
+      "unknown",
+      "backstory:disgraced3",
+      "new_name"
+    ]
+  ],
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social"],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+	        "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from heard n_c:0 was exiled from {PRONOUN/n_c:0/poss} old Clan and is no longer its deputy."
+                }
+            }
+        ],
+  "other_clan": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": 0
+  }},
+    {
+    "event_id": "gen_new_cat_queenhelpabandon",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. The night after the birth, the Clan awakes to helpless mewls and the fading scent of the loner.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["clan", "high_social", "high_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "respect"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from was disgusted that cat_to would abandon {PRONOUN/cat_to/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "high_social", "low_aggress", "high_stable"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["comfort"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from felt sympathetic thinking about the terrible circumstances that must have convinced cat_to to give up {PRONOUN/cat_to/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_to helped care for cat_from after {PRONOUN/cat_from/poss} parent abandoned {PRONOUN/cat_from/object}."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "high_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -30,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "low_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit, though {PRONOUN/cat_from/subject} believed there must have been a reason."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": -2
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpdeath",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard, and even m_c's knowledge cannot save {PRONOUN/n_c:0/object}. The Clan is left with n_c:0's litter.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner",
+        "dead"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_to cared for cat_from after {PRONOUN/cat_from/poss} parent died giving birth to {PRONOUN/cat_from/object}."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 0
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpmurder",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard. m_c watches {PRONOUN/n_c:0/object} struggle and bleed out. The Clan could use more kits, after all.",
+    "m_c": {
+        "status": ["medicine cat"],
+        "trait": ["bloodthirsty", "cold", "cunning", "sneaky"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner",
+        "dead"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_to cared for cat_from after {PRONOUN/cat_from/poss} parent died giving birth to {PRONOUN/cat_from/object}."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -3
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpadopt",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, n_c:0 admits {PRONOUN/n_c:0/subject} cannot care for them. r_c steps up to take them as {PRONOUN/r_c/poss} own.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "adoptive:r_c",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from grew up hearing about how m_c helped {PRONOUN/cat_from/poss} biological parent give birth to {PRONOUN/cat_from/object}."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "high_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -30,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "low_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit, though {PRONOUN/cat_from/subject} believed there must have been a reason."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 1
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpsteal",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, r_c orders n_c:0 to leave camp. These kits belong to c_n, now.",
+    "m_c": {
+        "status": ["medicine cat"],
+        "trait": ["-bloodthirsty", "-cold", "-fierce"]
+    },
+    "r_c": {
+        "status": ["leader"],
+        "trait": ["bloodthirsty", "fierce", "cold", "cunning", "shameless"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from grew up hearing about how m_c helped {PRONOUN/cat_from/poss} biological parent give birth to {PRONOUN/cat_from/object}."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "high_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -30,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "low_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit, though {PRONOUN/cat_from/subject} believed there must have been a reason."
+            }
+        },
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "trust", "comfort"],
+            "amount": -40,
+            "log": {
+                "cats_from": "cat_to stole cat_from's kits from {PRONOUN/cat_from/object}, and cat_from will do anything to get them back."
+            }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["trust", "comfort"],
+            "amount": -20,
+            "log": {
+                "cats_from": "cat_from aided a loner in giving birth and was horrified when cat_to forced the loner out of the camp and stole {PRONOUN/n_c:0/poss} kits."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -5
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpstealdeath",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, r_c orders n_c:0 to leave camp. These kits belong to c_n, now. n_c:0 fights with all the fury of a new parent, but {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} weak from the birth. The body is buried far from camp, where the kits will never find it.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "r_c": {
+        "status": ["leader"],
+        "trait": ["bloodthirsty", "fierce", "cold", "cunning", "shameless"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner",
+        "dead"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "injury": [
+        {
+            "cats": ["r_c"],
+            "injuries": ["battle_injury"]
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from grew up hearing about how m_c helped {PRONOUN/cat_from/poss} biological parent give birth to {PRONOUN/cat_from/object}."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "high_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -30,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
+            }
+        },
+        {
+            "cats_from": ["n_c:1", "low_aggress"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit, though {PRONOUN/cat_from/subject} believed there must have been a reason."
+            }
+        },
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["trust", "comfort"],
+            "amount": -20,
+            "log": {
+                "cats_from": "cat_from aided a loner in giving birth and was horrified when cat_to killed the loner and stole {PRONOUN/n_c:0/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "high_social", "high_stable"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "comfort"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from thought it was fox-hearted of cat_to to steal kits from a loner."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_social", "low_stable", "high_aggress"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from approved of cat_to strengthening c_n by taking kits from a loner."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -5
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelppayment",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, r_c insists n_c:0 leave a kit with c_n as payment. n_c:0 is in disbelief but is outnumbered, so {PRONOUN/n_c:0/subject} {VERB/n_c:0/surrender/surrenders} n_c:2 to the Clan.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "r_c": {
+        "status": ["leader"],
+        "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning", "sneaky"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn",
+            "meeting"
+        ],
+        [
+            "parent:0",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from sought cat_to's help when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} giving birth."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from heard stories about how cat_to helped n_c:0 when {PRONOUN/n_c:0/subject} gave birth to cat_from."
+            }
+        },
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_to stole one of cat_from's kits as \"payment\" for m_c's help during the kitting."
+            }
+        },
+        {
+            "cats_from": ["n_c:2"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
+            }
+        },
+        {
+            "cats_from": ["clan", "high_social", "low_aggress"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from thought it was cruel of cat_to to force a loner to surrender one of {PRONOUN/cat_to/poss} kits to c_n."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_social", "high_aggress", "low_lawful"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "respect"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from approved of cat_to strengthening c_n by keeping a loner's kit as payment for help with {PRONOUN/n_c:0/poss} kitting."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": -3
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpgaslight",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, m_c breaks the news to n_c:0 that one kit was stillborn. Once n_c:0 has left the territory, m_c allows n_c:2 out of the medicine den to join {PRONOUN/n_c:2/poss} new Clan.",
+    "m_c": {
+        "status": ["medicine cat"],
+        "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning", "sneaky"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn",
+            "meeting"
+        ],
+        [
+            "parent:0",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from sought cat_to's help when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} giving birth."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from heard stories about how cat_to helped n_c:0 when {PRONOUN/n_c:0/subject} gave birth to cat_from."
+            }
+        },
+        {
+            "cats_from": ["n_c:2"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to abandoned {PRONOUN/cat_from/object} as a kit."
+            }
+        },
+        {
+            "cats_from": ["clan", "high_aggress", "low_stable", "low_social"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from was disgusted that cat_to would abandon one of {PRONOUN/cat_to/poss} own kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_aggress", "low_stable"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from didn't understand why cat_to would abandon one of {PRONOUN/cat_to/poss} own kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_aggress", "high_stable", "high_social"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from suspected cat_to wasn't being entirely honest about how n_c:2 was abandoned by {PRONOUN/n_c:2/poss} parent."
+            }
+        },
+        {
+            "cats_from": ["clan", "high_aggress", "low_stable", "high_social", "low_lawful"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from concluded that cat_to's story about n_c:0 abandoning n_c:2 was an excuse to keep a kit and strengthen c_n. cat_from approved of cat_to's plan and told no one."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpgiantlitter",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard; {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} an enormous litter and begs c_n to raise some of the kits. r_c agrees to adopt them.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn",
+            "meeting",
+            "unknown"
+        ],
+        [
+            "parent:0",
+            "adoptive:r_c",
+            "litter",
+            "age:newborn"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["trust", "respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from sought cat_to's help when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} giving birth."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from heard stories about how cat_to helped n_c:0 when {PRONOUN/n_c:0/subject} gave birth to cat_from."
+            }
+        },
+        {
+            "cats_from": ["n_c:2"],
+            "cats_to": ["n_c:0"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from heard that cat_to left {PRONOUN/cat_from/object} as a kit because {PRONOUN/cat_to/subject} could not care for so many kits."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpchildsupport",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard, and m_c cannot save {PRONOUN/n_c:0/object}. r_c organizes a search party to track down any cat who knew n_c:0. c_n finds n_c:1, who agrees to raise the kits in n_c:0's memory.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "r_c": {
+        "status": ["leader"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner",
+        "dead"
+        ],
+        [
+            "meeting",
+            "exists",
+            "loner",
+            "age:senior adult"
+        ],
+        [
+            "parent:0",
+            "adoptive:1",
+            "litter",
+            "age:newborn",
+            "meeting"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:2"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from heard stories about how cat_to helped n_c:0 when {PRONOUN/n_c:0/subject} gave birth to cat_from."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "trust"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from appreciated that cat_to reached out to {PRONOUN/cat_from/object} after n_c:0 died in kitting."
+            }
+        },
+        {
+            "cats_from": ["clan", "high_social", "high_lawful"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from approved of cat_to seeking out the living relatives of an outsider to raise {PRONOUN/n_c:0/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_social", "high_lawful"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -8,
+            "log": {
+                "cats_from": "cat_from thought it was a waste of time for cat_to to track down the living relatives of a dead outsider to raise {PRONOUN/n_c:0/poss} kits."
+            }
+        },
+        {
+            "cats_from": ["clan", "low_social", "low_lawful", "high_aggress"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -12,
+            "log": {
+                "cats_from": "cat_from thought cat_to should have kept the kits of a dead outsider to strengthen c_n instead of leaving them to another outsider."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 2
+    }
+},
+{
+    "event_id": "gen_new_cat_queenhelpimpliedhalfclan",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "exclude_involved": ["r_c"],
+    "frequency": 1,
+    "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, n_c:0 demands that c_n take in and raise the kits, insisting that they have Clan heritage.",
+    "m_c": {
+        "status": ["medicine cat"]
+    },
+    "r_c": {
+        "age": ["young adult", "adult", "senior adult"],
+        "trait": ["charismatic"],
+        "gender": ["male"]
+    },
+    "new_cat": [
+        ["can_birth",
+        "meeting",
+        "exists",
+        "old_name",
+        "loner"
+        ],
+        [
+            "parent:0",
+            "litter",
+            "age:newborn",
+            "backstory:outsider2"
+        ]
+    ],
+    "relationships": [
+        {
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from appreciated cat_to's help during {PRONOUN/cat_from/poss} kitting."
+            }
+        },
+        {
+            "cats_from": ["n_c:1"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 15,
+            "log": {
+                "cats_from": "cat_from was cared for by cat_to after {PRONOUN/cat_from/poss} parent left {PRONOUN/cat_from/object} to the Clan."
+            }
+        },
+        {
+            "cats_from": ["some_clan", "high_social", "low_stable", "low_lawful"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["trust"],
+            "amount": -15,
+            "log": {
+                "cats_from": "After n_c:0 left {PRONOUN/n_c:0/poss} kits to the Clan and claimed they had Clan heritage, cat_from gossiped that cat_to might have been involved."
+            }
+        }
+    ],
+    "outsider": {
+        "current_rep": ["any"],
+        "changed": 1
+    }
+},
+    {
+        "event_id": "gen_newcat_senior_longwayloner",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c encounters a loner who claims {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} heard tales of c_n from far, far away. n_c:0 has long traveled to reach them and wishes to join the Clan.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "warrior"
+            ],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "loner",
+                "age:senior",
+                "old_name"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_newcat_senior_longwayrogue",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c encounters a rogue who claims {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} heard tales of c_n from far, far away. n_c:0 has long traveled to reach them and wishes to join the Clan.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "warrior"
+            ],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "rogue",
+                "age:senior",
+                "old_name"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 1
+        }
+    },
+    {
+    "event_id": "gen_newcat_senior_kittypetdeadowner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "m_c finds a lost, elderly kittypet whose owner is dead. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/are/is} looking for a new home and m_c meows that c_n would be willing to care for {PRONOUN/n_c:0/object}.",
+    "m_c": {
+        "status": ["leader", "deputy", "medicine cat"]
+    },
+      "new_cat": [
+        ["kittypet", "age:senior", "old_name"]
+    ],
+    "outsider": {
+        "current_rep": ["welcoming"],
+        "changed": 1
+    }
+},
+    {
+        "event_id": "gen_newcat_senior_loneliestloner",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 3,
+        "exclude_involved": ["m_c"],
+        "event_text": "An old loner pleads to join c_n. {PRONOUN/n_c:0/subject/CAP} always enjoyed {PRONOUN/n_c:0/poss} life of solitude... until now. n_c:0 is thrilled to take a new name when {PRONOUN/n_c:0/subject} {VERB/n_c:0/join/joins} the Clan.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "warrior"
+            ],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "loner",
+                "age:senior",
+                "new_name"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "neutral",
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_newcat_senior_hospiceloner",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "A elderly loner approaches c_n and announces {PRONOUN/n_c:0/subject} {VERB/n_c:0/think/thinks} {PRONOUN/n_c:0/subject} will die soon. n_c:0 asks if {PRONOUN/n_c:0/subject} can live out {PRONOUN/n_c:0/poss} last moons under the care of c_n and its medicine cats. The Clan obliges.",
+        "exclude_involved": [
+            "m_c"
+        ],
+        "new_cat": [
+            [
+                "loner",
+                "age:senior"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 2
+        }
+    },
+    {
+    "event_id": "gen_newcat_senior_securityloner",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "An old loner asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the loner decides to adopt a Clan-like name: n_c:0.",
+    "new_cat": [
+        ["loner", "age:senior", "new_name"]
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 1
+    },
+        "exclude_involved": ["m_c"]
+    },
+        {
+    "event_id": "gen_newcat_senior_securityrogue",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "An old rogue asks to join c_n, seeking community and security in {PRONOUN/n_c:0/poss} golden years. When welcomed in, the rogue decides to adopt a Clan-like name: n_c:0.",
+    "new_cat": [
+        ["rogue", "age:senior", "new_name"]
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 1
+    },
+        "exclude_involved": ["m_c"]
+    },
+ {
+    "event_id": "gen_new_cat_rogueredemption_success1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c accepts.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "-bloodthirsty",
+        "-cold",
+        "-strict",
+        "-vengeful"  
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior adult",
+        "exists"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": 1
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from was impressed that cat_to gave an old rogue a chance to join the clan."
+        }
+      },
+     {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c",
+            "some_clan"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+            "comfort"
+        ],
+        "amount": 5,
+        "log": {
+          "cats_from": "cat_from was grateful to be welcomed into c_n by cat_to."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_success2",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c accepts.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "-bloodthirsty",
+        "-cold",
+        "-strict", 
+        "-vengeful"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior",
+        "exists"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": 1
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from was impressed that cat_to gave an old rogue a chance to join the clan."
+        }
+      },
+      {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c",
+            "some_clan"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+            "comfort"
+        ],
+        "amount": 5,
+        "log": {
+          "cats_from": "cat_from was grateful to be welcomed into c_n by cat_to."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_deny1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c turns {PRONOUN/n_c:0/object} away.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "-bloodthirsty"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior adult",
+        "exists",
+         "old_name",
+          "meeting",
+          "unknown"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -1
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from thought cat_to should've given an old rogue a chance to join the clan."
+        }
+      },
+                        {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from was disappointed that cat_to shunned {PRONOUN/cat_from/object}."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0",
+            "high_aggress",
+            "low_stable"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from regretted ever offering c_n their forgiveness."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_deny2",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c turns {PRONOUN/n_c:0/object} away.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "-bloodthirsty"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior",
+        "exists",
+        "old_name",
+          "meeting",
+          "unknown"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -1
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "respect"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from thought cat_from should've given an old rogue a chance to join the clan."
+        }
+      },
+                {
+        "cats_from": [
+          "n_c:0"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -5,
+        "log": {
+          "cats_from": "cat_from was disappointed that cat_to shunned {PRONOUN/cat_from/object}."
+        }
+      },
+        {
+        "cats_from": [
+          "n_c:0",
+            "high_aggress",
+            "low_stable"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from regretted ever offering c_n their forgiveness."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_kill1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "bloodthirsty",
+          "vengeful"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior adult",
+        "exists",
+        "dead",
+          "old_name"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -3
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social",
+          "low_aggress"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "comfort",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from was stunned to see cat_to ruthlessly kill an old rogue who sought c_n's forgiveness."
+        }
+      },
+      {
+        "cats_from": [
+          "clan",
+          "high_aggress",
+            "low_lawful"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "trust",
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from approved of cat_to killing an old loner who once wronged c_n."
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "gen_new_cat_rogueredemption_kill2",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "m_c is called to the camp's entrance where n_c:0 waits, head ducked in respect. n_c:0 apologizes for any misdeeds, mischief, or hardship {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} caused c_n in the past and asks to join the Clan. m_c ruthlessly uses the opportunity to slay the nuisance where {PRONOUN/n_c:0/subject} {VERB/n_c:0/stand/stands}.",
+    "m_c": {
+      "status": [
+        "leader"
+      ],
+      "trait": [
+        "bloodthirsty",
+          "vengeful"
+      ],
+      "dies": false
+    },
+    "new_cat": [
+      [
+        "rogue",
+        "age:senior",
+        "exists",
+        "dead",
+          "old_name"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": -3
+    },
+    "relationships": [
+      {
+        "cats_from": [
+          "clan",
+          "high_social",
+          "low_aggress"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "comfort",
+          "trust"
+        ],
+        "amount": -15,
+        "log": {
+          "cats_from": "cat_from was stunned to see cat_to ruthlessly kill an old rogue who sought c_n's forgiveness."
+        }
+      },
+      {
+        "cats_from": [
+          "clan",
+          "high_aggress",
+            "low_lawful"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "like",
+          "respect"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from approved of cat_to killing an old rogue who once wronged c_n."
+        }
+      }
+    ]
+  }
 ]

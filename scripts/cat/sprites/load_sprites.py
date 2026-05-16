@@ -67,9 +67,29 @@ class Sprites:
         EYE_DATA = ujson.loads(read_file.read())
 
     with open(
-        "sprites/dicts/white_patches_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/white_patches_mostly_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
-        WHITE_DATA = ujson.loads(read_file.read())
+        WHITE_MOSTLY_DATA = ujson.loads(read_file.read())
+    with open(
+        "sprites/dicts/white_patches_high_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        WHITE_HIGH_DATA = ujson.loads(read_file.read())
+    with open(
+        "sprites/dicts/white_patches_mid_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        WHITE_MID_DATA = ujson.loads(read_file.read())
+    with open(
+        "sprites/dicts/white_patches_little_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        WHITE_LITTLE_DATA = ujson.loads(read_file.read())
+    with open(
+        "sprites/dicts/white_patches_vitiligo_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        WHITE_VITILIGO_DATA = ujson.loads(read_file.read())
+    with open(
+        "sprites/dicts/white_patches_points_sprite_data.json", "r", encoding="utf-8"
+    ) as read_file:
+        WHITE_POINT_DATA = ujson.loads(read_file.read())
 
     def __init__(self):
         """Class that handles and hold all spritesheets.
@@ -245,7 +265,12 @@ class Sprites:
         data_jsons = (
             self.EYE_DATA,
             self.PELT_DATA,
-            self.WHITE_DATA,
+            self.WHITE_MOSTLY_DATA,
+            self.WHITE_HIGH_DATA,
+            self.WHITE_MID_DATA,
+            self.WHITE_LITTLE_DATA,
+            self.WHITE_VITILIGO_DATA,
+            self.WHITE_POINT_DATA,
             self.TORTIE_DATA,
             self.SKIN_DATA,
             self.SCAR_DATA,
@@ -267,6 +292,7 @@ class Sprites:
             "fadedarkforest",
             "fadeunknownresidence",
             "symbols",
+            "heterochromiamask",
         ]
 
         # separate from data_json list bc we need to handle it differently later
@@ -290,6 +316,9 @@ class Sprites:
         # Line art
         for sheet in self.POSE_DATA["spritesheet"]:
             self.make_group(sheet, (0, 0), sheet)
+
+        # Heterochromia mask
+        self.make_group("heterochromiamask", (0, 0), f"heterochromiamask")
 
         # Fading Fog
         for i in range(0, 3):

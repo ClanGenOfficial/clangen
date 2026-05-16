@@ -67,7 +67,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated s_c's clever conversation when they met with a o_c_n patrol."
+                            "cats_from": "cat_from appreciated s_c's clever conversation when they met with a o_c_n patrol."
                         }
                     }
                 ]
@@ -101,7 +101,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated s_c's ability to entertain when they met with a o_c_n patrol."
+                            "cats_from": "cat_from appreciated s_c's ability to entertain when they met with a o_c_n patrol."
                         }
                     }
                 ]
@@ -129,7 +129,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated s_c's conversational skills when they met with a o_c_n patrol."
+                            "cats_from": "cat_from appreciated s_c's conversational skills when they met with a o_c_n patrol."
                         }
                     }
                 ]
@@ -160,7 +160,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat appreciated s_c's conversational skills when they met with a o_c_n patrol."
+                            "cats_from": "cat_from appreciated s_c's conversational skills when they met with a o_c_n patrol."
                         }
                     }
                 ]
@@ -200,13 +200,13 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was frustrated when to_cat obliviously offended another Clan's patrol."
+                            "cats_from": "cat_from was frustrated when cat_to obliviously offended another Clan's patrol."
                         }
                     }
                 ]
             },
             {
-                "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious - and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
+                "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious — and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
                 "exp": 0,
                 "stat_trait": [
                     "vengeful",
@@ -232,7 +232,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was frustrated when to_cat was openly aggressive another Clan's patrol."
+                            "cats_from": "cat_from was frustrated when cat_to was openly aggressive another Clan's patrol."
                         }
                     }
                 ]
@@ -258,7 +258,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's aggression toward o_c_n."
+                            "cats_from": "cat_from was impressed by cat_to's aggression toward o_c_n."
                         }
                     }
                 ]
@@ -284,7 +284,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's aggression toward o_c_n."
+                            "cats_from": "cat_from was impressed by cat_to's aggression toward o_c_n."
                         }
                     }
                 ]
@@ -326,7 +326,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -335,7 +335,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     }
                 ]
@@ -372,7 +372,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was grateful fo s_c's skills in preventing a fight with o_c_n."
+                            "cats_from": "cat_from was grateful fo s_c's skills in preventing a fight with o_c_n."
                         }
                     },
                     {
@@ -380,7 +380,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -389,7 +389,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border and nearly started a fight."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border and nearly started a fight."
                         }
                     }
                 ]
@@ -423,7 +423,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was grateful for to_cat's sharp eyes preventing {PRONOUN/from_cat/object} from blatantly trespassing during a hunt."
+                            "cats_from": "cat_from was grateful for cat_to's sharp eyes preventing {PRONOUN/cat_from/object} from blatantly trespassing during a hunt."
                         }
                     }
                 ]
@@ -459,7 +459,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -468,7 +468,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     }
                 ]
@@ -482,7 +482,7 @@
                             "r_c"
                         ],
                         "injuries": [
-                            "battle_injury"
+                            "cat bite"
                         ],
                         "scars": [
                             "LEGBITE"
@@ -490,7 +490,8 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it."
+                    "scar": "m_c disrespected the border lines and was scarred by an enemy warrior for it.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior who caught {PRONOUN/m_c/object} trespassing."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3,
@@ -500,7 +501,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -509,7 +510,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     }
                 ],
@@ -536,7 +537,7 @@
                             "r_c"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -545,7 +546,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat caught a rabbit from across the border."
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
                         }
                     }
                 ]
@@ -574,7 +575,7 @@
             ]
         },
         "frequency": 2,
-        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. Oh! {PRONOUN/p_l/subject/CAP} can smell some raspberries nearby - but it seems that they're just over the border.",
+        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. Oh! {PRONOUN/p_l/subject/CAP} can smell some raspberries nearby — but it seems that they're just over the border.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that trespassing isn't worth it in this case.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -617,7 +618,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. p_l forces {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurts out that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a medicine cat. The warriors either don't hear {PRONOUN/p_l/object} or don't care - they get in a good scratch before p_l can retreat.",
+                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. p_l forces {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurts out that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a medicine cat. The warriors either don't hear {PRONOUN/p_l/object} or don't care — they get in a good scratch before p_l can retreat.",
                 "exp": 0,
                 "injury": [
                     {
@@ -626,8 +627,7 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
@@ -661,7 +661,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border - while p_l understands it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/lecture/lectures} the apprentice on the importance of respecting border lines.",
+                "text": "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border — while p_l understands it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/lecture/lectures} the apprentice on the importance of respecting border lines.",
                 "exp": 10,
                 "other_clan_rep": 2,
                 "frequency": 4
@@ -697,7 +697,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by to_cat's quick thinking during a dog attack."
+                            "cats_from": "cat_from was impressed by cat_to's quick thinking during a dog attack."
                         }
                     }
                 ]
@@ -726,7 +726,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat found to_cat's compassion toward a hurt o_c_n warrior admirable."
+                            "cats_from": "cat_from found cat_to's compassion toward a hurt o_c_n warrior admirable."
                         }
                     }
                 ]
@@ -766,7 +766,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched to_cat harshly reprimand a stray o_c_n apprentice and couldn't help feeling like it was too much."
+                            "cats_from": "cat_from watched cat_to harshly reprimand a stray o_c_n apprentice and couldn't help feeling like it was too much."
                         }
                     }
                 ]
@@ -795,15 +795,12 @@
                         "injuries": [
                             "bite-wound",
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "NORIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} scarred by a dog.",
-                    "death": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} killed by a dog."
+                    "death": "m_c died of injuries inflicted by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -833,7 +830,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how to_cat's patrol jumped to hasty conclusions about a o_c_n scent."
+                            "cats_from": "cat_from saw how cat_to's patrol jumped to hasty conclusions about a o_c_n scent."
                         }
                     }
                 ]
@@ -870,7 +867,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border - while p_l understands that it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/give/gives} the apprentice a firm lecture on the importance of respecting border lines.",
+                "text": "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border — while p_l understands that it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/give/gives} the apprentice a firm lecture on the importance of respecting border lines.",
                 "exp": 10,
                 "other_clan_rep": 2,
                 "frequency": 4
@@ -939,15 +936,12 @@
                         "injuries": [
                             "bite-wound",
                             "mangled tail"
-                        ],
-                        "scars": [
-                            "TAILSCAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
-                    "death": "m_c followed the scent of a trespassing cat and was killed by a dog."
+                    "death": "m_c died from injuries inflicted by a dog."
                 },
                 "other_clan_rep": -1,
                 "frequency": 3
@@ -1203,16 +1197,16 @@
                     "deputy": [-1,-1]
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat chased off a thieving o_c_n apprentice!"
+                        "cats_from": "cat_from heard that cat_to chased off a thieving o_c_n apprentice!"
                     }
-                },
+                }],
                 "prey": ["small"],
                 "exp": 0,
                 "other_clan_rep": -3,
@@ -1325,16 +1319,16 @@
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat was gossiping about {PRONOUN/to_cat/poss} own Clanmates to a o_c_n cat!"
+                        "cats_from": "cat_from heard that cat_to was gossiping about {PRONOUN/cat_to/poss} own Clanmates to a o_c_n cat!"
                     }
-                },
+                }],
                 "exp": 0,
                 "stat_trait": [
                     "sincere",
@@ -1371,17 +1365,17 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -1390,15 +1384,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was injured by an enemy patrol while marking the border.",
-                    "death": "m_c lost a life in an ambush on the border."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -1408,17 +1399,17 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -1427,14 +1418,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -1672,16 +1661,16 @@
                     "deputy": [-1,-1]
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat chased off a thieving o_c_n apprentice!"
+                        "cats_from": "cat_from heard that cat_to chased off a thieving o_c_n apprentice!"
                     }
-                },
+                }],
                 "prey": ["small"],
                 "exp": 0,
                 "other_clan_rep": -3,
@@ -1794,16 +1783,16 @@
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat was gossiping about {PRONOUN/to_cat/poss} own Clanmates to a o_c_n cat!"
+                        "cats_from": "cat_from heard that cat_to was gossiping about {PRONOUN/cat_to/poss} own Clanmates to a o_c_n cat!"
                     }
-                },
+                }],
                 "exp": 0,
                 "stat_trait": [
                     "sincere",
@@ -1840,17 +1829,17 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -1859,14 +1848,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -1876,17 +1863,17 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -1895,14 +1882,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -2140,16 +2125,16 @@
                     "deputy": [-1,-1]
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat chased off a thieving o_c_n apprentice!"
+                        "cats_from": "cat_from heard that cat_to chased off a thieving o_c_n apprentice!"
                     }
-                },
+                }],
                 "prey": ["small"],
                 "exp": 0,
                 "other_clan_rep": -3,
@@ -2262,16 +2247,16 @@
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat was gossiping about {PRONOUN/to_cat/poss} own Clanmates to a o_c_n cat!"
+                        "cats_from": "cat_from heard that cat_to was gossiping about {PRONOUN/cat_to/poss} own Clanmates to a o_c_n cat!"
                     }
-                },
+                }],
                 "exp": 0,
                 "stat_trait": [
                     "sincere",
@@ -2308,17 +2293,17 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -2327,14 +2312,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -2344,17 +2327,17 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -2363,15 +2346,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c got injured patrolling on the border.",
-                    "death": "m_c lost their life in an ambush on the border."
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -2406,7 +2386,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails - not dangerous, but wiping the border markings off the map. r_c re-marks it and heads home, a simple but necessary mission completed.",
+                "text": "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails — not dangerous, but wiping the border markings off the map. r_c re-marks it and heads home, a simple but necessary mission completed.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4
@@ -2609,16 +2589,16 @@
                     "deputy": [-1,-1]
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat chased off a thieving o_c_n apprentice!"
+                        "cats_from": "cat_from heard that cat_to chased off a thieving o_c_n apprentice!"
                     }
-                },
+                }],
                 "prey": ["small"],
                 "exp": 0,
                 "other_clan_rep": -3,
@@ -2731,16 +2711,16 @@
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["s_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat was gossiping about {PRONOUN/to_cat/poss} own Clanmates to a o_c_n cat!"
+                        "cats_from": "cat_from heard that cat_to was gossiping about {PRONOUN/cat_to/poss} own Clanmates to a o_c_n cat!"
                     }
-                },
+                }],
                 "exp": 0,
                 "stat_trait": [
                     "sincere",
@@ -2777,17 +2757,17 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -2796,14 +2776,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -2813,17 +2791,17 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -2832,14 +2810,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -3077,16 +3053,16 @@
                     "deputy": [-1,-1]
                 },
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/r_c/subject/CAP} {VERB/r_c/see/sees} the young cat off with a furious yowl and then {VERB/r_c/bring/brings} the prey back to c_n camp to report the incident to the deputy.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "high_aggress"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["respect"],
                     "amount": 5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat chased off a thieving o_c_n apprentice!"
+                        "cats_from": "cat_from heard that cat_to chased off a thieving o_c_n apprentice!"
                     }
-                },
+                }],
                 "prey": ["small"],
                 "exp": 0,
                 "other_clan_rep": -3,
@@ -3199,16 +3175,16 @@
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
-                "relationship": {
+                "relationships": [{
                     "cats_from": ["clan", "low_social", "low_stable"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard that to_cat was gossiping about {PRONOUN/to_cat/poss} own Clanmates to a o_c_n cat!"
+                        "cats_from": "cat_from heard that cat_to was gossiping about {PRONOUN/cat_to/poss} own Clanmates to a o_c_n cat!"
                     }
-                },
+                }],
                 "exp": 0,
                 "stat_trait": [
                     "sincere",
@@ -3245,7 +3221,7 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -3254,14 +3230,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -3271,17 +3245,17 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
-                "relationship": {
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "from_cat heard about to_cat starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                },
+                }],
                 "exp": 0,
                 "injury": [
                     {
@@ -3290,14 +3264,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SIDE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c got injured patrolling on the border."
+                    "scar": "m_c got injured patrolling on the border.",
+                    "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
@@ -3603,7 +3575,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat gave from_cat a super special top-secret mission to cross the o_c_n border."
+                            "cats_from": "cat_to gave cat_from a super special top-secret mission to cross the o_c_n border."
                         }
                     },
                     {
@@ -3619,14 +3591,14 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat couldn't help but respect to_cat's daring enthusiasm to break the rules and cross o_c_n's border."
+                            "cats_from": "cat_from couldn't help but respect cat_to's daring enthusiasm to break the rules and cross o_c_n's border."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "Sick of app1's useless ambling, s_c orders {PRONOUN/app1/object} to steal from o_c_n's territory. app1 hesitates - surely stealing prey from other Clans is wrong? Looking anxiously across the border, app1 shakes {PRONOUN/app1/poss} head. {PRONOUN/app1/subject/CAP} won't do it. Startled by app1's refusal, s_c stalks off to continue the patrol, fuming - and maybe a tiny bit impressed.",
+                "text": "Sick of app1's useless ambling, s_c orders {PRONOUN/app1/object} to steal from o_c_n's territory. app1 hesitates — surely stealing prey from other Clans is wrong? Looking anxiously across the border, app1 shakes {PRONOUN/app1/poss} head. {PRONOUN/app1/subject/CAP} won't do it. Startled by app1's refusal, s_c stalks off to continue the patrol, fuming — and maybe a tiny bit impressed.",
                 "exp": 10,
                 "can_have_stat": [
                     "p_l"
@@ -3654,7 +3626,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "to_cat tried to make from_cat cross the o_c_n border and steal."
+                            "cats_from": "cat_to tried to make cat_from cross the o_c_n border and steal."
                         }
                     },
                     {
@@ -3670,7 +3642,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat couldn't help but respect to_cat's refusal of {PRONOUN/from_cat/poss} order to cross the o_c_n border."
+                            "cats_from": "cat_from couldn't help but respect cat_to's refusal of {PRONOUN/cat_from/poss} order to cross the o_c_n border."
                         }
                     }
                 ],
@@ -3694,7 +3666,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat gave from_cat a super special mission to race across the o_c_n border while on patrol."
+                            "cats_from": "cat_to gave cat_from a super special mission to race across the o_c_n border while on patrol."
                         }
                     }
                 ],
@@ -3721,7 +3693,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat unwisely suggested from_cat cross into o_c_n territory and was entirely unprepared for the consequences."
+                            "cats_from": "cat_to unwisely suggested cat_from cross into o_c_n territory and was entirely unprepared for the consequences."
                         }
                     },
                     {
@@ -3729,7 +3701,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -3737,7 +3709,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard how to_cat encouraged app1 to cross into o_c_n territory."
+                            "cats_from": "cat_from heard how cat_to encouraged app1 to cross into o_c_n territory."
                         }
                     }
                 ],
@@ -3764,16 +3736,11 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE",
-                            "BRIDGE",
-                            "CATBITETWO"
                         ]
                     }
                 ],
                 "history_text": {
-                    "death": "m_c died from a border skirmish after sneaking across the o_c_n border.",
+                    "death": "m_c died from injuries inflicted by an enemy warrior after {PRONOUN/m_c/subject} snuck across the o_c_n border.",
                     "scar": "m_c was scarred in a border skirmish after sneaking across the o_c_n border"
                 },
                 "relationships": [
@@ -3792,7 +3759,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "to_cat suggested from_cat cross the border and steal from o_c_n, leading to horrible consequences for from_cat."
+                            "cats_from": "cat_to suggested cat_from cross the border and steal from o_c_n, leading to horrible consequences for cat_from."
                         }
                     },
                     {
@@ -3800,7 +3767,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan","high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -3808,7 +3775,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat heard how to_cat encouraged app1 to cross into o_c_n territory."
+                            "cats_from": "cat_from heard how cat_to encouraged app1 to cross into o_c_n territory."
                         }
                     },
                     {
@@ -3825,7 +3792,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat couldn't believe how gullible to_cat was to follow {PRONOUN/from_cat/poss} orders and cross the o_c_n border."
+                            "cats_from": "cat_from couldn't believe how gullible cat_to was to follow {PRONOUN/cat_from/poss} orders and cross the o_c_n border."
                         }
                     }
                 ],
@@ -3901,7 +3868,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat found to_cat's enthusiasm to meet an o_c_n apprentice cute."
+                            "cats_from": "cat_from found cat_to's enthusiasm to meet an o_c_n apprentice cute."
                         }
                     }
                 ],
@@ -3998,7 +3965,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw how to_cat was overly friendly to another Clan's apprentice."
+                            "cats_from": "cat_from saw how cat_to was overly friendly to another Clan's apprentice."
                         }
                     }
                 ],
@@ -4035,7 +4002,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat had to remind to_cat not to fraternize with another Clan's apprentice."
+                            "cats_from": "cat_from had to remind cat_to not to fraternize with another Clan's apprentice."
                         }
                     },
                     {
@@ -4053,7 +4020,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat felt humiliated when from_cat harshly reprimanded {PRONOUN/to_cat/poss} actions in front of a o_c_n patrol."
+                            "cats_from": "cat_to felt humiliated when cat_from harshly reprimanded {PRONOUN/cat_to/poss} actions in front of a o_c_n patrol."
                         }
                     }
                 ],
@@ -4124,14 +4091,14 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat didn't appreciate to_cat's sassy remark and flippant attitude in front of an o_c_n patrol."
+                            "cats_from": "cat_from didn't appreciate cat_to's sassy remark and flippant attitude in front of an o_c_n patrol."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "app1 doesn't get the chance to meow hello to the o_c_n apprentice - s_c hisses and arches {PRONOUN/s_c/poss} back, staring down the other patrol. The o_c_n warriors respond in kind, fluffing out their pelts and slitting their eyes. Tension hangs heavy in the air, and both patrols spend more time posturing than border-marking.",
+                "text": "app1 doesn't get the chance to meow hello to the o_c_n apprentice — s_c hisses and arches {PRONOUN/s_c/poss} back, staring down the other patrol. The o_c_n warriors respond in kind, fluffing out their pelts and slitting their eyes. Tension hangs heavy in the air, and both patrols spend more time posturing than border-marking.",
                 "exp": 15,
                 "art": "gen_bord_twocat_hostile_app_warrior",
                 "stat_trait": [
@@ -4162,7 +4129,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wished to_cat hadn't needlessly escalated an encounter with o_c_n."
+                            "cats_from": "cat_from wished cat_to hadn't needlessly escalated an encounter with o_c_n."
                         }
                     }
                 ],
@@ -4204,7 +4171,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat got a little overly-enthusiastic during an encounter with o_c_n and from_cat couldn't help feeling frustrated."
+                            "cats_from": "cat_to got a little overly-enthusiastic during an encounter with o_c_n and cat_from couldn't help feeling frustrated."
                         }
                     }
                 ]
@@ -4255,7 +4222,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat got a little overly-hostile during an encounter with o_c_n and from_cat couldn't help feeling frustrated."
+                            "cats_from": "cat_to got a little overly-hostile during an encounter with o_c_n and cat_from couldn't help feeling frustrated."
                         }
                     }
                 ]
@@ -4274,15 +4241,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a o_c_n apprentice after a border scrum.",
-                    "death": "m_c died after picking a fight with a o_c_n apprentice on patrol."
+                    "death": "m_c died from injuries inflicted by a o_c_n apprentice after picking a fight on patrol."
                 },
                 "relationships": [
                     {
@@ -4297,7 +4261,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat couldn't believe to_cat actually started a fight with a o_c_n apprentice."
+                            "cats_from": "cat_from couldn't believe cat_to actually started a fight with a o_c_n apprentice."
                         }
                     },
                     {
@@ -4313,7 +4277,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat found it hilarious when {PRONOUN/from_cat/subject} heard that to_cat started a fight with a o_c_n apprentice."
+                            "cats_from": "cat_from found it hilarious when {PRONOUN/cat_from/subject} heard that cat_to started a fight with a o_c_n apprentice."
                         }
                     }
                 ],
@@ -4361,9 +4325,6 @@
                         ],
                         "injuries": [
                             "small_bite_injury"
-                        ],
-                        "scars": [
-                            "LEGBITE"
                         ]
                     }
                 ],
@@ -4384,7 +4345,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat couldn't believe to_cat actually started a fight with o_c_n."
+                            "cats_from": "cat_from couldn't believe cat_to actually started a fight with o_c_n."
                         }
                     },
                     {
@@ -4397,16 +4358,16 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5,
+                        "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was glad to_cat was there to stop a fight with o_c_n before it got too serious."
+                            "cats_from": "cat_from was glad cat_to was there to stop a fight with o_c_n before it got too serious."
                         }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "o_c_n came looking for a fight, and app1 is eager to give it to them. The rest of {PRONOUN/app1/poss} patrol has no choice but to back {PRONOUN/app1/object} up; they can't let an apprentice get shredded. The skirmish rages until most of them are bloodied and panting - neither patrol wants to admit defeat, but if things escalate any further, they might be carrying their Clanmates home for a vigil.",
+                "text": "o_c_n came looking for a fight, and app1 is eager to give it to them. The rest of {PRONOUN/app1/poss} patrol has no choice but to back {PRONOUN/app1/object} up; they can't let an apprentice get shredded. The skirmish rages until most of them are bloodied and panting — neither patrol wants to admit defeat, but if things escalate any further, they might be carrying their Clanmates home for a vigil.",
                 "exp": 0,
                 "art": "gen_battle_app_other_clan",
                 "other_clan_rep": -2,
@@ -4417,10 +4378,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "NECKBITE",
-                            "SNOUT"
                         ]
                     }
                 ],
@@ -4443,7 +4400,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat wished to_cat wasn't so eager for a fight."
+                            "cats_from": "cat_from wished cat_to wasn't so eager for a fight."
                         }
                     }
                 ]
@@ -4495,7 +4452,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -4534,7 +4491,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -4542,7 +4499,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l decides to bring r_c with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l - knowing {PRONOUN/p_l/object} to be a kind and caring cat - and thanks both of them sincerely.",
+                "text": "p_l decides to bring r_c with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l — knowing {PRONOUN/p_l/object} to be a kind and caring cat — and thanks both of them sincerely.",
                 "exp": 20,
                 "stat_trait": [
                     "compassionate",
@@ -4568,7 +4525,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat saw how gentle to_cat was toward lost o_c_n kits."
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
                         }
                     }
                 ],
@@ -4634,13 +4591,14 @@
                 "other_clan_rep": -8,
                 "new_cat": [
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ],
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ]
+               
                 ],
                 "frequency": 4
             },
@@ -4656,12 +4614,12 @@
                 "other_clan_rep": -8,
                 "new_cat": [
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ],
                     [
-                        "age: kitten",
-                        "backstory: otherclan5"
+                        "age:kitten",
+                        "backstory:stolenkit3"
                     ]
                 ],
                 "frequency": 4,
@@ -4680,7 +4638,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was witness to how to_cat apparently can't tell the difference between o_c_n kits and c_n kits."
+                            "cats_from": "cat_from was witness to how cat_to apparently can't tell the difference between o_c_n kits and c_n kits."
                         }
                     }
                 ]
@@ -4720,16 +4678,19 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_lawful", "high_social"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to warned a o_c_n patrol about a badger sett on their border."
+                        }
                     }
                 ],
                 "other_clan_rep": 2,
@@ -4761,7 +4722,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's efforts to ensure no cat gets caught unawares by a badger."
+                            "cats_from": "cat_from heard about cat_to's efforts to ensure no cat gets caught unawares by a badger."
                         }
                     }
                 ],
@@ -4775,12 +4736,12 @@
                     "MEDIATOR,1"
                 ],
                 "can_have_stat": [
-                    "adult"
+                    "p_l"
                 ],
                 "relationships": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -4791,7 +4752,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat heard about to_cat's efforts to ensure no cat gets caught unawares by a badger."
+                            "cats_from": "cat_from heard about cat_to's efforts to ensure no cat gets caught unawares by a badger."
                         }
                     }
                 ],
@@ -4803,24 +4764,6 @@
             {
                 "text": "The patrol waits patiently at the border for any o_c_n cat to appear but they are out of luck that day. p_l decides to continue the patrol as {PRONOUN/p_l/subject} {VERB/p_l/have/has} tried waiting long enough.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "s_c"
-                        ],
-                        "cats_from": [
-                            "some_clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "from_cat heard about to_cat's efforts to ensure no cat gets caught unawares by a badger."
-                        }
-                    }
-                ],
                 "frequency": 4
             }
         ],
@@ -4845,7 +4788,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "to_cat had the gall to contradict p_l's words during an encounter with o_c_n."
+                            "cats_from": "cat_to had the gall to contradict p_l's words during an encounter with o_c_n."
                         }
                     }
                 ]
@@ -4889,12 +4832,12 @@
         "pl_skill_constraint": [
             "LORE,1"
         ],
-        "intro_text": "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale - <i>if</i> they can all sit still for it!",
+        "intro_text": "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale — <i>if</i> they can all sit still for it!",
         "decline_text": "The apprentices can't sit still, but it's no great loss, the patrol just continue on with their work.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small - the savior of her Clan, marked with moth wings tucked behind her ear.",
+                "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small — the savior of her Clan, marked with moth wings tucked behind her ear.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4,
@@ -4913,7 +4856,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat enjoyed listening to to_cat's story on patrol."
+                            "cats_from": "cat_from enjoyed listening to cat_to's story on patrol."
                         }
                     }
                 ]
@@ -4921,7 +4864,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up. p_l's storytelling skills are wasted - though the o_c_n cats seem to appreciate the attempt.",
+                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up. p_l's storytelling skills are wasted — though the o_c_n cats seem to appreciate the attempt.",
                 "exp": 0,
                 "other_clan_rep": 0,
                 "frequency": 4
@@ -4929,7 +4872,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage in her own eyes, she nevertheless rose to the occasion when her Clan needed her - as would <i>any</i> c_n warrior, p_l warns the o_c_n patrol.",
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage in her own eyes, she nevertheless rose to the occasion when her Clan needed her — as would <i>any</i> c_n warrior, p_l warns the o_c_n patrol.",
                 "exp": 10,
                 "other_clan_rep": -2,
                 "frequency": 4
@@ -4937,7 +4880,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she- Oh, she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border.",
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she — Oh, she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border.",
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4

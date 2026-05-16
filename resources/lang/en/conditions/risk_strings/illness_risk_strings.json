@@ -1,16 +1,24 @@
 {
     "greencough": {
         "yellowcough": [
-             "There has to be a solution - if r_c tries hard enough, surely {PRONOUN/r_c/subject} can still save m_c from the yellowcough {PRONOUN/m_c/poss} greencough has progressed to.",
+             "There has to be a solution — if r_c tries hard enough, surely {PRONOUN/r_c/subject} can still save m_c from the yellowcough {PRONOUN/m_c/poss} greencough has progressed to.",
             "m_c sits miserably in the medicine cat den, coughing so hard it feels like {PRONOUN/m_c/subject} can barely get a breath in. The outlook looks grim as {PRONOUN/m_c/poss} greencough has progressed to yellowcough."
 
+        ],
+        "sore throat": [
+            "m_c's endless coughing has dried out {PRONOUN/m_c/poss} throat.",
+            "m_c's throat is sore from coughing."
         ]
     },
     "kittencough": {
         "whitecough": [
             "r_c quietly tells m_c's parent that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to move m_c to the medicine cat den. m_c's kittencough has progressed to whitecough.",
-            "m_c coughs pathetically, wondering why it's not getting better - and why {PRONOUN/m_c/subject} {VERB/m_c/have/has} to be in the stinky medicine cat den now."
+            "m_c coughs pathetically, wondering why it's not getting better — and why {PRONOUN/m_c/subject} {VERB/m_c/have/has} to be in the stinky medicine cat den now."
 
+        ],
+        "sore throat": [
+            "m_c's endless coughing has dried out {PRONOUN/m_c/poss} throat.",
+            "m_c's throat is sore from coughing."
         ]
     },
     "an infected wound": {
@@ -25,13 +33,21 @@
             "r_c moves m_c to the medicine cat den, where the whitecough that {PRONOUN/m_c/poss} running nose has turned into can be more easily monitored.",
             "m_c brings {PRONOUN/m_c/self} to the medicine cat den, concerned {PRONOUN/m_c/poss} running nose only seems to be getting worse."
 
+        ],
+        "sore throat": [
+            "m_c's congestion has left {PRONOUN/m_c/poss} throat inflamed and sore.",
+            "As if a running nose wasn't enough trouble, now m_c's throat is sore as well."
         ]
     },
     "whitecough": {
         "greencough":[
             "r_c searches through {PRONOUN/r_c/poss} herb stores. m_c's whitecough has progressed to greencough, greatly worrying r_c.",
             "m_c coughs, feeling like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} hacking up half {PRONOUN/m_c/poss} lungs. This is definitely worse than whitecough ever gets."
-
+            
+        ],
+        "sore throat": [
+            "m_c's endless coughing has dried out {PRONOUN/m_c/poss} throat.",
+            "m_c's throat is sore from coughing."
         ]
     },
     "yellowcough": {
@@ -39,6 +55,10 @@
             "r_c spots the specks of blood in the bedding where m_c has been coughing and swallows a wail of despair. If {PRONOUN/m_c/poss} yellowcough has progressed to redcough, it's practically a death sentence.",
              "m_c is going to be fine. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} sure of it. {PRONOUN/m_c/poss/CAP} lungs don't hurt nearly as much anymore, and if there's blood in {PRONOUN/m_c/poss} mouth when {PRONOUN/m_c/subject} {VERB/m_c/finish/finishes} a coughing fit, what of it?"
 
+        ],
+        "sore throat": [
+            "m_c's endless coughing has dried out {PRONOUN/m_c/poss} throat.",
+            "m_c's throat is sore from coughing."
         ]
     },
     "heat exhaustion": {
@@ -76,13 +96,17 @@
             "m_c curls up in {PRONOUN/m_c/poss} nest, numb to the other cats beside {PRONOUN/m_c/object}. There's a hole inside {PRONOUN/m_c/poss} heart now that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} could never again be filled.",
             "m_c pads out of camp, wanting nothing more than to be away from the pitying looks of {PRONOUN/m_c/poss} Clanmates.",
             "m_c wishes desperately to hear the voice of {PRONOUN/m_c/poss} loved one again, to see their face and smell their scent. The reality of the situation makes m_c want to wail into the sky.",
-            "m_c realizes one day that this grief will never leave - {PRONOUN/m_c/subject}'ll just have to learn to live with it. There's nothing else to do."
+            "m_c realizes one day that this grief will never leave — {PRONOUN/m_c/subject}'ll just have to learn to live with it. There's nothing else to do."
         ],
         "constant nightmares": [
             "m_c heads to the medicine cat den, hoping that r_c will give {PRONOUN/m_c/object} some poppy seeds to help dampen the nightmares that have been plaguing {PRONOUN/m_c/object}.",
             "m_c wakes from yet another nightmare, feeling as though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} being haunted by the ghost of the one {PRONOUN/m_c/subject} {VERB/m_c/grieve/grieves}.",
             "m_c wakes and wails, {PRONOUN/m_c/poss} dreams haunted by visions of {PRONOUN/m_c/poss} dead loved one.",
             "m_c jolts awake and immediately leaves the den to clear {PRONOUN/m_c/poss} head, hoping some fresh night air will help {PRONOUN/m_c/object} cope with the sadness and memories."
+        ],
+        "selective mutism": [
+            "m_c's voice suddenly gives out mid-conversation, the words clogging {PRONOUN/m_c/poss} throat.",
+            "m_c's grief has lessened with time, but the anxiety of losing a loved one remains, manifesting as selective mutism."
         ]
     }
 }

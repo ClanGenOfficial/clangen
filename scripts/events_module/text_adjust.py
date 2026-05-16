@@ -226,7 +226,7 @@ def get_special_snippet_list(
         unique_snippets.append(choice(snip_list))
 
     # pick out our final snippets
-    final_snippets = sample(unique_snippets, k=amount)
+    final_snippets = sample(unique_snippets, k=min(amount, len(unique_snippets)))
 
     if return_string:
         text = adjust_list_text(final_snippets)
@@ -504,7 +504,10 @@ def event_text_adjust(
             clan_name = clan.displayname
         except AttributeError:
             # todo can this be Switch.clan_name ?
-            clan_name = switch_get_value(Switch.clan_list)[0]
+            try:
+                clan_name = switch_get_value(Switch.clan_list)[0]
+            except IndexError:
+                clan_name = "Test"
 
         text = _replace_clan_name(text, "c_n", str(clan_name) + "Clan")
 
@@ -559,8 +562,9 @@ def _replace_clan_name(text, abbreviation, clan_name):
                     if f"{abbreviation}." in modify:
                         pos = modify.index(f"{abbreviation}.")
                     if modify[pos - 1] == "a":
-                        modify.remove("a")
-                        modify.insert(pos - 1, "an")
+                        modify[pos - 1] = "an"
+                    if modify[pos - 1] == "A":
+                        modify[pos - 1] = "An"
                     text = " ".join(modify)
                     break
 

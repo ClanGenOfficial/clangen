@@ -46,7 +46,9 @@
             "medicine_cat",
             "guided4",
             "refugee5",
-            "stolenkit1"
+            "stolenkit1",
+            "stolenkit2",
+            "stolenkit3"
         ],
         "healer_backstories": [
             "medicine_cat", "wandering_healer1", "wandering_healer2"

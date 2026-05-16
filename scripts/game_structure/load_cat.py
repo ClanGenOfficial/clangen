@@ -42,7 +42,7 @@ def load_cats():
 def json_load():
     Cat.all_cats.clear()
     Cat.all_cats_list.clear()
-    Cat.dead_cats.clear()
+
     all_cats = []
     clanname = switch_get_value(Switch.clan_list)[0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
@@ -178,9 +178,9 @@ def json_load():
             # converting old specialty saves into new scar parameter
             if "specialty" in cat or "specialty2" in cat:
                 if cat["specialty"] is not None:
-                    new_cat.pelt.scars.append(cat["specialty"])
+                    new_cat.pelt.scars = (*new_cat.pelt.scars, cat["specialty"])
                 if cat["specialty2"] is not None:
-                    new_cat.pelt.scars.append(cat["specialty2"])
+                    new_cat.pelt.scars = (*new_cat.pelt.scars, cat["specialty2"])
 
             new_cat.adoptive_parents = (
                 cat["adoptive_parents"] if "adoptive_parents" in cat else []
@@ -279,7 +279,8 @@ def json_load():
                     if cat.get("driven_out"):
                         new_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
 
-            new_cat.dead_for = cat["dead_moons"]
+            if cat.get("dead_moons"):
+                new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
@@ -502,7 +503,7 @@ def csv_load(all_cats):
                 )
                 the_cat.skill = attr[25]
                 if len(attr) > 28:
-                    the_cat.pelt.accessory = [attr[28]]
+                    the_cat.pelt.accessory = (attr[28],)
                 if len(attr) > 29:
                     the_cat.specialty2 = attr[29]
                 else:

@@ -11,9 +11,10 @@ This would allow any cat with a trait that *isn't* `calm`.
 
 As this is allowed in some but *not all* tags, parameters that allow exclusionary tags will be linked to this section. If a parameter *doesn't* link here, then exclusionary tags are not allowed.
 
-!!! warning
-    You cannot mix exclusionary tags and inclusionary tags in one parameter. You must use one or the other and, frankly, there is no reason to mix them. 
+!!! caution
+    For most parameters, there's no use in including both exclusionary and non-exclusionary values. Such as in our example, where we exclude `calm`. All other traits are automatically available, since they aren't `calm`, so we don't need to tag any non-exclusionary values. If we were to use two tags like this: `"trait": ["-calm", "arrogant"]` to specify that `arrogant` is required and `calm` is disqualifying, then we might as well just remove `-calm`. The `arrogant` tag on its own will automatically disqualify `calm` cats.
 
+    Where you can expect to utilize both types of values are in parameters with more intermixed tagging. For example, relationship constraints. Here, we may wish to specify that a pair of cats must NOT be child/parent as well as have the `dislikes` tier. As such we would tag: `["-child/parent", "dislikes"]`. This mixes exclusionary and non-exclusionary in a logical manner. 
 ## Conditions and Scars
 
 === "Taggable Injury Pools"
@@ -454,3 +455,21 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 
 !!! warning
     Within ShortEvents, these should only be used in m_c's relationship constraints.
+
+***
+
+## Clan Temperaments
+> These tags are used to indicate what type of Clan can receive an event.
+
+|                 | low aggression | mid aggression | high aggression  |
+|-----------------|----------------|----------------|------------------|
+| **low social**  | cunning        | proud          | bloodthirsty     |
+| **mid social**  | amiable        | stoic          | wary             |
+| **high social** | gracious       | mellow         | logical          |
+
+
+|                 | low stability | mid stability | high stability |
+|-----------------|---------------|---------------|----------------|
+| **low lawful**  | chaotic       | mercurial     | calculating    |
+| **mid lawful**  | eager         | observant     | adaptable      |
+| **high lawful** | decisive      | methodical    | steadfast      |

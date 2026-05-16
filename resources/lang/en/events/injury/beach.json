@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "r_c had to rescue m_c from drowning after the apprentice headed out to practice alone.",
+        "event_text": "r_c rescued m_c from drowning after the apprentice headed out to practice alone.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -69,7 +69,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "to_cat saved from_cat from drowning."
+                    "cats_from": "cat_to saved cat_from from drowning."
                 }
             }
         ]
@@ -86,7 +86,7 @@
         "event_text": "m_c's paw pads have become cracked and sore from walking through salty water.",
         "m_c": {
             "status": [
-                "apprentice"
+                "any"
             ]
         },
         "injury": [
@@ -145,7 +145,7 @@
             "leaf-fall"
         ],
         "frequency": 4,
-        "event_text": "m_c was messing around in the tide pools of the camp clearing, when {PRONOUN/m_c/poss} paw slipped and {PRONOUN/m_c/subject} fell in face first. {PRONOUN/m_c/poss/CAP} pride is wounded, but otherwise {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only bruised.",
+        "event_text": "m_c was messing around in the tide pools of the camp clearing, when {PRONOUN/m_c/poss} paw slipped and {PRONOUN/m_c/subject} fell in face-first. {PRONOUN/m_c/poss/CAP} pride is wounded, but otherwise {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only bruised.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -237,7 +237,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat dared to_cat to swim in freezing water alone, and to_cat actually did."
+                    "cats_from": "cat_from dared cat_to to swim in freezing water alone, and cat_to actually did."
                 }
             }
         ]
@@ -303,7 +303,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "to_cat ignored from_cat's warnings about salt water and became dehydrated."
+                    "cats_from": "cat_to ignored cat_from's warnings about salt water and became dehydrated."
                 }
             }
         ]
@@ -371,7 +371,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "to_cat saved from_cat's life when a seagull tried to carry {PRONOUN/from_cat/object} off."
+                    "cats_from": "cat_to saved cat_from's life when a seagull tried to carry {PRONOUN/cat_from/object} off."
                 }
             }
         ]
@@ -439,7 +439,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "to_cat saved from_cat's life when a pelican tried to carry {PRONOUN/from_cat/object} off."
+                    "cats_from": "cat_to saved cat_from's life when a pelican tried to carry {PRONOUN/cat_from/object} off."
                 }
             }
         ]
@@ -511,7 +511,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat dared to_cat to swim out of camp and was impressed when {PRONOUN/to_cat/subject} actually tried."
+                    "cats_from": "cat_from dared cat_to to swim out of camp and was impressed when {PRONOUN/cat_to/subject} actually tried."
                 }
             },
             {
@@ -526,7 +526,7 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "to_cat dared from_cat to swim out of camp, and from_cat almost drowned."
+                    "cats_from": "cat_to dared cat_from to swim out of camp, and cat_from almost drowned."
                 }
             }
         ]
@@ -598,7 +598,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "from_cat dared to_cat to swim out of camp and was impressed when {PRONOUN/to_cat/subject} actually tried."
+                    "cats_from": "cat_from dared cat_to to swim out of camp and was impressed when {PRONOUN/cat_to/subject} actually tried."
                 }
             },
             {
@@ -613,13 +613,13 @@
                 ],
                 "amount": -15,
                 "log": {
-                    "cats_from": "to_cat dared from_cat to swim out of camp, and from_cat almost drowned."
+                    "cats_from": "cat_to dared cat_from to swim out of camp, and cat_from almost drowned."
                 }
             }
         ]
     },
     {
-        "event_id": "bch_injury_bruises_multibouncykit1",
+        "event_id": "bch_injury_bruises_kit1",
         "location": [
             "beach:camp1"
         ],
@@ -635,7 +635,7 @@
                 "kitten"
             ],
             "trait": [
-                "bouncy"
+                "impulsive"
             ]
         },
         "injury": [
@@ -659,13 +659,12 @@
             "leaf-bare"
         ],
         "frequency": 4,
-        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and take a tumble.",
+        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and {VERB/m_c/take/takes} a tumble.",
         "m_c": {
             "status": [
                 "kitten"
             ],
             "trait": [
-                "bouncy",
                 "daring",
                 "impulsive",
                 "noisy",
@@ -701,7 +700,6 @@
                 "kitten"
             ],
             "trait": [
-                "bouncy",
                 "daring",
                 "impulsive",
                 "noisy",
@@ -767,8 +765,7 @@
     {
         "event_id": "bch_injury_crackedpads_any1",
         "location": [
-            "beach:camp1_camp3"
-        ],
+            "any"],
         "season": [
             "any"
         ],
@@ -897,9 +894,77 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "from_cat heard that to_cat saved an enemy warrior during a fight."
+                    "cats_from": "cat_from heard that cat_to saved an enemy warrior during a fight."
                 }
             }
         ]
+    },
+    {
+  "event_id": "bch_injury_shipwreckfall_anymultiage1",
+  "location": [
+    "beach:camp3"
+  ],
+  "season": [
+    "any"
+  ],
+  "frequency": 1,
+  "event_text": "While trying to climb the broken ship in camp, m_c's paw slipped and {PRONOUN/m_c/subject} fell to the ground with a nasty thump.",
+  "m_c": {
+    "age": [
+      "kitten",
+      "adolescent",
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ],
+      "trait": [
+"unruly",
+"impulsive",
+"attention-seeker",
+"charming",
+"skittish",
+"daydreamer",
+"fearless",
+"bossy",
+"troublesome",
+"childish",
+"playful",
+"charismatic",
+"bold",
+"daring",
+"confident",
+"adventurous",
+"shameless",
+"sneaky",
+"strange",
+"rebellious"
+],
+    "skill": [
+      "-CLIMBER,2"
+    ],
+    "status": [
+      "any"
+    ]
+  },
+  "injury": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "injuries": [
+        "broken bone"
+      ]
     }
+  ],
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c died from {PRONOUN/m_c/poss} wounds after failing to climb the broken ship.",
+      "scar": "m_c was scarred after failing to climb the broken ship."
+    }
+  ]
+}
 ]

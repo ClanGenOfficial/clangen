@@ -1,17 +1,39 @@
 # Writing Standards
 
 - ClanGen is a game that relies on random event generation. This means that whatever you're writing needs to function for all cats it might generate for, under all circumstances it can be generated in.
+- Writing for ClanGen requires a different skillset from other types of creative writing, partly due to how brief each piece of the game's text must be. Often times, "tell, don't show" is more important than "show, don't tell."
+- The focus of this game is allowing players to build their own story! Most of the time, it’s better not to insert character motivations into the text. We want to leave space for the player to explain and expand upon the events that happen in the game. Of course, there are some trait, skill, rank, or age specific texts that can allow more personality to shine through.
+- The Dark Forest is not fully implemented yet, and flavor text should not mention it too much at the moment. It exists, but there hasn't been a consensus on the exact implementation yet for things like training in the Dark Forest, or how exactly it operates in ClanGen. For example, if it's a secret to all except those who are chosen to train there, or if it's well-known to all Clan cats.
+- If you have something you'd like to do with a patrol or event, but the code doesn't seem to have functionality for it yet, please let a coder know! 
 
 !!! caution
     No assumptions should be made about the gender of any cat. Nothing in the game is completely gender-locked, including pregnancy under certain settings, so all text should take this into account.
 
-- Remember that the focus of this game is allowing players to build their own story! Most of the time, it’s better not to insert character motivations into the text. We want to leave space for the player to explain and expand upon the events that happen in the game. Of course, there are some trait, skill, rank, or age specific texts that can allow more personality to shine through
-- The Dark Forest is not fully implemented yet, and flavor text should not mention it too much at the moment. It exists, but there hasn't been a consensus on the exact implementation yet for things like training in the Dark Forest, or how exactly it operates in ClanGen. For example, if it's a secret to all except those who are chosen to train there, or if it's well-known to all Clan cats.
-- If you have something you'd like to do with a patrol or event, but the code doesn't seem to have functionality for it yet, please let a coder know! 
+
+# Why Writing for ClanGen is Different
+- The nature of a game like ClanGen means most text is likely to be encountered *many times* over a single playthrough.
+- If text is brief and gives its information directly, it will serve its function the same way each time a player encounters it. If it's flowery and lyrical, the player will enjoy it the first time, but then all subsequent times, their eyes will skim over it.
+- That's not to say flowery writing doesn't have its place. Adding some extra sparkle to highly rare events can make them exciting and signal that something important and unusual is happening. As with character motivations, the more constrained and rare text is, the more descriptively it can be written.
+
+# Dos and Don'ts
+### **DO:** Prioritize player creativity!
+Events can act as writing prompts. If a text generates over and over again, one way keep it interesting is ambiguity. You can add a single unusual detail in an event's text without elaborating on its meaning: the player will take it from there!
+### **DON'T:** Over-describe
+- If you are writing a cat to feel angry or happy, sometimes it's best to just label that emotion explicitly rather than try to describe it via body language. (If you say their tail is lashing, how do you know this specific cat has a tail, anyway? A `daring` cat might express anger differently from a `wise` cat.)
+- Go for quality over quantity in descriptions. Consider the event text `"m_c was murdered. r_c stands over them, blood dripping from their pelt."` It's short, but it includes one striking image of the blood running off of r_c's pelt. It doesn't explain how m_c was murdered, but the player can infer based on the single detail. Too many competing images can actually make descriptive writing weaker as a whole. Pick out the sharpest, and let it stand alone.
+### **DO:** Trim extra words!
+Verbs can easily get out of hand — consider the difference between `They were able to slowly close the distance as they stalked` and `They stalked closer.` (*Seemed to, was able to, managed to* can all slow down the flow of writing. Same with ongoing verbs — does it need to be *"She was walking"* or can it be *"She walked"*?).
+### **DON'T:** Rely on archetypes about ranks and statuses
+Medicine cats are not always gentle and soothing, and warriors are not always brave and loyal etc. Avoid adverbs like *gently*, *excitedly*, *sternly* as much as possible. If you don't constrain an event to certain traits, it will be possible to generate for ANY trait, from `loving` to `childish` to `bloodthirsty`.
+### **DO:** Embrace Subject-Verb-Object (SVO)
+SVO is the most common sentence structure in English. "Fireheart ate the mouse" is a SVO sentence: Fireheart is the subject, "ate" is the verb, and the mouse is the object. Many writers vary their sentence structure to avoid repetitive SVO structure. However, SVO is *nearly* always the briefest and clearest way to express an idea in English, and brevity and clarity are key in ClanGen's writing!
+### **DON'T:** Worry too much about these guidelines while writing
+These tips and tricks are great for *editing*. Let yourself write out an event however you imagine it, and then go back to it later to trim and edit!
+
 
 ## General Grammar
 - We use American spelling!
-- Keep it simple!  We do not include direct dialogue within our events and we try to keep the word count of each event low.  
+- Keep it simple!  We do not include direct dialogue within our events, and we try to keep the word count of each event low.  
 - The classics:
     - you're vs your
         - "Your" is always possessive, while “you’re” = “you are”. If you aren’t sure whether “you’re” should be used in a sentence, imagine the same sentence with “you are” in place of “you’re/your” and see if it still makes sense.
@@ -29,6 +51,11 @@
         - Plurals and possessives! Basically, English grammar conventions are hell. I will try to make it not too confusing with the word cat as an example noun. "Cat's" = single cat, possessive. "The cat's tail." "Cats" = plural, multiple cats, not possessive. "The cats gathered around the High Rock." Cats' = plural possessive. "The cats' nests were lined with fresh moss." 
         - For singular words that end in S, add an apostrophe to make them possessive. For instance, "the crocus' petals". For a possessive plural of a word that ends in S, add "es" to the end, then apostrophe. Random example sentence: "The actresses' rooms were located across the hall."
         - Basically, anytime there's a possessive, you want an apostrophe in there somewhere. If the word ends in S, plural or singular, the apostrophe goes at the end. If the singular form of the word ends in S and it's a plural possessive, add "es" at the end, then apostrophe.  The exception to this is “it’s’ and “its”, where “its” is the possessive form and has no apostrophe.
+    - commas and conjunctions (`and/but/so` etc)
+        - A comma comes before a conjunction when you are connecting two independent clauses. You can tell if you have two independent clauses by answering the question: "Am I connecting two complete sentences?"
+        - Consider the following: `m_c walked into camp, and r_c looked up.` "m_c walked into camp" and "r_c looked up" are both complete sentences. That's why there is a comma in front of "and."
+        - Conversely, look at the sentence: `m_c walked into camp and meowed hello to r_c.` "m_c walked into camp" is a complete sentence, but "meowed hello to r_c" isn't. That's why there is *no* comma in front of "and."
+        - A comma alone is *not enough* to connect two full sentences. `m_c walked into camp, r_c looked up.` is grammatically incorrect; it's called a comma splice. A semi-colon can work here instead, or you can add a conjunction after the comma.
 - All ClanGen game text should follow normal grammar rules for capitalizing the first letter of a sentence, and trying to avoid spelling or grammar typos. We all make typos, don't worry! But this is one of the ways beta testing your new content can help you!
 - If you are struggling with remembering or understanding a grammar rule, even one that isn't mentioned in the above list, feel free to message in the writing contributor thread or in other official channels of the Discord server.
 - The only exception to the above rule is Thoughts! Thoughts should be structured in such a way that they read as a full sentence if the cat’s name is read at the beginning.  For example: “Thinks about their past mistakes.” is the correct grammar for a Thought, as you could imagine a name at the beginning of the sentence and it would be grammatically correct.  However, the sentence should still be capitalized normally.
@@ -69,12 +96,12 @@ When writing events related to permanent conditions, we need to be very mindful 
 >
 >EXCEPTIONS: "Dragged" can be used in an emotional usage, such as "Poppyheart... drags herself to her front paws, complaining about dawn patrol". 
 
-- The idea that a cat "isn't" effected by their disability
->EG: "Wolfclaw... is proud that they can still work like the rest of the clan." This makes it seem like the cat is comparing themselves to the abled cats, and sets up standards where a disabled cat cannot show their disability. This eventually means you're implying it's somehow "lesser" to be disabled. It might make sense for an insecure cat, but be careful!
+- The idea that a cat "isn't" affected by their disability
+>EG: "Wolfclaw... is proud that they can still work like the rest of the clan." This makes it seem like the cat is comparing themselves to the abled cats and sets up standards where a disabled cat cannot show their disability. This eventually means you're implying it's somehow "lesser" to be disabled. It might make sense for an insecure cat, but be careful!
 >
->INSTEAD: Allow the disability to effect them, and focus on their personal achievements rather than comparing them to other cats. 
+>INSTEAD: Allow the disability to affect them, and focus on their personal achievements rather than comparing them to other cats. 
 >
->EXCEPTIONS: "Raspy lungs", "joint pain", "allergies", "persistent headaches", "constantly dizzy", "recurring shock" - you can reword these into being happy their disability isn't as harsh this moon. These disabilities all come in "waves", where you can have a few days where you aren't as affected, and a few days where you're effected lots. 
+>EXCEPTIONS: "Raspy lungs", "joint pain", "allergies", "persistent headaches", "constantly dizzy", "recurring shock" - you can reword these into being happy their disability isn't as harsh this moon. These disabilities all come in "waves", where you can have a few days where you aren't as affected, and a few days where you're strongly affected. 
 
 - The idea that a disability is only negative
 >EG: Any thoughts that give the idea that they'd prefer to be dead, excessive sadness about being disabled, etc.

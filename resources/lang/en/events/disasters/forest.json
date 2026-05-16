@@ -69,9 +69,9 @@
         ],
         "progress_events": {
             "moon1": [
-                "Even the trees look dry. The cats of c_n cart moss between camp and their water source, bringing back vital liquid to their youngest and oldest Clanmates. But there are murmurs of discontented gossip - what will they do if their water dries up?",
-                "The prey that cats bring back to the fresh-kill pile is beginning to look weak. Difficult to say what's taking its toll - the heat, or the difficulty of finding water.",
-                "med_name feels the crunch of leaf litter so dry it shatters under their footsteps. They swallow their concern - drought cannot be fought by the Clan's warriors, but med_name can stock the medicine cat den with remedies against heat stroke and exhaustion."
+                "Even the trees look dry. The cats of c_n cart moss between camp and their water source, bringing back vital liquid to their youngest and oldest Clanmates. But there are murmurs of discontented gossip — what will they do if their water dries up?",
+                "The prey that cats bring back to the fresh-kill pile is beginning to look weak. Difficult to say what's taking its toll — the heat, or the difficulty of finding water.",
+                "med_name feels the crunch of leaf litter so dry it shatters under their footsteps. They swallow their concern — drought cannot be fought by the Clan's warriors, but med_name can stock the medicine cat den with remedies against heat stroke and exhaustion."
             ],
             "moon2": [
                 "The drought continues. The cats of c_n pant in the shade, too hot to move, their tongues dry and tacky.",
@@ -103,7 +103,7 @@
                 "trigger_events": [
                     "dep_name sighs, organizing another hunting patrol. They can't fix the drought that's driving away and killing c_n's prey, all they can do is send out more warriors, and hope the skill of c_n's hunters can keep famine at bay.",
                     "c_n should be growing fat on the fruits of the season, or fat on the prey that's eaten those fruits, at least. But the drought brings only dust and thin pickings.",
-                    "The forest is silent - silent like the depths of winter. But this is caused by heat, not cold. How will c_n cope, in what should be a season of plenty?"
+                    "The forest is silent — silent like the depths of winter. But this is caused by heat, not cold. How will c_n cope, in what should be a season of plenty?"
                 ]
             },
             {
@@ -113,7 +113,7 @@
                 "trigger_events": [
                     "Deep in the forest, in a dried, dusty bed of leaves, a piece of glass catches the hot sunlight, and the leaf litter begins to smolder. A wildfire is born, hissing and crackling, racing through woods bone dry with the drought to become a towering, unstoppable inferno.",
                     "As drought stalks c_n, fire follows on its heels. No cat knows how it was born, but the Clan scatters before it, gathering their vulnerable and running, running for their lives as red glowing death hunts them, the woods of their home falling as prey to wildfire's jaws.",
-                    "The smoke reaches c_n first - but fire is hot on its heels. Their forest tinder-dry and dusty, c_n are forced to run before the flames, fleeing to the safety of the last scant water sources within the woods, warriors grabbing and hauling anyone who starts to fall behind."
+                    "The smoke reaches c_n first — but fire is hot on its heels. Their forest tinder-dry and dusty, c_n are forced to run before the flames, fleeing to the safety of the last scant water sources within the woods, warriors grabbing and hauling anyone who starts to fall behind."
                 ]
             }
         ],
@@ -140,7 +140,7 @@
         "progress_events": {
             "moon1": [
                 "In the aftermath of the fire the forest lays still and quiet, but the Clan knows life will find its way back.",
-                "The haze of smoke covers every sight, every smell, every sound. Until it lifts, there'll be no telling what c_n has lost - or what they've saved.",
+                "The haze of smoke covers every sight, every smell, every sound. Until it lifts, there'll be no telling what c_n has lost — or what they've saved.",
                 "The ground feels hot underpaw, unnatural and wrong. Streaked with soot, the cats of c_n stare at each other with wide eyes, shocked into silence."
             ],
             "moon2": [
@@ -154,7 +154,7 @@
                 "Trees send out new branches to mingle with their soot-stained and charred trunks."
             ],
             "moon4": [
-                "Birdsong - c_n has been without it for so long. With the forest growing back to life, their longed for dawn chorus has returned.",
+                "Birdsong — c_n has been without it for so long. With the forest growing back to life, their longed for dawn chorus has returned.",
                 "It sounds so strange, but their mud has changed color, back to being made of soil instead of soot! Still a pain to groom out of pelts though.",
                 "The growth of the forest has never been so well celebrated by c_n, but after the devastation of the wildfire, the flush of green returning feels like victory."
             ]
@@ -246,12 +246,12 @@
         "trigger_events": [
             "lead_name checks on the tiny streams of snowmelt crisscrossing the forest with growing concern. They're far higher than usual for this point in newleaf, and if this keeps up, the woods will be flooded.",
             "c_n huddles in their dens, miserable and soaked. The brambles and forest canopy still thin and budding have both failed under the heavy, constant rain. There's no sound out in the forest, there hasn't been for days, every preystep or bird chirp eclipse by the steady shower of water.",
-            "The ground, still not fully recovered its green pelt after leaf-bare, now lies drenched and sodden, more mud than forest-floor. A stream is establishing itself right through the center of camp where the fresh-kill pile should be - not that there's been much fresh-kill, not with the rains soaking the hunting patrols right down to their skin."
+            "The ground, still not fully recovered its green pelt after leaf-bare, now lies drenched and sodden, more mud than forest-floor. A stream is establishing itself right through the center of camp where the fresh-kill pile should be — not that there's been much fresh-kill, not with the rains soaking the hunting patrols right down to their skin."
         ],
         "progress_events": {
             "moon1": [
                 "lead_name wades through the undergrowth of the forest, concentrating intently on their paws. The path is so familiar they could walk it blind, but walking it up to their haunches in the swampy water that floods their forest is another matter.",
-                "As the floodwaters rise, c_n takes to the trees. There, at least, they can hunt, using skills normally reserved for the chase just to get around their territory. They can't be the only creatures driven into the canopy by the floods - surely their prey is here too, somewhere."
+                "As the floodwaters rise, c_n takes to the trees. There, at least, they can hunt, using skills normally reserved for the chase just to get around their territory. They can't be the only creatures driven into the canopy by the floods — surely their prey is here too, somewhere."
             ],
             "moon2": [
                 "It seems as though the world will never be dry again. While the waters have lowered, the cats still splash through puddles and rivers still rage on, an ever present threat."
@@ -349,7 +349,7 @@
             ]
         },
         "conclusion_events": [
-            "Fresh-kill tastes a little better, a little brighter, like it's cleaner. While the Clan might be a little thinner than they used to be, it seems as if they can now eat anything they catch again - if they can catch it!"
+            "Fresh-kill tastes a little better, a little brighter, like it's cleaner. While the Clan might be a little thinner than they used to be, it seems as if they can now eat anything they catch again — if they can catch it!"
         ],
         "secondary_disasters": [],
         "collateral_damage": {}

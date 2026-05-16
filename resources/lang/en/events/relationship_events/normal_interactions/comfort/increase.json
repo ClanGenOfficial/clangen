@@ -8,11 +8,17 @@
 			"r_c's laugh reminds m_c of someone {PRONOUN/m_c/subject} {VERB/m_c/miss/misses}.",
 			"m_c overhears r_c humming a comforting tune.",
 			"r_c brought m_c some dry bedding.",
+			"m_c and r_c chat about Clan news.",
+			"m_c talks with r_c about some Clan drama.",
+			"m_c is asking r_c interesting questions.",
+			"m_c learns something new about a Clanmate from r_c.",
 			"r_c lets m_c grab a piece of fresh-kill first.",
 			"m_c had a good dream about r_c.",
 			"m_c remembers something nice that r_c did.",
 			"m_c sees a pretty flower in r_c's nest.",
-			"m_c heard a story about something kind r_c did."
+			"m_c heard a story about something kind r_c did.",
+			"When m_c and r_c realize they've been grooming their pelts the same way, they laugh about it.",
+			"m_c learns some pelt-grooming techniques from r_c, and tells r_c some of {PRONOUN/m_c/poss} own."
 		]
 	},
 	{
@@ -63,7 +69,7 @@
 			"m_c notices that r_c brought {PRONOUN/m_c/object} a big piece of prey.",
 			"r_c is the only one who gets m_c's joke.",
 			"m_c overhears something about r_c that {PRONOUN/m_c/subject} can relate to.",
-			"m_c calms down when realizing r_c is nearby.",
+			"m_c calms down when {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} r_c is nearby.",
 			"r_c's advice is more helpful than m_c expected.",
 			"r_c motivates m_c to do something difficult.",
 			"r_c doesn't laugh when m_c does something embarrassing.",
@@ -87,6 +93,7 @@
 			"r_c saves the funniest jokes for m_c.",
 			"m_c and r_c perk up happily when they see each other.",
 			"The Clan hears m_c and r_c laughing together across the camp.",
+			"m_c and r_c share stories of a Clanmate they didn't realize they both miss.",
 			"m_c and r_c share little secrets about themselves."
 		],
 		"reaction_random_cat": {
@@ -197,7 +204,7 @@
 		"id": "comfort_inc_med7",
 		"interactions": [
 			"m_c is watching the shooting stars with r_c.",
-			"r_c lets m_c cry on {PRONOUN/r_c/subject} for a while.",
+			"r_c lets m_c cry on {PRONOUN/r_c/object} for a while.",
 			"r_c stays with m_c until {PRONOUN/m_c/subject} fall asleep.",
 			"As m_c tells r_c a long story, {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} interesting, engaged questions."
 		],
@@ -317,7 +324,7 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"like": "decrease:",
+			"like": "decrease",
 			"comfort": "decrease"
 		}
 	},
@@ -399,7 +406,8 @@
 			"Whenever r_c's name is mentioned, m_c relaxes.",
 			"m_c's Clanmates notice that {PRONOUN/m_c/subject} {VERB/m_c/talk/talks} a lot about r_c.",
 			"r_c compliments m_c on something {PRONOUN/m_c/subject} {VERB/m_c/were/was} self-conscious about.",
-			"m_c associates {PRONOUN/m_c/poss} favorite smell with r_c."
+			"m_c associates {PRONOUN/m_c/poss} favorite smell with r_c.",
+			"m_c and r_c find out they're both bringing flowers to the same Clanmate's grave."
 		]
 	},
 	{
@@ -413,7 +421,7 @@
 			"m_c and r_c gossip about drama nobody else knows.",
 			"m_c talks to r_c about a mutual friend they have both been worrying about.",
 			"m_c asks r_c to look at a little cut on {PRONOUN/m_c/poss} leg.",
-			"After something happens, m_c and r_c find comfort in one another's company."
+			"After something unsettling happens, m_c and r_c find comfort in one another's company."
 		],
 		"reaction_random_cat": {
 			"comfort": "increase"
@@ -425,10 +433,11 @@
 		"interactions": [
 			"m_c feels most like {PRONOUN/m_c/self} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} around r_c.",
 			"m_c could recognize r_c just by the sound of {PRONOUN/r_c/poss} paw steps.",
-			"m_c finds peace in r_c's company where it can't be found anywhere else.",
+			"m_c finds peace in r_c's company when it can't be found anywhere else.",
 			"When m_c panics about something, {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} of r_c to feel better.",
 			"m_c wakes up r_c every morning so they're up together.",
 			"m_c and r_c share their prey with one another every day.",
+			"m_c and r_c know more about each other than anyone else.",
 			"m_c and r_c have multiple inside jokes with one another."
 		],
 		"relationship_constraint": [
@@ -441,7 +450,7 @@
 		"interactions": [
 			"m_c helps r_c work through something difficult that happened to {PRONOUN/r_c/object}.",
 			"m_c comforts r_c after a terrible nightmare.",
-			"When r_c gets sick for a few days, m_c brings {PRONOUN/r_c/object} yummy prey and nest bedding.",
+			"When r_c gets sick for a few days, m_c brings {PRONOUN/r_c/object} fresh-kill and bedding.",
 			"r_c knows secrets about m_c that {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} told anyone else.",
 			"m_c always goes to r_c first when {PRONOUN/m_c/subject} needs advice."
 		],

@@ -1,9 +1,10 @@
 import os
 import unittest
 
-from scripts.cat_relations.enums import rel_type_tiers
+from scripts.cat_relations.enums import rel_type_tiers, RelType
 
 from scripts.cat.enums import CatRank
+from scripts.events_module.event_filters import filter_relationship_type
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -25,12 +26,8 @@ class RelationshipConstraints(unittest.TestCase):
         rel = Relationship(cat_from, cat_to, False, True)
 
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(rel, ["sibling"], "test")
-        )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(rel, ["-mates"], "test")
-        )
+        self.assertTrue(filter_relationship_type([cat_from, cat_to], ["sibling"]))
+        self.assertTrue(filter_relationship_type([cat_from, cat_to], ["-mates"]))
 
     def test_mates(self):
         # given
@@ -38,45 +35,21 @@ class RelationshipConstraints(unittest.TestCase):
         cat_to = Cat()
         cat_from.mate.append(cat_to.ID)
         cat_to.mate.append(cat_from.ID)
-        rel = Relationship(cat_from, cat_to, True, False)
 
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(rel, ["mates"], "test")
-        )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(rel, ["-mates"], "test")
-        )
+        self.assertTrue(filter_relationship_type([cat_from, cat_to], ["mates"]))
+        self.assertFalse(filter_relationship_type([cat_from, cat_to], ["-mates"]))
 
     def test_parent_child_combo(self):
         # given
         parent = Cat()
         child = Cat(parent1=parent.ID)
 
-        child_parent_rel = Relationship(child, parent, False, True)
-        parent_child_rel = Relationship(parent, child, False, True)
-
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                child_parent_rel, ["child/parent"], "test"
-            )
-        )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                child_parent_rel, ["parent/child"], "test"
-            )
-        )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                parent_child_rel, ["parent/child"], "test"
-            )
-        )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                parent_child_rel, ["child/parent"], "test"
-            )
-        )
+        self.assertTrue(filter_relationship_type([child, parent], ["child/parent"]))
+        self.assertFalse(filter_relationship_type([child, parent], ["parent/child"]))
+        self.assertTrue(filter_relationship_type([parent, child], ["parent/child"]))
+        self.assertFalse(filter_relationship_type([parent, child], ["child/parent"]))
 
     def test_rel_values_only_constraint_pos(self):
         # given
@@ -88,6 +61,7 @@ class RelationshipConstraints(unittest.TestCase):
         low_rel.comfort = 10
         low_rel.trust = 10
         low_rel.respect = 10
+        cat_from1.relationships.update({cat_to1.ID: low_rel})
 
         cat_from2 = Cat()
         cat_to2 = Cat()
@@ -97,6 +71,7 @@ class RelationshipConstraints(unittest.TestCase):
         mid_rel.comfort = 50
         mid_rel.trust = 50
         mid_rel.respect = 50
+        cat_from2.relationships.update({cat_to2.ID: mid_rel})
 
         cat_from3 = Cat()
         cat_to3 = Cat()
@@ -106,58 +81,69 @@ class RelationshipConstraints(unittest.TestCase):
         high_rel.comfort = 90
         high_rel.trust = 90
         high_rel.respect = 90
+        cat_from3.relationships.update({cat_to3.ID: high_rel})
+
         # then
         for level_list in rel_type_tiers.values():
             for l in level_list:
                 # last index of the list should be the highest positive
                 if l == level_list[-1]:
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from3, cat_to3],
+                            [f"{l}_only"],
                         )
                     )
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            mid_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from2, cat_to2],
+                            [f"{l}_only"],
                         )
                     )
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            low_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{l}_only"],
                         )
                     )
                 # next is middle pos
                 elif l == level_list[-2]:
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from3, cat_to3],
+                            [f"{l}_only"],
                         )
                     )
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            mid_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from2, cat_to2],
+                            [f"{l}_only"],
                         )
                     )
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            low_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{l}_only"],
                         )
                     )
                 # next is the lowest pos
                 elif l == level_list[-3]:
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from3, cat_to3],
+                            [f"{l}_only"],
                         )
                     )
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            mid_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from2, cat_to2],
+                            [f"{l}_only"],
                         )
                     )
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            low_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{l}_only"],
                         )
                     )
 
@@ -170,6 +156,8 @@ class RelationshipConstraints(unittest.TestCase):
         mid_rel.like = -50
         mid_rel.comfort = -50
         mid_rel.trust = -50
+        mid_rel.respect = -50
+        cat_from1.relationships.update({cat_to1.ID: mid_rel})
 
         cat_from2 = Cat()
         cat_to2 = Cat()
@@ -178,6 +166,8 @@ class RelationshipConstraints(unittest.TestCase):
         low_rel.like = -10
         low_rel.comfort = -10
         low_rel.trust = -10
+        low_rel.respect = -10
+        cat_from2.relationships.update({cat_to2.ID: low_rel})
 
         cat_from3 = Cat()
         cat_to3 = Cat()
@@ -186,58 +176,78 @@ class RelationshipConstraints(unittest.TestCase):
         high_rel.like = -90
         high_rel.comfort = -90
         high_rel.trust = -90
+        high_rel.respect = -90
+        cat_from3.relationships.update({cat_to3.ID: high_rel})
 
         for level_list in rel_type_tiers.values():
+            # no negs for romance
+            if level_list == rel_type_tiers[RelType.ROMANCE]:
+                continue
             for l in level_list:
                 # first index of the list should be the highest negative
                 if l == level_list[0]:
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}_only"], "test"
-                        )
+                        filter_relationship_type(
+                            [cat_from3, cat_to3],
+                            [f"{l}_only"],
+                        ),
+                        f"{l}",
                     )
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            mid_rel, [f"{l}_only"], "test"
-                        )
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{l}_only"],
+                        ),
+                        f"{l}",
                     )
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            low_rel, [f"{l}_only"], "test"
-                        )
+                        filter_relationship_type(
+                            [cat_from2, cat_to2],
+                            [f"{l}_only"],
+                        ),
+                        f"{l}",
                     )
                 # next is middle negative
                 elif l == level_list[1]:
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}_only"], "test"
-                        )
+                        filter_relationship_type(
+                            [cat_from3, cat_to3],
+                            [f"{l}_only"],
+                        ),
+                        f"{l}",
                     )
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            mid_rel, [f"{l}_only"], "test"
-                        )
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{l}_only"],
+                        ),
+                        f"{l}",
                     )
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            low_rel, [f"{l}_only"], "test"
-                        )
+                        filter_relationship_type(
+                            [cat_from2, cat_to2],
+                            [f"{l}_only"],
+                        ),
+                        f"{l}",
                     )
                 # next is the lowest neg
                 elif l == level_list[2]:
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from3, cat_to3],
+                            [f"{l}_only"],
                         )
                     )
                     self.assertFalse(
-                        cats_fulfill_single_interaction_constraints(
-                            mid_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{l}_only"],
                         )
                     )
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            low_rel, [f"{l}_only"], "test"
+                        filter_relationship_type(
+                            [cat_from2, cat_to2],
+                            [f"{l}_only"],
                         )
                     )
 
@@ -270,22 +280,25 @@ class RelationshipConstraints(unittest.TestCase):
                 # last index of the list should be the highest positive
                 if level == level_list[-1]:
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{level}"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{level}"],
                         )
                     )
                 # next is middle pos
                 elif level == level_list[-2]:
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{level}"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{level}"],
                         )
                     )
                 # next is the lowest pos
                 elif level == level_list[-3]:
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{level}"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{level}"],
                         )
                     )
 
@@ -295,22 +308,25 @@ class RelationshipConstraints(unittest.TestCase):
                 # first index of the list should be the highest positive
                 if level == level_list[0]:
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{level}"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{level}"],
                         )
                     )
                 # next is middle pos
                 elif level == level_list[1]:
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{level}"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{level}"],
                         )
                     )
                 # next is the lowest pos
                 elif level == level_list[2]:
                     self.assertTrue(
-                        cats_fulfill_single_interaction_constraints(
-                            high_rel, [f"{level}"], "test"
+                        filter_relationship_type(
+                            [cat_from1, cat_to1],
+                            [f"{level}"],
                         )
                     )
 
@@ -430,12 +446,12 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         hunter_to_all = SingleInteraction("test")
-        hunter_to_all.main_skill_constraint = ["good hunter"]
+        hunter_to_all.main_skill_constraint = ["HUNTER,1"]
         hunter_to_all.random_skill_constraint = []
 
         all_to_hunter = SingleInteraction("test")
-        all_to_hunter.main_skill_constraint = ["good fighter", "good hunter"]
-        all_to_hunter.random_skill_constraint = ["good hunter"]
+        all_to_hunter.main_skill_constraint = ["FIGHTER,1", "HUNTER,1"]
+        all_to_hunter.random_skill_constraint = ["HUNTER,1"]
 
         # then
         self.assertTrue(

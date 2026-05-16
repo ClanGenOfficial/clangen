@@ -487,7 +487,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "m_c's ears perk up as {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} to hear a deep, resonant rumbling. Reciprocating the intense purr, m_c gently bumps heads with r_c, a warrior known for the endless love {PRONOUN/r_c/subject} {VERB/r_c/hold/holds} for {PRONOUN/r_c/poss} Clan. A warm, sweet feeling cascades over m_c as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
+          "text": "m_c's ears perk up as {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} to hear a deep, resonant rumbling. Reciprocating the intense purr, m_c gently bumps heads with r_c, a warrior known for the fierce love for {PRONOUN/r_c/poss} Clanmates. A warm, sweet feeling cascades over m_c as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
           "virtue": ["compassion", "empathy", "devotion", "friendship", "forgiveness", "happiness", "hope", "kindness", "sympathy", "love", "offering second chances", "selflessness", "mercy", "strength", "unity"]
         },
         {
@@ -768,7 +768,7 @@
       "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "m_c holds {PRONOUN/m_c/poss} head high as r_c approaches. r_c looks mildly amused - or is that annoyance? The starry cat offers m_c a life for [virtue], saying that {PRONOUN/m_c/subject} could definitely use it. m_c scoffs internally at the implication.",
+          "text": "m_c holds {PRONOUN/m_c/poss} head high as r_c approaches. r_c looks mildly amused — or is that annoyance? The starry cat offers m_c a life for [virtue], saying that {PRONOUN/m_c/subject} could definitely use it. m_c scoffs internally at the implication.",
           "virtue": ["humility", "honesty", "honor", "integrity", "selflessness", "good sense"]
         }
       ]
@@ -862,7 +862,7 @@
     "loud_kit": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["bouncy", "impulsive", "noisy", "troublesome", "attention-seeker", "daring"],
+      "star_trait": ["impulsive", "noisy", "troublesome", "attention-seeker", "daring"],
       "rank": ["kitten"],
       "life_giving": [
         {

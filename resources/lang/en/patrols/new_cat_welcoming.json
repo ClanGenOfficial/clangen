@@ -17,7 +17,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
         "decline_text": "The patrol decides to leave the loner be.",
         "chance_of_success": 60,
@@ -38,7 +38,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited n_c:0 to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited n_c:0 to c_n."
                         }
                     }
                 ],
@@ -67,7 +67,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited n_c:0 and {PRONOUN/n_c:0/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited n_c:0 and {PRONOUN/n_c:0/poss} kits to c_n."
                         }
                     }
                 ],
@@ -113,8 +113,8 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was not impressed by to_cat's hostility and decided not to join {PRONOUN/to_cat/poss} Clan.",
-                            "cats_to": "to_cat couldn't imagine from_cat being a good addition to the Clan; and made that very clear when they met."
+                            "cats_from": "cat_from was not impressed by cat_to's hostility and decided not to join {PRONOUN/cat_to/poss} Clan.",
+                            "cats_to": "cat_to couldn't imagine cat_from being a good addition to the Clan; and made that very clear when they met."
                         }
                     }
                 ],
@@ -137,6 +137,545 @@
         ]
     },
     {
+        "patrol_id": "gen_bord_welcomingnewcatpair1",
+        "biome": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [
+            "new_cat"
+        ],
+        "patrol_art": "gen_bord_newcat",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "frequency": 2,
+        "intro_text": "The patrol finds a pair of cats interested in joining the Clan.",
+        "decline_text": "The patrol decides to leave the cats alone.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "The two are close friends and traveling companions who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:warrior"
+                    ],
+                    [
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 4
+            },
+            {
+                "text": "One of them, n_c:0, is a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills for a place in c_n. The two are brought back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:medicine cat"
+                    ],
+                    [
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two are close friends and traveling companions who want somewhere safe to live together. They promise to earn their keep, and, considering their age, the patrol feels somewhat obligated to bring the young cats back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:apprentice"
+                    ],
+                    [
+                        "status:apprentice"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 3
+            },
+            {
+                "text": "One of them, n_c:0, is learning to be a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills for a place in c_n. Considering their age, the patrol feels somewhat of an obligation to bring the young cats back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:medicine cat apprentice"
+                    ],
+                    [
+                        "status:apprentice"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two are parent and child who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "loner"
+                    ],
+                    [
+                        "status:apprentice",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "outsider_rep": 1,
+                "frequency": 3
+            },
+            {
+                "text": "The two are parent and child who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "loner"
+                    ],
+                    [
+                        "age:young adult",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "outsider_rep": 1,
+                "frequency": 3
+            },
+            {
+                "text": "One of them, n_c:0, is a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills if {PRONOUN/n_c:0/subject} and {PRONOUN/n_c:0/poss} child could join c_n. The two are brought back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "status:medicine cat",
+                        "loner"
+                    ],
+                    [
+                        "status:apprentice",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two are siblings who want somewhere safe to live together. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "dead",
+                        "loner",
+                        "unknown"
+                    ],
+                    [
+                        "age:adult",
+                        "parent:0",
+                        "loner"
+                    ],
+                    [
+                        "age:adolescent",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                     {
+                        "cats_from": ["n_c:2"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling as a sibling unit, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend and ally.",
+                          "cats_to": "After many moons of traveling as a sibling unit, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend and ally."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 4
+            },
+            {
+                "text": "One of them, n_c:1, is a healer, and {PRONOUN/n_c:1/subject}'d be happy to share {PRONOUN/n_c:1/poss} skills if {PRONOUN/n_c:1/subject} and {PRONOUN/n_c:1/poss} little sibling could join c_n. The two are brought back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "dead",
+                        "loner",
+                        "unknown"
+                    ],
+                    [
+                        "age:adult",
+                        "status:medicine cat",
+                        "parent:0",
+                        "loner"
+                    ],
+                    [
+                        "age:adolescent",
+                        "parent:0",
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                     {
+                        "cats_from": ["n_c:2"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling as a sibling unit, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend and ally.",
+                          "cats_to": "After many moons of traveling as a sibling unit, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend and ally."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two only met recently and decided to travel together after discovering their shared destination of c_n. They promise to earn their keep and are brought back to camp.",
+                "exp": 10,
+                "new_cat": [
+                    [
+                        "status:warrior"
+                    ],
+                    [
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 19,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "cat_from and cat_to traveled to c_n together."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 4
+            },
+            {
+                "text": "The two friends have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "art": "gen_cat_with_kit_loner",
+                "new_cat": [
+                    [
+                        "age:has_kits",
+                        "can_birth"
+                    ],
+                    [
+                        "loner"
+                    ],
+                    [
+                        "litter",
+                        "parent:0",
+                        "backstory:outsider_roots2"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     },
+                     {
+                        "cats_from": ["n_c:1"],
+                        "cats_to": ["n_c:2"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 25,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} friend, n_c:0, transferred easily to {PRONOUN/n_c:0/poss} child, cat_to.",
+                          "cats_to": "Having spent every moment of {PRONOUN/cat_to/poss} life alongside cat_from, cat_to nearly considers {PRONOUN/cat_from/object} a secondary parent."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "art": "gen_cat_with_kit_loner",
+                "new_cat": [
+                    [
+                        "age:adult",
+                        "can_birth"
+                    ],
+                    [
+                        "age:adult",
+                        "male"
+                    ],
+                    [
+                        "litter",
+                        "parent:0,1",
+                        "backstory:outsider_roots2"
+                    ]
+                ],
+                "relationships": [
+                     {
+                        "cats_from": ["n_c:1"],
+                        "cats_to": ["n_c:0"],
+                        "values": ["romance"],
+                        "amount": 15,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "...though a shared litter may evidence deeper feelings."
+                        }
+                     },
+                     {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend...",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend..."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            },
+            {
+                "text": "The two siblings have been looking for a safe place ever since n_c:1 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
+                "exp": 10,
+                "art": "gen_cat_with_kit_loner",
+                "new_cat": [
+                    [
+                        "age:senior",
+                        "male",
+                        "dead",
+                        "loner"
+                    ],
+                    [
+                        "age:adult",
+                        "can_birth",
+                        "loner",
+                        "parent:0"
+                    ],
+                    [
+
+                        "loner",
+                        "parent:0"
+                    ],
+                    [
+                        "litter",
+                        "parent:1",
+                        "backstory:outsider_roots2"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:1"],
+                        "cats_to": ["n_c:2"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling as a sibling unit, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend and ally.",
+                          "cats_to": "After many moons of traveling as a sibling unit, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend and ally."
+                        }
+                     },
+                     {
+                        "cats_from": ["n_c:2"],
+                        "cats_to": ["n_c:3"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 25,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} sibling, n_c:0, transferred easily to {PRONOUN/n_c:0/poss} child, cat_to.",
+                          "cats_to": "Having spent every moment of {PRONOUN/cat_to/poss} life alongside cat_from, cat_to nearly considers {PRONOUN/cat_from/object} a secondary parent."
+                        }
+                     }
+                ],
+                "outsider_rep": 1,
+                "frequency": 2
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The cats decide against joining after hearing more about Clan life.",
+                "exp": 0,
+                "outsider_rep": -1,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "loner"
+                    ],
+                    [
+                        "meeting",
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The cats decide against joining after hearing more about Clan life.",
+                "exp": 0,
+                "outsider_rep": -1,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "loner",
+                        "age:adult"
+                    ],
+                    [
+                        "meeting",
+                        "loner",
+                        "parent:0",
+                        "age:adolescent"
+                    ]
+                ],
+                "frequency": 3
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "The cats are unimpressed by their hostility and decide this Clan is not for them.",
+                "exp": 0,
+                "outsider_rep": -1,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "loner"
+                    ],
+                    [
+                        "meeting",
+                        "loner"
+                    ]
+                ],
+                "relationships": [
+                    {
+                        "cats_from": ["n_c:0"],
+                        "cats_to": ["n_c:1"],
+                        "values": ["like", "trust", "comfort"],
+                        "amount": 55,
+                        "mutual": true,
+                        "log": {
+                          "cats_from": "After many moons of traveling together, cat_from considers cat_to {PRONOUN/cat_from/poss} closest friend.",
+                          "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
+                        }
+                     }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The cats are unimpressed by their hostility and decide this Clan is not for them.",
+                "exp": 0,
+                "outsider_rep": -1,
+                "new_cat": [
+                    [
+                        "meeting",
+                        "loner",
+                        "age:adult"
+                    ],
+                    [
+                        "meeting",
+                        "loner",
+                        "parent:0",
+                        "age:adolescent"
+                    ]
+                ],
+                "frequency": 3
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "text": "The patrol drives the cats from the territory.",
+                "exp": 10,
+                "outsider_rep": -2,
+                "frequency": 4
+            }
+        ]
+    },
+    {
         "patrol_id": "gen_bord_asyoulikeit2",
         "biome": [
             "beach",
@@ -151,7 +690,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "cat_running_two",
+        "patrol_art": "running_two_warriors",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -167,7 +706,7 @@
         "decline_text": "Squabbling kittypets is no business of c_n's. p_l carries on with the patrol.",
         "success_outcomes": [
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful look.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful look.",
                 "exp": 20,
                 "outsider_rep": 2,
                 "relationships": [
@@ -188,7 +727,7 @@
                         ],
                         "amount": 55,
                 "log": {
-                    "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
+                    "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to."
                  }
                     },
                     {
@@ -202,7 +741,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -25
+                        "amount": -25,
+                        "log": {
+                            "cats_from": "cat_from was unhappy with cat_to for pushing the issue of {PRONOUN/cat_to/poss} feelings for {PRONOUN/cat_from/object}."
+                        }
                     },
                     {
                         "cats_to": [
@@ -218,7 +760,7 @@
                         ],
                         "amount": 15,
                 "log": {
-                    "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
+                    "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                  }
                     },
                     {
@@ -236,7 +778,7 @@
                         ],
                         "amount": 10,
                 "log": {
-                    "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} with {PRONOUN/from_cat/poss} relationship conflict."
+                    "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} with {PRONOUN/cat_from/poss} relationship conflict."
                  }
                     }
                 ],
@@ -258,7 +800,7 @@
                 "frequency": 1
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border.",
                 "exp": 20,
                 "outsider_rep": -1,
                 "relationships": [
@@ -279,7 +821,7 @@
                         ],
                         "amount": 55,
             "log": {
-                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
+                "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to."
             }
                     },
                     {
@@ -293,7 +835,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -25
+                        "amount": -25,
+                        "log": {
+                            "cats_from": "cat_from was unhappy with cat_to for pushing the issue of {PRONOUN/cat_to/poss} feelings for {PRONOUN/cat_from/object}."
+                        }
                     },
                     {
                         "cats_to": [
@@ -309,7 +854,7 @@
                         ],
                         "amount": 15,
             "log": {
-                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
+                "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
             }
                     }
                 ],
@@ -331,7 +876,7 @@
                 "frequency": 1
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
                 "exp": 20,
                 "outsider_rep": 4,
                 "stat_trait": [
@@ -358,7 +903,7 @@
                         ],
                         "amount": 55,
                     "log": {
-                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
+                        "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to."
                     }
                     },
                     {
@@ -395,7 +940,7 @@
                         ],
                         "amount": 10,
                     "log": {
-                        "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} resolve {PRONOUN/from_cat/poss} relationship conflict."
+                        "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                      }
                     }
                 ],
@@ -417,7 +962,7 @@
                 "frequency": 4
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. s_c steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment.",
                 "exp": 20,
                 "outsider_rep": 4,
                 "stat_skill": [
@@ -441,7 +986,7 @@
                         ],
                         "amount": 55,
                 "log": {
-                    "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
+                    "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to."
                 }
                     },
                     {
@@ -478,7 +1023,7 @@
                         ],
                         "amount": 10,
                 "log": {
-                    "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} resolve {PRONOUN/from_cat/poss} relationship conflict."
+                    "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                     }
                     }
                 ],
@@ -502,7 +1047,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l steps in and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c:0 catches that glance, jealousy in {PRONOUN/n_c:0/poss} eyes.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l steps in and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c:0 catches that glance, jealousy in {PRONOUN/n_c:0/poss} eyes.",
                 "exp": 20,
                 "outsider_rep": 0,
                 "relationships": [
@@ -519,7 +1064,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "...but got upset that to_cat shot a flirty wink at one of the Clan cats."
+                            "cats_from": "...but got upset that cat_to shot a flirty wink at one of the Clan cats."
                         }
                     },
                     {
@@ -539,7 +1084,7 @@
                         ],
                         "amount": 55,
                     "log": {
-                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat..."
+                        "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to..."
                         }
                     },
                     {
@@ -556,7 +1101,7 @@
                         ],
                         "amount": 15,
                     "log": {
-                        "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
+                        "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                     }
                     },
                     {
@@ -575,7 +1120,7 @@
                         ],
                         "amount": 10,
                     "log": {
-                        "cats_from": "from_cat was grateful for to_cat helping {PRONOUN/from_cat/object} with {PRONOUN/from_cat/poss} relationship conflict, and tried hitting on {PRONOUN/to_cat/object}."
+                        "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} with {PRONOUN/cat_from/poss} relationship conflict, and tried hitting on {PRONOUN/cat_to/object}."
                         }
                     },
                     {
@@ -592,7 +1137,7 @@
                         ],
                         "amount": -10,
                     "log": {
-                        "cats_from": "from_cat was jealous that n_c:1 seemed more interested in to_cat than {PRONOUN/from_cat/object}."
+                        "cats_from": "cat_from was jealous that n_c:1 seemed more interested in cat_to than {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -614,7 +1159,7 @@
                 "frequency": 1
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l steps in and lectures n_c:0, but it just seems to annoy both kittypets. Maybe they just like to argue.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l steps in and lectures n_c:0, but it just seems to annoy both kittypets. Maybe they just like to argue.",
                 "exp": 20,
                 "outsider_rep": -1,
                 "relationships": [
@@ -635,7 +1180,7 @@
                         ],
                         "amount": 55,
             "log": {
-                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
+                "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to."
             }
                     },
                     {
@@ -652,7 +1197,7 @@
                         ],
                         "amount": 45,
             "log": {
-                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
+                "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
             }
                     },
                     {
@@ -669,7 +1214,7 @@
                         ],
                         "amount": -15,
             "log": {
-                "cats_from": "from_cat was annoyed when to_cat tried to intervene in {PRONOUN/from_cat/poss} argument with {PRONOUN/from_cat/poss} friend."
+                "cats_from": "cat_from was annoyed when cat_to tried to intervene in {PRONOUN/cat_from/poss} argument with {PRONOUN/cat_from/poss} friend."
             }
                     }
                 ],
@@ -715,7 +1260,7 @@
                         ],
                         "amount": -35,
                 "log": {
-                    "cats_from": "to_cat told from_cat and {PRONOUN/from_cat/poss} friend to get lost while they were in the middle of an argument."
+                    "cats_from": "cat_to told cat_from and {PRONOUN/cat_from/poss} friend to get lost while they were in the middle of an argument."
                 }
                     },
                     {
@@ -732,7 +1277,7 @@
                         ],
                         "amount": -10,
                 "log": {
-                    "cats_from": "from_cat couldn't stand all this kittypet nonsense by the border any longer and told to_cat and {PRONOUN/to_cat/poss} friend to get lost."
+                    "cats_from": "cat_from couldn't stand all this kittypet nonsense by the border any longer and told cat_to and {PRONOUN/cat_to/poss} friend to get lost."
                 }
                     },
                     {
@@ -748,7 +1293,7 @@
                         ],
                         "amount": 25,
                 "log": {
-                    "cats_from": "to_cat and from_cat are friends and were in the middle of an argument before being interrupted."
+                    "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                 }
                     }
                 ],
@@ -772,7 +1317,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram - and to go tell all their kittypet friends to keep their personal lives on the other side of the border.",
+                "text": "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram — and to go tell all their kittypet friends to keep their personal lives on the other side of the border.",
                 "exp": 20,
                 "outsider_rep": -3,
                 "relationships": [
@@ -790,7 +1335,7 @@
                         ],
                         "amount": -35,
                     "log": {
-                        "cats_from": "to_cat told from_cat and {PRONOUN/from_cat/poss} friend to scram while they were in the middle of an argument."
+                        "cats_from": "cat_to told cat_from and {PRONOUN/cat_from/poss} friend to scram while they were in the middle of an argument."
                     }
                     },
                     {
@@ -807,7 +1352,7 @@
                         ],
                         "amount": -10,
                 "log": {
-                    "cats_from": "from_cat couldn't stand all this kittypet nonsense by the border any longer and told to_cat and {PRONOUN/to_cat/poss} friend to scram."
+                    "cats_from": "cat_from couldn't stand all this kittypet nonsense by the border any longer and told cat_to and {PRONOUN/cat_to/poss} friend to scram."
                 }
                     },
                     {
@@ -823,7 +1368,7 @@
                         ],
                         "amount": 25,
                     "log": {
-                        "cats_from": "to_cat and from_cat are friends and were in the middle of an argument before being interrupted."
+                        "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                     }
                     }
                 ],
@@ -862,7 +1407,7 @@
                         ],
                         "amount": -45,
             "log": {
-                "cats_from": "to_cat told from_cat and {PRONOUN/from_cat/poss} friend to scram while they were in the middle of an argument. from_cat tried to fight {PRONOUN/to_cat/poss} but was overpowered."
+                "cats_from": "cat_to told cat_from and {PRONOUN/cat_from/poss} friend to scram while they were in the middle of an argument. cat_from tried to fight {PRONOUN/cat_to/poss} but was overpowered."
             }
                     },
                     {
@@ -878,7 +1423,7 @@
                         ],
                         "amount": -20,
                 "log": {
-                    "cats_from": "from_cat easily overpowered the foolish, soft-pawed kittypet, to_cat, when {PRONOUN/to_cat/subject} tried to fight {PRONOUN/from_cat/object}."
+                    "cats_from": "cat_from easily overpowered the foolish, soft-pawed kittypet, cat_to, when {PRONOUN/cat_to/subject} tried to fight {PRONOUN/cat_from/object}."
                 }
                     },
                     {
@@ -894,7 +1439,7 @@
                         ],
                         "amount": 25,
             "log": {
-                "cats_from": "to_cat and from_cat are friends and were in the middle of an argument before being interrupted."
+                "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
             }
                     }
                 ],
@@ -916,7 +1461,7 @@
                 "frequency": 4
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l interrupts to tell n_c:1 that an ugly mangepelt like {PRONOUN/n_c:1/self} should be pleased that any cat at all has shown an interest.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:1 that an ugly mangepelt like {PRONOUN/n_c:1/self} should be pleased that any cat at all has shown an interest.",
                 "exp": 20,
                 "outsider_rep": -3,
                 "relationships": [
@@ -933,7 +1478,7 @@
                         ],
                         "amount": -45,
                     "log": {
-                        "cats_from": "to_cat rudely insulted from_cat, calling {PRONOUN/from_cat/object} an ugly mangepelt."
+                        "cats_from": "cat_to rudely insulted cat_from, calling {PRONOUN/cat_from/object} an ugly mangepelt."
                     }
                     },
                     {
@@ -953,7 +1498,7 @@
                         ],
                         "amount": 55,
                     "log": {
-                        "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
+                        "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to."
                     }
                     },
                     {
@@ -970,7 +1515,7 @@
                         ],
                         "amount": 15,
                     "log": {
-                        "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
+                        "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                     }
                     }
                 ],
@@ -992,7 +1537,7 @@
                 "frequency": 4
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l interrupts to tell n_c:0 that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:0 that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this.",
                 "exp": 20,
                 "outsider_rep": -3,
                 "relationships": [
@@ -1010,7 +1555,7 @@
                         ],
                         "amount": -35,
                             "log": {
-                                "cats_from": "to_cat rudely insulted n_c:1 calling {PRONOUN/n_c:1/object} a prideful and vain-hearted mouse-brain and neither n_c:0 or n_c:1 seemed appreciative."
+                                "cats_from": "cat_to rudely insulted n_c:1 calling {PRONOUN/n_c:1/object} a prideful and vain-hearted mouse-brain and neither n_c:0 or n_c:1 seemed appreciative."
                             }
                     },
                     {
@@ -1030,7 +1575,7 @@
                         ],
                         "amount": 55,
                             "log": {
-                                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat."
+                                "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to."
                             }
                     },
                     {
@@ -1047,7 +1592,7 @@
                         ],
                         "amount": 15,
                             "log": {
-                                "cats_from": "from_cat rejected {PRONOUN/from_cat/poss} friend, to_cat, <b>only</b> seeing to_cat as a friend."
+                                "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                             }
                     }
                 ],
@@ -1074,13 +1619,13 @@
                 "text": "p_l doesn't care about kittypet drama. {PRONOUN/p_l/subject/CAP} {VERB/p_l/interrupt/interrupts} and {VERB/p_l/tell/tells} the kittypets to get lost. One kittypet doesn't appreciate p_l's tone and takes a swipe at {PRONOUN/p_l/object}. r_c jumps in to help a humiliated p_l drive off the kittypets.",
                 "exp": 20,
                 "outsider_rep": -3,
-                "injuries": [
+                "injury": [
                     {
                         "cats": [
                             "p_l"
                         ],
-                        "injury": [
-                            "cat_bite"
+                        "injuries": [
+                            "cat bite"
                         ],
                         "scars": [
                             "CATBITETWO"
@@ -1106,7 +1651,7 @@
                         ],
                         "amount": -35,
                     "log": {
-                        "cats_from": "to_cat told from_cat and {PRONOUN/from_cat/poss} friend to get lost while they were in the middle of an argument. n_c:0 fought to_cat and then {PRONOUN/n_c:0/subject} and n_c:1 were driven away."
+                        "cats_from": "cat_to told cat_from and {PRONOUN/cat_from/poss} friend to get lost while they were in the middle of an argument. n_c:0 fought cat_to and then {PRONOUN/n_c:0/subject} and n_c:1 were driven away."
                     }
                     },
                     {
@@ -1122,7 +1667,7 @@
                         ],
                         "amount": 25,
                     "log": {
-                        "cats_from": "to_cat and from_cat are friends and were in the middle of an argument before being interrupted."
+                        "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                     }
                     }
                 ],
@@ -1144,7 +1689,7 @@
                 "frequency": 4
             },
             {
-                "text": "Through eavesdropping, p_l and r_c learn that one kittypet - n_c:0 - is in love with the other - n_c:1 - who is having none of it. p_l interrupts to tell n_c:1 that {PRONOUN/n_c:1/subject}{VERB/n_c:1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c:1 bats {PRONOUN/n_c:1/poss} eyelashes at p_l and giggles. n_c:0 looks on jealously.",
+                "text": "Through eavesdropping, p_l and r_c learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:1 that {PRONOUN/n_c:1/subject}{VERB/n_c:1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c:1 bats {PRONOUN/n_c:1/poss} eyelashes at p_l and giggles. n_c:0 looks on jealously.",
                 "exp": 20,
                 "outsider_rep": 0,
                 "relationships": [
@@ -1162,7 +1707,7 @@
                         ],
                         "amount": -35,
             "log": {
-                "cats_from": "from_cat was jealous that {PRONOUN/from_cat/poss} friend seemed more interested in to_cat than {PRONOUN/from_cat/object}."
+                "cats_from": "cat_from was jealous that {PRONOUN/cat_from/poss} friend seemed more interested in cat_to than {PRONOUN/cat_from/object}."
             }
                     },
                     {
@@ -1179,7 +1724,7 @@
                         ],
                         "amount": 15,
             "log": {
-                "cats_from": "Even though to_cat insulted {PRONOUN/from_cat/object}, from_cat couldn't help but be smitten by to_cat's roughness."
+                "cats_from": "Even though cat_to insulted {PRONOUN/cat_from/object}, cat_from couldn't help but be smitten by cat_to's roughness."
             }
                     },
                     {
@@ -1195,7 +1740,7 @@
                         ],
                         "amount": -15,
             "log": {
-                "cats_from": "...but was upset that to_cat batted {PRONOUN/to_cat/poss} eyes at one of the Clan cats after they insulted {PRONOUN/to_cat/object}."
+                "cats_from": "...but was upset that cat_to batted {PRONOUN/cat_to/poss} eyes at one of the Clan cats after they insulted {PRONOUN/cat_to/object}."
             }
                     },
                     {
@@ -1215,7 +1760,7 @@
                         ],
                         "amount": 55,
             "log": {
-                "cats_from": "from_cat confessed {PRONOUN/from_cat/poss} love to {PRONOUN/from_cat/poss} close friend, to_cat..."
+                "cats_from": "cat_from confessed {PRONOUN/cat_from/poss} love to {PRONOUN/cat_from/poss} close friend, cat_to..."
             }
                     },
                     {
@@ -1232,7 +1777,7 @@
                         ],
                         "amount": 15,
             "log": {
-                "cats_from": "to_cat and from_cat are friends and were in the middle of an argument before being interrupted."
+                "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
             }
                     }
                 ],
@@ -1294,7 +1839,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n."
+                            "cats_from": "cat_to invited cat_from to c_n."
                         }
                     }
                 ],
@@ -1323,7 +1868,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -1368,8 +1913,8 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was not impressed by to_cat's hostility and decided not to join {PRONOUN/to_cat/poss} Clan.",
-                            "cats_to": "to_cat was hostile towards from_cat when {PRONOUN/from_cat/subject} asked to join the Clan."
+                            "cats_from": "cat_from was not impressed by cat_to's hostility and decided not to join {PRONOUN/cat_to/poss} Clan.",
+                            "cats_to": "cat_to was hostile towards cat_from when {PRONOUN/cat_from/subject} asked to join the Clan."
                         }
                     }
                 ],
@@ -1409,7 +1954,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 3,
+        "frequency": 4,
         "intro_text": "The patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
         "decline_text": "The patrol decides to leave the kittypet be.",
         "chance_of_success": 60,
@@ -1429,7 +1974,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -1458,7 +2003,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited n_c:0 and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited n_c:0 and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -1535,7 +2080,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n."
+                            "cats_from": "cat_to invited cat_from to c_n."
                         }
                     }
                 ],
@@ -1564,7 +2109,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -1640,6 +2185,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after being hit by a monster on the Thunderpath.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster."
+                },
                 "relationships": [
                     {
                         "cats_from": ["n_c:0"],
@@ -1647,7 +2196,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that rescued from_cat from the Thunderpath."
+                            "cats_from": "cat_to was part of the patrol that rescued cat_from from the Thunderpath."
                         }
                     }
                 ],
@@ -1753,6 +2302,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after being hit by a monster on the Thunderpath.",
+                    "death": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit by a monster."
+                },
                 "new_cat": [
                     [
                         "loner"
@@ -1765,7 +2318,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat rescued from_cat from the Thunderpath."
+                            "cats_from": "cat_to rescued cat_from from the Thunderpath."
                         }
                     }
                 ],
@@ -1875,7 +2428,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
+                            "cats_from": "cat_to was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
                         }
                     }
                 ],
@@ -1894,7 +2447,7 @@
                 "frequency": 4
             },
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c reminds the patrol of the story of Tigger - they have a responsibility to help this cat.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c reminds the patrol of the story of Tigger — they have a responsibility to help this cat.",
                 "exp": 30,
                 "stat_skill": [
                     "LORE,1",
@@ -1918,7 +2471,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
+                            "cats_from": "cat_to was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
                         }
                     }
                 ],
@@ -1937,7 +2490,7 @@
                 "frequency": 4
             },
             {
-                "text": "Swerving to follow the scent trail, the patrol almost falls over a hissing queen. Reeling with surprise, no one hears exactly what {PRONOUN/n_c:0/subject} {VERB/n_c:0/spit/spits} out - but {PRONOUN/n_c:0/subject} {VERB/n_c:0/grab/grabs} something and {VERB/n_c:0/flee/flees}. It's only as the patrol regroups that they hear the distressed calls of {PRONOUN/n_c:0/poss} other kittens.",
+                "text": "Swerving to follow the scent trail, the patrol almost falls over a hissing queen. Reeling with surprise, no one hears exactly what {PRONOUN/n_c:0/subject} {VERB/n_c:0/spit/spits} out — but {PRONOUN/n_c:0/subject} {VERB/n_c:0/grab/grabs} something and {VERB/n_c:0/flee/flees}. It's only as the patrol regroups that they hear the distressed calls of {PRONOUN/n_c:0/poss} other kittens.",
                 "exp": 20,
                 "new_cat": [
                     [
@@ -1966,7 +2519,7 @@
                         "values": ["like", "respect"],
                         "amount": -50,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that <i>rudely</i> stepped over n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hiding with {PRONOUN/n_c:0/poss} kits from Clan cats."
+                            "cats_from": "cat_to was part of the patrol that <i>rudely</i> stepped over n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hiding with {PRONOUN/n_c:0/poss} kits from Clan cats."
                         }
                     },
                     {
@@ -1975,7 +2528,7 @@
                         "values": ["like"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "n_c:0 surprised from_cat when from_cat's patrol almost stepped over n_c:0 and {PRONOUN/n_c:0/poss} kits on accident."
+                            "cats_from": "n_c:0 surprised cat_from when cat_from's patrol almost stepped over n_c:0 and {PRONOUN/n_c:0/poss} kits on accident."
                         }
                     }
                 ],
@@ -2003,7 +2556,7 @@
                         "mutual": false,
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat called from_cat scent-blind when {PRONOUN/from_cat/subject} smelt a scent trail over the border."
+                            "cats_from": "cat_to called cat_from scent-blind when {PRONOUN/cat_from/subject} smelt a scent trail over the border."
                         }
                     }
                 ],
@@ -2018,7 +2571,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drag the kittypet back to camp - but the elderly cat is too weak.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drag the kittypet back to camp — but the elderly cat is too weak.",
                 "exp": 0,
                 "outsider_rep": -1,
                 "new_cat": [
@@ -2035,7 +2588,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness - but cursing the necessity of doing so.",
+                "text": "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness — but cursing the necessity of doing so.",
                 "exp": 10,
                 "outsider_rep": -2,
                 "new_cat": [
@@ -2074,13 +2627,13 @@
                 6
             ]
         },
-        "frequency": 3,
-        "intro_text": "Padding along the border, p_l checks once - twice - three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
+        "frequency": 2,
+        "intro_text": "Padding along the border, p_l checks once — twice — three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
         "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area - so p_l tastes the air in the hope of picking up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} {VERB/n_c:0/spot/spots} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up to happily touch noses with {PRONOUN/p_l/object}.",
+                "text": "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area — so p_l tastes the air in the hope of picking up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} {VERB/n_c:0/spot/spots} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up to happily touch noses with {PRONOUN/p_l/object}.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -2101,8 +2654,8 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 30,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat friend, to_cat, over the border.",
-                            "cats_to": "to_cat met {PRONOUN/to_cat/poss} loner friend, n_c:0, over the border."
+                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat friend, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c:0, over the border."
                         }
                     }
                 ],
@@ -2134,7 +2687,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
@@ -2147,8 +2703,8 @@
                         "values": ["like", "romance"],
                         "amount": 50,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, to_cat, over the border.",
-                            "cats_to": "to_cat met {PRONOUN/to_cat/poss} loner mate, n_c:0, over the border."
+                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
                         }
                     }
                 ],
@@ -2180,7 +2736,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
@@ -2193,8 +2752,8 @@
                         "values": ["like", "romance"],
                         "amount": 50,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, to_cat, over the border.",
-                            "cats_to": "to_cat met {PRONOUN/to_cat/poss} loner mate, n_c:0, over the border."
+                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
                         }
                     }
                 ],
@@ -2203,7 +2762,7 @@
                 "frequency": 4
             },
             {
-                "text": "n_c:0 - p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer - but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c:0, come back to c_n. Stay.",
+                "text": "n_c:0 — p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer — but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c:0, come back to c_n. Stay.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -2224,8 +2783,8 @@
                         "values": ["trust", "comfort"],
                         "amount": 30,
                         "log": {
-                            "cats_from": "to_cat convinced n_c:0 to join {PRONOUN/to_cat/poss} Clan and stay with {PRONOUN/to_cat/object}.",
-                            "cats_to": "to_cat convinced {PRONOUN/to_cat/poss} mate, n_c:0, to join the Clan and stay with {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_to convinced n_c:0 to join {PRONOUN/cat_to/poss} Clan and stay with {PRONOUN/cat_to/object}.",
+                            "cats_to": "cat_to convinced {PRONOUN/cat_to/poss} mate, n_c:0, to join the Clan and stay with {PRONOUN/cat_to/object}."
                         }
                     },
                     {
@@ -2240,11 +2799,14 @@
                             "like",
                             "romance"
                         ],
-                        "amount": 50
+                        "amount": 50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
-                            "high_lawful"
+                            "clan", "high_lawful"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2253,7 +2815,7 @@
                         "values": ["respect", "trust"],
                         "amount": -20,
                         "log": {
-                            "cats_from": "Upon n_c:0 joining the Clan, it was found out that to_cat and n_c:0 were in a forbidden relationship. to_cat hid this secret from the rest of the Clan."
+                            "cats_from": "Upon n_c:0 joining the Clan, it was found out that cat_to and n_c:0 were in a forbidden relationship. cat_to hid this secret from the rest of the Clan."
                         }
                     }
                 ],
@@ -2263,7 +2825,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is - p_l can go with {PRONOUN/n_c:0/object}.",
+                "text": "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is — p_l can go with {PRONOUN/n_c:0/object}.",
                 "exp": 0,
                 "new_cat": [
                     [
@@ -2289,7 +2851,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
@@ -2302,7 +2867,7 @@
                         "values": ["like", "romance"],
                         "amount": 50,
                         "log": {
-                            "cats_from": "to_cat decided to run away from {PRONOUN/to_cat/poss} Clan to be with n_c:0."
+                            "cats_from": "cat_to decided to run away from {PRONOUN/cat_to/poss} Clan to be with n_c:0."
                         }
                     }
                 ],
@@ -2311,7 +2876,7 @@
                 "frequency": 4
             },
             {
-                "text": "{PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} gone. p_l swallows, pulling scent over the roof of {PRONOUN/p_l/poss} mouth, desperately searching - but n_c:0 has moved on from the lands just outside c_n's borders. It's not like p_l wasn't warned; n_c:0 {PRONOUN/n_c:0/self} said {PRONOUN/n_c:0/subject} could only stay for so long, but...",
+                "text": "{PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} gone. p_l swallows, pulling scent over the roof of {PRONOUN/p_l/poss} mouth, desperately searching — but n_c:0 has moved on from the lands just outside c_n's borders. It's not like p_l wasn't warned; n_c:0 {PRONOUN/n_c:0/self} said {PRONOUN/n_c:0/subject} could only stay for so long, but...",
                 "exp": 0,
                 "new_cat": [
                     [
@@ -2334,7 +2899,10 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 30
+                        "amount": 30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
+                        }
                     },
                     {
                         "cats_from": [
@@ -2350,7 +2918,7 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "to_cat tried to meet {PRONOUN/to_cat/poss} mate, n_c:0, by the border, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} gone already."
+                            "cats_from": "cat_to tried to meet {PRONOUN/cat_to/poss} mate, n_c:0, by the border, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} gone already."
                         }
                     }
                 ],
@@ -2382,7 +2950,7 @@
                         "values": ["like"],
                         "amount": -50,
                         "log": {
-                            "cats_from": "...but n_c:0 said {PRONOUN/n_c:0/subject} {VERB/n_c:0/weren't/wasn't} ready to join. to_cat, who was tired of n_c:0's indecision, tried to coerce n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 wasn't having it, sick of to_cat's pressuring."
+                            "cats_from": "...but n_c:0 said {PRONOUN/n_c:0/subject} {VERB/n_c:0/weren't/wasn't} ready to join. cat_to, who was tired of n_c:0's indecision, tried to coerce n_c:0 into joining {PRONOUN/cat_to/poss} Clan but n_c:0 wasn't having it, sick of cat_to's pressuring."
                         }
                     },
                     {
@@ -2413,7 +2981,7 @@
                         "values": ["romance"],
                         "amount": 40,
                         "log": {
-                            "cats_from": "to_cat and n_c:0 were mates hiding their relationship from to_cat's Clan."
+                            "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
                 ],
@@ -2423,7 +2991,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. Freedom isn't given up so lightly. This - this can't be true. p_l's heart is breaking.",
+                "text": "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. Freedom isn't given up so lightly. This — this can't be true. p_l's heart is breaking.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -2445,7 +3013,7 @@
                         "values": ["like"],
                         "amount": -50,
                         "log": {
-                            "cats_from": "...but n_c:0 had already told to_cat that {PRONOUN/n_c:0/subject} refused to join. to_cat, who was tired of being separated from n_c:0, tried to pressure n_c:0 into joining {PRONOUN/to_cat/poss} Clan but n_c:0 still refused. It's officially hopeless for the pair now."
+                            "cats_from": "...but n_c:0 had already told cat_to that {PRONOUN/n_c:0/subject} refused to join. cat_to, who was tired of being separated from n_c:0, tried to pressure n_c:0 into joining {PRONOUN/cat_to/poss} Clan but n_c:0 still refused. It's officially hopeless for the pair now."
                         }
                     },
                     {
@@ -2476,7 +3044,7 @@
                         "values": ["romance"],
                         "amount": 40,
                         "log": {
-                            "cats_from": "to_cat and n_c:0 were mates hiding their relationship from to_cat's Clan."
+                            "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
                 ],
@@ -2503,7 +3071,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
         "decline_text": "The patrol goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!",
         "chance_of_success": 60,
@@ -2524,7 +3092,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "n_c:0 was found by to_cat and {PRONOUN/to_cat/poss} patrol and taken into the Clan as a kit."
+                            "cats_from": "n_c:0 was found by cat_to and {PRONOUN/cat_to/poss} patrol and taken into the Clan as a kit."
                         }
                     }
                 ],
@@ -2581,7 +3149,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "p_l finds an abandoned kit whose parents are nowhere to be found.",
         "decline_text": "p_l goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!",
         "chance_of_success": 60,
@@ -2602,7 +3170,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "n_c:0 was found by to_cat and taken into the Clan as a kit."
+                            "cats_from": "n_c:0 was found by cat_to and taken into the Clan as a kit."
                         }
                     }
                 ],
@@ -2672,7 +3240,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -2702,7 +3270,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -2749,7 +3317,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was slightly offended when the Clan rejected {PRONOUN/from_cat/poss} offer to help, and even more offended when a patrol tried to redirect {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_from was slightly offended when the Clan rejected {PRONOUN/cat_from/poss} offer to help, and even more offended when a patrol tried to redirect {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -2800,7 +3368,10 @@
                         "cats_from": ["n_c:0"],
                         "cats_to": ["patrol"],
                         "values": ["like", "trust", "comfort"],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was found and accepted into the Clan by cat_to's patrol."
+                        }
                     }
                 ],
                 "outsider_rep": 1,
@@ -2829,7 +3400,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -2874,7 +3445,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat was slightly offended when the Clan rejected {PRONOUN/from_cat/poss} offer to help, and even more offended when a patrol tried to redirect {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_from was slightly offended when the Clan rejected {PRONOUN/cat_from/poss} offer to help, and even more offended when a patrol tried to redirect {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -2926,7 +3497,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved n_c:0 from a dog."
+                            "cats_from": "cat_to was part of the patrol that saved n_c:0 from a dog."
                         }
                     }
                 ],
@@ -2959,7 +3530,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved n_c:0 from a dog."
+                            "cats_from": "cat_to was part of the patrol that saved n_c:0 from a dog."
                         }
                     }
                 ],
@@ -2990,9 +3561,6 @@
                         ],
                         "injuries": [
                             "claw-wound"
-                        ],
-                        "scars": [
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -3033,7 +3601,7 @@
                         "values": ["like"],
                         "amount": -20,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that watched n_c:0 get chased by a dog instead of helping {PRONOUN/n_c:0/object}."
+                            "cats_from": "cat_to was part of the patrol that watched n_c:0 get chased by a dog instead of helping {PRONOUN/n_c:0/object}."
                         }
                     }
                 ],
@@ -3073,7 +3641,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 60,
@@ -3101,7 +3669,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -3131,7 +3699,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -3166,7 +3734,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -3213,7 +3781,7 @@
                         "values": ["like"],
                         "amount": -50,
                         "log": {
-                            "cats_from": "from_cat was driven out of c_n territory by to_cat's patrol after {PRONOUN/from_cat/subject} attacked p_l."
+                            "cats_from": "cat_from was driven out of c_n territory by cat_to's patrol after {PRONOUN/cat_from/subject} attacked p_l."
                         }
                     }
                 ],
@@ -3223,10 +3791,13 @@
                             "p_l"
                         ],
                         "injuries": [
-                            "battle_injury"
+                            "claw-wound"
                         ],
                         "scars": [
-                            "BRIDGE"
+                            "FACE",
+                            "SNOUT",
+                            "BRIDGE",
+                            "CHEEK"
                         ]
                     }
                 ],
@@ -3268,7 +3839,7 @@
                         "values": ["like"],
                         "amount": -20,
                         "log": {
-                            "cats_from": "from_cat met an old friend, to_cat, at the border even though to_cat said {PRONOUN/to_cat/subject} didn't want to see {PRONOUN/from_cat/object} again."
+                            "cats_from": "cat_from met an old friend, cat_to, at the border even though cat_to said {PRONOUN/cat_to/subject} didn't want to see {PRONOUN/cat_from/object} again."
                         }
                     }
                 ],
@@ -3355,7 +3926,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -3384,7 +3955,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that helped from_cat after {PRONOUN/from_cat/subject} gave birth to {PRONOUN/from_cat/poss} kits."
+                            "cats_from": "cat_to was part of the patrol that helped cat_from after {PRONOUN/cat_from/subject} gave birth to {PRONOUN/cat_from/poss} kits."
                         }
                     }
                 ],
@@ -3477,7 +4048,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3485,7 +4056,7 @@
                 "frequency": 4
             },
             {
-                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil — as the kits grow older, they'll have questions about their parent.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -3508,7 +4079,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3604,7 +4175,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat and {PRONOUN/from_cat/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -3633,7 +4204,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that helped from_cat after {PRONOUN/from_cat/subject} gave birth to {PRONOUN/from_cat/poss} kits."
+                            "cats_from": "cat_to was part of the patrol that helped cat_from after {PRONOUN/cat_from/subject} gave birth to {PRONOUN/cat_from/poss} kits."
                         }
                     }
                 ],
@@ -3731,7 +4302,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3739,7 +4310,7 @@
                 "frequency": 4
             },
             {
-                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent.",
+                "text": "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil — as the kits grow older, they'll have questions about their parent.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -3762,7 +4333,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -3857,7 +4428,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat brought help for from_cat after {PRONOUN/from_cat/subject} gave birth to {PRONOUN/from_cat/poss} kits."
+                            "cats_from": "cat_to brought help for cat_from after {PRONOUN/cat_from/subject} gave birth to {PRONOUN/cat_from/poss} kits."
                         }
                     }
                 ],
@@ -3886,7 +4457,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat brought help for from_cat after {PRONOUN/from_cat/subject} gave birth to {PRONOUN/from_cat/poss} kits."
+                            "cats_from": "cat_to brought help for cat_from after {PRONOUN/cat_from/subject} gave birth to {PRONOUN/cat_from/poss} kits."
                         }
                     }
                 ],
@@ -3905,8 +4476,7 @@
                         ],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "outsider_rep": 0,
@@ -3994,7 +4564,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -4025,7 +4595,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a newborn."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a newborn."
                         }
                     }
                 ],
@@ -4044,8 +4614,7 @@
                         ],
                         "injuries": [
                             "shock"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "outsider_rep": 0,
@@ -4087,7 +4656,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 3,
         "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
@@ -4119,7 +4688,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a kit."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a kit."
                         }
                     }
                 ],
@@ -4150,7 +4719,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a kit."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a kit."
                         }
                     }
                 ],
@@ -4158,7 +4727,7 @@
                 "frequency": 1
             },
             {
-                "text": "Furious, high-pitched yowls greet the patrol as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior - they can't leave them here. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better.",
+                "text": "Furious, high-pitched yowls greet the patrol as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior — they can't leave them here. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -4185,7 +4754,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that saved from_cat and brought {PRONOUN/from_cat/object} to c_n as a kit."
+                            "cats_from": "cat_to was part of the patrol that saved cat_from and brought {PRONOUN/cat_from/object} to c_n as a kit."
                         }
                     }
                 ],
@@ -4236,7 +4805,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 2,
+        "frequency": 4,
         "intro_text": "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory.",
         "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
         "chance_of_success": 50,
@@ -4256,7 +4825,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -4278,7 +4847,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -4303,7 +4872,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
                         }
                     }
                 ],
@@ -4350,14 +4919,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "CATBITE"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat gained a scar from a fight with an angry kittypet."
+                    "scar": "m_c gained a scar from a fight with an angry kittypet.",
+                    "death": "m_c died of injuries inflicted by an intruding kittypet."
                 },
                 "outsider_rep": -1,
                 "new_cat": [
@@ -4404,8 +4971,8 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 1,
-        "intro_text": "The patrol is checking along the border lines when they hear a startling sound - a hiss of pain? They quickly follow the sound to the source. It's a loner, one who appears to be injured.",
+        "frequency": 2,
+        "intro_text": "The patrol is checking along the border lines when they hear a startling sound — a hiss of pain? They quickly follow the sound to the source. It's a loner, one who appears to be injured.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -4425,7 +4992,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} injured."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured."
                         }
                     }
                 ],
@@ -4441,6 +5008,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 4
             },
             {
@@ -4459,7 +5030,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} injured."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured."
                         }
                     }
                 ],
@@ -4475,6 +5046,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 1
             },
             {
@@ -4496,7 +5071,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} injured."
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured."
                         }
                     }
                 ],
@@ -4512,6 +5087,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 4
             }
         ],
@@ -4572,8 +5151,8 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "frequency": 1,
-        "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound - a hiss of pain? {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured.",
+        "frequency": 2,
+        "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound — a hiss of pain? {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured.",
         "decline_text": "It's probably nothing. p_l leaves the noise alone and continues on {PRONOUN/p_l/poss} way.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -4592,7 +5171,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} injured."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured."
                         }
                     }
                 ],
@@ -4608,6 +5187,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 4
             },
             {
@@ -4625,7 +5208,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} injured."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured."
                         }
                     }
                 ],
@@ -4641,6 +5224,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 1
             },
             {
@@ -4661,7 +5248,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} injured."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured."
                         }
                     }
                 ],
@@ -4677,6 +5264,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a fight in {PRONOUN/m_c/poss} past as a loner.",
+                    "death": "m_c died of injuries from a fight in {PRONOUN/m_c/poss} past as a loner."
+                },
                 "frequency": 4
             }
         ],
@@ -4748,7 +5339,7 @@
         "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "Oh StarClan, app1 can't live with leaving some poor sad soul alone on the mountainside in the cold! Following the pitious cries, app1 finds a terrified kittypet crouched by a Thunderpath, desperately searching for a monster and the Twolegs that it contains. But it's alright, app1 is here, and c_n will be able to help.",
+                "text": "Oh StarClan, app1 can't live with leaving some poor sad soul alone on the mountainside in the cold! Following the piteous cries, app1 finds a terrified kittypet crouched by a Thunderpath, desperately searching for a monster and the Twolegs that it contains. But it's alright, app1 is here, and c_n will be able to help.",
                 "exp": 20,
                 "new_cat": [
                     [
@@ -4762,7 +5353,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],
@@ -4778,6 +5369,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 4
             },
             {
@@ -4795,7 +5390,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],
@@ -4811,6 +5406,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 1
             },
             {
@@ -4835,7 +5434,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat invited from_cat to c_n when {PRONOUN/from_cat/subject} {VERB/from_cat/were/was} found crying in the mountainside in the cold alone."
+                            "cats_from": "cat_to invited cat_from to c_n when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} found crying in the mountainside in the cold alone."
                         }
                     }
                 ],
@@ -4851,6 +5450,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs.",
+                    "death": "m_c died of frostbite after being abandoned by {PRONOUN/m_c/poss} Twolegs."
+                },
                 "frequency": 4
             }
         ],
@@ -4923,7 +5526,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought {PRONOUN/from_cat/object} to c_n."
+                            "cats_from": "cat_to was part of the patrol that rescued cat_from from a cruel Twoleg and brought {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
@@ -4939,10 +5542,14 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a Twoleg attempted to drown {PRONOUN/m_c/object}.",
+                    "death": "m_c died of injuries inflicted by a Twoleg attempting to drown {PRONOUN/m_c/object}."
+                },
                 "frequency": 4
             },
             {
-                "text": "s_c sees the Twoleg, the bag they are holding, the stones they are putting inside - it's now or never to save this poor cat. Signaling the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/call/calls} commands to claw at the Twoleg's legs and distract them for as long as possible. As soon as the rest of the patrol jumps into action, s_c sneaks over to the bag, opening it and carefully carrying the old fragile cat inside into a safe hiding space. Yowling the retreat to the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/spend/spends}, the rest of the walk back to camp reassuring the old cat that {PRONOUN/n_c:0/subject} {VERB/n_c:0/aren't/isn't} a burden, and they all would be happy to have {PRONOUN/n_c:0/poss} wisdom and knowledge be a part of c_n.",
+                "text": "s_c sees the Twoleg, the bag they are holding, the stones they are putting inside — it's now or never to save this poor cat. Signaling the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/call/calls} commands to claw at the Twoleg's legs and distract them for as long as possible. As soon as the rest of the patrol jumps into action, s_c sneaks over to the bag, opening it and carefully carrying the old fragile cat inside into a safe hiding space. Yowling the retreat to the rest of the patrol, {PRONOUN/s_c/subject} {VERB/s_c/spend/spends}, the rest of the walk back to camp reassuring the old cat that {PRONOUN/n_c:0/subject} {VERB/n_c:0/aren't/isn't} a burden, and they all would be happy to have {PRONOUN/n_c:0/poss} wisdom and knowledge be a part of c_n.",
                 "exp": 10,
                 "stat_trait": [
                     "wise",
@@ -4965,7 +5572,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that rescued from_cat from a cruel Twoleg and brought {PRONOUN/from_cat/object} to c_n."
+                            "cats_from": "cat_to was part of the patrol that rescued cat_from from a cruel Twoleg and brought {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
@@ -4981,6 +5588,10 @@
                         "no_results": true
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a Twoleg attempted to drown {PRONOUN/m_c/object}.",
+                    "death": "m_c died of injuries inflicted by a Twoleg attempting to drown {PRONOUN/m_c/object}."
+                },
                 "frequency": 4
             }
         ],
@@ -4995,10 +5606,13 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a Twoleg kicked {PRONOUN/m_c/object} into a tree.",
+                    "death": "m_c died of injuries inflicted by a Twoleg."
+                },
                 "outsider_rep": -1,
                 "frequency": 4
             },
@@ -5019,10 +5633,13 @@
                         ],
                         "injuries": [
                             "blunt_force_injury"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred after a Twoleg threw {PRONOUN/m_c/object} to the earth.",
+                    "death": "m_c died of injuries inflicted by a Twoleg."
+                },
                 "outsider_rep": -1,
                 "frequency": 4
             }
@@ -5062,7 +5679,7 @@
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 1,
+        "frequency": 2,
         "intro_text": "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentice notices the patrol, they press themself to the ground, begging to join c_n.",
         "decline_text": "This seems like a o_c_n problem. They order the apprentice to go back home and continue the patrol.",
         "chance_of_success": 60,
@@ -5083,7 +5700,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that brought from_cat to c_n after {PRONOUN/from_cat/subject} left {PRONOUN/from_cat/poss} Clan."
+                            "cats_from": "cat_to was part of the patrol that brought cat_from to c_n after {PRONOUN/cat_from/subject} left {PRONOUN/cat_from/poss} Clan."
                         }
                     }
                 ],
@@ -5106,7 +5723,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that brought from_cat to c_n after {PRONOUN/from_cat/subject} left {PRONOUN/from_cat/poss} Clan."
+                            "cats_from": "cat_to was part of the patrol that brought cat_from to c_n after {PRONOUN/cat_from/subject} left {PRONOUN/cat_from/poss} Clan."
                         }
                     }
                 ],
@@ -5140,7 +5757,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat was part of the patrol that brought from_cat to c_n after {PRONOUN/from_cat/subject} left {PRONOUN/from_cat/poss} Clan."
+                            "cats_from": "cat_to was part of the patrol that brought cat_from to c_n after {PRONOUN/cat_from/subject} left {PRONOUN/cat_from/poss} Clan."
                         }
                     },
                     {
@@ -5154,7 +5771,7 @@
                         "values": ["like", "trust"],
                         "amount": 6,
                         "log": {
-                            "cats_from": "from_cat is thankful for to_cat helping {PRONOUN/from_cat/object} join c_n."
+                            "cats_from": "cat_from is thankful for cat_to helping {PRONOUN/cat_from/object} join c_n."
                         }
                     }
                 ],
@@ -5203,6 +5820,10 @@
                         ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred from a wound inflicted by another Clan's apprentice.",
+                    "death": "m_c died of a wound inflicted by another Clan's apprentice."
+                },
                 "outsider_rep": -1,
                 "frequency": 4
             }
@@ -5266,7 +5887,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat and from_cat trained and talked for hours about how each other's lives are."
+                            "cats_from": "cat_to and cat_from trained and talked for hours about how each other's lives are."
                         }
                     }
                 ],
@@ -5295,7 +5916,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "to_cat and from_cat talked for hours about how each other's lives are."
+                            "cats_from": "cat_to and cat_from talked for hours about how each other's lives are."
                         }
                     }
                 ],
@@ -5303,7 +5924,7 @@
                 "frequency": 1
             },
             {
-                "text": "A loner? Interesting. Never one to pass up a good conversation, s_c saunters up to the outsider and begins chatting with {PRONOUN/n_c:0/object}. The two cats end up talking as though they're old friends - which, by the time they part ways, it feels like they are.",
+                "text": "A loner? Interesting. Never one to pass up a good conversation, s_c saunters up to the outsider and begins chatting with {PRONOUN/n_c:0/object}. The two cats end up talking as though they're old friends — which, by the time they part ways, it feels like they are.",
                 "exp": 10,
                 "stat_trait": [
                     "charismatic",
@@ -5329,7 +5950,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat and from_cat talked for hours and quickly became friends."
+                            "cats_from": "cat_to and cat_from talked for hours and quickly became friends."
                         }
                     }
                 ],
@@ -5363,7 +5984,7 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 15,
                         "log": {
-                            "cats_from": "to_cat and from_cat talked for hours about kittypet life and quickly became friends."
+                            "cats_from": "cat_to and cat_from talked for hours about kittypet life and quickly became friends."
                         }
                     }
                 ],
@@ -5417,10 +6038,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR",
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -5450,10 +6067,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "RIGHTEAR",
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -5489,8 +6102,8 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 20,
                         "log": {
-                            "cats_from": "After talking with to_cat, from_cat was thrilled that to_cat decided to leave {PRONOUN/to_cat/poss} home and experience loner life!",
-                            "cats_to": "Interested in all the stories and experiences from_cat told to_cat about loner life, to_cat ran away from c_n to experience it for {PRONOUN/to_cat/self}, with from_cat to guide {PRONOUN/to_cat/object}."
+                            "cats_from": "After talking with cat_to, cat_from was thrilled that cat_to decided to leave {PRONOUN/cat_to/poss} home and experience loner life!",
+                            "cats_to": "Interested in all the stories and experiences cat_from told cat_to about loner life, cat_to ran away from c_n to experience it for {PRONOUN/cat_to/self}, with cat_from to guide {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -5522,8 +6135,8 @@
                         "values": ["like", "trust", "comfort"],
                         "amount": 20,
                         "log": {
-                            "cats_from": "After talking with to_cat, from_cat was thrilled that to_cat decided to leave {PRONOUN/to_cat/poss} home and experience kittypet life!",
-                            "cats_to": "Interested in all the stories and experiences from_cat told to_cat about kittypet life, to_cat ran away from c_n to experience it for {PRONOUN/to_cat/self}, with from_cat to guide {PRONOUN/to_cat/object}."
+                            "cats_from": "After talking with cat_to, cat_from was thrilled that cat_to decided to leave {PRONOUN/cat_to/poss} home and experience kittypet life!",
+                            "cats_to": "Interested in all the stories and experiences cat_from told cat_to about kittypet life, cat_to ran away from c_n to experience it for {PRONOUN/cat_to/self}, with cat_from to guide {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -5559,7 +6172,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l hisses out a warning, but the loner refuses to leave without a fight - which {PRONOUN/n_c:0/subject} promptly {VERB/n_c:0/lose/loses}.",
+                "text": "p_l hisses out a warning, but the loner refuses to leave without a fight — which {PRONOUN/n_c:0/subject} promptly {VERB/n_c:0/lose/loses}.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -5580,7 +6193,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat got into a fight with from_cat."
+                            "cats_from": "cat_to got into a fight with cat_from."
                         }
                     }
                 ],
@@ -5594,32 +6207,6 @@
                             "minor_injury",
                             "torn ear"
                         ],
-                        "scars": [
-                            "ONE",
-                            "TWO",
-                            "THREE",
-                            "FOUR",
-                            "RIGHTEAR",
-                            "LEFTEAR",
-                            "RIGHTBLIND",
-                            "LEFTBLIND",
-                            "BOTHBLIND",
-                            "MANLEG",
-                            "MANTAIL",
-                            "CATBITE",
-                            "CATBITETWO",
-                            "BRIDGE",
-                            "FACE",
-                            "SNOUT",
-                            "CHEEK",
-                            "THROAT",
-                            "TAILBASE",
-                            "TAILSCAR",
-                            "BACK",
-                            "SCRATCHSIDE",
-                            "SIDE",
-                            "BELLY"
-                        ],
                         "no_results": true
                     },
                     {
@@ -5632,10 +6219,6 @@
                             "scrapes",
                             "torn ear",
                             "torn pelt"
-                        ],
-                        "scars": [
-                            "RIGHTEAR",
-                            "LEFTEAR"
                         ]
                     }
                 ],
@@ -5668,7 +6251,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat got into a fight with from_cat."
+                            "cats_from": "cat_to got into a fight with cat_from."
                         }
                     }
                 ],
@@ -5682,32 +6265,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "ONE",
-                            "TWO",
-                            "THREE",
-                            "FOUR",
-                            "RIGHTEAR",
-                            "LEFTEAR",
-                            "RIGHTBLIND",
-                            "LEFTBLIND",
-                            "BOTHBLIND",
-                            "MANLEG",
-                            "MANTAIL",
-                            "CATBITE",
-                            "CATBITETWO",
-                            "BRIDGE",
-                            "FACE",
-                            "SNOUT",
-                            "CHEEK",
-                            "THROAT",
-                            "TAILBASE",
-                            "TAILSCAR",
-                            "BACK",
-                            "SCRATCHSIDE",
-                            "SIDE",
-                            "BELLY"
                         ],
                         "no_results": true
                     }
@@ -5743,7 +6300,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat tried to warn to_cat to not cause any trouble, but to_cat ignored {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_from tried to warn cat_to to not cause any trouble, but cat_to ignored {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -5772,7 +6329,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat tried to chase to_cat out of the territory, but failed."
+                            "cats_from": "cat_from tried to chase cat_to out of the territory, but failed."
                         }
                     },
                     {
@@ -5786,7 +6343,7 @@
                         "values": ["respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat found out that to_cat failed to chase a kittypet out of the territory."
+                            "cats_from": "cat_from found out that cat_to failed to chase a kittypet out of the territory."
                         }
                     }
                 ],
@@ -5815,7 +6372,7 @@
                         "values": ["like"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "to_cat got into a fight with from_cat and from_cat lost."
+                            "cats_from": "cat_to got into a fight with cat_from and cat_from lost."
                         }
                     }
                 ],
@@ -5829,32 +6386,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "ONE",
-                            "TWO",
-                            "THREE",
-                            "FOUR",
-                            "RIGHTEAR",
-                            "LEFTEAR",
-                            "RIGHTBLIND",
-                            "LEFTBLIND",
-                            "BOTHBLIND",
-                            "MANLEG",
-                            "MANTAIL",
-                            "CATBITE",
-                            "CATBITETWO",
-                            "BRIDGE",
-                            "FACE",
-                            "SNOUT",
-                            "CHEEK",
-                            "THROAT",
-                            "TAILBASE",
-                            "TAILSCAR",
-                            "BACK",
-                            "SCRATCHSIDE",
-                            "SIDE",
-                            "BELLY"
                         ]
                     }
                 ],
@@ -5887,7 +6418,7 @@
                         "values": ["respect", "like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "Despite losing a fight to to_cat, from_cat can't help but respect the other cat's skills."
+                            "cats_from": "Despite losing a fight to cat_to, cat_from can't help but respect the other cat's skills."
                         }
                     },
                     {
@@ -5901,7 +6432,7 @@
                         "values": ["respect"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat got into a fight with a kittypet and lost the fight."
+                            "cats_from": "cat_from heard that cat_to got into a fight with a kittypet and lost the fight."
                         }
                     }
                 ],
@@ -5915,32 +6446,6 @@
                             "torn pelt",
                             "torn ear",
                             "minor_injury"
-                        ],
-                        "scars": [
-                            "ONE",
-                            "TWO",
-                            "THREE",
-                            "FOUR",
-                            "RIGHTEAR",
-                            "LEFTEAR",
-                            "RIGHTBLIND",
-                            "LEFTBLIND",
-                            "BOTHBLIND",
-                            "MANLEG",
-                            "MANTAIL",
-                            "CATBITE",
-                            "CATBITETWO",
-                            "BRIDGE",
-                            "FACE",
-                            "SNOUT",
-                            "CHEEK",
-                            "THROAT",
-                            "TAILBASE",
-                            "TAILSCAR",
-                            "BACK",
-                            "SCRATCHSIDE",
-                            "SIDE",
-                            "BELLY"
                         ]
                     }
                 ],
@@ -5972,7 +6477,7 @@
         "min_max_status": {
             "normal adult": [1, 1]
         },
-        "frequency": 3,
+        "frequency": 2,
         "intro_text": "p_l hears rustling in the grass. Initially annoyed at whatever apprentice has decided to come play in the borderlands, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shocked when the flowering grass parts to reveal an outsider, who grins flirtatiously at p_l and offers a cocksure greeting.",
         "decline_text": "Nope, p_l is going back home. Right now.",
         "chance_of_success": 50,
@@ -6004,7 +6509,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat had a pleasant chat with to_cat while looking for a stream or river."
+                            "cats_from": "cat_from had a pleasant chat with cat_to while looking for a stream or river."
                         }
                     },
                     {
@@ -6021,7 +6526,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was amused by how confidently to_cat trespassed to ask for directions to a stream or river."
+                            "cats_from": "cat_from was amused by how confidently cat_to trespassed to ask for directions to a stream or river."
                         }
                     }
                 ],
@@ -6067,7 +6572,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat flirted with to_cat when {PRONOUN/to_cat/subject} found {PRONOUN/from_cat/object} trespassing and stealing prey."
+                            "cats_from": "cat_from flirted with cat_to when {PRONOUN/cat_to/subject} found {PRONOUN/cat_from/object} trespassing and stealing prey."
                         }
                     },
                     {
@@ -6084,7 +6589,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was amused by to_cat's audacity in crossing the border to steal prey and then flirting with from_cat."
+                            "cats_from": "cat_from was amused by cat_to's audacity in crossing the border to steal prey and then flirting with cat_from."
                         }
                     }
                 ],
@@ -6129,7 +6634,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat flirted with to_cat when to_cat caught {PRONOUN/from_cat/object} trespassing."
+                            "cats_from": "cat_from flirted with cat_to when cat_to caught {PRONOUN/cat_from/object} trespassing."
                         }
                     },
                     {
@@ -6146,7 +6651,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat was flattered by to_cat's flirtatious attention, even though to_cat was trespassing."
+                            "cats_from": "cat_from was flattered by cat_to's flirtatious attention, even though cat_to was trespassing."
                         }
                     }
                 ],
@@ -6156,7 +6661,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is stunned into silence by the loner's suave charm. That gives the loner a chance to pick up the dead rabbit {PRONOUN/n_c:0/subject} stole from c_n territory and run off. p_l curses and yowls after {PRONOUn/n_c:0/object} to no avail.",
+                "text": "p_l is stunned into silence by the loner's suave charm. That gives the loner a chance to pick up the dead rabbit {PRONOUN/n_c:0/subject} stole from c_n territory and run off. p_l curses and yowls after {PRONOUN/n_c:0/object} to no avail.",
                 "exp": 0,
                 "art": "gen_happy_cat3",
                 "new_cat": [
@@ -6182,7 +6687,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "from_cat enjoyed flirting with to_cat to get away with {PRONOUN/from_cat/poss} trespassing and poaching."
+                            "cats_from": "cat_from enjoyed flirting with cat_to to get away with {PRONOUN/cat_from/poss} trespassing and poaching."
                         }
                     },
                     {
@@ -6199,7 +6704,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "Despite {PRONOUN/from_cat/self}, from_cat was charmed by an audacious loner who trespassed and stole from c_n."
+                            "cats_from": "Despite {PRONOUN/cat_from/self}, cat_from was charmed by an audacious loner who trespassed and stole from c_n."
                         }
                     },
                     {
@@ -6215,7 +6720,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat let a loner get away with stealing prey from c_n."
+                            "cats_from": "cat_from heard that cat_to let a loner get away with stealing prey from c_n."
                         }
                     }
                 ],
@@ -6259,7 +6764,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat enjoyed spending a sun-high romping around with to_cat, and enjoyed stealing prey from c_n even more."
+                            "cats_from": "cat_from enjoyed spending a sun-high romping around with cat_to, and enjoyed stealing prey from c_n even more."
                         }
                     },
                     {
@@ -6275,7 +6780,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "...but from_cat admittedly had fun being distracted and tricked."
+                            "cats_from": "...but cat_from admittedly had fun being distracted and tricked."
                         }
                     },
                     {
@@ -6291,7 +6796,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "to_cat fooled from_cat while stealing prey from c_n's territory..."
+                            "cats_from": "cat_to fooled cat_from while stealing prey from c_n's territory..."
                         }
                     }
                 ],
@@ -6343,7 +6848,7 @@
                 "frequency": 4
             },
             {
-                "text": "The charming loner explains that {PRONOUN/n_c:0/poss} kittens need food. s_c is touched and approaches to offer help - when the loner suddenly attacks. s_c fights {PRONOUN/n_c:0/object} off, newly wary of smooth-talking strangers.",
+                "text": "The charming loner explains that {PRONOUN/n_c:0/poss} kittens need food. s_c is touched and approaches to offer help — when the loner suddenly attacks. s_c fights {PRONOUN/n_c:0/object} off, newly wary of smooth-talking strangers.",
                 "exp": 0,
                 "art": "gen_battle_warrior_loner",
                 "can_have_stat": [
@@ -6376,7 +6881,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "to_cat tricked from_cat with a story about needing to feed {PRONOUN/to_cat/poss} kits and then attacked {PRONOUN/from_cat/object}."
+                            "cats_from": "cat_to tricked cat_from with a story about needing to feed {PRONOUN/cat_to/poss} kits and then attacked {PRONOUN/cat_from/object}."
                         }
                     },
                     {
@@ -6392,7 +6897,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "from_cat heard that to_cat attacked p_l."
+                            "cats_from": "cat_from heard that cat_to attacked p_l."
                         }
                     }
                 ],
@@ -6403,9 +6908,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     },
                     {
@@ -6414,16 +6916,12 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had with a treacherous, flirtatious rogue.",
-                    "reg_death": "The wounds obtained fighting a treacherous, flirtatious rogue eventually killed m_c.",
-                    "lead_death": "wounds obtained fighting a treacherous, flirtatious rogue eventually killed m_c"
+                    "death": "m_c died of wounds sustained fighting a treacherous, flirtatious rogue."
                 },
                 "outsider_rep": -1,
                 "frequency": 4
@@ -6455,7 +6953,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat caught to_cat trespassing on c_n territory."
+                            "cats_from": "cat_from caught cat_to trespassing on c_n territory."
                         }
                     }
                 ],
@@ -6497,7 +6995,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "p_l caught n_c:0 trespassing and attacked {PRONOUn/n_c:0/object}."
+                            "cats_from": "p_l caught n_c:0 trespassing and attacked {PRONOUN/n_c:0/object}."
                         }
                     }
                 ],
@@ -6508,9 +7006,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     },
                     {
@@ -6519,9 +7014,6 @@
                         ],
                         "injuries": [
                             "torn ear"
-                        ],
-                        "scars": [
-                            "RIGHTEAR"
                         ]
                     },
                     {
@@ -6530,9 +7022,6 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SCRATCHSIDE"
                         ]
                     }
                 ],
@@ -6573,7 +7062,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "...but from_cat respected to_cat's authority."
+                            "cats_from": "...but cat_from respected cat_to's authority."
                         }
                     },
                     {
@@ -6589,7 +7078,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat was annoyed to be caught stealing by to_cat..."
+                            "cats_from": "cat_from was annoyed to be caught stealing by cat_to..."
                         }
                     },
                     {
@@ -6605,7 +7094,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat caught to_cat stealing from c_n."
+                            "cats_from": "cat_from caught cat_to stealing from c_n."
                         }
                     }
                 ],
@@ -6647,7 +7136,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat enjoyed flirting with to_cat when to_cat caught {PRONOUN/from_cat/object} trespassing."
+                            "cats_from": "cat_from enjoyed flirting with cat_to when cat_to caught {PRONOUN/cat_from/object} trespassing."
                         }
                     },
                     {
@@ -6663,7 +7152,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "...though from_cat wasn't entirely immune to {PRONOUN/to_cat/poss} charms."
+                            "cats_from": "...though cat_from wasn't entirely immune to {PRONOUN/cat_to/poss} charms."
                         }
                     },
                     {
@@ -6679,7 +7168,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat caught to_cat trespassing on c_n territory..."
+                            "cats_from": "cat_from caught cat_to trespassing on c_n territory..."
                         }
                     }
                 ],
@@ -6719,7 +7208,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "from_cat flirted with to_cat when {PRONOUN/to_cat/subject} caught {PRONOUN/from_cat/object} trespassing. Though to_cat drove {PRONOUN/from_cat/object} off, from_cat was impressed by to_cat's strength."
+                            "cats_from": "cat_from flirted with cat_to when {PRONOUN/cat_to/subject} caught {PRONOUN/cat_from/object} trespassing. Though cat_to drove {PRONOUN/cat_from/object} off, cat_from was impressed by cat_to's strength."
                         }
                     },
                     {
@@ -6735,7 +7224,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat caught to_cat trespassing on c_n territory and chased {PRONOUN/to_cat/object} off."
+                            "cats_from": "cat_from caught cat_to trespassing on c_n territory and chased {PRONOUN/cat_to/object} off."
                         }
                     }
                 ],

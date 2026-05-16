@@ -15,8 +15,9 @@ from scripts.game_structure.game.settings import game_setting_get
 from scripts.cat.enums import CatRank
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.game_structure.constants import DISPLAY_SETTINGS
+from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
+from scripts.game_structure.constants import DISPLAY_SETTINGS, CONFIG
 from scripts.ui.windows.select_focus_clans import SelectFocusClansWindow
 from scripts.screens.Screens import Screens
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
@@ -49,11 +50,13 @@ class WarriorDenScreen(Screens):
         self.active_code = None
         self.original_focus_code = None
         self.other_clan_settings = [
-            "sabotage other clans",
-            "aid other clans",
-            "raid other clans",
+            "sabotage_other_clans",
+            "aid_other_clans",
+            "raid_other_clans",
         ]
-        self.not_classic_codes = ["hunting", "raid other clans", "hoarding"]
+
+        self.has_mediators = True
+        self.has_meddies = True
 
     def handle_event(self, event):
         """
@@ -65,8 +68,6 @@ class WarriorDenScreen(Screens):
             if event.ui_element in self.focus_buttons.values():
                 for code, value in self.focus_buttons.items():
                     if value == event.ui_element:
-                        description = settings_dict["clan_focus"][code][1]
-
                         self.active_code = code
 
                         # only enable the save button if a focus switch is possible
@@ -84,26 +85,6 @@ class WarriorDenScreen(Screens):
                             and self.save_button.is_enabled
                         ):
                             self.save_button.disable()
-                        if "mediator" in description and self.save_button.is_enabled:
-                            # only create the mediator list if needed to check
-                            mediator_list = list(
-                                filter(
-                                    lambda x: x.status.rank == CatRank.MEDIATOR
-                                    and x.status.alive_in_player_clan,
-                                    Cat.all_cats_list,
-                                )
-                            )
-                            if len(mediator_list) < 1:
-                                self.save_button.disable()
-                        elif (
-                            "medicine cat" in description
-                            and self.save_button.is_enabled
-                        ):
-                            meds = find_alive_cats_with_rank(
-                                Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
-                            )
-                            if len(meds) < 1:
-                                self.save_button.disable()
 
                         self.update_buttons()
                         self.update_visual()
@@ -114,21 +95,33 @@ class WarriorDenScreen(Screens):
                 if self.active_code in self.other_clan_settings:
                     SelectFocusClansWindow()
                 else:
-                    # change the setting
-                    switch_clan_setting(self.original_focus_code)
-                    switch_clan_setting(self.active_code)
-                    game.clan.last_focus_change = game.clan.age
-                    self.original_focus_code = self.active_code
-
-                    self.save_button.disable()
-                    self.update_buttons()
-                    self.create_top_info()
+                    self.change_setting()
 
     def screen_switches(self):
         """
         Handle everything when it is switched to that screen.
         """
         super().screen_switches()
+
+        self.has_mediators = (
+            len(
+                find_alive_cats_with_rank(
+                    Cat, [CatRank.MEDIATOR, CatRank.MEDIATOR_APPRENTICE], working=True
+                )
+            )
+            > 0
+        )
+        self.has_meddies = (
+            len(
+                find_alive_cats_with_rank(
+                    Cat,
+                    [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
+                    working=True,
+                )
+            )
+            > 0
+        )
+
         self.hide_menu_buttons()
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
@@ -192,21 +185,19 @@ class WarriorDenScreen(Screens):
         if "focus_visual" in self.focus_information:
             self.focus_information["focus_visual"].kill()
 
-            path = settings_dict["clan_focus"][self.active_code][3]
             self.focus_information["focus_visual"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((442, 84), (264, 348))),
                 pygame.image.load(
-                    f"resources/images/warrior_den/{path}.png"
+                    f"resources/images/warrior_den/{self.active_code}.png"
                 ).convert_alpha(),
                 manager=MANAGER,
             )
 
         else:
-            path = settings_dict["clan_focus"][self.original_focus_code][3]
             self.focus_information["focus_visual"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((442, 84), (264, 348))),
                 pygame.image.load(
-                    f"resources/images/warrior_den/{path}.png"
+                    f"resources/images/warrior_den/{self.original_focus_code}.png"
                 ).convert_alpha(),
                 manager=MANAGER,
             )
@@ -236,13 +227,27 @@ class WarriorDenScreen(Screens):
                 set_clan_setting(code, code == self.original_focus_code)
 
     def update_buttons(self):
-        for code, button in self.focus_buttons.items():
-            if self.active_code == code:
-                button.disable()
+        for name, button in self.focus_buttons.items():
+            # check mediator-related buttons
+            if (
+                not self.has_mediators
+                and name in constants.CONFIG["focus"]["requires_mediator"]
+            ):
+                self.focus_buttons[name].disable()
+                self.focus_buttons[name].set_text(f"settings.requires_mediator")
+            # check meddie related buttons
+            elif (
+                not self.has_meddies
+                and name in constants.CONFIG["focus"]["requires_medicine_cat"]
+            ):
+                self.focus_buttons[name].disable()
+                self.focus_buttons[name].set_text(f"settings.requires_medicine_cat")
+            # check chosen button
+            elif self.active_code == name:
+                self.focus_buttons[name].disable()
+            # enable everyone else
             else:
-                button.enable()
-            if game.clan.game_mode == "classic" and code in self.not_classic_codes:
-                button.disable()
+                self.focus_buttons[name].enable()
 
     def create_buttons(self):
         """
@@ -253,44 +258,37 @@ class WarriorDenScreen(Screens):
             manager=MANAGER,
         )
 
-        # n increments the y placement
-        n = 0
+        anchor = {"top": "top"}
+        for name, value in settings_dict["clan_focus"].items():
+            if (
+                game.clan.game_mode == "classic"
+                and name in constants.CONFIG["focus"]["classic_disallows"]
+            ):
+                continue
 
-        for i, (code, desc) in enumerate(settings_dict["clan_focus"].items()):
-            self.focus_buttons[code] = UISurfaceImageButton(
+            self.focus_buttons[name] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, 2), (250, 28))),
-                f"settings.{code}",
+                f"settings.{name}",
                 get_button_dict(ButtonStyles.ROUNDED_RECT, (250, 28)),
                 object_id=ObjectID(None, "@buttonstyles_rounded_rect"),
                 container=self.focus["button_container"],
                 starting_height=2,
                 manager=MANAGER,
-                anchors=(
-                    {
-                        "top_target": self.focus_buttons[
-                            list(settings_dict["clan_focus"])[i - 1]
-                        ]
-                    }
-                    if i > 0
-                    else {"top": "top"}
-                ),
+                anchors=anchor,
             )
 
-            if get_clan_setting(code):
-                self.focus_buttons[code].disable()
-                self.original_focus_code = code
-                self.active_code = code
-            else:
-                self.focus_buttons[code].enable()
-            if game.clan.game_mode == "classic" and code in self.not_classic_codes:
-                self.focus_buttons[code].disable()
+            anchor = {"top_target": self.focus_buttons[name]}
+            if get_clan_setting(name):
+                self.active_code = name
+                self.original_focus_code = name
 
-            n += 1
+            self.update_buttons()
 
-        # # create scrollbar
-        # self.focus["button_container"].set_scrollable_area_dimensions(
-        #     ui_scale_dimensions((250, (len(settings_dict["clan_focus"]) * 30 + 100)))
-        # )
+        if not self.active_code:
+            switch_clan_setting("business_as_usual")
+            self.active_code = "business_as_usual"
+            self.original_focus_code = "business_as_usual"
+            self.update_buttons()
 
     def create_top_info(self):
         """
@@ -376,10 +374,22 @@ class WarriorDenScreen(Screens):
             text_kwargs={"info": i18n.t(f"settings.{self.active_code}_tooltip")},
         )
 
+    def change_setting(self):
+        """
+        Handles changing the focus setting to match self.active_code
+        """
+        switch_clan_setting(self.original_focus_code)
+        switch_clan_setting(self.active_code)
+        game.clan.last_focus_change = game.clan.age
+        self.original_focus_code = self.active_code
+
+        self.save_button.disable()
+        self.update_buttons()
+        self.create_top_info()
+
     def save_focus(self):
         """
         Saves the focus when the clan to focus on in screen 'SelectFocusClan' are selected.
         """
         if len(game.clan.clans_in_focus) > 0:
-            game.clan.last_focus_change = game.clan.age
-            self.original_focus_code = self.active_code
+            self.change_setting()

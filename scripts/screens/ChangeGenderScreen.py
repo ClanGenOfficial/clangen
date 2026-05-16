@@ -11,11 +11,9 @@ from pygame_gui.core import ObjectID, UIContainer
 from scripts.cat.cats import Cat
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    CatButton,
-    UISurfaceImageButton,
-)
+from ..ui.elements.cat_button import CatButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import shorten_text_to_fit
 from ..cat import pronouns
@@ -93,9 +91,6 @@ class ChangeGenderScreen(Screens):
 
             elif event.ui_element == self.buttons["add_pronouns"]:
                 PronounCreationWindow(self.the_cat)
-                self.previous_cat_button.disable()
-                self.next_cat_button.disable()
-                self.back_button.disable()
 
             elif type(event.ui_element) is CatButton:
                 if event.ui_element.cat_id == "add":

@@ -125,7 +125,7 @@
     {
         "id": "careful_warrior_to_deputy",
         "thoughts": [
-            "Asks the deputy about sending out some more hunting patrols - just to be sure"
+            "Asks the deputy about sending out some more hunting patrols — just to be sure"
         ],
         "main_trait_constraint": [
             "careful"
@@ -357,7 +357,7 @@
             "Grooms r_c clean and makes {PRONOUN/r_c/object} presentable",
             "Carries r_c to the nursery because {PRONOUN/r_c/subject} fell asleep",
             "Is scolding r_c for almost being reckless",
-            "Hopes {PRONOUN/m_c/poss} kits arent getting into too much trouble",
+            "Hopes {PRONOUN/m_c/poss} kits aren't getting into too much trouble",
             "Is in awe with how fast r_c is growing"
         ],
         "relationship_constraint": [

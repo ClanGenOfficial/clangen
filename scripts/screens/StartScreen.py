@@ -25,9 +25,9 @@ from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game, constants
-from scripts.game_structure.audio import music_manager
 from scripts.game_structure.game.settings import game_settings_load, game_setting_get
-from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.update_available import UpdateAvailableWindow
 from scripts.ui.windows.changelog import ChangelogWindow
 from scripts.housekeeping.datadir import open_data_dir, open_url
@@ -37,7 +37,7 @@ from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.game.switches import switch_get_value, Switch
-from ..housekeeping.datadir import get_data_dir, get_cache_dir
+from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -134,6 +134,56 @@ class StartScreen(Screens):
         for btn in self.social_buttons:
             self.social_buttons[btn].kill()
 
+    def reload_errors(self):
+        if switch_get_value(Switch.error_message):
+            self.continue_button.disable()
+            error_text = "screens.start.error_text"
+            traceback_text = ""
+            if switch_get_value(Switch.traceback):
+                print("Traceback:")
+                print(switch_get_value(Switch.traceback))
+                traceback_text = "<br><br>" + escape(
+                    "".join(
+                        traceback.format_exception(
+                            switch_get_value(Switch.traceback),
+                            switch_get_value(Switch.traceback),
+                            switch_get_value(Switch.traceback).__traceback__,
+                        )
+                    )
+                )  # pylint: disable=line-too-long
+            self.error_label.set_text(
+                error_text,
+                text_kwargs={
+                    "error": str(switch_get_value(Switch.error_message)),
+                    Switch.traceback: traceback_text,
+                },
+            )
+            self.error_box.show()
+            self.error_label.show()
+            self.error_gethelp.show()
+            self.open_data_directory_button.show()
+
+            if get_version_info().is_sandboxed:
+                self.open_data_directory_button.hide()
+
+            self.closebtn.show()
+
+            self.error_open = True
+        else:
+            if game.clan is not None:
+                self.continue_button.enable()
+            self.error_box.hide()
+            self.error_label.hide()
+            self.error_gethelp.hide()
+            self.open_data_directory_button.hide()
+
+            if get_version_info().is_sandboxed:
+                self.open_data_directory_button.hide()
+
+            self.closebtn.hide()
+
+            self.error_open = False
+
     def screen_switches(self):
         """
         TODO: DOCS
@@ -142,10 +192,6 @@ class StartScreen(Screens):
         super().screen_switches()
         if game.event_editing:
             game.event_editing = False
-
-        # start menu music if it isn't already playing
-        # this is the only screen that has to check its own music, other screens handle that in the screen change
-        music_manager.check_music(GameScreen.START)
 
         bg = pygame.image.load("resources/images/menu.png").convert()
         if game_setting_get("dark mode"):
@@ -378,39 +424,7 @@ class StartScreen(Screens):
         else:
             self.switch_clan_button.disable()
 
-        if switch_get_value(Switch.error_message):
-            error_text = "screens.start.error_text"
-            traceback_text = ""
-            if switch_get_value(Switch.traceback):
-                print("Traceback:")
-                print(switch_get_value(Switch.traceback))
-                traceback_text = "<br><br>" + escape(
-                    "".join(
-                        traceback.format_exception(
-                            switch_get_value(Switch.traceback),
-                            switch_get_value(Switch.traceback),
-                            switch_get_value(Switch.traceback).__traceback__,
-                        )
-                    )
-                )  # pylint: disable=line-too-long
-            self.error_label.set_text(
-                error_text,
-                text_kwargs={
-                    "error": str(switch_get_value(Switch.error_message)),
-                    Switch.traceback: traceback_text,
-                },
-            )
-            self.error_box.show()
-            self.error_label.show()
-            self.error_gethelp.show()
-            self.open_data_directory_button.show()
-
-            if get_version_info().is_sandboxed:
-                self.open_data_directory_button.hide()
-
-            self.closebtn.show()
-
-            self.error_open = True
+        self.reload_errors()
 
         if game.clan is not None:
             key_copy = tuple(Cat.all_cats.keys())

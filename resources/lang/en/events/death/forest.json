@@ -40,7 +40,7 @@
         ],
         "tags": [],
         "frequency": 3,
-        "event_text": "m_c was found dead underneath an oak tree with dog scent wreathing around {PRONOUN/m_c/object}.",
+        "event_text": "m_c was found dead underneath a clawed oak tree surrounded by the stench of dog.",
         "m_c": {
             "skill": [
                 "-CLIMBER,2"
@@ -165,9 +165,64 @@
                 "values": ["comfort"],
                 "amount": -10,
                 "log": {
-                    "cats_from": "from_cat was too slow to save to_cat from an owl."
+                    "cats_from": "cat_from was too slow to save cat_to from an owl."
                 }
             }
         ]
-    }
+    },
+        {
+        "event_id": "fst_mushroom_death",
+        "location": [
+            "forest:camp1"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf"
+        ],
+        "frequency": 2,
+        "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} found dead in {PRONOUN/m_c/poss} nest later that evening.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "-CLEVER,1",
+                "-SENSE,2",
+                "-HEALER,1"
+            ],
+            "trait": [
+               "-nervous",
+                "-strict",
+                "-thoughtful",
+                "-calm",
+                "-responsible",
+                "-wise",
+                "-cunning",
+                "-careful"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c ate a beautiful but deadly mushroom."
+            }
+        ]
+    },
+    {
+    "event_id": "fst_death_extinction_bear",
+    "location": ["forest:camp3"],
+    "season": ["leaf-fall"],
+    "sub_type": ["mass_death"],
+    "frequency": 2,
+    "event_text": "multi_cat were killed after a shelter-seeking bear lumbered into the grotto and discovered it was occupied.",
+    "history": [
+      {
+        "cats": ["multi_cat"],
+        "death": "m_c was killed by a bear rampaging through camp."
+      }
+    ]
+}
 ]

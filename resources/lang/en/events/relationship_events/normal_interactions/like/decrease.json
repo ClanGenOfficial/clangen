@@ -12,7 +12,16 @@
 			"m_c doesn't see why r_c is upset about something trivial.",
 			"r_c yawns while m_c is trying to tell {PRONOUN/r_c/object} something.",
 			"m_c asks for the last of r_c's fresh-kill, but r_c says no.",
-			"r_c won't help m_c fix {PRONOUN/m_c/poss} nest."
+			"r_c won't help m_c fix {PRONOUN/m_c/poss} nest.",
+			"m_c saw r_c being rude.",
+			"m_c heard r_c say something mean.",
+			"m_c saw r_c cough up a hairball.",
+			"m_c is annoyed by r_c's negative comments.",
+			"r_c tells m_c to smile more.",
+			"m_c hopes {PRONOUN/m_c/subject} just misheard r_c's rude remark.",
+			"r_c sneezed on m_c.",
+			"m_c doesn't understand why r_c is being so rude.",
+			"m_c was woken up early by r_c."
 		]
 	},
 	{
@@ -47,12 +56,14 @@
 			"m_c thinks that r_c is acting overly dramatic lately.",
 			"r_c won't give up a warm, sunny spot for m_c, not even for a minute.",
 			"m_c keeps telling r_c to stop saying a joke, but r_c doesn't take {PRONOUN/m_c/poss} request seriously.",
+			"r_c makes a snide remark about one of m_c's friends.",
 			"m_c is baffled by something r_c says about religion.",
 			"r_c makes a crude remark about the Clan to m_c."
 		]
 	},
 	{
 		"id": "platonic_de_med2",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is annoyed that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to pull ticks off of r_c today.",
 			"m_c doesn't like being bossed around by r_c just because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} young.",
@@ -69,6 +80,7 @@
 	},
 	{
 		"id": "platonic_de_med3",
+		"intensity": "medium",
 		"interactions": [
 			"r_c makes sure m_c is following the Warrior Code.",
 			"r_c snaps at m_c for making a joke about the Clan.",
@@ -80,6 +92,7 @@
 	},
 	{
 		"id": "platonic_de_med4",
+		"intensity": "medium",
 		"interactions": [
 			"r_c is not backing down in an argument with m_c.",
 			"r_c is getting too violent in an argument with m_c.",
@@ -132,7 +145,8 @@
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -178,7 +192,8 @@
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -257,7 +272,8 @@
 	},
 	{
 		"id": "dislike_inc_med1",
-		"intensity": [
+		"intensity": "medium",
+		"interactions": [
 			"m_c wishes r_c would take things more seriously.",
 			"m_c thinks r_c is acting childish lately.",
 			"m_c keeps complaining about something r_c did.",
@@ -272,6 +288,7 @@
 	},
 	{
 		"id": "dislike_inc_med2",
+		"intensity": "medium",
 		"interactions": [
 			"m_c ignores r_c.",
 			"m_c had a huge argument with r_c.",
@@ -291,12 +308,14 @@
 	},
 	{
 		"id": "dislike_inc_med3",
+		"intensity": "medium",
 		"interactions": [
 			"m_c had a disagreement with r_c while on patrol earlier.",
 			"m_c stole r_c's catch right out from under {PRONOUN/r_c/poss} claws.",
 			"m_c prays that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} on patrol with r_c tomorrow.",
 			"m_c sighs loudly every time r_c does anything on patrol.",
 			"While on a patrol, m_c secretly pulled back a branch and made it whop r_c in the face.",
+			"m_c pranked r_c during a patrol.",
 			"m_c laughed at r_c for making a mistake on a patrol.",
 			"m_c ignored r_c's advice on a patrol and nearly got hurt because of it.",
 			"m_c and r_c couldn't agree which way to go on a patrol and got home late.",
@@ -320,6 +339,7 @@
 	},
 	{
 		"id": "dislike_inc_med4",
+		"intensity": "medium",
 		"interactions": [
 			"m_c is thinking about how r_c wronged {PRONOUN/m_c/object}.",
 			"m_c is watching r_c scornfully.",
@@ -336,6 +356,7 @@
 	},
 	{
 		"id": "dislike_inc_med5",
+		"intensity": "medium",
 		"interactions": [
 			"r_c is asking m_c to tell {PRONOUN/r_c/object} about how good {PRONOUN/r_c/subject} {VERB/m_c/look/looks}.",
 			"r_c offends m_c with {PRONOUN/r_c/poss} brutal honesty.",
@@ -351,6 +372,7 @@
 	},
 	{
 		"id": "dislike_inc_med6",
+		"intensity": "medium",
 		"interactions": [
 			"r_c pulled a prank on m_c.",
 			"r_c blamed m_c for {PRONOUN/r_c/poss} own mistake.",
@@ -366,6 +388,7 @@
 	},
 	{
 		"id": "dislike_effect_other1",
+		"intensity": "medium",
 		"relationship_constraint": [
 			"hates"
 		],
@@ -375,6 +398,7 @@
 			"r_c is bragging about being better than m_c.",
 			"r_c is belittling m_c's accomplishments.",
 			"r_c is always talking about how much {PRONOUN/r_c/subject} {VERB/r_c/dislike/dislikes} m_c.",
+			"r_c won't stop complaining to m_c!",
 			"r_c's friends are tired of hearing about all of the things {PRONOUN/r_c/subject} {VERB/r_c/hate/hates} about m_c.",
 			"The Clan is starting to get nervous about how much m_c and r_c dislike one another.",
 			"m_c and r_c argue and fight like it's in their blood to do so.",
@@ -385,6 +409,7 @@
 	},
 	{
 		"id": "dislike_kit_inc_med1",
+		"intensity": "medium",
 		"interactions": [
 			"m_c trips over r_c.",
 			"m_c had to nip r_c on the rump because {PRONOUN/r_c/subject} {VERB/r_c/were/was} being naughty.",
@@ -393,25 +418,19 @@
 			"m_c tells someone to get r_c away from {PRONOUN/m_c/object}."
 		],
 		"main_status_constraint": [
-			"elder",
-			"apprentice",
-			"warrior",
-			"mediator apprentice",
-			"mediator",
-			"medicine cat apprentice",
-			"medicine cat",
-			"deputy",
-			"leader"
+			"-kitten"
 		],
 		"random_status_constraint": [
 			"kitten"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
 		"id": "dislike_dep_leader_inc_med1",
+		"intensity": "medium",
 		"interactions": [
 			"m_c punishes r_c with extra work.",
 			"m_c divides r_c into extra patrols.",
@@ -433,6 +452,7 @@
 	},
 	{
 		"id": "dislike_dep_leader_inc_med2",
+		"intensity": "medium",
 		"interactions": [
 			"m_c punishes r_c with extra work.",
 			"m_c divides r_c into extra patrols.",
@@ -450,11 +470,13 @@
 			"apprentice"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
 		"id": "dislike_med_inc_med1",
+		"intensity": "medium",
 		"interactions": [
 			"m_c gives r_c bitter herbs on purpose.",
 			"m_c snaps at r_c for seeking treatment for something trivial and wasting {PRONOUN/m_c/poss} time.",
@@ -469,7 +491,8 @@
 			"medicine cat"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -478,14 +501,17 @@
 		"interactions": [
 			"m_c thinks r_c is annoying.",
 			"m_c can't stand being around r_c.",
+			"m_c overhears r_c say something awful about a dead Clanmate.",
 			"m_c daydreams about r_c being exiled.",
-			"m_c thinks about telling others that r_c broke the code.",
+			"m_c thinks about telling others that r_c broke the Code.",
 			"m_c finds fault in everything r_c does.",
 			"m_c always assumes the worst of r_c.",
 			"A Clanmate claims that m_c wants r_c dead.",
 			"The Clan is very uncomfortable whenever m_c talks about r_c.",
 			"m_c makes all kinds of faces whenever r_c is brought up in conversation.",
-			"m_c sighs at the mere mention of r_c."
+			"m_c sighs at the mere mention of r_c.",
+			"m_c got lost and r_c didn't look for {PRONOUN/m_c/object}.",
+			"m_c and r_c argue about religion in the middle of camp."
 		]
 	},
 	{
@@ -495,7 +521,7 @@
 			"m_c had a fight with r_c.",
 			"m_c had a heated argument with r_c and said some very hurtful things.",
 			"m_c and r_c nearly got in a bloody fight if it weren't for the intervention of a Clanmate.",
-			"m_c and r_c are always backtalking to each other.",
+			"m_c and r_c are always back-talking to each other.",
 			"m_c and r_c snarl at one another over something trivial.",
 			"r_c told all of m_c's friends something embarrassing about {PRONOUN/m_c/object}.",
 			"m_c accuses r_c of lying about something important.",
@@ -505,7 +531,8 @@
 			"m_c argues with r_c in front of other cats and reveals something embarrassing."
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{
@@ -566,25 +593,62 @@
 			"deputy"
 		],
 		"reaction_random_cat": {
-			"like": "decrease"
+			"like": "decrease",
+			"trust": "decrease"
 		}
 	},
 	{
-		"id": "dislike_inc_high6",
+		"id": "dislike_inc_high_highrank1",
+		"intensity": "high",
+		"interactions": [
+			"m_c calls r_c a threat to the safety of the Clan.",
+			"m_c and r_c are arguing about something important and risking the Clan's safety.",
+			"m_c claims {PRONOUN/m_c/subject} spoke with StarClan and heard bad things about r_c."
+		],
+		"main_status_constraint": [
+			"medicine cat",
+			"leader"
+		],
+		"reaction_random_cat": {
+			"like": "decrease",
+			"comfort": "decrease",
+			"respect": "decrease",
+			"trust": "decrease"
+		}
+	},
+	{
+		"id": "dislike_inc_high_highrank2",
 		"intensity": "high",
 		"interactions": [
 			"m_c is scolding r_c.",
 			"m_c is bossing r_c around.",
 			"m_c calls r_c a threat to the safety of the Clan.",
 			"m_c and r_c are arguing about something important and risking the Clan's safety.",
-			"m_c threatens r_c with exile.",
-			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor.",
-			"m_c threatens to give r_c a terrible name.",
-			"m_c claims {PRONOUN/m_c/subject} spoke with StarClan and heard bad things about r_c."
+			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor."
 		],
 		"main_status_constraint": [
-			"medicine cat",
 			"deputy",
+			"leader"
+		],
+		"random_status_constraint": [
+			"-leader"
+		],
+		"reaction_random_cat": {
+			"like": "decrease",
+			"comfort": "decrease",
+			"respect": "decrease",
+			"trust": "decrease"
+		}
+	},
+	{
+		"id": "dislike_inc_high_highrank3",
+		"intensity": "high",
+		"interactions": [
+			"m_c threatens r_c with exile.",
+			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor.",
+			"m_c threatens to give r_c a terrible name."
+		],
+		"main_status_constraint": [
 			"leader"
 		],
 		"reaction_random_cat": {
@@ -619,6 +683,7 @@
 	},
 	{
 		"id": "dislike_kit_de_med1",
+		"intensity": "medium",
 		"interactions": [
 			"m_c sticks {PRONOUN/m_c/poss} tongue out at r_c.",
 			"m_c makes stinky faces at r_c for seemingly no reason.",
@@ -634,6 +699,7 @@
 	},
 	{
 		"id": "dislike_kit_de_med2",
+		"intensity": "medium",
 		"interactions": [
 			"m_c tried to have a friendly discussion with r_c about what prey tastes best, but it turned into an argument.",
 			"m_c and r_c always end up arguing over what games to play.",
@@ -654,6 +720,7 @@
 	},
 	{
 		"id": "dislike_kit_inc_med3",
+		"intensity": "medium",
 		"interactions": [
 			"m_c whines that r_c won't play with {PRONOUN/m_c/object}, even though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} always around camp.",
 			"m_c doesn't understand why r_c won't let {PRONOUN/m_c/object} play in the medicine cat den."
@@ -666,5 +733,26 @@
 			"mediator apprentice",
 			"medicine cat apprentice"
 		]
+	},
+	{
+		"id": "platonic_de_low_opposites",
+		"intensity": "low",
+		"interactions": [
+			"m_c and r_c disagree on something that should have an obvious answer.",
+			"r_c tells m_c to be happier. m_c explains it's not that simple."
+		],
+		"main_trait_constraint": [
+			"gloomy",
+			"grumpy"
+		],
+		"random_trait_constraint": [
+			"childish",
+			"oblivious",
+			"bold",
+			"confident"
+		],
+		"reaction_random_cat": {
+			"like": "decrease"
+		}
 	}
 ]

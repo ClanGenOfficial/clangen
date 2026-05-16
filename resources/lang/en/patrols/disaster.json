@@ -1,11 +1,11 @@
 [
     {
-        "patrol_id": "fst_bord_flashflood1",
+        "patrol_id": "gen_bord_flashflood1",
         "biome": [
-            "forest"
+            "-desert"
         ],
         "season": [
-            "newleaf"
+            "newleaf", "greenleaf", "leaf-fall"
         ],
         "types": [
             "border"
@@ -35,10 +35,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to gained trust in each other after persevering on a border patrol despite gray skies."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -56,10 +58,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to gained trust in each other after persevering on a rainy border patrol."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -73,7 +77,7 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
                             "patrol"
@@ -83,13 +87,16 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to led their border patrol to higher ground during a rainstorm."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
+                "text": "It's not worth the risk — s_c convinces the patrol to head for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -99,17 +106,35 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol", "high_social", "high_stable"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "respect"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was glad that cat_to didn't decide to risk a border patrol in poor weather."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol", "low_social", "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from wasn't happy that cat_to canceled a border patrol over a few dark clouds."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -125,325 +150,17 @@
                 "history_text": {
                     "death": "This cat was drowned by floodwaters."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
                 "frequency": 4
             }
         ]
     },
     {
-        "patrol_id": "fst_bord_flashflood2",
+        "patrol_id": "multi_bord_flashflood2",
         "biome": [
-            "forest"
+            "forest", "plains", "mountainous"
         ],
         "season": [
-            "greenleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was drowned by floodwaters."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_bord_flashflood3",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was drowned by floodwaters."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_bord_flashflood4",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "newleaf"
+            "newleaf", "greenleaf", "leaf-fall"
         ],
         "types": [
             "border"
@@ -479,139 +196,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_bord_flashflood5",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_bord_flashflood6",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
+                "text": "It's not worth the risk — s_c heads for home.",
                 "exp": 20,
                 "stat_trait": [
                     "careful",
@@ -695,7 +280,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -704,13 +289,32 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 25,
+                        "log": {
+                            "cats_from": "cat_to saved cat_from's life in a rogue ambush."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -728,7 +332,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "death": "This cat died from being ambushed by rogues."
+                    "death": "m_c was ambushed and killed by rogues."
                 },
                 "frequency": 4
             }
@@ -780,10 +384,11 @@
                 "frequency": 1
             },
             {
-                "text": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
+                "text": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the reaction time to escape, running for {PRONOUN/s_c/poss} life.",
                 "exp": 30,
                 "stat_skill": [
-                    "FIGHTER,3"
+                    "FIGHTER,3",
+                    "RUNNER,3"
                 ],
                 "new_cat": [
                     [
@@ -804,22 +409,25 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "mutual": true,
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from tried to ambush and kill cat_to, but cat_to escaped."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -839,1272 +447,6 @@
                 ],
                 "history_text": {
                     "death": "m_c died in a rogue ambush while on a solo patrol."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_bord_flashflood1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay far from the riverbanks as the rain begins to pour around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was drowned by floodwaters."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_bord_flashflood2",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "lost_cats": [
-                    "patrol"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_bord_flashflood3",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "lost_cats": [
-                    "patrol"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_bord_flashflood4",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_bord_flashflood5",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_bord_flashflood6",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_bord_flashflood1",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was drowned by floodwaters."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_bord_flashflood2",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was drowned by floodwaters."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_bord_flashflood3",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was drowned by floodwaters."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_bord_flashflood4",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around {PRONOUN/s_c/object}.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_bord_flashflood5",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_bord_flashflood6",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
                 },
                 "frequency": 4
             }
@@ -2161,10 +503,46 @@
                 "stat_skill": [
                     "FIGHTER,3"
                 ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "n_c:0",
+                            "n_c:1",
+                            "n_c:2"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 25,
+                        "log": {
+                            "cats_from": "cat_to saved cat_from's life in a rogue ambush."
+                        }
+                    }
+                ],
                 "frequency": 4
             },
             {
-                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
+                "text": "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -2182,7 +560,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "death": "This cat died from being ambushed by rogues."
+                    "death": "m_c was ambushed and killed by rogues."
                 },
                 "frequency": 4
             }
@@ -2234,10 +612,11 @@
                 "frequency": 1
             },
             {
-                "text": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for {PRONOUN/s_c/poss} life.",
+                "text": "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the reaction time to escape, running for {PRONOUN/s_c/poss} life.",
                 "exp": 30,
                 "stat_skill": [
-                    "FIGHTER,3"
+                    "FIGHTER,3",
+                    "RUNNER,3"
                 ],
                 "new_cat": [
                     [
@@ -2258,22 +637,25 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
-                            "patrol"
+                            "s_c"
                         ],
                         "mutual": true,
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from tried to ambush and kill cat_to, but cat_to escaped."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious - but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
+                "text": "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious — but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety.",
                 "exp": 30,
                 "stat_trait": [
                     "careful",
@@ -2299,709 +681,9 @@
         ]
     },
     {
-        "patrol_id": "bch_bord_flashflooddis1",
+        "patrol_id": "multi_bord_roguedis1",
         "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was drowned by floodwaters."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_bord_flashflooddis2",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/r_c/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/stick/sticks} to the clifftops, avoiding the low beaches as the rain pours down around {PRONOUN/s_c/object}.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_bord_flashflooddis3",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "As the patrol crosses a beach, shivering with the cold, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but out of sync with the ocean.",
-        "decline_text": "The patrol scrambles back the way they came, fluffed up and panting.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The cats leap forward, dashing to the other side of the beach and up onto the rocks. They make it in time to watch the beach get lost under a tide of water from inland.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c shouts to get back! The patrol scrambles back the way they came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. The cats pounce on the opportunity to scavenge.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,3"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. The rest of the patrol yowl at {PRONOUN/s_c/object} to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The cats are in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was swept out to sea by a flood."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "wtlnd_bord_flashflooddis1",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The cats get wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c convinces the patrol to head for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was drowned by floodwaters."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "wtlnd_bord_flashflooddis2",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "There are dark clouds on the horizon and r_c wonders if {PRONOUN/p_l/subject} should continue.",
-        "decline_text": "p_l decides to head back early.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "While it's pretty gray up there, the promised rain never comes.",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "r_c gets wet in the rain, but the patrol is otherwise successful.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c makes a careful judgment and keeps going. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stick/sticks} to solid ground, sometimes routing {PRONOUN/s_c/self} through the trees as the rain begins to pour around {PRONOUN/s_c/object}.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's not worth the risk - s_c heads for home.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps r_c away.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "m_c was drowned by floodwaters."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "wtlnd_bord_flashflooddis3",
-        "biome": [
-            "wetlands"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "gen_bord_flashflood",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "As the patrol crosses a muddy bog, shivering with the cold, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
-        "decline_text": "The patrol scrambles back the way they came, fluffed up and panting.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The cats leap forward, dashing to the other side of the bog and up into the trees. They make it in time to watch the swamp get lost under a tide of water from inland.",
-                "exp": 20,
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c shouts to get back! The patrol scrambles back the way they came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. The cats pounce on the opportunity to scavenge.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,3"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c shrieks at the strange sound, paws digging into the mud as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. The rest of the patrol yowl at {PRONOUN/s_c/object} to stop, running after {PRONOUN/s_c/object}, but s_c is proven right when the swamp disappears under a flood of water from inland. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} saved them all.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
-                ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The cats are in the middle of the bog when the flood hits them, freezing water rushing past, sweeping them straight out into the churning river, under its ice.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "death": "This cat was killed by a flood."
-                },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5
-                    }
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "fst_bord_roguedis1",
-        "biome": [
-            "forest"
+            "forest", "plains", "beach"
         ],
         "season": [
             "any"
@@ -3043,7 +725,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -3052,7 +734,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3083,7 +768,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -3092,7 +777,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3125,7 +813,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -3134,7 +822,26 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "cat_from was astounded by how fiercely cat_to fought when their patrol was ambushed by rogues."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3144,12 +851,25 @@
             {
                 "text": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
                 "exp": 0,
+                "new_cat": [
+                    [
+                        "rogue",
+                        "meeting"
+                    ],
+                    [
+                        "rogue",
+                        "meeting"
+                    ],
+                    [
+                        "rogue",
+                        "meeting"
+                    ]
+                ],
                 "dead_cats": [
                     "patrol"
                 ],
                 "history_text": {
-                    "scar": "This cat was badly scarred when rogues ambushed their patrol.",
-                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
                 "frequency": 4
             },
@@ -3175,7 +895,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -3184,7 +904,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "injury": [
@@ -3194,15 +917,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed their patrol.",
-                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "death": "m_c died of wounds sustained in a rogue ambush."
                 },
                 "frequency": 4
             }
@@ -3253,7 +973,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -3262,7 +982,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3293,7 +1016,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -3302,7 +1025,26 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's skill in battle when their patrol was ambushed by rogues."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3335,7 +1077,7 @@
                         "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -3344,7 +1086,26 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "cat_from was astounded by how fiercely cat_to fought when their patrol was ambushed by rogues."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -3358,8 +1119,7 @@
                     "patrol"
                 ],
                 "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
                 "frequency": 4
             },
@@ -3383,9 +1143,26 @@
                 "relationships": [
                     {
                         "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from and cat_to lost faith in each other after a rogue ambush forced them to retreat."
+                        }
+                    },
+                    {
+                        "cats_from": [
                             "n_c:0",
                             "n_c:1",
-                            "n_c:3"
+                            "n_c:2"
                         ],
                         "cats_to": [
                             "patrol"
@@ -3394,7 +1171,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -50
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "injury": [
@@ -3404,435 +1184,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "TWO"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "pln_bord_roguedis1",
-        "biome": [
-            "plains"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 2,
-        "max_cats": 3,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the long grass! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-                "exp": 30,
-                "new_cat": [
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:3"
-                        ],
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
-                "exp": 30,
-                "stat_skill": [
-                    "FIGHTER,3"
-                ],
-                "new_cat": [
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting",
-                        "dead"
-                    ]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:3"
-                        ],
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
-                "exp": 30,
-                "stat_trait": [
-                    "bloodthirsty",
-                    "fierce",
-                    "vengeful"
-                ],
-                "new_cat": [
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting",
-                        "dead"
-                    ]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:3"
-                        ],
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
-                },
-                "frequency": 4
-            },
-            {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
-                "exp": 0,
-                "new_cat": [
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:3"
-                        ],
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50
-                    }
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "battle_injury"
-                        ],
-                        "scars": [
-                            "ONE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
-                },
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "bch_bord_roguedis1",
-        "biome": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 2,
-        "max_cats": 3,
-        "min_max_status": {},
-        "frequency": 2,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the beach grass! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
-        "chance_of_success": 40,
-        "success_outcomes": [
-            {
-                "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-                "exp": 30,
-                "new_cat": [
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:3"
-                        ],
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
-                "exp": 30,
-                "stat_skill": [
-                    "FIGHTER,3"
-                ],
-                "new_cat": [
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting",
-                        "dead"
-                    ]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:3"
-                        ],
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50
-                    }
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
-                "exp": 30,
-                "stat_trait": [
-                    "bloodthirsty",
-                    "fierce",
-                    "vengeful"
-                ],
-                "new_cat": [
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting",
-                        "dead"
-                    ]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:3"
-                        ],
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50
-                    }
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are found the next day, covered in battle wounds and cold.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol"
-                ],
-                "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
-                },
-                "frequency": 4
-            },
-            {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat.",
-                "exp": 0,
-                "new_cat": [
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ],
-                    [
-                        "rogue",
-                        "meeting"
-                    ]
-                ],
-                "relationships": [
-                    {
-                        "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:3"
-                        ],
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50
-                    }
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "battle_injury"
-                        ],
-                        "scars": [
-                            "THREE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    "death": "m_c died of wounds sustained in a rogue ambush."
                 },
                 "frequency": 4
             }

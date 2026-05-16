@@ -2,7 +2,7 @@
     {
         "id": "general_exiled",
         "thoughts": [
-            "Is shocked that {PRONOUN/m_c/subject} have been exiled"
+            "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been exiled"
         ]
     },
     {

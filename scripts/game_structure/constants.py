@@ -22,6 +22,13 @@ EVENTS_PER_PAGE = 10
 
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach", "Wetlands", "Desert"]
 
+CAMPS: dict = {
+    "Forest": ["Classic", "Gully", "Grotto", "Lakeside"],
+    "Mountainous": ["Cliff", "Cavern", "Crystal River", "Ruins"],
+    "Plains": ["Grasslands", "Tunnels", "Wastelands", "Bridge"],
+    "Beach": ["Tidepools", "Tidal Cave", "Shipwreck", "Fjord"],
+}
+
 SEASONS = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
 SEASON_CALENDAR = [
     "Newleaf",
@@ -38,11 +45,18 @@ SEASON_CALENDAR = [
     "Leaf-bare",
 ]
 
-TEMPERAMENT_DICT = {
-    "low_social": ["cunning", "proud", "bloodthirsty"],
-    "mid_social": ["amiable", "stoic", "wary"],
-    "high_social": ["gracious", "mellow", "logical"],
-}
+TEMPERAMENT_DICTS = [
+    {
+        "low_social": ["cunning", "proud", "bloodthirsty"],
+        "mid_social": ["amiable", "stoic", "wary"],
+        "high_social": ["gracious", "mellow", "logical"],
+    },
+    {
+        "low_lawful": ["chaotic", "mercurial", "calculating"],
+        "mid_lawful": ["eager", "observant", "adaptable"],
+        "high_lawful": ["decisive", "methodical", "steadfast"],
+    },
+]
 
 facet_types = ["lawfulness", "sociability", "aggression", "stability"]
 facet_range = [0, 16]

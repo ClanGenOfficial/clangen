@@ -8,10 +8,10 @@ from scripts.game_structure.game.switches import (
     switch_remove_list_value,
 )
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
+from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
 )
+from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
 
@@ -51,16 +51,13 @@ class SymbolFilterWindow(GameWindow):
         y_pos = 20
 
         for tag, subtags in self.possible_tags.items():
-            self.checkbox[tag] = UIImageButton(
-                ui_scale(pygame.Rect((x_pos, y_pos), (34, 34))),
-                "",
-                object_id="@checked_checkbox",
+            self.checkbox[tag] = UICheckbox(
+                (x_pos, y_pos),
                 container=self.filter_container,
-                starting_height=2,
+                starting_height=1,
                 manager=MANAGER,
+                check=tag not in switch_get_value(Switch.disallowed_symbol_tags),
             )
-            if tag in switch_get_value(Switch.disallowed_symbol_tags):
-                self.checkbox[tag].change_object_id("@unchecked_checkbox")
 
             self.checkbox_text[tag] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((6, y_pos + 4), (-1, -1))),
@@ -73,19 +70,17 @@ class SymbolFilterWindow(GameWindow):
             y_pos += 35
             if subtags:
                 for s_tag in subtags:
-                    self.checkbox[s_tag] = UIImageButton(
-                        ui_scale(pygame.Rect((x_pos + 35, y_pos), (34, 34))),
-                        "",
-                        object_id="@checked_checkbox",
+                    self.checkbox[s_tag] = UICheckbox(
+                        (x_pos + 35, y_pos),
                         container=self.filter_container,
-                        starting_height=2,
+                        starting_height=1,
                         manager=MANAGER,
+                        check=s_tag
+                        not in switch_get_value(Switch.disallowed_symbol_tags),
                     )
-
                     if tag in switch_get_value(Switch.disallowed_symbol_tags):
                         self.checkbox[s_tag].disable()
-                    if s_tag in switch_get_value(Switch.disallowed_symbol_tags):
-                        self.checkbox[s_tag].change_object_id("@unchecked_checkbox")
+                        self.checkbox[s_tag].uncheck()
 
                     self.checkbox_text[s_tag] = pygame_gui.elements.UILabel(
                         ui_scale(pygame.Rect((6, y_pos + 4), (-1, -1))),
@@ -103,11 +98,9 @@ class SymbolFilterWindow(GameWindow):
             if event.ui_element in self.checkbox.values():
                 for tag, element in self.checkbox.items():
                     if element == event.ui_element:
-                        # find out what state the checkbox was in when clicked
-                        object_ids = element.get_object_ids()
                         # handle checked checkboxes becoming unchecked
-                        if "@checked_checkbox" in object_ids:
-                            self.checkbox[tag].change_object_id("@unchecked_checkbox")
+                        if element.checked:
+                            element.uncheck()
                             # add tag to disallowed list
                             if tag not in switch_get_value(
                                 Switch.disallowed_symbol_tags
@@ -118,20 +111,18 @@ class SymbolFilterWindow(GameWindow):
                             # if tag had subtags, also add those subtags
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
-                                    self.checkbox[s_tag].change_object_id(
-                                        "@unchecked_checkbox"
-                                    )
+                                    self.checkbox[s_tag].uncheck()
                                     self.checkbox[s_tag].disable()
                                     if s_tag not in switch_get_value(
                                         Switch.disallowed_symbol_tags
                                     ):
                                         switch_append_list_value(
-                                            Switch.disallowed_symbol_tags, tag
+                                            Switch.disallowed_symbol_tags, s_tag
                                         )
 
                         # handle unchecked checkboxes becoming checked
-                        elif "@unchecked_checkbox" in object_ids:
-                            self.checkbox[tag].change_object_id("@checked_checkbox")
+                        elif not element.checked:
+                            element.check()
                             # remove tag from disallowed list
                             if tag in switch_get_value(Switch.disallowed_symbol_tags):
                                 switch_remove_list_value(
@@ -140,14 +131,12 @@ class SymbolFilterWindow(GameWindow):
                             # if tag had subtags, also add those subtags
                             if tag in self.possible_tags:
                                 for s_tag in self.possible_tags[tag]:
-                                    self.checkbox[s_tag].change_object_id(
-                                        "@checked_checkbox"
-                                    )
+                                    self.checkbox[s_tag].check()
                                     self.checkbox[s_tag].enable()
-                                    if tag in switch_get_value(
+                                    if s_tag in switch_get_value(
                                         Switch.disallowed_symbol_tags
                                     ):
                                         switch_remove_list_value(
-                                            Switch.disallowed_symbol_tags, tag
+                                            Switch.disallowed_symbol_tags, s_tag
                                         )
         return super().process_event(event)

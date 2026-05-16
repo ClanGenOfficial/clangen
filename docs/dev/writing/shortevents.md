@@ -50,7 +50,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         }
     ],
     "exclude_involved": [],
-    "history:": [
+    "history": [
         {
             "cats": [],
             "scar": "",

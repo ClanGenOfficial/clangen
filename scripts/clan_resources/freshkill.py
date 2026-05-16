@@ -202,7 +202,7 @@ class FreshkillPile:
         self.feed_cats(living_cats)
         self.timeskip_feed = False
         value_diff -= sum(self.pile.values())
-        event_list.append(i18n.t("hardcoded.consumed_prey", count=value_diff))
+        event_list.append(i18n.t("hardcoded.consumed_prey", count=round(value_diff, 2)))
         self._update_needed_food(living_cats)
         self.update_total_amount()
 
@@ -366,7 +366,7 @@ class FreshkillPile:
 
         # sort the hungry
         hungry_cats_sorted = sorted(
-            list(hungry_cats), key=lambda x: self.nutrition_info[x.ID]
+            list(hungry_cats), key=lambda x: self.nutrition_info[x.ID].percentage
         )
 
         self._feed_group(hungry_cats_sorted)

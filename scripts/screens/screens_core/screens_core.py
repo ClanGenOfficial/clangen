@@ -13,12 +13,10 @@ from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-    UIImageButton,
-    UIDropDown,
-    UIModifiedImage,
-)
+from scripts.ui.elements.dropdown import UIDropDown
+from scripts.ui.elements.modified_image import UIModifiedImage
+from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.version import get_version_info
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -62,22 +60,20 @@ def rebuild_core(*, should_rebuild_bgs=True):
     rebuild_mute("default")
 
     version_number = pygame_gui.elements.UILabel(
-        ui_scale(pygame.Rect((50, 50), (-1, -1))),
+        ui_scale(pygame.Rect((0, 0), (-1, -1))),
         get_version_info().version_number[0:8],
-        object_id=get_text_box_theme(),
+        object_id="#dev_watermark",
         anchors={"bottom": "bottom", "right": "right"},
     )
     # Adjust position
     version_number.set_relative_position(
-        ui_scale_offset(
-            (
-                800 - version_number.get_relative_rect()[2],
-                700 - version_number.get_relative_rect()[3],
-            )
+        (
+            -version_number.relative_rect[2] - ui_scale_value(10),
+            -version_number.relative_rect[3],
         )
     )
 
-    if get_version_info().is_source_build or get_version_info().is_dev():
+    if get_version_info().is_source_build:
         dev_watermark = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((525, 660), (300, 50))),
             "screens.core.dev_watermark",

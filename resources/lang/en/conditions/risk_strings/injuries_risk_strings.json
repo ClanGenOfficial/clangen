@@ -7,19 +7,19 @@
     },
     "bite-wound": {
         "an infected wound": [
-            "The bite wound feels hot - m_c winces as r_c cleans it. It's becoming infected.",
+            "The bite wound feels hot — m_c winces as r_c cleans it. It's becoming infected.",
             "m_c's skin is starting to feel feverish around the area of {PRONOUN/m_c/poss} wound. It looks a bit worse than it did yesterday."
         ]
     },
     "cat bite": {
         "an infected wound": [
-            "The cat bite feels hot - m_c winces as r_c cleans it. It's becoming infected.",
+            "The cat bite feels hot — m_c winces as r_c cleans it. It's becoming infected.",
             "m_c's skin is starting to feel feverish around the area of {PRONOUN/m_c/poss} wound. It looks a bit worse than it did yesterday."
         ]
     },
     "beak bite": {
         "an infected wound": [
-            "The beak wound feels hot - m_c winces as r_c cleans it. It's becoming infected.",
+            "The beak wound feels hot — m_c winces as r_c cleans it. It's becoming infected.",
             "m_c's skin is starting to feel feverish around the area of {PRONOUN/m_c/poss} wound. It looks a bit worse than it did yesterday."
         ]
     },
@@ -42,11 +42,11 @@
     "tick bites": {
         "an infected wound": [
             "r_c sighs and tries to gently extract the head of the tick that was left behind when the insect was plucked off of m_c. With that contaminant, the little tick bite has become infected.",
-            "The tick on m_c was left for far too long. The area is now swollen and warm - definite signs of infection."
+            "The tick on m_c was left for far too long. The area is now swollen and warm — definite signs of infection."
         ],
         "tick fever": [
-        "r_c worries over m_c, looking for any tick-heads an apprentice might have left, but {PRONOUN/r_c/subject} can only find a distinctive rash. m_c knows what it means- tick fever.",
-        "m_c's heart sinks as {PRONOUN/m_c/poss} fur starts falling out. The apprentices must have missed a tick- r_c confirms it's tick fever.",
+        "r_c worries over m_c, looking for any tick-heads an apprentice might have left, but {PRONOUN/r_c/subject} can only find a distinctive rash. m_c knows what it means — tick fever.",
+        "m_c's heart sinks as {PRONOUN/m_c/poss} fur starts falling out. The apprentices must have missed a tick — r_c confirms it's tick fever.",
         "m_c complains about a new rash, going silent when r_c finds a tick-head. {PRONOUN/m_c/subject/CAP} has tick fever."
     ]
     },
@@ -64,7 +64,7 @@
     },
     "mangled leg": {
         "an infected wound": [
-            "r_c wonders if {PRONOUN/r_c/subject} might need to consult with a medicine cat from another Clan. m_c's mangled leg has become infected and swollen - and {PRONOUN/r_c/subject} {VERB/r_c/need/needs} more ideas.",
+            "r_c wonders if {PRONOUN/r_c/subject} might need to consult with a medicine cat from another Clan. m_c's mangled leg has become infected and swollen — and {PRONOUN/r_c/subject} {VERB/r_c/need/needs} more ideas.",
             "As if the injury wasn't bad enough, the skin around m_c's mangled leg has started to swell and feel feverish."
         ]
     },
@@ -82,7 +82,7 @@
     },
     "scrapes": {
         "an infected wound": [
-            "m_c hangs {PRONOUN/m_c/poss} head, embarrassed. {PRONOUN/m_c/subject/CAP} thought {PRONOUN/m_c/subject} could get away with not cleaning {PRONOUN/m_c/poss} scrapes since they're such minor wounds, but now the skin is irritated and infected - and r_c is clearly judging {PRONOUN/m_c/object} for not taking care of {PRONOUN/m_c/self}.",
+            "m_c hangs {PRONOUN/m_c/poss} head, embarrassed. {PRONOUN/m_c/subject/CAP} thought {PRONOUN/m_c/subject} could get away with not cleaning {PRONOUN/m_c/poss} scrapes since they're such minor wounds, but now the skin is irritated and infected — and r_c is clearly judging {PRONOUN/m_c/object} for not taking care of {PRONOUN/m_c/self}.",
             "The scrapes m_c had gotten seemed minor at first, but even the smallest wounds can get infected."
         ]
     },
@@ -155,8 +155,12 @@
     },
     "dehydrated": {
         "heat exhaustion": [
-            "r_c has managed to get some water into m_c, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} showing signs of confusion and fatigue - clear indications of heat exhaustion.",
+            "r_c has managed to get some water into m_c, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} showing signs of confusion and fatigue — clear indications of heat exhaustion.",
             "m_c pants, helplessly searching for a cooler place to lie and nap. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} utterly exhausted by this heat."
+        ],
+        "sore throat": [
+            "The lack of water has left m_c's throat dry and sore.",
+            "r_c has tried to get some water into m_c, but {PRONOUN/m_c/poss} thirst has left {PRONOUN/m_c/poss} throat dry and scratchy."
         ]
     },
     "damaged eyes": {

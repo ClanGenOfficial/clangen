@@ -1,1 +1,83 @@
-[]
+[
+  {
+    "event_id": "pln_death_trainvehicle",
+    "location": [
+      "plains:camp4"
+    ],
+    "season": [
+      "any"
+    ],
+    "tags": [
+      "all_lives"
+    ],
+    "frequency": 1,
+    "event_text": "r_c dares m_c to leap across the Silverpath in front of a Thundersnake near camp and is horrified when {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} and {VERB/m_c/are/is} struck.",
+    "m_c": {
+      "age": [
+        "-newborn",
+        "-kitten"
+      ],
+      "trait": [
+        "-strict",
+        "-gloomy",
+        "-responsible",
+        "-wise",
+        "-grumpy",
+        "-cunning",
+        "-careful",
+        "-nervous",
+        "-thoughtful",
+        "-cold",
+        "-calm"
+      ],
+      "dies": true
+    },
+    "r_c": {
+      "age": [
+        "-newborn"
+      ],
+      "trait": [
+        "childish",
+        "playful",
+        "daring",
+        "shameless",
+        "competitive"
+      ],
+      "dies": false
+    },
+    "history": [
+      {
+        "cats": [
+          "m_c"
+        ],
+        "death": "m_c died from being struck by a Thundersnake."
+      }
+    ]
+  },
+  {
+    "event_id": "pln_death_poisonedwater",
+    "location": [
+      "plains:camp3"
+    ],
+    "season": [
+      "greenleaf"
+    ],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "Driven to desperation by the greenleaf heat, m_c drinks from a foul-tasting puddle of water. The Clan finds {PRONOUN/m_c/object} dead in {PRONOUN/m_c/poss} nest hours later.",
+    "m_c": {
+      "age": [
+        "-kitten"
+      ],
+      "dies": true
+    },
+    "history": [
+      {
+        "cats": [
+          "m_c"
+        ],
+        "death": "m_c died after drinking poisoned water."
+      }
+    ]
+  }
+]

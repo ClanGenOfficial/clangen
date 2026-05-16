@@ -8,7 +8,7 @@
             "leaf-fall",
             "leaf-bare"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking on a snowdrift until it gave way and {PRONOUN/m_c/subject} fell down the mountain, breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
@@ -86,7 +86,7 @@
         "season": [
             "any"
         ],
-        "frequency": 3,
+        "frequency": 1,
         "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} slipped and plummeted to the ground.",
         "m_c": {
             "status": [

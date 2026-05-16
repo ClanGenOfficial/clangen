@@ -3,9 +3,7 @@ import pygame
 import pygame_gui
 
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
-)
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.windows.window_base_class import GameWindow
@@ -76,7 +74,7 @@ class RelationshipLogWindow(GameWindow):
         else:
             self.log = pygame_gui.elements.UITextBox(
                 log_string,
-                ui_scale(pygame.Rect((15, 45), (476, 250))),
+                ui_scale(pygame.Rect((15, 45), (476, 240))),
                 object_id="#text_box_30_horizleft",
                 manager=MANAGER,
                 container=self,
