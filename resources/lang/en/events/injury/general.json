@@ -9335,7 +9335,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 2,
-    "event_text": "After a Clanmate challenges {PRONOUN/m_c/object}, m_c commands r_c to help {PRONOUN/m_c/object} punish the protesting cat. Everyone ends up hurt, though m_c feels {PRONOUN/m_c/subject} can trust r_c more.",
+    "event_text": "After a Clanmate challenges {PRONOUN/m_c/object}, m_c commands r_c to help {PRONOUN/m_c/object} punish the protesting cat. r_c ends up hurt, but m_c feels {PRONOUN/m_c/subject} can trust r_c more.",
     "new_accessory": [],
     "m_c": {
         "status": [
@@ -9356,24 +9356,6 @@
     "injury": [
         {
             "cats": [
-                "m_c"
-            ],
-            "injuries": [
-                "battle_injury"
-            ],
-            "scars": [
-                "ONE",
-                "TWO",
-                "HINDLEG",
-                "FACE",
-                "SNOUT",
-                "CHEEK",
-                "BACK",
-                "CATBITE"
-            ]
-        },
-        {
-            "cats": [
                 "r_c"
             ],
             "injuries": [
@@ -9392,13 +9374,6 @@
         }
     ],
     "history": [
-        {
-            "cats": [
-                "m_c"
-            ],
-            "scar": "m_c got a scar after a Clanmate challenged {PRONOUN/m_c/object}.",
-            "death": "died from {PRONOUN/m_c/poss} injuries after a Clanmate challenged {PRONOUN/m_c/object}."
-        },
         {
             "cats": [
                 "r_c"
