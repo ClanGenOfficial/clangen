@@ -4,10 +4,13 @@ from enum import StrEnum
 class GameScreen(StrEnum):
     START = "start_screen"
     # screens access through start screen
-    MAKE_CLAN = "make_clan_screen"
     SWITCH_CLAN = "switch_clan_screen"
     SETTINGS = "settings_screen"
     EVENT_EDIT = "event_edit_screen"
+
+    # make clan screens
+    CHOOSE_MODE = "choose_mode_screen"
+    MAKE_CLAN = "make_clan_screen"
 
     # screens accessed through top menu
     CAMP = "camp_screen"

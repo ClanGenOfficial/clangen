@@ -27,6 +27,7 @@ from .StartScreen import StartScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .WarriorDenScreen import WarriorDenScreen
 from .enums import GameScreen
+from .make_clan_screens.ChooseModeScreen import ChooseModeScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -61,6 +62,7 @@ def rebuild_all_screens():
         GameScreen.CHANGE_ROLE: RoleScreen,
         GameScreen.SPRITE_INSPECT: SpriteInspectScreen,
         GameScreen.MAKE_CLAN: MakeClanScreen,
+        GameScreen.CHOOSE_MODE: ChooseModeScreen,
         GameScreen.ALLEGIANCES: AllegiancesScreen,
         GameScreen.CAMP: ClanScreen,
         GameScreen.LIST: ListScreen,
