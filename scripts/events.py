@@ -1786,6 +1786,13 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
             temp.update(possible_ceremonies.intersection(ceremony_id_by_tag[t]))
 
         possible_ceremonies = temp
+        # Check if cat does NOT have a suffix (for the sake of loner/kittypet/rogue) ----------------
+        # this also means we could probably have more easter eggs hehe
+        tags = []
+        if not cat.name.suffix:
+            tags.append("no_suffix")
+
+
         # Gather for traits --------------------------------------------------------------
 
         temp = possible_ceremonies.intersection(ceremony_id_by_tag["all_traits"])
