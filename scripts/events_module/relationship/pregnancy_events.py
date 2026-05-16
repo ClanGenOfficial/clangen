@@ -979,8 +979,6 @@ class Pregnancy_Events:
                 if other_cat and other_cat.status.group == cat.status.group:
                     relationships_to_update.append(other_cat.ID)
 
-            # otherwise, get_parents() won't get their parents.
-            inheritance_db.load_inheritances(Cat)
             if relationships_to_update:
                 for cat_id in relationships_to_update:
                     if cat_id == kit.ID:
