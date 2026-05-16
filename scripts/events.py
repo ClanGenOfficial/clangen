@@ -1764,6 +1764,22 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
             tags.append("abandoned")
         elif cat.backstory == "clanborn":
             tags.append("clanborn")
+        elif (
+             cat.backstory
+               in BACKSTORIES["backstory_categories"]["loner_backstories"]
+               ):
+            tags.append("loner")
+        elif (
+             cat.backstory
+               in BACKSTORIES["backstory_categories"]["kittypet_backstories"]
+               ):
+            tags.append("kittypet")
+        elif (
+             cat.backstory
+               in BACKSTORIES["backstory_categories"]["rogue_backstories"]
+               ):
+            tags.append("rogue")
+
         temp = possible_ceremonies.intersection(ceremony_id_by_tag["general_backstory"])
 
         for t in tags:
