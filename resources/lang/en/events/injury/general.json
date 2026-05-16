@@ -9325,7 +9325,7 @@
     "future_event": []
 },
 {
-    "event_id": "gen_injury_group3leaderneg",
+    "event_id": "gen_injury_leaderpunish",
     "location": [
         "any"
     ],
@@ -9456,7 +9456,7 @@
             ],
             "amount": -5,
             "log": {
-                "cats_from": "cat_from worries that cat_to views {PRONOUN/cat_from/object} as a tool."
+                "cats_from": "cat_from worries that cat_to views {PRONOUN/cat_from/object} as something to be used."
             }
         }
     ]
