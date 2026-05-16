@@ -236,6 +236,12 @@ class InheritanceDb:
         for t in inheritance_db_to_inheritance_functions:
             original = set(t[0]())
             sequel = t[1](cat_id)
+            if original != sequel:
+                print(
+                    f"WARNING: inheritance.{t[0].__name__} differs from inheritance_db.{t[1].__name__} for cat {cat_id}!"
+                )
+                print(f"    inheritance.{t[0].__name__}: {original}")
+                print(f"    inheritance_db.{t[1].__name__}: {sequel}")
             if not original.issubset(sequel):
                 return False
 
