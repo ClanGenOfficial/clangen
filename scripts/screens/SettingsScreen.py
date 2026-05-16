@@ -233,19 +233,6 @@ class SettingsScreen(Screens):
                         self.set_bg("default", "mainmenu_bg")
                         self.open_general_settings()
 
-                    if (
-                        self.sub_menu == "general"
-                        and event.ui_element is self.checkboxes["discord"]
-                    ):
-                        if game_setting_get("discord"):
-                            print("Starting Discord RPC")
-                            game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
-                            game.rpc.start()
-                            game.rpc.start_rpc.set()
-                        else:
-                            print("Stopping Discord RPC")
-                            game.rpc.close()
-
                     break
 
     def screen_switches(self):
@@ -255,6 +242,7 @@ class SettingsScreen(Screens):
         super().screen_switches()
         self.show_mute_buttons()
         self.settings_changed = False
+        self._discord_at_open = game_setting_get("discord")
 
         self.general_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((100, 100), (150, 30))),
@@ -382,6 +370,17 @@ class SettingsScreen(Screens):
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""
         self.settings_at_open = all_settings.settings.copy()
+        discord_is_on = game_setting_get("discord")
+        if self._discord_at_open != discord_is_on:
+            self._discord_at_open = discord_is_on
+            if discord_is_on:
+                print("Starting Discord RPC")
+                game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
+                game.rpc.start()
+                game.rpc.start_rpc.set()
+            else:
+                print("Stopping Discord RPC")
+                game.rpc.close()
         MANAGER.set_active_cursor(
             constants.CUSTOM_CURSOR
             if game_setting_get("custom cursor")

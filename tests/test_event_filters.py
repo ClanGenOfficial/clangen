@@ -531,6 +531,24 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
                 )
             )
 
+    def test_multiple(self):
+        app = Cat(moons=8, disable_random=True)
+        mentor = Cat(
+            moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR), disable_random=True
+        )
+
+        app.update_mentor(new_mentor=mentor.ID)
+        with self.subTest(
+            "are mentor/app, expected not mentor/app and not parent/child"
+        ):
+            self.assertFalse(
+                event_for_cat(
+                    cat_info={"relationship_status": ["-mentor/app", "-parent/child"]},
+                    cat=mentor,
+                    cat_group=[mentor, app],
+                )
+            )
+
 
 class TestRelationshipTiers(unittest.TestCase):
     @classmethod

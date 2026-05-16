@@ -2342,14 +2342,8 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [
-                2,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
+            "apprentice": [2, 5],
+            "normal adult": [1, 4]
         },
         "frequency": 3,
         "chance_of_success": 60,
@@ -2376,22 +2370,26 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's story about how Maowi caught a massive stingray that became c_n's territory."
+                        }
                     },
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol", "-p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol", "-p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
-                            "trust",
-                            "like"
+                            "comfort"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to listened to p_l's story together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2399,7 +2397,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l tries to start a story to entertain the apprentices, but they're tired and sullen, and don't appreciate being told of the magical fishing talents of a Stars-blessed cat when they're finding it so hard to learn themselves.",
+                "text": "p_l tries to start a story to entertain the apprentices, but they're tired and sullen, and don't appreciate being told of the magical fishing talents of a StarClan-blessed cat when they're finding it so hard to learn themselves.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -2410,12 +2408,16 @@
                             "app1",
                             "app2"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "respect",
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was annoyed that cat_to tried to tell some old story after a hard training session.",
+                            "cats_to": "cat_to was annoyed that cat_from wouldn't settle down after training to listen to {PRONOUN/cat_to/poss} story."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2462,40 +2464,31 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "like",
-                            "comfort"
-                        ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust",
-                            "like"
-                        ],
-                        "amount": 5
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
                             "respect"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from enjoyed cat_to's story about how Maowi slowed the sun down and created greenleaf."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol", "-p_l"
+                        ],
+                        "cats_from": [
+                            "patrol", "-p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to listened to p_l's story together."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2546,6 +2539,22 @@
                 "relationships": [
                     {
                         "cats_to": [
+                            "patrol", "-p_l"
+                        ],
+                        "cats_from": [
+                            "patrol", "-p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to listened to p_l's story together."
+                        }
+                    },
+                    {
+                        "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
@@ -2556,22 +2565,10 @@
                             "respect",
                             "like"
                         ],
-                        "amount": 10
-                    },
-                    {
-                        "cats_to": [
-                            "patrol"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust",
-                            "like"
-                        ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from learned from cat_to about how the moon controls the tides."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2594,7 +2591,10 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was irritated that cat_to's playful behavior on patrol derailed {PRONOUN/cat_from/poss} story."
+                        }
                     }
                 ],
                 "frequency": 4

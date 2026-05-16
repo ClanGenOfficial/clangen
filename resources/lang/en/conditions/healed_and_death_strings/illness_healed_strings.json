@@ -94,6 +94,8 @@
     ],
     "tick fever": [
         "m_c sighs in relief as the rashes fade, promising StarClan to check <i>twice</i> for ticks next time.",
-        "r_c purrs as m_c starts asking to get back to {PRONOUN/m_c/poss} duties. Tick fever can be so touch-and-go, but m_c pulled through!"
+        "r_c purrs as m_c starts asking to get back to {PRONOUN/m_c/poss} duties. Tick fever can be so touch-and-go, but m_c pulled through!",
+        "m_c's tick fever has subsided.",
+        "m_c is no longer suffering from tick fever."
     ]
 }

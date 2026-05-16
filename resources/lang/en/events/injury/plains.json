@@ -99,5 +99,36 @@
              "injuries": ["sprain"]
             }
         ]
+    },
+    {
+    "event_id": "plns_injury_fireflies",
+  "location": [
+    "plains:camp4"
+  ],
+  "season": [
+    "greenleaf",
+    "leaf-fall"
+  ],
+  "sub_type": [],
+  "tags": [],
+  "frequency": 2,
+  "event_text": "m_c got hurt while chasing fireflies through camp.",
+  "new_accessory": [],
+  "m_c": {
+    "age": [
+      "kitten",
+      "adolescent"
+    ]
+  },
+  "injury": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "injuries": [
+        "minor_injury"
+      ]
     }
+  ]
+}
 ]

@@ -467,7 +467,7 @@
   }, 
   "Curlew": {
       "variants": 1,
-      "tags0": ["plant", "flower"]
+      "tags0": ["animal", "bird"]
   }, 
   "Curly": {
     "variants": 1,
@@ -507,7 +507,7 @@
   }, 
   "Dart": {
     "variants": 1, 
-    "tags0": ["fish"]
+    "tags0": ["animal", "fish"]
   }, 
   "Dash": {
     "variants": 1,

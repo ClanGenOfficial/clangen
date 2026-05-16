@@ -177,5 +177,143 @@
                 "frequency": 4
             }
         ]
-    }
+    },
+    {
+    "patrol_id": "bch_train_greenleafmudflats",
+    "biome": ["beach"],
+    "season": ["greenleaf"],
+    "types": ["training"],
+    "tags": [],
+    "patrol_art": "bch_bord_trackrogue",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "apprentice": [
+            1,
+            1
+        ],
+        "normal adult": [
+            1,
+            1
+        ]
+    },
+    "frequency": 4,
+    "chance_of_success": 65,
+    "relationship_constraint": ["mentor/app"],
+    "intro_text": "While wading through the damp mud behind {PRONOUN/app1/poss} mentor, app1 wonders where the ocean went. p_l explains that the tide flows out far here, twice a day, leaving behind this landscape of soft, algae-rich silt stretching to the far horizon. Seabirds, probing the mud for cockles and clams, startle into flight at the cats' approach.",
+    "decline_text": "A sudden downpour leaves p_l and app1 drenched. They cancel training and return to camp to shelter.",
+    "success_outcomes": [
+{
+    "text": "c_n never goes out onto the mudflats in fog. It's far too easy to lose your way, wander toward the ocean, and be swept away when the tide returns. But under the greenleaf sun, it's safe to frolic and train here. p_l instructs app1 to keep an ear out for the approaching waves and an eye on the sun's movement.",
+    "exp": 14,
+    "frequency": 4,
+    "relationships": [
+{
+    "cats_from": ["app1"],
+    "cats_to": ["p_l"],
+    "mutual": false,
+    "values": ["trust","respect"],
+    "amount": 6,
+    "log": {
+    "cats_from": "cat_from felt more secure after learning about mudflat safety from cat_to."
+}
+}
+],
+    "art": "bch_bord_trackrogue"
+},
+{
+    "text": "If app1 wants to catch the birds, {PRONOUN/app1/subject} mustn't stick out so much. Following p_l's lead, they both roll in the mud, let themselves dry in the sun, and crouch in wait. A seabird wades closer, but app1 pounces too early, {PRONOUN/app1/poss} paws swishing through the air as the bird flaps away in a flurry of feathers. It's a process, p_l purrs - app1 got the principle.",
+    "exp": 18,
+    "frequency": 3,
+    "relationships": [
+{
+    "cats_from": ["app1"],
+    "cats_to": ["p_l"],
+    "mutual": false,
+    "values": ["comfort","like"],
+    "amount": 8,
+    "log": {
+    "cats_from": "cat_from felt encouraged by cat_to's supportive response to a missed catch."
+}
+}
+],
+    "art": "bch_train_lore1"
+},
+{
+    "text": "app1 watches the sea slowly return, rivulets turning into puddles and lapping waves as the water reclaims the land. With it, p_l explains, are traveling countless tiny mud snails — as small as a single kitten-claw, they cling to the underside of the water's surface. They move with the tide itself and are the fastest sealife in the mudflats.",
+    "exp": 20,
+    "frequency": 2,
+    "relationships": [
+{
+    "cats_from": ["app1"],
+    "cats_to": ["p_l"],
+    "mutual": false,
+    "values": ["respect"],
+    "amount": 10,
+    "log": {
+    "cats_from": "cat_from was impressed by cat_to's intricate knowledge of the mudflats' inhabitants."
+ 
+}
+}
+],
+    "art": "bch_bord_trackrogue"
+},
+{
+    "text": "app1 inquires about the little spirally piles of sand on the ground. p_l describes how sand worms live everywhere here, feeding on the algae and depositing leftover sand at the end of their tunnels. The worms are food for the birds, and the birds are food for c_n. If app1 can catch them! They'll work on pouncing techniques next.",
+    "exp": 20,
+    "frequency": 2,
+    "relationships": [
+{
+    "cats_from": ["app1"],
+    "cats_to": ["p_l"],
+    "mutual": false,
+    "values": ["respect"],
+    "amount": 10,
+    "log": {
+    "cats_from": "cat_from was impressed by cat_to's intricate knowledge of the mudflats' inhabitants."
+}
+}
+],
+    "art": "bch_bord_trackrogue"
+}
+],
+    "fail_outcomes": [
+{
+    "text": "The water slowly returns, and in the distance, damp fur flashes at the surface. p_l decides they really should return to camp, quickly. As app1 runs for shore, honking calls fill the air behind them. Out of breath and back on dry land, p_l explains: seals. Big teeth. Faster than they look.",
+    "exp": 0,
+    "frequency": 4,
+    "relationships": [
+{
+    "cats_from": ["app1"],
+    "cats_to": ["p_l"],
+    "mutual": false,
+    "values": ["trust"],
+    "amount": -8,
+    "log": {
+    "cats_from": "cat_from was scared by seals appearing in the mudflats and wished cat_to had warned {PRONOUN/cat_from/object}."
+}
+}
+],
+    "art": "running_warrior_app"
+},
+{
+    "text": "p_l reminds app1 not to get distracted. {PRONOUN/app1/subject/CAP} suddenly {VERB/app1/realize/realizes} there is water staining {PRONOUN/app1/poss} paws. The sea can return faster than {PRONOUN/app1/subject} think{VERB/app1//s}, p_l chides, and getting caught out by the rising water is dangerous. Cats have been lost that way. Staring at the ground, app1 quickly trudges after {PRONOUN/app1/poss} mentor.",
+    "exp": 0,
+    "frequency": 4,
+    "relationships": [
+{
+    "cats_from": ["p_l"],
+    "cats_to": ["app1"],
+    "mutual": false,
+    "values": ["respect","trust"],
+    "amount": -6,
+    "log": {
+    "cats_from": "cat_to got distracted while training on the mudflats. cat_from was disappointed {PRONOUN/cat_from/subject} had to remind {PRONOUN/cat_to/object} to stay vigilant."
+}
+}
+],
+    "art": "bch_bord_trackrogue"
+}
+]
+}
 ]

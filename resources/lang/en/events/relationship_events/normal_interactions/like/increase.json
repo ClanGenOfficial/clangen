@@ -26,7 +26,7 @@
 			"r_c mentions that m_c looks good today.",
 			"r_c tells m_c that {PRONOUN/m_c/poss} pelt is shiny today.",
 			"m_c prevents something from falling on r_c.",
-			"m_c warns r_c about something on the ground so r_c doesn't trip.",
+			"m_c warns r_c about something on the ground so {PRONOUN/r_c/subject} {VERB/m_c/don't/doesn't} trip.",
 			"m_c asks r_c how {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing."
 		],
 		"reaction_random_cat": {
@@ -429,7 +429,7 @@
 		"intensity": "medium",
 		"interactions": [
 			"m_c is telling r_c about a hunting technique.",
-			"m_c is thinking about how much r_c reminds {PRONOUN/m_c/subject} of {PRONOUN/m_c/poss} own apprentice days.",
+			"m_c is thinking about how much r_c reminds {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} own apprentice days.",
 			"m_c is telling r_c about {PRONOUN/m_c/poss} own days as an apprentice.",
 			"m_c promises to teach r_c a new technique later."
 		],

@@ -243,16 +243,9 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     if not required_rel or "any" in required_rel:
         return True
 
-    current_rel = other_clan.relations
+    current_standing = other_clan.get_standing()
 
-    if "hostile" in required_rel and 0 <= current_rel <= 6:
-        return True
-    elif "neutral" in required_rel and 7 <= current_rel <= 17:
-        return True
-    elif "ally" in required_rel and 18 <= current_rel:
-        return True
-
-    return False
+    return current_standing in required_rel
 
 
 def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
@@ -749,9 +742,9 @@ def _get_cats_with_status(cat_list: list, statuses: tuple) -> list:
 
     if is_exclusionary:
         statuses = [x.replace("-", "") for x in statuses]
-        return [kitty for kitty in cat_list if kitty.age not in statuses]
+        return [kitty for kitty in cat_list if kitty.status.rank not in statuses]
     else:
-        return [kitty for kitty in cat_list if kitty.age in statuses]
+        return [kitty for kitty in cat_list if kitty.status.rank in statuses]
 
 
 def _get_cats_with_skill(cat_list: list, skills: tuple) -> list:
@@ -828,7 +821,7 @@ def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
         return [kitty for kitty in cat_list if kitty.backstory in allowed_stories]
 
 
-def _check_for_exclusionary_value(possible_values) -> bool:
+def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     """
     Checks the given list for an exclusionary value and returns True or False
     """
@@ -870,6 +863,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     qualifies = False
 
     if "strangers" in filter_types:
+        qualifies = False
         if any([inter_cat.ID in test_cat.relationships for inter_cat in testing_cats]):
             if "strangers" in exclusionary_values:
                 qualifies = True
@@ -883,6 +877,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         filter_types.remove("strangers")
 
     if "siblings" in filter_types:
+        qualifies = False
         if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             if "siblings" in exclusionary_values:
                 qualifies = True
@@ -893,6 +888,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         filter_types.remove("siblings")
 
     if "littermates" in filter_types:
+        qualifies = False
         if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             if "littermates" in exclusionary_values:
                 qualifies = True
@@ -908,6 +904,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
             return False
 
         # then if cats don't have the needed number of mates
+        qualifies = False
         if not all(len(i.mate) >= (len(group) - 1) for i in group):
             if "mates" in exclusionary_values:
                 qualifies = True
@@ -934,6 +931,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
             return False
 
         # Check each cat to see if it is mates with the patrol leader
+        qualifies = False
         for cat in group:
             if cat.ID == patrol_leader.ID:
                 continue
@@ -952,6 +950,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         if len(group) != 2:
             return False
         # test for parentage
+        qualifies = False
         if not group[0].is_parent(group[1]):
             if "parent/child" in exclusionary_values:
                 qualifies = True
@@ -966,6 +965,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         if len(group) != 2:
             return False
         # test for parentage
+        qualifies = False
         if not group[1].is_parent(group[0]):
             if "child/parent" in exclusionary_values:
                 qualifies = True
@@ -977,6 +977,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
     if "mentor/app" in filter_types:
         # It should be exactly two cats for a "mentor/app" event
+        qualifies = False
         if len(group) != 2:
             return False
         # test for parentage
@@ -994,6 +995,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         if len(group) != 2:
             return False
         # test for parentage
+        qualifies = False
         if not group[0].ID in group[1].apprentice:
             if "app/mentor" in exclusionary_values:
                 qualifies = True
@@ -1010,18 +1012,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     # Filtering relationship values
     # these don't get exclusionary values because it's giving me a headache
     # each cat has to have relationships toward each other matching every level tag
+    group_ids = [cat.ID for cat in group]
     for tier in filter_types:
         for inter_cat in group:
             if len(group) == 2 and inter_cat == group[1]:
                 # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
                 # groups > 2 will require that all cats feel the same way toward each other.
                 continue
-            group_ids = [cat.ID for cat in group]
 
             relevant_relationships = [
-                rel
-                for rel in inter_cat.relationships.values()
-                if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
+                inter_cat.relationships[cat_id]
+                for cat_id in group_ids
+                if cat_id in inter_cat.relationships
             ]
 
             # list of every cat's tier list
@@ -1057,19 +1059,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
                     # get the tier's index within the rel_types's list
                     index = rel_type_tiers[rel_type].index(rel_tier)
-                    allowed_tiers = []
+                    allowed_tiers = set()
                     # if it's a pos tier, we allow that index and higher
                     if rel_tier.is_any_pos:
-                        allowed_tiers = rel_type_tiers[rel_type][index:]
+                        allowed_tiers = set(rel_type_tiers[rel_type][index:])
                     # if it's a neg tier, we allow that index and lower
                     elif rel_tier.is_any_neg:
-                        allowed_tiers = rel_type_tiers[rel_type][0 : index + 1]
+                        allowed_tiers = set(rel_type_tiers[rel_type][0 : index + 1])
 
                     discard = True
-                    for _t in tier_list:
-                        if _t in allowed_tiers:
-                            discard = False
-                            break
+                    tier_set = set(tier_list)
+                    if allowed_tiers.intersection(tier_set):
+                        discard = False
                     if discard:
                         return False
 

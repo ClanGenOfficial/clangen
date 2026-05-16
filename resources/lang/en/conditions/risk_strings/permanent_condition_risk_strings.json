@@ -16,6 +16,12 @@
             "The muscles in m_c's stump don't seem to understand they aren't connected to anything any more — m_c purrs gratefully when a Clanmate helps massage them."
         ]
     },
+    "damaged throat": {
+        "sore throat": [
+            "m_c overexerted {PRONOUN/m_c/poss} voice and now can hardly speak at all, with how horribly sore {PRONOUN/m_c/poss} throat is.",
+            "m_c mimes the motions for numbing herbs to r_c, who understands and supplies them swiftly. Something must have irritated m_c's damaged throat."
+        ]
+    },
     "born without a leg": {
         "sore": [
             "m_c reports to r_c with the ease of familiarity, asking for help sleeping at night — {PRONOUN/m_c/poss} missing limb is giving {PRONOUN/m_c/object} a bit of pain on that side of {PRONOUN/m_c/poss} body.",
@@ -168,12 +174,12 @@
     },
     "absent": {
         "joint pain": [
-            "m_c's joints hurt lately. {PRONOUN/m_c/object/CAP} must have been walking around more than {PRONOUN/m_c/object} thought.",
+            "m_c's joints hurt lately. {PRONOUN/m_c/subject/CAP} must have been walking around more than {PRONOUN/m_c/subject} thought.",
             "m_c isn't moving as much today, mumbling about being sore."
         ],
         "torn pelt": [ 
             "m_c has no idea where these scratches came from, but they're certainly there.",
-            "m_c accidentally tore {PRONOUN/m_c/poss} pelt when {PRONOUN/m_c/object} {VERB/m_c/were/was} wandering the territory."
+            "m_c accidentally tore {PRONOUN/m_c/poss} pelt when {PRONOUN/m_c/subject} {VERB/m_c/were/was} wandering the territory."
         ]
     },
     "strange lump": {

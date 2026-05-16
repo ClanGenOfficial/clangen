@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, Union, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.gather_cat import GatherCat
@@ -13,6 +13,7 @@ from scripts.models.common.scar import Scar
 
 
 class InjuryItem(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     cats: Union[List[GatherCat], MISSING] = Field(
         MISSING, description="Which cats are injured."
     )
