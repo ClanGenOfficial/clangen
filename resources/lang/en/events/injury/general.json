@@ -9397,14 +9397,14 @@
                 "m_c"
             ],
             "scar": "m_c got a scar after a Clanmate challenged {PRONOUN/m_c/object}.",
-            "death": "Died from their injuries after a Clanmate challenged {PRONOUN/m_c/object}."
+            "death": "died from {PRONOUN/m_c/poss} injuries after a Clanmate challenged {PRONOUN/m_c/object}."
         },
         {
             "cats": [
                 "r_c"
             ],
             "scar": "Got a scar while punishing a Clanmate in the name of m_c.",
-            "death": "Died from their injuries after punishing a Clanmate in the name of m_c."
+            "death": "died from {PRONOUN/m_c/poss} injuries after punishing a Clanmate for another."
         }
         
     ],
@@ -9423,7 +9423,7 @@
             ],
             "amount": 10,
             "log": {
-                "cats_from": "cat_from feels like they can trust cat_to after {PRONOUN/cat_to/subject} followed orders to punish a clanmate."
+                "cats_from": "cat_from feels like {PRONOUN/cat_from/poss}  can trust cat_to after {PRONOUN/cat_to/subject} followed orders to punish a Clanmate."
             }
         },
         {
