@@ -1069,7 +1069,7 @@ class Pregnancy_Events:
                             cats_to=[kit],
                             **parent_to_kit,
                         )
-            inheritance_db.load_inheritances(Cat)
+        inheritance_db.load_inheritances(Cat)
 
         # check for more extended family members to create relationships with
         all_relatives: list = all_kitten[
