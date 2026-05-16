@@ -33,7 +33,7 @@ class PatrolSchemaItem(BaseModel):
         description="Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
     )
     poi: Union[Dict[PointsOfInterestGroup, List[str]], MISSING] = Field(
-        ...,
+        MISSING,
         description="The relevant points of interest. Points of Interest never affect outcome.",
     )
     patrol_art: Optional[str] = Field(

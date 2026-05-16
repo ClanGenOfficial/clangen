@@ -1525,7 +1525,6 @@
         "event_id",
         "location",
         "season",
-        "poi",
         "frequency",
         "event_text"
       ],
