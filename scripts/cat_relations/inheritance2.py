@@ -78,7 +78,6 @@ class InheritanceDb:
         """
         Clears loaded inheritances. Make sure to call it when loading new Clans.
         """
-        self._cat_to_rels = defaultdict(FamilyRelations)
         self._cat_to_litter = {}
 
     def load_inheritances(self, Cat, get_faded_ids=None):
@@ -88,6 +87,7 @@ class InheritanceDb:
         :Cat: The Cat object. Required for the all_cats_list and cat fetching.
         :get_faded_ids: (Optional) A function that will return a list of all faded IDs.
         """
+        self._cat_to_rels = defaultdict(FamilyRelations)
         for cat in Cat.all_cats_list:
             self._load_inheritance(cat)
 
