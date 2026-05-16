@@ -111,6 +111,7 @@ class InheritanceDb:
         siblings = set()
         for p in self.get_parents(cat_id):
             siblings.update(self.get_children(p))
+        # don't be your own sibling
         siblings.discard(cat_id)
         return siblings
 
@@ -154,6 +155,7 @@ class InheritanceDb:
         cousins = set()
         for ps in self.get_parents_siblings(cat_id):
             cousins.update(self.get_children(ps))
+        # don't be your own cousin
         cousins.discard(cat_id)
         return cousins
 
