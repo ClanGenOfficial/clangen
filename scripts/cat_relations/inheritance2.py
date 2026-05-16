@@ -34,6 +34,7 @@ class InheritanceDb:
             FamilyRelations,
         ] = defaultdict(FamilyRelations)
         self._cat_to_litter: Dict[str, Tuple] = {}
+        self._saved_family_rels: Dict[str, FamilyRelations] = {}
 
     def __getitem__(self, arg: str):
         return self._cat_to_rels.get(arg)
@@ -41,7 +42,15 @@ class InheritanceDb:
     def __repr__(self):
         return str(self._cat_to_rels)
 
-    def _load_inheritance(self, cat):
+    def _load_inheritance(self, cat, save=False):
+        """
+        Loads inheritance for a single cat.
+
+        :param Cat cat: A cat object to load inheritance for.
+        :param bool save: If `True`, this inheritance data will be restored
+        when `load_inheritances()` is called again, as long as `clear_inheritances()`
+        has not been called.
+        """
         for parent_id in cat.adoptive_parents:
             self._cat_to_rels[cat.ID].parents.append(
                 {"relation_type": RelationType.ADOPTIVE, "cat_id": parent_id}
@@ -74,11 +83,15 @@ class InheritanceDb:
                     {"relation_type": RelationType.NOT_BLOOD, "cat_id": m}
                 )
 
+        if save:
+            self._saved_family_rels[cat.ID] = self._cat_to_rels[cat.ID]
+
     def clear_inheritances(self):
         """
         Clears loaded inheritances. Make sure to call it when loading new Clans.
         """
         self._cat_to_litter = {}
+        self._saved_family_rels = {}
 
     def load_inheritances(self, Cat, get_faded_ids=None):
         """
@@ -96,7 +109,11 @@ class InheritanceDb:
                 cat = Cat.fetch_cat(cat_id)
                 if not cat:
                     continue
-                self._load_inheritance(cat)
+                # "save" the inheritances of faded cats bc they're static
+                self._load_inheritance(cat, True)
+        else:  # not loading faded cats; restore the "saved" inheritances
+            for cat_id, saved_family_rel in self._saved_family_rels.items():
+                self._cat_to_rels[cat_id] = saved_family_rel
 
     def get_parents(self, cat_id: str) -> Set[str]:
         return {p["cat_id"] for p in self._cat_to_rels[cat_id].parents}
