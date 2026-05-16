@@ -936,5 +936,21 @@
 		"relationship_constraint": [
 			"parent/child"
 		]
+	},
+	{
+		"id": "daydreamer_inc_low2",
+		"intensity": "low",
+		"interactions": [
+			"r_c watches the clouds with m_c and tells {PRONOUN/m_c/subject} a story that's been on {PRONOUN/r_c/poss} mind."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		]
 	}
 ]
