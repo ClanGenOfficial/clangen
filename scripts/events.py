@@ -1754,7 +1754,7 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
 
         # Gather for backstories.json ----------------------------------------------------
         tags = []
-        if cat.backstory in ["backstory_categories"]["abandoned_backstories"]:
+        if cat.backstory in BACKSTORIES["backstory_categories"]["abandoned_backstories"]:
             tags.append("abandoned")
         elif cat.backstory == "clanborn":
             tags.append("clanborn")
