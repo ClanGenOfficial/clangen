@@ -497,7 +497,7 @@
             "mass_death"
         ],
         "frequency": 1,
-        "event_text": "A toxic algae bloom has been creeping across the lake for days. multi_cat drank from the wrong part of the lake before anyone thought to warn them.",
+        "event_text": "A toxic algae bloom has been creeping across the lake for days, and multi_cat drank from the wrong part of the lake before anyone thought to warn them.",
         "history": [
             {
                 "cats": [
