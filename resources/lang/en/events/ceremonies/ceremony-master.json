@@ -3158,6 +3158,18 @@
     ],
     "Together (old_name) and (previous_mentor) have torn claws and taken names, and as (old_name) is honored for {PRONOUN/m_c/poss} r_h and named m_c, they're not planning on stopping any time soon!"
   ],
+  "warrior_83": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "outsider",
+      "all_traits"
+    ],
+    "(old_name), despite having begun their live outside of the clan, puffs out {PRONOUN/m_c/poss} chest as {PRONOUN/m_c/subject} receive {PRONOUN/m_c/poss} full name: m_c, and are honoured for {PRONOUN/m_c/poss} r_h."
+  ],
   "mediator_0": [
     [
       "mediator",
