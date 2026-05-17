@@ -97,7 +97,7 @@
     "values": [
       "respect"
     ],
-    "amount": 5,
+    "amount": -5,
     "log": {
         "cats_from": "cat_from lost respect for cat_to after a sidetracked patrol."
     }
