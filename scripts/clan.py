@@ -499,6 +499,7 @@ class Clan:
         """
 
         version_info = None
+        game.reset_used_group_IDs()
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
         ):
