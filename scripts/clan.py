@@ -118,7 +118,7 @@ class Clan:
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
-        self.cruel_cards = cruel_cards
+        self.cruel_cards: list[str] = cruel_cards
         self.pregnancy_data = {}
         self.inheritance = {}
         self.custom_pronouns = {}
