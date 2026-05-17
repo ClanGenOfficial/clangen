@@ -66,22 +66,22 @@ Points of Interests can fall into many different tags that denote circumstances 
 
 |        Tag        |                                                           Description                                                           |
 |:-----------------:|:-------------------------------------------------------------------------------------------------------------------------------:|
-|        cave       | a natural underground hollow.                                                                                                   |
-|      covered      | any location that offers shelter from the elements.                                                                             |
-|     fall_risk     | risk of heights-related injury.                                                                                                 |
-|        hole       | a cavity in the earth.                                                                                                          |
-|        prey       | anything the Clan hunts. Has multiple more specific tags. Should not be used together.                                          |
-|     prey:bird     | avian prey.                                                                                                                     |
-|     prey:fish     | any aquatic-related prey.                                                                                                       |
-|    prey:ground    | ground-dwelling prey.                                                                                                           |
-|       rocks       | feature that primarily includes rocks, boulders, or stone.                                                                      |
-|      tainted      | carries a risk of injury or illness due to unsafe conditions                                                                    |
-|       trees       | incorporates trees.                                                                                                             |
-|      Twolegs      | revolves around Twolegs. Has more specific tags. Should not be used together.                                                   |
-| Twolegs:abandoned | An object, structure, area created or modified by Twolegs that has since been abandoned.                                        |
-|  Twolegs:present  | An object, structure, area created or modified by Twolegs that has regular Twoleg activity.                                     |
-|      unstable     | If there is a potential for the structure to collapse in some way, unstable ceilings, unstable ground, an old tree branch, etc. |
-|       water       | Lakes, streams, waterfalls, oceans, bays, etc.                                                                                  |
+|       cave        |                                                  a natural underground hollow.                                                  |
+|      covered      |                                       any location that offers shelter from the elements.                                       |
+|     fall_risk     |                                                 risk of heights-related injury.                                                 |
+|       hole        |                                                     a cavity in the earth.                                                      |
+|       prey        |                     anything the Clan hunts. Has multiple more specific tags. Should not be used together.                      |
+|    prey:flying    |                                                 any prey that primarily flies.                                                  |
+|    prey:water     |                                  prey found in or around water. assume your cats will get wet.                                  |
+|    prey:ground    |                                                      ground-dwelling prey.                                                      |
+|       rocks       |                                   feature that primarily includes rocks, boulders, or stone.                                    |
+|      tainted      |                                  carries a risk of injury or illness due to unsafe conditions                                   |
+|       trees       |                                                       incorporates trees.                                                       |
+|      Twolegs      |                          revolves around Twolegs. Has more specific tags. Should not be used together.                          |
+| Twolegs:abandoned |                    An object, structure, area created or modified by Twolegs that has since been abandoned.                     |
+|  Twolegs:present  |                   An object, structure, area created or modified by Twolegs that has regular Twoleg activity.                   |
+|     unstable      | If there is a potential for the structure to collapse in some way, unstable ceilings, unstable ground, an old tree branch, etc. |
+|       water       |                                         Lakes, streams, waterfalls, oceans, bays, etc.                                          |
 
 # Using Points of Interest
 
