@@ -7,7 +7,9 @@ from scripts.cat.cats import create_cat, create_example_cats
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.game_structure import image_cache
+from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.game.settings import game_setting_set
+from scripts.game_structure.game.switches import switch_set_value, switch_set_dict_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
@@ -24,8 +26,14 @@ class ChooseModeScreen(MakeClanScreenBase):
     def __init__(self, name="choose_mode_screen"):
         super().__init__(name)
 
+        self.game_mode = "classic"
+
     def screen_switches(self):
-        self.possible_cats = create_example_cats()
+        # Reset variables
+        switch_set_value(Switch.clan_creation_info, {})
+        switch_set_dict_value(
+            Switch.clan_creation_info, "possible_cats", create_example_cats()
+        )
 
         super().screen_switches()
         self.elements["previous_step"].disable()
@@ -34,18 +42,6 @@ class ChooseModeScreen(MakeClanScreenBase):
         self.set_mute_button_position("topright")
         self.show_mute_buttons()
         self.set_bg("default", "mainmenu_bg")
-
-        # Reset variables
-        self.game_mode = "classic"
-        self.clan_name = ""
-        self.selected_symbol = ""
-        self.selected_biome = ""
-        self.selected_camp = 0
-        self.selected_season = ""
-        self.leader = None
-        self.deputy = None
-        self.med_cat = None
-        self.members = []
 
         # MODE DESCRIPTION
         text_box = image_cache.load_image(
@@ -133,6 +129,7 @@ class ChooseModeScreen(MakeClanScreenBase):
             # Logic for when to quick-start clan
             elif event.ui_element == self.elements["next_step"]:
                 game_setting_set("game_mode", self.game_mode)
+                switch_set_dict_value(Switch.clan_creation_info, "game_mode", self.game_mode)
                 if self.elements["random_clan_checkbox"].checked:
                     self.random_quick_start()
                     self.save_clan()
@@ -185,20 +182,31 @@ class ChooseModeScreen(MakeClanScreenBase):
             self.elements["cruel_mode_button"].enable()
 
     def random_quick_start(self):
-        self.clan_name = self.random_clan_name()
-        self.selected_biome = self.random_biome_selection()
-        if self.selected_biome in ("Forest", "Mountainous", "Beach"):
-            self.selected_camp = randrange(1, 5)
-        else:
-            self.selected_camp = randrange(1, 4)
-        if f"symbol{self.clan_name.upper()}0" in sprites.clan_symbols:
+        # NAME
+        switch_set_dict_value(
+            Switch.clan_creation_info, "name", self.random_clan_name()
+        )
+        # BIOME
+        switch_set_dict_value(
+            Switch.clan_creation_info, "biome", self.random_biome_selection()
+        )
+        # CAMP
+        switch_set_dict_value(Switch.clan_creation_info, "camp_bg", f"camp{randrange(1, 5)}")
+
+        # SYMBOL
+        if f"symbol{switch_get_value(Switch.clan_creation_info)["name"].upper()}0" in sprites.clan_symbols:
             # Use recommended symbol if it exists
-            self.selected_symbol = f"symbol{self.clan_name.upper()}0"
+            symbol = f"symbol{switch_get_value(Switch.clan_creation_info)["name"].upper()}0"
         else:
-            self.selected_symbol = choice(sprites.clan_symbols)
-        self.leader = create_cat(rank=CatRank.WARRIOR)
-        self.deputy = create_cat(rank=CatRank.WARRIOR)
-        self.med_cat = create_cat(rank=CatRank.WARRIOR)
+            symbol = choice(sprites.clan_symbols)
+
+        switch_set_dict_value(Switch.clan_creation_info, "symbol", symbol)
+
+        # MEMBERS
+        switch_set_dict_value(Switch.clan_creation_info, "leader", create_cat(CatRank.WARRIOR))
+        switch_set_dict_value(Switch.clan_creation_info, "deputy", create_cat(CatRank.WARRIOR))
+        switch_set_dict_value(Switch.clan_creation_info, "medicine_cat", create_cat(CatRank.WARRIOR))
+        members = []
         for _ in range(randrange(4, 8)):
             random_rank = choice(
                 [
@@ -209,4 +217,6 @@ class ChooseModeScreen(MakeClanScreenBase):
                     CatRank.ELDER,
                 ]
             )
-            self.members.append(create_cat(rank=random_rank))
+            members.append(create_cat(rank=random_rank))
+
+        switch_set_dict_value(Switch.clan_creation_info, "starting_members", members)

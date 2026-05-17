@@ -9,7 +9,7 @@ from scripts.cat.cats import create_cat, Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.game_structure import image_cache, constants
-from scripts.game_structure.game import Switch
+from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.game.settings import game_setting_set
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
@@ -190,7 +190,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             "general.clan",
             ui_scale(pygame.Rect((292, 100), (216, 50))),
             object_id=ObjectID("#text_box_30_horizcenter_vertcenter", "#dark"),
-            text_kwargs={"name": self.clan_name},
+            text_kwargs={"name": switch_get_value(Switch.clan_creation_info)["name"]},
             manager=MANAGER,
         )
 
@@ -262,7 +262,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 visible=False,
             )
 
-        if self.leader:
+        if switch_get_value(Switch.clan_creation_info).get("leader"):
             self.elements["leader"].set_image(
                 pygame.transform.scale(
                     self.ui_images["leader_chosen"],
@@ -278,7 +278,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 )
             )
 
-        if self.deputy:
+        if switch_get_value(Switch.clan_creation_info).get("deputy"):
             self.elements["deputy"].set_image(
                 pygame.transform.scale(
                     self.ui_images["deputy_chosen"],
@@ -294,7 +294,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 )
             )
 
-        if self.med_cat:
+        if switch_get_value(Switch.clan_creation_info).get("medicine_cat"):
             self.elements["med"].set_image(
                 pygame.transform.scale(
                     self.ui_images["med_chosen"],
@@ -310,14 +310,20 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 )
             )
 
-        if len(self.members) >= 4:
+        if (
+            len(switch_get_value(Switch.clan_creation_info).get("starting_members", []))
+            >= 4
+        ):
             self.elements["fourth_cat"].set_image(
                 pygame.transform.scale(
                     self.ui_images["fourth_chosen"],
                     ui_scale_dimensions((800, 260)),
                 )
             )
-        elif len(self.members) >= 3:
+        elif (
+            len(switch_get_value(Switch.clan_creation_info).get("starting_members", []))
+            >= 3
+        ):
             self.elements["third_cat"].set_image(
                 pygame.transform.scale(
                     self.ui_images["third_chosen"],
@@ -325,7 +331,10 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 )
             )
             self.elements["fourth_cat"].show()
-        elif len(self.members) >= 2:
+        elif (
+            len(switch_get_value(Switch.clan_creation_info).get("starting_members", []))
+            >= 2
+        ):
             self.elements["second_cat"].set_image(
                 pygame.transform.scale(
                     self.ui_images["second_chosen"],
@@ -333,7 +342,10 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 )
             )
             self.elements["third_cat"].show()
-        elif len(self.members) == 1:
+        elif (
+            len(switch_get_value(Switch.clan_creation_info).get("starting_members", []))
+            == 1
+        ):
             self.elements["first_cat"].set_image(
                 pygame.transform.scale(
                     self.ui_images["first_chosen"],

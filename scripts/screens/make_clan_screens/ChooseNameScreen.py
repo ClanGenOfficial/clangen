@@ -3,6 +3,8 @@ import pygame_gui
 from pygame_gui.core import UIContainer
 
 from scripts.game_structure import image_cache
+from scripts.game_structure.game import Switch
+from scripts.game_structure.game.switches import switch_set_dict_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
 from scripts.ui.elements.modified_image import UIModifiedImage
@@ -88,10 +90,14 @@ class ChooseNameScreen(MakeClanScreenBase):
             elif event.ui_element == self.elements["reset_name"]:
                 self.elements["name_entry"].set_text("")
             elif event.ui_element == self.elements["next_step"]:
-                self.clan_name = self.elements["name_entry"].get_text().strip()
+                switch_set_dict_value(
+                    Switch.clan_creation_info,
+                    "name",
+                    self.elements["name_entry"].get_text().strip(),
+                )
                 self.change_screen(GameScreen.CHOOSE_CATS)
             elif event.ui_element == self.elements["previous_step"]:
-                self.clan_name = ""
+                switch_set_dict_value(Switch.clan_creation_info, "name", "")
                 self.change_screen(GameScreen.CHOOSE_MODE)
 
         return super().handle_event(event)
