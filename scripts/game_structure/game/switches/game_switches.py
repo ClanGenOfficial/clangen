@@ -16,6 +16,7 @@ class Switch(StrEnum):
     cat = auto()
     clan_name = auto()
     clan_creation_info = auto()
+    possible_cats = auto()
     cur_screen = auto()
     saved_clan = auto()
     clan_list = auto()
@@ -44,6 +45,7 @@ _switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
     "cat": "",
     "clan_name": "",
     "clan_creation_info": {},
+    "possible_cats": [],
     "cur_screen": GameScreen.START,
     "saved_clan": False,
     "clan_list": [],

@@ -13,7 +13,7 @@ from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import game
 from scripts.game_structure.game import switch_get_value, Switch
-from scripts.game_structure.game.switches import switch_set_dict_value
+from scripts.game_structure.game.switches import switch_set_dict_value, switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
@@ -39,13 +39,17 @@ class MakeClanScreenBase(Screens):
     def __init__(self, name="make_clan_screen"):
         super().__init__(name)
 
-        self.elements = {}
+        self.elements: dict = {}
+        self.clan_info: dict = {}
 
     def screen_switches(self):
         super().screen_switches()
         self.set_mute_button_position("topright")
         self.show_mute_buttons()
         self.set_bg("default", "mainmenu_bg")
+
+        # grab clan_info from the switch
+        self.clan_info = switch_get_value(Switch.clan_creation_info)
 
         # Buttons that appear on every screen.
         self.elements["menu_warning"] = pygame_gui.elements.UITextBox(
@@ -89,6 +93,10 @@ class MakeClanScreenBase(Screens):
         return super().handle_event(event)
 
     def exit_screen(self):
+        # set switch value so it can be retrieved during the next step
+        switch_set_value(Switch.clan_creation_info, self.clan_info)
+
+        # kill elements
         for ele in self.elements.values():
             ele.kill()
         self.elements.clear()
@@ -102,25 +110,21 @@ class MakeClanScreenBase(Screens):
         save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
-        save_id = switch_get_value(Switch.clan_creation_info)["name"]
+        save_id = self.clan_info["name"]
 
         # extra sanitization for filenames
         clan_name = sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", save_id)
         if _clan_name_exists(clan_name):
-            switch_set_dict_value(
-                Switch.clan_creation_info, "name", _generate_unique_clan_name(clan_name)
-            )
+            self.clan_info["name"] = _generate_unique_clan_name(clan_name)
 
         game.clan = Clan(
             displayname=clan_name,
-            **switch_get_value(Switch.clan_creation_info),
+            **self.clan_info,
         )
         game.clan.create_clan()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
-        game.clan.herb_supply.start_storage(
-            len(switch_get_value(Switch.clan_creation_info)["starting_members"])
-        )
+        game.clan.herb_supply.start_storage(len(self.clan_info["starting_members"]))
         game.clan.save_herb_supply(game.clan)
         game.clan.grief_strings.clear()
         Cat.sort_cats()
@@ -130,8 +134,8 @@ class MakeClanScreenBase(Screens):
         # Select a random biome and background
         possible_biomes = ["Forest", "Mountainous", "Plains", "Beach"]
         # ensuring that the new random camp will not be the same one
-        if switch_get_value(Switch.clan_creation_info).get("biome"):
-            possible_biomes.remove(switch_get_value(Switch.clan_creation_info)["biome"])
+        if self.clan_info.get("biome"):
+            possible_biomes.remove(self.clan_info.get("biome"))
         chosen_biome = choice(possible_biomes)
         return chosen_biome
 
@@ -139,7 +143,7 @@ class MakeClanScreenBase(Screens):
         clan_names = (
             names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
         )
-        if switch_get_value(Switch.clan_creation_info).get("name"):
-            clan_names.remove(switch_get_value(Switch.clan_creation_info)["name"])
+        if self.clan_info.get("name"):
+            clan_names.remove(self.clan_info.get("name"))
 
         return choice(clan_names)
