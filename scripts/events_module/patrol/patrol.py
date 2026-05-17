@@ -1163,8 +1163,8 @@ class Patrol:
                 # ignore skill or trait outcomes
                 if outcome.stat_trait or outcome.stat_skill:
                     continue
-                outcome_prey_size = outcome.prey[0]
                 if outcome.prey:
+                    outcome_prey_size = outcome.prey[0]
                     if outcome_prey_size not in prey_size_to_outcome_amounts:
                         prey_size_to_outcome_amounts[outcome_prey_size] = 0
                     prey_size_to_outcome_amounts[outcome_prey_size] += 1
