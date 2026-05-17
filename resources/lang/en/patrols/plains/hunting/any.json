@@ -2744,7 +2744,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 4,
+        "frequency": 2,
         "intro_text": "As the hunting patrol heads out, p_l suggests that they search for rabbit. It is rabbit season after all, {PRONOUN/p_l/subject} {VERB/p_l/insist/insists}.",
         "decline_text": "The patrol decides they might have better luck attempting to hunt duck instead.",
         "chance_of_success": 40,
