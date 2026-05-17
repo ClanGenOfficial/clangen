@@ -761,7 +761,7 @@ class Clan:
             biome=clan_data["biome"],
             camp_bg=clan_data["camp_bg"],
             game_mode=clan_data["gamemode"],
-            cruel_cards=clan_data["cruel_cards"],
+            cruel_cards=clan_data.get("cruel_cards", []),
             self_run_init_functions=False,
         )
         game.clan.post_initialization_functions()
