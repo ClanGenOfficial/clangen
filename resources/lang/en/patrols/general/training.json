@@ -625,7 +625,7 @@
                 "frequency": 4
             },
             {
-                "text": "With the patrol ranged around {PRONOUN/s_c/object} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} want to tell a story, for once! But no, no, they're happy to entertain and teach their Clanmates — has anyone heard of story_list?",
+                "text": "With the patrol ranged around {PRONOUN/s_c/object} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} want to tell a story, for once! But no, no, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} happy to entertain and teach {PRONOUN/s_c/poss} Clanmates — {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} if anyone has heard of story_list as {PRONOUN/s_c/subject} {VERB/s_c/begin/begins} to relax.",
                 "exp": 20,
                 "stat_skill": [
                     "STORY,2"

@@ -5105,7 +5105,7 @@
                 "frequency": 4
             },
             {
-                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/s_c/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remember/remembers} that c_n trust {PRONOUN/s_c/object} to heal them, so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
+                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/app1/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remember/remembers} that c_n trust {PRONOUN/s_c/object} to heal them, so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
                 "exp": 20,
                 "stat_trait": [
                     "compassionate",
@@ -23937,7 +23937,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, so it's not finding them that's hard — it's trying to carry all the roots back to camp all at once that proves difficult! On the way back, {PRONOUN/p_l/subject} spot some plantain and almost drop all of {PRONOUN/p_l/poss} roots when {PRONOUN/p_l/subject} attempt to collect it.",
+                "text": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, so it's not finding them that's hard — it's trying to carry all the roots back to camp all at once that proves difficult! On the way back, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} some plantain and almost drops all of {PRONOUN/p_l/poss} roots when {PRONOUN/p_l/subject} {VERB/p_l/attempt/attempts} to collect it.",
                 "exp": 10,
                 "herbs": [
                     "burdock",
