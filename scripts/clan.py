@@ -72,6 +72,7 @@ class Clan:
         camp_bg=None,
         symbol=None,
         game_mode="classic",
+        cruel_cards=[],
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
@@ -117,10 +118,7 @@ class Clan:
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
-        if game_mode == "cruel season":
-            self.cruel_cards = []
-        else:
-            self.cruel_cards = None
+        self.cruel_cards = cruel_cards
         self.pregnancy_data = {}
         self.inheritance = {}
         self.custom_pronouns = {}
@@ -426,6 +424,7 @@ class Clan:
             "camp_bg": self.camp_bg,
             "clan_symbol": self.chosen_symbol,
             "gamemode": self.game_mode,
+            "cruel_cards": self.cruel_cards,
             "used_group_IDs": game.used_group_IDs,
             "last_focus_change": self.last_focus_change,
             "clans_in_focus": self.clans_in_focus,
@@ -441,7 +440,6 @@ class Clan:
             "version_commit": get_version_info().version_number,
             "source_build": get_version_info().is_source_build,
             "custom_pronouns": self.custom_pronouns,
-            "cruel_card_IDs": self.cruel_cards,
         }
 
         # LEADER DATA
@@ -490,11 +488,6 @@ class Clan:
         save_clan_settings()
         if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
-
-        if game.clan.game_mode == "cruel season":
-            clan_data["cruel_card_IDs"] = self.cruel_cards
-        else:
-            clan_data["cruel_card_IDs"] = {}
 
         safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
@@ -768,6 +761,7 @@ class Clan:
             biome=clan_data["biome"],
             camp_bg=clan_data["camp_bg"],
             game_mode=clan_data["gamemode"],
+            cruel_cards=clan_data["cruel_cards"],
             self_run_init_functions=False,
         )
         game.clan.post_initialization_functions()
