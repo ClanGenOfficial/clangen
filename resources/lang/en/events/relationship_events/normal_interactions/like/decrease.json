@@ -791,7 +791,7 @@
 			"daydreamer"
 		]
     },
-  {
+  	{
 		"id": "daydreamerseasonal_de_low2",
 		"intensity": "low",
         "season": [
@@ -810,7 +810,7 @@
 			"daydreamer"
 		]
     },
-  {
+  	{
 		"id": "daydreamerseasonal_de_low3",
 		"intensity": "low",
         "season": [
@@ -829,7 +829,7 @@
 			"daydreamer"
 		]
     },
-  {
+  	{
 		"id": "daydreamerseasonal_de_low4",
 		"intensity": "low",
         "season": [
