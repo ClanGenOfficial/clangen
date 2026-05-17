@@ -30,12 +30,6 @@ from scripts.ui.theme import get_text_box_theme
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
 
 
-def _get_cat_tooltip_string(cat: Cat):
-    """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
-
-    return f"<b>{cat.name}</b><br>{cat.genderalign_string}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('cat.personality.' + cat.personality.trait)}<br>{cat.skills.skill_string(short=True)}"
-
-
 class ChooseCatsScreen(MakeClanScreenBase):
     path = "resources/images/pick_clan_screen"
     ui_images = {
@@ -212,35 +206,20 @@ class ChooseCatsScreen(MakeClanScreenBase):
             ):
                 self.elements["roll_container"].hide()
 
-                # SHIFT CLICK
-                if pygame.key.get_mods() & pygame.KMOD_SHIFT:
-                    # this is gonna be kinda annoying repetitive, but keybinds ugh i don't care enough to make it nicer
-                    clicked_cat = event.ui_element.return_cat_object()
-                    if not self.clan_info.get("leader"):
-                        if clicked_cat.age in ("newborn", "kitten", "adolescent"):
-                            self.selected_cat = clicked_cat
-                        else:
-                            self.clan_info["leader"] = clicked_cat
-                            self.selected_cat = None
-                    elif not self.clan_info.get("deputy"):
-                        if clicked_cat.age in ("newborn", "kitten", "adolescent"):
-                            self.selected_cat = clicked_cat
-                        else:
-                            self.clan_info["deputy"] = clicked_cat
-                            self.selected_cat = None
-                    elif not self.clan_info.get("medicine_cat"):
-                        if clicked_cat.age in ("newborn", "kitten", "adolescent"):
-                            self.selected_cat = clicked_cat
-                        else:
-                            self.clan_info["medicine_cat"] = clicked_cat
-                            self.selected_cat = None
-                    else:
-                        self.clan_info["starting_members"].get(clicked_cat)
-                        self.selected_cat = None
-                else:
-                    self.selected_cat = event.ui_element.return_cat_object()
-                    self.refresh_cat_images_and_info(self.selected_cat)
-                    self.refresh_text_and_buttons()
+                self.selected_cat = event.ui_element.return_cat_object()
+                if self.selected_cat in self.clan_info.get("starting_members", []):
+                    self.clan_info["starting_members"].remove(self.selected_cat)
+                elif self.selected_cat == self.clan_info.get("leader"):
+                    self.clan_info["leader"] = None
+                elif self.selected_cat == self.clan_info.get("deputy"):
+                    self.clan_info["deputy"] = None
+                elif self.selected_cat == self.clan_info.get("medicine_cat"):
+                    self.clan_info["medicine_cat"] = None
+
+                self.refresh_cat_images_and_info(self.selected_cat)
+                self.refresh_text_and_buttons()
+                self.update_head_display()
+                self.refresh_text_and_buttons()
 
             elif event.ui_element == self.elements["select_cat"]:
                 self._assign_cat()
@@ -630,7 +609,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 self._add_to_cat_column(
                     possible_cats[u], u, self.elements["chosen1_container"], u
                 )
-                self.elements["cat" + str(u)].disable()
 
             # place possible cat
             else:
@@ -664,7 +642,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 self._add_to_cat_column(
                     possible_cats[u], u, self.elements["chosen2_container"], u - 6
                 )
-                self.elements["cat" + str(u)].disable()
 
             # place possible cat
             else:
@@ -692,7 +669,16 @@ class ChooseCatsScreen(MakeClanScreenBase):
             ui_scale(pygame.Rect((0, 0 + 50 * position_offset), (50, 50))),
             cat.sprite,
             container=container,
-            tool_tip_text=_get_cat_tooltip_string(cat),
+            tool_tip_text=self._get_cat_tooltip_string(cat),
             cat_object=cat,
             manager=MANAGER,
         )
+
+    def _get_cat_tooltip_string(self, cat: Cat):
+        """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
+        name = (
+            cat.name
+            if self.clan_info.get("leader") != cat
+            else cat.name.get_specsuffix_name(CatRank.LEADER)
+        )
+        return f"<b>{name}</b><br>{cat.genderalign_string}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('cat.personality.' + cat.personality.trait)}<br>{cat.skills.skill_string(short=True)}"
