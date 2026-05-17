@@ -250,6 +250,8 @@ class ChooseCatsScreen(MakeClanScreenBase):
     def refresh_text_and_buttons(self):
         """Refreshes the button states and text boxes"""
 
+        if len(self.clan_info.get("starting_members", [])) >= 4:
+            self.elements["next_step"].enable()
         if len(self.clan_info.get("starting_members", [])) == 7:
             self.elements["select_cat"].disable()
         elif not self.selected_cat:
@@ -430,7 +432,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             self.elements["title"].set_text("screens.make_clan.recruit_title")
 
         # TOGGLE HEAD VISIBLE
-        cat_heads = [
+        for head in [
             "deputy",
             "med",
             "1_cat",
@@ -438,9 +440,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             "3_cat",
             "4_cat",
             "clan_glow",
-        ]
-
-        for head in cat_heads:
+        ]:
             self.elements[head].hide()
 
         # TOGGLE EYE LIGHTS
@@ -496,15 +496,38 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 )
             )
 
-        for i in range(min(len(self.clan_info.get("starting_members", [])), 4), 5):
-            if i == 0:
-                continue
-            self.elements[f"{i}_cat"].set_image(
-                pygame.transform.scale(
-                    self.ui_images[f"{i}_empty"],
-                    ui_scale_dimensions((800, 260)),
+        if len(self.clan_info.get("starting_members", [])) < 7:
+            for i in range(min(len(self.clan_info.get("starting_members", [])), 4), 5):
+                if i == 0:
+                    continue
+                self.elements[f"{i}_cat"].set_image(
+                    pygame.transform.scale(
+                        self.ui_images[f"{i}_empty"],
+                        ui_scale_dimensions((800, 260)),
+                    )
                 )
-            )
+
+        mod = (
+            1
+            if self.clan_info.get("leader")
+            and self.clan_info.get("deputy")
+            and self.clan_info.get("medicine_cat")
+            else 0
+        )
+        if self.clan_info.get("starting_members"):
+            for i in range(
+                1, (max(len(self.clan_info.get("starting_members", [])), 0)) + 1 + mod
+            ):
+                if i >= 5:
+                    continue
+                if len(self.clan_info.get("starting_members", [])) >= i:
+                    self.elements[f"{i}_cat"].set_image(
+                        pygame.transform.scale(
+                            self.ui_images[f"{i}_chosen"],
+                            ui_scale_dimensions((800, 260)),
+                        )
+                    )
+                self.elements[f"{i}_cat"].show()
 
         if len(self.clan_info.get("starting_members", [])) >= 7:
             self.elements["clan_glow"].show()
@@ -525,12 +548,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
                     ui_scale_dimensions((800, 260)),
                 )
             )
-            if (
-                self.clan_info.get("leader")
-                and self.clan_info.get("deputy")
-                and self.clan_info.get("medicine_cat")
-            ):
-                self.elements["4_cat"].show()
         elif len(self.clan_info.get("starting_members", [])) >= 2:
             self.elements["2_cat"].show()
             self.elements["2_cat"].set_image(
@@ -539,12 +556,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
                     ui_scale_dimensions((800, 260)),
                 )
             )
-            if (
-                self.clan_info.get("leader")
-                and self.clan_info.get("deputy")
-                and self.clan_info.get("medicine_cat")
-            ):
-                self.elements["3_cat"].show()
         elif len(self.clan_info.get("starting_members", [])) == 1:
             self.elements["1_cat"].show()
             self.elements["1_cat"].set_image(
@@ -553,12 +564,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
                     ui_scale_dimensions((800, 260)),
                 )
             )
-            if (
-                self.clan_info.get("leader")
-                and self.clan_info.get("deputy")
-                and self.clan_info.get("medicine_cat")
-            ):
-                self.elements["2_cat"].show()
         elif (
             self.clan_info.get("leader")
             and self.clan_info.get("deputy")
