@@ -1138,8 +1138,8 @@ class Patrol:
         prey_size = ["very_small", "small", "medium", "large", "huge"]
         prey_size_random_weights = PATROL_BALANCE[biome][season]
 
-        chosen_prey_size = choices(prey_size, weights=prey_size_random_weights)[0]
-        print(f"chosen filter prey size: {chosen_prey_size}")
+        original_prey_size = choices(prey_size, weights=prey_size_random_weights)[0]
+        print(f"chosen filter prey size: {original_prey_size}")
 
         # filter all possible patrol depending on the needed prey size
         for patrol in possible_patrols:
@@ -1150,7 +1150,7 @@ class Patrol:
                     # less frequent patrols are buffed the most,
                     #   but even frequent patrols are buffed at least a little.
                     prey_size_increase = int(prey_size_increase_str.split("_")[0])
-                    new_idx = prey_size.index(chosen_prey_size) + prey_size_increase
+                    new_idx = prey_size.index(original_prey_size) + prey_size_increase
                     # check to see we don't go over largest prey size
                     if new_idx >= len(prey_size):
                         new_idx = len(prey_size) - 1
