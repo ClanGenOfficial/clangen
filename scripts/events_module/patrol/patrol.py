@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+from collections import defaultdict
 import logging
 import random
 from copy import deepcopy
@@ -1135,40 +1136,43 @@ class Patrol:
         )
         season = game.clan.current_season
         prey_size = ["very_small", "small", "medium", "large", "huge"]
+        prey_size_random_weights = PATROL_BALANCE[biome][season]
 
-        chosen_prey_size = choices(prey_size, weights=PATROL_BALANCE[biome][season])[0]
+        chosen_prey_size = choices(prey_size, weights=prey_size_random_weights)[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
         # filter all possible patrol depending on the needed prey size
         for patrol in possible_patrols:
-            for adaption, needed_weight in PATROL_WEIGHT_ADAPTION.items():
-                if needed_weight == patrol.frequency:
+            # depending on the patrol frequency, we "buff" the chosen prey size
+            for prey_size_increase_str, associated_frequency in PATROL_WEIGHT_ADAPTION.items():
+                if associated_frequency == patrol.frequency:
                     # get the amount of class sizes which can be increased
-                    increment = int(adaption.split("_")[0])
-                    new_idx = prey_size.index(chosen_prey_size) + increment
-                    # check that the increment does not lead to an overflow
-                    new_idx = (
-                        new_idx if new_idx < len(prey_size) else len(prey_size) - 1
-                    )
-                    chosen_prey_size = deepcopy(prey_size[new_idx])
+                    # less frequent patrols are buffed the most,
+                    #   but even frequent patrols are buffed at least a little.
+                    prey_size_increase = int(prey_size_increase_str.split("_")[0])
+                    new_idx = prey_size.index(chosen_prey_size) + prey_size_increase
+                    # check to see we don't go over largest prey size
+                    if new_idx >= len(prey_size):
+                        new_idx = len(prey_size) - 1
+                    chosen_prey_size = prey_size[new_idx]
                     break
 
             # now count the outcomes + prey size
-            prey_types = {}
+            prey_size_to_outcome_amounts = {}
             for outcome in patrol.success_outcomes:
                 # ignore skill or trait outcomes
                 if outcome.stat_trait or outcome.stat_skill:
                     continue
+                outcome_prey_size = outcome.prey[0]
                 if outcome.prey:
-                    if outcome.prey[0] in prey_types:
-                        prey_types[outcome.prey[0]] += 1
-                    else:
-                        prey_types[outcome.prey[0]] = 1
+                    if outcome_prey_size not in prey_size_to_outcome_amounts:
+                        prey_size_to_outcome_amounts[outcome_prey_size] = 0
+                    prey_size_to_outcome_amounts[outcome_prey_size] += 1
 
             # get the prey size with the most outcomes
             most_prey_size = ""
             max_occurrences = 0
-            for size, amount in prey_types.items():
+            for size, amount in prey_size_to_outcome_amounts.items():
                 if amount >= max_occurrences and most_prey_size != chosen_prey_size:
                     most_prey_size = size
 
