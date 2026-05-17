@@ -36,8 +36,7 @@
 			"Late at night, m_c finds r_c sitting alone at the edge of camp. They go back to their dens without speaking.",
 			"The silence between m_c and r_c feels more uncomfortable than usual.",
 			"Both m_c and r_c avoid one another's eye contact.",
-			"After the Clan finds a strange object, m_c notes that r_c has been a little too fascinated with it.",
-			"It seems like there's an unspoken apology between m_c and r_c."
+			"After the Clan finds a strange object, m_c notes that r_c has been a little too fascinated with it."
 		],
 		"reaction_random_cat": {
 			"comfort": "decrease"
