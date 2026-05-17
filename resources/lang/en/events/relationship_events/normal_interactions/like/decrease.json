@@ -756,8 +756,8 @@
 		}
 	},
 	{
-		"id": "daydreamer_de_low1",
-		"intensity": "low",
+		"id": "daydreamer_de_med",
+		"intensity": "medium",
 		"interactions": [
 			"m_c has to tap r_c multiple times to get {PRONOUN/r_c/object} to snap out of {PRONOUN/r_c/poss} daydream.",
 			"m_c doesn't understand why r_c won't play like the other kits."
@@ -830,7 +830,7 @@
 		]
     },
   {
-		"id": "daydreamerseasonal_de_low3",
+		"id": "daydreamerseasonal_de_low4",
 		"intensity": "low",
         "season": [
             "greenleaf"
