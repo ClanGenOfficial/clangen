@@ -3,18 +3,26 @@
         "gather_fourtrees": "Fourtrees",
         "gather_island": "Gathering Island",
         "gather_monster": "the monster carcass",
-        "moon_meteor": "the Silverpelt stone",
+
+        "moon_meteor": "the Silverpelt Stone",
         "moon_pool": "the Moonpool",
-        "moon_cave": "the whispering cave",
-        "terrain_lake": "a large lake in the territory",
-        "terrain_carrionplace": "the Carrionplace",
-        "terrain_sunrocks": "the Sunrocks",
-        "terrain_well": "a Twoleg water pit",
-        "terrain_twolegplace": "a nearby Twolegplace",
-        "terrain_deepforest": "the densest part of the forest",
+        "moon_cave": "the Whispering Cave",
+
+        "terrain_lake": "the lake",
+        "terrain_fordriver": "Fordriver",
+        "terrain_carrionplace": "the carrionplace",
+        "terrain_sunningrocks": "Sunningrocks",
+        "terrain_well": "the Twoleg water pit",
+        "terrain_twolegplace": "the Twolegplace",
+        "terrain_horseplace": "the Horseplace",
+        "terrain_deepforest": "the deep forest",
+        "terrain_windswepttree": "Windswept Tree",
         "terrain_hugeboulder": "the huge boulder",
         "terrain_waterfall": "the waterfall",
-        "terrain_birdnests": "the bird nesting site",
-        "terrain_carrionbeach": "the carrion-beach"
+        "terrain_gullcliffs": "the gull cliffs",
+        "terrain_eaglenest": "the eagle nest",
+        "terrain_rookery": "the rookery",
+        "terrain_batcaves": "the bat caves",
+        "terrain_carrionbeach": "the carrionbeach"
     }
 }

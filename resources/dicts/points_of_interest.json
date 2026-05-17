@@ -7,7 +7,7 @@
     "gather_island": {
         "category": "gathering",
         "biome": ["any"],
-        "tags": ["water"]
+        "tags": ["water:flowing"]
     },
     "gather_monster": {
         "category": "gathering",
@@ -17,12 +17,12 @@
     "moon_meteor": {
         "category": "moonplace",
         "biome": ["any"],
-        "tags": []
+        "tags": ["rocks"]
     },
     "moon_pool": {
         "category": "moonplace",
         "biome": ["any"],
-        "tags": ["water"]
+        "tags": ["water:still"]
     },
     "moon_cave": {
         "category": "moonplace",
@@ -32,14 +32,19 @@
     "terrain_lake": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["water", "prey:fish"]
+        "tags": ["water:still", "water:flowing", "prey:water", "prey:flying"]
+    },
+    "terrain_fordriver": {
+        "category": "terrain",
+        "biome": ["any"],
+        "tags": ["water:flowing", "prey:water", "prey:flying"]
     },
     "terrain_carrionplace": {
         "category": "terrain",
         "biome": ["forest"],
         "tags": ["Twolegs:present", "tainted", "prey:ground", "unstable", "covered"]
     },
-    "terrain_sunrocks": {
+    "terrain_sunningrocks": {
         "category": "terrain",
         "biome": ["any"],
         "tags": ["rocks"]
@@ -47,37 +52,62 @@
     "terrain_well": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["Twolegs:abandoned", "water", "hole"]
+        "tags": ["Twolegs:abandoned", "water:still", "fall_risk"]
     },
     "terrain_twolegplace": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["Twolegs:present"]
+        "tags": ["Twolegs:present", "prey:ground", "tainted"]
+    },
+    "terrain_horseplace": {
+        "category": "terrain",
+        "biome": ["plains"],
+        "tags": ["Twolegs:present", "prey:ground", "prey:flying"]
     },
     "terrain_deepforest": {
         "category": "terrain",
         "biome": ["forest"],
-        "tags": ["trees", "prey"]
+        "tags": ["trees", "prey:ground", "prey:flying"]
+    },
+    "terrain_windswepttree": {
+        "category": "terrain",
+        "biome": ["plains"],
+        "tags": ["trees", "prey:ground", "prey:flying"]
     },
     "terrain_hugeboulder": {
         "category": "terrain",
         "biome": ["forest"],
-        "tags": ["rocks", "prey:ground"]
+        "tags": ["rocks", "prey:ground", "covered"]
     },
     "terrain_waterfall": {
         "category": "terrain",
-        "biome": ["mountainous"],
-        "tags": ["water", "prey:fish", "rocks", "fall_risk"]
+        "biome": ["mountainous", "forest"],
+        "tags": ["water:flowing", "prey:water", "rocks", "fall_risk"]
     },
-    "terrain_birdnests": {
+    "terrain_gullcliffs": {
+        "category": "terrain",
+        "biome": ["beach"],
+        "tags": ["prey:flying", "prey:eggs", "nests", "fall_risk", "unstable", "water:ocean"]
+    },
+    "terrain_eaglenest": {
+        "category": "terrain",
+        "biome": ["mountainous"],
+        "tags": ["prey:eggs", "nests"]
+    },
+    "terrain_rookery": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["prey:bird"]
+        "tags": ["prey:flying", "prey:eggs", "nests", "trees"]
+    },
+    "terrain_batcaves": {
+        "category": "terrain",
+        "biome": ["any"],
+        "tags": ["prey:flying", "tainted", "cave", "covered"]
     },
     "terrain_carrionbeach": {
         "category": "terrain",
         "biome": ["beach"],
-        "tags": ["prey:fish", "Twolegs:present", "tainted"]
+        "tags": ["Twolegs:present", "tainted", "prey:water", "water:ocean"]
     }
 
 }
