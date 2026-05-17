@@ -72,7 +72,7 @@ class Clan:
         camp_bg=None,
         symbol=None,
         game_mode="classic",
-        cruel_cards=[],
+        cruel_cards: list[str]=[],
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
