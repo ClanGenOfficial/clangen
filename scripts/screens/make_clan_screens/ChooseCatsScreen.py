@@ -29,6 +29,12 @@ from scripts.ui.theme import get_text_box_theme
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
 
 
+def _get_cat_tooltip_string(cat: Cat):
+    """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
+
+    return f"<b>{cat.name}</b><br>{cat.genderalign_string}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('cat.personality.' + cat.personality.trait)}<br>{cat.skills.skill_string(short=True)}"
+
+
 class ChooseCatsScreen(MakeClanScreenBase):
     path = "resources/images/pick_clan_screen"
     ui_images = {
@@ -130,10 +136,10 @@ class ChooseCatsScreen(MakeClanScreenBase):
         # add a counter for this one
         if constants.CONFIG["clan_creation"]["rerolls"]:
             self.elements["reroll_count"] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((0, 10), (50, 25))),
+                ui_scale(pygame.Rect((0, 0), (30, 30))),
                 str(self.rolls_left),
                 container=self.elements["roll_container"],
-                object_id=get_text_box_theme(""),
+                object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 anchors={"top_target": self.elements["roll2"]},
                 manager=MANAGER,
             )
@@ -145,7 +151,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 self.elements["roll2"].disable()
             if self.rolls_left == 0:
                 self.elements["roll3"].disable()
-            self.elements["dice"].hide()
             self.elements["reroll_count"].hide()
         else:
             if self.rolls_left == 0:
@@ -414,73 +419,99 @@ class ChooseCatsScreen(MakeClanScreenBase):
             self.clan_info.get("deputy"),
             self.clan_info.get("medicine_cat"),
         ] + self.clan_info.get("starting_members", [])
+
         # CAT IMAGES
+        selected_cat_index: Optional[int] = None
         # first half
         for u in range(6):
+            # kill existing element so we start fresh
             if "cat" + str(u) in self.elements:
                 self.elements["cat" + str(u)].kill()
-            if possible_cats[u] == selected:
-                self.elements["cat" + str(u)] = self.elements[
-                    "cat" + str(u)
-                ] = UISpriteButton(
-                    ui_scale(pygame.Rect((270, 200), (150, 150))),
-                    pygame.transform.scale(
-                        possible_cats[u].sprite, ui_scale_dimensions((150, 150))
-                    ),
-                    cat_object=possible_cats[u],
-                )
-            elif possible_cats[u] in chosen_cats:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    ui_scale(pygame.Rect((650, 130 + 50 * u), (50, 50))),
-                    possible_cats[u].sprite,
-                    cat_object=possible_cats[u],
+
+            if not self.elements.get("possible1_container"):
+                self.elements["possible1_container"] = UIContainer(
+                    ui_scale(pygame.Rect((50, 130), (50, 300))),
                     manager=MANAGER,
+                )
+
+            if not self.elements.get("chosen1_container"):
+                self.elements["chosen1_container"] = UIContainer(
+                    ui_scale(pygame.Rect((650, 130), (50, 300))),
+                    manager=MANAGER,
+                )
+
+            # locate selected cat
+            if possible_cats[u] == selected:
+                selected_cat_index = u
+
+            # place chosen cat
+            elif possible_cats[u] in chosen_cats:
+                self._add_to_cat_column(
+                    possible_cats[u], u, self.elements["chosen1_container"], u
                 )
                 self.elements["cat" + str(u)].disable()
+
+            # place possible cat
             else:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    ui_scale(pygame.Rect((column_poss[0], 130 + 50 * u), (50, 50))),
-                    possible_cats[u].sprite,
-                    tool_tip_text=self._get_cat_tooltip_string(possible_cats[u]),
-                    cat_object=possible_cats[u],
-                    manager=MANAGER,
+                self._add_to_cat_column(
+                    possible_cats[u], u, self.elements["possible1_container"], u
                 )
+
         # second half
         for u in range(6, 12):
             if "cat" + str(u) in self.elements:
                 self.elements["cat" + str(u)].kill()
-            if possible_cats[u] == selected:
-                self.elements["cat" + str(u)] = self.elements[
-                    "cat" + str(u)
-                ] = UISpriteButton(
-                    ui_scale(pygame.Rect((270, 200), (150, 150))),
-                    pygame.transform.scale(
-                        possible_cats[u].sprite, ui_scale_dimensions((150, 150))
-                    ),
-                    cat_object=possible_cats[u],
+
+            if not self.elements.get("possible2_container"):
+                self.elements["possible2_container"] = UIContainer(
+                    ui_scale(pygame.Rect((100, 130), (50, 300))),
                     manager=MANAGER,
                 )
-            elif possible_cats[u] in chosen_cats:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    ui_scale(pygame.Rect((700, 130 + 50 * (u - 6)), (50, 50))),
-                    possible_cats[u].sprite,
-                    cat_object=possible_cats[u],
-                    tool_tip_text=self._get_cat_tooltip_string(possible_cats[u]),
+
+            if not self.elements.get("chosen2_container"):
+                self.elements["chosen2_container"] = UIContainer(
+                    ui_scale(pygame.Rect((700, 130), (50, 300))),
                     manager=MANAGER,
+                )
+
+            # locate selected cat
+            if possible_cats[u] == selected:
+                selected_cat_index = u
+
+            # place chosen cat
+            elif possible_cats[u] in chosen_cats:
+                self._add_to_cat_column(
+                    possible_cats[u], u, self.elements["chosen2_container"], u - 6
                 )
                 self.elements["cat" + str(u)].disable()
+
+            # place possible cat
             else:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    ui_scale(
-                        pygame.Rect((column_poss[1], 130 + 50 * (u - 6)), (50, 50))
-                    ),
-                    possible_cats[u].sprite,
-                    tool_tip_text=self._get_cat_tooltip_string(possible_cats[u]),
-                    cat_object=possible_cats[u],
-                    manager=MANAGER,
+                self._add_to_cat_column(
+                    possible_cats[u], u, self.elements["possible2_container"], u - 6
                 )
 
-    def _get_cat_tooltip_string(self, cat: Cat):
-        """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
+        # placing selected cat
+        if selected_cat_index is not None:
+            i = selected_cat_index
+            self.elements["cat" + str(i)] = self.elements[
+                "cat" + str(i)
+            ] = UISpriteButton(
+                ui_scale(pygame.Rect((270, 200), (150, 150))),
+                pygame.transform.scale(
+                    possible_cats[i].sprite, ui_scale_dimensions((150, 150))
+                ),
+                cat_object=possible_cats[i],
+            )
 
-        return f"<b>{cat.name}</b><br>{cat.genderalign_string}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('cat.personality.' + cat.personality.trait)}<br>{cat.skills.skill_string(short=True)}"
+    def _add_to_cat_column(self, cat, index, container, position_offset):
+        """Places the cat into its column within the given container"""
+
+        self.elements["cat" + str(index)] = UISpriteButton(
+            ui_scale(pygame.Rect((0, 0 + 50 * position_offset), (50, 50))),
+            cat.sprite,
+            container=container,
+            tool_tip_text=_get_cat_tooltip_string(cat),
+            cat_object=cat,
+            manager=MANAGER,
+        )
