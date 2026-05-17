@@ -1173,7 +1173,7 @@ class Patrol:
             most_prey_size = ""
             max_occurrences = 0
             for size, amount in prey_size_to_outcome_amounts.items():
-                if amount >= max_occurrences and most_prey_size != chosen_prey_size:
+                if amount >= max_occurrences:
                     most_prey_size = size
 
             if chosen_prey_size == most_prey_size:
