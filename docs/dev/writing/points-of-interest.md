@@ -87,7 +87,16 @@ Points of Interests can fall into many different tags that denote circumstances 
 
 ## Constraints
 
-Patrols and Short Events now have an additional constraint that can be utilized to include either a specific Point of Interest ID or tag. (Ask Gynn more stuff)
+Patrols and Short Events now have an additional constraint that can be utilized to include either a specific Point of Interest ID or tag. 
+
+You can add this to any short event or patrol to constrain by Point of Interest, however, remember to constrain either via names, or by a single tag.
+
+~~~
+"poi": {
+    "name": ["name"]
+    "tags": ["tag"]
+    }
+~~~
 
 ## Using the Point Of Interest in a Sentence
 
