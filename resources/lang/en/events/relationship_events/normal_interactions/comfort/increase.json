@@ -63,6 +63,16 @@
 		]
 	},
 	{
+		"id": "comfort_inc_med_avoids",
+		"interactions": [
+			"It seems like there's an unspoken apology between m_c and r_c."
+		],
+		"relationship_constraint": ["avoids"],
+		"reaction_random_cat": {
+			"comfort": "increase"
+		}
+	},
+	{
 		"id": "comfort_inc_med1",
 		"interactions": [
 			"r_c helps m_c pick burrs out of {PRONOUN/m_c/poss} fur.",
@@ -77,16 +87,6 @@
 			"When m_c gets hurt, r_c is the first to ask if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay.",
 			"An issue becomes benign when m_c remembers r_c's advice."
 		]
-	},
-	{
-		"id": "comfort_inc_low2",
-		"interactions": [
-			"It seems like there's an unspoken apology between m_c and r_c."
-		],
-		"relationship_constraint": ["wary"],
-		"reaction_random_cat": {
-			"comfort": "increase"
-		}
 	},
 	{
 		"id": "comfort_inc_med2",
