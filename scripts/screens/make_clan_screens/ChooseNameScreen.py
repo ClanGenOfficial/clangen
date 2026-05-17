@@ -63,6 +63,9 @@ class ChooseNameScreen(MakeClanScreenBase):
             ui_scale(pygame.Rect((41, 2), (140, 29))),
             container=self.elements["entry_container"],
             manager=MANAGER,
+            initial_text=self.clan_info.get("name")
+            if self.clan_info.get("name")
+            else None,
         )
         self.elements["name_entry"].set_forbidden_characters("forbidden_file_path")
         self.elements["name_entry"].set_text_length_limit(11)

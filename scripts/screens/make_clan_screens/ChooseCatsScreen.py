@@ -41,14 +41,14 @@ class ChooseCatsScreen(MakeClanScreenBase):
         "deputy_chosen": pygame.image.load(f"{path}/deputy_chosen.png").convert_alpha(),
         "med_empty": pygame.image.load(f"{path}/med_empty.png").convert_alpha(),
         "med_chosen": pygame.image.load(f"{path}/med_chosen.png").convert_alpha(),
-        "first_empty": pygame.image.load(f"{path}/first_empty.png").convert_alpha(),
-        "first_chosen": pygame.image.load(f"{path}/first_chosen.png").convert_alpha(),
-        "second_empty": pygame.image.load(f"{path}/second_empty.png").convert_alpha(),
-        "second_chosen": pygame.image.load(f"{path}/second_chosen.png").convert_alpha(),
-        "third_empty": pygame.image.load(f"{path}/third_empty.png").convert_alpha(),
-        "third_chosen": pygame.image.load(f"{path}/third_chosen.png").convert_alpha(),
-        "fourth_empty": pygame.image.load(f"{path}/fourth_empty.png").convert_alpha(),
-        "fourth_chosen": pygame.image.load(f"{path}/fourth_chosen.png").convert_alpha(),
+        "1_empty": pygame.image.load(f"{path}/first_empty.png").convert_alpha(),
+        "1_chosen": pygame.image.load(f"{path}/first_chosen.png").convert_alpha(),
+        "2_empty": pygame.image.load(f"{path}/second_empty.png").convert_alpha(),
+        "2_chosen": pygame.image.load(f"{path}/second_chosen.png").convert_alpha(),
+        "3_empty": pygame.image.load(f"{path}/third_empty.png").convert_alpha(),
+        "3_chosen": pygame.image.load(f"{path}/third_chosen.png").convert_alpha(),
+        "4_empty": pygame.image.load(f"{path}/fourth_empty.png").convert_alpha(),
+        "4_chosen": pygame.image.load(f"{path}/fourth_chosen.png").convert_alpha(),
         "clan_glow": pygame.image.load(f"{path}/clan_glow.png").convert_alpha(),
     }
 
@@ -229,7 +229,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 self.refresh_text_and_buttons()
 
             elif event.ui_element == self.elements["previous_step"]:
-                self.clan_info["name"] = ""
                 self.change_screen(GameScreen.CHOOSE_NAME)
 
         return super().handle_event(event)
@@ -346,6 +345,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
         """
         Updates the cat head display to match the current selection of cats
         """
+        # CREATE HEADS
         if not self.elements.get("leader"):
             self.elements["leader"] = UIModifiedImage(
                 ui_scale(pygame.Rect((0, 440), (800, 260))),
@@ -373,37 +373,37 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 manager=MANAGER,
                 visible=False,
             )
-            self.elements["first_cat"] = pygame_gui.elements.UIImage(
+            self.elements["1_cat"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((0, 440), (800, 260))),
                 pygame.transform.scale(
-                    self.ui_images["first_empty"],
+                    self.ui_images["1_empty"],
                     ui_scale_dimensions((800, 260)),
                 ),
                 manager=MANAGER,
                 visible=False,
             )
-            self.elements["second_cat"] = pygame_gui.elements.UIImage(
+            self.elements["2_cat"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((0, 440), (800, 260))),
                 pygame.transform.scale(
-                    self.ui_images["second_empty"],
+                    self.ui_images["2_empty"],
                     ui_scale_dimensions((800, 260)),
                 ),
                 manager=MANAGER,
                 visible=False,
             )
-            self.elements["third_cat"] = pygame_gui.elements.UIImage(
+            self.elements["3_cat"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((0, 440), (800, 260))),
                 pygame.transform.scale(
-                    self.ui_images["third_empty"],
+                    self.ui_images["3_empty"],
                     ui_scale_dimensions((800, 260)),
                 ),
                 manager=MANAGER,
                 visible=False,
             )
-            self.elements["fourth_cat"] = pygame_gui.elements.UIImage(
+            self.elements["4_cat"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((0, 440), (800, 260))),
                 pygame.transform.scale(
-                    self.ui_images["fourth_empty"],
+                    self.ui_images["4_empty"],
                     ui_scale_dimensions((800, 260)),
                 ),
                 manager=MANAGER,
@@ -419,6 +419,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 visible=False,
             )
 
+        # SET TEXT
         if not self.clan_info.get("leader"):
             self.elements["title"].set_text("screens.make_clan.leader_title")
         elif not self.clan_info.get("deputy"):
@@ -428,6 +429,21 @@ class ChooseCatsScreen(MakeClanScreenBase):
         else:
             self.elements["title"].set_text("screens.make_clan.recruit_title")
 
+        # TOGGLE HEAD VISIBLE
+        cat_heads = [
+            "deputy",
+            "med",
+            "1_cat",
+            "2_cat",
+            "3_cat",
+            "4_cat",
+            "clan_glow",
+        ]
+
+        for head in cat_heads:
+            self.elements[head].hide()
+
+        # TOGGLE EYE LIGHTS
         if self.clan_info.get("leader"):
             self.elements["leader"].set_image(
                 pygame.transform.scale(
@@ -445,13 +461,15 @@ class ChooseCatsScreen(MakeClanScreenBase):
             )
 
         if self.clan_info.get("deputy"):
+            self.elements["deputy"].show()
             self.elements["deputy"].set_image(
                 pygame.transform.scale(
                     self.ui_images["deputy_chosen"],
                     ui_scale_dimensions((800, 260)),
                 )
             )
-            self.elements["med"].show()
+            if self.clan_info.get("leader"):
+                self.elements["med"].show()
         else:
             self.elements["deputy"].set_image(
                 pygame.transform.scale(
@@ -461,13 +479,15 @@ class ChooseCatsScreen(MakeClanScreenBase):
             )
 
         if self.clan_info.get("medicine_cat"):
+            self.elements["med"].show()
             self.elements["med"].set_image(
                 pygame.transform.scale(
                     self.ui_images["med_chosen"],
                     ui_scale_dimensions((800, 260)),
                 )
             )
-            self.elements["first_cat"].show()
+            if self.clan_info.get("leader") and self.clan_info.get("deputy"):
+                self.elements["1_cat"].show()
         else:
             self.elements["med"].set_image(
                 pygame.transform.scale(
@@ -476,44 +496,78 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 )
             )
 
+        for i in range(min(len(self.clan_info.get("starting_members", [])), 4), 5):
+            if i == 0:
+                continue
+            self.elements[f"{i}_cat"].set_image(
+                pygame.transform.scale(
+                    self.ui_images[f"{i}_empty"],
+                    ui_scale_dimensions((800, 260)),
+                )
+            )
+
         if len(self.clan_info.get("starting_members", [])) >= 7:
             self.elements["clan_glow"].show()
         elif len(self.clan_info.get("starting_members", [])) >= 4:
-            self.elements["fourth_cat"].set_image(
+            self.elements["4_cat"].show()
+            self.elements["4_cat"].set_image(
                 pygame.transform.scale(
-                    self.ui_images["fourth_chosen"],
+                    self.ui_images["4_chosen"],
                     ui_scale_dimensions((800, 260)),
                 )
             )
             self.elements["clan_glow"].hide()
         elif len(self.clan_info.get("starting_members", [])) >= 3:
-            self.elements["third_cat"].set_image(
+            self.elements["3_cat"].show()
+            self.elements["3_cat"].set_image(
                 pygame.transform.scale(
-                    self.ui_images["third_chosen"],
+                    self.ui_images["3_chosen"],
                     ui_scale_dimensions((800, 260)),
                 )
             )
-            self.elements["fourth_cat"].show()
+            if (
+                self.clan_info.get("leader")
+                and self.clan_info.get("deputy")
+                and self.clan_info.get("medicine_cat")
+            ):
+                self.elements["4_cat"].show()
         elif len(self.clan_info.get("starting_members", [])) >= 2:
-            self.elements["second_cat"].set_image(
+            self.elements["2_cat"].show()
+            self.elements["2_cat"].set_image(
                 pygame.transform.scale(
-                    self.ui_images["second_chosen"],
+                    self.ui_images["2_chosen"],
                     ui_scale_dimensions((800, 260)),
                 )
             )
-            self.elements["third_cat"].show()
+            if (
+                self.clan_info.get("leader")
+                and self.clan_info.get("deputy")
+                and self.clan_info.get("medicine_cat")
+            ):
+                self.elements["3_cat"].show()
         elif len(self.clan_info.get("starting_members", [])) == 1:
-            self.elements["first_cat"].set_image(
+            self.elements["1_cat"].show()
+            self.elements["1_cat"].set_image(
                 pygame.transform.scale(
-                    self.ui_images["first_chosen"],
+                    self.ui_images["1_chosen"],
                     ui_scale_dimensions((800, 260)),
                 )
             )
-            self.elements["second_cat"].show()
-        else:
-            self.elements["first_cat"].set_image(
+            if (
+                self.clan_info.get("leader")
+                and self.clan_info.get("deputy")
+                and self.clan_info.get("medicine_cat")
+            ):
+                self.elements["2_cat"].show()
+        elif (
+            self.clan_info.get("leader")
+            and self.clan_info.get("deputy")
+            and self.clan_info.get("medicine_cat")
+        ):
+            self.elements["1_cat"].show()
+            self.elements["1_cat"].set_image(
                 pygame.transform.scale(
-                    self.ui_images["first_empty"],
+                    self.ui_images["1_empty"],
                     ui_scale_dimensions((800, 260)),
                 )
             )
