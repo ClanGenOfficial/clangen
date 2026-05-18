@@ -12986,7 +12986,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The heat of greenleaf has made the burdock plants grow to towering size, with some leaves approaching the length of an adult cat. It's a long afternoon, but a productive, lighthearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as {PRONOUN/p_l/subject}'re sorting later.",
+                "text": "The heat of greenleaf has made the burdock plants grow to towering size, with some leaves approaching the length of an adult cat. It's a long afternoon, but a productive, lighthearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sorting later.",
                 "exp": 10,
                 "herbs": [
                     "burdock",
@@ -31491,7 +31491,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when they do come across some. It's a long afternoon, but a productive, lighthearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as they're sorting later.",
+                "text": "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when they do come across some. It's a long afternoon, but a productive, lighthearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sorting later.",
                 "exp": 10,
                 "herbs": [
                     "burdock",
