@@ -3,6 +3,7 @@ from random import choice, randint
 from typing import Dict, List, Union, Optional
 
 import i18n
+import math
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import (
@@ -1087,8 +1088,12 @@ class Pregnancy_Events:
 
         for kit in all_kitten:
             for c in all_relatives:
-                rel_reflection = constants.CONFIG["new_cat"]["ext_relative_modifier"]
-                y = random.randrange(-10, 10)
+                ext_relative_modifier = constants.CONFIG["new_cat"][
+                    "ext_relative_modifier"
+                ]
+                rel_reflection = ext_relative_modifier * len(parents)
+                variation_range = math.ceil(20 / len(parents))
+                y = random.randrange(-variation_range, variation_range)
 
                 # this finds what the relative's relationship is toward each parent and applies a reflection of that
                 # relationship to the kit. reflection values will be divided by 4 by default and then modified
@@ -1156,13 +1161,18 @@ class Pregnancy_Events:
                     rel_type = "negative"
 
                 # adds reaction text to type postscript and age postscript
-                new_relationship["log"] = event_text_adjust(
-                    cat,
-                    choice(Pregnancy_Events.NEWBORN_REL_REACTIONS[f"{rel_type}_log"]),
-                    main_cat=c,
-                    random_cat=kit,
-                    clan=game.clan,
-                ) + i18n.t(f"relationships.{rel_type}_postscript")
+                new_relationship["log"] = i18n.t(
+                    f"relationships.{rel_type}_postscript",
+                    text=event_text_adjust(
+                        cat,
+                        choice(
+                            Pregnancy_Events.NEWBORN_REL_REACTIONS[f"{rel_type}_log"]
+                        ),
+                        main_cat=c,
+                        random_cat=kit,
+                        clan=game.clan,
+                    ),
+                )
 
                 change_relationship_values(**new_relationship)
 

@@ -56,7 +56,7 @@ body:
     attributes:
       description: See [here](https://www.clangen.io/docs/report-a-bug/#how-do-i-find-my-game-version) for help finding your game version.
       label: "Commit # or Game Version Number"
-      placeholder: e.g. "4ef20d05" (if on development) or "v0.12.2" (if stable)
+      placeholder: e.g. "4ef20d05" (if on development) or "v0.13.0" (if stable)
     validations:
       required: true
   - type: dropdown

@@ -27,7 +27,10 @@
               "cats_to": ["n_c:0"],
               "mutual": true,
               "values": ["comfort", "like"],
-              "amount": 5
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from offered cat_to the protection of the Clan when {PRONOUN/cat_from/subject} found {PRONOUN/cat_to/object} wandering the desert."
+              }
             }
           ],
           "outsider": {

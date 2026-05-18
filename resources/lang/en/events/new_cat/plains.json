@@ -35,7 +35,10 @@
             "cats_to": ["n_c:1"],
             "mutual": true,
             "values": ["comfort", "like"],
-            "amount": 5
+            "amount": 5,
+            "log": {
+              "cats_from": "m_c found n_c:1 near {PRONOUN/n_c:1/poss} dead parent and brought {PRONOUN/n_c:1/object} into the Clan."
+            }
           }
         ],
         "outsider": {
@@ -78,7 +81,10 @@
             "cats_to": ["n_c:0"],
             "mutual": true,
             "values": ["comfort", "like"],
-            "amount": 10
+            "amount": 10,
+            "log": {
+              "cats_from": "m_c found n_c:0 in the tunnels and brought {PRONOUN/n_c:0/object} to the Clan."
+            }
           }
         ],
         "outsider": {
@@ -87,7 +93,58 @@
             ],
             "changed": 1
         }
+    },
+  {
+    "event_id": "gen_newcat_senior_barncat",
+    "location": ["plains"],
+    "season": ["any"],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "event_text": "m_c encounters an aging kittypet near a Twoleg structure. n_c:0 is looking for a new home; {PRONOUN/n_c:0/subject} just can't mouse like {PRONOUN/n_c:0/subject} used to. In exchange, n_c:0 can show c_n all the tricks to hunting in and about these \"barns.\"",
+    "m_c": {
+        "age": [],
+        "status": ["-kitten", "-apprentice", "-elder"],
+        "dies": false
+    },
+    "new_cat": [
+        ["kittypet", "age:senior", "old_name"]
+    ],
+    "outsider": {
+        "current_rep": ["neutral", "welcoming"],
+        "changed": 1
     }
-
-
-]
+},
+  {
+    "event_id": "pln_newcat_bridge_traincat",
+    "location": [
+      "plains:camp4"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "A stranger hops down from a slow-moving Thundersnake near camp, curious about the group of cats. When m_c explains, n_c:0 asks to stick around and see what clan life is all about.",
+    "m_c": {
+      "age": [],
+      "status": [
+        "-kitten",
+        "-apprentice"
+      ]
+    },
+    "new_cat": [
+      [
+        "old_name",
+        "age:young adult"
+      ]
+    ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": 1
+    }
+  }
+  ]

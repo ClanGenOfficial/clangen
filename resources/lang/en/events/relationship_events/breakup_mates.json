@@ -32,7 +32,7 @@
 	],
 	"chill_breakup":[
 		"m_c and r_c broke up.", 
-            	"m_c and r_c have decided that they may not be the right fit for each other after all, they decide leave off on good terms and break up.",
+            	"m_c and r_c have decided that they may not be the right fit for each other after all. They opt to leave things on good terms and break up.",
 		"After explaining {PRONOUN/m_c/poss} feelings and thoughts to r_c, m_c broke up with {PRONOUN/r_c/object}, no hard feelings."
 	]
 }

@@ -87,29 +87,30 @@ def get_living_clan_cat_count(Cat):
     return count
 
 
-def get_cats_same_age(Cat, cat, age_range=10):
+def get_cats_same_age(Cat, cat_to_match, age_range=10):
     """
     Look for all cats in the Clan and returns a list of cats which are in the same age range as the given cat.
     :param Cat: Cat class
-    :param cat: the given cat
+    :param cat_to_match: the given cat
     :param int age_range: The allowed age difference between the two cats, default 10
     """
     cats = []
     for inter_cat in Cat.all_cats.values():
         if not inter_cat.status.alive_in_player_clan:
             continue
-        if inter_cat.ID == cat.ID:
+        if inter_cat.ID == cat_to_match.ID:
             continue
 
-        if inter_cat.ID not in cat.relationships:
-            cat.create_one_relationship(inter_cat)
-            if cat.ID not in inter_cat.relationships:
-                inter_cat.create_one_relationship(cat)
+        if inter_cat.ID not in cat_to_match.relationships:
+            cat_to_match.create_one_relationship(inter_cat)
+            if cat_to_match.ID not in inter_cat.relationships:
+                inter_cat.create_one_relationship(cat_to_match)
             continue
 
         if (
-            inter_cat.moons <= cat.moons + age_range
-            and inter_cat.moons <= cat.moons - age_range
+            cat_to_match.moons + age_range
+            >= inter_cat.moons
+            >= cat_to_match.moons - age_range
         ):
             cats.append(inter_cat)
 
