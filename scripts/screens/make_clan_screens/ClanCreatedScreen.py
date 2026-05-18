@@ -1,23 +1,15 @@
-import i18n
 import pygame
 import pygame_gui
 
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.game_structure import game
-from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
-from scripts.screens.screens_core import screens_core
-from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
-from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
-from scripts.ui.windows.symbol_filter import SymbolFilterWindow
 
 
 class ClanCreatedScreen(MakeClanScreenBase):
