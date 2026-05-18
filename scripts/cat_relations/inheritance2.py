@@ -48,7 +48,7 @@ class InheritanceDb:
 
         :param Cat cat: A cat object to load inheritance for.
         :param bool save: If `True`, this inheritance data will be restored
-        when `load_inheritances()` is called again, as long as `clear_inheritances()`
+        when `load_inheritances()` is called again, as long as `clear_stored_data()`
         has not been called.
         """
         for parent_id in cat.adoptive_parents:
