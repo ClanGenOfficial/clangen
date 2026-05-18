@@ -86,9 +86,14 @@ class InheritanceDb:
         if save:
             self._saved_family_rels[cat.ID] = self._cat_to_rels[cat.ID]
 
-    def clear_inheritances(self):
+    def clear_stored_data(self):
         """
-        Clears loaded inheritances. Make sure to call it when loading new Clans.
+        Clears "stored" data when loaded inheritances, such as the
+        data of faded cats and which litter a cat belongs to.
+        Does NOT clear the inheritance data itself, which is automatically
+        cleared and reloaded when calling `load_inheritances()`
+
+        Make sure to call this when loading new Clans.
         """
         self._cat_to_litter = {}
         self._saved_family_rels = {}
