@@ -1746,7 +1746,7 @@
             }
         }
     },
-    "#mountain_biome_button": {
+    "#mountainous_biome_button": {
         "prototype": "biome_button_prototype",
         "images": {
             "normal_image": {
