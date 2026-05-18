@@ -226,7 +226,8 @@ class ChooseCatsScreen(MakeClanScreenBase):
             # GOING BACK
             elif event.ui_element == self.elements["previous_step"]:
                 self.change_screen(GameScreen.CHOOSE_NAME)
-            # TODO: go forward!
+            elif event.ui_element == self.elements["next_step"]:
+                self.change_screen(GameScreen.CHOOSE_CAMP)
 
         return super().handle_event(event)
 
@@ -585,7 +586,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
             object_id=get_text_box_theme("#text_box_26_horizcenter"),
             manager=MANAGER,
         )
-
 
     def refresh_cat_images_and_info(self, selected=None):
         """Update the image of the cat selected in the middle. Info and image.

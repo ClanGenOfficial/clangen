@@ -26,6 +26,7 @@ from .StartScreen import StartScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .WarriorDenScreen import WarriorDenScreen
 from .enums import GameScreen
+from .make_clan_screens.ChooseCampScreen import ChooseCampScreen
 from .make_clan_screens.ChooseCatsScreen import ChooseCatsScreen
 from .make_clan_screens.ChooseModeScreen import ChooseModeScreen
 from .make_clan_screens.ChooseNameScreen import ChooseNameScreen
@@ -65,6 +66,7 @@ def rebuild_all_screens():
         GameScreen.CHOOSE_MODE: ChooseModeScreen,
         GameScreen.CHOOSE_NAME: ChooseNameScreen,
         GameScreen.CHOOSE_CATS: ChooseCatsScreen,
+        GameScreen.CHOOSE_CAMP: ChooseCampScreen,
         GameScreen.ALLEGIANCES: AllegiancesScreen,
         GameScreen.CAMP: ClanScreen,
         GameScreen.LIST: ListScreen,
