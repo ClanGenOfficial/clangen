@@ -720,5 +720,19 @@
       "death": "m_c fell through the floorboards of the broken ship."
     }
   ]
-}
+},
+    {
+      "event_id": "bch_death_extinction_drown",
+      "location": ["beach:camp4"],
+      "season": ["any"],
+      "sub_type": ["mass_death"],
+      "frequency": 2,
+      "event_text": "The Clan fails to notice the rising tide, and aren't able to get to high enough ground in time before multi_cat are swept away.",
+      "history": [
+        {
+          "cats": ["multi_cat"],
+          "death": "m_c was swept away by the rising tide."
+        }
+      ]
+    }
 ]
