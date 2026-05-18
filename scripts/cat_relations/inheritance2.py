@@ -226,6 +226,42 @@ class InheritanceDb:
             return False
 
     def compare_to_inheritance(self, cat_id: str, inheritance):
+        """
+        This is a helper function for testing `inheritance2` by comparing it to the
+        previous `Inheritance` code. It's not used anywhere, but you can call/modify
+        it if you want to compare `inheritance2` data to old `Inheritance` data.
+
+        Currently, it checks that `inheritance2` contains all the cats that
+        corresponding `Inheritance` does
+            (i.e. that `Inheritance` data is a subset of `inheritance2` data).
+        Note that this does NOT mean that they are equal!
+        For example, `inheritance2` can also contain cats that AREN'T in `Inheritance`.
+        If this happens, a warning message will be printed to console, and you can evaluate
+        it really is an error or not.
+
+        `FamilyTreeScreen.py` is a good place to use this, since it still
+        uses the `Inheritance` code due to `inheritance2` not yet implementing
+        some data that's displayed on that screen.
+
+        This function should be removed when the original `Inheritance`
+        code is phased out.
+
+        Example Usage:
+        ```
+        from scripts.cat_relations.inheritance2 import inheritance_db
+        # ...
+
+        cat.create_inheritance_new_cat() # cat is a Cat
+        if not inheritance_db.compare_to_inheritance(cat.ID, cat.inheritance):
+            print(f"inheritance_db is not a subset of Inheritance for {cat.ID}!")
+        ```
+
+        :param inheritance: The `Inheritance` data you want to compare.
+        :param cat_id: The ID of the cat whose `Inheritance` it is.
+        :return bool: If the `inheritance2` data contains all the
+                      `Inheritance` data. This does NOT mean they are equal!
+        """
+
         inheritance_db_to_inheritance_functions = [
             (inheritance.get_parents, self.get_parents),
             (inheritance.get_children, self.get_children),
