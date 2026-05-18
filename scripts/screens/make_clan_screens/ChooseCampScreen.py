@@ -453,26 +453,12 @@ class ChooseCampScreen(MakeClanScreenBase):
                 },
             )
 
-        (
-            self.tabs["tab1"].disable()
-            if self.selected_camp_tab == 1
-            else self.tabs["tab1"].enable()
-        )
-        (
-            self.tabs["tab2"].disable()
-            if self.selected_camp_tab == 2
-            else self.tabs["tab2"].enable()
-        )
-        (
-            self.tabs["tab3"].disable()
-            if self.selected_camp_tab == 3
-            else self.tabs["tab3"].enable()
-        )
-        (
-            self.tabs["tab4"].disable()
-            if self.selected_camp_tab == 4
-            else self.tabs["tab4"].enable()
-        )
+        self.tabs["tab1"].enable()
+        self.tabs["tab2"].enable()
+        self.tabs["tab3"].enable()
+        self.tabs["tab4"].enable()
+        if self.selected_camp_tab:
+            self.tabs[f"tab{self.selected_camp_tab}"].disable()
 
         # I have to do this for proper layering.
         if "camp_art" in self.elements:

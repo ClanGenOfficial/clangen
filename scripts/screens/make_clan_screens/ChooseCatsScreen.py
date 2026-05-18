@@ -152,9 +152,9 @@ class ChooseCatsScreen(MakeClanScreenBase):
 
         # select cat buttons
         self.elements["random_cats"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((323, 360), (155, 30))),
+            ui_scale(pygame.Rect((313, 360), (175, 30))),
             "screens.make_clan.choose_random",
-            get_button_dict(ButtonStyles.SQUOVAL, (155, 30)),
+            get_button_dict(ButtonStyles.SQUOVAL, (175, 30)),
             object_id="@buttonstyles_squoval",
             starting_height=2,
             manager=MANAGER,
