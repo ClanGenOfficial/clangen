@@ -71,5 +71,6 @@ class ClanCreatedScreen(MakeClanScreenBase):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["continue"]:
+                self.set_mute_button_position("bottomright")
                 self.change_screen(GameScreen.CAMP)
         super().handle_event(event)
