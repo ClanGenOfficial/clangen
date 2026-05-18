@@ -1,3 +1,4 @@
+from random import choice
 from typing import Optional
 
 import i18n
@@ -149,7 +150,16 @@ class ChooseCatsScreen(MakeClanScreenBase):
 
         self.create_cat_info()
 
-        # select cat button
+        # select cat buttons
+        self.elements["random_cats"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((323, 360), (155, 30))),
+            "screens.make_clan.choose_random",
+            get_button_dict(ButtonStyles.SQUOVAL, (155, 30)),
+            object_id="@buttonstyles_squoval",
+            starting_height=2,
+            manager=MANAGER,
+        )
+
         self.elements["select_cat"] = UIImageButton(
             ui_scale(pygame.Rect((234, 348), (332, 52))),
             "screens.make_clan.choose_leader",
@@ -170,6 +180,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
         )
 
         self.refresh_cat_images_and_info()
+        self.refresh_text_and_buttons()
         self.update_head_display()
 
     def handle_event(self, event):
@@ -196,6 +207,51 @@ class ChooseCatsScreen(MakeClanScreenBase):
                     self.elements["reroll_count"].set_text(str(self.rolls_left))
                     if self.rolls_left == 0:
                         event.ui_element.disable()
+            # PICK RANDOM CATS
+            elif event.ui_element == self.elements["random_cats"]:
+                possible_cats = switch_get_value(Switch.possible_cats)
+
+                self.clan_info["leader"] = choice(
+                    [c for c in possible_cats if c.status.rank == CatRank.WARRIOR]
+                )
+                self.clan_info["deputy"] = choice(
+                    [
+                        c
+                        for c in possible_cats
+                        if c.status.rank == CatRank.WARRIOR
+                        and c != self.clan_info["leader"]
+                    ]
+                )
+                self.clan_info["medicine_cat"] = choice(
+                    [
+                        c
+                        for c in possible_cats
+                        if c.status.rank == CatRank.WARRIOR
+                        and c
+                        not in [self.clan_info["leader"], self.clan_info["deputy"]]
+                    ]
+                )
+                self.clan_info["starting_members"] = []
+                for i in range(1, choice(range(5, 8))):
+                    self.clan_info["starting_members"].append(
+                        choice(
+                            [
+                                c
+                                for c in possible_cats
+                                if c
+                                not in [
+                                    self.clan_info["leader"],
+                                    self.clan_info["deputy"],
+                                    self.clan_info["medicine_cat"],
+                                ]
+                                and c not in self.clan_info["starting_members"]
+                            ]
+                        )
+                    )
+                    self.update_head_display()
+                    self.refresh_cat_images_and_info()
+                    self.refresh_text_and_buttons()
+
             # CLICKING CAT SPRITE
             elif event.ui_element in (
                 self.elements["cat" + str(u)] for u in range(0, 12)
@@ -249,14 +305,35 @@ class ChooseCatsScreen(MakeClanScreenBase):
     def refresh_text_and_buttons(self):
         """Refreshes the button states and text boxes"""
 
+        # refresh random button
+        if (
+            not self.clan_info.get("leader")
+            and not self.clan_info.get("deputy")
+            and not self.clan_info.get("medicine_cat")
+            and len(self.clan_info.get("starting_members", [])) < 1
+        ):
+            self.elements["random_cats"].show()
+        else:
+            self.elements["random_cats"].hide()
+
         # allow the player forward
-        if len(self.clan_info.get("starting_members", [])) >= 4:
+        if (
+            self.clan_info.get("leader")
+            and self.clan_info.get("deputy")
+            and self.clan_info.get("medicine_cat")
+            and len(self.clan_info.get("starting_members", [])) >= 4
+        ):
             self.elements["next_step"].enable()
         else:
             self.elements["next_step"].disable()
 
         # disable further recruitment
-        if len(self.clan_info.get("starting_members", [])) == 7:
+        if (
+            self.clan_info.get("leader")
+            and self.clan_info.get("deputy")
+            and self.clan_info.get("medicine_cat")
+            and len(self.clan_info.get("starting_members", [])) == 7
+        ):
             self.elements["select_cat"].disable()
 
         # hide select button
