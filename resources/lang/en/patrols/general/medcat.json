@@ -20910,7 +20910,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "p_l's paw-pads nearly freeze from trying to dig up burdock in the cold, but somehow {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} it. It's worth all the effort and misery since {PRONOUN/p_l/subject} know how crucial these fresh herbs could be for the Clan, {PRONOUN/p_l/poss} Clanmates purring at the sight of the dirty roots.",
+                "text": "p_l's pawpads nearly freeze from trying to dig up burdock in the cold, but somehow {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} it. It's worth all the effort and misery since {PRONOUN/p_l/subject} {VERB/p_l/know/knows} how crucial these fresh herbs could be for the Clan, {PRONOUN/p_l/poss} Clanmates purring at the sight of the dirty roots.",
                 "exp": 10,
                 "herbs": [
                     "burdock"
