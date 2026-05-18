@@ -1,3 +1,5 @@
+import dataclasses
+from dataclasses import dataclass, field
 from random import choice
 from re import sub
 from typing import Optional
@@ -35,12 +37,76 @@ def _generate_unique_clan_name(new_clan_name: str):
     return f"{new_clan_name}_{uuid4()}"
 
 
+@dataclass
+class ClanInfo:
+    """
+    Dataclass for holding all the info we collect during clan creation. Attributes match the attributes used when intializing a Clan object.
+    """
+
+    # we do this as a dataclass to make it a bit more future-proofed for any eventual additions to this info
+    # this way it's much easier to change names of attributes or add new ones OR know if you've fucked smth up
+    name: str = ""
+    leader: Optional[Cat] = None
+    deputy: Optional[Cat] = None
+    medicine_cat: Optional[Cat] = None
+    starting_members: list = field(default_factory=list)
+    biome: str = ""
+    camp_bg: str = "camp1"
+    symbol: str = ""
+    starting_season: str = "Newleaf"
+    game_mode: str = "classic"
+
+    def clear(self):
+        """
+        Return all the attributes back to their default values
+        """
+        self.name = ""
+        self.leader = None
+        self.deputy = None
+        self.medicine_cat = None
+        self.starting_members = []
+        self.biome = ""
+        self.camp_bg = "camp1"
+        self.symbol = ""
+        self.starting_season = "Newleaf"
+        self.game_mode = "classic"
+
+    def update(self, saved_info: dict):
+        self.name = saved_info["name"]
+        self.leader = saved_info["leader"]
+        self.deputy = saved_info["deputy"]
+        self.medicine_cat = saved_info["medicine_cat"]
+        self.starting_members = saved_info["starting_members"]
+        self.biome = saved_info["biome"]
+        self.camp_bg = saved_info["camp_bg"]
+        self.symbol = saved_info["symbol"]
+        self.starting_season = saved_info["starting_season"]
+        self.game_mode = saved_info["game_mode"]
+
+    def get_dict(self) -> dict:
+        """
+        Returns all the attributes as a dict. We gotta use this instead of the dataclasses.as_dict() because Cat objects aren't pickable
+        """
+        return {
+            "name": self.name,
+            "leader": self.leader,
+            "deputy": self.deputy,
+            "medicine_cat": self.medicine_cat,
+            "starting_members": self.starting_members,
+            "biome": self.biome,
+            "camp_bg": self.camp_bg,
+            "symbol": self.symbol,
+            "starting_season": self.starting_season,
+            "game_mode": self.game_mode,
+        }
+
+
 class MakeClanScreenBase(Screens):
     def __init__(self, name="make_clan_screen"):
         super().__init__(name)
 
         self.elements: dict = {}
-        self.clan_info: dict = {}
+        self.clan_info: ClanInfo = ClanInfo()
 
     def screen_switches(self):
         super().screen_switches()
@@ -49,7 +115,8 @@ class MakeClanScreenBase(Screens):
         self.set_bg("default", "mainmenu_bg")
 
         # grab clan_info from the switch
-        self.clan_info = switch_get_value(Switch.clan_creation_info)
+        if switch_get_value(Switch.clan_creation_info):
+            self.clan_info.update(switch_get_value(Switch.clan_creation_info))
 
         # Buttons that appear on every screen.
         self.elements["menu_warning"] = pygame_gui.elements.UITextBox(
@@ -95,7 +162,7 @@ class MakeClanScreenBase(Screens):
 
     def exit_screen(self):
         # set switch value so it can be retrieved during the next step
-        switch_set_value(Switch.clan_creation_info, self.clan_info)
+        switch_set_value(Switch.clan_creation_info, self.clan_info.get_dict())
 
         # kill elements
         for ele in self.elements.values():
@@ -111,21 +178,21 @@ class MakeClanScreenBase(Screens):
         save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
-        save_id = self.clan_info["name"]
+        save_id = self.clan_info.name
 
         # extra sanitization for filenames
         clan_name = sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", save_id)
         if _clan_name_exists(clan_name):
-            self.clan_info["name"] = _generate_unique_clan_name(clan_name)
+            self.clan_info.name = _generate_unique_clan_name(clan_name)
 
         game.clan = Clan(
             displayname=clan_name,
-            **self.clan_info,
+            **self.clan_info.get_dict(),
         )
         game.clan.create_clan()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
-        game.clan.herb_supply.start_storage(len(self.clan_info["starting_members"]))
+        game.clan.herb_supply.start_storage(len(self.clan_info.starting_members))
         game.clan.save_herb_supply(game.clan)
         game.clan.grief_strings.clear()
         Cat.sort_cats()
@@ -135,8 +202,8 @@ class MakeClanScreenBase(Screens):
         # Select a random biome and background
         possible_biomes = ["Forest", "Mountainous", "Plains", "Beach"]
         # ensuring that the new random camp will not be the same one
-        if self.clan_info.get("biome"):
-            possible_biomes.remove(self.clan_info.get("biome"))
+        if self.clan_info.biome:
+            possible_biomes.remove(self.clan_info.biome)
         chosen_biome = choice(possible_biomes)
         return chosen_biome
 
@@ -144,8 +211,8 @@ class MakeClanScreenBase(Screens):
         clan_names = (
             names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
         )
-        if self.clan_info.get("name"):
-            clan_names.remove(self.clan_info.get("name"))
+        if self.clan_info.name:
+            clan_names.remove(self.clan_info.name)
 
         return choice(clan_names)
 
@@ -153,28 +220,28 @@ class MakeClanScreenBase(Screens):
         if not campnum:
             return None
 
-        leaf = self.clan_info.get("starting_season", "Newleaf").replace("-", "")
+        leaf = self.clan_info.starting_season.replace("-", "")
 
         camp_bg_base_dir = "resources/images/camp_bg/"
         start_leave = leaf.casefold()
         light_dark = "dark" if game_setting_get("dark mode") else "light"
 
-        biome = self.clan_info.get("biome").lower()
+        biome = self.clan_info.biome.lower()
 
         return (
             f"{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png"
         )
 
     def get_camp_bg(self, src=None):
-        camp_num = self.clan_info.get("camp_bg", "1")[-1]
+        camp_num = self.clan_info.camp_bg[-1]
         if src is None:
             src = pygame.image.load(self.get_camp_art_path(camp_num)).convert_alpha()
 
         name = "_".join(
             [
-                str(self.clan_info["biome"]),
+                str(self.clan_info.biome),
                 str(camp_num),
-                self.clan_info.get("starting_season", "Newleaf"),
+                self.clan_info.starting_season,
             ]
         )
         if name not in self.game_bgs:

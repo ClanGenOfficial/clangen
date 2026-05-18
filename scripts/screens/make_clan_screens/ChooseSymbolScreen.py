@@ -51,7 +51,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
         self.text["clan_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 0), (-1, -1))),
             text="general.clan",
-            text_kwargs={"name": self.clan_info["name"]},
+            text_kwargs={"name": self.clan_info.name},
             container=self.elements["text_container"],
             object_id=get_text_box_theme("#text_box_40"),
             manager=MANAGER,
@@ -59,7 +59,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
         )
         self.text["biome"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 5), (-1, -1))),
-            text=f"screens.make_clan.{self.clan_info['biome']}",
+            text=f"screens.make_clan.{self.clan_info.biome}",
             container=self.elements["text_container"],
             object_id=get_text_box_theme("#text_box_30_horizleft"),
             manager=MANAGER,
@@ -73,7 +73,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
             container=self.elements["text_container"],
             object_id=get_text_box_theme("#text_box_30_horizleft"),
             manager=MANAGER,
-            text_kwargs={"prefix": self.clan_info["leader"].name.prefix},
+            text_kwargs={"prefix": self.clan_info.leader.name.prefix},
             anchors={
                 "top_target": self.text["biome"],
             },
@@ -86,9 +86,8 @@ class ChooseSymbolScreen(MakeClanScreenBase):
             manager=MANAGER,
             text_kwargs={
                 "symbol": (
-                    f"{self.clan_info['name'].upper()}0"
-                    if f"symbol{self.clan_info['name'].upper()}0"
-                    in sprites.clan_symbols
+                    f"{self.clan_info.name.upper()}0"
+                    if f"symbol{self.clan_info.name.upper()}0" in sprites.clan_symbols
                     else i18n.t("screens.make_clan.not_applicable")
                 )
             },
@@ -155,17 +154,17 @@ class ChooseSymbolScreen(MakeClanScreenBase):
             manager=MANAGER,
         )
 
-        if not self.clan_info.get("symbol"):
-            if f"symbol{self.clan_info['name'].upper()}0" in sprites.clan_symbols:
-                self.clan_info["symbol"] = f"symbol{self.clan_info['name'].upper()}0"
+        if not self.clan_info.symbol:
+            if f"symbol{self.clan_info.name.upper()}0" in sprites.clan_symbols:
+                self.clan_info.symbol = f"symbol{self.clan_info.name.upper()}0"
 
                 self.text["selected"].set_text(
                     "screens.make_clan.symbol_selected",
-                    text_kwargs={"symbol": f"{self.clan_info['name'].upper()}0"},
+                    text_kwargs={"symbol": f"{self.clan_info.name.upper()}0"},
                 )
 
-        if self.clan_info.get("symbol"):
-            symbol_name = self.clan_info["symbol"].replace("symbol", "")
+        if self.clan_info.symbol:
+            symbol_name = self.clan_info.symbol.replace("symbol", "")
             self.text["selected"].set_text(
                 "screens.make_clan.symbol_selected", text_kwargs={"symbol": symbol_name}
             )
@@ -173,7 +172,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
             self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((573, 117), (100, 100))),
                 pygame.transform.scale(
-                    sprites.get_symbol(self.clan_info["symbol"]),
+                    sprites.get_symbol(self.clan_info.symbol),
                     ui_scale_dimensions((100, 100)),
                 ).convert_alpha(),
                 object_id="#selected_symbol",
@@ -181,7 +180,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
                 manager=MANAGER,
             )
             self.refresh_symbol_list()
-            while self.clan_info["symbol"] not in self.symbol_buttons:
+            while self.clan_info.symbol not in self.symbol_buttons:
                 self.current_page += 1
                 self.refresh_symbol_list()
             self.elements["done_button"].enable()
@@ -213,20 +212,20 @@ class ChooseSymbolScreen(MakeClanScreenBase):
                 self.save_clan()
                 self.change_screen(GameScreen.CLAN_CREATED)
             elif event.ui_element == self.elements["random_symbol_button"]:
-                if self.clan_info.get("symbol"):
-                    if self.clan_info["symbol"] in self.symbol_buttons:
-                        self.symbol_buttons[self.clan_info["symbol"]].enable()
-                self.clan_info["symbol"] = choice(sprites.clan_symbols)
+                if self.clan_info.symbol:
+                    if self.clan_info.symbol in self.symbol_buttons:
+                        self.symbol_buttons[self.clan_info.symbol].enable()
+                self.clan_info.symbol = choice(sprites.clan_symbols)
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["filters_tab"]:
                 SymbolFilterWindow()
             else:
                 for symbol_id, element in self.symbol_buttons.items():
                     if event.ui_element == element:
-                        if self.clan_info.get("symbol"):
-                            if self.clan_info["symbol"] in self.symbol_buttons:
-                                self.symbol_buttons[self.clan_info["symbol"]].enable()
-                        self.clan_info["symbol"] = symbol_id
+                        if self.clan_info.symbol:
+                            if self.clan_info.symbol in self.symbol_buttons:
+                                self.symbol_buttons[self.clan_info.symbol].enable()
+                        self.clan_info.symbol = symbol_id
                         self.refresh_text_and_buttons()
 
         super().handle_event(event)
@@ -249,17 +248,17 @@ class ChooseSymbolScreen(MakeClanScreenBase):
 
     def refresh_text_and_buttons(self):
         """Refreshes the button states and text boxes"""
-        if self.clan_info.get("symbol"):
-            if self.clan_info["symbol"] in self.symbol_buttons:
-                self.symbol_buttons[self.clan_info["symbol"]].disable()
+        if self.clan_info.symbol:
+            if self.clan_info.symbol in self.symbol_buttons:
+                self.symbol_buttons[self.clan_info.symbol].disable()
             # refresh selected symbol image
             self.elements["selected_symbol"].set_image(
                 pygame.transform.scale(
-                    sprites.get_symbol(self.clan_info["symbol"]),
+                    sprites.get_symbol(self.clan_info.symbol),
                     ui_scale_dimensions((100, 100)),
                 ).convert_alpha()
             )
-            symbol_name = self.clan_info["symbol"].replace("symbol", "")
+            symbol_name = self.clan_info.symbol.replace("symbol", "")
             self.text["selected"].set_text(
                 "screens.make_clan.symbol_selected",
                 text_kwargs={"symbol": symbol_name},
@@ -335,5 +334,5 @@ class ChooseSymbolScreen(MakeClanScreenBase):
                 x_pos = 96
                 y_pos += 70
 
-        if self.clan_info.get("symbol") in self.symbol_buttons:
-            self.symbol_buttons[self.clan_info["symbol"]].disable()
+        if self.clan_info.symbol in self.symbol_buttons:
+            self.symbol_buttons[self.clan_info.symbol].disable()

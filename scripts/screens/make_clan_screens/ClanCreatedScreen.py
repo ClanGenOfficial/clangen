@@ -17,8 +17,6 @@ from scripts.ui.theme import get_text_box_theme
 class ClanCreatedScreen(MakeClanScreenBase):
     def __init__(self, name="clan_created_screen"):
         super().__init__(name)
-        self.elements = {}
-        self.clan_info = None
 
     def screen_switches(self):
         super().screen_switches()
@@ -30,7 +28,7 @@ class ClanCreatedScreen(MakeClanScreenBase):
         self.elements["selected_symbol"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((350, 105), (100, 100))),
             pygame.transform.scale(
-                sprites.get_symbol(self.clan_info["symbol"]),
+                sprites.get_symbol(self.clan_info.symbol),
                 ui_scale_dimensions((100, 100)),
             ).convert_alpha(),
             object_id="#selected_symbol",
@@ -73,4 +71,5 @@ class ClanCreatedScreen(MakeClanScreenBase):
     def exit_screen(self):
         super().exit_screen()
 
-        switch_set_value(Switch.clan_creation_info, {})
+        self.clan_info.clear()
+        switch_set_value(Switch.clan_creation_info, self.clan_info.get_dict())

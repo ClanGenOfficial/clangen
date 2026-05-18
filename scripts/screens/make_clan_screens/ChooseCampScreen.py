@@ -1,31 +1,18 @@
-from random import randrange, choice
-from typing import Optional
+from random import randrange
 
 import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 
-from scripts.cat.cats import create_cat, create_example_cats
-from scripts.cat.enums import CatRank
-from scripts.cat.sprites.load_sprites import sprites
-from scripts.game_structure import image_cache
-from scripts.game_structure.game import Switch, game_setting_get
-from scripts.game_structure.game.settings import game_setting_set
-from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
-from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
-from scripts.screens.screens_core import screens_core
-from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
-from scripts.ui.theme import get_text_box_theme
 
 
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
@@ -45,9 +32,6 @@ class ChooseCampScreen(MakeClanScreenBase):
             ui_scale_dimensions((253, 620))
         )
         self.elements["next_step"].set_relative_position(ui_scale_dimensions((0, 620)))
-
-        if not self.clan_info.get("starting_season"):
-            self.clan_info["starting_season"] = "Newleaf"
 
         # Biome buttons
         self.elements["biome_container"] = UIContainer(
@@ -123,19 +107,19 @@ class ChooseCampScreen(MakeClanScreenBase):
                 self.set_bg(None)
                 self.change_screen(GameScreen.CHOOSE_CATS)
             elif event.ui_element == self.elements["forest_biome"]:
-                self.clan_info["biome"] = "Forest"
+                self.clan_info.biome = "Forest"
                 self.selected_camp_tab = 1
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["mountainous_biome"]:
-                self.clan_info["biome"] = "Mountainous"
+                self.clan_info.biome = "Mountainous"
                 self.selected_camp_tab = 1
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["plains_biome"]:
-                self.clan_info["biome"] = "Plains"
+                self.clan_info.biome = "Plains"
                 self.selected_camp_tab = 1
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["beach_biome"]:
-                self.clan_info["biome"] = "Beach"
+                self.clan_info.biome = "Beach"
                 self.selected_camp_tab = 1
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["tab1"]:
@@ -151,26 +135,26 @@ class ChooseCampScreen(MakeClanScreenBase):
                 self.selected_camp_tab = 4
                 self.refresh_selected_camp()
             elif event.ui_element == self.tabs["newleaf_tab"]:
-                self.clan_info["starting_season"] = "Newleaf"
+                self.clan_info.starting_season = "Newleaf"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["greenleaf_tab"]:
-                self.clan_info["starting_season"] = "Greenleaf"
+                self.clan_info.starting_season = "Greenleaf"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["leaf-fall_tab"]:
-                self.clan_info["starting_season"] = "Leaf-fall"
+                self.clan_info.starting_season = "Leaf-fall"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["leaf-bare_tab"]:
-                self.clan_info["starting_season"] = "Leaf-bare"
+                self.clan_info.starting_season = "Leaf-bare"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["random_background"]:
                 # Select a random biome and background
-                self.clan_info["biome"] = self.random_biome_selection()
+                self.clan_info.biome = self.random_biome_selection()
                 self.selected_camp_tab = randrange(1, 5)
-                self.clan_info["camp_bg"] = f"camp{self.selected_camp_tab}"
+                self.clan_info.camp_bg = f"camp{self.selected_camp_tab}"
                 self.refresh_selected_camp()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["next_step"]:
-                self.clan_info["camp_bg"] = f"camp{self.selected_camp_tab}"
+                self.clan_info.camp_bg = f"camp{self.selected_camp_tab}"
                 self.change_screen(GameScreen.CHOOSE_SYMBOL)
 
         return super().handle_event(event)
@@ -199,13 +183,13 @@ class ChooseCampScreen(MakeClanScreenBase):
         self.elements["plains_biome"].enable()
         self.elements["beach_biome"].enable()
 
-        if self.clan_info.get("biome") == "Forest":
+        if self.clan_info.biome == "Forest":
             self.elements["forest_biome"].disable()
-        elif self.clan_info.get("biome") == "Mountainous":
+        elif self.clan_info.biome == "Mountainous":
             self.elements["mountainous_biome"].disable()
-        elif self.clan_info.get("biome") == "Plains":
+        elif self.clan_info.biome == "Plains":
             self.elements["plains_biome"].disable()
-        elif self.clan_info.get("biome") == "Beach":
+        elif self.clan_info.biome == "Beach":
             self.elements["beach_biome"].disable()
 
         # enable/disable season buttons
@@ -213,16 +197,16 @@ class ChooseCampScreen(MakeClanScreenBase):
         self.tabs["greenleaf_tab"].enable()
         self.tabs["leaf-fall_tab"].enable()
         self.tabs["leaf-bare_tab"].enable()
-        if self.clan_info.get("starting_season") == "Newleaf":
+        if self.clan_info.starting_season == "Newleaf":
             self.tabs["newleaf_tab"].disable()
-        elif self.clan_info.get("starting_season") == "Greenleaf":
+        elif self.clan_info.starting_season == "Greenleaf":
             self.tabs["greenleaf_tab"].disable()
-        elif self.clan_info.get("starting_season") == "Leaf-fall":
+        elif self.clan_info.starting_season == "Leaf-fall":
             self.tabs["leaf-fall_tab"].disable()
-        elif self.clan_info.get("starting_season") == "Leaf-bare":
+        elif self.clan_info.starting_season == "Leaf-bare":
             self.tabs["leaf-bare_tab"].disable()
 
-        if self.clan_info.get("biome") and self.selected_camp_tab:
+        if self.clan_info.biome and self.selected_camp_tab:
             self.elements["next_step"].enable()
 
         # Deal with tab and shown camp image:
@@ -235,7 +219,7 @@ class ChooseCampScreen(MakeClanScreenBase):
         self.tabs["tab3"].kill()
         self.tabs["tab4"].kill()
 
-        if self.clan_info.get("biome") == "Forest":
+        if self.clan_info.biome == "Forest":
             tab_rect = ui_scale(pygame.Rect((0, 0), (85, 30)))
             tab_rect.topright = ui_scale_offset((5, 180))
             self.tabs["tab1"] = UISurfaceImageButton(
@@ -289,7 +273,7 @@ class ChooseCampScreen(MakeClanScreenBase):
                     "top_target": self.tabs["tab3"],
                 },
             )
-        elif self.clan_info.get("biome") == "Mountainous":
+        elif self.clan_info.biome == "Mountainous":
             tab_rect = ui_scale(pygame.Rect((0, 0), (70, 30)))
             tab_rect.topright = ui_scale_offset((5, 180))
             self.tabs["tab1"] = UISurfaceImageButton(
@@ -343,7 +327,7 @@ class ChooseCampScreen(MakeClanScreenBase):
                     "top_target": self.tabs["tab3"],
                 },
             )
-        elif self.clan_info.get("biome") == "Plains":
+        elif self.clan_info.biome == "Plains":
             tab_rect = ui_scale(pygame.Rect((0, 0), (115, 30)))
             tab_rect.topright = ui_scale_offset((5, 180))
             self.tabs["tab1"] = UISurfaceImageButton(
@@ -397,7 +381,7 @@ class ChooseCampScreen(MakeClanScreenBase):
                     "top_target": self.tabs["tab3"],
                 },
             )
-        elif self.clan_info.get("biome") == "Beach":
+        elif self.clan_info.biome == "Beach":
             tab_rect = ui_scale(pygame.Rect((0, 0), (110, 30)))
             tab_rect.topright = ui_scale_offset((5, 180))
             self.tabs["tab1"] = UISurfaceImageButton(
@@ -464,7 +448,7 @@ class ChooseCampScreen(MakeClanScreenBase):
         # I have to do this for proper layering.
         if "camp_art" in self.elements:
             self.elements["camp_art"].kill()
-        if self.clan_info.get("biome"):
+        if self.clan_info.biome:
             src = pygame.image.load(
                 self.get_camp_art_path(self.selected_camp_tab)
             ).convert_alpha()
