@@ -211,7 +211,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
                 self.refresh_symbol_list()
             elif event.ui_element == self.elements["done_button"]:
                 self.save_clan()
-                # TODO: save screen
+                self.change_screen(GameScreen.CLAN_CREATED)
             elif event.ui_element == self.elements["random_symbol_button"]:
                 if self.clan_info.get("symbol"):
                     if self.clan_info["symbol"] in self.symbol_buttons:
@@ -230,6 +230,13 @@ class ChooseSymbolScreen(MakeClanScreenBase):
                         self.refresh_text_and_buttons()
 
         super().handle_event(event)
+
+    def exit_screen(self):
+        super().exit_screen()
+        for ele in self.symbol_buttons.values():
+            ele.kill()
+        for ele in self.text.values():
+            ele.kill()
 
     def on_use(self):
         super().on_use()

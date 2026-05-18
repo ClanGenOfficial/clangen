@@ -12,11 +12,12 @@ from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import game
-from scripts.game_structure.game import switch_get_value, Switch
+from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
+from scripts.screens.screens_core import screens_core
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -147,3 +148,37 @@ class MakeClanScreenBase(Screens):
             clan_names.remove(self.clan_info.get("name"))
 
         return choice(clan_names)
+
+    def get_camp_art_path(self, campnum) -> Optional[str]:
+        if not campnum:
+            return None
+
+        leaf = self.clan_info.get("starting_season", "Newleaf").replace("-", "")
+
+        camp_bg_base_dir = "resources/images/camp_bg/"
+        start_leave = leaf.casefold()
+        light_dark = "dark" if game_setting_get("dark mode") else "light"
+
+        biome = self.clan_info.get("biome").lower()
+
+        return (
+            f"{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png"
+        )
+
+    def get_camp_bg(self, src=None):
+        camp_num = self.clan_info.get("camp_bg", "1")[-1]
+        if src is None:
+            src = pygame.image.load(self.get_camp_art_path(camp_num)).convert_alpha()
+
+        name = "_".join(
+            [
+                str(self.clan_info["biome"]),
+                str(camp_num),
+                self.clan_info.get("starting_season", "Newleaf"),
+            ]
+        )
+        if name not in self.game_bgs:
+            self.game_bgs[name] = screens_core.default_game_bgs[self.theme]["default"]
+            self.fullscreen_bgs[name] = screens_core.process_blur_bg(src)
+
+        self.set_bg(name)

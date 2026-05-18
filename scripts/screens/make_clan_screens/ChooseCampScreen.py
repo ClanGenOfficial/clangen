@@ -46,8 +46,8 @@ class ChooseCampScreen(MakeClanScreenBase):
         )
         self.elements["next_step"].set_relative_position(ui_scale_dimensions((0, 620)))
 
-        if not self.clan_info.get("season"):
-            self.clan_info["season"] = "Newleaf"
+        if not self.clan_info.get("starting_season"):
+            self.clan_info["starting_season"] = "Newleaf"
 
         # Biome buttons
         self.elements["biome_container"] = UIContainer(
@@ -151,21 +151,22 @@ class ChooseCampScreen(MakeClanScreenBase):
                 self.selected_camp_tab = 4
                 self.refresh_selected_camp()
             elif event.ui_element == self.tabs["newleaf_tab"]:
-                self.clan_info["season"] = "Newleaf"
+                self.clan_info["starting_season"] = "Newleaf"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["greenleaf_tab"]:
-                self.clan_info["season"] = "Greenleaf"
+                self.clan_info["starting_season"] = "Greenleaf"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["leaf-fall_tab"]:
-                self.clan_info["season"] = "Leaf-fall"
+                self.clan_info["starting_season"] = "Leaf-fall"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["leaf-bare_tab"]:
-                self.clan_info["season"] = "Leaf-bare"
+                self.clan_info["starting_season"] = "Leaf-bare"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["random_background"]:
                 # Select a random biome and background
                 self.clan_info["biome"] = self.random_biome_selection()
                 self.selected_camp_tab = randrange(1, 5)
+                self.clan_info["camp_bg"] = f"camp{self.selected_camp_tab}"
                 self.refresh_selected_camp()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["next_step"]:
@@ -212,13 +213,13 @@ class ChooseCampScreen(MakeClanScreenBase):
         self.tabs["greenleaf_tab"].enable()
         self.tabs["leaf-fall_tab"].enable()
         self.tabs["leaf-bare_tab"].enable()
-        if self.clan_info.get("season") == "Newleaf":
+        if self.clan_info.get("starting_season") == "Newleaf":
             self.tabs["newleaf_tab"].disable()
-        elif self.clan_info.get("season") == "Greenleaf":
+        elif self.clan_info.get("starting_season") == "Greenleaf":
             self.tabs["greenleaf_tab"].disable()
-        elif self.clan_info.get("season") == "Leaf-fall":
+        elif self.clan_info.get("starting_season") == "Leaf-fall":
             self.tabs["leaf-fall_tab"].disable()
-        elif self.clan_info.get("season") == "Leaf-bare":
+        elif self.clan_info.get("starting_season") == "Leaf-bare":
             self.tabs["leaf-bare_tab"].disable()
 
         if self.clan_info.get("biome") and self.selected_camp_tab:
@@ -478,38 +479,3 @@ class ChooseCampScreen(MakeClanScreenBase):
             self.get_camp_bg(src)
 
         self.draw_art_frame()
-
-    def get_camp_art_path(self, campnum) -> Optional[str]:
-        if not campnum:
-            return None
-
-        leaf = self.clan_info.get("season", "Newleaf").replace("-", "")
-
-        camp_bg_base_dir = "resources/images/camp_bg/"
-        start_leave = leaf.casefold()
-        light_dark = "dark" if game_setting_get("dark mode") else "light"
-
-        biome = self.clan_info.get("biome").lower()
-
-        return (
-            f"{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png"
-        )
-
-    def get_camp_bg(self, src=None):
-        if src is None:
-            src = pygame.image.load(
-                self.get_camp_art_path(self.selected_camp_tab)
-            ).convert_alpha()
-
-        name = "_".join(
-            [
-                str(self.clan_info["biome"]),
-                str(self.selected_camp_tab),
-                self.clan_info.get("season", "Newleaf"),
-            ]
-        )
-        if name not in self.game_bgs:
-            self.game_bgs[name] = screens_core.default_game_bgs[self.theme]["default"]
-            self.fullscreen_bgs[name] = screens_core.process_blur_bg(src)
-
-        self.set_bg(name)
