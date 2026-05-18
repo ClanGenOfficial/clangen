@@ -1,6 +1,6 @@
 from random import choice
 from re import sub
-from typing import Optional, List
+from typing import Optional
 from uuid import uuid4
 
 import pygame

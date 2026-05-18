@@ -96,7 +96,8 @@ class ChooseNameScreen(MakeClanScreenBase):
                 self.clan_info["name"] = self.elements["name_entry"].get_text().strip()
                 self.change_screen(GameScreen.CHOOSE_CATS)
             elif event.ui_element == self.elements["previous_step"]:
-                self.clan_info.pop("name")
+                if self.clan_info.get("name"):
+                    self.clan_info.pop("name")
                 self.change_screen(GameScreen.CHOOSE_MODE)
 
         return super().handle_event(event)

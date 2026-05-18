@@ -3,6 +3,8 @@ import pygame_gui
 
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.game_structure import game
+from scripts.game_structure.game import Switch
+from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
@@ -65,4 +67,10 @@ class ClanCreatedScreen(MakeClanScreenBase):
             if event.ui_element == self.elements["continue"]:
                 self.set_mute_button_position("bottomright")
                 self.change_screen(GameScreen.CAMP)
+
         super().handle_event(event)
+
+    def exit_screen(self):
+        super().exit_screen()
+
+        switch_set_value(Switch.clan_creation_info, {})

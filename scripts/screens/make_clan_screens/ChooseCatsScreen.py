@@ -287,6 +287,10 @@ class ChooseCatsScreen(MakeClanScreenBase):
 
         return super().handle_event(event)
 
+    def exit_screen(self):
+        self.selected_cat = None
+        super().exit_screen()
+
     def _assign_cat(self):
         """Assigns the selected cat to the next required role"""
         cat = self.selected_cat
@@ -314,6 +318,9 @@ class ChooseCatsScreen(MakeClanScreenBase):
         ):
             self.elements["random_cats"].show()
         else:
+            self.elements["random_cats"].hide()
+
+        if self.selected_cat:
             self.elements["random_cats"].hide()
 
         # allow the player forward
