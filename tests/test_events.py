@@ -1,3 +1,4 @@
+from typing import List
 import unittest
 from pathlib import Path
 from random import choice
@@ -5,6 +6,7 @@ from uuid import uuid4
 
 import shutil
 import os
+import random
 
 from scripts.cat import save_load
 from scripts.cat.cats import create_cat, Cat
@@ -13,6 +15,7 @@ from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, Afterlife
 from scripts.clan_package.settings import set_clan_setting
 from scripts import events
+from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.short.short_event_generation import (
     filter_events,
 )
@@ -138,6 +141,37 @@ class TestEvents(unittest.TestCase):
                                 )
                             )
                         )
+
+                    can_patrol = []
+                    for cat in Cat.all_cats_list:
+                        if (
+                            cat.in_camp
+                            and cat.ID not in game.patrolled
+                            and cat.status.rank.is_allowed_to_patrol()
+                            and cat.status.alive_in_player_clan
+                            and not cat.not_working()
+                        ):
+                            can_patrol.append(cat)
+                    random.shuffle(can_patrol)
+
+                    while can_patrol:
+                        num_to_patrol = min(len(can_patrol), random.randint(1, 6))
+                        to_patrol: List[Cat] = can_patrol[:num_to_patrol]
+                        meds_to_patrol = [
+                            cat
+                            for cat in to_patrol
+                            if cat.status.rank.is_any_medicine_rank()
+                        ]
+                        if meds_to_patrol:
+                            patrol_type = "med"
+                        else:
+                            patrol_type = "general"
+
+                        new_patrol = Patrol()
+                        new_patrol.setup_patrol(to_patrol, patrol_type)
+                        new_patrol.proceed_patrol("proceed")
+
+                        can_patrol = can_patrol[num_to_patrol:]
 
                 if not _ % 100:
                     print(f"CLANCATS ALIVE: {get_living_clan_cat_count(Cat)}")
