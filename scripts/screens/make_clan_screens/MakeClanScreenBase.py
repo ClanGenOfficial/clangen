@@ -13,12 +13,11 @@ from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import game
 from scripts.game_structure.game import switch_get_value, Switch
-from scripts.game_structure.game.switches import switch_set_dict_value, switch_set_value
+from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.Screens import Screens
 from scripts.screens.enums import GameScreen
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
-from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.scale import ui_scale

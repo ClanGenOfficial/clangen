@@ -13,6 +13,7 @@ class GameScreen(StrEnum):
     CHOOSE_NAME = "choose_name_screen"
     CHOOSE_CATS = "choose_cats_screen"
     CHOOSE_CAMP = "choose_camp_screen"
+    CHOOSE_SYMBOL = "choose_symbol_screen"
     MAKE_CLAN = "make_clan_screen"
 
     # screens accessed through top menu

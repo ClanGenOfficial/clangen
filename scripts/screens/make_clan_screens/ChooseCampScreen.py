@@ -106,7 +106,7 @@ class ChooseCampScreen(MakeClanScreenBase):
 
         # Random background
         self.elements["random_background"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((255, 585), (290, 30))),
+            ui_scale(pygame.Rect((255, 580), (290, 30))),
             "screens.make_clan.choose_random_background",
             get_button_dict(ButtonStyles.SQUOVAL, (290, 30)),
             object_id="@buttonstyles_squoval",
@@ -169,8 +169,8 @@ class ChooseCampScreen(MakeClanScreenBase):
                 self.refresh_selected_camp()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["next_step"]:
-                pass
-                # TODO: open symbols
+                self.clan_info["camp_bg"] = f"camp{self.selected_camp_tab}"
+                self.change_screen(GameScreen.CHOOSE_SYMBOL)
 
         return super().handle_event(event)
 
