@@ -7,12 +7,12 @@ from collections import defaultdict
 class RelationType(StrEnum):
     """An enum representing the possible relationships of a cat"""
 
-    BLOOD = "direct related"  # direct blood related - do not need a special print
+    BLOOD = "direct_related"  # direct blood related - do not need a special print
     ADOPTIVE = "adoptive"  # not blood related but close (parents, kits, siblings)
 
-    HALF_BLOOD = "half sibling"  # only one blood parent is the same (siblings only)
-    NOT_BLOOD = "not blood related"  # not blood related for parent siblings
-    RELATED = "blood related"  # related by blood (different mates only)
+    HALF_BLOOD = "half_sibling"  # only one blood parent is the same (siblings only)
+    NOT_BLOOD = "not_blood_related"  # not blood related for parent siblings
+    RELATED = "blood_related"  # related by blood (different mates only)
 
 
 class FamilyRelationLink(TypedDict):
