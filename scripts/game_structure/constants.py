@@ -15,7 +15,11 @@ MENU_SCREENS = [
     GameScreen.SETTINGS,
     GameScreen.START,
     GameScreen.SWITCH_CLAN,
-    GameScreen.MAKE_CLAN,
+    GameScreen.CHOOSE_MODE,
+    GameScreen.CHOOSE_NAME,
+    GameScreen.CHOOSE_CATS,
+    GameScreen.CHOOSE_SYMBOL,
+    GameScreen.CLAN_CREATED,
 ]
 
 EVENTS_PER_PAGE = 10

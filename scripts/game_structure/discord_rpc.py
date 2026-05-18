@@ -20,7 +20,6 @@ from scripts.screens.enums import GameScreen
 
 status_dict = {
     GameScreen.START: "At the start screen",
-    GameScreen.MAKE_CLAN: "Making a Clan",
     GameScreen.MEDIATION: "Mediating a dispute",
     GameScreen.PATROL: "On a patrol",
     GameScreen.PROFILE: "Viewing a cat's profile",

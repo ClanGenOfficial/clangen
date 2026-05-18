@@ -30,9 +30,7 @@ class ChooseModeScreen(MakeClanScreenBase):
 
     def screen_switches(self):
         # Reset variables
-        switch_set_value(
-            Switch.possible_cats, create_example_cats()
-        )
+        switch_set_value(Switch.possible_cats, create_example_cats())
 
         super().screen_switches()
         self.elements["previous_step"].disable()
@@ -132,7 +130,7 @@ class ChooseModeScreen(MakeClanScreenBase):
                 if self.elements["random_clan_checkbox"].checked:
                     self.random_quick_start()
                     self.save_clan()
-                    # TODO: open saved clan screen
+                    self.change_screen(GameScreen.CLAN_CREATED)
                 else:
                     self.change_screen(GameScreen.CHOOSE_NAME)
             elif event.ui_element == self.elements["random_clan_checkbox"]:
@@ -186,9 +184,9 @@ class ChooseModeScreen(MakeClanScreenBase):
         self.clan_info["camp_bg"] = f"camp{randrange(1, 5)}"
 
         # SYMBOL
-        if f"symbol{self.clan_info["name"].upper()}0" in sprites.clan_symbols:
+        if f"symbol{self.clan_info['name'].upper()}0" in sprites.clan_symbols:
             # Use recommended symbol if it exists
-            symbol = f"symbol{self.clan_info["name"].upper()}0"
+            symbol = f"symbol{self.clan_info['name'].upper()}0"
         else:
             symbol = choice(sprites.clan_symbols)
 
@@ -211,4 +209,4 @@ class ChooseModeScreen(MakeClanScreenBase):
             )
             members.append(create_cat(rank=random_rank))
 
-        self.clan_info["members"] = members
+        self.clan_info["starting_members"] = members
