@@ -1,5 +1,5 @@
 [
-  {
+    {
         "patrol_id": "fst_med_newleaf_allergies",
         "biome": [
             "forest"
@@ -15,101 +15,101 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-"normal adult": [1, 5],
-"medicine cat": [1, 5]
-      },
+            "normal adult": [1, 5],
+            "medicine cat": [1, 5]
+        },
         "frequency": 2,
         "chance_of_success": 60,
         "intro_text": "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming plants. That is, until r_c starts sneezing. Clearly, the pollen from the trees is affecting {PRONOUN/r_c/object} somewhat.",
         "decline_text": "Since r_c isn't up for a patrol in a pollen-filled forest, the patrol returns to camp with no new herbs. At least r_c seems to have stopped sneezing for now.",
         "success_outcomes": [
             {
-        "text": "p_l continues the patrol without acknowledging r_c sneezing. Despite the circumstances, the fresh newleaf plants are bountiful for the group, and the patrol returns with an average collection of herbs.",
-        "exp": 10,
-        "frequency": 4,
-        "prey": [],
-        "herbs": [
-            "random_herbs"
-        ],
-        "injury": [
+                "text": "p_l continues the patrol without acknowledging r_c sneezing. Despite the circumstances, the fresh newleaf plants are bountiful for the group, and the patrol returns with an average collection of herbs.",
+                "exp": 10,
+                "frequency": 4,
+                "prey": [],
+                "herbs": [
+                    "random_herbs"
+                ],
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "running nose"
+                        ],
+                        "scars": [],
+                        "no_results": true
+                    }
+                ],
+                "new_cat": [],
+                "art": "fst_canopy"
+            },
             {
-                "cats": [
-                    "r_c"
+                "text": "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c from finding herbs, it makes r_c the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs at the root of a tree, r_c is sent to collect them.",
+                "exp": 15,
+                "frequency": 2,
+                "prey": [],
+                "herbs": [
+                    "random_herbs"
                 ],
-                "injuries": [
-                    "running nose"
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "running nose"
+                        ],
+                        "scars": [],
+                        "no_results": true
+                    }
                 ],
-                "scars": [],
-                "no_results": true
-            }
-        ],
-        "new_cat": [],
-        "art": "fst_canopy"
-        },
-            {
-        "text": "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c from finding herbs, it makes r_c the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs at the root of a tree, r_c is sent to collect them.",
-        "exp": 15,
-        "frequency": 2,
-        "prey": [],
-        "herbs": [
-            "random_herbs"
-        ],
-        "injury": [
-            {
-                "cats": [
-                    "r_c"
-                ],
-                "injuries": [
-                    "running nose"
-                ],
-                "scars": [],
-                "no_results": true
-            }
-        ],
-        "new_cat": [],
-        "art": "gen_embarrassed1"
+                "new_cat": [],
+                "art": "gen_embarrassed1"
             }
         ],
         "fail_outcomes": [
             {
-        "text": "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn’t get very far. r_c stumbles mid-sneeze, tripping over a particularly large tree root and tumbling forward, knocking over other cats in {PRONOUN/r_c/poss} wake.",
-        "exp": 0,
-        "frequency": 4,
-        "prey": [],
-        "herbs": [],
-        "injury": [
-            {
-                "cats": [
-                    "r_c"
+                "text": "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn’t get very far. r_c stumbles mid-sneeze, tripping over a particularly large tree root and tumbling forward, knocking over other cats in {PRONOUN/r_c/poss} wake.",
+                "exp": 0,
+                "frequency": 4,
+                "prey": [],
+                "herbs": [],
+                "injury": [
+                    {
+                        "cats": [
+                            "r_c"
+                        ],
+                        "injuries": [
+                            "running nose"
+                        ],
+                        "scars": [],
+                        "no_results": true
+                    }
                 ],
-                "injuries": [
-                    "running nose"
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from lost respect for cat_to after a sidetracked patrol."
+                        }
+                    }
                 ],
-                "scars": [],
-                "no_results": true
-            }
-        ],
-"relationships": [
-    {
-    "cats_from": [
-      "p_l"
-    ],
-    "cats_to": [
-      "r_c"
-    ],
-    "mutual": false,
-    "values": [
-      "respect"
-    ],
-    "amount": 5,
-    "log": {
-        "cats_from": "cats_from lost respect for cats_to after a sidetracked patrol."
-    }
-        }
-        ],
-        "new_cat": [],
-        "art": "fst_med_stumble1"
+                "new_cat": [],
+                "art": "fst_med_stumble1"
             }
         ]
     }
-    ]
+]
