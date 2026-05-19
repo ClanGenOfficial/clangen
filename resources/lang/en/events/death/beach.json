@@ -744,7 +744,8 @@
         "m_c": {
             "age": [
                 "kitten"
-            ]
+            ],
+            "dies": true
         },
         "history": [
             {
