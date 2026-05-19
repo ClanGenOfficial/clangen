@@ -181,7 +181,7 @@ class InheritanceDb:
         cousins.discard(cat_id)
         return cousins
 
-    def get_relatives(self, cat_id: str, cousin_not_relative: bool) -> Set[str]:
+    def get_relatives(self, cat_id: str, exclude_cousins: bool) -> Set[str]:
         get_relative_functions = (
             self.get_parents,
             self.get_children,
@@ -196,16 +196,16 @@ class InheritanceDb:
         for get_relative_function in get_relative_functions:
             relatives.update(get_relative_function(cat_id))
 
-        if cousin_not_relative:
+        if exclude_cousins:
             pass
         else:  # cousin is relative
             relatives.update(self.get_cousins(cat_id))
         return relatives
 
-    def is_related(self, cat_a: str, cat_b: str, cousin_not_relative) -> bool:
+    def is_related(self, cat_a: str, cat_b: str, exclude_cousins) -> bool:
         return cat_b in self.get_relatives(
-            cat_a, cousin_not_relative
-        ) or cat_a in self.get_relatives(cat_b, cousin_not_relative)
+            cat_a, exclude_cousins
+        ) or cat_a in self.get_relatives(cat_b, exclude_cousins)
 
     def is_grandparent(self, maybe_grandparent: str, cat_a: str) -> bool:
         return maybe_grandparent in self.get_grandparents(cat_a)
