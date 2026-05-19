@@ -233,7 +233,9 @@ def event_for_poi(pois: dict[str, list]) -> bool:
 
     has_matching_name, has_matching_tags = False, False
     if "name" in pois:
-        has_matching_name = not set(pois.get("name", [])).isdisjoint(get_poi_names_set())
+        has_matching_name = not set(pois.get("name", [])).isdisjoint(
+            get_poi_names_set()
+        )
 
     if "tags" in pois:
         has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
