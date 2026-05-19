@@ -269,7 +269,7 @@ class AllegiancesScreen(Screens):
                 all_entries.append(
                     event_text_adjust(
                         Cat,
-                        f"{str(k.name).upper()} - {k.describe_cat(short=True)}",
+                        f"{str(k.name).upper()} - {k.describe_cat()}",
                         main_cat=k,
                     )
                 )

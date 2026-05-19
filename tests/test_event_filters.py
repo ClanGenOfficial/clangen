@@ -15,6 +15,7 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat, create_cat
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat.enums import CatRank, CatAge, CatSocial
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
@@ -203,6 +204,8 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         cat1.relationships = {}
         cat2.relationships = {}
 
+        inheritance_db.load_inheritances(Cat)
+
         with self.subTest("are strangers, expected strangers"):
             self.assertTrue(
                 event_for_cat(
@@ -253,9 +256,7 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
         cat2 = Cat(parent1=parent.ID)
-
-        cat1.create_inheritance_new_cat()
-        cat2.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
 
         with self.subTest("are siblings, expected siblings"):
             self.assertTrue(
@@ -295,8 +296,7 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         cat1 = Cat(parent1=parent.ID, moons=1)
         cat2 = Cat(parent1=parent.ID, moons=1)
 
-        cat1.create_inheritance_new_cat()
-        cat2.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
 
         with self.subTest("are littermates, expected littermates"):
             self.assertTrue(
@@ -377,7 +377,7 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
 
-        cat1.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
 
         with self.subTest("are parent/child, expected parent/child"):
             self.assertTrue(
@@ -416,7 +416,7 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
 
-        cat1.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
 
         with self.subTest("are child/parent, expected child/parent"):
             self.assertTrue(

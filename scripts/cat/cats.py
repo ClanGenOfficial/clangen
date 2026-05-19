@@ -36,6 +36,7 @@ from scripts.events_module.thoughts.generate_thoughts import (
     get_other_cat_for_thought,
 )
 from scripts.cat_relations.inheritance import Inheritance
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.cat_relations.enums import RelType, RelTier, rel_type_tiers
 from scripts.clan_package.settings import get_clan_setting
@@ -1776,79 +1777,55 @@ class Cat:
     #                                   relative                                   #
     # ---------------------------------------------------------------------------- #
     def get_parents(self):
-        """Returns list containing parents of cat(id)."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        return self.inheritance.parents.keys()
+        """Returns list containing parent IDs of this cat.
+
+        The order matters! The first cat will be considered the one who gave birth
+        to this cat for queen calculations.
+        """
+        bio_parents = [parent for parent in (self.parent1, self.parent2) if parent]
+        return bio_parents + self.adoptive_parents
 
     def get_siblings(self):
         """Returns list of the siblings(id)."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        return self.inheritance.siblings.keys()
+        return inheritance_db.get_siblings(self.ID)
 
     def get_children(self):
         """Returns list of the children (ids)."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        return self.inheritance.kits.keys()
+        return inheritance_db.get_children(self.ID)
 
     def is_grandparent(self, other_cat: Cat):
         """Check if the cat is the grandparent of the other cat."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        return other_cat.ID in self.inheritance.grand_kits.keys()
+        return inheritance_db.is_grandparent(self.ID, other_cat.ID)
 
     def is_parent(self, other_cat: Cat):
         """Check if the cat is the parent of the other cat."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        return other_cat.ID in self.inheritance.kits.keys()
+        return inheritance_db.is_parent(self.ID, other_cat.ID)
 
     def is_sibling(self, other_cat: Cat):
         """Check if the cats are siblings."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        return other_cat.ID in self.inheritance.siblings.keys()
+        return inheritance_db.is_sibling(self.ID, other_cat.ID)
 
     def is_littermate(self, other_cat: Cat):
         """Check if the cats are littermates."""
-        if other_cat.ID not in self.inheritance.siblings.keys():
+        if not self.is_sibling(other_cat):
             return False
-        litter_mates = [
-            key
-            for key, value in self.inheritance.siblings.items()
-            if "litter mates" in value["additional"]
-        ]
-        return other_cat.ID in litter_mates
+        return inheritance_db.is_littermate(self.ID, other_cat.ID)
 
     def is_uncle_aunt(self, other_cat: Cat):
         """Check if the cats are related as uncle/aunt and niece/nephew."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        return other_cat.ID in self.inheritance.siblings_kits.keys()
+        return inheritance_db.is_uncle_aunt(self.ID, other_cat.ID)
 
     def is_cousin(self, other_cat: Cat):
         """Check if this cat and other_cat are cousins."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        return other_cat.ID in self.inheritance.cousins.keys()
+        return inheritance_db.is_cousin(self.ID, other_cat.ID)
 
     def is_related(self, other_cat, cousin_allowed):
         """Checks if the given cat is related to the current cat, according to the inheritance."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        if cousin_allowed:
-            return other_cat.ID in self.inheritance.all_but_cousins
-        return other_cat.ID in self.inheritance.all_involved
+        return inheritance_db.is_related(self.ID, other_cat.ID, cousin_allowed)
 
     def get_relatives(self, cousin_allowed=True) -> list:
         """Returns a list of ids of all nearly related ancestors."""
-        if not self.inheritance:
-            self.inheritance = Inheritance(self)
-        if cousin_allowed:
-            return self.inheritance.all_involved
-        return self.inheritance.all_but_cousins
+        return inheritance_db.get_relatives(self.ID, cousin_allowed)
 
     # ---------------------------------------------------------------------------- #
     #                                  conditions                                  #
@@ -2526,10 +2503,7 @@ class Cat:
         if self.ID not in other_cat.previous_mates:
             other_cat.previous_mates.append(self.ID)
 
-        if other_cat.inheritance:
-            other_cat.inheritance.update_all_mates()
-        if self.inheritance:
-            self.inheritance.update_all_mates()
+        inheritance_db.load_inheritances(Cat)
 
     def set_mate(self, other_cat: Cat):
         """Sets up a mate relationship between self and other_cat."""
@@ -2544,10 +2518,7 @@ class Cat:
         if self.ID in other_cat.previous_mates:
             other_cat.previous_mates.remove(self.ID)
 
-        if other_cat.inheritance:
-            other_cat.inheritance.update_all_mates()
-        if self.inheritance:
-            self.inheritance.update_all_mates()
+        inheritance_db.load_inheritances(Cat)
 
         # Set starting relationship values
         if not self.dead:
@@ -2573,8 +2544,7 @@ class Cat:
     def unset_adoptive_parent(self, other_cat: Cat):
         """Unset the adoptive parent from self"""
         self.adoptive_parents.remove(other_cat.ID)
-        self.create_inheritance_new_cat()
-        other_cat.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
         if not self.dead:
             if other_cat.ID not in self.relationships:
                 self.create_one_relationship(other_cat)
@@ -2594,7 +2564,7 @@ class Cat:
     def set_adoptive_parent(self, other_cat: Cat):
         """Sets up a parent-child relationship between self and other_cat."""
         self.adoptive_parents.append(other_cat.ID)
-        self.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
 
         # Set starting relationship values
         if not self.dead:

@@ -625,7 +625,7 @@
                 "frequency": 4
             },
             {
-                "text": "With the patrol ranged around {PRONOUN/s_c/object} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} want to tell a story, for once! But no, no, they're happy to entertain and teach their Clanmates — has anyone heard of story_list?",
+                "text": "With the patrol ranged around {PRONOUN/s_c/object} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} want to tell a story, for once! But no, no, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} happy to entertain and teach {PRONOUN/s_c/poss} Clanmates — {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} if anyone has heard of story_list as {PRONOUN/s_c/subject} {VERB/s_c/begin/begins} to relax.",
                 "exp": 20,
                 "stat_skill": [
                     "STORY,2"
@@ -5296,7 +5296,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c is much more interesting in sharing gossip than focusing on the teamwork exercise. The rest of the patrol is not in the mood to chat, and s_c's lines of inquiry into the love lives and future plans of {PRONOUN/s_c/poss} Clanmates begin to make the others uncomfortable.",
+                "text": "s_c is much more interested in sharing gossip than focusing on the teamwork exercise. The rest of the patrol is not in the mood to chat, and s_c's lines of inquiry into the love lives and future plans of {PRONOUN/s_c/poss} Clanmates begin to make the others uncomfortable.",
                 "exp": 0,
                 "stat_trait": [
                     "charismatic", "playful", "shameless", "bold", "flamboyant", "loving", "troublesome"
@@ -5903,7 +5903,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c is much more interesting in sharing gossip than focusing on the teamwork exercise. p_l isn't in the mood to chat, and s_c's lines of inquiry into {PRONOUN/p_l/poss} love life and future plans begins to make {PRONOUN/p_l/object} uncomfortable.",
+                "text": "s_c is much more interested in sharing gossip than focusing on the teamwork exercise. p_l isn't in the mood to chat, and s_c's lines of inquiry into {PRONOUN/p_l/poss} love life and future plans begins to make {PRONOUN/p_l/object} uncomfortable.",
                 "exp": 0,
                 "stat_trait": [
                     "charismatic", "playful", "shameless", "bold", "flamboyant", "loving", "troublesome"
