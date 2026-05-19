@@ -429,7 +429,6 @@ dev_tools = false
   # due to how it's written in the save files. So don't try to 'fix' it.
   classic_difficulty_modifier = 1
   expanded_difficulty_modifier = 2.5
-  "cruel season_difficulty_modifier" = 3
 
   # amount to modify patrol success based on patrol stats
   # increasing this value increases the NUMERATOR for success (denominator is fixed at 120)
@@ -472,7 +471,6 @@ dev_tools = false
   # base 1/chance a cat will die
   classic_death_chance = 500
   expanded_death_chance = 350
-  "cruel season_death_chance" = 300
 
   # modifiers for death chance based on if a war is going badly
   # SUBTRACTS from the denominator so higher = more likely to die
@@ -497,13 +495,11 @@ dev_tools = false
 [condition_related]
   # 10/chance an illness will occur
   expanded_illness_chance = 250
-  "cruel season_illness_chance" = 200
   classic_illness_chance = 500
 
   # 5/chance (for most personalities) or 15/chance (for some personalities) an injury will occur 
   classic_injury_chance = 450
   expanded_injury_chance = 250
-  "cruel season_injury_chance" = 150
 
   # 1/chance a cat will get a permanent condition from an event with that possibility 
   permanent_condition_chance = 15
