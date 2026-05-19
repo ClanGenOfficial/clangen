@@ -2,7 +2,7 @@ The Points of Interest system adds more depth to each Clan's territory by giving
 
 Disclaimer: Points of Interest do <b>not</b> use exclusionary tags.
 
-# Creating a Point of Interest
+## Creating a Point of Interest
 
 New points of interest can be created in resources/dicts/points_of_interest.json. They use the following format:
 
@@ -50,8 +50,8 @@ Gathering locations and Moonplaces should be capitalized and written as a proper
 
 Keep in mind that a display name should either be a proper noun, or begin with "the" or "a/an" so it can easily be integrated into Short Events and Patrols. 
 
-# Categories and Tags
-## Categories
+## Categories and Tags
+### Categories
 
 Points of Interest are distributed into three categories. Each Territory has randomly generated Points of Interest in each category.
 
@@ -61,7 +61,7 @@ Points of Interest are distributed into three categories. Each Territory has ran
 | moonplace | This is the Clan's moon place, where medicine cats meet once a moon. One exists per territory. It typically features some connection to the moon, stars, or night sky. One exists per territory. |
 | territory | This is a feature within the Clan's territory that is notable due to either its appearance or opportunities around it. Three can be discovered per territory.                                    |
 
-## Tags 
+### Tags 
 Points of Interests can use many different tags that denote circumstances around them to help specify how it can be used and what events/patrols it would fit with.
 
 |        Tag        |                                                           Description                                                           |
@@ -86,9 +86,9 @@ Points of Interests can use many different tags that denote circumstances around
 |   water:flowing   |                                              streams, rivers, rills, deltas, etc.                                               |
 |    water:ocean    |                                                large saltwater bodies of water.                                                 |
 
-# Using Points of Interest
+## Using Points of Interest
 
-## Constraints
+### Constraints
 
 Patrols and Short Events now have an additional constraint that can be utilized to include either a specific Point of Interest ID or tag. 
 
