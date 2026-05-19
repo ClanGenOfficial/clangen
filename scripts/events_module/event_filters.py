@@ -138,7 +138,7 @@ def event_for_tags(
             return False
 
     # check romance
-    if "romance" in tags and other_cat not in get_possible_mates(cat):
+    if "romance" in tags and other_cat and other_cat not in get_possible_mates(cat):
         return False
 
     # check leader life tags
@@ -591,6 +591,7 @@ def cat_for_event(
     comparison_cat_rel_status: list = None,
     injuries: list = None,
     return_id: bool = True,
+    tags: list = None,
 ):
     """
     Checks the given cat list against constraint_dict to find any eligible cats.
@@ -602,6 +603,7 @@ def cat_for_event(
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
     :param return_id: If true, return cat ID instead of object
+    :param tags: List of event tags
     """
     # gather funcs to use
     func_dict = {
@@ -638,6 +640,11 @@ def cat_for_event(
             return None
 
     # rel status check
+    if "romance" in tags:
+        allowed_cats = list(
+            set(allowed_cats).intersection(set(get_possible_mates(comparison_cat)[0]))
+        )
+
     if comparison_cat_rel_status or constraint_dict.get("relationship_status"):
         # preliminary check to see if we can just skip to gathering certain rel groups
         allowed_cats, comparison_cat_rel_status = _get_cats_with_rel_status(

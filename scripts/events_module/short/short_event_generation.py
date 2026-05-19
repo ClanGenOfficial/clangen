@@ -602,6 +602,7 @@ def filter_events(
             ).copy(),
             injuries=r_c_injuries,
             return_id=False,
+            tags=chosen_event.tags,
         )
 
         if not chosen_cat:
