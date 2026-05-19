@@ -5105,7 +5105,7 @@
                 "frequency": 4
             },
             {
-                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/s_c/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remember/remembers} that c_n trust {PRONOUN/s_c/object} to heal them, so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
+                "text": "Wrapping {PRONOUN/s_c/poss} tail around app1, s_c reassures {PRONOUN/app1/object} that no one has always felt completely confident in their abilities, but that didn't mean they weren't good enough. s_c {PRONOUN/s_c/self} still doubts {PRONOUN/s_c/poss} own abilities sometimes, but {PRONOUN/s_c/subject} always {VERB/s_c/remember/remembers} that c_n trust {PRONOUN/s_c/object} to heal them, so {PRONOUN/s_c/subject} should trust {PRONOUN/s_c/self}, too. Pressing {PRONOUN/app1/poss} nose into s_c's side, app1 sniffles a thank you.",
                 "exp": 20,
                 "stat_trait": [
                     "compassionate",
@@ -12986,7 +12986,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The heat of greenleaf has made the burdock plants grow to towering size, with some leaves approaching the length of an adult cat. It's a long afternoon, but a productive, lighthearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as {PRONOUN/p_l/subject}'re sorting later.",
+                "text": "The heat of greenleaf has made the burdock plants grow to towering size, with some leaves approaching the length of an adult cat. It's a long afternoon, but a productive, lighthearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sorting later.",
                 "exp": 10,
                 "herbs": [
                     "burdock",
@@ -20910,7 +20910,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "p_l's paw-pads nearly freeze from trying to dig up burdock in the cold, but somehow {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} it. It's worth all the effort and misery since {PRONOUN/p_l/subject} know how crucial these fresh herbs could be for the Clan, {PRONOUN/p_l/poss} Clanmates purring at the sight of the dirty roots.",
+                "text": "p_l's pawpads nearly freeze from trying to dig up burdock in the cold, but somehow {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} it. It's worth all the effort and misery since {PRONOUN/p_l/subject} {VERB/p_l/know/knows} how crucial these fresh herbs could be for the Clan, {PRONOUN/p_l/poss} Clanmates purring at the sight of the dirty roots.",
                 "exp": 10,
                 "herbs": [
                     "burdock"
@@ -23937,7 +23937,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, so it's not finding them that's hard — it's trying to carry all the roots back to camp all at once that proves difficult! On the way back, {PRONOUN/p_l/subject} spot some plantain and almost drop all of {PRONOUN/p_l/poss} roots when {PRONOUN/p_l/subject} attempt to collect it.",
+                "text": "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, so it's not finding them that's hard — it's trying to carry all the roots back to camp all at once that proves difficult! On the way back, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} some plantain and almost drops all of {PRONOUN/p_l/poss} roots when {PRONOUN/p_l/subject} {VERB/p_l/attempt/attempts} to collect it.",
                 "exp": 10,
                 "herbs": [
                     "burdock",
@@ -31491,7 +31491,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when they do come across some. It's a long afternoon, but a productive, lighthearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as they're sorting later.",
+                "text": "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when they do come across some. It's a long afternoon, but a productive, lighthearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to carry everything home. p_l is amused to find some plantain leaves in the mix as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sorting later.",
                 "exp": 10,
                 "herbs": [
                     "burdock",
