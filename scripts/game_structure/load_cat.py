@@ -354,30 +354,12 @@ def json_load():
             )
             switch_set_value(Switch.traceback, e)
             raise
+        if constants.CONFIG["save_load"]["load_integrity_checks"]:
+            save_check()
 
     # have to load before thoughts but after cats are done
     inheritance_db.clear_stored_data()
     inheritance_db.load_inheritances(Cat, get_faded_ids)
-
-    # requires info received from inheritance
-    for cat in all_cats:
-        try:
-            # initialization of thoughts
-            cat.get_new_thought(other_clan_cats=other_clan_cats)
-        except Exception as e:
-            logger.exception(
-                f"There was an error when thoughts for cat #{cat} are created."
-            )
-            switch_set_value(
-                Switch.error_message,
-                f"There was an error when thoughts for cat #{cat} are created.",
-            )
-            switch_set_value(Switch.traceback, e)
-            raise
-
-        # Save integrety checks
-        if constants.CONFIG["save_load"]["load_integrity_checks"]:
-            save_check()
 
 
 def csv_load(all_cats):

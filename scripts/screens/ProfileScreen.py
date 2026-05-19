@@ -555,6 +555,15 @@ class ProfileScreen(Screens):
         if self.the_cat is None:
             return
 
+        if not self.the_cat.thought:
+            if self.the_cat.status.is_other_clancat:
+                other_clan_cats = [
+                    c for c in Cat.all_cats_list if c.status.is_other_clancat
+                ]
+                self.the_cat.get_new_thought(other_clan_cats=other_clan_cats)
+            else:
+                self.the_cat.get_new_thought()
+
         # Info in string
         cat_name = str(self.the_cat.name)
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
