@@ -196,8 +196,9 @@ class InheritanceDb:
         for get_relative_function in get_relative_functions:
             relatives.update(get_relative_function(cat_id))
 
-        if not cousin_not_relative:
-            # cousin counts as relative
+        if cousin_not_relative:
+            pass
+        else: # cousin is relative
             relatives.update(self.get_cousins(cat_id))
         return relatives
 
