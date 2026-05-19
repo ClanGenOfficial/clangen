@@ -21,6 +21,14 @@
         "GREENYELLOW": "green-yellow",
         "BRONZE": "bronze",
         "SILVER": "silver",
-		"ORANGE": "orange"
+		"ORANGE": "orange",
+        "DAWN": "dawn",
+        "DUSK": "dusk",
+        "AURORA": "aurora",
+        "FOREST": "forest green",
+        "MUSTARD": "mustard-yellow",
+        "EARTHY": "earthy brown",
+        "SEA": "sea blue",
+        "BLUEBELL": "bluebell"
     }
 }
