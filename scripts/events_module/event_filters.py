@@ -8,7 +8,7 @@ from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility
 from scripts.special_dates import get_special_date, contains_special_date_tag
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank, get_possible_mates
 from scripts.game_structure import game
 
 ALL_BACKSTORIES_LIST = set(
@@ -133,6 +133,10 @@ def event_for_tags(
     for _poss in possible_modes:
         if _poss in tags and mode != _poss:
             return False
+
+    # check romance
+    if "romance" in tags and other_cat not in get_possible_mates(cat):
+        return False
 
     # check leader life tags
     if hasattr(cat, "ID"):
