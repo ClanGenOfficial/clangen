@@ -478,8 +478,6 @@ class PatrolOutcome:
             gm_modifier = 1
         elif game.clan.game_mode == "expanded":
             gm_modifier = 3
-        elif game.clan.game_mode == "cruel season":
-            gm_modifier = 6
         else:
             gm_modifier = 1
 

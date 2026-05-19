@@ -6,7 +6,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
-from scripts.game_structure import game, constants
+from scripts.game_structure import constants
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
@@ -157,14 +157,6 @@ class FreshkillPile:
                 if not cat.status.rank.is_baby() and cat.status.alive_in_player_clan
             ]
         )
-        # increase the number for sick cats
-        if game.clan and game.clan.game_mode == "cruel season":
-            sick_cats = [
-                cat
-                for cat in living_cats
-                if cat.not_working() and "pregnant" not in cat.injuries
-            ]
-            needed_prey += len(sick_cats) * CONDITION_INCREASE
         # increase the number of prey which are missing for relevant queens and pregnant cats
         needed_prey += (len(relevant_queens) + len(pregnant_cats)) * (
             PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT[CatRank.WARRIOR]
@@ -635,16 +627,6 @@ class FreshkillPile:
         nutrition.max_score = max_score
         nutrition.current_score = max_score
         nutrition.percentage = 100
-
-        # adapt sickness (increase needed amount)
-        if (
-            "pregnant" not in cat.injuries
-            and cat.not_working()
-            and game.clan
-            and game.clan.game_mode == "cruel season"
-        ):
-            nutrition.max_score += CONDITION_INCREASE * factor
-            nutrition.current_score = nutrition.max_score
 
         self.nutrition_info[cat.ID] = nutrition
 
