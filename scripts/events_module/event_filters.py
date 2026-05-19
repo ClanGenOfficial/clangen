@@ -8,7 +8,10 @@ from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility
 from scripts.special_dates import get_special_date, contains_special_date_tag
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank, get_possible_mates
+from scripts.clan_package.get_clan_cats import (
+    find_alive_cats_with_rank,
+    get_possible_mates,
+)
 from scripts.game_structure import game
 
 ALL_BACKSTORIES_LIST = set(
