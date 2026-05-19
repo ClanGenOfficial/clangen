@@ -181,7 +181,7 @@ class InheritanceDb:
         cousins.discard(cat_id)
         return cousins
 
-    def get_relatives(self, cat_id: str, cousin_allowed: bool) -> Set[str]:
+    def get_relatives(self, cat_id: str, cousin_not_relative: bool) -> Set[str]:
         get_relative_functions = (
             self.get_parents,
             self.get_children,
@@ -195,7 +195,9 @@ class InheritanceDb:
         relatives = set()
         for get_relative_function in get_relative_functions:
             relatives.update(get_relative_function(cat_id))
-        if cousin_allowed:
+
+        if not cousin_not_relative:
+            # cousin counts as relative
             relatives.update(self.get_cousins(cat_id))
         return relatives
 
