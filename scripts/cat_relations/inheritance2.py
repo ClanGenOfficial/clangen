@@ -197,7 +197,7 @@ class InheritanceDb:
             relatives.update(get_relative_function(cat_id))
 
         if exclude_cousins:
-            pass
+            return relatives
         else:
             relatives.update(self.get_cousins(cat_id))
         return relatives
