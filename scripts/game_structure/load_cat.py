@@ -357,7 +357,6 @@ def json_load():
         if constants.CONFIG["save_load"]["load_integrity_checks"]:
             save_check()
 
-    # have to load before thoughts but after cats are done
     inheritance_db.clear_stored_data()
     inheritance_db.load_inheritances(Cat, get_faded_ids)
 
