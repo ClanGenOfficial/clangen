@@ -740,7 +740,7 @@
         "location": ["beach:camp4"],
         "season": ["any"],
         "frequency": 1,
-        "event_text": "m_c was playing too close to the water, and {PRONOUN/m_c/poss} screams are swallowed by the ocean as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} under.",
+        "event_text": "m_c was playing too close to the water. {PRONOUN/m_c/poss/CAP} screams are swallowed by the ocean as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} under, and does not resurface.",
         "m_c": {
             "age": [
                 "kitten"
