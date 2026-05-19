@@ -231,13 +231,13 @@ def event_for_poi(pois: dict[str, list]) -> bool:
     if not get_poi_names_set():
         return False  # we know they're requesting something
 
-    names, tags = False, False
+    has_matching_name, has_matching_tags = False, False
     if "name" in pois:
-        names = not set(pois.get("name", [])).isdisjoint(get_poi_names_set())
+        has_matching_name = not set(pois.get("name", [])).isdisjoint(get_poi_names_set())
 
     if "tags" in pois:
-        tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
-    return names or tags
+        has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
+    return has_matching_name or has_matching_tags
 
 
 def event_for_reputation(required_rep: list) -> bool:
