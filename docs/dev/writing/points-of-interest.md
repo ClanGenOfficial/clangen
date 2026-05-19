@@ -14,11 +14,11 @@ New points of interest can be created in resources/dicts/points_of_interest.json
     }
 ~~~
 
-The ID should be formatted as what category of Point of Interest it is and something to describe  the location itself. 
+The ID should be formatted as the category it is and a term to describe the location itself. For example: `gathering_meteor` is a gathering place most defined by a meteor crater. 
 
 Biomes are listed the same way they are for short events and patrols, by using the biome's name in quotation marks or "any".
 
-Options for categories and tags are listed in a section below, each should be within quotation marks with a comma between them (if necessary).
+Options for categories and tags are listed in [categories and tags](#categories-and-tags) below, each should be within quotation marks with a comma between them (if necessary).
 
 Here is an example of how a Point of Interest is coded.
 
@@ -30,7 +30,7 @@ Here is an example of how a Point of Interest is coded.
     }
 ~~~
 
-After adding a Point of Interest to their dicts file, it must also be added to resources/lang/en/points_of_interest.en.json. This allows you to determine what the Point of Interest is displayed as in game.
+After adding a Point of Interest to their dicts file, it must also be added to `resources/lang/en/points_of_interest.en.json`. This allows you to determine what the Point of Interest is displayed as in game.
 
 It is formatted as such:
 
@@ -43,7 +43,7 @@ Here are some examples of what a completed version looks like:
 ~~~
 "gather_fourtrees": "Fourtrees",
 "moon_pool": "the Moonpool",
-"terrain_deepforest": "the densest part of the forest",
+"terrain_deepforest": "the deep forest",
 ~~~
 
 Gathering locations and Moonplaces should be capitalized and written as a proper noun. Terrain features can be a named location, ie: Sunning Rocks, or can be a brief description such as "a copse of aspen trees"
@@ -62,7 +62,7 @@ Points of Interest are distributed into three categories. Each Territory has ran
 | territory | This is a feature within the Clan's territory that is notable due to either its appearance or opportunities around it. Three can be discovered per territory.                                    |
 
 ## Tags 
-Points of Interests can fall into many different tags that denote circumstances around them to help specify how it can be used and what events/patrols it would fit with.
+Points of Interests can use many different tags that denote circumstances around them to help specify how it can be used and what events/patrols it would fit with.
 
 |        Tag        |                                                           Description                                                           |
 |:-----------------:|:-------------------------------------------------------------------------------------------------------------------------------:|
@@ -77,11 +77,14 @@ Points of Interests can fall into many different tags that denote circumstances 
 |       rocks       |                                   feature that primarily includes rocks, boulders, or stone.                                    |
 |      tainted      |                                  carries a risk of injury or illness due to unsafe conditions                                   |
 |       trees       |                                                       incorporates trees.                                                       |
-|      Twolegs      |                          revolves around Twolegs. Has more specific tags. Should not be used together.                          |
+|      Twolegs      |                revolves around Twolegs. Has more specific tags. Should not be used alongside other twoleg tags.                 |
 | Twolegs:abandoned |                    An object, structure, area created or modified by Twolegs that has since been abandoned.                     |
 |  Twolegs:present  |                   An object, structure, area created or modified by Twolegs that has regular Twoleg activity.                   |
 |     unstable      | If there is a potential for the structure to collapse in some way, unstable ceilings, unstable ground, an old tree branch, etc. |
-|       water       |                                         Lakes, streams, waterfalls, oceans, bays, etc.                                          |
+|       water       |                  revolves around water. Has more specific tags. Should not be used alongside other water tags.                  |
+|    water:still    |                              still bodies of water such as lakes, ponds, and some areas of marshes                              |
+|   water:flowing   |                                              streams, rivers, rills, deltas, etc.                                               |
+|    water:ocean    |                                                large saltwater bodies of water.                                                 |
 
 # Using Points of Interest
 
@@ -89,7 +92,7 @@ Points of Interests can fall into many different tags that denote circumstances 
 
 Patrols and Short Events now have an additional constraint that can be utilized to include either a specific Point of Interest ID or tag. 
 
-You can add this to any short event or patrol to constrain by Point of Interest, however, remember to constrain either via names, or by a single tag.
+You can add this to any short event or patrol to constrain by Point of Interest. However, remember to constrain either via names or by a single tag, but not by both at once.
 
 ~~~
 "poi": {
@@ -100,7 +103,7 @@ You can add this to any short event or patrol to constrain by Point of Interest,
 
 ## Using the Point Of Interest in a Sentence
 
-Using a system similar to pronoun tags, Points of Interests can be mentioned in Short Events or Patrols with {POI} followed by relevant information, either the Points of Interest's IDs, or tags for a pool of Points of Interest.
+Using a system similar to pronoun tags, Points of Interests can be mentioned in Short Events or Patrols with {POI} followed by relevant information; either the Points of Interest's IDs, or tags for a pool of Points of Interest.
 
 A Point of Interest can either contain multiple names, separated by commas OR a single tag. Multiple tags cannot be used, nor should you mix tags and names.
 
