@@ -13313,7 +13313,7 @@
     "any"
   ],
   "frequency": 3,
-  "event_text": "m_c caught r_c trying to sneak out of camp while on guard duty.",
+  "event_text": "While on guard duty, m_c caught r_c trying to sneak out of camp.",
   "m_c": {
     "status": [
       "warrior",
