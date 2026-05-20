@@ -1,4 +1,7 @@
 from enum import Enum
+from typing import List, Union
+
+from pydantic import BaseModel, RootModel
 
 
 class PointsOfInterestTagEnum(Enum):
@@ -23,6 +26,17 @@ class PointsOfInterestTagEnum(Enum):
     WATER_OCEAN = "water:ocean"
 
 
-class PointsOfInterestGroup(Enum):
-    name = "name"
-    tags = "tags"
+class PointsOfInterestTag(RootModel):
+    root: Union[str, PointsOfInterestTagEnum]
+
+
+class PointsOfInterestGroupByName(BaseModel):
+    name: List[str]
+
+
+class PointsOfInterestGroupByTags(BaseModel):
+    tags: List[PointsOfInterestTag]
+
+
+class PointsOfInterestGroup(RootModel):
+    root: Union[PointsOfInterestGroupByName, PointsOfInterestGroupByTags]
