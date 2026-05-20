@@ -996,7 +996,15 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small cut", "poisoned"
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "poisoned"
                 ]
             }
         ],
