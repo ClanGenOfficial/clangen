@@ -966,5 +966,22 @@
       "scar": "m_c was scarred after failing to climb the broken ship."
     }
   ]
-}
+},
+    {
+        "event_id": "bch_injury_urchin1",
+        "location": ["beach:camp4"],
+        "season": ["any"],
+        "frequency": 2,
+        "event_text": "m_c steps on something in the sand that causes {PRONOUN/m_c/object} to yelp. Seems like {PRONOUN/m_c/subject} stepped on a sea urchin.",
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            }
+        ]
+    }
 ]
