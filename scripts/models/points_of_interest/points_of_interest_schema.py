@@ -17,7 +17,6 @@ class PointOfInterestItem(BaseModel):
     biome: List[Union[BiomeNoExclusions, Literal["any"]]] = Field(
         ..., description="Biomes the Point of Interest belongs to."
     )
-    # tags seem able to be kind of arbitrary, so this is just for autocomplete
     tags: List[PointsOfInterestTag]
 
 
