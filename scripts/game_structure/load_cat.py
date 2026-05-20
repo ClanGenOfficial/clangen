@@ -25,6 +25,7 @@ from scripts.game_structure import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
 from ..cat.status import StatusDict
+from ..clan_resources.point_of_interest import generate_and_add_new_poi, PoiType
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
@@ -701,11 +702,12 @@ def version_convert(version_info):
                     c.permanent_condition[con].pop("moons_with")
                 c.permanent_condition[con]["moon_start"] = game.clan.age - moons_with
 
+    # freshkill start for older clans
     if version < 3 and game.clan.freshkill_pile:
-        # freshkill start for older clans
         add_prey = game.clan.freshkill_pile.amount_food_needed() * 2
         game.clan.freshkill_pile.add_freshkill(add_prey)
 
+    # death history text revision
     if version < 4:
         for c in Cat.all_cats.values():
             if not c.status.is_leader:
@@ -720,3 +722,11 @@ def version_convert(version_info):
                 # check if a period is present and append one if not
                 if death["text"][-1] != ".":
                     death["text"] += "."
+
+    # generate points of interest
+    if version < 5:
+        generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.GATHERING)
+        generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.MOONPLACE)
+
+        for i in range(3):
+            generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.TERRAIN)
