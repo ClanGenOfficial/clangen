@@ -144,7 +144,7 @@
         }
     },
     {
-        "event_id": "bch_misc_any_oceandanger",
+        "event_id": "bch_misc_any_oceandanger1",
         "location": [
             "beach:camp4"
         ],
@@ -161,13 +161,55 @@
                 "senior"
             ],
             "relationship_status": [
-                "parent/child",
+                "parent/child"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "kitten"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": "m_c took the time to teach r_c about the dangerous things in the sea."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_any_oceandanger2",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c down to the edge of the water, and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "relationship_status": [
                 "mentor/app"
             ]
         },
         "r_c": {
             "age": [
-                "kitten",
                 "adolescent"
             ]
         },
