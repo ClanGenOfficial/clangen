@@ -727,7 +727,7 @@
             "beach:camp4"
         ],
         "season": [
-            "any"
+            "-greenleaf"
         ],
         "sub_type": [
             "mass_death"
@@ -749,7 +749,7 @@
             "beach:camp4"
         ],
         "season": [
-            "any"
+            "-greenleaf"
         ],
         "frequency": 1,
         "event_text": "m_c was playing too close to the water. {PRONOUN/m_c/poss/CAP} screams are swallowed by the ocean as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} under and does not resurface.",

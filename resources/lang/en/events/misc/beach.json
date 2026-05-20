@@ -152,14 +152,8 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "m_c takes r_c down to the edge of the water, and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
+        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
         "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
             "relationship_status": [
                 "parent/child"
             ]
@@ -198,23 +192,13 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "m_c takes r_c down to the edge of the water, and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
+        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
         "m_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
             "relationship_status": [
                 "mentor/app"
             ]
         },
-        "r_c": {
-            "age": [
-                "adolescent"
-            ]
-        },
+        "r_c": {},
         "relationships": [
             {
                 "cats_from": [
@@ -234,5 +218,37 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "bch_misc_any_kitseaglass",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c paws at the pretty, glittering seaglass tangled in the seaweed that hangs over the nursery entrance.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_any_elderbarncacles",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "frequency": 3,
+        "event_text": "m_c peers over the edge of the rock, past the barnacles exposed by the low tide, searching for something in {PRONOUN/m_c/poss} reflection in the sea below.",
+        "m_c": {
+            "status": [
+                "elder"
+            ]
+        }
     }
 ]
