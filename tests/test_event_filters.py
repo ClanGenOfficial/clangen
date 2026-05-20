@@ -5,6 +5,13 @@ from itertools import permutations
 
 from scripts.cat.personality import Personality
 from scripts.cat.skills import Skill, SkillPath
+from scripts.clan_resources.point_of_interest import (
+    add_poi,
+    get_poi_names_set,
+    get_poi_tags_set,
+    clear_pois,
+    generate_and_add_new_poi,
+)
 
 try:
     import tomllib
@@ -26,6 +33,7 @@ from scripts.events_module.event_filters import (
     event_for_season,
     event_for_tags,
     event_for_cat,
+    event_for_poi,
 )
 from scripts.game_structure import game
 
@@ -186,6 +194,184 @@ class TestEventFilters(unittest.TestCase):
             event_for_tags(["high_lives", "low_lives", "some_lives"], self.test_cat),
             "Assert 1-life leader does not pass mixed tag list where they qualify for 1 tag, but not others.",
         )
+
+
+class TestPointsOfInterest(unittest.TestCase):
+    def setUp(self):
+        game.clan = Clan()
+        game.clan.biome = "Forest"
+        game.clan.override_biome = False
+        game.clan.camp_bg = "camp1"
+        game.clan.starting_season = "Newleaf"
+        game.clan.game_mode = "classic"
+
+        self.test_cat = create_cat(CatRank.LEADER, moons=50)
+        game.clan.leader = self.test_cat
+
+        clear_pois()
+
+    def test_add_poi(self):
+        # add the POI
+        poi_to_add = {
+            "test_name": {
+                "category": "gathering",
+                "biome": ["any"],
+                "tags": ["water", "prey:fish"],
+            }
+        }
+
+        add_poi("test_name", poi_to_add["test_name"])
+
+        # confirm it exists
+        self.assertIn("test_name", get_poi_names_set())
+
+        # confirm tags exist appropriately
+        self.assertIn("water", get_poi_tags_set())
+        self.assertIn("prey:fish", get_poi_tags_set())
+        self.assertIn("prey", get_poi_tags_set())
+        self.assertNotIn("fish", get_poi_tags_set())
+
+    def test_clear_pois(self):
+        poi_to_add = {
+            "test_name": {
+                "category": "gathering",
+                "biome": ["any"],
+                "tags": ["water", "prey:fish"],
+            }
+        }
+
+        add_poi("test_name", poi_to_add["test_name"])
+
+        # clear POI
+        clear_pois()
+
+        # confirm it not exists
+        self.assertNotIn("test_name", get_poi_names_set())
+        # confirm tags removed exist appropriately
+        self.assertNotIn("water", get_poi_tags_set())
+        self.assertNotIn("prey:fish", get_poi_tags_set())
+        self.assertNotIn("prey", get_poi_tags_set())
+
+    def test_choose_poi(self):
+        possible_pois = {
+            "forest_poi": {
+                "category": "gathering",
+                "biome": ["forest"],
+                "tags": ["trees"],
+            },
+            "plains_poi": {
+                "category": "gathering",
+                "biome": ["plains"],
+                "tags": ["Twolegs"],
+            },
+            "terrain_poi": {
+                "category": "terrain",
+                "biome": ["forest"],
+                "tags": ["rocks"],
+            },
+            "moonplace_poi": {
+                "category": "moonplace",
+                "biome": ["forest"],
+                "tags": ["rocks"],
+            },
+        }
+
+        # combinations in the order "expected name", "not expected name", "biome", "category"
+        combinations = {
+            "biome": ["forest_poi", "plains_poi", "Forest", "gathering"],
+            "category": ["terrain_poi", "moonpool_poi", "Forest", "terrain"],
+        }
+
+        for name, (expected, unexpected, biome, category) in combinations.items():
+            with self.subTest(name=name):
+                clear_pois()
+                generate_and_add_new_poi(
+                    biome=biome, category=category, possible_pois=possible_pois
+                )
+
+                # confirm it exists
+                self.assertIn(expected, get_poi_names_set())
+                self.assertNotIn(unexpected, get_poi_names_set())
+
+        with self.subTest(title="file loaded PoIs"):
+            clear_pois()
+            generate_and_add_new_poi(biome="Forest", category="gathering")
+            self.assertEqual(len(get_poi_names_set()), 1)
+            self.assertGreater(len(get_poi_tags_set()), 0)
+
+    def test_error_forbid_duplicate_poi(self):
+        poi_to_add = {
+            "test_name": {
+                "category": "gathering",
+                "biome": ["any"],
+                "tags": ["water", "prey:fish"],
+            }
+        }
+
+        add_poi("test_name", poi_to_add["test_name"])
+        self.assertRaises(
+            Exception,
+            generate_and_add_new_poi,
+            biome="Forest",
+            category="gathering",
+            possible_pois=poi_to_add,
+        )
+
+    def test_error_no_possible_poi(self):
+        poi_to_add = {
+            "test_name": {
+                "category": "gathering",
+                "biome": ["any"],
+                "tags": ["water", "prey:fish"],
+            }
+        }
+
+        self.assertRaises(
+            Exception,
+            generate_and_add_new_poi,
+            biome="Forest",
+            category="moonplace",
+            possible_pois=poi_to_add,
+        )
+
+    def test_filter_poi(self):
+        # add the POI
+        poi_to_add = {
+            "test_name": {
+                "category": "gathering",
+                "biome": ["any"],
+                "tags": ["water", "prey:fish"],
+            }
+        }
+
+        add_poi("test_name", poi_to_add["test_name"])
+
+        # expected True combinations
+        combinations = {
+            "match name": {"name": ["test_name"]},
+            "match name multi": {"name": ["other_possibility", "test_name"]},
+            "match tag generic to generic": {"tags": ["water"]},
+            "match tag exact to exact": {"tags": ["prey:fish"]},
+            "match tag generic to exact": {"tags": ["prey"]},
+            "empty all": {"name": [], "tags": []},
+            "empty name": {"name": [], "tags": ["water"]},
+            "empty tags": {"name": ["test_name"], "tags": []},
+        }
+
+        for title, event_poi in combinations.items():
+            with self.subTest(title=title):
+                self.assertTrue(event_for_poi(event_poi))
+
+        # expected False combinations
+        bad_combinations = {
+            "no name": {"name": ["something_else", "aint_it_chief"]},
+            "no tag": {"tags": ["Twolegs", "cave"]},
+            "match generic tag but not exact": {"tags": ["prey:bird"]},
+        }
+
+        for title, event_poi in bad_combinations.items():
+            with self.subTest(title=title):
+                self.assertFalse(event_for_poi(event_poi))
 
 
 class TestInterpersonalRelationshipConstraints(unittest.TestCase):

@@ -7,6 +7,7 @@ from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility
+from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
@@ -215,6 +216,30 @@ def event_for_tags(
             return False
 
     return True
+
+
+def event_for_poi(pois: dict[str, list]) -> bool:
+    """
+    Checks if the Clan has a POI matching pois
+    :param pois: possible points of interest
+    :return: True if there's a match, False if not
+    """
+    if all(not value for value in pois.values()):
+        # fields may exist but are empty
+        return True
+
+    if not get_poi_names_set():
+        return False  # we know they're requesting something
+
+    has_matching_name, has_matching_tags = False, False
+    if "name" in pois:
+        has_matching_name = not set(pois.get("name", [])).isdisjoint(
+            get_poi_names_set()
+        )
+
+    if "tags" in pois:
+        has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
+    return has_matching_name or has_matching_tags
 
 
 def event_for_reputation(required_rep: list) -> bool:
