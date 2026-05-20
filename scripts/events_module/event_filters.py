@@ -587,11 +587,11 @@ def _check_cat_gender(cat, genders: list) -> bool:
 def cat_for_event(
     constraint_dict: dict,
     possible_cats: list,
+    tags: list,
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
     injuries: list = None,
     return_id: bool = True,
-    tags: list = None,
 ):
     """
     Checks the given cat list against constraint_dict to find any eligible cats.
