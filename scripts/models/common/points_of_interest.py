@@ -13,6 +13,8 @@ class PointsOfInterestTagEnum(Enum):
     PREY_FLYING = "prey:flying"
     PREY_WATER = "prey:water"
     PREY_GROUND = "prey:ground"
+    PREY_EGGS = "prey:eggs"
+    PREY_FISH = "prey:fish"
     ROCKS = "rocks"
     TAINTED = "tainted"
     TREES = "trees"
@@ -24,6 +26,7 @@ class PointsOfInterestTagEnum(Enum):
     WATER_STILL = "water:still"
     WATER_FLOWING = "water:flowing"
     WATER_OCEAN = "water:ocean"
+    NESTS = "nests"
 
 
 class PointsOfInterestTag(RootModel):

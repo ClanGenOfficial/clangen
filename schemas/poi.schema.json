@@ -78,6 +78,8 @@
         "prey:flying",
         "prey:water",
         "prey:ground",
+        "prey:eggs",
+        "prey:fish",
         "rocks",
         "tainted",
         "trees",
@@ -88,7 +90,8 @@
         "water",
         "water:still",
         "water:flowing",
-        "water:ocean"
+        "water:ocean",
+        "nests"
       ],
       "title": "PointsOfInterestTagEnum",
       "type": "string"
