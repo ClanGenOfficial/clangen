@@ -3183,7 +3183,7 @@
         "season": [
             "any"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "event_text": "m_c was injured after a fight with a Clanmate that r_c encouraged.",
         "m_c": {
             "age": [
@@ -3200,6 +3200,7 @@
             ]
         },
         "r_c": {
+            "relationship_status": ["dislikes", "avoids"],
             "age": [
                 "any"
             ],
@@ -3213,7 +3214,6 @@
                 "bloodthirsty",
                 "bold",
                 "cold",
-                "daring",
                 "fierce",
                 "strict",
                 "vengeful"
@@ -5592,6 +5592,7 @@
             "age": [
                 "-kitten"
             ],
+"relationship_status": ["doubts"],
             "status": [
                 "any"
             ],
@@ -5612,7 +5613,6 @@
                 "bloodthirsty",
                 "bold",
                 "cold",
-                "daring",
                 "fierce",
                 "righteous",
                 "strict",
@@ -5760,6 +5760,7 @@
         "frequency": 1,
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "m_c": {
+            "relationship_status": ["doubts"],
             "status": [
                 "-kitten",
                 "-leader"
@@ -5846,7 +5847,8 @@
             ],
             "trait": [
                 "-loyal"
-            ]
+            ],
+            "relationship_status": ["doubts"]
         },
         "r_c": {
             "age": [
@@ -5917,6 +5919,7 @@
         "frequency": 1,
         "event_text": "m_c was hurt by r_c to make an example out of {PRONOUN/m_c/object}.",
         "m_c": {
+            "relationship_status": ["doubts"],
             "age": [
                 "any"
             ],
@@ -8304,7 +8307,8 @@
             [
                 "clancat",
                 "exists",
-                "age:young adult"
+                "age:young adult",
+                "meeting"
             ]
         ],
         "injury": [

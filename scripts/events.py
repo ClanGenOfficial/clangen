@@ -90,7 +90,7 @@ def one_moon():
 
     game.cur_events_list = []
     game.herb_events_list = []
-    game.freshkill_events_list = []
+    game.freshkill_event_list = []
     game.mediated = []
     switch_set_value(Switch.saved_clan, False)
     new_cat_invited = False
@@ -1228,7 +1228,10 @@ def check_war():
     # grab our war "notice" for this moon
     event = random.choice(war_events)
     event = ongoing_event_text_adjust(
-        Cat, event, other_clan_name=f"{enemy_clan.name}Clan", clan=game.clan
+        Cat,
+        event,
+        other_clan_name=i18n.t("general.clan", name=enemy_clan.name),
+        clan=game.clan,
     )
     game.cur_events_list.append(Single_Event(event, "other_clans"))
 
@@ -1754,11 +1757,13 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
 
         # Gather for backstories.json ----------------------------------------------------
         tags = []
-        if cat.backstory == ["abandoned1", "abandoned2", "abandoned3"]:
+        if (
+            cat.backstory
+            in BACKSTORIES["backstory_categories"]["abandoned_backstories"]
+        ):
             tags.append("abandoned")
         elif cat.backstory == "clanborn":
             tags.append("clanborn")
-
         temp = possible_ceremonies.intersection(ceremony_id_by_tag["general_backstory"])
 
         for t in tags:

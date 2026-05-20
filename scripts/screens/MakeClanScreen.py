@@ -1297,7 +1297,7 @@ class MakeClanScreen(Screens):
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
 
-        return f"<b>{cat.name}</b><br>{cat.get_genderalign_string()}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('cat.personality.' + cat.personality.trait)}<br>{cat.skills.skill_string(short=True)}"
+        return f"<b>{cat.name}</b><br>{cat.genderalign_string}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('cat.personality.' + cat.personality.trait)}<br>{cat.skills.skill_string(short=True)}"
 
     def open_game_mode(self):
         # Clear previous screen
@@ -1442,9 +1442,10 @@ class MakeClanScreen(Screens):
         self.elements["name_entry"].set_forbidden_characters("forbidden_file_path")
         self.elements["name_entry"].set_text_length_limit(11)
         self.elements["clan"] = pygame_gui.elements.UITextBox(
-            "-Clan",
+            "general.clan",
             ui_scale(pygame.Rect((375, 600), (100, 25))),
             object_id="#text_box_30_horizcenter_light",
+            text_kwargs={"name": "-"},
             manager=MANAGER,
         )
         self.elements["reset_name"] = UISurfaceImageButton(
@@ -1474,9 +1475,10 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(
-            self.clan_name + "Clan",
+            "general.clan",
             ui_scale(pygame.Rect((292, 100), (216, 50))),
             object_id=ObjectID("#text_box_30_horizcenter_vertcenter", "#dark"),
+            text_kwargs={"name": self.clan_name},
             manager=MANAGER,
         )
 
@@ -1866,7 +1868,7 @@ class MakeClanScreen(Screens):
             object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="screens.make_clan.season_tooltip",
-            tool_tip_text_kwargs={"season": i18n.t("general.newleaf").capitalize()},
+            tool_tip_text_kwargs={"season": i18n.t("general.Newleaf")},
         )
         self.tabs["greenleaf_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((625, 25), (39, 34))),
@@ -1875,7 +1877,7 @@ class MakeClanScreen(Screens):
             object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="screens.make_clan.season_tooltip",
-            tool_tip_text_kwargs={"season": i18n.t("general.greenleaf").capitalize()},
+            tool_tip_text_kwargs={"season": i18n.t("general.Greenleaf")},
             anchors={"top_target": self.tabs["newleaf_tab"]},
         )
         self.tabs["leaffall_tab"] = UISurfaceImageButton(
@@ -1885,7 +1887,7 @@ class MakeClanScreen(Screens):
             object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="screens.make_clan.season_tooltip",
-            tool_tip_text_kwargs={"season": i18n.t("general.leaf-fall").capitalize()},
+            tool_tip_text_kwargs={"season": i18n.t("general.Leaf-fall")},
             anchors={"top_target": self.tabs["greenleaf_tab"]},
         )
         self.tabs["leafbare_tab"] = UISurfaceImageButton(
@@ -1895,7 +1897,7 @@ class MakeClanScreen(Screens):
             object_id="@buttonstyles_icon_tab_left",
             manager=MANAGER,
             tool_tip_text="screens.make_clan.season_tooltip",
-            tool_tip_text_kwargs={"season": i18n.t("general.leaf-bare").capitalize()},
+            tool_tip_text_kwargs={"season": i18n.t("general.Leaf-bare")},
             anchors={"top_target": self.tabs["leaffall_tab"]},
         )
         # Random background
@@ -1945,7 +1947,8 @@ class MakeClanScreen(Screens):
         )
         self.text["clan_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 0), (-1, -1))),
-            text=f"{self.clan_name}Clan",
+            text="general.clan",
+            text_kwargs={"name": self.clan_name},
             container=self.elements["text_container"],
             object_id=get_text_box_theme("#text_box_40"),
             manager=MANAGER,

@@ -15,7 +15,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 4,
+        "frequency": 2,
         "intro_text": "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's newleaf minimum, they can see where they're going.",
         "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later.",
         "chance_of_success": 40,

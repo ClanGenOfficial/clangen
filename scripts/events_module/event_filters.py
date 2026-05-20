@@ -7,6 +7,7 @@ from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility
+from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
@@ -215,6 +216,30 @@ def event_for_tags(
             return False
 
     return True
+
+
+def event_for_poi(pois: dict[str, list]) -> bool:
+    """
+    Checks if the Clan has a POI matching pois
+    :param pois: possible points of interest
+    :return: True if there's a match, False if not
+    """
+    if all(not value for value in pois.values()):
+        # fields may exist but are empty
+        return True
+
+    if not get_poi_names_set():
+        return False  # we know they're requesting something
+
+    has_matching_name, has_matching_tags = False, False
+    if "name" in pois:
+        has_matching_name = not set(pois.get("name", [])).isdisjoint(
+            get_poi_names_set()
+        )
+
+    if "tags" in pois:
+        has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
+    return has_matching_name or has_matching_tags
 
 
 def event_for_reputation(required_rep: list) -> bool:
@@ -1012,18 +1037,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     # Filtering relationship values
     # these don't get exclusionary values because it's giving me a headache
     # each cat has to have relationships toward each other matching every level tag
+    group_ids = [cat.ID for cat in group]
     for tier in filter_types:
         for inter_cat in group:
             if len(group) == 2 and inter_cat == group[1]:
                 # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
                 # groups > 2 will require that all cats feel the same way toward each other.
                 continue
-            group_ids = [cat.ID for cat in group]
 
             relevant_relationships = [
-                rel
-                for rel in inter_cat.relationships.values()
-                if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
+                inter_cat.relationships[cat_id]
+                for cat_id in group_ids
+                if cat_id in inter_cat.relationships
             ]
 
             # list of every cat's tier list
@@ -1059,19 +1084,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
                     # get the tier's index within the rel_types's list
                     index = rel_type_tiers[rel_type].index(rel_tier)
-                    allowed_tiers = []
+                    allowed_tiers = set()
                     # if it's a pos tier, we allow that index and higher
                     if rel_tier.is_any_pos:
-                        allowed_tiers = rel_type_tiers[rel_type][index:]
+                        allowed_tiers = set(rel_type_tiers[rel_type][index:])
                     # if it's a neg tier, we allow that index and lower
                     elif rel_tier.is_any_neg:
-                        allowed_tiers = rel_type_tiers[rel_type][0 : index + 1]
+                        allowed_tiers = set(rel_type_tiers[rel_type][0 : index + 1])
 
                     discard = True
-                    for _t in tier_list:
-                        if _t in allowed_tiers:
-                            discard = False
-                            break
+                    tier_set = set(tier_list)
+                    if allowed_tiers.intersection(tier_set):
+                        discard = False
                     if discard:
                         return False
 

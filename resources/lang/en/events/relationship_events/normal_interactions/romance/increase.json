@@ -211,18 +211,18 @@
 		"id": "rom_inc_med_patrols9",
 		"intensity": "medium",
 		"interactions": [
-            		"m_c and r_c played around during patrol and got in a bit of trouble, but still returned to camp smiling.",
-            		"m_c just barely missed a mouse, but r_c caught it right after, handing it off to {PRONOUN/m_c/object}.",
-            		"m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp.",
+            "m_c and r_c played around during patrol and got in a bit of trouble, but still returned to camp smiling.",
+        	"m_c just barely missed a mouse, but r_c caught it right after, handing it off to {PRONOUN/m_c/object}.",
+            "m_c and r_c got so into playing around that they got separated from the rest of the patrol, earning themselves an earful back at camp.",
 			"m_c feels giddy about getting on the same patrol as r_c."
 		],
 		"main_status_constraint":[
 			"-elder",
-			"-kit"
+			"-kitten"
 		],
 		"random_status_constraint":[
 			"-elder",
-			"-kit"
+			"-kitten"
 		],
 		"reaction_random_cat": {
 			"romance": "increase",

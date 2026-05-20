@@ -43,18 +43,18 @@
         "trust_word": "trust",
         "romance": "Romance (%{count})",
         "romance_word": "romance",
-        "positive_postscript": " (positive effect)",
-        "positive_postscript_low": " (low positive effect)",
-        "positive_postscript_medium": " (medium positive effect)",
-        "positive_postscript_high": " (high positive effect)",
-        "negative_postscript": " (negative effect)",
-        "negative_postscript_low": " (low negative effect)",
-        "negative_postscript_medium": " (medium negative effect)",
-        "negative_postscript_high": " (high negative effect)",
-        "neutral_postscript": " (neutral effect)",
+        "positive_postscript": "%{text} (positive effect)",
+        "positive_postscript_low": "%{text} (low positive effect)",
+        "positive_postscript_medium": "%{text} (medium positive effect)",
+        "positive_postscript_high": "%{text} (high positive effect)",
+        "negative_postscript": "%{text} (negative effect)",
+        "negative_postscript_low": "%{text} (low negative effect)",
+        "negative_postscript_medium": "%{text} (medium negative effect)",
+        "negative_postscript_high": "%{text} (high negative effect)",
+        "neutral_postscript": "%{text} (neutral effect)",
         "age_postscript": {
-            "one": "- %{name} was %{count} moon old",
-            "many": "- %{name} was %{count} moons old"
+            "one": "%{text} - %{name} was %{count} moon old",
+            "many": "%{text} - %{name} was %{count} moons old"
         },
         "relationship_log": "These cats recently interacted."
     }

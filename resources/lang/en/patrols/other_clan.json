@@ -1373,7 +1373,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -1399,7 +1399,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -1407,7 +1407,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -1837,7 +1837,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -1863,7 +1863,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -1871,7 +1871,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -2301,7 +2301,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -2327,7 +2327,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -2335,7 +2335,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -2765,7 +2765,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -2791,7 +2791,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -2799,7 +2799,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -3245,7 +3245,7 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "relationships": [{
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
@@ -3253,7 +3253,7 @@
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,

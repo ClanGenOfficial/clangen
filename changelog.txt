@@ -1,3 +1,26 @@
+<strong>v0.13.1</strong>
+- Fixed patrol results not displaying all received conditions when the outcome applies multiple conditions.
+- Fixed the Warrior Den screen crashing the game when all focus settings are false.
+- Fixed an event that would cause a crash when assigning an adoptive parent.
+- Fixed freshkill log not resetting on timeskip.
+- Fixed freshkill supply change events not appearing in the log.
+- Fixed freshkill consumption display to prevent weird decimals.
+- Fixed cats not dying on a patrol despite text implying they do.
+- Fixed a patrol where a cat would join the Clan when they weren't meant to.
+- Fixed constraints on the "go on patrol" relationship event so that kits wouldn't receive it.
+- Fixed a patrol that could result in a cat receiving a nonsensical permanent condition.
+- Fixed version number not appearing in the bottom right corner.
+- Fixed medicine cats receiving some ill-fitting thoughts.
+- Fixed a crash related to how we retrieve default risk chances.
+- Fixed apprentices kit-sitting their own littermates.
+- Fixed a self-interaction in a training patrol.
+- Fixed a variety of typos.
+
+- Changed relationship constraints of "maim" events
+- Added new events regarding other Clan relationships to help balance out the "new leader breaks alliances" event.
+- Allowed more outsider events to pull from existing outsiders instead of generating new ones
+- Adjusted frequency of a variety of events
+
 <strong>v0.13.0</strong>
 
 After seasons of silence, StarClan has finally spoken!
