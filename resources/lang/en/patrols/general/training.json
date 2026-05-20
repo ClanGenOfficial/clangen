@@ -18208,8 +18208,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was glad cat_from went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                        "cats_from": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan.",
+                        "cats_to": "cat_to was glad cat_from went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18259,8 +18259,8 @@
                         ],
                         "amount": -12,
                         "log": {
-                            "cats_from": "cat_from was frightened and disappointed when p_l scolded {PRONOUN/app1/object} for befriending a kittypet.",
-                            "cats_to": "cat_to was disgusted with cat_to's disloyalty for befriending a kittypet."
+                            "cats_from": "cat_from was frightened and disappointed when cat_to scolded {PRONOUN/cat_from/object} for befriending a kittypet.",
+                            "cats_to": "cat_to was disgusted with cat_from's disloyalty for befriending a kittypet."
                         }
                     }
                 ],
