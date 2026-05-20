@@ -975,6 +975,14 @@
       "title": "OutsiderRep",
       "type": "string"
     },
+    "PointsOfInterestGroup": {
+      "enum": [
+        "name",
+        "tags"
+      ],
+      "title": "PointsOfInterestGroup",
+      "type": "string"
+    },
     "RC": {
       "additionalProperties": false,
       "properties": {
@@ -1398,6 +1406,20 @@
           },
           "title": "Tags",
           "type": "array"
+        },
+        "poi": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description": "The relevant points of interest. Points of Interest never affect outcome.",
+          "propertyNames": {
+            "$ref": "#/$defs/PointsOfInterestGroup"
+          },
+          "title": "Poi",
+          "type": "object"
         },
         "frequency": {
           "description": "Controls how common an event is. 4 == Common, 3 == Uncommon, 2 == Rare, 3 == Very Rare. Consider this in the terms of 'If an event of this type happened every moon for 10 moons, on how many of those moons should this sort of event appear?'",
