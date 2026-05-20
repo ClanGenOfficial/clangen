@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import List, Union
 
-from pydantic import BaseModel, RootModel
+from pydantic import BaseModel, Field, RootModel
 
 
 class PointsOfInterestTagEnum(Enum):
@@ -31,11 +31,15 @@ class PointsOfInterestTag(RootModel):
 
 
 class PointsOfInterestGroupByName(BaseModel):
-    name: List[str]
+    name: List[str] = Field(
+        ..., description="Points of Interest with these specific IDs will be allowed."
+    )
 
 
 class PointsOfInterestGroupByTags(BaseModel):
-    tags: List[PointsOfInterestTag]
+    tags: List[PointsOfInterestTag] = Field(
+        ..., description="Points of Interest with these tags will be allowed."
+    )
 
 
 class PointsOfInterestGroup(RootModel):
