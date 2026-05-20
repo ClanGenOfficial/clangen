@@ -21,6 +21,12 @@
                 "events/new_cat/*.json",
                 "events/injury/*.json"
             ]
+        },
+        {
+            "url": "./schemas/poi.schema.json",
+            "fileMatch": [
+                "points_of_interest.json"
+            ]
         }
     ],
     "python.formatting.provider": "yapf",
