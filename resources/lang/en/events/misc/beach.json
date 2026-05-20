@@ -183,7 +183,9 @@
                     "comfort"
                 ],
                 "amount": 10,
-                "log": "m_c took the time to teach r_c about the dangerous things in the sea."
+                "log": {
+                    "cats_from": "m_c took the time to teach r_c about the dangerous things in the sea."
+                }
             }
         ]
     },
@@ -227,7 +229,9 @@
                     "comfort"
                 ],
                 "amount": 10,
-                "log": "m_c took the time to teach r_c about the dangerous things in the sea."
+                "log": {
+                    "cats_from": "m_c took the time to teach r_c about the dangerous things in the sea."
+                }
             }
         ]
     }
