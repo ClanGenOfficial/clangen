@@ -260,7 +260,7 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN/m_c/subject/CAP} {VERB/m_c/smile/smiles at seeing {PRONOUN/m_c/poss} kit happy.",
+        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN/m_c/subject/CAP} {VERB/m_c/smile/smiles} at seeing {PRONOUN/m_c/poss} kit happy.",
         "m_c": {
             "relationship_status": [
                 "parent/child"

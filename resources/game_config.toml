@@ -452,17 +452,17 @@ dev_tools = false
 
 [event_generation]
   # forces event with this id to occur
-  debug_ensure_event_id = "bch_death_kit_drown"
+  debug_ensure_event_id = "bch_misc_any_beachcombing1"
 
   # forces events of this kind to occur. can be:
   #   "new_cat" | "death" | "injury" | "misc"
-  debug_type_override = "death"
+  debug_type_override = "misc"
 
   # forces specified event to occur regardless of if requirements are met
   debug_override_requirements = false
 
   # forces the given frequency, frequency can be a number from 1-4
-  debug_override_frequency = 1
+  debug_override_frequency = 3
 
 [death_related]
   # base 1/chance that leader will die
