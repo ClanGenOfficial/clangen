@@ -91,6 +91,6 @@ def test_shortevents(shortevent_file: Path):
 
 
 def test_points_of_interest():
-    """Test that all shortevent JSONs are correct according to the Pydantic models"""
+    """Test that the Points of Interest JSON is correct according to the Pydantic models"""
     poi_file = RESOURCES_DIR / "dicts/points_of_interest.json"
     PointsOfInterestSchema.model_validate_json(poi_file.read_text())
