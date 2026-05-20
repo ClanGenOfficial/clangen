@@ -2158,8 +2158,7 @@
   ],
   "tags": [],
   "exclude_involved": [
-    "m_c",
-    "n_c:0"
+    "m_c"
   ],
   "frequency": 2,
   "event_text": "At the Gathering, o_c_n's leader announces they have exiled a warrior for an unforgivable crime. They advise the other Clans to keep their guards up.",
@@ -2215,8 +2214,7 @@
   ],
   "tags": [],
   "exclude_involved": [
-    "m_c",
-    "n_c:0"
+    "m_c"
   ],
   "frequency": 1,
   "event_text": "At the Gathering, o_c_n's deputy takes their place among the other leaders and declares the previous leader was driven out, but may still stalk the borders.",
@@ -2272,8 +2270,7 @@
   ],
   "tags": [],
   "exclude_involved": [
-    "m_c",
-    "n_c:0"
+    "m_c"
   ],
   "frequency": 1,
   "event_text": "At the Gathering, o_c_n's leader announces their medicine cat has been exiled for a terrible transgression. They warn the other Clans that the exiled cat is not to be trusted and should be killed on sight.",
@@ -2329,8 +2326,7 @@
   ],
   "tags": [],
   "exclude_involved": [
-    "m_c",
-    "n_c:0"
+    "m_c"
   ],
   "frequency": 1,
   "event_text": "At the Gathering, o_c_n's leader announces their deputy did something terrible and was exiled. They look mournful as they deliver the news and advise the others to watch their borders closely.",
