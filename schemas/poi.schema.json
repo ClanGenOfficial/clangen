@@ -43,14 +43,7 @@
         },
         "tags": {
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/$defs/Tag"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/$defs/PointsOfInterestTag"
           },
           "title": "Tags",
           "type": "array"
@@ -64,7 +57,18 @@
       "title": "PointOfInterestItem",
       "type": "object"
     },
-    "Tag": {
+    "PointsOfInterestTag": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestTagEnum"
+        }
+      ],
+      "title": "PointsOfInterestTag"
+    },
+    "PointsOfInterestTagEnum": {
       "enum": [
         "cave",
         "covered",
@@ -86,7 +90,7 @@
         "water:flowing",
         "water:ocean"
       ],
-      "title": "Tag",
+      "title": "PointsOfInterestTagEnum",
       "type": "string"
     }
   },
