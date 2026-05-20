@@ -161,7 +161,8 @@
                 "senior"
             ],
             "relationship_status": [
-                "parent/child","mentor/app"
+                "parent/child",
+                "mentor/app"
             ]
         },
         "r_c": {
@@ -172,10 +173,17 @@
         },
         "relationships": [
             {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
                 "mutual": false,
-                "values": ["trust","comfort"],
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
                 "amount": 10,
                 "log": "m_c took the time to teach r_c about the dangerous things in the sea."
             }
