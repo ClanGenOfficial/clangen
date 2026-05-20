@@ -285,5 +285,44 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "bch_misc_any_beachcombing2",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN/m_c/subject/CAP} {VERB/m_c/blush/blushes} at r_c's smile.",
+        "m_c": {
+            "relationship_status": [
+                "fancies"
+            ]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "like",
+                    "romance"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cats_from spent time looking for treasures on the beach with cats_to."
+                }
+            }
+        ]
     }
 ]
