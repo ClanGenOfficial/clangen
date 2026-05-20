@@ -439,7 +439,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 ***
 
 ## Interpersonal Relationships
-> These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat.
+> These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat. 
 
 | string            |                                    | Patrol Use Specifics                   |
 |-------------------|------------------------------------|----------------------------------------|
@@ -454,7 +454,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 You can utilize [#exclusionary tags](#exclusionary-tags).
 
 !!! warning
-    Within ShortEvents, these should only be used in m_c's relationship constraints.
+    Within ShortEvents, these should only be used in m_c's relationship constraints. They do not function as a pool. If you constrain a patrol to "child/parent", "app/mentor" the relationship between the cats <i>must</i> meet both criteria i.e. a parent who is the mentor to their apprentice child. 
 
 ***
 
