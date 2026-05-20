@@ -45,4 +45,7 @@ class PointsOfInterestGroupByTags(BaseModel):
 
 
 class PointsOfInterestGroup(RootModel):
-    root: Union[PointsOfInterestGroupByName, PointsOfInterestGroupByTags]
+    root: Union[PointsOfInterestGroupByName, PointsOfInterestGroupByTags] = Field(
+        ...,
+        description="Specifies Points of Interest constraints. Must use EITHER names or tags.",
+    )
