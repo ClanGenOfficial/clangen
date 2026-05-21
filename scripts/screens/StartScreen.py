@@ -70,13 +70,8 @@ class StartScreen(Screens):
                 os.system(f'start "" {event.link_target}')
             elif platform.system() == "Linux":
                 subprocess.Popen(["xdg-open", event.link_target])
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS or (
-            event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN
-        ):
-            if event.type == pygame.KEYDOWN:
-                element = self.current_focus
-            else:
-                element = event.ui_element
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            element = event.ui_element
 
             screens = {
                 self.continue_button: GameScreen.CAMP,
@@ -126,6 +121,8 @@ class StartScreen(Screens):
         self.closebtn.kill()
         for btn in self.social_buttons:
             self.social_buttons[btn].kill()
+
+        super().exit_screen()
 
     def reload_errors(self):
         if switch_get_value(Switch.error_message):

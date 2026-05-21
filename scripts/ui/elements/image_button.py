@@ -6,6 +6,7 @@ from pygame_gui.core import IContainerLikeInterface, UIElement, ObjectID
 from pygame_gui.core.gui_type_hints import RectLike, Coordinate
 from pygame_gui.core.interfaces import IUIManagerInterface
 
+from scripts.game_input import INPUT_ACTION_PRESSED, Action
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import screen
 
@@ -235,3 +236,13 @@ class UIImageButton(pygame_gui.elements.UIButton):
         super().on_unhovered()
         if self.is_focused:
             self.drawable_shape.set_active_state("selected")
+
+    def process_event(self, event: pygame.event.Event) -> bool:
+        if self.is_focused and event.type == INPUT_ACTION_PRESSED:
+            if event.action == Action.CONFIRM:
+                self.on_self_event(
+                    pygame_gui.UI_BUTTON_START_PRESS,
+                    {"mouse_button": pygame.BUTTON_LEFT},
+                )
+
+        return super().process_event(event)

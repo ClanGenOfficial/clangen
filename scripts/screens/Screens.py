@@ -272,7 +272,7 @@ class Screens:
     def exit_screen(self):
         """Runs when screen exits"""
         # reset matrix map so that it can be recreated cleanly later
-        self.matrix_map = [[]]
+        self.matrix_map.clear()
         pass
 
     # Functions to deal with the menu and mute button.
