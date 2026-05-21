@@ -13,9 +13,9 @@
             "hovered_text": "#000000",
             "selected_text": "#000000",
             "disabled_text": "#000000",
-            "link_text": "#B68727",
-            "link_hover": "#EFE5CE",
-            "link_selected": "#3A91A6",
+            "link_text": "#223A25",
+            "link_hover": "#2F4C2F",
+            "link_selected": "#2F4C2F",
             "text_shadow": "#777777",
             "normal_border": "#776045",
             "hovered_border": "#291B0F",
@@ -271,9 +271,9 @@
             "dark_bg": "#FFFF0000",
             "selected_bg": "#776045",
             "selected_text": "#AC9D72",
-            "link_text": "#2E8B57",
-            "link_hover": "#556B2F",
-            "link_selected": "#556B2F"
+            "link_text": "#223A25",
+            "link_hover": "#2F4C2F",
+            "link_selected": "#2F4C2F"
         },
         "misc": {"border_width": "0", "shadow_width": "0"}
     },

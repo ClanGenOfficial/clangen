@@ -48,7 +48,9 @@ class AllegiancesScreen(Screens):
         self.show_menu_buttons()
         self.show_mute_buttons()
         self.set_disabled_menu_buttons(["allegiances"])
-        self.update_heading_text(f"{game.clan.displayname}Clan")
+        self.update_heading_text(
+            "general.clan", text_kwargs={"name": game.clan.displayname}
+        )
         allegiance_list = self.get_allegiances_text()
 
         self.scroll_container = UIModifiedScrollingContainer(

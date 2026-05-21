@@ -63,6 +63,16 @@
 		]
 	},
 	{
+		"id": "comfort_inc_med_avoids",
+		"interactions": [
+			"It seems like there's an unspoken apology between m_c and r_c."
+		],
+		"relationship_constraint": ["avoids"],
+		"reaction_random_cat": {
+			"comfort": "increase"
+		}
+	},
+	{
 		"id": "comfort_inc_med1",
 		"interactions": [
 			"r_c helps m_c pick burrs out of {PRONOUN/m_c/poss} fur.",

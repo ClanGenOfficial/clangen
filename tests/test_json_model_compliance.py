@@ -12,6 +12,9 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 from scripts.models.patrol.patrol_schema import PatrolSchema
 from scripts.models.shortevent.short_event_schema import ShortEventSchema
 from scripts.models.thought.thought_schema import ThoughtSchema
+from scripts.models.points_of_interest.points_of_interest_schema import (
+    PointsOfInterestSchema,
+)
 
 
 ROOT_DIR = Path(__file__).parent.parent
@@ -85,3 +88,9 @@ def test_patrols(patrol_file: Path):
 def test_shortevents(shortevent_file: Path):
     """Test that all shortevent JSONs are correct according to the Pydantic models"""
     ShortEventSchema.model_validate_json(shortevent_file.read_text())
+
+
+def test_points_of_interest():
+    """Test that the Points of Interest JSON is correct according to the Pydantic models"""
+    poi_file = RESOURCES_DIR / "dicts/points_of_interest.json"
+    PointsOfInterestSchema.model_validate_json(poi_file.read_text())

@@ -110,8 +110,8 @@ class FreshkillPileTest(unittest.TestCase):
     def tearDown(self):
         rempath = get_save_dir() + "/" + self.test_clan_name
         shutil.rmtree(rempath)
-        if os.path.exists(rempath + "clan.json"):
-            os.remove(rempath + "clan.json")
+        if os.path.exists(rempath + "/clan.json"):
+            os.remove(rempath + "/clan.json")
 
     @classmethod
     def tearDownClass(cls):

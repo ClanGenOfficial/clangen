@@ -544,6 +544,8 @@ class Status:
         # adding a cat who has been in a clan in the past, they will take their old rank if possible
         elif self.is_former_clancat and not self.group.is_afterlife():
             new_rank = self.find_prior_clan_rank()
+            if new_rank == CatRank.NEWBORN and not age == CatAge.NEWBORN:
+                new_rank = CatRank.KITTEN
             # we don't need to change leaders and deps if they're going to an afterlife
             if (
                 new_rank in (CatRank.LEADER, CatRank.DEPUTY)
@@ -712,7 +714,7 @@ class Status:
         # if no group given
         if not group_ID:
             for entry in self.standing_history:
-                if CatStanding.EXILED in entry["standing"]:
+                if CatStanding.EXILED == entry["standing"][-1]:
                     return True
             return False
 
