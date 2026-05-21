@@ -117,7 +117,7 @@ class Screens:
         self.game_bgs = {}
         self.fullscreen_bgs = {}
 
-        self.current_selection: Optional[UIElement] = None
+        self.current_focus: Optional[UIElement] = None
         """The element currently being selected. Used for keybinds."""
         self.matrix_map: list[list[Optional[UIElement]]] = []
         """Used to map the placement of interactable elements on a screen. This allows keyboard inputs to move 'focus' from one element to another element in a logical and predetermined order."""
@@ -221,37 +221,52 @@ class Screens:
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here."""
+        # mute handling
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            out = self.mute_button_pressed(event)
+            if out:
+                return
+
+        # keybinds become live when a bound input is pressed
+        # and are turned off when the mouse is clicked
+        if event.type in (pygame.MOUSEBUTTONDOWN, pygame_gui.UI_BUTTON_ON_HOVERED):
+            switch_set_value(Switch.keybinds_live, False)
+            self.current_focus.unfocus()
+
+        elif event.type == INPUT_ACTION_PRESSED:
+            switch_set_value(Switch.keybinds_live, True)
+
         # keybind handling
-        if game_setting_get("keybinds"):
-            # handling mouse hovers! we want the mouse to be able to change the focused element
-            if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-                set_focus(new_focus=event.ui_element, old_focus=self.current_selection)
-                self.current_selection = event.ui_element
+        if switch_get_value(Switch.keybinds_live):
+            # if we weren't focused at all, then we just start with whatever the old current was
+            if not self.current_focus.is_focused:
+                set_focus(new_focus=self.current_focus)
+
             # handling changing the focus via keyboard and controller
             elif event.type == INPUT_ACTION_PRESSED:
                 if event.action == Action.DOWN:
-                    self.current_selection = focus_matrix.find_next_focus(
+                    self.current_focus = focus_matrix.find_next_focus(
                         self.matrix_map,
                         Action.DOWN,
-                        last_element=self.current_selection,
+                        last_element=self.current_focus,
                     )
                 elif event.action == Action.UP:
-                    self.current_selection = focus_matrix.find_next_focus(
+                    self.current_focus = focus_matrix.find_next_focus(
                         self.matrix_map,
                         Action.UP,
-                        last_element=self.current_selection,
+                        last_element=self.current_focus,
                     )
                 elif event.action == Action.LEFT:
-                    self.current_selection = focus_matrix.find_next_focus(
+                    self.current_focus = focus_matrix.find_next_focus(
                         self.matrix_map,
                         Action.LEFT,
-                        last_element=self.current_selection,
+                        last_element=self.current_focus,
                     )
                 elif event.action == Action.RIGHT:
-                    self.current_selection = focus_matrix.find_next_focus(
+                    self.current_focus = focus_matrix.find_next_focus(
                         self.matrix_map,
                         Action.RIGHT,
-                        last_element=self.current_selection,
+                        last_element=self.current_focus,
                     )
 
     def exit_screen(self):
@@ -327,7 +342,7 @@ class Screens:
             return False
 
         if event.type == pygame.KEYDOWN:
-            element = self.current_selection
+            element = self.current_focus
         else:
             element = event.ui_element
 

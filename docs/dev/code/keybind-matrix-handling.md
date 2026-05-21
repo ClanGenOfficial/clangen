@@ -10,17 +10,17 @@ Screens need to be set up with this matrix map in order for the keybinding to wo
 
 ```py
     def handle_event(self, event):
-      if event.type == pygame_gui.UI_BUTTON_START_PRESS or (
-          event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN
-      ): # (1)
-          if event.type == pygame.KEYDOWN:
-              element = self.current_selection  # (2)
-          else:
-              element = event.ui_element
-          
-          if element == self.element_on_the_screen:  # (3)
-              do_something()
-          
+    if event.type == pygame_gui.UI_BUTTON_START_PRESS or (
+            event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN
+    ):  # (1)
+        if event.type == pygame.KEYDOWN:
+            element = self.current_focus  # (2)
+        else:
+            element = event.ui_element
+
+        if element == self.element_on_the_screen:  # (3)
+            do_something()
+
 ```
 
 1.  `event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN` allows us to detect that the `enter` button was pressed down, which we must treat the same as a normal button click.

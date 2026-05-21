@@ -4,6 +4,7 @@ from typing import Optional
 from pygame_gui.core import UIElement
 
 from scripts.game_input import Action
+from scripts.game_structure.game import switch_get_value, Switch
 from scripts.ui.scale import ui_scale_value
 
 
@@ -191,14 +192,16 @@ def find_next_focus(
     return new_element
 
 
-def set_focus(new_focus: UIElement, old_focus: UIElement):
+def set_focus(new_focus: UIElement, old_focus: Optional[UIElement] = None):
     """
     Sets the given element as focused and unfocuses the prior element.
     :param new_focus: The element to focus
     :param old_focus: The element to unfocus
     """
-    old_focus.unfocus()
-    new_focus.focus()
+    if switch_get_value(Switch.keybinds_live):
+        if old_focus:
+            old_focus.unfocus()
+        new_focus.focus()
 
 
 def _valid_row(current_map, disallowed_element, possible_row) -> list:

@@ -37,6 +37,7 @@ class Switch(StrEnum):
     no_able_left = auto()
     new_leader = auto()
     switch_clan = auto()
+    keybinds_live = auto()
 
 
 _switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
@@ -64,6 +65,7 @@ _switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
     "no_able_left": False,
     "new_leader": None,
     "switch_clans": False,
+    "keybinds_live": False,
 }
 """If you are somehow accessing this from outside game_switches.py, something has gone terribly wrong."""
 

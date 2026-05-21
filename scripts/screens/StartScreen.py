@@ -32,6 +32,7 @@ from scripts.ui.windows.update_available import UpdateAvailableWindow
 from scripts.ui.windows.changelog import ChangelogWindow
 from scripts.housekeeping.datadir import open_data_dir, open_url
 from ..housekeeping.quit_game import quit_game
+from ..ui.focus_matrix import set_focus
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
@@ -73,7 +74,7 @@ class StartScreen(Screens):
             event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN
         ):
             if event.type == pygame.KEYDOWN:
-                element = self.current_selection
+                element = self.current_focus
             else:
                 element = event.ui_element
 
@@ -209,9 +210,10 @@ class StartScreen(Screens):
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
-        self.continue_button.focus()
-        self.current_selection = self.continue_button
+        set_focus(new_focus=self.continue_button)
+        self.current_focus = self.continue_button
         element_list.append(self.continue_button)
+
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.switch_clan",
