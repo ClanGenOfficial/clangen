@@ -65,14 +65,14 @@ class Relationship:
         """
 
         # romance operates on a 0-100 scale, 0 is no romantic interest and 100 is full romantic interest
-        self.romance = romance
+        self._romance = min(max(romance, 0), 100)
 
         # each stat can go from -100 to 100
         # negative numbers are the negative state while positive is the positive state
-        self.like = like
-        self.respect = respect
-        self.trust = trust
-        self.comfort = comfort
+        self._like = min(max(like, -100), 100)
+        self._respect = min(max(respect, -100), 100)
+        self._trust = min(max(trust, -100), 100)
+        self._comfort = min(max(comfort, -100), 100)
 
     def to_dict(self):
         return {
