@@ -101,10 +101,17 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect", 
+                            "trust"
+                        ],
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
@@ -542,7 +549,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "On their way to mark the far corners of their mountain, r_c starts telling a story of their ancestors to keep every cat entertained.",
+        "intro_text": "On their way to mark the far corners of their mountain, r_c starts telling a story of {PRONOUN/r_c/poss} ancestors to keep every cat entertained.",
         "decline_text": "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -640,8 +647,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
                         "mutual": true,
                         "values": ["like", "respect", "comfort"],
                         "amount": -10,

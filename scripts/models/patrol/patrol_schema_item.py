@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from pydantic_core import MISSING
 from scripts.models.common.biome import Biome
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
+from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.season import Season
 from scripts.models.common.skill import Skill
@@ -30,6 +31,10 @@ class PatrolSchemaItem(BaseModel):
     tags: List[PatrolTag] = Field(
         ...,
         description="Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
+    )
+    poi: Union[PointsOfInterestGroup, MISSING] = Field(
+        MISSING,
+        description="The relevant points of interest. Points of Interest never affect outcome.",
     )
     patrol_art: Optional[str] = Field(
         ...,

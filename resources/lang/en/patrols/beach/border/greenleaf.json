@@ -66,5 +66,163 @@
                 "frequency": 4
             }
         ]
+    },
+    {
+        "patrol_id": "bch_bord_greenleaf_ship1",
+        "biome": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "frequency": 2,
+        "chance_of_success": 60,
+        "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing—a piece of a floating nest. Towering over the cats, its jagged edges jut out at broken angles. Beneath the salt, Twoleg scent lingers in the air.",
+        "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
+        "success_outcomes": [
+            {
+                "text": "p_l investigates the interior of the washed-up floating nest. It appears to be lying on its side, with Twoleg stuff tumbled over and fallen in heaps. Giant, tough cobwebs lie next to a coil of thick, flexible vine. There is even a bright, shiny white-and-red striped ring, sized almost perfectly to nap within. But they have a task to do, and after noting the discovery, refresh the border markings without incident.",
+                "exp": 10,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "mutual": false,
+                        "values": [
+                            "trust", "respect"
+                        ],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "cat_from witnessed p_l's calm assessment of a wrecked floating Twoleg nest and felt more secure afterward."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "With a deep, probing breath, s_c perks up. There's something else in there, beside the salt and Twoleg stench. Following {PRONOUN/s_c/poss} nose through the shaded debris, {PRONOUN/s_c/subject} eventually {VERB/s_c/sink/sinks} {PRONOUN/s_c/poss} teeth into one of the several still-fresh fishes, tangled in giant cobwebs inside. c_n will feast tonight!",
+                "exp": 10,
+                "stat_skill": [
+                    "SENSE,1"
+                ],
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "like", "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed by s_c’s keen senses and enjoyed sharing in the scavenged fishes from a wrecked floating Twoleg nest."
+                        }
+                    }
+                ],
+                "prey": [
+                    "small"
+                ]
+            },
+            {
+                "text": "s_c ambles inside, sticking {PRONOUN/s_c/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c/subject} eventually {VERB/s_c/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand—as s_c soon demonstrates—will be an excellent border marker that no one can pretend to overlook.",
+                "exp": 10,
+                "stat_skill": [
+                    "CLEVER,1",
+                    "CAMP,1"
+                ],
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "trust", "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed by s_c's ingenious border marker, scavenged from a wrecked floating Twoleg nest, and knows {PRONOUN/cat_from/subject} can rely on {PRONOUN/s_c/poss} resourcefulness."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "s_c stalks closer, then freezes, eyes trained on a twisted carcass half-pinned under the wreckage. A great serpentine fish lies with eyes glazed and empty, flies starting to crawl over its smooth scales. s_c trembles, watching the oarfish's characteristic long, draped antennae fan out and ride on the lapping waves. This is an omen, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} to p_l. Grave danger is coming, but if c_n prepares now, they can weather the storm.",
+                "exp": 10,
+                "stat_skill": [
+                    "OMEN,1"
+                ],
+                "frequency": 1,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol", "-s_c"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "trust", "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from witnessed s_c interpret the dire omen of a washed-up oarfish and felt glad to have {PRONOUN/s_c/object} in the Clan."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "There's something in there, tangled in with the debris and brightly-coloured Twoleg furs. As p_l takes a step towards it, the wind turns, and the scent of carrion intensifies. Avoiding the crowfood, the patrol quickly walks on... but wonders what it once was.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "s_c confidently strolls inside, only to trip on a loose board and tumble into a pile of giant, Twoleg-made cobwebs! The sun has moved significantly by the time the patrol frees s_c, whose time spent wrapped up with rotting fishes has left its mark. The o_c_n patrol they encounter at the border a short while later is not amused and quickly departs upwind.",
+                "exp": 0,
+                "stat_trait": [
+                    "troublesome",
+                    "childish",
+                    "arrogant",
+                    "shameless",
+                    "flamboyant",
+                    "daring",
+                    "bold",
+                    "competitive",
+                    "oblivious",
+                    "adventurous",
+                    "confident",
+                    "fierce"
+                ],
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "like", "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from didn't enjoy patrolling beside a s_c stinking of rotting fish due to {PRONOUN/s_c/poss} own carelessness. Or the looks {PRONOUN/cat_from/subject} got from a o_c_n patrol because of it."
+                        }
+                    }
+                ],
+                "other_clan_rep": -1
+            }
+        ]
     }
 ]

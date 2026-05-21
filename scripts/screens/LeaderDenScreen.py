@@ -343,7 +343,6 @@ class LeaderDenScreen(Screens):
                     first_temper=i18n.t(f"screens.leader_den.{self.clan_temper[0]}"),
                     second_temper=i18n.t(f"screens.leader_den.{self.clan_temper[1]}"),
                 ),
-                "clan": game.clan.displayname,
             },
         )
 
@@ -473,10 +472,11 @@ class LeaderDenScreen(Screens):
                 f"clan_name{i}"
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 10), (133, -1))),
-                text=f"{other_clan.name}Clan",
+                text="general.clan",
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
+                text_kwargs={"name": other_clan.name},
                 anchors={
                     "centerx": "centerx",
                     "top_target": self.other_clan_selection_elements[f"clan_symbol{i}"],
@@ -631,10 +631,11 @@ class LeaderDenScreen(Screens):
 
         self.focus_clan_elements["clan_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 15), (215, -1))),
-            text=f"{self.focus_clan.name}Clan",
+            text="general.clan",
             object_id="#text_box_30_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
+            text_kwargs={"name": self.focus_clan.name},
             anchors={
                 "centerx": "centerx",
                 "top_target": self.focus_clan_elements["clan_symbol"],
