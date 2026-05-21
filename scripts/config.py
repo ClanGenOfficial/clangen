@@ -1,12 +1,12 @@
 import tomllib
 
-from game.switches import switch_get_value, Switch
+from scripts.game_structure.game.switches import switch_get_value, Switch
 
 with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
     CONFIG = tomllib.loads(read_file.read())
 
 #config_path passed as a string using dot notation
-def get_config_value(clan, config_path):
+def get_config(clan, config_path):
         
     war_effected = {
         ("death_related", "leader_death_chance"): (
