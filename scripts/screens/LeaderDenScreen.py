@@ -268,7 +268,6 @@ class LeaderDenScreen(Screens):
                 "m_c": game.clan.leader if not self.no_leader else None,
                 "count": 1,
             },
-            anchors={"bottom_target": self.screen_elements["temper_text"]},
         )
         self.screen_elements["outsider_notice_text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((68, 375), (445, -1))),
@@ -334,7 +333,7 @@ class LeaderDenScreen(Screens):
         self.screen_elements["clan_notice_text"].show()
 
         self.screen_elements["temper_text"] = pygame_gui.elements.UITextBox(
-            relative_rect=ui_scale(pygame.Rect((68, 410), (445, -1))),
+            relative_rect=ui_scale(pygame.Rect((10, 0), (445, -1))),
             html_text="screens.leader_den.temper_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
@@ -345,6 +344,7 @@ class LeaderDenScreen(Screens):
                     second_temper=i18n.t(f"screens.leader_den.{self.clan_temper[1]}"),
                 ),
             },
+            anchors={"top_target": self.screen_elements["clan_notice_text"]},
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
