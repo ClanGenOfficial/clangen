@@ -32,7 +32,7 @@ from scripts.ui.windows.update_available import UpdateAvailableWindow
 from scripts.ui.windows.changelog import ChangelogWindow
 from scripts.housekeeping.datadir import open_data_dir, open_url
 from ..housekeeping.quit_game import quit_game
-from ..ui.focus_matrix import set_focus
+from ..ui.focus_matrix import _set_focus
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
@@ -207,8 +207,7 @@ class StartScreen(Screens):
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
-        set_focus(new_focus=self.continue_button)
-        self.current_focus = self.continue_button
+        self.set_focus(self.continue_button)
         interactive_elements.append(self.continue_button)
 
         self.switch_clan_button = UISurfaceImageButton(
@@ -418,13 +417,11 @@ class StartScreen(Screens):
             self.continue_button.enable()
         else:
             self.continue_button.disable()
-            self.update_map([self.continue_button], remove=True)
 
         if len(switch_get_value(Switch.clan_list)) > 1:
             self.switch_clan_button.enable()
         else:
             self.switch_clan_button.disable()
-            self.update_map([self.switch_clan_button], remove=True)
 
         self.reload_errors()
 

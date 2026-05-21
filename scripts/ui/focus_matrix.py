@@ -18,8 +18,15 @@ def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[l
     for element in new_elements:
         # first, find the current y positions represented
         current_rows: dict[int, list] = {}
+        already_present = False
         for row in current_map:
+            if element in row:
+                already_present = True  # don't add an element that's already there
+                break
             current_rows[row[0].get_abs_rect().y] = row
+
+        if already_present:
+            continue
 
         # then position of the new element
         position = element.get_abs_rect()
@@ -166,33 +173,41 @@ def find_next_focus(
     # going LEFT!
     if direction == Action.LEFT and new_col is None:
         # find the new col, wrapping if necessary
-        if prior_col - 1 >= 0:
-            new_col = prior_col - 1
-        else:
-            new_col = len(current_map[new_row]) - 1
+        while _element_is_not_valid(current_map, new_row, new_col):
+            if prior_col - 1 >= 0:
+                new_col = prior_col - 1
+            else:
+                new_col = len(current_map[new_row]) - 1
+            prior_col = new_col
+
     # going RIGHT!
     elif direction == Action.RIGHT and new_col is None:
-        # find the new col, wrapping if necessary
-        if prior_col + 1 <= len(current_map[new_row]) - 1:
-            new_col = prior_col + 1
-        else:
-            new_col = 0
+        while _element_is_not_valid(current_map, new_row, new_col):
+            # find the new col, wrapping if necessary
+            if prior_col + 1 <= len(current_map[new_row]) - 1:
+                new_col = prior_col + 1
+            else:
+                new_col = 0
+            prior_col = new_col
+
     # if neither, then we keep our column the same IF POSSIBLE
     elif new_col is None:
-        if len(current_map[new_row]) - 1 < prior_col:
-            new_col = len(current_map[new_row]) - 1
-        else:
-            new_col = prior_col
+        while _element_is_not_valid(current_map, new_row, new_col):
+            if len(current_map[new_row]) - 1 < prior_col:
+                new_col = len(current_map[new_row]) - 1
+            else:
+                new_col = prior_col
+            prior_col = new_col
 
     new_element = current_map[new_row][new_col]
 
-    set_focus(new_focus=new_element, old_focus=last_element)
+    _set_focus(new_focus=new_element, old_focus=last_element)
 
     # return the element at the newly found indexes!
     return new_element
 
 
-def set_focus(new_focus: UIElement, old_focus: Optional[UIElement] = None):
+def _set_focus(new_focus: UIElement, old_focus: Optional[UIElement] = None):
     """
     Sets the given element as focused and unfocuses the prior element.
     :param new_focus: The element to focus
@@ -220,8 +235,23 @@ def _valid_row(current_map, disallowed_element, possible_row) -> list:
     if disallowed_element in row_without_cur_element:
         row_without_cur_element.remove(disallowed_element)
     for ele in row_without_cur_element.copy():
-        # remove any disabled ones, as we don't want to focus those
+        # remove any disabled or hidden ones, as we don't want to focus those
         if not ele.is_enabled:
+            row_without_cur_element.remove(ele)
+        if not ele.visible:
             row_without_cur_element.remove(ele)
 
     return row_without_cur_element
+
+
+def _element_is_not_valid(current_map, new_row, new_col):
+    # needs to be `is None` to avoid picking up 0 index
+    if new_col is None:
+        return True
+
+    if (
+        not current_map[new_row][new_col].is_enabled
+        or not current_map[new_row][new_col].visible
+    ):
+        return True
+    return False

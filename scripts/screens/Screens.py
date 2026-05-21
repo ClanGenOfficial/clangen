@@ -27,7 +27,7 @@ from scripts.game_structure.screen_settings import (
 )
 from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
 from scripts.ui import focus_matrix
-from scripts.ui.focus_matrix import set_focus
+from scripts.ui.focus_matrix import _set_focus
 from scripts.ui.windows.freshkill import FreshkillManagementWindow
 from scripts.ui.windows.herbs import HerbManagementWindow
 from scripts.ui.windows.save_check import SaveCheckWindow
@@ -240,7 +240,7 @@ class Screens:
         if switch_get_value(Switch.keybinds_live):
             # if we weren't focused at all, then we just start with whatever the old current was
             if not self.current_focus.is_focused:
-                set_focus(new_focus=self.current_focus)
+                self.set_focus(self.current_focus)
 
             # handling changing the focus via keyboard and controller
             elif event.type == INPUT_ACTION_PRESSED:
@@ -294,6 +294,10 @@ class Screens:
         else:
             self.matrix_map = focus_matrix.add_to_map(self.matrix_map, element_list)
 
+    def set_focus(self, element: UIElement):
+        _set_focus(new_focus=element, old_focus=self.current_focus)
+        self.current_focus = element
+
     @classmethod
     def hide_menu_buttons(cls):
         """This hides the menu buttons, so they are no longer visible
@@ -329,11 +333,13 @@ class Screens:
             self.menu_buttons["unmute_button"].show()
             self.menu_buttons["mute_button"].hide()
             self.update_map([self.menu_buttons["unmute_button"]])
+            self.set_focus(self.menu_buttons["unmute_button"])
 
         else:
             self.menu_buttons["unmute_button"].hide()
             self.menu_buttons["mute_button"].show()
             self.update_map([self.menu_buttons["mute_button"]])
+            self.set_focus(self.menu_buttons["mute_button"])
 
     def mute_button_pressed(self, event):
         """This is a short-up to deal with mute button presses.
@@ -341,10 +347,7 @@ class Screens:
         if game.audio.disabled:
             return False
 
-        if event.type == pygame.KEYDOWN:
-            element = self.current_focus
-        else:
-            element = event.ui_element
+        element = event.ui_element
 
         if element == Screens.menu_buttons["mute_button"]:
             game.audio.mute()

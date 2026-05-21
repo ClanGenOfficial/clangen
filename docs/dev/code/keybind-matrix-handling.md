@@ -14,3 +14,6 @@ However, if elements are being added or removed, then you'll need to be updating
 1. When elements are added, pass a list of them through `self.update_map` and the map will be updated.
 2. When elements are removed, pass a list of them through `self.update_map` before they are killed. Be sure to set the arg `remove` to True.
 3. The map will have been updated and no further action from you is required.
+
+!!! tip
+    You don't have to worry about adding and removing elements if they're being temporarily disabled or hidden. The map automatically skips over "invalid" elements when searching for a new element to focus on.
