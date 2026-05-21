@@ -192,8 +192,12 @@ class Skill:
     def __repr__(self) -> str:
         return f"<Skill: {self.path}, {self.points}, {self.tier}, {self.interest_only}>"
 
-    def get_short_skill(self):
-        return Skill.short_strings.get(self.path, "???")
+    def get_short_skill_string(self):
+        """
+        Returns a localized short string descriptor of the skill
+        :return: string representing the skill
+        """
+        return i18n.t(f"cat.skills.{Skill.short_strings.get(self.path, 'unknown')}")
 
     @staticmethod
     def generate_from_save_string(save_string: str):
@@ -414,9 +418,9 @@ class CatSkills:
 
         if short:
             if self.primary:
-                output.append(i18n.t(f"cat.skills.{self.primary.get_short_skill()}"))
+                output.append(self.primary.get_short_skill_string())
             if self.secondary:
-                output.append(i18n.t(f"cat.skills.{self.secondary.get_short_skill()}"))
+                output.append(self.secondary.get_short_skill_string())
         else:
             if self.primary:
                 output.append(i18n.t(f"cat.skills.{self.primary.skill}"))
@@ -619,8 +623,7 @@ class CatSkills:
                 try:
                     path = HiddenSkillEnum[path]
                 except KeyError:
-                    print(f"{path} is not a real skill path")
-                    return False
+                    raise KeyError(f"{path} is not a real skill path")
 
         if isinstance(path, HiddenSkillEnum):
             if path == self.hidden:

@@ -5,9 +5,9 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.ui_elements import UISurfaceImageButton
-from scripts.utility import get_text_box_theme
-from scripts.utility import ui_scale
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..ui.scale import ui_scale
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.game.settings import game_setting_get

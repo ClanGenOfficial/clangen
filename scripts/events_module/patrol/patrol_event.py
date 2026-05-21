@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
-from typing import List, Union
+from typing import List, Union, Dict
 
+from scripts.cat.personality import Personality
+from scripts.cat.skills import SkillPath
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
+from scripts.game_structure import constants
 
 
 class PatrolEvent:
+    NUM_OF_TRAITS = len(Personality.trait_ranges["normal_traits"].keys()) + len(
+        Personality.trait_ranges["kit_traits"].keys()
+    )
+    NUM_OF_SKILLS = len(SkillPath)
+
     def __init__(
         self,
         patrol_id,
@@ -14,7 +22,8 @@ class PatrolEvent:
         season: List[str] = None,
         types: List[str] = None,
         tags: List[str] = None,
-        weight: int = 20,
+        frequency: int = 4,
+        poi: Union[Dict[str, List], None] = None,
         patrol_art: Union[str, None] = None,
         patrol_art_clean: Union[str, None] = None,
         intro_text: str = "",
@@ -31,40 +40,90 @@ class PatrolEvent:
         pl_skill_constraints: List[str] = None,
         pl_trait_constraints: List[str] = None,
     ):
+        self.weight = 1
+
         self.patrol_id = patrol_id
-        self.weight = weight
+        self.frequency = frequency
         self.types = types if types is not None else []
 
         self.patrol_art = patrol_art
         self.patrol_art_clean = patrol_art_clean
+
         self.biome = biome if biome is not None else ["any"]
+        if "any" not in self.biome:
+            # add 4 for every biome not listed
+            self.weight += 4 * (len(constants.BIOME_TYPES) - len(self.biome))
+
         self.camp = camp if camp is not None else ["any"]
+        if "any" not in self.camp:
+            self.weight += 8
+
         self.season = season if season is not None else ["any"]
+        if "any" not in self.season:
+            # add 4 for every season not listed
+            self.weight += 4 * (len(constants.SEASONS) - len(self.season))
+
         self.tags = tags if tags is not None else []
+
+        self.poi = poi if poi else {}
+        # add 8, 6, 4 or 2 if there are between 1-4 specific named locations
+        # todo: check for balancing
+        if self.poi.get("name") and not 1 > len(self.poi["name"]) > 5:
+            self.weight += 8 - 2 * len(self.poi["name"])
+        elif self.poi.get("tags"):
+            # add 4-1 depending on how many specific points of interest are included
+            # but only if specific ones are not already requested
+            self.weight += min(4, len(self.poi.get("tags", [])))
+
+        self.chance_of_success = chance_of_success  # out of 100
+
+        self.min_cats = min_cats
+        self.max_cats = max_cats
+        self.weight += 2 * (
+            6 - (self.max_cats - self.min_cats)
+        )  # the narrower this range, the higher weighted we want it
+
+        self.min_max_status = min_max_status if min_max_status is not None else {}
+        self.weight += len(self.min_max_status) * 2
+
+        self.relationship_constraints = (
+            relationship_constraints if relationship_constraints is not None else []
+        )
+        # LOTS of weight on rel constraints
+        self.weight += len(self.relationship_constraints) * 20
+        self.pl_skill_constraints = (
+            pl_skill_constraints if pl_skill_constraints is not None else []
+        )
+        if self.pl_skill_constraints:
+            if "-" in self.pl_skill_constraints[0]:
+                # exclusionary values!
+                self.weight += len(self.pl_skill_constraints)
+            else:
+                # inclusionary values get inverse weighting
+                self.weight += self.NUM_OF_SKILLS - len(self.pl_skill_constraints)
+
+        self.pl_trait_constraints = (
+            pl_trait_constraints if pl_trait_constraints is not None else []
+        )
+        if self.pl_trait_constraints:
+            if "-" in self.pl_trait_constraints[0]:
+                # exclusionary values!
+                self.weight += len(self.pl_trait_constraints)
+            else:
+                # inclusionary values get inverse weighting
+                self.weight += self.NUM_OF_SKILLS - len(self.pl_trait_constraints)
+
         self.intro_text = intro_text
+        self.decline_text = decline_text
 
         self.success_outcomes = success_outcomes if success_outcomes is not None else []
         self.fail_outcomes = fail_outcomes if fail_outcomes is not None else []
-        self.decline_text = decline_text
-        self.chance_of_success = chance_of_success  # out of 100
-        self.min_cats = min_cats
-        self.max_cats = max_cats
         self.antag_success_outcomes = (
             antag_success_outcomes if antag_success_outcomes is not None else []
         )
         self.antag_fail_outcomes = (
             antag_fail_outcomes if antag_fail_outcomes is not None else []
         )
-        self.relationship_constraints = (
-            relationship_constraints if relationship_constraints is not None else []
-        )
-        self.pl_skill_constraints = (
-            pl_skill_constraints if pl_skill_constraints is not None else []
-        )
-        self.pl_trait_constraints = (
-            pl_trait_constraints if pl_trait_constraints is not None else []
-        )
-        self.min_max_status = min_max_status if min_max_status is not None else {}
 
     @property
     def new_cat(self) -> bool:

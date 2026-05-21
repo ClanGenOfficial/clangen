@@ -6,16 +6,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that a Clan was hunting {PRONOUN/m_c/object} down"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -15
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -24,16 +27,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Shook off {PRONOUN/m_c/poss} pursuers easily",
+      "new_thought": "Shook off {PRONOUN/m_c/poss} pursuers easily"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -15
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from noticed a c_n patrol trailing {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -42,16 +48,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Won't fall for such an obvious trap",
+      "new_thought": "Won't fall for such an obvious trap"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -15
+          "amount": -15,
+          "log": {
+            "cats_from": "c_n tried to ambush m_c."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -60,16 +69,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that a Clan was hunting {PRONOUN/m_c/object} down"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -15
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -78,16 +90,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "former Clancat"],
-      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that a Clan was hunting {PRONOUN/m_c/object} down"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -15
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -96,16 +111,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "former Clancat"],
-      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that a Clan was hunting {PRONOUN/m_c/object} down"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -15
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -114,17 +132,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["exiled", "lost"],
-      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan was hunting for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan was hunting for {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
           "values": ["like"],
-          "amount": -20
+          "amount": -20,
+          "log": {
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -133,17 +153,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Is slinking through undergrowth, worried c_n may find {PRONOUN/m_c/object}",
+      "new_thought": "Is slinking through undergrowth, worried c_n may find {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
           "values": ["like"],
-          "amount": -20
+          "amount": -20,
+          "log": {
+            "cats_from": "cat_from narrowly escaped a c_n patrol."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -152,37 +174,41 @@
     "rep_change": -2,
     "m_c": {
       "status": ["exiled", "lost"],
-      "new_thought": "Is slinking through undergrowth, worried c_n may find {PRONOUN/m_c/object}",
+      "new_thought": "Is slinking through undergrowth, worried c_n may find {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
           "values": ["like"],
-          "amount": -10
+          "amount": -20,
+          "log": {
+            "cats_from": "cat_from narrowly escaped a c_n patrol."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
-    "event_text": "A patrol encounters m_c, but m_c convinces them to let {PRONOUn/m_c/object} go.",
+    "event_text": "A patrol encounters m_c, but m_c convinces them to let {PRONOUN/m_c/object} go.",
     "reputation": ["any"],
     "rep_change": 1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
       "skill": ["SPEAKER,2"],
-      "new_thought": "Is confident {PRONOUN/m_c/subject} can talk {PRONOUN/m_c/poss} way out of anything",
+      "new_thought": "Is confident {PRONOUN/m_c/subject} can talk {PRONOUN/m_c/poss} way out of anything"
+    },
       "relationships": [
         {
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
           "values": ["like"],
-          "amount": 5
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from was confronted by a c_n patrol but persuaded them letting {PRONOUN/cat_from/object} go."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -192,17 +218,19 @@
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
       "trait": ["vengeful"],
-      "new_thought": "Will never forget this slight",
+      "new_thought": "Will never forget this slight"
+    },
       "relationships": [
         {
+          "cats_to": [ "clan" ],
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
           "values": ["like"],
-          "amount": -50
+          "amount": -40,
+          "log": {
+            "cats_from": "cat_from swore revenge on the whole of c_n after a c_n patrol attacked {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -211,16 +239,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that a Clan wants {PRONOUN/m_c/object} out of their territory"
+        },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -5
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from heard that c_n wants {PRONOUN/cat_from/object} off their territory."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -229,26 +260,40 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Can't be forced out that easily",
+      "new_thought": "Can't be forced out that easily"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -5
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from was driven beyond the borders by a c_n patrol, but {PRONOUN/cat_from/subject} won't be gotten rid of so easily."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
-    "event_text": "A c_n patrol confronts m_c and tells {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not welcome anywhere near c_n's territory. m_c agrees - and is scented trespassing <i>again</i> within the quarter-moon.",
+    "event_text": "A c_n patrol confronts m_c and tells {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} not welcome anywhere near c_n's territory. m_c agrees — and is scented trespassing <i>again</i> within the quarter-moon.",
     "reputation": ["any"],
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
       "new_thought": "Considers Clan cats especially gullible"
-    }
+    },
+      "relationships": [
+        {
+          "cats_to": [ "some_clan" ],
+          "cats_from": ["m_c"],
+          "values": ["like", "respect"],
+          "amount": -10,
+          "log": {
+            "cats_from": "A c_n patrol told cat_from to stop crossing the border, but {PRONOUN/cat_from/subject} {VERB/cat_from/have/has} no intention of listening."
+          }
+        }
+      ]
   },
   {
     "interaction_type": "drive",
@@ -257,17 +302,19 @@
     "rep_change": -1,
     "m_c": {
       "status": ["loner", "rogue", "kittypet"],
-      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that a Clan wants {PRONOUN/m_c/object} out of their territory"
+    },
       "relationships": [
         {
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -276,16 +323,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "former Clancat"],
-      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that a Clan wants {PRONOUN/m_c/object} out of their territory"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -15
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -294,16 +344,19 @@
     "rep_change": -2,
     "m_c": {
       "status": ["loner", "rogue", "kittypet", "former Clancat"],
-      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that a Clan wants {PRONOUN/m_c/object} out of their territory"
+    },
       "relationships": [
         {
-          "cats_to": [ "clan" ],
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
           "values": ["like"],
-          "amount": -15
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -312,17 +365,19 @@
     "rep_change": -1,
     "m_c": {
       "status": ["exiled", "lost"],
-      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan wants {PRONOUN/m_c/object} gone",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan wants {PRONOUN/m_c/object} gone"
+    },
       "relationships": [
         {
+          "cats_to": [ "some_clan" ],
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "invite",
@@ -371,17 +426,20 @@
     "rep_change": 1,
     "m_c": {
       "status": ["exiled"],
-      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan was searching for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} old Clan was searching for {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
+          "cats_to": ["some_clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from heard that {PRONOUN/m_c/poss} old Clan has been looking for {PRONOUN/m_c/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "invite",
@@ -391,17 +449,20 @@
     "m_c": {
       "status": ["exiled"],
       "trait": [ "bloodthirsty", "vengeful", "fierce", "cold", "bold", "shameless" ],
-      "new_thought": "Spits at {PRONOUN/m_c/poss} Clanmates' retreating tails",
+      "new_thought": "Spits at {PRONOUN/m_c/poss} Clanmates' retreating tails"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
+          "cats_to": ["some_clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -5,
+          "log": {
+            "cats_from": "cat_from was approached by some of {PRONOUN/m_c/poss} old Clanmates, but {PRONOUN/cat_from/subject} won't forgive so easily."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "invite",
@@ -519,17 +580,20 @@
     "rep_change": -1,
     "m_c": {
       "status": ["former Clancat"],
-      "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}",
+      "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
+          "cats_to": ["some_clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -538,17 +602,20 @@
     "rep_change": -1,
     "m_c": {
       "status": ["former Clancat"],
-      "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}",
+      "new_thought": "Wonders why c_n would be looking for {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
+          "cats_to": ["some_clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -558,17 +625,20 @@
     "m_c": {
       "status": ["rogue", "kittypet", "loner", "former Clancat"],
       "skill": [ "GHOST,1" ],
-      "new_thought": "Shivers, thanking the spirit that warned {PRONOUN/m_c/object}",
+      "new_thought": "Shivers, thanking the spirit that warned {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
+          "cats_to": ["some_clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from received a paranormal warning that c_n means {PRONOUN/cat_from/object} harm."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "search",
@@ -577,17 +647,20 @@
     "rep_change": 1,
     "m_c": {
       "status": ["lost"],
-      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} Clan has been searching for {PRONOUN/m_c/object}",
+      "new_thought": "Heard rumors that {PRONOUN/m_c/poss} Clan has been searching for {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
+          "cats_to": ["some_clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from caught a rumor from rogues that c_n is looking for {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -600,17 +673,20 @@
       "skill": [
         "HUNTER,3"
       ],
-      "new_thought": "Is feeling rather proud of {PRONOUN/m_c/self}",
+      "new_thought": "Is feeling rather proud of {PRONOUN/m_c/self}"
+    },
       "relationships": [
         {
-          "cats_from": ["clan"],
+          "cats_from": ["some_clan"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from was impressed by cat_to's hunting skill, even though it meant cat_to remained on c_n territory."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -623,17 +699,30 @@
       "skill": [
         "SENSE,1"
       ],
-      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
+      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n"
+    },
       "relationships": [
         {
-          "cats_from": ["clan"],
+          "cats_from": ["some_clan"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
+          }
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["like"],
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -646,17 +735,30 @@
       "skill": [
         "SENSE,1"
       ],
-      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
+      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n"
+    },
       "relationships": [
         {
-          "cats_from": ["clan"],
+          "cats_from": ["some_clan"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
+          }
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["like"],
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from heard that c_n was hunting {PRONOUN/cat_from/object} down."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -669,17 +771,20 @@
       "skill": [
         "CLAIRVOYANT,1"
       ],
-      "new_thought": "Thanks {PRONOUN/m_c/poss} lucky stars {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} escaped c_n once more",
-      "relationships": [
+      "new_thought": "Thanks {PRONOUN/m_c/poss} lucky stars {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} escaped c_n once more"
+    },
+    "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": true,
+          "cats_to": ["some_clan"],
+          "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from narrowly escaped a c_n patrol."
+          }
         }
-      ]
-    }
+    ]
   },
   {
     "interaction_type": "drive",
@@ -692,24 +797,30 @@
       "skill": [
         "HUNTER,3"
       ],
-      "new_thought": "Feels pleased to show those whippersnappers a thing or two",
+      "new_thought": "Feels pleased to show those whippersnappers a thing or two"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
-          "cats_to": ["clan"],
+          "cats_to": ["some_clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": -5
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from felt contempt for c_n after outhunting their best hunters and earning the right to remain on their territory."
+          }
         },
         {
-          "cats_from": ["clan"],
+          "cats_from": ["some_clan"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 10
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from was grudgingly impressed by cat_to's hunting skill."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -722,24 +833,30 @@
       "skill": [
         "SENSE,1"
       ],
-      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n",
+      "new_thought": "Is thankful {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} caught by c_n"
+    },
       "relationships": [
         {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": true,
-          "values": ["like"],
-          "amount": -5
-        },
-        {
-          "cats_from": ["clan"],
+          "cats_from": ["some_clan"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 5
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from was grudgingly impressed by how cat_to eluded c_n's pursuit."
+          }
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["like"],
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from heard that c_n was looking for {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -752,24 +869,30 @@
       "skill": [
         "SENSE,1"
       ],
-      "new_thought": "Isn't ready to join StarClan just yet",
+      "new_thought": "Isn't ready to join StarClan just yet"
+    },
       "relationships": [
         {
-          "cats_from": ["m_c"],
-          "cats_to": ["clan"],
-          "mutual": true,
-          "values": ["like"],
-          "amount": -15
-        },
-        {
-          "cats_from": ["clan"],
+          "cats_from": ["some_clan"],
           "cats_to": ["m_c"],
           "mutual": false,
           "values": ["respect"],
-          "amount": 10
+          "amount": 5,
+          "log": {
+            "cats_from": "cat_from was grudgingly impressed by how cat_to evaded c_n's trap."
+          }
+        },
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["some_clan"],
+          "mutual": false,
+          "values": ["like"],
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from evaded the trap that c_n set for {PRONOUN/cat_from/object}."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -778,17 +901,20 @@
     "rep_change": 0,
     "m_c": {
       "status": ["kittypet"],
-      "new_thought": "Smugly watches the Clan cats retreat",
+      "new_thought": "Smugly watches the Clan cats retreat"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": true,
           "values": ["like"],
-          "amount": -10
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from felt contempt for c_n after the c_n patrol that came to kill {PRONOUN/cat_from/object} found {PRONOUN/cat_from/object} in {PRONOUN/cat_from/poss} Twoleg nest."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -797,17 +923,20 @@
     "rep_change": 0,
     "m_c": {
       "status": ["kittypet"],
-      "new_thought": "Smugly watches the Clan cats retreat",
+      "new_thought": "Smugly watches the Clan cats retreat"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": true,
           "values": ["like"],
-          "amount": -10
+          "amount": -10,
+          "log": {
+            "cats_from": "cat_from felt contempt for c_n after the c_n patrol that came to drive {PRONOUN/cat_from/object} out found {PRONOUN/cat_from/object} in {PRONOUN/cat_from/poss} Twoleg nest."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "invite",
@@ -886,17 +1015,20 @@
     "rep_change": -1,
     "m_c": {
       "status": ["lost"],
-      "new_thought": "Doesn't understand why {PRONOUN/m_c/poss} old Clanmates want to hurt {PRONOUN/m_c/object}",
+      "new_thought": "Doesn't understand why {PRONOUN/m_c/poss} old Clanmates want to hurt {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["like"],
-          "amount": -15
+          "values": ["like", "trust"],
+          "amount": -30,
+          "log": {
+            "cats_from": "cat_from realized c_n may not want {PRONOUN/cat_from/object} back."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -905,17 +1037,20 @@
     "rep_change": -1,
     "m_c": {
       "status": ["lost"],
-      "new_thought": "Doesn't understand why {PRONOUN/m_c/poss} old Clanmates want to hurt {PRONOUN/m_c/object}",
+      "new_thought": "Doesn't understand why {PRONOUN/m_c/poss} old Clanmates want to hurt {PRONOUN/m_c/object}"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["like"],
-          "amount": -15
+          "values": ["like", "trust"],
+          "amount": -30,
+          "log": {
+            "cats_from": "cat_from realized c_n may not want {PRONOUN/cat_from/object} back."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "search",
@@ -935,7 +1070,19 @@
     "m_c": {
       "status": ["loner", "rogue"],
       "new_thought": "Knows better than to trust Clan cats"
-    }
+    },
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from knew of c_n's reputation for dealing harshly with outsiders."
+          }
+        }
+      ]
   },
   {
     "interaction_type": "invite",
@@ -945,7 +1092,19 @@
     "m_c": {
       "status": ["kittypet"],
       "new_thought": "Shivers in {PRONOUN/m_c/poss} nest at the thought of Clan cats"
-    }
+    },
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from knew of c_n's reputation for dealing harshly with outsiders."
+          }
+        }
+      ]
   },
   {
     "interaction_type": "hunt",
@@ -954,17 +1113,20 @@
     "rep_change": -1,
     "m_c": {
       "status": ["kittypet", "loner", "rogue"],
-      "new_thought": "Is stunned to discover Clan cats are much more vicious than {PRONOUN/m_c/subject} thought",
+      "new_thought": "Is stunned to discover Clan cats are much more vicious than {PRONOUN/m_c/subject} thought"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
           "values": ["like"],
-          "amount": -15
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from was stunned to be attacked by c_n, who {PRONOUN/cat_from/subject} previously thought was friendly to outsiders."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "hunt",
@@ -973,17 +1135,20 @@
     "rep_change": 0,
     "m_c": {
       "status": ["kittypet", "loner", "rogue"],
-      "new_thought": "Shudders at the thought of running into a c_n warrior",
+      "new_thought": "Shudders at the thought of running into a c_n warrior"
+    },
       "relationships": [
         {
           "cats_from": ["m_c"],
           "cats_to": ["clan"],
           "mutual": false,
-          "values": ["like"],
-          "amount": -15
+          "values": ["trust"],
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from knew of c_n's reputation for dealing harshly with outsiders."
+          }
         }
       ]
-    }
   },
   {
     "interaction_type": "drive",
@@ -993,11 +1158,23 @@
     "m_c": {
       "status": ["kittypet", "loner", "rogue"],
       "new_thought": "Shudders at the thought of running into a c_n warrior"
-    }
+    },
+      "relationships": [
+        {
+          "cats_from": ["m_c"],
+          "cats_to": ["clan"],
+          "mutual": false,
+          "values": ["trust"],
+          "amount": -15,
+          "log": {
+            "cats_from": "cat_from knew of c_n's reputation for dealing harshly with outsiders."
+          }
+        }
+      ]
   },
   {
     "interaction_type": "invite",
-    "event_text": "Apparently, c_n is getting a reputation with the local rogues - every time c_n visits one of them, they go missing. m_c is nowhere to be found.",
+    "event_text": "Apparently, c_n is getting a reputation with the local rogues — every time c_n visits one of them, they go missing. m_c is nowhere to be found.",
     "reputation": ["welcoming"],
     "rep_change": 0,
     "m_c": {

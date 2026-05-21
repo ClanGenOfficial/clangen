@@ -1,15 +1,11 @@
 import os
-from collections import defaultdict
 from copy import deepcopy
-from email.policy import default
 from random import choice, shuffle
 
 import i18n.config
 
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank
-from scripts.cat.history import History
 from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction
 from scripts.cat_relations.enums import RelType
 from scripts.event_class import Single_Event
@@ -18,12 +14,15 @@ from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     event_for_cat,
-)
-from scripts.utility import (
-    change_relationship_values,
-    process_text,
     filter_relationship_type,
+    _check_cat_skills,
+    _check_cat_trait,
+    _check_cat_status,
+    _check_cat_backstory,
+    _check_cat_age,
 )
+from scripts.events_module.text_adjust import process_text
+from scripts.events_module.consequences import change_relationship_values
 from scripts.game_structure.localization import load_lang_resource
 
 
@@ -118,26 +117,26 @@ class GroupEvents:
             chosen_interaction.intensity
         ]
 
-        if len(chosen_interaction.general_reaction) > 0:
-            # if there is a general reaction in the interaction, then use this
-            GroupEvents.influence_general_relationship(
-                amount, abbreviations_cat_id, chosen_interaction
-            )
-        else:
-            GroupEvents.influence_specific_relationships(
-                amount, abbreviations_cat_id, chosen_interaction
-            )
-
         # choose the interaction text and display
         interaction_str = choice(chosen_interaction.interactions)
         interaction_str = GroupEvents.prepare_text(
             interaction_str, abbreviations_cat_id
         )
-        # TODO: add the interaction to the relationship log?
 
-        interaction_str = interaction_str + i18n.t(
-            f"relationships.{inter_type}_postscript"
+        interaction_str = i18n.t(
+            f"relationships.{inter_type}_postscript", text=interaction_str
         )
+
+        if len(chosen_interaction.general_reaction) > 0:
+            # if there is a general reaction in the interaction, then use this
+            GroupEvents.influence_general_relationship(
+                amount, abbreviations_cat_id, chosen_interaction, interaction_str
+            )
+        else:
+            GroupEvents.influence_specific_relationships(
+                amount, abbreviations_cat_id, chosen_interaction, interaction_str
+            )
+
         ids = list(abbreviations_cat_id.values())
         relevant_event_tabs = ["relation", "interaction"]
         if chosen_interaction.get_injuries:
@@ -187,6 +186,8 @@ class GroupEvents:
 
             if interact.status_constraint.get("m_c"):
                 main_constraint_dict["status"] = interact.status_constraint.get("m_c")
+            if interact.age_constraint.get("m_c"):
+                main_constraint_dict["age"] = interact.age_constraint.get("m_c")
             if interact.trait_constraint.get("m_c"):
                 main_constraint_dict["trait"] = interact.trait_constraint.get("m_c")
             if interact.backstory_constraint.get("m_c"):
@@ -301,13 +302,27 @@ class GroupEvents:
             for abbreviation in dictionary:
                 dictionary[abbreviation] = []
 
+                # if the abbreviation has a age constraint, check in details
+                if abbreviation in interact.age_constraint:
+                    # if the cat status is in the age constraint, add the id to the list
+                    age_ids = [
+                        cat.ID
+                        for cat in interact_cats
+                        if _check_cat_age(cat, interact.age_constraint[abbreviation])
+                    ]
+                else:
+                    # if there is no constraint, add all ids to the list
+                    age_ids = [cat.ID for cat in interact_cats]
+
                 # if the abbreviation has a status constraint, check in details
                 if abbreviation in interact.status_constraint:
                     # if the cat status is in the status constraint, add the id to the list
                     status_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.status.rank in interact.status_constraint[abbreviation]
+                        if _check_cat_status(
+                            cat, interact.status_constraint[abbreviation]
+                        )
                     ]
                 else:
                     # if there is no constraint, add all ids to the list
@@ -318,7 +333,9 @@ class GroupEvents:
                     skill_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.skill in interact.skill_constraint[abbreviation]
+                        if _check_cat_skills(
+                            cat, interact.skill_constraint[abbreviation]
+                        )
                     ]
                 else:
                     skill_ids = [cat.ID for cat in interact_cats]
@@ -327,8 +344,9 @@ class GroupEvents:
                     trait_ids = [
                         cat.ID
                         for cat in interact_cats
-                        if cat.personality.trait
-                        in interact.trait_constraint[abbreviation]
+                        if _check_cat_trait(
+                            cat, interact.trait_constraint[abbreviation]
+                        )
                     ]
                 else:
                     trait_ids = [cat.ID for cat in interact_cats]
@@ -339,6 +357,7 @@ class GroupEvents:
                         cat_id in status_ids
                         and cat_id in skill_ids
                         and cat_id in trait_ids
+                        and cat_id in age_ids
                     ):
                         dictionary[abbreviation].append(cat_id)
 
@@ -419,7 +438,6 @@ class GroupEvents:
         interaction: GroupInteraction, abbreviations_cat_id: dict
     ):
         """Check if the interaction is allowed with the current chosen cats."""
-        fulfilled_list = []
 
         for name, rel_constraint in interaction.relationship_constraint.items():
             abbre_from = name.split("_to_")[0]
@@ -434,16 +452,14 @@ class GroupEvents:
                 cat_from.create_one_relationship(cat_to)
                 if cat_from.ID not in cat_to.relationships:
                     cat_to.create_one_relationship(cat_from)
-                continue
 
-            fulfilled = filter_relationship_type(
+            if not filter_relationship_type(
                 group=[cat_from, cat_to],
                 filter_types=rel_constraint,
-                event_id=interaction.id,
-            )
-            fulfilled_list.append(fulfilled)
+            ):
+                return False
 
-        return all(fulfilled_list)
+        return True
 
     @staticmethod
     def cat_allow_interaction(
@@ -458,7 +474,20 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if relevant_cat.status.rank not in constraint:
+            if not _check_cat_status(relevant_cat, constraint):
+                all_fulfilled = False
+        if not all_fulfilled:
+            return False
+
+        # check cats fulfill age constraint
+        all_fulfilled = True
+        for abbr, constraint in interaction.age_constraint.items():
+            # main cat is already filtered
+            if abbr == "m_c":
+                continue
+            # check if the current abbreviations cat fulfill the constraint
+            relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
+            if not _check_cat_age(relevant_cat, constraint):
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -471,7 +500,7 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if not relevant_cat.skills.check_skill_requirement_list(constraint):
+            if not _check_cat_skills(relevant_cat, constraint):
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -484,7 +513,7 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if relevant_cat.personality.trait not in constraint:
+            if not _check_cat_trait(relevant_cat, constraint):
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -497,7 +526,7 @@ class GroupEvents:
                 continue
             # check if the current abbreviations cat fulfill the constraint
             relevant_cat = Cat.all_cats[abbreviations_cat_id[abbr]]
-            if relevant_cat.backstory not in constraint:
+            if not _check_cat_backstory(relevant_cat, constraint):
                 all_fulfilled = False
         if not all_fulfilled:
             return False
@@ -525,7 +554,7 @@ class GroupEvents:
 
     @staticmethod
     def influence_general_relationship(
-        amount, abbreviations_cat_id, chosen_interaction
+        amount, abbreviations_cat_id, chosen_interaction, log
     ):
         """
         Influence the relationship between all cats with the same amount, defined by the chosen group relationship.
@@ -547,18 +576,19 @@ class GroupEvents:
 
         abbreviations_cat = []
 
-        for cat in abbreviations_cat_id:
+        for cat in abbreviations_cat_id.values():
             abbreviations_cat.append(Cat.fetch_cat(cat))
         for inter_cat in abbreviations_cat:
             change_relationship_values(
                 cats_from=[inter_cat],
                 cats_to=list(abbreviations_cat),
+                log=log,
                 **amount_dict,
             )
 
     @staticmethod
     def influence_specific_relationships(
-        amount, abbreviations_cat_id, chosen_interaction
+        amount, abbreviations_cat_id, chosen_interaction, log
     ):
         """
         Influence the relationships based on the list of the reaction of the chosen group interaction.
@@ -589,7 +619,7 @@ class GroupEvents:
                     )
 
             change_relationship_values(
-                cats_from=[cat_from], cats_to=[cat_to], **amount_dict
+                cats_from=[cat_from], cats_to=[cat_to], log=log, **amount_dict
             )
 
     @staticmethod

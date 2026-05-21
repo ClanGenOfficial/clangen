@@ -14,6 +14,7 @@ from scripts.events_module.relationship.group_events import (
     GroupEvents,
     GroupInteraction,
 )
+from scripts.cat_relations.inheritance2 import inheritance_db
 
 
 class MainCatFiltering(unittest.TestCase):
@@ -38,7 +39,7 @@ class MainCatFiltering(unittest.TestCase):
         interaction1.status_constraint = {"m_c": ["warrior"]}
 
         interaction2 = GroupInteraction("2")
-        interaction2.status_constraint = {"m_c": ["healer"]}
+        interaction2.status_constraint = {"m_c": ["medicine cat"]}
 
         # when
         all_interactions = [interaction1, interaction2]
@@ -125,6 +126,7 @@ class MainCatFiltering(unittest.TestCase):
         group_events = GroupEvents()
         main_cat = Cat(moons=40)
         main_cat.skills.primary = Skill(SkillPath.HUNTER, points=9)
+        main_cat.skills.secondary = Skill(SkillPath.SWIMMER, points=9)
         group_events.abbreviations_cat_id = {"m_c": main_cat.ID}
 
         interaction1 = GroupInteraction("1")
@@ -338,6 +340,7 @@ class OtherCatsFiltering(unittest.TestCase):
             "r_c1": random1.ID,
             "r_c2": random2.ID,
         }
+        inheritance_db.load_inheritances(Cat)
         # given - relationships
         # order: romance, like, respect, trust, comfort
         main_cat.relationships[random1.ID] = Relationship(
@@ -574,7 +577,7 @@ class OtherCatsFiltering(unittest.TestCase):
         interaction1.relationship_constraint = {"r_c1_to_m_c": ["hates"]}
 
         interaction2 = GroupInteraction("test")
-        interaction2.relationship_constraint = {"r_c1_to_r_c2": ["not_mates"]}
+        interaction2.relationship_constraint = {"r_c1_to_r_c2": ["-mates"]}
 
         interaction3 = GroupInteraction("test")
         interaction3.relationship_constraint = {"r_c1_to_r_c2": ["fancies_only"]}

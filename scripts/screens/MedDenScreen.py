@@ -7,21 +7,19 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.clan_resources.herb.herb_supply import MESSAGES
 from scripts.game_structure import game
-from scripts.game_structure.ui_elements import (
-    UISpriteButton,
-    UIImageButton,
-    UITextBoxTweaked,
-    UISurfaceImageButton,
-    UIModifiedImage,
-)
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    find_alive_cats_with_rank,
-    shorten_text_to_fit,
+from ..ui.elements.modified_image import UIModifiedImage
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
+from ..ui.elements.sprite_button import UISpriteButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import (
     event_text_adjust,
-    ui_scale_offset,
+    shorten_text_to_fit,
+    process_text,
 )
+from ..ui.scale import ui_scale, ui_scale_offset
+from ..clan_package.get_clan_cats import find_alive_cats_with_rank
 from .Screens import Screens
 from .enums import GameScreen
 from ..cat.enums import CatRank
@@ -148,6 +146,7 @@ class MedDenScreen(Screens):
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
+            starting_height=2,
         )
         self.last_med = UISurfaceImageButton(
             ui_scale(pygame.Rect((600, 278), (34, 34))),
@@ -155,6 +154,7 @@ class MedDenScreen(Screens):
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             manager=MANAGER,
+            starting_height=2,
         )
 
         if game.clan.game_mode != "classic":
@@ -479,13 +479,13 @@ class MedDenScreen(Screens):
             )
             self.med_info = UITextBoxTweaked(
                 "",
-                ui_scale(pygame.Rect((580, 185), (120, 120))),
+                ui_scale(pygame.Rect((580, 185), (120, 90))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1,
                 manager=MANAGER,
             )
             med_skill = cat.skills.skill_string(short=True)
-            med_exp = i18n.t("general.exp_label", exp=cat.experience_level)
+            med_exp = i18n.t("general.exp_label", exp=cat.experience_level_string)
             med_working = True
             if cat.not_working():
                 med_working = False
@@ -563,6 +563,10 @@ class MedDenScreen(Screens):
                         )
             conditions = ",<br>".join(condition_list)
 
+            conditions = process_text(
+                conditions, {"m_c": (str(cat.name), choice(cat.pronouns))}
+            )
+
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
                 cat.sprite,
@@ -593,7 +597,7 @@ class MedDenScreen(Screens):
         herb_list = []
         herb_supply = game.clan.herb_supply
 
-        if not herb_supply.total:
+        if herb_supply.total <= 0:
             herb_list = ["Empty"]
 
         elif game.clan.game_mode != "classic":
@@ -726,9 +730,6 @@ class MedDenScreen(Screens):
             self.log_box.kill()
         if self.med_cat:
             self.med_cat.kill()
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:

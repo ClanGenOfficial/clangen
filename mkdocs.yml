@@ -13,23 +13,35 @@ nav:
         - dev/project-basics/index.md
         - dev/project-basics/development-team-roles.md
         - dev/project-basics/getting-started-with-github-and-clangen.md
+        - Senior Developer Guides:
+            - dev/senior/index.md
     - Code:
         - dev/code/index.md
         - dev/code/cat-status.md
+        - dev/art/cat-sprites/adding-new-sprites.md
         - dev/code/content-adding.md
         - dev/code/localization.md
     - Writing:
         - dev/writing/index.md
         - Reference:
           - dev/writing/reference/index.md
-          - dev/writing/reference/trait-dictionary.md
+          - dev/writing/reference/writing-standards.md
+          - dev/writing/reference/terminology.md
           - dev/writing/reference/tag-lists.md
+          - dev/writing/reference/common-formats.md
+          - dev/writing/reference/pronoun-tags.md
+          - dev/writing/reference/trait-dictionary.md
+          - dev/writing/reference/biomes.md
+          - dev/writing/reference/animals.md
+          - dev/writing/reference/herbs.md
+          - dev/writing/reference/common-errors.md
         - dev/writing/patrols.md
         - dev/writing/shortevents.md
         - dev/writing/future.md
         - dev/writing/leaders-den-events.md
         - dev/writing/thoughts.md
         - dev/writing/leader-ceremonies.md
+        - dev/writing/points-of-interest.md
         - dev/writing/localization.md
         - dev/writing/advanced-documentation.md
     - Art:
@@ -43,12 +55,15 @@ nav:
         - dev/art/camp-backgrounds.md
     - Audio:
         - dev/audio/index.md
+
   - User Guides:
     - user-guides/index.md
     - user-guides/removing-palette-maps.md
   - Contributing to the Wiki:
       - contributing/index.md
       - contributing/documentation-resources.md
+  - Development Blog:
+      - blog/index.md
 
 theme:
   name: material
@@ -64,6 +79,7 @@ theme:
     - navigation.top
     - navigation.indexes
     - navigation.tabs
+    - navigation.path
   custom_dir: docs-resources
   palette:
     - media: "(prefers-color-scheme)"
@@ -134,6 +150,10 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: True
+  - pymdownx.tasklist:
+      custom_checkbox: false
+      clickable_checkbox: true
+  - pymdownx.blocks.caption
 
 watch:
   - docs-resources/includes
@@ -146,3 +166,4 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
+  - blog

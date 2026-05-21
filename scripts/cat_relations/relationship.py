@@ -4,6 +4,7 @@ from typing import Optional
 
 import i18n
 
+from scripts.cat.enums import CatCompatibility
 from scripts.game_structure import constants
 from scripts.cat_relations.interaction import (
     cats_fulfill_single_interaction_constraints,
@@ -11,9 +12,13 @@ from scripts.cat_relations.interaction import (
 )
 from scripts.cat_relations.enums import RelTier, RelType
 from scripts.event_class import Single_Event
-from scripts.events_module.event_filters import event_for_location, event_for_season
+from scripts.events_module.event_filters import (
+    event_for_location,
+    event_for_season,
+    get_personality_compatibility,
+)
 from scripts.game_structure import game
-from scripts.utility import get_personality_compatibility, process_text
+from scripts.events_module.text_adjust import process_text
 import scripts.cat_relations.interaction as interactions
 
 
@@ -54,15 +59,20 @@ class Relationship:
         else:
             self.log = []
 
+        self.no_longer_neutral = []
+        """
+        List of rel types that made it out of the neutral tier (ROMANCE is not included). This list is used to indicate which types should not return to a neutral state.
+        """
+
         # romance operates on a 0-100 scale, 0 is no romantic interest and 100 is full romantic interest
-        self.romance = romance
+        self._romance = min(max(romance, 0), 100)
 
         # each stat can go from -100 to 100
         # negative numbers are the negative state while positive is the positive state
-        self.like = like
-        self.respect = respect
-        self.trust = trust
-        self.comfort = comfort
+        self._like = min(max(like, -100), 100)
+        self._respect = min(max(respect, -100), 100)
+        self._trust = min(max(trust, -100), 100)
+        self._comfort = min(max(comfort, -100), 100)
 
     def to_dict(self):
         return {
@@ -76,6 +86,7 @@ class Relationship:
             "comfort": self.comfort,
             "trust": self.trust,
             "log": self.log,
+            "no_longer_neutral": self.no_longer_neutral,
         }
 
     def link_relationship(self):
@@ -208,17 +219,17 @@ class Relationship:
         # prepare string for display
         interaction_str = self.adjust_interaction_string(interaction_str)
 
-        effect = ""
+        effect = "relationships.neutral_postscript"
         if positive:
-            effect = i18n.t(f"relationships.positive_postscript_{intensity}")
+            effect = f"relationships.positive_postscript_{intensity}"
         elif not positive:
-            effect = i18n.t(f"relationships.negative_postscript_{intensity}")
+            effect = f"relationships.negative_postscript_{intensity}"
 
-        interaction_str = interaction_str + effect
+        interaction_str = i18n.t(effect, text=interaction_str)
         self.log.append(
-            interaction_str
-            + i18n.t(
+            i18n.t(
                 "relationships.age_postscript",
+                text=interaction_str,
                 name=str(self.cat_from.name),
                 count=self.cat_from.moons,
             )
@@ -244,12 +255,12 @@ class Relationship:
 
         return process_text(string, cat_dict)
 
-    def get_value_change_amount(self, value_change: bool, intensity: str) -> int:
+    def get_value_change_amount(self, is_positive: bool, intensity: str) -> int:
         """Finds and returns the int amount that the relationship type will change by according to given intensity and additional modifiers
 
         Parameters
         ----------
-        value_change : bool
+        is_positive : bool
             True if the relationship value is positive, False if negative.
         intensity : str
             the intensity of the affect
@@ -261,16 +272,14 @@ class Relationship:
         """
         # get the normal amount
         amount = constants.CONFIG["relationship"]["value_change_amount"][intensity]
-        if value_change == "decrease":
+        if not is_positive:
             amount = amount * -1
 
         # take compatibility into account
         compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
-        if compatibility is None:
-            # neutral compatibility
+        if compatibility == CatCompatibility.NEUTRAL:
             amount = amount
-        elif compatibility:
-            # positive compatibility
+        elif compatibility == CatCompatibility.POSITIVE:
             amount += constants.CONFIG["relationship"]["compatibility_effect"]
         else:
             # negative compatibility
@@ -278,13 +287,13 @@ class Relationship:
         return amount
 
     def interaction_affect_relationships(
-        self, value_change: bool, intensity: str, rel_type: str
+        self, is_positive: bool, intensity: str, rel_type: str
     ) -> None:
         """Affects the relationship according to the chosen types.
 
         Parameters
         ----------
-        value_change : str
+        is_positive : bool
             if the relationship value is positive
         intensity : str
             the intensity of the affect
@@ -294,7 +303,7 @@ class Relationship:
         Returns
         -------
         """
-        amount = self.get_value_change_amount(value_change, intensity)
+        amount = self.get_value_change_amount(is_positive, intensity)
 
         # only high intensity gives passive buffs
         if intensity == "high":
@@ -350,7 +359,10 @@ class Relationship:
         for key, value in dictionary.items():
             if value == "neutral":
                 continue
-            amount = self.get_value_change_amount(value, "low")
+
+            amount = self.get_value_change_amount(
+                is_positive=value == "increase", intensity="low"
+            )
 
             setattr(self, key, getattr(self, key) + amount)
 
@@ -371,8 +383,8 @@ class Relationship:
 
         # take personality in count
         comp = get_personality_compatibility(self.cat_from, self.cat_to)
-        if comp:
-            bool_ballot.append(comp)
+        if comp == CatCompatibility.POSITIVE:
+            bool_ballot.append(True)
 
         # further influence the partition based on the relationship
         for value in (self.like, self.respect, self.comfort, self.trust):
@@ -534,11 +546,31 @@ class Relationship:
         return self.romance + self.like + self.respect + self.comfort + self.trust
 
     @property
+    def total_abs_relationship_value(self) -> int:
+        """
+        Returns the sum of the absolute values of all relationship types.
+        """
+        return (
+            abs(self.romance)
+            + abs(self.like)
+            + abs(self.respect)
+            + abs(self.comfort)
+            + abs(self.trust)
+        )
+
+    @property
     def has_extreme_negative(self) -> bool:
         """
         Returns True if the relationship has an extreme negative value.
         """
         return any(tier for tier in self.get_reltype_tiers() if tier.is_extreme_neg)
+
+    @property
+    def has_mid_negative(self) -> bool:
+        """
+        Returns True if the relationship has a mid negative value.
+        """
+        return any(tier for tier in self.get_reltype_tiers() if tier.is_mid_neg)
 
     @property
     def has_extreme_positive(self) -> bool:
@@ -593,7 +625,14 @@ class Relationship:
             value = 100
         elif value < -100:
             value = -100
+
         self._like = value
+
+        if RelType.LIKE in self.no_longer_neutral and self.like_tier.is_neutral:
+            self._like = self._get_neutral_adjusted_value(self._like)
+
+        if RelType.LIKE not in self.no_longer_neutral and not self.like_tier.is_neutral:
+            self.no_longer_neutral.append(RelType.LIKE)
 
     @property
     def like_tier(self) -> Optional[RelTier]:
@@ -626,6 +665,15 @@ class Relationship:
             value = -100
         self._respect = value
 
+        if RelType.RESPECT in self.no_longer_neutral and self.respect_tier.is_neutral:
+            self._respect = self._get_neutral_adjusted_value(self._respect)
+
+        if (
+            RelType.RESPECT not in self.no_longer_neutral
+            and not self.respect_tier.is_neutral
+        ):
+            self.no_longer_neutral.append(RelType.RESPECT)
+
     @property
     def respect_tier(self) -> Optional[RelTier]:
         group = self._get_tier_group(self.respect)
@@ -656,6 +704,15 @@ class Relationship:
         elif value < -100:
             value = -100
         self._comfort = value
+
+        if RelType.COMFORT in self.no_longer_neutral and self.comfort_tier.is_neutral:
+            self._comfort = self._get_neutral_adjusted_value(self._comfort)
+
+        if (
+            RelType.COMFORT not in self.no_longer_neutral
+            and not self.comfort_tier.is_neutral
+        ):
+            self.no_longer_neutral.append(RelType.COMFORT)
 
     @property
     def comfort_tier(self) -> Optional[RelTier]:
@@ -688,12 +745,21 @@ class Relationship:
             value = -100
         self._trust = value
 
+        if RelType.TRUST in self.no_longer_neutral and self.trust_tier.is_neutral:
+            self._trust = self._get_neutral_adjusted_value(self._trust)
+
+        if (
+            RelType.TRUST not in self.no_longer_neutral
+            and not self.trust_tier.is_neutral
+        ):
+            self.no_longer_neutral.append(RelType.TRUST)
+
     @property
     def trust_tier(self) -> Optional[RelTier]:
         group = self._get_tier_group(self.trust)
 
         if group == "extreme_neg":
-            return RelTier.LOATHES
+            return RelTier.DISCREDITS
         elif group == "mid_neg":
             return RelTier.DISTRUSTS
         elif group == "low_neg":
@@ -719,3 +785,20 @@ class Relationship:
                 return group
 
         return None
+
+    @staticmethod
+    def _get_neutral_adjusted_value(value: int):
+        value_intervals = constants.CONFIG["relationship"]["value_intervals"]
+        neutral_start = value_intervals["low_neg"]
+        neutral_end = value_intervals["neutral"]
+
+        if neutral_start < value <= neutral_end:  # if value is neutral
+            # find which end of the neutral range we're closest too
+            if abs(value - neutral_start) < abs(neutral_end - value):
+                # if closest to neg side, return negative tier value
+                return neutral_start - 1
+            else:
+                # if closest to pos side, return positive tier value
+                return neutral_end + 1
+        else:
+            return value

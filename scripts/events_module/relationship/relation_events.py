@@ -6,15 +6,14 @@ import ujson
 
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatAge
 from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
-from scripts.utility import (
+from scripts.events_module.event_filters import filter_relationship_type
+from scripts.clan_package.get_clan_cats import (
     get_cats_same_age,
-    get_cats_of_romantic_interest,
-    get_free_possible_mates,
-    filter_relationship_type,
+    get_possible_mates,
 )
 
 
@@ -43,7 +42,7 @@ class Relation_Events:
         Returns
         -------
         """
-        if not cat.relationships:
+        if not cat.relationships or cat.age == CatAge.NEWBORN:
             return
         Relation_Events.had_one_event = False
 
@@ -78,8 +77,7 @@ class Relation_Events:
             return
 
         # get the cats which are relevant for romantic interactions
-        free_possible_mates = get_free_possible_mates(cat)
-        other_love_interest = get_cats_of_romantic_interest(cat)
+        free_possible_mates, other_love_interest = get_possible_mates(cat)
         possible_cats = free_possible_mates
         if 0 < len(other_love_interest) < 3:
             possible_cats.extend(other_love_interest)
@@ -147,9 +145,12 @@ class Relation_Events:
         if not Relation_Events.can_trigger_events(cat):
             return
 
+        # gets cats who are within an age range. range is either 40% their current moon age OR 40 moons, whichever is smaller
         same_age_cats = get_cats_same_age(
-            Cat, cat, constants.CONFIG["mates"]["age_range"]
+            Cat, cat, min(constants.CONFIG["mates"]["age_range"], int(cat.moons * 0.4))
         )
+        if [c for c in same_age_cats if c.age == CatAge.NEWBORN]:
+            pass
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
             if (
@@ -183,7 +184,9 @@ class Relation_Events:
             chosen_type = "all"
         possible_interaction_cats = list(
             filter(
-                lambda cat: (cat.status.alive_in_player_clan),
+                lambda cat: (
+                    cat.status.alive_in_player_clan and not cat.age == CatAge.NEWBORN
+                ),
                 Cat.all_cats.values(),
             )
         )
@@ -226,7 +229,11 @@ class Relation_Events:
             return
 
         for new_cat in new_cats:
-            same_age_cats = get_cats_same_age(Cat, new_cat)
+            same_age_cats = get_cats_same_age(
+                Cat,
+                new_cat,
+                min(constants.CONFIG["mates"]["age_range"], int(new_cat.moons * 0.4)),
+            )
             alive_cats = [
                 i for i in new_cat.all_cats.values() if i.status.alive_in_player_clan
             ]

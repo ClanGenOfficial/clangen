@@ -1,34 +1,579 @@
 [
-    {
-	"id": "morning_stretches",
-	"biome": ["any"],
-	"season": ["any"],
-	"intensity": "medium",
-	"cat_amount": 5,
-	"interactions": [
-		"m_c, wanting to help keep {PRONOUN/m_c/poss} Clanmates in shape and ready for anything, woke r_c1, r_c2, r_c3, and r_c4 up early for morning stretches."
-	],
-	"status_constraint": {
-		"m_c": ["deputy", "leader", "warrior", "elder", "medicine cat", "mediator"]
+	{
+		"id": "morning_stretches",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c, wanting to help keep {PRONOUN/m_c/poss} Clanmates in shape and ready for anything, wakes r_c1, r_c2, r_c3, and r_c4 up early for morning stretches.",
+			"Early in the morning, m_c rallies r_c1, r_c2, r_c3, and r_c4 to do stretches in hopes of keeping {PRONOUN/m_c/poss} Clanmates prepared for anything.",
+			"r_c1, r_c2, r_c3, and r_c4 can't escape from m_c waking them up to do early morning stretches.",
+			"r_c1, r_c2, r_c3, and r_c4 respect how dutiful m_c is to training, but they all wish they weren't up doing stretches at dawn.",
+			"r_c1, r_c2, r_c3, and r_c4 bemoan m_c's insistence that they get up and do stretches at <i>dawn.</i> While they do it, nobody but m_c likes it.",
+			"m_c rallies r_c1, r_c2, r_c3, and r_c4 to do early morning stretches with {PRONOUN/m_c/object}.",
+			"r_c1, r_c2, r_c3, and r_c4 wish that m_c let them sleep instead of getting them up for early morning stretches.",
+			"Stretching might be good for one's health, but r_c1, r_c2, r_c3, and r_c4 wish m_c didn't insist on stretching at the crack of dawn."
+		],
+		"status_constraint": {
+			"m_c": [
+				"deputy",
+				"leader",
+				"warrior",
+				"elder",
+				"medicine cat",
+				"mediator"
+			],
+			"r_c1": [
+				"-kitten"
+			],
+			"r_c2": [
+				"-kitten"
+			],
+			"r_c3": [
+				"-kitten"
+			],
+			"r_c4": [
+				"-kitten"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"respect": "increase",
+				"like": "decrease"
+			},
+			"r_c2_to_m_c": {
+				"respect": "increase",
+				"like": "decrease"
+			},
+			"r_c3_to_m_c": {
+				"respect": "increase",
+				"like": "decrease"
+			},
+			"r_c4_to_m_c": {
+				"respect": "increase",
+				"like": "decrease"
+			}   
+		}
 	},
-	"specific_reaction": {
-		"r_c1_to_m_c": {
-			"romance": "increase",
-			"like": "increase",
-			"comfort": "increase",
-			"trust": "increase"
+	{
+		"id": "group_5_campcleanup",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c, noticing the state of disarray the camp is in, gathers r_c1, r_c2, r_c3, and r_c4 to help {PRONOUN/m_c/object} clean up.",
+			"m_c recruits r_c1, r_c2, r_c3, and r_c4 to tidy up camp upon noticing how unorganized it has become.",
+			"Camp has become a disorganized mess, so m_c convinces r_c1, r_c2, r_c3, and r_c4 to help {PRONOUN/m_c/object} tidy it up.",
+			"The dens are in need of repair, so m_c drags r_c1, r_c2, r_c3, and r_c4 to help {PRONOUN/m_c/object} with repairs.",
+			"m_c pesters r_c1, r_c2, r_c3, and r_c4 into helping {PRONOUN/m_c/object} with repairs across camp.",
+			"r_c1, r_c2, r_c3, and r_c4 can respect m_c's dedication to keeping camp clean, but each cat has something else they'd rather be doing instead of cleaning.",
+			"r_c1, r_c2, r_c3, and r_c4 won't deny that camp needs to be cleaned, but they wish that m_c hadn't gathered them to do it.",
+			"Before a den comes caving in, m_c forces r_c1, r_c2, r_c3, and r_c4 to help {PRONOUN/m_c/object} with maintenance."
+		],
+		"status_constraint": {
+			"m_c": [
+				"deputy",
+				"leader",
+				"warrior",
+				"elder",
+				"medicine cat",
+				"mediator"
+			]
 		},
-        	"r_c2_to_m_c": {
+		"skill_constraint": {
+			"m_c": [
+				"CAMP,1"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"respect": "increase",
+				"like": "decrease"
+			},
+			"r_c2_to_m_c": {
+				"respect": "increase",
+				"like": "decrease"
+			},
+			"r_c3_to_m_c": {
+				"respect": "increase",
+				"like": "decrease"
+			},
+			"r_c4_to_m_c": {
+				"respect": "increase",
+				"like": "decrease"
+			}   
+		}
+	},
+	{
+		"id": "group_5_negative_seniordisrespected_fourapprentices",
+		"intensity": "high",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c attempts to impart {PRONOUN/m_c/poss} knowledge onto r_c1, r_c2, r_c3, and r_c4, but none of the apprentices pays attention.",
+			"m_c tries teaching r_c1, r_c2, r_c3, and r_c4 one of {PRONOUN/m_c/poss} skills but gives up because no apprentice listens.",
+			"m_c had an informative lecture planned for r_c1, r_c2, r_c3, and r_c4, but gives up midway because the apprentices ignore {PRONOUN/m_c/object}.",
+			"r_c1, r_c2, r_c3, and r_c4 will not stop talking to each other during m_c's lesson, and m_c calls it off.",
+			"m_c spent an entire day planning a lesson for r_c1, r_c2, r_c3, and r_c4, but it goes to waste as the apprentices are distracted by each other.",
+			"m_c cannot believe how disrespectful r_c1, r_c2, r_c3, and r_c4 are while {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to give a lecture."
+		],
+		"age_constraint": {
+			"m_c": [
+				"senior adult",
+				"senior"
+			]
+		},
+		"status_constraint": {
+			"r_c1": [
+				"apprentice",
+				"medicine cat apprentice",
+				"mediator apprentice"
+			],
+			"r_c2": [
+				"apprentice",
+				"medicine cat apprentice",
+				"mediator apprentice"
+			],
+			"r_c3": [
+				"apprentice",
+				"medicine cat apprentice",
+				"mediator apprentice"
+			],
+			"r_c4": [
+				"apprentice",
+				"medicine cat apprentice",
+				"mediator apprentice"
+			]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"respect": "decrease"
+			},
+			"m_c_to_r_c2": {
+				"respect": "decrease"
+			},
+			"m_c_to_r_c3": {
+				"respect": "decrease"
+			},
+			"m_c_to_r_c4": {
+				"respect": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_5_negative_warriordisrespected_fourapprentices",
+		"intensity": "high",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c wants this training exercise to be a success, but r_c1, r_c2, r_c3, and r_c4 refuse to listen, and m_c gives up.",
+			"It is impossible to make r_c1, r_c2, r_c3, and r_c4 understand the importance of stretching properly, so m_c calls the exercise off.",
+			"r_c1, r_c2, r_c3, and r_c4 are too busy goofing off to listen to m_c's advice.",
+			"m_c attempts to keep r_c1, r_c2, r_c3, and r_c4 focused during training, but the four continuously talk about unrelated topics.",
+			"r_c1, r_c2, r_c3, and r_c4 pointedly ignore m_c's reminders to focus on training instead of gossiping."
+		],
+		"status_constraint": {
+			"m_c": [
+				"warrior"
+			],
+			"r_c1": [
+				"apprentice"
+			],
+			"r_c2": [
+				"apprentice"
+			],
+			"r_c3": [
+				"apprentice"
+			],
+			"r_c4": [
+				"apprentice"
+			]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"respect": "decrease"
+			},
+			"m_c_to_r_c2": {
+				"respect": "decrease"
+			},
+			"m_c_to_r_c3": {
+				"respect": "decrease"
+			},
+			"m_c_to_r_c4": {
+				"respect": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_5_negative_groupargument_twohates",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"What begins as a petty argument between m_c and r_c1 turns into a spat involving r_c2, r_c3, and r_c4 as well.",
+			"The argument between m_c and r_c1 spills into r_c2, r_c3, and r_c4's day, leading to the five cats hissing at each other.",
+			"Nobody is safe from m_c and r_c1's dispute, and r_c2, r_c3, and r_c4 are dragged into it.",
+			"The screaming match between m_c and r_c1 soon involves r_c2, r_c3, and r_c4 as well.",
+			"r_c2, r_c3, and r_c4 wake up to m_c and r_c1's yowling, and the three cats give the snappy pair a piece of their minds.",
+			"Trying to eat while m_c and r_c1 scream at each other is impossible, so r_c2, r_c3, and r_c4 decide to chip in with their opinions."
+		],
+		"relationship_constraint": {
+			"m_c_to_r_c1": [
+				"hates"
+			],
+			"r_c1_to_m_c": [
+				"hates"
+			]
+		},
+		"general_reaction": {
+			"like": "decrease",
+			"respect": "decrease"
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"comfort": "decrease"
+			},
+			"r_c1_to_m_c": {
+				"comfort": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_5_negative_kitkerfuffle",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"The debate over who gets to be the leader in a game explodes into a hurtful argument between m_c, r_c1, r_c2, r_c3, and r_c4.",
+			"m_c hurls insults at r_c1, r_c2, r_c3, and r_c4 for <i>thinking</i> they deserve a chance to play as the leader.",
+			"m_c is appalled when r_c1, r_c2, r_c3, and r_c4 won't let {PRONOUN/m_c/object} play as the leader, so {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} insulting everyone.",
+			"m_c demands that r_c1 give up playing the leader in a game, which sparks an argument that drags r_c2, r_c3, and r_c4 in as well.",
+			"A fight over a toy escalates into a screaming match between m_c, r_c1, r_c2, r_c3, and r_c4.",
+			"m_c calls r_c1, r_c2, r_c3, and r_c4 a bunch of wusses after a play-fight, and it escalates into a fight between the five.",
+			"m_c, r_c1, r_c2, r_c3, and r_c4 can't settle who gets a toy.",
+			"m_c won't stop instigating a fight between r_c1, r_c2, r_c3, and r_c4.",
+			"m_c orders r_c1, r_c2, r_c3, and r_c4 to give {PRONOUN/m_c/object} a toy they are playing with and starts a fight when told no.",
+			"A game of make-believe turns into a real scuffle between m_c, r_c1, r_c2, r_c3, and r_c4 when they can't decide who will play what in the next round.",
+			"m_c calls everyone in the nursery is a mouse-brain. It leads to an argument between {PRONOUN/m_c/self}, r_c1, r_c2, r_c3, and r_c4.",
+			"m_c screams in r_c1 and r_c2's faces that they both suck, sparking an argument that snowballs and drags in both r_c3 and r_c4.",
+			"m_c keeps hogging being the leader during a game, causing a fight to break out between {PRONOUN/m_c/self}, r_c1, r_c2, r_c3, and r_c4 over who gets to be it next."
+		],
+		"status_constraint": {
+			"m_c": [
+				"kitten"
+			],
+			"r_c1": [
+				"kitten"
+			],
+			"r_c2": [
+				"kitten"
+			],
+			"r_c3": [
+				"kitten"
+			],
+			"r_c4": [
+				"kitten"
+			]
+		},
+		"trait_constraint": {
+			"m_c": [
+				"attention-seeker",
+				"bossy",
+				"bullying",
+				"fearless",
+				"impulsive",
+				"unruly"
+			]
+		},
+		"general_reaction": {
 			"like": "decrease"
+		}
+	},
+	{
+		"id": "group_5_neg_kitsitting",
+		"intensity": "medium",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c didn't think it would be too hard to watch the kits, but r_c1, r_c2, r_c3, and r_c4 prove that thought very, very wrong.",
+			"It hasn't been that long since m_c began kitsitting r_c1, r_c2, r_c3, and r_c4, but chaos is already underway.",
+			"m_c wants to scream into {PRONOUN/m_c/poss} nest after kitsitting r_c1, r_c2, r_c3, and r_c4.",
+			"m_c doesn't have a moment to rest while kitsitting with how prone to trouble r_c1, r_c2, r_c3, and r_c4 are.",
+			"While kitsitting, m_c tries — and fails — to rein in the rambunctiousness of r_c1, r_c2, r_c3, and r_c4.",
+			"Nobody ever said kitsitting was easy, but m_c thought that r_c1, r_c2, r_c3, and r_c4 would be easier to watch than they actually are.",
+			"m_c wishes {PRONOUN/m_c/subject} could blink while kitsitting without missing a heartbeat of r_c1, r_c2, r_c3, and r_c4's troublemaking.",
+			"After kitsitting r_c1, r_c2, r_c3, and r_c4, m_c takes time to recover from the four kits' endless mischief."
+		],
+		"status_constraint": {
+			"m_c": [
+				"-kitten"
+			],
+			"r_c1": [
+				"kitten"
+			],
+			"r_c2": [
+				"kitten"
+			],
+			"r_c3": [
+				"kitten"
+			],
+			"r_c4": [
+				"kitten"
+			]
 		},
-        "r_c3_to_m_c": {
-			"comfort": "increase",
-			"trust": "increase"
+		"skill_constraint": {
+			"m_c": [
+				"-KIT,1"
+			]
 		},
-        "r_c4_to_m_c": {
-			"comfort": "increase",
-			"trust": "increase"
-		}   
+		"relationship_constraint": {
+			"m_c_to_r_c1": [
+				"-parent/child"
+			],
+			"m_c_to_r_c2": [
+				"-parent/child"
+			],
+			"m_c_to_r_c3": [
+				"-parent/child"
+			],
+			"m_c_to_r_c4": [
+				"-parent/child"
+			]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"like": "decrease",
+				"comfort": "decrease"
+			},
+			"m_c_to_r_c2": {
+				"like": "decrease",
+				"comfort": "decrease"
+			},
+			"m_c_to_r_c3": {
+				"like": "decrease",
+				"comfort": "decrease"
+			},
+			"m_c_to_r_c4": {
+				"like": "decrease",
+				"comfort": "decrease"
+			}   
+		}
+	},
+	{
+		"id": "group_5_neg_siblingappandkits_1",
+		"intensity": "low",
+		"cat_amount": 5,
+		"interactions": [
+			"r_c1 tells m_c to watch r_c2, r_c3, and r_c4. It was a disaster waiting to happen, and m_c adamantly refuses to kitsit again.",
+			"r_c1 suggests that m_c tries to bond with r_c2, r_c3, and r_c4. Everything that can go wrong does, making m_c avoidant of {PRONOUN/m_c/poss} siblings.",
+			"r_c1 needs someone to watch r_c2, r_c3, and r_c4, so it falls to m_c. The moment r_c1 returns, m_c bolts.",
+			"r_c1 entrusts r_c2, r_c3, and r_c4 to m_c. Try as {PRONOUN/m_c/subject} might to connect to {PRONOUN/m_c/poss} younger siblings, it goes up in flames."
+		],
+		"status_constraint": {
+			"m_c": [
+				"apprentice",
+				"medicine cat apprentice",
+				"mediator apprentice"
+			],
+			"r_c2": [
+				"kitten"
+			],
+			"r_c3": [
+				"kitten"
+			],
+			"r_c4": [
+				"kitten"
+			]
+		},
+		"relationship_constraint": {
+			"m_c_to_r_c1": [
+				"child/parent"
+			],
+			"m_c_to_r_c2": [
+				"siblings"
+			],
+			"m_c_to_r_c3": [
+				"siblings"
+			],
+			"m_c_to_r_c4": [
+				"siblings"
+			]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"like": "decrease"
+			},
+			"m_c_to_r_c2": {
+				"like": "decrease",
+				"comfort": "decrease"
+			},
+			"m_c_to_r_c3": {
+				"like": "decrease",
+				"comfort": "decrease"
+			},
+			"m_c_to_r_c4": {
+				"like": "decrease",
+				"comfort": "decrease"
+			}   
+		}
+	},
+	{
+		"id": "group_5_neg_medicinecatdebates",
+		"intensity": "high",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c, r_c1, r_c2, r_c3, and r_c4 discuss medicine amongst themselves, and it soon sours into a nasty argument.",
+			"m_c is in disbelief about the techniques r_c1, r_c2, r_c3, and r_c4 suggest during a discussion about medicine.",
+			"m_c, r_c1, r_c2, r_c3, and r_c4 cannot find common ground during a discussion about new usages for herbs.",
+			"After a heated argument about herbs, m_c, r_c1, r_c2, r_c3, and r_c4 avoid each other.",
+			"m_c, r_c1, r_c2, r_c3, and r_c4 have differing opinions about how to wrap wounds, and it escalates into a controversy.",
+			"m_c refuses to listen to r_c1, r_c2, r_c3, and r_c4's opinions regarding herbs.",
+			"A fiery debate blazes between m_c, r_c1, r_c2, r_c3, and r_c4 over how to get to specific herbs."
+		],
+		"status_constraint": {
+			"m_c": [
+				"medicine cat"
+			],
+			"r_c1": [
+				"medicine cat"
+			],
+			"r_c2": [
+				"medicine cat"
+			],
+			"r_c3": [
+				"medicine cat"
+			],
+			"r_c4": [
+				"medicine cat"
+			]
+		},
+		"general_reaction": {
+			"like": "decrease",
+			"trust": "decrease",
+			"respect": "decrease"
+		}
+	},
+	{
+		"id": "group_5_neg_deputyvswarriors",
+		"intensity": "high",
+		"cat_amount": 5,
+		"interactions": [
+			"r_c1, r_c2, r_c3, and r_c4 come to m_c with a complaint regarding patrols, but get blown off by m_c.",
+			"m_c refuses to understand r_c1, r_c2, r_c3, and r_c4's points about patrol organization.",
+			"m_c dismisses r_c1, r_c2, r_c3, and r_c4's arguments by reminding them who their deputy is.",
+			"When r_c1, r_c2, r_c3, and r_c4 begin an argument about hunting, m_c silences them through {PRONOUN/m_c/poss} authority.",
+			"None of r_c1, r_c2, r_c3, or r_c4's critiques about {PRONOUN/m_c/poss} usage of authority matter to m_c."
+		],
+		"status_constraint": {
+			"m_c": [
+				"deputy"
+			],
+			"r_c1": [
+				"warrior"
+			],
+			"r_c2": [
+				"warrior"
+			],
+			"r_c3": [
+				"warrior"
+			],
+			"r_c4": [
+				"warrior"
+			]
+		},
+		"trait_constraint": {
+			"m_c": [
+				"ambitious",
+				"arrogant",
+				"bloodthirsty",
+				"bold",
+				"cold",
+				"fierce",
+				"shameless",
+				"confident",
+				"childish",
+				"oblivious"
+			]
+		},
+		"specific_reaction": {
+			"r_c1_to_m_c": {
+				"like": "decrease",
+				"respect": "decrease"
+			},
+			"r_c2_to_m_c": {
+				"like": "decrease",
+				"respect": "decrease"
+			},
+			"r_c3_to_m_c": {
+				"like": "decrease",
+				"respect": "decrease"
+			},
+			"r_c4_to_m_c": {
+				"like": "decrease",
+				"respect": "decrease"
+			}   
+		}
+	},
+	{
+		"id": "group_5_neg_leadershiptroubles_1",
+		"intensity": "high",
+		"cat_amount": 5,
+		"interactions": [
+			"m_c is being spoken over by r_c1, but won't curb r_c1's habit even after r_c2, r_c3, and r_c4 bring it up.",
+			"r_c2, r_c3, and r_c4 bring up m_c's tendency to let r_c1 take over Clan affairs, but {PRONOUN/m_c/subject} {VERB/m_c/dismiss/dismisses} the warriors' concern.",
+			"m_c gets interrupted by r_c1 during a meeting, but m_c doesn't correct {PRONOUN/r_c1/object}, and it bothers r_c2, r_c3, and r_c4.",
+			"m_c tries to say something important, but r_c1 derails the conversation. r_c2, r_c3, and r_c4 confront m_c about r_c1's actions, only for m_c to ignore the concerns.",
+			"Every meeting, r_c1 speaks over m_c. r_c2, r_c3, and r_c4 talk to m_c about their discontent, but it goes nowhere."
+		],
+		"status_constraint": {
+			"m_c": [
+				"leader"
+			],
+			"r_c1": [
+				"deputy"
+			],
+			"r_c2": [
+				"warrior"
+			],
+			"r_c3": [
+				"warrior"
+			],
+			"r_c4": [
+				"warrior"
+			]
+		},
+		"trait_constraint": {
+			"m_c": [
+				"insecure",
+				"lonesome",
+				"nervous"
+			],
+			"r_c1": [
+				"ambitious",
+				"arrogant",
+				"bold",
+				"childish",
+				"troublesome"
+			]
+		},
+		"specific_reaction": {
+			"r_c2_to_m_c": {
+				"respect": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_r_c1": {
+				"respect": "decrease",
+				"comfort": "decrease"
+			},
+			"r_c3_to_m_c": {
+				"respect": "decrease",
+				"trust": "decrease"
+			},
+			"r_c3_to_r_c1": {
+				"respect": "decrease",
+				"comfort": "decrease"
+			},
+			"r_c4_to_m_c": {
+				"respect": "decrease",
+				"trust": "decrease"
+			},
+			"r_c4_to_r_c1": {
+				"respect": "decrease",
+				"comfort": "decrease"
+			}
+		}
 	}
-}
 ]

@@ -43,6 +43,43 @@
             ]
         }
     },
+    "breathless fit": {
+        "severity": "severe",
+        "mortality": {
+            "newborn": 2,
+            "kitten": 5,
+            "adolescent": 10,
+            "young adult": 20,
+            "adult": 20,
+            "senior adult": 20,
+            "senior": 5
+        },
+        "medicine_mortality": {
+            "newborn": 30,
+            "kitten": 50,
+            "adolescent": 70,
+            "young adult": 100,
+            "adult": 100,
+            "senior adult": 100,
+            "senior": 70
+        },
+        "duration": 1,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": {
+            "1": [
+                "betony"
+            ],
+            "2": [
+                "rosemary",
+                "juniper"
+            ],
+            "3": [
+                "mullein"
+            ]
+        }
+    },
     "diarrhea": {
         "severity": "major",
         "mortality": {
@@ -149,6 +186,10 @@
             {
                 "name": "yellowcough",
                 "chance": 60
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -194,6 +235,10 @@
             {
                 "name": "whitecough",
                 "chance": 10
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -360,6 +405,10 @@
             {
                 "name": "whitecough",
                 "chance": 15
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -400,6 +449,10 @@
             {
                 "name": "greencough",
                 "chance": 18
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -446,6 +499,10 @@
             {
                 "name": "redcough",
                 "chance": 80
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -689,6 +746,10 @@
             {
                 "name": "constant nightmares",
                 "chance": 15
+            },
+            {
+                "name": "selective mutism",
+                "chance": 150
             }
         ],
         "herbs": {

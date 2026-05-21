@@ -9,6 +9,7 @@
 			"m_c sees r_c whispering suspiciously to a Clanmate.",
 			"m_c smells something strange on r_c.",
 			"m_c feels like r_c has been quieter than usual.",
+			"m_c suspects r_c lied about something trivial.",
 			"m_c noticed that r_c wasn't in {PRONOUN/r_c/poss} nest last night.",
 			"Though m_c asks around, {PRONOUN/m_c/subject} can't find r_c anywhere.",
 			"m_c asks r_c a simple question, but r_c reacts strangely to it.",
@@ -41,15 +42,22 @@
 		"id": "trust_de_med1",
 		"interactions": [
 			"m_c knows that r_c just lied!",
+			"m_c worries about how capable r_c is.",
 			"r_c gave m_c a gift that doesn't make sense.",
 			"r_c forgot something important about m_c.",
 			"r_c keeps calling m_c by the wrong name.",
+			"m_c is disappointed when r_c doesn't uphold a promise.",
 			"r_c sides with a Clanmate instead of m_c on something.",
 			"m_c thinks that r_c spread a rumor about {PRONOUN/m_c/object}.",
 			"m_c doesn't think that r_c's intentions are all pure.",
+			"r_c tries to convince m_c that an obvious lie is real.",
+			"r_c said something about a Clanmate that concerned m_c.",
+			"m_c knows that r_c fake-laughed at {PRONOUN/m_c/poss} joke.",
+			"m_c doubts r_c would be able to protect {PRONOUN/m_c/object} if something went wrong.",
 			"m_c swears {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c sneaking around the camp at night.",
 			"r_c keeps making excuses about something m_c wants to know.",
 			"m_c can't seem to get a straight answer from r_c lately.",
+			"m_c starts to see flaws in r_c's philosophies.",
 			"r_c let m_c down when m_c was counting on {PRONOUN/r_c/object}."
 		]
 	},
@@ -91,7 +99,7 @@
 	{
 		"id": "trust_kit_de_med1",
 		"interactions": [
-			"m_c constantly pulling pranks on r_c.",
+			"m_c is constantly pulling pranks on r_c.",
 			"m_c always shifts the blame to r_c!",
 			"m_c won't stop crying whenever r_c starts winning in a game.",
 			"m_c grins while r_c is being scolded by an older Clanmate.",
@@ -119,6 +127,8 @@
 			"r_c uses one of m_c's fears against {PRONOUN/m_c/object}.",
 			"r_c accidentally hurts m_c during an argument between them.",
 			"m_c thinks r_c is trying to steal one of {PRONOUN/m_c/poss} friends!",
+			"m_c swears that r_c stole something from {PRONOUN/m_c/poss} nest.",
+			"m_c lied to r_c's face.",
 			"m_c turned to r_c in a time of need, only for r_c to abandon {PRONOUN/m_c/object}."
 		]
 	},
@@ -143,7 +153,8 @@
 			"hates"
 		],
 		"reaction_random_cat": {
-			"trust": "decrease"
+			"trust": "decrease",
+			"comfort": "decrease"
 		}
 	},
 	{

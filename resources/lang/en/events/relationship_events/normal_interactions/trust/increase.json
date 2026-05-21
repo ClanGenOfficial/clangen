@@ -79,7 +79,8 @@
 			"Only m_c and r_c know the details about a specific piece of Clan drama."
 		],
 		"reaction_random_cat": {
-			"trust": "increase"
+			"trust": "increase",
+			"comfort": "increase"
 		}
 	},
 	{
@@ -189,7 +190,8 @@
 			"medicine cat apprentice"
 		],
 		"reaction_random_cat": {
-			"trust": "increase"
+			"trust": "increase",
+			"like": "increase"
 		}
 	},
 	{
@@ -218,8 +220,25 @@
 			"leader"
 		],
 		"reaction_random_cat": {
-			"trust": "increase"
+			"like": "increase"
 		}
+	},
+	{
+		"id": "trust_kit_parent_inc_med",
+		"interactions": [
+			"m_c always listens to r_c's advice.",
+			"m_c knows r_c won't judge {PRONOUN/m_c/object}.",
+			"m_c knows r_c will always have time for {PRONOUN/r_c/poss} kit.",
+			"r_c helps m_c up when {PRONOUN/m_c/subject} {VERB/r_c/trip/trips}.",
+			"r_c answers m_c's silly question honestly.",
+			"r_c takes m_c's bump seriously, even if other cats think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} faking it."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"relationship_constraint": [
+			"child/parent"
+		]
 	},
 	{
 		"id": "trust_inc_high1",
@@ -239,7 +258,7 @@
 		"id": "trust_inc_high2",
 		"intensity": "high",
 		"interactions": [
-			"m_c is letting r_c share {PRONOUN/r_c/poss} troubles with {PRONOUN/m_c/object}, hoping {PRONOUN/r_c/subject}'ll feel better afterwards.",
+			"m_c is letting r_c share {PRONOUN/r_c/poss} troubles with {PRONOUN/m_c/object}, hoping {PRONOUN/r_c/subject}'ll feel better afterward.",
 			"m_c promises to always look out for r_c.",
 			"m_c trusts r_c with a very important task.",
 			"m_c often goes to r_c for guidance.",
@@ -249,6 +268,8 @@
 			"m_c and r_c agree on something the rest of the Clan finds contentious.",
 			"m_c tells r_c to count on {PRONOUN/m_c/object} in a difficult situation."
 		],
+		"main_status_constraint": ["-kitten"],
+		"random_status_constraint": ["-kitten"],
 		"reaction_random_cat": {
 			"trust": "increase"
 		}
@@ -265,26 +286,11 @@
 			"During a patrol, m_c and r_c have a long conversation about their beliefs and agree on many things.",
 			"During the last gathering, m_c and r_c defended their Clan against another Clan's heckling."
 		],
-		"main_status_constraint": [
-			"apprentice",
-			"warrior",
-			"mediator",
-			"medicine cat",
-			"deputy",
-			"medicine cat apprentice",
-			"leader"
-		],
-		"random_status_constraint": [
-			"apprentice",
-			"warrior",
-			"mediator",
-			"medicine cat",
-			"deputy",
-			"leader",
-			"medicine cat apprentice"
-		],
+		"main_status_constraint": ["-kitten"],
+		"random_status_constraint": ["-kitten"],
 		"reaction_random_cat": {
-			"trust": "increase"
+			"trust": "increase",
+			"comfort": "increase"
 		}
 	},
 	{

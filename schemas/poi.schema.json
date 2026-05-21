@@ -1,0 +1,105 @@
+{
+  "$defs": {
+    "BiomeNoExclusions": {
+      "enum": [
+        "mountainous",
+        "plains",
+        "forest",
+        "beach",
+        "wetlands",
+        "desert"
+      ],
+      "title": "BiomeNoExclusions",
+      "type": "string"
+    },
+    "PointOfInterestItem": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "description": "Category the Point of Interest belongs to.",
+          "enum": [
+            "gathering",
+            "moonplace",
+            "terrain"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "biome": {
+          "description": "Biomes the Point of Interest belongs to.",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/BiomeNoExclusions"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Biome",
+          "type": "array"
+        },
+        "tags": {
+          "items": {
+            "$ref": "#/$defs/PointsOfInterestTag"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "category",
+        "biome",
+        "tags"
+      ],
+      "title": "PointOfInterestItem",
+      "type": "object"
+    },
+    "PointsOfInterestTag": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestTagEnum"
+        }
+      ],
+      "title": "PointsOfInterestTag"
+    },
+    "PointsOfInterestTagEnum": {
+      "enum": [
+        "cave",
+        "covered",
+        "fall_risk",
+        "hole",
+        "prey",
+        "prey:flying",
+        "prey:water",
+        "prey:ground",
+        "prey:eggs",
+        "prey:fish",
+        "rocks",
+        "tainted",
+        "trees",
+        "Twolegs",
+        "Twolegs:abandoned",
+        "Twolegs:present",
+        "unstable",
+        "water",
+        "water:still",
+        "water:flowing",
+        "water:ocean",
+        "nests"
+      ],
+      "title": "PointsOfInterestTagEnum",
+      "type": "string"
+    }
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/PointOfInterestItem"
+  },
+  "title": "PointsOfInterestSchema",
+  "type": "object"
+}

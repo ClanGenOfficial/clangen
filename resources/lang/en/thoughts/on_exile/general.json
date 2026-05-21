@@ -1,0 +1,15 @@
+[
+    {
+        "id": "general_exiled",
+        "thoughts": [
+            "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been exiled"
+        ]
+    },
+    {
+        "id": "general_exiled_revenge",
+        "thoughts": [
+            "Swears {PRONOUN/m_c/poss} revenge for being exiled"
+        ],
+        "main_trait_constraint": ["vengeful", "bloodthirsty"]
+    }
+]

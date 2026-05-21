@@ -5,22 +5,18 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.game_structure import image_cache
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UISpriteButton,
-    UISurfaceImageButton,
-)
-from scripts.utility import (
-    get_personality_compatibility,
-    get_text_box_theme,
-    ui_scale,
-    ui_scale_dimensions,
-    ui_scale_offset,
-    shorten_text_to_fit,
-)
+from ..ui.elements.sprite_button import UISpriteButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import shorten_text_to_fit
+from ..events_module.event_filters import get_personality_compatibility
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
 from .enums import GameScreen
+from ..cat.enums import CatCompatibility
 from ..clan_package.settings import get_clan_setting
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
@@ -495,7 +491,7 @@ class ChooseMateScreen(Screens):
         and the page"""
         self.all_offspring = [
             Cat.fetch_cat(i)
-            for i in list(self.the_cat.inheritance.kits)
+            for i in inheritance_db.get_children(self.the_cat.ID)
             if isinstance(Cat.fetch_cat(i), Cat)
         ]
         if self.selected_cat and self.kits_selected_pair:
@@ -801,8 +797,7 @@ class ChooseMateScreen(Screens):
         """Updates all elements with the current cat, as well as the selected cat.
         Called when the screen switched, and whenever the focused cat is switched"""
         self.the_cat = Cat.all_cats[switch_get_value(Switch.cat)]
-        if not self.the_cat.inheritance:
-            self.the_cat.create_inheritance_new_cat()
+        self.the_cat.create_inheritance_new_cat()
 
         (
             self.next_cat,
@@ -1092,22 +1087,20 @@ class ChooseMateScreen(Screens):
 
     def draw_compatible_line_affection(self):
         """Draws the heart-line based on capability, and draws the hearts based on romantic love."""
+        compatibility = get_personality_compatibility(self.the_cat, self.selected_cat)
+
+        if compatibility == CatCompatibility.POSITIVE:
+            line = "resources/images/line_compatible.png"
+        elif compatibility == CatCompatibility.NEGATIVE:
+            line = "resources/images/line_incompatible.png"
+        else:
+            line = "resources/images/line_neutral.png"
 
         # Set the lines
         self.selected_cat_elements["compat_line"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, 190), (200, 78))),
             pygame.transform.scale(
-                image_cache.load_image(
-                    "resources/images/line_compatible.png"
-                    if get_personality_compatibility(self.the_cat, self.selected_cat)
-                    else (
-                        "resources/images/line_incompatible.png"
-                        if not get_personality_compatibility(
-                            self.the_cat, self.selected_cat
-                        )
-                        else "resources/images/line_neutral.png"
-                    )
-                ).convert_alpha(),
+                image_cache.load_image(line).convert_alpha(),
                 ui_scale_dimensions((200, 78)),
             ),
             anchors={"centerx": "centerx"},
@@ -1205,6 +1198,3 @@ class ChooseMateScreen(Screens):
         ]
 
         return valid_mates
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]

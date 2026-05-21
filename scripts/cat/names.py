@@ -9,7 +9,7 @@ import random
 import ujson
 
 from scripts.game_structure import constants
-from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.enums import CatRank, CatGroup, CatAge
 from scripts.housekeeping.datadir import get_save_dir
 
 
@@ -260,11 +260,40 @@ class Name:
             else:
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
+    def get_specsuffix_name(self, rank: CatRank = CatRank.LEADER):
+        """
+        Return the cat's name with the appropriate special suffix. If no specsuffix is given for that rank, returns
+        default prefix + suffix. If specsuffix_hidden is true, return default prefix + suffix.
+        :param rank: CatRank matching
+        :return: Cat's name string
+        """
+        if rank in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:
+            return self.prefix + self.names_dict["special_suffixes"][rank]
+
+        return self.prefix + self.suffix
+
     def __repr__(self):
         # Handles predefined suffixes (such as newborns being kit),
         # then suffixes based on ages (fixes #2004, just trust me)
 
         # Handles suffix assignment with outside cats
+        if (
+            self.cat.status.is_lost(CatGroup.PLAYER_CLAN_ID)
+            and not self.cat.status.is_former_clancat
+            and self.suffix
+        ):
+            # these are cats who were born to a parent who'd been lost frm their clan, and who's parent decided to keep with traditional naming
+            age_to_rank = {
+                CatAge.NEWBORN: CatRank.NEWBORN,
+                CatAge.KITTEN: CatRank.KITTEN,
+                CatAge.ADOLESCENT: CatRank.APPRENTICE,
+            }
+            if self.cat.age in age_to_rank:
+                rank = age_to_rank[self.cat.age]
+                return self.prefix + self.names_dict["special_suffixes"][rank]
+            else:
+                return self.prefix + self.suffix
+
         if self.cat.status.is_former_clancat:
             old_rank = self.cat.status.find_prior_clan_rank()
 

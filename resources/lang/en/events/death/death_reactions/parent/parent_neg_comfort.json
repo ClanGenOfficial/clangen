@@ -1,1 +1,10 @@
-{}
+{
+    "general": {
+        "body": [
+
+        ],
+        "no_body": [
+            "r_c sits out in the camp, not in grief, but in fear at not seeing m_c’s body. How can {PRONOUN/r_c/subject} be sure that {PRONOUN/r_c/poss} kit isn’t up to something much worse? m_c refuses to rest until {PRONOUN/r_c/poss} clanmates convince {PRONOUN/r_c/object} that m_c is actually gone."
+        ]
+    }
+}

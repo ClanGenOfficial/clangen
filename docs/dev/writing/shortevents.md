@@ -18,7 +18,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     "season": [],
     "sub_type": [],
     "tags": [],
-    "frequency": 0,
+    "frequency": 4,
     "event_text": "event text here",
     "new_accessory": [],
     "m_c": {
@@ -26,9 +26,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         "status": [],
         "relationship_status": [],
         "skill": [],
-        "not_skill": [],
         "trait": [],
-        "not_trait": [],
         "backstory": [],
         "dies": false
     },
@@ -37,9 +35,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         "status": [],
         "relationship_status": [],
         "skill": [],
-        "not_skill": [],
         "trait": [],
-        "not_trait": [],
         "backstory": [],
         "dies": false
     },
@@ -54,12 +50,11 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         }
     ],
     "exclude_involved": [],
-    "history:": [
+    "history": [
         {
             "cats": [],
             "scar": "",
-            "reg_death": "",
-            "lead_death": ""
+            "death": ""
         }
     ],
     "relationships": [
@@ -103,33 +98,33 @@ the event_id is a unique string used to identify the event. It does not affect e
 >- If you are making new_cat or other_clan events, please include if the event is hostile/neutral/welcoming or hostile/neutral/allies in the ID
 >- If the event is under some kind of constraint, like being skill locked or relationship locked, please indicate that in the ID 
 
-| Abbreviations |      Meaning                     |
-|---------------|----------------------------------|
-| mtn           | appears in the mountainous biome |
-| pln           | appears in the plains biome      |
-| fst           | appears in the forest biome      |
-| bch           | appears in the beach biome       |
-| wtlnd         | appears in the wetlands biome    |
-| dst           | appears in the desert biome      |
-| gen           | appears in any biome             |
-| death         | death type event                 |
-| injury        | injury type event                |
-| new_cat       | new_cat type event               |
-| misc          | any event type that does not fit into the preceding three       |
+| Abbreviations | Meaning                                                   |
+|---------------|-----------------------------------------------------------|
+| mtn           | appears in the mountainous biome                          |
+| pln           | appears in the plains biome                               |
+| fst           | appears in the forest biome                               |
+| bch           | appears in the beach biome                                |
+| wtlnd         | appears in the wetlands biome                             |
+| dst           | appears in the desert biome                               |
+| gen           | appears in any biome                                      |
+| death         | death type event                                          |
+| injury        | injury type event                                         |
+| new_cat       | new_cat type event                                        |
+| misc          | any event type that does not fit into the preceding three |
 
 Example:
 !!! todo "TODO"
     write example
 
 How to make sure your event_id is unique:
-> ctrl (or command) + f through the .json file you're writing the event into. As each event_id contains the biome & type within it and we have different jsons for different biomes and event types, if your potential event_id isn't in the json already, your event_id will be unique.
+> ctrl (or command) + f through the .json file you're writing the event into. As each event_id contains the biome & type within it, and we have different jsons for different biomes and event types, if your potential event_id isn't in the json already, your event_id will be unique.
 
 !!! caution
     No NSFW event_ids. No exceptions.
 
 ***
 ### location:list[str]
->This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  
+>This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 | string        | use                              |
 |---------------|----------------------------------|
@@ -144,10 +139,10 @@ How to make sure your event_id is unique:
 !!! todo "TODO"
     add a table listing various camps
 
-Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols. 
+Please have a look at the [full biome differences list](reference/biomes.md) when thinking about writing patrols. 
 
 ### season:list[str]
->List of seasons in which the event may occur.
+>List of seasons in which the event may occur. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 lowercase season names + "any"
 
@@ -155,12 +150,12 @@ lowercase season names + "any"
 ### sub_type:list[str]
 >List of subtypes for this event. If the event has no subtype, remove parameter.  Possible subtypes:
 
-| death event subtypes | use                                                                                                               |
-|----------------------|-------------------------------------------------------------------------------------------------------------------|
-| war                  | marks event as only occurring during war                                                                          |
-| murder               | marks event as being a murder (m_c is the victim, r_c is the murderer)                                            |
-| old_age              | marks event as only occurring if the m_c is old enough to die of old age                                          |
-| mass_death           | marks event as a mass death event, 3-11 cats will be selected for death                                       |
+| death event subtypes | use                                                                      |
+|----------------------|--------------------------------------------------------------------------|
+| war                  | marks event as only occurring during war                                 |
+| murder               | marks event as being a murder (m_c is the victim, r_c is the murderer)   |
+| old_age              | marks event as only occurring if the m_c is old enough to die of old age |
+| mass_death           | marks event as a mass death event, 3-11 cats will be selected for death  |
 
 | injury event subtypes | use                                      |
 |-----------------------|------------------------------------------|
@@ -184,15 +179,15 @@ lowercase season names + "any"
 ### tags:list[str]
 >Tags are used for some filtering purposes.
 
-| string               | use                                                                                                                                     |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| classic              | event only occurs in classic mode                                                                                                       |
-| cruel_season         | event only occurs in cruel_season mode                                                                                                  |
-| no_body              | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events                |
-| skill_trait_required | normally there is a small chance to bypass skill and trait requirements, this tag will make that chance nonexistent.                    |
-| clan_wide            | if the event text does not mention the main or random cat, but is instead an event occurring towards the Clan as a whole, use this tag. |
-| romance              | marks event as being between two cats who are allowed romantic relations                                                                |
-| adoption             | marks event as being an adoption                                                                                                        |
+| string               | use                                                                                                                      |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------|
+| classic              | event only occurs in classic mode                                                                                        |
+| cruel_season         | event only occurs in cruel_season mode                                                                                   |
+| no_body              | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events |
+| skill_trait_required | normally there is a small chance to bypass skill and trait requirements, this tag will make that chance nonexistent.     |
+| clan_wide            | if this is a murder reveal, use this tag to denote this event as informing the ENTIRE Clan of the murder.                |
+| romance              | marks event as being between two cats who are allowed romantic relations                                                 |
+| adoption             | marks event as being an adoption                                                                                         |
 
 > **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
 
@@ -247,9 +242,9 @@ lowercase season names + "any"
 ### m_c:dict[str, various]
 >Specifies the requirements for the main cat (m_c) of the event. 
 >
->**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](reference/tag-lists.md#__tabbed_2_1)
+>**age:[list]** : a list of ages m_c can be. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags). [Possible Ages](reference/tag-lists.md#__tabbed_2_1)
 >
->**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](reference/tag-lists.md#__tabbed_2_2)
+>**status:[list]** : a list of statuses m_c can b. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags). [Possible Statuses](reference/tag-lists.md#__tabbed_2_2)
 
 !!! tip
     Keep in mind that the status and ages you input can limit each other! For example, if you add "kitten" to `age`, remember that kitten age cats can only ever have the kitten status.  This means that you *could* leave `status` as "any" and be secure in the knowledge that kitten status cats will be the only ones chosen.  
@@ -258,19 +253,13 @@ lowercase season names + "any"
 
     However, remember the wide range of ages and statuses we have and how they can overlap with each other.  It's possible to have warriors who graduate early and are still adolescent age.  It's also possible for apps to train longer than usual and become young adults without becoming warriors.  Elders, likewise, can be both young and old cats as it's possible for cats to retire to the elder den at any age.
 
->**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels) and [Relationship Types](reference/tag-lists.md#relationship-types).
+>**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
->**skill[list]** : m_c must possess at least one skill from this list. if they can be anything, use "any"
+>**skill[list]** : m_c must possess at least one skill from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**not_skill[list]** : m_c cannot possess any of the skills on this list. 
->This is mostly useful in cases where a cat can have any skill except one or two, in which case you would need to list those few skills here, but would not have to list all the other skills in the skill parameter.  Cats are also capable of having multiple skills, so it can be valuable to specify if a cat with an allowed skill should still be prevented from this event due to possessing a second, un-allowed skill.  Also useful for stopping a cat with a certain skill (like FIGHTER,3) from getting an event incongruent with their skill (dying in a fight to an apprentice)
+>**trait[list]** : m_c must possess at least one trait from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**trait[list]** : m_c must possess at least one trait from this list. if they can be anything, use "any"
->
->**not_trait[list]** : m_c cannot possess any of the traits on this list. 
->This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.  
->
->**backstory[list]** : m_c must possess a backstory from this list. if they can be anything, use "any"
+>**backstory[list]** : m_c must possess a backstory from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
 >**dies[bool]** : the m_c will die due to this event. default is False
 
@@ -279,23 +268,18 @@ lowercase season names + "any"
 ### r_c:dict[str, various]
 >Specifies the requirements for r_c of the event.  If there is no r_c in the event, then do not include this parameter. 
 >
->**age:[list]** : a list of ages r_c can be. if they can be anything, use "any"
+>**age:[list]** : a list of ages r_c can be. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**status:[list]** : a list of statuses r_c can be. if they can be anything, use "any"
+>**status:[list]** : a list of statuses r_c can be. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-levels).
+>**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers).
 > 
->**skill[list]** : r_c must possess at least one skill from this list. if they can be anything, remove parameter or leave list empty.
+>**skill[list]** : r_c must possess at least one skill from this list. If they can be anything, remove parameter or leave list empty. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**not_skill[list]** : r_c cannot possess any of the skills on this list
->This is mostly useful in cases where a cat can have any skill except one or two, in which case you would need to list those few skills here, but would not have to list all the other skills in the skill parameter.  Cats are also capable of having multiple skills, so it can be valuable to specify if a cat with an allowed skill should still be prevented from this event due to possessing a second, un-allowed skill.
 >
->**trait[list]** : r_c must possess at least one trait from this list. if they can be anything, use "any"
+>**trait[list]** : r_c must possess at least one trait from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**not_trait[list]** : r_c cannot possess any of the traits on this list
->This is mostly useful in cases where a cat can have any trait except one or two, in which case you would need to list those few traits here, but would not have to list all the other traits in the skill parameter.  
->
->**backstory[list]** : r_c must possess a backstory from this list. if they can be anything, use "any"
+>**backstory[list]** : r_c must possess a backstory from this list. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
 >**dies[bool]** : r_c will die due to this event, default is False
 
@@ -328,7 +312,8 @@ lowercase season names + "any"
 | "kittypet"                                  | Gives the cat a kitty-pet type backstory. If "meeting" is also included, this tag will make the cat a kittypet outsider.                                                                                                                                                                                                                                            |
 | "loner"                                     | Gives the cat a loner type backstory. If "meeting" is also included, this tag will make the cat a loner outsider.                                                                                                                                                                                                                                                   |
 | "rogue"                                     | Gives the cat a rogue type backstory. If "meeting" is also included, this tag will make the cat a rogue outsider.                                                                                                                                                                                                                                                   |
-| "clancat"                                   | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
+| "clancat"                                   | Gives the cat a clancat type backstory. If "meeting" is also included, this tag will make an Other Clancat.                                                                                                                                                                                                                                                         |
+| "former clancat"                            | Gives the cat a former-clancat type backstory. If "meeting" is also included, this tag will make the cat a former Clancat outsider.                                                                                                                                                                                                                                 |
 | "meeting"                                   | Make the cat an outsider (the patrol just met them, but they didn't join). That cat will never take a new Clan-like name.                                                                                                                                                                                                                                           |
 | "exists"                                    | Will attempt to find an existing outsider to utilize instead of creating a new one. Keep in mind that this ONLY checks if the existing outsider matches indicated status, age, and backstory.  DO NOT use this tag in conjunction with creating litters or assigning parentage.                                                                                     |
 | "unknown"                                   | Prevents the inclusion of "notifying" text such as "The Clan has met `name`". Best used for situations in which a cat needs to be created, but the Clan didn't actually interact with them (i.e. creating abandoned litters).                                                                                                                                       |
@@ -343,18 +328,13 @@ lowercase season names + "any"
 ***
 
 ### injury:list[dict[str, various]]
->Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the blocks as you like within the list. 
+>Optional. Indicates which cats get injured, and how. You can include as many of the blocks as you like within the list. 
 >
 >```json
 >    {
 >      "cats": [],
 >      "injuries": [],
->      "scars": [],
->      "history:": {
->        "scar": "",
->        "reg_death": "",
->        "lead_death": ""
->      }
+>      "scars": []
 >    }
 >```
 >
@@ -375,7 +355,7 @@ lowercase season names + "any"
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
->Optional. A scar is chosen from this pool to possibly be given upon healing their injury.
+>Optional. This replaces the standard scar pool for the given injury.
 >
 >[Scar List](reference/tag-lists.md#__tabbed_1_5)
 
@@ -390,7 +370,7 @@ lowercase season names + "any"
 
 ### history_text: Dict[str, str]:
 >Controls the history-text for scars and death. You must include a list of cats for whom the history will be assigned (i.e. "m_c", "r_c").
->[History Writing Guidelines](reference/index.md#writing-histories)
+>[History Writing Guidelines](reference/common-formats.md#writing-histories)
 >
 >Block:
 >
@@ -398,91 +378,19 @@ lowercase season names + "any"
 >    {
 >        "cats": [],
 >        "scar": "",
->        "reg_death": "",
->        "lead_death": ""
+>        "death": ""
 >    }
 >```
 
-| text_type    | "custom history message"                                                                                    |
-|--------------|-------------------------------------------------------------------------------------------------------------|
-| "reg_death"  | Death history text for non-leaders. Whole sentence.  must include if cat is dead or injured                 |
-| "lead_death" | Death history text for leaders. Sentence fragment. must include if dead or injured cat could be the leader. |
-| "scar"       | Scar history. Whole sentence.  must include if cat gets injured                                             |
+| text_type | "custom history message"                                                    |
+|-----------|-----------------------------------------------------------------------------|
+| "death"   | Death history text. Whole sentence.  must include if cat is dead or injured |
+| "scar"    | Scar history. Whole sentence.  must include if cat gets injured             |
 
 ***
 
 ### relationships:list[dict[str, various]]
->Optional. Indicates effect on cat relationships. You can include as many of the following blocks as you want, in a list
->
->```
->{
->    "cats_from": [],
->    "cats_to": [],
->    "mutual": false,
->    "values" [],
->    "amount": 5
->}
->```
->
->Parameter for each:
-
->**cats_from: List[str] :** The cat's whose relationship values are being edited. You are changing how the "cats_from" feels. 
-
-| string      |                                                                                                            |
-|-------------|------------------------------------------------------------------------------------------------------------|
-| m_c         | main cat's feelings are affected                                                                           |
-| r_c         | other cat's feelings are affected                                                                          |
-| n_c:{index} | new cat's feelings are affected                                                                            |
-| clan        | the clan's feelings are affected (experimental, unsupported in old format and not sure if i can make work) |
-
-
->**cats_to: List[str] :** The target of the relationship. You can changing how "cats_from" feel about "cats_to"
-
-| string      |                                                                                                                 |
-|-------------|-----------------------------------------------------------------------------------------------------------------|
-| m_c         | feelings toward the main cat are affected                                                                       |
-| r_c         | feelings toward the other_cat are affected                                                                      |
-| n_c:{index} | feelings toward the new cat are affected                                                                        |
-| clan        | feelings toward the clan are affected (experimental, unsupported in old format and not sure if i can make work) |
-
-> Group modifiers: These will modify the cats already being gathered according to the other strings. For example, a block with `"cats_from": ["clan", "low_lawful"]` will gather all the cats in the Clan with a 0-8 lawfulness facet.  These can be combined to get cats with specific ranges of multiple facets.
-
-| modifier     |                                                |
-|--------------|------------------------------------------------|
-| low_lawful   | cats with a 0-8 lawfulness facet are affected  |
-| high_lawful  | cats with a 9-16 lawfulness facet are affected |
-| low_social   | cats with a 0-8 sociable facet are affected    |
-| high_social  | cats with a 9-16 sociable facet are affected   |
-| low_stable   | cats with a 0-8 stability facet are affected   |
-| high_stable  | cats with a 9-16 stability facet are affected  |
-| low_aggress  | cats with a 0-8 aggression facet are affected  |
-| high_aggress | cats with a 9-16 aggression facet are affected |
-
->**mutual: bool :** Optional. Controls if the relation effect will be applied in both directions. 
-
-| bool  |                                                                                                                                              |
-|-------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| true  | Relationship effects will be applied in both directions. Equivalent to repeating the relation block with "cats_from" and "cats_to" swapped.  |
-| false | Default. Relationship effects will be applied in a single direction.                                                                         |
-
->**values: bool :** Controls which relationship values are affected.
-
-| string     |                                                                                                                                                                                                                            |
-|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "romantic" | Romantic-like is affected. Be careful with this one! There is no automatic check to ensure the cats are potential mates. See "tags" and ensure that the correct tags are added, and "cats_to" and "cats_from" are correct. |
-| "platonic" | Platonic like is effected                                                                                                                                                                                                  |
-| "dislike"  | Dislike (hate) is effected                                                                                                                                                                                                 |
-| "comfort"  | Comfort (comfortable) is effected                                                                                                                                                                                          |
-| "jealous"  | Jealousy is effected                                                                                                                                                                                                       |
-| "trust"    | Trust (reliance) is effected                                                                                                                                                                                               |
-| "respect"  | Respect (admiration) is affected.                                                                                                                                                                                          |
-
->**amount: int :** Exact amount the relationship value will be affected. Can be positive or negative. 
-
-| int           |                                                                                                                                |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------|
-| {any integer} | The amount the relationship will be affected. 5 is a normal amount, and 15 is a large amount. Try to stay within those bounds. |
-
+>Optional. Indicates effect on cat relationships. Check [Writing Relationship Changes](reference/common-formats.md#writing-relationship-changes) for full parameters.
 ***
 
 ### outsider:dict[str, various]

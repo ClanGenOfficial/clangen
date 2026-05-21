@@ -11,6 +11,8 @@ import asyncio
 import threading
 from time import time
 
+import i18n
+
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure import game
@@ -33,7 +35,7 @@ class _DiscordRPC(threading.Thread):
         self._rpc = None
         self._client_id = client_id
         self._connected = False
-        self._start_time = round(time() * 1000)
+        self._start_time = int(time())
         self._rpc_supported = False
         self._event_loop = asyncio.new_event_loop()
 
@@ -44,11 +46,18 @@ class _DiscordRPC(threading.Thread):
     def run(self):
         self.start_rpc.wait()
         self.get_rpc()
-        self.connect()
         while not self.close_rpc.is_set():
             self.update_rpc.wait()
-            self.update()
-        self.close()
+            if not self.close_rpc.is_set():
+                self.update()
+        if self._connected:
+            try:
+                self._rpc.clear()
+                self._rpc.close()
+            except Exception:
+                pass
+            finally:
+                self._connected = False
 
     def get_rpc(self):
         # Check if pypresence is available.
@@ -61,7 +70,7 @@ class _DiscordRPC(threading.Thread):
             print("Discord RPC is supported")
         except ImportError:
             print("Pypresence not installed, Discord RPC isn't supported.")
-            print("To enable rpc, run 'pip install pypresence' in your terminal.")
+            print("To enable rpc, run 'uv add pypresence' in your terminal.")
             return
         # Check if Discord is running.
         try:
@@ -113,7 +122,7 @@ class _DiscordRPC(threading.Thread):
             # Example: beach_greenleaf_camp1_dark
 
             if game.clan:
-                clan_name = f"{game.clan.displayname}Clan"
+                clan_name = i18n.t("general.clan", name=game.clan.displayname)
                 cats_amount = len(game.clan.clan_cats)
                 clan_age = game.clan.age
             else:
@@ -123,11 +132,11 @@ class _DiscordRPC(threading.Thread):
             try:
                 self._rpc.update(
                     state=state_text,
-                    details=f"Managing {clan_name} for {clan_age} moons",
+                    details=f"{clan_name} ({clan_age} moons)",
                     large_image=img_str.lower(),
                     large_text=img_text,
                     small_image="discord",
-                    small_text=f"Managing {cats_amount} cats",
+                    small_text=f"{cats_amount} cats",
                     start=self._start_time,
                     buttons=[
                         {
@@ -144,6 +153,5 @@ class _DiscordRPC(threading.Thread):
         self.update_rpc.clear()
 
     def close(self):
-        if self._connected:
-            self._rpc.close()
-            self._connected = False
+        self.close_rpc.set()
+        self.update_rpc.set()

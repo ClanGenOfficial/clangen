@@ -66,8 +66,6 @@ def medicine_cats_can_cover_clan(all_cats, amount_per_med) -> bool:
 def get_amount_cat_for_one_medic(clan):
     """Returns the amount of cats one medicine cat can treat"""
     amount = 10
-    if clan and clan.game_mode == "cruel season":
-        amount = 7
     if clan and clan.game_mode == "classic":
         # just hope nobody has clans with more than 1,000,000 cats in classic
         amount = 1000000
@@ -184,6 +182,7 @@ class Injury:
         cause_permanent=None,
         herbs=None,
         event_triggered=False,
+        potential_scars=None,
     ):
         self.name = name
         self.severity = severity
@@ -196,6 +195,7 @@ class Injury:
         self.cause_permanent = cause_permanent
         self.herbs = herbs if herbs else []
         self.new = event_triggered
+        self.potential_scars = potential_scars
 
         self.current_duration = duration
         self.current_mortality = mortality

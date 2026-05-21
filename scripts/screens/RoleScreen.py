@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 import os
+from typing import TYPE_CHECKING
 
 import i18n
 import pygame
@@ -8,17 +9,11 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game
-from scripts.game_structure.ui_elements import (
-    UITextBoxTweaked,
-    UISurfaceImageButton,
-)
-from scripts.utility import (
-    get_text_box_theme,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale,
-    adjust_list_text,
-)
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import adjust_list_text, shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
 from ..game_structure.game.settings import game_setting_get
@@ -28,9 +23,12 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
+
 
 class RoleScreen(Screens):
-    the_cat = None
+    the_cat: "Cat" = None
     selected_cat_elements = {}
     buttons = {}
     next_cat = None
@@ -251,7 +249,7 @@ class RoleScreen(Screens):
             i18n.t(f"cat.personality.{self.the_cat.personality.trait}"),
             i18n.t("general.moons_age", count=self.the_cat.moons)
             + "  |  "
-            + self.the_cat.genderalign,
+            + self.the_cat.genderalign_string,
         ]
 
         if self.the_cat.mentor:

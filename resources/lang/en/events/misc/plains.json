@@ -113,7 +113,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c tripped and ended up with acc_plural all over {PRONOUN/m_c/object}! Oh hey, it actually doesn't look that bad...",
+        "event_text": "m_c tripped and ended up with acc_plural all over {PRONOUN/m_c/object}! As it turns out, m_c quite likes the look of them.",
         "new_accessory": [
             "CLOVER",
             "DAISY"
@@ -140,7 +140,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c sat and watched the grass wave across the plain, wondering when times would feel that gentle again. ",
+        "event_text": "m_c watched the grass sway across the plains, wondering when times would feel that gentle again. ",
         "m_c": {
             "status": [
                 "leader"
@@ -163,7 +163,7 @@
     {
         "event_id": "pln_misc_war_bolster1",
         "location": [
-            "plains_camp2"
+            "plains:camp2"
         ],
         "season": [
             "any"
@@ -173,6 +173,20 @@
         ],
         "frequency": 4,
         "event_text": "m_c has been working to disguise the entrance into the camp tunnels.",
-        "m_c": {}
+        "m_c": {
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
+                "amount": 5,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from approved of how cat_to disguised the camp tunnels' entrance."
+                }
+            }
+        ]
     }
 ]
