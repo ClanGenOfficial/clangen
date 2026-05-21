@@ -1,4 +1,4 @@
-from enum import StrEnum, Enum
+from enum import StrEnum
 
 
 class GameScreen(StrEnum):

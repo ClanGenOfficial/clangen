@@ -182,7 +182,7 @@ class SettingsScreen(Screens):
             if self.sub_menu in ("general", "relation", "language"):
                 self.handle_checkbox_events(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen(GameScreen.START)
             elif event.key == pygame.K_RIGHT:

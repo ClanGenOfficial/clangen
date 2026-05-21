@@ -67,11 +67,11 @@ class KeyboardManager(InputManager):
         return KeyboardManager.action_map.get(event.key)
 
     def process_event(self, event: pygame.Event):
-        if event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        if event.type == pygame.KEYDOWN:
             action = self._get_action_from_event(event)
             if action:
                 self._post_action(action, custom_events.INPUT_ACTION_PRESSED)
-        if event.type == pygame.KEYUP and game_setting_get("keybinds"):
+        if event.type == pygame.KEYUP:
             action = self._get_action_from_event(event)
             if action:
                 self._post_action(action, custom_events.INPUT_ACTION_RELEASED)

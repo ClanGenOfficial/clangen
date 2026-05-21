@@ -198,7 +198,7 @@ class StartScreen(Screens):
 
         # Create buttons
 
-        element_list = []
+        interactive_elements = []
 
         self.continue_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 310), (200, 30))),
@@ -209,7 +209,7 @@ class StartScreen(Screens):
         )
         set_focus(new_focus=self.continue_button)
         self.current_focus = self.continue_button
-        element_list.append(self.continue_button)
+        interactive_elements.append(self.continue_button)
 
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
@@ -219,7 +219,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.continue_button},
         )
-        element_list.append(self.switch_clan_button)
+        interactive_elements.append(self.switch_clan_button)
         self.new_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.new_clan",
@@ -228,7 +228,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.switch_clan_button},
         )
-        element_list.append(self.new_clan_button)
+        interactive_elements.append(self.new_clan_button)
         self.settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.settings_info",
@@ -237,7 +237,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.new_clan_button},
         )
-        element_list.append(self.settings_button)
+        interactive_elements.append(self.settings_button)
         self.quit = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.quit",
@@ -246,7 +246,7 @@ class StartScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.settings_button},
         )
-        element_list.append(self.quit)
+        interactive_elements.append(self.quit)
         if constants.CONFIG["dev_tools"]:
             self.event_edit = UISurfaceImageButton(
                 ui_scale(pygame.Rect((70, 15), (200, 30))),
@@ -256,7 +256,7 @@ class StartScreen(Screens):
                 manager=MANAGER,
                 anchors={"top_target": self.quit},
             )
-            element_list.append(self.event_edit)
+            interactive_elements.append(self.event_edit)
 
         self.social_buttons["twitter_button"] = UIImageButton(
             ui_scale(pygame.Rect((18, 641), (40, 40))),
@@ -282,8 +282,8 @@ class StartScreen(Screens):
             tool_tip_text="screens.start.tooltip_discord",
             anchors={"left_target": self.social_buttons["tumblr_button"]},
         )
-        element_list.extend(self.social_buttons.values())
-        self.update_map(element_list)
+        interactive_elements.extend(self.social_buttons.values())
+        self.update_map(interactive_elements)
 
         errorimg = image_cache.load_image(
             "resources/images/errormsg.png"
@@ -345,8 +345,8 @@ class StartScreen(Screens):
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            visible=False,
         )
-        self.update_button.visible = 0
 
         try:
             global has_checked_for_update
@@ -377,7 +377,8 @@ class StartScreen(Screens):
                 has_checked_for_update = True
 
             if update_available:
-                self.update_button.visible = 1
+                self.update_button.show()
+                self.update_map([self.update_button])
         except (RequestException, Timeout):
             logger.exception("Failed to check for update")
             has_checked_for_update = True
@@ -417,11 +418,13 @@ class StartScreen(Screens):
             self.continue_button.enable()
         else:
             self.continue_button.disable()
+            self.update_map([self.continue_button], remove=True)
 
         if len(switch_get_value(Switch.clan_list)) > 1:
             self.switch_clan_button.enable()
         else:
             self.switch_clan_button.disable()
+            self.update_map([self.switch_clan_button], remove=True)
 
         self.reload_errors()
 

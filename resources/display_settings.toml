@@ -13,7 +13,6 @@
         "fullscreen scaling" = false
         "no sprite antialiasing" = false
         "custom cursor" = false
-        keybinds = false
         shaders = false
         gore = false
         discord = false

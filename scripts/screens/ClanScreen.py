@@ -74,7 +74,7 @@ class ClanScreen(Screens):
             else:
                 self.menu_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 self.change_screen(GameScreen.LIST)
             elif event.key == pygame.K_LEFT:
