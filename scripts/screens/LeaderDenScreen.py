@@ -262,7 +262,7 @@ class LeaderDenScreen(Screens):
             relative_rect=ui_scale(pygame.Rect((68, 375), (445, -1))),
             html_text="screens.leader_den.clan_notice_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
-            anchors={"top_target":self.screen_elements["temper_text"]},
+            anchors={"top_target":"temper_text"},
             visible=False,
             manager=MANAGER,
             text_kwargs={
