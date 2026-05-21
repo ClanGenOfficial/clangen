@@ -5966,7 +5966,7 @@
         },
         {
             "min_max_status": {"normal adult": [4,6]},
-            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. p_l and {PRONOUN/p_l/poss} Clanmates react quickly, backing r_c up. r_c distracts the gannet, and p_l pounces, sinking {PRONOUN/s_c/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, r_c and p_l have to carry it together!",
+            "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. p_l and {PRONOUN/p_l/poss} Clanmates react quickly, backing r_c up. r_c distracts the gannet, and p_l pounces, sinking {PRONOUN/p_l/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, r_c and p_l have to carry it together!",
             "exp": 40,
             "frequency": 2,
             "prey": ["huge"],
