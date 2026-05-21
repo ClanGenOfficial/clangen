@@ -264,7 +264,7 @@ class LeaderDenScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             visible=False,
             manager=MANAGER,
-            anchors={"top_target":self.clan_temper},
+            anchors={"bottom_target": self.screen_elements["temper_text"]},
             text_kwargs={
                 "m_c": game.clan.leader if not self.no_leader else None,
                 "count": 1,
