@@ -39,7 +39,7 @@ def get_config(clan, config_path):
         ),
     }
     config_value = CONFIG
-    config_keys = config_path.split(".")
+    config_keys = tuple(config_path.split("."))
 
     #checking cards first
     for card in clan.cruel_cards:
@@ -50,6 +50,7 @@ def get_config(clan, config_path):
     if(config_value == CONFIG):
         for key in config_keys:
             config_value = config_value[key]
+    
     
     # Apply war if needed
     if clan and clan.war.get("at_war", False) and config_keys in war_effected:

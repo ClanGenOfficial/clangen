@@ -7,6 +7,7 @@ TODO: Docs
 """
 import logging
 import random
+from scripts.config import get_config 
 
 # pylint: enable=line-too-long
 import traceback
@@ -664,7 +665,7 @@ def handle_focus():
 
         warrior_amount = (
             len(healthy_warriors)
-            * constants.CONFIG["focus"]["hunting"][CatRank.WARRIOR]
+            * get_config(game.clan, "focus.hunting." + CatRank.WARRIOR)
         )
 
         # handle apprentices
@@ -676,7 +677,7 @@ def handle_focus():
 
         app_amount = (
             len(healthy_apprentices)
-            * constants.CONFIG["focus"]["hunting"][CatRank.APPRENTICE]
+            * get_config(game.clan, "focus.hunting." + CatRank.APPRENTICE)
         )
 
         # finish
@@ -2106,7 +2107,7 @@ def handle_injuries_or_general_death(cat):
     if (
         not int(
             random.random()
-            * game.get_config_value("death_related", "leader_death_chance")
+            * get_config(game.clan, "death_related.leader_death_chance")
         )
         and cat.status.is_leader
         and not cat.not_working()
@@ -2154,9 +2155,8 @@ def handle_injuries_or_general_death(cat):
     if (
         not int(
             random.random()
-            * game.get_config_value(
-                "death_related", f"{game.clan.game_mode}_death_chance"
-            )
+            * get_config(game.clan, f"death_related.{game.clan.game_mode}_death_chance")
+            
         )
         and not cat.not_working()
     ):  # 1/400
