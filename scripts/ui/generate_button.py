@@ -45,7 +45,7 @@ buttonstyles = {
             "resources/images/generated_buttons/mainmenu_hovered.png"
         ).convert_alpha(),
         "selected": pygame.image.load(
-            "resources/images/generated_buttons/mainmenu_select.png"
+            "resources/images/generated_buttons/mainmenu_disabled.png"
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/mainmenu_disabled.png"
@@ -205,7 +205,7 @@ buttonstyles = {
             "resources/images/generated_buttons/dropdown_hovered.png"
         ).convert_alpha(),
         "selected": pygame.image.load(
-            "resources/images/generated_buttons/dropdown_hovered.png"
+            "resources/images/generated_buttons/dropdown_normal.png"
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/dropdown_disabled.png"
