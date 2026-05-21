@@ -268,7 +268,7 @@ class LeaderDenScreen(Screens):
                 "m_c": game.clan.leader if not self.no_leader else None,
                 "count": 1,
             },
-            anchors={"bottom_target":self.screen_elements["temper_text"]},
+            anchors={"bottom_target": self.screen_elements["temper_text"]},
         )
         self.screen_elements["outsider_notice_text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((68, 375), (445, -1))),
