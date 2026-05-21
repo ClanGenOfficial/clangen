@@ -4,28 +4,7 @@ from typing import Optional
 from pygame_gui.core import UIElement
 
 from scripts.screens.enums import FocusDirection
-
-
-def create_map(element_list: list[UIElement]) -> list[list]:
-    """
-    Takes the given elements and creates the matrix map of their positions on screen
-    :param element_list: The list of interactable elements to map
-    :return: The matrix map
-    """
-    # first we sort out the elements into their rows based on their y pos
-    row_mapping: dict[int, list] = {}
-    for element in element_list:
-        if not row_mapping.get(element.get_abs_rect().y):
-            row_mapping[element.get_abs_rect().y] = [element]
-        else:
-            row_mapping[element.get_abs_rect().y].append(element)
-
-    # then we sort them by their x pos
-    for row in row_mapping:
-        row_mapping[row].sort(key=lambda x: x.get_abs_rect().x)
-
-    # and now we compile the matrix and return
-    return [row for row in row_mapping.values()]
+from scripts.ui.scale import ui_scale_value
 
 
 def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[list]:
@@ -44,12 +23,21 @@ def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[l
         # then position of the new element
         position = element.get_abs_rect()
 
-        # add the element to an existing row if it's y pos is already represented
-        if position.y in current_rows:
-            current_rows[position.y].append(element)
-            current_rows[position.y].sort(key=lambda x: x.get_abs_rect().x)
-        # otherwise, we need to find where it fits into the current matrix
-        else:
+        # first we check if a new row is needed
+        new_row = True
+        target = None
+        for row in current_rows:
+            # we allow a 30 px range so that elements which are slightly different y coordinates
+            # but still visibly feel side-by-side will be treated as part of the same row
+            if (
+                (row - ui_scale_value(15))
+                <= element.get_abs_rect().y
+                <= row + ui_scale_value(15)
+            ):
+                new_row = False
+                target = row
+        # now if we need a new row, we find where it should fit
+        if new_row:
             # sort within the current row positions
             row_positions = list(current_rows.keys())
             row_positions.append(position.y)
@@ -57,6 +45,10 @@ def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[l
             # insert it into the actual map according to how we've sorted
             new_row_index = row_positions.index(position.y)
             current_map.insert(new_row_index, [element])
+        # otherwise add the element to an existing row
+        else:
+            current_rows[target].append(element)
+            current_rows[target].sort(key=lambda x: x.get_abs_rect().x)
 
     return current_map
 
@@ -193,11 +185,20 @@ def find_next_focus(
 
     new_element = current_map[new_row][new_col]
 
-    last_element.unfocus()
-    new_element.focus()
+    set_focus(new_focus=new_element, old_focus=last_element)
 
     # return the element at the newly found indexes!
     return new_element
+
+
+def set_focus(new_focus: UIElement, old_focus: UIElement):
+    """
+    Sets the given element as focused and unfocuses the prior element.
+    :param new_focus: The element to focus
+    :param old_focus: The element to unfocus
+    """
+    old_focus.unfocus()
+    new_focus.focus()
 
 
 def _valid_row(current_map, disallowed_element, possible_row) -> list:

@@ -26,6 +26,7 @@ from scripts.game_structure.screen_settings import (
 )
 from scripts.screens.screens_core.screens_core import rebuild_moon_n_season_indicator
 from scripts.ui import focus_matrix
+from scripts.ui.focus_matrix import set_focus
 from scripts.ui.windows.freshkill import FreshkillManagementWindow
 from scripts.ui.windows.herbs import HerbManagementWindow
 from scripts.ui.windows.save_check import SaveCheckWindow
@@ -116,6 +117,7 @@ class Screens:
         self.fullscreen_bgs = {}
 
         self.current_selection: Optional[UIElement] = None
+        """The element currently being selected. Used for keybinds."""
         self.matrix_map: list[list[Optional[UIElement]]] = []
         """Used to map the placement of interactable elements on a screen. This allows keyboard inputs to move 'focus' from one element to another element in a logical and predetermined order."""
 
@@ -218,12 +220,9 @@ class Screens:
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here."""
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS or (
-            event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN
-        ):
-            out = self.mute_button_pressed(event)
-            if out:
-                return
+        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED and game_setting_get("keybinds"):
+            set_focus(new_focus=event.ui_element, old_focus=self.current_selection)
+            self.current_selection = event.ui_element
         elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_DOWN:
                 self.current_selection = focus_matrix.find_next_focus(
@@ -267,7 +266,7 @@ class Screens:
         :param remove: Default False, set to True if the list of elements should be removed from the matrix map instead of added.
         """
         if not self.matrix_map:
-            self.matrix_map = focus_matrix.create_map(element_list)
+            self.matrix_map = focus_matrix.add_to_map(self.matrix_map, element_list)
         elif remove:
             self.matrix_map = focus_matrix.remove_from_map(
                 self.matrix_map, element_list
