@@ -275,10 +275,6 @@ class Screens:
         self.matrix_map.clear()
         pass
 
-    # Functions to deal with the menu and mute button.
-    #   The menu is used very often, so I don't want to keep
-    #   recreating and killing it. Lots of chances for bugs there.
-
     def update_map(self, element_list: list[UIElement], remove=False):
         """
         Updates the matrix map with the given list of elements.
@@ -298,6 +294,9 @@ class Screens:
         _set_focus(new_focus=element, old_focus=self.current_focus)
         self.current_focus = element
 
+    # Functions to deal with the menu and mute button.
+    #   The menu is used very often, so I don't want to keep
+    #   recreating and killing it. Lots of chances for bugs there.
     @classmethod
     def hide_menu_buttons(cls):
         """This hides the menu buttons, so they are no longer visible
