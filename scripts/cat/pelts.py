@@ -308,9 +308,9 @@ class Pelt:
                     else:
                         self.cat_sprites[age] = choice(
                             (
-                                f"adolescent{fur}0",
-                                f"adolescent{fur}1",
-                                f"adolescent{fur}2",
+                                f"adolescent_{fur}0",
+                                f"adolescent_{fur}1",
+                                f"adolescent_{fur}2",
                             )
                         )
                 elif age in (CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT):
