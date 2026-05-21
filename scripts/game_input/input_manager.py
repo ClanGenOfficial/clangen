@@ -71,6 +71,10 @@ class KeyboardManager(InputManager):
             action = self._get_action_from_event(event)
             if action:
                 self._post_action(action, custom_events.INPUT_ACTION_PRESSED)
+        if event.type == pygame.KEYUP and game_setting_get("keybinds"):
+            action = self._get_action_from_event(event)
+            if action:
+                self._post_action(action, custom_events.INPUT_ACTION_RELEASED)
 
     def set_action_maps(self, pygame_key_to_action: Dict[int, Action]):
         KeyboardManager.action_map = pygame_key_to_action
@@ -180,6 +184,10 @@ class ControllerManager(InputManager):
             self._last_used_controller = event.instance_id
             action = self._get_action_from_event(event)
             self._post_action(action, custom_events.INPUT_ACTION_PRESSED)
+        if event.type == pygame.CONTROLLERBUTTONUP:
+            # don't think people will consider letting go of a button as "using" the controller
+            action = self._get_action_from_event(event)
+            self._post_action(action, custom_events.INPUT_ACTION_RELEASED)
 
         if event.type == pygame.CONTROLLERAXISMOTION:
             self._last_used_controller = event.instance_id
