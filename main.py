@@ -135,9 +135,9 @@ def loading_animation(scale: float = 1):
         i += 1
         if i >= total_frames:
             i = 0
-        for ev in pygame.event.get():
-            controller_manager.process_event(ev)
-            if ev.type == pygame.QUIT:
+        for event in pygame.event.get():
+            controller_manager.process_event(event)
+            if event.type == pygame.QUIT:
                 quit_game(savesettings=False)
 
         pygame.display.update()
