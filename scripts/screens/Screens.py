@@ -8,6 +8,7 @@ from pygame_gui.core import UIElement
 
 import scripts.game_structure.screen_settings
 import scripts.screens.screens_core.screens_core
+from scripts.game_input import INPUT_ACTION_PRESSED, Action
 from scripts.game_structure import constants
 from scripts.cat.enums import CatGroup
 from scripts.game_structure.game.settings import (
@@ -31,7 +32,7 @@ from scripts.ui.windows.freshkill import FreshkillManagementWindow
 from scripts.ui.windows.herbs import HerbManagementWindow
 from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.ui.event_load_animation import EventLoadingAnimation
-from scripts.screens.enums import GameScreen, FocusDirection
+from scripts.screens.enums import GameScreen
 from scripts.ui.scale import ui_scale_blit
 from scripts.game_structure import game
 
@@ -220,34 +221,38 @@ class Screens:
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here."""
-        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED and game_setting_get("keybinds"):
-            set_focus(new_focus=event.ui_element, old_focus=self.current_selection)
-            self.current_selection = event.ui_element
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
-            if event.key == pygame.K_DOWN:
-                self.current_selection = focus_matrix.find_next_focus(
-                    self.matrix_map,
-                    FocusDirection.DOWN,
-                    last_element=self.current_selection,
-                )
-            elif event.key == pygame.K_UP:
-                self.current_selection = focus_matrix.find_next_focus(
-                    self.matrix_map,
-                    FocusDirection.UP,
-                    last_element=self.current_selection,
-                )
-            elif event.key == pygame.K_LEFT:
-                self.current_selection = focus_matrix.find_next_focus(
-                    self.matrix_map,
-                    FocusDirection.LEFT,
-                    last_element=self.current_selection,
-                )
-            elif event.key == pygame.K_RIGHT:
-                self.current_selection = focus_matrix.find_next_focus(
-                    self.matrix_map,
-                    FocusDirection.RIGHT,
-                    last_element=self.current_selection,
-                )
+        # keybind handling
+        if game_setting_get("keybinds"):
+            # handling mouse hovers! we want the mouse to be able to change the focused element
+            if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+                set_focus(new_focus=event.ui_element, old_focus=self.current_selection)
+                self.current_selection = event.ui_element
+            # handling changing the focus via keyboard and controller
+            elif event.type == INPUT_ACTION_PRESSED:
+                if event.action == Action.DOWN:
+                    self.current_selection = focus_matrix.find_next_focus(
+                        self.matrix_map,
+                        Action.DOWN,
+                        last_element=self.current_selection,
+                    )
+                elif event.action == Action.UP:
+                    self.current_selection = focus_matrix.find_next_focus(
+                        self.matrix_map,
+                        Action.UP,
+                        last_element=self.current_selection,
+                    )
+                elif event.action == Action.LEFT:
+                    self.current_selection = focus_matrix.find_next_focus(
+                        self.matrix_map,
+                        Action.LEFT,
+                        last_element=self.current_selection,
+                    )
+                elif event.action == Action.RIGHT:
+                    self.current_selection = focus_matrix.find_next_focus(
+                        self.matrix_map,
+                        Action.RIGHT,
+                        last_element=self.current_selection,
+                    )
 
     def exit_screen(self):
         """Runs when screen exits"""

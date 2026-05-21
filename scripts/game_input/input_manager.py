@@ -49,8 +49,8 @@ class KeyboardManager(InputManager):
     action_map = {
         pygame.K_ESCAPE: Action.BACK,
         pygame.K_RETURN: Action.CONFIRM,
-        pygame.K_LEFT: Action.PREVIOUS,
-        pygame.K_RIGHT: Action.NEXT,
+        pygame.K_LEFT: Action.LEFT,
+        pygame.K_RIGHT: Action.RIGHT,
         pygame.K_SPACE: Action.SAVE,
         pygame.K_UP: Action.UP,
         pygame.K_DOWN: Action.DOWN,

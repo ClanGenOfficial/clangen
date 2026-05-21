@@ -3,7 +3,7 @@ from typing import Optional
 
 from pygame_gui.core import UIElement
 
-from scripts.screens.enums import FocusDirection
+from scripts.game_input import Action
 from scripts.ui.scale import ui_scale_value
 
 
@@ -85,7 +85,7 @@ def remove_from_map(
 
 
 def find_next_focus(
-    current_map: list[list], direction: FocusDirection, last_element: UIElement
+    current_map: list[list], direction: Action, last_element: UIElement
 ) -> UIElement:
     """
     Moves focus from one element to the next logical element.
@@ -117,11 +117,11 @@ def find_next_focus(
     # if going left or right, let's check if we can!
     change_to_higher_row = False
     change_to_lower_row = False
-    if direction in (FocusDirection.LEFT, FocusDirection.RIGHT):
+    if direction in (Action.LEFT, Action.RIGHT):
         # we need to see if there's a valid element to switch to
         if not _valid_row(current_map, last_element, prior_row):
             # there isn't! so we need to change our row too
-            if direction == FocusDirection.LEFT:
+            if direction == Action.LEFT:
                 # left will go upward
                 change_to_higher_row = True
             else:
@@ -129,7 +129,7 @@ def find_next_focus(
                 change_to_lower_row = True
 
     # going UP!
-    if direction == FocusDirection.UP or change_to_higher_row:
+    if direction == Action.UP or change_to_higher_row:
         while not _valid_row(current_map, last_element, new_row):
             # find the new row, wrapping if necessary
             if prior_row - 1 >= 0:
@@ -144,7 +144,7 @@ def find_next_focus(
                 change_to_higher_row = False
 
     # going DOWN!
-    elif direction == FocusDirection.DOWN or change_to_lower_row:
+    elif direction == Action.DOWN or change_to_lower_row:
         while not _valid_row(current_map, last_element, new_row):
             # find the new row, wrapping if necessary
             if prior_row + 1 <= len(current_map) - 1:
@@ -163,14 +163,14 @@ def find_next_focus(
 
     # Now to find our new column!
     # going LEFT!
-    if direction == FocusDirection.LEFT and new_col is None:
+    if direction == Action.LEFT and new_col is None:
         # find the new col, wrapping if necessary
         if prior_col - 1 >= 0:
             new_col = prior_col - 1
         else:
             new_col = len(current_map[new_row]) - 1
     # going RIGHT!
-    elif direction == FocusDirection.RIGHT and new_col is None:
+    elif direction == Action.RIGHT and new_col is None:
         # find the new col, wrapping if necessary
         if prior_col + 1 <= len(current_map[new_row]) - 1:
             new_col = prior_col + 1

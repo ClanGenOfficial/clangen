@@ -26,7 +26,6 @@ from requests.exceptions import RequestException, Timeout
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game, constants
 from scripts.game_structure.game.settings import game_settings_load, game_setting_get
-from ..ui import focus_matrix
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.update_available import UpdateAvailableWindow
@@ -35,7 +34,7 @@ from scripts.housekeeping.datadir import open_data_dir, open_url
 from ..housekeeping.quit_game import quit_game
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
-from .enums import GameScreen, FocusDirection
+from .enums import GameScreen
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..housekeeping.datadir import get_cache_dir
