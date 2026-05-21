@@ -264,7 +264,6 @@ class LeaderDenScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             visible=False,
             manager=MANAGER,
-            anchors={"bottom_target": self.temper_text},
             text_kwargs={
                 "m_c": game.clan.leader if not self.no_leader else None,
                 "count": 1,
@@ -345,6 +344,7 @@ class LeaderDenScreen(Screens):
                     second_temper=i18n.t(f"screens.leader_den.{self.clan_temper[1]}"),
                 ),
             },
+            anchors={"top_target": self.screen_elements["clan_notice_text"]},
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
