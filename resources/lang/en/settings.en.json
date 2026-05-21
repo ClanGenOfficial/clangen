@@ -8,8 +8,6 @@
         "no sprite antialiasing_tooltip": "If enabled, sprites and patrol art will no longer be antialiased (\"blurry\"/\"smooth\") when in fullscreen.",
         "custom cursor": "Custom cursor",
         "custom cursor_tooltip": "The cursor will be replaced with a cat paw. The cursor is currently unfinished and is prone to crashing.",
-        "keybinds": "Keybinds",
-        "keybinds_tooltip": "Enables certain keybinds to be used throughout the menus for quick navigation.",
         "shaders": "Enable shaders",
         "shaders_tooltip": "This will add a shading layer onto the cat sprites.",
         "gore": "Allow mild gore and blood in patrol artwork",
