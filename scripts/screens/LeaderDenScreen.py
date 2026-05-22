@@ -333,7 +333,7 @@ class LeaderDenScreen(Screens):
         self.screen_elements["clan_notice_text"].show()
 
         self.screen_elements["temper_text"] = pygame_gui.elements.UITextBox(
-            relative_rect=ui_scale(pygame.Rect((68, -15), (445, -1))),
+            relative_rect=ui_scale(pygame.Rect((68, -12), (445, -1))),
             html_text="screens.leader_den.temper_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
