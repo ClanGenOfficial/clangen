@@ -664,7 +664,7 @@ def handle_focus():
         ]
 
         warrior_amount = len(healthy_warriors) * get_config(
-            game.clan, "focus.hunting." + CatRank.WARRIOR
+            game.clan, f"focus.hunting.{CatRank.WARRIOR}"
         )
 
         # handle apprentices
@@ -675,7 +675,7 @@ def handle_focus():
         ]
 
         app_amount = len(healthy_apprentices) * get_config(
-            game.clan, "focus.hunting." + CatRank.APPRENTICE
+            game.clan, f"focus.hunting.{CatRank.APPRENTICE}"
         )
 
         # finish
