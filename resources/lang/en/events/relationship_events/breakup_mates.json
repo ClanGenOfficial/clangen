@@ -28,7 +28,7 @@
 		"Out of the blue, m_c bluntly tells r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} interested in {PRONOUN/r_c/object} anymore, so {PRONOUN/m_c/subject} {VERB/m_c/call/calls} off their relationship and r_c walks away heartbroken and confused.",
             	"Some relationships turn out good, some don't, but for m_c and r_c's relationship, things really didn't turn out so well. They've broken up.", 
             	"Things have become tense and sour in m_c and r_c’s relationship. They decided to break up before any fight breaks out between them.",
-		"r_c broke up with m_c and m_c has taken it very hard. {PRONOUN/m_c/subject/CAP} seem to be avoiding r_c as much as possible."
+		"r_c broke up with m_c and m_c has taken it very hard. {PRONOUN/m_c/subject/CAP} {VERB/m_c/seem/seems} to be avoiding r_c as much as possible."
 	],
 	"chill_breakup":[
 		"m_c and r_c broke up.", 
