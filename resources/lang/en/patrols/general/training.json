@@ -18100,7 +18100,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was glad to hear that cat_to wouldn't hesitate to challenge a kittypet on c_n territory, regardless of any prior relationship.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                            "cats_to": "cat_to sought cat_from's advice on how to manage relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18131,7 +18131,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was glad cat_to went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                            "cats_to": "cat_to sought cat_from's advice on how to manage relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18161,7 +18161,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was glad cat_to went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                            "cats_to": "cat_to sought cat_from's advice on how to manage relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18178,8 +18178,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
                         "values": [
                             "like",
@@ -18188,7 +18188,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from taught cat_to about {PRONOUN/cat_from/poss} past as a kittypet.",
-                            "cats_to": "cat_from learned about cat_to's past as a kittypet."
+                            "cats_to": "cat_to learned about cat_from's past as a kittypet."
                         }
                     }
                 ],
@@ -18208,8 +18208,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from was glad cat_to went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                        "cats_from": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan.",
+                        "cats_to": "cat_to was glad cat_from went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18259,8 +18259,8 @@
                         ],
                         "amount": -12,
                         "log": {
-                            "cats_from": "app1 was frightened and disappointed when p_l scolded {PRONOUN/app1/object} for befriending a kittypet.",
-                            "cats_to": "p_l was disgusted with app1's disloyalty for befriending a kittypet."
+                            "cats_from": "cat_from was frightened and disappointed when cat_to scolded {PRONOUN/cat_from/object} for befriending a kittypet.",
+                            "cats_to": "cat_to was disgusted with cat_from's disloyalty for befriending a kittypet."
                         }
                     }
                 ],
