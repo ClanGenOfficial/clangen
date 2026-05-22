@@ -460,7 +460,7 @@
           "$ref": "#/$defs/GatherCatEnum"
         },
         {
-          "pattern": "^n_c:[0-9]+$",
+          "pattern": "^-?n_c:[0-9]+$",
           "type": "string"
         }
       ],
