@@ -50,7 +50,7 @@
   "interactions": [
     "m_c eats as ravenously as a wolverine and by the time {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} done, r_c1, r_c2, and r_c3 barely have the stomach to finish their own meals.",
     "While m_c gorges on {PRONOUN/m_c/poss} piece of fresh kill, r_c1, r_c2, and r_c3 find that eating is suddenly less appealing.",
-    "Spittle and flecks of bone fly while m_c guzzles down prey, reminding r_c1, rc_2, and r_c3 to seek out better mealtime companionship next time."
+    "Spittle and flecks of bone fly while m_c gobbles down prey, reminding r_c1, rc_2, and r_c3 to seek out better mealtime companionship next time."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
@@ -72,7 +72,7 @@
   "intensity": "medium",
   "cat_amount": 4,
   "interactions": [
-"m_c spends the Gathering whispering to r_c1, r_c2, and r_c3 making it nearly impossible for anyone nearby to hear the leaders speak.",
+"m_c spends the Gathering whispering to r_c1, r_c2, and r_c3, making it nearly impossible for anyone nearby to hear the leaders speak.",
     "m_c won't keep {PRONOUN/m_c/poss} mouth shut during the Gathering. r_c1, r_c2, and r_c3 can barely hear the leader's announcements!",
     "No matter how many warning looks r_c1, r_c2, and r_c3 send {PRONOUN/m_c/object}, m_c keeps talking over the Gathering announcements."
   ],
@@ -114,9 +114,9 @@
   "intensity": "low",
   "cat_amount": 4,
   "interactions": [
-"m_c shares a suspiciously exaggerated tale with r_c1, r_c2, and r_c3 who seem far from convinced of its veracity.",
+"m_c shares a suspiciously exaggerated tale with r_c1, r_c2, and r_c3, who seem far from convinced of its veracity.",
     "m_c tells r_c1, r_c2, and r_c3 a story that seems to grow less believable every meow.",
-    "m_c tells r_c1, r_c2, and r_c3, a story that earns more skepticism than admiration."
+    "m_c tells r_c1, r_c2, and r_c3 a story that earns more skepticism than admiration."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
@@ -158,7 +158,9 @@
     		"status_constraint": {
 			"m_c": [
 			"-kitten",
-              "-elder"
+            "-elder",
+			"-leader",
+			"-deputy"
 			],
 			"r_c1": [
 			"-kitten",
