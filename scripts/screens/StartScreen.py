@@ -58,9 +58,9 @@ class StartScreen(Screens):
         self.warning_label = None
 
         self.social_buttons = {}
+        self.elements = {}
 
         self.error_open = False
-        self.event_edit = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
@@ -74,10 +74,10 @@ class StartScreen(Screens):
             element = event.ui_element
 
             screens = {
-                self.continue_button: GameScreen.CAMP,
-                self.switch_clan_button: GameScreen.SWITCH_CLAN,
-                self.new_clan_button: GameScreen.MAKE_CLAN,
-                self.settings_button: GameScreen.SETTINGS,
+                self.elements["continue"]: GameScreen.CAMP,
+                self.elements["switch_clan"]: GameScreen.SWITCH_CLAN,
+                self.elements["new_clan"]: GameScreen.MAKE_CLAN,
+                self.elements["settings"]: GameScreen.SETTINGS,
             }
             if element in screens and not self.error_open:
                 self.change_screen(screens[element])
@@ -93,9 +93,9 @@ class StartScreen(Screens):
                 self.error_open = False
             elif element == self.update_button:
                 UpdateAvailableWindow()
-            elif element == self.quit:
+            elif element == self.elements["quit"]:
                 quit_game(savesettings=False, clearevents=False)
-            elif element == self.event_edit:
+            elif element == self.elements.get("event_edit"):
                 self.change_screen(GameScreen.EVENT_EDIT)
             elif element == self.social_buttons["discord_button"]:
                 open_url("https://discord.gg/clangen")
@@ -108,16 +108,11 @@ class StartScreen(Screens):
 
     def exit_screen(self):
         # Button murder time.
-        self.continue_button.kill()
-        self.switch_clan_button.kill()
-        self.new_clan_button.kill()
-        self.settings_button.kill()
+        for ele in self.elements.values():
+            ele.kill()
         self.error_label.kill()
         self.warning_label.kill()
         self.update_button.kill()
-        self.quit.kill()
-        if self.event_edit:
-            self.event_edit.kill()
         self.closebtn.kill()
         for btn in self.social_buttons:
             self.social_buttons[btn].kill()
@@ -126,7 +121,7 @@ class StartScreen(Screens):
 
     def reload_errors(self):
         if switch_get_value(Switch.error_message):
-            self.continue_button.disable()
+            self.elements["continue"].disable()
             error_text = "screens.start.error_text"
             traceback_text = ""
             if switch_get_value(Switch.traceback):
@@ -161,7 +156,7 @@ class StartScreen(Screens):
             self.error_open = True
         else:
             if game.clan is not None:
-                self.continue_button.enable()
+                self.elements["continue"].enable()
             self.error_box.hide()
             self.error_label.hide()
             self.error_gethelp.hide()
@@ -197,65 +192,59 @@ class StartScreen(Screens):
         self.show_mute_buttons()
 
         # Create buttons
-
-        interactive_elements = []
-
-        self.continue_button = UISurfaceImageButton(
+        self.elements["continue"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 310), (200, 30))),
             "buttons.continue",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
-        self.set_focus(self.continue_button)
-        interactive_elements.append(self.continue_button)
+        self.set_focus(self.elements["continue"])
 
-        self.switch_clan_button = UISurfaceImageButton(
+        self.elements["switch_clan"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.switch_clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
-            anchors={"top_target": self.continue_button},
+            anchors={"top_target": self.elements["continue"]},
         )
-        interactive_elements.append(self.switch_clan_button)
-        self.new_clan_button = UISurfaceImageButton(
+        self.elements["new_clan"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.new_clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
-            anchors={"top_target": self.switch_clan_button},
+            anchors={"top_target": self.elements["switch_clan"]},
         )
-        interactive_elements.append(self.new_clan_button)
-        self.settings_button = UISurfaceImageButton(
+        self.elements["settings"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.settings_info",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
-            anchors={"top_target": self.new_clan_button},
+            anchors={"top_target": self.elements["new_clan"]},
         )
-        interactive_elements.append(self.settings_button)
-        self.quit = UISurfaceImageButton(
+        self.elements["quit"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
             "buttons.quit",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
-            anchors={"top_target": self.settings_button},
+            anchors={"top_target": self.elements["settings"]},
         )
-        interactive_elements.append(self.quit)
+
         if constants.CONFIG["dev_tools"]:
-            self.event_edit = UISurfaceImageButton(
+            self.elements["event_edit"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((70, 15), (200, 30))),
                 "buttons.event_edit",
                 image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
                 object_id="@buttonstyles_mainmenu",
                 manager=MANAGER,
-                anchors={"top_target": self.quit},
+                anchors={"top_target": self.elements["quit"]},
             )
-            interactive_elements.append(self.event_edit)
+
+        interactive_elements = list(self.elements.values())
 
         self.social_buttons["twitter_button"] = UIImageButton(
             ui_scale(pygame.Rect((18, 641), (40, 40))),
@@ -282,6 +271,7 @@ class StartScreen(Screens):
             anchors={"left_target": self.social_buttons["tumblr_button"]},
         )
         interactive_elements.extend(self.social_buttons.values())
+
         self.update_map(interactive_elements)
 
         errorimg = image_cache.load_image(
@@ -414,14 +404,14 @@ class StartScreen(Screens):
         self.warning_label.rebuild()
 
         if game.clan is not None and switch_get_value(Switch.error_message) == "":
-            self.continue_button.enable()
+            self.elements["continue"].enable()
         else:
-            self.continue_button.disable()
+            self.elements["continue"].disable()
 
         if len(switch_get_value(Switch.clan_list)) > 1:
-            self.switch_clan_button.enable()
+            self.elements["switch_clan"].enable()
         else:
-            self.switch_clan_button.disable()
+            self.elements["switch_clan"].disable()
 
         self.reload_errors()
 
