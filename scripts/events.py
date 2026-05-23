@@ -2104,9 +2104,8 @@ def handle_injuries_or_general_death(cat):
     modify_for_war = switch_get_value(Switch.war_rel_change_type) != "rel_up"
 
     # chance to kill leader: 1/50 by default
-    leader_death_chance = (
-        get_config(game.clan, "death_related.leader_death_chance")
-        - get_config(game.clan, "death_related.war_death_modifier_leader")
+    leader_death_chance = get_config(game.clan, "death_related.leader_death_chance") - (
+        get_config(game.clan, "death_related.war_death_modifier_leader")
         if modify_for_war
         else 0
     )
@@ -2156,12 +2155,9 @@ def handle_injuries_or_general_death(cat):
             return True
 
     # final death chance and then, if not triggered, head to injuries
-    death_chance = (
-        get_config(
-            game.clan,
-            f"death_related.{'classic' if game.clan.game_mode == 'classic' else 'expanded'}_death_chance",
-        )
-        - get_config(game.clan, "death_related.war_death_modifier")
+    mode = "classic" if game.clan.game_mode == "classic" else "expanded"
+    death_chance = get_config(game.clan, f"death_related.{mode}_death_chance") - (
+        get_config(game.clan, "death_related.war_death_modifier")
         if modify_for_war
         else 0
     )

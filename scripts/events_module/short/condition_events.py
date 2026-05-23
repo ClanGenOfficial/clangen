@@ -353,13 +353,11 @@ class Condition_Events:
         triggered = False
 
         modify_for_war = switch_get_value(Switch.war_rel_change_type) != "rel_up"
-
-        injury_chance = (
-            get_config(
-                game.clan,
-                f"condition_related.{'classic' if game.clan.game_mode == 'classic' else 'expanded'}_injury_chance",
-            )
-            - get_config(game.clan, "condition_related.war_injury_modifier")
+        mode = "classic" if game.clan.game_mode == "classic" else "expanded"
+        injury_chance = get_config(
+            game.clan, f"condition_related.{mode}_injury_chance"
+        ) - (
+            get_config(game.clan, "condition_related.war_injury_modifier")
             if modify_for_war
             else 0
         )
