@@ -38,9 +38,8 @@ class FreshkillPileTest(unittest.TestCase):
         cls.previously_loaded_clan = cls.clanlist[0] if cls.clanlist else None
 
     def setUp(self) -> None:
-        self.game_config = None
         with open("resources/game_config.toml", "r") as read_file:
-            self.prey_config = tomllib.loads(read_file.read())
+            self.game_config = tomllib.loads(read_file.read())
         self.amount = self.game_config["prey"]["start_amount"]
         self.prey_requirement = self.game_config["prey"]["prey_requirement"]
         self.condition_increase = self.game_config["prey"]["condition_increase"]
