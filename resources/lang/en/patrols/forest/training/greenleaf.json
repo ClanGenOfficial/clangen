@@ -139,6 +139,7 @@
         "types": [
             "training"
         ],
+        "tags": [],
         "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
         "min_cats": 3,
         "max_cats": 6,
