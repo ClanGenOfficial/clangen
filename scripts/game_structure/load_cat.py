@@ -25,7 +25,11 @@ from scripts.game_structure import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
 from ..cat.status import StatusDict
-from ..clan_resources.point_of_interest import clear_pois, generate_and_add_new_poi, PoiType
+from ..clan_resources.point_of_interest import (
+    clear_pois,
+    generate_and_add_new_poi,
+    PoiType,
+)
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
