@@ -81,6 +81,9 @@ class MediationScreen(Screens):
                 self.update_buttons()
             elif event.ui_element == self.elements["remove_cat0"]:
                 self.selected_cat_1 = None
+                if self.selected_cat_2:
+                    self.selected_cat_1 = self.selected_cat_2
+                    self.selected_cat_2 = None
                 self.update_selected_cats()
             elif event.ui_element == self.elements["remove_cat1"]:
                 self.selected_cat_2 = None
@@ -544,40 +547,84 @@ class MediationScreen(Screens):
             visible=other_cat,
         )
 
-        self.selected_cat_elements[f"cat_image{cat_num}"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((0, 0), (100, 100))),
-            pygame.transform.scale(cat.sprite, ui_scale_dimensions((100, 100))),
-            container=self.selected_cat_elements[f"cat_container{cat_num}"],
-            anchors={
-                "top_target": self.selected_cat_elements[f"bubble_tail{cat_num}"],
-            },
-            manager=MANAGER,
-        )
-        short_name = shorten_text_to_fit(str(cat.name), 45, 7)
-        self.selected_cat_elements[f"cat_name{cat_num}"] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((0, 0), (-1, 30))),
-            short_name,
-            object_id="#text_box_30_horizcenter",
-            container=self.selected_cat_elements[f"cat_container{cat_num}"],
-            anchors={
-                "top_target": self.selected_cat_elements[f"bubble_tail{cat_num}"],
-                "left_target": self.selected_cat_elements[f"cat_image{cat_num}"],
-            },
-            manager=MANAGER,
-        )
-        self.selected_cat_elements[
-            f"cat_details{cat_num}"
-        ] = pygame_gui.elements.UITextBox(
-            self.get_cat_details(cat, other_cat),
-            ui_scale(pygame.Rect((0, 0), (100, -1))),
-            object_id="#text_box_22_horizleft_spacing_95",
-            container=self.selected_cat_elements[f"cat_container{cat_num}"],
-            anchors={
-                "top_target": self.selected_cat_elements[f"cat_name{cat_num}"],
-                "left_target": self.selected_cat_elements[f"cat_image{cat_num}"],
-            },
-            manager=MANAGER,
-        )
+        if cat == self.selected_cat_1:
+            self.selected_cat_elements[
+                f"cat_image{cat_num}"
+            ] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((0, 0), (100, 100))),
+                pygame.transform.scale(cat.sprite, ui_scale_dimensions((100, 100))),
+                container=self.selected_cat_elements[f"cat_container{cat_num}"],
+                anchors={
+                    "top_target": self.selected_cat_elements[f"bubble_tail{cat_num}"],
+                },
+                manager=MANAGER,
+            )
+            short_name = shorten_text_to_fit(str(cat.name), 45, 7)
+            self.selected_cat_elements[
+                f"cat_name{cat_num}"
+            ] = pygame_gui.elements.UILabel(
+                ui_scale(pygame.Rect((0, 0), (100, 30))),
+                short_name,
+                object_id="#text_box_30_horizleft",
+                container=self.selected_cat_elements[f"cat_container{cat_num}"],
+                anchors={
+                    "top_target": self.selected_cat_elements[f"bubble_tail{cat_num}"],
+                    "left_target": self.selected_cat_elements[f"cat_image{cat_num}"],
+                },
+                manager=MANAGER,
+            )
+            self.selected_cat_elements[
+                f"cat_details{cat_num}"
+            ] = pygame_gui.elements.UITextBox(
+                self.get_cat_details(cat, other_cat),
+                ui_scale(pygame.Rect((0, 0), (100, -1))),
+                object_id="#text_box_22_horizleft_spacing_95",
+                container=self.selected_cat_elements[f"cat_container{cat_num}"],
+                anchors={
+                    "top_target": self.selected_cat_elements[f"cat_name{cat_num}"],
+                    "left_target": self.selected_cat_elements[f"cat_image{cat_num}"],
+                },
+                manager=MANAGER,
+            )
+
+        else:
+            short_name = shorten_text_to_fit(str(cat.name), 45, 7)
+            self.selected_cat_elements[
+                f"cat_name{cat_num}"
+            ] = pygame_gui.elements.UILabel(
+                ui_scale(pygame.Rect((0, 0), (100, 30))),
+                short_name,
+                object_id="#text_box_30_horizright",
+                container=self.selected_cat_elements[f"cat_container{cat_num}"],
+                anchors={
+                    "top_target": self.selected_cat_elements[f"bubble_tail{cat_num}"]
+                },
+                manager=MANAGER,
+            )
+            self.selected_cat_elements[
+                f"cat_details{cat_num}"
+            ] = pygame_gui.elements.UITextBox(
+                self.get_cat_details(cat, other_cat),
+                ui_scale(pygame.Rect((0, 0), (100, -1))),
+                object_id="#text_box_22_horizright_spacing_95",
+                container=self.selected_cat_elements[f"cat_container{cat_num}"],
+                anchors={
+                    "top_target": self.selected_cat_elements[f"cat_name{cat_num}"]
+                },
+                manager=MANAGER,
+            )
+            self.selected_cat_elements[
+                f"cat_image{cat_num}"
+            ] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((0, 0), (100, 100))),
+                pygame.transform.scale(cat.sprite, ui_scale_dimensions((100, 100))),
+                container=self.selected_cat_elements[f"cat_container{cat_num}"],
+                anchors={
+                    "top_target": self.selected_cat_elements[f"bubble_tail{cat_num}"],
+                    "left_target": self.selected_cat_elements[f"cat_details{cat_num}"],
+                },
+                manager=MANAGER,
+            )
 
     def get_cat_details(self, cat, other_cat):
         output = ""
