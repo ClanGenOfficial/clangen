@@ -1,7 +1,7 @@
 ## clan.json
 (including a simplified summary by line for those who need a refresher)
 
-The clan.json holds information about a clan save, such as other_clan information and camp biome.
+The `clan.json` holds information about a clan save, such as other_clan information and camp biome.
 
 **Formatting Cheat Sheet:**
 
@@ -17,7 +17,7 @@ For those who need a refresher of the file, but don't need all of the details. U
 
 |  `Code ` |  Explanation  |  Additional Information  |
 | :---- | :---- | :---- |
-|  `"clanname": "Fuzz",`  |  Prefix/name of the save.  |  The name of the save. If you change this, you'll have to also change the clan.json and clan save folders name.  |
+|  `"clanname": "Fuzz",`  |  Prefix/name of the save.  |  The name of the save. If you change this, you'll have to also change the `clan.json` and clan save folders name.  |
 |  `"displayname": "Fuzz",`  |  Prefix/name of the clan.  |  The name that is displayed in the game for the clan. Only has to be changed here  |
 |  `"clanage": 2,`  |  The number of moonskips for this clan  | Changing the number does not revert the save or add changes |
 |  `"biome": "Plains",`  |  The biome of this clan. "Plains", "Mountainous", "Beach", "Forest"  |  Affects camp background, text, prey, and herb chances  |
@@ -41,7 +41,7 @@ For those who need a refresher of the file, but don't need all of the details. U
 | ` "med_cat": "11"`  |  The ID of the senior medicine cat (usually the med cat you chose when creating the clan)  |  Edit to `null,` if there are no medicine cats or med apprentices in the clan  |
 |  `"med_cat_number": 0,`  |  The amount of medicine cats & med apprentices in the clan   |  This line EXCLUDES the senior med cat listed for "med_cat" Ex: have 7 med cats, edit this line to be 6  |
 |  `"med_cat_predecessors": 0`,  |  Amount of dead previous senior medicine cats  |  |
-|  `"clan_cats": "1,2,3",`  |  List of all used IDs in the clan_cats.json file  |  This includes EVERY cat in the file, doesn't matter if they're clancat or outside  |
+|  `"clan_cats": "1,2,3",`  |  List of all used IDs in the `clan_cats.json` file  |  This includes EVERY cat in the file, doesn't matter if they're clancat or outside  |
 |  `"faded_cats": "", ` |  List of IDs for faded_cats, if necessary toggles are on  |  faded_cats do not have connected code, so they're separated |
 | ` "patrolled_cats": [], ` |  Lists which IDs have patrolled on the current moonskip to avoid cats working more than once  |  |
 |  `"other_clans": [{}],` | The other_clan information, like ID, name, and symbol | refer to expanded explanation |
@@ -53,7 +53,7 @@ For those who need a refresher of the file, but don't need all of the details. U
 
 `"clanname": "Fuzz",`
 
-This is the save name. You can change the save name here, but make sure to rename the clan save folder and the clan.json to correspond with this change
+This is the save name. You can change the save name here, but make sure to rename the clan save folder and the `clan.json` to correspond with this change
 
 `"display_name": "Fuzz",`
 
@@ -177,7 +177,7 @@ The lines remembering what version/commit its updated to, and if its a source bu
 
 These are the custom pronouns you made for cats in the current save. They'll be listed here as a resource for the save to grab onto and apply to other cats if applicable.
 
-* These do NOT move across saves (though you can copy paste them to other clan.jsons)
+* These do NOT move across saves (though you can copy paste them to other `clan.json`s)
 * If you wish to save pronouns permanently, this is the file path to add pronouns to: resources -> dicts -> pronouns.json
 
 `"leader": "21",`
@@ -226,7 +226,7 @@ This is the number of cats who were the "senior" medicine cats ("med_cat") befor
 
 `"clan_cats": "23,21,27,35,36,19,20,22,24,25,26,28,29,30,31,32,33,34,37,38,39",`
 
-This is the ID list for cats within the clan_cats.json. Do not add spaces between the numbers
+This is the ID list for cats within the `clan_cats.json`. Do not add spaces between the numbers
 
 * If you add or delete an ID from clan_cats, they also need to be added or deleted from here.
 
@@ -289,7 +289,7 @@ This is the WAR line. If you want to change it so this clan is at war with your 
 
 * If you'll like to see the calculating code for clan temperament yourself, you'll search for `def temperament(self):` in scripts > clan.py
 
-Changing the Clan Temperament is more involved than simply changing the listed type in the clan.json. Instead, the clan temperament is based on the facets of the cats within the player clan. If you want to change the temperament, you need to manually change all four facets of the clan cats.
+Changing the Clan Temperament is more involved than simply changing the listed type in the `clan.json`. Instead, the clan temperament is based on the facets of the cats within the player clan. If you want to change the temperament, you need to manually change all four facets of the clan cats.
 
 #### Temperament Table
 
@@ -309,11 +309,11 @@ This is the table showing where the second temperament options stand on how "sta
 | mid_lawful | "eager" |"observant" | "adaptable" |
 | high_lawful  | "decisive" | "methodical" | "steadfast" |
 
-"Stoic" and "observant" are the default temperaments given when the game is unable to calculate the temperaments. 
+"Stoic" and "observant" are the default temperaments given when the game is unable to calculate the temperaments (no leader, no deputy, no medicine cats, etc)
 
 * The range of your temperaments are 11-0. 11 is the highest, 7 is the medium, and anything below 7 is the lowest.
 
-#### (to-do) Calculating
+#### Calculating
 
 !!! to-do
      explain further on how temperaments are calculated in the code, and how to edit the cats to guarantee specific temperaments

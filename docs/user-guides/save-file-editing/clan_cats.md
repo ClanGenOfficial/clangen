@@ -1,4 +1,4 @@
-## Clan_Cats.json
+## clan_cats.json
 (including a simplified summary by line for those who need a refresher)
 
 The clan_cats is the data of every cat in the save file, including outsiders and dead cats.
@@ -30,10 +30,10 @@ Some parts of this section might need you to read expanded explanation because I
 |  `"status": {[]},`  |  The standing a group status of a cat |  Please refer to expanded explanation for full details  |
 |  `"dark_forest_affinity": 0`  |  The cats affinity towards the dark forest. -# = less likely, +# = more likely |  Influences whether the cat goes to the DF when they die  |
 |  `"starclan_affinity": 0`  |  The cats affinity towards starclan. -# = less likely, +# = more likely |  Influences whether the cat goes to starclan when they die |
-| ` "backstory": "clanborn",`  |  Cat's backstory  |  Options: [Backstories documentation](https://clangen.io/docs/dev/writing/reference/tag-lists/#backstories)  |
-|  `"moons": 20, ` |  Age of the cat in moons  |  Age Ranges: [age & status](https://clangen.io/docs/dev/writing/reference/tag-lists/#age-and-status)  |
-| ` "trait": "sneaky", ` |  Cat's trait  |  Options: [trait & skills](https://clangen.io/docs/dev/writing/reference/tag-lists/#traits-and-skills)  |
-| ` "facets": "0,5,10,14", ` |  "Sub-categories" of traits. Can delete line - regenerates new facets once deleted  |  Ranges: [trait_ranges.json](https://github.com/ClanGenOfficial/clangen/blob/development/resources/dicts/traits/trait_ranges.json)  Refer to expanded explanation  |
+| ` "backstory": "clanborn",`  |  Cat's backstory  |  Options: [Backstories documentation](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#backstories)  |
+|  `"moons": 20, ` |  Age of the cat in moons  |  Age Ranges: [age & status](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#age-and-status)  |
+| ` "trait": "sneaky", ` |  Cat's trait  |  Options: [trait & skills](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#traits-and-skills)  |
+| ` "facets": "0,5,10,14", ` |  Facets determine what trait the cat has. null the line to regenerate `"facets": null,`  |  Ranges: [trait_ranges.json](https://github.com/ClanGenOfficial/ClanGen/blob/development/resources/dicts/traits/trait_ranges.json)  |
 | ` "parent1": "329",`  |  First parent  |  If you want no biological parents, edit to be `null,`  |
 | ` "parent2": null, ` |  Second parent. Referred to as parent.mate in code  |  Cannot have a parent in parent2 with no parent in parent1  |
 | ` "adoptive_parents": [], ` |  Cats who adopted this cat  |  Would look like `"adoptive_parents": ["1","2"],`  |
@@ -81,9 +81,9 @@ Some parts of this section might need you to read expanded explanation because I
 
 |  `Code`  |  Explanation  |  Additional Information  |
 | :---- | :---- | :---- |
-|  `"skill_dict": {}, ` |  Skills the cat has  |  "SKILL,Tier#,False/True". Refer to Expanded Explanation. Options: [trait & skills](https://clangen.io/docs/dev/writing/reference/tag-lists/#traits-and-skills)  |
+|  `"skill_dict": {}, ` |  Skills the cat has  |  "SKILL,Tier#,False/True". Refer to Expanded Explanation. Options: [trait & skills](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#traits-and-skills)  |
 | ` "scars": [],`  |  Cat's scars. Can have multiple: `"scars": ["ONE","TWO","THREE"],`  |  Always "UPPERCASE"  |
-| ` "accessory": [],`  |  Accessory code. leave as `"accessory": [],` if there is none  |  Can have 2-3 accessories in game. `"accessory": ["JAY FEATHER","WISTERIA"],`  |
+| ` "accessory": [],`  |  Accessory code. leave as `"accessory": [],` if there is none  |  Can have 2-3 accessories in game. `"accessory": ["JAY FEATHER","DESERT WILLOW"],`  |
 | ` "experience": 321,`  |  Cat's experience. Determines how good they are in their role.  |  Highest is 321 - refer to Expanded Explanation for ranges  |
 |  `"current_apprentice": [],`  |  Current apprentices of the cat  |  `"current_apprentice": ["1","2","3"],`  |
 | ` "former_apprentices": [],`  |  Former apprentices of the cat |  `"former_apprentice": ["1","2","3"],`  |
@@ -166,12 +166,12 @@ Everything that affects status is here. It also lists previous statuses, the cla
 		
 `"group": ""`: The "group" the cat belongs to/is affiliated with. 
 
-* "group" will be a number. Look in your clan.json to see the number associated with a group. "1"=playerclan & "2"=starclan for example
+* "group" will be a number. Look in your `clan.json` to see the number associated with a group. "1"=playerclan & "2"=starclan for example
 * If they don't belong to a group (ex: kittypet), it'll be `null,`
 
 `"rank": ""`: The "rank" of the cat. Essentially, this is what "status" used to be. 
 
-* Available Ranks: [status documentation](https://clangen.io/docs/dev/writing/reference/tag-lists/#__tabbed_2_2)
+* Available Ranks: [status documentation](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#__tabbed_2_2)
 * "rank" cannot be null
 
 `"moons_as": 0`: The amount of moons the cat was/is the specific rank. It'll stay 0 if it's a previous status that has no recorded history 
@@ -183,7 +183,7 @@ Everything that affects status is here. It also lists previous statuses, the cla
 
 `"group": "1"`: The "group" the cat has a standing with. If the cat isn't from a neighboring clan, this will likely only be player_clan ("1") and an afterlife group ("2"-"4") if they're dead
 
-* "group" will be a number. Look in your clan.json to see the number associated with a group. "1"=playerclan & "2"=starclan for example
+* "group" will be a number. Look in your `clan.json` to see the number associated with a group. "1"=playerclan & "2"=starclan for example
 * "group" cannot be null
 
 `"standing": []`: The current standing with the group. (can have multiple)
@@ -209,32 +209,32 @@ Affinity can either be a negative or positive number. Negative means the cat wou
 
 `"backstory": "abandoned4",`
 
-Refer to [backstories documentation](https://clangen.io/docs/dev/writing/reference/tag-lists/#backstories) for all the available backstories!
+Refer to [backstories documentation](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#backstories) for all the available backstories!
 
 * Cats outside the clan and dead outsiders have hardcoded backstories displayed no matter what is put here
 
 `"moons": 23,`
 
-This is the age of the cat. The age ranges are listing in the [game_config.toml](https://github.com/ClanGenOfficial/clangen/blob/development/resources/game_config.toml)
+This is the age of the cat. The age ranges are listing in the [game_config.toml](https://github.com/ClanGenOfficial/ClanGen/blob/development/resources/game_config.toml)
 
 `"trait": "strange",`
 
-This is the cat's personality trait. Refer to [trait documentation](https://clangen.io/docs/dev/writing/reference/tag-lists/#__tabbed_3_2) for all the available ones.
+This is the cat's personality trait. Refer to [trait documentation](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#__tabbed_3_2) for all the available ones.
 
-* While changing the trait, you need to either change the facet to match with the new trait or outright delete the facet line
-* The trait will always be lowercase
+* While changing the trait, you need to also null the "facets" line underneath ("facets": null,) to regenerate new facets based on the trait you edited in.
 
 ---
 
 `"facets": "6,12,0,15",`
 
-These are the facets. Facets directly determine what trait the cat has depending on the numbers in the "facet" line. If you do not want to be specific, you can delete this line entirely to regenerate new facets for you.
+These are the facets. Facets directly determine what trait the cat has depending on the numbers in the "facets" line. If you do not want to be specific, null the line `"facets": null,` to regenerate new ones.
+
 
 **Using Facets**
 
 Facets determine what trait the cat has. They affect how the cat interacts with their peers and goes toward the overall clan temperament. 
 
-Facets operate on a range of 0-16 for each section. Facet ranges are stored in the [trait_ranges.json](https://github.com/ClanGenOfficial/clangen/blob/development/resources/dicts/traits/trait_ranges.json). This json tells you specifically which ranges are for each trait.
+Facets operate on a range of 0-16 for each section. Facet ranges are stored in the [trait_ranges.json](https://github.com/ClanGenOfficial/ClanGen/blob/development/resources/dicts/traits/trait_ranges.json). This json tells you specifically which ranges are for each trait.
 
 **SIMPLE STEPS**
 
@@ -311,7 +311,7 @@ Tracks the number of times an apprentice has patrolled with their mentor. Is use
 The current mate(s) of the cat. If there aren't mates for the cat: `"mate": [],`
 
 !!! tip
-	 When adding or removing a mate, also make sure to edit the mates's "mate" line
+	 When adding or removing a mate, also make sure to edit the mate's "mate" line
 
 `"previous_mates": ["73"],`
 
@@ -367,7 +367,7 @@ This is the length of the pelt. "long", "medium", and "short" apply here. Long-h
 
 `"sprite_para_adult": "para_adult_short0",`
 
-These are the new names for your poses. You'll add in a choice instead of a number. The file [pose_sprite_data](https://github.com/ClanGenOfficial/clangen/blob/development/sprites/dicts/pose_sprite_data.json) in your sprites folder > dict folder lists the poses and their corresponding name. 
+These are the new names for your poses. You'll add in a choice instead of a number. The file [pose_sprite_data](https://github.com/ClanGenOfficial/ClanGen/blob/development/sprites/dicts/pose_sprite_data.json) in your sprites folder > dict folder lists the poses and their corresponding name. 
 
 `"eye_colour": "GREEN",`
 
@@ -452,7 +452,7 @@ The scars the cat has. If they don't have any scars: `"scars": [],`. This is alw
 
 `"accessory": [],`
 
-A cat can have up to three accessories in development. Ex: `"accessory": ["JAY FEATHER", "WISTERIA"],`. Always written as "UPPERCASE"
+A cat can have up to three accessories in development. Ex: `"accessory": ["JAY FEATHER", "DESERT WILLOW"],`. Always written as "UPPERCASE"
 
 `"experience": 63,`
 
@@ -537,7 +537,7 @@ Holds a template of a cat's code for copy/pasting/editing purposes. All the valu
         "backstory": "",
         "moons": 0,
         "trait": "",
-        "facets": "",
+        "facets": null,
         "parent1": null,
         "parent2": null,
         "adoptive_parents": [],
@@ -591,25 +591,25 @@ Holds a template of a cat's code for copy/pasting/editing purposes. All the valu
 
 ## Adding a Cat
 
-Adding a cat to a save file is as simple as duplicating another cat's code, changing the listed ID of the duplicate, and adding the ID to clan.json's `"clan_cats"` list. But what does that look like?
+Adding a cat to a save file is as simple as duplicating another cat's code, changing the listed ID of the duplicate, and adding the ID to `clan.json`'s `"clan_cats"` list. But what does that look like?
 
 ### editing clan_cats
 
-Open your `clan_cats.json` with a text editor. You'll (hopefully) notice that every cat's information is within a dict (`{}`). When copying a cat's code, you'll copy from the first surrounding bracket `{` to the last surrounding bracket `}`, like how the template is above.
+Open your ``clan_cats.json`` with a text editor. You'll (hopefully) notice that every cat's information is within a dict (`{}`). When copying a cat's code, you'll copy from the first surrounding bracket `{` to the last surrounding bracket `}`, like how the template is above.
 
 Then, go to the bottom of the file, and place a *comma* after the closing dict bracket `}` of the last cat in the file. Press enter to make an empty line, then paste your copied code.
 
 Once your code is pasted, change `"ID"` to be a *unique number* not currently being used by another cat. This is what makes the added cat "individual".
 
-Save the file, then go to a json validator website (such as jsonlint.com) to add in your edited `clan_cats.json` to confirm the file is valid with your edits.
+Save the file, then go to a json validator website (such as jsonlint.com) to add in your edited ``clan_cats.json`` to confirm the file is valid with your edits.
 
-### editing clan.json
+### editing `clan.json`
 
-If so, navigate back to your save files, and open `[clanname]clan.json` within your save folder. Scroll down until you find `"clan_cats"`. Add the *unique number* of the added cat to the list.
+If so, navigate back to your save files, and open `[clanname]`clan.json`` within your save folder. Scroll down until you find `"clan_cats"`. Add the *unique number* of the added cat to the list.
 
 * Do not add spaces. `"clan_cats": "1,2,3,4,5",`
 
-Once it is confirmed that the game runs, you can go back to `clan_cats.json` and edit any information of the new cat to make them unique. Use [Clan_Cats.json](#clan_catsjson) to make sure you're editing the file appropriately.
+Once it is confirmed that the game runs, you can go back to ``clan_cats.json`` and edit any information of the new cat to make them unique. Use [`clan_cats.json`](#clan_catsjson) to make sure you're editing the file appropriately.
 
 ## Deleting a Cat
 
@@ -620,7 +620,7 @@ Deleting a cat from a save file is a little complicated and leaves more room for
 
 ### editing clan_cats
 
-Go into your save files, and open `clan_cats.json`. Search for the cat you want to edit in the file. Make sure to write down their ID somewhere, so you don't forget.
+Go into your save files, and open ``clan_cats.json``. Search for the cat you want to edit in the file. Make sure to write down their ID somewhere, so you don't forget.
 
 There is a few main things you want to do in clan_cats: 
 
@@ -628,19 +628,19 @@ There is a few main things you want to do in clan_cats:
 * ctrl + f (or the equivalent) and mass search their ID (ex: "10"), and *delete every mention of their ID manually*. Do not use an auto replace feature.
 * If applicable, replace their ID with another cat. (ex: if they were a single parent to a litter, and you still want the litter to be littermates)
 
-Once you're done removing the cat from `clan_cats.json`, use a json validator such as jsonlint.com to check the formatting of the file, aka make sure it's still valid. If it is, head on to the next part.
+Once you're done removing the cat from ``clan_cats.json``, use a json validator such as jsonlint.com to check the formatting of the file, aka make sure it's still valid. If it is, head on to the next part.
 
-### editing clan.json
+### editing `clan.json`
 
-Navigate to your `[clanname]clan.json` file. ctrl + f (or the equivalent) and mass search the deleted cats ID in clan.json. Delete any mentions manually.
+Navigate to your `[clanname]`clan.json`` file. ctrl + f (or the equivalent) and mass search the deleted cats ID in `clan.json`. Delete any mentions manually.
 
-Use the explanation of clan.json to make sure you're removing the ID appropriately.
+Use the explanation of `clan.json` to make sure you're removing the ID appropriately.
 
 ### additional files
 
 You will also have to delete their ID from every other file in the clan save. Most notably: 
 
-- (expanded) nutritional_info.json
+- (expanded) nutrition_info.json
 	- Causes a freshkill timeskip crash when there's an "nonexistent" ID listed
 - pregnancy.json
 	- To avoid a cat generating as pregnant
@@ -655,7 +655,7 @@ This is a section specifically for how to edit the "status" part of the clan_cat
 
 ## Other Clan Cats
 
-To make a other clan cat, go to your `clan_cats.json`. This is all we're going to change.
+To make a other clan cat, go to your ``clan_cats.json``. This is all we're going to change.
 
 Make your new cat/navigate to your desired cat and scroll down to their status code.
 ```json
@@ -686,7 +686,7 @@ Make your new cat/navigate to your desired cat and scroll down to their status c
 
 For this example, let's say I want to make this cat a previous leader from the "player_clan", and they're currently a warrior for Rockclan, which is group "5".
 
-* You can figure out what group belongs to which other_clan through the clan.json `"used_group_IDs"` and `"other_clans"`
+* You can figure out what group belongs to which other_clan through the `clan.json` `"used_group_IDs"` and `"other_clans"`
 
 First, let's go with simple steps first. Removing them from the player clan requires changing "standing_history" to have "known". In this example, they're not a member due to belonging to another clan.
 
@@ -816,7 +816,7 @@ After:
         }
 ```
 
-Once this has been deleted from the file, save your clan_cats.json and move to the cats history file. History folder > ID_history.json matching the ID of the cat you just edited.
+Once this has been deleted from the file, save your `clan_cats.json` and move to the cats history file. History folder > ID_history.json matching the ID of the cat you just edited.
 
 Inside the history file, scroll until you see the line "died_by": [], - delete all the dead event information within that section until it reads as "died_by": [],
 
@@ -912,7 +912,7 @@ Add a new section to "group_history" and "standing_history" with the "group" bei
 
 This will immediately make them part of the afterlife of your choice.
 
-(expanded) To avoid bugs, remove the cat's ID from `nutritional_info.json` in your clan save folder. This makes sure the game doesn't try to "feed" them and crash you on moonskip.
+(expanded) To avoid bugs, remove the cat's ID from `nutrition_info.json` in your clan save folder. This makes sure the game doesn't try to "feed" them and crash you on moonskip.
 
 
 Optionally, you can add a death message to the cats history file "died_by". Like below: 

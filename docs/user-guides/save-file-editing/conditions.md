@@ -221,7 +221,7 @@ After:
 }
 ```
 
-Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/clangen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want. For example, heat stroke would look like this:
+Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/ClanGen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want. For example, heat stroke would look like this:
 
 ```json
         ....
@@ -304,7 +304,7 @@ Copy from the templates provided here for the condition type you want to add (th
 }
 ```
 
-Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/clangen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want. For example, paralyzed would look like this:
+Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/ClanGen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want. For example, paralyzed would look like this:
 
 ```json
     ....
@@ -386,7 +386,7 @@ For example:
 }
 ```
 
-Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/clangen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want.
+Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/ClanGen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want.
 
 Example with "lost a leg":
 ```json
@@ -624,7 +624,7 @@ If you already have an "injuries" section and only need to add the condition:
         }
 ```
 
-When the code is put into the file, edit the `mortality` and `moon_start` to reflect the age and clan age moon. You can find the information for pregnancies [here](https://github.com/ClanGenOfficial/clangen/blob/development/resources/dicts/conditions/injuries.json).
+When the code is put into the file, edit the `mortality` and `moon_start` to reflect the age and clan age moon. You can find the information for pregnancies [here](https://github.com/ClanGenOfficial/ClanGen/blob/development/resources/dicts/conditions/injuries.json).
 
 Use a json validator such as jsonlint.com to check your formatting of the file before you proceed. If it's valid, head to the next step: pregnancy.json.
 
