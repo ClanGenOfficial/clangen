@@ -552,7 +552,7 @@ Reminder that you have to make the victim deceased through the clan_cats and die
 `"moon": 7,`: The clan moon age in which the cat was murdered.
 
 
-## Revealed murder victim
+### Revealed murder victim
 Reminder that you have to make the victim deceased through the clan_cats and died_by code in the history file. "Planning" murders should be done through future events.
 
 ```json
