@@ -560,7 +560,7 @@ class MediationScreen(Screens):
         else:  # if it already existed, just update the display
             self.elements["cat_list"].update_display(self.page, self.all_cats_list)
 
-        self.update_search_cats()
+        self.update_search_cats(self.elements["search_bar"].get_text())
 
     def _set_cat_list(self):
         """
@@ -700,8 +700,12 @@ class MediationScreen(Screens):
                 other_cat, get_clan_setting("first cousin mates")
             ):
                 allow_romance = False
+                self.elements["romance_checkbox"].hide()
+                self.elements["romance_text"].hide()
             else:
                 allow_romance = True
+                self.elements["romance_checkbox"].show()
+                self.elements["romance_text"].show()
 
             self.selected_cat_elements[
                 f"relation_display{cat_num}"
