@@ -8,7 +8,6 @@ from pygame._sdl2 import controller
 from typing import Literal, Union, Dict
 from abc import ABC, abstractmethod
 
-from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_input.action import Action
 from scripts.game_input import custom_events
 

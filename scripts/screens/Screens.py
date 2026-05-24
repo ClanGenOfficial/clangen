@@ -248,25 +248,25 @@ class Screens:
                     self.current_focus = focus_matrix.find_next_focus(
                         self.matrix_map,
                         Action.DOWN,
-                        last_element=self.current_focus,
+                        prev_focus_element=self.current_focus,
                     )
                 elif event.action == Action.UP:
                     self.current_focus = focus_matrix.find_next_focus(
                         self.matrix_map,
                         Action.UP,
-                        last_element=self.current_focus,
+                        prev_focus_element=self.current_focus,
                     )
                 elif event.action == Action.LEFT:
                     self.current_focus = focus_matrix.find_next_focus(
                         self.matrix_map,
                         Action.LEFT,
-                        last_element=self.current_focus,
+                        prev_focus_element=self.current_focus,
                     )
                 elif event.action == Action.RIGHT:
                     self.current_focus = focus_matrix.find_next_focus(
                         self.matrix_map,
                         Action.RIGHT,
-                        last_element=self.current_focus,
+                        prev_focus_element=self.current_focus,
                     )
 
     def exit_screen(self):

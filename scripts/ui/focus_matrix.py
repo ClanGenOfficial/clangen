@@ -8,22 +8,30 @@ from scripts.game_structure.game import switch_get_value, Switch
 from scripts.ui.scale import ui_scale_value
 
 
-def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[list]:
+def add_to_map(
+    current_map: list[list[UIElement]], new_elements: list[UIElement]
+) -> list[list]:
     """
-    Takes the given elements and adds them to the map
+    Takes the given elements and adds them to the map.
+    The matrix map is a list of lists. Each list is a new "row" within the map.
+    We compile the map by checking the y and x coord positioning of each element. Elements with similar y coords will be
+    placed in the same row, and their order within that row determined by their x coord (lowest to highest).
     :param current_map: The current matrix map
     :param new_elements: The list of interactable elements to add
     :return: The new map
     """
+    # making a copy so we aren't modifying the original list since we're just gonna be returning a new list
+    current_map = current_map.copy()
+
     for element in new_elements:
         # first, find the current y positions represented
-        current_rows: dict[int, list] = {}
+        current_rows_by_y_pos: dict[int, list] = {}
         already_present = False
         for row in current_map:
             if element in row:
                 already_present = True  # don't add an element that's already there
                 break
-            current_rows[row[0].get_abs_rect().y] = row
+            current_rows_by_y_pos[row[0].get_abs_rect().y] = row
 
         if already_present:
             continue
@@ -33,8 +41,8 @@ def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[l
 
         # first we check if a new row is needed
         new_row = True
-        target = None
-        for row in current_rows:
+        target_row = None
+        for row in current_rows_by_y_pos:
             # we allow a 30 px range so that elements which are slightly different y coordinates
             # but still visibly feel side-by-side will be treated as part of the same row
             if (
@@ -43,11 +51,12 @@ def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[l
                 <= row + ui_scale_value(15)
             ):
                 new_row = False
-                target = row
+                target_row = row
+                break
         # now if we need a new row, we find where it should fit
         if new_row:
             # sort within the current row positions
-            row_positions = list(current_rows.keys())
+            row_positions = list(current_rows_by_y_pos.keys())
             row_positions.append(position.y)
             row_positions.sort()
             # insert it into the actual map according to how we've sorted
@@ -55,8 +64,8 @@ def add_to_map(current_map: list[list], new_elements: list[UIElement]) -> list[l
             current_map.insert(new_row_index, [element])
         # otherwise add the element to an existing row
         else:
-            current_rows[target].append(element)
-            current_rows[target].sort(key=lambda x: x.get_abs_rect().x)
+            current_rows_by_y_pos[target_row].append(element)
+            current_rows_by_y_pos[target_row].sort(key=lambda x: x.get_abs_rect().x)
 
     return current_map
 
@@ -76,12 +85,11 @@ def remove_from_map(
         for row in current_map:
             if element in row:
                 element_row = current_map.index(row)
+                break
 
         # if the element isn't present, we warn
         if element_row is None:
-            raise Exception(
-                "WARNING: attempted to remove an element from the matrix map, but it wasn't present in the matrix map."
-            )
+            continue
 
         # then remove it
         current_map[element_row].remove(element)
@@ -93,13 +101,13 @@ def remove_from_map(
 
 
 def find_next_focus(
-    current_map: list[list], direction: Action, last_element: UIElement
+    current_map: list[list], direction: Action, prev_focus_element: UIElement
 ) -> UIElement:
     """
     Moves focus from one element to the next logical element.
     :param current_map: The current matrix map
     :param direction: The direction in which to look for the next element
-    :param last_element: The element currently in focus
+    :param prev_focus_element: The element currently in focus that should lose focus
     :return: UIElement that has received focus
     """
     new_row = None
@@ -109,16 +117,16 @@ def find_next_focus(
     prior_row = None
     prior_col = None
     for index, row in enumerate(current_map):
-        if last_element in row:
+        if prev_focus_element in row:
             prior_row = index
-            prior_col = current_map[index].index(last_element)
+            prior_col = current_map[index].index(prev_focus_element)
             break
 
     if (
         prior_row is None or prior_col is None
     ):  # specifically NONE, using `if not x or x` will falsely pick up 0 indexes
         raise Exception(
-            f"{last_element} not found in the matrix map. Use self.update_map() to add it. If this element shouldn't be interactable, then it was mistakenly given focus!"
+            f"{prev_focus_element} not found in the matrix map. Use self.update_map() to add it. If this element shouldn't be interactable, then it was mistakenly given focus!"
         )  # uh oh it must not be in the map and that's a problem!
 
     # where are we going?
@@ -127,7 +135,7 @@ def find_next_focus(
     change_to_lower_row = False
     if direction in (Action.LEFT, Action.RIGHT):
         # we need to see if there's a valid element to switch to
-        if not _valid_row(current_map, last_element, prior_row):
+        if not _valid_row(current_map, prev_focus_element, prior_row):
             # there isn't! so we need to change our row too
             if direction == Action.LEFT:
                 # left will go upward
@@ -138,7 +146,7 @@ def find_next_focus(
 
     # going UP!
     if direction == Action.UP or change_to_higher_row:
-        while not _valid_row(current_map, last_element, new_row):
+        while not _valid_row(current_map, prev_focus_element, new_row):
             # find the new row, wrapping if necessary
             if prior_row - 1 >= 0:
                 new_row = prior_row - 1
@@ -153,7 +161,7 @@ def find_next_focus(
 
     # going DOWN!
     elif direction == Action.DOWN or change_to_lower_row:
-        while not _valid_row(current_map, last_element, new_row):
+        while not _valid_row(current_map, prev_focus_element, new_row):
             # find the new row, wrapping if necessary
             if prior_row + 1 <= len(current_map) - 1:
                 new_row = prior_row + 1
@@ -201,7 +209,7 @@ def find_next_focus(
 
     new_element = current_map[new_row][new_col]
 
-    _set_focus(new_focus=new_element, old_focus=last_element)
+    _set_focus(new_focus=new_element, old_focus=prev_focus_element)
 
     # return the element at the newly found indexes!
     return new_element

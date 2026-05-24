@@ -232,11 +232,6 @@ class UIImageButton(pygame_gui.elements.UIButton):
             self.tool_tip = None
         super().unfocus()
 
-    def on_unhovered(self):
-        super().on_unhovered()
-        if self.is_focused:
-            self.drawable_shape.set_active_state("selected")
-
     def process_event(self, event: pygame.event.Event) -> bool:
         if self.is_focused and event.type == INPUT_ACTION_PRESSED:
             if event.action == Action.CONFIRM:
