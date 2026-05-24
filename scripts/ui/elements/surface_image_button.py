@@ -210,8 +210,6 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 self.find_text_layer_pos()
             self.text_layer.set_position(self.text_layer_offset)
         super().on_unhovered()
-        if self.is_focused:
-            self.drawable_shape.set_active_state("selected")
 
     def disable(self):
         if self.hovered:
@@ -231,7 +229,7 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
 
     def focus(self):
         super().focus()
-        self.drawable_shape.set_active_state("selected")
+        self.drawable_shape.set_active_state("hovered")
         if self.tool_tip is None and self.tool_tip_text is not None:
             self.tool_tip = self.ui_manager.create_tool_tip(
                 text=self.tool_tip_text,
@@ -244,7 +242,10 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
             )
 
     def unfocus(self):
-        self.drawable_shape.set_active_state("normal")
+        if self.hovered:
+            self.drawable_shape.set_active_state("hovered")
+        else:
+            self.drawable_shape.set_active_state("normal")
         if self.tool_tip is not None:
             self.tool_tip.kill()
             self.tool_tip = None

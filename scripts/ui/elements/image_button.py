@@ -8,6 +8,8 @@ from pygame_gui.core.interfaces import IUIManagerInterface
 
 from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
 from scripts.game_structure import game
+from scripts.game_structure.game import Switch
+from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import screen
 
 
@@ -213,7 +215,7 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
     def focus(self):
         super().focus()
-        self.drawable_shape.set_active_state("selected")
+        self.drawable_shape.set_active_state("hovered")
         if self.tool_tip is None and self.tool_tip_text is not None:
             self.tool_tip = self.ui_manager.create_tool_tip(
                 text=self.tool_tip_text,
@@ -226,7 +228,10 @@ class UIImageButton(pygame_gui.elements.UIButton):
             )
 
     def unfocus(self):
-        self.drawable_shape.set_active_state("normal")
+        if self.hovered:
+            self.drawable_shape.set_active_state("hovered")
+        else:
+            self.drawable_shape.set_active_state("normal")
         if self.tool_tip is not None:
             self.tool_tip.kill()
             self.tool_tip = None
