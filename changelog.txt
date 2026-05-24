@@ -1,3 +1,23 @@
+<strong>v0.13.2</strong>
+- Prevented starting and trailing spaces from being used for Clan names (this could cause crashes)
+- Newborns who are exiled and then return to the Clan are no longer perpetually stuck at the newborn rank for their entire life.
+- Other Clans no longer have a chance to generate with an already-used name
+- Fixed the filtering for romance in short events
+- Prevented kittens from "assigned task" thoughts
+- Fixed other_clan group ID bloat that would occur when loading old saves. Can't be retroactively fixed for affected saves, but shouldn't be particularly detrimental to normal play.
+- Apprentice wrangling rel events are now properly age filtered. No more kittens planning lessons for apprentices.
+- Fixed other clan cats who do not join the player clan still receiving "welcome" events as though they had
+- Various inverted relationship effects fixed.
+- Fixed unwanted capitalization of pelt pattern for kits listed under queens in allegiances
+- Allowed un-parented kits to use the longer version of their description in allegiances
+- Fixed issue where Clan ID was showing up in the leader's den screen and switch Clan screen
+- Added further protection to save conversion for sprite poses, just in case any cats had been assigned mismatched pose indexes prior to save conversion.
+- Mild typo fixes, added missing pronoun/verb tags, and slightly reworded some things to avoid text display errors.
+
+- Moved "unspoken apology" rel event from comfort decrease to comfort increase (and now requires "avoids" tier)
+- Lowered frequencies of the "grim job" med cat patrol and the plains "far border" patrol
+- Adjusted the wording of a couple poly mate events
+
 <strong>v0.13.1</strong>
 - Fixed patrol results not displaying all received conditions when the outcome applies multiple conditions.
 - Fixed the Warrior Den screen crashing the game when all focus settings are false.

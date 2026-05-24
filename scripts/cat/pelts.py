@@ -285,16 +285,16 @@ class Pelt:
                         self.cat_sprites[age] = "para_adult_short0"
                     continue
 
-                if age == CatAge.NEWBORN:
+                elif age == CatAge.NEWBORN:
                     self.cat_sprites[age] = (
                         "newborn2" if "newborn2" in self.newborn_poses else "newborn0"
                     )
                     continue
-                if age == CatAge.KITTEN:
+                elif age == CatAge.KITTEN:
                     # since these were at the top of the sheet, the pose nums were 0, 1, 2. thus they'll naturally match this fstring
-                    self.cat_sprites[age] = f"kitten{pose}"
+                    self.cat_sprites[age] = f"kitten{pose if pose in (0, 1, 2) else 0}"
                     continue
-                if age == CatAge.ADOLESCENT:
+                elif age == CatAge.ADOLESCENT:
                     if self.length == "long":
                         fur = "long"
                     else:
@@ -305,8 +305,15 @@ class Pelt:
                         self.cat_sprites[age] = f"adolescent_{fur}1"
                     elif pose == 5:
                         self.cat_sprites[age] = f"adolescent_{fur}2"
-                    continue
-                if age in (CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT):
+                    else:
+                        self.cat_sprites[age] = choice(
+                            (
+                                f"adolescent_{fur}0",
+                                f"adolescent_{fur}1",
+                                f"adolescent_{fur}2",
+                            )
+                        )
+                elif age in (CatAge.YOUNG_ADULT, CatAge.ADULT, CatAge.SENIOR_ADULT):
                     if pose in (0, 9):
                         self.cat_sprites[age] = "adult_long0"
                     elif pose in (1, 10):
@@ -319,13 +326,27 @@ class Pelt:
                         self.cat_sprites[age] = "adult_short1"
                     elif pose == 8:
                         self.cat_sprites[age] = "adult_short2"
-                if age == CatAge.SENIOR:
+                    else:
+                        if self.length == "long":
+                            self.cat_sprites[age] = choice(
+                                ("adult_long0", "adult_long1", "adult_long2")
+                            )
+                        else:
+                            self.cat_sprites[age] = choice(
+                                ("adult_short0", "adult_short1", "adult_short2")
+                            )
+
+                elif age == CatAge.SENIOR:
                     if pose in (3, 12):
                         self.cat_sprites[age] = "senior0"
                     elif pose in (4, 13):
                         self.cat_sprites[age] = "senior1"
                     elif pose in (5, 14):
                         self.cat_sprites[age] = "senior2"
+                    else:
+                        self.cat_sprites[age] = choice(
+                            ("senior0", "senior1", "senior2")
+                        )
 
         # now for the updating handling of pose name strings
         else:

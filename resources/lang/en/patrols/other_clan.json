@@ -232,7 +232,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was frustrated when cat_to was openly aggressive another Clan's patrol."
+                            "cats_from": "cat_from was frustrated when cat_to was openly aggressive towards another Clan's patrol."
                         }
                     }
                 ]
@@ -952,7 +952,16 @@
                 "min_max_status": {
                     "leader": [-1, -1]
                 },
-                "text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n deputy conversing with lead_name.  {PRONOUN/lead_name/subject/CAP} {VERB/lead_name/tell/tells} p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
+                "text": "How dare they trespass! p_l bounds after the scent, tracking it to the c_n camp. Inside, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the o_c_n deputy conversing with lead_name. {PRONOUN/lead_name/subject/CAP} {VERB/lead_name/tell/tells} p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {
+                    "leader": [1, 1]
+                },
+                "text": "How dare they trespass! p_l bounds after the scent, tracking it to the c_n camp. Inside, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the o_c_n deputy conversing with dep_name. p_l remembers arranging a meeting at the last Gathering to discuss a recent event, and it turns out, {PRONOUN/p_l/subject} just showed up late.",
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4

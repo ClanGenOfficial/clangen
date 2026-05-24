@@ -17,6 +17,8 @@ nav:
             - dev/senior/index.md
     - Code:
         - dev/code/index.md
+        - User Interface:
+            - dev/code/keybind-matrix-handling.md
         - dev/code/cat-status.md
         - dev/art/cat-sprites/adding-new-sprites.md
         - dev/code/content-adding.md
@@ -137,7 +139,6 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.inlinehilite
-  - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg

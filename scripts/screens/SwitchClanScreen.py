@@ -71,7 +71,7 @@ class SwitchClanScreen(Screens):
                         # rebuild to update menu scheme differences between game modes
                         rebuild_core()
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen(GameScreen.START)
 

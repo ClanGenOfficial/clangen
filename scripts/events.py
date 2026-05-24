@@ -7,6 +7,7 @@ TODO: Docs
 """
 import logging
 import random
+from scripts.config import get_config
 
 # pylint: enable=line-too-long
 import traceback
@@ -616,11 +617,11 @@ def get_moon_freshkill():
 
     prey_amount = 0
     for cat in healthy_hunter:
-        lower_value = constants.PREY_CONFIG["auto_warrior_prey"][0]
-        upper_value = constants.PREY_CONFIG["auto_warrior_prey"][1]
+        lower_value = constants.CONFIG["prey"]["auto_warrior_prey"][0]
+        upper_value = constants.CONFIG["prey"]["auto_warrior_prey"][1]
         if cat.status.rank == CatRank.APPRENTICE:
-            lower_value = constants.PREY_CONFIG["auto_apprentice_prey"][0]
-            upper_value = constants.PREY_CONFIG["auto_apprentice_prey"][1]
+            lower_value = constants.CONFIG["prey"]["auto_apprentice_prey"][0]
+            upper_value = constants.CONFIG["prey"]["auto_apprentice_prey"][1]
 
         prey_amount += random.randint(lower_value, upper_value)
     game.freshkill_event_list.append(
@@ -662,9 +663,8 @@ def handle_focus():
             and cat.available_to_work()
         ]
 
-        warrior_amount = (
-            len(healthy_warriors)
-            * constants.CONFIG["focus"]["hunting"][CatRank.WARRIOR]
+        warrior_amount = len(healthy_warriors) * get_config(
+            game.clan, f"focus.hunting.{CatRank.WARRIOR}"
         )
 
         # handle apprentices
@@ -674,9 +674,8 @@ def handle_focus():
             if cat.status.rank == CatRank.APPRENTICE and cat.available_to_work()
         ]
 
-        app_amount = (
-            len(healthy_apprentices)
-            * constants.CONFIG["focus"]["hunting"][CatRank.APPRENTICE]
+        app_amount = len(healthy_apprentices) * get_config(
+            game.clan, f"focus.hunting.{CatRank.APPRENTICE}"
         )
 
         # finish
@@ -2105,8 +2104,7 @@ def handle_injuries_or_general_death(cat):
     # chance to kill leader: 1/50 by default
     if (
         not int(
-            random.random()
-            * game.get_config_value("death_related", "leader_death_chance")
+            random.random() * get_config(game.clan, "death_related.leader_death_chance")
         )
         and cat.status.is_leader
         and not cat.not_working()
@@ -2154,9 +2152,7 @@ def handle_injuries_or_general_death(cat):
     if (
         not int(
             random.random()
-            * game.get_config_value(
-                "death_related", f"{game.clan.game_mode}_death_chance"
-            )
+            * get_config(game.clan, f"death_related.{game.clan.game_mode}_death_chance")
         )
         and not cat.not_working()
     ):  # 1/400
