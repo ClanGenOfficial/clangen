@@ -1,5 +1,6 @@
 from collections import deque
 from random import choice
+from typing import List
 
 import i18n
 import pygame.transform
@@ -32,8 +33,8 @@ class MediationScreen(Screens):
         super().__init__(name)
         self.all_cats_list = None
         self.back_button = None
-        self.selected_cat_1 = None
-        self.selected_cat_2 = None
+        self.selected_cat0 = None
+        self.selected_cat1 = None
         self.mediators = deque()
         self.cat_buttons = []
         self.page = 1
@@ -52,108 +53,117 @@ class MediationScreen(Screens):
 
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
+            # MEDIATOR ARROWS
             elif event.ui_element == self.elements["last_mediator"]:
                 self.mediators.rotate()
                 self.update_mediator_info()
             elif event.ui_element == self.elements["next_mediator"]:
                 self.mediators.rotate(-1)
                 self.update_mediator_info()
+            # CAT LIST ARROWS
             elif event.ui_element == self.elements["next_page"]:
                 self.page += 1
-                self._set_cat_list()
-                self.elements["cat_list"].update_display(
-                    current_page=self.page, cat_list=self.all_cats_list
-                )
+                self.update_list_cats()
             elif event.ui_element == self.elements["prev_page"]:
                 self.page -= 1
-                self._set_cat_list()
-                self.elements["cat_list"].update_display(
-                    current_page=self.page, cat_list=self.all_cats_list
-                )
+                self.update_list_cats()
+            # ROMANCE CHECKBOX
             elif event.ui_element == self.elements["romance_checkbox"]:
                 self.allow_romance = not self.allow_romance
                 if self.elements["romance_checkbox"].checked:
                     self.elements["romance_checkbox"].uncheck()
                 else:
                     self.elements["romance_checkbox"].check()
-                self.update_buttons()
+            # REMOVE CAT
             elif event.ui_element == self.elements["remove_cat0"]:
-                self.selected_cat_1 = None
-                if self.selected_cat_2:
-                    self.selected_cat_1 = self.selected_cat_2
-                    self.selected_cat_2 = None
-                if not self.selected_cat_1 and self.tab_view != "all":
+                self.selected_cat0 = None
+                # now we move the other cat to be cat0
+                if self.selected_cat1:
+                    self.selected_cat0 = self.selected_cat1
+                    self.selected_cat1 = None
+                # if no cats are selected, we reset the tab to All
+                if not self.selected_cat0 and self.tab_view != "all":
                     self.tab_view = "all"
                     self.update_list_cats()
                 self.update_selected_cats()
             elif event.ui_element == self.elements["remove_cat1"]:
-                self.selected_cat_2 = None
+                self.selected_cat1 = None
                 self.update_selected_cats()
+            # IMPROVE BUTTON
             elif event.ui_element == self.elements["improve_rel"]:
-                game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
+                game.mediated.append([self.selected_cat0.ID, self.selected_cat1.ID])
                 game.patrolled.append(self.mediators[0].ID)
                 output = Cat.mediate_relationship(
                     self.mediators[0],
-                    self.selected_cat_1,
-                    self.selected_cat_2,
+                    self.selected_cat0,
+                    self.selected_cat1,
                     self.allow_romance,
                 )
                 self.elements["results"].set_text(output)
                 self.update_selected_cats()
                 self.update_mediator_info()
+            # SABOTAGE BUTTON
             elif event.ui_element == self.elements["sabotage_rel"]:
-                game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
+                game.mediated.append([self.selected_cat0.ID, self.selected_cat1.ID])
                 game.patrolled.append(self.mediators[0].ID)
                 output = Cat.mediate_relationship(
                     self.mediators[0],
-                    self.selected_cat_1,
-                    self.selected_cat_2,
+                    self.selected_cat0,
+                    self.selected_cat1,
                     self.allow_romance,
                     sabotage=True,
                 )
                 self.elements["results"].set_text(output)
                 self.update_selected_cats()
                 self.update_mediator_info()
+            # PICK RANDOM CATS
             elif event.ui_element == self.elements["random_cat0"]:
-                self.selected_cat_1 = self.random_cat()
+                self.selected_cat0 = self.random_cat()
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
-                    self.selected_cat_2 = self.random_cat()
+                    self.selected_cat1 = self.random_cat()
                 self.update_selected_cats()
             elif event.ui_element == self.elements["random_cat1"]:
-                self.selected_cat_2 = self.random_cat()
+                self.selected_cat1 = self.random_cat()
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
-                    self.selected_cat_1 = self.random_cat()
+                    self.selected_cat0 = self.random_cat()
                 self.update_selected_cats()
+            # SWITCH TO ALL TAB
             elif event.ui_element == self.elements["all_tab"]:
                 self.tab_view = "all"
                 self.elements["all_tab"].disable()
                 self.elements["neg_tab"].enable()
                 self.elements["pos_tab"].enable()
                 self.update_list_cats()
+            # SWITCH TO NEG TAB
             elif event.ui_element == self.elements["neg_tab"]:
                 self.tab_view = "negative"
                 self.elements["all_tab"].enable()
                 self.elements["neg_tab"].disable()
                 self.elements["pos_tab"].enable()
                 self.update_list_cats()
+            # SWITCH TO POS TAB
             elif event.ui_element == self.elements["pos_tab"]:
                 self.tab_view = "positive"
                 self.elements["all_tab"].enable()
                 self.elements["neg_tab"].enable()
                 self.elements["pos_tab"].disable()
                 self.update_list_cats()
-            elif event.ui_element in self.elements["cat_list"].cat_sprites.values():
+            # SELECT A CAT
+            elif (
+                self.elements.get("cat_list")
+                and event.ui_element in self.elements["cat_list"].cat_sprites.values()
+            ):
                 if event.ui_element.return_cat_object() not in (
-                    self.selected_cat_1,
-                    self.selected_cat_2,
+                    self.selected_cat0,
+                    self.selected_cat1,
                 ):
                     if (
                         pygame.key.get_mods() & pygame.KMOD_SHIFT
-                        or not self.selected_cat_1
+                        or not self.selected_cat0
                     ):
-                        self.selected_cat_1 = event.ui_element.return_cat_object()
+                        self.selected_cat0 = event.ui_element.return_cat_object()
                     else:
-                        self.selected_cat_2 = event.ui_element.return_cat_object()
+                        self.selected_cat1 = event.ui_element.return_cat_object()
                     self.update_selected_cats()
 
     def screen_switches(self):
@@ -194,14 +204,7 @@ class MediationScreen(Screens):
             manager=MANAGER,
         )
 
-        # BOXES
-        self.elements["result_frame"] = UIModifiedImage(
-            ui_scale(pygame.Rect((0, 8), (270, 125))),
-            get_box(BoxStyles.FRAME, (270, 125)),
-            container=self.elements["effects_container"],
-            manager=MANAGER,
-        )
-
+        # SEARCH BAR
         self.elements["search_bar_back"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((410, 0), (228, 39))),
             pygame.transform.scale(
@@ -221,6 +224,7 @@ class MediationScreen(Screens):
             manager=MANAGER,
         )
 
+        # CAT LIST
         self.elements["cat_list_bg"] = UIModifiedImage(
             ui_scale(pygame.Rect((24, -5), (625, 150))),
             get_box(BoxStyles.ROUNDED_BOX, (600, 150)),
@@ -233,7 +237,7 @@ class MediationScreen(Screens):
         )
 
         self.elements["cat_list_bg"].disable()
-        # arrows for cat list
+        # LIST ARROWS
         self.elements["prev_page"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 90), (34, 34))),
             Icon.ARROW_LEFT,
@@ -253,7 +257,8 @@ class MediationScreen(Screens):
             manager=MANAGER,
             starting_height=1,
         )
-        # TABS
+
+        # LIST TABS
         self.elements["all_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((50, 5), (50, 35))),
             "screens.mediation.all",
@@ -290,6 +295,15 @@ class MediationScreen(Screens):
             container=self.elements["cat_list_container"],
             visible=False,
         )
+
+        # RESULTS
+        self.elements["result_frame"] = UIModifiedImage(
+            ui_scale(pygame.Rect((0, 8), (270, 125))),
+            get_box(BoxStyles.FRAME, (270, 125)),
+            container=self.elements["effects_container"],
+            manager=MANAGER,
+        )
+        # ROMANCE CHECKBOX
         self.elements["romance_checkbox"] = UICheckbox(
             position=(70, 0),
             container=self.elements["effects_container"],
@@ -310,7 +324,7 @@ class MediationScreen(Screens):
             visible=False,
         )
 
-        # EFFECT
+        # EFFECT BUTTONS
         self.elements["improve_rel"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((20, 0), (105, 30))),
             "screens.mediation.improve",
@@ -329,6 +343,7 @@ class MediationScreen(Screens):
             manager=MANAGER,
         )
 
+        # RESULT TEXT
         self.elements["results"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((20, 40), (229, 80))),
@@ -351,6 +366,7 @@ class MediationScreen(Screens):
             object_id="@buttonstyles_icon",
         )
 
+        # INDICATOR TEXT
         self.elements["select_cat0"] = pygame_gui.elements.UITextBox(
             "screens.mediation.select_cat0",
             ui_scale(pygame.Rect((68, 385), (165, -1))),
@@ -399,117 +415,132 @@ class MediationScreen(Screens):
         )
         self.elements["random_cat1"].disable()
 
+        # UPDATE
         if self.mediators:
             self.update_mediator_info()
         else:
             NoMediatorsWindow()
 
-    def random_cat(self):
-        if self.selected_cat_list():
+    def random_cat(self) -> Cat:
+        """
+        Return a random cat to influence
+        """
+        if self.selected_cat_list:
             random_list = [
-                i for i in self.all_cats_list if i not in self.selected_cat_list()
+                i for i in self.all_cats_list if i not in self.selected_cat_list
             ]
         else:
             random_list = self.all_cats_list
         return choice(random_list)
 
     def update_mediator_info(self):
+        """
+        Update mediator elements and corresponding information
+        """
+        # kill and reset
         for ele in self.mediator_elements:
             self.mediator_elements[ele].kill()
         self.mediator_elements.clear()
 
-        if self.mediators:
-            mediator = self.mediators[0]
+        # grab the mediator to use
+        mediator = self.mediators[0]
 
-            # mediator can't be one of the selected cats
-            if mediator == self.selected_cat_1:
-                self.selected_cat_1 = None
-                self.update_selected_cats()
-            if mediator == self.selected_cat_2:
-                self.selected_cat_2 = None
-                self.update_selected_cats()
+        # mediator can't be one of the selected cats
+        if mediator == self.selected_cat0:
+            self.selected_cat0 = None
+            if self.selected_cat1:  # move other cat over
+                self.selected_cat0 = self.selected_cat1
+                self.selected_cat1 = None
+            self.update_selected_cats()
+        if mediator == self.selected_cat1:
+            self.selected_cat1 = None
+            self.update_selected_cats()
 
-            # this is gonna be the "{name} can influence" yada yada above the mediator sprite
-            self.mediator_elements["mediator_status"] = pygame_gui.elements.UITextBox(
-                "",
-                ui_scale(pygame.Rect((0, 37), (229, 57))),
-                anchors={"centerx": "centerx"},
-                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
-                manager=MANAGER,
-            )
+        # this is gonna be the "{name} can influence" yada yada above the mediator sprite
+        self.mediator_elements["mediator_status"] = pygame_gui.elements.UITextBox(
+            "",
+            ui_scale(pygame.Rect((0, 37), (229, 57))),
+            anchors={"centerx": "centerx"},
+            object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
+            manager=MANAGER,
+        )
 
-            self.mediator_elements["container"] = UIContainer(
-                ui_scale(pygame.Rect((0, 0), (150, 200))),
-                anchors={
-                    "centerx": "centerx",
-                    "top_target": self.mediator_elements["mediator_status"],
-                },
-                manager=MANAGER,
-            )
-            self.mediator_elements["platform"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((0, 0), (240, 210))),
-                pygame.transform.scale(
-                    sprites.get_platform(
-                        biome=(
-                            game.clan.override_biome
-                            if game.clan.override_biome
-                            else game.clan.biome
-                        ),
-                        season=game.clan.current_season,
-                        show_nest=mediator.not_working(),
-                        group=mediator.status.group,
+        # container for all the other elements
+        self.mediator_elements["container"] = UIContainer(
+            ui_scale(pygame.Rect((0, 0), (150, 200))),
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.mediator_elements["mediator_status"],
+            },
+            manager=MANAGER,
+        )
+        # cat sprite stuff
+        self.mediator_elements["platform"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((0, 0), (240, 210))),
+            pygame.transform.scale(
+                sprites.get_platform(
+                    biome=(
+                        game.clan.override_biome
+                        if game.clan.override_biome
+                        else game.clan.biome
                     ),
-                    ui_scale_dimensions((240, 210)),
+                    season=game.clan.current_season,
+                    show_nest=mediator.not_working(),
+                    group=mediator.status.group,
                 ),
-                anchors={
-                    "centerx": "centerx",
-                    "top_target": self.mediator_elements["mediator_status"],
-                },
-                manager=MANAGER,
-                starting_height=-1,
-            )
-            self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((0, 0), (150, 150))),
-                pygame.transform.scale(
-                    mediator.sprite, ui_scale_dimensions((150, 150))
-                ),
-                container=self.mediator_elements["container"],
-            )
+                ui_scale_dimensions((240, 210)),
+            ),
+            anchors={
+                "centerx": "centerx",
+                "top_target": self.mediator_elements["mediator_status"],
+            },
+            manager=MANAGER,
+            starting_height=-1,
+        )
+        self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((0, 0), (150, 150))),
+            pygame.transform.scale(mediator.sprite, ui_scale_dimensions((150, 150))),
+            container=self.mediator_elements["container"],
+        )
 
-            text = (
-                i18n.t(f"cat.personality.{mediator.personality.trait}")
-                + "\n"
-                + mediator.experience_level_string
-            )
+        # cat description
+        text = (
+            i18n.t(f"cat.personality.{mediator.personality.trait}")
+            + "\n"
+            + mediator.experience_level_string
+        )
+        self.mediator_elements["details"] = pygame_gui.elements.UITextBox(
+            text,
+            ui_scale(pygame.Rect((0, 0), (150, -1))),
+            object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
+            container=self.mediator_elements["container"],
+            anchors={"top_target": self.mediator_elements["mediator_image"]},
+            manager=MANAGER,
+            visible=not mediator.not_working(),  # doesn't appear if the cat isn't working
+        )
+        # disable buttons if mediator can't work
+        if mediator.not_working():
+            self.elements["improve_rel"].disable()
+            self.elements["sabotage_rel"].disable()
+        else:
+            self.elements["improve_rel"].enable()
+            self.elements["sabotage_rel"].enable()
 
-            if mediator.not_working():
-                self.elements["improve_rel"].disable()
-                self.elements["sabotage_rel"].disable()
-            else:
-                self.elements["improve_rel"].enable()
-                self.elements["sabotage_rel"].enable()
-
-            self.mediator_elements["details"] = pygame_gui.elements.UITextBox(
-                text,
-                ui_scale(pygame.Rect((0, 0), (150, -1))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
-                container=self.mediator_elements["container"],
-                anchors={"top_target": self.mediator_elements["mediator_image"]},
-                manager=MANAGER,
-                visible=not mediator.not_working(),
-            )
-
-        # deactivate arrows
+        # deactivate arrows if no other mediators
         if len(self.mediators) <= 1:
             self.elements["last_mediator"].disable()
             self.elements["next_mediator"].disable()
 
-        self.update_buttons()
+        self.update_mediator_status_and_buttons()
         self.update_list_cats()
 
     def update_list_cats(self):
+        """
+        Updates the cat list display according to current selections
+        """
+        # make sure the list is up to date
         self._set_cat_list()
-        if not self.elements.get("cat_list"):
+        if not self.elements.get("cat_list"):  # create the element in the first place
             self.elements["cat_list"] = UICatListDisplay(
                 ui_scale(pygame.Rect(((35, 35), (600, 130)))),
                 container=self.elements["cat_list_container"],
@@ -526,18 +557,23 @@ class MediationScreen(Screens):
                 tool_tip_name=True,
                 manager=MANAGER,
             )
-        else:
+        else:  # if it already existed, just update the display
             self.elements["cat_list"].update_display(self.page, self.all_cats_list)
 
+        self.update_search_cats()
+
     def _set_cat_list(self):
+        """
+        Updates self.all_cats_list according to chosen tab
+        """
         if self.tab_view == "positive":
             self.all_cats_list = [
                 c
                 for c in Cat.all_cats_list
                 if (c.ID != self.mediators[0].ID)
                 and c.status.alive_in_player_clan
-                and c.ID in self.selected_cat_1.relationships
-                and self.selected_cat_1.relationships[c.ID].total_relationship_value > 0
+                and c.ID in self.selected_cat0.relationships
+                and self.selected_cat0.relationships[c.ID].total_relationship_value > 0
             ]
         elif self.tab_view == "negative":
             self.all_cats_list = [
@@ -545,8 +581,8 @@ class MediationScreen(Screens):
                 for c in Cat.all_cats_list
                 if (c.ID != self.mediators[0].ID)
                 and c.status.alive_in_player_clan
-                and c.ID in self.selected_cat_1.relationships
-                and self.selected_cat_1.relationships[c.ID].total_relationship_value < 0
+                and c.ID in self.selected_cat0.relationships
+                and self.selected_cat0.relationships[c.ID].total_relationship_value < 0
             ]
         else:
             self.all_cats_list = [
@@ -556,37 +592,51 @@ class MediationScreen(Screens):
             ]
 
     def update_selected_cats(self):
+        """
+        Updates all elements connected to the selected cats.
+        """
+        # kill and reset all the elements
         for ele in self.selected_cat_elements:
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
 
+        # show both "select a cat" text. these will be hidden later if need be.
         self.elements["select_cat0"].show()
         self.elements["select_cat1"].show()
-        if self.selected_cat_1:
+
+        # check if the neg/pos tabs should be hidden or shown
+        if self.selected_cat0:
             self.elements["neg_tab"].show()
             self.elements["pos_tab"].show()
         else:
             self.elements["neg_tab"].hide()
             self.elements["pos_tab"].hide()
 
-        self.draw_cat_block(self.selected_cat_1, (50, 80))
-        self.draw_cat_block(self.selected_cat_2, (550, 80))
+        # draw each cat block
+        self._draw_cat_block(self.selected_cat0, (50, 80))
+        self._draw_cat_block(self.selected_cat1, (550, 80))
 
-        self.update_buttons()
+        # update the mediator info
+        self.update_mediator_status_and_buttons()
 
-    def draw_cat_block(self, cat: Cat, starting_pos: tuple):
+    def _draw_cat_block(self, cat: Cat, starting_pos: tuple):
+        """
+        Creates all the elements within a selected cat block
+        """
         if not cat:
             return
 
-        selected_cats = self.selected_cat_list()
+        # first we grab an index for the cat, so that we can create unique elements using it
+        selected_cats = self.selected_cat_list
         cat_num = selected_cats.index(cat)
+        # we also find the other cat, so that we can get any important info we need from them
         other_cat = (
             [c for c in selected_cats if c != cat][0]
             if len(selected_cats) > 1
             else None
         )
 
-        # hide "select cat to influence" text
+        # hide "select cat to influence" text, cus at this point we know a cat has been selected
         self.elements[f"select_cat{cat_num}"].hide()
 
         # enable random and remove
@@ -595,11 +645,13 @@ class MediationScreen(Screens):
         # and so the player can now choose a second cat
         self.elements[f"random_cat1"].enable()
 
+        # we love a container
         self.selected_cat_elements[f"cat_container{cat_num}"] = UIContainer(
             ui_scale(pygame.Rect((starting_pos[0], starting_pos[1]), (200, 350))),
             manager=MANAGER,
         )
 
+        # this is the background bubble for the relationship display
         self.selected_cat_elements[f"rel_bg{cat_num}"] = UIModifiedImage(
             ui_scale(pygame.Rect((0, 0), (140, 185))),
             get_box(BoxStyles.ROUNDED_BOX, (140, 185)),
@@ -609,13 +661,14 @@ class MediationScreen(Screens):
             visible=other_cat,
         )
 
+        # and this is the tail of that bubble
         image = pygame.transform.scale(
             image_cache.load_image(
                 "resources/images/thought_bubble_tail.png"
             ).convert_alpha(),
             ui_scale_dimensions((32, 52)),
         )
-        if cat == self.selected_cat_2:
+        if cat == self.selected_cat1:  # tail has to flip if this is the right-side cat
             image = pygame.transform.flip(image, True, False)
 
         self.selected_cat_elements[f"bubble_tail{cat_num}"] = UIModifiedImage(
@@ -630,6 +683,7 @@ class MediationScreen(Screens):
             visible=other_cat,
         )
 
+        # if we have another cat, then we create the relationship display
         if other_cat:
             the_relationship = cat.relationships[other_cat.ID]
 
@@ -660,7 +714,7 @@ class MediationScreen(Screens):
             )
 
         # cat stuff needs to be drawn differently for each cat due to changes in alignment and anchoring
-        if cat == self.selected_cat_1:
+        if cat == self.selected_cat0:
             self.selected_cat_elements[
                 f"cat_image{cat_num}"
             ] = pygame_gui.elements.UIImage(
@@ -689,7 +743,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"cat_details{cat_num}"
             ] = pygame_gui.elements.UITextBox(
-                self.get_cat_details(cat, other_cat),
+                self._get_cat_details(cat, other_cat),
                 ui_scale(pygame.Rect((0, 0), (100, -1))),
                 object_id="#text_box_22_horizleft_spacing_95",
                 container=self.selected_cat_elements[f"cat_container{cat_num}"],
@@ -717,7 +771,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"cat_details{cat_num}"
             ] = pygame_gui.elements.UITextBox(
-                self.get_cat_details(cat, other_cat),
+                self._get_cat_details(cat, other_cat),
                 ui_scale(pygame.Rect((0, 0), (100, -1))),
                 object_id="#text_box_22_horizright_spacing_95",
                 container=self.selected_cat_elements[f"cat_container{cat_num}"],
@@ -740,7 +794,10 @@ class MediationScreen(Screens):
             )
 
     @staticmethod
-    def get_cat_details(cat, other_cat):
+    def _get_cat_details(cat, other_cat) -> str:
+        """
+        Returns a string with the cat's details: gender, relation to other cat, age, and trait
+        """
         output = ""
         output += f"{cat.genderalign}<br>"
 
@@ -766,50 +823,57 @@ class MediationScreen(Screens):
 
         return output
 
-    def selected_cat_list(self):
+    @property
+    def selected_cat_list(self) -> List[Cat]:
+        """Easy way to get a list of both selected cats"""
         output = []
-        if self.selected_cat_1:
-            output.append(self.selected_cat_1)
-        if self.selected_cat_2:
-            output.append(self.selected_cat_2)
+        if self.selected_cat0:
+            output.append(self.selected_cat0)
+        if self.selected_cat1:
+            output.append(self.selected_cat1)
 
         return output
 
-    def update_buttons(self):
-        mediator_status = ""
+    def update_mediator_status_and_buttons(self):
+        """
+        Updates the mediator status text and the states of improve/sabotage buttons
+        """
+        if not self.mediator_elements:
+            # early return, sometimes this func is called when no mediator elements are made
+            # in which case, we should just skip all of it
+            return
 
-        invalid_mediator = False
-        if self.mediators is not None:
-            mediator_name = self.mediators[0].name
-            if self.mediators[0].not_working():
-                invalid_mediator = True
-                mediator_status = i18n.t(
-                    "screens.mediation.mediator_cant_work", name=mediator_name
-                )
-            elif self.mediators[0].ID in game.patrolled:
-                invalid_mediator = True
-                mediator_status = i18n.t(
-                    "screens.mediation.mediator_already_worked", name=mediator_name
-                )
-            else:
-                mediator_status = i18n.t(
-                    "screens.mediation.mediator_ready_to_work", name=mediator_name
-                )
-        else:
+        # finding mediator status string
+        invalid_mediator = False  # will be True if a mediator can't work
+        mediator_name = self.mediators[0].name
+        if self.mediators[0].not_working():
             invalid_mediator = True
+            mediator_status = i18n.t(
+                "screens.mediation.mediator_cant_work", name=mediator_name
+            )
+        elif self.mediators[0].ID in game.patrolled:
+            invalid_mediator = True
+            mediator_status = i18n.t(
+                "screens.mediation.mediator_already_worked", name=mediator_name
+            )
+        else:
+            mediator_status = i18n.t(
+                "screens.mediation.mediator_ready_to_work", name=mediator_name
+            )
 
+        # check if influence pair has already been mediated
         invalid_pair = False
-        if self.selected_cat_1 and self.selected_cat_2:
+        if self.selected_cat0 and self.selected_cat1:
             for x in game.mediated:
-                if self.selected_cat_1.ID in x and self.selected_cat_2.ID in x:
+                if self.selected_cat0.ID in x and self.selected_cat1.ID in x:
                     invalid_pair = True
                     mediator_status = i18n.t("screens.mediation.pair_already_mediated")
                     break
-        else:
-            invalid_pair = True
 
+        # set status text
         self.mediator_elements["mediator_status"].set_text(mediator_status)
 
+        # disable associated buttons if something is invalid
         if invalid_mediator or invalid_pair:
             self.elements["improve_rel"].disable()
             self.elements["sabotage_rel"].disable()
@@ -835,8 +899,10 @@ class MediationScreen(Screens):
         self.elements["cat_list"].update_display(self.page, current_listed_cats)
 
     def exit_screen(self):
-        self.selected_cat_1 = None
-        self.selected_cat_2 = None
+        self.selected_cat0 = None
+        self.selected_cat1 = None
+        self.mediators.clear()
+        self.tab_view = "all"
 
         for ele in self.mediator_elements:
             self.mediator_elements[ele].kill()
@@ -854,8 +920,6 @@ class MediationScreen(Screens):
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
 
-        self.tab_view = "all"
-        self.mediators.clear()
         self.back_button.kill()
         del self.back_button
 
