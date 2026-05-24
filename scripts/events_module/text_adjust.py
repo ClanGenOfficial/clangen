@@ -16,6 +16,10 @@ from scripts.cat.pronouns import (
 )
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.clan_resources.point_of_interest import (
+    get_random_poi_by_tag,
+    get_poi_names_set,
+)
 from scripts.game_structure import localization, game
 from scripts.game_structure.game import switch_get_value, Switch
 from scripts.game_structure.localization import load_lang_resource, get_lang_config
@@ -52,7 +56,10 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     # if the cat that the pronoun is assigned to wasn't passed with the dict, then we just return
     # it's assumed that the text is going to be processed at some other point with that cat's info
     # (for example, this is required for rel log processing to be done correctly)
-    if inner_details[1] != "PLURAL" and inner_details[1] not in cat_pronouns_dict:
+    if (
+        inner_details[1].upper() != "PLURAL"
+        and inner_details[1] not in cat_pronouns_dict
+    ) and inner_details[0] != "POI":
         return m.group(0)
 
     try:
@@ -68,6 +75,8 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
                         raise e
                     continue
             d = determine_plural_pronouns(catlist)
+        elif inner_details[0].upper() == "POI":
+            return poi_repl(inner_details)
         else:
             try:
                 d = cat_pronouns_dict[inner_details[1]][1]
@@ -115,6 +124,26 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
         logger.exception("Failed to find pronoun: " + m.group(1))
         print("Failed to find pronoun:", m.group(1))
         return "error2"
+
+
+def poi_repl(inner_details):
+    """
+    Replaces a point of interest tag with the appropriate POI
+    :param inner_details:
+    :return:
+    """
+    base_string = "points_of_interest."
+    if inner_details[1].upper() == "TAG":
+        base_string += get_random_poi_by_tag(inner_details[2])
+    elif inner_details[1].upper() == "NAME":
+        names = set(inner_details[2].split(","))
+        base_string += (
+            choice(list(names.intersection(get_poi_names_set())))
+            if names.intersection(get_poi_names_set())
+            else "MISSING_POI"
+        )
+
+    return i18n.t(base_string)
 
 
 def name_repl(m, cat_dict):
@@ -475,6 +504,9 @@ def event_text_adjust(
             find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
         )
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
+
+    if "POI" in text:
+        replace_dict["point_of_interest"] = "unused, purely to trigger pronoun_repl"
 
     # assign all names and pronouns
     if replace_dict:

@@ -48,7 +48,6 @@
 			"Helps r_c fill a puddle in the camp with sand",
 			"Notices some of r_c's fur on {PRONOUN/m_c/poss} fresh-kill",
 			"Pretends not to see r_c cough up a hairball",
-			"Is assigned the same task as r_c",
 			"Accidentally startles r_c",
 			"Is accidentally startled by r_c",
 			"Runs into r_c at the medicine den",
@@ -96,7 +95,8 @@
             "Saw some wandering Twolegs today",
             "Saw a Twoleg kit playing with a dog",
             "Saw a Twoleg kit playing with a kittypet",
-            "Saw a kittypet rolling around a Twoleg garden"
+            "Saw a kittypet rolling around a Twoleg garden",
+			"Is assigned the same task as r_c"
         ],
         "main_status_constraint": [
             "-kitten"

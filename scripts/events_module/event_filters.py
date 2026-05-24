@@ -7,8 +7,12 @@ from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility
+from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
 from scripts.special_dates import get_special_date, contains_special_date_tag
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.clan_package.get_clan_cats import (
+    find_alive_cats_with_rank,
+    get_possible_mates,
+)
 from scripts.game_structure import game
 
 ALL_BACKSTORIES_LIST = set(
@@ -134,6 +138,10 @@ def event_for_tags(
         if _poss in tags and mode != _poss:
             return False
 
+    # check romance
+    if "romance" in tags and other_cat and other_cat not in get_possible_mates(cat):
+        return False
+
     # check leader life tags
     if hasattr(cat, "ID"):
         if cat.status.is_leader:
@@ -215,6 +223,30 @@ def event_for_tags(
             return False
 
     return True
+
+
+def event_for_poi(pois: dict[str, list]) -> bool:
+    """
+    Checks if the Clan has a POI matching pois
+    :param pois: possible points of interest
+    :return: True if there's a match, False if not
+    """
+    if all(not value for value in pois.values()):
+        # fields may exist but are empty
+        return True
+
+    if not get_poi_names_set():
+        return False  # we know they're requesting something
+
+    has_matching_name, has_matching_tags = False, False
+    if "name" in pois:
+        has_matching_name = not set(pois.get("name", [])).isdisjoint(
+            get_poi_names_set()
+        )
+
+    if "tags" in pois:
+        has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
+    return has_matching_name or has_matching_tags
 
 
 def event_for_reputation(required_rep: list) -> bool:
@@ -580,6 +612,7 @@ def _check_cat_gender(cat, genders: list) -> bool:
 def cat_for_event(
     constraint_dict: dict,
     possible_cats: list,
+    tags: list,
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
     injuries: list = None,
@@ -595,6 +628,7 @@ def cat_for_event(
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
     :param return_id: If true, return cat ID instead of object
+    :param tags: List of event tags
     """
     # gather funcs to use
     func_dict = {
@@ -631,6 +665,11 @@ def cat_for_event(
             return None
 
     # rel status check
+    if "romance" in tags:
+        allowed_cats = list(
+            set(allowed_cats).intersection(set(get_possible_mates(comparison_cat)[0]))
+        )
+
     if comparison_cat_rel_status or constraint_dict.get("relationship_status"):
         # preliminary check to see if we can just skip to gathering certain rel groups
         allowed_cats, comparison_cat_rel_status = _get_cats_with_rel_status(

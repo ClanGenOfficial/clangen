@@ -460,7 +460,7 @@
           "$ref": "#/$defs/GatherCatEnum"
         },
         {
-          "pattern": "^n_c:[0-9]+$",
+          "pattern": "^-?n_c:[0-9]+$",
           "type": "string"
         }
       ],
@@ -975,6 +975,93 @@
       "title": "OutsiderRep",
       "type": "string"
     },
+    "PointsOfInterestGroup": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PointsOfInterestGroupByName"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestGroupByTags"
+        }
+      ],
+      "description": "Specifies Points of Interest constraints. Must use EITHER names or tags.",
+      "title": "PointsOfInterestGroup"
+    },
+    "PointsOfInterestGroupByName": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "Points of Interest with these specific IDs will be allowed.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Name",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "PointsOfInterestGroupByName",
+      "type": "object"
+    },
+    "PointsOfInterestGroupByTags": {
+      "additionalProperties": false,
+      "properties": {
+        "tags": {
+          "description": "Points of Interest with these tags will be allowed.",
+          "items": {
+            "$ref": "#/$defs/PointsOfInterestTag"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "tags"
+      ],
+      "title": "PointsOfInterestGroupByTags",
+      "type": "object"
+    },
+    "PointsOfInterestTag": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestTagEnum"
+        }
+      ],
+      "title": "PointsOfInterestTag"
+    },
+    "PointsOfInterestTagEnum": {
+      "enum": [
+        "cave",
+        "covered",
+        "fall_risk",
+        "hole",
+        "prey",
+        "prey:flying",
+        "prey:water",
+        "prey:ground",
+        "prey:eggs",
+        "prey:fish",
+        "rocks",
+        "tainted",
+        "trees",
+        "Twolegs",
+        "Twolegs:abandoned",
+        "Twolegs:present",
+        "unstable",
+        "water",
+        "water:still",
+        "water:flowing",
+        "water:ocean",
+        "nests"
+      ],
+      "title": "PointsOfInterestTagEnum",
+      "type": "string"
+    },
     "RC": {
       "additionalProperties": false,
       "properties": {
@@ -1398,6 +1485,11 @@
           },
           "title": "Tags",
           "type": "array"
+        },
+        "poi": {
+          "$ref": "#/$defs/PointsOfInterestGroup",
+          "description": "The relevant points of interest. Points of Interest never affect outcome.",
+          "title": "Poi"
         },
         "frequency": {
           "description": "Controls how common an event is. 4 == Common, 3 == Uncommon, 2 == Rare, 3 == Very Rare. Consider this in the terms of 'If an event of this type happened every moon for 10 moons, on how many of those moons should this sort of event appear?'",

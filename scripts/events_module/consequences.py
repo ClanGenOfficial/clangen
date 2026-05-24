@@ -15,6 +15,7 @@ from scripts.cat.enums import (
 )
 from scripts.cat.names import names
 from scripts.cat_relations.enums import RelType
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
@@ -465,7 +466,7 @@ def create_new_cat_block(
                 n_c.relationships[par.ID] = start_relation
 
             # UPDATE INHERITANCE
-            n_c.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
 
     return new_cats
 

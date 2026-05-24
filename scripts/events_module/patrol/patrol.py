@@ -25,6 +25,7 @@ from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     cat_for_event,
+    event_for_poi,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
@@ -723,6 +724,11 @@ class Patrol:
                         )
                     continue
 
+                if not event_for_poi(patrol.poi):
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print("DEBUG: requested patrol does not meet constraints (PoI)")
+                    continue
+
                 if "hunting" not in patrol.types and patrol_type == "hunting":
                     if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
                         print(
@@ -1206,5 +1212,5 @@ class Patrol:
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
-PATROL_WEIGHT_ADAPTION = constants.PREY_CONFIG["patrol_weight_adaption"]
-PATROL_BALANCE = constants.PREY_CONFIG["patrol_balance"]
+PATROL_WEIGHT_ADAPTION = constants.CONFIG["prey"]["patrol_weight_adaption"]
+PATROL_BALANCE = constants.CONFIG["prey"]["patrol_balance"]
