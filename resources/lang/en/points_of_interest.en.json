@@ -1,0 +1,28 @@
+{
+    "en": {
+        "gather_fourtrees": "Fourtrees",
+        "gather_island": "Gathering Island",
+        "gather_monster": "the Monster Carcass",
+
+        "moon_meteor": "the Silverpelt Stone",
+        "moon_pool": "the Moonpool",
+        "moon_cave": "the Whispering Cave",
+
+        "terrain_lake": "the lake",
+        "terrain_fordriver": "Fordriver",
+        "terrain_carrionplace": "the carrionplace",
+        "terrain_sunningrocks": "Sunningrocks",
+        "terrain_well": "the Twoleg water pit",
+        "terrain_twolegplace": "the Twolegplace",
+        "terrain_horseplace": "the Horseplace",
+        "terrain_deepforest": "the deep forest",
+        "terrain_windswepttree": "Windswept Tree",
+        "terrain_hugeboulder": "the huge boulder",
+        "terrain_waterfall": "the waterfall",
+        "terrain_gullcliffs": "the gull cliffs",
+        "terrain_eaglenest": "the eagle nest",
+        "terrain_rookery": "the rookery",
+        "terrain_batcaves": "the bat caves",
+        "terrain_carrionbeach": "the carrionbeach"
+    }
+}

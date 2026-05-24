@@ -354,7 +354,7 @@
         "id": "cunning_elder",
         "thoughts": [
             "Persuades a Clanmate to bring {PRONOUN/m_c/object} fresh-kill, though {PRONOUN/m_c/subject} could have got it {PRONOUN/m_c/self}",
-            "Always ends up with the nicest piece of prey, without anycat realising"
+            "Always ends up with the nicest piece of prey, without anycat realizing"
         ],
         "main_age_constraint": [
             "senior adult",

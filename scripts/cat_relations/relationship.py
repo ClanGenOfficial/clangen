@@ -65,14 +65,14 @@ class Relationship:
         """
 
         # romance operates on a 0-100 scale, 0 is no romantic interest and 100 is full romantic interest
-        self.romance = romance
+        self._romance = min(max(romance, 0), 100)
 
         # each stat can go from -100 to 100
         # negative numbers are the negative state while positive is the positive state
-        self.like = like
-        self.respect = respect
-        self.trust = trust
-        self.comfort = comfort
+        self._like = min(max(like, -100), 100)
+        self._respect = min(max(respect, -100), 100)
+        self._trust = min(max(trust, -100), 100)
+        self._comfort = min(max(comfort, -100), 100)
 
     def to_dict(self):
         return {
@@ -219,17 +219,17 @@ class Relationship:
         # prepare string for display
         interaction_str = self.adjust_interaction_string(interaction_str)
 
-        effect = ""
+        effect = "relationships.neutral_postscript"
         if positive:
-            effect = i18n.t(f"relationships.positive_postscript_{intensity}")
+            effect = f"relationships.positive_postscript_{intensity}"
         elif not positive:
-            effect = i18n.t(f"relationships.negative_postscript_{intensity}")
+            effect = f"relationships.negative_postscript_{intensity}"
 
-        interaction_str = interaction_str + effect
+        interaction_str = i18n.t(effect, text=interaction_str)
         self.log.append(
-            interaction_str
-            + i18n.t(
+            i18n.t(
                 "relationships.age_postscript",
+                text=interaction_str,
                 name=str(self.cat_from.name),
                 count=self.cat_from.moons,
             )

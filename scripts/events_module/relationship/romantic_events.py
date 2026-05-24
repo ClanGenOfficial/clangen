@@ -260,16 +260,16 @@ class RomanticEvents:
         }
         interaction_str = process_text(interaction_str, cat_dict)
 
-        # extract intensity from the interaction, defaults to "positive"
-        intensity = getattr(chosen_interaction, "intensity", "positive")
+        # extract intensity from the interaction, defaults to "medium"
+        intensity = getattr(chosen_interaction, "intensity", "medium")
 
         effect = ""
         if value_change == "increase":
-            effect = f" ({intensity} positive effect)"
+            effect = f"relationships.positive_postscript_{intensity}"
         if value_change == "decrease":
-            effect = f" ({intensity} negative effect)"
+            effect = f"relationships.negative_postscript_{intensity}"
 
-        interaction_str = interaction_str + effect
+        interaction_str = i18n.t(effect, text=interaction_str)
 
         # send string to current moon relationship events before adding age of cats
         relevant_event_tabs = ["relation", "interaction"]
@@ -286,19 +286,21 @@ class RomanticEvents:
 
         # now add the age of the cats before the string is sent to the cats' relationship logs
         relationship.log.append(
-            interaction_str
-            + i18n.t(
-                "relationships.age_postscript", name=cat_from.name, count=cat_from.moons
+            i18n.t(
+                "relationships.age_postscript",
+                text=interaction_str,
+                name=cat_from.name,
+                count=cat_from.moons,
             )
         )
 
         if not relationship.opposite_relationship and cat_from.ID != cat_to.ID:
             relationship.link_relationship()
             relationship.opposite_relationship.log.append(
-                interaction_str
-                + i18n.t(
+                i18n.t(
                     "relationships.age_postscript",
-                    name=str(cat_to.name),
+                    text=interaction_str,
+                    name=cat_to.name,
                     count=cat_to.moons,
                 )
             )

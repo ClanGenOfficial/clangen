@@ -50,7 +50,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
         }
     ],
     "exclude_involved": [],
-    "history:": [
+    "history": [
         {
             "cats": [],
             "scar": "",
@@ -272,7 +272,7 @@ lowercase season names + "any"
 >
 >**status:[list]** : a list of statuses r_c can be. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers).
+>**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers). This is not a pool. m_c and r_c must meet every relationship constraint chosen, not just one of the constraints.  
 > 
 >**skill[list]** : r_c must possess at least one skill from this list. If they can be anything, remove parameter or leave list empty. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >

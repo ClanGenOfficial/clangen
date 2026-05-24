@@ -82,7 +82,7 @@
             "Wonders if there's anyone here {PRONOUN/m_c/subject} can actually trust",
             "Tried crossing the border into StarClan to no avail"
         ],
-        "main_trait_status": [
+        "main_trait_constraint": [
             "careful",
             "compassionate",
             "loving",
@@ -116,10 +116,10 @@
             "Is cleaning the blood from {PRONOUN/m_c/poss} claws",
             "Is the first to volunteer for training",
             "Is trying to lure living cats to train in the Dark Forest",
-            "Is itching to dig {PRONOUN/m_c/poss} claws into the first cat {PRONOUN/m_c/object} sees",
+            "Is itching to dig {PRONOUN/m_c/poss} claws into the first cat {PRONOUN/m_c/subject} {VERB/m_c/see/sees}",
             "Has taken a living visitor under {PRONOUN/m_c/poss} wing",
             "Has begun to grow quite fond of the muck",
-            "Has allied {PRONOUN/m_c/self} with the strongest cats {PRONOUN/m_c/object} could find",
+            "Has allied {PRONOUN/m_c/self} with the strongest cats {PRONOUN/m_c/subject} could find",
             "Befriended a weaker cat only to happily betray them when they needed {PRONOUN/m_c/object} most"
         ],
         "main_trait_constraint": [

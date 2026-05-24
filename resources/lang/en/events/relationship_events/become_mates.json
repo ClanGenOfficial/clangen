@@ -50,7 +50,11 @@
         "After being rejected by r_c, m_c's barely been visible round camp. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} good at hiding when {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to be.",
 		"m_c confesses {PRONOUN/m_c/poss} feelings to r_c, asking to be mates. And the answer, well, it's not yes.",
 		"Look, r_c is sorry, but {PRONOUN/r_c/subject} just {VERB/r_c/don't/doesn't} see m_c that way. m_c slinks off, rejected.",
-		"m_c's confession of love to r_c could've gone better. Actually, anything would've been better than the rejection {PRONOUN/m_c/subject} got."
+		"m_c's confession of love to r_c could've gone better. Actually, anything would've been better than the rejection {PRONOUN/m_c/subject} got.",
+		"When r_c tells m_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not interested in being mates, r_c expects the worst. But surprisingly, m_c nods in understanding and says {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine with staying friends.",
+		"After a long moment of silence, r_c gently rejects m_c's love confession. m_c just nods and walks away.",
+		"m_c's smile fades when r_c tells {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} feel the same way. Through {PRONOUN/m_c/poss} heartbreak, m_c meows that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay with staying friends if it means r_c can be happy.",
+		"r_c explains to m_c that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} feel ready to be in a relationship. Although {PRONOUN/m_c/subject} {VERB/m_c/are/is} sad to be rejected, {PRONOUN/m_c/subject} {VERB/m_c/take/takes} the situation better than r_c thought {PRONOUN/m_c/subject} would."
 	],
 	"makeup_fail":[
 		"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c but was rejected.",

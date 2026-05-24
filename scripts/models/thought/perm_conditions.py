@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, Union
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.thought.born_with import BornWith
@@ -10,6 +10,7 @@ from scripts.models.thought.perm_condition_any import PermConditionAny
 
 
 class PermConditions(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     m_c: Union[List[PermConditionAny], MISSING] = MISSING
     r_c: Union[List[PermConditionAny], MISSING] = MISSING
     born_with: Union[BornWith, MISSING] = Field(

@@ -25,7 +25,7 @@
     "plains": {
         "base": ["biome_plains/plains_base.mp3"],
         "tunnels": ["biome_plains/tunnels_digging1.mp3", "biome_plains/tunnels_digging2.mp3"],
-        "wasteland": ["biome_plains/wasteland_construction.mp3", "biome_plains/wasteland_crow.mp3", "biome_plains/wasteland_hawk.mp3", "biome_plains/wasteland_squeaky_machinery.mp3"]
+        "wastelands": ["biome_plains/wasteland_construction.mp3", "biome_plains/wasteland_crow.mp3", "biome_plains/wasteland_hawk.mp3", "biome_plains/wasteland_squeaky1.mp3", "biome_plains/wasteland_squeaky2.mp3"]
     }
 
 

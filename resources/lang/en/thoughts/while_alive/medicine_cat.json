@@ -170,7 +170,7 @@
     {
         "id": "careful_medicine_cat",
         "thoughts": [
-            "Counts and re-counts the poppy seeds",
+            "Counts and recounts the poppy seeds",
             "Makes sure none of the herbs get mixed up"
         ],
         "main_trait_constraint": [
@@ -331,7 +331,7 @@
     {
         "id": "nervous_medicine_cat",
         "thoughts": [
-            "Re-counts the amount of catmint in {PRONOUN/m_c/poss} stores"
+            "Recounts the amount of catmint in {PRONOUN/m_c/poss} stores"
         ],
         "main_trait_constraint": [
             "nervous"

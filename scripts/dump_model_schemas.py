@@ -8,6 +8,9 @@ from scripts.models.common.common_schema import CommonSchema
 from scripts.models.patrol.patrol_schema import PatrolSchema
 from scripts.models.shortevent.short_event_schema import ShortEventSchema
 from scripts.models.thought.thought_schema import ThoughtSchema
+from scripts.models.points_of_interest.points_of_interest_schema import (
+    PointsOfInterestSchema,
+)
 from scripts.models.util import (
     create_generate_json_schema_with_externals,
     get_defs_from_pydantic_model,
@@ -65,18 +68,12 @@ def dump_model_schema(
 
 # noinspection PyTypeChecker
 def main():
-    dump_model_schema(CommonSchema, "schemas/common.schema.json", only_defs=True)
-    dump_model_schema(
-        PatrolSchema, "schemas/patrol.schema.json", inherit_defs_from=[CommonSchema]
-    )
-    dump_model_schema(
-        ShortEventSchema,
-        "schemas/shortevent.schema.json",
-        inherit_defs_from=[CommonSchema],
-    )
-    dump_model_schema(
-        ThoughtSchema, "schemas/thought.schema.json", inherit_defs_from=[CommonSchema]
-    )
+    # temporarily removing common schema because of a bug with pycharm: https://youtrack.jetbrains.com/issue/IJPL-174586?_gl=1*j6r7uu*_gcl_au*MTQwNTQzODQ1My4xNzQ5MDA0ODE4*FPAU*MTQwNTQzODQ1My4xNzQ5MDA0ODE4*_ga*NDA4MzM4NjU4LjE3NDkwMDQ4MjA.*_ga_9J976DJZ68*czE3NTE5MjY0NjkkbzIkZzEkdDE3NTE5MjgxNzEkajU4JGwwJGgw
+    # when that bug is fixed, you can add it back
+    dump_model_schema(PatrolSchema, "schemas/patrol.schema.json")
+    dump_model_schema(ShortEventSchema, "schemas/shortevent.schema.json")
+    dump_model_schema(ThoughtSchema, "schemas/thought.schema.json")
+    dump_model_schema(PointsOfInterestSchema, "schemas/poi.schema.json")
 
 
 if __name__ == "__main__":

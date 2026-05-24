@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 import os
+from typing import TYPE_CHECKING
 
 import i18n
 import pygame
@@ -22,9 +23,12 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
+
 
 class RoleScreen(Screens):
-    the_cat = None
+    the_cat: "Cat" = None
     selected_cat_elements = {}
     buttons = {}
     next_cat = None
@@ -245,7 +249,7 @@ class RoleScreen(Screens):
             i18n.t(f"cat.personality.{self.the_cat.personality.trait}"),
             i18n.t("general.moons_age", count=self.the_cat.moons)
             + "  |  "
-            + self.the_cat.genderalign,
+            + self.the_cat.genderalign_string,
         ]
 
         if self.the_cat.mentor:

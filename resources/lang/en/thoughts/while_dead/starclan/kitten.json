@@ -86,7 +86,7 @@
         "thoughts":[
             "Wishes {PRONOUN/m_c/subject} could become apprentices with r_c",
             "Misses playing with r_c",
-            "Hopes that r_c doesn't think that {PRONOUN/m_c/subject} {VERB/m_c/is/are} angry with {PRONOUN/r_c/object}"
+            "Hopes that r_c doesn't think that {PRONOUN/m_c/subject} {VERB/m_c/are/is} angry with {PRONOUN/r_c/object}"
         ],
         "relationship_constraint": [
             "siblings"

@@ -51,6 +51,12 @@ These articles hold information generally relevant when writing any content for 
 
     Warriors includes plenty of other animals, this article can guide you on how to include them within ClanGen content.
 
+- __[Herb Dictionary](herbs.md)__
+
+    ---
+
+    A list of the many herbs found within ClanGen as well as useful information on each one.
+
 - __[Common Errors](common-errors.md)__
 
     ---

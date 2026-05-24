@@ -1,0 +1,8 @@
+{
+  "card1": {
+    "card_art": "file_path",
+    "modifiers": {
+      "mod_name": 1
+    }
+  }
+}
