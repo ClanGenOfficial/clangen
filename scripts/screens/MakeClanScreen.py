@@ -622,11 +622,6 @@ class MakeClanScreen(Screens):
                 self.elements["expanded_mode_button"].enable()
                 self.elements["cruel_mode_button"].enable()
 
-            # Don't let the player go forwards with cruel mode, it's not done yet.
-            if self.game_mode == "cruel season":
-                self.elements["next_step"].disable()
-            else:
-                self.elements["next_step"].enable()
         # Show the error message if you try to choose a child for leader, deputy, or med cat.
         elif self.sub_screen in ("choose leader", "choose deputy", "choose med cat"):
             if self.selected_cat.age in ("newborn", "kitten", "adolescent"):
