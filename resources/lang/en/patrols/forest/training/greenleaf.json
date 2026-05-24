@@ -152,7 +152,7 @@
         "pl_skill_constraint": [
             "STORY,1"
         ],
-        "intro_text": "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of one of c_n's unique birds — a hallmark of {PRONOUN/p_l/poss} kithood.",
+        "intro_text": "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of a unique bird of c_n's territory — one fondly recalled from kithood.",
         "decline_text": "p_l gets too distracted in the lovely birdsong to continue.",
         "success_outcomes": [
             {
