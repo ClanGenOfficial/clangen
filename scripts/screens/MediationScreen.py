@@ -36,11 +36,9 @@ class MediationScreen(Screens):
         self.selected_cat0 = None
         self.selected_cat1 = None
         self.mediators = deque()
-        self.cat_buttons = []
         self.page = 1
         self.selected_cat_elements = {}
         self.allow_romance = True
-        self.current_listed_cats = None
         self.previous_search_text = ""
 
         self.elements = {}
@@ -915,10 +913,6 @@ class MediationScreen(Screens):
         for ele in self.elements.values():
             ele.kill()
         self.elements.clear()
-
-        for cat in self.cat_buttons:
-            cat.kill()
-        self.cat_buttons.clear()
 
         for ele in self.selected_cat_elements:
             self.selected_cat_elements[ele].kill()
