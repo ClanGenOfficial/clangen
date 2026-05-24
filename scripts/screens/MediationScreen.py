@@ -1,5 +1,4 @@
 from collections import deque
-from math import ceil
 from random import choice
 
 import i18n
@@ -14,8 +13,6 @@ from ..ui.elements.cat_list_display import UICatListDisplay
 from ..ui.elements.checkbox import UICheckbox
 from ..ui.elements.modified_image import UIModifiedImage
 from ..ui.elements.relation_display import UIRelationDisplay
-from ..ui.elements.sprite_button import UISpriteButton
-from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import shorten_text_to_fit
@@ -47,6 +44,7 @@ class MediationScreen(Screens):
 
         self.elements = {}
         self.mediator_elements = {}
+        self.tab_view = "all"
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -84,6 +82,9 @@ class MediationScreen(Screens):
                 if self.selected_cat_2:
                     self.selected_cat_1 = self.selected_cat_2
                     self.selected_cat_2 = None
+                if not self.selected_cat_1 and self.tab_view != "all":
+                    self.tab_view = "all"
+                    self.update_list_cats()
                 self.update_selected_cats()
             elif event.ui_element == self.elements["remove_cat1"]:
                 self.selected_cat_2 = None
@@ -97,7 +98,7 @@ class MediationScreen(Screens):
                     self.selected_cat_2,
                     self.allow_romance,
                 )
-                self.results.set_text(output)
+                self.elements["results"].set_text(output)
                 self.update_selected_cats()
                 self.update_mediator_info()
             elif event.ui_element == self.elements["sabotage_rel"]:
@@ -110,7 +111,7 @@ class MediationScreen(Screens):
                     self.allow_romance,
                     sabotage=True,
                 )
-                self.results.set_text(output)
+                self.elements["results"].set_text(output)
                 self.update_selected_cats()
                 self.update_mediator_info()
             elif event.ui_element == self.elements["random_cat0"]:
@@ -123,7 +124,25 @@ class MediationScreen(Screens):
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
                     self.selected_cat_1 = self.random_cat()
                 self.update_selected_cats()
-            elif event.ui_element in self.cat_buttons:
+            elif event.ui_element == self.elements["all_tab"]:
+                self.tab_view = "all"
+                self.elements["all_tab"].disable()
+                self.elements["neg_tab"].enable()
+                self.elements["pos_tab"].enable()
+                self.update_list_cats()
+            elif event.ui_element == self.elements["neg_tab"]:
+                self.tab_view = "negative"
+                self.elements["all_tab"].enable()
+                self.elements["neg_tab"].disable()
+                self.elements["pos_tab"].enable()
+                self.update_list_cats()
+            elif event.ui_element == self.elements["pos_tab"]:
+                self.tab_view = "positive"
+                self.elements["all_tab"].enable()
+                self.elements["neg_tab"].enable()
+                self.elements["pos_tab"].disable()
+                self.update_list_cats()
+            elif event.ui_element in self.elements["cat_list"].cat_sprites.values():
                 if event.ui_element.return_cat_object() not in (
                     self.selected_cat_1,
                     self.selected_cat_2,
@@ -177,7 +196,7 @@ class MediationScreen(Screens):
 
         # BOXES
         self.elements["result_frame"] = UIModifiedImage(
-            ui_scale(pygame.Rect((0, 10), (270, 125))),
+            ui_scale(pygame.Rect((0, 8), (270, 125))),
             get_box(BoxStyles.FRAME, (270, 125)),
             container=self.elements["effects_container"],
             manager=MANAGER,
@@ -234,7 +253,43 @@ class MediationScreen(Screens):
             manager=MANAGER,
             starting_height=1,
         )
-
+        # TABS
+        self.elements["all_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((50, 5), (50, 35))),
+            "screens.mediation.all",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (50, 35)),
+            object_id="@buttonstyles_horizontal_tab",
+            starting_height=2,
+            anchors={"bottom_target": self.elements["cat_list_bg"]},
+            container=self.elements["cat_list_container"],
+        )
+        self.elements["all_tab"].disable()
+        self.elements["pos_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((10, 5), (80, 35))),
+            "screens.mediation.positive",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (80, 35)),
+            object_id="@buttonstyles_horizontal_tab",
+            starting_height=2,
+            anchors={
+                "bottom_target": self.elements["cat_list_bg"],
+                "left_target": self.elements["all_tab"],
+            },
+            container=self.elements["cat_list_container"],
+            visible=False,
+        )
+        self.elements["neg_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((10, 5), (90, 35))),
+            "screens.mediation.negative",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (90, 35)),
+            object_id="@buttonstyles_horizontal_tab",
+            starting_height=2,
+            anchors={
+                "bottom_target": self.elements["cat_list_bg"],
+                "left_target": self.elements["pos_tab"],
+            },
+            container=self.elements["cat_list_container"],
+            visible=False,
+        )
         self.elements["romance_checkbox"] = UICheckbox(
             position=(70, 0),
             container=self.elements["effects_container"],
@@ -274,9 +329,9 @@ class MediationScreen(Screens):
             manager=MANAGER,
         )
 
-        self.results = pygame_gui.elements.UITextBox(
+        self.elements["results"] = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((280, 385), (229, 100))),
+            ui_scale(pygame.Rect((20, 40), (229, 80))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             container=self.elements["effects_container"],
             manager=MANAGER,
@@ -297,13 +352,13 @@ class MediationScreen(Screens):
         )
 
         self.elements["select_cat0"] = pygame_gui.elements.UITextBox(
-            "screens.mediation.select_cat",
+            "screens.mediation.select_cat0",
             ui_scale(pygame.Rect((68, 385), (165, -1))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
         self.elements["select_cat1"] = pygame_gui.elements.UITextBox(
-            "screens.mediation.select_cat",
+            "screens.mediation.select_cat1",
             ui_scale(pygame.Rect((568, 385), (165, -1))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
@@ -475,16 +530,44 @@ class MediationScreen(Screens):
             self.elements["cat_list"].update_display(self.page, self.all_cats_list)
 
     def _set_cat_list(self):
-        self.all_cats_list = [
-            i
-            for i in Cat.all_cats_list
-            if (i.ID != self.mediators[0].ID) and i.status.alive_in_player_clan
-        ]
+        if self.tab_view == "positive":
+            self.all_cats_list = [
+                c
+                for c in Cat.all_cats_list
+                if (c.ID != self.mediators[0].ID)
+                and c.status.alive_in_player_clan
+                and c.ID in self.selected_cat_1.relationships
+                and self.selected_cat_1.relationships[c.ID].total_relationship_value > 0
+            ]
+        elif self.tab_view == "negative":
+            self.all_cats_list = [
+                c
+                for c in Cat.all_cats_list
+                if (c.ID != self.mediators[0].ID)
+                and c.status.alive_in_player_clan
+                and c.ID in self.selected_cat_1.relationships
+                and self.selected_cat_1.relationships[c.ID].total_relationship_value < 0
+            ]
+        else:
+            self.all_cats_list = [
+                i
+                for i in Cat.all_cats_list
+                if (i.ID != self.mediators[0].ID) and i.status.alive_in_player_clan
+            ]
 
     def update_selected_cats(self):
         for ele in self.selected_cat_elements:
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
+
+        self.elements["select_cat0"].show()
+        self.elements["select_cat1"].show()
+        if self.selected_cat_1:
+            self.elements["neg_tab"].show()
+            self.elements["pos_tab"].show()
+        else:
+            self.elements["neg_tab"].hide()
+            self.elements["pos_tab"].hide()
 
         self.draw_cat_block(self.selected_cat_1, (50, 80))
         self.draw_cat_block(self.selected_cat_2, (550, 80))
@@ -547,6 +630,36 @@ class MediationScreen(Screens):
             visible=other_cat,
         )
 
+        if other_cat:
+            the_relationship = cat.relationships[other_cat.ID]
+
+            same_age = the_relationship.cat_to.age == cat.age
+            adult_ages = ["young adult", "adult", "senior adult", "senior"]
+            both_adult = (
+                the_relationship.cat_to.age in adult_ages and cat.age in adult_ages
+            )
+            check_age = both_adult or same_age
+
+            # If they are not both adults, or the same age, OR they are related, don't display any romantic affection,
+            # even if they somehow have some. They should not be able to get any, but it never hurts to check.
+            if not check_age or cat.is_related(
+                other_cat, get_clan_setting("first cousin mates")
+            ):
+                allow_romance = False
+            else:
+                allow_romance = True
+
+            self.selected_cat_elements[
+                f"relation_display{cat_num}"
+            ] = UIRelationDisplay(
+                (2, 10),
+                the_relationship,
+                romance=allow_romance,
+                container=self.selected_cat_elements[f"cat_container{cat_num}"],
+                anchors={"centerx": "centerx"},
+            )
+
+        # cat stuff needs to be drawn differently for each cat due to changes in alignment and anchoring
         if cat == self.selected_cat_1:
             self.selected_cat_elements[
                 f"cat_image{cat_num}"
@@ -626,7 +739,8 @@ class MediationScreen(Screens):
                 manager=MANAGER,
             )
 
-    def get_cat_details(self, cat, other_cat):
+    @staticmethod
+    def get_cat_details(cat, other_cat):
         output = ""
         output += f"{cat.genderalign}<br>"
 
@@ -651,271 +765,6 @@ class MediationScreen(Screens):
         output += f"{i18n.t(f'cat.personality.{cat.personality.trait}')}<br>"
 
         return output
-
-    def draw_info_block(self, cat, starting_pos: tuple):
-        if not cat:
-            return
-
-        other_cat = [Cat.fetch_cat(i) for i in self.selected_cat_list() if i != cat.ID]
-        if other_cat:
-            other_cat = other_cat[0]
-        else:
-            other_cat = None
-
-        tag = str(starting_pos)
-
-        x = starting_pos[0]
-        y = starting_pos[1]
-
-        self.selected_cat_elements["cat_image" + tag] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((x + 50, y + 7), (100, 100))),
-            pygame.transform.scale(cat.sprite, ui_scale_dimensions((100, 100))),
-        )
-
-        name = str(cat.name)
-        short_name = shorten_text_to_fit(name, 62, 7)
-        self.selected_cat_elements["name" + tag] = pygame_gui.elements.UILabel(
-            ui_scale(pygame.Rect((x, y + 100), (200, 30))),
-            short_name,
-            object_id="#text_box_30_horizcenter",
-        )
-
-        # Gender
-        if cat.genderalign == "female":
-            gender_icon = image_cache.load_image(
-                "resources/images/female_big.png"
-            ).convert_alpha()
-        elif cat.genderalign == "male":
-            gender_icon = image_cache.load_image(
-                "resources/images/male_big.png"
-            ).convert_alpha()
-        elif cat.genderalign == "trans female":
-            gender_icon = image_cache.load_image(
-                "resources/images/transfem_big.png"
-            ).convert_alpha()
-        elif cat.genderalign == "trans male":
-            gender_icon = image_cache.load_image(
-                "resources/images/transmasc_big.png"
-            ).convert_alpha()
-        else:
-            # Everyone else gets the nonbinary icon
-            gender_icon = image_cache.load_image(
-                "resources/images/nonbi_big.png"
-            ).convert_alpha()
-
-        self.selected_cat_elements["gender" + tag] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((x + 160, y + 12), (25, 25))),
-            pygame.transform.scale(gender_icon, ui_scale_dimensions((25, 25))),
-        )
-
-        related = False
-        # MATE
-        if other_cat and len(cat.mate) > 0 and other_cat.ID in cat.mate:
-            self.selected_cat_elements["mate_icon" + tag] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((x + 14, y + 14), (22, 20))),
-                pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/heart_big.png"
-                    ).convert_alpha(),
-                    ui_scale_dimensions((44, 40)),
-                ),
-            )
-        elif other_cat:
-            # FAMILY DOT
-            # Only show family dot on cousins if first cousin mates are disabled.
-            if get_clan_setting("first cousin mates"):
-                check_cousins = False
-            else:
-                check_cousins = other_cat.is_cousin(cat)
-
-            if (
-                other_cat.is_uncle_aunt(cat)
-                or cat.is_uncle_aunt(other_cat)
-                or other_cat.is_grandparent(cat)
-                or cat.is_grandparent(other_cat)
-                or other_cat.is_parent(cat)
-                or cat.is_parent(other_cat)
-                or other_cat.is_sibling(cat)
-                or check_cousins
-            ):
-                related = True
-                self.selected_cat_elements[
-                    "relation_icon" + tag
-                ] = pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect((x + 14, y + 14), (18, 18))),
-                    pygame.transform.scale(
-                        image_cache.load_image(
-                            "resources/images/dot_big.png"
-                        ).convert_alpha(),
-                        ui_scale_dimensions((18, 18)),
-                    ),
-                )
-
-        col1 = i18n.t("general.moons_age", count=cat.moons)
-        t = i18n.t(f"cat.personality.{cat.personality.trait}")
-        if len(t) > 15:
-            col1 += "\n" + t[:12] + "..."
-        else:
-            col1 += "\n" + t
-        self.selected_cat_elements["col1" + tag] = pygame_gui.elements.UITextBox(
-            col1,
-            ui_scale(pygame.Rect((x + 21, y + 126), (90, -1))),
-            object_id="#text_box_22_horizleft_spacing_95",
-            manager=MANAGER,
-        )
-        self.selected_cat_elements["col1" + tag].disable()
-
-        mates = False
-        if len(cat.mate) > 0:
-            col2 = i18n.t("general.has_a_mate")
-            if other_cat:
-                if other_cat.ID in cat.mate:
-                    mates = True
-                    col2 = i18n.t("general.cats_mate", name=other_cat.name)
-        else:
-            col2 = i18n.t("general.mate_none")
-
-        self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(
-            col2,
-            ui_scale(pygame.Rect((x + 110, y + 126), (80, -1))),
-            object_id="#text_box_22_horizleft_spacing_95",
-            manager=MANAGER,
-        )
-        self.selected_cat_elements["col2" + tag].disable()
-
-        # Relation info:
-        if related and other_cat and not mates:
-            relation = ""
-            if cat.is_uncle_aunt(other_cat):
-                if other_cat.genderalign in ("female", "trans female"):
-                    relation = "general.niece"
-                elif other_cat.genderalign in ("male", "trans male"):
-                    relation = "general.nephew"
-                else:
-                    relation = "general.siblings_child"
-            elif other_cat.is_uncle_aunt(cat):
-                if other_cat.genderalign in ("female", "trans female"):
-                    relation = "general.aunt"
-                elif other_cat.genderalign in ("male", "trans male"):
-                    relation = "general.uncle"
-                else:
-                    relation = "general.parents_sibling"
-            elif other_cat.is_grandparent(cat):
-                if other_cat.genderalign in ("female", "trans female"):
-                    relation = "general.grandmother"
-                elif other_cat.genderalign in ("male", "trans male"):
-                    relation = "general.grandfather"
-                else:
-                    relation = "general.grandparent"
-            elif cat.is_grandparent(other_cat):
-                if other_cat.genderalign in ("female", "trans female"):
-                    relation = "general.granddaughter"
-                elif other_cat.genderalign in ("male", "trans male"):
-                    relation = "general.grandson"
-                else:
-                    relation = "general.grandchild"
-            elif other_cat.is_parent(cat):
-                if other_cat.genderalign in ("female", "trans female"):
-                    relation = "general.mother"
-                elif other_cat.genderalign in ("male", "trans male"):
-                    relation = "general.father"
-                else:
-                    relation = "general.parent"
-            elif cat.is_parent(other_cat):
-                if other_cat.genderalign in ("female", "trans female"):
-                    relation = "general.daughter"
-                elif other_cat.genderalign in ("male", "trans male"):
-                    relation = "general.son"
-                else:
-                    relation = "general.child"
-            elif other_cat.is_sibling(cat) or cat.is_sibling(other_cat):
-                if other_cat.genderalign in ("female", "trans female"):
-                    relation = "general.sister"
-                elif other_cat.genderalign in ("male", "trans male"):
-                    relation = "general.brother"
-                else:
-                    relation = "general.sibling"
-
-                if other_cat.is_littermate(cat) or cat.is_littermate(other_cat):
-                    relation = i18n.t(
-                        "general.sibling_littermate", relation=i18n.t(relation)
-                    )
-            elif not get_clan_setting("first cousin mates") and other_cat.is_cousin(
-                cat
-            ):
-                if other_cat.genderalign in ("female", "trans female"):
-                    relation = "general.cousin_female"
-                elif other_cat.genderalign in ("male", "trans male"):
-                    relation = "general.cousin_male"
-                else:
-                    relation = "general.cousin_nb"
-
-            self.selected_cat_elements[
-                "col2_relation" + tag
-            ] = pygame_gui.elements.UITextBox(
-                i18n.t("general.related_text"),
-                ui_scale(pygame.Rect((x + 110, -15), (80, -1))),
-                starting_height=3,
-                object_id="#text_box_22_horizleft_spacing_95",
-                manager=MANAGER,
-                anchors={"top_target": self.selected_cat_elements["col2" + tag]},
-            )
-            self.selected_cat_elements["col2_relation" + tag].set_tooltip(
-                text=i18n.t(relation)
-            )
-            self.selected_cat_elements["col2_relation" + tag].tool_tip_delay = 0
-            self.selected_cat_elements["col2_relation" + tag].disable()
-
-        # ------------------------------------------------------------------------------------------------------------ #
-        # RELATION BARS
-
-        if other_cat:
-            name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 68, 11)
-
-            self.selected_cat_elements[
-                f"relation_heading{tag}"
-            ] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((x + 20, y + 160), (160, -1))),
-                "screens.mediation.cat_feelings",
-                object_id="#text_box_22_horizcenter",
-                text_kwargs={"name": short_name, "m_c": cat},
-            )
-
-            if other_cat.ID in cat.relationships:
-                the_relationship = cat.relationships[other_cat.ID]
-            else:
-                the_relationship = cat.create_one_relationship(other_cat)
-
-            # ROMANTIC LOVE
-            # CHECK AGE DIFFERENCE
-            same_age = the_relationship.cat_to.age == cat.age
-            both_adult = (
-                cat.age.can_have_mate() and the_relationship.cat_to.age.can_have_mate()
-            )
-            check_age = both_adult or same_age
-
-            # If they are not both adults, or the same age, OR they are related, don't display any romantic affection,
-            # even if they somehow have some. They should not be able to get any, but it never hurts to check.
-            if not check_age or related:
-                allow_romance = False
-                # Print, just for bug checking. Again, they should not be able to get love towards their relative.
-                if the_relationship.romance and related:
-                    print(
-                        f"WARNING: {cat.name} has {the_relationship.romance} romantic love towards their relative, {the_relationship.cat_to.name}"
-                    )
-            else:
-                allow_romance = True
-
-            self.selected_cat_elements[f"display{tag}"] = UIRelationDisplay(
-                position=(x + 50, 0),
-                relationship=the_relationship,
-                romance=allow_romance,
-                manager=MANAGER,
-                anchors={
-                    "top_target": self.selected_cat_elements[f"relation_heading{tag}"]
-                },
-            )
 
     def selected_cat_list(self):
         output = []
@@ -994,7 +843,7 @@ class MediationScreen(Screens):
         self.mediator_elements = {}
 
         for ele in self.elements.values():
-            ele.kilL()
+            ele.kill()
         self.elements.clear()
 
         for cat in self.cat_buttons:
@@ -1005,11 +854,10 @@ class MediationScreen(Screens):
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
 
+        self.tab_view = "all"
         self.mediators.clear()
         self.back_button.kill()
         del self.back_button
-        self.results.kill()
-        del self.results
 
     def on_use(self):
         super().on_use()
