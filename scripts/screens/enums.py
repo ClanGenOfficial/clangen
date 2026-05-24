@@ -9,12 +9,12 @@ class GameScreen(StrEnum):
     EVENT_EDIT = "event_edit_screen"
 
     # make clan screens
-    CHOOSE_MODE = "choose_mode_screen"
-    CHOOSE_NAME = "choose_name_screen"
-    CHOOSE_CATS = "choose_cats_screen"
-    CHOOSE_CAMP = "choose_camp_screen"
-    CHOOSE_SYMBOL = "choose_symbol_screen"
-    CLAN_CREATED = "clan_created_screen"
+    MAKE_CLAN_CHOOSE_MODE = "choose_mode_screen"
+    MAKE_CLAN_CHOOSE_NAME = "choose_name_screen"
+    MAKE_CLAN_CHOOSE_CATS = "choose_cats_screen"
+    MAKE_CLAN_CHOOSE_CAMP = "choose_camp_screen"
+    MAKE_CLAN_CHOOSE_SYMBOL = "choose_symbol_screen"
+    MAKE_CLAN_CLAN_CREATED = "clan_created_screen"
 
     # screens accessed through top menu
     CAMP = "camp_screen"

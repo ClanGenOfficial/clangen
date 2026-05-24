@@ -27,7 +27,7 @@ class ChooseCampScreen(MakeClanScreenBase):
     def screen_switches(self):
         super().screen_switches()
 
-        # move the step buttons back down
+        # return step buttons to their default position
         self.elements["previous_step"].set_relative_position(
             ui_scale_dimensions((253, 620))
         )
@@ -105,7 +105,7 @@ class ChooseCampScreen(MakeClanScreenBase):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["previous_step"]:
                 self.set_bg(None)
-                self.change_screen(GameScreen.CHOOSE_CATS)
+                self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CATS)
             elif event.ui_element == self.elements["forest_biome"]:
                 self.clan_info.biome = "Forest"
                 self.selected_camp_tab = 1
@@ -155,7 +155,7 @@ class ChooseCampScreen(MakeClanScreenBase):
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["next_step"]:
                 self.clan_info.camp_bg = f"camp{self.selected_camp_tab}"
-                self.change_screen(GameScreen.CHOOSE_SYMBOL)
+                self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_SYMBOL)
 
         return super().handle_event(event)
 

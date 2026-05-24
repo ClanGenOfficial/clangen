@@ -201,7 +201,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["previous_step"]:
-                self.change_screen(GameScreen.CHOOSE_CAMP)
+                self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CAMP)
             elif event.ui_element == self.elements["page_right"]:
                 self.current_page += 1
                 self.refresh_symbol_list()
@@ -210,7 +210,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
                 self.refresh_symbol_list()
             elif event.ui_element == self.elements["done_button"]:
                 self.save_clan()
-                self.change_screen(GameScreen.CLAN_CREATED)
+                self.change_screen(GameScreen.MAKE_CLAN_CLAN_CREATED)
             elif event.ui_element == self.elements["random_symbol_button"]:
                 if self.clan_info.symbol:
                     if self.clan_info.symbol in self.symbol_buttons:

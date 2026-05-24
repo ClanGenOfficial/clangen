@@ -100,6 +100,33 @@ class ClanInfo:
             "game_mode": self.game_mode,
         }
 
+    def no_cats_chosen(self) -> bool:
+        return (
+            not self.leader
+            and not self.deputy
+            and not self.medicine_cat
+            and not self.starting_members
+        )
+
+    def has_minimum_cats(self) -> bool:
+        return (
+            self.leader
+            and self.depuety
+            and self.medicine_cat
+            and len(self.starting_members) >= 4
+        )
+
+    def has_maximum_cats(self) -> bool:
+        return (
+            self.leader
+            and self.depuety
+            and self.medicine_cat
+            and len(self.starting_members) >= 7
+        )
+
+    def has_high_ranks_filled(self) -> bool:
+        return all([self.leader, self.deputy, self.medicine_cat])
+
 
 class MakeClanScreenBase(Screens):
     def __init__(self, name="make_clan_screen"):

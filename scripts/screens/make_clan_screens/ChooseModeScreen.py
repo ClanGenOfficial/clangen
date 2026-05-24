@@ -64,10 +64,10 @@ class ChooseModeScreen(MakeClanScreenBase):
             object_id="#expanded_mode_button",
             manager=MANAGER,
         )
-        self.elements["cruel_mode_button"] = UIImageButton(
+        self.elements["cruel_season_mode_button"] = UIImageButton(
             ui_scale(pygame.Rect((100, 400), (150, 30))),
             "screens.make_clan.cruel_season_label",
-            object_id="#cruel_mode_button",
+            object_id="#cruel_season_mode_button",
             manager=MANAGER,
         )
 
@@ -119,7 +119,7 @@ class ChooseModeScreen(MakeClanScreenBase):
             elif event.ui_element == self.elements["expanded_mode_button"]:
                 self.game_mode = "expanded"
                 self.refresh_text_and_buttons()
-            elif event.ui_element == self.elements["cruel_mode_button"]:
+            elif event.ui_element == self.elements["cruel_season_mode_button"]:
                 self.game_mode = "cruel season"
                 self.refresh_text_and_buttons()
 
@@ -130,9 +130,9 @@ class ChooseModeScreen(MakeClanScreenBase):
                 if self.elements["random_clan_checkbox"].checked:
                     self.random_quick_start()
                     self.save_clan()
-                    self.change_screen(GameScreen.CLAN_CREATED)
+                    self.change_screen(GameScreen.MAKE_CLAN_CLAN_CREATED)
                 else:
-                    self.change_screen(GameScreen.CHOOSE_NAME)
+                    self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
             elif event.ui_element == self.elements["random_clan_checkbox"]:
                 if self.elements["random_clan_checkbox"].checked:
                     self.elements["random_clan_checkbox"].uncheck()
@@ -164,19 +164,19 @@ class ChooseModeScreen(MakeClanScreenBase):
         if self.game_mode == "classic":
             self.elements["classic_mode_button"].disable()
             self.elements["expanded_mode_button"].enable()
-            self.elements["cruel_mode_button"].enable()
+            self.elements["cruel_season_mode_button"].enable()
         elif self.game_mode == "expanded":
             self.elements["classic_mode_button"].enable()
             self.elements["expanded_mode_button"].disable()
-            self.elements["cruel_mode_button"].enable()
+            self.elements["cruel_season_mode_button"].enable()
         elif self.game_mode == "cruel season":
             self.elements["classic_mode_button"].enable()
             self.elements["expanded_mode_button"].enable()
-            self.elements["cruel_mode_button"].disable()
+            self.elements["cruel_season_mode_button"].disable()
         else:
             self.elements["classic_mode_button"].enable()
             self.elements["expanded_mode_button"].enable()
-            self.elements["cruel_mode_button"].enable()
+            self.elements["cruel_season_mode_button"].enable()
 
     def random_quick_start(self):
         self.clan_info.name = self.random_clan_name()

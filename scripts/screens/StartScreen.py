@@ -76,7 +76,7 @@ class StartScreen(Screens):
             screens = {
                 self.continue_button: GameScreen.CAMP,
                 self.switch_clan_button: GameScreen.SWITCH_CLAN,
-                self.new_clan_button: GameScreen.CHOOSE_MODE,
+                self.new_clan_button: GameScreen.MAKE_CLAN_CHOOSE_MODE,
                 self.settings_button: GameScreen.SETTINGS,
             }
             if event.ui_element in screens and not self.error_open:
