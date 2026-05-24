@@ -111,7 +111,7 @@ class ClanInfo:
     def has_minimum_cats(self) -> bool:
         return (
             self.leader
-            and self.depuety
+            and self.deputy
             and self.medicine_cat
             and len(self.starting_members) >= 4
         )
@@ -119,7 +119,7 @@ class ClanInfo:
     def has_maximum_cats(self) -> bool:
         return (
             self.leader
-            and self.depuety
+            and self.deputy
             and self.medicine_cat
             and len(self.starting_members) >= 7
         )
