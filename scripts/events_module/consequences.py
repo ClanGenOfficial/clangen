@@ -398,6 +398,10 @@ def create_new_cat_block(
         # add mates
         # THIS DOES NOT ADD RELATIONS TO CATS IN THE EVENT, those are added within the relationships block of the event
 
+        # Read relationship buff values from game_config.toml so they stay in sync with the config.
+        _sib_cfg = constants.CONFIG["new_cat"]["sib_buff"]
+        _par_cfg = constants.CONFIG["new_cat"]["parent_buff"]
+
         for n_c in new_cats:
             # SET MATES
             for inter_cat in give_mates:
@@ -415,10 +419,10 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, inter_cat, False, True)
-                start_relation.like += 40 + y
-                start_relation.comfort = 40 + y
-                start_relation.respect = 10 + y
-                start_relation.trust = 30 + y
+                start_relation.like += _sib_cfg["cat1_to_cat2"]["like"] + y
+                start_relation.comfort = _sib_cfg["cat1_to_cat2"]["comfort"] + y
+                start_relation.respect = _sib_cfg["cat1_to_cat2"]["respect"] + y
+                start_relation.trust = _sib_cfg["cat1_to_cat2"]["trust"] + y
                 n_c.relationships[inter_cat.ID] = start_relation
 
             # BIO PARENTS
@@ -428,18 +432,18 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
-                start_relation.like += 60 + y
-                start_relation.comfort = 40 + y
-                start_relation.respect = 30 + y
-                start_relation.trust = 30 + y
+                start_relation.like += _par_cfg["parent_to_kit"]["like"] + y
+                start_relation.comfort = _par_cfg["parent_to_kit"]["comfort"] + y
+                start_relation.respect = _par_cfg["parent_to_kit"]["respect"] + y
+                start_relation.trust = _par_cfg["parent_to_kit"]["trust"] + y
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
-                start_relation.like += 40 + y
-                start_relation.comfort = 70 + y
-                start_relation.respect = 30 + y
-                start_relation.trust = 60 + y
+                start_relation.like += _par_cfg["kit_to_parent"]["like"] + y
+                start_relation.comfort = _par_cfg["kit_to_parent"]["comfort"] + y
+                start_relation.respect = _par_cfg["kit_to_parent"]["respect"] + y
+                start_relation.trust = _par_cfg["kit_to_parent"]["trust"] + y
                 n_c.relationships[par.ID] = start_relation
 
             # ADOPTIVE PARENTS
@@ -451,18 +455,18 @@ def create_new_cat_block(
 
                 y = randrange(0, 20)
                 start_relation = Relationship(par, n_c, False, True)
-                start_relation.like += 60 + y
-                start_relation.comfort = 40 + y
-                start_relation.respect = 30 + y
-                start_relation.trust = 30 + y
+                start_relation.like += _par_cfg["parent_to_kit"]["like"] + y
+                start_relation.comfort = _par_cfg["parent_to_kit"]["comfort"] + y
+                start_relation.respect = _par_cfg["parent_to_kit"]["respect"] + y
+                start_relation.trust = _par_cfg["parent_to_kit"]["trust"] + y
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
                 start_relation = Relationship(n_c, par, False, True)
-                start_relation.like += 40 + y
-                start_relation.comfort = 70 + y
-                start_relation.respect = 30 + y
-                start_relation.trust = 60 + y
+                start_relation.like += _par_cfg["kit_to_parent"]["like"] + y
+                start_relation.comfort = _par_cfg["kit_to_parent"]["comfort"] + y
+                start_relation.respect = _par_cfg["kit_to_parent"]["respect"] + y
+                start_relation.trust = _par_cfg["kit_to_parent"]["trust"] + y
                 n_c.relationships[par.ID] = start_relation
 
             # UPDATE INHERITANCE
