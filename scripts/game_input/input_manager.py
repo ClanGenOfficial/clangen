@@ -50,6 +50,8 @@ class KeyboardManager(InputManager):
         pygame.K_RETURN: Action.CONFIRM,
         pygame.K_LEFT: Action.LEFT,
         pygame.K_RIGHT: Action.RIGHT,
+        pygame.K_q: Action.PREVIOUS,
+        pygame.K_e: Action.NEXT,
         pygame.K_SPACE: Action.SAVE,
         pygame.K_UP: Action.UP,
         pygame.K_DOWN: Action.DOWN,

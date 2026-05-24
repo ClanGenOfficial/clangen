@@ -275,20 +275,22 @@ class Screens:
         self.matrix_map.clear()
         pass
 
-    def update_map(self, element_list: list[UIElement], remove=False):
+    def add_to_map(self, element_list: list[UIElement]):
         """
         Updates the matrix map with the given list of elements.
         :param element_list: The list of elements to update.
-        :param remove: Default False, set to True if the list of elements should be removed from the matrix map instead of added.
         """
         if not self.matrix_map:
             self.matrix_map = focus_matrix.add_to_map(self.matrix_map, element_list)
-        elif remove:
-            self.matrix_map = focus_matrix.remove_from_map(
-                self.matrix_map, element_list
-            )
         else:
             self.matrix_map = focus_matrix.add_to_map(self.matrix_map, element_list)
+
+    def remove_from_map(self, element_list: list[UIElement]):
+        """
+        Removes the given elements from the matrix map.
+        :param element_list: The list of elements to remove.
+        """
+        self.matrix_map = focus_matrix.remove_from_map(self.matrix_map, element_list)
 
     def set_focus(self, element: UIElement):
         _set_focus(new_focus=element, old_focus=self.current_focus)
@@ -331,13 +333,13 @@ class Screens:
         if game.audio.muted or game.audio.disabled or game_setting_get("audio_mute"):
             self.menu_buttons["unmute_button"].show()
             self.menu_buttons["mute_button"].hide()
-            self.update_map([self.menu_buttons["unmute_button"]])
+            self.add_to_map([self.menu_buttons["unmute_button"]])
             self.set_focus(self.menu_buttons["unmute_button"])
 
         else:
             self.menu_buttons["unmute_button"].hide()
             self.menu_buttons["mute_button"].show()
-            self.update_map([self.menu_buttons["mute_button"]])
+            self.add_to_map([self.menu_buttons["mute_button"]])
             self.set_focus(self.menu_buttons["mute_button"])
 
     def mute_button_pressed(self, event):

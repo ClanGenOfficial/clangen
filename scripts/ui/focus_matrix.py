@@ -1,4 +1,3 @@
-from logging import exception
 from typing import Optional
 
 from pygame_gui.core import UIElement
@@ -126,7 +125,7 @@ def find_next_focus(
         prior_row is None or prior_col is None
     ):  # specifically NONE, using `if not x or x` will falsely pick up 0 indexes
         raise Exception(
-            f"{prev_focus_element} not found in the matrix map. Use self.update_map() to add it. If this element shouldn't be interactable, then it was mistakenly given focus!"
+            f"{prev_focus_element} not found in the matrix map. Use self.add_to_map() to add it. If this element shouldn't be interactable, then it was mistakenly given focus!"
         )  # uh oh it must not be in the map and that's a problem!
 
     # where are we going?
@@ -148,12 +147,13 @@ def find_next_focus(
     if direction == Action.UP or change_to_higher_row:
         while not _valid_row(current_map, prev_focus_element, new_row):
             # find the new row, wrapping if necessary
-            if prior_row - 1 >= 0:
-                new_row = prior_row - 1
-            else:
+            if prior_row - 1 < 0:
                 new_row = len(current_map) - 1
                 # we also move the column to be the farthest right
                 new_col = len(current_map[new_row]) - 1
+            else:
+                new_row = prior_row - 1
+
             # if we're changing bc of a wrap, we want to predetermine the column
             if change_to_higher_row:
                 new_col = len(current_map[new_row]) - 1
@@ -163,12 +163,13 @@ def find_next_focus(
     elif direction == Action.DOWN or change_to_lower_row:
         while not _valid_row(current_map, prev_focus_element, new_row):
             # find the new row, wrapping if necessary
-            if prior_row + 1 <= len(current_map) - 1:
-                new_row = prior_row + 1
-            else:
+            if prior_row + 1 > len(current_map) - 1:
                 new_row = 0
                 # we also move the column to be the farthest left
                 new_col = 0
+            else:
+                new_row = prior_row + 1
+
             # if we're changing bc of a wrap, we want to predetermine the column
             if change_to_lower_row:
                 new_col = 0
@@ -182,29 +183,32 @@ def find_next_focus(
     if direction == Action.LEFT and new_col is None:
         # find the new col, wrapping if necessary
         while _element_is_not_valid(current_map, new_row, new_col):
-            if prior_col - 1 >= 0:
-                new_col = prior_col - 1
-            else:
+            if prior_col - 1 < 0:
                 new_col = len(current_map[new_row]) - 1
+            else:
+                new_col = prior_col - 1
+
             prior_col = new_col
 
     # going RIGHT!
     elif direction == Action.RIGHT and new_col is None:
         while _element_is_not_valid(current_map, new_row, new_col):
             # find the new col, wrapping if necessary
-            if prior_col + 1 <= len(current_map[new_row]) - 1:
-                new_col = prior_col + 1
-            else:
+            if prior_col + 1 > len(current_map[new_row]) - 1:
                 new_col = 0
+            else:
+                new_col = prior_col + 1
+
             prior_col = new_col
 
     # if neither, then we keep our column the same IF POSSIBLE
     elif new_col is None:
         while _element_is_not_valid(current_map, new_row, new_col):
-            if len(current_map[new_row]) - 1 < prior_col:
-                new_col = len(current_map[new_row]) - 1
-            else:
+            if len(current_map[new_row]) - 1 >= prior_col:
                 new_col = prior_col
+            else:
+                new_col = len(current_map[new_row]) - 1
+
             prior_col = new_col
 
     new_element = current_map[new_row][new_col]

@@ -272,7 +272,7 @@ class StartScreen(Screens):
         )
         interactive_elements.extend(self.social_buttons.values())
 
-        self.update_map(interactive_elements)
+        self.add_to_map(interactive_elements)
 
         errorimg = image_cache.load_image(
             "resources/images/errormsg.png"
@@ -367,7 +367,7 @@ class StartScreen(Screens):
 
             if update_available:
                 self.update_button.show()
-                self.update_map([self.update_button])
+                self.add_to_map([self.update_button])
         except (RequestException, Timeout):
             logger.exception("Failed to check for update")
             has_checked_for_update = True

@@ -76,7 +76,9 @@ class Sound:
             Action.DOWN,
             Action.UP,
         ):
-            self.play("button_hover")
+            pass
+            # TODO: disabled for now with the `pass`. Eventually we want to implement a custom event to be used in triggering this sound for focused elements
+            # self.play("button_hover")
 
     def play(self, sound, button: Union[UISurfaceImageButton, UIImageButton] = None):
         """
