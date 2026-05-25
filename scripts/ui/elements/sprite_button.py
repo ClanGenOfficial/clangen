@@ -118,24 +118,29 @@ class UISpriteButton:
     def enable(self):
         self.is_enabled = True
         self.button.enable()
+        self.target_indicator.disable()
 
     def disable(self):
         self.is_enabled = False
         self.button.disable()
+        self.target_indicator.enable()
 
     def hide(self):
         self.visible = False
         self.image.hide()
         self.button.hide()
+        self.target_indicator.hide()
 
     def show(self):
         self.visible = True
         self.image.show()
         self.button.show()
+        self.target_indicator.show()
 
     def kill(self):
         self.button.kill()
         self.image.kill()
+        self.target_indicator.kill()
         del self
 
     def set_image(self, new_image):
@@ -157,19 +162,3 @@ class UISpriteButton:
 
     def on_hovered(self):
         self.button.on_hovered()
-
-    def process_event(self, event: pygame.event.Event) -> bool:
-        if self.is_focused and event.type == INPUT_ACTION_PRESSED:
-            if event.action == Action.CONFIRM:
-                self.button.on_self_event(
-                    pygame_gui.UI_BUTTON_START_PRESS,
-                    {"mouse_button": pygame.BUTTON_LEFT},
-                )
-        elif self.is_focused and event.type == INPUT_ACTION_RELEASED:
-            if event.action == Action.CONFIRM:
-                self.button.on_self_event(
-                    pygame_gui.UI_BUTTON_PRESSED,
-                    {"mouse_button": pygame.BUTTON_LEFT},
-                )
-
-        return self.button.process_event(event)
