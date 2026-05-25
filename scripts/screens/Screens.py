@@ -334,13 +334,11 @@ class Screens:
             self.menu_buttons["unmute_button"].show()
             self.menu_buttons["mute_button"].hide()
             self.add_to_map([self.menu_buttons["unmute_button"]])
-            self.set_focus(self.menu_buttons["unmute_button"])
 
         else:
             self.menu_buttons["unmute_button"].hide()
             self.menu_buttons["mute_button"].show()
             self.add_to_map([self.menu_buttons["mute_button"]])
-            self.set_focus(self.menu_buttons["mute_button"])
 
     def mute_button_pressed(self, event):
         """This is a short-up to deal with mute button presses.
@@ -355,12 +353,14 @@ class Screens:
             game_setting_set("audio_mute", True)
             game_settings_save(self)
             self.show_mute_buttons()
+            self.set_focus(self.menu_buttons["unmute_button"])
             return True
         elif element == Screens.menu_buttons["unmute_button"]:
             game.audio.unmute()
             game_setting_set("audio_mute", False)
             game_settings_save(self)
             self.show_mute_buttons()
+            self.set_focus(self.menu_buttons["mute_button"])
             return True
         else:
             return False
