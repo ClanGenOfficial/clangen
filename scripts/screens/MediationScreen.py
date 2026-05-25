@@ -164,6 +164,8 @@ class MediationScreen(Screens):
                         self.selected_cat1 = event.ui_element.return_cat_object()
                     self.update_selected_cats()
 
+        super().handle_event(event)
+
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
@@ -180,6 +182,8 @@ class MediationScreen(Screens):
                 else:
                     self.mediators.append(cat)
 
+        interactable_elements = []
+
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
             "buttons.back",
@@ -187,6 +191,8 @@ class MediationScreen(Screens):
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
+        self.current_focus = self.back_button
+        interactable_elements.append(self.back_button)
 
         # CONTAINERS
         self.elements["effects_container"] = UIContainer(
@@ -221,6 +227,7 @@ class MediationScreen(Screens):
             container=self.elements["cat_list_container"],
             manager=MANAGER,
         )
+        interactable_elements.append(self.elements["search_bar"])
 
         # CAT LIST
         self.elements["cat_list_bg"] = UIModifiedImage(
@@ -254,6 +261,9 @@ class MediationScreen(Screens):
             container=self.elements["cat_list_container"],
             manager=MANAGER,
             starting_height=1,
+        )
+        interactable_elements.extend(
+            [self.elements["prev_page"], self.elements["next_page"]]
         )
 
         # LIST TABS
@@ -293,6 +303,13 @@ class MediationScreen(Screens):
             container=self.elements["cat_list_container"],
             visible=False,
         )
+        interactable_elements.extend(
+            [
+                self.elements["all_tab"],
+                self.elements["pos_tab"],
+                self.elements["neg_tab"],
+            ]
+        )
 
         # RESULTS
         self.elements["result_frame"] = UIModifiedImage(
@@ -309,6 +326,7 @@ class MediationScreen(Screens):
             anchors={"top_target": self.elements["result_frame"]},
             visible=False,
         )
+        interactable_elements.append(self.elements["romance_checkbox"])
         self.elements["romance_text"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 7), (100, 20))),
             "screens.mediation.allow_romantic",
@@ -340,6 +358,9 @@ class MediationScreen(Screens):
             anchors={"left_target": self.elements["improve_rel"]},
             manager=MANAGER,
         )
+        interactable_elements.extend(
+            [self.elements["improve_rel"], self.elements["sabotage_rel"]]
+        )
 
         # RESULT TEXT
         self.elements["results"] = pygame_gui.elements.UITextBox(
@@ -362,6 +383,9 @@ class MediationScreen(Screens):
             Icon.ARROW_RIGHT,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
+        )
+        interactable_elements.extend(
+            [self.elements["last_mediator"], self.elements["next_mediator"]]
         )
 
         # INDICATOR TEXT
@@ -412,6 +436,17 @@ class MediationScreen(Screens):
             sound_id="dice_roll",
         )
         self.elements["random_cat1"].disable()
+
+        interactable_elements.extend(
+            [
+                self.elements["remove_cat0"],
+                self.elements["remove_cat1"],
+                self.elements["random_cat0"],
+                self.elements["random_cat1"],
+            ]
+        )
+
+        self.add_to_map(interactable_elements)
 
         # UPDATE
         if self.mediators:
@@ -876,7 +911,9 @@ class MediationScreen(Screens):
         self.mediator_elements["mediator_status"].set_text(mediator_status)
 
         # disable associated buttons if something is invalid
-        if invalid_mediator or invalid_pair:
+        if (invalid_mediator or invalid_pair) or not (
+            self.selected_cat0 and self.selected_cat1
+        ):
             self.elements["improve_rel"].disable()
             self.elements["sabotage_rel"].disable()
         else:

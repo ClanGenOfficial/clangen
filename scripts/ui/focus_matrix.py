@@ -158,6 +158,8 @@ def find_next_focus(
             if change_to_higher_row:
                 new_col = len(current_map[new_row]) - 1
                 change_to_higher_row = False
+            else:
+                new_col = prior_col
 
             prior_row = new_row
 
@@ -175,6 +177,8 @@ def find_next_focus(
             # if we're changing bc of a wrap, we want to predetermine the column
             if change_to_lower_row:
                 new_col = 0
+            else:
+                new_col = prior_col
 
             prior_row = new_row
 
@@ -207,13 +211,17 @@ def find_next_focus(
 
     # if neither, then we keep our column the same IF POSSIBLE
     else:
-        while _element_is_not_valid(current_map, new_row, new_col):
-            if len(current_map[new_row]) - 1 >= prior_col:
-                new_col = prior_col
-            else:
-                new_col = len(current_map[new_row]) - 1
+        if _element_is_not_valid(current_map, new_row, new_col):
+            while _element_is_not_valid(current_map, new_row, new_col):
+                # find the new col, wrapping if necessary
+                if prior_col + 1 > len(current_map[new_row]) - 1:
+                    new_col = 0
+                else:
+                    new_col = prior_col + 1
 
-            prior_col = new_col
+                prior_col = new_col
+        else:
+            new_col = prior_col
 
     new_element = current_map[new_row][new_col]
 
@@ -263,6 +271,10 @@ def _valid_row(current_map, disallowed_element, possible_row) -> list:
 def _element_is_not_valid(current_map, new_row, new_col):
     # needs to be `is None` to avoid picking up 0 index
     if new_col is None:
+        return True
+    # since new_col is an index, we need to - 1 the len to make them "match"
+    # what we're trying to do here is check if the new_col will be a valid index of the new_row
+    if len(current_map[new_row]) - 1 < new_col:
         return True
 
     if (
