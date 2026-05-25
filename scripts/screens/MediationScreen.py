@@ -644,10 +644,18 @@ class MediationScreen(Screens):
         else:
             self.elements["neg_tab"].hide()
             self.elements["pos_tab"].hide()
+            self.elements["remove_cat0"].disable()
+            self.elements["random_cat1"].disable()
+
+        if not self.selected_cat1:
+            self.elements["remove_cat1"].disable()
 
         # draw each cat block
         self._draw_cat_block(self.selected_cat0, (50, 80))
         self._draw_cat_block(self.selected_cat1, (550, 80))
+
+        # reset results
+        self.elements["results"].set_text("")
 
         # update the mediator info
         self.update_mediator_status_and_buttons()
