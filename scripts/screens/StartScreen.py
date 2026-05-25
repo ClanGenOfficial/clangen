@@ -407,11 +407,13 @@ class StartScreen(Screens):
             self.elements["continue"].enable()
         else:
             self.elements["continue"].disable()
+            self.current_focus = self.elements["switch_clan"]
 
         if len(switch_get_value(Switch.clan_list)) > 1:
             self.elements["switch_clan"].enable()
         else:
             self.elements["switch_clan"].disable()
+            self.current_focus = self.elements["new_clan"]
 
         self.reload_errors()
 
