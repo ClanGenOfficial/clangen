@@ -159,6 +159,8 @@ def find_next_focus(
                 new_col = len(current_map[new_row]) - 1
                 change_to_higher_row = False
 
+            prior_row = new_row
+
     # going DOWN!
     elif direction == Action.DOWN or change_to_lower_row:
         while not _valid_row(current_map, prev_focus_element, new_row):
@@ -173,6 +175,8 @@ def find_next_focus(
             # if we're changing bc of a wrap, we want to predetermine the column
             if change_to_lower_row:
                 new_col = 0
+
+            prior_row = new_row
 
     # if no new row, then the new row is our old one!
     if new_row is None:  # has to be `is None` so that it doesn't pick up 0 indexes
@@ -202,7 +206,7 @@ def find_next_focus(
             prior_col = new_col
 
     # if neither, then we keep our column the same IF POSSIBLE
-    elif new_col is None:
+    else:
         while _element_is_not_valid(current_map, new_row, new_col):
             if len(current_map[new_row]) - 1 >= prior_col:
                 new_col = prior_col
