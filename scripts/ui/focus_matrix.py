@@ -7,6 +7,9 @@ from scripts.game_structure.game import switch_get_value, Switch
 from scripts.ui.scale import ui_scale_value
 
 
+Y_VARIANCE = 25
+
+
 def add_to_map(
     current_map: list[list[UIElement]], new_elements: list[UIElement]
 ) -> list[list]:
@@ -45,9 +48,9 @@ def add_to_map(
             # we allow a 30 px range so that elements which are slightly different y coordinates
             # but still visibly feel side-by-side will be treated as part of the same row
             if (
-                (row - ui_scale_value(15))
+                (row - ui_scale_value(Y_VARIANCE))
                 <= element.get_abs_rect().y
-                <= row + ui_scale_value(15)
+                <= row + ui_scale_value(Y_VARIANCE)
             ):
                 new_row = False
                 target_row = row

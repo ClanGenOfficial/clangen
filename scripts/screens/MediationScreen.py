@@ -591,8 +591,7 @@ class MediationScreen(Screens):
                 tool_tip_name=True,
                 manager=MANAGER,
             )
-        else:  # if it already existed, just update the display
-            self.elements["cat_list"].update_display(self.page, self.all_cats_list)
+            self.add_to_map(self.elements["cat_list"].cat_sprites.values())
 
         self.update_search_cats(self.elements["search_bar"].get_text())
 
@@ -936,7 +935,9 @@ class MediationScreen(Screens):
 
         Cat.ordered_cat_list = current_listed_cats
 
+        self.remove_from_map(self.elements["cat_list"].cat_sprites.values())
         self.elements["cat_list"].update_display(self.page, current_listed_cats)
+        self.add_to_map(self.elements["cat_list"].cat_sprites.values())
 
     def exit_screen(self):
         self.selected_cat0 = None
