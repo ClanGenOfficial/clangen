@@ -38,7 +38,7 @@ class MediationScreen(Screens):
         self.mediators = deque()
         self.page = 1
         self.selected_cat_elements = {}
-        self.allow_romance = True
+        self.allow_romance = False
         self.previous_search_text = ""
 
         self.elements = {}
@@ -325,6 +325,7 @@ class MediationScreen(Screens):
             manager=MANAGER,
             anchors={"top_target": self.elements["result_frame"]},
             visible=False,
+            check=self.allow_romance,
         )
         interactable_elements.append(self.elements["romance_checkbox"])
         self.elements["romance_text"] = pygame_gui.elements.UILabel(
