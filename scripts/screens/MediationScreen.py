@@ -654,9 +654,6 @@ class MediationScreen(Screens):
         self._draw_cat_block(self.selected_cat0, (50, 80))
         self._draw_cat_block(self.selected_cat1, (550, 80))
 
-        # reset results
-        self.elements["results"].set_text("")
-
         # update the mediator info
         self.update_mediator_status_and_buttons()
 

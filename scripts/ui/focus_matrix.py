@@ -33,7 +33,11 @@ def add_to_map(
             if element in row:
                 already_present = True  # don't add an element that's already there
                 break
-            current_rows_by_y_pos[row[0].get_abs_rect().y] = row
+            for item in row:
+                if not item:
+                    continue
+                current_rows_by_y_pos[item.get_abs_rect().y] = row
+                break
 
         if already_present:
             continue
@@ -63,11 +67,12 @@ def add_to_map(
             row_positions.sort()
             # insert it into the actual map according to how we've sorted
             new_row_index = row_positions.index(position.y)
-            current_map.insert(new_row_index, [element])
+            current_map.insert(new_row_index, adjust_row([], element))
         # otherwise add the element to an existing row
         else:
-            current_rows_by_y_pos[target_row].append(element)
-            current_rows_by_y_pos[target_row].sort(key=lambda x: x.get_abs_rect().x)
+            current_rows_by_y_pos[target_row] = adjust_row(
+                current_rows_by_y_pos[target_row], element
+            )
 
     return current_map
 
@@ -94,12 +99,28 @@ def remove_from_map(
             continue
 
         # then remove it
-        current_map[element_row].remove(element)
+        index = current_map[element_row].index(element)
+        current_map[element_row][index] = None
+
         # check if it empties a row, if it does, remove the row
         if not current_map[element_row]:
             current_map.pop(element_row)
 
     return current_map
+
+
+def adjust_row(
+    row: list[Optional[UIElement]], element: UIElement
+) -> list[Optional[UIElement]]:
+    if not row:  # if row is empty
+        row = [None for x in range(int(ui_scale_value(800) / ui_scale_value(10)) + 1)]
+
+    index = int(element.get_abs_rect().x / ui_scale_value(10))
+
+    row.insert(index, element)
+    row.pop(index + 1)
+
+    return row
 
 
 def find_next_focus(
@@ -262,6 +283,9 @@ def _valid_row(current_map, disallowed_element, possible_row) -> list:
     if disallowed_element in row_without_cur_element:
         row_without_cur_element.remove(disallowed_element)
     for ele in row_without_cur_element.copy():
+        if ele is None:
+            row_without_cur_element.remove(ele)
+            continue
         # remove any disabled or hidden ones, as we don't want to focus those
         if not ele.is_enabled:
             row_without_cur_element.remove(ele)
@@ -273,8 +297,9 @@ def _valid_row(current_map, disallowed_element, possible_row) -> list:
 
 def _element_is_not_valid(current_map, new_row, new_col):
     # needs to be `is None` to avoid picking up 0 index
-    if new_col is None:
+    if new_col is None or current_map[new_row][new_col] is None:
         return True
+
     # since new_col is an index, we need to - 1 the len to make them "match"
     # what we're trying to do here is check if the new_col will be a valid index of the new_row
     if len(current_map[new_row]) - 1 < new_col:
