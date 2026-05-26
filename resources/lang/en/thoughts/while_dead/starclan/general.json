@@ -68,11 +68,8 @@
             "Is telling other StarClan cats about the ambitions, hopes, and dreams {PRONOUN/m_c/subject} had for c_n"
         ],
         "main_age_constraint": [
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
+            "-kitten",
+            "-newborn"
         ],
         "main_backstory_constraint": ["clan_founder"],
         "random_living_status": [
