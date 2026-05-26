@@ -362,6 +362,11 @@
         ],
         "random_living_status": [
             "starclan"
+        ],
+        "random_age_constraint": [
+            "-kitten",
+            "-newborn",
+            "-adolescent"
         ]
     },
     {
