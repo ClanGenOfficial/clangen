@@ -200,10 +200,12 @@ while 1:
         if event.type == INPUT_ACTION_PRESSED and debug_mode.debug_menu.visible:
             pass
         else:
+            consumed = MANAGER.process_events(event)
             # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-            all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
-                event
-            )
+            if not consumed:
+                all_screens.get_screen(
+                    game.current_screen.replace(" ", "_")
+                ).handle_event(event)
 
         if not game.audio.disabled and not game.audio.muted:
             game.audio.sound.handle_sound_events(event)
@@ -216,7 +218,11 @@ while 1:
                     GameScreen.START,
                     GameScreen.SWITCH_CLAN,
                     GameScreen.SETTINGS,
-                    GameScreen.MAKE_CLAN,
+                    GameScreen.MAKE_CLAN_CHOOSE_MODE,
+                    GameScreen.MAKE_CLAN_CHOOSE_NAME,
+                    GameScreen.MAKE_CLAN_CHOOSE_CATS,
+                    GameScreen.MAKE_CLAN_CHOOSE_SYMBOL,
+                    GameScreen.MAKE_CLAN_CLAN_CREATED,
                 )
                 or not game.clan
             ):
@@ -253,7 +259,6 @@ while 1:
 
         controller_manager.process_event(event)
         keyboard_manager.process_event(event)
-        MANAGER.process_events(event)
 
     MANAGER.update(time_delta)
 
