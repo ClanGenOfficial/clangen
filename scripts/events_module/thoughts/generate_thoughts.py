@@ -366,11 +366,14 @@ def _constraints_fulfilled(main_cat: "Cat", random_cat: "Cat", thought) -> bool:
             if random_cat.dead:
                 if random_cat.status.group == CatGroup.DARK_FOREST:
                     living_status = "darkforest"
-                else:
+                if random_cat.status.group == CatGroup.STARCLAN:
                     living_status = "starclan"
+                else:
+                    living_status = "unknownresidence"
             else:
                 living_status = "living"
         else:
+            # left this here as a failsafe since otherwise it causes a 'placed before declared' error
             living_status = "unknownresidence"
         if living_status and living_status not in thought["random_living_status"]:
             return False
