@@ -9,7 +9,7 @@ import itertools
 import os.path
 import sys
 from random import choice, randint, sample, random, randrange
-from typing import Dict, List, Any, Union, Callable, Optional, TYPE_CHECKING
+from typing import Dict, List, Any, Union, Callable, Optional, TYPE_CHECKING, Literal
 
 import i18n
 import ujson  # type: ignore
@@ -186,7 +186,7 @@ class Cat:
         self._moons = None
 
         # Public attributes
-        self.gender = gender
+        self.gender: Literal["male", "female"] = gender
         self.status: Status = Status(**status_dict) if status_dict else Status()
         self.backstory = backstory
         self.age: Optional[CatAge] = None
@@ -194,22 +194,24 @@ class Cat:
         self.personality = Personality(
             trait="troublesome", lawful=0, aggress=0, stable=0, social=0
         )
-        self.parent1 = parent1
-        self.parent2 = parent2
-        self.adoptive_parents = adoptive_parents if adoptive_parents else []
+        self.parent1: str = parent1
+        self.parent2: str = parent2
+        self.adoptive_parents: List[str] = adoptive_parents if adoptive_parents else []
         self.pelt = pelt if pelt else Pelt()
-        self.former_mentor = []
+        self.former_mentor: List[str] = []
         self.patrol_with_mentor = 0
-        self.apprentice = []
-        self.former_apprentices = []
+        self.apprentice: List[str] = []
+        self.former_apprentices: List[str] = []
         self.relationships: Dict[str, Relationship] = {}
-        self.mate = []
-        self.previous_mates = []
+        self.mate: List[str] = []
+        self.previous_mates: List[str] = []
         self._pronouns: Dict[str, List[Dict[str, Union[str, int]]]] = {}
         self.placement = None
         self.example = example
         self.thought = ""
-        self.genderalign = None
+        self.genderalign: Union[
+            Literal["trans male", "trans female", "male", "female", "nonbinary"], str
+        ] = None
         self.birth_cooldown = 0
         self.illnesses = {}
         self.injuries = {}
@@ -228,9 +230,9 @@ class Cat:
 
         self.prevent_fading = False  # Prevents a cat from fading
 
-        self.faded_offspring = (
-            []
-        )  # Stores of a list of faded offspring, for relation tracking purposes
+        self.faded_offspring: List[
+            str
+        ] = []  # Stores of a list of faded offspring, for relation tracking purposes
 
         self.faded = faded  # This is only used to flag cats that are faded, but won't be added to the faded list until
         # the next save.
@@ -238,7 +240,7 @@ class Cat:
         self.favourite = False
 
         self.specsuffix_hidden = specsuffix_hidden
-        self.inheritance = None
+        self.inheritance: Inheritance = None
 
         # setting ID
         if ID is None:
@@ -925,7 +927,7 @@ class Cat:
         for x in self.apprentice:
             Cat.fetch_cat(x).update_mentor()
 
-    def add_to_clan(self) -> list:
+    def add_to_clan(self) -> List[str]:
         """Makes an "outside cat" a Clan cat. Returns a list of IDs for any additional cats that
         are coming with them."""
 
@@ -3467,12 +3469,13 @@ def create_cat(rank, moons=None, biome=None):
 
 
 # Twelve example cats
-def create_example_cats():
+def create_example_cats() -> list[Cat]:
     warrior_indices = sample(range(12), 3)
 
+    chosen_cats = []
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = create_cat(rank=CatRank.WARRIOR)
+            chosen_cats.append(create_cat(rank=CatRank.WARRIOR))
         else:
             random_rank = choice(
                 [
@@ -3483,7 +3486,9 @@ def create_example_cats():
                     CatRank.ELDER,
                 ]
             )
-            game.choose_cats[cat_index] = create_cat(rank=random_rank)
+            chosen_cats.append(create_cat(rank=random_rank))
+
+    return chosen_cats
 
 
 def create_option_preview_cat(scar: str = None, acc: str = None):

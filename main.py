@@ -218,7 +218,11 @@ while 1:
                     GameScreen.START,
                     GameScreen.SWITCH_CLAN,
                     GameScreen.SETTINGS,
-                    GameScreen.MAKE_CLAN,
+                    GameScreen.MAKE_CLAN_CHOOSE_MODE,
+                    GameScreen.MAKE_CLAN_CHOOSE_NAME,
+                    GameScreen.MAKE_CLAN_CHOOSE_CATS,
+                    GameScreen.MAKE_CLAN_CHOOSE_SYMBOL,
+                    GameScreen.MAKE_CLAN_CLAN_CREATED,
                 )
                 or not game.clan
             ):
