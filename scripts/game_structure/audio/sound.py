@@ -6,6 +6,7 @@ import pygame
 import pygame_gui
 import ujson
 
+from scripts.game_input import INPUT_ACTION_RELEASED, INPUT_ACTION_PRESSED, Action
 from scripts.game_structure.game.settings import game_setting_get, game_setting_set
 from scripts.ui.elements.cat_button import CatButton
 from scripts.ui.elements.image_button import UIImageButton
@@ -69,6 +70,15 @@ class Sound:
                 if self.pressed != event.ui_element:
                     self.play("button_hover")
             self.pressed = None
+        elif event.type == INPUT_ACTION_PRESSED and event.action in (
+            Action.LEFT,
+            Action.RIGHT,
+            Action.DOWN,
+            Action.UP,
+        ):
+            pass
+            # TODO: disabled for now with the `pass`. Eventually we want to implement a custom event to be used in triggering this sound for focused elements
+            # self.play("button_hover")
 
     def play(self, sound, button: Union[UISurfaceImageButton, UIImageButton] = None):
         """

@@ -277,18 +277,7 @@ class Clan:
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
-            other_clan_names = [str(i.name) for i in self.all_other_clans] + [
-                game.clan.displayname
-            ]
-            other_clan_name = choice(
-                names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
-            )
-            while other_clan_name in other_clan_names:
-                other_clan_name = choice(
-                    names.names_dict["normal_prefixes"]
-                    + names.names_dict["clan_prefixes"]
-                )
-            other_clan = OtherClan(name=other_clan_name)
+            other_clan = OtherClan()
             self.all_other_clans.append(other_clan)
 
         # remove any already loaded points of interest
@@ -506,9 +495,11 @@ class Clan:
         if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
 
-        safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
+        safe_save(f"{get_save_dir()}/{self.name}/clan.json", clan_data)
 
-        if os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (
+        if os.path.exists(f"{get_save_dir()}/{self.name}clan.json"):
+            os.remove(f"{get_save_dir()}/{self.name}clan.json")
+        elif os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (
             self.name != "current"
         ):
             os.remove(get_save_dir() + f"/{self.name}clan.txt")
@@ -522,6 +513,8 @@ class Clan:
         game.reset_used_group_IDs()
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
+        ) or os.path.exists(
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
         ):
             version_info = self.load_clan_json()
         elif os.path.exists(
@@ -741,8 +734,19 @@ class Clan:
         switch_set_value(
             Switch.error_message, "There was an error loading the clan.json"
         )
+        filename = (
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
+        )
+        if not os.path.exists(filename):
+            # legacy
+            filename = (
+                get_save_dir()
+                + "/"
+                + switch_get_value(Switch.clan_list)[0]
+                + "clan.json"
+            )
         with open(
-            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json",
+            filename,
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
@@ -1361,9 +1365,17 @@ class OtherClan:
             self.group_ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
         game.clan.other_clan_IDs.append(self.group_ID)
 
-        clan_names = names.names_dict["normal_prefixes"]
-        clan_names.extend(names.names_dict["clan_prefixes"])
-        self.name = name or choice(clan_names)
+        self.name = name
+        if not self.name:  # find name if clan has no name yet
+            used_names = [str(i.name) for i in game.clan.all_other_clans] + [
+                game.clan.displayname
+            ]
+            clan_names = names.names_dict["normal_prefixes"]
+            clan_names.extend(names.names_dict["clan_prefixes"])
+            self.name = choice(clan_names)
+            while self.name in used_names:  # making sure we don't repeat a name
+                self.name = choice(clan_names)
+
         self.relations = relations or randint(8, 12)
 
         self.temperament: tuple[str, str]
