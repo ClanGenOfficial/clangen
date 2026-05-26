@@ -263,9 +263,7 @@
             "Visited r_c's dream to tell {PRONOUN/r_c/object} just how immensely proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/object}"
         ],
         "random_living_status": [
-            "starclan",
-            "darkforest",
-            "unknownresidence"
+            "living"
         ],
         "main_skill_constraint": [
             "STAR,1",
@@ -275,7 +273,9 @@
             "parent/child"
         ],
         "main_status_constraint": [
-            "living"
+            "starclan",
+            "unknownresidence",
+            "darkforest"
         ]
     },
     {
