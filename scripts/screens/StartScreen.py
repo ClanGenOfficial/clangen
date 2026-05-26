@@ -32,7 +32,6 @@ from scripts.ui.windows.update_available import UpdateAvailableWindow
 from scripts.ui.windows.changelog import ChangelogWindow
 from scripts.housekeeping.datadir import open_data_dir, open_url
 from ..housekeeping.quit_game import quit_game
-from ..ui.focus_matrix import _set_focus
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
