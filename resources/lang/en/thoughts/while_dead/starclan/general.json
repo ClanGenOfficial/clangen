@@ -37,12 +37,6 @@
             "Is chasing rabbits in StarClan",
             "Can feel some cat forgetting {PRONOUN/m_c/object}...",
             "Is judging a codebreaker"
-        ],
-        "random_living_status":[
-            "living",
-            "starclan",
-            "darkforest",
-            "unknownresidence"
         ]
     },
     {
