@@ -23,11 +23,8 @@
             "starclan"
         ],
         "random_age_constraint": [
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
+            "-kitten",
+            "-newborn"
         ]
     },
     {
