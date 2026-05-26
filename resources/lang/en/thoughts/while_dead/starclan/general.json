@@ -144,11 +144,8 @@
             "Is watching over the newest additions to {PRONOUN/m_c/poss} Clan"
         ],
         "main_age_constraint": [
-            "adolescent",
-            "young adult",
-            "adult",
-            "senior adult",
-            "senior"
+            "-kitten",
+            "-newborn"
         ],
         "main_backstory_constraint": ["clan_founder"],
         "random_status_constraint": [
@@ -247,7 +244,7 @@
             "Is feeling guilty watching r_c miss {PRONOUN/m_c/object}",
             "Deeply regrets leaving r_c without {PRONOUN/m_c/object}"
         ],
-        "random_living_status": [
+        "main_status_constraint": [
             "starclan",
             "darkforest",
             "unknownresidence"
@@ -255,7 +252,7 @@
         "relationship_constraint": [
             "parent/child"
         ],
-        "main_status_constraint": [
+        "random_living_status": [
             "living"
         ]
     },
