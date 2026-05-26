@@ -41,7 +41,7 @@ class ShortEventSchemaItem(BaseModel):
         List[Tag],
         MISSING,
     ] = Field(MISSING, description="Used for some filtering purposes")
-    poi: Union[Dict[PointsOfInterestGroup, List[str]], MISSING] = Field(
+    poi: Union[PointsOfInterestGroup, MISSING] = Field(
         MISSING,
         description="The relevant points of interest. Points of Interest never affect outcome.",
     )
