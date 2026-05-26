@@ -19,6 +19,7 @@ from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
+from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.events_module.short.short_event_generation import create_short_event
@@ -350,12 +351,20 @@ class Condition_Events:
         Returns: boolean - if an event was triggered
         """
         triggered = False
-        random_number = int(
-            random.random()
-            * game.get_config_value(
-                "condition_related", f"{game.clan.game_mode}_injury_chance"
-            )
+
+        modify_for_war = switch_get_value(Switch.war_rel_change_type) != "rel_up"
+        mode = (
+            "expanded" if game.clan.game_mode == "cruel season" else game.clan.game_mode
         )
+        injury_chance = get_config(
+            game.clan, f"condition_related.{mode}_injury_chance"
+        ) - (
+            get_config(game.clan, "condition_related.war_injury_modifier")
+            if modify_for_war
+            else 0
+        )
+
+        random_number = int(random.random() * injury_chance)
 
         if cat.dead:
             triggered = True

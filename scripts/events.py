@@ -2101,11 +2101,17 @@ def handle_injuries_or_general_death(cat):
         Condition_Events.handle_injuries(cat)
         return
 
+    use_war_modifier = switch_get_value(Switch.war_rel_change_type) != "rel_up"
+
     # chance to kill leader: 1/50 by default
+    leader_death_chance = get_config(game.clan, "death_related.leader_death_chance") - (
+        get_config(game.clan, "death_related.war_death_modifier_leader")
+        if use_war_modifier
+        else 0
+    )
+
     if (
-        not int(
-            random.random() * get_config(game.clan, "death_related.leader_death_chance")
-        )
+        not int(random.random() * leader_death_chance)
         and cat.status.is_leader
         and not cat.not_working()
     ):
@@ -2149,13 +2155,13 @@ def handle_injuries_or_general_death(cat):
             return True
 
     # final death chance and then, if not triggered, head to injuries
-    if (
-        not int(
-            random.random()
-            * get_config(game.clan, f"death_related.{game.clan.game_mode}_death_chance")
-        )
-        and not cat.not_working()
-    ):  # 1/400
+    mode = "expanded" if game.clan.game_mode == "cruel season" else game.clan.game_mode
+    death_chance = get_config(game.clan, f"death_related.{mode}_death_chance") - (
+        get_config(game.clan, "death_related.war_death_modifier")
+        if use_war_modifier
+        else 0
+    )
+    if not int(random.random() * death_chance) and not cat.not_working():  # 1/400
         create_short_event(
             event_type="birth_death",
             main_cat=cat,
