@@ -21,6 +21,9 @@
         ],
         "random_living_status": [
             "starclan"
+        ],
+        "random_status_constraint": [
+            "-elder"
         ]
     }
 ]
