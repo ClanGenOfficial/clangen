@@ -50,7 +50,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
     def __init__(self, name="choose_cats_screen"):
         super().__init__(name)
 
-        self.rolls_left = constants.CONFIG["clan_creation"]["rerolls"]
         self.selected_cat: Optional[Cat] = None
 
     def screen_switches(self):
