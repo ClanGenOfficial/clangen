@@ -952,9 +952,7 @@ class Patrol:
                 f"classic_difficulty_modifier"
             ]
         else:
-            gm_modifier = constants.CONFIG["patrol_generation"][
-                f"difficulty_modifier"
-            ]
+            gm_modifier = constants.CONFIG["patrol_generation"][f"difficulty_modifier"]
 
         exp_adustment = (
             (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)
