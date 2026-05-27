@@ -238,7 +238,12 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 self.refresh_text_and_buttons()
             # GOING BACK
             elif event.ui_element == self.elements["previous_step"]:
-                self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
+                if self.selected_cat:
+                    self.selected_cat = None
+                    self.refresh_cat_images_and_info()
+                    self.refresh_text_and_buttons()
+                else:
+                    self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
             elif event.ui_element == self.elements["next_step"]:
                 self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CAMP)
 
@@ -315,6 +320,16 @@ class ChooseCatsScreen(MakeClanScreenBase):
 
         if self.selected_cat:
             self.elements["random_cats"].hide()
+
+        # refresh dice and remove error text
+        if not self.selected_cat:
+            self.elements["error_message"].hide()
+            self.elements["roll_container"].show()
+            if constants.CONFIG["clan_creation"]["rerolls"] == 3:
+                self.elements["reroll_count"].hide()
+            else:
+                self.elements["roll1"].hide()
+                self.elements["roll3"].hide()
 
         # allow the player forward
         if self.clan_info.has_minimum_cats():
