@@ -272,7 +272,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 
 
 ## Traits and Skills
-You can utilize [#exclusionary tags](#exclusionary-tags). They function like as non-exclusionary tags do i.e. when you write "SWIMMER,2", a cat must be a good swimmer or above, if you write "<b>-</b>SWIMMER,2" a cat *cannot* be a good swimmer or above.
+You can utilize [#exclusionary tags](#exclusionary-tags). They function the same way as non-exclusionary tags. For example, when you write "SWIMMER,2", a cat must be a good swimmer or above. If you write "<b>-</b>SWIMMER,2" a cat *cannot* be a good swimmer or above.
 
 === "Skills"
 
