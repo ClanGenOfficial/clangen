@@ -1,6 +1,6 @@
 {
-  "card1": {
-    "card_art": "file_path",
+  "danger_placeholder": {
+    "card_art": "danger/death.png",
     "modifiers": {
       "mod_name": 1
     }

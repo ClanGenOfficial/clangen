@@ -1,6 +1,6 @@
 {
-  "card1": {
-    "card_art": "file_path",
+  "origin_placeholder": {
+    "card_art": "origin/eaten.png",
     "modifiers": {
       "mod_name": 1
     }

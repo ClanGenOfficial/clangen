@@ -1,6 +1,6 @@
 {
-  "card1": {
-    "card_art": "file_path",
+  "environment_placeholder": {
+    "card_art": "environment/tainted.png",
     "modifiers": {
       "mod_name": 1
     }

@@ -1,6 +1,6 @@
 {
-  "card1": {
-    "card_art": "file_path",
+  "behavior_placeholder": {
+    "card_art": "behavior/sorrow.png",
     "modifiers": {
       "mod_name": 1
     }
