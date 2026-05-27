@@ -272,10 +272,15 @@ class Condition_Events:
             # ---------------------------------------------------------------------------- #
             #                              make cats sick                                  #
             # ---------------------------------------------------------------------------- #
+            mode = (
+                "expanded"
+                if game.clan.game_mode == "cruel_season"
+                else game.clan.game_mode
+            )
             random_number = int(
                 random.random()
-                * game.get_config_value(
-                    "condition_related", f"{game.clan.game_mode}_illness_chance"
+                * get_config(
+                    "condition_related", f"{mode}_illness_chance"
                 )
             )
             if (
