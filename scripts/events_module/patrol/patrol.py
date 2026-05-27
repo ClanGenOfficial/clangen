@@ -253,7 +253,7 @@ class Patrol:
             index = self.patrol_status_list.index(CatRank.MEDICINE_CAT)
             self.patrol_leader = self.patrol_cats[index]
             # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
-         # This prevents warrior from being treated as medicine cats in medicine cat patrols.
+            # This prevents warrior from being treated as medicine cats in medicine cat patrols.
         elif CatRank.MEDICINE_APPRENTICE in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.MEDICINE_APPRENTICE)
             self.patrol_leader = self.patrol_cats[index]
