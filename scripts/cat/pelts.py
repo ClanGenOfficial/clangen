@@ -657,9 +657,7 @@ class Pelt:
         possible_pelts = [
             Pelt.pelt_categories[x] for x in Pelt.pelt_categories if x != "torties"
         ]
-        chosen_pelt = choice(
-            random.choices(possible_pelts, weights=(35, 20, 30, 15), k=1)[0]
-        )
+        chosen_pelt = choice(random.choices(possible_pelts, weights=weights, k=1)[0])
 
         # Tortie chance
         tortie_chance_f = constants.CONFIG["cat_generation"][
