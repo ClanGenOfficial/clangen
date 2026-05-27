@@ -947,9 +947,14 @@ class Patrol:
 
         patrol_size = len(self.patrol_cats)
         total_exp = sum([x.experience for x in self.patrol_cats])
-        gm_modifier = constants.CONFIG["patrol_generation"][
-            f"{game.clan.game_mode}_difficulty_modifier"
-        ]
+        if game.clan.game_mode == "classic":
+            gm_modifier = constants.CONFIG["patrol_generation"][
+                f"classic_difficulty_modifier"
+            ]
+        else:
+            gm_modifier = constants.CONFIG["patrol_generation"][
+                f"difficulty_modifier"
+            ]
 
         exp_adustment = (
             (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)

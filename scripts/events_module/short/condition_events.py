@@ -272,16 +272,15 @@ class Condition_Events:
             # ---------------------------------------------------------------------------- #
             #                              make cats sick                                  #
             # ---------------------------------------------------------------------------- #
-            mode = (
-                "expanded"
-                if game.clan.game_mode == "cruel_season"
-                else game.clan.game_mode
+
+            path = (
+                "condition_related.classic_illness_chance"
+                if game.clan.game_mode == "classic"
+                else "condition_related.illness_chance"
             )
             random_number = int(
                 random.random()
-                * get_config(
-                    "condition_related", f"{mode}_illness_chance"
-                )
+                * get_config(game.clan, path)
             )
             if (
                 not cat.dead
@@ -361,8 +360,14 @@ class Condition_Events:
         mode = (
             "expanded" if game.clan.game_mode == "cruel_season" else game.clan.game_mode
         )
+        path = (
+            "condition_related.classic_injury_chance"
+            if game.clan.game_mode == "classic"
+            else "condition_related.injury_chance"
+        )
+
         injury_chance = get_config(
-            game.clan, f"condition_related.{mode}_injury_chance"
+            game.clan, path
         ) - (
             get_config(game.clan, "condition_related.war_injury_modifier")
             if modify_for_war

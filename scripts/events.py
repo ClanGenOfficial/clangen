@@ -2155,8 +2155,8 @@ def handle_injuries_or_general_death(cat):
             return True
 
     # final death chance and then, if not triggered, head to injuries
-    mode = "expanded" if game.clan.game_mode == "cruel_season" else game.clan.game_mode
-    death_chance = get_config(game.clan, f"death_related.{mode}_death_chance") - (
+    path = "death_related.classic_death_chance" if game.clan.game_mode == "classic" else "death_related.death_chance"
+    death_chance = get_config(game.clan, path) - (
         get_config(game.clan, "death_related.war_death_modifier")
         if use_war_modifier
         else 0
