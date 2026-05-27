@@ -184,7 +184,9 @@ class MakeClanScreenBase(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["main_menu"]:
                 self.set_mute_button_position("bottomright")
-                self.rolls_left = constants.CONFIG["clan_creation"]["rerolls"]
+                MakeClanScreenBase.rolls_left = constants.CONFIG["clan_creation"][
+                    "rerolls"
+                ]
                 switch_set_value(Switch.possible_cats, [])
                 self.clan_info.clear()
                 self.change_screen(GameScreen.START)

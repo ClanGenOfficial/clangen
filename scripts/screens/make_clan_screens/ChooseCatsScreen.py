@@ -117,7 +117,10 @@ class ChooseCatsScreen(MakeClanScreenBase):
         )
 
         # set to infinite or higher than typical
-        if self.rolls_left == -1 or constants.CONFIG["clan_creation"]["rerolls"] > 3:
+        if (
+            MakeClanScreenBase.rolls_left == -1
+            or constants.CONFIG["clan_creation"]["rerolls"] > 3
+        ):
             # hide top and bottom so only center remains
             self.elements["roll1"].hide()
             self.elements["roll3"].hide()
@@ -125,7 +128,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
         if constants.CONFIG["clan_creation"]["rerolls"]:
             self.elements["reroll_count"] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 0), (30, 30))),
-                str(self.rolls_left),
+                str(MakeClanScreenBase.rolls_left),
                 container=self.elements["roll_container"],
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 anchors={"top_target": self.elements["roll2"]},
@@ -133,17 +136,17 @@ class ChooseCatsScreen(MakeClanScreenBase):
             )
 
         if constants.CONFIG["clan_creation"]["rerolls"] == 3:
-            if self.rolls_left <= 2:
+            if MakeClanScreenBase.rolls_left <= 2:
                 self.elements["roll1"].disable()
-            if self.rolls_left <= 1:
+            if MakeClanScreenBase.rolls_left <= 1:
                 self.elements["roll2"].disable()
-            if self.rolls_left == 0:
+            if MakeClanScreenBase.rolls_left == 0:
                 self.elements["roll3"].disable()
             self.elements["reroll_count"].hide()
         else:
-            if self.rolls_left == 0:
+            if MakeClanScreenBase.rolls_left == 0:
                 self.elements["roll2"].disable()
-            elif self.rolls_left == -1:
+            elif MakeClanScreenBase.rolls_left == -1:
                 self.elements["reroll_count"].hide()
 
         self.create_cat_info()
@@ -198,12 +201,14 @@ class ChooseCatsScreen(MakeClanScreenBase):
                     self.elements["error_message"].hide()
 
                 self.refresh_cat_images_and_info()  # Refresh all the images.
-                self.rolls_left -= 1
+                MakeClanScreenBase.rolls_left -= 1
                 if constants.CONFIG["clan_creation"]["rerolls"] == 3:
                     event.ui_element.disable()
                 else:
-                    self.elements["reroll_count"].set_text(str(self.rolls_left))
-                    if self.rolls_left == 0:
+                    self.elements["reroll_count"].set_text(
+                        str(MakeClanScreenBase.rolls_left)
+                    )
+                    if MakeClanScreenBase.rolls_left == 0:
                         event.ui_element.disable()
             # PICK RANDOM CATS
             elif event.ui_element == self.elements["random_cats"]:
