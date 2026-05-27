@@ -49,7 +49,7 @@ def add_to_map(
         new_row = True
         target_row = None
         for row in current_rows_by_y_pos:
-            # we allow a 30 px range so that elements which are slightly different y coordinates
+            # we allow a 50 px range so that elements which are slightly different y coordinates
             # but still visibly feel side-by-side will be treated as part of the same row
             if (
                 (row - ui_scale_value(Y_VARIANCE))
