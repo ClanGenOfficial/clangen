@@ -132,7 +132,9 @@ class ChooseModeScreen(MakeClanScreenBase):
                     self.save_clan()
                     self.change_screen(GameScreen.MAKE_CLAN_CLAN_CREATED)
                 else:
-                    self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
+                    # TODO: make sure there's an if else gate for game mode
+                    self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CARDS)
+                    # self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
             elif event.ui_element == self.elements["random_clan_checkbox"]:
                 if self.elements["random_clan_checkbox"].checked:
                     self.elements["random_clan_checkbox"].uncheck()
