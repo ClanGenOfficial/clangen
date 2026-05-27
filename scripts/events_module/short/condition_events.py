@@ -131,7 +131,7 @@ class Condition_Events:
     def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:
         """
         Handles gaining conditions or death for cats with low nutrient.
-        This function should only be called if the game is in 'expanded' or 'cruel season' mode.
+        This function should only be called if the game is in 'expanded' or 'cruel_season' mode.
 
         Starvation and malnutrtion must be handled separately from other illnesses due to their distinct death triggers.
 
@@ -354,7 +354,7 @@ class Condition_Events:
 
         modify_for_war = switch_get_value(Switch.war_rel_change_type) != "rel_up"
         mode = (
-            "expanded" if game.clan.game_mode == "cruel season" else game.clan.game_mode
+            "expanded" if game.clan.game_mode == "cruel_season" else game.clan.game_mode
         )
         injury_chance = get_config(
             game.clan, f"condition_related.{mode}_injury_chance"
