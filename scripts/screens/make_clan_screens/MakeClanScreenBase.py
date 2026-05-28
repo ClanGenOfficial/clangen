@@ -55,6 +55,7 @@ class ClanInfo:
     symbol: str = ""
     starting_season: str = "Newleaf"
     game_mode: str = "classic"
+    cruel_cards: list[str] = field(default_factory=list)
 
     def clear(self):
         """
@@ -70,6 +71,7 @@ class ClanInfo:
         self.symbol = ""
         self.starting_season = "Newleaf"
         self.game_mode = "classic"
+        self.cruel_cards = []
 
     def update(self, saved_info: dict):
         self.name = saved_info["name"]
@@ -82,6 +84,7 @@ class ClanInfo:
         self.symbol = saved_info["symbol"]
         self.starting_season = saved_info["starting_season"]
         self.game_mode = saved_info["game_mode"]
+        self.cruel_cards = saved_info["cruel_cards"]
 
     def get_dict(self) -> dict:
         """
@@ -98,6 +101,7 @@ class ClanInfo:
             "symbol": self.symbol,
             "starting_season": self.starting_season,
             "game_mode": self.game_mode,
+            "cruel_cards": self.cruel_cards,
         }
 
     def no_cats_chosen(self) -> bool:
