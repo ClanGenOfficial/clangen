@@ -2,8 +2,8 @@ import pygame
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.elements import UIImage
 
-from scripts.game_structure import image_cache
-from scripts.ui.scale import ui_scale, ui_scale_dimensions
+from scripts.game_structure import image_cache, game
+from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 
 
 class UICruelCard(UIImage):
@@ -14,6 +14,7 @@ class UICruelCard(UIImage):
         unscaled_position: tuple[int, int],
         image_path: str,
         group_layer_count: int,
+        card_interval: int,
         last_in_line: bool = False,
         visible: bool = True,
         manager: IUIManagerInterface = None,
@@ -37,13 +38,17 @@ class UICruelCard(UIImage):
         self.starting_position = unscaled_position
         self.group_layer_count = group_layer_count
         self.last_in_line = last_in_line
+        self.card_interval = card_interval
 
     def on_hovered(self):
         self.set_relative_position(
-            (self.relative_rect.x, self.relative_rect.y - self.HOVER_MOVE_AMOUNT)
+            (
+                self.relative_rect.x,
+                self.relative_rect.y - ui_scale_value(self.HOVER_MOVE_AMOUNT),
+            )
         )
         self.change_layer(self.starting_height + self.group_layer_count)
-
+        game.audio.sound.play("button_hover")
         super().on_hovered()
 
     def on_unhovered(self):
@@ -85,9 +90,9 @@ class UICruelCard(UIImage):
 
         if self.hovered:
             hover_rect = self.rect.copy()
-            hover_rect.height += self.HOVER_MOVE_AMOUNT
+            hover_rect.height += ui_scale_value(self.HOVER_MOVE_AMOUNT)
             if not self.last_in_line:
-                hover_rect.width = 40
+                hover_rect.width = ui_scale_value(self.card_interval)
             return bool(hover_rect.collidepoint(hover_x, hover_y)) and bool(
                 container_clip_rect.collidepoint(hover_x, hover_y)
             )
