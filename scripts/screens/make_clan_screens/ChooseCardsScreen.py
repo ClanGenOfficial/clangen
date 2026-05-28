@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, choice
 
 import pygame
 import pygame_gui
@@ -7,6 +7,7 @@ from scripts.game_structure import constants, image_cache
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
+from scripts.ui.elements.card_button import UICruelCard
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
 
@@ -15,7 +16,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
     def __init__(self, name="choose_cards_screen"):
         super().__init__(name)
 
-        self.card_elements = {}
+        self.card_elements: dict[str, UICruelCard] = {}
+        self.card_page: int = 1
+        self.card_chunks: list[list[UICruelCard]] = []
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -35,18 +38,28 @@ class ChooseCardsScreen(MakeClanScreenBase):
             anchors={"centerx": "centerx"},
         )
 
-        x_pos = 100
-        for name, info in constants.CRUEL_CARDS_ALL.items():
-            y_mod = randint(2, 10)  # just to introduce some random scatter
-            art = image_cache.load_image(
-                f"resources/images/cruel_cards/{info['card_art']}"
-            ).convert_alpha()
-            self.card_elements[name] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((x_pos, 25 + y_mod), (230, 360))),
-                pygame.transform.scale(art, ui_scale_dimensions((230, 360))),
-                object_id="#symbol_list_frame",
-                starting_height=2,
+        self.card_chunks = self.chunks(list(constants.CRUEL_CARDS_ALL.keys()), 10)
+
+        self.update_cruel_cards()
+
+    def update_cruel_cards(self):
+        # page starts at 1 but chunk index starts at 0, so we subtract 1 from page to get index
+        chunk = self.card_chunks[self.card_page - 1]
+
+        cards = {k: v for k, v in constants.CRUEL_CARDS_ALL.items() if k in chunk}
+
+        x_pos = 100  # need to start at consistent place and then move by intervals for each card
+        layer_num = 1  # need to give each card a consecutive layer to ensure they stay layered correctly
+        for name, info in cards.items():
+            y_mod = choice([2, 6, 10, 14])  # just to introduce some random scatter
+            self.card_elements[name] = UICruelCard(
+                (x_pos, 10 + y_mod),
+                f"resources/images/cruel_cards/{info['card_art']}",
+                last_in_line=name == chunk[-1],
+                group_layer_count=len(chunk),
+                starting_height=layer_num,
                 manager=MANAGER,
                 anchors={"top_target": self.elements["header"]},
             )
-            x_pos += 50
+            x_pos += 40  # move x_pos for next card
+            layer_num += 1  # increase layer num for next card
