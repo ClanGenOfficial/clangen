@@ -5,6 +5,9 @@ lock_season = false
 # whether or not development tools are disabled
 dev_tools = false
 
+[cruel_season]
+  card_limit = 12
+
 # settings regarding relationship events, also called "interactions"
 [relationship]
   # sets the max amount of interactions a cat can have each moon

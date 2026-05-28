@@ -6,7 +6,6 @@ from pygame_gui import (
     UI_BUTTON_ON_HOVERED,
     UI_BUTTON_ON_UNHOVERED,
     UI_BUTTON_START_PRESS,
-    UI_BUTTON_PRESSED,
 )
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.elements import UIImage

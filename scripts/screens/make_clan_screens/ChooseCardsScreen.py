@@ -5,7 +5,8 @@ import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 
-from scripts.game_structure import constants, image_cache
+from scripts.config import get_config
+from scripts.game_structure import constants, image_cache, game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
@@ -21,6 +22,7 @@ from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
+from scripts.ui.windows.cruel_card_limit import CruelCardLimit
 
 
 class ChooseCardsScreen(MakeClanScreenBase):
@@ -38,7 +40,10 @@ class ChooseCardsScreen(MakeClanScreenBase):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["next_step"]:
                 self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
+            elif event.ui_element == self.elements["previous_step"]:
+                self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_MODE)
 
+            # CHANGE PAGE
             elif event.ui_element == self.elements["page_left"]:
                 self.card_chunks.rotate(-1)
                 self.update_cruel_cards()
@@ -47,9 +52,15 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 self.update_cruel_cards()
 
             elif event.ui_element in self.card_elements.values():
-                self.chosen_cards.append(event.card_name)
-                self.update_cruel_cards(update_chunks=True)
-                self.add_chosen_card(card_name=event.card_name)
+                if len(self.chosen_cards) >= get_config(
+                    game.clan, "cruel_season.card_limit"
+                ):
+                    CruelCardLimit()
+
+                else:
+                    self.chosen_cards.append(event.card_name)
+                    self.update_cruel_cards(update_chunks=True)
+                    self.add_chosen_card(card_name=event.card_name)
 
             elif event.ui_element in self.card_icon_elements.values():
                 self.chosen_cards.remove(event.card_name)
@@ -160,7 +171,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         # CHOSEN CARDS
         self.elements["chosen_cards_container"] = UIContainer(
-            ui_scale(pygame.Rect((50, -10), (220, 100))),
+            ui_scale(pygame.Rect((40, -10), (220, 100))),
             manager=MANAGER,
             anchors={
                 "top_target": self.elements["card_container"],
