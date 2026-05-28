@@ -6,20 +6,21 @@ import pygame_gui
 from pygame_gui.core import UIContainer
 
 from scripts.config import get_config
-from scripts.game_structure import constants, game
-from scripts.game_structure.game import switch_get_value, Switch
+from scripts.game_structure import constants, game, image_cache
+from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
 from scripts.ui.elements.cruel_card_icon import UICruelCardIcon
 from scripts.ui.elements.cruel_card_large import UICruelCardLarge
+from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
-from scripts.ui.scale import ui_scale
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.cruel_card_conflicts import CruelCardConflicts
 from scripts.ui.windows.cruel_card_limit import CruelCardLimit
@@ -60,6 +61,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 random_card = self.random_card()
                 if random_card:
                     self.handle_card_chosen(random_card)
+                    self.update_card_info(random_card)
 
             # UNDO CHOICES
             elif event.ui_element in self.card_icon_elements.values():
@@ -70,10 +72,8 @@ class ChooseCardsScreen(MakeClanScreenBase):
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             # UPDATE CARD INFO DISPLAY
             if event.ui_element in self.card_elements.values():
-                self.elements["info_default"].hide()
                 self.update_card_info(event.card_name)
             elif event.ui_element in self.card_icon_elements.values():
-                self.elements["info_default"].hide()
                 self.update_card_info(event.card_name)
 
         super().handle_event(event)
@@ -137,6 +137,18 @@ class ChooseCardsScreen(MakeClanScreenBase):
             },
             manager=MANAGER,
         )
+        self.elements["card_backdrop"] = UIModifiedImage(
+            ui_scale(pygame.Rect((5, 120), (580, 256))),
+            pygame.transform.scale(
+                image_cache.load_image(
+                    f"resources/images/cruel_cards/card_backdrop_{'dark' if game_setting_get('dark mode') else 'dark'}.png"
+                ),
+                ui_scale_dimensions((580, 256)),
+            ),
+            container=self.elements["card_container"],
+            manager=MANAGER,
+            starting_height=0,
+        )
 
         self.elements["page_right"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((10, 175), (34, 34))),
@@ -154,6 +166,20 @@ class ChooseCardsScreen(MakeClanScreenBase):
         # update the display with cards
         self.update_cruel_cards()
 
+        # RANDOM CARD
+        self.elements["random_card"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((88, -10), (34, 34))),
+            Icon.DICE,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
+            sound_id="dice_roll",
+            anchors={
+                "top_target": self.elements["card_container"],
+            },
+            starting_height=-1,
+        )
+
         # CARD INFO
         self.elements["info_box"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((20, -50), (300, 150))),
@@ -163,6 +189,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 "top_target": self.elements["card_container"],
                 "left_target": self.elements["page_left"],
             },
+            starting_height=-1,
         )
         # "hover to see effects" message
         self.elements["info_default"] = pygame_gui.elements.UITextBox(
@@ -201,23 +228,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
             anchors={"top_target": self.elements["card_title"]},
         )
 
-        # RANDOM CARD
-        self.elements["random_card"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((5, -10), (34, 34))),
-            Icon.DICE,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            manager=MANAGER,
-            sound_id="dice_roll",
-            anchors={
-                "top_target": self.elements["card_container"],
-                "left_target": self.elements["info_box"],
-            },
-        )
-
         # CHOSEN CARDS
         self.elements["chosen_cards_container"] = UIContainer(
-            ui_scale(pygame.Rect((30, -10), (220, 100))),
+            ui_scale(pygame.Rect((30, -20), (220, 100))),
             manager=MANAGER,
             anchors={
                 "top_target": self.elements["card_container"],
@@ -287,6 +300,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         """
         Takes the name of the card, retrieves its information, and displays it.
         """
+        self.elements["info_default"].hide()
         self.elements["card_info_container"].show()
 
         self.elements["card_title"].set_text(f"cruel_season.card_names.{card_name}")
