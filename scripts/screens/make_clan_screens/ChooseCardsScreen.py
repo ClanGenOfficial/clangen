@@ -79,6 +79,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
         super().handle_event(event)
 
     def handle_card_chosen(self, card_name):
+        """
+        Handles checking card limits, conflicts, marking the card as chosen, and updating the displays
+        """
         # limit hit
         if len(self.clan_info.cruel_cards) >= get_config(
             game.clan, "cruel_season.card_limit"
@@ -256,6 +259,10 @@ class ChooseCardsScreen(MakeClanScreenBase):
         self.reset_chosen_cards()
 
     def update_cruel_cards(self, update_chunks=False):
+        """
+        Updates the cruel card display.
+        :param update_chunks: If there were changes to the chosen cards, then set this to True to update the page chunks.
+        """
         for ele in self.card_elements.values():
             ele.kill()
         self.card_elements.clear()
@@ -309,6 +316,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
         )
 
     def add_chosen_card(self, card_name: str):
+        """
+        Adds given card to the chosen card display.
+        """
         self.elements["next_step"].enable()
 
         # aiming for 5 cards in each row
@@ -356,6 +366,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
             )
 
     def reset_chosen_cards(self):
+        """
+        Wipes all chosen card elements and recreates them.
+        """
         if not self.clan_info.cruel_cards:
             self.elements["next_step"].disable()
         for ele in self.card_icon_elements.values():
