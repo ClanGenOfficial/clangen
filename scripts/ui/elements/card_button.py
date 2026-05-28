@@ -1,4 +1,5 @@
 import pygame
+from pygame_gui import UI_BUTTON_ON_HOVERED, UI_BUTTON_ON_UNHOVERED
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.elements import UIImage
 
@@ -13,6 +14,7 @@ class UICruelCard(UIImage):
         self,
         unscaled_position: tuple[int, int],
         image_path: str,
+        name: str,
         group_layer_count: int,
         card_interval: int,
         last_in_line: bool = False,
@@ -39,6 +41,7 @@ class UICruelCard(UIImage):
         self.group_layer_count = group_layer_count
         self.last_in_line = last_in_line
         self.card_interval = card_interval
+        self.name = name
 
     def on_hovered(self):
         self.set_relative_position(
@@ -49,11 +52,26 @@ class UICruelCard(UIImage):
         )
         self.change_layer(self.starting_height + self.group_layer_count)
         game.audio.sound.play("button_hover")
+
+        event_data = {
+            "ui_element": self,
+            "ui_object_id": self.most_specific_combined_id,
+            "card_name": self.name,
+        }
+        pygame.event.post(pygame.event.Event(UI_BUTTON_ON_HOVERED, event_data))
+
         super().on_hovered()
 
     def on_unhovered(self):
         self.set_relative_position(ui_scale_dimensions(self.starting_position))
         self.change_layer(self.starting_height)
+
+        event_data = {
+            "ui_element": self,
+            "ui_object_id": self.most_specific_combined_id,
+            "card_name": self.name,
+        }
+        pygame.event.post(pygame.event.Event(UI_BUTTON_ON_UNHOVERED, event_data))
 
         super().on_unhovered()
 

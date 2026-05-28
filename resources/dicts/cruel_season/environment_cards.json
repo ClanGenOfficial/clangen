@@ -6,7 +6,7 @@
     }
   },
   "environment_placeholder1": {
-    "card_art": "environment/tainted.png",
+    "card_art": "environment/sickness.png",
     "modifiers": {
       "mod_name": 1
     }
