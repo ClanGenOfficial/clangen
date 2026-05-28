@@ -184,6 +184,10 @@ with open(
     CRUEL_CARDS_ORIGIN: dict = ujson.loads(read_file.read())
 CRUEL_CARDS_ALL.update(CRUEL_CARDS_ORIGIN)
 
+with open(
+    "resources/dicts/cruel_season/card_conflicts.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_CONFLICTS: dict = ujson.loads(read_file.read())
 
 with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
     CONFIG = tomllib.loads(read_file.read())

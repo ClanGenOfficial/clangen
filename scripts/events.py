@@ -114,7 +114,7 @@ def one_moon():
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()
 
-    if game.clan.game_mode in ("expanded", "cruel season") and game.clan.freshkill_pile:
+    if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
         # feed the cats and update the nutrient status
         relevant_cats = list(
             filter(
@@ -252,7 +252,7 @@ def one_moon():
             )
         game.dead_cats_to_grieve.clear()
 
-    if game.clan.game_mode in ("expanded", "cruel season") and game.clan.freshkill_pile:
+    if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
         # make a notification if the Clan does not have enough prey
         if (
             FRESHKILL_EVENT_ACTIVE
@@ -275,7 +275,7 @@ def one_moon():
         ),
     )
 
-    if game.clan.game_mode in ("expanded", "cruel season"):
+    if game.clan.game_mode in ("expanded", "cruel_season"):
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         med_fulfilled = medicine_cats_can_cover_clan(
             Cat.all_cats.values(), amount_per_med
@@ -1036,7 +1036,7 @@ def one_moon_cat(cat):
 
     # handle nutrition amount
     # (CARE: the cats have to be fed before this happens - should be handled in "one_moon" function)
-    if game.clan.game_mode in ("expanded", "cruel season") and game.clan.freshkill_pile:
+    if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
         Condition_Events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
 
         if cat.dead:
@@ -2155,8 +2155,12 @@ def handle_injuries_or_general_death(cat):
             return True
 
     # final death chance and then, if not triggered, head to injuries
-    mode = "expanded" if game.clan.game_mode == "cruel season" else game.clan.game_mode
-    death_chance = get_config(game.clan, f"death_related.{mode}_death_chance") - (
+    path = (
+        "death_related.classic_death_chance"
+        if game.clan.game_mode == "classic"
+        else "death_related.death_chance"
+    )
+    death_chance = get_config(game.clan, path) - (
         get_config(game.clan, "death_related.war_death_modifier")
         if use_war_modifier
         else 0

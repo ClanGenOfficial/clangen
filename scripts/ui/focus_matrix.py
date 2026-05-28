@@ -2,6 +2,7 @@ from typing import Optional
 
 from pygame_gui.core import UIElement
 
+import scripts.game_structure.screen_settings
 from scripts.game_input import Action
 from scripts.game_structure.game import switch_get_value, Switch
 from scripts.ui.scale import ui_scale_value
@@ -113,7 +114,16 @@ def adjust_row(
     row: list[Optional[UIElement]], element: UIElement
 ) -> list[Optional[UIElement]]:
     if not row:  # if row is empty
-        row = [None for x in range(int(ui_scale_value(800) / ui_scale_value(10)) + 1)]
+        row = [
+            None
+            for x in range(
+                int(
+                    ui_scale_value(scripts.game_structure.screen_settings.screen_x)
+                    / ui_scale_value(10)
+                )
+                + 1
+            )
+        ]
 
     index = int(element.get_abs_rect().x / ui_scale_value(10))
 
