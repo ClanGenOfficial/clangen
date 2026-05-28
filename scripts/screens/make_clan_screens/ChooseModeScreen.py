@@ -183,11 +183,19 @@ class ChooseModeScreen(MakeClanScreenBase):
             self.elements["cruel_season_mode_button"].enable()
 
     def random_quick_start(self):
+        # reset in case players went forward, made choices, then came back and quick started
+        game_mode = (
+            self.clan_info.game_mode
+        )  # save game mode, that's the only choice we want to preserve
+        self.clan_info.clear()
+        self.clan_info.game_mode = game_mode
+
         if self.clan_info.game_mode == "cruel_season":
             for i in range(randint(3, 8)):
                 random_card = self.random_card()
                 if random_card:
                     self.clan_info.cruel_cards.append(random_card)
+
         self.clan_info.name = self.random_clan_name()
         self.clan_info.biome = self.random_biome_selection()
         self.clan_info.camp_bg = f"camp{randrange(1, 5)}"

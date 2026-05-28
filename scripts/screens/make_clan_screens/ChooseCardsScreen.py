@@ -374,4 +374,6 @@ class ChooseCardsScreen(MakeClanScreenBase):
             ele.kill()
         self.card_icon_elements.clear()
 
+        self.card_chunks.clear()
+
         super().exit_screen()
