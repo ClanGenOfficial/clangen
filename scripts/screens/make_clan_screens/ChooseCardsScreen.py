@@ -144,7 +144,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
             ui_scale(pygame.Rect((5, 120), (580, 256))),
             pygame.transform.scale(
                 image_cache.load_image(
-                    f"resources/images/cruel_cards/card_backdrop_{'dark' if game_setting_get('dark mode') else 'dark'}.png"
+                    f"resources/images/cruel_cards/card_backdrop_{'dark' if game_setting_get('dark mode') else 'light'}.png"
                 ),
                 ui_scale_dimensions((580, 256)),
             ),
