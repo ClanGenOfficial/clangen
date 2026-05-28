@@ -110,9 +110,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
         layer_num = 1  # need to give each card a consecutive layer to ensure they stay layered correctly
         for name, info in cards.items():
             # TODO: decide if u actually want the scatter
-            y_mod = choice([2, 6, 10, 14])  # just to introduce some random scatter
+            y_mod = choice([2, 6, 10])  # just to introduce some random scatter
             self.card_elements[name] = UICruelCard(
-                (x_pos, 10),
+                (x_pos, 10 + y_mod),
                 f"resources/images/cruel_cards/{info['card_art']}",
                 card_interval=40,
                 last_in_line=name == chunk[-1],
