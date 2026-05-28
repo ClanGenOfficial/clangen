@@ -9,7 +9,8 @@ from scripts.game_structure import constants, image_cache
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
-from scripts.ui.elements.card_button import UICruelCard
+from scripts.ui.elements.cruel_card_icon import UICruelCardIcon
+from scripts.ui.elements.cruel_card_large import UICruelCardLarge
 from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
 )
@@ -26,8 +27,12 @@ class ChooseCardsScreen(MakeClanScreenBase):
     def __init__(self, name="choose_cards_screen"):
         super().__init__(name)
 
-        self.card_elements: dict[str, UICruelCard] = {}
-        self.card_chunks: deque[list[UICruelCard]] = deque([])
+        self.card_elements: dict[str, UICruelCardLarge] = {}
+        self.card_chunks: deque[list[UICruelCardLarge]] = deque([])
+
+        self.card_icon_elements: dict[str, UICruelCardIcon] = {}
+
+        self.chosen_cards: list[str] = []
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -41,9 +46,16 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 self.card_chunks.rotate()
                 self.update_cruel_cards()
 
+            elif event.ui_element in self.card_elements.values():
+                self.chosen_cards.append(event.card_name)
+                self.update_cruel_cards(update_chunks=True)
+                self.update_chosen_cards(card_name=event.card_name)
+
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element in self.card_elements.values():
                 self.elements["info_default"].hide()
+                self.update_card_info(event.card_name)
+            elif event.ui_element in self.card_icon_elements.values():
                 self.update_card_info(event.card_name)
 
         super().handle_event(event)
@@ -90,10 +102,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
             },
             manager=MANAGER,
         )
-        # chunk the card list
-        self.card_chunks = deque(
-            self.chunks(list(constants.CRUEL_CARDS_ALL.keys()), 10)
-        )
+
         # update the display with cards
         self.update_cruel_cards()
 
@@ -144,11 +153,48 @@ class ChooseCardsScreen(MakeClanScreenBase):
             anchors={"top_target": self.elements["card_title"]},
         )
 
-    def update_cruel_cards(self):
+        # CHOSEN CARDS
+        self.elements["chosen_cards_container"] = UIContainer(
+            ui_scale(pygame.Rect((50, -10), (220, 100))),
+            manager=MANAGER,
+            anchors={
+                "top_target": self.elements["card_container"],
+                "left_target": self.elements["info_box"],
+            },
+        )
+        # this is an inner container which will actually hold the icons
+        # it helps make things visually fancy and dynamically shift the card icons to be centered
+        self.elements[
+            "card_icon_container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
+            ui_scale(pygame.Rect((0, 0), (0, 0))),
+            manager=MANAGER,
+            container=self.elements["chosen_cards_container"],
+            anchors={
+                "centerx": "centerx",
+                "centery": "centery",
+            },
+            resize_top=False,
+            resize_left=False,
+        )
+
+    def update_cruel_cards(self, update_chunks=False):
         for ele in self.card_elements.values():
             ele.kill()
         self.card_elements.clear()
 
+        # chunk the card list, we don't include any cards that have already been chosen
+        if update_chunks or not self.card_chunks:
+            self.card_chunks = deque(
+                self.chunks(
+                    [
+                        x
+                        for x in constants.CRUEL_CARDS_ALL.keys()
+                        if x not in self.chosen_cards
+                    ],
+                    10,
+                )
+            )
         chunk = self.card_chunks[0]
 
         cards = {k: v for k, v in constants.CRUEL_CARDS_ALL.items() if k in chunk}
@@ -158,7 +204,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         for name, info in cards.items():
             # TODO: decide if u actually want the scatter
             y_mod = choice([2, 6, 10])  # just to introduce some random scatter
-            self.card_elements[name] = UICruelCard(
+            self.card_elements[name] = UICruelCardLarge(
                 (x_pos, 10 + y_mod),
                 f"resources/images/cruel_cards/{info['card_art']}",
                 name=name,
@@ -183,3 +229,48 @@ class ChooseCardsScreen(MakeClanScreenBase):
         self.elements["card_description"].set_text(
             f"cruel_season.card_descriptions.{card_name}"
         )
+
+    def update_chosen_cards(self, card_name: str):
+        # aiming for 5 cards in each row
+        columns = 6
+
+        if card_name in constants.CRUEL_CARDS_DANGER:
+            button = "danger"
+        elif card_name in constants.CRUEL_CARDS_ORIGIN:
+            button = "origin"
+        elif card_name in constants.CRUEL_CARDS_BEHAVIOR:
+            button = "behavior"
+        else:
+            button = "environment"
+
+        if len(self.card_icon_elements) < columns:
+            # anchor to left element, if there's an existing icon already
+            self.card_icon_elements[card_name] = UICruelCardIcon(
+                unscaled_position=(0 if not self.card_icon_elements else 5, 0),
+                name=card_name,
+                container=self.elements["card_icon_container"],
+                tool_tip_text="screens.make_clan.cruel_card_icon_remove",
+                object_id=f"#card_icon_{button}",
+                anchors={"left_target": list(self.card_icon_elements.values())[-1]}
+                if self.card_icon_elements
+                else None,
+            )
+
+        elif len(self.card_icon_elements) >= columns:
+            # anchor to one of the top cards and to left element (if one exists)
+            self.card_icon_elements[card_name] = UICruelCardIcon(
+                unscaled_position=(
+                    0 if len(self.card_icon_elements) == columns else 5,
+                    5,
+                ),
+                name=card_name,
+                container=self.elements["card_icon_container"],
+                tool_tip_text="screens.make_clan.cruel_card_icon_remove",
+                object_id=f"#card_icon_{button}",
+                anchors={
+                    "left_target": list(self.card_icon_elements.values())[-1],
+                    "top_target": list(self.card_icon_elements.values())[0],
+                }
+                if len(self.card_icon_elements) > columns
+                else {"top_target": list(self.card_icon_elements.values())[0]},
+            )

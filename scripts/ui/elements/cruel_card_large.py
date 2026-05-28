@@ -1,13 +1,22 @@
+from typing import Dict, Any
+
 import pygame
-from pygame_gui import UI_BUTTON_ON_HOVERED, UI_BUTTON_ON_UNHOVERED
+import pygame_gui
+from pygame_gui import (
+    UI_BUTTON_ON_HOVERED,
+    UI_BUTTON_ON_UNHOVERED,
+    UI_BUTTON_START_PRESS,
+    UI_BUTTON_PRESSED,
+)
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.elements import UIImage
 
+from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
 from scripts.game_structure import image_cache, game
 from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 
 
-class UICruelCard(UIImage):
+class UICruelCardLarge(UIImage):
     HOVER_MOVE_AMOUNT = 50
 
     def __init__(
@@ -37,6 +46,7 @@ class UICruelCard(UIImage):
             anchors=anchors,
         )
 
+        self.held = False
         self.starting_position = unscaled_position
         self.group_layer_count = group_layer_count
         self.last_in_line = last_in_line
@@ -53,25 +63,14 @@ class UICruelCard(UIImage):
         self.change_layer(self.starting_height + self.group_layer_count)
         game.audio.sound.play("button_hover")
 
-        event_data = {
-            "ui_element": self,
-            "ui_object_id": self.most_specific_combined_id,
-            "card_name": self.name,
-        }
-        pygame.event.post(pygame.event.Event(UI_BUTTON_ON_HOVERED, event_data))
+        self.on_self_event(UI_BUTTON_ON_HOVERED)
 
         super().on_hovered()
 
     def on_unhovered(self):
         self.set_relative_position(ui_scale_dimensions(self.starting_position))
         self.change_layer(self.starting_height)
-
-        event_data = {
-            "ui_element": self,
-            "ui_object_id": self.most_specific_combined_id,
-            "card_name": self.name,
-        }
-        pygame.event.post(pygame.event.Event(UI_BUTTON_ON_UNHOVERED, event_data))
+        self.on_self_event(UI_BUTTON_ON_UNHOVERED)
 
         super().on_unhovered()
 
@@ -118,3 +117,58 @@ class UICruelCard(UIImage):
         return bool(self.rect.collidepoint(hover_x, hover_y)) and bool(
             container_clip_rect.collidepoint(hover_x, hover_y)
         )
+
+    def process_event(self, event: pygame.event.Event) -> bool:
+        consumed_event = False
+        if self.is_focused and event.type == INPUT_ACTION_PRESSED:
+            if event.action == Action.CONFIRM:
+                self.on_self_event(
+                    pygame_gui.UI_BUTTON_START_PRESS,
+                    {"mouse_button": pygame.BUTTON_LEFT},
+                )
+        elif self.is_focused and event.type == INPUT_ACTION_RELEASED:
+            if event.action == Action.CONFIRM:
+                self.on_self_event(
+                    pygame_gui.UI_BUTTON_PRESSED,
+                    {"mouse_button": pygame.BUTTON_LEFT},
+                )
+
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            scaled_mouse_pos = self.ui_manager.calculate_scaled_mouse_position(
+                event.pos
+            )
+            if self.hover_point(scaled_mouse_pos[0], scaled_mouse_pos[1]):
+                if self.is_enabled:
+                    self.on_self_event(
+                        UI_BUTTON_START_PRESS, {"mouse_button": event.button}
+                    )
+                    self.held = True
+                    self.hovered = False
+                    self.on_unhovered()
+
+                consumed_event = True
+
+        return consumed_event
+
+    def on_self_event(self, event: int, data: Dict[str, Any] = None):
+        """
+        Called when an event is triggered by this element. Handles these events either by posting the event back
+        to the event queue, or by running a function supplied by the user.
+
+        :param event: The event triggered.
+
+        :param data: event data
+
+        """
+        if data is None:
+            data = {}
+
+        event_data = data
+        event_data.update(
+            {
+                "ui_element": self,
+                "ui_object_id": self.most_specific_combined_id,
+                "card_name": self.name,
+            }
+        )
+        pygame.event.post(pygame.event.Event(event, event_data))
