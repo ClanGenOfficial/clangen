@@ -60,7 +60,6 @@ class UICruelCardLarge(UIImage):
             )
         )
         self.change_layer(self.starting_height + self.group_layer_count)
-        game.audio.sound.play("button_hover")
 
         self.on_self_event(UI_BUTTON_ON_HOVERED)
 

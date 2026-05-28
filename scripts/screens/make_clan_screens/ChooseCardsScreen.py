@@ -6,21 +6,20 @@ import pygame_gui
 from pygame_gui.core import UIContainer
 
 from scripts.config import get_config
-from scripts.game_structure import constants, image_cache, game
+from scripts.game_structure import constants, game
+from scripts.game_structure.game import switch_get_value, Switch
+from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
 from scripts.ui.elements.cruel_card_icon import UICruelCardIcon
 from scripts.ui.elements.cruel_card_large import UICruelCardLarge
-from scripts.ui.elements.modified_scrolling_container import (
-    UIModifiedScrollingContainer,
-)
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
-from scripts.ui.scale import ui_scale, ui_scale_dimensions
+from scripts.ui.scale import ui_scale
 from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.cruel_card_conflicts import CruelCardConflicts
 from scripts.ui.windows.cruel_card_limit import CruelCardLimit
@@ -86,6 +85,19 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 self.update_card_info(event.card_name)
 
         super().handle_event(event)
+
+    def on_use(self):
+        if switch_get_value(Switch.card_conflict_changes):
+            card_changes = switch_get_value(Switch.card_conflict_changes)
+            for c in card_changes["remove"]:
+                self.chosen_cards.remove(c)
+            self.chosen_cards.append(card_changes["add"])
+            self.update_cruel_cards(update_chunks=True)
+            self.reset_chosen_cards()
+
+            switch_set_value(Switch.card_conflict_changes, {})
+
+        super().on_use()
 
     def screen_switches(self):
         super().screen_switches()
@@ -182,7 +194,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         # CHOSEN CARDS
         self.elements["chosen_cards_container"] = UIContainer(
-            ui_scale(pygame.Rect((40, -10), (220, 100))),
+            ui_scale(pygame.Rect((30, -10), (220, 100))),
             manager=MANAGER,
             anchors={
                 "top_target": self.elements["card_container"],
@@ -311,4 +323,10 @@ class ChooseCardsScreen(MakeClanScreenBase):
             self.add_chosen_card(card)
 
     def _card_has_conflicts(self, card_name):
-        pass
+        for conflict_list in constants.CRUEL_CARDS_CONFLICTS.values():
+            if card_name in conflict_list and set(self.chosen_cards).intersection(
+                set(conflict_list)
+            ):
+                return True
+
+        return False
