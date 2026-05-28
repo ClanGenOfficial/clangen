@@ -101,6 +101,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
     def screen_switches(self):
         super().screen_switches()
+        self.chosen_cards = self.clan_info.cruel_cards
 
         self.elements["header"] = pygame_gui.elements.UITextBox(
             "screens.make_clan.cruel_card_header",
@@ -217,6 +218,8 @@ class ChooseCardsScreen(MakeClanScreenBase):
             resize_left=False,
         )
 
+        self.reset_chosen_cards()
+
     def update_cruel_cards(self, update_chunks=False):
         for ele in self.card_elements.values():
             ele.kill()
@@ -270,6 +273,8 @@ class ChooseCardsScreen(MakeClanScreenBase):
         )
 
     def add_chosen_card(self, card_name: str):
+        self.elements["next_step"].enable()
+
         # aiming for 5 cards in each row
         columns = 6
 
@@ -315,6 +320,8 @@ class ChooseCardsScreen(MakeClanScreenBase):
             )
 
     def reset_chosen_cards(self):
+        if not self.chosen_cards:
+            self.elements["next_step"].disable()
         for ele in self.card_icon_elements.values():
             ele.kill()
         self.card_icon_elements.clear()
@@ -330,3 +337,16 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 return True
 
         return False
+
+    def exit_screen(self):
+        self.clan_info.cruel_cards = self.chosen_cards
+
+        for ele in self.card_elements.values():
+            ele.kill()
+        self.card_elements.clear()
+
+        for ele in self.card_icon_elements.values():
+            ele.kill()
+        self.card_icon_elements.clear()
+
+        super().exit_screen()

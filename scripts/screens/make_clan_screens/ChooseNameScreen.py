@@ -93,6 +93,7 @@ class ChooseNameScreen(MakeClanScreenBase):
                 self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CATS)
             elif event.ui_element == self.elements["previous_step"]:
                 self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_MODE)
+                # TODO: if in cruel season, set to go back to choose cards
 
         return super().handle_event(event)
 
