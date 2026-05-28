@@ -49,7 +49,12 @@ class ChooseCardsScreen(MakeClanScreenBase):
             elif event.ui_element in self.card_elements.values():
                 self.chosen_cards.append(event.card_name)
                 self.update_cruel_cards(update_chunks=True)
-                self.update_chosen_cards(card_name=event.card_name)
+                self.add_chosen_card(card_name=event.card_name)
+
+            elif event.ui_element in self.card_icon_elements.values():
+                self.chosen_cards.remove(event.card_name)
+                self.reset_chosen_cards()
+                self.update_cruel_cards(update_chunks=True)
 
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element in self.card_elements.values():
@@ -230,7 +235,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
             f"cruel_season.card_descriptions.{card_name}"
         )
 
-    def update_chosen_cards(self, card_name: str):
+    def add_chosen_card(self, card_name: str):
         # aiming for 5 cards in each row
         columns = 6
 
@@ -274,3 +279,11 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 if len(self.card_icon_elements) > columns
                 else {"top_target": list(self.card_icon_elements.values())[0]},
             )
+
+    def reset_chosen_cards(self):
+        for ele in self.card_icon_elements.values():
+            ele.kill()
+        self.card_icon_elements.clear()
+
+        for card in self.chosen_cards:
+            self.add_chosen_card(card)
