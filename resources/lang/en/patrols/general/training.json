@@ -625,7 +625,7 @@
                 "frequency": 4
             },
             {
-                "text": "With the patrol ranged around {PRONOUN/s_c/object} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} want to tell a story, for once! But no, no, they're happy to entertain and teach their Clanmates — has anyone heard of story_list?",
+                "text": "With the patrol ranged around {PRONOUN/s_c/object} in a loose circle, s_c teases that maybe {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} want to tell a story, for once! But no, no, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} happy to entertain and teach {PRONOUN/s_c/poss} Clanmates — {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} if anyone has heard of story_list as {PRONOUN/s_c/subject} {VERB/s_c/begin/begins} to relax.",
                 "exp": 20,
                 "stat_skill": [
                     "STORY,2"
@@ -5296,7 +5296,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c is much more interesting in sharing gossip than focusing on the teamwork exercise. The rest of the patrol is not in the mood to chat, and s_c's lines of inquiry into the love lives and future plans of {PRONOUN/s_c/poss} Clanmates begin to make the others uncomfortable.",
+                "text": "s_c is much more interested in sharing gossip than focusing on the teamwork exercise. The rest of the patrol is not in the mood to chat, and s_c's lines of inquiry into the love lives and future plans of {PRONOUN/s_c/poss} Clanmates begin to make the others uncomfortable.",
                 "exp": 0,
                 "stat_trait": [
                     "charismatic", "playful", "shameless", "bold", "flamboyant", "loving", "troublesome"
@@ -5903,7 +5903,7 @@
                 "frequency": 4
             },
             {
-                "text": "s_c is much more interesting in sharing gossip than focusing on the teamwork exercise. p_l isn't in the mood to chat, and s_c's lines of inquiry into {PRONOUN/p_l/poss} love life and future plans begins to make {PRONOUN/p_l/object} uncomfortable.",
+                "text": "s_c is much more interested in sharing gossip than focusing on the teamwork exercise. p_l isn't in the mood to chat, and s_c's lines of inquiry into {PRONOUN/p_l/poss} love life and future plans begins to make {PRONOUN/p_l/object} uncomfortable.",
                 "exp": 0,
                 "stat_trait": [
                     "charismatic", "playful", "shameless", "bold", "flamboyant", "loving", "troublesome"
@@ -18100,7 +18100,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was glad to hear that cat_to wouldn't hesitate to challenge a kittypet on c_n territory, regardless of any prior relationship.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                            "cats_to": "cat_to sought cat_from's advice on how to manage relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18131,7 +18131,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was glad cat_to went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                            "cats_to": "cat_to sought cat_from's advice on how to manage relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18161,7 +18161,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was glad cat_to went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                            "cats_to": "cat_to sought cat_from's advice on how to manage relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18178,8 +18178,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["p_l"],
                         "mutual": true,
                         "values": [
                             "like",
@@ -18188,7 +18188,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from taught cat_to about {PRONOUN/cat_from/poss} past as a kittypet.",
-                            "cats_to": "cat_from learned about cat_to's past as a kittypet."
+                            "cats_to": "cat_to learned about cat_from's past as a kittypet."
                         }
                     }
                 ],
@@ -18208,8 +18208,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from was glad cat_to went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan.",
-                            "cats_to": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan."
+                        "cats_from": "cat_from sought cat_to's advice on how to manage relationships with cats outside the Clan.",
+                        "cats_to": "cat_to was glad cat_from went to {PRONOUN/cat_from/object} for advice on relationships with cats outside the Clan."
                         }
                     }
                 ],
@@ -18259,8 +18259,8 @@
                         ],
                         "amount": -12,
                         "log": {
-                            "cats_from": "app1 was frightened and disappointed when p_l scolded {PRONOUN/app1/object} for befriending a kittypet.",
-                            "cats_to": "p_l was disgusted with app1's disloyalty for befriending a kittypet."
+                            "cats_from": "cat_from was frightened and disappointed when cat_to scolded {PRONOUN/cat_from/object} for befriending a kittypet.",
+                            "cats_to": "cat_to was disgusted with cat_from's disloyalty for befriending a kittypet."
                         }
                     }
                 ],

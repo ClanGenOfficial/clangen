@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
-from typing import List, Union
+from typing import List, Union, Dict
 
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
@@ -23,6 +23,7 @@ class PatrolEvent:
         types: List[str] = None,
         tags: List[str] = None,
         frequency: int = 4,
+        poi: Union[Dict[str, List], None] = None,
         patrol_art: Union[str, None] = None,
         patrol_art_clean: Union[str, None] = None,
         intro_text: str = "",
@@ -63,6 +64,17 @@ class PatrolEvent:
             self.weight += 4 * (len(constants.SEASONS) - len(self.season))
 
         self.tags = tags if tags is not None else []
+
+        self.poi = poi if poi else {}
+        # add 8, 6, 4 or 2 if there are between 1-4 specific named locations
+        # todo: check for balancing
+        if self.poi.get("name") and not 1 > len(self.poi["name"]) > 5:
+            self.weight += 8 - 2 * len(self.poi["name"])
+        elif self.poi.get("tags"):
+            # add 4-1 depending on how many specific points of interest are included
+            # but only if specific ones are not already requested
+            self.weight += min(4, len(self.poi.get("tags", [])))
+
         self.chance_of_success = chance_of_success  # out of 100
 
         self.min_cats = min_cats

@@ -2744,9 +2744,9 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 4,
-        "intro_text": "It's rabbit season, hahahaha.",
-        "decline_text": "Actually no, would you believe it's duck season?",
+        "frequency": 2,
+        "intro_text": "As the hunting patrol heads out, p_l suggests that they search for rabbit. It is rabbit season after all, {PRONOUN/p_l/subject} {VERB/p_l/insist/insists}.",
+        "decline_text": "The patrol decides they might have better luck attempting to hunt duck instead.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2777,7 +2777,7 @@
                 "frequency": 4
             },
             {
-                "text": "The rabbits aren't interested in cooperating. Between every cat present, they only manage a single kill. But it's not a failure, and as they pad home, s_c tells the story of the Prince with a Thousand Enemies, digger, listener, runner, the prince with the swift warning.",
+                "text": "The rabbits aren't interested in cooperating. Between every cat present, they only manage a single kill. But it's not a failure, and as they pad home, s_c tells the story of the Prince Rabbit with a Thousand Enemies.",
                 "exp": 20,
                 "art": "gen_hunt_rabbit",
                 "can_have_stat": [
@@ -2820,7 +2820,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from listened to cat_to's story of the Prince with a Thousand Enemies after a rabbit hunt."
+                            "cats_from": "cat_from listened to cat_to's story of the Prince Rabbit with a Thousand Enemies after a rabbit hunt."
                         }
                     }
                 ],
@@ -2863,7 +2863,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Isn't <i>every</i> season rabbit season? The unnecessary confusion starts an equally unecessary argument, and no hunting gets down as the patrol talks in circles.",
+                "text": "Isn't <i>every</i> season rabbit season? The unnecessary confusion starts an equally unnecessary argument, and no hunting gets down as the patrol talks in circles.",
                 "exp": 0,
                 "art": "gen_train_argue",
                 "relationships": [
@@ -2887,7 +2887,7 @@
                 "frequency": 4
             },
             {
-                "text": "It doesn't matter how tightly the patrol locks down the entrance to this burrow — the rabbits escape elsewhere. Crafty wabbits.",
+                "text": "It doesn't matter how tightly the patrol locks down the entrance to this burrow — the rabbits escape elsewhere. Crafty rabbits.",
                 "exp": 0,
                 "art": "gen_hunt_burrow",
                 "frequency": 4
