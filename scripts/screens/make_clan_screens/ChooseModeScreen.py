@@ -123,18 +123,20 @@ class ChooseModeScreen(MakeClanScreenBase):
                 self.game_mode = "cruel_season"
                 self.refresh_text_and_buttons()
 
-            # Logic for when to quick-start clan
+            # NEXT STEP
             elif event.ui_element == self.elements["next_step"]:
                 game_setting_set("game_mode", self.game_mode)
                 self.clan_info.game_mode = self.game_mode
+                # Logic for when to quick-start clan
                 if self.elements["random_clan_checkbox"].checked:
                     self.random_quick_start()
                     self.save_clan()
                     self.change_screen(GameScreen.MAKE_CLAN_CLAN_CREATED)
                 else:
-                    # TODO: make sure there's an if else gate for game mode
-                    self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CARDS)
-                    # self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
+                    if self.clan_info.game_mode == "cruel_season":
+                        self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CARDS)
+                    else:
+                        self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
             elif event.ui_element == self.elements["random_clan_checkbox"]:
                 if self.elements["random_clan_checkbox"].checked:
                     self.elements["random_clan_checkbox"].uncheck()
@@ -181,6 +183,7 @@ class ChooseModeScreen(MakeClanScreenBase):
             self.elements["cruel_season_mode_button"].enable()
 
     def random_quick_start(self):
+        # TODO: make this pick cards
         self.clan_info.name = self.random_clan_name()
         self.clan_info.biome = self.random_biome_selection()
         self.clan_info.camp_bg = f"camp{randrange(1, 5)}"
