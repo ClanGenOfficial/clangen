@@ -146,20 +146,23 @@ class MakeClanScreenBase(Screens):
             self.clan_info.update(switch_get_value(Switch.clan_creation_info))
 
         # Buttons that appear on every screen.
-        self.elements["menu_warning"] = pygame_gui.elements.UITextBox(
-            "screens.make_clan.menu_warning",
-            ui_scale(pygame.Rect((25, 25), (600, -1))),
-            object_id=get_text_box_theme("#text_box_22_horizleft"),
-            manager=MANAGER,
-        )
         self.elements["main_menu"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((25, 50), (153, 30))),
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
             "buttons.main_menu",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
             starting_height=1,
         )
+
+        self.elements["menu_warning"] = pygame_gui.elements.UITextBox(
+            "screens.make_clan.menu_warning",
+            ui_scale(pygame.Rect((25, 0), (200, -1))),
+            object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
+            anchors={"top_target": self.elements["main_menu"]},
+            manager=MANAGER,
+        )
+
         self.elements["previous_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((253, 620), (147, 30))),
             "buttons.previous_step",
