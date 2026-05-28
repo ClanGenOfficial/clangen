@@ -13,7 +13,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
-from scripts.game_structure import game
+from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
@@ -249,6 +249,38 @@ class MakeClanScreenBase(Screens):
             clan_names.remove(self.clan_info.name)
 
         return choice(clan_names)
+
+    def random_card(self) -> str:
+        """
+        Returns a random cruel card ID
+        """
+        card = None
+
+        # check conflicts
+        i = 0
+        while (not card or self.card_has_conflicts(card)) and i < 20:
+            card = choice(
+                [
+                    c
+                    for c in list(constants.CRUEL_CARDS_ALL.keys())
+                    if c not in self.clan_info.cruel_cards
+                ]
+            )
+            i += 1
+
+        # `i` is just some extra protection so that we don't infinite while loop
+        # though we really SHOULDN'T end up with cards conflicting that much
+
+        return card
+
+    def card_has_conflicts(self, card_name):
+        for conflict_list in constants.CRUEL_CARDS_CONFLICTS.values():
+            if card_name in conflict_list and set(
+                self.clan_info.cruel_cards
+            ).intersection(set(conflict_list)):
+                return True
+
+        return False
 
     def get_camp_art_path(self, campnum) -> Optional[str]:
         if not campnum:

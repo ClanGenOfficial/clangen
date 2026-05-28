@@ -34,8 +34,6 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         self.card_icon_elements: dict[str, UICruelCardIcon] = {}
 
-        self.chosen_cards: list[str] = []
-
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # PREV/NEXT
@@ -54,25 +52,18 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
             # CHOOSE CARDS
             elif event.ui_element in self.card_elements.values():
-                # limit hit
-                if len(self.chosen_cards) >= get_config(
-                    game.clan, "cruel_season.card_limit"
-                ):
-                    CruelCardLimit()
-                # card conflicts
-                elif self._card_has_conflicts(event.card_name):
-                    CruelCardConflicts(
-                        new_card=event.card_name, chosen_cards=self.chosen_cards
-                    )
-                # otherwise just add the card
-                else:
-                    self.chosen_cards.append(event.card_name)
-                    self.update_cruel_cards(update_chunks=True)
-                    self.add_chosen_card(card_name=event.card_name)
+                card_name = event.card_name
+                self.handle_card_chosen(card_name)
+
+            # RANDOM CARD
+            elif event.ui_element == self.elements["random_card"]:
+                random_card = self.random_card()
+                if random_card:
+                    self.handle_card_chosen(random_card)
 
             # UNDO CHOICES
             elif event.ui_element in self.card_icon_elements.values():
-                self.chosen_cards.remove(event.card_name)
+                self.clan_info.cruel_cards.remove(event.card_name)
                 self.reset_chosen_cards()
                 self.update_cruel_cards(update_chunks=True)
 
@@ -82,16 +73,34 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 self.elements["info_default"].hide()
                 self.update_card_info(event.card_name)
             elif event.ui_element in self.card_icon_elements.values():
+                self.elements["info_default"].hide()
                 self.update_card_info(event.card_name)
 
         super().handle_event(event)
+
+    def handle_card_chosen(self, card_name):
+        # limit hit
+        if len(self.clan_info.cruel_cards) >= get_config(
+            game.clan, "cruel_season.card_limit"
+        ):
+            CruelCardLimit()
+        # card conflicts
+        elif self.card_has_conflicts(card_name):
+            CruelCardConflicts(
+                new_card=card_name, chosen_cards=self.clan_info.cruel_cards
+            )
+        # otherwise just add the card
+        else:
+            self.clan_info.cruel_cards.append(card_name)
+            self.update_cruel_cards(update_chunks=True)
+            self.add_chosen_card(card_name=card_name)
 
     def on_use(self):
         if switch_get_value(Switch.card_conflict_changes):
             card_changes = switch_get_value(Switch.card_conflict_changes)
             for c in card_changes["remove"]:
-                self.chosen_cards.remove(c)
-            self.chosen_cards.append(card_changes["add"])
+                self.clan_info.cruel_cards.remove(c)
+            self.clan_info.cruel_cards.append(card_changes["add"])
             self.update_cruel_cards(update_chunks=True)
             self.reset_chosen_cards()
 
@@ -101,7 +110,6 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
     def screen_switches(self):
         super().screen_switches()
-        self.chosen_cards = self.clan_info.cruel_cards
 
         self.elements["header"] = pygame_gui.elements.UITextBox(
             "screens.make_clan.cruel_card_header",
@@ -193,6 +201,20 @@ class ChooseCardsScreen(MakeClanScreenBase):
             anchors={"top_target": self.elements["card_title"]},
         )
 
+        # RANDOM CARD
+        self.elements["random_card"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((5, -10), (34, 34))),
+            Icon.DICE,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
+            sound_id="dice_roll",
+            anchors={
+                "top_target": self.elements["card_container"],
+                "left_target": self.elements["info_box"],
+            },
+        )
+
         # CHOSEN CARDS
         self.elements["chosen_cards_container"] = UIContainer(
             ui_scale(pygame.Rect((30, -10), (220, 100))),
@@ -232,7 +254,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
                     [
                         x
                         for x in constants.CRUEL_CARDS_ALL.keys()
-                        if x not in self.chosen_cards
+                        if x not in self.clan_info.cruel_cards
                     ],
                     10,
                 )
@@ -320,27 +342,16 @@ class ChooseCardsScreen(MakeClanScreenBase):
             )
 
     def reset_chosen_cards(self):
-        if not self.chosen_cards:
+        if not self.clan_info.cruel_cards:
             self.elements["next_step"].disable()
         for ele in self.card_icon_elements.values():
             ele.kill()
         self.card_icon_elements.clear()
 
-        for card in self.chosen_cards:
+        for card in self.clan_info.cruel_cards:
             self.add_chosen_card(card)
 
-    def _card_has_conflicts(self, card_name):
-        for conflict_list in constants.CRUEL_CARDS_CONFLICTS.values():
-            if card_name in conflict_list and set(self.chosen_cards).intersection(
-                set(conflict_list)
-            ):
-                return True
-
-        return False
-
     def exit_screen(self):
-        self.clan_info.cruel_cards = self.chosen_cards
-
         for ele in self.card_elements.values():
             ele.kill()
         self.card_elements.clear()
