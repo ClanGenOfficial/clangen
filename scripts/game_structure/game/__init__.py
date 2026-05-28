@@ -201,65 +201,6 @@ def load_events():
         pass
 
 
-def get_config_value(*args):
-    """Fetches a value from the config dictionary. Pass each key as a
-    separate argument, in the same order you would access the dictionary.
-    This function will apply war modifiers if the clan is currently at war."""
-
-    global clan
-
-    war_effected = {
-        ("death_related", "leader_death_chance"): (
-            "death_related",
-            "war_death_modifier_leader",
-        ),
-        ("death_related", "classic_death_chance"): (
-            "death_related",
-            "war_death_modifier",
-        ),
-        ("death_related", "expanded_death_chance"): (
-            "death_related",
-            "war_death_modifier",
-        ),
-        ("death_related", "cruel season_death_chance"): (
-            "death_related",
-            "war_death_modifier",
-        ),
-        ("condition_related", "classic_injury_chance"): (
-            "condition_related",
-            "war_injury_modifier",
-        ),
-        ("condition_related", "expanded_injury_chance"): (
-            "condition_related",
-            "war_injury_modifier",
-        ),
-        ("condition_related", "cruel season_injury_chance"): (
-            "condition_related",
-            "war_injury_modifier",
-        ),
-    }
-
-    # Get Value
-    config_value = constants.CONFIG
-    for key in args:
-        config_value = config_value[key]
-
-    # Apply war if needed
-    if clan and clan.war.get("at_war", False) and args in war_effected:
-        rel_change_type = switch_get_value(Switch.war_rel_change_type)
-        # if the war was positively affected this moon, we don't apply war modifier
-        # this way we only see increased death/injury when the war is going badly or is neutral
-        if rel_change_type != "rel_up":
-            # Grabs the modifier
-            mod = constants.CONFIG
-            for key in war_effected[args]:
-                mod = mod[key]
-
-            config_value -= mod
-
-    return config_value
-
-
 def get_free_group_ID(group_type: CatGroup) -> str:
     """
     Find the next free group ID, adds it to the used_group_ID dict, and then returns the ID.
