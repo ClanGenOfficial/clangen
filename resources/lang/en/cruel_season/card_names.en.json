@@ -1,8 +1,16 @@
 {
   "en": {
-    "environment_placeholder": "Environment Placeholder",
-    "danger_placeholder": "Danger Placeholder",
-    "origin_placeholder": "Origin Placeholder",
-    "behavior_placeholder": "Behavior Placeholder"
+    "environment_placeholder0": "Environment Placeholder",
+    "environment_placeholder1": "Environment Placeholder",
+    "environment_placeholder2": "Environment Placeholder",
+    "danger_placeholder0": "Danger Placeholder",
+    "danger_placeholder1": "Danger Placeholder",
+    "danger_placeholder2": "Danger Placeholder",
+    "origin_placeholder0": "Origin Placeholder",
+    "origin_placeholder1": "Origin Placeholder",
+    "origin_placeholder2": "Origin Placeholder",
+    "behavior_placeholder0": "Behavior Placeholder",
+    "behavior_placeholder1": "Behavior Placeholder",
+    "behavior_placeholder2": "Behavior Placeholder"
   }
 }

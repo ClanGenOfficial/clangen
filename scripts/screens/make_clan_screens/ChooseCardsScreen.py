@@ -11,6 +11,7 @@ from scripts.screens.enums import GameScreen
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
 from scripts.ui.elements.card_button import UICruelCard
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
+from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
@@ -60,7 +61,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         )
 
         self.elements["card_container"] = UIContainer(
-            ui_scale(pygame.Rect((10, 50), (590, 500))),
+            ui_scale(pygame.Rect((10, 50), (590, 450))),
             anchors={
                 "left_target": self.elements["page_left"],
             },
@@ -78,6 +79,16 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 "left_target": self.elements["card_container"],
             },
             manager=MANAGER,
+        )
+
+        self.elements["info_box"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((20, -50), (300, 150))),
+            get_box(BoxStyles.FRAME, (300, 150)),
+            manager=MANAGER,
+            anchors={
+                "top_target": self.elements["card_container"],
+                "left_target": self.elements["page_left"],
+            },
         )
 
         self.card_chunks = deque(
