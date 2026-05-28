@@ -1,5 +1,6 @@
 import tomllib
 
+from scripts.game_structure import constants
 from scripts.game_structure.game.switches import switch_get_value, Switch
 
 with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
@@ -13,8 +14,9 @@ def get_config(clan, config_path):
 
     # checking cards first
     for card in clan.cruel_cards:
-        if config_path in card["modifiers"]:
-            config_value = card["modifiers"][config_path]
+        card_info = constants.CRUEL_CARDS_ALL[card]
+        if config_path in card_info["modifiers"]:
+            config_value = card_info["modifiers"][config_path]
 
     # then checking game_config
     if config_value == CONFIG:
