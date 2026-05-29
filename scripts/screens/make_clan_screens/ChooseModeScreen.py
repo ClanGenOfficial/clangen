@@ -120,7 +120,7 @@ class ChooseModeScreen(MakeClanScreenBase):
                 self.game_mode = "expanded"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["cruel_season_mode_button"]:
-                self.game_mode = "cruel season"
+                self.game_mode = "cruel_season"
                 self.refresh_text_and_buttons()
 
             # Logic for when to quick-start clan
@@ -150,7 +150,7 @@ class ChooseModeScreen(MakeClanScreenBase):
         elif self.game_mode == "expanded":
             display_text = "screens.make_clan.expanded_info"
             display_name = "screens.make_clan.expanded_label"
-        elif self.game_mode == "cruel season":
+        elif self.game_mode == "cruel_season":
             display_text = "screens.make_clan.cruel_season_info"
             display_name = "screens.make_clan.cruel_season_label"
         else:
@@ -169,7 +169,7 @@ class ChooseModeScreen(MakeClanScreenBase):
             self.elements["classic_mode_button"].enable()
             self.elements["expanded_mode_button"].disable()
             self.elements["cruel_season_mode_button"].enable()
-        elif self.game_mode == "cruel season":
+        elif self.game_mode == "cruel_season":
             self.elements["classic_mode_button"].enable()
             self.elements["expanded_mode_button"].enable()
             self.elements["cruel_season_mode_button"].disable()
