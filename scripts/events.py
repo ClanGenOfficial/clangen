@@ -1271,6 +1271,7 @@ def perform_ceremonies(cat):
         and cat.status.rank == CatRank.DEPUTY
     ):
         game.clan.leader_lives = 9
+        cat.rank_change(CatRank.LEADER)
         ceremony(cat, CatRank.LEADER)
 
     # OTHER CEREMONIES ---------------------------------------
