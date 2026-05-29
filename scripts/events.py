@@ -1273,6 +1273,7 @@ def perform_ceremonies(cat):
         game.clan.leader_lives = 9
         cat.rank_change(CatRank.LEADER)
         ceremony(cat, CatRank.LEADER)
+        game.clan.deputy = None
 
     # OTHER CEREMONIES ---------------------------------------
 
