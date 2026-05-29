@@ -1254,7 +1254,6 @@ def perform_ceremonies(cat):
         if cat.status.rank == CatRank.MEDICINE_CAT and game.clan.medicine_cat is None:
             game.clan.medicine_cat = cat
 
-    # TODO: hardcoded events, not good, consider how to convert to ShortEvent
     # PROMOTE DEPUTY TO LEADER, IF NEEDED -----------------------
     if game.clan.leader:
         leader_dead = game.clan.leader.dead
@@ -1269,8 +1268,8 @@ def perform_ceremonies(cat):
         game.clan.deputy is not None
         and game.clan.deputy.status.alive_in_player_clan
         and (leader_dead or leader_outside)
+        and cat.status.rank == CatRank.DEPUTY
     ):
-        game.clan.leader = game.clan.deputy
         game.clan.leader_lives = 9
         ceremony(cat, CatRank.LEADER)
 
