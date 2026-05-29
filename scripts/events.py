@@ -1275,7 +1275,7 @@ def perform_ceremonies(cat):
         ceremony(cat, CatRank.LEADER)
         game.clan.deputy = None
 
-    # OTHER CEREMONIES ---------------------------------------
+        # OTHER CEREMONIES ---------------------------------------
 
         # retiring to elder den
         if (
