@@ -267,7 +267,7 @@
                 "frequency": 4,
                 "stat_skill": ["-CLIMBER,0"],
                 "stat_trait": ["confident", "shameless", "arrogant"],
-                "can_have_stat": ["r_c"],
+                "can_have_stat": ["not_pl"],
                 "relationships": [
                     {
                         "cats_from": ["patrol"],
