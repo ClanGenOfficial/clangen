@@ -1504,8 +1504,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "p_l died from the bite of a venomous snake.",
-                    "lead_death": "died from the bite of a venomous snake.",
+                    "death": "p_l died from the bite of a venomous snake.",
                     "scar": "p_l was scarred by a snake bite."
                 },
                 "art": "gen_scared_cat_warrior"
