@@ -1337,7 +1337,7 @@
         },
         "frequency": 2,
         "chance_of_success": 40,
-        "intro_text": "While patrolling near {POI/tag/twolegs:present}, the patrol stumbles across an odd stack of Twoleg wood. The trunk’s been cut into long pieces and it’s confusingly smooth.",
+        "intro_text": "While patrolling near {POI/tag/Twolegs:present}, the patrol stumbles across an odd stack of Twoleg wood. The trunk’s been cut into long pieces and it’s confusingly smooth.",
         "decline_text": "They don’t have time for this. The patrol leaves the stack behind and continues on their way.",
         "success_outcomes": [
             {
