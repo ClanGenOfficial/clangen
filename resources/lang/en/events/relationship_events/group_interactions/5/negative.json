@@ -583,7 +583,7 @@
   "interactions": [
     "m_c eats as ravenously as a wolverine and by the time {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} done, r_c1, r_c2, r_c3, and r_c4 barely have the stomach to finish their own meals.",
     "While m_c gorges on {PRONOUN/m_c/poss} piece of fresh kill, r_c1, r_c2, r_c3, and r_c4 find that eating is suddenly less appealing.",
-    "Spittle and flecks of bone fly while m_c gobbles down prey, reminding r_c1, rc_2, r_c3, and r_c4 to seek out better mealtime companionship next time."
+    "Spittle and flecks of bone fly while m_c gobbles down prey, reminding r_c1, r_c2, r_c3, and r_c4 to seek out better mealtime companionship next time."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
