@@ -752,7 +752,7 @@
             "-greenleaf"
         ],
         "frequency": 1,
-        "event_text": "m_c was playing too close to the water. {PRONOUN/m_c/poss/CAP} screams are swallowed by the ocean as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} under and does not resurface.",
+        "event_text": "While playing close to the water, m_c is swept away. {PRONOUN/m_c/poss/CAP} wails are swallowed by the ocean as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} under and does not resurface.",
         "m_c": {
             "age": [
                 "kitten"

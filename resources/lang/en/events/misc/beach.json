@@ -178,7 +178,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c took the time to teach r_c about the dangerous things in the sea."
+                    "cats_from": "cat_from took the time to teach cat_to about the dangerous things in the sea."
                 }
             }
         ]
@@ -214,7 +214,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c took the time to teach r_c about the dangerous things in the sea."
+                    "cats_from": "cat_from took the time to teach cat_to about the dangerous things in the sea."
                 }
             }
         ]
@@ -281,7 +281,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from spent time looking for treasures on the beach with cats_to."
+                    "cats_from": "cat_from spent time looking for treasures on the beach with cat_to."
                 }
             }
         ]
@@ -320,7 +320,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from spent time looking for treasures on the beach with cats_to."
+                    "cats_from": "cat_from spent time looking for treasures on the beach with cat_to."
                 }
             }
         ]
