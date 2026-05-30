@@ -44,6 +44,7 @@ Allowing relationships to go negative allows the developers to sort of squash so
 "no_longer_neutral" example:
 
 ```json
+[
     {
         "cat_from_id": "209",
         "cat_to_id": "175",
@@ -59,7 +60,8 @@ Allowing relationships to go negative allows the developers to sort of squash so
             "like",
             "comfort"
         ]
-    },
+    }
+]
 ```
 
 "like" and "comfort" have surpassed the neutral pool, so therefore "no_longer_neutral" triggered and added those values to its list.

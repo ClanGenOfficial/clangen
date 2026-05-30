@@ -585,3 +585,5 @@ Reminder that you have to make the victim deceased through the clan_cats and die
 `"text"`: The text that would be shown in the history of the victim. This will usually match the "died_by" text.
 
 `"moon": 7,`: The clan moon age in which the cat was murdered.
+
+---

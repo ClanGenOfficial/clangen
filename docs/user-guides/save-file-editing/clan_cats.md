@@ -369,6 +369,9 @@ This is the length of the pelt. "long", "medium", and "short" apply here. Long-h
 
 These are the new names for your poses. You'll add in a choice instead of a number. The file [pose_sprite_data](https://github.com/ClanGenOfficial/ClanGen/blob/development/sprites/dicts/pose_sprite_data.json) in your sprites folder > dict folder lists the poses and their corresponding name. 
 
+!!! tip
+     The poses are stricter now for save conversion purposes, so you can't use poses outside of their intended grouping.
+
 `"eye_colour": "GREEN",`
 
 This is where the eye color goes. This will always be "UPPERCASE" and this section of the code cannot be `null`

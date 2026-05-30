@@ -53,7 +53,8 @@ For example, "one bad eye" is a permanent condition. You cannot use the template
             "risks": [],
             "complication": null,
             "cause_permanent": [],
-            "event_triggered": false
+            "event_triggered": false,
+            "potential_scars": []
         }
     }
 ```
@@ -125,6 +126,7 @@ If you want to add more than one risk to the condition, place a comma after the 
 | "complication": null,  | Used in the situation where the condition is infected or festering. Add the condition "an infected wound" or "a festering wound" into illnesses, then add the corresponding "infected"/"festering" to replace null,  |
 | "cause_permanent": [],  | Possible given permanent conditions when an injury heals. Looks like "cause_permanent": ["lost a leg"],  |
 |  "event_triggered": false, | Should be left as false if save file editing. |
+|  "potential_scars": [] | A list of potential scars the cat can get from this condition once it heals. "potential_scars": ["HALFTAIL","NOTAIL"]. |
 
 ### Explaining Permanent Conditions
 
@@ -604,7 +606,8 @@ If you have to also add the condition type "injuries": {}:
             "risks": [],
             "complication": null,
             "cause_permanent": [],
-            "event_triggered": false
+            "event_triggered": false,
+            "potential_scars": []
         }
     }
 ```
@@ -620,7 +623,8 @@ If you already have an "injuries" section and only need to add the condition:
             "risks": [],
             "complication": null,
             "cause_permanent": [],
-            "event_triggered": false
+            "event_triggered": false,
+            "potential_scars": []
         }
 ```
 
@@ -740,7 +744,8 @@ Before editing:
             ],
             "complication": null,
             "cause_permanent": [],
-            "event_triggered": false
+            "event_triggered": false,
+            "potential_scars": []
         },
         "pregnant": {
             "severity": "major",
@@ -751,7 +756,8 @@ Before editing:
             "risks": [],
             "complication": null,
             "cause_permanent": [],
-            "event_triggered": false
+            "event_triggered": false,
+            "potential_scars": []
         }
     },
     
@@ -776,7 +782,8 @@ After removing pregnancy from the injuries condition type:
             ],
             "complication": null,
             "cause_permanent": [],
-            "event_triggered": false
+            "event_triggered": false,
+            "potential_scars": []
         }
     }
 }
@@ -797,7 +804,8 @@ Before editing:
             "risks": [],
             "complication": null,
             "cause_permanent": [],
-            "event_triggered": false
+            "event_triggered": false,
+            "potential_scars": []
         }
     },
     "illnesses": {

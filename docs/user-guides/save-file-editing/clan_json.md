@@ -318,3 +318,23 @@ This is the table showing where the second temperament options stand on how "sta
 !!! to-do
      explain further on how temperaments are calculated in the code, and how to edit the cats to guarantee specific temperaments
 
+afterlife temperaments: calculated based off the guides facets and high ranked cats (leader, deputy, medicine cats)
+
+Pull the leader's facets. Multiply the individual facet numbers by 3.
+
+"3,1,0,5" > "9,3,0,15"
+
+Pull the deputy's facets. Multiply the individual facet numbers by 2.
+
+"10,4,2,9" > "20,8,4,18"
+
+Calculate the median of medicine cats' individual facet numbers. 
+Calculate the median of all clan_cats individual facet numbers.
+
+Then find the mean of all the individual facet humers you go from the above instructions
+
+You should then have 4 numbers. Round them to the nearest whole number (7.3 > 7)
+
+socialbity and aggression are a pair. 
+
+Stability and unlawfullness are a oair
