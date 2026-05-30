@@ -142,5 +142,187 @@
                 "senior"
             ]
         }
+    },
+    {
+        "event_id": "bch_misc_any_oceandanger1",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
+        "m_c": {
+            "relationship_status": [
+                "parent/child"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "kitten"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from took the time to teach cat_to about the dangerous things in the sea."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_any_oceandanger2",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
+        "m_c": {
+            "relationship_status": [
+                "mentor/app"
+            ]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from took the time to teach cat_to about the dangerous things in the sea."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_any_kitseaglass",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c paws at the pretty, glittering seaglass tangled in the seaweed that hangs over the nursery entrance.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_any_elderbarnacles",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "frequency": 3,
+        "event_text": "m_c peers over the edge of the rock, past the barnacles exposed by the low tide, searching for something in {PRONOUN/m_c/poss} reflection in the sea below.",
+        "m_c": {
+            "status": [
+                "elder"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_any_beachcombing1",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN/m_c/subject/CAP} {VERB/m_c/smile/smiles} at seeing {PRONOUN/m_c/poss} kit happy.",
+        "m_c": {
+            "relationship_status": [
+                "parent/child"
+            ]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from spent time looking for treasures on the beach with cat_to."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_any_beachcombing2",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN/m_c/subject/CAP} {VERB/m_c/blush/blushes} at r_c's smile.",
+        "m_c": {
+            "relationship_status": [
+                "fancies"
+            ]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "like",
+                    "romance"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from spent time looking for treasures on the beach with cat_to."
+                }
+            }
+        ]
     }
 ]

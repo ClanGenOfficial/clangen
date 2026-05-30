@@ -55,11 +55,11 @@ Keep in mind that a display name should either be a proper noun, or begin with "
 
 Points of Interest are distributed into three categories. Each Territory has randomly generated Points of Interest in each category.
 
-|  Category |                                                                                            Description                                                                                           |
+| Category  |                                                                                            Description                                                                                           |
 |:---------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | gathering | This is the Clan's Gathering place, where they interface with other Clans. One exists per territory.                                                                                             |
 | moonplace | This is the Clan's moon place, where medicine cats meet once a moon. One exists per territory. It typically features some connection to the moon, stars, or night sky. One exists per territory. |
-| territory | This is a feature within the Clan's territory that is notable due to either its appearance or opportunities around it. Three can be discovered per territory.                                    |
+|  terrain  | This is a feature within the Clan's territory that is notable due to either its appearance or opportunities around it. Three can be discovered per territory.                                    |
 
 ### Tags 
 Points of Interests can use many different tags that denote circumstances around them to help specify how it can be used and what events/patrols it would fit with.
