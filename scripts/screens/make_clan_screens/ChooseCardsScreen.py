@@ -124,7 +124,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         # CARD DISPLAY
         self.elements["page_left"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((60, 175), (34, 34))),
+            ui_scale(pygame.Rect((65, 175), (34, 34))),
             Icon.ARROW_LEFT,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
@@ -134,14 +134,14 @@ class ChooseCardsScreen(MakeClanScreenBase):
         )
 
         self.elements["card_container"] = UIContainer(
-            ui_scale(pygame.Rect((10, 50), (590, 450))),
+            ui_scale(pygame.Rect((12, 50), (583, 450))),
             anchors={
                 "left_target": self.elements["page_left"],
             },
             manager=MANAGER,
         )
         self.elements["card_backdrop"] = UIModifiedImage(
-            ui_scale(pygame.Rect((5, 120), (580, 256))),
+            ui_scale(pygame.Rect((0, 120), (580, 256))),
             pygame.transform.scale(
                 image_cache.load_image(
                     f"resources/images/cruel_cards/card_backdrop_{'dark' if game_setting_get('dark mode') else 'light'}.png"
@@ -276,7 +276,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
                         for x in constants.CRUEL_CARDS_ALL.keys()
                         if x not in self.clan_info.cruel_cards
                     ],
-                    10,
+                    12,
                 )
             )
         chunk = self.card_chunks[0]
@@ -292,7 +292,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 (x_pos, 10 + y_mod),
                 f"resources/images/cruel_cards/{info['card_art']}",
                 name=name,
-                card_interval=40,
+                card_interval=32,
                 last_in_line=name == chunk[-1],
                 group_layer_count=len(chunk),
                 starting_height=layer_num,
@@ -300,7 +300,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 anchors={"top_target": self.elements["header"]},
                 manager=MANAGER,
             )
-            x_pos += 40  # move x_pos for next card
+            x_pos += 32  # move x_pos for next card
             layer_num += 1  # increase layer num for next card
 
     def update_card_info(self, card_name: str):
