@@ -150,7 +150,7 @@
         "frequency": 3,
         "chance_of_success": 60,
         "pl_skill_constraint": [
-            "STORY,1"
+            "HUNTER,1"
         ],
         "intro_text": "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of a unique bird of c_n's territory — one fondly recalled from kithood.",
         "decline_text": "p_l gets too distracted by the lovely birdsong to continue.",
@@ -198,7 +198,7 @@
                 ]
             },
             {
-                "text": "Gray-cheeked thrushes, as one might guess, are taupe-and-white birds with grayer cheeks, whose breasts are spotted with dark brown. From the treetops, they belt a lilting song. They nest in low down branch crotches of trees such as willows, alders, spruces, birches, or firs.",
+                "text": "Gray-cheeked thrushes, as one might guess, are taupe-and-white birds with grayer cheeks, whose breasts are spotted with dark brown. From the treetops, they belt a lilting song. They nest in low down branch forks of trees such as willows, alders, spruces, birches, or firs.",
                 "exp": 30,
                 "frequency": 4,
                 "relationships": [
