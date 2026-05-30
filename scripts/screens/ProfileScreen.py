@@ -1050,7 +1050,7 @@ class ProfileScreen(Screens):
 
         # NUTRITION INFO (if the game is in the correct mode)
         if (
-            game.clan.game_mode in ["expanded", "cruel season"]
+            game.clan.game_mode in ["expanded", "cruel_season"]
             and the_cat.is_alive()
             and FRESHKILL_ACTIVE
         ):
