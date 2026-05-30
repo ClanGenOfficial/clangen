@@ -988,7 +988,7 @@
   },
   {
     "interaction_type": "befriend",
-    "event_text": "During the Gathering, m_c proposes a friendship between o_c_n and c_n, describing a beautiful future for their Clans where no cat goes hungry and half-Clan families might thrive. o_c_n's leader replies that though o_c_n may be an easy-going Clan, even they know life isn't all mice and moonlight'",
+    "event_text": "During the Gathering, m_c proposes a friendship between o_c_n and c_n, describing a beautiful future for their Clans where no cat goes hungry and half-Clan families might thrive. o_c_n's leader replies that though o_c_n may be an easy-going Clan, even they know life isn't all mice and moonlight.",
     "rel_change": -1,
     "m_c": { },
     "player_clan_temper": ["any"],
@@ -1202,7 +1202,7 @@
   },
   {
     "interaction_type": "appease",
-    "event_text": "During the Gathering, m_c awkwardly compliments o_c_n's strength in a recent border skirmish between their Clans. o_c_n's leader unsheathes their claws and promises {PRONOUN/m_c/subject} {VERB/m_c/has/have}n't seen anything yet.",
+    "event_text": "During the Gathering, m_c awkwardly compliments o_c_n's strength in a recent border skirmish between their Clans. o_c_n's leader unsheathes their claws and promises {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't seen anything yet.",
     "rel_change": -1,
     "m_c": {},
     "player_clan_temper": ["any"],
