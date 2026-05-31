@@ -6950,6 +6950,9 @@
         "season": [
             "any"
         ],
+        "sub_type": [
+            "war"
+        ],
         "frequency": 2,
         "event_text": "m_c is conversing with r_c about ways to potentially end this war — though not without bloodshed.",
         "m_c": {
