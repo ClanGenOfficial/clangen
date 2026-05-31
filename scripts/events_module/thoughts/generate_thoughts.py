@@ -10,6 +10,7 @@ from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
 )
+from scripts.events_module.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.events_module.event_filters import filter_relationship_type
@@ -26,6 +27,12 @@ random_cat_constraints = [
     "random_living_status",
     "random_outside_status",
 ]
+
+loaded_thoughts = {}
+
+
+def get_resource_directory(fallback=False):
+    return f"resources/lang/{i18n.config.get('locale') if not fallback else i18n.config.get('fallback')}/events/"
 
 
 def get_other_cat_for_thought(
@@ -104,21 +111,21 @@ def _load_group(thought_type: CatThought, main_cat: "Cat", other_cat: "Cat"):
 
     # GUIDES
     if thought_type == CatThought.IS_GUIDE:
-        thoughts = load_lang_resource(f"{start_path}/{main_cat.status.group}.json")
+        thoughts = _load_file(f"{start_path}/{main_cat.status.group}.json")
 
     # DEAD CATS
     elif thought_type == CatThought.WHILE_DEAD:
         new_path = f"{start_path}/{main_cat.status.group}"
-        thoughts = load_lang_resource(f"{new_path}/{rank}.json")
-        thoughts.extend(_load_exiled_and_former(main_cat, new_path))
-        thoughts.extend(_load_general(main_cat, new_path))
+        thoughts = _load_file(f"{new_path}/{rank}.json")
+        thoughts.extend(_get_exiled_and_former(main_cat, new_path))
+        thoughts.extend(_get_general(main_cat, new_path))
 
     # LIVING CATS
     elif thought_type == CatThought.WHILE_ALIVE:
         if main_cat.age == CatAge.NEWBORN:  # accounting for non-clan newborns
-            thoughts = load_lang_resource(f"{new_path}/newborn.json")
+            thoughts = _load_file(f"{new_path}/newborn.json")
         else:
-            thoughts = load_lang_resource(f"{new_path}/{rank}.json")
+            thoughts = _load_file(f"{new_path}/{rank}.json")
 
         # make sure lost thoughts are included
         if main_cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
@@ -126,18 +133,18 @@ def _load_group(thought_type: CatThought, main_cat: "Cat", other_cat: "Cat"):
             if prior_rank:
                 prior_rank = prior_rank.replace(" ", "_")
                 thoughts.extend(
-                    load_lang_resource(f"{start_path}/while_lost/{prior_rank}.json")
+                    _load_file(f"{start_path}/while_lost/{prior_rank}.json")
                 )
 
         else:
-            thoughts.extend(_load_general(main_cat, new_path))
-            thoughts.extend(_load_exiled_and_former(main_cat, new_path))
-            thoughts.extend(_load_clancat(main_cat, new_path))
+            thoughts.extend(_get_general(main_cat, new_path))
+            thoughts.extend(_get_exiled_and_former(main_cat, new_path))
+            thoughts.extend(_get_clancat(main_cat, new_path))
 
     # CATS WHO JUST CHANGED RANK
     elif thought_type == CatThought.ON_RANK_CHANGE:
-        thoughts = load_lang_resource(f"{new_path}/{rank}.json")
-        thoughts.extend(_load_general(main_cat, new_path))
+        thoughts = _load_file(f"{new_path}/{rank}.json")
+        thoughts.extend(_get_general(main_cat, new_path))
 
     # CATS WHO JUST DIED
     elif thought_type == CatThought.ON_DEATH:
@@ -150,25 +157,25 @@ def _load_group(thought_type: CatThought, main_cat: "Cat", other_cat: "Cat"):
             new_path = f"{start_path}/{main_cat.status.group}"
 
         if not is_leader:
-            thoughts = load_lang_resource(f"{new_path}/general.json")
+            thoughts = _load_file(f"{new_path}/general.json")
         else:
             # leader dies fully
             if leader_death:
-                thoughts = load_lang_resource(f"{new_path}/leader_death.json")
+                thoughts = _load_file(f"{new_path}/leader_death.json")
             # leader only loses a life
             else:
-                thoughts = load_lang_resource(f"{new_path}/leader_life.json")
+                thoughts = _load_file(f"{new_path}/leader_life.json")
 
     # PARENTAL REACTION TO BIRTH
     elif thought_type == CatThought.ON_BIRTH:
-        thoughts = load_lang_resource(f"{new_path}/parent.json")
+        thoughts = _load_file(f"{new_path}/parent.json")
 
     # ON NEW CAT ENCOUNTER
     elif thought_type == CatThought.ON_MEETING:
         if main_cat.status.is_clancat:
-            thoughts = load_lang_resource(f"{new_path}/clancat.json")
+            thoughts = _load_file(f"{new_path}/clancat.json")
         else:
-            thoughts = load_lang_resource(f"{new_path}/outsider.json")
+            thoughts = _load_file(f"{new_path}/outsider.json")
 
     # thought types with just a general path
     elif thought_type in (
@@ -178,11 +185,11 @@ def _load_group(thought_type: CatThought, main_cat: "Cat", other_cat: "Cat"):
         CatThought.ON_GRIEF_TOWARD_BODY,
         CatThought.ON_GRIEF_NO_BODY,
     ):
-        thoughts = load_lang_resource(f"{new_path}/general.json")
+        thoughts = _load_file(f"{new_path}/general.json")
 
     # ON CHANGING AFTERLIFE
     elif thought_type == CatThought.ON_AFTERLIFE_CHANGE:
-        thoughts = load_lang_resource(f"{new_path}/{main_cat.status.group}.json")
+        thoughts = _load_file(f"{new_path}/{main_cat.status.group}.json")
         pass
 
     final_thoughts = _filter_list(thoughts, main_cat, other_cat)
@@ -190,42 +197,64 @@ def _load_group(thought_type: CatThought, main_cat: "Cat", other_cat: "Cat"):
     return final_thoughts
 
 
-def _load_exiled_and_former(main_cat: "Cat", path) -> list:
+def _get_exiled_and_former(main_cat: "Cat", path) -> list:
     """
     Checks if cat needs exiled or former clancat thoughts and returns loaded resources
     """
     thoughts = []
     # make sure exiled thoughts are included
     if main_cat.status.is_exiled(CatGroup.PLAYER_CLAN):
-        thoughts.extend(load_lang_resource(f"{path}/exiled.json"))
+        thoughts.extend(_load_file(f"{path}/exiled.json"))
 
     # former clancat thoughts
     if main_cat.status.is_former_clancat:
-        thoughts.extend(load_lang_resource(f"{path}/former_clancat.json"))
+        thoughts.extend(_load_file(f"{path}/former_clancat.json"))
 
     return thoughts
 
 
-def _load_general(main_cat: "Cat", path) -> list:
+def _get_general(main_cat: "Cat", path) -> list:
     """
     Returns general thoughts if the cat is not a newborn
     """
     # newborns don't receive general thoughts
     if main_cat.age != CatAge.NEWBORN:
-        return load_lang_resource(f"{path}/general.json")
+        return _load_file(f"{path}/general.json")
 
     return []
 
 
-def _load_clancat(main_cat: "Cat", path) -> list:
+def _get_clancat(main_cat: "Cat", path) -> list:
     """
     Returns clancat thoughts if the cat is a clancat
     """
     # newborns don't receive general thoughts
     if main_cat.status.is_clancat and main_cat.age != CatAge.NEWBORN:
-        return load_lang_resource(f"{path}/clancat.json")
+        return _load_file(f"{path}/clancat.json")
 
     return []
+
+
+def _load_file(path) -> list[TextPoolEvent]:
+    """
+    Loads and returns the thoughts file
+    """
+    # check if we've already loaded these thoughts and then load them if need be
+    if path not in loaded_thoughts.keys():
+        for t in load_lang_resource(path):
+            loaded_thoughts[path].append(
+                TextPoolEvent(
+                    id=t.get("id"),
+                    location=t.get("location"),
+                    season=t.get("season"),
+                    tags=t.get("tags"),
+                    strings=t.get("strings"),
+                    involved_cats=t.get("involved_cats"),
+                    relationship_constraint=t.get("relationship_constraint"),
+                )
+            )
+
+    return loaded_thoughts[path]
 
 
 def new_thought(thought_type: CatThought, main_cat: "Cat", other_cat: "Cat"):
@@ -264,18 +293,18 @@ def new_death_thought(
     THOUGHTS: []
     try:
         if main_cat.status.is_leader and lives_left > 0:
-            loaded_thoughts = load_lang_resource(
+            possible_thoughts = _load_file(
                 f"thoughts/on_death/{afterlife}/leader_life.json"
             )
         elif main_cat.status.is_leader and lives_left == 0:
-            loaded_thoughts = load_lang_resource(
+            possible_thoughts = _load_file(
                 f"thoughts/on_death/{afterlife}/leader_death.json"
             )
         else:
-            loaded_thoughts = load_lang_resource(
+            possible_thoughts = _load_file(
                 f"thoughts/on_death/{afterlife}/general.json"
             )
-        thought_group = choice(_filter_list(loaded_thoughts, main_cat, other_cat))
+        thought_group = choice(_filter_list(possible_thoughts, main_cat, other_cat))
         chosen_thought = choice(thought_group["thoughts"])
         return chosen_thought
 
