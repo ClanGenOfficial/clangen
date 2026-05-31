@@ -1027,9 +1027,24 @@ class Pregnancy_Events:
                 if second_kitten.ID == kitten.ID:
                     continue
                 start_relation = Relationship(kitten, second_kitten, False, True)
-                start_relation.like += 20 + y
-                start_relation.comfort += 10 + y
-                start_relation.trust += 10 + y
+                start_relation.romance += (
+                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["romance"]
+                    + y
+                )
+                start_relation.like += (
+                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["like"] + y
+                )
+                start_relation.respect += (
+                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["respect"]
+                    + y
+                )
+                start_relation.comfort += (
+                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["comfort"]
+                    + y
+                )
+                start_relation.trust += (
+                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["trust"] + y
+                )
                 kitten.relationships[second_kitten.ID] = start_relation
 
         # check if the possible adoptive cat is not already in the family tree and

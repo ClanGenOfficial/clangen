@@ -1,10 +1,13 @@
 from typing import Optional
 
+import scripts.game_structure.screen_settings
+from pygame import display
 from pygame_gui.core import UIElement
-
 from scripts.game_input import Action
-from scripts.game_structure.game import switch_get_value, Switch
+from scripts.game_structure.game import Switch, switch_get_value
 from scripts.ui.scale import ui_scale_value
+
+Y_VARIANCE = 25
 
 
 def add_to_map(
@@ -30,7 +33,11 @@ def add_to_map(
             if element in row:
                 already_present = True  # don't add an element that's already there
                 break
-            current_rows_by_y_pos[row[0].get_abs_rect().y] = row
+            for item in row:
+                if not item:
+                    continue
+                current_rows_by_y_pos[item.get_abs_rect().y] = row
+                break
 
         if already_present:
             continue
@@ -42,12 +49,12 @@ def add_to_map(
         new_row = True
         target_row = None
         for row in current_rows_by_y_pos:
-            # we allow a 30 px range so that elements which are slightly different y coordinates
+            # we allow a 50 px range so that elements which are slightly different y coordinates
             # but still visibly feel side-by-side will be treated as part of the same row
             if (
-                (row - ui_scale_value(15))
+                (row - ui_scale_value(Y_VARIANCE))
                 <= element.get_abs_rect().y
-                <= row + ui_scale_value(15)
+                <= row + ui_scale_value(Y_VARIANCE)
             ):
                 new_row = False
                 target_row = row
@@ -60,11 +67,12 @@ def add_to_map(
             row_positions.sort()
             # insert it into the actual map according to how we've sorted
             new_row_index = row_positions.index(position.y)
-            current_map.insert(new_row_index, [element])
+            current_map.insert(new_row_index, adjust_row([], element))
         # otherwise add the element to an existing row
         else:
-            current_rows_by_y_pos[target_row].append(element)
-            current_rows_by_y_pos[target_row].sort(key=lambda x: x.get_abs_rect().x)
+            current_rows_by_y_pos[target_row] = adjust_row(
+                current_rows_by_y_pos[target_row], element
+            )
 
     return current_map
 
@@ -91,12 +99,40 @@ def remove_from_map(
             continue
 
         # then remove it
-        current_map[element_row].remove(element)
+        index = current_map[element_row].index(element)
+        current_map[element_row][index] = None
+
         # check if it empties a row, if it does, remove the row
         if not current_map[element_row]:
             current_map.pop(element_row)
 
     return current_map
+
+
+def adjust_row(
+    row: list[Optional[UIElement]], element: UIElement
+) -> list[Optional[UIElement]]:
+    if not row:  # if row is empty
+        row = [
+            None
+            for x in range(
+                int(
+                    ui_scale_value(display.get_surface().get_width())
+                    / ui_scale_value(10)
+                )
+                + 1
+            )
+        ]
+
+    index = int(element.get_abs_rect().x / ui_scale_value(10))
+
+    # Clamping to suitable values to avoid going out of bounds
+    index = max(0, min(index, len(row) - 1))
+
+    row.insert(index, element)
+    row.pop(index + 1)
+
+    return row
 
 
 def find_next_focus(
@@ -158,6 +194,10 @@ def find_next_focus(
             if change_to_higher_row:
                 new_col = len(current_map[new_row]) - 1
                 change_to_higher_row = False
+            else:
+                new_col = prior_col
+
+            prior_row = new_row
 
     # going DOWN!
     elif direction == Action.DOWN or change_to_lower_row:
@@ -173,6 +213,10 @@ def find_next_focus(
             # if we're changing bc of a wrap, we want to predetermine the column
             if change_to_lower_row:
                 new_col = 0
+            else:
+                new_col = prior_col
+
+            prior_row = new_row
 
     # if no new row, then the new row is our old one!
     if new_row is None:  # has to be `is None` so that it doesn't pick up 0 indexes
@@ -202,14 +246,18 @@ def find_next_focus(
             prior_col = new_col
 
     # if neither, then we keep our column the same IF POSSIBLE
-    elif new_col is None:
-        while _element_is_not_valid(current_map, new_row, new_col):
-            if len(current_map[new_row]) - 1 >= prior_col:
-                new_col = prior_col
-            else:
-                new_col = len(current_map[new_row]) - 1
+    else:
+        if _element_is_not_valid(current_map, new_row, new_col):
+            while _element_is_not_valid(current_map, new_row, new_col):
+                # find the new col, wrapping if necessary
+                if prior_col + 1 > len(current_map[new_row]) - 1:
+                    new_col = 0
+                else:
+                    new_col = prior_col + 1
 
-            prior_col = new_col
+                prior_col = new_col
+        else:
+            new_col = prior_col
 
     new_element = current_map[new_row][new_col]
 
@@ -247,6 +295,9 @@ def _valid_row(current_map, disallowed_element, possible_row) -> list:
     if disallowed_element in row_without_cur_element:
         row_without_cur_element.remove(disallowed_element)
     for ele in row_without_cur_element.copy():
+        if ele is None:
+            row_without_cur_element.remove(ele)
+            continue
         # remove any disabled or hidden ones, as we don't want to focus those
         if not ele.is_enabled:
             row_without_cur_element.remove(ele)
@@ -258,7 +309,12 @@ def _valid_row(current_map, disallowed_element, possible_row) -> list:
 
 def _element_is_not_valid(current_map, new_row, new_col):
     # needs to be `is None` to avoid picking up 0 index
-    if new_col is None:
+    if new_col is None or current_map[new_row][new_col] is None:
+        return True
+
+    # since new_col is an index, we need to - 1 the len to make them "match"
+    # what we're trying to do here is check if the new_col will be a valid index of the new_row
+    if len(current_map[new_row]) - 1 < new_col:
         return True
 
     if (

@@ -32,7 +32,6 @@ from scripts.ui.windows.update_available import UpdateAvailableWindow
 from scripts.ui.windows.changelog import ChangelogWindow
 from scripts.housekeeping.datadir import open_data_dir, open_url
 from ..housekeeping.quit_game import quit_game
-from ..ui.focus_matrix import _set_focus
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
@@ -76,7 +75,7 @@ class StartScreen(Screens):
             screens = {
                 self.elements["continue"]: GameScreen.CAMP,
                 self.elements["switch_clan"]: GameScreen.SWITCH_CLAN,
-                self.elements["new_clan"]: GameScreen.MAKE_CLAN,
+                self.elements["new_clan"]: GameScreen.MAKE_CLAN_CHOOSE_MODE,
                 self.elements["settings"]: GameScreen.SETTINGS,
             }
             if element in screens and not self.error_open:
@@ -407,11 +406,13 @@ class StartScreen(Screens):
             self.elements["continue"].enable()
         else:
             self.elements["continue"].disable()
+            self.current_focus = self.elements["switch_clan"]
 
         if len(switch_get_value(Switch.clan_list)) > 1:
             self.elements["switch_clan"].enable()
         else:
             self.elements["switch_clan"].disable()
+            self.current_focus = self.elements["new_clan"]
 
         self.reload_errors()
 

@@ -143,7 +143,7 @@ class Clan:
         self.other_clan_IDs = []
 
         self.starting_members = starting_members
-        if game_mode in ("expanded", "cruel season"):
+        if game_mode in ("expanded", "cruel_season"):
             self.freshkill_pile = FreshkillPile()
         else:
             self.freshkill_pile = None
@@ -492,7 +492,7 @@ class Clan:
         self.save_pregnancy(game.clan)
 
         save_clan_settings()
-        if game.clan.game_mode in ("expanded", "cruel season"):
+        if game.clan.game_mode in ("expanded", "cruel_season"):
             self.save_freshkill_pile(game.clan)
 
         safe_save(f"{get_save_dir()}/{self.name}/clan.json", clan_data)

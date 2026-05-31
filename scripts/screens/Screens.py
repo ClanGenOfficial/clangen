@@ -231,7 +231,8 @@ class Screens:
         # and are turned off when the mouse is clicked
         if event.type in (pygame.MOUSEBUTTONDOWN, pygame_gui.UI_BUTTON_ON_HOVERED):
             switch_set_value(Switch.keybinds_live, False)
-            self.current_focus.unfocus()
+            if self.current_focus:
+                self.current_focus.unfocus()
 
         elif event.type == INPUT_ACTION_PRESSED:
             switch_set_value(Switch.keybinds_live, True)
@@ -239,7 +240,7 @@ class Screens:
         # keybind handling
         if switch_get_value(Switch.keybinds_live):
             # if we weren't focused at all, then we just start with whatever the old current was
-            if not self.current_focus.is_focused:
+            if self.current_focus and not self.current_focus.is_focused:
                 self.set_focus(self.current_focus)
 
             # handling changing the focus via keyboard and controller
@@ -334,13 +335,11 @@ class Screens:
             self.menu_buttons["unmute_button"].show()
             self.menu_buttons["mute_button"].hide()
             self.add_to_map([self.menu_buttons["unmute_button"]])
-            self.set_focus(self.menu_buttons["unmute_button"])
 
         else:
             self.menu_buttons["unmute_button"].hide()
             self.menu_buttons["mute_button"].show()
             self.add_to_map([self.menu_buttons["mute_button"]])
-            self.set_focus(self.menu_buttons["mute_button"])
 
     def mute_button_pressed(self, event):
         """This is a short-up to deal with mute button presses.
@@ -355,12 +354,14 @@ class Screens:
             game_setting_set("audio_mute", True)
             game_settings_save(self)
             self.show_mute_buttons()
+            self.set_focus(self.menu_buttons["unmute_button"])
             return True
         elif element == Screens.menu_buttons["unmute_button"]:
             game.audio.unmute()
             game_setting_set("audio_mute", False)
             game_settings_save(self)
             self.show_mute_buttons()
+            self.set_focus(self.menu_buttons["mute_button"])
             return True
         else:
             return False
