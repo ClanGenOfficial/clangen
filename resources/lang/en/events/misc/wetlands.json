@@ -14,7 +14,7 @@
     "location": ["wetlands"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "frequency": 4,
-    "event_text": "m_c keeps seeing prophecy_list_sight/m_c in the water underpaw... {PRONOUN/m_c/subject/CAP} continues wading forward with {PRONOUN/m_c/poss} mission, debating the vision.",
+    "event_text": "m_c keeps seeing prophecy_list_sight/m_c in the water underpaw... {PRONOUN/m_c/subject/CAP} {VERB/m_c/continue/continues} wading forward with {PRONOUN/m_c/poss} mission, debating the vision.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["PROPHET,2"]

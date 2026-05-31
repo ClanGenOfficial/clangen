@@ -7,8 +7,12 @@ from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
+from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
 from scripts.special_dates import get_special_date, contains_special_date_tag
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.clan_package.get_clan_cats import (
+    find_alive_cats_with_rank,
+    get_possible_mates,
+)
 from scripts.game_structure import game
 
 ALL_BACKSTORIES_LIST = set(
@@ -134,6 +138,10 @@ def event_for_tags(
         if _poss in tags and mode != _poss:
             return False
 
+    # check romance
+    if "romance" in tags and other_cat and other_cat not in get_possible_mates(cat):
+        return False
+
     # check leader life tags
     if hasattr(cat, "ID"):
         if cat.status.is_leader:
@@ -217,6 +225,30 @@ def event_for_tags(
     return True
 
 
+def event_for_poi(pois: dict[str, list]) -> bool:
+    """
+    Checks if the Clan has a POI matching pois
+    :param pois: possible points of interest
+    :return: True if there's a match, False if not
+    """
+    if all(not value for value in pois.values()):
+        # fields may exist but are empty
+        return True
+
+    if not get_poi_names_set():
+        return False  # we know they're requesting something
+
+    has_matching_name, has_matching_tags = False, False
+    if "name" in pois:
+        has_matching_name = not set(pois.get("name", [])).isdisjoint(
+            get_poi_names_set()
+        )
+
+    if "tags" in pois:
+        has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
+    return has_matching_name or has_matching_tags
+
+
 def event_for_reputation(required_rep: list) -> bool:
     """
     checks if the clan has reputation matching required_rep
@@ -243,16 +275,9 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     if not required_rel or "any" in required_rel:
         return True
 
-    current_rel = other_clan.relations
+    current_standing = other_clan.get_standing()
 
-    if "hostile" in required_rel and 0 <= current_rel <= 6:
-        return True
-    elif "neutral" in required_rel and 7 <= current_rel <= 17:
-        return True
-    elif "ally" in required_rel and 18 <= current_rel:
-        return True
-
-    return False
+    return current_standing in required_rel
 
 
 def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
@@ -878,6 +903,7 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
 def cat_for_event(
     constraint_dict: dict,
     possible_cats: list,
+    tags: list,
     involved_cat_dict: dict = None,  # TODO: this could likely replace comparison cat, eventually
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
@@ -895,6 +921,7 @@ def cat_for_event(
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
     :param return_id: If true, return cat ID instead of object
+    :param tags: List of event tags
     """
     # gather funcs to use
     func_dict = {
@@ -942,6 +969,11 @@ def cat_for_event(
             return None
 
     # rel status check
+    if "romance" in tags:
+        allowed_cats = list(
+            set(allowed_cats).intersection(set(get_possible_mates(comparison_cat)[0]))
+        )
+
     if comparison_cat_rel_status or constraint_dict.get("relationship_status"):
         # preliminary check to see if we can just skip to gathering certain rel groups
         allowed_cats, comparison_cat_rel_status = _get_cats_with_rel_status(
@@ -1401,18 +1433,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     # Filtering relationship values
     # these don't get exclusionary values because it's giving me a headache
     # each cat has to have relationships toward each other matching every level tag
+    group_ids = [cat.ID for cat in group]
     for tier in filter_types:
         for inter_cat in group:
             if len(group) == 2 and inter_cat == group[1]:
                 # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
                 # groups > 2 will require that all cats feel the same way toward each other.
                 continue
-            group_ids = [cat.ID for cat in group]
 
             relevant_relationships = [
-                rel
-                for rel in inter_cat.relationships.values()
-                if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
+                inter_cat.relationships[cat_id]
+                for cat_id in group_ids
+                if cat_id in inter_cat.relationships
             ]
 
             # list of every cat's tier list
@@ -1448,19 +1480,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
                     # get the tier's index within the rel_types's list
                     index = rel_type_tiers[rel_type].index(rel_tier)
-                    allowed_tiers = []
+                    allowed_tiers = set()
                     # if it's a pos tier, we allow that index and higher
                     if rel_tier.is_any_pos:
-                        allowed_tiers = rel_type_tiers[rel_type][index:]
+                        allowed_tiers = set(rel_type_tiers[rel_type][index:])
                     # if it's a neg tier, we allow that index and lower
                     elif rel_tier.is_any_neg:
-                        allowed_tiers = rel_type_tiers[rel_type][0 : index + 1]
+                        allowed_tiers = set(rel_type_tiers[rel_type][0 : index + 1])
 
                     discard = True
-                    for _t in tier_list:
-                        if _t in allowed_tiers:
-                            discard = False
-                            break
+                    tier_set = set(tier_list)
+                    if allowed_tiers.intersection(tier_set):
+                        discard = False
                     if discard:
                         return False
 

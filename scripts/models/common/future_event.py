@@ -23,7 +23,8 @@ class EventType(Enum):
 
 
 class FutureEventPool(BaseModel):
-    subtype: Union[List[EventSubtype], MISSING] = Field(
+    model_config = ConfigDict(extra="forbid")
+    sub_type: Union[List[EventSubtype], MISSING] = Field(
         MISSING,
         description="Events to be added to the pool will contain all subtypes specified.",
     )
@@ -38,6 +39,7 @@ class FutureEventPool(BaseModel):
 
 
 class FutureCat(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     age: Union[List[Union[Age, Literal["any"]]], MISSING] = Field(
         MISSING,
         description='List of ages the cat can be. If they can be anything, use "any".',

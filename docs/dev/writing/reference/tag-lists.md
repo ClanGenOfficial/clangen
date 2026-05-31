@@ -302,7 +302,7 @@ You can utilize [exclusionary tags](#exclusionary-tags).
 | `exiled`  | cat was forced out of the group intentionally         |
 
 ## Traits and Skills
-You can utilize [exclusionary tags](#exclusionary-tags).
+You can utilize [#exclusionary tags](#exclusionary-tags). They function the same way as non-exclusionary tags. For example, when you write "SWIMMER,2", a cat must be a good swimmer or above. If you write "<b>-</b>SWIMMER,2" a cat *cannot* be a good swimmer or above.
 
 === "Skills"
 
@@ -469,7 +469,7 @@ You can utilize [exclusionary tags](#exclusionary-tags).
 ***
 
 ## Interpersonal Relationships
-> These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat.
+> These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat. 
 
 | string            |                                    | Patrol Use Specifics                   |
 |-------------------|------------------------------------|----------------------------------------|
@@ -484,7 +484,10 @@ You can utilize [exclusionary tags](#exclusionary-tags).
 You can utilize [#exclusionary tags](#exclusionary-tags).
 
 !!! warning
-    Within ShortEvents, these should only be used in m_c's relationship constraints.
+    Within ShortEvents, these should only be used in m_c's relationship constraints. 
+
+!!! warning
+    Most formats utilizing these tags will be treated as a requirement list rather than a pool of possibilities. If you constrain a patrol to "child/parent", "app/mentor" the relationship between the cats <i>must</i> meet both criteria i.e. a parent who is the mentor to their apprentice child. Refer back to specific documentation of type of writing content you are adding to see if it is an exception to the rule. 
 
 ***
 

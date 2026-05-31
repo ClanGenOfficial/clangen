@@ -35,6 +35,24 @@ body:
       default: 2
     validations:
       required: true
+  - type: dropdown
+    id: gamemode
+    attributes:
+      label: Gamemode
+      description: Which gamemode were you playing when you encountered this issue?
+      options:
+        - Classic Mode
+        - Expanded Mode
+        - Cruel Season
+      default: 2
+    validations:
+      required: true
+  - type: textarea
+    id: cards
+    attributes:
+      label: Challenge cards
+      description: If you were playing in Cruel Season mode, list the cards that were in use.
+      placeholder: Neverending Cold, Persistent Twolegs, Lean Meat...
   - type: textarea
     id: reproduce
     attributes:
@@ -56,7 +74,7 @@ body:
     attributes:
       description: See [here](https://www.clangen.io/docs/report-a-bug/#how-do-i-find-my-game-version) for help finding your game version.
       label: "Commit # or Game Version Number"
-      placeholder: e.g. "4ef20d05" (if on development) or "v0.12.2" (if stable)
+      placeholder: e.g. "4ef20d05" (if on development) or "v0.13.0" (if stable)
     validations:
       required: true
   - type: textarea

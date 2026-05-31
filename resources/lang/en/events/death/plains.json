@@ -11,7 +11,7 @@
       "all_lives"
     ],
     "frequency": 1,
-    "event_text": "r_c dares m_c to leap across the Silverpath in front of a Thundersnake near camp and is horrified when {PRONOUN/m_c/subject} stumbles and is struck.",
+    "event_text": "r_c dares m_c to leap across the Silverpath in front of a Thundersnake near camp and is horrified when {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} and {VERB/m_c/are/is} struck.",
     "m_c": {
       "age": [
         "-newborn",

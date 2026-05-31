@@ -25,7 +25,7 @@ from scripts.ui.icon import Icon
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.ui.theme import get_text_box_theme
 from scripts.events_module.text_adjust import shorten_text_to_fit
-from scripts.clan_package.cotc import get_other_clan, get_other_clan_relation
+from scripts.clan_package.cotc import get_other_clan
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
@@ -223,11 +223,14 @@ class LeaderDenScreen(Screens):
                     i
                     for i in Cat.all_cats.values()
                     if i.status.alive_in_player_clan
+                    and not i.not_working()
                     and i.status.rank
                     not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
+                adults = sorted(adults, key=lambda x: x.experience, reverse=True)
+
                 if adults:
-                    self.helper_cat = random.choice(adults)
+                    self.helper_cat = adults[0]
 
             if self.helper_cat:
                 self.screen_elements["helper_image"] = pygame_gui.elements.UIImage(
@@ -330,7 +333,7 @@ class LeaderDenScreen(Screens):
         self.screen_elements["clan_notice_text"].show()
 
         self.screen_elements["temper_text"] = pygame_gui.elements.UITextBox(
-            relative_rect=ui_scale(pygame.Rect((68, 410), (445, -1))),
+            relative_rect=ui_scale(pygame.Rect((68, -13), (445, -1))),
             html_text="screens.leader_den.temper_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
@@ -340,8 +343,8 @@ class LeaderDenScreen(Screens):
                     first_temper=i18n.t(f"screens.leader_den.{self.clan_temper[0]}"),
                     second_temper=i18n.t(f"screens.leader_den.{self.clan_temper[1]}"),
                 ),
-                "clan": game.clan.displayname,
             },
+            anchors={"top_target": self.screen_elements["clan_notice_text"]},
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
@@ -469,11 +472,12 @@ class LeaderDenScreen(Screens):
             self.other_clan_selection_elements[
                 f"clan_name{i}"
             ] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((0, 20), (133, -1))),
-                text=f"{other_clan.name}Clan",
+                ui_scale(pygame.Rect((0, 10), (133, -1))),
+                text="general.clan",
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
+                text_kwargs={"name": other_clan.name},
                 anchors={
                     "centerx": "centerx",
                     "top_target": self.other_clan_selection_elements[f"clan_symbol{i}"],
@@ -503,9 +507,9 @@ class LeaderDenScreen(Screens):
             self.other_clan_selection_elements[
                 f"clan_rel{i}"
             ] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((0, 2), (133, -1))),
-                text=f"screens.leader_den.{get_other_clan_relation(other_clan.relations).strip()}",
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                ui_scale(pygame.Rect((0, 0), (133, -1))),
+                text=f"screens.leader_den.{other_clan.get_standing().strip()}",
+                object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
                 anchors={
@@ -624,14 +628,15 @@ class LeaderDenScreen(Screens):
 
         x_pos = 10
         y_pos = 182
-        relation = get_other_clan_relation(self.focus_clan.relations)
+        relation = self.focus_clan.get_standing()
 
         self.focus_clan_elements["clan_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 15), (215, -1))),
-            text=f"{self.focus_clan.name}Clan",
+            text="general.clan",
             object_id="#text_box_30_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
+            text_kwargs={"name": self.focus_clan.name},
             anchors={
                 "centerx": "centerx",
                 "top_target": self.focus_clan_elements["clan_symbol"],

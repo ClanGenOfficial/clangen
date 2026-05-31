@@ -922,7 +922,7 @@
             "text": "Before the patrol can strike, another Twoleg kit trundles past and spots the cats, squealing with glee. p_l shouts the order to retreat, and the cats sprint up the beach into the undergrowth where clumsy Twolegs can't follow.",
             "exp": 0,
             "frequency": 4,
-            "art": "cat_running_two"
+            "art": "running_two_warriors"
         },
         {
             "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass with their haul. r_c dabs {PRONOUN/r_c/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Back at the camp, r_c feels the consequences of tasting mysterious Twoleg food.",
@@ -958,7 +958,7 @@
                     }   
                 }
             ],
-            "art": "cat_running_solo"
+            "art": "running_warrior"
         },
         {
             "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/hiss/hisses}. The Twoleg kit is undeterred, reaching for {PRONOUN/s_c/object} with a smooth paw, and s_c swipes. p_l didn't have <i>that</i> kind of distraction in mind and yowls for the patrol to retreat.",

@@ -38,12 +38,11 @@ class FreshkillPileTest(unittest.TestCase):
         cls.previously_loaded_clan = cls.clanlist[0] if cls.clanlist else None
 
     def setUp(self) -> None:
-        self.prey_config = None
-        with open("resources/prey_config.toml", "r") as read_file:
-            self.prey_config = tomllib.loads(read_file.read())
-        self.amount = self.prey_config["start_amount"]
-        self.prey_requirement = self.prey_config["prey_requirement"]
-        self.condition_increase = self.prey_config["condition_increase"]
+        with open("resources/game_config.toml", "r") as read_file:
+            self.game_config = tomllib.loads(read_file.read())
+        self.amount = self.game_config["prey"]["start_amount"]
+        self.prey_requirement = self.game_config["prey"]["prey_requirement"]
+        self.condition_increase = self.game_config["prey"]["condition_increase"]
 
         # load in the spritesheets
         # we have to do this to prevent a crash, even though we won't be displaying anything
@@ -110,8 +109,8 @@ class FreshkillPileTest(unittest.TestCase):
     def tearDown(self):
         rempath = get_save_dir() + "/" + self.test_clan_name
         shutil.rmtree(rempath)
-        if os.path.exists(rempath + "clan.json"):
-            os.remove(rempath + "clan.json")
+        if os.path.exists(rempath + "/clan.json"):
+            os.remove(rempath + "/clan.json")
 
     @classmethod
     def tearDownClass(cls):
