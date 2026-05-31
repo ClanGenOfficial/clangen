@@ -62,7 +62,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
                 "age": [],
                 "group": [],
                 "standing": {
-                    "with": [],
+                    "group": [],
                     "currently": [],
                     "past": []
                   },

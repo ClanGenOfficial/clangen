@@ -655,7 +655,7 @@ def _check_cat_standing(
 
     qualifies = False
 
-    groups = standing["with"]
+    groups = standing["group"]
     current_standings = standing["currently"]
     past_standings = standing["past"]
 
@@ -663,7 +663,7 @@ def _check_cat_standing(
     groups = [x.replace("-", "") for x in groups if "-" in x]
 
     # unpack some of the group tags into something easier to filter for
-    for tag in standing["with"]:
+    for tag in standing["group"]:
         if (
             "match" in tag
         ):  # we remove the match tag and replace it with the correct group tag
