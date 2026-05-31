@@ -159,5 +159,39 @@
             ],
             "changed": 1
         }
+    },
+    {
+        "event_id": "bch_new_cat_current",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "-greenleaf"
+        ],
+        "frequency": 2,
+        "event_text": "n_c:0 is found coughing and spluttering on the beach, and {PRONOUN/n_c:0/subject} weakly {VERB/n_c:0/explain/explains} {PRONOUN/n_c:0/subject} got caught in a current and ended up here.",
+        "new_cat": [
+            [
+                "loner"
+            ]
+        ],
+        "injury": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "injuries": [
+                    "water in their lungs"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "death": "n_c:0 died from water inhalation after getting caught in an ocean current."
+            }
+        ]
     }
 ]

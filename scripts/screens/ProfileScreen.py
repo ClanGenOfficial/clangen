@@ -212,7 +212,7 @@ class ProfileScreen(Screens):
             else:
                 self.handle_tab_events(event)
         elif event.type == INPUT_ACTION_PRESSED:
-            if event.action == Action.PREVIOUS:
+            if event.action == Action.PREVIOUS and not self.editing_notes:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
                     switch_set_value(Switch.cat, self.previous_cat)
@@ -220,7 +220,7 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.action == Action.NEXT:
+            elif event.action == Action.NEXT and not self.editing_notes:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
                     switch_set_value(Switch.cat, self.next_cat)
