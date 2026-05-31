@@ -1920,7 +1920,7 @@
             "apprentice": [1, 1],
             "normal adult": [1, 1]
         },
-        "frequency": 4,
+        "frequency": 2,
         "intro_text": "On this dry morning, p_l and app1 head out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of crisscrossed, overlapping tunnels.",
         "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
         "chance_of_success": 60,
@@ -2204,7 +2204,7 @@
             "apprentice": [2, 5],
             "normal adult": [1, 4]
         },
-        "frequency": 4,
+        "frequency": 2,
         "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic but with plenty of crisscrossing, overlapping tunnels.",
         "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
         "chance_of_success": 60,

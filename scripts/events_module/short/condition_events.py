@@ -131,7 +131,7 @@ class Condition_Events:
     def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:
         """
         Handles gaining conditions or death for cats with low nutrient.
-        This function should only be called if the game is in 'expanded' or 'cruel season' mode.
+        This function should only be called if the game is in 'expanded' or 'cruel_season' mode.
 
         Starvation and malnutrtion must be handled separately from other illnesses due to their distinct death triggers.
 
@@ -272,12 +272,13 @@ class Condition_Events:
             # ---------------------------------------------------------------------------- #
             #                              make cats sick                                  #
             # ---------------------------------------------------------------------------- #
-            random_number = int(
-                random.random()
-                * game.get_config_value(
-                    "condition_related", f"{game.clan.game_mode}_illness_chance"
-                )
+
+            path = (
+                "condition_related.classic_illness_chance"
+                if game.clan.game_mode == "classic"
+                else "condition_related.illness_chance"
             )
+            random_number = int(random.random() * get_config(game.clan, path))
             if (
                 not cat.dead
                 and not cat.is_ill()
@@ -353,12 +354,13 @@ class Condition_Events:
         triggered = False
 
         modify_for_war = switch_get_value(Switch.war_rel_change_type) != "rel_up"
-        mode = (
-            "expanded" if game.clan.game_mode == "cruel season" else game.clan.game_mode
+        path = (
+            "condition_related.classic_injury_chance"
+            if game.clan.game_mode == "classic"
+            else "condition_related.injury_chance"
         )
-        injury_chance = get_config(
-            game.clan, f"condition_related.{mode}_injury_chance"
-        ) - (
+
+        injury_chance = get_config(game.clan, path) - (
             get_config(game.clan, "condition_related.war_injury_modifier")
             if modify_for_war
             else 0

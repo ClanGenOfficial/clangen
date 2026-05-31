@@ -966,5 +966,63 @@
       "scar": "m_c was scarred after failing to climb the broken ship."
     }
   ]
-}
+},
+    {
+        "event_id": "bch_injury_urchin1",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "m_c steps on something in the sand that causes {PRONOUN/m_c/object} to yelp. Seems like {PRONOUN/m_c/subject} stepped on a sea urchin.",
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_injury_urchin2",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c steps on something in the sand that causes {PRONOUN/m_c/object} to yelp. As {PRONOUN/m_c/poss} paw starts to go numb {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} {PRONOUN/m_c/subject} must have stepped on a venomous sea urchin, and {PRONOUN/m_c/subject} {VERB/m_c/rush/rushes} to the medicine den.",
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "small cut"
+                ]
+            },
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "poisoned"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed by a sea urchin's venom."
+            }
+        ]
+    }
 ]
