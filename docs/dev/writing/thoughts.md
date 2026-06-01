@@ -127,6 +127,11 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 
 ***
 
+### tags: list[str]
+Used to dictate some odds-and-ends about thought constraints: [General Tags](reference/tag-lists.md#general-tags).
+
+***
+
 ### strings: list[str]
 This is a list of thoughts applicable to the constraints on this thought block. You may include as many or as few thoughts here as you wish, but remember that the constraints will apply to *all* of them. 
 

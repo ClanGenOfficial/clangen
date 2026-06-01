@@ -32,6 +32,53 @@ As this is allowed in some but *not all* tags, parameters that allow exclusionar
 
 Please have a look at the [full biome differences list](biomes.md) when thinking about writing patrols. 
 
+## General Tags
+These tags are used for more general filtering purposes.
+
+| string    | use                                                                                                                      |
+|-----------|--------------------------------------------------------------------------------------------------------------------------|
+| classic   | event only occurs in classic mode                                                                                        |
+| no_body   | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events |
+| clan_wide | if this is a murder reveal, use this tag to denote this event as informing the ENTIRE Clan of the murder.                |
+| romance   | marks event as being between two cats who are allowed romantic relations                                                 |
+| adoption  | marks event as being an adoption                                                                                         |
+
+> **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
+
+| string        | use                                                                                                                                                            |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| clan:{status} | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
+| clan:apps     | event only occurs if the clan has living apps, this includes ALL types of apps (medicine, mediator, and warrior)                                               |
+
+
+> **Leader Specific Tags** - since leaders can have 9 lives, it's helpful to have tags that indicate how an event is influenced by those lives.
+
+| leader event tag | use                                                                                                                                        |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| all_lives        | indicates the death event will take all the remaining lives                                                                                |
+| some_lives       | indicates the death event will take multiple lives, but that it will not take *all* lives. The leader will still be alive after the event. |
+| lives_remain     | indicates that the death event can only occur if the leader has multiple lives left. This leader will still be alive after the event.      |
+| high_lives       | this event will only occur if the leader has 7-9 lives left                                                                                |
+| mid_lives        | this event will only occur if the leader has 4-6 lives left                                                                                |
+| low_lives        | this event will only occur if the leader has 1-3 lives left                                                                                |
+
+!!! tip
+    Leader death events that are not tagged with `all_lives` or `some_lives` will take 1 life by default.
+
+> **Patrol Specific Tags**
+> 
+| tag                   | use                                                                                                                                                                                                                                                                                                                   |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| "romance"             | Marks the patrol as a romance patrol. Romance patrols are special, and are filtered to require patrol leader (p_l) and random cat (r_c) to to be potential mates or current mates. If any outcomes have effects on romantic-like, make sure this tag has been added, and the romantic-like is applied to p_l and r_c. |
+| "rom_two_apps"        | Does nothing on its own. When "romance" present, check for potential mate or current mate between app1 and app2, rather than p_l and r_c                                                                                                                                                                              |
+| "all_mentored"        | Checks if all apprentices (no matter if medicine cat or warrior) within a patrol has a mentor.                                                                                                                                                                                                                        |
+| "app{index}_mentored" | First checks if the app number (IE: app1, app2, app3, and so forth) is mentioned in patrol text, then checks if the specific apprentice assigned to the abbreviation has a mentor.                                                                                                                                    |
+| "disaster"            | These patrols are only possible when mass extinction is turned ON. Used to mark patrols where the entire patrol can die or become lost.                                                                                                                                                                               |
+| "new_cat"             | Used to mark when a new cat can join during this patrol. Marking these patrols allows for better balancing.                                                                                                                                                                                                           |
+| "halloween"           | Used to mark patrols that should only occur around halloween                                                                                                                                                                                                                                                          |
+| "april_fools"         | Used to mark patrols that should only occur on april fools                                                                                                                                                                                                                                                            |
+| "new_years"           | Used to mark patrols that should only occur on new years.                                                                                                                                                                                                                                                             |
+
 
 ## Conditions and Scars
 
