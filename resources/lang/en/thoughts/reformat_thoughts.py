@@ -128,9 +128,9 @@ def reformat():
             if t.get("has_injuries", {}).get("r_c") or t.get("perm_conditions", {}).get("r_c"):
                 health: dict = {"condition": []}
                 if t.get("has_injuries", {}).get("r_c"):
-                    health["condition"].append(t["has_injuries"]["r_c"])
+                    health["condition"] = t["has_injuries"]["r_c"]
                 if t.get("perm_conditions", {}).get("r_c"):
-                    health["condition"].append(t["perm_conditions"]["r_c"])
+                    health["condition"] = t["perm_conditions"]["r_c"]
 
                 r_c["health"] = health
 
