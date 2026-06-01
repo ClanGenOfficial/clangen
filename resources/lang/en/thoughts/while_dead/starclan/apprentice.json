@@ -1,7 +1,7 @@
 [
     {
         "id": "gen_dead_war_app",
-        "thoughts": [
+        "strings": [
             "Is sad {PRONOUN/m_c/subject} never got {PRONOUN/m_c/poss} warrior name",
             "Patrols StarClan's territory",
             "Imagines what {PRONOUN/m_c/poss} warrior ceremony would have been like",
@@ -11,20 +11,27 @@
             "Wonders if the water ever freezes in StarClan",
             "Sneaks close to the border of the Dark Forest but dares not go in"
         ],
-        "random_living_status":[
-            "living",
-            "starclan"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "dead_app_to_dead_other",
-        "thoughts": [
+        "strings": [
             "Laughs with r_c",
             "Stalks through StarClan's forests with r_c",
             "Encourages r_c to dip {PRONOUN/r_c/poss} paws into the cool water"
         ],
-        "random_living_status": [
-            "starclan"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
     }
 ]

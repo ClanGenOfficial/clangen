@@ -1,7 +1,7 @@
 [
     {
         "id": "gen_dead_exiled",
-        "thoughts": [
+        "strings": [
             "Wishes {PRONOUN/m_c/subject} had the chance to fix {PRONOUN/m_c/poss} mistakes while alive",
             "Curses c_n for making {PRONOUN/m_c/object} die alone",
             "Wonders what is happening in StarClan",
@@ -10,8 +10,12 @@
             "Is thinking bitterly about {PRONOUN/m_c/poss} former Clanmates",
             "Is finding peace in an afterlife outside of StarClan or the Dark Forest"
         ],
-        "main_status_constraint": [
-            "exiled"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "exiled"
+                ]
+            }
+        }
     }
 ]

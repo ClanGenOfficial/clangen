@@ -1,7 +1,7 @@
 [
     {
         "id": "gen_dead_elder",
-        "thoughts": [
+        "strings": [
             "Is watching c_n proudly",
             "Is having some well-deserved rest",
             "Is telling the same story to whoever is around to listen",
@@ -15,12 +15,16 @@
     },
     {
         "id": "dead_elder_to_dead_other",
-        "thoughts": [
+        "strings": [
             "Is giving r_c unsolicited advice",
             "Is telling r_c about {PRONOUN/m_c/poss} glory days"
         ],
-        "random_living_status": [
-            "starclan"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
     }
 ]
