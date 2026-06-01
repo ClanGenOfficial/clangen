@@ -171,7 +171,7 @@
         "sub_type": [],
         "tags": [],
         "frequency": 2,
-        "event_text": "A stranger is found washed up on the shore, coughing up saltwater and surrounded by the remains of what {PRONOUN/n_c:0/subject} {VERB/n_c:0/call/calls} a 'boat.' m_c brings {PRONOUN/n_c:0/object} to camp to be treated.",
+        "event_text": "A stranger washes up on the shore, coughing up saltwater and surrounded by the remains of what {PRONOUN/n_c:0/subject} {VERB/n_c:0/call/calls} a \"boat.\" m_c brings {PRONOUN/n_c:0/object} to camp to be treated.",
         "m_c": {
             "age": [],
             "status": [
