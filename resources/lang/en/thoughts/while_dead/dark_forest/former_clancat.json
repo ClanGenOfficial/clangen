@@ -1,7 +1,7 @@
 [
     {
         "id": "general_formerclancat_dead_thoughts",
-        "thoughts": [
+        "strings": [
             "Is practicing battle moves",
             "Is sharpening {PRONOUN/m_c/poss} claws",
             "Is slinking through the shadows",
@@ -52,9 +52,13 @@
             "Wishes to be alone",
             "Misses the feeling of a warm nest",
             "Feels a sharp pang of hunger"
-    ],
-    "main_status_constraint": [
-        "former Clancat"
-    ]
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "former Clancat"
+                ]
+            }
+        }
     }
 ]
