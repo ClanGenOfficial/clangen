@@ -70,7 +70,8 @@ def reformat():
                     health["condition"] = t["has_injuries"]["m_c"]
                 if t.get("perm_conditions", {}).get("m_c"):
                     health["condition"] = t["perm_conditions"]["m_c"]
-                    health["must_be_congenital"] = True
+                    if t["perm_conditions"]["born_with"].get("m_c"):
+                        health["must_be_congenital"] = True
 
                 m_c["health"] = health
 
@@ -130,7 +131,6 @@ def reformat():
                     health["condition"].append(t["has_injuries"]["r_c"])
                 if t.get("perm_conditions", {}).get("r_c"):
                     health["condition"].append(t["perm_conditions"]["r_c"])
-                    health["must_be_congenital"] = True
 
                 r_c["health"] = health
 
