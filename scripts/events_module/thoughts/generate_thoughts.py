@@ -33,10 +33,6 @@ random_cat_constraints = [
 loaded_thoughts = {}
 
 
-def get_resource_directory(fallback=False):
-    return f"resources/lang/{i18n.config.get('locale') if not fallback else i18n.config.get('fallback')}/events/"
-
-
 def get_other_cat_for_thought(
     cat_list: list["Cat"], main_cat: "Cat"
 ) -> Optional["Cat"]:
