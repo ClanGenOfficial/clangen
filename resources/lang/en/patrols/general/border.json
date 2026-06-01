@@ -1454,6 +1454,7 @@
                     {
                         "cats_from": [
                             "patrol"
+                            "-p_l"
                         ],
                         "cats_to": [
                             "s_c"
