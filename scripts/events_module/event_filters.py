@@ -620,37 +620,40 @@ def _check_cat_group(cat, groups: List[str], already_involved_cats: dict) -> boo
     for tag in groups:
         if "match" in tag:  # checks if group matches with the tagged cat
             cat_to_match = tag.replace("match:", "")
-            if (
-                is_exclusionary
-                and cat.status.group == already_involved_cats[cat_to_match].status.group
-            ):
-                return False
-            elif (
-                not is_exclusionary
-                and cat.status.group != already_involved_cats[cat_to_match].status.group
-            ):
-                continue
+            if cat.status.group == already_involved_cats[cat_to_match].status.group:
+                if is_exclusionary:
+                    return False
+            else:
+                if not is_exclusionary:
+                    return False
             remaining_tags.remove(tag)
 
         elif tag == "afterlife":  # checks if group is an afterlife
-            if is_exclusionary and cat.status.group.is_afterlife():
-                return False
-            elif not is_exclusionary and not cat.status.group.is_afterlife():
-                continue
+            if cat.status.group.is_afterlife():
+                if is_exclusionary:
+                    return False
+            else:
+                if not is_exclusionary:
+                    return False
             remaining_tags.remove(tag)
 
         elif tag == "no_group":  # checks if the cat has no group
-            if is_exclusionary and cat.status.group:
-                return False
-            elif not is_exclusionary and not cat.status.group:
-                continue
+            if cat.status.group == CatGroup.NONE:
+                if is_exclusionary:
+                    return False
+            else:
+                if not is_exclusionary:
+                    return False
             remaining_tags.remove(tag)
+
+    if not remaining_tags:
+        return True
 
     # checks all the plain group tags that will match the CatGroup enums
     if remaining_tags and cat.status.group not in remaining_tags:
         return is_exclusionary
 
-    return True
+    return not is_exclusionary
 
 
 def _check_cat_standing(
