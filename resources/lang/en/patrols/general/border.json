@@ -1513,8 +1513,25 @@
             {
                 "text": "p_l suggests taking the wood pieces to the nearby pond to waterlog the wood and prevent the Twolegs from building more nests, but the rest of the patrol is reluctant and {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up the idea.",
                 "exp": 0,
-                "frequency": 3
-            }
-        ]
-    }
-]
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was annoyed with cat_to when {PRONOUN/cat_to/subject} didn't go along with {PRONOUN/cat_from/poss} idea."
+                        }
+                    }
+                }
+            ]
+        }
+    ]
