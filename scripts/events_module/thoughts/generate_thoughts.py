@@ -9,6 +9,7 @@ from scripts.events_module.event_filters import (
     event_for_cat,
     event_for_location,
     event_for_season,
+    event_for_tags,
 )
 from scripts.events_module.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
@@ -313,20 +314,22 @@ def new_death_thought(
         return i18n.t("defaults.thought")
 
 
-def _constraints_fulfilled(main_cat: "Cat", random_cat: "Cat", thought) -> bool:
+def _constraints_fulfilled(main_cat: "Cat", random_cat: "Cat", thought: TextPoolEvent) -> bool:
     """Check if thought constraints are fulfilled"""
 
     if "location" in thought:
-        if not event_for_location(thought["biome"]):
+        if not event_for_location(thought.location):
             return False
 
-    if "season" in thought:
-        if not event_for_season(thought["season"]):
+    if thought.season:
+        if not event_for_season(thought.season):
             return False
 
-    if "not_working" in thought:
-        if thought["not_working"] != main_cat.not_working():
+    if thought.tags:
+        if not event_for_tags(thought.tags, main_cat, random_cat):
             return False
+
+    if thought.involved_cats:
 
     if not random_cat:
         r_c_in_text = [

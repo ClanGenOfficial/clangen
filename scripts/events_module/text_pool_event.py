@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
@@ -10,12 +10,14 @@ from scripts.events_module.parameter_dicts import (
 @dataclass(slots=True)
 class TextPoolEvent:
     id: str
-    location: list[str]
-    season: list[str]
-    tags: list[str]
     strings: list[str]
-    involved_cats: dict[str, InvolvedCatDict]
-    relationship_constraint: [list[RelationshipConstraintDict]]
+    location: list[str] = field(default_factory=list)
+    season: list[str] = field(default_factory=list)
+    tags: list[str] = field(default_factory=list)
+    involved_cats: dict[str, InvolvedCatDict] = field(default_factory=dict)
+    relationship_constraint: [list[RelationshipConstraintDict]] = field(
+        default_factory=list
+    )
 
     def __repr__(self):
         return self.id
