@@ -1,7 +1,7 @@
 [
     {
         "id": "lost_warrior_thoughts",
-        "strings": [
+        "thoughts": [
             "Hopes that the Clan's kits are doing well",
             "Misses the warmth of the warriors' den",
             "Hopes {PRONOUN/m_c/poss} friends from c_n are doing okay",
@@ -10,18 +10,14 @@
     },
     {
         "id": "lost_warrior_to_apprentices",
-        "strings": [
+        "thoughts": [
             "Wonders if the apprentices of the Clan are now warriors"
         ],
-        "involved_cats": {
-            "r_c": {
-                "status": [
-                    "apprentice"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "random_status_constraint": [
+            "apprentice"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     }
 ]

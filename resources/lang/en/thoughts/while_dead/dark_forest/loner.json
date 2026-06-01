@@ -1,19 +1,15 @@
 [
     {
         "id": "general_loner_dead_thoughts",
-        "strings": [
+        "thoughts": [
             "Feels a sharp pang of hunger",
             "Wonders how {PRONOUN/m_c/subject} ended up here",
             "Winces as the mud sucks at {PRONOUN/m_c/poss} paws",
             "Is looking fruitlessly for prey",
             "Yowls angrily"
         ],
-        "involved_cats": {
-            "m_c": {
-                "status": [
-                    "loner"
-                ]
-            }
-        }
+        "main_status_constraint": [
+            "loner"
+        ]
     }
 ]
