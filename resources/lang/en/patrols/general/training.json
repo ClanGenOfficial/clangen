@@ -21,7 +21,7 @@
 			]
 		},
 		"frequency": 2,
-		"intro_text": "p_l asks r_c if {PRONOUN/r_c/subject} needs any help with anything, now that {PRONOUN/p_l/subject} {VERB/p_l/have/has} the time.",
+		"intro_text": "p_l asks r_c if {PRONOUN/r_c/subject} {VERB/r_c/need/needs} any help with anything, now that {PRONOUN/p_l/subject} {VERB/p_l/have/has} the time.",
 		"decline_text": "r_c shakes {PRONOUN/r_c/poss} head. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} good right now, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to go on patrol soon, anyways.",
 		"chance_of_success": 60,
 		"relationship_constraint": [
@@ -84,7 +84,7 @@
 						1
 					]
 				},
-				"text": "r_c scoffs, saying {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} need help from p_l. The warrior gasps, feigning offence. How dare r_c be so mean to {PRONOUN/p_l/object}! r_c rolls {PRONOUN/r_c/poss} eyes, and after a little back and forth begrudgingly mumbles if p_l can maybe teach {PRONOUN/r_c/subject} a little bit extra about fighting. p_l accepts, and even if r_c is anxious, the two end up having a great training session.",
+				"text": "s_c scoffs, saying {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} need help from p_l. The warrior gasps, feigning offence. How dare s_c be so mean to {PRONOUN/p_l/object}! s_c rolls {PRONOUN/s_c/poss} eyes, and, after a little back and forth, mumbles a request for extra battle training. p_l accepts, and even if s_c is anxious, the two end up having a great training session.",
 				"stat_trait": [
 					"insecure",
 					"nervous",
@@ -202,7 +202,7 @@
 						-1
 					]
 				},
-				"text": "r_c laughs. p_l, up at the crack of dawn, asking if {PRONOUN/p_l/subject} can do extra work? But if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} serious, which r_c realizes {PRONOUN/p_l/subject} {VERB/p_l/are/is}, {PRONOUN/r_c/subject} <i>would</i> like help with something. Has p_l ever seen one of those Twoleg ruins in the territory? Yes, the ones with weird symbols covering the walls. r_c tells p_l {PRONOUN/r_c/subject} thinks {PRONOUN/r_c/subject} could learn more about the territory's history there. Perhaps {PRONOUN/p_l/subject} would like to accompany r_c on the way?",
+				"text": "r_c laughs. s_c, up at the crack of dawn, asking if {PRONOUN/s_c/subject} can do extra work? But if {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} serious, which r_c realizes {PRONOUN/s_c/subject} {VERB/s_c/are/is}, {PRONOUN/r_c/subject} <i>would</i> like help with something. Has s_c ever seen one of those Twoleg ruins in the territory? Yes, the ones with weird symbols covering the walls. r_c tells s_c {PRONOUN/r_c/subject} thinks {PRONOUN/r_c/subject} could learn more about the territory's history there. Perhaps {PRONOUN/s_c/subject} would like to accompany r_c on the way?",
 				"stat_trait": [
 					"childish",
 					"oblivious",
@@ -248,7 +248,7 @@
 						-1
 					]
 				},
-				"text": "r_c suggests exploring an interesting spot in the territory {PRONOUN/r_c/subject} found. p_l agrees, and r_c leads {PRONOUN/p_l/object} to a lake with a little waterfall! The two get a little wet while exploring, but they both feel more confident in their knowledge of the territory.",
+				"text": "r_c suggests exploring an interesting spot in the territory {PRONOUN/r_c/subject} found. p_l agrees, and r_c leads {PRONOUN/p_l/object} to a pond with a little waterfall! The two get a little wet while exploring, but they both feel more confident in their knowledge of the territory.",
 				"relationships": [
 					{
 						"cats_from": [
@@ -346,7 +346,7 @@
 						-1
 					]
 				},
-				"text": "r_c notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and elsewhere with {PRONOUN/p_l/poss} thoughts. r_c feels disappointed in what could've been a fun outing.",
+				"text": "r_c notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and seems distracted. r_c feels disappointed in what could've been a fun outing.",
 				"exp": 0,
 				"frequency": 4,
 				"stat_trait": [
@@ -430,7 +430,7 @@
 						-1
 					]
 				},
-				"text": "r_c notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and elsewhere with {PRONOUN/p_l/poss} thoughts. When r_c asks if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} okay, p_l snaps back at r_c, and the patrol ends in an argument.",
+				"text": "r_c notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and seems distracted. When r_c asks if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} okay, p_l snaps back at r_c, and the patrol ends in an argument.",
 				"exp": 0,
 				"frequency": 2,
 				"stat_trait": [
