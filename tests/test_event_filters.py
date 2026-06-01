@@ -1908,16 +1908,88 @@ class TestCatConstraint(unittest.TestCase):
                 event_for_cat(cat=broken_cat, cat_info={"health": {"working": False}})
             )
 
-        # cat should have an injury and does
-        # include an illness and a perm condition
+        # cat should have a condition and does
+        test_dict = {
+            broken_cat: ["broken bone"],
+            ill_cat: ["greencough"],
+            born_para_cat: ["paralyzed"],
+        }
+        for cat, condition in test_dict.items():
+            with self.subTest(f"has required condition: {condition}"):
+                self.assertTrue(
+                    event_for_cat(
+                        cat=cat, cat_info={"health": {"condition": condition}}
+                    )
+                )
 
-        # cat shouldn't have an injury and does
-        # include an illness and a perm condition
+        # cat has the wrong condition
+        test_dict = {
+            broken_cat: ["whitecough"],
+            ill_cat: ["whitecough"],
+            born_para_cat: ["whitecough"],
+        }
+        for cat, condition in test_dict.items():
+            with self.subTest(f"does not have required condition: {condition}"):
+                self.assertFalse(
+                    event_for_cat(
+                        cat=cat, cat_info={"health": {"condition": condition}}
+                    )
+                )
+
+        # cat has no condition but needs one
+        with self.subTest(f"does not have any condition"):
+            self.assertFalse(
+                event_for_cat(
+                    cat=working_cat, cat_info={"health": {"condition": ["greencough"]}}
+                )
+            )
 
         # condition must be acquired and is
+        with self.subTest(f"condition must be acquired and is"):
+            self.assertTrue(
+                event_for_cat(
+                    cat=acquired_para_cat,
+                    cat_info={
+                        "health": {"condition": ["paralyzed"], "must_be_acquired": True}
+                    },
+                )
+            )
 
         # condition must be acquired and isn't
+        with self.subTest(f"condition must be acquired and isn't"):
+            self.assertFalse(
+                event_for_cat(
+                    cat=born_para_cat,
+                    cat_info={
+                        "health": {"condition": ["paralyzed"], "must_be_acquired": True}
+                    },
+                )
+            )
 
         # condition must be congenital and is
+        with self.subTest(f"condition must be congenital and is"):
+            self.assertTrue(
+                event_for_cat(
+                    cat=born_para_cat,
+                    cat_info={
+                        "health": {
+                            "condition": ["paralyzed"],
+                            "must_be_congenital": True,
+                        }
+                    },
+                )
+            )
 
-        # condition must be congential and isn't
+        # condition must be congenital and isn't
+        with self.subTest(f"condition must be congenital and isn't"):
+            self.assertFalse(
+                event_for_cat(
+                    cat=acquired_para_cat,
+                    cat_info={
+                        "health": {
+                            "condition": ["paralyzed"],
+                            "must_be_congenital": True,
+                        }
+                    },
+                )
+            )
