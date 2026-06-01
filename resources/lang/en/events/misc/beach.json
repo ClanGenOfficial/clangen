@@ -156,7 +156,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "A thick fog has started to envelop the coast. When m_c looks over the shoreline, {PRONOUN/m_c/subject} {VERB/m_c/swear/swears} {PRONOUN/m_c/subject} {VERB/m_c/see/sees} a translucent Twoleg ship out on the ocean... but when {PRONOUN/m_c/subject} {VERB/m_c/blink/blinks}, it's gone.",
+        "event_text": "A thick fog envelops the coast. m_c swears {PRONOUN/m_c/subject} {VERB/m_c/see/sees} a translucent Twoleg ship out on the ocean... but when {PRONOUN/m_c/subject} {VERB/m_c/blink/blinks}, it's gone.",
         "m_c": {
             "age": [
                 "any"
