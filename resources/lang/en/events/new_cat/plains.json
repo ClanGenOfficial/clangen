@@ -158,7 +158,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 2,
-    "event_text": "m_c bumps into something in the darkness of camp. {PRONOUN/m_c/subject/CAP} {VERB/m_c/look/looks} up to find the glowing eyes of a stranger, who starts begging to stay in c_n to hide from something chasing {PRONOUN/n_c:0/object}.",
+    "event_text": "m_c bumps into something in the darkness of camp. {PRONOUN/m_c/subject/CAP} {VERB/m_c/look/looks} up to find the glowing eyes of a stranger, who begs {PRONOUN/m_c/object} to hide {PRONOUN/n_c:0/object} from something chasing {PRONOUN/n_c:0/object}.",
     "m_c": {
       "age": [],
       "status": [
