@@ -77,7 +77,8 @@ def reformat():
             if t.get("main_backstory_constraint"):
                 m_c["backstory"] = t.get("main_backstory_constraint")
             if m_c:
-                reformatted_thought["m_c"] = m_c
+                reformatted_thought["involved_cats"] = {}
+                reformatted_thought["involved_cats"]["m_c"] = m_c
 
             # RANDOM CAT
             r_c = {}
@@ -130,7 +131,7 @@ def reformat():
             if t.get("random_backstory_constraint"):
                 r_c["backstory"] = t.get("random_backstory_constraint")
             if r_c:
-                reformatted_thought["r_c"] = r_c
+                reformatted_thought.get("involved_cats", {})["r_c"] = r_c
 
             if t.get("relationship_constraint"):
                 reformatted_thought["relationship_constraint"] = {
@@ -142,7 +143,8 @@ def reformat():
             new_thoughts.append(reformatted_thought)
 
         with open(path, "w") as write_file:
-            write_file.write(new_thoughts)
+            write_file.write(str(new_thoughts))
+
 
 load_paths()
 reformat()
