@@ -871,12 +871,14 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
         if "any" in required_conditions:
             return True
 
+        print(required_conditions)
         is_exclusionary = _check_for_exclusionary_value(required_conditions)
         if is_exclusionary:
             required_conditions = [x.replace("-", "") for x in required_conditions]
 
         current_conditions = set(cat.illnesses.keys())
         current_conditions.update(cat.injuries.keys())
+        current_conditions.update(cat.permanent_condition.keys())
 
         if current_conditions.intersection(set(required_conditions)):
             if is_exclusionary:
