@@ -8,7 +8,10 @@ from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
 from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
-from scripts.events_module.parameter_dicts import InvolvedCatDict
+from scripts.events_module.parameter_dicts import (
+    InvolvedCatDict,
+    RelationshipConstraintDict,
+)
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
@@ -359,6 +362,7 @@ def event_for_cat(
     event_id: str = None,
     p_l=None,
     injuries: list = None,
+    other_involved_clan_id: str = None,
 ) -> bool:
     """
     checks if a cat is suitable for the event
@@ -369,6 +373,7 @@ def event_for_cat(
     :param event_id: if event comes with an id, include it here
     :param p_l: if event is a patrol, include patrol leader object here
     :param injuries: list of injuries that the event may give this cat
+    :param other_involved_clan_id: if another Clan is involved, include their ID
     """
 
     func_lookup = {
@@ -402,7 +407,12 @@ def event_for_cat(
 
     # checking groups
     if cat_info.get("group"):
-        if not _check_cat_standing(cat, cat_info["group"], involved_cat_dict):
+        if not _check_cat_group(cat, cat_info["group"], involved_cat_dict):
+            return False
+    if cat_info.get("standing"):
+        if not _check_cat_standing(
+            cat, cat_info["standing"], involved_cat_dict, other_involved_clan_id
+        ):
             return False
 
     # checking injuries
@@ -642,14 +652,17 @@ def _check_cat_group(cat, groups: List[str], already_involved_cats: dict) -> boo
 
 
 def _check_cat_standing(
-    cat, standing: Dict[str, list], already_involved_cats: dict, other_clan_id: str
+    cat,
+    standing: Dict[str, list],
+    already_involved_cats: dict,
+    other_clan_id: str = None,
 ) -> bool:
     """
     Checks if the cat is in one of the required groups
     :param cat: cat to check
     :param standing: dict of standing info
     :param already_involved_cats: dict of cats already involved: key is cat abbr and value is cat object
-    :param other_clan_id: the ID of the other clan involved in this event
+    :param other_clan_id: the ID of the other involved clan
     """
     if not standing:
         return True
@@ -714,7 +727,7 @@ def _check_cat_standing(
     return qualifies
 
 
-def _has_current_standing(cat, standing, groups, other_clan_id: str) -> bool:
+def _has_current_standing(cat, standing, groups, other_clan_id: str = None) -> bool:
     """
     Checks if the cat currently has a certain standing
     :param standing: the CatStanding to check for
@@ -731,7 +744,7 @@ def _has_current_standing(cat, standing, groups, other_clan_id: str) -> bool:
         print(f"WARNING: {standing} is unsupported by the standing filter.")
         return False
 
-    if CatGroup.OTHER_CLAN in groups:
+    if CatGroup.OTHER_CLAN in groups and other_clan_id:
         if status_func(other_clan_id):
             return True
     if CatGroup.PLAYER_CLAN in groups:
@@ -753,7 +766,7 @@ def _has_current_standing(cat, standing, groups, other_clan_id: str) -> bool:
     return False
 
 
-def _has_past_standing(cat, standing, groups, other_clan_id: str) -> bool:
+def _has_past_standing(cat, standing, groups, other_clan_id: str = None) -> bool:
     """
     Checks if the cat has had a certain standing
     :param cat: the cat the check
@@ -762,7 +775,7 @@ def _has_past_standing(cat, standing, groups, other_clan_id: str) -> bool:
     :param other_clan_id: the ID of the other clan involved in this event
     """
 
-    if CatGroup.OTHER_CLAN in groups:
+    if CatGroup.OTHER_CLAN in groups and other_clan_id:
         if standing in cat.status.get_standing_with_group(other_clan_id):
             return True
     if CatGroup.PLAYER_CLAN in groups:
@@ -1250,6 +1263,30 @@ def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     return any(value.find("-") == 0 for value in possible_values)
 
 
+def check_rel_constraint_groups(constraints_dict: RelationshipConstraintDict) -> bool:
+    """
+    Compares two groups of cats to see if they meet relationship constraints
+    """
+    for cat in constraints_dict["cats_from"]:
+        group = [cat]
+        group.extend(constraints_dict["cats_to"])
+        if not filter_relationship_type(
+            group=group, filter_types=constraints_dict["constraints"]
+        ):
+            return False
+
+    if constraints_dict["mutual"]:
+        for cat in constraints_dict["cats_to"]:
+            group = [cat]
+            group.extend(constraints_dict["cats_from"])
+            if not filter_relationship_type(
+                group=group, filter_types=constraints_dict["constraints"]
+            ):
+                return False
+
+    return True
+
+
 def filter_relationship_type(group: list, filter_types: List[str], patrol_leader=None):
     """
     filters for specific types of relationships between groups of cat objects, returns bool
@@ -1281,8 +1318,6 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
     test_cat = group[0]
     testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
-    qualifies = False
 
     if "strangers" in filter_types:
         qualifies = False

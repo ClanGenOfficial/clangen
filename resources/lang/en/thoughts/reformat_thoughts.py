@@ -109,6 +109,12 @@ def reformat():
                     if "unknownresidence" in t.get("random_living_status"):
                         r_c["group"].append("unknown_residence")
 
+            if t.get("random_outside_status"):
+                if "clancat" in t["random_outside_status"]:
+                    r_c["group"].append("player_clan")
+                if "outside" in t["random_outside_status"]:
+                    r_c["group"].append("no_group")
+
             if t.get("random_trait_constraint"):
                 r_c["stat"] = {
                     "trait": t.get("random_trait_constraint"),
@@ -134,12 +140,14 @@ def reformat():
                 reformatted_thought.get("involved_cats", {})["r_c"] = r_c
 
             if t.get("relationship_constraint"):
-                reformatted_thought["relationship_constraint"] = {
-                    "cats_from": ["m_c"],
-                    "cats_to": ["r_c"],
-                    "mutual": False,
-                    "constraints": t.get("relationship_constraint"),
-                }
+                reformatted_thought["relationship_constraint"] = [
+                    {
+                        "cats_from": ["m_c"],
+                        "cats_to": ["r_c"],
+                        "mutual": False,
+                        "constraints": t.get("relationship_constraint"),
+                    }
+                ]
             new_thoughts.append(reformatted_thought)
 
         dict_text = ujson.dumps(new_thoughts, indent=4)

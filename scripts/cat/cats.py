@@ -1598,8 +1598,10 @@ class Cat:
 
         if self.status.is_other_clancat and not self.dead:
             cat_list = other_clan_cats.copy() if other_clan_cats else []
+            other_clan_id = self.status.group_ID
         else:
             cat_list = self.all_cats_list.copy()
+            other_clan_id = choice(game.clan.other_clan_IDs)
 
         if not other_cat:
             other_cat = get_other_cat_for_thought(
@@ -1608,7 +1610,9 @@ class Cat:
             )
 
         # get chosen thought
-        chosen_thought = new_thought(thought_type, self, other_cat)
+        chosen_thought = new_thought(
+            thought_type, self, other_cat, other_clan_id=other_clan_id
+        )
 
         chosen_thought = event_text_adjust(
             self.__class__,

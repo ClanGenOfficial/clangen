@@ -185,12 +185,12 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 ```json
     "standing": {
-        "with": [],
+        "group": [],
         "currently": [],
         "past": []
       },
 ```
->**`"with"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups)
+>**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups)
 
 >**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
 
