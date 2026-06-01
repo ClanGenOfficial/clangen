@@ -1,24 +1,15 @@
 [
     {
         "id": "general_exiled",
-        "strings": [
+        "thoughts": [
             "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been exiled"
         ]
     },
     {
         "id": "general_exiled_revenge",
-        "strings": [
+        "thoughts": [
             "Swears {PRONOUN/m_c/poss} revenge for being exiled"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "vengeful",
-                        "bloodthirsty"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": ["vengeful", "bloodthirsty"]
     }
 ]
