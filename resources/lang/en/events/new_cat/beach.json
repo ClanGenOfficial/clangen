@@ -161,6 +161,70 @@
         }
     },
     {
+        "event_id": "bch_newcat_twolegboatcrash",
+        "location": [
+            "beach:camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "A stranger washes up on the shore, coughing up saltwater and surrounded by the remains of what {PRONOUN/n_c:0/subject} {VERB/n_c:0/call/calls} a \"boat.\" m_c brings {PRONOUN/n_c:0/object} to camp to be treated.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "-kitten"
+            ]
+        },
+        "new_cat": [
+            [
+                "status:warrior",
+                "backstory:kittypet2"
+            ]
+        ],
+        "injury": [
+            {
+                "cats": ["n_c:0"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["n_c:0"],
+                "death": "m_c died after {PRONOUN/m_c/poss} boat crashed and {PRONOUN/m_c/subject} inhaled too much water."
+            }
+        ],
+        "relationships": [
+            {
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:0"],
+              "mutual": false,
+              "values": ["comfort", "like"],
+              "amount": 5,
+                "log": {
+                    "cats_from": "m_c found n_c:0 after {PRONOUN/n_c:0/poss} boat crashed and rushed {PRONOUN/n_c:0/object} to camp to be treated."
+                }
+            },
+            {
+              "cats_from": ["n_c:0"],
+              "cats_to": ["m_c"],
+              "values": ["trust"],
+              "amount": 10,
+              "log": {
+                "cats_from": "n_c:0 is grateful that m_c found {PRONOUN/n_c:0/object} washed up on shore and saved {PRONOUN/n_c:0/poss} life."
+              }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 1
+        }
+    },
+    {
         "event_id": "bch_new_cat_current",
         "location": [
             "beach:camp4"

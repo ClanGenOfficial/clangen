@@ -5120,6 +5120,28 @@
         ]
     },
     {
+        "event_id": "gen_misc_any_daydreamerkitten1",
+        "location": ["any"],
+        "season": ["any"],
+        "frequency": 2,
+        "event_text": "m_c watches the clouds and imagines a world far, far away...",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"]
+        }
+    },
+    {
+        "event_id": "gen_misc_any_daydreamerkitten2",
+        "location": ["any"],
+        "season": ["any"],
+        "frequency": 2,
+        "event_text": "m_c watches a scuttling beetle and imagines it's on a great adventure.",
+        "m_c": {
+            "age": ["kitten"],
+            "trait": ["daydreamer"]
+        }
+    },
+    {
         "event_id": "gen_misc_any_welcoming_strangermeeting1",
         "location": [
             "any"
@@ -14088,5 +14110,32 @@
                 ]
         },
      "r_c": {}
-    }
+    },
+    {
+    "event_id": "gen_misc_greenleaf_splashdate",
+    "location": ["any", "-desert"],
+    "season": ["greenleaf"],
+    "sub_type": [],
+    "tags": ["romance"],
+    "frequency": 4,
+    "event_text": "m_c and r_c spend sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
+    "m_c": {
+        "age": ["adolescent", "young adult"]
+    },
+    "r_c": {
+        "age": ["adolescent", "young adult"]
+    },
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": true,
+            "values": ["romance"],
+            "amount": 10,
+            "log": {
+  "cats_from": "cat_to and cat_from enjoyed splashing each other to beat the heat."
+                }
+        }
+    ]
+}
 ]
