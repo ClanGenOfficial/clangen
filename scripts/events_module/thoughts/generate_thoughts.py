@@ -353,7 +353,7 @@ def _constraints_fulfilled(
             cat=main_cat,
             involved_cat_dict=involved_cats,
             event_id=thought.id,
-            other_involved_clan_id=other_clan_id
+            other_involved_clan_id=other_clan_id,
         ):
             return False
 
@@ -362,7 +362,7 @@ def _constraints_fulfilled(
             cat=random_cat,
             involved_cat_dict=involved_cats,
             event_id=thought.id,
-            other_involved_clan_id=other_clan_id
+            other_involved_clan_id=other_clan_id,
         ):
             return False
 
