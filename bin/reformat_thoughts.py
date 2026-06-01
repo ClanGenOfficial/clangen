@@ -3,7 +3,7 @@ import os
 import ujson
 
 
-root_dir = "../thoughts"
+root_dir = "../resources/lang/en/thoughts"
 file_set = set()
 
 
@@ -136,7 +136,9 @@ def reformat():
                     "skill": t.get("random_skill_constraint"),
                 }
 
-            if t.get("has_injuries", {}).get("r_c") or t.get("perm_conditions", {}).get("r_c"):
+            if t.get("has_injuries", {}).get("r_c") or t.get("perm_conditions", {}).get(
+                "r_c"
+            ):
                 health: dict = {"condition": []}
                 if t.get("has_injuries", {}).get("r_c"):
                     health["condition"] = t["has_injuries"]["r_c"]
