@@ -1531,7 +1531,8 @@
                             "cats_from": "cat_from was annoyed with cat_to when {PRONOUN/cat_to/subject} didn't go along with {PRONOUN/cat_from/poss} idea."
                         }
                     }
-                }
-            ]
-        }
-    ]
+                ]
+            }
+        ]
+    }
+ ]
