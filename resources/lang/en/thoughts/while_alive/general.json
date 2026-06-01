@@ -1,7 +1,7 @@
 [
     {
         "id": "gen",
-        "strings": [
+        "thoughts": [
             "Is feeling quite lazy",
             "Is spending a considerable amount of time grooming",
             "Is looking forward to today",
@@ -66,16 +66,16 @@
             "Is grooming, grooming, grooming away...",
             "Purrs whenever the sun hits {PRONOUN/m_c/object} just right",
             "Sprawls out in a warm patch of sunlight",
-            "Notices a cloud is shaped like a star",
-            "Notices a cloud is shaped like a mouse",
-            "Notices a cloud is shaped like a bird",
-            "Startles at a clap of thunder",
+			"Notices a cloud is shaped like a star",
+			"Notices a cloud is shaped like a mouse",
+			"Notices a cloud is shaped like a bird",
+			"Startles at a clap of thunder",
             "Meows"
         ]
     },
     {
         "id": "gen_to_other",
-        "strings": [
+        "thoughts": [
             "Is eavesdropping on r_c",
             "Wonders how r_c is doing",
             "Wonders what r_c is up to"
@@ -83,7 +83,7 @@
     },
     {
         "id": "gen_not_kit",
-        "strings": [
+        "thoughts": [
             "Is thinking about {PRONOUN/m_c/poss} life choices",
             "Can't wait to take a nap later",
             "Saw a yappy little dog today",
@@ -92,17 +92,13 @@
             "Is drinking water from a nearby stream",
             "Spends time watching fish in the nearby river"
         ],
-        "involved_cats": {
-            "m_c": {
-                "age": [
-                    "-kitten"
-                ]
-            }
-        }
+        "main_age_constraint": [
+            "-kitten"
+        ]
     },
     {
         "id": "gen_to_kit",
-        "strings": [
+        "thoughts": [
             "Is a bit cross with r_c",
             "Is growing fond of r_c",
             "Is wishing r_c would play more quietly",
@@ -110,98 +106,85 @@
             "Is proud of r_c's growth",
             "Watches r_c pretend to hunt a mouse",
             "Catches r_c climb a bit too high"
+        ] ,
+        "main_age_constraint": [
+            "-kitten"
         ],
-        "involved_cats": {
-            "m_c": {
-                "age": [
-                    "-kitten"
-                ]
-            },
-            "r_c": {
-                "age": [
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "random_age_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "gen_to_alive_senior",
-        "strings": [
+        "thoughts": [
             "Is hoping r_c will tell {PRONOUN/m_c/object} a new story",
             "Wonders at all that r_c has seen and done",
             "Is listening to r_c's story",
             "Is spending time with r_c"
         ],
-        "involved_cats": {
-            "m_c": {
-                "status": [
-                    "-elder",
-                    "-leader"
-                ],
-                "age": [
-                    "-senior"
-                ]
-            },
-            "r_c": {
-                "age": [
-                    "senior"
-                ]
-            }
-        }
+        "main_status_constraint": [
+            "-elder",
+            "-leader"
+        ],
+        "main_age_constraint": [
+            "-senior"
+        ],
+        "random_age_constraint": [
+            "senior"
+        ]
     },
     {
         "id": "gen_newleaf_greenleaf",
-        "season": [
-            "Newleaf",
-            "Greenleaf"
-        ],
-        "strings": [
+        "thoughts": [
             "Purrs as a cool breeze hits {PRONOUN/m_c/object}"
+        ],
+        "season": [
+            "Newleaf", "Greenleaf"
         ]
     },
     {
         "id": "gen_greenleaf",
-        "season": [
-            "Greenleaf"
-        ],
-        "strings": [
+        "thoughts": [
             "Is finding the buzzing of the cicadas annoying",
             "Can't sleep because of the bugs and the heat",
             "Can't get anything done with this heat",
             "Is sitting in the shade trying to hide from the heat",
             "Is debating swimming to cool down"
+        ],
+        "season": [
+            "Greenleaf"
         ]
     },
     {
         "id": "gen_leaffall",
-        "season": [
-            "Leaf-fall"
-        ],
-        "strings": [
+        "thoughts": [
             "Leaps into a pile of fallen leaves",
             "Is crushing leaves under {PRONOUN/m_c/poss} paws",
             "Is glad it's not so hot out anymore"
+        ],
+        "season": [
+            "Leaf-fall"
         ]
     },
     {
         "id": "gen_leafbare",
-        "season": [
-            "Leaf-bare"
-        ],
-        "strings": [
+        "thoughts": [
             "Sneezes when a snowflake landed on {PRONOUN/m_c/poss} nose",
             "Can't stand this cold",
             "Pounced on some movement under the snow like a fox",
             "Slipped on some ice hidden under the snow",
             "Is careful not to stand under branches with snow on them"
+        ],
+        "season": [
+            "Leaf-bare"
         ]
     },
     {
         "id": "adventurous_gen",
-        "strings": [
+        "thoughts": [
             "Wonders what lies beyond the distant horizon...",
             "Is dreaming of one day discovering something new and exciting!",
             "Is itching to run, run, run!",
@@ -212,74 +195,54 @@
             "Imagines riding a log down a rushing river",
             "Fantasizes about breathing underwater to explore the depths of a lake"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "adventurous"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "adventurous"
+        ]
     },
     {
         "id": "play_pretend_gen",
-        "strings": [
+        "thoughts": [
             "Has r_c very engaged in a very, very tall tale",
             "Is proudly watching r_c plan how to hunt down a creature {PRONOUN/m_c/subject} made up",
             "Swears {PRONOUN/m_c/subject} saw a frog riding a bird just the other day",
             "Claims to be able to speak to dogs",
             "Talks about {PRONOUN/m_c/poss} kittypet friend who has lived through twenty-five leaf-bares"
         ],
-        "involved_cats": {
-            "m_c": {
-                "age": [
-                    "-kitten",
-                    "-adolescent"
-                ],
-                "stat": {
-                    "trait": [
-                        "adventurous",
-                        "charismatic",
-                        "childish",
-                        "cunning",
-                        "playful",
-                        "sneaky"
-                    ]
-                }
-            },
-            "r_c": {
-                "age": [
-                    "kitten",
-                    "adolescent"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "adventurous",
+            "charismatic",
+            "childish",
+            "cunning",
+            "playful",
+            "sneaky"
+        ],
+        "main_age_constraint": [
+            "-kitten",
+            "-adolescent"
+        ],
+        "random_age_constraint": [
+            "kitten",
+            "adolescent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "ambitious_gen",
-        "strings": [
+        "thoughts":[
             "Is feeling proud of {PRONOUN/m_c/self}",
             "Wants to drive off a fox all by {PRONOUN/m_c/self}",
             "Imagines taking on a badger single-pawed",
             "Wants to get so much done today!"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "ambitious"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "ambitious"
+        ]
     },
     {
         "id": "arrogant_gen",
-        "strings": [
+        "thoughts":[
             "Is sure that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} more skilled than anyone else",
             "Is confidently spreading misinformation on something {PRONOUN/m_c/subject} {VERB/m_c/know/knows} little about",
             "Is confidently spreading misinformation on something {PRONOUN/m_c/subject} {VERB/m_c/know/knows} nothing about",
@@ -288,19 +251,14 @@
             "Looks smug despite not doing anything impressive",
             "Grooms in an extra ostentatious way"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "arrogant"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "arrogant"
+        ]
     },
     {
         "id": "bloodthirsty_gen",
-        "strings": [
+        "thoughts":[
+
             "Is acting suspicious",
             "Has been washing {PRONOUN/m_c/poss} paws a lot lately",
             "Growls to {PRONOUN/m_c/self}",
@@ -315,59 +273,39 @@
             "Shreds {PRONOUN/m_c/poss} bedding absentmindedly",
             "Admires {PRONOUN/m_c/poss} own claws"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "bloodthirsty"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
     },
     {
         "id": "bold_gen",
-        "strings": [
+        "thoughts":[
             "Prances around with {PRONOUN/m_c/poss} tail up high, ready for anything",
             "Is not afraid of anything"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "bold"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "bold"
+        ]
     },
     {
         "id": "bold_to_kit",
-        "strings": [
+        "thoughts": [
             "Promises r_c {PRONOUN/m_c/subject}'ll protect {PRONOUN/r_c/object} when the time comes"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "bold"
-                    ]
-                }
-            },
-            "r_c": {
-                "age": [
-                    "newborn",
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "bold"
+        ],
+        "random_age_constraint": [
+            "newborn",
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "calm_gen",
-        "strings": [
+        "thoughts":[
             "Is taking a moment to appreciate some peace and quiet",
             "Is meditating upon a sun-warmed rock",
             "Is out on a peaceful stroll",
@@ -380,88 +318,60 @@
             "Spends the whole morning stretching",
             "Listens to the harmony of birdsong"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "calm"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "calm"
+        ]
     },
     {
         "id": "calm_to_kit",
-        "strings": [
+        "thoughts": [
             "Is unable to be scared, no matter how much the kits try"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "calm"
-                    ]
-                }
-            },
-            "r_c": {
-                "status": [
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "calm"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "careful_gen",
-        "strings": [
+        "thoughts":[
             "Slowly and methodically grooms {PRONOUN/m_c/self}",
             "Feels at peace",
             "Watches where {PRONOUN/m_c/subject} {VERB/m_c/put/puts} {PRONOUN/m_c/poss} paws",
             "Swats at a giant spider! And realizes it was just a leaf"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "careful"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "careful"
+        ]
     },
     {
         "id": "careful_to_younger",
-        "strings": [
+        "thoughts": [
             "Is chiding r_c for being so reckless"
         ],
-        "involved_cats": {
-            "m_c": {
-                "age": [
-                    "-kitten",
-                    "-adolescent"
-                ],
-                "stat": {
-                    "trait": [
-                        "careful"
-                    ]
-                }
-            },
-            "r_c": {
-                "age": [
-                    "adolescent",
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "careful"
+        ],
+        "main_age_constraint": [
+            "-kitten",
+            "-adolescent"
+        ],
+        "random_age_constraint": [
+            "adolescent",
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "charismatic_gen",
-        "strings": [
+        "thoughts":[
             "Always manages to turn the mood into a lighter one",
             "Is laughing with friends",
             "Plans to go on a stroll with some cat today",
@@ -478,19 +388,13 @@
             "Is sad {PRONOUN/m_c/subject} can't spend time with every cat at once",
             "Just wants to be alone, for once"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "charismatic"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "charismatic"
+        ]
     },
     {
         "id": "childish_gen",
-        "strings": [
+        "thoughts":[
             "Is playing with {PRONOUN/m_c/poss} food",
             "Is crunching leaves with {PRONOUN/m_c/poss} paws",
             "Is distracted by a shiny Twoleg trinket {PRONOUN/m_c/subject} found",
@@ -502,45 +406,32 @@
             "Starts a beetle collection",
             "Wants to shrink down super tiny and infiltrate an anthill"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "childish"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "childish"
+        ]
     },
     {
         "id": "silly_to_living_kit",
-        "strings": [
+        "thoughts":[
+
             "Is pretending to not see r_c sneaking up on {PRONOUN/m_c/object}",
             "Excitedly asks r_c if {PRONOUN/r_c/subject} {VERB/r_c/know/knows} any good games",
             "Tells r_c jokes all day"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "childish",
-                        "playful"
-                    ]
-                }
-            },
-            "r_c": {
-                "age": [
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "random_age_constraint": [
+            "kitten"
+        ],
+        "main_trait_constraint": [
+            "childish",
+            "playful"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "cold_gen",
-        "strings": [
+        "thoughts":[
             "Is hissing in frustration",
             "Is grunting rudely at passersby",
             "Believes weakness should be punished, not nurtured",
@@ -550,19 +441,13 @@
             "Doesn't laugh at r_c's joke",
             "Scowls for no reason"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "cold"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "cold"
+        ]
     },
     {
         "id": "compassionate_gen",
-        "strings": [
+        "thoughts":[
             "Is delighted by the slow passage of time",
             "Feels entirely unlike {PRONOUN/m_c/self} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} bothered by something small",
             "Feels {PRONOUN/m_c/poss} kindness might be taken advantage of",
@@ -571,61 +456,41 @@
             "Is feeling really sad, but tries not to let it show",
             "Helps solve a conflict by mediating both sides"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "compassionate"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "compassionate"
+        ]
     },
     {
         "id": "compassionate_to_kit",
-        "strings": [
+        "thoughts": [
             "Smiles at some kit's cheap prank, knowing they'll grow out of it soon",
             "Listens to a kit's complaints, even if they seem trivial",
             "Tells the kits they're getting so big and strong!"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "compassionate"
-                    ]
-                }
-            },
-            "r_c": {
-                "age": [
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "compassionate"
+        ],
+        "random_age_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "competitive_gen",
-        "strings": [
+        "thoughts":[
             "Puffs out {PRONOUN/m_c/poss} chest, feeling secure with the space {PRONOUN/m_c/subject} {VERB/m_c/take/takes} up",
             "Is practicing doing things around camp as fast as possible, just in case",
             "Wants to wrestle just for fun"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "competitive"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "competitive"
+        ]
     },
     {
         "id": "confident_gen",
-        "strings": [
+        "thoughts":[
             "Is puffing {PRONOUN/m_c/poss} chest out",
             "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the funniest cat around",
             "Is strutting around confidently",
@@ -635,37 +500,26 @@
             "Already has a plan in mind for today",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} well-liked"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "confident"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "confident"
+        ]
     },
     {
         "id": "cunning_gen",
-        "strings": [
+        "thoughts":[
             "Knows exactly how to get {PRONOUN/m_c/self} out of a mess {PRONOUN/m_c/subject} orchestrated",
             "Grooms {PRONOUN/m_c/poss} pelt to <i>just</i> this side of perfection",
             "Schemes intensely",
             "Concocts a plan for world domination... just for fun"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "cunning"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "cunning"
+        ]
     },
     {
         "id": "daring_gen",
-        "strings": [
+        "thoughts":[
+
             "Took a nap on a high tree branch",
             "Took a nap on the edge of a high rock",
             "Suffered a bellyache after being dared to swallow a beetle",
@@ -680,19 +534,14 @@
             "Goes out for a hunt during a thunderstorm",
             "Isn't afraid of anything"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "daring"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "daring"
+        ]
     },
     {
         "id": "faithful_gen",
-        "strings": [
+        "thoughts":[
+
             "Is certain of {PRONOUN/m_c/poss} purpose",
             "Doesn't question {PRONOUN/m_c/poss} own judgment",
             "Stares up at the stars wonderingly",
@@ -701,42 +550,29 @@
             "Feels {PRONOUN/m_c/poss} paws are guided by {PRONOUN/m_c/poss} ancestors",
             "Encourages {PRONOUN/m_c/poss} friends to trust in their beliefs"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "faithful"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "faithful"
+        ]
     },
     {
         "id": "faithful_to_kit",
-        "strings": [
+        "thoughts": [
             "Urges r_c to follow {PRONOUN/r_c/poss} own beliefs"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "faithful"
-                    ]
-                }
-            },
-            "r_c": {
-                "status": [
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "faithful"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "fierce_gen",
-        "strings": [
+        "thoughts":[
+
             "Isn't scared of anything today!",
             "Can't stop flexing {PRONOUN/m_c/poss} claws",
             "Woke up with a flame in {PRONOUN/m_c/poss} belly this morning!",
@@ -751,19 +587,13 @@
             "Wishes {PRONOUN/m_c/subject} had more scars",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a force to be reckoned with"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "fierce"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "fierce"
+        ]
     },
     {
         "id": "flamboyant_gen",
-        "strings": [
+        "thoughts":[
             "Is catching the attention of every cat around {PRONOUN/m_c/object}",
             "Works to show off {PRONOUN/m_c/poss} talents in every movement {PRONOUN/m_c/subject} {VERB/m_c/make/makes}",
             "Spent a long time grooming {PRONOUN/m_c/self} to catch as much attention as possible",
@@ -777,19 +607,13 @@
             "Decorates {PRONOUN/m_c/self} with a new kind of flower petal, then changes {PRONOUN/m_c/poss} mind",
             "Has such a shiny pelt {PRONOUN/m_c/subject} {VERB/m_c/glisten/glistens} in the sun"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "flamboyant"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "flamboyant"
+        ]
     },
     {
         "id": "gloomy_gen",
-        "strings": [
+        "thoughts":[
             "Is feeling down...",
             "Wants to be alone...",
             "Apologized for something {PRONOUN/m_c/subject} didn't even need to apologize for",
@@ -800,19 +624,13 @@
             "Sighs a lot",
             "Thinks it'll probably rain"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "gloomy"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "gloomy"
+        ]
     },
     {
         "id": "grumpy_gen",
-        "strings": [
+        "thoughts":[
             "Is grumbling about something or other to {PRONOUN/m_c/self}",
             "Is extra irritable today",
             "Snickers when {PRONOUN/m_c/subject} {VERB/m_c/see/sees} a cat trip",
@@ -827,19 +645,14 @@
             "Finds bird song annoying",
             "Wishes {PRONOUN/m_c/subject} could just have a bit of peace"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "grumpy"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "grumpy"
+        ]
     },
     {
         "id": "insecure_gen",
-        "strings": [
+        "thoughts":[
+
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough...",
             "Is thinking about where {PRONOUN/m_c/subject} {VERB/m_c/belong/belongs}",
             "Wonders if other cats laugh with {PRONOUN/m_c/object} or at {PRONOUN/m_c/object}...",
@@ -855,19 +668,13 @@
             "Fakes it 'til {PRONOUN/m_c/subject} {VERB/m_c/make/makes} it",
             "Boasts loudly about all {PRONOUN/m_c/poss} accomplishments"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "insecure"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "insecure"
+        ]
     },
     {
         "id": "lonesome_gen",
-        "strings": [
+        "thoughts":[
             "Is sitting alone",
             "Wants to be alone...",
             "Wonders if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} alone in {PRONOUN/m_c/poss} thoughts and beliefs",
@@ -888,24 +695,16 @@
             "Wishes r_c would stop bothering {PRONOUN/m_c/object}",
             "Is surprised to find {PRONOUN/m_c/self} enjoying r_c's company"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "lonesome"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "lonesome"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "loving_gen",
-        "strings": [
+        "thoughts":[
             "Is feeling content with the little things in life",
             "Is purring with friends",
             "Is purring loudly",
@@ -918,48 +717,32 @@
             "Plans a fun surprise for r_c",
             "Bumps heads with r_c affectionately"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "loving"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "loving"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "loyal_gen",
-        "strings": [
+        "thoughts":[
             "Is determined to protect {PRONOUN/m_c/poss} loved ones",
             "Is determined to protect {PRONOUN/m_c/poss} loved ones, now more-so than ever",
             "Defends {PRONOUN/m_c/poss} friend against a rumor",
             "Is stricken after breaking a promise",
             "Reminds r_c that {PRONOUN/r_c/subject} can tell {PRONOUN/m_c/object} anything"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "loyal"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "loyal"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "nervous_gen",
-        "strings": [
+        "thoughts":[
             "Feels like there are ants pricking {PRONOUN/m_c/poss} pelt...",
             "Wonders if other cats laugh with {PRONOUN/m_c/object} or at {PRONOUN/m_c/object}...",
             "Had a nightmare about being on {PRONOUN/m_c/poss} own",
@@ -976,19 +759,13 @@
             "Imagines the worst-case scenario",
             "Has {PRONOUN/m_c/poss} fur spiked up for no apparent reason"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "nervous"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "nervous"
+        ]
     },
     {
         "id": "playful_gen",
-        "strings": [
+        "thoughts":[
             "Pounced on a stray leaf with satisfaction",
             "Seems to be playing with {PRONOUN/m_c/poss} food",
             "Is play-fighting with friends",
@@ -1003,42 +780,28 @@
             "Gets caught mid-prank and makes up an excuse",
             "Makes up a silly story to amuse r_c"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "playful"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "random_living_status": [
+            "living"
+        ],
+        "main_trait_constraint": [
+            "playful"
+        ]
     },
     {
         "id": "rebellious_gen",
-        "strings": [
+        "thoughts":[
             "Is doubting why things are done the way they are",
             "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told",
             "Thinks rules are made to be broken",
             "Thinks every cat should be in charge of themselves"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "rebellious"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "rebellious"
+        ]
     },
     {
         "id": "responsible_gen",
-        "strings": [
+        "thoughts":[
             "Plans to wake up early tomorrow",
             "Was the first to rise this morning",
             "Isn't sure {PRONOUN/m_c/subject} should be idling around at the moment",
@@ -1049,40 +812,26 @@
             "Rests for exactly as long as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to before resuming work",
             "Always makes a plan before launching into action"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "responsible"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "responsible"
+        ]
     },
     {
         "id": "righteous_gen",
-        "strings": [
+        "thoughts":[
             "Is reevaluating {PRONOUN/m_c/poss} morals",
             "Silently judges r_c from afar"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "righteous"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "righteous"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "shameless_gen",
-        "strings": [
+        "thoughts":[
             "Is snoring at a ridiculous volume",
             "Is laughing at a dog stuck behind a Twoleg fence",
             "Is eating and chewing very loudly",
@@ -1097,24 +846,16 @@
             "Steals r_c's punchline",
             "Retells r_c's story as if it happened to {PRONOUN/m_c/object}"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "shameless"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "shameless"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "sincere_gen",
-        "strings": [
+        "thoughts":[
             "Doesn't understand why other cats lie",
             "Is spending a lot of {PRONOUN/m_c/poss} time thinking of ways to support any cat, no matter what they're going through",
             "Pays r_c a personal compliment",
@@ -1126,24 +867,16 @@
             "Refuses to tell a white lie and hurts r_c's feelings because of it",
             "Makes uncomfortably long eye contact with r_c"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "sincere"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "sincere"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "strange_gen",
-        "strings": [
+        "thoughts":[
             "Doesn't understand why cats stare at {PRONOUN/m_c/object} the way they do",
             "Won a staring contest against a cat who was not participating",
             "Is chasing a butterfly",
@@ -1158,7 +891,7 @@
             "Is drawing symbols in the dirt with {PRONOUN/m_c/poss} claws",
             "Paces back and forth",
             "Is zoning out",
-            "Is barking like a dog \u00e2\u20ac\u201d somehow",
+            "Is barking like a dog — somehow",
             "Was found talking to a tree the other day",
             "Was walking on {PRONOUN/m_c/poss} forelimbs for a bit",
             "Seems to have come up with {PRONOUN/m_c/poss} own secret language",
@@ -1168,40 +901,27 @@
             "Rolls around in flowers",
             "Sneezes eleven times in a row"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "strange"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "strange"
+        ]
     },
     {
         "id": "strange_not_kittypet",
-        "strings": [
+        "thoughts":[
             "Wants to change {PRONOUN/m_c/poss} name to be like a kittypet"
         ],
-        "involved_cats": {
-            "m_c": {
-                "status": [
-                    "-kittypet"
-                ],
-                "past_status": [
-                    "-kittypet"
-                ],
-                "stat": {
-                    "trait": [
-                        "strange"
-                    ]
-                }
-            }
-        }
+        "main_status_constraint": [
+            "-kittypet"
+        ],
+        "main_trait_constraint": ["strange"],
+
+        "main_status_history": [
+            "-kittypet"
+        ]
     },
     {
         "id": "sneaky_gen",
-        "strings": [
+        "thoughts":[
             "Taunted a dog stuck behind a Twoleg fence",
             "Is acting suspicious",
             "Is licking {PRONOUN/m_c/poss} chops after an unknown tasty treat",
@@ -1213,64 +933,42 @@
             "Lies easily and confidently to r_c",
             "Rolls around in wild garlic to mask {PRONOUN/m_c/poss} scent"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "sneaky"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "random_living_status": [
+            "living"
+        ],
+        "main_trait_constraint": [
+            "sneaky"
+        ]
     },
     {
         "id": "strict_gen",
-        "strings": [
+        "thoughts":[
             "Is lashing {PRONOUN/m_c/poss} tail furiously",
             "Will not allow {PRONOUN/m_c/self} to rest",
             "Has been tough on {PRONOUN/m_c/self} recently"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "strict"
-                    ]
-                }
-            }
-        }
+        "main_trait_constraint": [
+            "strict"
+        ]
     },
     {
         "id": "thoughtful_gen",
-        "strings": [
+        "thoughts":[
             "Prepared the perfect gift for a friend",
             "Looks out for r_c",
             "Wonders how r_c is doing",
             "Compliments r_c on {PRONOUN/r_c/poss} grooming"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "thoughtful"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "thoughtful"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "troublesome_gen",
-        "strings": [
+        "thoughts":[
             "Won't stop pulling pranks",
             "Is causing problems",
             "Taunted a dog stuck behind a Twoleg fence",
@@ -1284,24 +982,16 @@
             "Teases r_c endlessly",
             "Gossips all day"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "troublesome"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "random_living_status": [
+            "living"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
     },
     {
         "id": "vengeful_gen",
-        "strings": [
+        "thoughts":[
             "Seems to be plotting something",
             "Is definitely plotting something",
             "Swears that {PRONOUN/m_c/subject} will get {PRONOUN/m_c/poss} revenge... but for what?",
@@ -1311,60 +1001,33 @@
             "Bides {PRONOUN/m_c/poss} time",
             "Considers forgiving {PRONOUN/m_c/poss} enemies, then perishes the thought"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "vengeful"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "vengeful"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     },
     {
         "id": "vengeful_to_disliked",
-        "strings": [
+        "thoughts":[
             "Won't let r_c get away with it",
             "Whispers the names of cats who have wronged {PRONOUN/m_c/object} before {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}",
             "Is laughing because a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like got hurt"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "vengeful"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        },
+        "main_trait_constraint": [
+            "vengeful"
+        ],
         "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "dislikes"
-                ]
-            }
+            "dislikes"
+        ],
+        "random_living_status": [
+            "living"
         ]
     },
     {
         "id": "wise_gen",
-        "strings": [
+        "thoughts":[
             "Is grooming {PRONOUN/m_c/self} thoughtfully",
             "Solves a problem by thinking back to another time the exact same thing happened",
             "Feels completely at peace",
@@ -1377,19 +1040,11 @@
             "Feels the weight of {PRONOUN/m_c/poss} memories wrapped around {PRONOUN/m_c/object} like the softest moss",
             "Advises r_c about {PRONOUN/r_c/poss} woes"
         ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "wise"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        "main_trait_constraint": [
+            "wise"
+        ],
+        "random_living_status": [
+            "living"
+        ]
     }
 ]
