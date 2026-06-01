@@ -63,6 +63,16 @@
 		]
 	},
 	{
+		"id": "comfort_inc_med_avoids",
+		"interactions": [
+			"It seems like there's an unspoken apology between m_c and r_c."
+		],
+		"relationship_constraint": ["avoids"],
+		"reaction_random_cat": {
+			"comfort": "increase"
+		}
+	},
+	{
 		"id": "comfort_inc_med1",
 		"interactions": [
 			"r_c helps m_c pick burrs out of {PRONOUN/m_c/poss} fur.",
@@ -204,7 +214,7 @@
 		"id": "comfort_inc_med7",
 		"interactions": [
 			"m_c is watching the shooting stars with r_c.",
-			"r_c lets m_c cry on {PRONOUN/r_c/subject} for a while.",
+			"r_c lets m_c cry on {PRONOUN/r_c/object} for a while.",
 			"r_c stays with m_c until {PRONOUN/m_c/subject} fall asleep.",
 			"As m_c tells r_c a long story, {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} interesting, engaged questions."
 		],

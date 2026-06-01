@@ -127,5 +127,163 @@
                 "frequency": 4
             }
         ]
+    },
+    {
+        "patrol_id": "fst_train_greenleaf_thrushlessons_hunterlocked1",
+        "biome": [
+            "forest"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "types": [
+            "training"
+        ],
+        "tags": [],
+        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [2, 5],
+            "normal adult": [1, 1]
+        },
+        "frequency": 3,
+        "chance_of_success": 60,
+        "pl_skill_constraint": [
+            "HUNTER,1"
+        ],
+        "intro_text": "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of a unique bird of c_n's territory — one fondly recalled from kithood.",
+        "decline_text": "p_l gets too distracted by the lovely birdsong to continue.",
+        "success_outcomes": [
+            {
+                "text": "Varied thrushes are sexually dimorphic, <i>unlike</i> most thrushes but <i>like</i> their cousins, the bluebirds and the robin. The males are dark gray and burnt orange, while the females and immatures are brown and dull orange. Above, they sing quiet but lovely <i>beez</i> and <i>peez</i> in the treetops of conifers.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from happily listened to cat_to's lesson on varied thrushes.",
+                            "cats_to": "cat_to enjoyed teaching cat_from about the varied thrush."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "Veeries, named after their calls, are shy cinnamon-and-white thrushes. They nest on the grounds of dense forests, which makes it easy to steal their nutrient-rich eggs—or, p_l adds, to watch the chicks grow up and fledge.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from happily listened to cat_to's lesson on veeries.",
+                            "cats_to": "cat_to enjoyed teaching cat_from about the veery."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "Gray-cheeked thrushes, as one might guess, are taupe-and-white birds with grayer cheeks, whose breasts are spotted with dark brown. From the treetops, they belt a lilting song. They nest in low down branch forks of trees such as willows, alders, spruces, birches, or firs.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from happily listened to cat_to's lesson on gray-cheeked thrushes.",
+                            "cats_to": "cat_to enjoyed teaching cat_from about the gray-cheeked thrush."
+                        }
+                    }
+                ]
+            },
+            {
+                "text": "Wood thrushes are recognized by their soft <i>ee-oh-lay</i>s ending in a metallic trill, describes p_l, so beautiful that it almost tugs at one's heartstrings. Though rare, one might find these black speckled ginger-and-white birds foraging on the forest floor—providing an opportunity to catch one, or just a moment to observe nature.",
+                "exp": 30,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["p_l"],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from happily listened to cat_to's lesson on wood thrushes.",
+                            "cats_to": "cat_to enjoyed teaching cat_from about the wood thrush."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "When r_c asks why they would even need to learn about birds that are too high up to catch, p_l scoffs. Can't {PRONOUN/r_c/subject} let {PRONOUN/p_l/object} reminisce?",
+                "exp": 0,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c"],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was annoyed that cat_to was more focused on whether or not thrushes could be hunted."
+                        }
+                    }
+                ],
+                "art": "app_cat_looking_up"
+            },
+            {
+                "text": "When p_l mentions that {PRONOUN/p_l/subject} will be teaching the patrol about thrushes, s_c butts in. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} caught <i>so</i> many cinnamon-and-white thrushes before! When p_l informs the rest of the patrol that {PRONOUN/s_c/subject} {VERB/s_c/have/has} been catching ground-nesting veeries, not the types of thrushes that nest higher up, s_c feels too embarrassed to stay and learn with the group.",
+                "exp": 0,
+                "frequency": 4,
+                "stat_skill": ["-CLIMBER,0"],
+                "stat_trait": ["confident", "shameless", "arrogant"],
+                "can_have_stat": ["not_pl"],
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["s_c"],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} acted like {PRONOUN/cat_to/subject} knew everything about thrushes."
+                        }
+                    }
+                ],
+                "art": "gen_train_patrolapprenticesessionfail"
+            }
+        ]
     }
 ]

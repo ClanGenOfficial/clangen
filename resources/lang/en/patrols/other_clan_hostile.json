@@ -5695,9 +5695,10 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Opportunity or trap — it's possible to succeed if it's either, or both. p_l charges across the border, straight into o_c_n territory and straight past the patrol lying in wait to ambush {PRONOUN/p_l/object}, but one of the patrol is just a little further to the side than all the others, just a little, just enough, and instead of springing the trap and getting away scot-free, p_l falls to it.",
+                "text": "Opportunity or trap — it's possible to succeed if it's either, or both. p_l charges across the border, straight into o_c_n territory and the claws of the waiting patrol. Alone, p_l is easily overcome and slaughtered.",
                 "exp": 0,
-                "other_clan_rep": -1,
+                "dead_cats": ["p_l"],
+                "other_clan_rep": -3,
                 "frequency": 4
             }
         ],
@@ -5721,145 +5722,13 @@
         "types": [
             "border"
         ],
-        "tags": [
-            "disaster"
-        ],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 2,
-        "max_cats": 3,
-        "min_max_status": {},
-        "frequency": 4,
-        "intro_text": "Hmm. The o_c_n scent marks on this area of the border seem a little more faint than usual, especially with such hostility between the two Clans. It could be an opportunity to mark further into o_c_n land — or it could be something to be cautious about.",
-        "decline_text": "Either way, the decision of what to do about the border should be made back at camp, not here. p_l takes {PRONOUN/p_l/poss} little patrol home to report it.",
-        "chance_of_success": 20,
-        "success_outcomes": [
-            {
-                "text": "p_l won't be the one to put the first paw wrong, no matter how tempting the circumstances. No, {PRONOUN/p_l/subject} {VERB/p_l/mark/marks} the border <i>exactly</i> right, not letting {PRONOUN/p_l/poss} little patrol put a whisker out of place, and if o_c_n has a problem with that, they can take it up with all of c_n.",
-                "exp": 50,
-                "frequency": 4
-            },
-            {
-                "text": "This smacks of a setup to s_c. If {PRONOUN/s_c/subject} were trying to get away with attacking c_n, this is how {PRONOUN/s_c/subject}'d do it, tempt some mouse-brain with an opportunity that looked too good to resist. So, assuming cunning eyes are already watching {PRONOUN/s_c/object}, {PRONOUN/s_c/subject} {VERB/s_c/lay/lies} down to bask in front of the border instead, talking loudly with {PRONOUN/s_c/poss} patrolmates. Good old psychological warfare.",
-                "exp": 50,
-                "stat_skill": [
-                    "SPEAKER,2",
-                    "MEDIATOR,2"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "It's quiet. Too quiet, the high strung s_c decides, backpedaling rapidly — and not a moment too soon. Soundlessly, the thwarted o_c_n patrol drops out of cover, their tails lashing furiously. The rest of the patrol breaks and follow s_c, as s_c, shivering, digs {PRONOUN/s_c/poss} claws in and runs for home.",
-                "exp": 50,
-                "stat_trait": [
-                    "calm",
-                    "careful",
-                    "nervous",
-                    "insecure"
-                ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "It's too good of an opportunity to pass up — too good to be true. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, it's all over for the entire patrol.",
-                "exp": 0,
-                "dead_cats": [
-                    "patrol",
-                    "some_lives"
-                ],
-                "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "death": "m_c was killed in a border ambush by a hostile Clan."
-                },
-                "other_clan_rep": -1,
-                "frequency": 4
-            },
-            {
-                "text": "It's too good of an opportunity to pass up — too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, the smaller c_n patrol is swamped in an ambush, fur flying, cats screaming, the scent of blood thick in the air.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "patrol"
-                        ],
-                        "injuries": [
-                            "battle_injury",
-                            "minor_injury",
-                            "small_bite_injury",
-                            "torn pelt",
-                            "torn ear"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "death": "m_c died of injuries inflicted by an enemy warrior."
-                },
-                "other_clan_rep": -1,
-                "frequency": 4
-            },
-            {
-                "text": "Starting trouble is s_c's speciality — but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some idiots to take advantage of the 'weak' section of the border. The patrol won't be given the chance to make the same mistake again.",
-                "exp": 0,
-                "stat_trait": [
-                    "troublesome",
-                    "fierce",
-                    "bloodthirsty",
-                    "daring",
-                    "ambitious",
-                    "shameless",
-                    "sneaky",
-                    "arrogant",
-                    "competitive",
-                    "rebellious"
-                ],
-                "dead_cats": [
-                    "patrol",
-                    "some_lives"
-                ],
-                "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
-                    "death": "m_c was killed in a border ambush by a hostile Clan."
-                },
-                "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "text": "Opportunity or trap — it's possible to succeed if it's either, or both. p_l charges across the border, straight into o_c_n territory and straight past the patrol lying in wait to ambush {PRONOUN/p_l/object}, but one of the patrol is just a little further to the side than all the others, just a little, just enough, and instead of springing the trap and getting away scot-free, p_l leads the patrol to their doom.",
-                "exp": 0,
-                "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_success_outcomes": [
-            {
-                "text": "Opportunity or trap — it's possible to succeed if it's either, or both. p_l charges across the border, straight into o_c_n territory and straight past the patrol lying in wait to ambush {PRONOUN/p_l/object}, hurling {PRONOUN/p_l/self} past the trap, making a long loop to get back to {PRONOUN/p_l/poss} own border. That'll show those mangy o_c_n foxpelts how it's done!",
-                "exp": 50,
-                "other_clan_rep": -2,
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "gen_bord_ambush_hostile_disaster3",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
         "tags": [],
         "patrol_art": "bord_general_intro",
-        "min_cats": 4,
+        "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 4,
-        "intro_text": "Hmm. The o_c_n scent marks on this area of the border seem a little more faint than usual, especially with such hostility between the two Clans. It could be an opportunity to mark further into o_c_n land — or it could be something to be cautious about.",
+        "intro_text": "The o_c_n scent marks at the border are unusually faint, considering the hostility between the two Clans. It could be an opportunity to mark further into o_c_n land, or it could be something to be cautious about.",
         "decline_text": "Either way, the decision of what to do about the border should be made back at camp, not here. p_l takes {PRONOUN/p_l/poss} little patrol home to report it.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -5878,7 +5747,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's quiet. Too quiet, the high strung s_c decides, backpedaling rapidly — and not a moment too soon. Soundlessly, the thwarted o_c_n patrol drops out of cover, their tails lashing furiously. The two patrols, equal in numbers and fury now that the element of surprise is gone, exchange cutting remarks — but no claw blows.",
+                "text": "It's quiet. Too quiet, the highstrung s_c decides, backpedaling rapidly — and not a moment too soon. Soundlessly, the thwarted o_c_n patrol drops out of cover, their tails lashing furiously. The two patrols, equal in numbers and fury now that the element of surprise is gone, exchange cutting remarks — but no claw blows.",
                 "exp": 50,
                 "stat_trait": [
                     "calm",
@@ -5891,17 +5760,30 @@
         ],
         "fail_outcomes": [
             {
-                "text": "It's too good of an opportunity to pass up — too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, they descend in ambush. The big border patrol gives as good as they get, ripping o_c_n fur, but they've been taken by surprise, and not everyone will make it home from this.",
+                "min_max_status": {"normal adult": [3, 6]},
+                "text": "It's too good of an opportunity to pass up — too good to be true. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, they descend in ambush. The big border patrol gives as good as they get, ripping o_c_n fur, but they've been taken by surprise, and not everyone will make it home from this.",
                 "exp": 0,
                 "dead_cats": [
-                    "multi",
-                    "some_lives"
+                    "p_l", "r_c", "some_lives"
                 ],
                 "history_text": {
                     "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
-                "other_clan_rep": -1,
+                "other_clan_rep": -3,
                 "frequency": 4
+            },
+            {
+                "min_max_status": {"normal adult": [2, 2]},
+                "text": "It's too good of an opportunity to pass up — too good to be true. The o_c_n patrol is waiting for them, and with so few full warriors, the patrol is easily ambushed and massacred.",
+                "exp": 0,
+                "dead_cats": [
+                    "patrol"
+                ],
+                "history_text": {
+                    "death": "m_c was killed in a border ambush by a hostile Clan."
+                },
+                "other_clan_rep": -3,
+                "frequency": 2
             },
             {
                 "text": "It's too good of an opportunity to pass up — too good, in fact, to be real. The o_c_n patrol is waiting for them, and as soon as r_c steps fully into o_c_n territory, the c_n patrol is ambushed, fur flying, cats screaming, the scent of blood thick in the air.",
@@ -5924,11 +5806,11 @@
                     "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "death": "m_c died of injuries inflicted by an enemy warrior."
                 },
-                "other_clan_rep": -1,
+                "other_clan_rep": -2,
                 "frequency": 4
             },
             {
-                "text": "Starting trouble is s_c's speciality — but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some idiots to take advantage of the 'weak' section of the border. Though the border patrol gives as good as they get, what they get is ambushed and beaten.",
+                "text": "Starting trouble is s_c's specialty, but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some idiots to take advantage of the \"weak\" section of the border. Not every cat will be walking away from this ambush.",
                 "exp": 0,
                 "stat_trait": [
                     "troublesome",
@@ -5947,18 +5829,9 @@
                     "some_lives"
                 ],
                 "history_text": {
-                    "scar": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                     "death": "m_c was killed in a border ambush by a hostile Clan."
                 },
-                "other_clan_rep": -1,
-                "frequency": 4
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "text": "Opportunity or trap — it's possible to succeed if it's either, or both. p_l charges across the border, straight into o_c_n territory and straight past the patrol lying in wait to ambush {PRONOUN/p_l/object}, but one of the patrol is just a little further to the side than all the others, just a little, just enough, and instead of springing the trap and getting away scot-free, p_l leads the patrol to their doom.",
-                "exp": 0,
-                "other_clan_rep": -1,
+                "other_clan_rep": -3,
                 "frequency": 4
             }
         ],
@@ -5967,6 +5840,15 @@
                 "text": "Opportunity or trap — it's possible to succeed if it's either, or both. p_l charges across the border, straight into o_c_n territory and straight past the patrol lying in wait to ambush {PRONOUN/p_l/object}, hurling {PRONOUN/p_l/self} past the trap, making a long loop to get back to {PRONOUN/p_l/poss} own border. That'll show those mangy o_c_n foxpelts how it's done!",
                 "exp": 50,
                 "other_clan_rep": -2,
+                "frequency": 4
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "text": "Opportunity or trap — it's possible to succeed if it's either, or both. The patrol charges across the border, p_l at the fore, straight into o_c_n territory and the claws of the patrol waiting to ambush them. p_l leads the patrol to their doom.",
+                "exp": 0,
+                "other_clan_rep": -3,
+                "dead_cats": ["patrol"],
                 "frequency": 4
             }
         ]
