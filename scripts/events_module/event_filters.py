@@ -911,7 +911,7 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
             # checking if they're NOT congenital
             if matching:
                 for cond in matching:
-                    if not cat.permanent_condition[cond].get("born_with"):
+                    if cat.permanent_condition[cond].get("born_with"):
                         return False
 
     return True
