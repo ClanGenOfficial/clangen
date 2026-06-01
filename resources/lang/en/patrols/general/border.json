@@ -1453,7 +1453,7 @@
                     },
                     {
                         "cats_from": [
-                            "patrol"
+                            "patrol",
                             "-p_l"
                         ],
                         "cats_to": [
