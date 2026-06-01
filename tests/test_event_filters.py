@@ -1528,6 +1528,120 @@ class TestCatConstraint(unittest.TestCase):
                     )
                 )
 
+    def test_stat(self):
+        """
+        Checks if the `must_have_both` works.
+        """
+        cat = Cat()
+
+        # has both
+        with self.subTest("has both"):
+            cat.personality = Personality(trait="arrogant")
+            cat.skills.primary = Skill(SkillPath.CAMP, points=0)
+
+            self.assertTrue(
+                event_for_cat(
+                    cat=cat,
+                    cat_info={
+                        "stat": {
+                            "skill": ["CAMP, 0"],
+                            "trait": ["arrogant"],
+                            "must_have_both": True,
+                        }
+                    },
+                )
+            )
+
+        # has none
+        with self.subTest("has neither"):
+            cat.personality = Personality(trait="daring")
+            cat.skills.primary = Skill(SkillPath.SENSE, points=0)
+
+            self.assertFalse(
+                event_for_cat(
+                    cat=cat,
+                    cat_info={
+                        "stat": {
+                            "skill": ["CAMP, 0"],
+                            "trait": ["arrogant"],
+                            "must_have_both": True,
+                        }
+                    },
+                )
+            )
+
+        # missing skill allowed
+        with self.subTest("missing skill allowed"):
+            cat.personality = Personality(trait="arrogant")
+            cat.skills.primary = Skill(SkillPath.SENSE, points=0)
+
+            self.assertTrue(
+                event_for_cat(
+                    cat=cat,
+                    cat_info={
+                        "stat": {
+                            "skill": ["CAMP, 0"],
+                            "trait": ["arrogant"],
+                            "must_have_both": False,
+                        }
+                    },
+                )
+            )
+
+        # missing skill not allowed
+        with self.subTest("missing skill not allowed"):
+            cat.personality = Personality(trait="arrogant")
+            cat.skills.primary = Skill(SkillPath.SENSE, points=0)
+
+            self.assertFalse(
+                event_for_cat(
+                    cat=cat,
+                    cat_info={
+                        "stat": {
+                            "skill": ["CAMP, 0"],
+                            "trait": ["arrogant"],
+                            "must_have_both": True,
+                        }
+                    },
+                )
+            )
+
+        # missing trait allowed
+        with self.subTest("missing trait allowed"):
+            cat.personality = Personality(trait="daring")
+            cat.skills.primary = Skill(SkillPath.CAMP, points=0)
+
+            self.assertTrue(
+                event_for_cat(
+                    cat=cat,
+                    cat_info={
+                        "stat": {
+                            "skill": ["CAMP, 0"],
+                            "trait": ["arrogant"],
+                            "must_have_both": False,
+                        }
+                    },
+                )
+            )
+
+        # missing trait not allowed
+        with self.subTest("missing trait not allowed"):
+            cat.personality = Personality(trait="daring")
+            cat.skills.primary = Skill(SkillPath.CAMP, points=0)
+
+            self.assertFalse(
+                event_for_cat(
+                    cat=cat,
+                    cat_info={
+                        "stat": {
+                            "skill": ["CAMP, 0"],
+                            "trait": ["arrogant"],
+                            "must_have_both": True,
+                        }
+                    },
+                )
+            )
+
     def test_trait(self):
         """
         Runs adult & kit traits.
