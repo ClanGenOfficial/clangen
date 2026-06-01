@@ -13883,7 +13883,7 @@
       "any"
     ],
     "frequency": 1,
-    "event_text": "m_c wonders if their clanmates like r_c more than them.",
+    "event_text": "m_c wonders if {PRONOUN/m_c/poss} Clanmates like r_c more than {PRONOUN/m_c/object}.",
     "m_c": {
       "relationship_status": [
         "envies_only"
@@ -13900,7 +13900,7 @@
       "any"
     ],
     "frequency": 1,
-    "event_text": "m_c feels like their parent favors r_c.",
+    "event_text": "m_c feels like {PRONOUN/m_c/poss} parent favors r_c.",
     "m_c": {
       "relationship_status": [
         "envies_only", "siblings"
@@ -13921,6 +13921,9 @@
         "m_c": {
             "relationship_status": [
                 "envies_only"
+            ],
+             "status": [
+                "-leader"
             ]
         },
         "r_c": {
@@ -13939,7 +13942,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c doesn't feel like they can trust r_c to lead responsibly.",
+        "event_text": "m_c doesn't trust r_c to lead responsibly.",
         "m_c": {
             "status": ["warrior", "deputy"],
             "relationship_status": [
@@ -13961,7 +13964,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c doesn't believe r_c knows what they're doing with all those herbs. ",
+        "event_text": "m_c doesn't believe r_c knows what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing with all those herbs.",
         "m_c": {
             "status": ["-kitten"],
             "relationship_status": [
@@ -14041,7 +14044,8 @@
         "m_c": {
             "relationship_status": [
                 "fears_only"
-                ]
+                ],
+            "status": ["-leader"]
         },
         "r_c": {
             "status": ["leader", "deputy"]
@@ -14060,7 +14064,8 @@
         "m_c": {
             "relationship_status": [
                 "fears_only"
-                ]
+                ],
+            "status": ["-medicine cat", "-medicine cat apprentice"]
         },
         "r_c": {
             "status": ["medicine cat apprentice", "medicine cat"]
