@@ -1,7 +1,7 @@
 [
     {
         "id": "general_dark_forest_thoughts",
-        "thoughts": [
+        "strings": [
             "Is practicing battle moves",
             "Is sharpening {PRONOUN/m_c/poss} claws",
             "Is slinking through the shadows",
@@ -52,20 +52,24 @@
     },
     {
         "id": "dark_forest_to_living_other",
-        "thoughts": [
+        "strings": [
             "Is thinking about walking in the dreams of r_c",
             "Watches r_c with malice in {PRONOUN/m_c/poss} eyes",
             "Is whispering in the ear of r_c",
             "Is watching r_c with a sly smile",
             "Wonders what r_c would think if {PRONOUN/r_c/subject} saw {PRONOUN/m_c/object} now"
         ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "dark_forest_kind",
-        "thoughts": [
+        "strings": [
             "Wishes {PRONOUN/m_c/subject} could go to StarClan",
             "Feels regret for {PRONOUN/m_c/poss} actions",
             "Is curled up in a ball, crying",
@@ -82,22 +86,28 @@
             "Wonders if there's anyone here {PRONOUN/m_c/subject} can actually trust",
             "Tried crossing the border into StarClan to no avail"
         ],
-        "main_trait_constraint": [
-            "careful",
-            "compassionate",
-            "loving",
-            "gloomy",
-            "nervous",
-            "playful",
-            "responsible",
-            "sincere",
-            "strange",
-            "thoughtful"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "careful",
+                        "compassionate",
+                        "loving",
+                        "gloomy",
+                        "nervous",
+                        "playful",
+                        "responsible",
+                        "sincere",
+                        "strange",
+                        "thoughtful"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "dark_forest_evil",
-        "thoughts": [
+        "strings": [
             "Is fighting with another member of the Dark Forest",
             "Wishes {PRONOUN/m_c/subject} could hurt those who have wronged {PRONOUN/m_c/object}",
             "Wants to unleash mayhem on the cats who hurt {PRONOUN/m_c/object} in life",
@@ -122,39 +132,51 @@
             "Has allied {PRONOUN/m_c/self} with the strongest cats {PRONOUN/m_c/subject} could find",
             "Befriended a weaker cat only to happily betray them when they needed {PRONOUN/m_c/object} most"
         ],
-        "main_trait_constraint": [
-            "arrogant",
-            "ambitious",
-            "bloodthirsty",
-            "bold",
-            "cold",
-            "cunning",
-            "faithful",
-            "fierce",
-            "grumpy",
-            "insecure",
-            "rebellious",
-            "strict",
-            "strange",
-            "vengeful"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "ambitious",
+                        "bloodthirsty",
+                        "bold",
+                        "cold",
+                        "cunning",
+                        "faithful",
+                        "fierce",
+                        "grumpy",
+                        "insecure",
+                        "rebellious",
+                        "strict",
+                        "strange",
+                        "vengeful"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "dark_forest_sneaky",
-        "thoughts": [
+        "strings": [
             "Isn't surprised in the slightest as to why {PRONOUN/m_c/subject} ended up here",
             "Easily avoided encountering another shadowy cat",
             "Talked {PRONOUN/m_c/poss} way out of a training session",
             "Tricked a shadowy cat into doing {PRONOUN/m_c/poss} bidding"
         ],
-        "main_trait_constraint": [
-            "sneaky",
-            "arrogant",
-            "shameless",
-            "wise",
-            "cunning",
-            "charismatic",
-            "strange"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "sneaky",
+                        "arrogant",
+                        "shameless",
+                        "wise",
+                        "cunning",
+                        "charismatic",
+                        "strange"
+                    ]
+                }
+            }
+        }
     }
 ]
