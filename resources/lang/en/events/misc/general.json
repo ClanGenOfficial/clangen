@@ -13807,7 +13807,7 @@
         }
     },
     {
-    "event_id": "gen_misc_greenleaf_younglove_adolescent",
+    "event_id": "gen_misc_greenleaf_splashdate",
     "location": ["any", "-desert"],
     "season": ["greenleaf"],
     "sub_type": [],
