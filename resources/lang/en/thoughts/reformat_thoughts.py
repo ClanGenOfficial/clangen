@@ -137,7 +137,9 @@ def reformat():
             if t.get("random_backstory_constraint"):
                 r_c["backstory"] = t.get("random_backstory_constraint")
             if r_c:
-                reformatted_thought.get("involved_cats", {})["r_c"] = r_c
+                if not reformatted_thought.get("involved_cats"):
+                    reformatted_thought["involved_cats"] = {}
+                reformatted_thought["involved_cats"]["r_c"] = r_c
 
             if t.get("relationship_constraint"):
                 reformatted_thought["relationship_constraint"] = [
