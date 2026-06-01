@@ -350,15 +350,15 @@
 				"exp": 0,
 				"frequency": 4,
 				"stat_trait": [
-					"-calm",
-					"-charismatic",
-					"-compassionate",
-					"-flamboyant",
-					"-loving",
-					"-responsible",
-					"-sincere",
-					"-thoughtful",
-					"-wise"
+					"calm",
+					"charismatic",
+					"compassionate",
+					"flamboyant",
+					"loving",
+					"responsible",
+					"sincere",
+					"thoughtful",
+					"wise"
 				],
 				"can_have_stat": [
 					"p_l"
