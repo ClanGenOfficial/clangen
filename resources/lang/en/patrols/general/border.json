@@ -1352,9 +1352,9 @@
                         "cats_to": [
                             "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
-                            "like"
+                            "trust"
                         ],
                         "amount": -5,
                         "log": {
@@ -1365,7 +1365,7 @@
                 "art": "fst_hunt_twolegplace"
             },
             {
-                "text": "s_c is able to deduce by looking at the nearby Twoleg nest that the wood pieces are used to build them. Alarmed, the patrol returns to camp to report their findings.",
+                "text": "s_c is able to deduce by examining the nearby Twoleg nest that the wood pieces are used to build them. Alarmed, the patrol returns to camp to report their findings.",
                 "exp": 20,
                 "frequency": 3,
                 "stat_skill": [
@@ -1398,7 +1398,7 @@
                 "art": "fst_hunt_twolegplace"
             },
             {
-                "text": "p_l suggests dumping the wood pieces in the nearby pond—the water will surely ruin the wood and prevent the Twolegs from building more nests—and the patrol is there until sunhigh dragging the pieces to the pond.",
+                "text": "p_l suggests dumping the wood pieces in the nearby pond—the water will surely ruin the wood and prevent the Twolegs from building more nests. The patrol is there until sunhigh dragging the pieces to the pond.",
                 "exp": 10,
                 "frequency": 4,
                 "relationships": [
@@ -1424,7 +1424,7 @@
                 "art": "mtn_hunt_patrolfollowsstreamtocoldbog"
             },
             {
-                "text": "p_l suggests dumping the wood pieces in the nearby pond to ruin the wood and prevent the Twolegs from building more nests, but before anyone can answer {PRONOUN/p_l/object}, s_c walks over and tugs just the right piece out of place, sending the entire pile tumbling and sliding down the slope right into the pond.",
+                "text": "p_l suggests dumping the wood pieces in the nearby pond to ruin the wood and prevent the Twolegs from building more nests. Before anyone can answer {PRONOUN/p_l/object}, s_c walks over and tugs just the right piece out of place, sending the entire pile tumbling down the slope right into the pond.",
                 "exp": 30,
                 "frequency": 2,
                 "stat_skill": [
