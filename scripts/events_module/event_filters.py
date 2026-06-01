@@ -1,13 +1,14 @@
 import re
 from itertools import combinations
 from random import choice, randint
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Union
 
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
 from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
+from scripts.events_module.parameter_dicts import InvolvedCatDict
 from scripts.special_dates import get_special_date, contains_special_date_tag
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
@@ -351,7 +352,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
 
 
 def event_for_cat(
-    cat_info: dict,
+    cat_info: Union[dict, InvolvedCatDict],
     cat,
     cat_group: list = None,
     involved_cat_dict: dict = None,  # TODO: this eventually replaces cat_group

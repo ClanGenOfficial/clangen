@@ -16,7 +16,7 @@ class TextPoolEvent:
     tags: list[str] = field(default_factory=list)
     involved_cats: dict[str, InvolvedCatDict] = field(default_factory=dict)
     relationship_constraint: [list[RelationshipConstraintDict]] = field(
-        default_factory=list
+        default_factory=list[dict]
     )
 
     def __repr__(self):
