@@ -15,20 +15,9 @@ from scripts.events_module.event_filters import (
 from scripts.events_module.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.events_module.event_filters import filter_relationship_type
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
-
-random_cat_constraints = [
-    "random_backstory_constraint",
-    "random_status_constraint",
-    "random_age_constraint",
-    "random_trait_constraint",
-    "random_skill_constraint",
-    "random_living_status",
-    "random_outside_status",
-]
 
 loaded_thoughts = {}
 
@@ -364,6 +353,7 @@ def _constraints_fulfilled(
             cat=main_cat,
             involved_cat_dict=involved_cats,
             event_id=thought.id,
+            other_involved_clan_id=other_clan_id
         ):
             return False
 
@@ -372,6 +362,7 @@ def _constraints_fulfilled(
             cat=random_cat,
             involved_cat_dict=involved_cats,
             event_id=thought.id,
+            other_involved_clan_id=other_clan_id
         ):
             return False
 
