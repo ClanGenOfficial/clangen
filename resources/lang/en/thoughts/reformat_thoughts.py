@@ -59,8 +59,8 @@ def reformat():
                     "skill": t.get("main_skill_constraint"),
                 }
             if (
-                t.get("has_injuries")
-                or t.get("perm_conditions")
+                t.get("has_injuries", {}).get("m_c")
+                or t.get("perm_conditions", {}).get("m_c")
                 or t.get("not_working")
             ):
                 health = {}
@@ -125,7 +125,7 @@ def reformat():
                     "skill": t.get("random_skill_constraint"),
                 }
 
-            if t.get("has_injuries") or t.get("perm_conditions"):
+            if t.get("has_injuries", {}).get("r_c") or t.get("perm_conditions", {}).get("r_c"):
                 health: dict = {"condition": []}
                 if t.get("has_injuries", {}).get("r_c"):
                     health["condition"].append(t["has_injuries"]["r_c"])
