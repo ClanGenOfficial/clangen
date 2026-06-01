@@ -142,8 +142,13 @@ def reformat():
                 }
             new_thoughts.append(reformatted_thought)
 
+        dict_text = ujson.dumps(new_thoughts, indent=4)
+        dict_text = dict_text.replace(
+            "\/", "/"
+        )  # ujson tries to escape "/", but doesn't end up doing a good job.
+
         with open(path, "w") as write_file:
-            write_file.write(str(new_thoughts))
+            write_file.write(dict_text)
 
 
 load_paths()
