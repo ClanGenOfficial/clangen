@@ -1872,3 +1872,52 @@ class TestCatConstraint(unittest.TestCase):
 
         with self.subTest("expected male, was female"):
             self.assertFalse(event_for_cat(cat=female, cat_info={"gender": ["male"]}))
+
+    def test_health(self):
+        working_cat = Cat()
+        broken_cat = Cat()
+        broken_cat.get_injured(name="broken bone")
+        ill_cat = Cat()
+        ill_cat.get_ill(name="greencough")
+        born_para_cat = Cat()
+        born_para_cat.get_permanent_condition(name="paralyzed", born_with=True)
+        acquired_para_cat = Cat()
+        acquired_para_cat.get_permanent_condition(name="paralyzed", born_with=False)
+
+        # cat must be working and is
+        with self.subTest("must work and is working"):
+            self.assertTrue(
+                event_for_cat(cat=working_cat, cat_info={"health": {"working": True}})
+            )
+
+        # cat must be working and isn't
+        with self.subTest("must work and isn't working"):
+            self.assertFalse(
+                event_for_cat(cat=broken_cat, cat_info={"health": {"working": True}})
+            )
+
+        # cat can't be working and is
+        with self.subTest("can't work and is working"):
+            self.assertFalse(
+                event_for_cat(cat=working_cat, cat_info={"health": {"working": False}})
+            )
+
+        # cat can't be working and isn't
+        with self.subTest("can't work and isn't working"):
+            self.assertTrue(
+                event_for_cat(cat=broken_cat, cat_info={"health": {"working": False}})
+            )
+
+        # cat should have an injury and does
+        # include an illness and a perm condition
+
+        # cat shouldn't have an injury and does
+        # include an illness and a perm condition
+
+        # condition must be acquired and is
+
+        # condition must be acquired and isn't
+
+        # condition must be congenital and is
+
+        # condition must be congential and isn't
