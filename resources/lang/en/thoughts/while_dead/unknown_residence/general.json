@@ -1,7 +1,7 @@
 [
     {
         "id": "unknown_residence_general_thoughts",
-        "thoughts": [
+        "strings": [
             "Is chasing ghost rabbits",
             "Is thinking about {PRONOUN/m_c/poss} life",
             "Is curled up in a tight ball, snoring and dozing away",
@@ -62,7 +62,7 @@
     },
     {
         "id": "unknown_residence_lost_clancat_",
-        "thoughts": [
+        "strings": [
             "Sobs knowing {PRONOUN/m_c/subject} may never join {PRONOUN/m_c/poss} Clanmates in StarClan",
             "Still wanders around looking for c_n",
             "Wonders why {PRONOUN/m_c/subject} didn't end up in StarClan",
@@ -77,17 +77,21 @@
             "Is at least glad {PRONOUN/m_c/subject} didn't end up in the Dark Forest",
             "Is convinced StarClan's forgotten about {PRONOUN/m_c/object}...",
             "Is still looking for c_n"
-],
-         "main_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ]
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice",
+                    "mediator apprentice",
+                    "warrior",
+                    "medicine cat",
+                    "mediator",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            }
+        }
     }
 ]

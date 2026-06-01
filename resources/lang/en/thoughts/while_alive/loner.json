@@ -1,7 +1,7 @@
 [
     {
         "id": "general_loner_thoughts",
-        "thoughts": [
+        "strings": [
             "Is spending the night with a friend",
             "Wonders about what Clan life would be like",
             "Is considering finding some housefolk to live with",
@@ -29,19 +29,23 @@
     },
     {
         "id": "loner_kitten_/_adolescent_thoughts",
-        "thoughts": [
+        "strings": [
             "Is trying to figure out how to catch a bird",
             "Is trying to figure out how to catch a mouse",
             "Is learning the hunters crouch"
         ],
-        "main_age_constraint": [
-            "kitten",
-            "adolescent"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten",
+                    "adolescent"
+                ]
+            }
+        }
     },
     {
         "id": "loner_adolescent_thoughts",
-        "thoughts": [
+        "strings": [
             "Is currently trying to figure out how to catch a squirrel",
             "Is currently trying to figure out how to catch a rabbit",
             "Is missing {PRONOUN/m_c/poss} parents",
@@ -62,33 +66,41 @@
             "Wonders if {PRONOUN/m_c/poss} parents were once renowned explorers",
             "Laughs at the thought of being a Clan cat and having a warrior name... Maybe..."
         ],
-        "main_age_constraint": [
-            "adolescent"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "adolescent"
+                ]
+            }
+        }
     },
     {
         "id": "loner_adolescent_to_clanapp_thoughts",
-        "thoughts": [
+        "strings": [
             "Has a mock battle with r_c from c_n whenever the apprentice flees from {PRONOUN/r_c/poss} boring chores",
             "Shows off individual scars and tells r_c in detail how {PRONOUN/m_c/subject} got them all",
             "Wonders where r_c went"
         ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_status_constraint": [
-            "apprentice"
-        ],
-        "random_outside_status": [
-            "clancat"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "adolescent"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "group": [
+                    "-afterlife",
+                    "player_clan"
+                ]
+            }
+        }
     },
     {
         "id": "loner_adult_thoughts",
-        "thoughts": [
+        "strings": [
             "Is scouting out locations for a new den",
             "Nearly got caught in a Twoleg trap!",
             "Got pet by a Twoleg",
@@ -96,15 +108,19 @@
             "Was almost eaten by a monster",
             "Is playing with kits"
         ],
-        "main_age_constraint": [
-            "young adult",
-            "adult",
-            "senior adult"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            }
+        }
     },
     {
         "id": "loner_senior_or_elder_thoughts",
-        "thoughts": [
+        "strings": [
             "Wonders if {PRONOUN/m_c/subject} should have joined a Clan when {PRONOUN/m_c/subject} {VERB/m_c/were/was} younger",
             "Debates finding housefolk to care for {PRONOUN/m_c/object} in {PRONOUN/m_c/poss} old age",
             "Is enjoying the sun on {PRONOUN/m_c/poss} back",
@@ -124,26 +140,30 @@
             "Is gnawing at {PRONOUN/m_c/poss} pelt, irritated at the abundance of fleas",
             "Coughs heavily"
         ],
-        "main_age_constraint": [
-            "senior"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "senior"
+                ]
+            }
+        }
     },
     {
         "id": "loner_leaffall",
-        "thoughts": [
-            "Frowns deeply at the first frost"
-        ],
         "season": [
             "Leaf-fall"
+        ],
+        "strings": [
+            "Frowns deeply at the first frost"
         ]
     },
     {
         "id": "loner_leafbare",
-        "thoughts": [
-            "Wishes newleaf would come already"
-        ],
         "season": [
             "Leaf-bare"
+        ],
+        "strings": [
+            "Wishes newleaf would come already"
         ]
     }
 ]
