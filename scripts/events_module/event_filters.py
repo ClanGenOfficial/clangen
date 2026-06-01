@@ -375,6 +375,8 @@ def event_for_cat(
     :param injuries: list of injuries that the event may give this cat
     :param other_involved_clan_id: if another Clan is involved, include their ID
     """
+    if not cat_info:
+        return True
 
     func_lookup = {
         "age": _check_cat_age,
@@ -529,8 +531,8 @@ def _check_cat_stat(cat, stat: dict) -> bool:
     """
     Checks if the cat matches up with the given stat dict.
     """
-    has_skill = True
-    has_trait = True
+    has_skill = False
+    has_trait = False
 
     if stat.get("skill"):
         if _check_cat_skills(cat, stat["skill"]):
@@ -1263,13 +1265,15 @@ def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     return any(value.find("-") == 0 for value in possible_values)
 
 
-def check_rel_constraint_groups(constraints_dict: RelationshipConstraintDict) -> bool:
+def check_rel_constraint_groups(
+    constraints_dict: RelationshipConstraintDict, involved_cats: dict
+) -> bool:
     """
     Compares two groups of cats to see if they meet relationship constraints
     """
     for cat in constraints_dict["cats_from"]:
-        group = [cat]
-        group.extend(constraints_dict["cats_to"])
+        group = [involved_cats[cat]]
+        group.extend([involved_cats[c] for c in constraints_dict["cats_to"]])
         if not filter_relationship_type(
             group=group, filter_types=constraints_dict["constraints"]
         ):
@@ -1277,8 +1281,8 @@ def check_rel_constraint_groups(constraints_dict: RelationshipConstraintDict) ->
 
     if constraints_dict["mutual"]:
         for cat in constraints_dict["cats_to"]:
-            group = [cat]
-            group.extend(constraints_dict["cats_from"])
+            group = [involved_cats[cat]]
+            group.extend([involved_cats[c] for c in constraints_dict["cats_from"]])
             if not filter_relationship_type(
                 group=group, filter_types=constraints_dict["constraints"]
             ):

@@ -252,16 +252,17 @@ def _load_file(path) -> list[TextPoolEvent]:
     """
     # check if we've already loaded these thoughts and then load them if need be
     if path not in loaded_thoughts.keys():
+        loaded_thoughts[path] = []
         for t in load_lang_resource(path):
             loaded_thoughts[path].append(
                 TextPoolEvent(
                     id=t.get("id"),
-                    location=t.get("location"),
-                    season=t.get("season"),
-                    tags=t.get("tags"),
-                    strings=t.get("strings"),
-                    involved_cats=t.get("involved_cats"),
-                    relationship_constraint=t.get("relationship_constraint"),
+                    location=t.get("location", []),
+                    season=t.get("season", []),
+                    tags=t.get("tags", []),
+                    strings=t.get("strings", []),
+                    involved_cats=t.get("involved_cats", {}),
+                    relationship_constraint=t.get("relationship_constraint", []),
                 )
             )
 
@@ -290,7 +291,7 @@ def new_thought(
                 _load_group(thought_type, main_cat, other_cat, other_clan_id)
             )
 
-            chosen_thought = choice(chosen_thought_group["thoughts"])
+            chosen_thought = choice(chosen_thought_group.strings)
     except IndexError:
         traceback.print_exc()
         chosen_thought = i18n.t("defaults.thought")
@@ -339,7 +340,7 @@ def _constraints_fulfilled(
         "r_c": random_cat,
     }
 
-    if "location" in thought:
+    if thought.location:
         if not event_for_location(thought.location):
             return False
 
@@ -358,7 +359,7 @@ def _constraints_fulfilled(
         ]
         r_c_constraint = thought.involved_cats.get("r_c")
         # r_c mentioned in text or required with constraints, so we dump this thought
-        if r_c_in_text or r_c_constraint:
+        if r_c_in_text or r_c_constraint or thought.relationship_constraint:
             return False
 
     if thought.involved_cats:
@@ -380,7 +381,7 @@ def _constraints_fulfilled(
 
     if thought.relationship_constraint:
         for constraints in thought.relationship_constraint:
-            if not check_rel_constraint_groups(constraints):
+            if not check_rel_constraint_groups(constraints, involved_cats):
                 return False
 
     return True
