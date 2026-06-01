@@ -1471,24 +1471,24 @@ class TestCatConstraint(unittest.TestCase):
             with self.subTest(
                 "empty", old_rank=old_rank.value, new_rank=new_rank.value
             ):
-                self.assertTrue(event_for_cat(cat=cat, cat_info={"status_history": []}))
+                self.assertTrue(event_for_cat(cat=cat, cat_info={"past_status": []}))
             with self.subTest(
                 "current rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertFalse(
-                    event_for_cat(cat=cat, cat_info={"status_history": [new_rank]})
+                    event_for_cat(cat=cat, cat_info={"past_status": [new_rank]})
                 )
             with self.subTest(
                 "former rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertTrue(
-                    event_for_cat(cat=cat, cat_info={"status_history": [old_rank]})
+                    event_for_cat(cat=cat, cat_info={"past_status": [old_rank]})
                 )
             with self.subTest(
                 '"any"', old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertTrue(
-                    event_for_cat(cat=cat, cat_info={"status_history": ["any"]})
+                    event_for_cat(cat=cat, cat_info={"past_status": ["any"]})
                 )
             with self.subTest(
                 "other rank",
@@ -1497,24 +1497,20 @@ class TestCatConstraint(unittest.TestCase):
                 other_rank=other_rank,
             ):
                 self.assertFalse(
-                    event_for_cat(cat=cat, cat_info={"status_history": [other_rank]})
+                    event_for_cat(cat=cat, cat_info={"past_status": [other_rank]})
                 )
 
             with self.subTest(
                 "not current rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertTrue(
-                    event_for_cat(
-                        cat=cat, cat_info={"status_history": [f"-{new_rank}"]}
-                    )
+                    event_for_cat(cat=cat, cat_info={"past_status": [f"-{new_rank}"]})
                 )
             with self.subTest(
                 "not former rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertFalse(
-                    event_for_cat(
-                        cat=cat, cat_info={"status_history": [f"-{old_rank}"]}
-                    )
+                    event_for_cat(cat=cat, cat_info={"past_status": [f"-{old_rank}"]})
                 )
             with self.subTest(
                 "not other rank",
@@ -1523,9 +1519,7 @@ class TestCatConstraint(unittest.TestCase):
                 other_rank=other_rank,
             ):
                 self.assertTrue(
-                    event_for_cat(
-                        cat=cat, cat_info={"status_history": [f"-{other_rank}"]}
-                    )
+                    event_for_cat(cat=cat, cat_info={"past_status": [f"-{other_rank}"]})
                 )
 
     def test_stat(self):
