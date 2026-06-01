@@ -23,7 +23,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat, create_cat
 from scripts.cat_relations.inheritance2 import inheritance_db
-from scripts.cat.enums import CatRank, CatAge, CatSocial
+from scripts.cat.enums import CatRank, CatAge, CatSocial, CatGroup
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat_relations.relationship import Relationship
@@ -1404,6 +1404,81 @@ class TestCatConstraint(unittest.TestCase):
             self.assertTrue(
                 event_for_cat(cat=cat, cat_info={"age": [f"-{unmatched_age.value}"]})
             )
+
+    def test_group(self):
+        cat = Cat()
+        test_dict = {
+            CatGroup.STARCLAN: CatGroup.STARCLAN_ID,
+            CatGroup.DARK_FOREST: CatGroup.DARK_FOREST_ID,
+            CatGroup.UNKNOWN_RESIDENCE: CatGroup.UNKNOWN_RESIDENCE_ID,
+        }
+        for group, group_id in test_dict.items():
+            cat.status.add_to_group(group_id)
+            # is dead
+            with self.subTest(f"is part of afterlife"):
+                self.assertTrue(
+                    event_for_cat(cat=cat, cat_info={"group": ["afterlife"]})
+                )
+
+            # is alive
+            with self.subTest(f"isn't part of afterlife"):
+                self.assertFalse(
+                    event_for_cat(cat=cat, cat_info={"group": [f"-afterlife"]})
+                )
+
+        # no group
+        cat.status.leave_group(CatSocial.LONER)
+        with self.subTest(f"isn't part of a group"):
+            self.assertTrue(event_for_cat(cat=cat, cat_info={"group": ["no_group"]}))
+
+        # yes group
+        cat.status.add_to_group(CatGroup.PLAYER_CLAN_ID)
+        with self.subTest(f"is part of a group"):
+            self.assertTrue(event_for_cat(cat=cat, cat_info={"group": ["-no_group"]}))
+
+        # doesn't match another cat
+        other_cat = Cat()
+        other_cat.status.add_to_group(CatGroup.STARCLAN_ID)
+        with self.subTest(f"doesn't match other cat's group"):
+            self.assertTrue(
+                event_for_cat(
+                    cat=cat,
+                    cat_info={"group": ["-match:r_c"]},
+                    involved_cat_dict={"m_c": cat, "r_c": other_cat},
+                )
+            )
+
+        # matches another cat
+        cat.status.add_to_group(CatGroup.STARCLAN_ID)
+        with self.subTest(f"does match other cat's group"):
+            self.assertTrue(
+                event_for_cat(
+                    cat=cat,
+                    cat_info={"group": ["match:r_c"]},
+                    involved_cat_dict={"m_c": cat, "r_c": other_cat},
+                )
+            )
+
+        test_dict = {
+            CatGroup.PLAYER_CLAN: CatGroup.PLAYER_CLAN_ID,
+            CatGroup.STARCLAN: CatGroup.STARCLAN_ID,
+            CatGroup.DARK_FOREST: CatGroup.DARK_FOREST_ID,
+            CatGroup.UNKNOWN_RESIDENCE: CatGroup.UNKNOWN_RESIDENCE_ID,
+            CatGroup.OTHER_CLAN: "5",
+        }
+        game.used_group_IDs["5"] = CatGroup.OTHER_CLAN
+
+        for group, group_id in test_dict.items():
+            cat.status.add_to_group(group_id)
+            # is part of specific group
+            with self.subTest(f"is part of {group}"):
+                self.assertTrue(event_for_cat(cat=cat, cat_info={"group": [group]}))
+
+            # isn't part of specific group
+            with self.subTest(f"isn't part of {group}"):
+                self.assertFalse(
+                    event_for_cat(cat=cat, cat_info={"group": [f"-{group}"]})
+                )
 
     def test_statuses(self):
         statuses = [s for s in [*CatRank] if s.is_any_clancat_rank()]
