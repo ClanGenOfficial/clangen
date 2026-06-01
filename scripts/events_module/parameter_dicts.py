@@ -7,17 +7,17 @@ class StandingDict(TypedDict):
     past: list[str]
 
 
-class StatDict(TypedDict):
+class StatDict(TypedDict, total=False):
     skill: list[str]
     trait: list[str]
     must_have_both: bool
 
 
-class HealthDict(TypedDict):
+class HealthDict(TypedDict, total=False):
     working: bool
     condition: list[str]
-    must_be_congenital: NotRequired[bool]
-    must_be_acquired: NotRequired[bool]
+    must_be_congenital: bool
+    must_be_acquired: bool
 
 
 class InvolvedCatDict(TypedDict):
