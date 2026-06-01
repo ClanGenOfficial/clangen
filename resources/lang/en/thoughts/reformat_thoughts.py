@@ -42,6 +42,9 @@ def reformat():
             # MAIN CAT
             m_c = {}
             if t.get("main_status_constraint"):
+                if "living" in t.get("main_status_constraint"):
+                    m_c["group"] = ["-afterlife"]
+
                 m_c["status"] = t.get("main_status_constraint")
 
             if t.get("main_status_history"):
@@ -93,7 +96,15 @@ def reformat():
                 r_c["age"] = t.get("random_age_constraint")
 
             if t.get("random_living_status"):
-                if "living" in t.get("random_living_status"):
+                if (
+                    "starclan" in t.get("random_living_status")
+                    and "darkforest" in t.get("random_living_status")
+                    and "unknownresidence" in t.get("random_living_status")
+                    and "living" in t.get("random_living_status")
+                ):
+                    # there's at least one thought that does this for some reason, so we're just gonna try and catch it
+                    pass
+                elif "living" in t.get("random_living_status"):
                     r_c["group"] = ["-afterlife"]
                 elif (
                     "starclan" in t.get("random_living_status")

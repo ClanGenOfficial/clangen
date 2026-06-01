@@ -614,7 +614,7 @@ def _check_cat_group(cat, groups: List[str], already_involved_cats: dict) -> boo
 
     is_exclusionary = _check_for_exclusionary_value(groups)
 
-    groups = [x.replace("-", "") for x in groups if "-" in x]
+    groups = [x.replace("-", "") for x in groups]
     remaining_tags = groups.copy()
 
     for tag in groups:
@@ -871,7 +871,6 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
         if "any" in required_conditions:
             return True
 
-        print(required_conditions)
         is_exclusionary = _check_for_exclusionary_value(required_conditions)
         if is_exclusionary:
             required_conditions = [x.replace("-", "") for x in required_conditions]
@@ -898,7 +897,7 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
             # checking if they're congenital
             if matching:
                 for cond in matching:
-                    if not cat.permanent_condition[cond].born_with:
+                    if not cat.permanent_condition[cond].get("born_with"):
                         return False
 
         # need to check if the perm conditions were NOT congenital
@@ -912,7 +911,7 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
             # checking if they're NOT congenital
             if matching:
                 for cond in matching:
-                    if cat.permanent_condition[cond].born_with:
+                    if not cat.permanent_condition[cond].get("born_with"):
                         return False
 
     return True
