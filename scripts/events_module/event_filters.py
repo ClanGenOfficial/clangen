@@ -675,11 +675,11 @@ def _check_cat_standing(
     qualifies = False
 
     groups = standing["group"]
-    current_standings = standing["currently"]
-    past_standings = standing["past"]
+    current_standings = standing.get("currently", [])
+    past_standings = standing.get("past", [])
 
     group_is_exclusionary = _check_for_exclusionary_value(groups)
-    groups = [x.replace("-", "") for x in groups if "-" in x]
+    groups = [x.replace("-", "") for x in groups]
 
     # unpack some of the group tags into something easier to filter for
     for tag in standing["group"]:
