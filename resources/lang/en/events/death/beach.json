@@ -720,5 +720,52 @@
       "death": "m_c fell through the floorboards of the broken ship."
     }
   ]
-}
+},
+    {
+        "event_id": "bch_death_extinction_drown",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "-greenleaf"
+        ],
+        "sub_type": [
+            "mass_death"
+        ],
+        "frequency": 2,
+        "event_text": "The Clan fails to notice the rising tide, and aren't able to get to high enough ground in time before multi_cat are swept away.",
+        "history": [
+            {
+                "cats": [
+                    "multi_cat"
+                ],
+                "death": "m_c was swept away by the rising tide."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_kit_drown",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "-greenleaf"
+        ],
+        "frequency": 1,
+        "event_text": "While playing close to the water, m_c is swept away. {PRONOUN/m_c/poss/CAP} wails are swallowed by the ocean as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} under and does not resurface.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c played too close to the water and got swept away."
+            }
+        ]
+    }
 ]

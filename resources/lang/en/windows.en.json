@@ -26,7 +26,7 @@
         "miscellaneous": "miscellaneous",
         "editor_save_check_message": "This event will be saved to:",
         "save_check_message": "Would you like to save your game before exiting? If you don't, progress may be lost!",
-        "delete_check_message": "Do you wish to delete %{clan}? This is permanent and cannot be undone.",
+        "delete_check_message": "Do you wish to delete %{clan} (id:%clan_id)? This is permanent and cannot be undone.",
         "delete_yes": "Delete it!",
         "delete_no": "No! Go back!",
         "game_over_message": "%{clan} has died out. For now, this is where their story ends. Perhaps it's time to tell a new tale?",

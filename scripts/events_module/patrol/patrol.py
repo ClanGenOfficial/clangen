@@ -15,6 +15,7 @@ from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
+from scripts.config import get_config
 from scripts.events_module.event_filters import (
     event_for_tags,
     get_frequency,
@@ -25,6 +26,7 @@ from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     cat_for_event,
+    event_for_poi,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
@@ -252,15 +254,15 @@ class Patrol:
         if CatRank.MEDICINE_CAT in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.MEDICINE_CAT)
             self.patrol_leader = self.patrol_cats[index]
-        # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
-        # This prevents warrior from being treated as medicine cats in medicine cat patrols.
+            # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
+            # This prevents warrior from being treated as medicine cats in medicine cat patrols.
         elif CatRank.MEDICINE_APPRENTICE in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.MEDICINE_APPRENTICE)
             self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
-        # sets leader as patrol leader
+            # sets leader as patrol leader
         elif CatRank.LEADER in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.LEADER)
             self.patrol_leader = self.patrol_cats[index]
@@ -723,6 +725,11 @@ class Patrol:
                         )
                     continue
 
+                if not event_for_poi(patrol.poi):
+                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
+                        print("DEBUG: requested patrol does not meet constraints (PoI)")
+                    continue
+
                 if "hunting" not in patrol.types and patrol_type == "hunting":
                     if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
                         print(
@@ -941,9 +948,13 @@ class Patrol:
 
         patrol_size = len(self.patrol_cats)
         total_exp = sum([x.experience for x in self.patrol_cats])
-        gm_modifier = constants.CONFIG["patrol_generation"][
-            f"{game.clan.game_mode}_difficulty_modifier"
-        ]
+        path = (
+            "patrol_generation.classic_difficulty_modifier"
+            if game.clan.game_mode == "classic"
+            else "patrol_generation.difficulty_modifier"
+        )
+
+        gm_modifier = get_config(game.clan, path)
 
         exp_adustment = (
             (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)
@@ -1206,5 +1217,5 @@ class Patrol:
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
-PATROL_WEIGHT_ADAPTION = constants.PREY_CONFIG["patrol_weight_adaption"]
-PATROL_BALANCE = constants.PREY_CONFIG["patrol_balance"]
+PATROL_WEIGHT_ADAPTION = constants.CONFIG["prey"]["patrol_weight_adaption"]
+PATROL_BALANCE = constants.CONFIG["prey"]["patrol_balance"]
