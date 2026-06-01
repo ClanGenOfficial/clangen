@@ -1,7 +1,7 @@
 [
     {
         "id": "gen_dead_newborn",
-        "thoughts": [
+        "strings": [
             "Mewls pitifully for milk",
             "Snoozes peacefully",
             "Wobbles around StarClan happily",
@@ -11,41 +11,68 @@
             "Attempts to snarl but can only manage a tiny mewl",
             "Rolls through the starry grass"
         ],
-        "main_age_constraint": [
-            "newborn"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "newborn"
+                ]
+            }
+        }
     },
     {
         "id": "gen_dead_newborn_to_alive_parent",
-        "thoughts":[
+        "strings": [
             "Thinks {PRONOUN/m_c/subject} heard r_c's voice",
             "Is mewling for r_c",
             "Searches for r_c's scent",
             "Blindly reaches out for r_c"
         ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "newborn"
+                ]
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "child/parent"
-        ],
-        "random_living_status": [
-            "living"
-        ],
-        "main_age_constraint": [
-            "newborn"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
         ]
     },
     {
         "id": "gen_dead_newborn_to_dead_other",
-        "thoughts":[
+        "strings": [
             "Is being watched by r_c",
             "Is being bathed by r_c",
             "Is tucked under r_c's belly",
             "Blindly swipes at r_c's tail"
         ],
-        "random_living_status": [
-            "starclan"
-        ],
-        "main_age_constraint": [
-            "newborn"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "newborn"
+                ]
+            },
+            "r_c": {
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
     }
 ]

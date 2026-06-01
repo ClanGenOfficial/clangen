@@ -1,8 +1,7 @@
 [
-
     {
         "id": "gen_new_parent",
-        "thoughts": [
+        "strings": [
             "Watches over the new litter",
             "Is brimming with love",
             "Is thinking of {PRONOUN/m_c/poss} new responsibilities",
@@ -29,24 +28,65 @@
             "Has never been so exhausted in all {PRONOUN/m_c/poss} life"
         ]
     },
-        {
+    {
         "id": "gen_new_parent_to_friend",
-        "thoughts": [
+        "strings": [
             "Asks r_c to watch over the kits"
         ],
-            "random_age_constraint": ["young adult", "adult", "senior adult", "senior"],
-            "relationship_constraint": ["trusts"]
+        "involved_cats": {
+            "r_c": {
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult",
+                    "senior"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "trusts"
+                ]
+            }
+        ]
     },
     {
         "id": "gen_parent_to_newborn",
-        "thoughts": [
+        "strings": [
             "Stops r_c from falling out of the nest",
             "Makes sure r_c has fed enough",
             "Hissed at a Clanmate who got too close to r_c",
             "Considers renaming r_c",
             "Is proud of r_c for sleeping through the night"
         ],
-        "random_age_constraint": ["newborn"],
-        "relationship_constraint": ["parent/child"]
+        "involved_cats": {
+            "r_c": {
+                "age": [
+                    "newborn"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
+        ]
     }
 ]
