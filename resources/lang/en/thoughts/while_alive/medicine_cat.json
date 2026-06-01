@@ -814,15 +814,13 @@
             "r_c": {
                 "health": {
                     "condition": [
-                        [
-                            "bruises",
-                            "cracked pads",
-                            "sore",
-                            "scrapes",
-                            "small cut",
-                            "tick bites",
-                            "torn ear"
-                        ]
+                        "bruises",
+                        "cracked pads",
+                        "sore",
+                        "scrapes",
+                        "small cut",
+                        "tick bites",
+                        "torn ear"
                     ]
                 }
             }
@@ -842,18 +840,16 @@
             "r_c": {
                 "health": {
                     "condition": [
-                        [
-                            "claw-wound",
-                            "bite-wound",
-                            "cat bite",
-                            "beak bite",
-                            "snake bite",
-                            "rat bite",
-                            "dislocated joint",
-                            "sprain",
-                            "quilled by a porcupine",
-                            "torn pelt"
-                        ]
+                        "claw-wound",
+                        "bite-wound",
+                        "cat bite",
+                        "beak bite",
+                        "snake bite",
+                        "rat bite",
+                        "dislocated joint",
+                        "sprain",
+                        "quilled by a porcupine",
+                        "torn pelt"
                     ]
                 }
             }
@@ -876,16 +872,14 @@
             "r_c": {
                 "health": {
                     "condition": [
-                        [
-                            "broken jaw",
-                            "broken back",
-                            "broken bone",
-                            "mangled leg",
-                            "mangled tail",
-                            "head damage",
-                            "severe burn",
-                            "severe headache"
-                        ]
+                        "broken jaw",
+                        "broken back",
+                        "broken bone",
+                        "mangled leg",
+                        "mangled tail",
+                        "head damage",
+                        "severe burn",
+                        "severe headache"
                     ]
                 }
             }
