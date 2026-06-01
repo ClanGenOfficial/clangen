@@ -663,6 +663,207 @@
         ]
     },
     {
+        "event_id": "gen_death_murder_moonpool_medonmedviolence",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder"
+        ],
+        "poi": {
+            "name": ["moon_pool"]
+        },
+        "tags": [],
+        "frequency": 4,
+        "event_text": "r_c waited until all the medicine cats were asleep and dreaming by the edge of {POI/name/moon_pool}. Then, {PRONOUN/r_c/subject} held m_c's head under the water until {PRONOUN/m_c/subject} stopped struggling.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat", "medicine cat apprentice"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat apprentice",
+                "medicine cat"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was murdered by r_c, who drowned {PRONOUN/m_c/object} in the Moonpool."
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_murder_mooncave_medonmedviolence",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder"
+        ],
+        "poi": {
+            "name": ["moon_cave"]
+        },
+        "tags": [],
+        "frequency": 4,
+        "event_text": "The ghostly murmurs of {POI/name/moon_cave} cannot drown out m_c's cries for help when r_c gets {PRONOUN/r_c/poss} claws on {PRONOUN/m_c/object} at last.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat", "medicine cat apprentice"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat apprentice",
+                "medicine cat"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was murdered by r_c, who cornered and killed {PRONOUN/m_c/object} in the Whispering Cave."
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_murder_mooncave_medonmedviolence",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder"
+        ],
+        "poi": {
+            "name": ["mother_mouth"]
+        },
+        "tags": [],
+        "frequency": 4,
+        "event_text": "During the half-moon, the gathered medicine cats wonder where m_c and r_c are. The moonlight flooding the Moonstone won't last all night. Outside, r_c heaps rocks on m_c's body.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat", "medicine cat apprentice"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "medicine cat apprentice",
+                "medicine cat"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was murdered by r_c, who killed {PRONOUN/m_c/object} outside the Mothermouth during the half-moon."
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_death_fox_any1",
         "location": [
             "any"
@@ -813,6 +1014,113 @@
                     "m_c"
                 ],
                 "death": "m_c went missing and was found dead."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_fallriskPOI_any1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "all_lives"
+        ],
+        "poi": {
+            "tags": ["fall_risk"]
+        },
+        "frequency": 4,
+        "event_text": "m_c went missing and was found dead at the bottom of {POI/tag/fall_risk}.",
+        "m_c": {
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c went missing and was found dead after falling from a great height."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_taintedPOI_any1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "poi": {
+            "tags": ["tainted"]
+        },
+        "frequency": 4,
+        "event_text": "m_c went missing and was found dead near {POI/tag/tainted}, a strange odor rising from {PRONOUN/m_c/poss} body.",
+        "m_c": {
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was poisoned by something near a dangerous part of the territory."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_taintedPOI_any1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "poi": {
+            "tags": ["tainted"]
+        },
+        "frequency": 4,
+        "event_text": "m_c went missing and was found dead near {POI/tag/tainted}, a strange odor rising from {PRONOUN/m_c/poss} body.",
+        "m_c": {
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was poisoned by something near a dangerous part of the territory."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_unstablePOI_any1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "poi": {
+            "tags": ["unstable"]
+        },
+        "frequency": 4,
+        "event_text": "m_c was killed when part of {POI/tag/unstable} collapsed.",
+        "m_c": {
+            "dies": true,
+            "status": ["-kitten", "-elder"]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was crushed when something collapsed on {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -1089,9 +1397,12 @@
         "season": [
             "any"
         ],
+        "poi": {
+            "tags": ["water:flowing"]
+        },
         "tags": [],
         "frequency": 3,
-        "event_text": "m_c fell into the river. r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
+        "event_text": "m_c fell into {POI/tag/flowing:water}. r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
                 "-kitten"
@@ -1129,7 +1440,52 @@
                     "m_c",
                     "r_c"
                 ],
-                "death": "This cat drowned alongside a Clanmate."
+                "death": "m_c drowned alongside a Clanmate."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_horseplace",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_horseplace"]
+        },
+        "frequency": 2,
+        "event_text": "m_c is caught under a horse's hooves while hunting in {POI/name/terrain_horseplace}. {PRONOUN/m_c/poss/CAP} Clanmates can't get to {PRONOUN/m_c/object} in time.",
+        "m_c": {
+            "dies": true,
+            "status": ["leader", "deputy", "warrior", "apprentice"]
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died when {PRONOUN/m_c/subject} got caught under a horse's hooves."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_treesPOI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["trees"]
+        },
+        "frequency": 2,
+        "event_text": "m_c is hunting near {POI/tag/trees} when a branch falls on {PRONOUN/m_c/object}, killing {PRONOUN/m_c/object}.",
+        "new_accessory": [],
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c was killed after a branch fell on {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -2942,7 +3298,7 @@
             "all_lives"
         ],
         "frequency": 4,
-        "event_text": "m_c met their end to the long claws of a predator. Later, c_n found only {PRONOUN/m_c/poss} blood and a foul smell.",
+        "event_text": "m_c met {PRONOUN/m_c/poss} end at the long claws of a predator. Later, c_n found only {PRONOUN/m_c/poss} blood and a foul smell.",
         "m_c": {
             "age": [
                 "-kitten"
@@ -5037,7 +5393,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c was lead out into the territory and killed by r_c."
+                "death": "m_c was led out into the territory and killed by r_c."
             }
         ],
         "future_event": [
@@ -8090,12 +8446,15 @@
     },
     {
         "event_id": "gen_death_drownedbyaduck",
-        "location": ["beach", "forest", "wetlands"],
+        "location": ["any"],
         "season": ["-leaf-bare"],
+        "poi": {
+            "name": ["terrain_lake"]
+        },
         "sub_type": [],
         "tags": [],
         "frequency": 1,
-        "event_text": "m_c attacked a duck, intending to bring it back for the fresh-kill pile, but was knocked below the surface of the water and drowned.",
+        "event_text": "m_c attacked a duck by {POI/name/terrain_lake}, intending to bring it back for the fresh-kill pile, but was knocked below the surface of the water and drowned.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -8373,6 +8732,47 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "gen_death_murder_sunningrocks",
+        "location": ["any"],
+        "season": ["any"],
+        "tags": [],
+        "sub_type": ["murder", "war"],
+        "poi": {
+            "name": ["terrain_sunningrocks"]
+        },
+        "frequency": 4,
+        "event_text": "In the wake of a battle with o_c_n at {POI/name/terrain_sunningrocks}, r_c claims that m_c was killed by the o_c_n deputy, and r_c killed the deputy in revenge.",
+        "m_c": {
+            "status": ["deputy"]
+        },
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    4
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "adolescent"
+                        ]
+                    }
+                }
+            }
+        ],
+        "other_clan": {
+            "changed": -6
+        }
     },
     {
         "event_id": "gen_death_trapmurder1",
@@ -9395,5 +9795,76 @@
     ],
     "changed": -3
   }
+},
+{
+    "event_id": "gen_death_gatheringisland",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "poi": {
+        "name": ["gather_island"]
+    },
+    "frequency": 1,
+    "event_text": "m_c is so excited to be at the Gathering that {PRONOUN/m_c/subject} {VERB/m_c/forget/forgets} to watch {PRONOUN/m_c/poss} paws on the tree bridge. No cat is able to pull {PRONOUN/m_c/object} to shore in time, and the Gathering is cut short for a vigil.",
+    "m_c": {
+        "dies": true,
+        "age": ["adolescent"],
+        "trait": ["-careful", "-calm", "-wise"],
+        "skill": ["-SWIMMER,0"]
+    },
+    "history": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c died after slipping off the tree bridge at the Gathering."
+        }
+
+    ]
+},
+{
+    "event_id": "gen_death_fourtrees",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "poi": {
+        "name": ["gather_fourtrees"]
+    },
+    "frequency": 1,
+    "event_text": "When r_c takes m_c to {POI/name/gather_fourtrees}, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. r_c can't stop {PRONOUN/m_c/object} in time. m_c only makes it halfway up the first when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}, never to get back up.",
+    "m_c": {
+        "dies": true,
+        "age": ["adolescent"],
+        "trait": ["arrogant", "ambitious", "confident", "rebellious"],
+        "skill": ["-CLIMBER,0"],
+        "relationship_status": ["app/mentor"]
+    },
+    "r_c": {},
+    "history": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c died after falling out of one of the Fourtrees."
+        }
+
+    ]
+},
+{
+    "event_id": "gen_death_gathermonster",
+    "location": ["any"],
+    "season": ["any"],
+    "poi": {
+        "name": ["gather_monster"]
+    },
+    "tags": [],
+    "frequency": 1,
+    "event_text": "At a busy Gathering, m_c is scratched by a piece of sharp metal jutting from {POI/name/gather_monster}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/succumb/succumbs} to infection only a few days later.",
+    "m_c": {
+        "dies": true,
+        "age": ["-kitten"]
+    },
+    "history": [
+        {
+        "cats": ["m_c"],
+        "death": "m_c died of infection after being scraped by rusty metal at the Gathering."
+    }
+    ]
 }
 ]

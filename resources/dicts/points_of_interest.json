@@ -19,6 +19,11 @@
         "biome": ["any"],
         "tags": ["rocks"]
     },
+    "moon_mouth": {
+        "category": "moonplace",
+        "biome": ["any"],
+        "tags": ["rocks", "cave", "covered"]
+    },
     "moon_pool": {
         "category": "moonplace",
         "biome": ["any"],
