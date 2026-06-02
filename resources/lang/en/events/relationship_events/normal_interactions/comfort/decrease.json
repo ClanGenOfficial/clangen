@@ -107,7 +107,7 @@
 			"m_c was rudely awoken by r_c.",
 			"r_c says that m_c smells weird.",
 			"m_c keeps looking behind r_c during their conversation.",
-			"r_c won't tell m_c what {PRONOUN/r_c/subject} finds so funny.",
+			"r_c won't tell m_c what {PRONOUN/r_c/subject} {VERB/r_c/find/finds} so funny.",
 			"m_c doesn't think r_c's weird joke was just a joke."
 		],
 		"reaction_random_cat": {
