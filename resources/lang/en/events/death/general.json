@@ -9427,7 +9427,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c was secretly murdered by r_c, who framed {PRONOUN/m_c/poss} death on o_c_n warriors."
+                "death": "m_c was secretly murdered by r_c, who blamed {PRONOUN/m_c/poss} death on o_c_n warriors."
             }
         ],
         "other_clan": {
@@ -9544,7 +9544,7 @@
         ],
         "tags": [],
         "frequency": 3,
-        "event_text": "r_c brutally murders m_c and plants {PRONOUN/m_c/poss} body near the o_c_n border to frame {PRONOUN/m_c/poss} death on the warring Clan.",
+        "event_text": "r_c brutally murders m_c and plants {PRONOUN/m_c/poss} body near the o_c_n border to blame the warring Clan for {PRONOUN/m_c/poss} death.",
         "m_c": {
             "status": [
                 "warrior",
