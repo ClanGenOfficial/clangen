@@ -4663,7 +4663,19 @@
         },
         "r_c": {
             "status": ["-kitten"]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "r_c grew suspicious of m_c when m_c showed off {PRONOUN/m_c/poss} new accessory."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_accessoryrookeryPOI1",
