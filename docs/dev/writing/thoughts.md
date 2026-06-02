@@ -152,7 +152,7 @@ For example:
 ### involved_cats: dict[str: dict]
 This dictionary holds all constraints for the cats whom we wish to reference in the thought, including the thinking cat!
 
-Each entry is an individual cat, with the key being their event designation (`r_c`, `m_c`, etc.) and the value being their personal constraints. Allowed constraints are as follows:
+Each entry is an individual cat, with the key being their event designation (`r_c`, `m_c`, etc.) and the value being their personal constraints. In thoughts, you are allowed to reference `m_c`, who is the "owner" of the thoughts, and `r_c`, who is a cat being referenced by the thought. Allowed constraints are as follows:
 
 ***
 
@@ -181,12 +181,10 @@ Each entry is an individual cat, with the key being their event designation (`r_
 ***
 
 **group:list[str]**
->Constraints the thought to only happen if the cat is a member of a listed group.
+>Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. you can use tags in: [possible group tags](reference/tag-lists.md#groups) and you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 **standing: dict[str: var]**
->Constrains the thought to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or a member.
-> 
-> This is also how you can dictate that a cat must belong to *no* group.
+>Constrains the thought to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
 
 ```json
     "standing": {
@@ -195,7 +193,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
         "past": []
       },
 ```
->**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups)
+>**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups). You should not try to tag `no_group`.
 
 >**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
 
@@ -246,7 +244,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
     `must_be_congenital` and `must_be_acquired` naturally conflict with each other. Be careful not to set both of them to `true`, else they won't behave correctly.
 
 !!! note
-    Be careful when specifying `must_be_congenital`. If you force a condition to be congenital when it can never generate as such, the thought will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
+    Be careful when specifying `must_be_congenital`. If you force a condition to be congenital when it can never generate as such or vice versa, the thought will never trigger!
 
 ***
 
@@ -278,7 +276,7 @@ Constrains the thought to only occur is the specified relationships exist. Multi
     If we want to ensure that `m_c` trusts `r_c`, we would put `m_c` in the `cats_from` list and `r_c` in the `cats_to` list. The feeling of trust is going *from* `m_c` *to* `r_c`.
 
 **mutual:bool**
->Defaults to `true`. Set this to `false` if the constraints should be mutual between the `cats_from` and `cats_to` groups.
+>Defaults to `false`. Set this to `true` if the constraints should be mutual between the `cats_from` and `cats_to` groups.
 
 !!! caution "For example"
     To work off of our earlier example: if we want `r_c` to *also* trust `m_c`, then we would set `mutual` to `true`.

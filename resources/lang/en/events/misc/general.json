@@ -14236,12 +14236,298 @@
             "changed": 15
         }
     },
+  {
+    "event_id": "gen_rel_hate1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 1,
+    "event_text": "m_c's fur bristles when r_c is near.",
+    "m_c": {
+      "relationship_status": [
+        "hates_only"
+      ]
+    },
+    "r_c": {}
+  },
+  {
+    "event_id": "gen_rel_hate2",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 1,
+    "event_text": "r_c is always getting on m_c's nerves.",
+    "m_c": {
+      "relationship_status": [
+        "hates_only"
+      ]
+    },
+    "r_c": {}
+  },
+  {
+    "event_id": "gen_rel_hate3",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 1,
+    "event_text": "m_c often catches {PRONOUN/m_c/self} glaring at r_c.",
+    "m_c": {
+      "relationship_status": [
+        "hates_only"
+      ]
+    },
+    "r_c": {}
+  },
+      {
+    "event_id": "gen_rel_envy1",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 1,
+    "event_text": "m_c is jealous of the attention r_c receives.",
+    "m_c": {
+      "relationship_status": [
+        "envies_only"
+      ]
+    },
+    "r_c": {}
+  },
+          {
+    "event_id": "gen_rel_envy2",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 1,
+    "event_text": "m_c wonders if {PRONOUN/m_c/poss} Clanmates like r_c more than {PRONOUN/m_c/object}.",
+    "m_c": {
+      "relationship_status": [
+        "envies_only"
+      ]
+    },
+    "r_c": {}
+  },
+              {
+    "event_id": "gen_rel_envy3",
+    "location": [
+      "any"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 1,
+    "event_text": "m_c feels like {PRONOUN/m_c/poss} parent favors r_c.",
+    "m_c": {
+      "relationship_status": [
+        "envies_only", "siblings"
+      ]
+    },
+    "r_c": {}
+  },
+    {
+        "event_id": "gen_rel_envy4",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c wishes they had the same power as r_c.",
+        "m_c": {
+            "relationship_status": [
+                "envies_only"
+            ],
+             "status": [
+                "-leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "deputy"
+            ]
+        }
+    },
+        {
+        "event_id": "gen_rel_distrust1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c doesn't trust r_c to lead responsibly.",
+        "m_c": {
+            "status": ["warrior", "deputy"],
+            "relationship_status": [
+                "distrusts_only"
+                ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ]
+        }
+    },
+            {
+        "event_id": "gen_rel_distrust2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c doesn't believe r_c knows what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing with all those herbs.",
+        "m_c": {
+            "status": ["-kitten"],
+            "relationship_status": [
+                "distrusts_only"
+                ]
+        },
+        "r_c": {
+            "status": [
+                "medicine cat", "medicine cat apprentice"
+            ]
+        }
+    },
+            {
+        "event_id": "gen_rel_distrust3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c doesn't believe a word r_c meows.",
+        "m_c": {
+            "relationship_status": [
+                "distrusts_only"
+                ]
+        },
+        "r_c": {}
+    },
+                {
+        "event_id": "gen_rel_fears1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c avoids going on patrol with r_c.",
+        "m_c": {
+            "status": ["-kitten", "-elder"],
+            "relationship_status": [
+                "fears_only"
+                ]
+        },
+        "r_c": {
+            "status": ["-kitten", "-elder"]
+        }
+    },
+                    {
+        "event_id": "gen_rel_fears2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c fears getting on r_c's bad side.",
+        "m_c": {
+            "relationship_status": [
+                "fears_only"
+                ]
+        },
+        "r_c": {}
+    },
+     {
+        "event_id": "gen_rel_fears3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c is afraid of being punished by r_c.",
+        "m_c": {
+            "relationship_status": [
+                "fears_only"
+                ],
+            "status": ["-leader"]
+        },
+        "r_c": {
+            "status": ["leader", "deputy"]
+        }
+    },
+                    {
+        "event_id": "gen_rel_fears4",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c refuses to go to the medicine cat den, even when in need of care.",
+        "m_c": {
+            "relationship_status": [
+                "fears_only"
+                ],
+            "status": ["-medicine cat", "-medicine cat apprentice"]
+        },
+        "r_c": {
+            "status": ["medicine cat apprentice", "medicine cat"]
+        }
+    },
+                   {
+        "event_id": "gen_rel_fears5",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c thinks r_c is scary.",
+        "m_c": {
+            "status": ["kitten"],
+            "relationship_status": [
+                "fears_only"
+                ]
+        },
+     "r_c": {}
+    },
     {
     "event_id": "gen_misc_greenleaf_splashdate",
     "location": ["any", "-desert"],
     "season": ["greenleaf"],
     "sub_type": [],
     "tags": ["romance"],
+    "poi": {
+        "tags": ["water:flowing"]
+    },
     "frequency": 4,
     "event_text": "m_c and r_c spend sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
     "m_c": {
