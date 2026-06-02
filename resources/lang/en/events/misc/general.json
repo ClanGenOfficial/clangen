@@ -4854,10 +4854,10 @@
         "sub_type": ["accessory"],
         "tags": [],
         "poi": {
-            "tags": ["water"]
+            "tags": ["water:flowing"]
         },
         "frequency": 4,
-        "event_text": "m_c picks cattails near {POI/tag/water} and decides to wear them.",
+        "event_text": "m_c picks cattails near {POI/tag/water:flowing} and decides to wear them.",
         "new_accessory": ["CATTAIL"],
         "m_c": {
             "status": ["-kitten"]
