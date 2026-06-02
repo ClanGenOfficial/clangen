@@ -774,6 +774,9 @@ class Clan:
         else:
             displayname = clan_data["clanname"]
 
+        # remove any already loaded points of interest
+        clear_pois()
+
         load_pois(clan_data.get("poi", {"empty": []}))
 
         game.clan = Clan(
