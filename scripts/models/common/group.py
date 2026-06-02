@@ -3,7 +3,7 @@ from typing import Annotated, Union
 
 from pydantic import RootModel, StringConstraints, AfterValidator
 
-from scripts.models.common.cat import validate_cat_abbr
+from scripts.models.common.cat import CatEnum
 
 
 class GroupEnum(Enum):
@@ -24,6 +24,16 @@ class GroupEnum(Enum):
     NOT_STARCLAN = "-starclan"
     NOT_UNKNOWN_RESIDENCE = "-unknown_residence"
     NOT_NO_GROUP = "-no_group"
+
+
+def validate_cat_abbr(value: str) -> str:
+    abbrs = [r.value for r in CatEnum]
+    _, abbr_str = value.split(":")
+    if abbr_str not in abbrs:
+        raise ValueError(
+            f"Abbreviation {abbr_str} in {value} is not a valid abbreviation!"
+        )
+    return value
 
 
 class Group(RootModel):

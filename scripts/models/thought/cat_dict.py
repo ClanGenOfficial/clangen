@@ -1,6 +1,6 @@
 from typing import Union, List
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from pydantic_core import MISSING
 
 from scripts.models.common.age import Age
@@ -13,6 +13,7 @@ from scripts.models.thought.status_any import StatusAny
 
 
 class CatDict(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     status: Union[List[StatusAny], MISSING] = MISSING
     past_status: Union[List[StatusAny], MISSING] = MISSING
     age: Union[List[Age], MISSING] = MISSING

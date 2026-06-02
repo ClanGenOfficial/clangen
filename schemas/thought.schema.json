@@ -216,6 +216,7 @@
       "title": "Cat"
     },
     "CatDict": {
+      "additionalProperties": false,
       "properties": {
         "status": {
           "items": {
@@ -309,6 +310,7 @@
       "type": "string"
     },
     "HealthDict": {
+      "additionalProperties": false,
       "properties": {
         "working": {
           "title": "Working",
@@ -430,6 +432,7 @@
       "type": "string"
     },
     "InvolvedCats": {
+      "additionalProperties": false,
       "properties": {
         "m_c": {
           "$ref": "#/$defs/CatDict",
@@ -690,6 +693,7 @@
       "type": "string"
     },
     "StandingDict": {
+      "additionalProperties": false,
       "properties": {
         "group": {
           "items": {
@@ -720,6 +724,7 @@
       "type": "object"
     },
     "StatDict": {
+      "additionalProperties": false,
       "properties": {
         "skill": {
           "items": {
