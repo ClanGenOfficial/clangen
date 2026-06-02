@@ -104,8 +104,8 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "unknownresidence"
+                "group": [
+                    "unknown_residence"
                 ]
             },
             "r_c": {
