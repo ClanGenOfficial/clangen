@@ -9506,7 +9506,7 @@
             ],
             "changed": 0
         },
-        "future_events": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -9577,7 +9577,7 @@
             ],
             "changed": 0
         },
-        "future_events": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -9648,7 +9648,7 @@
             ],
             "changed": 0
         },
-        "future_events": [
+        "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
