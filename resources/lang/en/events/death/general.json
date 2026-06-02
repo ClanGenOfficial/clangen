@@ -702,7 +702,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c was murdered by r_c, who drowned {PRONOUN/m_c/object} in the Moonpool."
+                "death": "m_c was murdered by r_c, who drowned {PRONOUN/m_c/object} in the half-moon meeting place."
             }
         ],
         "future_event": [
@@ -715,7 +715,7 @@
                 },
                 "moon_delay": [
                     1,
-                    12
+                    3
                 ],
                 "involved_cats": {
                     "m_c": "r_c",
@@ -769,7 +769,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c was murdered by r_c, who cornered and killed {PRONOUN/m_c/object} in the Whispering Cave."
+                "death": "m_c was murdered by r_c, who cornered and killed {PRONOUN/m_c/object} by the half-moon meeting place."
             }
         ],
         "future_event": [
@@ -782,7 +782,7 @@
                 },
                 "moon_delay": [
                     1,
-                    12
+                    3
                 ],
                 "involved_cats": {
                     "m_c": "r_c",
@@ -808,7 +808,7 @@
             "murder"
         ],
         "poi": {
-            "name": ["mother_mouth"]
+            "name": ["moon_mouth"]
         },
         "tags": [],
         "frequency": 4,
@@ -829,14 +829,15 @@
             "status": [
                 "medicine cat apprentice",
                 "medicine cat"
-            ]
+            ],
+            "skill": ["-CLEVER,0"]
         },
         "history": [
             {
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c was murdered by r_c, who killed {PRONOUN/m_c/object} outside the Mothermouth during the half-moon."
+                "death": "m_c was murdered by r_c, who killed {PRONOUN/m_c/object} during the half-moon."
             }
         ],
         "future_event": [
@@ -849,7 +850,7 @@
                 },
                 "moon_delay": [
                     1,
-                    12
+                    3
                 ],
                 "involved_cats": {
                     "m_c": "r_c",
@@ -8716,6 +8717,15 @@
         "m_c": {
             "status": ["deputy"]
         },
+        "r_c": {
+            "status": ["-medicine cat", "-medicine cat apprentice", "-mediator", "-mediator apprentice"]
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c was murdered by r_c, who pretended {PRONOUN/m_c/subject} {VERB/m_c/were/was} killed by the deputy of an enemy Clan."
+            }
+        ],
         "future_event": [
             {
                 "event_type": "misc",
