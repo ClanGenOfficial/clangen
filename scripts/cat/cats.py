@@ -1972,7 +1972,7 @@ class Cat:
             }
 
         if (
-            not self.disable_random
+            not Cat.disable_random
             and len(new_injury.also_got) > 0
             and not int(random() * 5)
         ):
