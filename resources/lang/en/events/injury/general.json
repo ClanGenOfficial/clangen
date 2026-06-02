@@ -6758,7 +6758,7 @@
         "new_accessory": [],
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"],
-            "relationship_status": ["acknowledges", "praises"]
+            "relationship_status": ["considers", "relates_to"]
         },
         "r_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"]
