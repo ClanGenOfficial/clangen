@@ -9395,5 +9395,281 @@
     ],
     "changed": -3
   }
-}
+},
+    {
+        "event_id": "gen_death_otherclanblame_murder1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "murder"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c was found dead near the o_c_n border.",
+        "m_c": {
+            "skill": [
+                "-FIGHTER,2"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "-kitten"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was secretly murdered by r_c, who framed {PRONOUN/m_c/poss} death on o_c_n warriors."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        },
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": ["hidden_murder_reveal"]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ],
+        "exclude_involved": ["r_c"]
+    },
+     {
+        "event_id": "gen_death_warbattle_murder1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "murder"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "A vicious battle breaks out between c_n and o_c_n. Amidst the flurry of claws and blood, r_c takes advantage of the chaos to isolate m_c and murder {PRONOUN/m_c/object} without being noticed.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "skill": [
+                "-FIGHTER,3"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was discreetly killed by r_c during a battle with o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        },
+        "future_events": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_otherclanblame_murder2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "murder"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "r_c brutally murders m_c and plants {PRONOUN/m_c/poss} body near the o_c_n border to frame {PRONOUN/m_c/poss} death on the warring Clan.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "skill": [
+                "-FIGHTER,2"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was murdered by r_c, who framed the death as an attack by o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        },
+        "future_events": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+     {
+        "event_id": "gen_death_warambush_murder1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "murder"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c chases a trespassing o_c_n warrior off of the territory. On {PRONOUN/m_c/poss} way back, {PRONOUN/m_c/subject} {VERB/r_c/are/is} suddenly ambushed by r_c, who murders {PRONOUN/m_c/object} on the spot.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "skill": [
+                "-FIGHTER,2"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was ambushed and murdered by r_c while {PRONOUN/m_c/subject} {VERB/m_c/were/was} protecting the territory from o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        },
+        "future_events": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    }
 ]
