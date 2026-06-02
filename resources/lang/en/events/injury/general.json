@@ -6682,7 +6682,7 @@
             "name": ["terrain_twolegplace"]
         },
         "frequency": 2,
-        "event_text": "m_c and r_c go on an adventure in the Twolegplace, but they barely escape with their lives after encountering a group of alleycats.",
+        "event_text": "m_c and r_c go on an adventure in the Twolegplace, but they barely escape with their lives after encountering a gang of rogues.",
         "new_accessory": [],
         "m_c": {
             "status": ["apprentice"],
@@ -6700,8 +6700,8 @@
         "history": [
             {
                 "cats": ["m_c", "r_c"],
-                "scar": "m_c was scarred in a fight with alleycats.",
-                "death": "m_c died of {PRONOUN/m_c/poss} injuries after getting into a fight with alleycats."
+                "scar": "m_c was scarred in a fight with a gang of rogues.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after getting into a fight with a gang of rogues."
             }
         ],
         "new_cat": [
