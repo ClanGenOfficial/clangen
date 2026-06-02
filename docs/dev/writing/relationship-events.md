@@ -37,7 +37,7 @@ From there, each folder contains a `decrease.json` and `increase.json`. Events t
 ## Relationship Event Format
 
 !!! note "Important"
-    If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable. Check out the below "Minimum Required" to see what parameters are always required.
+    If you do not use a constraint, you can remove it from the event to make the JSONS less hefty and more readable. Check out the below "Minimum Required" to see what parameters are always required.
 
 ### Minimum Required
 >The smallest amount of information you're required to include in this format. 
@@ -206,12 +206,10 @@ Each entry is an individual cat, with the key being their event designation (`r_
 ***
 
 **group:list[str]**
->Constraints the event to only happen if the cat is a member of a listed group.
+>Constraints the event to only happen if the cat is a member of a listed group or a member of no group. you can use tags in: [possible group tags](reference/tag-lists.md#groups) and you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 **standing: dict[str: var]**
->Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or a member.
-> 
-> This is also how you can dictate that a cat must belong to *no* group.
+>Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
 
 ```json
     "standing": {
@@ -220,12 +218,11 @@ Each entry is an individual cat, with the key being their event designation (`r_
         "past": []
       },
 ```
->**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups)
+>**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups). You should not try to tag `no_group`.
 
 >**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
 
 >**`"past"`** - standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
-
 
 ***
 
