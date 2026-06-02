@@ -20,6 +20,17 @@
       "title": "Age",
       "type": "string"
     },
+    "AllTrait": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Trait"
+        },
+        {
+          "$ref": "#/$defs/KitTrait"
+        }
+      ],
+      "title": "AllTrait"
+    },
     "Backstory": {
       "enum": [
         "clan_founder_backstories",
@@ -247,7 +258,11 @@
           "title": "Health"
         },
         "backstory": {
-          "$ref": "#/$defs/Backstory"
+          "items": {
+            "$ref": "#/$defs/Backstory"
+          },
+          "title": "Backstory",
+          "type": "array"
         }
       },
       "title": "CatDict",
@@ -427,6 +442,44 @@
       },
       "title": "InvolvedCats",
       "type": "object"
+    },
+    "KitTrait": {
+      "enum": [
+        "unruly",
+        "-unruly",
+        "shy",
+        "-shy",
+        "impulsive",
+        "-impulsive",
+        "bullying",
+        "-bullying",
+        "attention-seeker",
+        "-attention-seeker",
+        "daydreamer",
+        "-daydreamer",
+        "charming",
+        "-charming",
+        "fearless",
+        "-fearless",
+        "skittish",
+        "-skittish",
+        "quiet",
+        "-quiet",
+        "self-conscious",
+        "-self-conscious",
+        "know-it-all",
+        "-know-it-all",
+        "sweet",
+        "-sweet",
+        "polite",
+        "-polite",
+        "bossy",
+        "-bossy",
+        "noisy",
+        "-noisy"
+      ],
+      "title": "KitTrait",
+      "type": "string"
     },
     "Location": {
       "items": {
@@ -677,7 +730,7 @@
         },
         "trait": {
           "items": {
-            "$ref": "#/$defs/Trait"
+            "$ref": "#/$defs/AllTrait"
           },
           "title": "Trait",
           "type": "array"
