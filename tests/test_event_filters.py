@@ -1735,6 +1735,7 @@ class TestCatConstraint(unittest.TestCase):
         with self.subTest("has both"):
             cat.personality = Personality(trait="arrogant")
             cat.skills.primary = Skill(SkillPath.CAMP, points=0)
+            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
 
             self.assertTrue(
                 event_for_cat(
@@ -1753,6 +1754,7 @@ class TestCatConstraint(unittest.TestCase):
         with self.subTest("has neither"):
             cat.personality = Personality(trait="daring")
             cat.skills.primary = Skill(SkillPath.SENSE, points=0)
+            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
 
             self.assertFalse(
                 event_for_cat(
@@ -1771,6 +1773,7 @@ class TestCatConstraint(unittest.TestCase):
         with self.subTest("missing skill allowed"):
             cat.personality = Personality(trait="arrogant")
             cat.skills.primary = Skill(SkillPath.SENSE, points=0)
+            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
 
             self.assertTrue(
                 event_for_cat(
@@ -1789,6 +1792,7 @@ class TestCatConstraint(unittest.TestCase):
         with self.subTest("missing skill not allowed"):
             cat.personality = Personality(trait="arrogant")
             cat.skills.primary = Skill(SkillPath.SENSE, points=0)
+            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
 
             self.assertFalse(
                 event_for_cat(
@@ -1807,6 +1811,7 @@ class TestCatConstraint(unittest.TestCase):
         with self.subTest("missing trait allowed"):
             cat.personality = Personality(trait="daring")
             cat.skills.primary = Skill(SkillPath.CAMP, points=0)
+            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
 
             self.assertTrue(
                 event_for_cat(
