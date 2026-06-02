@@ -9785,8 +9785,6 @@
     ],
     "changed": -3
   }
-<<<<<<< Updated upstream
-=======
 },
 {
     "event_id": "gen_death_gatheringisland",
@@ -9858,6 +9856,5 @@
         "death": "m_c died of infection after being scraped by rusty metal at the Gathering."
     }
 ]
->>>>>>> Stashed changes
 }
 ]
