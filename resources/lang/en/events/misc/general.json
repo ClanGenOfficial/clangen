@@ -14690,7 +14690,7 @@
             ]
         },
         "r_c": {
-        "relationship_list": [
+        "relationship_status": [
             "enjoys",
             "trusts"
         ]
@@ -14809,7 +14809,7 @@
             ]
         },
         "r_c": {
-        "relationship_list": [
+        "relationship_status": [
             "hates",
             "distrusts"
         ]
