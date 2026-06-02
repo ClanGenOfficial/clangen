@@ -1595,7 +1595,9 @@ class Cat:
             other_clan_id = self.status.group_ID
         else:
             cat_list = self.all_cats_list.copy()
-            other_clan_id = choice(game.clan.other_clan_IDs)
+            other_clan_id = (
+                choice(game.clan.other_clan_IDs) if game.clan.other_clan_IDs else None
+            )
 
         if not other_cat:
             other_cat = get_other_cat_for_thought(

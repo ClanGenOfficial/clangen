@@ -264,7 +264,7 @@ class Clan:
                 Cat.all_cats[i].example = True
                 self.remove_cat(Cat.all_cats[i].ID)
 
-        # give thoughts,actions and relationships to cats
+        # give actions and relationships to cats
         for cat_id in Cat.all_cats:
             the_cat = Cat.all_cats.get(cat_id)
             the_cat.init_all_relationships()
@@ -272,7 +272,6 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE)
-            the_cat.get_new_thought()
 
         save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
