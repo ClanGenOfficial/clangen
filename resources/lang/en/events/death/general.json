@@ -1602,32 +1602,6 @@
         ]
     },
     {
-        "event_id": "gen_death_taintedPOI_any1",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "poi": {
-            "tags": ["tainted"]
-        },
-        "frequency": 4,
-        "event_text": "m_c went missing and was found dead near {POI/tag/tainted}, a strange odor rising from {PRONOUN/m_c/poss} body.",
-        "m_c": {
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c was poisoned by something near a dangerous part of the territory."
-            }
-        ]
-    },
-    {
         "event_id": "gen_death_unstablePOI_any1",
         "location": [
             "any"
