@@ -1,7 +1,7 @@
 [
     {
         "id": "general_outside_thoughts",
-        "thoughts": [
+        "strings": [
             "Ran into another cat while sheltering from the rain",
             "Caught a massive mouse!",
             "Was chased away from the shelter {PRONOUN/m_c/subject} had been staying in",
@@ -34,7 +34,7 @@
     },
     {
         "id": "general_lost_thoughts",
-        "thoughts": [
+        "strings": [
             "Desperately tries to find {PRONOUN/m_c/poss} way back",
             "Misses {PRONOUN/m_c/poss} nest",
             "Is asking a group of loners if know where {PRONOUN/m_c/poss} Clan is",
@@ -81,101 +81,156 @@
             "Asked a kittypet for directions",
             "Asked a rouge for directions"
         ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice",
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
-            "elder"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice",
+                    "warrior",
+                    "mediator",
+                    "medicine cat",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            }
+        }
     },
     {
         "id": "lost_thoughts_to_random_cat",
-        "thoughts": [
+        "strings": [
             "Is missing r_c",
             "Thought {PRONOUN/m_c/subject} spotted r_c while wandering around earlier"
         ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice",
-            "warrior",
-            "mediator",
-            "medicine cat",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "any"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice",
+                    "warrior",
+                    "mediator",
+                    "medicine cat",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "any"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "lost_cats_with_family",
-        "thoughts": [
+        "strings": [
             "Wonders how {PRONOUN/m_c/poss} family is doing",
             "Misses {PRONOUN/m_c/poss} family",
             "Prays to StarClan that {PRONOUN/m_c/poss} loved ones are safe"
         ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice",
+                    "warrior",
+                    "mediator",
+                    "medicine cat",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "siblings",
-            "parent/child",
-            "child/parent"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice",
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
-            "elder"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "siblings",
+                    "parent/child",
+                    "child/parent"
+                ]
+            }
         ]
     },
     {
         "id": "lost_cats_with_siblings",
-        "thoughts": [
+        "strings": [
             "Hopes {PRONOUN/m_c/poss} siblings are doing okay"
         ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice",
+                    "warrior",
+                    "mediator",
+                    "medicine cat",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "siblings"
-        ],
-        "main_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice",
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
-            "elder"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "siblings"
+                ]
+            }
         ]
     },
     {
         "id": "lost_cats_with_kits",
-        "thoughts": [
+        "strings": [
             "Sends a prayer to the stars for the safety of {PRONOUN/m_c/poss} kits"
         ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "warrior",
+                    "mediator",
+                    "medicine cat",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "parent/child"
-        ],
-        "main_status_constraint": [
-            "warrior", 
-            "mediator", 
-            "medicine cat", 
-            "deputy", 
-            "leader", 
-            "elder"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
         ]
     }
 ]

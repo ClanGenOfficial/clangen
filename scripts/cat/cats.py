@@ -1563,13 +1563,7 @@ class Cat:
         if not self.status.alive_in_player_clan:
             # this is handled in events.py
             self.personality.set_kit(self.age.is_baby())
-            self.get_new_thought(other_clan_cats=other_clan_cats)
             return
-
-        if self.dead and not self.faded:
-            self.get_new_thought(CatThought.WHILE_DEAD)
-            return
-        self.get_new_thought(CatThought.WHILE_ALIVE)
 
         # Set personality to correct type
         self.personality.set_kit(self.age.is_baby())
@@ -1598,8 +1592,14 @@ class Cat:
 
         if self.status.is_other_clancat and not self.dead:
             cat_list = other_clan_cats.copy() if other_clan_cats else []
+            other_clan_id = self.status.group_ID
         else:
             cat_list = self.all_cats_list.copy()
+            other_clan_id = (
+                choice(game.clan.other_clan_IDs)
+                if game.clan and game.clan.other_clan_IDs
+                else None
+            )
 
         if not other_cat:
             other_cat = get_other_cat_for_thought(
@@ -1608,7 +1608,9 @@ class Cat:
             )
 
         # get chosen thought
-        chosen_thought = new_thought(thought_type, self, other_cat)
+        chosen_thought = new_thought(
+            thought_type, self, other_cat, other_clan_id=other_clan_id
+        )
 
         chosen_thought = event_text_adjust(
             self.__class__,
@@ -1969,7 +1971,11 @@ class Cat:
                 "potential_scars": new_injury.potential_scars,
             }
 
-        if len(new_injury.also_got) > 0 and not int(random() * 5):
+        if (
+            not Cat.disable_random
+            and len(new_injury.also_got) > 0
+            and not int(random() * 5)
+        ):
             avoided = False
             if (
                 "blood loss" in new_injury.also_got

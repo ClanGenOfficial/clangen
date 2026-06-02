@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from typing import Annotated, List, Literal, Union, Dict
+from typing import List, Union
 
-from pydantic import BaseModel, ConfigDict, Field, StringConstraints
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
-from scripts.models.common.biome import Biome
 from scripts.models.common.new_cat import NewCat
 from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.season import Season
@@ -20,7 +19,7 @@ from scripts.models.shortevent.outsider import Outsider
 from scripts.models.shortevent.rc import RC
 from scripts.models.shortevent.supply import Supply
 from scripts.models.shortevent.tag import Tag
-from scripts.models.shortevent.cat import Cat
+from scripts.models.common.cat import Cat
 from scripts.models.common.relationship import Relationship
 from scripts.models.common.future_event import FutureEvent
 

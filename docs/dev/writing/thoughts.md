@@ -45,45 +45,65 @@ Within the game, all cats take a new thought each timeskip. However, there are a
 
 ## Thought Format
 
+### Full Format
 ```json
-{
-    "id": "",
-    "biome": [],
-    "season": [],
-    "thoughts": [],
-    "has_injuries": {
-        "m_c": [],
-        "r_c": []
-    },
-    "perm_conditions": {
-        "m_c": [],
-        "r_c": [],
-        "born_with": {
-            "m_c": false,
-            "r_c": false
-        }
-    },
-    "relationship_constraint": [],
-    "backstory_constraint": {
-        "m_c": [],
-        "r_c": []
-    },
-    "main_status_constraint": [],
-    "random_status_constraint": [],
-    "main_status_history": [],
-    "random_status_history": [],
-    "main_age_constraint": [],
-    "random_age_constraint": [],
-    "main_trait_constraint": [],
-    "random_trait_constraint": [],
-    "main_skill_constraint": [],
-    "random_skill_constraint": [],
-    "random_living_status": [],
-    "random_outside_status": []
-}
+    {
+        "id": "test",
+        "location": [],
+        "season": [],
+        "tags": [],
+        "strings": [
+            "Is thinking"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [],
+                "past_status": [],
+                "age": [],
+                "group": [],
+                "standing": {
+                    "group": [],
+                    "currently": [],
+                    "past": []
+                  },
+                "stat": {
+                    "skill": [],
+                    "trait": [],
+                    "must_have_both": false
+                },
+                "health": {
+                    "working": true,
+                    "condition": [],
+                    "must_be_congenital": false,
+                    "must_be_acquired": false
+                },
+                "backstory": []
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [],
+                "cats_to": [],
+                "mutual": false,
+                "constraints": []
+            }
+        ]
+    }
 ```
 !!! note "Important"
-    If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable.
+    If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable. Check out the below "Minimum Required" to see what parameters are always required.
+
+### Minimum Required
+>The smallest amount of information you're required to include in this format. 
+
+```json
+{
+    "id": "test",
+    "strings": [
+        "Is thinking"
+    ]
+}
+```
 
 ***
 
@@ -96,143 +116,176 @@ A unique string used to identify the thought block. Generally, the ID includes t
 
 ***
 
-### biome: list[str]
-Constrains the thought to only occur if a player chooses a specific biome.
-> "plains", "beach", "mountainous", "forest",
+### location:list[str]
+This controls the biome and camp the event appears in. [Tagging Instructions](reference/tag-lists.md#locations)
 
 ***
 
 ### season: list[str]
-Constrains the thought to only occur once the Clan is in a specific season.
-> "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare",
+List of seasons in which the event may occur. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
+You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or remove the parameter altogether to allow for any season.
 
 ***
 
-### thoughts: list[str]
+### tags: list[str]
+Used to dictate some odds-and-ends about thought constraints: [General Tags](reference/tag-lists.md#general-tags).
+
+***
+
+### strings: list[str]
 This is a list of thoughts applicable to the constraints on this thought block. You may include as many or as few thoughts here as you wish, but remember that the constraints will apply to *all* of them. 
 
-Examples:
-
-* "Mewls pitifully for milk" (`gen_dead_newborn`)
-* "Wonders if {PRONOUN/m_c/subject} would have gotten the chance to do r_c's first check-up" (`general_med_cat_app_to_dead_starclan_newborn1`)
-* "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend" (`kit_dead_kit`)
+For example:
+```json
+"strings": [
+        "Is wondering what r_c would think of current conflicts in the Clan",
+        "Wishes r_c was alive to solve {PRONOUN/m_c/poss} problems",
+        "Wonders if r_c is ending arguments in StarClan"
+]
+```
 
 !!! caution
     Be careful about referencing actions only specific types of cats take! For example, if a thought refers to patrolling, consider if you've adequately constrained the thought to only allow cats who *can* go on a patrol. We don't want kittens talking about their trip to the Gathering!
 
- ***
+***
 
-### has_injuries: dict[str: list]
-Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury).
+### involved_cats: dict[str: dict]
+This dictionary holds all constraints for the cats whom we wish to reference in the thought, including the thinking cat!
 
-> [Illness Tag List](reference/tag-lists.md#__tabbed_1_3)
->
-> [Injury Tag List](reference/tag-lists.md#__tabbed_1_2)
-
-You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any illness or injury.
+Each entry is an individual cat, with the key being their event designation (`r_c`, `m_c`, etc.) and the value being their personal constraints. Allowed constraints are as follows:
 
 ***
 
-### perm_conditions: dict[str: var]
-Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
-
-> [Permanent Conditions Tag List](reference/tag-lists.md#__tabbed_1_4)
->
-> You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any permanent condition.
-
-The additional constraint `born_with` allows you to constrain whether this thought appears for cats born with a condition (congenital) or not. Not providing the constraint is the same as saying either is acceptable.
-
-!!! note Important
-    Be careful when specifying `born_with`. If you force a condition to be congenital when it can never generate as such, the thought will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
-
-***
-
-### relationship_constraint: list
-Constrains the thought to only occur if m_c and r_c fulfill the tags requirements. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
-
-***
-
-### backstory_constraint: dict[str: list]
-Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
-
-> [Backstory Tag List](reference/tag-lists.md#backstories)
-
-***
-
-### main_status_constraint: list[str] & random_status_constraint: list[str]
-Constrains the thought to only happen if m_c or r_c are in a certain role. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
+**status: list[str]**
+>Constrains the thought to only happen if the cat holds a certain role. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 > [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
 > 
-> You can also use the tag "any" to allow the thought to occur for all roles except "newborns", who shouldn't get any general thoughts, just the ones placed in their specific JSON.
+> You can also remove the parameter to allow the thought to occur for all roles except "newborns", who are only allowed if specifically tagged as such.
 
 ***
 
-### main_status_history: list[str] & random_status_history: list[str]::
-Constrains the thought to only happen if m_c or r_c used to have a certain role, but are no longer that role. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+**past_status: list[str]**
+>Constrains the thought to only happen if the cat held a certain role in the past. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 > [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
 
 ***
-
-### main_age_constraint: list[str] & random_age_constraint: list[str]:
-Constrains the thought to only occur if m_c or r_c are within a certain age group. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+**age: list[str]**
+>Constrains the thought to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 > [Age Tag List](reference/tag-lists.md#__tabbed_2_1)
+> 
+> You can also remove the parameter to allow the thought to occur for all ages except "newborns", who are only allowed if specifically tagged as such.
 
 ***
 
-### main_trait_constraint: list[str] & random_trait_constraint: list[str]:
-Constrains the thought to only occur if m_c or r_c has a specific trait. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+**group:list[str]**
+>Constraints the thought to only happen if the cat is a member of a listed group.
 
-> [Trait Tag List](reference/tag-lists.md#__tabbed_3_2)
+**standing: dict[str: var]**
+>Constrains the thought to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or a member.
+> 
+> This is also how you can dictate that a cat must belong to *no* group.
+
+```json
+    "standing": {
+        "group": [],
+        "currently": [],
+        "past": []
+      },
+```
+>**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups)
+
+>**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
+
+>**`"past"`** - standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
+
 
 ***
 
-### main_skill_constraint: list[str] & random_skill_constraint: list[str]:
-Constrains the thought to occur only if m_c or r_c has a specific skill. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
-> [Skill Tag List](reference/tag-lists.md#__tabbed_3_1)
+**stat: dict[str: list]**
+> Constrains the thought to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+
+```json
+    "stat": {
+        "skill": [],
+        "trait": [],
+        "must_have_both": false
+    },
+```
+>**`"skill"`** - list of allowed skills from [Skill Tag List](reference/tag-lists.md#__tabbed_3_1)
+> 
+> **`"trait"`** - list of allowed traits from [Trait Tag List](reference/tag-lists.md#__tabbed_3_2)
+> 
+> **`"must_have_both"`** - defaults to `false`. if set to `true`, the cat's trait *and* skills must qualify. if `false`, the cat must have *either* a listed trait or a listed skill.
 
 ***
 
-### random_living_status: list[str] & random_outside_status: list[str]:
-Constrains the thought if r_c has a specific place of death (first set of tags) or outside role (second set of tags).
-
-> [Other Status Tag List](reference/tag-lists.md#__tabbed_2_3)
-
-## Examples
-Some examples of thoughts include:
-
-    {
-        "id": "gen_dead_exiled",
-        "thoughts": [
-            "Wishes {PRONOUN/m_c/subject} had the chance to fix {PRONOUN/m_c/poss} mistakes while alive",
-            "Curses c_n for making {PRONOUN/m_c/object} die alone",
-            "Wonders what is happening in StarClan",
-            "Regrets not trying to join a different Clan before {PRONOUN/m_c/subject} died",
-            "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/have/has} a purpose anymore",
-            "Is thinking bitterly about {PRONOUN/m_c/poss} former Clanmates"
-        ],
-        "main_status_constraint": [
-            "exiled"
-        ]
+**health: dict[str: var]**
+> Constrains the thought to only occur if the cat's health matches the constraints.
+ 
+```json
+    "health": {
+        "working": true,
+        "condition": [],
+        "must_be_congenital": false,
+        "must_be_acquired": false
     }
+```
+> **`"working"`** - by default, this is always set to `true`. if set to `false`, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind)
 
-_Found in `while_dead/unknown_residence/exiled.json`_
+> **`"condition`** - a list of conditions that the cat must have *at least* one of. if any condition is allowed, use `"any"`. supports [exclusionary tags](reference/tag-lists.md#exclusionary-tags). check [illness](reference/tag-lists.md/#__tabbed_1_3), [injury](reference/tag-lists.md#__tabbed_1_2), and [permanent condition](reference/tag-lists.md#__tabbed_1_4) references for lists of current condition possibilities.
 
-    {
-        "id": "fierce_deputy",
-        "thoughts": [
-            "Is sternly instructing a patrol about the importance of strength in defending the Clan",
-            "Feels a rush of adrenaline at the thought of an upcoming battle",
-            "Impressed {PRONOUN/m_c/poss} Clanmates by scaring off an intruder"
-        ],
-        "main_trait_constraint": [
-            "fierce"
+> **`"must_be_congenital"`** - by default, this is always set to `false`. if set to `true`, the cat must have been born with a permanent condition listed in the `condition`.
+
+> **`"must_be_acquired"`** - by default, this is always set to `false`. if set to `true`, the cat must have acquired a permanent condition listed in `condition` later in life.
+
+!!! warning
+    `must_be_congenital` and `must_be_acquired` naturally conflict with each other. Be careful not to set both of them to `true`, else they won't behave correctly.
+
+!!! note
+    Be careful when specifying `must_be_congenital`. If you force a condition to be congenital when it can never generate as such, the thought will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
+
+***
+
+**backstory:list**
+>Constrains the thought to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
+
+> [Backstory Tag List](reference/tag-lists.md#backstories)
+
+
+### relationship_constraint: list[dict]
+Constrains the thought to only occur is the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
+```json
+        "relationship_constraint": [
+            {
+                "cats_from": [],
+                "cats_to": [],
+                "mutual": false,
+                "constraints": []
+            }
         ]
-    }
+```
+**cats_from:list**
+>The cats from whom the relationship originates. Use the designations (`m_c`, `r_c`, etc.) of cats listed in `involved_cats`.
 
-_Found in `while_alive/deputy.json`_
+**cats_to:list**
+>The cats who are the target of the relationship. Use the designations (`m_c`, `r_c`, etc.) of cats listed in `involved_cats`.
 
+!!! caution "For example"
+    If we want to ensure that `m_c` trusts `r_c`, we would put `m_c` in the `cats_from` list and `r_c` in the `cats_to` list. The feeling of trust is going *from* `m_c` *to* `r_c`.
+
+**mutual:bool**
+>Defaults to `true`. Set this to `false` if the constraints should be mutual between the `cats_from` and `cats_to` groups.
+
+!!! caution "For example"
+    To work off of our earlier example: if we want `r_c` to *also* trust `m_c`, then we would set `mutual` to `true`.
+
+**constraints:list**
+>The list of required relationships. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships). For the purposes of tag use explanations in those references: `cats_from` is considered "cat1" and `cats_to` is considered "cat2".
+
+!!! caution "For example"
+    To work off of our earlier example: we would list `trusts` in our `constraints`
 
