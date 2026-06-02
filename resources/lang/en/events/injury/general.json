@@ -6634,8 +6634,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred after trying to climb all of the Fourtrees as an apprentice.",
-                "death": "m_c died of {PRONOUN/m_c/poss} injuries after falling out of one of the Fourtrees."
+                "scar": "m_c was scarred after trying to climb a tree at the Gathering place as an apprentice.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after falling out of a tree at the Gathering place."
             }
 
         ]
