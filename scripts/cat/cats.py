@@ -1597,9 +1597,11 @@ class Cat:
             cat_list = self.all_cats_list.copy()
             other_clan_id = (
                 choice(game.clan.other_clan_IDs)
-                if game.clan and game.clan.other_clan_IDs
+                if game.clan
+                and hasattr(game.clan, "other_clan_ids")
+                and game.clan.other_clan_IDs
                 else None
-            )
+            )  # this is so stupid convoluted because of tests and game.clan initialization
 
         if not other_cat:
             other_cat = get_other_cat_for_thought(
