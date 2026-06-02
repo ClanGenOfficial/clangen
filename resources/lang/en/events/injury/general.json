@@ -6653,11 +6653,11 @@
         "event_text": "m_c and r_c become poisoned after hunting near {POI/name/terrain_carrionplace,terrain_carrionbeach}.",
         "new_accessory": [],
         "m_c": {
-            "status": ["warrior", "apprentice"],
-            "relationship_status": ["considers"]
+            "status": ["leader", "deputy", "warrior", "apprentice"],
+            "relationship_status": ["considers", "relates_to"]
         },
         "r_c": {
-            "status": ["warrior", "apprentice"]
+            "status": ["leader", "deputy", "warrior", "apprentice"]
         },
         "injury": [
             {
@@ -6668,7 +6668,7 @@
         "history": [
             {
                 "cats": ["m_c", "r_c"],
-                "death": "m_c died after eating rotting prey."
+                "death": "m_c died after eating tainted prey."
             }
         ]
     },
@@ -6682,11 +6682,11 @@
             "name": ["terrain_twolegplace"]
         },
         "frequency": 2,
-        "event_text": "m_c and r_c go on an adventure in the Twolegplace, but they barely escape with their lives after encountering a gang of rogues.",
+        "event_text": "m_c and r_c sneak out and go on an adventure in the Twolegplace, but they barely escape with their lives after encountering a gang of rogues.",
         "new_accessory": [],
         "m_c": {
             "status": ["apprentice"],
-            "relationship_status": ["considers"]
+            "relationship_status": ["considers", "relates_to"]
         },
         "r_c": {
             "status": ["apprentice"]
@@ -6754,11 +6754,11 @@
             "name": ["terrain_horseplace"]
         },
         "frequency": 2,
-        "event_text": "m_c is caught under a horse's hooves while hunting in {POI/name/terrain_horseplace}. r_c helps {PRONOUN/m_c/object} back to camp",
+        "event_text": "m_c is caught under a horse's hooves while hunting in {POI/name/terrain_horseplace}. r_c helps {PRONOUN/m_c/object} back to camp.",
         "new_accessory": [],
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"],
-            "relationship_status": ["acknowledges"]
+            "relationship_status": ["acknowledges", "praises"]
         },
         "r_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"]
