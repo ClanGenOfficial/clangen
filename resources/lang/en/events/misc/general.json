@@ -4763,7 +4763,7 @@
             "name": ["terrain_eaglenest"]
         },
         "frequency": 4,
-        "event_text": "m_c insists {PRONOUN/m_c/poss} new pelt decoration was stolen from {POI/name/terrain_eaglenest}, but almost nobody believe {PRONOUN/m_c/object}.",
+        "event_text": "m_c insists {PRONOUN/m_c/poss} new pelt decoration was stolen from {POI/name/terrain_eaglenest}, but almost nobody believes {PRONOUN/m_c/object}.",
         "new_accessory": ["SPARROW FEATHERS"],
         "m_c": {
             "status": ["-kitten"],
