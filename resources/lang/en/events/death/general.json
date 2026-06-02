@@ -9785,5 +9785,79 @@
     ],
     "changed": -3
   }
+<<<<<<< Updated upstream
+=======
+},
+{
+    "event_id": "gen_death_gatheringisland",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "poi": {
+        "name": ["gather_island"]
+    },
+    "frequency": 1,
+    "event_text": "m_c is so excited to be at the Gathering that {PRONOUN/m_c/subject} {VERB/m_c/forget/forgets} to watch {PRONOUN/m_c/poss} paws on the tree bridge. No cat is able to pull {PRONOUN/m_c/object} to shore in time, and the Gathering is cut short for a vigil.",
+    "m_c": {
+        "dies": true,
+        "age": ["adolescent"],
+        "trait": ["-careful", "-calm", "-wise"],
+        "skill": ["-SWIMMER,0"]
+    },
+    "history": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c died after slipping off the tree bridge at the Gathering."
+        }
+
+    ]
+},
+{
+    "event_id": "gen_death_fourtrees",
+    "location": ["any"],
+    "season": ["any"],
+    "tags": [],
+    "poi": {
+        "name": ["gather_fourtrees"]
+    },
+    "frequency": 1,
+    "event_text": "When r_c takes m_c to {POI/name/gather_fourtrees}, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. r_c can't stop {PRONOUN/m_c/object} in time. m_c only makes it halfway up the first when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}, never to get back up.",
+    "m_c": {
+        "dies": true,
+        "age": ["adolescent"],
+        "trait": ["arrogant", "ambitious", "confident", "rebellious"],
+        "skill": ["-CLIMBER,0"],
+        "relationship_status": ["app/mentor"]
+    },
+    "r_c": {},
+    "history": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c died after falling out of one of the Fourtrees."
+        }
+
+    ]
+},
+{
+    "event_id": "gen_death_gathermonster",
+    "location": ["any"],
+    "season": ["any"],
+    "poi": {
+        "name": ["gather_monster"]
+    },
+    "tags": [],
+    "frequency": 1,
+    "event_text": "At a busy Gathering, m_c is scratched by a piece of sharp metal jutting from {POI/name/gather_monster}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/succumb/succumbs} to infection only a few days later.",
+    "m_c": {
+        "dies": true,
+        "age": ["-kitten"]
+    },
+    "history": [
+        {
+        "cats": ["m_c"],
+        "death": "m_c died of infection after being scraped by rusty metal at the Gathering."
+    }
+]
+>>>>>>> Stashed changes
 }
 ]
