@@ -866,9 +866,12 @@
           "title": "Involved Cats"
         },
         "relationship_constraint": {
-          "$ref": "#/$defs/RelationshipConstraint",
           "description": "Used to require specific relationships between the cats",
-          "title": "Relationship Constraint"
+          "items": {
+            "$ref": "#/$defs/RelationshipConstraint"
+          },
+          "title": "Relationship Constraint",
+          "type": "array"
         }
       },
       "required": [

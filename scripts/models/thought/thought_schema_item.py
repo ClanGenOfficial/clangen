@@ -37,7 +37,7 @@ class ThoughtSchemaItem(BaseModel):
         MISSING,
         description="Used to add constraints for the various involved cats.",
     )
-    relationship_constraint: Union[RelationshipConstraint, MISSING] = Field(
+    relationship_constraint: Union[List[RelationshipConstraint], MISSING] = Field(
         MISSING,
         description="Used to require specific relationships between the cats",
     )
