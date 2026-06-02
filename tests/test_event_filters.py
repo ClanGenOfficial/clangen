@@ -2079,6 +2079,7 @@ class TestCatConstraint(unittest.TestCase):
     def test_health(self):
         working_cat = Cat()
         broken_cat = Cat()
+        Cat.disable_random = True
         broken_cat.get_injured(name="broken bone")
         ill_cat = Cat()
         ill_cat.get_ill(name="greencough")
