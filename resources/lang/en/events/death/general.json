@@ -9239,27 +9239,27 @@
                 }
             }]
     },
-{
-    "event_id": "gen_death_gathermonster",
-    "location": ["any"],
-    "season": ["any"],
-    "poi": {
-        "name": ["gather_monster"]
+    {
+        "event_id": "gen_death_gathermonster",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "name": ["gather_monster"]
+        },
+        "tags": [],
+        "frequency": 1,
+        "event_text": "At a busy Gathering, m_c is scratched by a piece of sharp metal jutting from {POI/name/gather_monster}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/succumb/succumbs} to infection only a few days later.",
+        "m_c": {
+            "dies": true,
+            "age": ["-kitten"]
+        },
+        "history": [
+            {
+            "cats": ["m_c"],
+            "death": "m_c died of infection after being scraped by rusty metal at the Gathering."
+        }
+        ]
     },
-    "tags": [],
-    "frequency": 1,
-    "event_text": "At a busy Gathering, m_c is scratched by a piece of sharp metal jutting from {POI/name/gather_monster}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/succumb/succumbs} to infection only a few days later.",
-    "m_c": {
-        "dies": true,
-        "age": ["-kitten"]
-    },
-    "history": [
-        {
-        "cats": ["m_c"],
-        "death": "m_c died of infection after being scraped by rusty metal at the Gathering."
-    }
-    ]
-},
     {
         "event_id": "gen_death_medmessup1",
         "location": [
