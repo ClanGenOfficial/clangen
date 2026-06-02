@@ -1563,13 +1563,7 @@ class Cat:
         if not self.status.alive_in_player_clan:
             # this is handled in events.py
             self.personality.set_kit(self.age.is_baby())
-            self.get_new_thought(other_clan_cats=other_clan_cats)
             return
-
-        if self.dead and not self.faded:
-            self.get_new_thought(CatThought.WHILE_DEAD)
-            return
-        self.get_new_thought(CatThought.WHILE_ALIVE)
 
         # Set personality to correct type
         self.personality.set_kit(self.age.is_baby())
