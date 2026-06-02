@@ -22,11 +22,8 @@
         "involved_cats": {
             "r_c": {
                 "age": [
-                    "adolescent",
-                    "young adult",
-                    "adult",
-                    "senior adult",
-                    "senior"
+                    "-newborn",
+                    "-kitten"
                 ],
                 "group": [
                     "starclan"

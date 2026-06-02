@@ -74,11 +74,8 @@
         "involved_cats": {
             "m_c": {
                 "age": [
-                    "adolescent",
-                    "young adult",
-                    "adult",
-                    "senior adult",
-                    "senior"
+                    "-newborn",
+                    "-kitten"
                 ],
                 "backstory": [
                     "clan_founder"
@@ -181,11 +178,8 @@
         "involved_cats": {
             "m_c": {
                 "age": [
-                    "adolescent",
-                    "young adult",
-                    "adult",
-                    "senior adult",
-                    "senior"
+                    "-newborn",
+                    "-kitten"
                 ],
                 "backstory": [
                     "clan_founder"
@@ -321,7 +315,7 @@
         "involved_cats": {
             "m_c": {
                 "group": [
-                    "-afterlife"
+                    "afterlife"
                 ],
                 "status": [
                     "living"
@@ -329,7 +323,7 @@
             },
             "r_c": {
                 "group": [
-                    "afterlife"
+                    "-afterlife"
                 ]
             }
         },
@@ -357,7 +351,7 @@
         "involved_cats": {
             "m_c": {
                 "group": [
-                    "-afterlife"
+                    "afterlife"
                 ],
                 "status": [
                     "living"
@@ -371,48 +365,7 @@
             },
             "r_c": {
                 "group": [
-                    "afterlife"
-                ]
-            }
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "parent/child"
-                ]
-            }
-        ]
-    },
-    {
-        "id": "dead_outsider_parent_to_alive_child",
-        "strings": [
-            "Regrets not joining a Clan if it meant being able to raise r_c",
-            "Still doesn't trust Clan cats, but is happy r_c is safe",
-            "Is just glad r_c was saved from meeting the same fate {PRONOUN/m_c/subject} did",
-            "Is so grateful to c_n for saving r_c"
-        ],
-        "involved_cats": {
-            "m_c": {
-                "status": [
-                    "unknownresidence"
-                ]
-            },
-            "r_c": {
-                "group": [
                     "-afterlife"
-                ],
-                "backstory": [
-                    "orphaned1",
-                    "orphaned2",
-                    "orphaned4",
-                    "orphaned5"
                 ]
             }
         },
