@@ -1971,7 +1971,7 @@ class Cat:
                 "potential_scars": new_injury.potential_scars,
             }
 
-        if len(new_injury.also_got) > 0 and not int(random() * 5):
+        if not self.disable_random and len(new_injury.also_got) > 0 and not int(random() * 5):
             avoided = False
             if (
                 "blood loss" in new_injury.also_got
