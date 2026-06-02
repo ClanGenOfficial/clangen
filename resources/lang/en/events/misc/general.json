@@ -4873,7 +4873,7 @@
             "tags": ["prey:flying"]
         },
         "frequency": 4,
-        "event_text": "m_c is on a walk by {POI/tag/prey:flying} when {PRONOUN/m_c/subject} finds some lovely feathers. {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to wear them.",
+        "event_text": "m_c is on a walk by {POI/tag/prey:flying} when {PRONOUN/m_c/subject} {VERB/m_c/find/finds} some lovely feathers. {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to wear them.",
         "new_accessory": ["BLUE FEATHERS", "RED FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS"],
         "m_c": {
             "status": ["-kitten"]
