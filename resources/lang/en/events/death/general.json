@@ -9436,7 +9436,8 @@
             ],
             "changed": -3
         },
-        "future_event": [
+         "exclude_involved": ["r_c"],
+         "future_event": [
             {
                 "event_type": "misc",
                 "pool": {
@@ -9456,8 +9457,7 @@
                     }
                 }
             }
-        ],
-        "exclude_involved": ["r_c"]
+        ]
     },
      {
         "event_id": "gen_death_warbattle_murder1",
