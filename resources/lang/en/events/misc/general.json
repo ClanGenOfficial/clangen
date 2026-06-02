@@ -4755,7 +4755,7 @@
         "new_accessory": ["SPARROW FEATHERS"],
         "m_c": {
             "status": ["-kitten"],
-            "skill": ["STORYTELLER,1"]
+            "skill": ["STORY,1"]
         },
         "r_c": {
             "age": ["kitten", "adolescent"],
