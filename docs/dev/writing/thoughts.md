@@ -181,7 +181,7 @@ Each entry is an individual cat, with the key being their event designation (`r_
 ***
 
 **group:list[str]**
->Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. you can use tags in: [possible group tags.](reference/tag-lists.md#groups) and you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+>Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. you can use tags in: [possible group tags](reference/tag-lists.md#groups) and you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
 
 **standing: dict[str: var]**
 >Constrains the thought to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
