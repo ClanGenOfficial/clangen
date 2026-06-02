@@ -810,7 +810,7 @@
         "poi": {
             "name": ["moon_mouth"]
         },
-        "tags": [],
+        "tags": ["no_body"],
         "frequency": 4,
         "event_text": "During the half-moon, the gathered medicine cats wonder where m_c and r_c are. The moonlight flooding the Moonstone won't last all night. Outside, r_c heaps rocks on m_c's body.",
         "m_c": {
@@ -8718,7 +8718,7 @@
             "status": ["deputy"]
         },
         "r_c": {
-            "status": ["-medicine cat", "-medicine cat apprentice", "-mediator", "-mediator apprentice"]
+            "status": ["warrior", "leader", "apprentice"]
         },
         "history": [
             {
@@ -9845,26 +9845,5 @@
         }
 
     ]
-},
-{
-    "event_id": "gen_death_gathermonster",
-    "location": ["any"],
-    "season": ["any"],
-    "poi": {
-        "name": ["gather_monster"]
-    },
-    "tags": [],
-    "frequency": 1,
-    "event_text": "At a busy Gathering, m_c is scratched by a piece of sharp metal jutting from {POI/name/gather_monster}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/succumb/succumbs} to infection only a few days later.",
-    "m_c": {
-        "dies": true,
-        "age": ["-kitten"]
-    },
-    "history": [
-        {
-        "cats": ["m_c"],
-        "death": "m_c died of infection after being scraped by rusty metal at the Gathering."
-    }
-]
 }
 ]
