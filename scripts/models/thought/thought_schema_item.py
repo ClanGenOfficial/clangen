@@ -5,10 +5,10 @@ from typing import List, Union
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
+from scripts.models.common.season import Season
 from scripts.models.shortevent.location import Location
 from scripts.models.thought.involved_cats import InvolvedCats
 from scripts.models.thought.relationship_constraint_dict import RelationshipConstraint
-from scripts.models.thought.season import Season
 from scripts.models.thought.tag import Tag
 
 
