@@ -6617,7 +6617,7 @@
             "name": ["gather_fourtrees"]
         },
         "frequency": 1,
-        "event_text": "When r_c takes m_c to {POI/name/gather_fourtrees}, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. r_c can't stop {PRONOUN/m_c/object} in time. m_c is leaping from the first tree to the second when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}. While {PRONOUN/m_c/subject} {VERB/m_c/land/lands} on {PRONOUN/m_c/poss} feet, {PRONOUN/m_c/poss} leg snaps under {PRONOUN/m_c/object}.",
+        "event_text": "When r_c takes m_c to {POI/name/gather_fourtrees}, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. m_c is leaping from the first tree to the second when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}. {PRONOUN/m_c/poss/CAP} leg snaps under {PRONOUN/m_c/object}.",
         "m_c": {
             "age": ["adolescent"],
             "trait": ["arrogant", "ambitious", "confident", "rebellious"],
