@@ -170,7 +170,7 @@
     {
         "id": "gen_greenleaf_kit",
         "season": [
-            "Greenleaf"
+            "greenleaf"
         ],
         "strings": [
             "Is whining about the heat",
@@ -187,7 +187,7 @@
     {
         "id": "gen_leafbare_kit",
         "season": [
-            "Leaf-bare"
+            "leaf-bare"
         ],
         "strings": [
             "Is whining about the cold",
