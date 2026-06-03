@@ -48,7 +48,7 @@
         "r_c worries over m_c, looking for any tick-heads an apprentice might have left, but {PRONOUN/r_c/subject} can only find a distinctive rash. m_c knows what it means — tick fever.",
         "m_c's heart sinks as {PRONOUN/m_c/poss} fur starts falling out. The apprentices must have missed a tick — r_c confirms it's tick fever.",
         "m_c complains about a new rash, going silent when r_c finds a tick-head. {PRONOUN/m_c/subject/CAP} has tick fever.",
-        "m_c is caught scratching at a rash, pulling out small clumps of loose fur. It seems {PRONOUN/m_c/subject} {VERB/have/has} developed tick fever."
+        "m_c is caught scratching at a rash, pulling out small clumps of loose fur. It seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} developed tick fever."
     ]
     },
     "broken jaw": {
