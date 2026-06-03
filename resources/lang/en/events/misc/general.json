@@ -8084,7 +8084,7 @@
             "tags": ["water:flowing"]
         },
         "frequency": 1,
-        "event_text": "No matter where m_c goes on the territory, {PRONOUN/m_c/subject} can't seem to escape the sound of running water of {POI/tag/water:flowing}. m_c wonders if it's a sign.",
+        "event_text": "No matter where m_c goes on the territory, {PRONOUN/m_c/subject} can't seem to escape the sound of running water from {POI/tag/water:flowing}. m_c wonders if it's a sign.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
