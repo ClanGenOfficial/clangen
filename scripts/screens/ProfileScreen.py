@@ -564,8 +564,10 @@ class ProfileScreen(Screens):
                     c for c in Cat.all_cats_list if c.status.is_other_clancat
                 ]
                 self.the_cat.get_new_thought(other_clan_cats=other_clan_cats)
+            elif self.the_cat.dead:
+                self.the_cat.get_new_thought(CatThought.WHILE_DEAD)
             else:
-                self.the_cat.get_new_thought()
+                self.the_cat.get_new_thought(CatThought.WHILE_ALIVE)
 
         # Info in string
         cat_name = str(self.the_cat.name)

@@ -1304,5 +1304,235 @@
                 "art": "gen_train_waterdive_app"
             }
         ]
+    },
+    {
+        "patrol_id": "gen_bord_smoothboards",
+        "biome": [
+            "any"
+        ],
+        "poi": {
+            "tags": [
+                "twolegs:present"
+            ]
+        },
+        "season": [
+            "any"
+        ],
+        "types": [
+            "border"
+        ],
+        "tags": [],
+        "patrol_art": "fst_hunt_twolegplace",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "normal adult": [
+                2,
+                6
+            ],
+            "apprentice": [
+                -1,
+                -1
+            ]
+        },
+        "frequency": 2,
+        "chance_of_success": 40,
+        "intro_text": "While patrolling near {POI/tag/Twolegs:present}, the patrol stumbles across an odd stack of Twoleg wood. The trunk’s been cut into long pieces and it’s confusingly smooth.",
+        "decline_text": "They don’t have time for this. The patrol leaves the stack behind and continues on their way.",
+        "success_outcomes": [
+            {
+                "text": "It seems like the Twolegs used some sort of strange object found nearby to make these wood pieces so smooth, but the cats still can’t figure out why.",
+                "exp": 10,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to weren't able to figure out a Twoleg object on patrol."
+                        }
+                    }
+                ],
+                "art": "fst_hunt_twolegplace"
+            },
+            {
+                "text": "s_c is able to deduce by examining the nearby Twoleg nest that the wood pieces are used to build them. Alarmed, the patrol returns to camp to report their findings.",
+                "exp": 20,
+                "frequency": 3,
+                "stat_skill": [
+                    "CLEVER,2",
+                    "SENSE,2",
+                    "INSIGHTFUL,2"
+                ],
+                "can_have_stat": [
+                    "any"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed that s_c figured out the use of strange Twoleg wood pieces."
+                        }
+                    }
+                ],
+                "art": "fst_hunt_twolegplace"
+            },
+            {
+                "text": "p_l suggests dumping the wood pieces in the nearby pond—the water will surely ruin the wood and prevent the Twolegs from building more nests. The patrol is there until sunhigh dragging the pieces to the pond.",
+                "exp": 10,
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's idea of sabotaging the wood pieces to prevent the Twolegs from building new nests.",
+                            "cats_to": "cat_to worked with cat_from to sabotage a stack of wood pieces to prevent Twolegs from building new nests."
+                        }
+                    }
+                ],
+                "art": "mtn_hunt_patrolfollowsstreamtocoldbog"
+            },
+            {
+                "text": "p_l suggests dumping the wood pieces in the nearby pond to ruin the wood and prevent the Twolegs from building more nests. Before anyone can answer {PRONOUN/p_l/object}, s_c walks over and tugs just the right piece out of place, sending the entire pile tumbling down the slope right into the pond.",
+                "exp": 30,
+                "frequency": 2,
+                "stat_skill": [
+                    "CLEVER,3"
+                ],
+                "can_have_stat": [
+                    "not_pl"
+                ],
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l was jealous and upset when s_c stole {PRONOUN/p_l/poss} moment to shine during a patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol",
+                            "-p_l"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed when cat_to sent an entire stack of wood pieces down a slope into a pond by pulling just one out."
+                        }
+                    }
+                ],
+                "art": "pln_bord_shortswim1"
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol is unable to determine why the Twolegs have done this to the tree, and they return to camp disappointed.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "The patrol fails to notice the scent of predator in the odd stack. A snake lunges out of it and bites p_l.",
+                "exp": 0,
+                "frequency": 2,
+                "injury": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "snake bite"
+                        ],
+                        "scars": [
+                            "SNAKE"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "poisoned"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "death": "p_l died from the bite of a venomous snake.",
+                    "scar": "p_l was scarred by a snake bite."
+                },
+                "art": "gen_scared_cat_warrior"
+            },
+            {
+                "text": "p_l suggests taking the wood pieces to the nearby pond to waterlog the wood and prevent the Twolegs from building more nests, but the rest of the patrol is reluctant and {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up the idea.",
+                "exp": 0,
+                "frequency": 3,
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was annoyed with cat_to when {PRONOUN/cat_to/subject} didn't go along with {PRONOUN/cat_from/poss} idea."
+                        }
+                    }
+                ]
+            }
+        ]
     }
-] 
+ ]
