@@ -106,7 +106,7 @@
             "any"
         ],
         "frequency": 0,
-        "event_text": "DEBUG: added n_c:0 and n_c:1 and injured n_c:1.",
+        "event_text": "DEBUG: added n_c:0 and a litter and injured the litter.",
         "new_cat": [
             [
                 "loner",
