@@ -94,6 +94,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             sound_id="dice_roll",
+            tool_tip_text="screens.make_clan.reroll_tooltip",
         )
         self.elements["roll2"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 10), (34, 34))),
@@ -104,6 +105,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             anchors={"top_target": self.elements["roll1"]},
             manager=MANAGER,
             sound_id="dice_roll",
+            tool_tip_text="screens.make_clan.reroll_tooltip",
         )
         self.elements["roll3"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 10), (34, 34))),
@@ -114,6 +116,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             anchors={"top_target": self.elements["roll2"]},
             manager=MANAGER,
             sound_id="dice_roll",
+            tool_tip_text="screens.make_clan.reroll_tooltip",
         )
 
         # set to infinite or higher than typical
@@ -200,7 +203,11 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 if self.elements["error_message"]:
                     self.elements["error_message"].hide()
 
+                self.clan_info.clear_cats()
+
                 self.refresh_cat_images_and_info()  # Refresh all the images.
+                self.refresh_text_and_buttons()
+                self.update_head_display()
                 MakeClanScreenBase.rolls_left -= 1
                 if constants.CONFIG["clan_creation"]["rerolls"] == 3:
                     event.ui_element.disable()

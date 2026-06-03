@@ -70,6 +70,12 @@ class ClanInfo:
         self.starting_season = "Newleaf"
         self.game_mode = "classic"
 
+    def clear_cats(self):
+        self.leader = None
+        self.deputy = None
+        self.medicine_cat = None
+        self.starting_members = []
+
     def update(self, saved_info: dict):
         self.name = saved_info["name"]
         self.leader = saved_info["leader"]
