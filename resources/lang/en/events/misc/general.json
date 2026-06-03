@@ -14826,33 +14826,362 @@
      "r_c": {}
     },
     {
-    "event_id": "gen_misc_greenleaf_splashdate",
-    "location": ["any", "-desert"],
-    "season": ["greenleaf"],
-    "sub_type": [],
-    "tags": ["romance"],
-    "poi": {
-        "tags": ["water:flowing"]
+        "event_id": "gen_misc_greenleaf_splashdate",
+        "location": ["any", "-desert"],
+        "season": ["greenleaf"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "tags": ["water:flowing"]
+        },
+        "frequency": 4,
+        "event_text": "m_c and r_c spend sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
+        "m_c": {
+            "age": ["adolescent", "young adult"]
+        },
+        "r_c": {
+            "age": ["adolescent", "young adult"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance"],
+                "amount": 10,
+                "log": {
+                        "cats_from": "cat_to and cat_from enjoyed splashing each other to beat the heat."
+                    }
+            }
+        ]
     },
-    "frequency": 4,
-    "event_text": "m_c and r_c spend sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
-    "m_c": {
-        "age": ["adolescent", "young adult"]
-    },
-    "r_c": {
-        "age": ["adolescent", "young adult"]
-    },
-    "relationships": [
-        {
-            "cats_from": ["m_c"],
-            "cats_to": ["r_c"],
-            "mutual": true,
-            "values": ["romance"],
-            "amount": 10,
-            "log": {
-  "cats_from": "cat_to and cat_from enjoyed splashing each other to beat the heat."
+    {
+        "event_id": "gen_misc_taintedPOI_strange",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["tainted"]
+        },
+        "frequency": 1,
+        "event_text": "Most c_n cats find {POI/tag/tainted} a filthy, unpleasant part of the territory, but m_c finds a strange beauty in it.",
+        "m_c": {
+            "trait": ["strange"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "low_social", "low_stable"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -8,
+                "log": {
+                    "cats_from": "cat_from saw cat_to lurking around a dangerous part of the territory and felt uneasy."
                 }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_birdsPOI_younglove",
+        "location": ["any"],
+        "season": ["newleaf"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["prey:flying"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c watch birds perform courtship rituals near {POI/tag/prey:flying} and talk loudly about how ridiculous lovers can be. Their Clanmates exchange glances.",
+        "m_c": {
+            "age": ["adolescent", "young adult"],
+            "relationship_status": ["-mates", "fancies"]
+        },
+        "r_c": {
+            "age": ["adolescent", "young adult"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social", "-m_c", "-r_c"],
+                "cats_to": ["m_c", "r_c"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from was amused by how unsubtle m_c and r_c's crushes on each other were becoming."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_treesPOI_senior",
+        "location": ["any"],
+        "season": ["leaf-fall"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["trees"]
+        },
+        "frequency": 1,
+        "event_text": "m_c watches the leaves change and fall from the branches of {POI/tag/trees}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wonder/wonders} if {PRONOUN/m_c/subject}'ll be around to see it again next year.",
+        "m_c": {
+            "age": ["senior"]
         }
-    ]
-}
+    },
+    {
+        "event_id": "gen_misc_treesPOI_apprentices",
+        "location": ["any"],
+        "season": ["greenleaf"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["trees"]
+        },
+        "frequency": 1,
+        "event_text": "m_c is dazzled by the greenery of {POI/tag/trees}. {PRONOUN/m_c/poss/CAP} first greenleaf is living up to its name.",
+        "m_c": {
+            "age": ["adolescent"]
+        }
+    },
+    {
+        "event_id": "gen_misc_waterstillPOI_daring",
+        "location": ["any"],
+        "season": ["leaf-bare"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["water:still"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tests the thickness of the ice on {POI/tag/water:still}'s surface, hoping to go for a slide later.",
+        "m_c": {
+            "trait": ["daring", "bold", "troublesome", "rebellious", "arrogant", "adventurous", "competitive"]
+        }
+    },
+    {
+        "event_id": "gen_misc_twolegsabandonedPOI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["Twolegs:abandoned"]
+        },
+        "frequency": 1,
+        "event_text": "m_c reports seeing a Twoleg near {POI/tag/Twolegs:abandoned}. The Clan worries that Twolegs may return to reclaim their creation.",
+        "m_c": {
+            "status": ["-kitten", "-elder", "-leader"]
+        }
+    },
+    {
+        "event_id": "gen_misc_twolegspresentPOI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["Twolegs:present"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c lie in wait near {POI/tag/Twolegs:present}, hoping to snatch some scraps of Twoleg food.",
+        "m_c": {
+            "status": ["-kitten", "-elder"],
+            "trait": ["-strict", "-righteous", "-wise", "-careful", "-faithful"],
+            "relationship_status": ["considers", "relates_to"]
+        },
+        "r_c": {
+            "status": ["-kitten", "-elder"],
+            "trait": ["-strict", "-righteous", "-wise", "-careful", "-faithful"]
+        }
+    },
+    {
+        "event_id": "gen_misc_coveredPOI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "tags": ["covered"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c get caught in a storm and shelter by {POI/tag/covered}. When they return to camp, they seem closer.",
+        "m_c": {
+            "status": ["-kitten"],
+            "relationship_status": ["-mates"]
+        },
+        "r_c": {
+            "status": ["-kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "While sheltering from a storm together, cat_from and cat_to felt a spark of connection."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_fallriskPOI_apps",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["fall_risk"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c yowl down {POI/tag/fall_risk}, trying to make their meows echo.",
+        "m_c": {
+            "status": ["apprentice"]
+        },
+        "r_c": {
+            "status": ["apprentice"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["comfort", "like"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from and cat_to had fun yowling at the top of their lungs together."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_fallriskPOI_neardeath",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["fall_risk"]
+        },
+        "frequency": 1,
+        "event_text": "m_c has a near-death experience by {POI/tag/fall_risk}.",
+        "m_c": {}
+    },
+    {
+        "event_id": "gen_misc_sunningrocksPOI_mates",
+        "location": ["any"],
+        "season": ["greenleaf", "newleaf"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "name": ["terrain_sunningrocks"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c spend a lazy day soaking up the sun at {POI/name/terrain_sunningrocks}.",
+        "m_c": {
+            "relationship_status": ["mates"]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from and cat_to sunned themselves together."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_wateroceanPOI_mates",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "tags": ["water:ocean"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c cozy up together by {POI/tag/water:ocean} and listen to the crash of waves.",
+        "m_c": {
+            "relationship_status": ["mates"]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from and cat_to listened to the ocean together."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hugeboulder_story",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_hugeboulder"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tells the story of how {POI/name/terrain_hugeboulder} was once an enormous bear who hibernated so long it turned to stone.",
+        "m_c": {
+            "skill": ["STORY,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_windswepttree_story",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_windswepttree"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tells the story of how {POI/name/terrain_windswepttree} has helped hold up the sky for so many generations that now it bends beneath the weight.",
+        "m_c": {
+            "skill": ["STORY,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_lake_story",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_lake"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tells the story of how {POI/name/terrain_lake} was created when Silverpelt lost her footing in the night sky and left a pawprint in the earth. Generations of rainwater filled it to create {POI/name/terrain_lake}.",
+        "m_c": {
+            "skill": ["STORY,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_well_story",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_well"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tells the story of how dogs won the favor of Twolegs when, many generations ago, a dog rescued a Twoleg from {POI/name/terrain_well}.",
+        "m_c": {
+            "skill": ["STORY,2"]
+        }
+    }
 ]
