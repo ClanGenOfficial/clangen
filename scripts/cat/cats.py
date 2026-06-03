@@ -2225,9 +2225,8 @@ class Cat:
         condition_directory = get_save_dir() + "/" + clanname + "/conditions"
         condition_file_path = condition_directory + "/" + self.ID + "_conditions.json"
 
-        if (
-            (not self.is_ill() and not self.is_injured() and not self.is_disabled())
-            or ((self.dead or self.status.is_outsider) and not self.is_disabled())
+        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or (
+            (self.dead or self.status.is_outsider) and not self.is_disabled()
         ):
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
