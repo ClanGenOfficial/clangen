@@ -1227,7 +1227,7 @@ class ProfileScreen(Screens):
 
     def save_user_notes(self):
         """Saves user-entered notes."""
-        clanname = game.clan.name
+        clanname = game.clan.save_id
 
         notes = self.user_notes
 
@@ -1246,7 +1246,7 @@ class ProfileScreen(Screens):
 
     def load_user_notes(self):
         """Loads user-entered notes."""
-        clanname = game.clan.name
+        clanname = game.clan.save_id
 
         notes_directory = get_save_dir() + "/" + clanname + "/notes"
         notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
