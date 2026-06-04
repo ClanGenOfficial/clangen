@@ -283,6 +283,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
 
     return current_standing in required_rel
 
+
 def event_for_player_temper(player_clan_temper) -> bool:
     """
     check if player clan has the required temperament
@@ -293,7 +294,8 @@ def event_for_player_temper(player_clan_temper) -> bool:
     else:
         player_temper = game.clan.temperament
         return player_temper in player_clan_temper
-    
+
+
 def event_for_other_temper(other_clan_temper: list, other_clan) -> bool:
     """
     check if any other clans have the required temperament
@@ -304,6 +306,7 @@ def event_for_other_temper(other_clan_temper: list, other_clan) -> bool:
     else:
         other_temper = other_clan.temperament
         return other_temper in other_clan_temper
+
 
 def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
     """
