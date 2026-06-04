@@ -1667,8 +1667,8 @@
             "hovered_image": {
                 "path": "resources\/images\/buttons\/cruel_season_hover.png"
             },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/cruel_season_hover.png"
+            "disabled_image": {
+                "path": "resources\/images\/buttons\/cruel_season_unavailable.png"
             }
         }
     },
