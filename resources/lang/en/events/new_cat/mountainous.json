@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "While wandering around the caves, m_c found a stranger who seemed to be searching for something. After an introduction, n_c_pre tells m_c that starry-looking crystals have guided {PRONOUN/n_c/subject} to this place, and that {PRONOUN/n_c/subject} wish to join. {PRONOUN/n_c/subject/CAP} take on a new name.",
+        "event_text": "While wandering around the caves, m_c found a stranger who seemed to be searching for something. After an introduction, n_c_pre:0 tells m_c that crystals with stars in them have guided {PRONOUN/n_c:0/object} to this place, and that {PRONOUN/n_c:0/subject} {VERB/n_c:0/wish/wishes} to join. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/take/takes} on a new name.",
         "m_c": {
             "age": [
                 "young adult",
@@ -34,17 +34,17 @@
               "values": ["trust", "respect"],
               "amount": 5,
                 "log": {
-                    "cats_from": "m_c found n_c searching for the Clan after being guided by StarClan."
+                    "cats_from": "m_c found n_c:0 searching for the Clan, where StarClan was trying to lead {PRONOUN/n_c:0/object}."
                 }
             },
             {
               "cats_from": ["n_c"],
               "cats_to": ["m_c"],
-              "values": ["trust"],
-              "amount": 5,
+              "values": ["trust", "respect"],
+              "amount": 10,
               "log": {
-                "cats_from": "n_c is grateful that m_c has lead {PRONOUN/n_c/subject} to c_n"
-              }
+                "cats_from": "n_c:0 is grateful that m_c has lead {PRONOUN/n_c:0/object} to c_n when StarClan tried to guide {PRONOUN/n_c:0/object} there."
+            	}
             }
         ],
         "outsider": {
