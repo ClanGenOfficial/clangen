@@ -976,8 +976,8 @@
       "type": "string"
     },
     "other_clan_temper": {
-      "description": "Required temperament the other clan must have for the outcome",
-      "enum": [
+          "description": "Required temperament the other clan must have for the outcome",
+          "enum": [
           "cunning",
           "proud",
           "bloodthirsty",
@@ -997,10 +997,10 @@
           "methodical",
           "steadfast"
           ],
-      "title": "Other Clan Temperament",
-      "type": "string"
+          "title": "Other Clan Temperament",
+          "type": "string"
         },
-    "player_clan_temper": {
+        "player_clan_temper": {
           "description": "Required temperament the player clan must have for the outcome",
           "enum": [
           "cunning",
@@ -1024,7 +1024,7 @@
           ],
           "title": "Player Clan Temperament",
           "type": "string"
-    },
+        },
     "PointsOfInterestGroup": {
       "anyOf": [
         {
