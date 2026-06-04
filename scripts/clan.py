@@ -214,7 +214,7 @@ class Clan:
         the program starts
         """
         game.reset_used_group_IDs()
-        switch_set_value(Switch.clan_name, self.save_id)
+        switch_set_value(Switch.clan_save_id, self.save_id)
         reset_loaded_clan_settings()
         game.starclan = Afterlife()
         game.dark_forest = Afterlife()
@@ -318,7 +318,6 @@ class Clan:
             and cat.ID in Cat.outside_cats
         ):
             Cat.outside_cats.pop(cat.ID)
-            cat.clan = str(game.clan.save_id)
 
     def remove_cat(self, ID):  # ID is cat.ID
         """
