@@ -1536,49 +1536,50 @@
         ]
     },
     {
-        "patrol_id": "gen_bord_testotherclan",
-        "biome": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
-        "patrol_art": "gen_patrol_bickering",
-        "min_cats": 1,
-        "max_cats": 6,
-        "frequency": 4,
-        "chance_of_success": 50,
-        "intro_text": "DEBUG PATROL: this is to test other clan temperament!",
-        "decline_text": "this was a debug patrol",
-        "success_outcomes": [
-            {
-                "text": "o_c_n's temperament is: gracious",
-                "exp": 10,
-                "frequency": 4,
-                "other_clan_temper": "gracious"
-            },
-            {
-                "text": "anti crash unconstrained event, please retry!",
-                "exp": 5,
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "o_c_n's temperament is: bloodthirsty",
-                "exp": 0,
-                "frequency": 4,
-                "other_clan_temper": "bloodthirsty"
-            },
-            {
-                "text": "anti crash unconstrained event, please retry!",
-                "exp": 5,
-                "frequency": 4
-            }
-        ]
-    }
+    "patrol_id": "some_unique_id",
+    "biome": [
+        "any"
+    ],
+    "season": [
+        "any"
+    ],
+    "types": [
+        "border"
+    ],
+    "tags": [],
+    "patrol_art": "hunt_general_intro",
+    "min_cats": 1,
+    "max_cats": 6,
+    "frequency": 4,
+    "chance_of_success": 50,
+    "intro_text": "DEBUG: TEST PATROL",
+    "decline_text": "And they head right back!",
+    "success_outcomes": [
+        {
+            "text": "other clan temperament is gracious",
+            "exp": 10,
+            "frequency": 4,
+            "other_clan_temper": "gracious"
+        },
+        {
+            "text": "other clan temperament is bloodthirsty",
+            "exp": 10,
+            "frequency": 4,
+            "other_clan_temper": "bloodthirsty"
+        },
+        {
+            "text": "other clan temperament is observant",
+            "exp": 10,
+            "frequency": 4,
+            "other_clan_temper": "observant"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "unconstrained so it doesn't explode.",
+            "exp": 0,
+            "frequency": 4
+        }
+    ]
+}
  ]

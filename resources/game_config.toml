@@ -439,7 +439,7 @@ dev_tools = false
   chance_of_romance_patrol = 16
 
   # forces patrol with this id to occur, assuming it's possible by constraints
-  debug_ensure_patrol_id = ""
+  debug_ensure_patrol_id = "gen_patrol_testotherclan"
 
   # set to true to remove all constraints for patrols regarding location, session, biomes, etc.
   debug_override_patrol_stat_requirements = false
