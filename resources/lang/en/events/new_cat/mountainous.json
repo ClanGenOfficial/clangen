@@ -29,7 +29,7 @@
         "relationships": [
             {
               "cats_from": ["m_c"],
-              "cats_to": ["n_c:"],
+              "cats_to": ["n_c:0"],
               "mutual": false,
               "values": ["trust", "respect"],
               "amount": 5,
@@ -38,7 +38,7 @@
                 }
             },
             {
-              "cats_from": ["n_c"],
+              "cats_from": ["n_c:0"],
               "cats_to": ["m_c"],
               "values": ["trust", "respect"],
               "amount": 10,
