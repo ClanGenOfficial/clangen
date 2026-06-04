@@ -516,14 +516,14 @@ def handle_lead_den_event():
                             invited_cat.status._change_rank(CatRank.MEDICINE_CAT)
                         # if cat is a little baby, check name
                         elif invited_cat.age in (CatAge.NEWBORN, CatAge.KITTEN):
-                            if not invited_cat.save_id.suffix:
-                                invited_cat.save_id = Name(
-                                    invited_cat.save_id.prefix,
-                                    invited_cat.save_id.suffix,
+                            if not invited_cat.name.suffix:
+                                invited_cat.name = Name(
+                                    invited_cat.name.prefix,
+                                    invited_cat.name.suffix,
                                     game.clan.biome,
                                     cat=invited_cat,
                                 )
-                                invited_cat.save_id.give_suffix(
+                                invited_cat.name.give_suffix(
                                     pelt=None,
                                     biome=game.clan.biome
                                     if not game.clan.override_biome
