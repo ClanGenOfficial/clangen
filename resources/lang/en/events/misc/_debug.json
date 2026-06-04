@@ -54,5 +54,16 @@
         },
         "frequency": 0,
         "event_text": "DEBUG: visited 'prey:fish' POI"
+    },
+    {
+        "event_id": "debug_misc_other_clan_temper",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: successfully checked for other clan temperament. o_c_n is gracious"
     }
 ]
