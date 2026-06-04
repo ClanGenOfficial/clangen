@@ -283,6 +283,16 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
 
     return current_standing in required_rel
 
+def event_for_player_temper(player_clan_temper) -> bool:
+    """
+    check if player clan has the required temperament
+    """
+    # TODO: Add schema
+    if not player_clan_temper or "any" in player_clan_temper:
+        return True
+    else:
+        player_temper = game.clan.temperament
+        return player_temper in player_clan_temper
 
 def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
     """
