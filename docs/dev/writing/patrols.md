@@ -547,6 +547,7 @@ This is a good starting point for writing your own outcomes.
     "dead_cats": [],
     "outsider_rep": null,
     "other_clan_rep": null,
+    "other_clan_temper": null,
     "injury": [
         {
             "cats": [],
@@ -888,6 +889,10 @@ Other clan reputation changes
 
 > Please check with the other developers before changing from these defaults. However, there are lots of reasons why other_clan_rep might be effected more or less than these defaults. For example, failing to antagonize an enemy clan and getting your warriors killed in a border skirmish might make the player Clan absolutely _hate_ the other_clan. Create an argument for why your patrol deserves a greater effect and talk to the other developers.
 >
+***
+
+### other_clan_temper
+> Optional. Allows the writer to lock the outcome to only show if the other_clan has a certain temperament. check [Clan Temperaments](reference/tag-lists.md#clan-temperaments) for possible values.
 
 ***
 
