@@ -88,7 +88,7 @@ class ClanInfo:
         Returns all the attributes as a dict. We gotta use this instead of the dataclasses.as_dict() because Cat objects aren't pickable
         """
         return {
-            "name": self.display_name,
+            "display_name": self.display_name,
             "leader": self.leader,
             "deputy": self.deputy,
             "medicine_cat": self.medicine_cat,
