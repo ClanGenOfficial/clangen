@@ -72,7 +72,7 @@ class ClanInfo:
         self.game_mode = "classic"
 
     def update(self, saved_info: dict):
-        self.display_name = saved_info["name"]
+        self.display_name = saved_info["display_name"]
         self.leader = saved_info["leader"]
         self.deputy = saved_info["deputy"]
         self.medicine_cat = saved_info["medicine_cat"]
