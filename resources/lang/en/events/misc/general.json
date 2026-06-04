@@ -14854,5 +14854,162 @@
                 }
         }
     ]
+},
+      {
+    "event_id": "gen_rel_loathes1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c's claws unsheathe whenever r_c is near.",
+    "m_c": {
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {}
+},
+    {
+    "event_id": "gen_rel_loathes2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c pretends not to notice when r_c stumbles during a patrol.",
+    "m_c": {
+        "status": ["-kitten", "-elder"],
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {
+    "status": ["-newborn", "-kitten", "-elder"]
+    }
+},
+    {
+    "event_id": "gen_rel_loathes3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c's cannot stomach that fox-hearted r_c.",
+    "m_c": {
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks the praise r_c receives is a load of mouse-dung.",
+    "m_c": {
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c can tastes mousebile every time {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} about r_c.",
+    "m_c": {
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks {PRONOUN/m_c/subject} would be a better deputy than r_c.",
+    "m_c": {
+        "status": ["-kitten", "-deputy", "-leader"],
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {
+        "status": ["deputy"]
+    }
+},
+      {
+    "event_id": "gen_rel_discredits1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c is convinced r_c is influenced by the Dark Forest.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {}
+},
+          {
+    "event_id": "gen_rel_discredits2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c knows r_c is plotting against {PRONOUN/m_c/object}.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_discredits3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks r_c lets Clanmates {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like die intentionally.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {
+        "age": [],
+        "status": ["medicine cat", "medicine cat apprentice"]
+    }
+},
+          {
+    "event_id": "gen_rel_discredits4",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c whispers to {PRONOUN/m_c/poss} friends doubts about r_c's leadership.",
+    "m_c": {
+        "relationship_status": ["discredits_only"],
+         "status": ["-deputy", "-leader"]
+    },
+    "r_c": {
+        "status": ["leader", "deputy"]
+    }
+},
+    {
+    "event_id": "gen_rel_runsfrom1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c refuses to socialize or patrol with r_c.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"]
+    },
+    "r_c": {
+        "status": ["-kitten", "-elder"]
+    }
+},
+      {
+    "event_id": "gen_rel_runsfrom2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks if they were alone together r_c would hurt them.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"]
+    },
+    "r_c": {}
+},
+          {
+    "event_id": "gen_rel_runsfrom3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c isn't sure {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} safe in c_n... not with r_c around.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"]
+    },
+    "r_c": {}
 }
 ]
