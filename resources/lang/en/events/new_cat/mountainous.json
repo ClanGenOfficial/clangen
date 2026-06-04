@@ -1,5 +1,60 @@
 [
     {
+        "event_id": "mtn_new_cat_crystalguided_welcoming",
+        "location": [
+            "mountainous:camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "While wandering around the caves, m_c found a stranger who seemed to be searching for something. After an introduction, n_c_pre tells m_c that starry-looking crystals have guided {PRONOUN/n_c/subject} to this place, and that {PRONOUN/n_c/subject} wish to join. {PRONOUN/n_c/subject/CAP} take on a new name.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+            	"new_name",
+		    	"backstory:guided2,guided4"
+            ]
+        ],
+        "relationships": [
+            {
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:"],
+              "mutual": false,
+              "values": ["trust", "respect"],
+              "amount": 5,
+                "log": {
+                    "cats_from": "m_c found n_c searching for the Clan after being guided by StarClan."
+                }
+            },
+            {
+              "cats_from": ["n_c"],
+              "cats_to": ["m_c"],
+              "values": ["trust"],
+              "amount": 5,
+              "log": {
+                "cats_from": "n_c is grateful that m_c has lead {PRONOUN/n_c/subject} to c_n"
+              }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
         "event_id": "mtn_new_cat_eagle",
         "location": [
             "mountainous"
