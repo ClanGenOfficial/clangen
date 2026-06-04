@@ -1227,11 +1227,11 @@ class ProfileScreen(Screens):
 
     def save_user_notes(self):
         """Saves user-entered notes."""
-        clanname = game.clan.save_id
+        save_id = game.clan.save_id
 
         notes = self.user_notes
 
-        notes_directory = get_save_dir() + "/" + clanname + "/notes"
+        notes_directory = get_save_dir() + "/" + save_id + "/notes"
         notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
 
         if not os.path.exists(notes_directory):
@@ -1246,9 +1246,9 @@ class ProfileScreen(Screens):
 
     def load_user_notes(self):
         """Loads user-entered notes."""
-        clanname = game.clan.save_id
+        save_id = game.clan.save_id
 
-        notes_directory = get_save_dir() + "/" + clanname + "/notes"
+        notes_directory = get_save_dir() + "/" + save_id + "/notes"
         notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
 
         if not os.path.exists(notes_file_path):

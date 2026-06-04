@@ -350,7 +350,7 @@ class PatrolScreen(Screens):
         variable_dict["outcome_art"] = self.outcome_art
 
         variable_dict["current_moon"] = game.clan.age
-        variable_dict["clan_name"] = game.clan.save_id
+        variable_dict["clan_name"] = game.clan.name
 
         return variable_dict
 
