@@ -1,7 +1,7 @@
 [
     {
         "id": "gen_newborn",
-        "thoughts": [
+        "strings": [
             "Mewls pitifully for milk",
             "Tries to figure out all of the smells around {PRONOUN/m_c/object}",
             "Snoozes peacefully",
@@ -15,13 +15,17 @@
             "Mewls for attention",
             "Puffs {PRONOUN/m_c/poss} fur out at a new smell"
         ],
-        "main_age_constraint": [
-            "newborn"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "newborn"
+                ]
+            }
+        }
     },
     {
         "id": "gen_newborn_to_parent",
-        "thoughts":[
+        "strings": [
             "Snuggles closer to r_c",
             "Snuggles up to the belly of r_c",
             "Smells r_c and immediately perks up",
@@ -32,34 +36,68 @@
             "Purrs while suckling milk",
             "Squeals when r_c gets out of the nest"
         ],
-        "main_age_constraint": [
-            "newborn"
-        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "newborn"
+                ]
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "child/parent"
-        ],
-        "random_living_status": [
-            "living"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
         ]
     },
     {
         "id": "gen_newborn_to_sibling",
-        "thoughts":[
+        "strings": [
             "Tried suckling on r_c's tail",
             "Is being buried under r_c",
             "Was almost shoved out of the nest by r_c"
         ],
-        "main_age_constraint": [
-            "newborn"
-        ],
-        "random_age_constraint": [
-            "newborn"
-        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "newborn"
+                ]
+            },
+            "r_c": {
+                "age": [
+                    "newborn"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "siblings"
-        ],
-        "random_living_status": [
-            "living"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "siblings"
+                ]
+            }
         ]
     }
 ]
