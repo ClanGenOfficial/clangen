@@ -75,7 +75,7 @@ class FreshkillPileTest(unittest.TestCase):
 
         game.clan = Clan(
             save_id=self.test_clan_name,
-            displayname="Test",
+            display_name="Test",
             leader=self.leader,
             deputy=self.deputy,
             medicine_cat=self.medicine_cat,

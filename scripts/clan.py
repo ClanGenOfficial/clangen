@@ -83,11 +83,11 @@ class Clan:
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
-        displayname="",
+        display_name=None,
     ):
         """
         :param save_id: The save file name for the Clan, this should not be used for player-facing text beyond the save file screen
-        :param displayname: The display name for the Clan, this is what should appear while the playing the game.
+        :param display_name: The display name for the Clan, this is what should appear while the playing the game.
         """
         if save_id == "":
             return
@@ -95,14 +95,12 @@ class Clan:
         if starting_members is None:
             starting_members = []
 
-        # name is the unique id of the clan. i'm sorry if this is confusing...
-        # TODO: change to better name like clan_id
         self.save_id = save_id
-        # displayname is the name you should use whenever displaying the clan name in UI
-        if not displayname:
-            self.displayname = save_id
+        if not display_name:
+            self.name = save_id
         else:
-            self.displayname = displayname
+            self.name = display_name
+            
         self.leader = leader
         self.leader_lives = 9
         self.leader_predecessors = 0
@@ -421,7 +419,7 @@ class Clan:
 
         clan_data = {
             "clanname": self.save_id,
-            "displayname": self.displayname,
+            "displayname": self.name,
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
@@ -499,7 +497,7 @@ class Clan:
         if os.path.exists(f"{get_save_dir()}/{self.save_id}clan.json"):
             os.remove(f"{get_save_dir()}/{self.save_id}clan.json")
         elif os.path.exists(get_save_dir() + f"/{self.save_id}clan.txt") & (
-                self.save_id != "current"
+            self.save_id != "current"
         ):
             os.remove(get_save_dir() + f"/{self.save_id}clan.txt")
 
@@ -780,7 +778,7 @@ class Clan:
 
         game.clan = Clan(
             save_id=clan_data["clanname"],
-            displayname=displayname,
+            display_name=displayname,
             leader=leader,
             deputy=deputy,
             medicine_cat=med_cat,
@@ -1370,7 +1368,7 @@ class OtherClan:
         self.name = name
         if not self.name:  # find name if clan has no name yet
             used_names = [str(i.name) for i in game.clan.all_other_clans] + [
-                game.clan.displayname
+                game.clan.name
             ]
             clan_names = names.names_dict["normal_prefixes"]
             clan_names.extend(names.names_dict["clan_prefixes"])

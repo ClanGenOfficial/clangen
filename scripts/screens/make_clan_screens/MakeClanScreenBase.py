@@ -213,7 +213,7 @@ class MakeClanScreenBase(Screens):
             self.clan_info.name = _generate_unique_clan_name(clan_name)
 
         game.clan = Clan(
-            displayname=clan_name,
+            display_name=clan_name,
             **self.clan_info.get_dict(),
         )
         game.clan.create_clan()
