@@ -96,10 +96,7 @@ class Clan:
             starting_members = []
 
         self.save_id = save_id
-        if not display_name:
-            self.name = save_id
-        else:
-            self.name = display_name
+        self.name = display_name if display_name else save_id
 
         self.leader = leader
         self.leader_lives = 9
