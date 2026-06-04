@@ -72,6 +72,7 @@ class Clan:
     def __init__(
         self,
         save_id="",
+        display_name=None,
         leader=None,
         deputy=None,
         medicine_cat=None,
@@ -83,7 +84,6 @@ class Clan:
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
-        display_name=None,
     ):
         """
         :param save_id: The save file name for the Clan, this should not be used for player-facing text beyond the save file screen
@@ -100,7 +100,7 @@ class Clan:
             self.name = save_id
         else:
             self.name = display_name
-            
+
         self.leader = leader
         self.leader_lives = 9
         self.leader_predecessors = 0
@@ -418,7 +418,7 @@ class Clan:
         """
 
         clan_data = {
-            "clanname": self.save_id,
+            "save_id": self.save_id,
             "displayname": self.name,
             "clanage": self.age,
             "biome": self.biome,
@@ -766,10 +766,12 @@ class Clan:
         else:
             med_cat = None
 
-        if "displayname" in clan_data:
-            displayname = clan_data["displayname"]
-        else:
-            displayname = clan_data["clanname"]
+        # just checking if old param name is being used
+        save_id = (
+            clan_data.get("clanname")
+            if clan_data.get("clanname")
+            else clan_data.get("save_id")
+        )
 
         # remove any already loaded points of interest
         clear_pois()
@@ -777,8 +779,10 @@ class Clan:
         load_pois(clan_data.get("poi", {"empty": []}))
 
         game.clan = Clan(
-            save_id=clan_data["clanname"],
-            display_name=displayname,
+            save_id=save_id,
+            display_name=clan_data.get(
+                "displayname", None
+            ),  # if no displayname is found, clan init just uses save_id
             leader=leader,
             deputy=deputy,
             medicine_cat=med_cat,
