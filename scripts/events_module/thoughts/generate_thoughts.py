@@ -73,25 +73,7 @@ def get_other_cat_for_thought(
     return other_cat
 
 
-def _filter_list(
-    inter_list: list, main_cat: "Cat", other_cat: "Cat", other_clan_id: str
-) -> list:
-    """
-    Filters thoughts in the inter_list per their constraints and returns a list of allowed thoughts.
-    """
-    created_list = []
-    for inter in inter_list:
-        if _constraints_fulfilled(
-            main_cat=main_cat,
-            random_cat=other_cat,
-            thought=inter,
-            other_clan_id=other_clan_id,
-        ):
-            created_list.append(inter)
-    return created_list
-
-
-def _load_group(thought_type: CatThought, main_cat: "Cat"):
+def _load_allowed_thoughts(thought_type: CatThought, main_cat: "Cat"):
     """
     Loads and returns thoughts appropriate for the given args.
     """
@@ -268,16 +250,19 @@ def new_thought(
         ).lower() == "rickastley":
             return i18n.t("defaults.rickroll")
         else:
-            chosen_thought_group = choice(
-                _filter_list(
-                    _load_group(thought_type, main_cat),
-                    main_cat,
-                    other_cat,
-                    other_clan_id,
-                )
-            )
+            thought_options = []
+            for thought in _load_allowed_thoughts(thought_type, main_cat):
+                if _constraints_fulfilled(
+                    main_cat=main_cat,
+                    random_cat=other_cat,
+                    thought=thought,
+                    other_clan_id=other_clan_id,
+                ):
+                    thought_options.append(thought)
 
+            chosen_thought_group = choice(thought_options)
             chosen_thought = choice(chosen_thought_group.strings)
+
     except IndexError:
         traceback.print_exc()
         chosen_thought = i18n.t("defaults.thought")
