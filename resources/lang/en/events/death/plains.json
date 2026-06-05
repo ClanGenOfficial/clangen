@@ -89,7 +89,7 @@
       "any"
     ],
     "frequency": 1,
-    "event_text": "m_c wanders to the nearby Silverpath. Before anyone can guide them home, {PRONOUN/m_c/subject} {VERB/m_c/are/is} struck and killed by a Thundersnake.",
+    "event_text": "m_c wanders to the nearby Silverpath. Before anyone can guide {PRONOUN/m_c/object} home, {PRONOUN/m_c/subject} {VERB/m_c/are/is} struck and killed by a Thundersnake.",
     "m_c": {
       "status": [
         "kitten",
