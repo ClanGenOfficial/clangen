@@ -462,7 +462,7 @@
 						],
 						"amount": -10,
 						"log": {
-							"cats_from": "cat_to was tired and snappy after {PRONOUN/cat_to/subject} promised cat_from {PRONOUN/cat_to/subject} were fine to explore."
+							"cats_from": "cat_to was tired and snappy after {PRONOUN/cat_to/subject} promised cat_from {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} fine to explore."
 						}
 					},
 					{
