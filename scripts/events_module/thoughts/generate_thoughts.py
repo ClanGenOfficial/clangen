@@ -13,7 +13,7 @@ from scripts.events_module.event_filters import (
     check_rel_constraint_groups,
 )
 from scripts.events_module.text_pool_event import TextPoolEvent
-from scripts.game_structure import game
+from scripts.game_structure import game, constants
 from scripts.game_structure.localization import load_lang_resource
 
 if TYPE_CHECKING:
@@ -40,6 +40,10 @@ def new_thought(
         ).lower() == "rickastley":
             return i18n.t("defaults.rickroll")
         else:
+            ensured_id = constants.CONFIG["thought_generation"][
+                "debug_ensure_thought_id"
+            ]
+
             thought_options = []
             for thought in _load_allowed_thoughts(thought_type, main_cat):
                 if _constraints_fulfilled(
@@ -48,10 +52,31 @@ def new_thought(
                     thought=thought,
                     other_clan_id=other_clan_id,
                 ):
+                    if ensured_id and ensured_id != thought.id:
+                        continue
+
                     thought_options.append(thought)
 
+            if not thought_options and ensured_id:
+                print(
+                    "Thought ID ensured, but the ensured thoughts could not be found. This cat likely doesn't meet the constraints."
+                )
+
             chosen_thought_group = choice(thought_options)
-            chosen_thought = choice(chosen_thought_group.strings)
+
+            # only use ensured index if a thought as been ensured
+            ensured_index: int = (
+                constants.CONFIG["thought_generation"]["debug_ensure_thought_index"]
+                if constants.CONFIG["thought_generation"]["debug_ensure_thought_id"]
+                else None
+            )
+
+            # specifically "is not None" so that index 0 isn't picked up as a NoneType
+            chosen_thought = (
+                chosen_thought_group.strings[ensured_index]
+                if ensured_index is not None
+                else choice(chosen_thought_group.strings)
+            )
 
     except IndexError:
         traceback.print_exc()
@@ -171,7 +196,7 @@ def get_other_cat_for_thought(
 
 def _load_allowed_thoughts(thought_type: CatThought, main_cat: "Cat"):
     """
-    Loads and returns thoughts appropriate for the given args.
+    Loads and returns thoughts appropriate for the given cat.
     """
     # get rank
     rank = main_cat.status.rank
