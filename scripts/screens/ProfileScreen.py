@@ -977,7 +977,7 @@ class ProfileScreen(Screens):
                 bs_text = i18n.t("cat.backstories.clanborn_backstories")
         if bs_text:
             output += bs_text
-    
+
             # NEWLINE ----------
             output += "\n"
 
