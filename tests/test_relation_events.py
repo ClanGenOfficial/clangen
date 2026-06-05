@@ -21,7 +21,7 @@ class CanHaveKits(unittest.TestCase):
         # then
         self.assertFalse(
             Pregnancy_Events.check_if_can_have_kits(
-                cat, single_parentage=True, allow_unmated=True, allow_affair=True
+                cat, allow_single_parent=True, allow_unmated=True, allow_affair=True
             )
         )
 
