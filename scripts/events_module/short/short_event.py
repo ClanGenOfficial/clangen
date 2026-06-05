@@ -598,7 +598,7 @@ class ShortEvent:
                     game.clan.leader_lives -= 1
 
                 cat.die(body)
-                self.additional_event_text = get_leader_life_notice()
+                self.additional_event_text = get_leader_life_notice(cat.name)
 
             else:
                 cat.die(body)

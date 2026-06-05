@@ -743,13 +743,13 @@ def ceremony_text_adjust(
     return adjust_text, random_living_parent, random_dead_parent
 
 
-def get_leader_life_notice() -> str:
+def get_leader_life_notice(leader_name:str) -> str:
     """
     Returns a string specifying how many lives the leader has left or notifying of the leader's full death
     """
     if game.clan.instructor.status.group == CatGroup.DARK_FOREST:
-        return i18n.t("cat.history.leader_lives_left_df", count=game.clan.leader_lives)
-    return i18n.t("cat.history.leader_lives_left_sc", count=game.clan.leader_lives)
+        return i18n.t("cat.history.leader_lives_left_df", name=leader_name, count=game.clan.leader_lives)
+    return i18n.t("cat.history.leader_lives_left_sc", name=leader_name, count=game.clan.leader_lives)
 
 
 def adjust_list_text(list_of_items: List) -> str:
