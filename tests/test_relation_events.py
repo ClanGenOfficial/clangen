@@ -184,7 +184,7 @@ class CanHaveKits(unittest.TestCase):
     )
     def test_no_kit_setting(self, check_if_can_have_kits):
         # given
-        test_clan = Clan(name="clan")
+        test_clan = Clan(save_id="clan")
         test_clan.pregnancy_data = {}
         cat1 = Cat(gender="female", disable_random=True)
         cat1.no_kits = True
@@ -248,7 +248,7 @@ class Pregnancy(unittest.TestCase):
     )
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
-        clan = Clan(name="clan")
+        clan = Clan(save_id="clan")
         cat = Cat(gender="female", age="adult", moons=40, disable_random=True)
         clan.pregnancy_data = {}
 
@@ -264,7 +264,7 @@ class Pregnancy(unittest.TestCase):
     )
     def test_pair(self, check_if_can_have_kits):
         # given
-        clan = Clan(name="clan")
+        clan = Clan(save_id="clan")
         cat1 = Cat(gender="female", age="adult", moons=40, disable_random=True)
         cat2 = Cat(gender="male", age="adult", moons=40, disable_random=True)
 
