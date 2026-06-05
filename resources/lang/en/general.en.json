@@ -192,9 +192,10 @@
             "one": "apprentice: %{apprentices}",
             "many": "apprentices: %{apprentices}"
         },
+        "former_apprentice_history": "%{name} previously mentored %{apprentices}.",
         "former_apprentice_label": {
-            "one": "former apprentice: %{apprentices}",
-            "many": "former apprentices: %{apprentices}"
+            "one": "1 former apprentice",
+            "many": "%{count} former apprentices"
         },
         "apprentice_extra": {
             "zero": "",
