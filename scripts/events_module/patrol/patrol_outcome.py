@@ -482,7 +482,7 @@ class PatrolOutcome:
             gm_modifier = 1
 
         base_exp = 0
-        if "master" in (x.experience_level for x in patrol.patrol_cats):
+        if "masterful" in (x.experience_level for x in patrol.patrol_cats):
             max_boost = 10
         else:
             max_boost = 0
