@@ -353,11 +353,12 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     else:
         if game.clan is None:
             # todo can this be Switch.clan_name ?
+            # when can this even be called before game.clan is initialized?
             clan_name = switch_get_value(Switch.clan_list)[0]
         else:
             clan_name = str(game.clan.name)
 
-    text = text.replace("c_n", i18n.t("general.clan", name=clan_name))
+    text = text.replace("c_n", clan_name)
 
     return text
 
@@ -525,9 +526,7 @@ def event_text_adjust(
         text = _replace_clan_name(
             text,
             "o_c_n",
-            other_clan
-            if isinstance(other_clan, str)
-            else i18n.t("general.clan", name=str(other_clan.name)),
+            other_clan if isinstance(other_clan, str) else other_clan.name,
         )
 
     # clan_name
@@ -537,13 +536,13 @@ def event_text_adjust(
         except AttributeError:
             # todo can this be Switch.clan_name ?
             try:
-                clan_name = switch_get_value(Switch.clan_list)[0]
+                clan_name = i18n.t(
+                    "general.clan", name=str(switch_get_value(Switch.clan_list)[0])
+                )
             except IndexError:
-                clan_name = "Test"
+                clan_name = i18n.t("general.clan", name="Test")
 
-        text = _replace_clan_name(
-            text, "c_n", i18n.t("general.clan", name=str(clan_name))
-        )
+        text = _replace_clan_name(text, "c_n", clan_name)
 
     # prey lists
     text = adjust_prey_abbr(text)
@@ -636,7 +635,7 @@ def leader_ceremony_text_adjust(
     if extra_lives:
         text = text.replace("[life_num]", str(extra_lives))
 
-    text = text.replace("c_n", i18n.t("general.clan", name=str(game.clan.name)))
+    text = text.replace("c_n", game.clan.name)
 
     return text
 
@@ -653,7 +652,7 @@ def ceremony_text_adjust(
     living_parents=(),
     dead_parents=(),
 ):
-    clanname = i18n.t("general.clan", name=game.clan.name)
+    clanname = game.clan.name
 
     random_honor = random_honor
     random_living_parent = None
@@ -811,7 +810,7 @@ def history_text_adjust(text, other_clan_name, clan, other_cat_rc=None):
         text = text.replace("o_c_n", str(other_clan_name))
 
     if "c_n" in text:
-        text = text.replace("c_n", i18n.t("general.clan", name=clan.name))
+        text = text.replace("c_n", clan.name)
     if "r_c" in text and other_cat_rc:
         text = selective_replace(text, "r_c", str(other_cat_rc.name))
     return text

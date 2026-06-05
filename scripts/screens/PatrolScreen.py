@@ -307,15 +307,14 @@ class PatrolScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.set_disabled_menu_buttons(["patrols"])
-        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.name})
+        self.update_heading_text(game.clan.name)
         self.show_mute_buttons()
         self.show_menu_buttons()
 
         if (
             self.in_progress_data is not None
             and self.in_progress_data["current_moon"] == game.clan.age
-            and self.in_progress_data["clan_name"]
-            == i18n.t("general.clan", clan=game.clan.name)
+            and self.in_progress_data["clan_name"] == game.clan.name
         ):
             self.display_change_load(self.in_progress_data)
         else:
