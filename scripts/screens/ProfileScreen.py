@@ -967,7 +967,7 @@ class ProfileScreen(Screens):
             not the_cat.status.alive_in_player_clan
             and CatGroup.PLAYER_CLAN_ID not in the_cat.status.all_groups
         ):
-            bs_text = the_cat.status.social
+            bs_text = i18n.t(f"general.{the_cat.status.social}", count=1)
         else:
             if the_cat.backstory:
                 bs_text = backstory_text(the_cat)
