@@ -728,11 +728,11 @@ class PatrolOutcome:
 
         change_clan_relations(patrol.other_clan, self.other_clan_rep)
         if self.other_clan_rep > 0:
-            return i18n.t("screens.patrol.clan_rep_improved", clan=patrol.other_clan)
+            return i18n.t("screens.patrol.clan_rep_improved", clan=patrol.other_clan.name)
         elif self.other_clan_rep == 0:
-            return i18n.t("screens.patrol.clan_rep_neutral", clan=patrol.other_clan)
+            return i18n.t("screens.patrol.clan_rep_neutral", clan=patrol.other_clan.name)
         else:
-            return i18n.t("screens.patrol.clan_rep_worsened", clan=patrol.other_clan)
+            return i18n.t("screens.patrol.clan_rep_worsened", clan=patrol.other_clan.name)
 
     def _handle_herbs(self, patrol: "Patrol") -> str:
         """Handle giving herbs"""
