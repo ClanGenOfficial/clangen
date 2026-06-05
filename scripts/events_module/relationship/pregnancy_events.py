@@ -107,7 +107,7 @@ class Pregnancy_Events:
                 # events.ceremony_accessory = True
                 return
 
-        if cat.status.is_outsider:
+        if not cat.status.alive_in_player_clan:
             return
 
         # Handle birth cooldown outside of the check_if_can_have_kits function, so it only happens once
