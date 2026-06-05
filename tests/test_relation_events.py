@@ -6,7 +6,6 @@ from scripts.cat.enums import CatGroup
 from scripts.clan_package.settings import (
     load_clan_settings,
     set_clan_setting,
-    get_clan_setting,
 )
 from scripts.game_structure import game
 
@@ -151,7 +150,7 @@ class TestPregnancySettings(unittest.TestCase):
 
 class CanHaveKits(unittest.TestCase):
     def test_other_clan_pregnancy(self):
-        test_clan = Clan(name="clan")
+        test_clan = Clan(save_id="clan")
         test_clan.pregnancy_data = {}
         cat = Cat(disable_random=True, moons=50)
         game.used_group_IDs["5"] = CatGroup.OTHER_CLAN
@@ -160,7 +159,7 @@ class CanHaveKits(unittest.TestCase):
         self.assertFalse(Pregnancy_Events.handle_having_kits(cat, test_clan))
 
     def test_cat_not_working_pregnancy(self):
-        test_clan = Clan(name="clan")
+        test_clan = Clan(save_id="clan")
         test_clan.pregnancy_data = {}
         cat = Cat(disable_random=True, moons=50)
         cat.get_injured("broken bone")
