@@ -752,6 +752,13 @@ class ProfileScreen(Screens):
             output += i18n.t(f"general.{the_cat.age.value}", count=1)
         else:
             output += i18n.t(f"general.{the_cat.age.value}", count=1)
+        output += " "  # space between this and the moon count
+        # MOONS
+        output += i18n.t("general.moons_age", count=the_cat.moons)
+        if the_cat.dead:
+            output += "\n"
+            output += i18n.t("general.moons_age_in_death", count=the_cat.dead_for)
+
         # NEWLINE ----------
         output += "\n"
 
@@ -819,14 +826,6 @@ class ProfileScreen(Screens):
                 parents=adjust_list_text([str(cat.name) for cat in all_parents]),
             )
 
-        # MOONS
-        output += "\n"
-        if the_cat.dead:
-            output += i18n.t("general.moons_age_in_life", count=the_cat.moons)
-            output += "\n"
-            output += i18n.t("general.moons_age_in_death", count=the_cat.dead_for)
-        else:
-            output += i18n.t("general.moons_age", count=the_cat.moons)
         # MATE
         if len(the_cat.mate) > 0:
             output += "\n"

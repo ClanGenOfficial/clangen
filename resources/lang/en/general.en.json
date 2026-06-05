@@ -1,16 +1,12 @@
 {
     "en": {
         "moons_age": {
-            "one": "1 moon",
-            "many": "%{count} moons"
+            "one": "(1 moon)",
+            "many": "(%{count} moons)"
         },
         "moons_age_in_death": {
-            "one": "1 moon (in death)",
-            "many": "%{count} moons (in death)"
-        },
-        "moons_age_in_life": {
-            "one": "1 moon (in life)",
-            "many": "%{count} moons (in life)"
+            "one": "dead for 1 moon",
+            "many": "dead for %{count} moons"
         },
         "moon_date": "moon %{moon}",
         "guide": "guiding ghost",
