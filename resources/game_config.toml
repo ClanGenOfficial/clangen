@@ -429,8 +429,6 @@ dev_tools = false
   # if you want to ensure a specific string from the thought's options, include its index here.
   # by default the first string will be used (index 0)
   debug_ensure_thought_index = 0
-  # set to true to ignore any constraints on this thought
-  debug_override_thought_requirements = false
 
 
 [patrol_generation]
