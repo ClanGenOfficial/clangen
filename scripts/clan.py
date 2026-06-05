@@ -1422,6 +1422,14 @@ class OtherClan:
             else clan_symbol_sprite(self, return_string=True)
         )
 
+    @property
+    def name(self):
+        return i18n.t("general.clan", name=self._name)
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
     def __repr__(self):
         # has indicators that this is unlocalized, just in case
         return f"!!{self.name}Clan!!"
