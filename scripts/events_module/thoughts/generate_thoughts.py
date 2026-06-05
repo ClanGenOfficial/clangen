@@ -74,7 +74,7 @@ def get_other_cat_for_thought(
 
 
 def _filter_list(
-    inter_list: list, main_cat: "Cat", other_cat: "Cat", other_clan_id:str
+    inter_list: list, main_cat: "Cat", other_cat: "Cat", other_clan_id: str
 ) -> list:
     """
     Filters thoughts in the inter_list per their constraints and returns a list of allowed thoughts.
@@ -91,9 +91,7 @@ def _filter_list(
     return created_list
 
 
-def _load_group(
-    thought_type: CatThought, main_cat: "Cat"
-):
+def _load_group(thought_type: CatThought, main_cat: "Cat"):
     """
     Loads and returns thoughts appropriate for the given args.
     """
@@ -271,7 +269,12 @@ def new_thought(
             return i18n.t("defaults.rickroll")
         else:
             chosen_thought_group = choice(
-                _filter_list(_load_group(thought_type, main_cat), main_cat, other_cat, other_clan_id)
+                _filter_list(
+                    _load_group(thought_type, main_cat),
+                    main_cat,
+                    other_cat,
+                    other_clan_id,
+                )
             )
 
             chosen_thought = choice(chosen_thought_group.strings)
@@ -282,40 +285,8 @@ def new_thought(
     return chosen_thought
 
 
-def new_death_thought(
-    main_cat: "Cat",
-    other_cat: "Cat",
-    afterlife,
-    lives_left,
-):
-    """
-    Finds an on_death thought appropriate for the given args.
-    """
-    THOUGHTS: []
-    try:
-        if main_cat.status.is_leader and lives_left > 0:
-            possible_thoughts = _load_file(
-                f"thoughts/on_death/{afterlife}/leader_life.json"
-            )
-        elif main_cat.status.is_leader and lives_left == 0:
-            possible_thoughts = _load_file(
-                f"thoughts/on_death/{afterlife}/leader_death.json"
-            )
-        else:
-            possible_thoughts = _load_file(
-                f"thoughts/on_death/{afterlife}/general.json"
-            )
-        thought_group = choice(_filter_list(possible_thoughts, main_cat, other_cat))
-        chosen_thought = choice(thought_group["thoughts"])
-        return chosen_thought
-
-    except IndexError:
-        traceback.print_exc()
-        return i18n.t("defaults.thought")
-
-
 def _constraints_fulfilled(
-    main_cat: "Cat", random_cat: "Cat", thought: TextPoolEvent, other_clan_id:str
+    main_cat: "Cat", random_cat: "Cat", thought: TextPoolEvent, other_clan_id: str
 ) -> bool:
     """Check if thought constraints are fulfilled"""
     involved_cats = {
