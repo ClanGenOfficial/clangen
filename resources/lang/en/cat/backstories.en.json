@@ -76,14 +76,14 @@
         "clan_founder_backstories": "Clan founder",
         "clanborn_backstories": "Clanborn",
         "outsider_roots_backstories": "outsider roots",
-        "half_clan_backstories": "half-Clan",
+        "half_clan_backstories": "half-Clan roots",
         "loner_backstories": "formerly a loner",
         "rogue_backstories": "formerly a rogue",
         "kittypet_backstories": "formerly a kittypet",
         "outsider_backstories": "formerly an outsider",
         "former_clancat_backstories": "originally from another Clan",
-        "orphaned_backstories": "orphaned",
-        "abandoned_backstories": "abandoned",
+        "orphaned_backstories": "orphaned as a kitten",
+        "abandoned_backstories": "abandoned as a kitten",
         "beginning_clanborn": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} born on moon %{birth_moon} during %{birth_season}.",
         "beginning_cotc": "{PRONOUN/m_c/subject/CAP} joined the Clan on moon %{moon} at the age of %{join_age}."
     }

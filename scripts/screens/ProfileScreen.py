@@ -952,6 +952,24 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
         output += "\n"
 
+        # BACKSTORY
+        bs_text = "this should not appear"
+        # if cat has never been part of the player clan, then they get no backstory yet
+        if (
+            not the_cat.status.alive_in_player_clan
+            and CatGroup.PLAYER_CLAN_ID not in the_cat.status.all_groups
+        ):
+            bs_text = the_cat.status.social
+        else:
+            if the_cat.backstory:
+                bs_text = backstory_text(the_cat)
+            else:
+                bs_text = i18n.t("cat.backstories.clanborn_backstories")
+        output += bs_text
+
+        # NEWLINE ----------
+        output += "\n"
+
         # LEADER LIVES:
         # Optional - Only shows up for leaders
         if not the_cat.dead and CatRank.LEADER in the_cat.status.rank:
@@ -1029,23 +1047,6 @@ class ProfileScreen(Screens):
         )
         if get_clan_setting("showxp"):
             output += " (" + str(the_cat.experience) + ")"
-        # NEWLINE ----------
-        output += "\n"
-
-        # BACKSTORY
-        bs_text = "this should not appear"
-        # if cat has never been part of the player clan, then they get no backstory yet
-        if (
-            not the_cat.status.alive_in_player_clan
-            and CatGroup.PLAYER_CLAN_ID not in the_cat.status.all_groups
-        ):
-            bs_text = the_cat.status.social
-        else:
-            if the_cat.backstory:
-                bs_text = backstory_text(the_cat)
-            else:
-                bs_text = i18n.t("cat.backstories.clanborn_backstories")
-        output += i18n.t("screens.profile.backstory_label", backstory=bs_text)
         # NEWLINE ----------
         output += "\n"
 
