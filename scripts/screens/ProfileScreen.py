@@ -961,22 +961,25 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        bs_text = "this should not appear"
+        bs_text = ""
         # if cat has never been part of the player clan, then they get no backstory yet
         if (
             not the_cat.status.alive_in_player_clan
             and CatGroup.PLAYER_CLAN_ID not in the_cat.status.all_groups
         ):
-            bs_text = i18n.t(f"general.{the_cat.status.social}", count=1)
+            # outsider backstory will match their status
+            if not the_cat.status.is_outsider:
+                bs_text = i18n.t(f"general.{the_cat.status.social}", count=1)
         else:
             if the_cat.backstory:
                 bs_text = backstory_text(the_cat)
             else:
                 bs_text = i18n.t("cat.backstories.clanborn_backstories")
-        output += bs_text
-
-        # NEWLINE ----------
-        output += "\n"
+        if bs_text:
+            output += bs_text
+    
+            # NEWLINE ----------
+            output += "\n"
 
         # MENTOR
         # Only shows up if the cat has a mentor.
