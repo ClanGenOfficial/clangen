@@ -22,6 +22,102 @@ if TYPE_CHECKING:
 loaded_thoughts = {}
 
 
+def new_thought(
+    thought_type: CatThought, main_cat: "Cat", other_cat: "Cat", other_clan_id: str
+):
+    """
+    Finds a thought appropriate for the given args.
+    :param thought_type: An enum determining what kind of thought is required
+    :param main_cat: The main cat involved
+    :param other_cat: The other cat involved
+    :param other_clan_id: An other_clan ID. If a thought requires another Clan to be involved, this is the Clan that will be used.
+    """
+    # get possible thoughts
+    try:
+        # checks if the cat is Rick Astley to give the rickroll thought, otherwise proceed as usual
+        if (main_cat.name.prefix + main_cat.name.suffix).replace(
+            " ", ""
+        ).lower() == "rickastley":
+            return i18n.t("defaults.rickroll")
+        else:
+            thought_options = []
+            for thought in _load_allowed_thoughts(thought_type, main_cat):
+                if _constraints_fulfilled(
+                    main_cat=main_cat,
+                    random_cat=other_cat,
+                    thought=thought,
+                    other_clan_id=other_clan_id,
+                ):
+                    thought_options.append(thought)
+
+            chosen_thought_group = choice(thought_options)
+            chosen_thought = choice(chosen_thought_group.strings)
+
+    except IndexError:
+        traceback.print_exc()
+        chosen_thought = i18n.t("defaults.thought")
+
+    return chosen_thought
+
+
+def _constraints_fulfilled(
+    main_cat: "Cat", random_cat: "Cat", thought: TextPoolEvent, other_clan_id: str
+) -> bool:
+    """Check if thought constraints are fulfilled"""
+    involved_cats = {
+        "m_c": main_cat,
+        "r_c": random_cat,
+    }
+
+    if thought.location:
+        if not event_for_location(thought.location):
+            return False
+
+    if thought.season:
+        if not event_for_season(thought.season):
+            return False
+
+    if thought.tags:
+        if not event_for_tags(thought.tags, main_cat, random_cat):
+            return False
+
+    # check that we have a random cat if the thought requires one
+    if not random_cat:
+        r_c_in_text = [
+            thought_str for thought_str in thought.strings if "r_c" in thought_str
+        ]
+        r_c_constraint = thought.involved_cats.get("r_c")
+        # r_c mentioned in text or required with constraints, so we dump this thought
+        if r_c_in_text or r_c_constraint or thought.relationship_constraint:
+            return False
+
+    if thought.involved_cats:
+        if not event_for_cat(
+            thought.involved_cats.get("m_c", {}),
+            cat=main_cat,
+            involved_cat_dict=involved_cats,
+            event_id=thought.id,
+            other_involved_clan_id=other_clan_id,
+        ):
+            return False
+
+        if not event_for_cat(
+            thought.involved_cats.get("r_c", {}),
+            cat=random_cat,
+            involved_cat_dict=involved_cats,
+            event_id=thought.id,
+            other_involved_clan_id=other_clan_id,
+        ):
+            return False
+
+    if thought.relationship_constraint:
+        for constraints in thought.relationship_constraint:
+            if not check_rel_constraint_groups(constraints, involved_cats):
+                return False
+
+    return True
+
+
 def get_other_cat_for_thought(
     cat_list: list["Cat"], main_cat: "Cat"
 ) -> Optional["Cat"]:
@@ -230,99 +326,3 @@ def _load_file(path) -> list[TextPoolEvent]:
             )
 
     return loaded_thoughts[path]
-
-
-def new_thought(
-    thought_type: CatThought, main_cat: "Cat", other_cat: "Cat", other_clan_id: str
-):
-    """
-    Finds a thought appropriate for the given args.
-    :param thought_type: An enum determining what kind of thought is required
-    :param main_cat: The main cat involved
-    :param other_cat: The other cat involved
-    :param other_clan_id: An other_clan ID. If a thought requires another Clan to be involved, this is the Clan that will be used.
-    """
-    # get possible thoughts
-    try:
-        # checks if the cat is Rick Astley to give the rickroll thought, otherwise proceed as usual
-        if (main_cat.name.prefix + main_cat.name.suffix).replace(
-            " ", ""
-        ).lower() == "rickastley":
-            return i18n.t("defaults.rickroll")
-        else:
-            thought_options = []
-            for thought in _load_allowed_thoughts(thought_type, main_cat):
-                if _constraints_fulfilled(
-                    main_cat=main_cat,
-                    random_cat=other_cat,
-                    thought=thought,
-                    other_clan_id=other_clan_id,
-                ):
-                    thought_options.append(thought)
-
-            chosen_thought_group = choice(thought_options)
-            chosen_thought = choice(chosen_thought_group.strings)
-
-    except IndexError:
-        traceback.print_exc()
-        chosen_thought = i18n.t("defaults.thought")
-
-    return chosen_thought
-
-
-def _constraints_fulfilled(
-    main_cat: "Cat", random_cat: "Cat", thought: TextPoolEvent, other_clan_id: str
-) -> bool:
-    """Check if thought constraints are fulfilled"""
-    involved_cats = {
-        "m_c": main_cat,
-        "r_c": random_cat,
-    }
-
-    if thought.location:
-        if not event_for_location(thought.location):
-            return False
-
-    if thought.season:
-        if not event_for_season(thought.season):
-            return False
-
-    if thought.tags:
-        if not event_for_tags(thought.tags, main_cat, random_cat):
-            return False
-
-    # check that we have a random cat if the thought requires one
-    if not random_cat:
-        r_c_in_text = [
-            thought_str for thought_str in thought.strings if "r_c" in thought_str
-        ]
-        r_c_constraint = thought.involved_cats.get("r_c")
-        # r_c mentioned in text or required with constraints, so we dump this thought
-        if r_c_in_text or r_c_constraint or thought.relationship_constraint:
-            return False
-
-    if thought.involved_cats:
-        if not event_for_cat(
-            thought.involved_cats.get("m_c", {}),
-            cat=main_cat,
-            involved_cat_dict=involved_cats,
-            event_id=thought.id,
-            other_involved_clan_id=other_clan_id,
-        ):
-            return False
-
-        if not event_for_cat(
-            thought.involved_cats.get("r_c", {}),
-            cat=random_cat,
-            involved_cat_dict=involved_cats,
-            event_id=thought.id,
-            other_involved_clan_id=other_clan_id,
-        ):
-            return False
-
-    if thought.relationship_constraint:
-        for constraints in thought.relationship_constraint:
-            if not check_rel_constraint_groups(constraints, involved_cats):
-                return False
-
-    return True
