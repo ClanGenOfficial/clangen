@@ -949,6 +949,14 @@ class ProfileScreen(Screens):
                 rank=i18n.t(f"general.{the_cat.status.rank}", count=1),
             )
 
+        # LEADER LIVES:
+        # Optional - Only shows up for leaders
+        if not the_cat.dead and CatRank.LEADER in the_cat.status.rank:
+            output += " "
+            output += i18n.t(
+                "screens.profile.lives_remaining_label", count=game.clan.leader_lives
+            )
+
         # NEWLINE ----------
         output += "\n"
 
@@ -969,15 +977,6 @@ class ProfileScreen(Screens):
 
         # NEWLINE ----------
         output += "\n"
-
-        # LEADER LIVES:
-        # Optional - Only shows up for leaders
-        if not the_cat.dead and CatRank.LEADER in the_cat.status.rank:
-            output += i18n.t(
-                "screens.profile.lives_remaining_label", count=game.clan.leader_lives
-            )
-            # NEWLINE ----------
-            output += "\n"
 
         # MENTOR
         # Only shows up if the cat has a mentor.
