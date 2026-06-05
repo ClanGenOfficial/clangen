@@ -74,7 +74,7 @@ def get_other_cat_for_thought(
 
 
 def _filter_list(
-    inter_list: list, main_cat: "Cat", other_cat: "Cat", other_clan_id=str
+    inter_list: list, main_cat: "Cat", other_cat: "Cat", other_clan_id:str
 ) -> list:
     """
     Filters thoughts in the inter_list per their constraints and returns a list of allowed thoughts.
@@ -92,7 +92,7 @@ def _filter_list(
 
 
 def _load_group(
-    thought_type: CatThought, main_cat: "Cat", other_cat: "Cat", other_clan_id=str
+    thought_type: CatThought, main_cat: "Cat"
 ):
     """
     Loads and returns thoughts appropriate for the given args.
@@ -188,9 +188,7 @@ def _load_group(
         thoughts = _load_file(f"{new_path}/{main_cat.status.group}.json")
         pass
 
-    final_thoughts = _filter_list(thoughts, main_cat, other_cat, other_clan_id)
-
-    return final_thoughts
+    return thoughts
 
 
 def _get_exiled_and_former(main_cat: "Cat", path) -> list:
@@ -273,7 +271,7 @@ def new_thought(
             return i18n.t("defaults.rickroll")
         else:
             chosen_thought_group = choice(
-                _load_group(thought_type, main_cat, other_cat, other_clan_id)
+                _filter_list(_load_group(thought_type, main_cat), main_cat, other_cat, other_clan_id)
             )
 
             chosen_thought = choice(chosen_thought_group.strings)
@@ -317,7 +315,7 @@ def new_death_thought(
 
 
 def _constraints_fulfilled(
-    main_cat: "Cat", random_cat: "Cat", thought: TextPoolEvent, other_clan_id=str
+    main_cat: "Cat", random_cat: "Cat", thought: TextPoolEvent, other_clan_id:str
 ) -> bool:
     """Check if thought constraints are fulfilled"""
     involved_cats = {
