@@ -349,13 +349,13 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
     if other_clan_name:
         text = text.replace("o_c_n", other_clan_name)
     if clan:
-        clan_name = str(clan.displayname)
+        clan_name = str(clan.name)
     else:
         if game.clan is None:
             # todo can this be Switch.clan_name ?
             clan_name = switch_get_value(Switch.clan_list)[0]
         else:
-            clan_name = str(game.clan.displayname)
+            clan_name = str(game.clan.name)
 
     text = text.replace("c_n", i18n.t("general.clan", name=clan_name))
 
@@ -533,7 +533,7 @@ def event_text_adjust(
     # clan_name
     if "c_n" in text:
         try:
-            clan_name = clan.displayname
+            clan_name = clan.name
         except AttributeError:
             # todo can this be Switch.clan_name ?
             try:
@@ -636,7 +636,7 @@ def leader_ceremony_text_adjust(
     if extra_lives:
         text = text.replace("[life_num]", str(extra_lives))
 
-    text = text.replace("c_n", i18n.t("general.clan", name=str(game.clan.displayname)))
+    text = text.replace("c_n", i18n.t("general.clan", name=str(game.clan.name)))
 
     return text
 
@@ -653,7 +653,7 @@ def ceremony_text_adjust(
     living_parents=(),
     dead_parents=(),
 ):
-    clanname = i18n.t("general.clan", name=game.clan.displayname)
+    clanname = i18n.t("general.clan", name=game.clan.name)
 
     random_honor = random_honor
     random_living_parent = None
@@ -811,7 +811,7 @@ def history_text_adjust(text, other_clan_name, clan, other_cat_rc=None):
         text = text.replace("o_c_n", str(other_clan_name))
 
     if "c_n" in text:
-        text = text.replace("c_n", i18n.t("general.clan", name=clan.displayname))
+        text = text.replace("c_n", i18n.t("general.clan", name=clan.name))
     if "r_c" in text and other_cat_rc:
         text = selective_replace(text, "r_c", str(other_cat_rc.name))
     return text

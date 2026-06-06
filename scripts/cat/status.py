@@ -734,6 +734,15 @@ class Status:
 
         return False
 
+    def left_group(self, group_ID: str = CatGroup.PLAYER_CLAN_ID) -> bool:
+        for entry in self.standing_history:
+            if group_ID and entry["group"] != group_ID:
+                continue
+            if CatStanding.LEFT == entry["standing"][-1]:
+                return True
+
+        return False
+
 
 class StatusDict(TypedDict, total=False):
     """

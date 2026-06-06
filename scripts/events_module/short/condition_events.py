@@ -353,7 +353,10 @@ class Condition_Events:
         """
         triggered = False
 
-        modify_for_war = switch_get_value(Switch.war_rel_change_type) != "rel_up"
+        modify_for_war = (
+            game.clan.war["at_war"]
+            and switch_get_value(Switch.war_rel_change_type) != "rel_up"
+        )
         path = (
             "condition_related.classic_injury_chance"
             if game.clan.game_mode == "classic"
@@ -1092,7 +1095,7 @@ class Condition_Events:
                     if cat.age == CatAge.ADOLESCENT:
                         event += i18n.t(
                             "hardcoded.condition_retire_adolescent_ceremony",
-                            clan=game.clan.displayname,
+                            clan=game.clan.name,
                             newname=cat.name.prefix + cat.name.suffix,
                         )
 

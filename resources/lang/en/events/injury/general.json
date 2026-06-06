@@ -6393,12 +6393,15 @@
     },
     {
         "event_id": "gen_injury_drownedbyaduck",
-        "location": ["beach", "forest", "wetlands"],
+        "location": ["any"],
         "season": ["-leaf-bare"],
         "sub_type": [],
         "tags": [],
+        "poi": {
+            "name": ["POI/name/terrain_lake"]
+        },
         "frequency": 1,
-        "event_text": "m_c fought with a duck in the water, trying to kill it for the fresh-kill pile, but was knocked below the surface of the water and inhaled a lot of water.",
+        "event_text": "m_c fought with a duck in the water, trying to kill it for the fresh-kill pile, but was knocked below the surface of {POI/name/terrain_lake} and inhaled a lot of water.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -6556,6 +6559,262 @@
                 "log": {
                     "cats_from": "cat_from saw cat_to defend the fresh-kill pile from a horde of rats."
                 }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_waterinlungs_gatheringisland",
+        "location": ["any"],
+        "season": ["any"],
+    "tags": [],
+        "poi": {
+            "name": ["gather_island"]
+        },
+        "frequency": 1,
+        "event_text": "m_c is so excited to be at the Gathering that {PRONOUN/m_c/subject} {VERB/m_c/forget/forgets} to watch {PRONOUN/m_c/poss} paws on the tree bridge. r_c has to jump in the water to rescue {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": ["adolescent"],
+            "trait": ["-careful", "-calm", "-wise"],
+            "skill": ["-SWIMMER,0"]
+        },
+        "r_c": {
+            "age": ["young adult", "adult", "senior adult"],
+            "status": ["-elder"],
+            "skill": ["SWIMMER,1"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"]
+            }
+
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died of the water in {PRONOUN/m_c/poss} lungs after falling off the tree bridge at the Gathering."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["respect", "like"],
+                "amount": -10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from was humiliated when cat_to needed to rescue {PRONOUN/cat_from/object} from the water at the Gathering."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_bluntforce_fourtrees",
+        "location": ["any"],
+        "season": ["any"],
+        "tags": [],
+        "poi": {
+            "name": ["gather_fourtrees"]
+        },
+        "frequency": 1,
+        "event_text": "When r_c takes m_c to {POI/name/gather_fourtrees}, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. m_c is leaping from the first tree to the second when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}. {PRONOUN/m_c/poss/CAP} leg snaps under {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": ["adolescent"],
+            "trait": ["arrogant", "ambitious", "confident", "rebellious"],
+            "skill": ["CLIMBER,0"],
+            "relationship_status": ["app/mentor"]
+        },
+        "r_c": {},
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["broken bone"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after trying to climb a tree at the Gathering place as an apprentice.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after falling out of a tree at the Gathering place."
+            }
+
+        ]
+    },
+    {
+        "event_id": "gen_injury_poison_carrion",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_carrionplace", "terrain_carrionbeach"]
+        },
+        "frequency": 2,
+        "event_text": "m_c and r_c become poisoned after hunting near {POI/name/terrain_carrionplace,terrain_carrionbeach}.",
+        "new_accessory": [],
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"],
+            "relationship_status": ["considers", "relates_to"]
+        },
+        "r_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"]
+        },
+        "injury": [
+            {
+                "cats": ["r_c", "m_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "death": "m_c died after eating tainted prey."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_battleinjury_twolegplace",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_twolegplace"]
+        },
+        "frequency": 2,
+        "event_text": "m_c and r_c sneak out and go on an adventure in the Twolegplace, but they barely escape with their lives after encountering a gang of rogues.",
+        "new_accessory": [],
+        "m_c": {
+            "status": ["apprentice"],
+            "relationship_status": ["considers", "relates_to"]
+        },
+        "r_c": {
+            "status": ["apprentice"]
+        },
+        "injury": [
+            {
+                "cats": ["r_c", "m_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "scar": "m_c was scarred in a fight with a gang of rogues.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after getting into a fight with a gang of rogues."
+            }
+        ],
+        "new_cat": [
+            [
+                "rogue",
+                "meeting",
+                "unknown"
+            ],
+            [
+                "rogue",
+                "meeting",
+                "unknown"
+            ],
+            [
+                "rogue",
+                "meeting",
+                "unknown"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c", "r_c"],
+                "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -15,
+                "log": {
+                    "cats_from": "cat_from was chased out of the Twolegplace by cat_to."
+                }
+            },
+            {
+                "cats_from": ["m_c", "r_c"],
+                "cats_to": ["n_c:0", "n_c:1", "n_c:2"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": -15,
+                "log": {
+                    "cats_from": "cat_from and cat_to got into a vicious fight."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_bluntforce_horseplace",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_horseplace"]
+        },
+        "frequency": 2,
+        "event_text": "m_c is caught under a horse's hooves while hunting in {POI/name/terrain_horseplace}. r_c helps {PRONOUN/m_c/object} back to camp.",
+        "new_accessory": [],
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"],
+            "relationship_status": ["considers", "relates_to"]
+        },
+        "r_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["blunt_force_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after being caught under a horse's hooves.",
+                "death": "m_c died after being injured by a horse's hooves."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["respect", "trust"],
+                "amount": 10,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from was grateful that cat_to helped {PRONOUN/cat_from/object} back to camp after {PRONOUN/cat_from/subject} was struck by a horse's hooves."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_bluntforce_trees",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["trees"]
+        },
+        "frequency": 2,
+        "event_text": "m_c is hunting near {POI/tag/trees} when a branch falls on {PRONOUN/m_c/object}, injuring {PRONOUN/m_c/object}.",
+        "new_accessory": [],
+        "m_c": {
+            "status": ["leader", "deputy", "warrior", "apprentice"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["blunt_force_injury", "bruises"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after a branch fell on {PRONOUN/m_c/object}.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
             }
         ]
     },
