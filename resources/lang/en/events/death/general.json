@@ -9544,7 +9544,7 @@
         ],
         "tags": [],
         "frequency": 3,
-        "event_text": "r_c brutally murders m_c and plants {PRONOUN/m_c/poss} body near the o_c_n border to blame the warring Clan for {PRONOUN/m_c/poss} death.",
+        "event_text": "r_c brutally murders m_c and plants {PRONOUN/m_c/poss} body near the o_c_n border to frame the warring Clan for {PRONOUN/m_c/poss} death.",
         "m_c": {
             "status": [
                 "warrior",
