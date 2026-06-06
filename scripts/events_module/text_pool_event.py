@@ -19,7 +19,9 @@ class TextPoolEvent:
     relationship_constraint: list[RelationshipConstraintDict] = field(
         default_factory=list[RelationshipConstraintDict]
     )
-    relationship_changes: list[RelationshipChangeDict] = field(default_factory=list[RelationshipChangeDict])
+    relationship_changes: list[RelationshipChangeDict] = field(
+        default_factory=list[RelationshipChangeDict]
+    )
 
     def __repr__(self):
         return self.id
