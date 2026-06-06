@@ -86,7 +86,7 @@ From there, each folder contains a `negative.json` and `positive.json`. Events t
                     "must_be_acquired": false
                 },
                 "backstory": []
-            }
+            },
             "r_c": {
                 "status": [],
                 "past_status": [],
@@ -118,7 +118,7 @@ From there, each folder contains a `negative.json` and `positive.json`. Events t
                 "mutual": false,
                 "constraints": []
             }
-        ]
+        ],
         "relationship_changes": [
             {
                 "cats_from": [],
