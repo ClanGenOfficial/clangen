@@ -21493,5 +21493,198 @@
                 "art": "gen_cat_looking_up1"
             }
         ]
+},
+{
+    "patrol_id": "gen_train_newleaf_tadpole",
+    "biome": ["-desert"],
+    "season": ["newleaf"],
+    "types": ["hunting"],
+    "tags": [],
+    "patrol_art": "mtn_hunt_patrolfollowsstreamtocoldbog",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [
+            1,
+            6
+        ]
+    },
+    "frequency": 3,
+    "chance_of_success": 60,
+    "intro_text": "p_l leads the patrol to a shallow pool along {POI/tag/water:flowing}, gently warmed by the newleaf sun. p_l peers into the water, searching for soft gelatinous clumps of frogspawn clinging to the reeds. ",
+    "decline_text": "It seems there is no frogspawn here today, unlucky. The patrol returns to camp.",
+    "success_outcomes": [
+        {
+    "text": "p_l notes that the water is calm, warm, and sheltered. It will be the perfect condition for the tadpoles to survive. Come greenleaf, c_n will have plenty of frogs to catch.",
+    "exp": 20,
+    "frequency": 4,
+    "art": "patrol_outcome_art"
+        },
+        {
+    "text": "p_l notices some speckled egg clusters and instructs the patrol to mark the area and discourage other predators.",
+    "exp": 20,
+    "frequency": 4,
+    "art": "patrol_outcome_art"
+        },
+        {
+    "text": "The patrol hears distant croaking echoing through the reeds. While there may not be frogspawn here, it is likely to be bountiful come greenleaf.",
+    "exp": 20,
+    "frequency": 4,
+    "art": "patrol_outcome_art"
+        },
+        {
+    "min_max_status": {
+         "apprentice": [
+            1,
+            6
+        ]
+    },
+    "text": "app1 is unimpressed. Why can't c_n collect and eat the frogspawn now? p_l explains the importance of patience: if they wait now, there will be more prey for the future for them to hunt.",
+    "exp": 25,
+    "frequency": 4,
+    "relationships": [
+        {
+            "cats_to": [
+                "p_l"
+            ],
+            "cats_from": ["app1"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from appreciated that cat_to made a good point about patience."
+            }
+        }
+    ],
+    "art": "patrol_outcome_art"
+},
+        {
+    "min_max_status": {
+         "apprentice": [
+            1,
+            6
+        ]
+    },
+    "text": "Look app1! There are already tadpoles. p_l eagerly explains to app1 that in just a moon or two, the tadpoles will become succulent frogs ready to be hunted.",
+    "exp": 25,
+    "frequency": 4,
+    "relationships": [
+        {
+            "cats_to": [
+                "p_l"
+            ],
+            "cats_from": ["app1"],
+            "mutual": false,
+            "values": ["like"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from was excited by cat_to's enthusiasm about tadpoles."
+            }
+        }
+    ],
+    "art": "gen_train_talkingAW"
+},
+        {
+    "text": "s_c stands with p_l and points out which globules have a dark or milky center. Lucky for c_n, there are plenty of healthy dark-spotted frogspawn waiting to hatch.",
+    "exp": 20,
+    "frequency": 3,
+    "stat_skill": ["TEACHER,1", "CLEVER,1", "SENSE,1"],
+    "art": "gen_happy_cat"
+},
+        {
+    "text": "The patrol purrs in satisfaction to see a healthy amount of clusters growing. Meanwhile, s_c wonders to {PRONOUN/s_c/self} if the jelly-like eggs would be of any use to the medicine cats. ",
+    "exp": 20,
+    "frequency": 2,
+    "stat_skill": ["HEALER,1"],
+    "art": "patrol_outcome_art"
+}
+    ],
+    "fail_outcomes": [
+        {
+    "text": "p_l only notices a few scattered clusters. Frogs may be scarce prey this greenleaf.",
+    "exp": 5,
+    "frequency": 4,
+    "art": "patrol_outcome_art"
+},
+        {
+    "text": "r_c discovers raccoon scat nearby and p_l finds no frogspawn. It seems like this area has been claimed already.",
+    "exp": 5,
+    "frequency": 4,
+    "art": "patrol_outcome_art"
+},
+        {
+    "min_max_status": {
+         "apprentice": [
+            1,
+            6
+        ]
+    },
+    "text": "app1 reaches a paw into the spawning pool and hefts a glob out before p_l can stop them. Wasn't the point to <i>catch</i> prey? p_l exasperatedly explains their purpose to an embarrassed app1.",
+    "exp": 5,
+    "frequency": 4,
+    "relationships": [
+        {
+            "cats_to": [
+                "p_l"
+            ],
+            "cats_from": ["app1"],
+            "mutual": false,
+            "values": ["like"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from was embarrassed that cat_to scolded them for a mistake on patrol."
+            }
+        }
+    ],
+    "art": "gen_embarrassed1_warrior_app"
+},
+                {
+    "min_max_status": {
+         "apprentice": [
+            1,
+            6
+        ]
+    },
+    "text": "app1 reaches eagerly into the pool, scooping the spawn into {PRONOUN/app1/poss} paw. {PRONOUN/app1/subject/CAP} {VERB/app1/twist/twists} to show off their catch to p_l and send the glob flying into p_l's face. p_l angrily scolds {PRONOUN/app1/object} for wasting a valuable resource.",
+    "exp": 5,
+    "frequency": 2,
+    "relationships": [
+        {
+            "cats_to": [
+                "p_l"
+            ],
+            "cats_from": ["app1"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from was upset after cat_to yelled at {PRONOUN/cat_from/object} for a mistake.",
+                "cats_to": "cat_to was furious that cat_from hit {PRONOUN/cat_to/object} in the face with frogspawn."
+            }
+        }
+    ],
+    "art": "gen_embarrassed1_warrior_app"
+},
+        {
+    "text": "As r_c looks into the water, the muddy bank below them gives way. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tumble/tumbles} in and {VERB/r_c/squash/squishes} the frogspawn below.",
+    "exp": 5,
+    "frequency": 2,
+    "relationships": [
+        {
+            "cats_to": [
+                "r_c"
+            ],
+            "cats_from": ["patrol"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from was exasperated when cat_to fell into the water and onto delicate frogspawn."
+            }
+        }
+    ],
+    "art": "gen_train_soggykitty_mad_warrior"
+}
+    ]
 }
 ]
