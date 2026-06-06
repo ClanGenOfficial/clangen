@@ -57,6 +57,7 @@ class Relation_Events:
                 for c in Cat.all_cats_list
                 if c.status.alive_in_player_clan
                 and not c.status.rank == CatRank.NEWBORN
+                and c != cat
             ],
         )
 

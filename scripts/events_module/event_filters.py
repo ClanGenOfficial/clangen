@@ -1391,7 +1391,7 @@ def _filter_relationship_type_updated(
         for cat in cats_from:
             # if the cat doesn't have enough mates to conceivably be mated to all the required cats, and we aren't trying to exclude mated cats
             if len(cat.mate) < len(cats_to):
-                if "mates" in exclusionary_values:
+                if "mates" in inclusionary_values:
                     # then we know these cats don't qualify
                     return False
 

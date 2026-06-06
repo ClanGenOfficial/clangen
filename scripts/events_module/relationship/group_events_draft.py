@@ -1,4 +1,4 @@
-from random import choice, choices
+from random import choice, choices, sample
 from typing import Union, List
 
 from scripts.cat.cats import Cat
@@ -71,6 +71,8 @@ def start_interaction(main_cat: Cat, interactable_cats: list):
                 if not involved_cats["multi_cat"]:
                     failed = True
                     break
+                else:
+                    continue
 
             # onto the single cats
             involved_cats[other_cat] = _get_single_cat(
@@ -164,8 +166,13 @@ def _get_multi_cats(
         return_id=False,
     )
 
-    # now we need to find who qualifies for the relationship constraints if we have those
     involved_cats["multi_cat"] = []  # set this up ahead of time
+
+    if not event.relationship_constraint:
+        chosen_cats = sample(possible_cats, min(len(possible_cats), max_cats))
+        return chosen_cats
+
+    # now we need to find who qualifies for the relationship constraints
     while len(chosen_cats) < max_cats and possible_cats:
         failed = False
         cat = choice(possible_cats)
