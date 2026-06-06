@@ -8,6 +8,12 @@ with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
 
 # config_path passed as a string using dot notation - ex "graduation.min_graduating_age"
 def get_config(clan, config_path):
+    """
+    returns a config value from game_config OR a modified value from active cards (cruel season). 
+
+    config_path is passed as a string using dot notation - ex "graduation.min_graduating_age"
+    
+    """
     config_value = CONFIG
     config_keys = tuple(config_path.split("."))
 
