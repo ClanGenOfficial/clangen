@@ -9477,6 +9477,7 @@
         "m_c": {
             "status": [
                 "warrior",
+                "apprentice",
                 "deputy",
                 "leader"
             ],
