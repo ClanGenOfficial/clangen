@@ -1276,11 +1276,13 @@ def check_rel_constraint_groups(
     """
     Compares two groups of cats to see if they meet relationship constraints
     """
-    for cat in constraints_dict["cats_from"]:
-        group = [involved_cats[cat]]
         group.extend([involved_cats[c] for c in constraints_dict["cats_to"]])
         if not filter_relationship_type(
             group=group, filter_types=constraints_dict["constraints"]
+        return True
+
+    cats_from = [
+        involved_cats[c] for c in constraints_dict["cats_from"] if c in involved_cats
         ):
             return False
 
