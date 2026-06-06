@@ -14829,7 +14829,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cat_from is thinking m_c might be a spy after r_c brought up {PRONOUN/m_c/poss} origins."
+                    "cats_from": "cat_from wondered if m_c was a spy after r_c brought up {PRONOUN/m_c/poss} origins."
                 }
             },
             {
