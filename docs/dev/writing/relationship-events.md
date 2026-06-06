@@ -127,7 +127,7 @@ From there, each folder contains a `negative.json` and `positive.json`. Events t
                 "values": [],
                 "amount": 0
             }
-        ],
+        ]
     }
 ```
 
