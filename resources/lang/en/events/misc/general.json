@@ -15024,7 +15024,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cat_from thinks m_c should've weakened the warring Clan by killing one of their warriors when {PRONOUN/m_c/subject} had the chance."
+                    "cats_from": "cat_from thought m_c should have weakened a warring Clan by killing one of their warriors when {PRONOUN/m_c/subject} had the chance."
                 }
             }
         ],
