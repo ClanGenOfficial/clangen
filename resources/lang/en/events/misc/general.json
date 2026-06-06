@@ -14564,7 +14564,7 @@
             "clan_wide"
         ],
         "frequency": 3,
-        "event_text": "There's no doubt the war with o_c_n has caused a lot of damage to c_n. But it's come to light that mur_c's death was not their doing, but instead m_c's, who used the war as a cover to murder mur_c.",
+        "event_text": "Though the war with o_c_n has caused a lot of damage to c_n, it has come to light that mur_c's death was not their doing, but instead m_c's, who used the war as a cover to murder mur_c.",
         "m_c": {
             "age": [
                 "any"
