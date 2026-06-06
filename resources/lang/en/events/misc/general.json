@@ -14788,7 +14788,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "r_c begins to spread rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
+        "event_text": "r_c spreads rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
         "m_c": {
             "status": [
                 "-kitten",
