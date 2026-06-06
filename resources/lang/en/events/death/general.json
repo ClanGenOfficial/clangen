@@ -9441,7 +9441,7 @@
             {
                 "event_type": "misc",
                 "pool": {
-                    "sub_type": ["hidden_murder_reveal"]
+                    "event_id": ["gen_misc_murderreveal_warcoverup"]
                 },
                 "moon_delay": [
                     1,
