@@ -921,7 +921,7 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
 
 
 def cat_for_event(
-    constraint_dict: dict,
+    constraint_dict: Union[dict, InvolvedCatDict],
     possible_cats: list,
     tags: list,
     involved_cat_dict: dict = None,  # TODO: this could likely replace comparison cat, eventually
@@ -929,6 +929,7 @@ def cat_for_event(
     comparison_cat_rel_status: list = None,
     injuries: list = None,
     return_id: bool = True,
+    return_list: bool = False,
 ):
     """
     Checks the given cat list against constraint_dict to find any eligible cats.
@@ -941,6 +942,7 @@ def cat_for_event(
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
     :param return_id: If true, return cat ID instead of object
+    :param return_list: if true, return a list of all valid cats instead of a single valid cat
     :param tags: List of event tags
     """
     # gather funcs to use
@@ -1020,12 +1022,11 @@ def cat_for_event(
     if not allowed_cats:
         return None
 
-    cat = choice(allowed_cats)
-
-    if return_id:
-        return cat.ID
+    if return_list:
+        return allowed_cats if not return_id else [c.ID for c in allowed_cats]
     else:
-        return cat
+        cat = choice(allowed_cats)
+        return cat if not return_id else cat.ID
 
 
 def _get_cats_with_rel_status(
