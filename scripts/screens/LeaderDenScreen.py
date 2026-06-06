@@ -1017,7 +1017,9 @@ class LeaderDenScreen(Screens):
 
         if clan:
             self.screen_elements["outsider_notice_text"].hide()
+            self.screen_elements["outsider_rep"].hide()
             self.screen_elements["clan_notice_text"].show()
+            self.screen_elements["temper_text"].show()
 
             self.screen_elements["temper_text"].set_text(
                 "screens.leader_den.temper_text",
@@ -1036,6 +1038,7 @@ class LeaderDenScreen(Screens):
         else:
             self.screen_elements["outsider_notice_text"].show()
             self.screen_elements["clan_notice_text"].hide()
+            self.screen_elements["temper_text"].hide()
 
             self.clan_rep = game.clan.reputation
             if 0 <= int(self.clan_rep) <= 30:
@@ -1045,9 +1048,13 @@ class LeaderDenScreen(Screens):
             else:
                 reputation = "welcoming"
 
-            self.screen_elements["temper_text"].set_text(
-                "screens.leader_den.outsider_rep",
+            self.screen_elements["outsider_rep"] = pygame_gui.elements.UILabel(
+                relative_rect=ui_scale(pygame.Rect((68, -10), (445, -1))),
+                text="screens.leader_den.outsider_rep",
+                object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                manager=MANAGER,
                 text_kwargs={"reputation": i18n.t(f"screens.leader_den.{reputation}")},
+                anchors={"top_target": self.screen_elements["outsider_notice_text"]},
             )
 
     def update_outsider_cats(self):
