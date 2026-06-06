@@ -4,6 +4,7 @@ from random import choice, randint
 
 import ujson
 
+from scripts.events_module.relationship import group_events_draft
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
@@ -48,7 +49,16 @@ class Relation_Events:
 
         # currently try to trigger every moon, because there are not many group events
         # TODO: maybe change in future
-        Relation_Events.group_events(cat)
+        # Relation_Events.group_events(cat)
+        group_events_draft.start_interaction(
+            main_cat=cat,
+            interactable_cats=[
+                c
+                for c in Cat.all_cats_list
+                if c.status.alive_in_player_clan
+                and not c.status.rank == CatRank.NEWBORN
+            ],
+        )
 
         Relation_Events.same_age_events(cat)
 
