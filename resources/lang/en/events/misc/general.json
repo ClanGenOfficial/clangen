@@ -14564,7 +14564,7 @@
             "clan_wide"
         ],
         "frequency": 3,
-        "event_text": "There's no doubt the war with o_c_n has caused a lot of damage to c_n. But it's come to light that mur_c's death was not their doing, but instead m_c's, who used the war as a coverup to murder mur_c.",
+        "event_text": "There's no doubt the war with o_c_n has caused a lot of damage to c_n. But it's come to light that mur_c's death was not their doing, but instead m_c's, who used the war as a cover to murder mur_c.",
         "m_c": {
             "age": [
                 "any"
@@ -14627,7 +14627,7 @@
     ],
     "tags": [],
     "frequency": 2,
-    "event_text": "The war with o_c_n demands full reliability from every cat in c_n. m_c's half-Clan heritage makes some cats question where {PRONOUN/m_c/poss} loyalties truly lie.",
+    "event_text": "The war with o_c_n demands full loyalty from every cat in c_n. m_c's half-Clan heritage makes some cats question where {PRONOUN/m_c/poss} loyalties truly lie.",
     "m_c": {
         "status": [
             "-kitten",
@@ -14787,7 +14787,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "r_c begins to spread rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
+        "event_text": "r_c spreads rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
         "m_c": {
             "status": [
                 "-kitten",
@@ -14828,7 +14828,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cat_from is thinking m_c might be a spy after r_c brought up {PRONOUN/m_c/poss} origins."
+                    "cats_from": "cat_from wondered if m_c was a spy after r_c brought up {PRONOUN/m_c/poss} origins."
                 }
             },
             {
@@ -14933,7 +14933,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cat_from was unsettled to learn m_c mercilessly killed a rival Clancat, even in the middle of a war."
+                    "cats_from": "cat_from was unsettled to learn m_c mercilessly killed a rival Clan cat, even in the middle of a war."
                 }
             },
             {
@@ -14951,7 +14951,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cat_from approves of m_c weakening the warring Clan by killing one of their warriors."
+                    "cats_from": "cat_from approves of m_c weakening a warring Clan by killing one of their warriors."
                 }
             }
         ],
@@ -15005,7 +15005,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cat_from can't help but be relieved m_c didn't kill a rival Clancat, even in the middle of a war."
+                    "cats_from": "cat_from approved of m_c sparing a rival Clan cat in the middle of a war."
                 }
             },
             {
@@ -15023,7 +15023,7 @@
                 ],
                 "amount": -10,
                 "log": {
-                    "cats_from": "cat_from thinks m_c should've weakened the warring Clan by killing one of their warriors when {PRONOUN/m_c/subject} had the chance."
+                    "cats_from": "cat_from thought m_c should have weakened a warring Clan by killing one of their warriors when {PRONOUN/m_c/subject} had the chance."
                 }
             }
         ],
