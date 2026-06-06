@@ -404,7 +404,7 @@
     {
         "id": "gen_newleaf_clan",
         "season": [
-            "Newleaf"
+            "newleaf"
         ],
         "strings": [
             "Enjoys the warmth of newleaf",
@@ -415,7 +415,7 @@
     {
         "id": "gen_greenleaf_clan",
         "season": [
-            "Greenleaf"
+            "greenleaf"
         ],
         "strings": [
             "Enjoys the warmth of greenleaf"
@@ -424,7 +424,7 @@
     {
         "id": "gen_leafbare_clan",
         "season": [
-            "Leaf-bare"
+            "leaf-bare"
         ],
         "strings": [
             "Took a nap in the clearing and woke up under a blanket of snow",
@@ -1425,9 +1425,9 @@
     {
         "id": "scared_storm_gen",
         "season": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall"
+            "newleaf",
+            "greenleaf",
+            "leaf-fall"
         ],
         "strings": [
             "Cowers in {PRONOUN/m_c/poss} nest during a particularly rough storm"
@@ -4065,7 +4065,7 @@
     {
         "id": "working_cat_newleaf",
         "season": [
-            "Newleaf"
+            "newleaf"
         ],
         "strings": [
             "Is looking forward to finding more prey as the snow melts",
@@ -4089,7 +4089,7 @@
     {
         "id": "working_cat_leaffall",
         "season": [
-            "Leaf-fall"
+            "leaf-fall"
         ],
         "strings": [
             "Worries about the lack of prey leaf-bare will bring",
@@ -7332,7 +7332,7 @@
     {
         "id": "wasting_disease_greenleaf_gen_to_alive_gen",
         "season": [
-            "Greenleaf"
+            "greenleaf"
         ],
         "strings": [
             "Feels strangely cold",
@@ -7352,7 +7352,7 @@
     {
         "id": "wasting_disease_leaf-fall_gen_to_alive_gen",
         "season": [
-            "Leaf-fall"
+            "leaf-fall"
         ],
         "strings": [
             "Dreads the potential illness that may arrive in leaf-bare",
@@ -7805,8 +7805,8 @@
     {
         "id": "allergies_warm_seasons",
         "season": [
-            "Greenleaf",
-            "Newleaf"
+            "greenleaf",
+            "newleaf"
         ],
         "strings": [
             "Is smelling the flowers despite sneezing afterwards",
@@ -7829,8 +7829,8 @@
     {
         "id": "allergies_cold_seasons",
         "season": [
-            "Leaf-bare",
-            "Leaf-fall"
+            "leaf-bare",
+            "leaf-fall"
         ],
         "strings": [
             "Is happy about {PRONOUN/m_c/poss} allergies calming down this season",
@@ -7850,8 +7850,8 @@
     {
         "id": "allergies_cold_season_to_alive_gen",
         "season": [
-            "Leaf-bare",
-            "Leaf-fall"
+            "leaf-bare",
+            "leaf-fall"
         ],
         "strings": [
             "Startles r_c with how quiet {PRONOUN/m_c/subject} is now"

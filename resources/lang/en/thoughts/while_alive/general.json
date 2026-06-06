@@ -155,8 +155,8 @@
     {
         "id": "gen_newleaf_greenleaf",
         "season": [
-            "Newleaf",
-            "Greenleaf"
+            "newleaf",
+            "greenleaf"
         ],
         "strings": [
             "Purrs as a cool breeze hits {PRONOUN/m_c/object}"
@@ -165,7 +165,7 @@
     {
         "id": "gen_greenleaf",
         "season": [
-            "Greenleaf"
+            "greenleaf"
         ],
         "strings": [
             "Is finding the buzzing of the cicadas annoying",
@@ -178,7 +178,7 @@
     {
         "id": "gen_leaffall",
         "season": [
-            "Leaf-fall"
+            "leaf-fall"
         ],
         "strings": [
             "Leaps into a pile of fallen leaves",
@@ -189,7 +189,7 @@
     {
         "id": "gen_leafbare",
         "season": [
-            "Leaf-bare"
+            "leaf-bare"
         ],
         "strings": [
             "Sneezes when a snowflake landed on {PRONOUN/m_c/poss} nose",
