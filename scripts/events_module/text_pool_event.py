@@ -3,6 +3,7 @@ from dataclasses import dataclass, field
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
+    RelationshipChangeDict,
 )
 
 
@@ -18,6 +19,7 @@ class TextPoolEvent:
     relationship_constraint: list[RelationshipConstraintDict] = field(
         default_factory=list[RelationshipConstraintDict]
     )
+    relationship_changes: list[RelationshipChangeDict] = field(default_factory=list[RelationshipChangeDict])
 
     def __repr__(self):
         return self.id
