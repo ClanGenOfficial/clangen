@@ -25,11 +25,13 @@ Within this folder are 3 folders:
 | `normal_interactions`  | the general 2-cat interactions that are most common in the game       |
 | `welcome_interactions` | these are special events only triggered when a new cat joins the Clan |
 
-Within each folder are folders for each relationship value: `comfort`, `like`, `respect`, `romance`, `trust`. This value will be the "main" value affected by the events inside that folder.
+Within `normal_interactions` and `welcome_interactions` are folders for each relationship value: `comfort`, `like`, `respect`, `romance`, `trust`. This value will be the "main" value affected by the events inside that folder.
 
 There's one more layer of folders after this one. These dictate the strength of the effect on the "main" value: `low`, `mid`, or `high`.
 
-From there, each folder contains a `decrease.json` and `increase.json`. Events the decrease the "main" value will go in `decrease.json` and events that increase the "main" value will go into `increase.json`.
+From there, each folder contains a `negative.json` and `positive.json`. Events the decrease the "main" value will go in `negative.json` and events that increase the "main" value will go into `positive.json`.
+
+`group_interactions` is unique. It skips the first layer of folders dictating relationship value as its nature in affecting many relationships at once means determining a "main" value is difficult. Instead, consider how large of a relationship change is being made and whether it's largely positive or negative.
 
 !!! important
     While there are other files within `relationship_events` beyond just the 3 interaction folders listed, these do NOT contain events using the format that will be explained in this documentation.
@@ -315,7 +317,9 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 >Optional. Indicates *additional* effects on cat relationships. Check [Writing Relationship Changes](reference/common-formats.md#writing-relationship-changes) for full parameters.
 
 !!! caution
-    As noted in [Directory Structure](#directory-structure), these events are already categorized according the values they will affect, as well as the size of the effect. You *do not* need to include those effects in this dict. They are applied *automatically* from `m_c` to `r_c`. 
+    As noted in [Directory Structure](#directory-structure), `normal_interactions` and `welcoming_interactions` events are already categorized according the values they will affect, as well as the size of the effect. You *do not* need to include those effects in this dict. They are applied *automatically* from `m_c` to `r_c`. 
     
     So, if an event is in `comfort/mid/decrease` then you do not need to change the comfort amount from `m_c` to `r_c`. **However**, if you wish to change the comfort from `r_c` to `m_c`, then you *do* need to use this parameter to do so.
+
+    Events in `group_interactions` are exempt from this. For those you will have to dictate every single intended change to the relationships.
 ***
