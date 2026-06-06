@@ -397,7 +397,6 @@
             "The debate over who gets to be the leader in a game explodes into a hurtful argument between m_c, multi_cat.",
             "m_c hurls insults at multi_cat for <i>thinking</i> they deserve a chance to play as the leader.",
             "m_c is appalled when multi_cat won't let {PRONOUN/m_c/object} play as the leader, so {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} insulting everyone.",
-            "m_c demands that r_c1 give up playing the leader in a game, which sparks an argument that drags multi_cat in as well.",
             "A fight over a toy escalates into a screaming match between m_c, multi_cat.",
             "m_c calls multi_cat a bunch of wusses after a play-fight, and it escalates into a fight between the five.",
             "m_c, multi_cat can't settle who gets a toy.",
@@ -405,7 +404,6 @@
             "m_c orders multi_cat to give {PRONOUN/m_c/object} a toy they are playing with and starts a fight when told no.",
             "A game of make-believe turns into a real scuffle between m_c, multi_cat when they can't decide who will play what in the next round.",
             "m_c calls everyone in the nursery is a mouse-brain. It leads to an argument between {PRONOUN/m_c/self}, multi_cat.",
-            "m_c screams in r_c1 and r_c2's faces that they both suck, sparking an argument that snowballs and drags in both r_c3 and r_c4.",
             "m_c keeps hogging being the leader during a game, causing a fight to break out between {PRONOUN/m_c/self}, multi_cat over who gets to be it next."
         ],
         "involved_cats": {
@@ -434,6 +432,49 @@
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["multi_cat"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multi_cat_negative_kitkerfuffle",
+        "strings": [
+            "m_c demands that r_c1 give up playing the leader in a game, which sparks an argument that drags multi_cat in as well.",
+            "m_c screams in r_c1 face that {PRONOUN/r_c1/subject} {VERB/r_c1/suck/sucks}, sparking an argument that snowballs and drags in both multi_cat."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "attention-seeker",
+                        "bossy",
+                        "bullying",
+                        "fearless",
+                        "impulsive",
+                        "unruly"
+                    ]
+                }
+            },
+            "r_c1": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat", "r_c"],
                 "mutual": true,
                 "values": ["like"],
                 "amount": -10
