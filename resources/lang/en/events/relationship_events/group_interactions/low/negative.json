@@ -156,5 +156,35 @@
                 "amount": -5
             }
         ]
+    },
+    {
+        "id": "neg_observations_low",
+        "strings": [
+			"m_c noticed that r_c1 had a sour expression while looking at a r_c2 in the distance.",
+			"m_c notices how rude r_c1 is being to r_c2.",
+			"m_c doesn't like the way r_c1 interacts with r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraints": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["begrudges", "dislikes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": -5
+            }
+        ]
     }
 ]
