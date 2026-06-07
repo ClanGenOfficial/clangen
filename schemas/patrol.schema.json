@@ -857,56 +857,6 @@
           "title": "Other Clan Rep",
           "type": "integer"
         },
-        "other_clan_temper": {
-          "description": "Required temperament the other clan must have for the outcome",
-          "enum": [
-          "cunning",
-          "proud",
-          "bloodthirsty",
-          "amiable",
-          "stoic",
-          "wary",
-          "gracious",
-          "mellow",
-          "logical",
-          "chaotic",
-          "mercurial",
-          "calculating",
-          "eager",
-          "observant",
-          "adaptable",
-          "decisive",
-          "methodical",
-          "steadfast"
-          ],
-          "title": "Other Clan Temperament",
-          "type": "string"
-        },
-        "player_clan_temper": {
-          "description": "Required temperament the player clan must have for the outcome",
-          "enum": [
-          "cunning",
-          "proud",
-          "bloodthirsty",
-          "amiable",
-          "stoic",
-          "wary",
-          "gracious",
-          "mellow",
-          "logical",
-          "chaotic",
-          "mercurial",
-          "calculating",
-          "eager",
-          "observant",
-          "adaptable",
-          "decisive",
-          "methodical",
-          "steadfast"
-          ],
-          "title": "Player Clan Temperament",
-          "type": "string"
-        },
         "future_event": {
           "$ref": "#/$defs/FutureEvent",
           "title": "Future Event"
