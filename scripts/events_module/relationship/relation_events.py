@@ -24,13 +24,6 @@ class Relation_Events:
     had_one_event = False
     cats_triggered_events = {}
 
-    base_path = os.path.join("resources", "dicts", "relationship_events")
-
-    types_path = os.path.join(base_path, "group_interactions", "group_types.json")
-    with open(types_path, "r", encoding="utf-8") as read_file:
-        GROUP_TYPES = ujson.load(read_file)
-    del base_path
-
     @staticmethod
     def handle_relationships(cat: Cat):
         """Checks the relationships of the cat and trigger additional events if possible.
