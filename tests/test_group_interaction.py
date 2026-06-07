@@ -10,7 +10,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import Skill, SkillPath
-from scripts.events_module.relationship.group_events import (
+from scripts.events_module.relationship.generate_group_event import (
     GroupEvents,
     GroupInteraction,
 )

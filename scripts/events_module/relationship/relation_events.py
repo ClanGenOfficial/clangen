@@ -1,10 +1,10 @@
 import os
 import random
-from random import choice, randint
+from random import choice
 
 import ujson
 
-from scripts.events_module.relationship import group_events_draft
+from scripts.events_module.relationship import generate_group_event
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
@@ -178,7 +178,7 @@ class Relation_Events:
             and Relation_Events.can_trigger_events(cat)
         ]
 
-        interacted_cat_ids = group_events_draft.trigger_interaction(
+        interacted_cat_ids = group_events.trigger_interaction(
             main_cat=cat,
             interactable_cats=possible_interaction_cats,
         )
