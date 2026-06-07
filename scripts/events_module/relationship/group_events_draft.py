@@ -55,6 +55,7 @@ def start_interaction(main_cat: Cat, interactable_cats: list):
     # attempt to find a valid event where we can fill the other roles
     chosen_event: Optional[TextPoolEvent] = None
     while not chosen_event and possible_events:
+        involved_cats = {"m_c": main_cat}
         failed = False
         event_to_test = choice(possible_events)
         possible_cats = interactable_cats.copy()
@@ -84,7 +85,7 @@ def start_interaction(main_cat: Cat, interactable_cats: list):
 
             # onto the single cats
             involved_cats[other_cat] = _get_single_cat(
-                involved_cats, interactable_cats, event_to_test, other_cat, constraints
+                involved_cats, possible_cats, event_to_test, other_cat, constraints
             )
 
             if not involved_cats[other_cat]:
@@ -95,6 +96,7 @@ def start_interaction(main_cat: Cat, interactable_cats: list):
 
         if failed:
             possible_events.remove(event_to_test)
+            chosen_event = None
             continue
         else:
             chosen_event = event_to_test
@@ -206,6 +208,7 @@ def _get_single_cat(
                 break
         if failed:
             possible_cats.remove(cat)
+            chosen_cat = None
             continue
 
         # if we're here, then this is a valid cat! we move on

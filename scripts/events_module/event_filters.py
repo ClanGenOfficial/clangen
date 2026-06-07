@@ -1289,6 +1289,7 @@ def check_rel_constraint_groups(
     ]
     if "multi_cat" in constraints_dict["cats_from"]:
         cats_from.extend(involved_cats["multi_cat"])
+
     cats_to = [
         involved_cats[c]
         for c in constraints_dict["cats_to"]
