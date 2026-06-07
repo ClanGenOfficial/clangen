@@ -1,5 +1,9 @@
 # Relationship Events
 
+!!! warning "Under Development"
+    Relationship events are in the midst of being reformatted to work with the below documentation. Group events are currently the only category that matches this documentation.
+
+
 Relationship events are events that occur each timeskip that are focused entirely on influencing the relationships between certain cats. 
 
 These should be fairly short, like all timeskip events. Less than 300 characters, with shorter being better, is preferred.
