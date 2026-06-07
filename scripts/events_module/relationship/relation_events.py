@@ -178,7 +178,7 @@ class Relation_Events:
             and Relation_Events.can_trigger_events(cat)
         ]
 
-        interacted_cat_ids = group_events.trigger_interaction(
+        interacted_cat_ids = generate_group_event.trigger_interaction(
             main_cat=cat,
             interactable_cats=possible_interaction_cats,
         )
