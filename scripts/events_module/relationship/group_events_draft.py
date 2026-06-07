@@ -1,8 +1,12 @@
 from random import choice, choices, sample
-from typing import Union, List
+from typing import Union, List, Optional
+
+import i18n
 
 from scripts.cat.cats import Cat
 from scripts.config import get_config
+from scripts.event_class import Single_Event
+from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     event_for_cat,
     cat_for_event,
@@ -10,8 +14,8 @@ from scripts.events_module.event_filters import (
 )
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
-    RelationshipConstraintDict,
 )
+from scripts.events_module.text_adjust import process_text, adjust_list_text
 from scripts.events_module.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
@@ -49,14 +53,18 @@ def start_interaction(main_cat: Cat, interactable_cats: list):
     )
 
     # attempt to find a valid event where we can fill the other roles
-    chosen_event = None
-    possible_cats = interactable_cats.copy()
-    while not chosen_event and possible_cats:
+    chosen_event: Optional[TextPoolEvent] = None
+    while not chosen_event and possible_events:
         failed = False
         event_to_test = choice(possible_events)
+        possible_cats = interactable_cats.copy()
 
         # we go through each required kitty to see if we can find a match within our interactable cats
         for other_cat, constraints in event_to_test.involved_cats.items():
+            if not possible_cats:
+                failed = True
+                break
+
             if other_cat == "m_c":
                 continue  # we skip this cus we already have our m_c
             # find the multi_cat group
@@ -81,13 +89,74 @@ def start_interaction(main_cat: Cat, interactable_cats: list):
 
             if not involved_cats[other_cat]:
                 failed = True
+                break
             else:
                 possible_cats.remove(involved_cats[other_cat])
 
         if failed:
+            possible_events.remove(event_to_test)
             continue
         else:
             chosen_event = event_to_test
+
+    # aww... nothing was possible
+    if not chosen_event:
+        return
+
+    # now format up the string
+    event_string = choice(chosen_event.strings)
+
+    if "multi_cat" in involved_cats:
+        event_string = event_string.replace(
+            "multi_cat",
+            adjust_list_text([str(c.name) for c in involved_cats["multi_cat"]]),
+        )
+
+    replace_dict = {
+        abbr: (str(c.name), choice(c.pronouns))
+        for abbr, c in involved_cats.items()
+        if abbr != "multi_cat"
+    }
+    event_string = process_text(event_string, replace_dict)
+    event_string = i18n.t(
+        f"relationships.{type_of_change}_postscript", text=event_string
+    )
+
+    cat_ids = []
+    if "multi_cat" in involved_cats:
+        cat_ids = [c.ID for c in involved_cats["multi_cat"]]
+    cat_ids += [c.ID for abbr, c in involved_cats.items() if abbr != "multi_cat"]
+    game.cur_events_list.append(
+        Single_Event(event_string, ["relation", "interaction"], cat_ids)
+    )
+
+    influence_relationships(involved_cats, chosen_event, event_string)
+
+
+def influence_relationships(involved_cats, event: TextPoolEvent, chosen_string: str):
+    for change in event.relationship_changes:
+        cats_from = [
+            involved_cats[c]
+            for c in change["cats_from"]
+            if c in involved_cats and c != "multi_cat"
+        ]
+        if "multi_cat" in change["cats_from"]:
+            cats_from.extend(involved_cats["multi_cat"])
+        cats_to = [
+            involved_cats[c]
+            for c in change["cats_to"]
+            if c in involved_cats and c != "multi_cat"
+        ]
+        if "multi_cat" in change["cats_to"]:
+            cats_to.extend(involved_cats["multi_cat"])
+
+        value_changes = {}
+        for value in change["values"]:
+            value_changes[value] = change["amount"]
+
+        change_relationship_values(
+            cats_from=cats_from, cats_to=cats_to, **value_changes, log=chosen_string
+        )
 
 
 def filter_by_main_cat(cat: Cat, possible_events: List[TextPoolEvent]) -> list:
@@ -165,6 +234,8 @@ def _get_multi_cats(
         return_list=True,
         return_id=False,
     )
+    if not possible_cats or len(possible_cats) <= 1:
+        return chosen_cats
 
     involved_cats["multi_cat"] = []  # set this up ahead of time
 

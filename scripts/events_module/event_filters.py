@@ -1283,11 +1283,19 @@ def check_rel_constraint_groups(
         return True
 
     cats_from = [
-        involved_cats[c] for c in constraints_dict["cats_from"] if c in involved_cats
+        involved_cats[c]
+        for c in constraints_dict["cats_from"]
+        if c in involved_cats and c != "multi_cat"
     ]
+    if "multi_cat" in constraints_dict["cats_from"]:
+        cats_from.extend(involved_cats["multi_cat"])
     cats_to = [
-        involved_cats[c] for c in constraints_dict["cats_to"] if c in involved_cats
+        involved_cats[c]
+        for c in constraints_dict["cats_to"]
+        if c in involved_cats and c != "multi_cat"
     ]
+    if "multi_cat" in constraints_dict["cats_to"]:
+        cats_to.extend(involved_cats["multi_cat"])
 
     if not _filter_relationship_type_updated(
         cats_from=cats_from,
