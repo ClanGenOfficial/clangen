@@ -31,7 +31,7 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
     :return: List of involved cat IDs
     """
 
-    # LOAD POSSIBLE EVENTS
+    # GET EVENT CATEGORY
     # choose if this is lowering or raising the relationship
     type_of_change = choice(["negative", "positive"])
 
@@ -43,20 +43,8 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
 
-    # find events that m_c can have
-    possible_events = _get_possible_events(
-        main_cat,
-        _load_file(
-            f"events/relationship_events/group_interactions/{chosen_intensity}/{type_of_change}.json"
-        ),
-    )
-
     # FIND VALID EVENT
-    involved_cats: dict[str, Union[Cat, list[Cat]]] = {"m_c": main_cat}
-    # attempt to find a valid event where we can fill the other roles
-    chosen_event, involved_cats = _find_event(
-        interactable_cats, involved_cats, main_cat, possible_events
-    )
+    chosen_event, involved_cats = _get_event(chosen_intensity, interactable_cats, main_cat, type_of_change)
 
     # RESOLVE EVENT
     if not chosen_event:  # aww... nothing was possible
@@ -65,6 +53,25 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
         return _resolve_event(
             chosen_event, chosen_intensity, involved_cats, type_of_change
         )
+
+
+def _get_event(chosen_intensity, interactable_cats, main_cat, type_of_change):
+    # find events that m_c can have
+    possible_events = _get_possible_events(
+        main_cat,
+        _load_file(
+            f"events/relationship_events/group_interactions/{chosen_intensity}/{type_of_change}.json"
+        ),
+    )
+
+    # set up the basic cat dict
+    involved_cats: dict[str, Union[Cat, list[Cat]]] = {"m_c": main_cat}
+
+    # attempt to find a valid event where we can fill the other roles
+    chosen_event, involved_cats = _find_event_and_cats(
+        interactable_cats, involved_cats, main_cat, possible_events
+    )
+    return chosen_event, involved_cats
 
 
 def _resolve_event(
@@ -111,7 +118,7 @@ def _resolve_event(
     return cat_ids
 
 
-def _find_event(
+def _find_event_and_cats(
     interactable_cats, involved_cats, main_cat, possible_events
 ) -> tuple[TextPoolEvent, dict]:
     """
