@@ -9398,7 +9398,7 @@
             ],
             "amount": 10,
             "log": {
-                "cats_from": "cat_from felt like {PRONOUN/cat_from/poss} can trust cat_to after {PRONOUN/cat_to/subject} followed orders to punish a Clanmate."
+                "cats_from": "cat_from felt like {PRONOUN/cat_from/poss} could trust cat_to after {PRONOUN/cat_to/subject} followed orders to punish a Clanmate."
             }
         },
         {
