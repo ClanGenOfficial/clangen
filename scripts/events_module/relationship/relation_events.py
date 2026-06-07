@@ -8,7 +8,6 @@ from scripts.events_module.relationship import group_events_draft
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
-from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.event_filters import filter_relationship_type
@@ -47,19 +46,7 @@ class Relation_Events:
             return
         Relation_Events.had_one_event = False
 
-        # currently try to trigger every moon, because there are not many group events
-        # TODO: maybe change in future
-        # Relation_Events.group_events(cat)
-        group_events_draft.start_interaction(
-            main_cat=cat,
-            interactable_cats=[
-                c
-                for c in Cat.all_cats_list
-                if c.status.alive_in_player_clan
-                and not c.status.rank == CatRank.NEWBORN
-                and c != cat
-            ],
-        )
+        Relation_Events.group_events(cat)
 
         Relation_Events.same_age_events(cat)
 
@@ -182,40 +169,22 @@ class Relation_Events:
         if not Relation_Events.can_trigger_events(cat):
             return
 
-        chosen_type = "all"
-        if len(Relation_Events.GROUP_TYPES) > 0 and randint(
-            0, constants.CONFIG["relationship"]["chance_of_special_group"]
-        ):
-            types_to_choose = []
-            for group, value in Relation_Events.GROUP_TYPES.items():
-                types_to_choose.extend([group] * value["frequency"])
-                chosen_type = choice(list(Relation_Events.GROUP_TYPES.keys()))
+        possible_interaction_cats = [
+            c
+            for c in Cat.all_cats_list
+            if c.status.alive_in_player_clan
+            and not c.status.rank == CatRank.NEWBORN
+            and c != cat
+            and Relation_Events.can_trigger_events(cat)
+        ]
 
-        if cat.status.is_leader:
-            chosen_type = "all"
-        possible_interaction_cats = list(
-            filter(
-                lambda cat: (
-                    cat.status.alive_in_player_clan and not cat.age == CatAge.NEWBORN
-                ),
-                Cat.all_cats.values(),
-            )
+        interacted_cat_ids = group_events_draft.trigger_interaction(
+            main_cat=cat,
+            interactable_cats=possible_interaction_cats,
         )
-        if cat in possible_interaction_cats:
-            possible_interaction_cats.remove(cat)
 
-        if chosen_type != "all":
-            possible_interaction_cats = (
-                Relation_Events.cats_with_relationship_constraints(
-                    cat, Relation_Events.GROUP_TYPES[chosen_type]["constraint"]
-                )
-            )
-
-        interacted_cat_ids = GroupEvents.start_interaction(
-            cat, possible_interaction_cats
-        )
-        for id in interacted_cat_ids:
-            inter_cat = Cat.all_cats[id]
+        for i in interacted_cat_ids:
+            inter_cat = Cat.all_cats[i]
             Relation_Events.trigger_event(inter_cat)
 
     @staticmethod
