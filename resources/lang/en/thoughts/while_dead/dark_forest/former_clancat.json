@@ -55,8 +55,16 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "former Clancat"
+                "past_status": [
+                    "leader",
+                    "deputy",
+                    "warrior",
+                    "medicine cat",
+                    "medicine cat apprentice",
+                    "apprentice",
+                    "mediator",
+                    "mediator apprentice",
+                    "kitten"
                 ]
             }
         }

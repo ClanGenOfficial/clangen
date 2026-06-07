@@ -151,7 +151,7 @@
     {
         "id": "loner_leaffall",
         "season": [
-            "Leaf-fall"
+            "leaf-fall"
         ],
         "strings": [
             "Frowns deeply at the first frost"
@@ -160,7 +160,7 @@
     {
         "id": "loner_leafbare",
         "season": [
-            "Leaf-bare"
+            "leaf-bare"
         ],
         "strings": [
             "Wishes newleaf would come already"

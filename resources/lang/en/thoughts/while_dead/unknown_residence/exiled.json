@@ -12,9 +12,10 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "exiled"
-                ]
+                "standing": {
+                    "group": ["player_clan"],
+                    "currently": ["exiled"]
+                }
             }
         }
     }

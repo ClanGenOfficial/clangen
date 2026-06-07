@@ -4,8 +4,9 @@ from random import choice
 
 import ujson
 
+from scripts.config import get_config
+from scripts.game_structure import constants, game
 from scripts.events_module.relationship import generate_group_event
-from scripts.game_structure import constants
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
 from scripts.events_module.relationship.romantic_events import RomanticEvents
@@ -46,7 +47,11 @@ class Relation_Events:
             return
         Relation_Events.had_one_event = False
 
-        Relation_Events.group_events(cat)
+        if not int(
+            random.random()
+            * get_config(game.clan, "relationship.chance_of_group_event")
+        ):
+            Relation_Events.group_events(cat)
 
         Relation_Events.same_age_events(cat)
 

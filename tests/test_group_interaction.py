@@ -19,7 +19,7 @@ from scripts.cat_relations.inheritance2 import inheritance_db
 
 class MainCatFiltering(unittest.TestCase):
     test_clan = Clan(
-        name="Test",
+        save_id="Test",
         leader=None,
         deputy=None,
         medicine_cat=None,
