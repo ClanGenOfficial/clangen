@@ -234,7 +234,7 @@ def _get_single_cat(
     event: TextPoolEvent,
     cat_abbr: str,
     cat_constraints: InvolvedCatDict,
-) -> Cat:
+) -> Optional[Cat]:
     chosen_cat = None
 
     # get the cats who qualify
@@ -246,6 +246,9 @@ def _get_single_cat(
         return_list=True,
         return_id=False,
     )
+    # early return if no cats
+    if not possible_cats:
+        return None
 
     # early return if we don't need to check anything else
     if not event.relationship_constraint:
