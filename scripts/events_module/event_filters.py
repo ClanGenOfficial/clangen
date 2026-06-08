@@ -1288,7 +1288,7 @@ def check_rel_constraint_groups(
         if c in involved_cats and c != "multi_cat"
     ]
     if "multi_cat" in constraints_dict["cats_from"]:
-        cats_from.extend(involved_cats["multi_cat"])
+        cats_from.extend(involved_cats.get("multi_cat", []))
 
     cats_to = [
         involved_cats[c]
@@ -1296,7 +1296,7 @@ def check_rel_constraint_groups(
         if c in involved_cats and c != "multi_cat"
     ]
     if "multi_cat" in constraints_dict["cats_to"]:
-        cats_to.extend(involved_cats["multi_cat"])
+        cats_to.extend(involved_cats.get("multi_cat", []))
 
     if not _filter_relationship_type_updated(
         cats_from=cats_from,
@@ -1508,6 +1508,9 @@ def _filter_relationship_type_updated(
                 for cat_id in compare_group
                 if cat_id in cat.relationships
             ]
+
+            if not relevant_relationships:
+                return False
 
             # list of all the tier lists from those relationships
             tier_lists: list[RelTier] = [

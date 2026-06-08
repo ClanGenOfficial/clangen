@@ -31,7 +31,7 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
     :return: List of involved cat IDs
     """
 
-    # GET EVENT CATEGORY
+    # GET EVENTS
     # choose if this is lowering or raising the relationship
     type_of_change = choice(["negative", "positive"])
 
@@ -42,9 +42,11 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
     chosen_intensity = choices(
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
+    path = f"events/relationship_events/group_interactions/{chosen_intensity}/{type_of_change}.json"
+    events = _load_file(path)
 
     # FIND VALID EVENT
-    chosen_event, involved_cats = _get_event(chosen_intensity, interactable_cats, main_cat, type_of_change)
+    chosen_event, involved_cats = _get_event(events, interactable_cats, main_cat)
 
     # RESOLVE EVENT
     if not chosen_event:  # aww... nothing was possible
@@ -55,14 +57,11 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
         )
 
 
-def _get_event(chosen_intensity, interactable_cats, main_cat, type_of_change):
+def _get_event(
+    events: list[TextPoolEvent], interactable_cats: list[Cat], main_cat: Cat
+):
     # find events that m_c can have
-    possible_events = _get_possible_events(
-        main_cat,
-        _load_file(
-            f"events/relationship_events/group_interactions/{chosen_intensity}/{type_of_change}.json"
-        ),
-    )
+    possible_events = _find_events_for_main_cat(main_cat, events)
 
     # set up the basic cat dict
     involved_cats: dict[str, Union[Cat, list[Cat]]] = {"m_c": main_cat}
@@ -146,7 +145,7 @@ def _find_event_and_cats(
             # MULTI CAT
             if other_cat == "multi_cat":
                 involved_cats["multi_cat"] = _get_multi_cats(
-                    involved_cats, possible_cats, event_to_test, constraints
+                    involved_cats, possible_cats.copy(), event_to_test, constraints
                 )
                 # if we found no one, then this event isn't possible, and we should try a different one
                 if not involved_cats["multi_cat"]:
@@ -159,7 +158,11 @@ def _find_event_and_cats(
             # OTHER SINGLE CATS
             else:
                 involved_cats[other_cat] = _get_single_cat(
-                    involved_cats, possible_cats, event_to_test, other_cat, constraints
+                    involved_cats,
+                    possible_cats.copy(),
+                    event_to_test,
+                    other_cat,
+                    constraints,
                 )
 
                 if not involved_cats[other_cat]:
@@ -209,7 +212,7 @@ def _influence_relationships(involved_cats, event: TextPoolEvent, chosen_string:
         )
 
 
-def _get_possible_events(cat: Cat, possible_events: List[TextPoolEvent]) -> list:
+def _find_events_for_main_cat(cat: Cat, possible_events: List[TextPoolEvent]) -> list:
     """
     Returns possible events for the given cat.
     """
@@ -258,6 +261,10 @@ def _get_single_cat(
         temp_involved_cats[cat_abbr] = cat
         # test if the cat matches the rel constraints
         for block in event.relationship_constraint:
+            # if the cat isn't part of this constraint block, then we skip it
+            if cat_abbr not in block["cats_from"] + block["cats_to"]:
+                continue
+
             if not check_rel_constraint_groups(block, temp_involved_cats):
                 failed = True
                 break
@@ -315,6 +322,9 @@ def _get_multi_cats(
         _temp_involved_cats["multi_cat"].append(cat)
         # find out if this cat will match the rel constraints
         for block in event.relationship_constraint:
+            # if this block doesn't include multi_cat then we skip it
+            if "multi_cat" not in block["cats_from"] + block["cats_to"]:
+                continue
             if not check_rel_constraint_groups(block, _temp_involved_cats):
                 failed = True
                 break
