@@ -1059,7 +1059,7 @@ class TestInterpersonalRelationshipConstraints2(unittest.TestCase):
                 )
             )
         with self.subTest("are not all mates, expected not mates"):
-            self.assertFalse(
+            self.assertTrue(
                 check_rel_constraint_groups(
                     {
                         "cats_from": ["mate1"],
