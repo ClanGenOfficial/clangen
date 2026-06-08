@@ -23,6 +23,14 @@
             ]
         },
         {
+            "url": "./schemas/relationship_group_event.schema.json",
+            "fileMatch": [
+                "events/relationship_events/group_interactions/high/*.json",
+                "events/relationship_events/group_interactions/medium/*.json",
+                "events/relationship_events/group_interactions/low/*.json"
+            ]
+        },
+        {
             "url": "./schemas/poi.schema.json",
             "fileMatch": [
                 "points_of_interest.json"

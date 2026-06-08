@@ -315,8 +315,11 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 !!! caution "For example"
     To work off of our earlier example: we would list `trusts` in our `constraints`
 
-### relationships:list[dict[str, various]]
+### relationship_changes:list[dict[str, various]]
 >Optional. Indicates *additional* effects on cat relationships. Check [Writing Relationship Changes](reference/common-formats.md#writing-relationship-changes) for full parameters.
+
+!!! caution
+    The ONLY `cats_from` and `cats_to` parameters allowed here are the ones you have defined in `involved_cats`. Exclusionary tags and facet tags shouldn't be used. Logs are unnecessary as we always use the chosen event string for the logs. 
 
 !!! caution
     As noted in [Directory Structure](#directory-structure), `normal_interactions` and `welcoming_interactions` events are already categorized according the values they will affect, as well as the size of the effect. You *do not* need to include those effects in this dict. They are applied *automatically* from `m_c` to `r_c`. 
