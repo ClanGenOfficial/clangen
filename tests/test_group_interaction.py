@@ -138,7 +138,9 @@ class MainCatFiltering(unittest.TestCase):
 
             self.assertEqual(event1, chosen_event)
             self.assertEqual(involved_cats["m_c"], main_cat)
-            self.assertCountEqual(involved_cats["multi_cat"], [rand_medicine1, rand_medicine2])
+            self.assertCountEqual(
+                involved_cats["multi_cat"], [rand_medicine1, rand_medicine2]
+            )
 
     def test_relationship_constraints(self):
         main_cat = Cat(
