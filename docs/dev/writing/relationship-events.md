@@ -72,7 +72,6 @@ From there, each folder contains a `negative.json` and `positive.json`. Events t
                 "status": [],
                 "past_status": [],
                 "age": [],
-                "group": [],
                 "standing": {
                     "group": [],
                     "currently": [],
@@ -95,7 +94,6 @@ From there, each folder contains a `negative.json` and `positive.json`. Events t
                 "status": [],
                 "past_status": [],
                 "age": [],
-                "group": [],
                 "standing": {
                     "group": [],
                     "currently": [],
@@ -211,9 +209,6 @@ Each entry is an individual cat, with the key being their event designation (`r_
 
 ***
 
-**group:list[str]**
->Constraints the event to only happen if the cat is a member of a listed group or a member of no group. you can use tags in: [possible group tags](reference/tag-lists.md#groups) and you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
-
 **standing: dict[str: var]**
 >Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
 
@@ -229,6 +224,9 @@ Each entry is an individual cat, with the key being their event designation (`r_
 >**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
 
 >**`"past"`** - standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
+
+!!! warning
+    Keep in mind that currently the only cats who receive and are included in relationship events are player Clan cats. Cats currently outside the Clan cannot be part of an event. `standing` can still be constrained for in the context of a cat who *used* to be lost, exiled, etc.
 
 ***
 
