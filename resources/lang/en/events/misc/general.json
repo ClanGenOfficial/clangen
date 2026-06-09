@@ -14995,7 +14995,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 1,
-    "event_text": "m_c thinks if they were alone together r_c would hurt them.",
+    "event_text": "m_c thinks if they were alone together r_c would hurt {PRONOUN/m_c/object}.",
     "m_c": {
         "relationship_status": ["runs_from_only"]
     },
