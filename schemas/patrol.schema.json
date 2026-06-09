@@ -1490,22 +1490,12 @@
         "elder",
         "-elder",
         "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
         "kittypet",
         "-kittypet",
         "loner",
         "-loner",
         "rogue",
-        "-rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "-lost",
-        "outside cat",
-        "clancat"
+        "-rogue"
       ],
       "title": "Status",
       "type": "string"
