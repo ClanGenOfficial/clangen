@@ -14871,21 +14871,18 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 1,
-    "event_text": "m_c pretends not to notice when r_c stumbles during a patrol.",
+    "event_text": "m_c hopes r_c gets horribly wounded.",
     "m_c": {
-        "status": ["-kitten", "-elder"],
         "relationship_status": ["loathes_only"]
     },
-    "r_c": {
-    "status": ["-newborn", "-kitten", "-elder"]
-    }
+    "r_c": {}
 },
     {
     "event_id": "gen_rel_loathes3",
     "location": ["any"],
     "season": ["any"],
     "frequency": 1,
-    "event_text": "m_c's cannot stomach that fox-hearted r_c.",
+    "event_text": "m_c cannot stomach that fox-hearted r_c.",
     "m_c": {
         "relationship_status": ["loathes_only"]
     },
@@ -14920,7 +14917,7 @@
     "frequency": 1,
     "event_text": "m_c thinks {PRONOUN/m_c/subject} would be a better deputy than r_c.",
     "m_c": {
-        "status": ["-kitten", "-deputy", "-leader"],
+        "status": ["-kitten", "-deputy", "-leader", "-medicine cat apprentice", "-medicine cat"],
         "relationship_status": ["resents_only"]
     },
     "r_c": {
