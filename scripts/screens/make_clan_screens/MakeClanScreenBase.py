@@ -50,6 +50,7 @@ class ClanInfo:
     deputy: Optional[Cat] = None
     medicine_cat: Optional[Cat] = None
     starting_members: list = field(default_factory=list)
+    starting_outsiders: list = field(default_factory=list)
     biome: str = ""
     camp_bg: str = "camp1"
     symbol: str = ""
@@ -65,6 +66,7 @@ class ClanInfo:
         self.deputy = None
         self.medicine_cat = None
         self.starting_members = []
+        self.starting_outsiders = []
         self.biome = ""
         self.camp_bg = "camp1"
         self.symbol = ""
@@ -77,6 +79,7 @@ class ClanInfo:
         self.deputy = saved_info["deputy"]
         self.medicine_cat = saved_info["medicine_cat"]
         self.starting_members = saved_info["starting_members"]
+        self.starting_outsiders = saved_info["starting_outsiders"]
         self.biome = saved_info["biome"]
         self.camp_bg = saved_info["camp_bg"]
         self.symbol = saved_info["symbol"]
@@ -93,6 +96,7 @@ class ClanInfo:
             "deputy": self.deputy,
             "medicine_cat": self.medicine_cat,
             "starting_members": self.starting_members,
+            "starting_outsiders": self.starting_outsiders,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
             "symbol": self.symbol,
@@ -203,7 +207,6 @@ class MakeClanScreenBase(Screens):
         game.just_died.clear()
         game.dead_cats_to_grieve.clear()
         save_load.faded_ids.clear()
-        Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
 
         # extra sanitization for filenames
