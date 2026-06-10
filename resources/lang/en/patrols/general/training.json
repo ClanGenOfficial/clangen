@@ -21515,7 +21515,7 @@
     "decline_text": "It seems there is no frogspawn here today, unlucky. The patrol returns to camp.",
     "success_outcomes": [
         {
-    "text": "p_l notes that the water is calm, warm, and sheltered. It will be the perfect condition for the tadpoles to survive. Come greenleaf, c_n will have plenty of frogs to catch.",
+    "text": "p_l notes that the water is calm, warm, and sheltered. Conditions are perfect for the tadpoles to survive. Come greenleaf, c_n will have plenty of frogs to catch.",
     "exp": 20,
     "frequency": 4,
     "art": "patrol_outcome_art"
