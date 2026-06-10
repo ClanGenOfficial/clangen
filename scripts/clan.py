@@ -82,6 +82,7 @@ class Clan:
         game_mode="classic",
         cruel_cards: list[str] = [],
         starting_members=None,
+        starting_outsiders=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
     ):
@@ -94,6 +95,8 @@ class Clan:
 
         if starting_members is None:
             starting_members = []
+        if starting_outsiders is None:
+            starting_outsiders = []
 
         self.save_id = save_id
         self.name = display_name if display_name else save_id
@@ -138,6 +141,7 @@ class Clan:
         self.other_clan_IDs = []
 
         self.starting_members = starting_members
+        self.starting_outsiders = starting_outsiders
         if game_mode in ("expanded", "cruel_season"):
             self.freshkill_pile = FreshkillPile()
         else:
@@ -249,6 +253,10 @@ class Clan:
                 if Cat.all_cats[i] == x:
                     self.add_cat(Cat.all_cats[i])
                     not_found = False
+            for x in self.starting_outsiders:
+                if Cat.all_cats[i] == x:
+                    self.add_cat(Cat.outside_cats[i])
+                    not_found = False
             if (
                 Cat.all_cats[i] != self.leader
                 and Cat.all_cats[i] != self.medicine_cat
@@ -267,6 +275,12 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE)
+
+        for cat_id in Cat.outside_cats:
+            the_cat = Cat.outside_cats.get(cat_id)
+            the_cat.init_all_relationships()
+            if the_cat != self.instructor:
+                the_cat.backstory = "clan_founder"
 
         save_cats(game.clan.save_id, Cat, game)
         number_other_clans = randint(3, 5)
