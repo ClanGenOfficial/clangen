@@ -169,7 +169,10 @@ class ChangeCatNameWindow(GameWindow):
 
                 if old_name != str(self.the_cat.name):
                     self.name_changed.show()
-                    self.heading.set_text(f"-Change {self.the_cat.name}'s Name-")
+                    self.heading.set_text(
+                        "windows.change_name_title",
+                        text_kwargs={"name": self.the_cat.name},
+                    )
                 else:
                     self.name_changed.hide()
 

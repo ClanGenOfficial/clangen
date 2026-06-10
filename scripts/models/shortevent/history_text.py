@@ -5,7 +5,7 @@ from typing import List, Union, Literal
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
-from scripts.models.shortevent.cat import Cat
+from scripts.models.common.cat import Cat
 
 
 class HistoryText(BaseModel):

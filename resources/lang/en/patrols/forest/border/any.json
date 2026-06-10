@@ -96,7 +96,6 @@
                     "multi"
                 ],
                 "history_text": {
-                    "scar": "This cat was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
                 "relationships": [
@@ -127,14 +126,11 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "THROAT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "scar": "This cat was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "death": "m_c died of an injury sustained in a rogue ambush."
                 },
                 "relationships": [
@@ -3575,12 +3571,10 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a fox fight.",
                     "death": "m_c died of an injury inflicted by a fox."
                 }
             },
@@ -3742,12 +3736,10 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": ["LEFTEAR"]
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c carries a scar from a fox fight.",
                     "death": "m_c died of an injury inflicted by a fox."
             },
                 "relationships": [
