@@ -1169,7 +1169,7 @@ class EventEditScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        self.show_mute_buttons()
+        Screens.show_mute_buttons()
 
         self.main_menu_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (152, 30))),

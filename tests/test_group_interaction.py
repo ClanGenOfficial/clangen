@@ -14,12 +14,11 @@ from scripts.events_module.relationship.group_events import (
     GroupEvents,
     GroupInteraction,
 )
-from scripts.cat_relations.inheritance2 import inheritance_db
 
 
 class MainCatFiltering(unittest.TestCase):
     test_clan = Clan(
-        save_id="Test",
+        name="Test",
         leader=None,
         deputy=None,
         medicine_cat=None,
@@ -340,7 +339,6 @@ class OtherCatsFiltering(unittest.TestCase):
             "r_c1": random1.ID,
             "r_c2": random2.ID,
         }
-        inheritance_db.load_inheritances(Cat)
         # given - relationships
         # order: romance, like, respect, trust, comfort
         main_cat.relationships[random1.ID] = Relationship(

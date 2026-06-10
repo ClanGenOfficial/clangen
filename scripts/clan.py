@@ -21,19 +21,12 @@ from scripts.cat.names import names
 from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
+    load_faded_cat_ids,
 )
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
 from scripts.clan_resources.herb.herb_supply import HerbSupply
-from scripts.clan_resources.point_of_interest import (
-    load_pois,
-    get_poi_save_dict,
-    generate_and_add_new_poi,
-    PoiType,
-    get_poi_names_set,
-    clear_pois,
-)
 from scripts.events_module.future.future_event import FutureEvent
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure import constants
@@ -71,8 +64,7 @@ class Clan:
 
     def __init__(
         self,
-        save_id="",
-        display_name=None,
+        name="",
         leader=None,
         deputy=None,
         medicine_cat=None,
@@ -80,24 +72,29 @@ class Clan:
         camp_bg=None,
         symbol=None,
         game_mode="classic",
-        cruel_cards: list[str] = [],
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
+        displayname="",
     ):
         """
-        :param save_id: The save file name for the Clan, this should not be used for player-facing text beyond the save file screen
-        :param display_name: The display name for the Clan, this is what should appear while the playing the game.
+        :param name: The save file name for the Clan, this should not be used for player-facing text beyond the save file screen
+        :param displayname: The display name for the Clan, this is what should appear while the playing the game.
         """
-        if save_id == "":
+        if name == "":
             return
 
         if starting_members is None:
             starting_members = []
 
-        self.save_id = save_id
-        self.name = display_name if display_name else save_id
-
+        # name is the unique id of the clan. i'm sorry if this is confusing...
+        # TODO: change to better name like clan_id
+        self.name = name
+        # displayname is the name you should use whenever displaying the clan name in UI
+        if not displayname:
+            self.displayname = name
+        else:
+            self.displayname = displayname
         self.leader = leader
         self.leader_lives = 9
         self.leader_predecessors = 0
@@ -120,7 +117,6 @@ class Clan:
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
-        self.cruel_cards: list[str] = cruel_cards
         self.pregnancy_data = {}
         self.inheritance = {}
         self.custom_pronouns = {}
@@ -138,7 +134,7 @@ class Clan:
         self.other_clan_IDs = []
 
         self.starting_members = starting_members
-        if game_mode in ("expanded", "cruel_season"):
+        if game_mode in ("expanded", "cruel season"):
             self.freshkill_pile = FreshkillPile()
         else:
             self.freshkill_pile = None
@@ -211,7 +207,7 @@ class Clan:
         the program starts
         """
         game.reset_used_group_IDs()
-        switch_set_value(Switch.clan_save_id, self.save_id)
+        switch_set_value(Switch.clan_name, self.name)
         reset_loaded_clan_settings()
         game.starclan = Afterlife()
         game.dark_forest = Afterlife()
@@ -259,7 +255,7 @@ class Clan:
                 Cat.all_cats[i].example = True
                 self.remove_cat(Cat.all_cats[i].ID)
 
-        # give actions and relationships to cats
+        # give thoughts,actions and relationships to cats
         for cat_id in Cat.all_cats:
             the_cat = Cat.all_cats.get(cat_id)
             the_cat.init_all_relationships()
@@ -267,26 +263,30 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE)
+            the_cat.get_new_thought()
 
-        save_cats(game.clan.save_id, Cat, game)
+        save_cats(game.clan.name, Cat, game)
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
-            other_clan = OtherClan()
+            other_clan_names = [str(i.name) for i in self.all_other_clans] + [
+                game.clan.displayname
+            ]
+            other_clan_name = choice(
+                names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
+            )
+            while other_clan_name in other_clan_names:
+                other_clan_name = choice(
+                    names.names_dict["normal_prefixes"]
+                    + names.names_dict["clan_prefixes"]
+                )
+            other_clan = OtherClan(name=other_clan_name)
             self.all_other_clans.append(other_clan)
-
-        # remove any already loaded points of interest
-        clear_pois()
-
-        generate_and_add_new_poi(game.clan.biome, PoiType.GATHERING)
-        generate_and_add_new_poi(game.clan.biome, PoiType.MOONPLACE)
-        for i in range(3):
-            generate_and_add_new_poi(game.clan.biome, PoiType.TERRAIN)
 
         # create leader's ceremony
         self.leader.generate_lead_ceremony()
 
         self.save_clan()
-        save_clanlist(self.save_id)
+        save_clanlist(self.name)
         switch_set_value(Switch.clan_list, read_clans())
 
         # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
@@ -315,6 +315,7 @@ class Clan:
             and cat.ID in Cat.outside_cats
         ):
             Cat.outside_cats.pop(cat.ID)
+            cat.clan = str(game.clan.name)
 
     def remove_cat(self, ID):  # ID is cat.ID
         """
@@ -332,9 +333,9 @@ class Clan:
             self.clan_cats.remove(ID)
 
     def __repr__(self):
-        if self.save_id is not None:
+        if self.name is not None:
             _ = (
-                f"{self.save_id}: led by {self.leader.name}"
+                f"{self.name}: led by {self.leader.name}"
                 f"with {self.medicine_cat.name} as med. cat"
             )
             return _
@@ -414,14 +415,13 @@ class Clan:
         """
 
         clan_data = {
-            "save_id": self.save_id,
-            "displayname": self.name,
+            "clanname": self.name,
+            "displayname": self.displayname,
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
             "clan_symbol": self.chosen_symbol,
             "gamemode": self.game_mode,
-            "cruel_cards": self.cruel_cards,
             "used_group_IDs": game.used_group_IDs,
             "last_focus_change": self.last_focus_change,
             "clans_in_focus": self.clans_in_focus,
@@ -477,25 +477,21 @@ class Clan:
 
         clan_data["war"] = self.war
 
-        clan_data["poi"] = get_poi_save_dict()
-
         self.save_herb_supply(game.clan)
         self.save_disaster(game.clan)
         self.save_future_events(game.clan)
         self.save_pregnancy(game.clan)
 
         save_clan_settings()
-        if game.clan.game_mode in ("expanded", "cruel_season"):
+        if game.clan.game_mode in ("expanded", "cruel season"):
             self.save_freshkill_pile(game.clan)
 
-        safe_save(f"{get_save_dir()}/{self.save_id}/clan.json", clan_data)
+        safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
-        if os.path.exists(f"{get_save_dir()}/{self.save_id}clan.json"):
-            os.remove(f"{get_save_dir()}/{self.save_id}clan.json")
-        elif os.path.exists(get_save_dir() + f"/{self.save_id}clan.txt") & (
-            self.save_id != "current"
+        if os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (
+            self.name != "current"
         ):
-            os.remove(get_save_dir() + f"/{self.save_id}clan.txt")
+            os.remove(get_save_dir() + f"/{self.name}clan.txt")
 
     def load_clan(self):
         """
@@ -503,11 +499,8 @@ class Clan:
         """
 
         version_info = None
-        game.reset_used_group_IDs()
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
-        ) or os.path.exists(
-            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
         ):
             version_info = self.load_clan_json()
         elif os.path.exists(
@@ -595,7 +588,7 @@ class Clan:
             elif general[8] == "None":
                 general[8] = 50
             game.clan = Clan(
-                save_id=general[0],
+                name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
                 medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
@@ -614,7 +607,7 @@ class Clan:
             elif general[7] == "None":
                 general[7] = "classic"
             game.clan = Clan(
-                save_id=general[0],
+                name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
                 medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
@@ -630,7 +623,7 @@ class Clan:
             elif general[3] == "None":
                 general[3] = "camp1"
             game.clan = Clan(
-                save_id=general[0],
+                name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
                 medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
@@ -641,7 +634,7 @@ class Clan:
             game.clan.post_initialization_functions()
         elif len(general) == 3:
             game.clan = Clan(
-                save_id=general[0],
+                name=general[0],
                 leader=Cat.all_cats[leader_info[0]],
                 deputy=Cat.all_cats.get(deputy_info[0], None),
                 medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
@@ -727,19 +720,8 @@ class Clan:
         switch_set_value(
             Switch.error_message, "There was an error loading the clan.json"
         )
-        filename = (
-            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
-        )
-        if not os.path.exists(filename):
-            # legacy
-            filename = (
-                get_save_dir()
-                + "/"
-                + switch_get_value(Switch.clan_list)[0]
-                + "clan.json"
-            )
         with open(
-            filename,
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json",
             "r",
             encoding="utf-8",
         ) as read_file:  # pylint: disable=redefined-outer-name
@@ -762,30 +744,20 @@ class Clan:
         else:
             med_cat = None
 
-        # just checking if old param name is being used
-        save_id = (
-            clan_data.get("clanname")
-            if clan_data.get("clanname")
-            else clan_data.get("save_id")
-        )
-
-        # remove any already loaded points of interest
-        clear_pois()
-
-        load_pois(clan_data.get("poi", {"empty": []}))
+        if "displayname" in clan_data:
+            displayname = clan_data["displayname"]
+        else:
+            displayname = clan_data["clanname"]
 
         game.clan = Clan(
-            save_id=save_id,
-            display_name=clan_data.get(
-                "displayname", None
-            ),  # if no displayname is found, clan init just uses save_id
+            name=clan_data["clanname"],
+            displayname=displayname,
             leader=leader,
             deputy=deputy,
             medicine_cat=med_cat,
             biome=clan_data["biome"],
             camp_bg=clan_data["camp_bg"],
             game_mode=clan_data["gamemode"],
-            cruel_cards=clan_data.get("cruel_cards", []),
             self_run_init_functions=False,
         )
         game.clan.post_initialization_functions()
@@ -883,6 +855,8 @@ class Clan:
         if "war" in clan_data:
             game.clan.war = clan_data["war"]
 
+        load_faded_cat_ids(clan_data["clanname"])
+
         game.clan.last_focus_change = clan_data.get("last_focus_change")
         game.clan.clans_in_focus = clan_data.get("clans_in_focus", [])
 
@@ -930,9 +904,9 @@ class Clan:
         """
         Load the information about what cat is pregnant and in what 'state' they are in the pregnancy.
         """
-        if not game.clan.save_id:
+        if not game.clan.name:
             return
-        file_path = get_save_dir() + f"/{game.clan.save_id}/pregnancy.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/pregnancy.json"
         if os.path.exists(file_path):
             with open(
                 file_path, "r", encoding="utf-8"
@@ -945,21 +919,21 @@ class Clan:
         """
         Save the information about what cat is pregnant and in what 'state' they are in the pregnancy.
         """
-        if not game.clan.save_id:
+        if not game.clan.name:
             return
 
         safe_save(
-            f"{get_save_dir()}/{game.clan.save_id}/pregnancy.json", clan.pregnancy_data
+            f"{get_save_dir()}/{game.clan.name}/pregnancy.json", clan.pregnancy_data
         )
 
     def load_disaster(self, clan):
         """
         TODO: DOCS
         """
-        if not game.clan.save_id:
+        if not game.clan.name:
             return
 
-        file_path = get_save_dir() + f"/{game.clan.save_id}/disasters/primary.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/disasters/primary.json"
         try:
             if os.path.exists(file_path):
                 with open(
@@ -985,7 +959,7 @@ class Clan:
                     else:
                         clan.primary_disaster = {}
             else:
-                os.makedirs(get_save_dir() + f"/{game.clan.save_id}/disasters")
+                os.makedirs(get_save_dir() + f"/{game.clan.name}/disasters")
                 clan.primary_disaster = None
                 with open(file_path, "w", encoding="utf-8") as rel_file:
                     json_string = ujson.dumps(clan.primary_disaster, indent=4)
@@ -993,7 +967,7 @@ class Clan:
         except:
             clan.primary_disaster = None
 
-        file_path = get_save_dir() + f"/{game.clan.save_id}/disasters/secondary.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/disasters/secondary.json"
         try:
             if os.path.exists(file_path):
                 with open(file_path, "r", encoding="utf-8") as read_file:
@@ -1015,7 +989,7 @@ class Clan:
                     else:
                         clan.secondary_disaster = {}
             else:
-                os.makedirs(get_save_dir() + f"/{game.clan.save_id}/disasters")
+                os.makedirs(get_save_dir() + f"/{game.clan.name}/disasters")
                 clan.secondary_disaster = None
                 with open(file_path, "w", encoding="utf-8") as rel_file:
                     json_string = ujson.dumps(clan.secondary_disaster, indent=4)
@@ -1028,11 +1002,11 @@ class Clan:
         """
         TODO: DOCS
         """
-        if not clan.save_id:
+        if not clan.name:
             return
-        file_path = get_save_dir() + f"/{clan.save_id}/disasters/primary.json"
-        if not os.path.isdir(f"{get_save_dir()}/{clan.save_id}/disasters"):
-            os.mkdir(f"{get_save_dir()}/{clan.save_id}/disasters")
+        file_path = get_save_dir() + f"/{clan.name}/disasters/primary.json"
+        if not os.path.isdir(f"{get_save_dir()}/{clan.name}/disasters"):
+            os.mkdir(f"{get_save_dir()}/{clan.name}/disasters")
         if clan.primary_disaster:
             disaster = {
                 "event": clan.primary_disaster.event,
@@ -1048,7 +1022,7 @@ class Clan:
         else:
             disaster = {}
 
-        safe_save(f"{get_save_dir()}/{clan.save_id}/disasters/primary.json", disaster)
+        safe_save(f"{get_save_dir()}/{clan.name}/disasters/primary.json", disaster)
 
         if clan.secondary_disaster:
             disaster = {
@@ -1065,17 +1039,17 @@ class Clan:
         else:
             disaster = {}
 
-        safe_save(f"{get_save_dir()}/{clan.save_id}/disasters/secondary.json", disaster)
+        safe_save(f"{get_save_dir()}/{clan.name}/disasters/secondary.json", disaster)
 
     def load_future_events(self, clan):
         """
         Loads the Clan's saved future events
         """
-        if not game.clan.save_id:
+        if not game.clan.name:
             return
 
         # load the current file path, if it exists in save
-        file_path = f"{get_save_dir()}/{game.clan.save_id}/future_events.json"
+        file_path = f"{get_save_dir()}/{game.clan.name}/future_events.json"
         if os.path.exists(file_path):
             with open(file_path, "r", encoding="utf-8") as save_file:
                 save_list = ujson.load(save_file)
@@ -1105,19 +1079,19 @@ class Clan:
         for event in game.clan.future_events:
             save_list.append(event.to_dict())
 
-        safe_save(f"{get_save_dir()}/{game.clan.save_id}/future_events.json", save_list)
+        safe_save(f"{get_save_dir()}/{game.clan.name}/future_events.json", save_list)
 
     def load_herb_supply(self, clan):
         """
         Loads the Clan's saved herb supply info
         """
-        if not game.clan.save_id:
+        if not game.clan.name:
             return
 
         save_dir = get_save_dir()
 
-        current_file_path = save_dir + f"/{game.clan.save_id}/herb_supply.json"
-        old_file_path = save_dir + f"/{game.clan.save_id}/herbs.json"
+        current_file_path = save_dir + f"/{game.clan.name}/herb_supply.json"
+        old_file_path = save_dir + f"/{game.clan.name}/herbs.json"
 
         try:
             # load the old file path and convert the save data into current format
@@ -1162,22 +1136,22 @@ class Clan:
         }
 
         safe_save(
-            f"{get_save_dir()}/{game.clan.save_id}/herb_supply.json",
+            f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
             combined_supply_dict,
         )
 
         # delete old herb save file if it exists
-        if os.path.exists(get_save_dir() + f"/{game.clan.save_id}/herbs.json"):
-            os.remove(get_save_dir() + f"/{game.clan.save_id}/herbs.json")
+        if os.path.exists(get_save_dir() + f"/{game.clan.name}/herbs.json"):
+            os.remove(get_save_dir() + f"/{game.clan.name}/herbs.json")
 
     def load_freshkill_pile(self, clan):
         """
         TODO: DOCS
         """
-        if not game.clan.save_id or clan.game_mode == "classic":
+        if not game.clan.name or clan.game_mode == "classic":
             return
 
-        file_path = get_save_dir() + f"/{game.clan.save_id}/freshkill_pile.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/freshkill_pile.json"
         try:
             if os.path.exists(file_path):
                 with open(
@@ -1186,7 +1160,7 @@ class Clan:
                     pile = ujson.load(read_file)
                     clan.freshkill_pile = FreshkillPile(pile)
 
-                file_path = get_save_dir() + f"/{game.clan.save_id}/nutrition_info.json"
+                file_path = get_save_dir() + f"/{game.clan.name}/nutrition_info.json"
                 if os.path.exists(file_path) and clan.freshkill_pile:
                     with open(file_path, "r", encoding="utf-8") as read_file:
                         nutritions = ujson.load(read_file)
@@ -1211,7 +1185,7 @@ class Clan:
             return
 
         safe_save(
-            f"{get_save_dir()}/{game.clan.save_id}/freshkill_pile.json",
+            f"{get_save_dir()}/{game.clan.name}/freshkill_pile.json",
             clan.freshkill_pile.pile,
         )
 
@@ -1223,7 +1197,7 @@ class Clan:
                 "percentage": nutr.percentage,
             }
 
-        safe_save(f"{get_save_dir()}/{game.clan.save_id}/nutrition_info.json", data)
+        safe_save(f"{get_save_dir()}/{game.clan.name}/nutrition_info.json", data)
 
     ## Properties
 
@@ -1365,17 +1339,9 @@ class OtherClan:
             self.group_ID = game.get_free_group_ID(CatGroup.OTHER_CLAN)
         game.clan.other_clan_IDs.append(self.group_ID)
 
-        self.name = name
-        if not self.name:  # find name if clan has no name yet
-            used_names = [str(i.name) for i in game.clan.all_other_clans] + [
-                game.clan.name
-            ]
-            clan_names = names.names_dict["normal_prefixes"]
-            clan_names.extend(names.names_dict["clan_prefixes"])
-            self.name = choice(clan_names)
-            while self.name in used_names:  # making sure we don't repeat a name
-                self.name = choice(clan_names)
-
+        clan_names = names.names_dict["normal_prefixes"]
+        clan_names.extend(names.names_dict["clan_prefixes"])
+        self.name = name or choice(clan_names)
         self.relations = relations or randint(8, 12)
 
         self.temperament: tuple[str, str]
@@ -1414,8 +1380,7 @@ class OtherClan:
         )
 
     def __repr__(self):
-        # has indicators that this is unlocalized, just in case
-        return f"!!{self.name}Clan!!"
+        return f"{self.name}Clan"
 
     def get_standing(self) -> Literal["ally", "neutral", "hostile"]:
         """
@@ -1590,11 +1555,11 @@ def _find_alignment(temper_dict: dict, first_value: int, second_value: int) -> s
     :param second_value: The second value to find the alignment for. This is the chart's "x-value", or when viewing it as a dictionary: its values.
     """
     if 11 <= first_value:
-        temper = list(temper_dict.values())[2]
+        temper = list(temper_dict.values())[0]
     elif 7 <= first_value:
         temper = list(temper_dict.values())[1]
     else:
-        temper = list(temper_dict.values())[0]
+        temper = list(temper_dict.values())[2]
 
     if 11 <= second_value:
         temper = temper[2]

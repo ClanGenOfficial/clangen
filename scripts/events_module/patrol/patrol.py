@@ -15,7 +15,6 @@ from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
 from scripts.clan import Clan
 from scripts.clan_package.settings import get_clan_setting
-from scripts.config import get_config
 from scripts.events_module.event_filters import (
     event_for_tags,
     get_frequency,
@@ -25,8 +24,6 @@ from scripts.events_module.event_filters import (
     get_personality_compatibility,
     event_for_location,
     event_for_season,
-    cat_for_event,
-    event_for_poi,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
@@ -254,15 +251,15 @@ class Patrol:
         if CatRank.MEDICINE_CAT in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.MEDICINE_CAT)
             self.patrol_leader = self.patrol_cats[index]
-            # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
-            # This prevents warrior from being treated as medicine cats in medicine cat patrols.
+        # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
+        # This prevents warrior from being treated as medicine cats in medicine cat patrols.
         elif CatRank.MEDICINE_APPRENTICE in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.MEDICINE_APPRENTICE)
             self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
-            # sets leader as patrol leader
+        # sets leader as patrol leader
         elif CatRank.LEADER in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.LEADER)
             self.patrol_leader = self.patrol_cats[index]
@@ -725,11 +722,6 @@ class Patrol:
                         )
                     continue
 
-                if not event_for_poi(patrol.poi):
-                    if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
-                        print("DEBUG: requested patrol does not meet constraints (PoI)")
-                    continue
-
                 if "hunting" not in patrol.types and patrol_type == "hunting":
                     if self.debug_patrol and self.debug_patrol == patrol.patrol_id:
                         print(
@@ -948,13 +940,9 @@ class Patrol:
 
         patrol_size = len(self.patrol_cats)
         total_exp = sum([x.experience for x in self.patrol_cats])
-        path = (
-            "patrol_generation.classic_difficulty_modifier"
-            if game.clan.game_mode == "classic"
-            else "patrol_generation.difficulty_modifier"
-        )
-
-        gm_modifier = get_config(game.clan, path)
+        gm_modifier = constants.CONFIG["patrol_generation"][
+            f"{game.clan.game_mode}_difficulty_modifier"
+        ]
 
         exp_adustment = (
             (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)
@@ -974,83 +962,22 @@ class Patrol:
 
         # Skill and trait stuff
         for kitty in self.patrol_cats:
-            # SUCCESS OUTCOME
-            is_exclusionary = any(
-                value.find("-") == 0 for value in success_outcome.stat_skill
+            hits = kitty.skills.check_skill_requirement_list(success_outcome.stat_skill)
+            success_chance += (
+                hits * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
             )
-            if is_exclusionary:
-                skills_to_check = [
-                    x.replace("-", "") for x in success_outcome.stat_skill
-                ]
-            else:
-                skills_to_check = success_outcome.stat_skill
 
-            hits = kitty.skills.check_skill_requirement_list(skills_to_check)
-
-            if is_exclusionary and not hits:
-                # if they don't have a disallowed skill, we increase the chance
-                success_chance += (
-                    1 * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
-                )
-            else:
-                # if they had a required skill, we increase
-                success_chance += (
-                    hits
-                    * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
-                )
-
-            # FAIL OUTCOME
-            is_exclusionary = any(
-                value.find("-") == 0 for value in fail_outcome.stat_skill
+            hits = kitty.skills.check_skill_requirement_list(fail_outcome.stat_skill)
+            success_chance -= (
+                hits * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
             )
-            if is_exclusionary:
-                skills_to_check = [x.replace("-", "") for x in fail_outcome.stat_skill]
-            else:
-                skills_to_check = fail_outcome.stat_skill
-            hits = kitty.skills.check_skill_requirement_list(skills_to_check)
 
-            if is_exclusionary and not hits:
-                # if they don't have a disallowed skill, we decrease chance (fail mod is a negative)
-                success_chance += (
-                    1 * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
-                )
-            else:
-                # if they had the required skill, we decrease chance (fail mod is a negative)
-                success_chance += (
-                    hits
-                    * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
-                )
-
-            # SUCCESS OUTCOME
-            is_exclusionary = any(
-                value.find("-") == 0 for value in success_outcome.stat_trait
-            )
-            if is_exclusionary:
-                trait_to_check = [
-                    x.replace("-", "") for x in success_outcome.stat_trait
-                ]
-            else:
-                trait_to_check = success_outcome.stat_trait
-
-            if (is_exclusionary and kitty.personality.trait not in trait_to_check) or (
-                kitty.personality.trait in trait_to_check
-            ):
+            if kitty.personality.trait in success_outcome.stat_trait:
                 success_chance += constants.CONFIG["patrol_generation"][
                     "win_stat_cat_modifier"
                 ]
 
-            # FAIL OUTCOME
-            is_exclusionary = any(
-                value.find("-") == 0 for value in fail_outcome.stat_trait
-            )
-            if is_exclusionary:
-                trait_to_check = [x.replace("-", "") for x in fail_outcome.stat_trait]
-            else:
-                trait_to_check = fail_outcome.stat_trait
-
-            if (is_exclusionary and kitty.personality.trait not in trait_to_check) or (
-                kitty.personality.trait in trait_to_check
-            ):
+            if kitty.personality.trait in fail_outcome.stat_trait:
                 success_chance += constants.CONFIG["patrol_generation"][
                     "fail_stat_cat_modifier"
                 ]
@@ -1217,5 +1144,5 @@ class Patrol:
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
-PATROL_WEIGHT_ADAPTION = constants.CONFIG["prey"]["patrol_weight_adaption"]
-PATROL_BALANCE = constants.CONFIG["prey"]["patrol_balance"]
+PATROL_WEIGHT_ADAPTION = constants.PREY_CONFIG["patrol_weight_adaption"]
+PATROL_BALANCE = constants.PREY_CONFIG["patrol_balance"]

@@ -338,7 +338,8 @@ class FamilyTreeScreen(Screens):
         x_dim = 80
         y_dim = 90
 
-        self.the_cat.create_inheritance_new_cat()
+        if not self.the_cat.inheritance:
+            self.the_cat.create_inheritance_new_cat()
 
         self.parents = self.the_cat.inheritance.get_parents()
         self.mates = self.the_cat.inheritance.get_mates()

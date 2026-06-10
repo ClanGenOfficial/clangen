@@ -230,7 +230,7 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
                 self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
             if event.key == pygame.K_LEFT:
@@ -241,7 +241,7 @@ class ListScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.clan_name = i18n.t("general.clan", name=game.clan.name)
+        self.clan_name = game.clan.displayname + "Clan"
 
         self.set_disabled_menu_buttons(["cats"])
         self.show_menu_buttons()

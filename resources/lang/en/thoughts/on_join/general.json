@@ -1,22 +1,15 @@
 [
     {
         "id": "newly_joined",
-        "strings": [
+        "thoughts": [
             "Is looking around the camp with wonder"
         ]
     },
     {
         "id": "newly_joined_kit",
-        "strings": [
+        "thoughts": [
             "Is snuggled safe in the nursery"
         ],
-        "involved_cats": {
-            "m_c": {
-                "status": [
-                    "kitten",
-                    "newborn"
-                ]
-            }
-        }
+        "main_status_constraint": ["kitten", "newborn"]
     }
 ]

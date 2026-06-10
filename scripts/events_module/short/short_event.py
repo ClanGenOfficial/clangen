@@ -1,5 +1,5 @@
 from random import choice, randrange, choices, sample
-from typing import List, Optional, Dict
+from typing import List, Optional
 
 import i18n
 
@@ -54,7 +54,6 @@ class ShortEvent:
         season: List[str] = None,
         sub_type: List[str] = None,
         tags: List[str] = None,
-        poi: Optional[Dict[str, List]] = None,
         text: str = "",
         new_accessory: List[str] = None,
         m_c=None,
@@ -86,7 +85,6 @@ class ShortEvent:
             )  # this increases the weight inversely to the number of season constraints
         self.sub_type = sub_type if sub_type else []
         self.tags = tags if tags else []
-        self.poi = poi if poi else {}
         self.text = text
         self.text_template = text
         self.new_accessory = new_accessory if new_accessory else []
@@ -227,7 +225,7 @@ class ShortEvent:
         self.dead_cat_objects.clear()
 
         if other_clan:
-            self.other_clan_name = i18n.t("general.clan", name=other_clan.name)
+            self.other_clan_name = f"{other_clan.name}Clan"
 
         self.all_involved_cat_ids.append(self.main_cat.ID)
 
@@ -441,7 +439,7 @@ class ShortEvent:
                     i18n.t("defaults.event_dead_outsider"),
                     main_cat=first_cat,
                 )
-            elif not first_cat.status.alive_in_player_clan:
+            elif first_cat.status.is_outsider:
                 n_c_index = self.new_cats.index(cat_list)
                 if (
                     f"n_c:{n_c_index}" in self.exclude_involved
@@ -886,8 +884,6 @@ class ShortEvent:
             game.clan.freshkill_pile.remove_freshkill(reduce_amount, take_random=True)
         if increase_amount != 0:
             game.clan.freshkill_pile.add_freshkill(increase_amount)
-
-        game.freshkill_event_list.append(self.text)
 
     def handle_herb_supply(self, block):
         """

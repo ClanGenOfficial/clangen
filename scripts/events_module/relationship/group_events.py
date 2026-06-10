@@ -1,11 +1,15 @@
 import os
+from collections import defaultdict
 from copy import deepcopy
+from email.policy import default
 from random import choice, shuffle
 
 import i18n.config
 
 from scripts.game_structure import constants
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatRank
+from scripts.cat.history import History
 from scripts.cat_relations.interaction import create_group_interaction, GroupInteraction
 from scripts.cat_relations.enums import RelType
 from scripts.event_class import Single_Event
@@ -123,8 +127,8 @@ class GroupEvents:
             interaction_str, abbreviations_cat_id
         )
 
-        interaction_str = i18n.t(
-            f"relationships.{inter_type}_postscript", text=interaction_str
+        interaction_str = interaction_str + i18n.t(
+            f"relationships.{inter_type}_postscript"
         )
 
         if len(chosen_interaction.general_reaction) > 0:
@@ -186,8 +190,6 @@ class GroupEvents:
 
             if interact.status_constraint.get("m_c"):
                 main_constraint_dict["status"] = interact.status_constraint.get("m_c")
-            if interact.age_constraint.get("m_c"):
-                main_constraint_dict["age"] = interact.age_constraint.get("m_c")
             if interact.trait_constraint.get("m_c"):
                 main_constraint_dict["trait"] = interact.trait_constraint.get("m_c")
             if interact.backstory_constraint.get("m_c"):

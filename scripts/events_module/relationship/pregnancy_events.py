@@ -17,7 +17,6 @@ from scripts.cat.enums import (
 from scripts.cat.names import names, Name
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.relationship import Relationship, RelType
-from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
@@ -63,7 +62,7 @@ class Pregnancy_Events:
         """Gets the biggest family of the clan."""
         biggest_family = None
         for cat in Cat.all_cats.values():
-            ancestors = list(cat.get_relatives())
+            ancestors = cat.get_relatives()
             if not biggest_family:
                 biggest_family = ancestors
                 biggest_family.append(cat.ID)
@@ -1027,32 +1026,19 @@ class Pregnancy_Events:
                 if second_kitten.ID == kitten.ID:
                     continue
                 start_relation = Relationship(kitten, second_kitten, False, True)
-                start_relation.romance += (
-                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["romance"]
-                    + y
-                )
-                start_relation.like += (
-                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["like"] + y
-                )
-                start_relation.respect += (
-                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["respect"]
-                    + y
-                )
-                start_relation.comfort += (
-                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["comfort"]
-                    + y
-                )
-                start_relation.trust += (
-                    constants.CONFIG["new_cat"]["sib_buff"]["cat1_to_cat2"]["trust"] + y
-                )
+                start_relation.like += 20 + y
+                start_relation.comfort += 10 + y
+                start_relation.trust += 10 + y
                 kitten.relationships[second_kitten.ID] = start_relation
+
+            kitten.create_inheritance_new_cat()  # Calculate inheritance.
 
         # check if the possible adoptive cat is not already in the family tree and
         # add them as adoptive parents if not
         final_adoptive_parents = []
         for adoptive_p in all_adoptive_parents:
             Cat.fetch_cat(adoptive_p).get_new_thought(CatThought.ON_BIRTH)
-            if adoptive_p not in inheritance_db.get_relatives(all_kitten[0].ID, True):
+            if adoptive_p not in all_kitten[0].inheritance.all_involved:
                 final_adoptive_parents.append(adoptive_p)
         if not adoptive_parents:
             cat.get_new_thought(CatThought.ON_BIRTH)
@@ -1063,6 +1049,8 @@ class Pregnancy_Events:
         if final_adoptive_parents:
             for kit in all_kitten:
                 kit.adoptive_parents = final_adoptive_parents
+                kit.inheritance.update_inheritance()
+                kit.inheritance.update_all_related_inheritance()
 
                 # update relationship for adoptive parents
                 for parent_id in final_adoptive_parents:
@@ -1084,7 +1072,6 @@ class Pregnancy_Events:
                             cats_to=[kit],
                             **parent_to_kit,
                         )
-        inheritance_db.load_inheritances(Cat)
 
         # check for more extended family members to create relationships with
         all_relatives: list = all_kitten[
@@ -1174,18 +1161,13 @@ class Pregnancy_Events:
                     rel_type = "negative"
 
                 # adds reaction text to type postscript and age postscript
-                new_relationship["log"] = i18n.t(
-                    f"relationships.{rel_type}_postscript",
-                    text=event_text_adjust(
-                        cat,
-                        choice(
-                            Pregnancy_Events.NEWBORN_REL_REACTIONS[f"{rel_type}_log"]
-                        ),
-                        main_cat=c,
-                        random_cat=kit,
-                        clan=game.clan,
-                    ),
-                )
+                new_relationship["log"] = event_text_adjust(
+                    cat,
+                    choice(Pregnancy_Events.NEWBORN_REL_REACTIONS[f"{rel_type}_log"]),
+                    main_cat=c,
+                    random_cat=kit,
+                    clan=game.clan,
+                ) + i18n.t(f"relationships.{rel_type}_postscript")
 
                 change_relationship_values(**new_relationship)
 

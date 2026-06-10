@@ -15,7 +15,6 @@ from scripts.cat.enums import (
 )
 from scripts.cat.names import names
 from scripts.cat_relations.enums import RelType
-from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
@@ -72,8 +71,6 @@ def create_new_cat_block(
             int(index) if index.isdigit() else index for index in adoptive_indexes
         ]
         for index in adoptive_indexes:
-            if isinstance(index, int):
-                index = f"n_c:{index}"
             if in_event_cats[index].ID not in adoptive_parents:
                 adoptive_parents.append(in_event_cats[index].ID)
                 adoptive_parents.extend(in_event_cats[index].mate)
@@ -466,7 +463,7 @@ def create_new_cat_block(
                 n_c.relationships[par.ID] = start_relation
 
             # UPDATE INHERITANCE
-        inheritance_db.load_inheritances(Cat)
+            n_c.create_inheritance_new_cat()
 
     return new_cats
 
@@ -952,21 +949,21 @@ def unpack_rel_block(
                     positive = True
 
         if positive:
-            effect = "relationships.positive_postscript"
+            effect = i18n.t("relationships.positive_postscript")
         else:
-            effect = "relationships.negative_postscript"
+            effect = i18n.t("relationships.negative_postscript")
 
         # Get log
         to_log = None
         from_log = None
         if "log" in block:
             to_log = (
-                i18n.t(effect, text=block["log"].get("cats_to", ""))
+                block["log"].get("cats_to", "") + effect
                 if "cats_to" in block["log"]
                 else None
             )
             from_log = (
-                i18n.t(effect, text=block["log"].get("cats_from", ""))
+                block["log"].get("cats_from", "") + effect
                 if "cats_from" in block["log"]
                 else None
             )
@@ -1117,9 +1114,8 @@ def change_relationship_values(
                 else:
                     created_rel_logs.update({single_cat_from: processed_log})
 
-                log_text = i18n.t(
+                log_text = processed_log + i18n.t(
                     "relationships.age_postscript",
-                    text=processed_log,
                     name=str(single_cat_from.name),
                     count=single_cat_from.moons,
                 )

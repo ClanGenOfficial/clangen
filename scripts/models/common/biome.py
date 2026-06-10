@@ -16,12 +16,3 @@ class Biome(Enum):
     not_wetlands = "-wetlands"
     desert = "desert"
     not_desert = "-desert"
-
-
-class BiomeNoExclusions(Enum):
-    mountainous = "mountainous"
-    plains = "plains"
-    forest = "forest"
-    beach = "beach"
-    wetlands = "wetlands"
-    desert = "desert"

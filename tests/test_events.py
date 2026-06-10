@@ -39,8 +39,8 @@ class TestEvents(unittest.TestCase):
         game.starclan = Afterlife()
         game.dark_forest = Afterlife()
         game.clan = Clan(
-            save_id=cls.test_clan_name,
-            display_name="Test",
+            name=cls.test_clan_name,
+            displayname="Test",
             leader=create_cat(CatRank.LEADER),
             deputy=create_cat(CatRank.DEPUTY),
             medicine_cat=create_cat(CatRank.MEDICINE_CAT),
@@ -84,8 +84,8 @@ class TestEvents(unittest.TestCase):
         """
         rempath = get_save_dir() + "/" + cls.test_clan_name
         shutil.rmtree(rempath)
-        if os.path.exists(rempath + "/clan.json"):
-            os.remove(rempath + "/clan.json")
+        if os.path.exists(rempath + "clan.json"):
+            os.remove(rempath + "clan.json")
 
         if cls.previously_loaded_clan:
             with open(Path(get_save_dir()) / "currentclan.txt", "w") as currentclanfile:
