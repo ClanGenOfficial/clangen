@@ -21511,7 +21511,7 @@
     },
     "frequency": 3,
     "chance_of_success": 60,
-    "intro_text": "p_l leads the patrol to a shallow pool along {POI/tag/water:flowing}, gently warmed by the newleaf sun. p_l peers into the water, searching for soft gelatinous clumps of frogspawn clinging to the reeds. ",
+    "intro_text": "p_l leads the patrol to a shallow pool by {POI/tag/water:flowing}, gently warmed by the newleaf sun. p_l peers into the water, searching for soft gelatinous clumps of frogspawn clinging to the reeds. ",
     "decline_text": "It seems there is no frogspawn here today, unlucky. The patrol returns to camp.",
     "success_outcomes": [
         {
