@@ -285,7 +285,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
             self.update_head_display()
             self.refresh_cat_images_and_info()
             self.refresh_text_and_buttons()
-            self.unchosen_become_outsiders()
 
     def exit_screen(self):
         self.selected_cat = None
@@ -781,11 +780,3 @@ class ChooseCatsScreen(MakeClanScreenBase):
             else cat.name.get_specsuffix_name(CatRank.LEADER)
         )
         return f"<b>{name}</b><br>{cat.genderalign_string}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('cat.personality.' + cat.personality.trait)}<br>{cat.skills.skill_string(short=True)}"
-
-    def unchosen_become_outsiders(self):
-        self.clan_info.starting_outsiders = []
-
-        for c in possible_cats:
-            if possible_cats[u] not in chosen_cats:
-                self.clan_info.starting_outsiders.append(c[u])
-                self.Cat.outside_cats.append(c[u])
