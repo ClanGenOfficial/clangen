@@ -21521,13 +21521,13 @@
     "art": "patrol_outcome_art"
         },
         {
-    "text": "p_l notices some speckled egg clusters and instructs the patrol to mark the area and discourage other predators.",
+    "text": "p_l notices some speckled egg clusters and instructs the patrol to mark the area to discourage other predators.",
     "exp": 20,
     "frequency": 4,
     "art": "patrol_outcome_art"
         },
         {
-    "text": "The patrol hears distant croaking echoing through the reeds. While there may not be frogspawn here, it is likely to be bountiful come greenleaf.",
+    "text": "The patrol hears distant croaking echo through the reeds. While there may not be frogspawn here, it is likely to be bountiful come greenleaf.",
     "exp": 20,
     "frequency": 4,
     "art": "patrol_outcome_art"
@@ -21539,7 +21539,7 @@
             6
         ]
     },
-    "text": "app1 is unimpressed. Why can't c_n collect and eat the frogspawn now? p_l explains the importance of patience: if they wait now, there will be more prey for the future for them to hunt.",
+    "text": "app1 is unimpressed. Why can't c_n collect and eat the frogspawn now? p_l explains the importance of patience: if they wait now, there will be more prey in the future for them to hunt.",
     "exp": 25,
     "frequency": 4,
     "relationships": [
@@ -21565,7 +21565,7 @@
             6
         ]
     },
-    "text": "Look app1! There are already tadpoles. p_l eagerly explains to app1 that in just a moon or two, the tadpoles will become succulent frogs ready to be hunted.",
+    "text": "Look, app1! There are already tadpoles. p_l eagerly explains to app1 that in just a moon or two, the tadpoles will become succulent frogs ready to be hunted.",
     "exp": 25,
     "frequency": 4,
     "relationships": [
@@ -21595,7 +21595,7 @@
     "text": "The patrol purrs in satisfaction to see a healthy amount of clusters growing. Meanwhile, s_c wonders to {PRONOUN/s_c/self} if the jelly-like eggs would be of any use to the medicine cats. ",
     "exp": 20,
     "frequency": 2,
-    "stat_skill": ["HEALER,1"],
+    "stat_skill": ["HEALER,0"],
     "art": "patrol_outcome_art"
 }
     ],
@@ -21607,7 +21607,7 @@
     "art": "patrol_outcome_art"
 },
         {
-    "text": "r_c discovers raccoon scat nearby and p_l finds no frogspawn. It seems like this area has been claimed already.",
+    "text": "r_c discovers raccoon scat nearby, and p_l finds no frogspawn. It seems like this area has been claimed already.",
     "exp": 5,
     "frequency": 4,
     "art": "patrol_outcome_art"
@@ -21619,7 +21619,7 @@
             6
         ]
     },
-    "text": "app1 reaches a paw into the spawning pool and hefts a glob out before p_l can stop them. Wasn't the point to <i>catch</i> prey? p_l exasperatedly explains their purpose to an embarrassed app1.",
+    "text": "app1 reaches a paw into the spawning pool and hefts a glob out before p_l can stop {PRONOUN/app1/object}. Wasn't the point to <i>catch</i> prey? p_l exasperatedly explains their purpose to an embarrassed app1.",
     "exp": 5,
     "frequency": 4,
     "relationships": [
@@ -21632,7 +21632,7 @@
             "values": ["like"],
             "amount": -5,
             "log": {
-                "cats_from": "cat_from was embarrassed that cat_to scolded them for a mistake on patrol."
+                "cats_from": "cat_from was embarrassed that cat_to scolded {PRONOUN/cat_from/object} for a mistake on patrol."
             }
         }
     ],
@@ -21645,7 +21645,7 @@
             6
         ]
     },
-    "text": "app1 reaches eagerly into the pool, scooping the spawn into {PRONOUN/app1/poss} paw. {PRONOUN/app1/subject/CAP} {VERB/app1/twist/twists} to show off their catch to p_l and send the glob flying into p_l's face. p_l angrily scolds {PRONOUN/app1/object} for wasting a valuable resource.",
+    "text": "app1 reaches eagerly into the pool, scooping the spawn into {PRONOUN/app1/poss} paw. {PRONOUN/app1/subject/CAP} {VERB/app1/twist/twists} to show off {PRONOUN/app1/poss} catch to p_l and send the glob flying into p_l's face. p_l scolds {PRONOUN/app1/object} for wasting a valuable resource.",
     "exp": 5,
     "frequency": 2,
     "relationships": [
@@ -21658,7 +21658,7 @@
             "values": ["like"],
             "amount": -15,
             "log": {
-                "cats_from": "cat_from was upset after cat_to yelled at {PRONOUN/cat_from/object} for a mistake.",
+                "cats_from": "cat_from was upset after cat_to berated {PRONOUN/cat_from/object} for a mistake.",
                 "cats_to": "cat_to was furious that cat_from hit {PRONOUN/cat_to/object} in the face with frogspawn."
             }
         }
@@ -21666,7 +21666,7 @@
     "art": "gen_embarrassed1_warrior_app"
 },
         {
-    "text": "As r_c looks into the water, the muddy bank below them gives way. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tumble/tumbles} in and {VERB/r_c/squash/squishes} the frogspawn below.",
+    "text": "As r_c looks into the water, the muddy bank below {PRONOUN/r_c/object} gives way. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tumble/tumbles} in and {VERB/r_c/squash/squashes} the frogspawn below.",
     "exp": 5,
     "frequency": 2,
     "relationships": [
