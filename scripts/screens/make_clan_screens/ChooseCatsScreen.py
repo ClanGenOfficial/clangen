@@ -412,7 +412,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             "general.clan",
             ui_scale(pygame.Rect((292, 100), (216, 50))),
             object_id=ObjectID("#text_box_30_horizcenter_vertcenter", "#dark"),
-            text_kwargs={"name": self.clan_info.name},
+            text_kwargs={"name": self.clan_info.display_name},
             manager=MANAGER,
         )
 

@@ -121,7 +121,7 @@ class SaveCheckWindow(GameWindow):
                 if game.clan is not None:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
-                    save_cats(switch_get_value(Switch.clan_name), Cat, game)
+                    save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
