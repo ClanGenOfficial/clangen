@@ -43,7 +43,7 @@
               "values": ["trust", "respect"],
               "amount": 10,
               "log": {
-                "cats_from": "n_c:0 is grateful that m_c has lead {PRONOUN/n_c:0/object} to c_n when StarClan tried to guide {PRONOUN/n_c:0/object} there."
+                "cats_from": "n_c:0 was grateful m_c led {PRONOUN/n_c:0/object} to c_n when StarClan tried to guide {PRONOUN/n_c:0/object} there."
             	}
             }
         ],
