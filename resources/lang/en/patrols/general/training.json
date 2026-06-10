@@ -21512,7 +21512,7 @@
     "frequency": 3,
     "chance_of_success": 60,
     "intro_text": "p_l leads the patrol to a shallow pool by {POI/tag/water:flowing}, gently warmed by the newleaf sun. p_l peers into the water, searching for soft gelatinous clumps of frogspawn clinging to the reeds. ",
-    "decline_text": "It seems there is no frogspawn here today, unlucky. The patrol returns to camp.",
+    "decline_text": "It seems there is no frogspawn here today. The patrol returns to camp.",
     "success_outcomes": [
         {
     "text": "p_l notes that the water is calm, warm, and sheltered. Conditions are perfect for the tadpoles to survive. Come greenleaf, c_n will have plenty of frogs to catch.",
