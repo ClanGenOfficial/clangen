@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "While wandering around the caves, m_c found a stranger who seemed to be searching for something. After an introduction, n_c_pre:0 tells m_c that crystals with stars in them have guided {PRONOUN/n_c:0/object} to this place, and that {PRONOUN/n_c:0/subject} {VERB/n_c:0/wish/wishes} to join. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/take/takes} on a new name.",
+        "event_text": "m_c finds a stranger who seems to be searching for something. n_c_pre:0 tells m_c that crystals with stars in them have guided {PRONOUN/n_c:0/object} here to join the Clan. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/take/takes} on a new name.",
         "m_c": {
             "age": [
                 "young adult",
