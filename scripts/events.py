@@ -7,6 +7,7 @@ TODO: Docs
 """
 import logging
 import random
+from scripts.config import get_config
 
 # pylint: enable=line-too-long
 import traceback
@@ -90,7 +91,7 @@ def one_moon():
 
     game.cur_events_list = []
     game.herb_events_list = []
-    game.freshkill_events_list = []
+    game.freshkill_event_list = []
     game.mediated = []
     switch_set_value(Switch.saved_clan, False)
     new_cat_invited = False
@@ -107,19 +108,13 @@ def one_moon():
         switch_set_value(Switch.no_able_left, False)
 
     # age up the clan, set current season
-    old_season = game.clan.current_season
     game.clan.age += 1
-    if game.clan.current_season != old_season:
-        # update audio to use new season ambiance
-        try:
-            game.audio.check(should_fade_out=True)
-        except AttributeError:
-            pass
+
     update_afterlife_temper()
     Pregnancy_Events.handle_pregnancy_age(game.clan)
     check_war()
 
-    if game.clan.game_mode in ("expanded", "cruel season") and game.clan.freshkill_pile:
+    if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
         # feed the cats and update the nutrient status
         relevant_cats = list(
             filter(
@@ -145,6 +140,7 @@ def one_moon():
     # Calling of "one_moon" functions.
     other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
     for cat in Cat.all_cats_list.copy():
+        cat.thought = None
         if cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
             one_moon_cat(cat)
         elif not cat.status.group or cat.status.is_other_clancat:
@@ -257,7 +253,7 @@ def one_moon():
             )
         game.dead_cats_to_grieve.clear()
 
-    if game.clan.game_mode in ("expanded", "cruel season") and game.clan.freshkill_pile:
+    if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
         # make a notification if the Clan does not have enough prey
         if (
             FRESHKILL_EVENT_ACTIVE
@@ -280,7 +276,7 @@ def one_moon():
         ),
     )
 
-    if game.clan.game_mode in ("expanded", "cruel season"):
+    if game.clan.game_mode in ("expanded", "cruel_season"):
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         med_fulfilled = medicine_cats_can_cover_clan(
             Cat.all_cats.values(), amount_per_med
@@ -315,7 +311,7 @@ def one_moon():
     # autosave
     if get_clan_setting("autosave") and game.clan.age % 5 == 0:
         try:
-            save_cats(switch_get_value(Switch.clan_name), Cat, game)
+            save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
             game.clan.save_clan()
             game.clan.save_pregnancy(game.clan)
             game.save_events()
@@ -622,11 +618,11 @@ def get_moon_freshkill():
 
     prey_amount = 0
     for cat in healthy_hunter:
-        lower_value = constants.PREY_CONFIG["auto_warrior_prey"][0]
-        upper_value = constants.PREY_CONFIG["auto_warrior_prey"][1]
+        lower_value = constants.CONFIG["prey"]["auto_warrior_prey"][0]
+        upper_value = constants.CONFIG["prey"]["auto_warrior_prey"][1]
         if cat.status.rank == CatRank.APPRENTICE:
-            lower_value = constants.PREY_CONFIG["auto_apprentice_prey"][0]
-            upper_value = constants.PREY_CONFIG["auto_apprentice_prey"][1]
+            lower_value = constants.CONFIG["prey"]["auto_apprentice_prey"][0]
+            upper_value = constants.CONFIG["prey"]["auto_apprentice_prey"][1]
 
         prey_amount += random.randint(lower_value, upper_value)
     game.freshkill_event_list.append(
@@ -668,9 +664,8 @@ def handle_focus():
             and cat.available_to_work()
         ]
 
-        warrior_amount = (
-            len(healthy_warriors)
-            * constants.CONFIG["focus"]["hunting"][CatRank.WARRIOR]
+        warrior_amount = len(healthy_warriors) * get_config(
+            game.clan, f"focus.hunting.{CatRank.WARRIOR}"
         )
 
         # handle apprentices
@@ -680,9 +675,8 @@ def handle_focus():
             if cat.status.rank == CatRank.APPRENTICE and cat.available_to_work()
         ]
 
-        app_amount = (
-            len(healthy_apprentices)
-            * constants.CONFIG["focus"]["hunting"][CatRank.APPRENTICE]
+        app_amount = len(healthy_apprentices) * get_config(
+            game.clan, f"focus.hunting.{CatRank.APPRENTICE}"
         )
 
         # finish
@@ -1012,7 +1006,6 @@ def one_moon_cat(cat):
         return
 
     if cat.dead:
-        cat.get_new_thought(CatThought.WHILE_DEAD)
         if cat.ID in game.just_died and cat.status.rank != CatRank.NEWBORN:
             # newborns are exempt from this bc if we increase the moons, they become a kitten without actually gaining the kitten rank
             cat.moons += 1
@@ -1043,7 +1036,7 @@ def one_moon_cat(cat):
 
     # handle nutrition amount
     # (CARE: the cats have to be fed before this happens - should be handled in "one_moon" function)
-    if game.clan.game_mode in ("expanded", "cruel season") and game.clan.freshkill_pile:
+    if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
         Condition_Events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
 
         if cat.dead:
@@ -1167,9 +1160,9 @@ def check_war():
                 break
 
         threshold = 10
-        if enemy_clan.temperament == "bloodthirsty":
+        if "bloodthirsty" in enemy_clan.temperament:
             threshold = 12
-        if enemy_clan.temperament in ["mellow", "amiable", "gracious"]:
+        if set(enemy_clan.temperament).intersection({"mellow", "amiable", "gracious"}):
             threshold = 7
 
         threshold -= int(game.clan.war["duration"])
@@ -1198,9 +1191,11 @@ def check_war():
     else:  # try to start a war if no war in progress
         for other_clan in game.clan.all_other_clans:
             threshold = 5
-            if other_clan.temperament == "bloodthirsty":
+            if "bloodthirsty" in other_clan.temperament:
                 threshold = 10
-            if other_clan.temperament in ["mellow", "amiable", "gracious"]:
+            if set(other_clan.temperament).intersection(
+                {"mellow", "amiable", "gracious"}
+            ):
                 threshold = 3
 
             if int(other_clan.relations) <= threshold and not int(
@@ -1232,7 +1227,10 @@ def check_war():
     # grab our war "notice" for this moon
     event = random.choice(war_events)
     event = ongoing_event_text_adjust(
-        Cat, event, other_clan_name=f"{enemy_clan.name}Clan", clan=game.clan
+        Cat,
+        event,
+        other_clan_name=i18n.t("general.clan", name=enemy_clan.name),
+        clan=game.clan,
     )
     game.cur_events_list.append(Single_Event(event, "other_clans"))
 
@@ -1758,11 +1756,13 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
 
         # Gather for backstories.json ----------------------------------------------------
         tags = []
-        if cat.backstory == ["abandoned1", "abandoned2", "abandoned3"]:
+        if (
+            cat.backstory
+            in BACKSTORIES["backstory_categories"]["abandoned_backstories"]
+        ):
             tags.append("abandoned")
         elif cat.backstory == "clanborn":
             tags.append("clanborn")
-
         temp = possible_ceremonies.intersection(ceremony_id_by_tag["general_backstory"])
 
         for t in tags:
@@ -2101,12 +2101,20 @@ def handle_injuries_or_general_death(cat):
         Condition_Events.handle_injuries(cat)
         return
 
+    use_war_modifier = (
+        game.clan.war["at_war"]
+        and switch_get_value(Switch.war_rel_change_type) != "rel_up"
+    )
+
     # chance to kill leader: 1/50 by default
+    leader_death_chance = get_config(game.clan, "death_related.leader_death_chance") - (
+        get_config(game.clan, "death_related.war_death_modifier_leader")
+        if use_war_modifier
+        else 0
+    )
+
     if (
-        not int(
-            random.random()
-            * game.get_config_value("death_related", "leader_death_chance")
-        )
+        not int(random.random() * leader_death_chance)
         and cat.status.is_leader
         and not cat.not_working()
     ):
@@ -2150,15 +2158,17 @@ def handle_injuries_or_general_death(cat):
             return True
 
     # final death chance and then, if not triggered, head to injuries
-    if (
-        not int(
-            random.random()
-            * game.get_config_value(
-                "death_related", f"{game.clan.game_mode}_death_chance"
-            )
-        )
-        and not cat.not_working()
-    ):  # 1/400
+    path = (
+        "death_related.classic_death_chance"
+        if game.clan.game_mode == "classic"
+        else "death_related.death_chance"
+    )
+    death_chance = get_config(game.clan, path) - (
+        get_config(game.clan, "death_related.war_death_modifier")
+        if use_war_modifier
+        else 0
+    )
+    if not int(random.random() * death_chance) and not cat.not_working():  # 1/400
         create_short_event(
             event_type="birth_death",
             main_cat=cat,

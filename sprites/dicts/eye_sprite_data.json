@@ -27,7 +27,17 @@
             "PALEYELLOW": "yellow",
             "GOLD": "yellow",
             "GREENYELLOW": "yellow",
-            "ORANGE": "yellow"
+            "ORANGE": "yellow",
+            "DAWN": "yellow",
+            "DUSK": "yellow"
+        },
+        {
+            "AURORA": "blue",
+            "FOREST": "green",
+            "MUSTARD": "yellow",
+            "EARTHY": "yellow",
+            "SEA": "blue",
+            "BLUEBELL": "blue"
         }
     ]
 }

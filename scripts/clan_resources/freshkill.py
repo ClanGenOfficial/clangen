@@ -6,7 +6,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
-from scripts.game_structure import game, constants
+from scripts.game_structure import constants
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
@@ -46,7 +46,7 @@ class Nutrition:
             value = 0
         self._current_score = value
         self.percentage = self._current_score / self.max_score * 100
-        text_config = constants.PREY_CONFIG["text_nutrition"]
+        text_config = constants.CONFIG["prey"]["text_nutrition"]
         self.nutrition_text = text_config["text"][0]
         for index in range(len(text_config["lower_range"])):
             if self.percentage >= text_config["lower_range"][index]:
@@ -76,12 +76,12 @@ class FreshkillPile:
             self.total_amount = total
         else:
             self.pile = {
-                "expires_in_4": constants.PREY_CONFIG["start_amount"],
+                "expires_in_4": constants.CONFIG["prey"]["start_amount"],
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = constants.PREY_CONFIG["start_amount"]
+            self.total_amount = constants.CONFIG["prey"]["start_amount"]
         self.timeskip_feed = False
         self.nutrition_info = {}
         self.living_cats = []
@@ -157,14 +157,6 @@ class FreshkillPile:
                 if not cat.status.rank.is_baby() and cat.status.alive_in_player_clan
             ]
         )
-        # increase the number for sick cats
-        if game.clan and game.clan.game_mode == "cruel season":
-            sick_cats = [
-                cat
-                for cat in living_cats
-                if cat.not_working() and "pregnant" not in cat.injuries
-            ]
-            needed_prey += len(sick_cats) * CONDITION_INCREASE
         # increase the number of prey which are missing for relevant queens and pregnant cats
         needed_prey += (len(relevant_queens) + len(pregnant_cats)) * (
             PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT[CatRank.WARRIOR]
@@ -202,7 +194,7 @@ class FreshkillPile:
         self.feed_cats(living_cats)
         self.timeskip_feed = False
         value_diff -= sum(self.pile.values())
-        event_list.append(i18n.t("hardcoded.consumed_prey", count=value_diff))
+        event_list.append(i18n.t("hardcoded.consumed_prey", count=round(value_diff, 2)))
         self._update_needed_food(living_cats)
         self.update_total_amount()
 
@@ -636,16 +628,6 @@ class FreshkillPile:
         nutrition.current_score = max_score
         nutrition.percentage = 100
 
-        # adapt sickness (increase needed amount)
-        if (
-            "pregnant" not in cat.injuries
-            and cat.not_working()
-            and game.clan
-            and game.clan.game_mode == "cruel season"
-        ):
-            nutrition.max_score += CONDITION_INCREASE * factor
-            nutrition.current_score = nutrition.max_score
-
         self.nutrition_info[cat.ID] = nutrition
 
 
@@ -654,15 +636,15 @@ class FreshkillPile:
 # ---------------------------------------------------------------------------- #
 
 
-ADDITIONAL_PREY = constants.PREY_CONFIG["additional_prey"]
-PREY_REQUIREMENT = constants.PREY_CONFIG["prey_requirement"]
-CONDITION_INCREASE = constants.PREY_CONFIG["condition_increase"]
-FEEDING_ORDER = constants.PREY_CONFIG["feeding_order"]
-HUNTER_BONUS = constants.PREY_CONFIG["hunter_bonus"]
-HUNTER_EXP_BONUS = constants.PREY_CONFIG["hunter_exp_bonus"]
-FRESHKILL_EVENT_TRIGGER_FACTOR = constants.PREY_CONFIG["base_event_trigger_factor"]
-MAL_PERCENTAGE = constants.PREY_CONFIG["nutrition_malnourished_percentage"]
-STARV_PERCENTAGE = constants.PREY_CONFIG["nutrition_starving_percentage"]
+ADDITIONAL_PREY = constants.CONFIG["prey"]["additional_prey"]
+PREY_REQUIREMENT = constants.CONFIG["prey"]["prey_requirement"]
+CONDITION_INCREASE = constants.CONFIG["prey"]["condition_increase"]
+FEEDING_ORDER = constants.CONFIG["prey"]["feeding_order"]
+HUNTER_BONUS = constants.CONFIG["prey"]["hunter_bonus"]
+HUNTER_EXP_BONUS = constants.CONFIG["prey"]["hunter_exp_bonus"]
+FRESHKILL_EVENT_TRIGGER_FACTOR = constants.CONFIG["prey"]["base_event_trigger_factor"]
+MAL_PERCENTAGE = constants.CONFIG["prey"]["nutrition_malnourished_percentage"]
+STARV_PERCENTAGE = constants.CONFIG["prey"]["nutrition_starving_percentage"]
 
-FRESHKILL_ACTIVE = constants.PREY_CONFIG["activate_death"]
-FRESHKILL_EVENT_ACTIVE = constants.PREY_CONFIG["activate_events"]
+FRESHKILL_ACTIVE = constants.CONFIG["prey"]["activate_death"]
+FRESHKILL_EVENT_ACTIVE = constants.CONFIG["prey"]["activate_events"]

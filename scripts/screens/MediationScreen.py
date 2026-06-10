@@ -330,7 +330,11 @@ class MediationScreen(Screens):
                 object_id=get_text_box_theme(),
             )
 
-            text = mediator.personality.trait + "\n" + mediator.experience_level
+            text = (
+                i18n.t(f"cat.personality.{mediator.personality.trait}")
+                + "\n"
+                + mediator.experience_level_string
+            )
 
             if mediator.not_working():
                 text += "\n" + i18n.t("general.cant_work")
