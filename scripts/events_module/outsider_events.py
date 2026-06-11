@@ -66,9 +66,6 @@ class OutsiderEvents:
                 clanname = i18n.t("general.clan", name=clanname)
                 text = text.replace("o_c_n", clanname)
                 death_history = death_history.replace("o_c_n", clanname)
-                game.cur_events_list.append(
-                    Single_Event(text, "other_clans", cat_dict={"m_c": cat})
-                    )
             elif cat.status.is_outsider:
                 text = random.choice(deaths[cat.status.social.value])
                 death_history = i18n.t(
@@ -79,6 +76,14 @@ class OutsiderEvents:
 
             cat.history.add_death(death_text=death_history)
             cat.die(grief_allowed=False)
-            game.cur_events_list.append(
-                Single_Event(text, "birth_death", cat_dict={"m_c": cat})
-            )
+            if cat.status.is_other_clancat or (
+                cat.status.is_former_clancat
+                and not cat.status.get_last_valid_group_id() == CatGroup.PLAYER_CLAN_ID
+            ):
+                game.cur_events_list.append(
+                    Single_Event(text, ["birth_death", "other_clans"], cat_dict={"m_c": cat})
+                )
+            else:
+                game.cur_events_list.append(
+                    Single_Event(text, "birth_death", cat_dict={"m_c": cat})
+                )
