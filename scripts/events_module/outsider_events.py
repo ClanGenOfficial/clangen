@@ -66,6 +66,9 @@ class OutsiderEvents:
                 clanname = i18n.t("general.clan", name=clanname)
                 text = text.replace("o_c_n", clanname)
                 death_history = death_history.replace("o_c_n", clanname)
+                game.cur_events_list.append(
+                    Single_Event(text, "other_clans", cat_dict={"m_c": cat})
+                    )
             elif cat.status.is_outsider:
                 text = random.choice(deaths[cat.status.social.value])
                 death_history = i18n.t(
