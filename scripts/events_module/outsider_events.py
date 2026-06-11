@@ -81,7 +81,9 @@ class OutsiderEvents:
                 and not cat.status.get_last_valid_group_id() == CatGroup.PLAYER_CLAN_ID
             ):
                 game.cur_events_list.append(
-                    Single_Event(text, ["birth_death", "other_clans"], cat_dict={"m_c": cat})
+                    Single_Event(
+                        text, ["birth_death", "other_clans"], cat_dict={"m_c": cat}
+                    )
                 )
             else:
                 game.cur_events_list.append(
