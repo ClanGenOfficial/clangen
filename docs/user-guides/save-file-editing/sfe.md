@@ -1,5 +1,7 @@
 # Introduction
 
+(currently up to date with 1.13.3)
+
 "Save file editing" is the modification of ClanGen's save files. This can range from something as simple as changing the appearance of a cat to inserting a future event.
 
 !!! warning
@@ -84,12 +86,12 @@ In the saves folder, you're going to have four major components:
 * **currentclan.txt**: Tracks which clan the game is currently continuing with.
 * **settings.json**: The menu settings file, aka settings that affect every clan.
 * **Clan save folder**: The main save folder for a clan.
+* **clan.json**: A clan's `clan.json`, which complies information like clan name, other_clans information, "clan_cats" list, etc.
 
 ### Clan Save Folder
 
 Within the Clan Save folder is many other folders and saves that are generated as the save processes. Please do not delete files (unless instructed to). Even if they appear empty, the code looks for specific files to generate the clan.
 
-* **clan.json**: A clan's `clan.json`, which complies information like clan name, other_clans information, "clan_cats" list, etc.
 * **conditions**: Holds every cat's individual conditions `JSON`. This will only generate if cats have conditions applied to them.
 * **disasters**: Keeps a record of Clan's disasters. You should have two files in this folder: primary.json and secondary.json (unimplemented feature)
 * **history**: Holds every cat's individual history `JSON`. Each cat will have a history file connected to them.
