@@ -182,8 +182,8 @@
   "cat_amount": 4,
   "interactions": [
 "m_c tracked a trail of muddy pawprints into the warrior's den, straight through the nests of r_c1, r_c2, and r_c3.",
-    "m_c returned to the warrior's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3’s nests.",
-    "m_c tromped into the warrior's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3’s nests."
+    "m_c returned to the warrior's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3's nests.",
+    "m_c tromped into the warrior's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3's nests."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
@@ -224,8 +224,8 @@
   "cat_amount": 4,
   "interactions": [
 "m_c tracked a trail of muddy pawprints into the elder's den, straight through the nests of r_c1, r_c2, and r_c3.",
-    "m_c returned to the elder's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3’s nests.",
-    "m_c tromped into the elder's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3’s nests."
+    "m_c returned to the elder's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3's nests.",
+    "m_c tromped into the elder's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3's nests."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
@@ -262,8 +262,8 @@
   "cat_amount": 4,
   "interactions": [
 "m_c tracked a trail of muddy pawprints into the apprentice's den, straight through the nests of r_c1, r_c2, and r_c3.",
-    "m_c returned to the apprentice's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3’s nests.",
-    "m_c tromped into the apprentice's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3’s nests."
+    "m_c returned to the apprentice's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3's nests.",
+    "m_c tromped into the apprentice's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3's nests."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {

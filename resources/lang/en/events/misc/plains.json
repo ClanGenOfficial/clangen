@@ -188,5 +188,43 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "pln_misc_bridge_eeriesounds_status",
+        "location": [
+            "plains:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c sits under the bridge while a Thundersnake travels above. Amidst the rumbling and roaring in {PRONOUN/m_c/poss} ears, {PRONOUN/m_c/subject} {VERB/m_c/swear/swears} {PRONOUN/m_c/subject} can hear prophecy_list_sound.",
+        "m_c": {
+            "status": ["leader", "medicine cat", "medicine cat apprentice"]
+        }
+    },
+    {
+        "event_id": "pln_misc_bridge_eeriesounds_skill",
+        "location": [
+            "plains:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c sits under the bridge while a Thundersnake travels above. Amidst the rumbling and roaring in {PRONOUN/m_c/poss} ears, {PRONOUN/m_c/subject} {VERB/m_c/swear/swears} {PRONOUN/m_c/subject} can hear prophecy_list_sound.",
+        "m_c": {
+            "age": [],
+            "status": [],
+            "relationship_status": [],
+            "skill": ["STAR,0", "DARK,0", "OMEN,0", "CLAIRVOYANT,0", "PROPHET,0"],
+            "trait": [],
+            "backstory": [],
+            "dies": false
+        }
     }
 ]
