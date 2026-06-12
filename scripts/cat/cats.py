@@ -27,6 +27,7 @@ from scripts.cat.enums import (
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
+from scripts.cat.sprites.load_sprites import Sprites
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
 from scripts.cat.status import Status, StatusDict
@@ -121,6 +122,18 @@ class Cat:
 
     all_cats_list: List[Cat] = []
     ordered_cat_list: List[Cat] = []
+
+    must_have_tail: list = []
+
+    for sprite_list in Sprites.PLANT_DATA["sprite_list"]:
+        for acc in sprite_list:
+            if sprite_list[acc] == "tail":
+                must_have_tail.append(acc)
+
+    for sprite_list in Sprites.WILD_DATA["sprite_list"]:
+        for acc in sprite_list:
+            if sprite_list[acc] == "tail":
+                must_have_tail.append(acc)
 
     # DEBUG SETTINGS
     disable_random = False
@@ -2049,22 +2062,12 @@ class Cat:
 
         # remove accessories if need be
         if "NOTAIL" in self.pelt.scars or "HALFTAIL" in self.pelt.scars:
-            self.pelt.accessory = tuple(
+            self.pelt.accessory = tuple (
                 acc
                 for acc in self.pelt.accessory
-                if acc
-                not in (
-                    "RED FEATHERS",
-                    "BLUE FEATHERS",
-                    "JAY FEATHERS",
-                    "GULL FEATHERS",
-                    "SPARROW FEATHERS",
-                    "CLOVER",
-                    "DAISY",
-                    "WISTERIA",
-                    "GOLDEN CREEPING JENNY",
-                )
+                if acc not in Cat.must_have_tail
             )
+            return self.pelt.accessory
 
         condition = PERMANENT[name]
         new_condition = False
