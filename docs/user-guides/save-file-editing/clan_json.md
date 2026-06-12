@@ -13,7 +13,7 @@ The `clan.json` holds information about a clan save, such as other_clan informat
 
 ### Simplified Explanation
 
-For those who need a refresher of the file, but don't need all of the details. Users who are new to editing save files, I heavily recommend reading through the expanded explanation section!
+For those who need a refresher of the file, but don't need all the details. Users who are new to editing save files, I heavily recommend reading through the expanded explanation section!
 
 |  `Code ` |  Explanation  |  Additional Information  |
 | :---- | :---- | :---- |
@@ -127,7 +127,7 @@ Cannot be a negative number - only within the 1-100 range
 
 `"mediated": [],`
 
-The grouping list of cats IDs who have been mediated for that moon through the mediator activity. It'll be listed within the [],
+The grouping list of cats IDs who have been mediated for that moon through the mediator activity. It'll be listed within [],
 
 * this is to ensure cats can't be mediated more than once in a moon. `"mediated": [["10","14"],["90","1"]]`
 
@@ -159,7 +159,7 @@ This is the temperament of your clan. Widely based on the facets of the clan, mo
 
 `"source_build": true,`
 
-The lines remembering what version/commit its updated to, and if its a source build. Will update on its own - do not edit.
+The lines remembering what version/commit its updated to, and if it is a source build. Will update on its own - do not edit.
 ```
 "custom_pronouns": [
     {
@@ -177,7 +177,7 @@ The lines remembering what version/commit its updated to, and if its a source bu
 
 These are the custom pronouns you made for cats in the current save. They'll be listed here as a resource for the save to grab onto and apply to other cats if applicable.
 
-* These do NOT move across saves (though you can copy paste them to other `clan.json`s)
+* These do NOT move across saves (though you can copy and paste them to other `clan.json`s)
 * If you wish to save pronouns permanently, this is the file path to add pronouns to: resources -> dicts -> pronouns.json
 
 `"leader": "21",`
@@ -238,7 +238,7 @@ This is the ID list of cats who died and faded over time.
 
 `"patrolled_cats": [],`
 
-Lists the cats who have been on a patrol for that moon. Their ID's would be listed within the [], 
+Lists the cats who have been on a patrol for that moon. Their ID's would be listed within [], 
 * This is to make sure one cat doesn't patrol more than once.
 
 ---
@@ -263,7 +263,7 @@ This holds all the other clans information necessary for them to function in the
 
 **"relations"**: The relationship between the player clan and other clan. 0 to 20 -- lower number = worse relations
 
-* Above or equal to 17 is ally, above 7 and under 17 is neutral, and under 7 is hostile.
+* Above or equal to 17 is an ally, above 7 and under 17 is neutral, and under 7 is hostile.
 
 **"temperament"**: The same choices the player clan has! You do not need to change facets
 
@@ -279,13 +279,13 @@ This holds all the other clans information necessary for them to function in the
     "duration": 0
 }
 ```
-This is the WAR line. If you want to change it so this clan is at war with your clan, change the following. 
+This is the WAR line. If you want to change it, so this clan is at war with your clan, change the following. 
 
 * "At_war": true, "enemy": "[name of other clan]", "duration": 1
 * You cannot be at war with more than one clan!
 
 
-} << --- this is ALWAYS be at the start and end of this json!
+} << --- this is ALWAYS be at the start and end of this json
 
 ### Changing Clan Temperament
 
@@ -328,7 +328,7 @@ The temperament for the player clan is calculated through multiplication, mean, 
 
 * Leader's facets are multiplied by 3, and deputies by 2.
 * Medicine cats facets are calculated to find the median
-* the rest of the cats (so every cat in the player clan thats not the leader, deputy, or a medicine cat) is calculated to find the median
+* the rest of the cats (so every cat in the player clan that is not the leader, deputy, or a medicine cat) is calculated to find the median
 
 Once all those are calculated, then they find the mean of all of those numbers to get the total.
 

@@ -2,7 +2,7 @@
 !!! warning
      Conditions files do not generate for cats who don't currently have an applied condition. If none of the cats have conditions, the conditions folder will not generate either.
 
-The conditions folder holds all of the cats applied conditions (injuries, illnesses, and permanent conditions). These are what you'll edit if you want to create cats with disabilities or if you want a cat to be pregnant.
+The conditions folder holds all the cats applied conditions (injuries, illnesses, and permanent conditions). These are what you'll edit if you want to create cats with disabilities or if you want a cat to be pregnant.
 
 ## Formatting
 
@@ -108,7 +108,7 @@ If you want to add more than one risk to the condition, place a comma after the 
 | "severity": "severe"  | "severe" and "major" disallow the cat from working. "minor" is simply a condition with little effect.  |
 | "mortality": 20,  |  "Mortality" is the chance (1/number) of a cat dying from this condition based on age. Setting the mortality to 0 means the cat will not die from the condition. |
 | "infectiousness": 0,  | The chance (1/number) of this condition spreading to other cats. Setting it to 0 makes it not infectious. |
-| "duration": 1,  | A count down to how many moons until the condition heals.  |
+| "duration": 1,  | A count-down to how many moons until the condition heals.  |
 |  "moon_start": 1, | The clan age moon the condition developed on.  |
 | "risks": [],  |  Conditions that may be given during the duration of the condition. |
 |  "event_triggered": false, | Should be left as false if save file editing. |
@@ -119,7 +119,7 @@ If you want to add more than one risk to the condition, place a comma after the 
 |---|---|
 | "severity": "severe"  | "severe" and "major" disallow the cat from working. "minor" is simply a condition with little effect.  |
 | "mortality": 20,  |  "Mortality" is the chance (1/number) of a cat dying from this condition based on age. Setting the mortality to 0 means the cat will not die from the condition. |
-| "duration": 1,  | A count down to how many moons until the condition heals.  |
+| "duration": 1,  | A count-down to how many moons until the condition heals.  |
 |  "moon_start": 1, | The clan age moon the condition developed on.  |
 | "illness_infectiousness": [],  | Unused code, please keep empty |
 | "risks": [],  |  Conditions that may be given during the duration of the condition. |

@@ -1,7 +1,7 @@
 !!! warning
      Future events can only be utilized as ShortEvents. Anything outside of that, such as pregnancy events, are not possible with future events.
 
-Documentation based around future events and its options are part of the [writers documentation](https://clangen.io/docs/dev/writing/future/).
+Documentation based around future events and its options are part of the [writer's documentation](https://clangen.io/docs/dev/writing/future/).
 
 Future Events give the game the ability to force short events in the future as a continuation from a previous short event or patrol. It also gives us, people who like to force things, the ability to force specific short events on specific cats based on our storylines for them. Such as murders, injuries, and more.
 
@@ -58,8 +58,8 @@ If you are unsure on how a future event would look like for your need, try to fi
       If the sub_type is not specified, it'll pull from *every* event with the same "event_type"
 
 - `"sub_type": []`: Could be types like murder_reveal, hidden_murder_reveal, etc. More than one sub_type can be used.
-- `"event_id": []`:  Specifying a specific future event(s) to trigger by ID, rather than a pool of events. Can be the same event ID as "parent_event"
-- `""excluded_event_id": []`: Excluding a specific future events(s) to trigger by ID
+- `"event_id": []`: Specifying a specific future event(s) to trigger by ID, rather than a pool of events. Can be the same event ID as "parent_event"
+- `""excluded_event_id": []`: Excluding a specific future event(s) to trigger by ID
 
 One parameter must be utilized (commonly "sub_type"), but you can use more than one if your heart desires.
 

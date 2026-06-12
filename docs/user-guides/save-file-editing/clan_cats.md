@@ -1,5 +1,4 @@
 ## clan_cats.json
-(including a simplified summary by line for those who need a refresher)
 
 The clan_cats is the data of every cat in the save file, including outsiders and dead cats.
 
@@ -28,8 +27,8 @@ Some parts of this section might need you to read expanded explanation because I
 |  `"pronouns": {"en":[]}, ` |  Pronouns the cat will use in text  |  Recommend changing while in game  |
 | ` "birth_cooldown": 0,  `|  Pregnancy cooldown  |  Highest is 6 unless the game_config is edited  |
 |  `"status": {[]},`  |  The standing a group status of a cat |  Please refer to expanded explanation for full details  |
-|  `"dark_forest_affinity": 0`  |  The cats affinity towards the dark forest. -# = less likely, +# = more likely |  Influences whether the cat goes to the DF when they die  |
-|  `"starclan_affinity": 0`  |  The cats affinity towards starclan. -# = less likely, +# = more likely |  Influences whether the cat goes to starclan when they die |
+|  `"dark_forest_affinity": 0`  |  The cat's affinity towards the dark forest. -# = less likely, +# = more likely |  Influences whether the cat goes to the DF when they die  |
+|  `"starclan_affinity": 0`  |  The cat's affinity towards starclan. -# = less likely, +# = more likely |  Influences whether the cat goes to starclan when they die |
 | ` "backstory": "clanborn",`  |  Cat's backstory  |  Options: [Backstories documentation](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#backstories)  |
 |  `"moons": 20, ` |  Age of the cat in moons  |  Age Ranges: [age & status](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#age-and-status)  |
 | ` "trait": "sneaky", ` |  Cat's trait  |  Options: [trait & skills](https://ClanGen.io/docs/dev/writing/reference/tag-lists/#traits-and-skills)  |
@@ -50,7 +49,7 @@ Some parts of this section might need you to read expanded explanation because I
 **Appearance**  
  Use [\[Dev Ver.\] Visual Sprite Guide](https://docs.google.com/spreadsheets/d/18T-VPGo4GJP35ECYnkzqKZThd6t8j7TwN97QspXtXY0/edit?gid=1808652489#gid=1808652489) for available options (unofficial resource)
 
-[ Pixel Cat Creator ](https://cgen-tools.github.io/pixel-cat-maker/)  is a great, unofficial resource to "preview" and build a sprite, similar to a customizer tool. May not have development options.
+[ Pixel Cat Creator ](https://cgen-tools.github.io/pixel-cat-maker/) is a great, unofficial resource to "preview" and build a sprite, similar to a customizer tool. May not have development options.
 
 |  `Code ` |  Explanation  |  Additional Information  |
 | :---- | :---- | :---- |
@@ -94,7 +93,7 @@ Some parts of this section might need you to read expanded explanation because I
 
 ### Expanded Explanation
 
-For those who might need ALL of the details for every line. It can be a long read, but to avoid player error, read carefully!
+For those who might need ALL the details for every line. It can be a long read, but to avoid player error, read carefully!
 
 [       ← This should ALWAYS be at the start and end of the entire `JSON`
 
@@ -122,7 +121,7 @@ This is the birth sex of the cat! "male" or "female". Cannot be custom.
 
 `"gender_align": "male",`
 
-This is the gender a cat was not born with but aligns themself as! This can be a custom alignment.
+This is the gender a cat was not born with but aligns themselves as! This can be a custom alignment.
 
 * All default ones: "male", "female", "trans male", "trans female", "non-binary"
 
@@ -319,7 +318,7 @@ Former mate(s). If there isn't a previous mate for the cat: `"previous_mates": [
 
 `"paralyzed": false,`
 
-Let's the game know that the cat is paralyzed and needs to use the exclusive paralyzed sprite.
+Lets the game know that the cat is paralyzed and needs to use the exclusive paralyzed sprite.
 
 `"no_kits": false,`
 
@@ -647,7 +646,7 @@ Use the explanation of `clan.json` to make sure you're removing the ID appropria
 You will also have to delete their ID from every other file in the clan save. Most notably: 
 
 - (expanded) nutrition_info.json
-	- Causes a freshkill timeskip crash when there's an "nonexistent" ID listed
+	- Causes a freshkill timeskip crash when there's a "nonexistent" ID listed
 - pregnancy.json
 	- To avoid a cat generating as pregnant
 - (complete delete) ID_conditions, ID_history, and ID_relations if applicable
@@ -661,7 +660,7 @@ This is a section specifically for how to edit the "status" part of the clan_cat
 
 ## Other Clan Cats
 
-To make a other clan cat, go to your ``clan_cats.json``. This is all we're going to change.
+To make an other clan cat, go to your ``clan_cats.json``. This is all we're going to change.
 
 Make your new cat/navigate to your desired cat and scroll down to their status code.
 ```json
@@ -822,7 +821,7 @@ After:
         }
 ```
 
-Once this has been deleted from the file, save your `clan_cats.json` and move to the cats history file. History folder > ID_history.json matching the ID of the cat you just edited.
+Once this has been deleted from the file, save your `clan_cats.json` and move to the cat's history file. History folder > ID_history.json matching the ID of the cat you just edited.
 
 Inside the history file, scroll until you see the line "died_by": [], - delete all the dead event information within that section until it reads as "died_by": [],
 
@@ -921,7 +920,7 @@ This will immediately make them part of the afterlife of your choice.
 (expanded) To avoid bugs, remove the cat's ID from `nutrition_info.json` in your clan save folder. This makes sure the game doesn't try to "feed" them and crash you on moonskip.
 
 
-Optionally, you can add a death message to the cats history file "died_by". Like below: 
+Optionally, you can add a death message to the cat's history file "died_by". Like below: 
 
 ```json
     "died_by": [

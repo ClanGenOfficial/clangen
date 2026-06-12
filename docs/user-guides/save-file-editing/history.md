@@ -127,7 +127,7 @@ You can find the strings for skills: [history.py](https://github.com/ClanGenOffi
     },
 ```
 
-`"trait"` is the influence directed toward the apprentices *facets*. Facets are a string of numbers that make up the cats trait, and they influence which trait the cat has.
+`"trait"` is the influence directed toward the apprentices *facets*. Facets are a string of numbers that make up the cat's trait, and they influence which trait the cat has.
 
 - the facets are "sociability", "stability", "aggression", and "lawfulness". [#how-facets-reflect-on-the-trait](https://ClanGen.io/docs/dev/writing/reference/trait-dictionary/#how-facets-reflect-on-the-trait)
 
@@ -150,7 +150,7 @@ Let's look specifically at the trait influences here. Trait influences are forma
 
 `"ID": {}`: ID of the mentor causing this influence.
 
-`"facetname"`: +/-# of how much it will change. For precaution sake, influence for traits should not pass 10/-10
+`"facetname"`: +/-# of how much it will change. For precaution’s sake, influence for traits should not pass 10/-10
 
 `"strings": []`: the flavor text determined by the above influence. You can find the strings for traits: [history.py](https://github.com/ClanGenOfficial/ClanGen/blob/development/scripts/cat/history.py) - `facet_influence_text`
 
@@ -270,7 +270,7 @@ Added in 1.13, this part of the history doesn't have an implemented feature just
 
 afterlife_acceptance text and their ID's are found in [afterlife.en.json](https://github.com/ClanGenOfficial/ClanGen/blob/development/resources/lang/en/cat/afterlife.en.json)
 
-Based on the cats afterlife affinity's in clan_cats.json and if they're a kitten rank, they'll generate with an "afterlife_acceptance" text when they die.
+Based on the cat's afterlife affinity's in clan_cats.json and if they're a kitten rank, they'll generate with an "afterlife_acceptance" text when they die.
 
 - Until the feature is fleshed out in how affinity is applied, the cats will get default texts based on where the afterlife guide currently is (starclan or dark forest)
 
@@ -305,7 +305,7 @@ When this condition duration is over, and if it rolls into death or a scar, then
 
 `"scar_text"`: The text that will be given if this cat is scarred due to the condition recovering. It would be transferred to "scar_events".
 
-`"other_cat"`: Tracks whether or not a cat was involved in the condition event. If r_c is used, the ID/cat listed here will be mentioned. If not, it'll be null. `"other_cat": null`
+`"other_cat"`: Tracks whether a cat was involved in the condition event. If r_c is used, the ID/cat listed here will be mentioned. If not, it'll be null. `"other_cat": null`
 
 You might be looking at the pronoun stuff and wondering what it is. These are the tags that makes plugging correct pronouns in text possible. [Pronoun Tags](https://ClanGen.io/docs/dev/writing/reference/pronoun-tags/)
 
@@ -349,7 +349,7 @@ Simply place a comma after the second to last bracket `}` in the file, then add 
     ],
 ```
 
-`"involved": "182",`: Tracks if a cat was involved in the death event. If r_c is used within the text, it'll pull the ID/cat listed here. If there isn't an involved cat, the line will be nulled. `"involved": null,`
+`"involved": "182",`: Tracks if a cat was involved in the death event. If r_c is used within the text, it'll pull the ID/cat listed here. If there isn't an involved cat, the line will be null. `"involved": null,`
 
 `"text"`: This is the death text you see in the history file. `m_c` is the cat that owns the history file.
 
@@ -400,7 +400,7 @@ When a cat gets a scar from an event, the text of how it happened will be logged
     ],
 ```
 
-`"involved": "182",`: Tracks if a cat was involved in the scar event. If r_c is used within the text, it'll pull the ID/cat listed here. If there isn't an involved cat, the line will be nulled. `"involved": null,`
+`"involved": "182",`: Tracks if a cat was involved in the scar event. If r_c is used within the text, it'll pull the ID/cat listed here. If there isn't an involved cat, the line will be null. `"involved": null,`
 
 `"text"`: This is the scar text you see in the history file. `m_c` is the cat that owns the history file.
 

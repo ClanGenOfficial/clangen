@@ -64,6 +64,6 @@ Allowing relationships to go negative allows the developers to sort of squash so
 ]
 ```
 
-"like" and "comfort" have surpassed the neutral pool, so therefore "no_longer_neutral" triggered and added those values to its list.
+"like" and "comfort" have surpassed the neutral pool, therefore "no_longer_neutral" is triggered and added those values to its list.
 
 ---
