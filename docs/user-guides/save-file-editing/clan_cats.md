@@ -619,6 +619,9 @@ Once it is confirmed that the game runs, you can go back to ``clan_cats.json`` a
 !!! warning
 	 When deleting a cat, make sure you're deleting their ID from every file in the save to avoid future bugs/strange behavior. Also delete any exclusive files (ID_conditions, ID_history), as they will not delete themself.
 
+!!! danger
+     You CANNOT delete the cat listed as the instructor (your Starclan guide). They are required for the save to function.
+
 Deleting a cat from a save file is a little complicated and leaves more room for error as you'll have to edit multiple files, depending on how involved the cat is in the save.
 
 ### editing clan_cats
