@@ -2,7 +2,7 @@
 !!! warning
      Conditions files do not generate for cats who don't currently have an applied condition. If none of the cats have conditions, the conditions folder will not generate either.
 
-The conditions folder holds all the cats applied conditions (injuries, illnesses, and permanent conditions). These are what you'll edit if you want to create cats with disabilities or if you want a cat to be pregnant.
+The conditions folder holds all applied conditions (injuries, illnesses, and permanent conditions) within the playerclan. This folder and its files are what you'll edit if you want to create cats with disabilities or if you want a cat to be pregnant.
 
 ## Formatting
 
@@ -12,11 +12,11 @@ The conditions file is boiled down to three main components:
 
 - `{}`: the dict holding all the information in the file. This has to be at the beginning `{` and end `}` of the json for it to properly work
 - `"condition type": {}`: the dict holding all the relevant conditions for the *specific condition type*.
-    - You can have multiple conditions types in a file, but you cannot have more than one of the SAME condition type. For example, you cannot have two `"illnesses": {}`'s, but having both `"illnesses": {}` and `"injuries": {}` is fine
+    - You cannot, for example, have `"illnesses": {}` present twice in the file. If you have two illness conditions, they'll both go within the one condition type section.
 - `"condition name": {}`: the dict holding all the relevant information for the *specific condition*.
     - This will be stuff like "one bad eye", "paralyzed", "weak leg" under the relevant "condition type", which in this case would be `"permanent condition": {}`
 
-When adding to the same dict, you need to remember your commas and the placement of your brackets. Remember to utilize [jsonlint.com](https://jsonlint.com/) to check if the formatting of the file is correct.
+When adding to the same dict, you need to remember your commas and the placement of your brackets. Remember to utilize [jsonlint.com](https://jsonlint.com/) to check if the formatting is correct.
 
 ## Condition Templates
 
@@ -99,34 +99,53 @@ What do risks look like? Risk have three main components:
     ],
 ```
 
-If you want to add more than one risk to the condition, place a comma after the `}` ending bracket, then paste the risk information.
+If you want to add more than one risk to the condition, place a comma after the `}` ending bracket and add on. For example:
+
+```json
+    "risks": [
+        {
+            "name": "sore",
+            "chance": 20
+        },
+        {
+            "name": "dehydrated",
+            "chance": 20
+        }
+    ],
+```
+
+Some conditions have their own default risks connected to them. However, you can theoretically apply additional risks to the condition (that it normally wouldn't have) if your heart desires.
 
 ### Explaining illnesses
 
 | Code  | Description  |
 |---|---|
-| "severity": "severe"  | "severe" and "major" disallow the cat from working. "minor" is simply a condition with little effect.  |
+| "severity": "severe"  | "severe" and "major" disallow the cat from working. "minor" means they are still allowed to work.  |
 | "mortality": 20,  |  "Mortality" is the chance (1/number) of a cat dying from this condition based on age. Setting the mortality to 0 means the cat will not die from the condition. |
-| "infectiousness": 0,  | The chance (1/number) of this condition spreading to other cats. Setting it to 0 makes it not infectious. |
+| "infectiousness": 0,  | The chance (1/number) of this condition spreading to other cats. 0 = not infectious |
 | "duration": 1,  | A count-down to how many moons until the condition heals.  |
 |  "moon_start": 1, | The clan age moon the condition developed on.  |
-| "risks": [],  |  Conditions that may be given during the duration of the condition. |
+| "risks": [],  |  Additional "small" Additional "small" conditions that may be given during the duration of the condition. |
 |  "event_triggered": false, | Should be left as false if save file editing. |
+
+Illnesses have their own information for every individual condition. Please reference the file [illnesses.json](https://github.com/ClanGenOfficial/clangen/blob/release_0.13.0/resources/dicts/conditions/illnesses.json) within resources > dicts > conditions when adding conditions to a cat
 
 ### Explaining injuries
 
 | Code  | Description  |
 |---|---|
-| "severity": "severe"  | "severe" and "major" disallow the cat from working. "minor" is simply a condition with little effect.  |
+| "severity": "severe"  | "severe" and "major" disallow the cat from working. "minor" means they are still allowed to work.  |
 | "mortality": 20,  |  "Mortality" is the chance (1/number) of a cat dying from this condition based on age. Setting the mortality to 0 means the cat will not die from the condition. |
 | "duration": 1,  | A count-down to how many moons until the condition heals.  |
 |  "moon_start": 1, | The clan age moon the condition developed on.  |
 | "illness_infectiousness": [],  | Unused code, please keep empty |
-| "risks": [],  |  Conditions that may be given during the duration of the condition. |
+| "risks": [],  |  Additional "small" conditions that may be given during the duration of the condition. |
 | "complication": null,  | Used in the situation where the condition is infected or festering. Add the condition "an infected wound" or "a festering wound" into illnesses, then add the corresponding "infected"/"festering" to replace null,  |
 | "cause_permanent": [],  | Possible given permanent conditions when an injury heals. Looks like "cause_permanent": ["lost a leg"],  |
 |  "event_triggered": false, | Should be left as false if save file editing. |
 |  "potential_scars": [] | A list of potential scars the cat can get from this condition once it heals. "potential_scars": ["HALFTAIL","NOTAIL"]. |
+
+Injuries have their own information for every individual condition. Please reference the file [injuries.json](https://github.com/ClanGenOfficial/clangen/blob/release_0.13.0/resources/dicts/conditions/injuries.json) within resources > dicts > conditions when adding conditions to a cat
 
 ### Explaining Permanent Conditions
 
@@ -138,10 +157,12 @@ If you want to add more than one risk to the condition, place a comma after the 
 |  "moon_start": 1, | The clan age moon the condition developed on. If "born_with": true, keep at 0 (zero).  |
 | "mortality": 0, |  "Mortality" is the chance (1/number) of a cat dying from this condition based on age. Setting the mortality to 0 means the cat will not die from the condition.   |
 | "illness_infectiousness": [],  | Unused code, please keep empty |
-| "risks": [],  |  Conditions that may be given during the duration of the condition. |
+| "risks": [],  |  Additional "small" conditions that may be given during the duration of the condition. |
 | "complication": null,  | Used in the situation where the condition is infected or festering. Add the condition "an infected wound" or "a festering wound" into illnesses, then add the corresponding "infected"/"festering" to replace null,  |
 |  "event_triggered": false, | Should be left as false if save file editing. |
 | "moons_with": 0,  | Tracks how many moons the cat had the perm condition, unused. |
+
+Permanent conditions have their own information for every individual condition. Please reference the file [permanent_conditions.json](https://github.com/ClanGenOfficial/clangen/blob/release_0.13.0/resources/dicts/conditions/permanent_conditions.json) within resources > dicts > conditions when adding conditions to a cat
 
 ## Adding Conditions
 
@@ -245,7 +266,7 @@ Now edit the new section for the condition you want. Go to the [conditions code 
 
 If the file doesn't already have the condition type for the condition you want to add, then you'll have to add it along with the condition.
 
-For example, I want to add permanent condition to a cat who already has fleas, which is an illness. I cannot add a permanent condition to "illnesses": {}, so I must add "permanent conditions": {}
+For example, I want to add a permanent condition to a cat who already has fleas, which is an illness. I cannot add a permanent condition to "illnesses": {}, so I must add "permanent conditions": {}
 
 Before editing:
 ```json
@@ -269,7 +290,7 @@ Before editing:
 }
 ```
 
-Copy from the templates provided here for the condition type you want to add (this case, "permanent conditions"). Put a comma after the second to last bracket `}`, and paste the template:
+Copy from the templates provided [here](#condition-templates) for the condition type you want to add (this case, "permanent conditions"). Put a comma after the second to last bracket `}`, and paste the template:
 
 ```json
 {
@@ -306,7 +327,7 @@ Copy from the templates provided here for the condition type you want to add (th
 }
 ```
 
-Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/ClanGen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want. For example, paralyzed would look like this:
+Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/ClanGen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition. For example, paralyzed would look like this:
 
 ```json
     ....
@@ -350,7 +371,7 @@ Now edit the new section for the condition you want. Go to the [conditions code 
 If there wasn't a condition in the file, then that probably means you had to create a condition file. If so, make sure it's named `ID_conditions`, it's a .json file type, and it's within the conditions folder.
 
 !!! tip
-     It's easier to duplicate a JSON file from elsewhere, rename it, and delete the contents due to many programs not providing the option to create JSON type files.
+     It's easier to duplicate a JSON file from elsewhere, rename it, move to the desired location, and delete the contents. Many programs do not provide the option to create .json files.
 
 Open the file and put `{}` into the file first. This is your holding dict that'll hold everything else in the file.
 
@@ -432,7 +453,7 @@ Find the condition file in the conditions folder that uses the cats ID.
 !!! info
      If the condition you want to delete is the only condition in the file, you can safely delete the file entirely. Right click the conditions file and click "delete".
 
-If the condition is the only condition in a condition type, do the following:
+If the condition is the only one present in the condition type, do the following:
 
 Let's say I want to get rid of fleas. Before editing:
 ```json
@@ -517,7 +538,7 @@ From "illnesses" until the bracket with the comma `},`, delete until it looks li
 ```
 ---
 
-If the condition is not the only condition in the condition type, do the following:
+If the condition is not the only one in the condition type, do the following:
 
 Let's say I want to delete heat stroke from the file. 
 
@@ -592,7 +613,7 @@ When editing pregnancies, there are two files involved: the pregnancy.json and t
 
 Find or create the conditions file for the cat. Unsure what their ID is? Go to the clan_cats, search their prefix (or information that makes them unique), then use the "ID" connected to them.
 
-Using the instructions provided previously for adding a condition, input the following code:
+Using the instructions provided previously for [adding a condition](#adding-conditions), input the following code:
 
 If you have to also add the condition type "injuries": {}:
 ```json
@@ -759,8 +780,7 @@ Before editing:
             "event_triggered": false,
             "potential_scars": []
         }
-    },
-    
+    }  
 }
 ```
 
@@ -788,6 +808,8 @@ After removing pregnancy from the injuries condition type:
     }
 }
 ```
+
+---
 
 If "pregnant" is the only condition under injuries and there's another condition type present:
 
@@ -875,6 +897,8 @@ After:
 ```json
 {}
 ```
+
+---
 
 If there's more than one pregnancy in the file:
 

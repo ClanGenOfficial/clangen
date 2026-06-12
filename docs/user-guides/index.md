@@ -8,7 +8,7 @@ Information on utilizing our documentation system can be found in the [Contribut
 
 - _[Palette Maps](removing-palette-maps.md)_
 
-    Instructions on how to remove Palette Maps (new collars rework).
+    Instructions on how to remove Palette Maps (collars rework).
 
 - _[Save File Editing](save-file-editing/sfe.md)_
 
