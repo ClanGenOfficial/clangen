@@ -14904,7 +14904,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 1,
-    "event_text": "m_c can tastes mousebile every time {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} about r_c.",
+    "event_text": "m_c tastes mouse-bile every time {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} about r_c.",
     "m_c": {
         "relationship_status": ["resents_only"]
     },
@@ -14981,7 +14981,8 @@
     "frequency": 1,
     "event_text": "m_c refuses to socialize or patrol with r_c.",
     "m_c": {
-        "relationship_status": ["runs_from_only"]
+        "relationship_status": ["runs_from_only"],
+        "status": ["-kitten", "-elder"]
     },
     "r_c": {
         "status": ["-kitten", "-elder"]
