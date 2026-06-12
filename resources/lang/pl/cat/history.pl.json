@@ -1,11 +1,11 @@
 {
     "en": {
-        "training_kit": "This cat has not begun training.",
-        "training_app": "This cat has not finished training.",
+        "training_kit": "Ten kot nie zaczął treningu.",
+        "training_app": "Ten kot nie skończył treningu.",
         "training_mentors": {
-            "zero": "This cat either did not have a mentor, or {PRONOUN/m_c/poss} mentor is unknown.",
-            "one": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by %{mentors}.",
-            "many": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} mentored by %{mentors}."
+            "zero": "Ten kot nie miał mentora, albo {PRONOUN\/m_c\/genitive} mentor jest nieznany.",
+            "one": "By{VERB\/m_c\/ł\/ła\/ło\/li\/ły} trenowan{ADJ\/m_c\/y\/a\/e\/i\/e} przez %{mentors}.",
+            "many": "By{VERB\/m_c\/ł\/ła\/ło\/li\/ły} trenowan{ADJ\/m_c\/y\/a\/e\/i\/e} przez %{mentors}.."
         },
         "training_mentor_trait_influence": "%{mentor} influenced {PRONOUN/m_c/object} to be more likely to %{influence}.",
         "training_mentor_skill_influence": "%{mentor} helped {PRONOUN/m_c/object} become better at %{influence}.",
@@ -13,24 +13,24 @@
         "graduation_early": "{PRONOUN/m_c/poss/CAP} training went so well that {PRONOUN/m_c/subject} graduated early at %{age} moons old.",
         "graduation_normal": "{PRONOUN/m_c/subject/CAP} graduated at %{age} moons old.",
         "graduation_late": "{PRONOUN/m_c/subject/CAP} graduated late at %{age} moons old.",
-        "mentored": "{PRONOUN/m_c/subject/CAP} mentored %{apprentices}.",
-         "comment": "Leader live strings for history text or text where m_c is included in the area its being called to",
-        "leader_death_all": "lost all of {PRONOUN/m_c/poss} lives",
+        "mentored": "{PRONOUN/m_c/subject/CAP} by{VERB\/m_c\/ł\/ła\/ło\/li\/ły} mentorem %{apprentices}.",
+        "comment": "Leader live strings for history text or text where m_c is included in the area its being called to",
+        "leader_death_all": "straci{VERB\/m_c\/ł\/ła\/ło\/li\/ły} wszystkie życia",
         "leader_death_cardinal": {
-            "one": "%{cardinal} life:",
-            "many": "%{cardinal} lives:"
+            "one": "%{cardinal} życie:",
+            "many": "%{cardinal} życia:"
         },
-        "leader_death_many_lives": "%{first_cardinal} through %{last_cardinal} lives:",
+        "leader_death_many_lives": "Od %{first_cardinal} do %{last_cardinal} żyć:",
         "leader_lost_lives": {
-            "one": "lost a life.",
-            "many": "lost %{count} lives."
+            "one": "straci{VERB\/m_c\/ł\/ła\/ło\/li\/ły} jedno życie.",
+            "many": "straci{VERB\/m_c\/ł\/ła\/ło\/li\/ły} %{count} żyć."
         },
 
         "comment_two": "Leader live strings for text where m_c is not included where its being called to, ie patrol outcome text",
-        "n_leader_death_all": "m_c lost all of {PRONOUN/m_c/poss} lives",
+        "n_leader_death_all": "m_c straci{VERB\/m_c\/ł\/ła\/ło\/li\/ły} wszystkie życia",
         "n_leader_lost_lives": {
-            "one": "m_c lost a life.",
-            "many": "m_c lost %{count} lives."
+            "one": "m_c straci{VERB\/m_c\/ł\/ła\/ło\/li\/ły} życie.",
+            "many": "m_c straci{VERB\/m_c\/ł\/ła\/ło\/li\/ły} %{count} żyć."
         },
         
         "regular_death": "%{cats} died.",

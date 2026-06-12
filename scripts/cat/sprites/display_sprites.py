@@ -86,6 +86,7 @@ def generate_sprite(
                 ],
                 (0, 0),
             )
+            print(cat.pelt.get_sprites_name() + cat.pelt.colour + cat_sprite)
         else:
             # Base Coat
             sprite_name = f"colours_{cat.pelt.tortie_base}{cat.pelt.colour}{cat_sprite}"
