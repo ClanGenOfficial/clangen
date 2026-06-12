@@ -2062,10 +2062,8 @@ class Cat:
 
         # remove accessories if need be
         if "NOTAIL" in self.pelt.scars or "HALFTAIL" in self.pelt.scars:
-            self.pelt.accessory = tuple (
-                acc
-                for acc in self.pelt.accessory
-                if acc not in Cat.must_have_tail
+            self.pelt.accessory = tuple(
+                acc for acc in self.pelt.accessory if acc not in Cat.must_have_tail
             )
 
         condition = PERMANENT[name]
