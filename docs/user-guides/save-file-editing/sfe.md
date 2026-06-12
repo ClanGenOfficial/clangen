@@ -119,9 +119,15 @@ The "malformed" error stems from a `JSON` file being invalid in its formatting. 
 
 Edit in the json validator until it outputs as valid, then convert all the changes to your local `JSON` game file. Try to run the game.
 
+Other errors that might be due to a malformed file:
+
+- `potential_history` after editing the history files
+- `"Leaf-bare"` after editing the clan.json file
+- `unmute_button` after editing events.json, future_events.json, or pregnancy.json
+
 ### Loading `clan.json`
 
-The error "error when loading `clan.json`" without a traceback is the default error popup when there's something incorrect with (primarily) ``clan.json`` or any file outside ``clan_cats.json``. Retrace your steps and double check your edits.
+The error "error when loading `clan.json`" without a traceback is the default error popup when there's something incorrect with (primarily) `clan.json` or any file outside `clan_cats.json`. Retrace your steps and double check your edits.
 
 ### Keyword:
 
@@ -130,20 +136,6 @@ The error "error when loading `clan.json`" without a traceback is the default er
 These errors are relatively straightforward. The "keyword" it mentions is the culprit, and typically you're able to just search it in the `clan_cats` file (or whichever file it errors for) and edit it from there.
 
 *For 1.13 beyond*: the error `keyword: 'pattern'` is due to trying to use a 1.13 save with an outdated version of ClanGen. Since the save files were changed massively in 1.13, 1.13 saves can no longer be used across versions.
-
-### potential_history
-
-`potential_history` is an error that comes from the history files. In my experience, due to the lack of malformed error for these files, it throws out `potential_history` is a substitute. Follow the same directions provided by the "malformed" heading above.
-
-### "Leaf-bare"
-
-Same as `potential_history`. Due to the lack of malformed error for the `clan.json`, it throws out `"Leaf-bare"` as a substitute. Follow the same directions provided by the "malformed" heading above.
-
-### unmute_button
-
-Same as `potential_history`. Due to the lack of malformed error for the events.json, future_events.json, and pregnancy.json, it throws out `unmute_button` as a substitute. Follow the same directions provided by the "malformed" heading above.
-
-ONLY follow this if you edited the files mentioned. This error is used in many other places and can mean different things.
 
 ### clan_bg
 
