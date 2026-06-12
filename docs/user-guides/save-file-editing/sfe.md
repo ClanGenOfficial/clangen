@@ -1,6 +1,6 @@
 # Introduction
 
-(currently up to date with 1.13.3)
+(currently up to date with 0.13.3)
 
 "Save file editing" is the modification of ClanGen's save files. This can range from something as simple as changing the appearance of a cat to inserting a future event.
 
@@ -135,7 +135,7 @@ The error "error when loading `clan.json`" without a traceback is the default er
 
 These errors are relatively straightforward. The "keyword" it mentions is the culprit, and typically you're able to just search it in the `clan_cats` file (or whichever file it errors for) and edit it from there.
 
-*For 1.13 beyond*: the error `keyword: 'pattern'` is due to trying to use a 1.13 save with an outdated version of ClanGen. Since the save files were changed massively in 1.13, 1.13 saves can no longer be used across versions.
+*For 0.13 beyond*: the error `keyword: 'pattern'` is due to trying to use a 0.13 save with an outdated version of ClanGen. Since the save files were changed massively in 0.13, 0.13 saves can no longer be used across versions.
 
 ### clan_bg
 
@@ -149,7 +149,7 @@ Here's a list of attribute errors for ClanGen and what they possibly mean.
 
 'NoneType' object has no attribute 'premul_alpha'
 
-- Check your cats sprite information. If they have a number in quotes rather than something similar to "newborn0", then you'll have to change them to reflect the new sprite data options for 1.13.
+- Check your cats sprite information. If they have a number in quotes rather than something similar to "newborn0", then you'll have to change them to reflect the new sprite data options for 0.13.
 
 'NoneType' object has no attribute 'name'
 

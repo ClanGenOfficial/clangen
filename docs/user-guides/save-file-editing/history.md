@@ -266,7 +266,7 @@ Lead ceremony texts are in game folder > resources > lang > en > events
 
 ## afterlife_acceptance
 
-Added in 1.13, this part of the history doesn't have an implemented feature just yet (purely flavor text until further notice). It is connected to the clan_cats.json afterlife affinity's.
+Added in 0.13, this part of the history doesn't have an implemented feature just yet (purely flavor text until further notice). It is connected to the clan_cats.json afterlife affinity's.
 
 afterlife_acceptance text and their ID's are found in [afterlife.en.json](https://github.com/ClanGenOfficial/ClanGen/blob/development/resources/lang/en/cat/afterlife.en.json)
 
