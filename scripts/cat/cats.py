@@ -2067,7 +2067,6 @@ class Cat:
                 for acc in self.pelt.accessory
                 if acc not in Cat.must_have_tail
             )
-            return self.pelt.accessory
 
         condition = PERMANENT[name]
         new_condition = False
