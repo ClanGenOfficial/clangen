@@ -31,7 +31,7 @@ For those who need a refresher of the file, but don't need all of the details. U
 |  `"reputation": 80,`  |  The relationship player clan has with outside cats  |  1-100, refer to expanded explanation for more detail.  |
 |  `"mediated": [],`  |  Records which pairs of cats were mediated  |  EX: `"mediated": [["10,"22"]],`  |
 |  `"starting_season": "Newleaf",`  |  The season the clan started on when generated.   |  "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"  |
-|  `"temperament": "stoic",`  |  "Personality" of the player clan  |  Calculated based on facets, the player needs to manually change cats facets. Refer to Changing Clan Temperaments   |
+|  `"temperament": ["stoic", "eager"],`  |  "Personality" of the player clan. In order ["aggression/sociability", "lawfulness/stability"]  |  Calculated based on facets, the player needs to manually change cats facets. Refer to Changing Clan Temperaments   |
 |  `"custom_pronouns": {},`  |  The area where custom pronouns are stored for the save  |  Refer to expanded explanation  |
 |  `"leader": "21",`  |  The ID of the clan's current leader.   |  Edit to `null,` for no leader  |
 | ` "leader_lives": 9,`  |  The amount of lives the current leader has. 1-9 only  |  Deletes itself when "leader" is null, be careful to add it back when adding a leader through editing  |
@@ -267,6 +267,8 @@ This holds all the other clans information necessary for them to function in the
 
 **"temperament"**: The same choices the player clan has! You do not need to change facets
 
+* It's good to note that temperaments are *in order*. The first temperament listed is the aggression/sociability scale, the second one is the lawfulness/stability
+
 **"chosen_symbol"**: The same choices the player clan has! Symbols generate to be the same as the clan's name. "symbol[PREFIX][#]". Use [\[Dev Ver.\] Visual Sprite Guide](https://docs.google.com/spreadsheets/d/18T-VPGo4GJP35ECYnkzqKZThd6t8j7TwN97QspXtXY0/edit?gid=1808652489#gid=1808652489) for the available symbols.
 
 ---
@@ -315,26 +317,39 @@ This is the table showing where the second temperament options stand on how "sta
 
 #### Calculating
 
-!!! to-do
-     explain further on how temperaments are calculated in the code, and how to edit the cats to guarantee specific temperaments
+**Afterlife temperaments:** calculated based off the guides facets and high ranked cats (leader, deputy, medicine cats)
 
-afterlife temperaments: calculated based off the guides facets and high ranked cats (leader, deputy, medicine cats)
+**Clan temperaments:**
 
-Pull the leader's facets. Multiply the individual facet numbers by 3.
+!!! tip
+     When referring to facets in this context, we are separating the four numbers and grouping them together. So aggression goes with aggression and onward. You're not adding all four numbers, then finding the mean/median.
 
-"3,1,0,5" > "9,3,0,15"
+The temperament for the player clan is calculated through multiplication, mean, and median of each type of facet. 
 
-Pull the deputy's facets. Multiply the individual facet numbers by 2.
+* Leader's facets are multiplied by 3, and deputies by 2.
+* Medicine cats facets are calculated to find the median
+* the rest of the cats (so every cat in the player clan thats not the leader, deputy, or a medicine cat) is calculated to find the median
 
-"10,4,2,9" > "20,8,4,18"
+Once all those are calculated, then they find the mean of all of those numbers to get the total.
 
-Calculate the median of medicine cats' individual facet numbers. 
-Calculate the median of all clan_cats individual facet numbers.
+##### For example
 
-Then find the mean of all the individual facet humers you go from the above instructions
+Facets are formatted as [aggression, sociability, lawfulness, stability]. Each number is separated from each other.
 
-You should then have 4 numbers. Round them to the nearest whole number (7.3 > 7)
+If we are calculating the leaders influence, we'd multiply all four numbers by 3. "3,2,8,10" > [3*3], [2*3], [8*3], [10*3] > "9,6,24,30"
 
-socialbity and aggression are a pair. 
+Same with deputy. We'd multiply all four numbers by 2. "1,2,9,5" > [1*2], [2*2], [9*2], [5*2] > "2,4,18,10"
 
-Stability and unlawfullness are a oair
+Let's say we only have one medicine cat. We wouldn't do anything with their facets (use them as is). If we have multiple, we'll calculate the median between all of them. 
+
+Aggression: 1 1 8 14 = 1 + 8 = 9/2 = 4.5
+... and so forth with the rest of them
+
+You'll do the same for other clan cats within the player clan. Calculate their median.
+
+With the total numbers, calculate the mean:
+
+Aggression [leader: 9] + [deputy: 2] + [medicine cats: 4.5] + [clan_cats: 9] = 24.5/4 = 6.1 (we'll round to 6)
+... and so forth with the rest of them
+
+If you want to change the temperament of your clan, you will need to change the facets and calculate them to make sure they fit the vision that you have. Sometimes, just changing the leader, deputy, and medicine cats is enough of a change but other times, you'll have to go further.
