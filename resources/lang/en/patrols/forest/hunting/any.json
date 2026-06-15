@@ -3763,55 +3763,6 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_fish1",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "gen_hunt_fish",
-        "min_cats": 1,
-        "max_cats": 3,
-        "min_max_status": {},
-        "frequency": 4,
-        "intro_text": "The patrol glimpses the shadow of a fish as they pad past a stream.",
-        "decline_text": "The patrol ignores the fish.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "r_c very carefully walks to the water's edge and waits for {PRONOUN/r_c/poss} chance. When the fish is near, {PRONOUN/r_c/subject} {VERB/r_c/hook/hooks} it out of the water with {PRONOUN/r_c/poss} claws. More fresh-kill!",
-                "exp": 10,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "r_c pads closer to the water's edge, careful to keep {PRONOUN/r_c/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/r_c/object} and darts too close. r_c's paw flashes into the water and the fish flops onto the bank. {PRONOUN/r_c/subject/CAP} {VERB/r_c/kill/kills} it and happily {VERB/r_c/carry/carries} it back to camp.",
-                "exp": 10,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 1
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
-                "exp": 0,
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
         "patrol_id": "fst_hunt_twolegdogsdeer1",
         "biome": [
             "forest"

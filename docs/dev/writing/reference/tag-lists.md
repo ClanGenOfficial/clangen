@@ -15,6 +15,71 @@ As this is allowed in some but *not all* tags, parameters that allow exclusionar
     For most parameters, there's no use in including both exclusionary and non-exclusionary values. Such as in our example, where we exclude `calm`. All other traits are automatically available, since they aren't `calm`, so we don't need to tag any non-exclusionary values. If we were to use two tags like this: `"trait": ["-calm", "arrogant"]` to specify that `arrogant` is required and `calm` is disqualifying, then we might as well just remove `-calm`. The `arrogant` tag on its own will automatically disqualify `calm` cats.
 
     Where you can expect to utilize both types of values are in parameters with more intermixed tagging. For example, relationship constraints. Here, we may wish to specify that a pair of cats must NOT be child/parent as well as have the `dislikes` tier. As such we would tag: `["-child/parent", "dislikes"]`. This mixes exclusionary and non-exclusionary in a logical manner. 
+
+
+### Locations
+>This controls the biome and camp the event appears in. If the event can appear in any location, use "any".  If you would like the event to occur in specific biomes, but do not want to restrict it to certain camps, then add the plain biome names.  If you would like the event to occur in specific camps, you can specify the camps by extending the biome name accordingly: `"biome:{camp1_camp2_camp3}"`.  In practice, this may look like the following examples: `"mountainous:camp1"`, `"beach:camp2_camp4"`, `"plains:camp1_camp2_camp3"`.  You can utilize [exclusionary tags](tag-lists.md#exclusionary-tags).
+
+| string        | use                              |
+|---------------|----------------------------------|
+| "mountainous" | appears in the mountainous biome |
+| "plains"      | appears in the plains biome      |
+| "forest"      | appears in the forest biome      |
+| "beach"       | appears in the beach biome       |
+| "wetlands"    | appears in the wetlands biome    |
+| "desert"      | appears in the desert biome      |
+| "any"         | appears in any biome             |
+
+Please have a look at the [full biome differences list](biomes.md) when thinking about writing patrols. 
+
+## General Tags
+These tags are used for more general filtering purposes.
+
+| string    | use                                                                                                                      |
+|-----------|--------------------------------------------------------------------------------------------------------------------------|
+| classic   | event only occurs in classic mode                                                                                        |
+| no_body   | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events |
+| clan_wide | if this is a murder reveal, use this tag to denote this event as informing the ENTIRE Clan of the murder.                |
+| romance   | marks event as being between two cats who are allowed romantic relations                                                 |
+| adoption  | marks event as being an adoption                                                                                         |
+
+> **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
+
+| string        | use                                                                                                                                                            |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| clan:{status} | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
+| clan:apps     | event only occurs if the clan has living apps, this includes ALL types of apps (medicine, mediator, and warrior)                                               |
+
+
+> **Leader Specific Tags** - since leaders can have 9 lives, it's helpful to have tags that indicate how an event is influenced by those lives.
+
+| leader event tag | use                                                                                                                                        |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| all_lives        | indicates the death event will take all the remaining lives                                                                                |
+| some_lives       | indicates the death event will take multiple lives, but that it will not take *all* lives. The leader will still be alive after the event. |
+| lives_remain     | indicates that the death event can only occur if the leader has multiple lives left. This leader will still be alive after the event.      |
+| high_lives       | this event will only occur if the leader has 7-9 lives left                                                                                |
+| mid_lives        | this event will only occur if the leader has 4-6 lives left                                                                                |
+| low_lives        | this event will only occur if the leader has 1-3 lives left                                                                                |
+
+!!! tip
+    Leader death events that are not tagged with `all_lives` or `some_lives` will take 1 life by default.
+
+> **Patrol Specific Tags**
+> 
+| tag                   | use                                                                                                                                                                                                                                                                                                                   |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| "romance"             | Marks the patrol as a romance patrol. Romance patrols are special, and are filtered to require patrol leader (p_l) and random cat (r_c) to to be potential mates or current mates. If any outcomes have effects on romantic-like, make sure this tag has been added, and the romantic-like is applied to p_l and r_c. |
+| "rom_two_apps"        | Does nothing on its own. When "romance" present, check for potential mate or current mate between app1 and app2, rather than p_l and r_c                                                                                                                                                                              |
+| "all_mentored"        | Checks if all apprentices (no matter if medicine cat or warrior) within a patrol has a mentor.                                                                                                                                                                                                                        |
+| "app{index}_mentored" | First checks if the app number (IE: app1, app2, app3, and so forth) is mentioned in patrol text, then checks if the specific apprentice assigned to the abbreviation has a mentor.                                                                                                                                    |
+| "disaster"            | These patrols are only possible when mass extinction is turned ON. Used to mark patrols where the entire patrol can die or become lost.                                                                                                                                                                               |
+| "new_cat"             | Used to mark when a new cat can join during this patrol. Marking these patrols allows for better balancing.                                                                                                                                                                                                           |
+| "halloween"           | Used to mark patrols that should only occur around halloween                                                                                                                                                                                                                                                          |
+| "april_fools"         | Used to mark patrols that should only occur on april fools                                                                                                                                                                                                                                                            |
+| "new_years"           | Used to mark patrols that should only occur on new years.                                                                                                                                                                                                                                                             |
+
+
 ## Conditions and Scars
 
 === "Taggable Injury Pools"
@@ -246,14 +311,6 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 
     > You can utilize [#exclusionary tags](#exclusionary-tags).
 
-
-=== "Life/Death Statuses"
-
-    > * `living`
-    * `starclan`
-    * `darkforest`
-    * `unknownresidence`
-
 === "Affiliation Statuses"
 
     > * `kittypet`
@@ -269,7 +326,27 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
     
     Not all statuses are utilized in all formats, please check the relevant event format guide for information on what statuses are or are not valid.
 
+## Groups
+You can utilize [exclusionary tags](#exclusionary-tags).
 
+| tag                 | use                                                                                                                                      |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `match:{cat}`       | Ensures this cat will match with the given cat. For example, the tag `match:r_c` will require this cat to be in the same group as `r_c`. |
+| `no_group`          | This cat is not part of any group.                                                                                                       |
+| `afterlife`         | This cat must be part of one of the afterlives (StarClan, Unknown Residence, or Dark Forest)                                             |
+| `player_clan`       | This cat must be part of the player_clan                                                                                                 |
+| `other_clan`        | This cat must be part of a non-player clan                                                                                               |
+| `starclan`          | This cat must be part of StarClan                                                                                                        |
+| `unknown_residence` | This cat must be part of the Unknown Residence                                                                                           |
+| `dark_forest`       | This cat must be part of the Dark Forest                                                                                                 |
+
+## Standings
+
+| tag       | meaning                                               |
+|-----------|-------------------------------------------------------|
+| `left`    | cat voluntarily left the group                        |
+| `lost`    | cat became forcibly separated from the group          |
+| `exiled`  | cat was forced out of the group intentionally         |
 
 ## Traits and Skills
 You can utilize [#exclusionary tags](#exclusionary-tags). They function the same way as non-exclusionary tags. For example, when you write "SWIMMER,2", a cat must be a good swimmer or above. If you write "<b>-</b>SWIMMER,2" a cat *cannot* be a good swimmer or above.

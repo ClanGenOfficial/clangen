@@ -47,7 +47,7 @@ def load_clan_settings():
 def save_clan_settings():
     safe_save(
         Path(get_save_dir())
-        / switch_get_value(Switch.clan_name)
+        / switch_get_value(Switch.clan_save_id)
         / "clan_settings.json",
         clan_settings,
     )
