@@ -774,7 +774,7 @@ class MediationScreen(Screens):
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 0), (100, 30))),
                 short_name,
-                object_id="#text_box_30_horizleft",
+                object_id=get_text_box_theme("#text_box_30_horizleft"),
                 container=self.selected_cat_elements[f"cat_container{cat_num}"],
                 anchors={
                     "top_target": self.selected_cat_elements[f"bubble_tail{cat_num}"],
@@ -787,7 +787,7 @@ class MediationScreen(Screens):
             ] = pygame_gui.elements.UITextBox(
                 self._get_cat_details(cat, other_cat),
                 ui_scale(pygame.Rect((0, 0), (100, -1))),
-                object_id="#text_box_22_horizleft_spacing_95",
+                object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
                 container=self.selected_cat_elements[f"cat_container{cat_num}"],
                 anchors={
                     "top_target": self.selected_cat_elements[f"cat_name{cat_num}"],
@@ -803,7 +803,7 @@ class MediationScreen(Screens):
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 0), (100, 30))),
                 short_name,
-                object_id="#text_box_30_horizright",
+                object_id=get_text_box_theme("#text_box_30_horizright"),
                 container=self.selected_cat_elements[f"cat_container{cat_num}"],
                 anchors={
                     "top_target": self.selected_cat_elements[f"bubble_tail{cat_num}"]
@@ -815,7 +815,7 @@ class MediationScreen(Screens):
             ] = pygame_gui.elements.UITextBox(
                 self._get_cat_details(cat, other_cat),
                 ui_scale(pygame.Rect((0, 0), (100, -1))),
-                object_id="#text_box_22_horizright_spacing_95",
+                object_id=get_text_box_theme("#text_box_22_horizright_spacing_95"),
                 container=self.selected_cat_elements[f"cat_container{cat_num}"],
                 anchors={
                     "top_target": self.selected_cat_elements[f"cat_name{cat_num}"]
