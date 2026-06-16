@@ -89,8 +89,8 @@ class LeaderDenScreen(Screens):
                     if f"button{i}" not in self.other_clan_selection_elements:
                         continue
                     if (
-                        event.ui_element
-                        == self.other_clan_selection_elements[f"button{i}"]
+                            event.ui_element
+                            == self.other_clan_selection_elements[f"button{i}"]
                     ):
                         self.focus_clan = game.clan.all_other_clans[i]
                         self.update_other_clan_focus()
@@ -194,8 +194,8 @@ class LeaderDenScreen(Screens):
         if self.no_leader or game.clan.leader.not_working():
             if game.clan.deputy:
                 if (
-                    not game.clan.deputy.not_working()
-                    and game.clan.deputy.status.alive_in_player_clan
+                        not game.clan.deputy.not_working()
+                        and game.clan.deputy.status.alive_in_player_clan
                 ):
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
@@ -214,23 +214,23 @@ class LeaderDenScreen(Screens):
                         i
                         for i in Cat.all_cats.values()
                         if not i.dead
-                        and not i.not_working()
-                        and i.status.rank.is_any_mediator_rank()
+                           and not i.not_working()
+                           and i.status.rank.is_any_mediator_rank()
                     ]
                     if mediators:
                         self.helper_cat = mediators[0]
                     else:
                         self.helper_cat = None
             if (
-                not self.helper_cat
+                    not self.helper_cat
             ):  # if no meds or mediators available, literally anyone please anyone help
                 adults = [
                     i
                     for i in Cat.all_cats.values()
                     if i.status.alive_in_player_clan
-                    and not i.not_working()
-                    and i.status.rank
-                    not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
+                       and not i.not_working()
+                       and i.status.rank
+                       not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
                 adults = sorted(adults, key=lambda x: x.experience, reverse=True)
 
@@ -787,7 +787,7 @@ class LeaderDenScreen(Screens):
         )
 
     def _compare_temper(
-        self, player_temper: str, other_temper: str, temper_dict: dict
+            self, player_temper: str, other_temper: str, temper_dict: dict
     ) -> float:
         """
         compares two temper ints and finds the chance of failure between them, adds additional modifiers for distance
@@ -827,13 +827,13 @@ class LeaderDenScreen(Screens):
         if player_y_axis != other_y_axis:
             fail_chance += 0.1
             if (
-                player_y_axis == temper_dict_keys[0]
-                and other_y_axis == temper_dict_keys[-1]
+                    player_y_axis == temper_dict_keys[0]
+                    and other_y_axis == temper_dict_keys[-1]
             ):
                 fail_chance += 0.15
             elif (
-                other_y_axis == temper_dict_keys[0]
-                and player_y_axis == temper_dict_keys[-1]
+                    other_y_axis == temper_dict_keys[0]
+                    and player_y_axis == temper_dict_keys[-1]
             ):
                 fail_chance += 0.15
 
@@ -1013,7 +1013,7 @@ class LeaderDenScreen(Screens):
         )
 
         if self.focus_cat.status.is_outsider and not self.focus_cat.status.is_lost(
-            CatGroup.PLAYER_CLAN_ID
+                CatGroup.PLAYER_CLAN_ID
         ):
             self.focus_button["invite"].set_text("screens.leader_den.invite")
         else:
@@ -1023,7 +1023,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_outsider_button_container.enable()
         if (
-            self.focus_cat.age == "newborn" or self.no_leader
+                self.focus_cat.age == "newborn" or self.no_leader
         ):  # not allowed to do things to newborns
             self.focus_outsider_button_container.disable()
 
@@ -1084,14 +1084,14 @@ class LeaderDenScreen(Screens):
             i
             for i in Cat.all_cats.values()
             if not i.dead
-            and i.status.is_outsider
-            and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
-            and (
-                CatStanding.KNOWN
-                in i.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID)
-                or CatStanding.MEMBER
-                in i.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID)
-            )
+               and i.status.is_outsider
+               and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
+               and (
+                       CatStanding.KNOWN
+                       in i.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID)
+                       or CatStanding.MEMBER
+                       in i.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID)
+               )
         ]
 
         # separate them into chunks for the pages
