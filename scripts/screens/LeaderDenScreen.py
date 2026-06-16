@@ -644,8 +644,6 @@ class LeaderDenScreen(Screens):
             anchors={"centerx": "centerx"},
         )
 
-        x_pos = 10
-        y_pos = 182
         relation = self.focus_clan.get_standing()
 
         self.focus_clan_elements["clan_name"] = pygame_gui.elements.UILabel(
