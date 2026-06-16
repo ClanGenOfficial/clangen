@@ -278,7 +278,7 @@ class LeaderDenScreen(Screens):
             anchors={"top_target": self.screen_elements["lead_image"]},
         )
         self.screen_elements["outsider_notice_text"] = pygame_gui.elements.UITextBox(
-            relative_rect=ui_scale(pygame.Rect((68, (outsider_notice_y)), (445, -1))),
+            relative_rect=ui_scale(pygame.Rect((68, outsider_notice_y), (445, -1))),
             html_text=f"screens.leader_den.outsider_notice_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             visible=False,
