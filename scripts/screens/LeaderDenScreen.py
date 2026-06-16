@@ -693,7 +693,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_frame_elements["negative_interaction"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 265), (121, 30))),
-            "provoke",
+            "screens.leader_den.provoke",
             get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
             object_id="@buttonstyles_squoval",
             container=self.focus_clan_container,
@@ -704,7 +704,7 @@ class LeaderDenScreen(Screens):
         )
         self.focus_frame_elements["positive_interaction"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 305), (121, 30))),
-            "befriend",
+            "screens.leader_den.befriend",
             get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
             container=self.focus_clan_container,
             object_id="@buttonstyles_squoval",
