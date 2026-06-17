@@ -1,6 +1,6 @@
 from collections import deque
 from random import choice
-from typing import List
+from typing import List, Optional
 
 import i18n
 import pygame.transform
@@ -82,6 +82,9 @@ class MediationScreen(Screens):
                 # if no cats are selected, we reset the tab to All
                 if not self.selected_cat0 and self.tab_view != "all":
                     self.tab_view = "all"
+                    self.elements["all_tab"].disable()
+                    self.elements["neg_tab"].enable()
+                    self.elements["pos_tab"].enable()
                     self.update_list_cats()
                 self.update_selected_cats()
             elif event.ui_element == self.elements["remove_cat1"]:
@@ -455,7 +458,7 @@ class MediationScreen(Screens):
         else:
             NoMediatorsWindow()
 
-    def random_cat(self) -> Cat:
+    def random_cat(self) -> Optional[Cat]:
         """
         Return a random cat to influence
         """
@@ -465,6 +468,10 @@ class MediationScreen(Screens):
             ]
         else:
             random_list = self.all_cats_list
+
+        if not random_list:
+            return None
+
         return choice(random_list)
 
     def update_mediator_info(self):
