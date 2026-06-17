@@ -459,7 +459,7 @@ class LeaderDenScreen(Screens):
                 manager=MANAGER,
             )
             self.other_clan_selection_elements[f"button{i}"] = UIImageButton(
-                ui_scale(pygame.Rect((0, 0), (134, 174))),
+                ui_scale(pygame.Rect((0, -1), (134, 158))),
                 "",
                 object_id="#other_clan_select_button",
                 starting_height=2,
