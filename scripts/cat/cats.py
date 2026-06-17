@@ -123,18 +123,6 @@ class Cat:
     all_cats_list: List[Cat] = []
     ordered_cat_list: List[Cat] = []
 
-    must_have_tail: list = []
-
-    for sprite_list in Sprites.PLANT_DATA["sprite_list"]:
-        for acc in sprite_list:
-            if sprite_list[acc] == "tail":
-                must_have_tail.append(acc)
-
-    for sprite_list in Sprites.WILD_DATA["sprite_list"]:
-        for acc in sprite_list:
-            if sprite_list[acc] == "tail":
-                must_have_tail.append(acc)
-
     # DEBUG SETTINGS
     disable_random = False
 
