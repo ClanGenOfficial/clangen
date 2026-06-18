@@ -1,7 +1,7 @@
 [
     {
         "id": "warrior_apprentice_gen",
-        "thoughts": [
+        "strings": [
             "Feels worn out from training",
             "Wonders if {PRONOUN/m_c/subject}'ll be allowed to go night-hunting soon",
             "Is resting in the sun after a long day of training",
@@ -73,7 +73,7 @@
     },
     {
         "id": "warrior_apprentice_to_alive_leader_or_deputy",
-        "thoughts": [
+        "strings": [
             "Is panicking as r_c approaches the disheveled apprentices' den",
             "Is attempting to be composed whenever r_c says {PRONOUN/r_c/subject} will oversee training today",
             "Longs to taste the power r_c has",
@@ -93,33 +93,41 @@
             "Is asking r_c about {PRONOUN/r_c/poss} duties",
             "Offers r_c {PRONOUN/m_c/poss} catch out of respect"
         ],
-        "random_status_constraint": [
-            "leader",
-            "deputy"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "leader",
+                    "deputy"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_leader",
-        "thoughts": [
+        "strings": [
             "Believes {PRONOUN/m_c/subject} could become a leader like r_c",
             "Insists that, one day, {PRONOUN/m_c/subject} will stand in r_c's position",
             "Refuses to listen to anyone, including r_c",
             "Pays attention to how r_c commands c_n",
             "Admires r_c's ability to stand unwavering above c_n"
         ],
-        "random_status_constraint": [
-            "leader"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "leader"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_deputy",
-        "thoughts": [
+        "strings": [
             "Wants r_c to assign {PRONOUN/m_c/object} to the next patrol",
             "Is watching and learning from r_c",
             "Wishes r_c would let {PRONOUN/m_c/object} sleep, instead of assigning {PRONOUN/m_c/object} to the dawn patrol",
@@ -137,16 +145,20 @@
             "Shows off in front of r_c in hopes {PRONOUN/r_c/subject} {VERB/r_c/put/puts} in a good word for {PRONOUN/m_c/object}",
             "Believes {PRONOUN/m_c/subject} could become a deputy like r_c"
         ],
-        "random_status_constraint": [
-            "deputy"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "deputy"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_warrior",
-        "thoughts": [
+        "strings": [
             "Is watching and learning from r_c",
             "Is asking r_c questions about warrior life",
             "Is re-enacting a move that {PRONOUN/m_c/subject} saw r_c do",
@@ -156,34 +168,42 @@
             "Asks r_c for advice on passing an assessment",
             "Is watching r_c train"
         ],
-        "random_status_constraint": [
-            "warrior"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_clanborn_warrior",
-        "thoughts": [
+        "strings": [
             "Wonders if r_c was a good apprentice"
         ],
-        "random_backstory_constraint": [
-            "clan_founder_backstories",
-            "clanborn_backstories",
-            "outsider_roots_backstories",
-            "half_clan_backstories"
-        ],
-        "random_living_status": [
-            "living"
-        ],
-        "random_status_constraint": [
-            "warrior"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "-afterlife"
+                ],
+                "backstory": [
+                    "clan_founder_backstories",
+                    "clanborn_backstories",
+                    "outsider_roots_backstories",
+                    "half_clan_backstories"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_medcat",
-        "thoughts": [
+        "strings": [
             "Can't get the taste of herbs out of {PRONOUN/m_c/poss} mouth after helping r_c",
             "Is gagging after helping r_c",
             "Glances at r_c tending to herbs and feels thankful to have chosen the path of a warrior",
@@ -203,17 +223,21 @@
             "Wonders how r_c can handle having so many lives rely on {PRONOUN/r_c/object}",
             "Is curious how plants of all things can heal wounds"
         ],
-        "random_living_status": [
-            "living"
-        ],
-        "random_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_clanborn_warrior",
-        "thoughts": [
+        "strings": [
             "Wonders if r_c was a good apprentice",
             "Asks r_c what the Clan was like when {PRONOUN/r_c/subject} {VERB/r_c/were/was} {PRONOUN/m_c/poss} age",
             "Asks r_c if the apprentices' den has changed since {PRONOUN/r_c/subject} {VERB/r_c/were/was} an apprentice",
@@ -221,22 +245,26 @@
             "Is jumpy about a particular spot in the apprentices' den r_c claimed was haunted",
             "Is listening to a story r_c heard when {PRONOUN/r_c/subject} {VERB/r_c/were/was} a kit"
         ],
-        "random_backstory_constraint": [
-                "clan_founder_backstories",
-                "clanborn_backstories",
-                "outsider_roots_backstories",
-                "half_clan_backstories"
-        ],
-        "random_living_status": [
-            "living"
-        ],
-        "random_status_constraint": [
-            "warrior"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "-afterlife"
+                ],
+                "backstory": [
+                    "clan_founder_backstories",
+                    "clanborn_backstories",
+                    "outsider_roots_backstories",
+                    "half_clan_backstories"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_apprentice",
-        "thoughts": [
+        "strings": [
             "Is learning how to hunt with r_c",
             "Teases r_c for missing an easy catch",
             "Is happy that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to train with r_c",
@@ -257,34 +285,44 @@
             "Asks r_c to train with {PRONOUN/m_c/object} soon",
             "Is in a squabble about the best time to hunt"
         ],
-        "random_status_constraint": [
-            "apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_nonwar_app",
-        "thoughts": [
+        "strings": [
             "Can't understand why r_c doesn't want to learn to fight",
             "Shows r_c some defensive moves",
             "Promises r_c that once {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a warrior, {PRONOUN/m_c/subject}'ll take care of {PRONOUN/r_c/object}"
         ],
-        "main_status_constraint": [
-            "apprentice"
-        ],
-        "random_status_constraint": [
-            "medicine cat apprentice",
-            "mediator apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat apprentice",
+                    "mediator apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_elder",
-        "thoughts": [
+        "strings": [
             "Is dreading having to clean the elders' den later",
             "Is picking ticks off of r_c",
             "Listens to a story from r_c",
@@ -299,19 +337,23 @@
             "Is bringing r_c a nice piece of prey",
             "Is complaining about picking ticks out of the elders' pelts"
         ],
-        "random_status_constraint": [
-            "elder"
-        ],
-        "random_age_constraint": [
-            "senior"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "elder"
+                ],
+                "age": [
+                    "senior"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_kits",
-        "thoughts": [
+        "strings": [
             "Leaves fresh-kill outside the nursery for the kits",
             "Is showing r_c the proper way to do a hunter's crouch",
             "Tries not to giggle as r_c fails at a hunting crouch",
@@ -327,16 +369,20 @@
             "Tries to teach r_c something new... but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not listening",
             "Wonders if all kits are gross or if it's just r_c"
         ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "ambitious_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Begs to be made a warrior early",
             "Wants to go on both a border and hunting patrol",
             "Is asking for extra, extra training",
@@ -350,32 +396,46 @@
             "Is settling for nothing less than perfect",
             "Is too busy training to help out around camp"
         ],
-        "main_trait_constraint": [
-            "ambitious"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "ambitious"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "ambitious_warrior_apprentice_to_other_apps",
-        "thoughts": [
+        "strings": [
             "Has been catching the most prey out of all the apprentices",
             "Is confident that {PRONOUN/m_c/subject} could beat the other apprentices",
             "Wants to be the most promising apprentice",
             "Is trying to outshine the other apprentices",
             "Wants to be made a warrior before r_c"
         ],
-        "random_status_constraint": [
-            "apprentice"
-        ],
-        "main_trait_constraint": [
-            "ambitious"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "ambitious"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "bold_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Taunted a rival Clan's apprentice at the border",
             "Took the biggest piece of prey from the pile",
             "Is claiming to be ready for {PRONOUN/m_c/poss} assessment early",
@@ -385,39 +445,55 @@
             "Tells {PRONOUN/m_c/poss} mentor {PRONOUN/m_c/subject} {VERB/m_c/are/is} going hunting instead of training",
             "Tells {PRONOUN/m_c/poss} mentor {PRONOUN/m_c/subject} {VERB/m_c/are/is} going on patrol without {PRONOUN/r_c/object}"
         ],
-        "main_status_constraint": [
-            "apprentice"
-        ],
-        "main_trait_constraint": [
-            "bold"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "stat": {
+                    "trait": [
+                        "bold"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "bold_warrior_apprentice_to_warrior",
-        "thoughts": [
+        "strings": [
             "Is looking to challenge a warrior to a sparring match",
             "Is pretty sure r_c would lose in a fight with {PRONOUN/m_c/object}",
             "Doesn't listen to r_c's advice"
         ],
-        "main_status_constraint": [
-            "apprentice"
-        ],
-        "random_status_constraint": [
-            "warrior"
-        ],
-        "main_trait_constraint": [
-            "bold"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "stat": {
+                    "trait": [
+                        "bold"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "bloodthirsty_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Pesters {PRONOUN/m_c/poss} mentor for more battle training",
             "Is practicing forbidden battle moves",
             "Drew blood during {PRONOUN/m_c/poss} battle training",
@@ -429,39 +505,59 @@
             "Is glaring at r_c",
             "Is covered in prey-blood after hunting",
             "Is clawing up moss for fun",
-            "Is asking what deathberries look like — for safety reasons, of course...",
+            "Is asking what deathberries look like \u00e2\u20ac\u201d for safety reasons, of course...",
             "Hopes to get a scar from battle"
         ],
-        "main_trait_constraint": [
-            "bloodthirsty"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "calm_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Likes to catch prey",
             "Is taking extra time to finish {PRONOUN/m_c/poss} task for today",
             "Is calm and focused"
         ],
-        "main_trait_constraint": [
-            "calm"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "calm"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "competitive_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Is busy mastering a fighting technique"
         ],
-        "main_trait_constraint": [
-            "competitive"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "competitive"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "childish_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Wonders if {PRONOUN/m_c/subject} could still fit in the nursery",
             "Turns {PRONOUN/m_c/poss} sparring practice into a tickle fight",
             "Asks if {PRONOUN/m_c/subject} can chase pretty bugs instead of prey",
@@ -470,39 +566,59 @@
             "Says {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} want to do anything today",
             "Is not allowed to leave camp without asking first"
         ],
-        "main_trait_constraint": [
-            "childish"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "childish"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "childish_apprentice_to_elder",
-        "thoughts": [
+        "strings": [
             "Pouts about being asked to check the elders for ticks",
             "Is hiding instead of taking care of the elders",
             "Is listening to r_c tell stories instead of cleaning out the den"
         ],
-        "main_trait_constraint": [
-            "childish"
-        ],
-        "random_status_constraint": [
-            "elder"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "childish"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "elder"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "cold_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Doesn't react when {PRONOUN/m_c/poss} mentor praises {PRONOUN/m_c/object} for a good catch"
         ],
-        "main_trait_constraint": [
-            "cold"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cold"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "confident_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Is sure that {PRONOUN/m_c/subject}'ll be made into a warrior soon",
             "Thinks that {PRONOUN/m_c/subject} will be the strongest warrior to ever live",
             "Isn't worried about anything",
@@ -514,16 +630,24 @@
             "Is sure {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing a good job today",
             "Knows {PRONOUN/m_c/subject} will get picked first for today's hunting patrol"
         ],
-        "main_trait_constraint": [
-            "confident"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "confident"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "fierce_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Is showing off {PRONOUN/m_c/poss} new battle moves",
             "Is pushing hard for more battle training",
             "Was recently chastised by {PRONOUN/m_c/poss} mentor for reckless behavior out on patrol",
@@ -538,16 +662,24 @@
             "Is in trouble after scratching r_c during an argument",
             "Snarls that r_c's problems aren't {PRONOUN/m_c/poss} issue"
         ],
-        "main_trait_constraint": [
-            "fierce"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "fierce"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "insecure_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Doesn't think {PRONOUN/m_c/poss} hauls on hunting patrols have been substantial enough",
             "Is sure {PRONOUN/m_c/subject} will fail {PRONOUN/m_c/poss} assessment",
             "Thinks that {PRONOUN/m_c/subject}'ll mess up on a border patrol",
@@ -557,13 +689,19 @@
             "Is hiding after receiving a compliment",
             "Has had a good day today, and actually feels confident in {PRONOUN/m_c/self}"
         ],
-        "main_trait_constraint": [
-            "insecure"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "insecure_nervous_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
             "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
             "Hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} not assigned to a border patrol",
@@ -575,14 +713,20 @@
             "Gives {PRONOUN/m_c/self} a stomachache by worrying so much",
             "Is fretting about something so much that {PRONOUN/m_c/subject} {VERB/m_c/give/gives} {PRONOUN/m_c/self} a headache"
         ],
-        "main_trait_constraint": [
-            "insecure",
-            "nervous"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "nervous"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "nervous_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Is scared to go on border patrol",
             "Fled upon hearing the distant barking of a dog",
             "Wonders if {PRONOUN/m_c/subject}'ll ever become a warrior",
@@ -594,27 +738,41 @@
             "Is nervous about {PRONOUN/m_c/poss} upcoming assessment",
             "Wishes to be like the warriors in the stories told to {PRONOUN/m_c/object} in the nursery"
         ],
-        "main_trait_constraint": [
-            "nervous"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "responsible_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Spent all morning practicing and mastering the hunting crouch",
             "Makes sure that everyone else is fed before taking prey from the fresh-kill pile",
             "Listens to {PRONOUN/m_c/poss} mentor's advice"
         ],
-        "main_trait_constraint": [
-            "responsible"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "responsible"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "thoughtful_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
             "Wants to gather moss for the elders' den",
             "Is making sure there's nothing around camp that needs to be done",
@@ -624,16 +782,24 @@
             "Always double checks everything",
             "Wonders what {PRONOUN/m_c/subject} can do to help"
         ],
-        "main_trait_constraint": [
-            "thoughtful"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "thoughtful"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_mentor",
-        "thoughts": [
+        "strings": [
             "Is trying to perfect the latest move that r_c taught {PRONOUN/m_c/object}",
             "Is asking r_c questions",
             "Is grumbling after r_c woke {PRONOUN/m_c/object} up for the dawn patrol",
@@ -654,16 +820,31 @@
             "Is asking r_c to show {PRONOUN/m_c/object} how to do something again",
             "Is being difficult when r_c asks {PRONOUN/m_c/object} to do something"
         ],
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
-        ],
-        "random_living_status": [
-            "living"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "warrior_apprentice_to_comforting_mentor",
-        "thoughts": [
+        "strings": [
             "Feels comfortable talking with r_c",
             "Knows {PRONOUN/m_c/subject} can always come to r_c if {PRONOUN/m_c/subject} {VERB/m_c/have/has} any issues",
             "Hopes that one day {PRONOUN/m_c/subject} will be as good as a mentor as r_c is",
@@ -673,54 +854,88 @@
             "Knows that r_c is there for {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/need/needs} it",
             "Feels awkward about r_c's kindness, but doesn't push it away"
         ],
-        "random_trait_constraint": [
-            "charismatic",
-            "compassionate",
-            "thoughtful",
-            "confident",
-            "calm",
-            "faithful",
-            "loving",
-            "responsible",
-            "wise",
-            "cunning",
-            "sincere"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "charismatic",
+                        "compassionate",
+                        "thoughtful",
+                        "confident",
+                        "calm",
+                        "faithful",
+                        "loving",
+                        "responsible",
+                        "wise",
+                        "cunning",
+                        "sincere"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "warrior_apprentice_to_harsher_mentor",
-        "thoughts": [
+        "strings": [
             "Has difficulty following r_c's lessons",
             "Knows that r_c's training will make {PRONOUN/m_c/object} a stronger warrior",
             "Wishes r_c would let {PRONOUN/m_c/object} relax for a day",
             "Feels awkward around {PRONOUN/m_c/poss} mentor"
         ],
-        "random_trait_constraint": [
-            "troublesome",
-            "fierce",
-            "bloodthirsty",
-            "cold",
-            "strict",
-            "ambitious",
-            "vengeful",
-            "arrogant"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "fierce",
+                        "bloodthirsty",
+                        "cold",
+                        "strict",
+                        "ambitious",
+                        "vengeful",
+                        "arrogant"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "warrior_apprentice_to_outgoing_mentor",
-        "thoughts": [
+        "strings": [
             "Gets dragged out of {PRONOUN/m_c/poss} nest for an all-day, out-of-camp training session",
             "Is wide-eyed at how r_c seems to know <i>everyone</i>",
             "Finds r_c's energy contagious, and is excited to train today",
@@ -728,28 +943,45 @@
             "Can feel {PRONOUN/m_c/poss} paws falling off waiting for r_c to finish {PRONOUN/r_c/poss} conversation",
             "Craves silence, but unfortunately, r_c is training {PRONOUN/m_c/object} today"
         ],
-        "random_trait_constraint": [
-            "childish",
-            "playful",
-            "charismatic",
-            "bold",
-            "daring",
-            "adventurous",
-            "flamboyant",
-            "arrogant",
-            "competitive",
-            "oblivious"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "childish",
+                        "playful",
+                        "charismatic",
+                        "bold",
+                        "daring",
+                        "adventurous",
+                        "flamboyant",
+                        "arrogant",
+                        "competitive",
+                        "oblivious"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "warrior_apprentice_to_withdrawn_mentor",
-        "thoughts": [
+        "strings": [
             "Has to seek r_c out for training",
             "Tries to start a conversation with r_c... it falls flat quickly",
             "Accidentally startles {PRONOUN/m_c/poss} mentor",
@@ -757,42 +989,78 @@
             "Has learned to enjoy the silence during r_c's training exercises",
             "Wishes r_c would talk more often"
         ],
-        "random_trait_constraint": [
-            "gloomy",
-            "lonesome",
-            "nervous",
-            "insecure",
-            "grumpy"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "gloomy",
+                        "lonesome",
+                        "nervous",
+                        "insecure",
+                        "grumpy"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "insecure_nervous_warrior_apprentice_to_mentor",
-        "thoughts": [
+        "strings": [
             "Feels worried about going on patrol today",
             "Asks {PRONOUN/m_c/poss} mentor if {PRONOUN/m_c/subject} {VERB/m_c/are/is} meant to be a warrior",
             "Thinks that {PRONOUN/m_c/subject} could be doing better",
             "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} more like r_c, {PRONOUN/m_c/poss} mentor is so cool"
         ],
-        "main_trait_constraint": [
-            "insecure",
-            "nervous"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "nervous"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "insecure_nervous_warrior_apprentice_to_comforting_mentor",
-        "thoughts": [
+        "strings": [
             "Seeks out r_c's comfort after a hard day",
             "Is glad to have r_c as {PRONOUN/m_c/poss} mentor",
             "Wouldn't trade {PRONOUN/m_c/poss} mentor for anyone else in the Clan",
@@ -804,33 +1072,54 @@
             "Wonders if r_c really likes {PRONOUN/m_c/object}, or just pretends to",
             "Doesn't feel worthy of being r_c's apprentice"
         ],
-        "main_trait_constraint": [
-            "insecure",
-            "nervous"
-        ],
-        "random_trait_constraint": [
-            "charismatic",
-            "compassionate",
-            "thoughtful",
-            "confident",
-            "calm",
-            "faithful",
-            "loving",
-            "responsible",
-            "wise",
-            "cunning",
-            "sincere"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "nervous"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "charismatic",
+                        "compassionate",
+                        "thoughtful",
+                        "confident",
+                        "calm",
+                        "faithful",
+                        "loving",
+                        "responsible",
+                        "wise",
+                        "cunning",
+                        "sincere"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "insecure_nervous_warrior_apprentice_to_harsher_mentor",
-        "thoughts": [
+        "strings": [
             "Seeks comfort from r_c, but doesn't get it",
             "Feels like {PRONOUN/m_c/subject} will never live up to r_c's expectations",
             "Hopes that training under r_c will help {PRONOUN/m_c/object} be as confident as {PRONOUN/m_c/poss} mentor",
@@ -847,64 +1136,106 @@
             "Is surprised when r_c apologizes for snapping at {PRONOUN/m_c/object} the other day",
             "Snaps back at r_c after a lecture goes too far"
         ],
-        "main_trait_constraint": [
-            "insecure",
-            "nervous"
-        ],
-        "random_trait_constraint": [
-            "troublesome",
-            "fierce",
-            "bloodthirsty",
-            "cold",
-            "strict",
-            "ambitious",
-            "vengeful",
-            "arrogant",
-            "rebellious"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "nervous"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "fierce",
+                        "bloodthirsty",
+                        "cold",
+                        "strict",
+                        "ambitious",
+                        "vengeful",
+                        "arrogant",
+                        "rebellious"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "insecure_nervous_warrior_apprentice_to_outgoing_mentor",
-        "thoughts": [
+        "strings": [
             "Wishes {PRONOUN/m_c/poss} mentor didn't try to encourage {PRONOUN/m_c/object} to speak with others so much",
             "Hides behind r_c during the Gathering",
             "Wonders how r_c can speak with others so easily",
             "Tries out some suggestions r_c gave {PRONOUN/m_c/object} to be able to be more outgoing",
             "Hid from {PRONOUN/m_c/poss} mentor when {PRONOUN/m_c/subject} learned {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to take {PRONOUN/m_c/object} to the far edges of the territory today"
         ],
-        "main_trait_constraint": [
-            "insecure",
-            "nervous"
-        ],
-        "random_trait_constraint": [
-            "childish",
-            "playful",
-            "charismatic",
-            "bold",
-            "daring",
-            "righteous",
-            "adventurous",
-            "flamboyant",
-            "arrogant",
-            "competitive",
-            "oblivious"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "nervous"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "childish",
+                        "playful",
+                        "charismatic",
+                        "bold",
+                        "daring",
+                        "righteous",
+                        "adventurous",
+                        "flamboyant",
+                        "arrogant",
+                        "competitive",
+                        "oblivious"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "insecure_nervous_warrior_apprentice_to_withdrawn_mentor",
-        "thoughts": [
+        "strings": [
             "Fidgets anxiously as an awkward silence settles between {PRONOUN/m_c/object} and r_c",
             "Feels understood by r_c",
             "Shares prey with r_c in comfortable silence",
@@ -912,27 +1243,48 @@
             "Doesn't mind how little r_c talks",
             "Internally wishes r_c would explain things a bit better"
         ],
-        "main_trait_constraint": [
-            "insecure",
-            "nervous"
-        ],
-        "random_trait_constraint": [
-            "gloomy",
-            "lonesome",
-            "nervous",
-            "insecure",
-            "grumpy"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "nervous"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "gloomy",
+                        "lonesome",
+                        "nervous",
+                        "insecure",
+                        "grumpy"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
-            "app/mentor"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
         "id": "formerly_rogue_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Got scolded for eating what {PRONOUN/m_c/subject} caught",
             "Is having some trouble adjusting",
             "Forgets the Warrior Code sometimes",
@@ -941,94 +1293,131 @@
             "Doesn't miss being a rogue",
             "Is happy to be training as a warrior instead of living as a rogue"
         ],
-        "main_backstory_constraint": [
-            "rogue1",
-            "rogue2",
-            "rogue3",
-            "refugee4",
-            "tragedy_survivor2",
-            "guided2"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "rogue1",
+                    "rogue2",
+                    "rogue3",
+                    "refugee4",
+                    "tragedy_survivor2",
+                    "guided2"
+                ]
+            }
+        }
     },
     {
         "id": "formerly_kittypet_warrior_apprentice",
-        "thoughts": [
+        "strings": [
             "Hopes to become a warrior soon so others will stop teasing {PRONOUN/m_c/object} about being a kittypet",
             "Hopes to earn some fierce scars to hide {PRONOUN/m_c/poss} past",
             "Trains all day long to prove {PRONOUN/m_c/self} to be as good as any other apprentice"
         ],
-        "main_backstory_constraint": [
-            "kittypet1",
-            "kittypet2",
-            "kittypet3",
-            "kittypet4",
-            "refugee3",
-            "tragedy_survivor3",
-            "guided1"
-        ],
-        "main_status_constraint": [
-            "apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "backstory": [
+                    "kittypet1",
+                    "kittypet2",
+                    "kittypet3",
+                    "kittypet4",
+                    "refugee3",
+                    "tragedy_survivor3",
+                    "guided1"
+                ]
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "formerly_kittypet_warrior_apprentice_to_apprentice",
-        "thoughts": [
+        "strings": [
             "Tries to prove former kittypets are just as good as Clanborn apprentices by one-upping r_c",
             "Tries to convince r_c to slice {PRONOUN/m_c/poss} ear in hopes it'll scar"
         ],
-        "main_backstory_constraint": [
-            "kittypet1",
-            "kittypet2",
-            "kittypet3",
-            "kittypet4",
-            "refugee3",
-            "tragedy_survivor3",
-            "guided1"
-        ],
-        "main_status_constraint": [
-            "apprentice"
-        ],
-        "random_status_constraint": [
-            "apprentice"
-        ],
-        "random_backstory_constraint": [
-            "clan_founder",
-            "clanborn"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "backstory": [
+                    "kittypet1",
+                    "kittypet2",
+                    "kittypet3",
+                    "kittypet4",
+                    "refugee3",
+                    "tragedy_survivor3",
+                    "guided1"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ],
+                "backstory": [
+                    "clan_founder",
+                    "clanborn"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_dead_warrior",
-        "thoughts": [
+        "strings": [
             "Wishes {PRONOUN/m_c/subject} could learn from r_c",
             "Wants to be a great warrior, just like r_c"
         ],
-        "random_status_constraint": [
-            "warrior"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
     },
     {
         "id": "warrior_apprentice_to_alive_crush",
-        "thoughts": [
+        "strings": [
             "Shows off to r_c with an amazing pounce",
             "Gives r_c a piece of freshkill {PRONOUN/m_c/subject} hunted {PRONOUN/m_c/self}"
         ],
-        "main_status_constraint": [
-            "apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ]
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "fancies_only"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "fancies_only"
+                ]
+            }
         ]
     }
 ]

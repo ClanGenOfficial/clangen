@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 
 
 def load_cats():
-    load_faded_cat_ids(switch_get_value(Switch.clan_name))
+    load_faded_cat_ids(switch_get_value(Switch.clan_save_id))
     try:
         json_load()
     except FileNotFoundError:

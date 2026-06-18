@@ -8,7 +8,6 @@ from pygame._sdl2 import controller
 from typing import Literal, Union, Dict
 from abc import ABC, abstractmethod
 
-from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_input.action import Action
 from scripts.game_input import custom_events
 
@@ -49,8 +48,10 @@ class KeyboardManager(InputManager):
     action_map = {
         pygame.K_ESCAPE: Action.BACK,
         pygame.K_RETURN: Action.CONFIRM,
-        pygame.K_LEFT: Action.PREVIOUS,
-        pygame.K_RIGHT: Action.NEXT,
+        pygame.K_LEFT: Action.LEFT,
+        pygame.K_RIGHT: Action.RIGHT,
+        pygame.K_q: Action.PREVIOUS,
+        pygame.K_e: Action.NEXT,
         pygame.K_SPACE: Action.SAVE,
         pygame.K_UP: Action.UP,
         pygame.K_DOWN: Action.DOWN,
@@ -67,11 +68,11 @@ class KeyboardManager(InputManager):
         return KeyboardManager.action_map.get(event.key)
 
     def process_event(self, event: pygame.Event):
-        if event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        if event.type == pygame.KEYDOWN:
             action = self._get_action_from_event(event)
             if action:
                 self._post_action(action, custom_events.INPUT_ACTION_PRESSED)
-        if event.type == pygame.KEYUP and game_setting_get("keybinds"):
+        if event.type == pygame.KEYUP:
             action = self._get_action_from_event(event)
             if action:
                 self._post_action(action, custom_events.INPUT_ACTION_RELEASED)

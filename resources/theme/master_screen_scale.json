@@ -1659,7 +1659,7 @@
             }
         }
     },
-    "#cruel_mode_button": {
+    "#cruel_season_mode_button": {
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/cruel_season.png"
@@ -1746,7 +1746,7 @@
             }
         }
     },
-    "#mountain_biome_button": {
+    "#mountainous_biome_button": {
         "prototype": "biome_button_prototype",
         "images": {
             "normal_image": {
