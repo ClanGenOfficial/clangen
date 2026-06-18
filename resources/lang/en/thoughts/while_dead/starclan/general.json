@@ -316,9 +316,6 @@
             "m_c": {
                 "group": [
                     "afterlife"
-                ],
-                "status": [
-                    "living"
                 ]
             },
             "r_c": {
@@ -352,9 +349,6 @@
             "m_c": {
                 "group": [
                     "afterlife"
-                ],
-                "status": [
-                    "living"
                 ],
                 "stat": {
                     "skill": [
