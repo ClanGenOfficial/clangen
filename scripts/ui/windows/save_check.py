@@ -27,9 +27,6 @@ class SaveCheckWindow(GameWindow):
             ui_scale(pygame.Rect((250, 200), (300, 200))),
         )
 
-        self.clan_name = "UndefinedClan"
-        if game.clan:
-            self.clan_name = f"{game.clan.name}Clan"
         self.last_screen = last_screen
         self.isMainMenu = is_main_menu
         self.mm_btn = mm_btn
@@ -124,7 +121,7 @@ class SaveCheckWindow(GameWindow):
                 if game.clan is not None:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
-                    save_cats(switch_get_value(Switch.clan_name), Cat, game)
+                    save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()

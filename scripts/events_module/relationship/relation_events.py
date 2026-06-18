@@ -4,7 +4,8 @@ from random import choice, randint
 
 import ujson
 
-from scripts.game_structure import constants
+from scripts.config import get_config
+from scripts.game_structure import constants, game
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
 from scripts.events_module.relationship.group_events import GroupEvents
@@ -46,9 +47,11 @@ class Relation_Events:
             return
         Relation_Events.had_one_event = False
 
-        # currently try to trigger every moon, because there are not many group events
-        # TODO: maybe change in future
-        Relation_Events.group_events(cat)
+        if not int(
+            random.random()
+            * get_config(game.clan, "relationship.chance_of_group_event")
+        ):
+            Relation_Events.group_events(cat)
 
         Relation_Events.same_age_events(cat)
 

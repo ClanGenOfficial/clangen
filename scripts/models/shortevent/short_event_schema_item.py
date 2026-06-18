@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from typing import Annotated, List, Literal, Union
+from typing import List, Union
 
-from pydantic import BaseModel, ConfigDict, Field, StringConstraints
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
-from scripts.models.common.biome import Biome
 from scripts.models.common.new_cat import NewCat
+from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.season import Season
 from scripts.models.shortevent.event_subtype import EventSubtype
 from scripts.models.shortevent.gender import NewGenderEnum
@@ -19,7 +19,7 @@ from scripts.models.shortevent.outsider import Outsider
 from scripts.models.shortevent.rc import RC
 from scripts.models.shortevent.supply import Supply
 from scripts.models.shortevent.tag import Tag
-from scripts.models.shortevent.cat import Cat
+from scripts.models.common.cat import Cat
 from scripts.models.common.relationship import Relationship
 from scripts.models.common.future_event import FutureEvent
 
@@ -40,6 +40,10 @@ class ShortEventSchemaItem(BaseModel):
         List[Tag],
         MISSING,
     ] = Field(MISSING, description="Used for some filtering purposes")
+    poi: Union[PointsOfInterestGroup, MISSING] = Field(
+        MISSING,
+        description="The relevant points of interest. Points of Interest never affect outcome.",
+    )
     frequency: int = Field(
         ...,
         description="Controls how common an event is. 4 == Common, 3 == Uncommon, 2 == Rare, 3 == Very Rare. Consider this in the terms of 'If an event of this type happened every moon for 10 moons, on how many of those moons should this sort of event appear?'",

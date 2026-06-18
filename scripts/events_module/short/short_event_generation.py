@@ -23,6 +23,7 @@ from scripts.events_module.event_filters import (
     cat_for_event,
     get_frequency,
     find_new_frequency,
+    event_for_poi,
 )
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants, game
@@ -290,6 +291,7 @@ def generate_event_objects(event_triggered, biome, frequency) -> list:
                     season=event["season"] if "season" in event else ["any"],
                     sub_type=event["sub_type"] if "sub_type" in event else [],
                     tags=event["tags"] if "tags" in event else [],
+                    poi=event["poi"] if "poi" in event else {},
                     text=event_text,
                     new_accessory=(
                         event["new_accessory"] if "new_accessory" in event else []
@@ -379,6 +381,9 @@ def filter_events(
 
         # check tags
         if not event_for_tags(event.tags, main_cat, random_cat):
+            continue
+
+        if not event_for_poi(event.poi):
             continue
 
         if not game.clan.leader and "lead_name" in event.text:
