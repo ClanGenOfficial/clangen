@@ -72,7 +72,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn’t get very far. r_c stumbles mid-sneeze, tripping over a particularly large tree root and tumbling forward, knocking over other cats in {PRONOUN/r_c/poss} wake.",
+                "text": "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn't get very far. r_c stumbles mid-sneeze, tripping over a particularly large tree root and tumbling forward, knocking over other cats in {PRONOUN/r_c/poss} wake.",
                 "exp": 0,
                 "frequency": 4,
                 "prey": [],

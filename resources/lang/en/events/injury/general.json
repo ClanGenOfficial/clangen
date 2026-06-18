@@ -9586,6 +9586,118 @@
         }
     ],
     "future_event": []
+},
+{
+    "event_id": "gen_injury_leaderpunish",
+    "location": [
+        "any"
+    ],
+    "season": [
+        "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "After a Clanmate challenges {PRONOUN/m_c/object}, m_c commands r_c to help {PRONOUN/m_c/object} punish the protesting cat. r_c ends up hurt, but m_c feels {PRONOUN/m_c/subject} can trust r_c more.",
+    "new_accessory": [],
+    "m_c": {
+        "status": [
+            "leader"
+        ],
+        "trait": [
+            "bloodthirsty",
+            "vengeful",
+            "fierce"
+        ]
+    },
+    "r_c": {
+        "status": [
+            "warrior",
+            "deputy"
+        ]
+    },
+    "injury": [
+        {
+            "cats": [
+                "r_c"
+            ],
+            "injuries": [
+                "battle_injury"
+            ],
+            "scars": [
+                "ONE",
+                "TWO",
+                "HINDLEG",
+                "FACE",
+                "SNOUT",
+                "CHEEK",
+                "BACK",
+                "CATBITE"
+            ]
+        }
+    ],
+    "history": [
+        {
+            "cats": [
+                "r_c"
+            ],
+            "scar": "Got a scar while punishing a Clanmate in the name of m_c.",
+            "death": "died from {PRONOUN/m_c/poss} injuries after m_c ordered {PRONOUN/m_c/object} to punish a Clanmate."
+        }
+        
+    ],
+    "relationships": [
+        {
+            "cats_from": [
+                "m_c"
+            ],
+            "cats_to": [
+                "r_c"
+            ],
+            "mutual": false,
+            "values": [
+                "comfort",
+                "trust"
+            ],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from felt like {PRONOUN/cat_from/poss} could trust cat_to after {PRONOUN/cat_to/subject} followed orders to punish a Clanmate."
+            }
+        },
+        {
+            "cats_from": [
+                "r_c"
+            ],
+            "cats_to": [
+                "m_c"
+            ],
+            "mutual": false,
+            "values": [
+                "like"
+            ],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_from was glad that cat_to trusted {PRONOUN/cat_from/object} to take {PRONOUN/cat_to/poss} side."
+            }
+        },
+        {
+            "cats_from": [
+                "r_c"
+            ],
+            "cats_to": [
+                "m_c"
+            ],
+            "mutual": false,
+            "values": [
+                "trust",
+                "comfort"
+            ],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from grew worried that cat_to viewed {PRONOUN/cat_from/object} as something to be used after being ordered to punish a Clanmate."
+            }
+        }
+    ]
 }
 ]
 
