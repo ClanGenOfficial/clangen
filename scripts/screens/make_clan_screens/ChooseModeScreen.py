@@ -196,14 +196,14 @@ class ChooseModeScreen(MakeClanScreenBase):
                 if random_card:
                     self.clan_info.cruel_cards.append(random_card)
 
-        self.clan_info.name = self.random_clan_name()
+        self.clan_info.display_name = self.random_clan_name()
         self.clan_info.biome = self.random_biome_selection()
         self.clan_info.camp_bg = f"camp{randrange(1, 5)}"
 
         # SYMBOL
-        if f"symbol{self.clan_info.name.upper()}0" in sprites.clan_symbols:
+        if f"symbol{self.clan_info.display_name.upper()}0" in sprites.clan_symbols:
             # Use recommended symbol if it exists
-            symbol = f"symbol{self.clan_info.name.upper()}0"
+            symbol = f"symbol{self.clan_info.display_name.upper()}0"
         else:
             symbol = choice(sprites.clan_symbols)
 

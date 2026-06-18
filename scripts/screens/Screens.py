@@ -210,7 +210,7 @@ class Screens:
         Screens.game_frame = scripts.screens.screens_core.screens_core.game_frame
         try:
             Screens.update_heading_text(
-                "general.clan", text_kwargs={"name": game.clan.displayname}
+                "general.clan", text_kwargs={"name": game.clan.name}
             )
         except AttributeError:
             Screens.update_heading_text("DebugClan")

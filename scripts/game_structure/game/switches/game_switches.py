@@ -14,7 +14,7 @@ from scripts.screens.enums import GameScreen
 
 class Switch(StrEnum):
     cat = auto()
-    clan_name = auto()
+    clan_save_id = auto()
     clan_creation_info = auto()
     possible_cats = auto()
     cur_screen = auto()

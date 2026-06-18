@@ -667,10 +667,15 @@
     },
     "Season": {
       "enum": [
-        "Greenleaf",
-        "Leaf-fall",
-        "Leaf-bare",
-        "Newleaf"
+        "greenleaf",
+        "-greenleaf",
+        "leaf-fall",
+        "-leaf-fall",
+        "leaf-bare",
+        "-leaf-bare",
+        "newleaf",
+        "-newleaf",
+        "any"
       ],
       "title": "Season",
       "type": "string"
@@ -773,22 +778,12 @@
         "elder",
         "-elder",
         "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
         "kittypet",
         "-kittypet",
         "loner",
         "-loner",
         "rogue",
-        "-rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "-lost",
-        "outside cat",
-        "clancat"
+        "-rogue"
       ],
       "title": "Status",
       "type": "string"

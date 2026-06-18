@@ -71,7 +71,7 @@ def load_data():
     clan_list = read_clans()
     if clan_list:
         switch_set_value(Switch.clan_list, clan_list)
-        switch_set_value(Switch.clan_name, clan_list[0])
+        switch_set_value(Switch.clan_save_id, clan_list[0])
         try:
             game.starclan = Afterlife()
             game.dark_forest = Afterlife()

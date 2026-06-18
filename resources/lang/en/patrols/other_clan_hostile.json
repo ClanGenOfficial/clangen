@@ -253,7 +253,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is cautious, but n_c:0’s exile was controversial, and information can make the difference between life and death. n_c:0 is ultimately brought back to camp.",
+                "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is cautious, but n_c:0's exile was controversial, and information can make the difference between life and death. n_c:0 is ultimately brought back to camp.",
                 "exp": 20,
                 "art": "gen_speaking_cat_outsider",
                 "new_cat": [
@@ -297,7 +297,7 @@
                 "frequency": 4
             },
             {
-                "text": "It turns out {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} actually innocent. At least that’s what n_c:0 feverishly insists, as {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join c_n in exchange for o_c_n secrets. The patrol is unnerved by n_c:0's wild-eyed expression, but it seems like vengeance against o_c_n is {PRONOUN/n_c:0/poss} only motive, and o_c_n is a fierce enemy. n_c:0 is brought back to camp.",
+                "text": "It turns out {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} actually innocent. At least that's what n_c:0 feverishly insists, as {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join c_n in exchange for o_c_n secrets. The patrol is unnerved by n_c:0's wild-eyed expression, but it seems like vengeance against o_c_n is {PRONOUN/n_c:0/poss} only motive, and o_c_n is a fierce enemy. n_c:0 is brought back to camp.",
                 "exp": 20,
                 "art": "gen_speaking_cat_outsider",
                 "new_cat": [
@@ -418,7 +418,7 @@
                 "frequency": 4
             },
             {
-                "text": "n_c:0 offers o_c_n secrets in exchange for a place in c_n. With how unstable their relations have been lately, those secrets could be crucial — which is exactly why c_n won’t escalate the situation by sheltering a o_c_n exile. n_c:0 is chased far from the territory.",
+                "text": "n_c:0 offers o_c_n secrets in exchange for a place in c_n. With how unstable their relations have been lately, those secrets could be crucial — which is exactly why c_n won't escalate the situation by sheltering a o_c_n exile. n_c:0 is chased far from the territory.",
                 "exp": 10,
                 "new_cat": [
                     [
@@ -448,7 +448,7 @@
                 "frequency": 4
             },
             {
-                "text": "When the patrol confronts n_c:0, they’re shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn’t deserve banishment. Cautious but sympathetic — how horrible could o_c_n be, to exile kits? — p_l escorts n_c:0 from Clan territory while the others bring the litter to their new home.",
+                "text": "When the patrol confronts n_c:0, they're shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn't deserve banishment. Cautious but sympathetic — how horrible could o_c_n be, to exile kits? — p_l escorts n_c:0 from Clan territory while the others bring the litter to their new home.",
                 "exp": 15,
                 "new_cat": [
                     [
@@ -487,7 +487,7 @@
                 "frequency": 2
             },
             {
-                "text": "When the patrol confronts n_c:0, they’re shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn’t deserve banishment. n_c:0’s exile was already controversial, p_l thinks, and the kits are innocent. Perhaps c_n could accept n_c:0... if {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} willing to divulge a few of {PRONOUN/n_c:0/poss} former Clan’s secrets.",
+                "text": "When the patrol confronts n_c:0, they're shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn't deserve banishment. n_c:0's exile was already controversial, p_l thinks, and the kits are innocent. Perhaps c_n could accept n_c:0... if {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} willing to divulge a few of {PRONOUN/n_c:0/poss} former Clan's secrets.",
                 "exp": 20,
                 "new_cat": [
                     [
@@ -613,7 +613,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. But when p_l begins the attack, n_c:0 sweeps {PRONOUN/p_l/poss} legs out from under {PRONOUN/p_l/object} so swiftly and smoothly p_l and {PRONOUN/p_l/poss} Clanmates are too stunned to retaliate until n_c:0 is cackling far, far away.",
+                "text": "The things n_c:0 did go beyond c_n and o_c_n's rivalry. But when p_l begins the attack, n_c:0 sweeps {PRONOUN/p_l/poss} legs out from under {PRONOUN/p_l/object} so swiftly and smoothly p_l and {PRONOUN/p_l/poss} Clanmates are too stunned to retaliate until n_c:0 is cackling far, far away.",
                 "exp": 0,
                 "frequency": 4,
                 "other_clan_rep": 0,
@@ -678,7 +678,7 @@
                 ]
             },
             {
-                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. But when p_l begins the attack, n_c:0 proves a formidable enemy; {PRONOUN/n_c:0/subject} {VERB/n_c:0/cackle/cackles} as {PRONOUN/n_c:0/subject} {VERB/n_c:0/dash/dashes} away, a bloody p_l's concerned Clanmates still helping {PRONOUN/p_l/poss} to {PRONOUN/p_l/poss} feet.",
+                "text": "The things n_c:0 did go beyond c_n and o_c_n's rivalry. But when p_l begins the attack, n_c:0 proves a formidable enemy; {PRONOUN/n_c:0/subject} {VERB/n_c:0/cackle/cackles} as {PRONOUN/n_c:0/subject} {VERB/n_c:0/dash/dashes} away, a bloody p_l's concerned Clanmates still helping {PRONOUN/p_l/poss} to {PRONOUN/p_l/poss} feet.",
                 "exp": 0,
                 "frequency": 4,
                 "other_clan_rep": 0,
@@ -755,7 +755,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and only by luck does n_c:0 escape with {PRONOUN/n_c:0/poss} life.",
+                "text": "The things n_c:0 did go beyond c_n and o_c_n's rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and only by luck does n_c:0 escape with {PRONOUN/n_c:0/poss} life.",
                 "exp": 15,
                 "other_clan_rep": 2,
                 "art": "gen_battle_warrior_loner",
@@ -789,7 +789,7 @@
                 "frequency": 4
             },
             {
-                "text": "The things n_c:0 did go beyond c_n and o_c_n’s rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and while the intention was merely removal from Clan territory, no one is sad to see {PRONOUN/n_c:0/object} dead.",
+                "text": "The things n_c:0 did go beyond c_n and o_c_n's rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and while the intention was merely removal from Clan territory, no one is sad to see {PRONOUN/n_c:0/object} dead.",
                 "exp": 15,
                 "other_clan_rep": 2,
                 "art": "gen_battle_warrior_loner",
