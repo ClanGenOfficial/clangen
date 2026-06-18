@@ -6663,7 +6663,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "p_l lunges from the heath onto the pheasant’s back, sinking {PRONOUN/p_l/poss} claws into its wings before the bird can take flight. It isn't pretty; the pheasant squirms and squawks, desperately trying to throw p_l off before {PRONOUN/p_l/subject} {VERB/p_l/subdue/subdues} and {VERB/p_l/kill/kills} it, returning to camp with the prize in tow.",
+                "text": "p_l lunges from the heath onto the pheasant's back, sinking {PRONOUN/p_l/poss} claws into its wings before the bird can take flight. It isn't pretty; the pheasant squirms and squawks, desperately trying to throw p_l off before {PRONOUN/p_l/subject} {VERB/p_l/subdue/subdues} and {VERB/p_l/kill/kills} it, returning to camp with the prize in tow.",
                 "exp": 15,
                 "frequency": 4,
                 "prey": [

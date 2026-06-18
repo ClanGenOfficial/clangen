@@ -21,7 +21,7 @@ class GameOverWindow(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 180))),
         )
-        self.clan_name = i18n.t("general.clan", name=game.clan.displayname)
+        self.clan_name = i18n.t("general.clan", name=game.clan.name)
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
             "windows.game_over_message",

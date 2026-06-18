@@ -121,7 +121,7 @@ class _DiscordRPC(threading.Thread):
             # Example: beach_greenleaf_camp1_dark
 
             if game.clan:
-                clan_name = i18n.t("general.clan", name=game.clan.displayname)
+                clan_name = i18n.t("general.clan", name=game.clan.name)
                 cats_amount = len(game.clan.clan_cats)
                 clan_age = game.clan.age
             else:
