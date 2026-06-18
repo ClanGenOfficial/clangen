@@ -137,8 +137,8 @@ class SwitchClanScreen(Screens):
             manager=MANAGER,
             anchors={"centerx": "centerx"},
             text_kwargs={
-                "clan": game.clan.displayname if game.clan else "",
-                "clan_id": game.clan.name if game.clan else "",
+                "clan": game.clan.name if game.clan else "",
+                "clan_id": game.clan.save_id if game.clan else "",
                 "count": 1 if game.clan else 0,
             },
         )

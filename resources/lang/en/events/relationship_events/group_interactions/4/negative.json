@@ -50,7 +50,7 @@
   "interactions": [
     "m_c eats as ravenously as a wolverine and by the time {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} done, r_c1, r_c2, and r_c3 barely have the stomach to finish their own meals.",
     "While m_c gorges on {PRONOUN/m_c/poss} piece of fresh kill, r_c1, r_c2, and r_c3 find that eating is suddenly less appealing.",
-    "Spittle and flecks of bone fly while m_c gobbles down prey, reminding r_c1, rc_2, and r_c3 to seek out better mealtime companionship next time."
+    "Spittle and flecks of bone fly while m_c gobbles down prey, reminding r_c1, r_c2, and r_c3 to seek out better mealtime companionship next time."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
@@ -182,8 +182,8 @@
   "cat_amount": 4,
   "interactions": [
 "m_c tracked a trail of muddy pawprints into the warrior's den, straight through the nests of r_c1, r_c2, and r_c3.",
-    "m_c returned to the warrior's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3’s nests.",
-    "m_c tromped into the warrior's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3’s nests."
+    "m_c returned to the warrior's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3's nests.",
+    "m_c tromped into the warrior's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3's nests."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
@@ -224,8 +224,8 @@
   "cat_amount": 4,
   "interactions": [
 "m_c tracked a trail of muddy pawprints into the elder's den, straight through the nests of r_c1, r_c2, and r_c3.",
-    "m_c returned to the elder's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3’s nests.",
-    "m_c tromped into the elder's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3’s nests."
+    "m_c returned to the elder's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3's nests.",
+    "m_c tromped into the elder's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3's nests."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
@@ -262,8 +262,8 @@
   "cat_amount": 4,
   "interactions": [
 "m_c tracked a trail of muddy pawprints into the apprentice's den, straight through the nests of r_c1, r_c2, and r_c3.",
-    "m_c returned to the apprentice's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3’s nests.",
-    "m_c tromped into the apprentice's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3’s nests."
+    "m_c returned to the apprentice's den dripping mud everywhere and managed to ruin r_c1, r_c2, and r_c3's nests.",
+    "m_c tromped into the apprentice's den with muddy paws, trailing muck straight through r_c1, r_c2, and r_c3's nests."
   ],
   		"specific_reaction": {
 			"r_c1_to_m_c": {
