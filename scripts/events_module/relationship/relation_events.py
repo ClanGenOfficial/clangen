@@ -47,10 +47,7 @@ class Relation_Events:
             return
         Relation_Events.had_one_event = False
 
-        if not int(
-            random.random()
-            * get_config(game.clan, "relationship.chance_of_group_event")
-        ):
+        if not int(random.random() * get_config("relationship.chance_of_group_event")):
             Relation_Events.group_events(cat)
 
         Relation_Events.same_age_events(cat)
