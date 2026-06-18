@@ -96,6 +96,8 @@ class StartScreen(Screens):
                 quit_game(savesettings=False, clearevents=False)
             elif element == self.elements.get("event_edit"):
                 self.change_screen(GameScreen.EVENT_EDIT)
+            elif element == self.elements.get("bug_report"):
+                open_url("https://github.com/ClanGenOfficial/clangen/issues/new/choose")
             elif element == self.social_buttons["discord_button"]:
                 open_url("https://discord.gg/clangen")
             elif element == self.social_buttons["tumblr_button"]:
@@ -242,6 +244,14 @@ class StartScreen(Screens):
                 manager=MANAGER,
                 anchors={"top_target": self.elements["quit"]},
             )
+
+        self.elements["bug_report"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((610, 25), (160, 30))),
+            "buttons.bug_report",
+            image_dict=get_button_dict(ButtonStyles.MAINMENU, (160, 30)),
+            object_id="@buttonstyles_mainmenu",
+            manager=MANAGER,
+        )
 
         interactive_elements = list(self.elements.values())
 
