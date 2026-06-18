@@ -318,9 +318,7 @@ class PatrolScreen(Screens):
             self.open_choose_cats_screen()
 
         self.set_disabled_menu_buttons(["patrols"])
-        self.update_heading_text(
-            "general.clan", text_kwargs={"name": game.clan.displayname}
-        )
+        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.name})
         self.show_mute_buttons()
         self.show_menu_buttons()
 
