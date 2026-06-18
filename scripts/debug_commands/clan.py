@@ -25,7 +25,7 @@ class ReloadClanCommand(Command):
             switch_set_value(Switch.switch_clan, True)
             add_output_line_to_log("Reload successful!")
         elif len(args) > 0 and args[0] == "save":
-            save_cats(switch_get_value(Switch.clan_name), Cat, game)
+            save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
             game.clan.save_clan()
             game.clan.save_pregnancy(game.clan)
             game.save_events()

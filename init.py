@@ -71,7 +71,14 @@ def log_crash(logtype, value, tb):
     """
     Log uncaught exceptions to file
     """
-    logging.critical("Uncaught exception", exc_info=(logtype, value, tb))
+    try:
+        version_number = get_version_info().version_number
+    except:  # don't want the crash handler to crash
+        version_number = "version unknown"
+    logging.critical(
+        f"Uncaught exception (ClanGen {version_number})",
+        exc_info=(logtype, value, tb),
+    )
     sys.__excepthook__(type, value, tb)
 
 
