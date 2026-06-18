@@ -61,7 +61,9 @@ class ChooseNameScreen(MakeClanScreenBase):
             ui_scale(pygame.Rect((41, 2), (140, 29))),
             container=self.elements["entry_container"],
             manager=MANAGER,
-            initial_text=self.clan_info.name if self.clan_info.name else None,
+            initial_text=self.clan_info.display_name
+            if self.clan_info.display_name
+            else None,
         )
         self.elements["name_entry"].set_forbidden_characters("forbidden_file_path")
         self.elements["name_entry"].set_text_length_limit(11)
@@ -89,7 +91,9 @@ class ChooseNameScreen(MakeClanScreenBase):
             elif event.ui_element == self.elements["reset_name"]:
                 self.elements["name_entry"].set_text("")
             elif event.ui_element == self.elements["next_step"]:
-                self.clan_info.name = self.elements["name_entry"].get_text().strip()
+                self.clan_info.display_name = (
+                    self.elements["name_entry"].get_text().strip()
+                )
                 self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CATS)
             elif event.ui_element == self.elements["previous_step"]:
                 self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_MODE)
