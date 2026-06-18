@@ -1,7 +1,7 @@
 [
     {
         "id": "general_death_dark_forest_thoughts",
-        "thoughts": [
+        "strings": [
             "Is startled to find {PRONOUN/m_c/self} wading in the muck of a shadowed forest",
             "Is watching {PRONOUN/m_c/poss} own vigil",
             "Wants to comfort a Clanmate who is grieving over {PRONOUN/m_c/object}"
@@ -9,12 +9,18 @@
     },
     {
         "id": "star_death_dark_forest",
-        "thoughts": [
+        "strings": [
             "Is shocked to find {PRONOUN/m_c/self} here and not StarClan",
             "Just can't believe {PRONOUN/m_c/subject} ended up in the Dark Forest. Was StarClan not watching over c_n?"
         ],
-        "main_skill_constraint": [
-            "STAR,1"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STAR,1"
+                    ]
+                }
+            }
+        }
     }
 ]

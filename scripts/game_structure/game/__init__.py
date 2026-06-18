@@ -150,7 +150,7 @@ def save_events():
     events_list = []
     for event in cur_events_list:
         events_list.append(event.to_dict())
-    safe_save(f"{get_save_dir()}/{clan.name}/events.json", events_list)
+    safe_save(f"{get_save_dir()}/{clan.save_id}/events.json", events_list)
 
 
 def add_faded_offspring_to_faded_cat(parent, offspring):
@@ -160,7 +160,7 @@ def add_faded_offspring_to_faded_cat(parent, offspring):
 
     global clan
 
-    path = f"{get_save_dir()}/{clan.name}/faded_cats/{parent}.json"
+    path = f"{get_save_dir()}/{clan.save_id}/faded_cats/{parent}.json"
 
     try:
         with open(
@@ -187,7 +187,7 @@ def load_events():
 
     global clan
 
-    clanname = clan.name
+    clanname = clan.save_id
     events_path = f"{get_save_dir()}/{clanname}/events.json"
     events_list = []
     try:
