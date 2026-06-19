@@ -526,7 +526,7 @@ class EventsScreen(Screens):
         rect = pygame.Rect(
             ui_scale_offset((211, 275)),
             (
-                self.events_frame.rect[2] + ui_scale_value(13),
+                self.events_frame.rect[2] + ui_scale_value(13) +1, # Removes 1 Pixel gap towards the right frame
                 self.events_frame.rect[3] - ui_scale_value(19),
             ),
         )
