@@ -39,10 +39,7 @@ class OutsiderEvents:
             elif cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
                 text = random.choice(deaths["lost"])
                 death_history = i18n.t("events.death.outsider_deaths.history.lost")
-            elif cat.status.is_other_clancat or (
-                cat.status.is_former_clancat
-                and not cat.status.get_last_valid_group_id() == CatGroup.PLAYER_CLAN_ID
-            ):
+            elif cat.status.is_other_clancat and not cat.status.get_last_valid_group_id() == CatGroup.PLAYER_CLAN_ID:
                 group_id = cat.status.get_last_valid_group_id()
                 if cat.status.is_exiled(group_id):
                     text = random.choice(deaths["other_clan_exiled"])
