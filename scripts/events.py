@@ -1763,12 +1763,27 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
             tags.append("abandoned")
         elif cat.backstory == "clanborn":
             tags.append("clanborn")
+        elif cat.backstory in BACKSTORIES["backstory_categories"]["loner_backstories"]:
+            tags.append("loner")
+        elif (
+            cat.backstory in BACKSTORIES["backstory_categories"]["kittypet_backstories"]
+        ):
+            tags.append("kittypet")
+        elif cat.backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]:
+            tags.append("rogue")
+
         temp = possible_ceremonies.intersection(ceremony_id_by_tag["general_backstory"])
 
         for t in tags:
             temp.update(possible_ceremonies.intersection(ceremony_id_by_tag[t]))
 
         possible_ceremonies = temp
+        # Check if cat does NOT have a suffix (for the sake of loner/kittypet/rogue) ----------------
+        # this also means we could probably have more easter eggs hehe
+        tags = []
+        if not cat.name.suffix:
+            tags.append("no_suffix")
+
         # Gather for traits --------------------------------------------------------------
 
         temp = possible_ceremonies.intersection(ceremony_id_by_tag["all_traits"])
