@@ -78,7 +78,6 @@ class OutsiderEvents:
             cat.die(grief_allowed=False)
             if (
                 cat.status.is_other_clancat
-                and not cat.status.get_last_valid_group_id() == CatGroup.PLAYER_CLAN_ID
             ):
                 game.cur_events_list.append(
                     Single_Event(
