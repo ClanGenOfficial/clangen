@@ -516,7 +516,7 @@ class Clan:
             self.load_clan_txt()
         else:
             switch_set_value(
-                Switch.error_message, "There was an error loading the clan.json"
+                Switch.error_message, "There was an error loading the clan.json - Can't locate the clan.json!"
             )
 
         # can't put this in post initialization bc guide isn't made before that func
