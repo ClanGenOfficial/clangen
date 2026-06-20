@@ -725,7 +725,7 @@ class Clan:
             return
 
         switch_set_value(
-            Switch.error_message, "There was an error loading the clan.json"
+            Switch.error_message, "There was an error loading the clan.json - check for extra commas/brackets or missing lines!"
         )
         filename = (
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
