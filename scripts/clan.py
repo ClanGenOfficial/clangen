@@ -516,7 +516,8 @@ class Clan:
             self.load_clan_txt()
         else:
             switch_set_value(
-                Switch.error_message, "There was an error loading the clan.json - Can't locate the clan.json!"
+                Switch.error_message,
+                "There was an error loading the clan.json - Can't locate the clan.json!",
             )
 
         # can't put this in post initialization bc guide isn't made before that func
@@ -725,7 +726,8 @@ class Clan:
             return
 
         switch_set_value(
-            Switch.error_message, "There was an error loading the clan.json - check for extra commas/brackets or missing lines!"
+            Switch.error_message,
+            "There was an error loading the clan.json - check for extra/missing commas/brackets, typos or missing lines!",
         )
         filename = (
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
