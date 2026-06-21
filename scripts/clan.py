@@ -424,7 +424,7 @@ class Clan:
 
         clan_data = {
             "save_id": self.save_id,
-            "displayname": self.name,
+            "displayname": self._name,
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
@@ -856,7 +856,7 @@ class Clan:
                     ID = other_clan["group_ID"]
                 game.clan.all_other_clans.append(
                     OtherClan(
-                        name=other_clan["name"],
+                        name=other_clan.get("prefix", other_clan.get("name")),
                         relations=int(other_clan["relations"]),
                         temperament=other_clan["temperament"],
                         chosen_symbol=other_clan["chosen_symbol"],
@@ -1424,11 +1424,11 @@ class OtherClan:
 
     @property
     def name(self):
-        return i18n.t("general.clan", name=self._name)
+        return i18n.t("general.clan", name=self.prefix)
 
     @name.setter
     def name(self, value):
-        self._name = value
+        self.prefix = value
 
     def __repr__(self):
         # has indicators that this is unlocalized, just in case
