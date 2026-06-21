@@ -1630,25 +1630,6 @@ class TestCatConstraint(unittest.TestCase):
                     event_for_cat(cat=cat, cat_info={"status": [f"-{status.value}"]})
                 )
 
-    def test_statuses_lost(self):
-        cat = Cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
-        cat.become_lost()
-
-        with self.subTest("rank-constrained", rank="lost"):
-            self.assertTrue(event_for_cat(cat=cat, cat_info={"status": ["lost"]}))
-        with self.subTest('"any"', age="lost"):
-            self.assertTrue(event_for_cat(cat=cat, cat_info={"status": ["any"]}))
-        with self.subTest("unmatched - different Clan rank", age="lost"):
-            self.assertFalse(
-                event_for_cat(cat=cat, cat_info={"status": [CatRank.LEADER]})
-            )
-        with self.subTest("unmatched - same as former rank", age="lost"):
-            self.assertFalse(
-                event_for_cat(cat=cat, cat_info={"status": [CatRank.WARRIOR]})
-            )
-        with self.subTest("exclusionary", age="lost"):
-            self.assertFalse(event_for_cat(cat=cat, cat_info={"status": [f"-lost"]}))
-
     def test_status_history(self):
         return  # temp patch until the test can be fixed proper
         ranks = [*CatRank]

@@ -306,10 +306,6 @@ class PatrolScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        self.set_disabled_menu_buttons(["patrols"])
-        self.update_heading_text(game.clan.name)
-        self.show_mute_buttons()
-        self.show_menu_buttons()
 
         if (
             self.in_progress_data is not None
@@ -320,6 +316,11 @@ class PatrolScreen(Screens):
         else:
             self.in_progress_data = None
             self.open_choose_cats_screen()
+
+        self.set_disabled_menu_buttons(["patrols"])
+        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.name})
+        self.show_mute_buttons()
+        self.show_menu_buttons()
 
     def display_change_save(self) -> Dict:
         if self.start_patrol_thread is not None and self.start_patrol_thread.is_alive():

@@ -491,7 +491,9 @@ def _check_cat_status(cat, statuses: list) -> bool:
     if not statuses or "any" in statuses:
         return True
 
-    if (cat.status.rank in statuses) or ("lost" in statuses and cat.status.is_lost()):
+    if (cat.status.rank in statuses) or (
+        "clancat" in statuses and cat.status.is_clancat
+    ):
         return True
 
     is_exclusionary = _check_for_exclusionary_value(statuses)
@@ -499,7 +501,9 @@ def _check_cat_status(cat, statuses: list) -> bool:
     if is_exclusionary:
         statuses = [x.replace("-", "") for x in statuses]
 
-    if (cat.status.rank in statuses) or ("lost" in statuses and cat.status.is_lost()):
+    if (cat.status.rank in statuses) or (
+        "clancat" in statuses and cat.status.is_clancat
+    ):
         return False
 
     return is_exclusionary
@@ -516,6 +520,9 @@ def _check_cat_status_history(cat, statuses: list) -> bool:
 
     if is_exclusionary:
         statuses = [x.replace("-", "") for x in statuses]
+
+    if "clancat" in statuses and cat.status.is_former_clancat:
+        return not is_exclusionary
 
     for _rank in cat.status.all_ranks.keys():
         if _rank in statuses and _rank != cat.status.rank:
