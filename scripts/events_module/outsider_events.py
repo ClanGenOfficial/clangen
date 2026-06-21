@@ -76,9 +76,7 @@ class OutsiderEvents:
 
             cat.history.add_death(death_text=death_history)
             cat.die(grief_allowed=False)
-            if (
-                cat.status.is_other_clancat
-            ):
+            if cat.status.is_other_clancat:
                 game.cur_events_list.append(
                     Single_Event(
                         text, ["birth_death", "other_clans"], cat_dict={"m_c": cat}
