@@ -1,0 +1,127 @@
+UV is a program that helps manage virtual environments (your dependencies) by installing them through the terminal with a few commands. These **dependencies are required for the game** to run, so you must either use UV as instructed, or install every requirement individually yourself.
+
+The provided README.md in your game folder is already quite helpful, but if you need detailed instructions, follow the section dedicated to your operating system.
+
+Yes, this guide can also work and apply with **up-to-date** mods. You just have to take the initiative to change some details to reflect the mod you're installing. Make sure to read carefully.
+
+---
+
+## QNA
+
+Here's a little QNA for things you might want to know before you proceed with UV.
+
+### Does UV work with Thonny?
+
+No, it does not. Rather, it's mostly an issue with ClanGen and Thonny clashing than it is with UV refusing to work with Thonny. Thonny does not support every dependency ClanGen needs (so it requires you to install additional thonny-exclusive environments), and frankly, sometimes that's just more work than necessary.
+
+In short terms, no, we do not recommend using Thonny with ClanGen.
+
+### What should I install before attempting to install UV?
+
+First, you need ClanGen's source version of the game. This is essentially the developer version that gives you access to the game's core coding. 
+
+You can download the source version through either:
+
+- [github releases](https://github.com/ClanGenOfficial/clangen/releases) (source version of stable releases)
+- the green [<> code button](https://github.com/ClanGenOfficial/clangen) to the right (source version of development commits). Make sure you're selected on the right branch before using the <> code button!
+
+Secondly, you'll need a terminal program. The terminal program that comes with your device is just fine, and it's recommended to install UV through the devices terminal.
+
+### Do I need python before installing UV?
+
+Nope! Unlike poetry (the installer ClanGen was using previously), UV installs Python automatically as a requirement. It also automatically uses the correct Python the game needs, so you no longer have to delete other versions of python to make it work.
+
+### Are the dependencies installed locally?
+
+Probably not in the way you're thinking. UV itself is installed locally onto your device, though the dependencies are installed along with the source copy you're applying them to. If you're using multiple source copies, you'll have separate dependencies for each one of them.
+
+### Terminology 
+
+If you are unsure of the terms I'm using and how they apply to installing the game, please check here for definitions! Apologizes if I miss something.
+
+**Operating system**: The devices system, such as Windows, MacOS, ChromeOS, Linux. 
+
+- If you do not know what operating system you're using, you can find it in your devices "system" settings.
+
+**Source**: A version of ClanGen that gives you access to ClanGen's core coding, rather than it being compressed into an easy-to-use launcher.
+
+- Source can be BOTH stable and development. Source =/= development 
+
+**Dependencies**: The requirements necessary for your game to run. 
+
+**PATH**: Path is referring to what your terminal is set to look at.
+
+---
+
+# Windows
+
+!!! warning
+     All the commands listed in this guide are COPY AND PASTE. Please do not change the commands!
+
+Please follow this windows section if you're using a windows device!
+
+For the following instructions, we will be continuing with Windows PowerShell (NOT ISE). This is the recommended method, but if you want to use another method, please take a look at [UV's alternative download methods](https://docs.astral.sh/uv/getting-started/installation/#pypi).
+
+## Installing UV
+
+Open Windows PowerShell. If you're unsure how to do that, use the quick search in your task bar and type in `windows powershell`. Open the program that pops up.
+
+Copy the following command and paste it into your opened terminal:
+
+```console
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Press enter. Once the command is done finalizing, close out of the powershell program to "reset" the terminal.
+
+-
+
+Search and open Windows PowerShell again. Once the terminal is opened, input the below command:
+
+```console
+uv --version
+```
+
+Press enter. This is simply checking to see the previous command installed UV correctly. If this command spits out `uv [number] (numbers)`, then it worked.
+
+## Running via RUN file
+
+Go to your ClanGen source game folder and scroll through the files until you see a **run** file. The type should be "windows batch file". Double click that.
+
+The run file should download your requirements and open the game for you. If it DOES NOT open, follow the next steps.
+
+## Running Manually
+
+If the RUN file doesn't end up working for you, or you want to do the manual way instead, then follow this section.
+
+Now that UV is properly installed, you can switch to any other IDE of your choice to install your requirements. The installing example continues to use powershell, but powershell isn't required for this section.
+
+- If you're intending to use an IDE with ClanGen going forward, it is recommended to switch to the IDE and use `uv sync` at least once before proceeding with it's features.
+
+### PATH
+
+Open a new version of Windows PowerShell. 
+
+Before we can do any commands, we have to set the terminal to PATH.
+
+- If you're unsure of what this means: the terminal can only affect what you set it to affect. If you leave it to its default pathing, it CAN NOT find ClanGen and apply your commands.
+
+![default powershell pathing](assets/tech-help/WIN-powershell-default.png)
+
+Type `cd` into your terminal. Do not Enter yet. 
+
+Go to where your unzipped ClanGen source is located on your device, and open it until you get to its contents. Look at the top of the file explorer, and right click the last folder listed in the file pathing. Select "copy address as text".
+
+- "Copy address as text" copies the entire file pathing to the folder you right clicked, which is perfect for this kind of command.
+
+![copy address as text](assets/tech-help/WIN-coppy-address.png)
+
+Paste the text you just copied after the `cd` command. it should end up look similar to `cd C:\Users\username\Documents\clangen-stable/clangen`. Enter.
+
+![cd command](assets/tech-help/WIN-cd-command-example.png)
+
+Once the terminal is set to the path, like the example above, use the command `dir` to make sure you're in the correct place.
+
+![dir command](assets/tech-help/WIN-dir-command.png)
+
+You should see the internal contents of the ClanGen source folder, like above.
