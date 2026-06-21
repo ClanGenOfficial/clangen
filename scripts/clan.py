@@ -173,11 +173,11 @@ class Clan:
 
     @property
     def name(self):
-        return i18n.t("general.clan", name=self._name)
+        return i18n.t("general.clan", name=self.prefix)
 
     @name.setter
     def name(self, value):
-        self._name = value
+        self.prefix = value
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
@@ -424,7 +424,7 @@ class Clan:
 
         clan_data = {
             "save_id": self.save_id,
-            "displayname": self._name,
+            "displayname": self.prefix,
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
