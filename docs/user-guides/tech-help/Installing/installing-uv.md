@@ -74,7 +74,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 Press enter. Once the command is done finalizing, close out of the powershell program to "reset" the terminal.
 
--
+---
 
 Search and open Windows PowerShell again. Once the terminal is opened, input the below command:
 
@@ -100,13 +100,20 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 
 ### PATH
 
+#### Open in terminal
+
+Go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file explorer, and select open with terminal. It'll automatically open in the correct pathing.
+
+Follow the section "commands" below.
+
+#### Manually
 Open a new version of Windows PowerShell. 
 
 Before we can do any commands, we have to set the terminal to PATH.
 
 - If you're unsure of what this means: the terminal can only affect what you set it to affect. If you leave it to its default pathing, it CAN NOT find ClanGen and apply your commands.
 
-![default powershell pathing](assets/tech-help/WIN-powershell-default.png)
+![default powershell pathing](docs-resources/assets/tech-help/WIN-powershell-default.png)
 
 Type `cd` into your terminal. Do not Enter yet. 
 
@@ -114,14 +121,168 @@ Go to where your unzipped ClanGen source is located on your device, and open it 
 
 - "Copy address as text" copies the entire file pathing to the folder you right clicked, which is perfect for this kind of command.
 
-![copy address as text](assets/tech-help/WIN-coppy-address.png)
+![copy address as text](docs-resources/assets/tech-help/WIN-coppy-address.png)
 
 Paste the text you just copied after the `cd` command. it should end up look similar to `cd C:\Users\username\Documents\clangen-stable/clangen`. Enter.
 
-![cd command](assets/tech-help/WIN-cd-command-example.png)
+![cd command](docs-resources/assets/tech-help/WIN_cd_command_example.png)
 
 Once the terminal is set to the path, like the example above, use the command `dir` to make sure you're in the correct place.
 
-![dir command](assets/tech-help/WIN-dir-command.png)
+![dir command](docs-resources/assets/tech-help/WIN-dir-command.png)
 
 You should see the internal contents of the ClanGen source folder, like above.
+
+If you don't get the internal contents, reset your terminal and try again. If it's just a folder called clangen, you can use `cd clangen` to further add to the terminal path, then confirm with `dir`.
+
+### Commands
+
+Once you're on the right path, you can then start adding commands to your terminal.
+
+The first one is actually installing your dependencies using UV.
+
+```console
+uv sync
+```
+
+`uv sync` will automatically generate the necessary .venv folder where your dependencies will be held. 
+
+---
+
+Once the above command is finalized (without errors), we can now open the game using a command:
+
+```console
+uv run main.py
+```
+
+When using the manual way, you will have to put the terminal to the correct file path and use the open command above every time you want to play (Unless the IDE you intend to use offers a run option). 
+
+# MacOS/Linux
+
+!!! warning
+     All the commands listed in this guide are COPY AND PASTE. Please do not change the commands!
+
+Please follow this section if you're using MacOS or Linux. The commands are virtually the same, though the errors you might get from attempting to run source might be different.
+
+## Installing UV
+
+Open the terminal provided to you by your OS (operating system).
+
+- MAC: Command + space keys on your keyboard, type in terminal, enter
+- LINUX: Open the linux terminal
+
+Copy the below command and paste it into your terminal:
+
+```console
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Press enter. Once the command is done finalizing, close out of the terminal to "reset" it. 
+
+---
+
+Open your terminal again. Once it's opened, input the below command:
+
+```console
+uv --version
+```
+
+Press enter. This is simply checking to see the previous command installed UV correctly. If this command spits out `uv [number] (numbers)`, then it worked.
+
+## Running via RUN file
+
+Go to your ClanGen source game folder and scroll through the files until you see a run file. The type should be "SH source file". Double click that.
+
+The run file should download your requirements and open the game for you. If it DOES NOT open, follow the next steps.
+
+## Running Manually
+
+If the RUN file doesn't end up working for you, or you want to do the manual way instead, then follow this section.
+
+Now that UV is properly installed, you can switch to any other IDE of your choice to install your requirements.
+
+### PATH: MAC
+
+!!!to-do
+     images of the process for mac provided by a mac player?
+
+Open your devices terminal and type in `cd`. Do not enter. 
+
+Find where your unzipped clangen source is held on your device in finder. For example, If I left it in downloads - `downloads/clangen/clangen`
+
+Put the clangen location after cd. For example, `cd downloads/clangen/clangen`
+
+Your path in the terminal should change. Use `ls` to confirm you're in the correct area. You should get something similar to below:
+
+![dir command](docs-resources/assets/tech-help/WIN-dir-command.png)
+
+If you don't get the internal contents, reset your terminal and try again. If it's just a folder called clangen, you can use `cd clangen` to further add to the terminal path, then confirm with `dir`.
+
+Proceed to the Commands section below.
+
+### PATH: Linux
+
+!!!to-do
+     images of the process for linux provided by a linux player?
+
+There are technically two ways to set your terminal to path with linux. You can either do it the [manual way](#path-mac), like detailed above, or you can open the folder within the linux terminal.
+
+Go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file manager, and select open with terminal. It'll automatically open in the correct pathing.
+
+### Commands
+
+Once you're on the right path, you can then start adding commands to your terminal.
+
+The first one is actually installing your dependencies using UV.
+
+```console
+uv sync
+```
+
+`uv sync` will automatically generate the necessary .venv folder where your dependencies will be held. 
+
+---
+
+Once the above command is finalized (without errors), we can now open the game using a command:
+
+```console
+uv run main.py
+```
+
+When using the manual way, you will have to put the terminal to the correct file path and use the open command above every time you want to play (Unless the IDE you intend to use offers a run option). 
+
+# Common Problems
+
+Having a problem with installing source? Look here!
+
+---
+
+**"I'm using Linux - how do I "unzip" a .zip folder?"**
+
+The easiest way to unzip a folder while using linux is:
+
+1. Create a folder in the place you want your Source to be held
+2. Double click your clangen source folder to open it
+3. Select everything you see in the folder
+4. Drag or copy+paste the contents to the folder in step 1
+
+If that doesn't work for you, you're able to also use downloadable programs, like 7zip, to get an extract option when right clicking the zipped folder.
+
+---
+
+**"My terminal throws the error no 'pyproject.tomi' found in current directory when I do commands."**
+
+You're not in path to do the command! Please closely follow the path section for your operating system again.
+
+---
+
+**"The run.sh file just opens in a text editor instead of running."**
+
+!!! to-do
+     potential execute permissions guide created by a linux user?
+
+This has something to do with execute permissions, and you can search how to give a .sh file permissions on your browser.
+
+For those who don't want to go through permissions, follow the manual way of opening the game.
+
+---
