@@ -13,6 +13,7 @@ import statistics
 from random import choice, randint
 from typing import Literal
 
+import i18n
 import ujson
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
@@ -169,6 +170,14 @@ class Clan:
                 (self.age + modifiers[self.starting_season]) % 12
             ]
         )
+
+    @property
+    def name(self):
+        return i18n.t("general.clan", name=self._name)
+
+    @name.setter
+    def name(self, value):
+        self._name = value
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
@@ -1412,6 +1421,14 @@ class OtherClan:
             if chosen_symbol
             else clan_symbol_sprite(self, return_string=True)
         )
+
+    @property
+    def name(self):
+        return i18n.t("general.clan", name=self._name)
+
+    @name.setter
+    def name(self, value):
+        self._name = value
 
     def __repr__(self):
         # has indicators that this is unlocalized, just in case
