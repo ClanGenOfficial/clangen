@@ -1375,7 +1375,7 @@ class OtherClan:
         game.clan.other_clan_IDs.append(self.group_ID)
 
         self.name = name
-        if not self.name:  # find name if clan has no name yet
+        if not self.prefix:  # find name if clan has no name yet
             used_names = [str(i.name) for i in game.clan.all_other_clans] + [
                 game.clan.name
             ]
