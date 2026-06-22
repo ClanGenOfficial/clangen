@@ -173,11 +173,11 @@ class Clan:
 
     @property
     def name(self):
-        return i18n.t("general.clan", name=self._name)
+        return i18n.t("general.clan", name=self.prefix)
 
     @name.setter
     def name(self, value):
-        self._name = value
+        self.prefix = value
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
@@ -424,7 +424,7 @@ class Clan:
 
         clan_data = {
             "save_id": self.save_id,
-            "displayname": self.name,
+            "displayname": self.prefix,
             "clanage": self.age,
             "biome": self.biome,
             "camp_bg": self.camp_bg,
@@ -856,7 +856,7 @@ class Clan:
                     ID = other_clan["group_ID"]
                 game.clan.all_other_clans.append(
                     OtherClan(
-                        name=other_clan["name"],
+                        name=other_clan.get("prefix", other_clan.get("name")),
                         relations=int(other_clan["relations"]),
                         temperament=other_clan["temperament"],
                         chosen_symbol=other_clan["chosen_symbol"],
@@ -1375,7 +1375,7 @@ class OtherClan:
         game.clan.other_clan_IDs.append(self.group_ID)
 
         self.name = name
-        if not self.name:  # find name if clan has no name yet
+        if not self.prefix:  # find name if clan has no name yet
             used_names = [str(i.name) for i in game.clan.all_other_clans] + [
                 game.clan.name
             ]
@@ -1424,11 +1424,11 @@ class OtherClan:
 
     @property
     def name(self):
-        return i18n.t("general.clan", name=self._name)
+        return i18n.t("general.clan", name=self.prefix)
 
     @name.setter
     def name(self, value):
-        self._name = value
+        self.prefix = value
 
     def __repr__(self):
         # has indicators that this is unlocalized, just in case
