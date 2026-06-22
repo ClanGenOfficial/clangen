@@ -140,6 +140,7 @@ def one_moon():
     # Calling of "one_moon" functions.
     other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
     for cat in Cat.all_cats_list.copy():
+        cat.thought = None
         if cat.status.alive_in_player_clan or cat.status.group.is_afterlife():
             one_moon_cat(cat)
         elif not cat.status.group or cat.status.is_other_clancat:
@@ -310,7 +311,7 @@ def one_moon():
     # autosave
     if get_clan_setting("autosave") and game.clan.age % 5 == 0:
         try:
-            save_cats(switch_get_value(Switch.clan_name), Cat, game)
+            save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
             game.clan.save_clan()
             game.clan.save_pregnancy(game.clan)
             game.save_events()
@@ -1005,7 +1006,6 @@ def one_moon_cat(cat):
         return
 
     if cat.dead:
-        cat.get_new_thought(CatThought.WHILE_DEAD)
         if cat.ID in game.just_died and cat.status.rank != CatRank.NEWBORN:
             # newborns are exempt from this bc if we increase the moons, they become a kitten without actually gaining the kitten rank
             cat.moons += 1
@@ -1229,7 +1229,7 @@ def check_war():
     event = ongoing_event_text_adjust(
         Cat,
         event,
-        other_clan_name=i18n.t("general.clan", name=enemy_clan.name),
+        other_clan_name=enemy_clan.name,
         clan=game.clan,
     )
     game.cur_events_list.append(Single_Event(event, "other_clans"))
@@ -1763,12 +1763,27 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
             tags.append("abandoned")
         elif cat.backstory == "clanborn":
             tags.append("clanborn")
+        elif cat.backstory in BACKSTORIES["backstory_categories"]["loner_backstories"]:
+            tags.append("loner")
+        elif (
+            cat.backstory in BACKSTORIES["backstory_categories"]["kittypet_backstories"]
+        ):
+            tags.append("kittypet")
+        elif cat.backstory in BACKSTORIES["backstory_categories"]["rogue_backstories"]:
+            tags.append("rogue")
+
         temp = possible_ceremonies.intersection(ceremony_id_by_tag["general_backstory"])
 
         for t in tags:
             temp.update(possible_ceremonies.intersection(ceremony_id_by_tag[t]))
 
         possible_ceremonies = temp
+        # Check if cat does NOT have a suffix (for the sake of loner/kittypet/rogue) ----------------
+        # this also means we could probably have more easter eggs hehe
+        tags = []
+        if not cat.name.suffix:
+            tags.append("no_suffix")
+
         # Gather for traits --------------------------------------------------------------
 
         temp = possible_ceremonies.intersection(ceremony_id_by_tag["all_traits"])
@@ -2101,7 +2116,10 @@ def handle_injuries_or_general_death(cat):
         Condition_Events.handle_injuries(cat)
         return
 
-    use_war_modifier = switch_get_value(Switch.war_rel_change_type) != "rel_up"
+    use_war_modifier = (
+        game.clan.war["at_war"]
+        and switch_get_value(Switch.war_rel_change_type) != "rel_up"
+    )
 
     # chance to kill leader: 1/50 by default
     leader_death_chance = get_config(game.clan, "death_related.leader_death_chance") - (

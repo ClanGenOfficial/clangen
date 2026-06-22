@@ -1,4 +1,3 @@
-import dataclasses
 from dataclasses import dataclass, field
 from random import choice
 from re import sub
@@ -13,7 +12,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
-from scripts.game_structure import game
+from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
@@ -45,7 +44,7 @@ class ClanInfo:
 
     # we do this as a dataclass to make it a bit more future-proofed for any eventual additions to this info
     # this way it's much easier to change names of attributes or add new ones OR know if you've fucked smth up
-    name: str = ""
+    display_name: str = ""
     leader: Optional[Cat] = None
     deputy: Optional[Cat] = None
     medicine_cat: Optional[Cat] = None
@@ -60,7 +59,7 @@ class ClanInfo:
         """
         Return all the attributes back to their default values
         """
-        self.name = ""
+        self.display_name = ""
         self.leader = None
         self.deputy = None
         self.medicine_cat = None
@@ -71,8 +70,14 @@ class ClanInfo:
         self.starting_season = "Newleaf"
         self.game_mode = "classic"
 
+    def clear_cats(self):
+        self.leader = None
+        self.deputy = None
+        self.medicine_cat = None
+        self.starting_members = []
+
     def update(self, saved_info: dict):
-        self.name = saved_info["name"]
+        self.display_name = saved_info["display_name"]
         self.leader = saved_info["leader"]
         self.deputy = saved_info["deputy"]
         self.medicine_cat = saved_info["medicine_cat"]
@@ -88,7 +93,7 @@ class ClanInfo:
         Returns all the attributes as a dict. We gotta use this instead of the dataclasses.as_dict() because Cat objects aren't pickable
         """
         return {
-            "name": self.name,
+            "display_name": self.display_name,
             "leader": self.leader,
             "deputy": self.deputy,
             "medicine_cat": self.medicine_cat,
@@ -129,6 +134,8 @@ class ClanInfo:
 
 
 class MakeClanScreenBase(Screens):
+    rolls_left = constants.CONFIG["clan_creation"]["rerolls"]
+
     def __init__(self, name="make_clan_screen"):
         super().__init__(name)
 
@@ -182,6 +189,11 @@ class MakeClanScreenBase(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["main_menu"]:
+                self.set_mute_button_position("bottomright")
+                MakeClanScreenBase.rolls_left = constants.CONFIG["clan_creation"][
+                    "rerolls"
+                ]
+                switch_set_value(Switch.possible_cats, [])
                 self.clan_info.clear()
                 self.change_screen(GameScreen.START)
 
@@ -205,15 +217,15 @@ class MakeClanScreenBase(Screens):
         save_load.faded_ids.clear()
         Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
-        save_id = self.clan_info.name
 
         # extra sanitization for filenames
-        clan_name = sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", save_id)
-        if _clan_name_exists(clan_name):
-            self.clan_info.name = _generate_unique_clan_name(clan_name)
+        save_id = sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", self.clan_info.display_name)
+        # if the name is in use, we create a unique save id
+        if _clan_name_exists(save_id):
+            save_id = _generate_unique_clan_name(save_id)
 
         game.clan = Clan(
-            displayname=clan_name,
+            save_id=save_id,
             **self.clan_info.get_dict(),
         )
         game.clan.create_clan()
@@ -238,8 +250,8 @@ class MakeClanScreenBase(Screens):
         clan_names = (
             names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
         )
-        if self.clan_info.name:
-            clan_names.remove(self.clan_info.name)
+        if self.clan_info.display_name:
+            clan_names.remove(self.clan_info.display_name)
 
         return choice(clan_names)
 

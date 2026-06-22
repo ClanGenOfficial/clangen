@@ -15,6 +15,7 @@
         "error_clan_name_space": "Clan names cannot start with a space.",
         "error_clan_name_duplicate": "A Clan with that name already exists.",
         "reset_name": "reset name",
+        "reroll_tooltip": "reroll all cats",
         "leader_title": "pick a leader to guide the Clan through any obstacles",
         "deputy_title": "choose a deputy to support the leader and take charge when things go awry",
         "medcat_title": " choose a medicine cat to heal the Clan and commune with their ancestors",

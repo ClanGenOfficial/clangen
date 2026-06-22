@@ -14,7 +14,7 @@ from scripts.screens.enums import GameScreen
 
 class Switch(StrEnum):
     cat = auto()
-    clan_name = auto()
+    clan_save_id = auto()
     clan_creation_info = auto()
     possible_cats = auto()
     cur_screen = auto()
@@ -44,7 +44,7 @@ class Switch(StrEnum):
 
 _switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
     "cat": "",
-    "clan_name": "",
+    "clan_name": "",  # TODO: this is unused and undeclared as a strenum?
     "clan_creation_info": {},
     "possible_cats": [],
     "cur_screen": GameScreen.START,

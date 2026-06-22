@@ -168,7 +168,7 @@ class Condition_Events:
             if cat.status.is_leader:
                 game.clan.leader_lives -= 1
                 # kill and retrieve leader life text
-                text = get_leader_life_notice()
+                text = get_leader_life_notice(cat.name)
 
             possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS["starving"]
             event = random.choice(possible_string_list) + " " + text
@@ -353,7 +353,10 @@ class Condition_Events:
         """
         triggered = False
 
-        modify_for_war = switch_get_value(Switch.war_rel_change_type) != "rel_up"
+        modify_for_war = (
+            game.clan.war["at_war"]
+            and switch_get_value(Switch.war_rel_change_type) != "rel_up"
+        )
         path = (
             "condition_related.classic_injury_chance"
             if game.clan.game_mode == "classic"
@@ -606,7 +609,7 @@ class Condition_Events:
                 event = event_text_adjust(Cat, event, main_cat=cat)
                 # add life loss message
                 if cat.status.is_leader:
-                    event = event + " " + get_leader_life_notice()
+                    event = event + " " + get_leader_life_notice(cat.name)
 
                 # add death to history
                 cat.history.add_death(
@@ -740,7 +743,7 @@ class Condition_Events:
                 event = event_text_adjust(Cat, event, main_cat=cat)
                 # add life loss message
                 if cat.status.is_leader:
-                    event = event + " " + get_leader_life_notice()
+                    event = event + " " + get_leader_life_notice(cat.name)
 
                 # add death to history
                 cat.history.add_death(condition=injury, death_text=history_text.strip())
@@ -1092,7 +1095,7 @@ class Condition_Events:
                     if cat.age == CatAge.ADOLESCENT:
                         event += i18n.t(
                             "hardcoded.condition_retire_adolescent_ceremony",
-                            clan=game.clan.displayname,
+                            clan=game.clan.name,
                             newname=cat.name.prefix + cat.name.suffix,
                         )
 

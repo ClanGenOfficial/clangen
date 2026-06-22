@@ -564,8 +564,10 @@ class ProfileScreen(Screens):
                     c for c in Cat.all_cats_list if c.status.is_other_clancat
                 ]
                 self.the_cat.get_new_thought(other_clan_cats=other_clan_cats)
+            elif self.the_cat.dead:
+                self.the_cat.get_new_thought(CatThought.WHILE_DEAD)
             else:
-                self.the_cat.get_new_thought()
+                self.the_cat.get_new_thought(CatThought.WHILE_ALIVE)
 
         # Info in string
         cat_name = str(self.the_cat.name)
@@ -878,7 +880,7 @@ class ProfileScreen(Screens):
         if the_cat.dead:
             old_clan = the_cat.status.get_last_living_group()
             if old_clan == CatGroup.PLAYER_CLAN_ID:
-                name = game.clan.displayname
+                name = game.clan.name
             # if they had an old clan that wasn't the player's, find it!
             elif old_clan:
                 name = [
@@ -900,7 +902,7 @@ class ProfileScreen(Screens):
         # otherwise, assume the cat takes the player clan's name
         # it's okay if this is an outsider, if they don't actually have a group to refer to then they won't use this variable
         else:
-            name = game.clan.displayname
+            name = game.clan.name
 
         if the_cat.status.is_exiled():
             if not name:
@@ -910,9 +912,9 @@ class ProfileScreen(Screens):
                     if c.group_ID == the_cat.status.get_last_living_group()
                 ]
             if not name:
-                name = game.clan.displayname
+                name = game.clan.name
 
-        cat_clan = i18n.t(f"general.clan", name=f"{name}")
+        cat_clan = name
 
         if the_cat.status.is_lost():
             output += f"<font color='#FF0000'>{i18n.t('general.lost', count=1)}</font>"
@@ -1225,11 +1227,11 @@ class ProfileScreen(Screens):
 
     def save_user_notes(self):
         """Saves user-entered notes."""
-        clanname = game.clan.name
+        save_id = game.clan.save_id
 
         notes = self.user_notes
 
-        notes_directory = get_save_dir() + "/" + clanname + "/notes"
+        notes_directory = get_save_dir() + "/" + save_id + "/notes"
         notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
 
         if not os.path.exists(notes_directory):
@@ -1244,9 +1246,9 @@ class ProfileScreen(Screens):
 
     def load_user_notes(self):
         """Loads user-entered notes."""
-        clanname = game.clan.name
+        save_id = game.clan.save_id
 
-        notes_directory = get_save_dir() + "/" + clanname + "/notes"
+        notes_directory = get_save_dir() + "/" + save_id + "/notes"
         notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
 
         if not os.path.exists(notes_file_path):
