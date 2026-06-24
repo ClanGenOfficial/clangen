@@ -308,9 +308,7 @@ class WarriorDenScreen(Screens):
         if self.original_focus_code in self.other_clan_settings:
             desc = i18n.t(
                 "screens.warrior_den.involved_clans",
-                clans=adjust_list_text(
-                    [f"{clan}clan" for clan in game.clan.clans_in_focus]
-                ),
+                clans=adjust_list_text(game.clan.clans_in_focus),
             )
         last_change_text = ""
         next_change = ""
