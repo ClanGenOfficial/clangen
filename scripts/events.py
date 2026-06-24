@@ -1155,7 +1155,7 @@ def check_war():
     if game.clan.war["at_war"]:
         # Grab the enemy clan object
         for other_clan in game.clan.all_other_clans:
-            if other_clan.name == game.clan.war["enemy"]:
+            if other_clan.prefix == game.clan.war["enemy"]:
                 enemy_clan = other_clan
                 break
 
@@ -1203,7 +1203,7 @@ def check_war():
             ):
                 enemy_clan = other_clan
                 game.clan.war["at_war"] = True
-                game.clan.war["enemy"] = other_clan.name
+                game.clan.war["enemy"] = other_clan.prefix
                 war_events = WAR_TXT["trigger_events"]
                 switch_set_value(Switch.war_rel_change_type, "rel_down")
 
