@@ -123,8 +123,8 @@ class GroupEvents:
             interaction_str, abbreviations_cat_id
         )
 
-        interaction_str = i18n.t(
-            f"relationships.{inter_type}_postscript", text=interaction_str
+        interaction_str = interaction_str + i18n.t(
+            f"relationships.{inter_type}_postscript"
         )
 
         if len(chosen_interaction.general_reaction) > 0:

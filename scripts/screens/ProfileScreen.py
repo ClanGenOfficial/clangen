@@ -11,7 +11,6 @@ import pygame_gui
 import ujson
 from pygame_gui.core import ObjectID
 
-from scripts.game_input import INPUT_ACTION_PRESSED, Action
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache, game
@@ -211,8 +210,8 @@ class ProfileScreen(Screens):
                 )
             else:
                 self.handle_tab_events(event)
-        elif event.type == INPUT_ACTION_PRESSED:
-            if event.action == Action.PREVIOUS and not self.editing_notes:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+            if event.key == pygame.K_LEFT:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
                     self.clear_profile()
                     switch_set_value(Switch.cat, self.previous_cat)
@@ -220,7 +219,7 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.action == Action.NEXT and not self.editing_notes:
+            elif event.key == pygame.K_RIGHT:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     self.clear_profile()
                     switch_set_value(Switch.cat, self.next_cat)
@@ -228,7 +227,8 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 else:
                     print("invalid next cat", self.previous_cat)
-            if event.action == Action.BACK:
+
+            elif event.key == pygame.K_ESCAPE:
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
 
@@ -555,20 +555,6 @@ class ProfileScreen(Screens):
         if self.the_cat is None:
             return
 
-        # initialize thoughts if they have none
-        if not self.the_cat.thought:
-            if self.the_cat.status.is_other_clancat:
-                # this isn't great, but it's only being run if someone checks an
-                # other clan cat when booting the game before doing a timeskip
-                other_clan_cats = [
-                    c for c in Cat.all_cats_list if c.status.is_other_clancat
-                ]
-                self.the_cat.get_new_thought(other_clan_cats=other_clan_cats)
-            elif self.the_cat.dead:
-                self.the_cat.get_new_thought(CatThought.WHILE_DEAD)
-            else:
-                self.the_cat.get_new_thought(CatThought.WHILE_ALIVE)
-
         # Info in string
         cat_name = str(self.the_cat.name)
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
@@ -739,9 +725,9 @@ class ProfileScreen(Screens):
         output = ""
         # SEX/GENDER
         if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
-            output += the_cat.gender_string
+            output += the_cat.get_gender_string()
         else:
-            output += the_cat.genderalign_string
+            output += the_cat.get_genderalign_string()
         # NEWLINE ----------
         output += "\n"
 
@@ -880,7 +866,7 @@ class ProfileScreen(Screens):
         if the_cat.dead:
             old_clan = the_cat.status.get_last_living_group()
             if old_clan == CatGroup.PLAYER_CLAN_ID:
-                name = game.clan.name
+                name = game.clan.displayname
             # if they had an old clan that wasn't the player's, find it!
             elif old_clan:
                 name = [
@@ -902,7 +888,7 @@ class ProfileScreen(Screens):
         # otherwise, assume the cat takes the player clan's name
         # it's okay if this is an outsider, if they don't actually have a group to refer to then they won't use this variable
         else:
-            name = game.clan.name
+            name = game.clan.displayname
 
         if the_cat.status.is_exiled():
             if not name:
@@ -912,7 +898,7 @@ class ProfileScreen(Screens):
                     if c.group_ID == the_cat.status.get_last_living_group()
                 ]
             if not name:
-                name = game.clan.name
+                name = game.clan.displayname
 
         cat_clan = i18n.t(f"general.clan", name=f"{name}")
 
@@ -1026,7 +1012,7 @@ class ProfileScreen(Screens):
 
         # EXPERIENCE
         output += i18n.t(
-            "screens.profile.experience_label", exp=the_cat.experience_level_string
+            "screens.profile.experience_label", exp=the_cat.experience_level
         )
         if get_clan_setting("showxp"):
             output += " (" + str(the_cat.experience) + ")"
@@ -1052,7 +1038,7 @@ class ProfileScreen(Screens):
 
         # NUTRITION INFO (if the game is in the correct mode)
         if (
-            game.clan.game_mode in ["expanded", "cruel_season"]
+            game.clan.game_mode in ["expanded", "cruel season"]
             and the_cat.is_alive()
             and FRESHKILL_ACTIVE
         ):
@@ -1227,11 +1213,11 @@ class ProfileScreen(Screens):
 
     def save_user_notes(self):
         """Saves user-entered notes."""
-        save_id = game.clan.save_id
+        clanname = game.clan.name
 
         notes = self.user_notes
 
-        notes_directory = get_save_dir() + "/" + save_id + "/notes"
+        notes_directory = get_save_dir() + "/" + clanname + "/notes"
         notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
 
         if not os.path.exists(notes_directory):
@@ -1246,9 +1232,9 @@ class ProfileScreen(Screens):
 
     def load_user_notes(self):
         """Loads user-entered notes."""
-        save_id = game.clan.save_id
+        clanname = game.clan.name
 
-        notes_directory = get_save_dir() + "/" + save_id + "/notes"
+        notes_directory = get_save_dir() + "/" + clanname + "/notes"
         notes_file_path = notes_directory + "/" + self.the_cat.ID + "_notes.json"
 
         if not os.path.exists(notes_file_path):

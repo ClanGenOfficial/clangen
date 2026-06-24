@@ -65,14 +65,14 @@ class Relationship:
         """
 
         # romance operates on a 0-100 scale, 0 is no romantic interest and 100 is full romantic interest
-        self._romance = min(max(romance, 0), 100)
+        self.romance = romance
 
         # each stat can go from -100 to 100
         # negative numbers are the negative state while positive is the positive state
-        self._like = min(max(like, -100), 100)
-        self._respect = min(max(respect, -100), 100)
-        self._trust = min(max(trust, -100), 100)
-        self._comfort = min(max(comfort, -100), 100)
+        self.like = like
+        self.respect = respect
+        self.trust = trust
+        self.comfort = comfort
 
     def to_dict(self):
         return {
@@ -219,17 +219,17 @@ class Relationship:
         # prepare string for display
         interaction_str = self.adjust_interaction_string(interaction_str)
 
-        effect = "relationships.neutral_postscript"
+        effect = ""
         if positive:
-            effect = f"relationships.positive_postscript_{intensity}"
+            effect = i18n.t(f"relationships.positive_postscript_{intensity}")
         elif not positive:
-            effect = f"relationships.negative_postscript_{intensity}"
+            effect = i18n.t(f"relationships.negative_postscript_{intensity}")
 
-        interaction_str = i18n.t(effect, text=interaction_str)
+        interaction_str = interaction_str + effect
         self.log.append(
-            i18n.t(
+            interaction_str
+            + i18n.t(
                 "relationships.age_postscript",
-                text=interaction_str,
                 name=str(self.cat_from.name),
                 count=self.cat_from.moons,
             )
@@ -379,23 +379,21 @@ class Relationship:
 
         """
         # base for non-existing like
-        bool_ballot = [True, False]
+        bool_ballot = [True, True, False]
 
         # take personality in count
         comp = get_personality_compatibility(self.cat_from, self.cat_to)
         if comp == CatCompatibility.POSITIVE:
             bool_ballot.append(True)
-        elif comp == CatCompatibility.NEGATIVE:
-            bool_ballot.append(False)
 
         # further influence the partition based on the relationship
         for value in (self.like, self.respect, self.comfort, self.trust):
-            # each 20th above 0 adds another True
+            # each 10th above 0 adds another True
             if value > 0:
-                bool_ballot += [True] * int(value / 20)
-            # each 20th below 0
+                bool_ballot += [True] * int(value / 10)
+            # each 10th below 0
             else:
-                bool_ballot += [False] * int(abs(value) / 20)
+                bool_ballot += [False] * int(abs(value) / 10)
 
         return choice(bool_ballot)
 

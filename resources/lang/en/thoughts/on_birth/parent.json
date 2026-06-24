@@ -1,7 +1,8 @@
 [
+
     {
         "id": "gen_new_parent",
-        "strings": [
+        "thoughts": [
             "Watches over the new litter",
             "Is brimming with love",
             "Is thinking of {PRONOUN/m_c/poss} new responsibilities",
@@ -28,65 +29,24 @@
             "Has never been so exhausted in all {PRONOUN/m_c/poss} life"
         ]
     },
-    {
+        {
         "id": "gen_new_parent_to_friend",
-        "strings": [
+        "thoughts": [
             "Asks r_c to watch over the kits"
         ],
-        "involved_cats": {
-            "r_c": {
-                "age": [
-                    "young adult",
-                    "adult",
-                    "senior adult",
-                    "senior"
-                ]
-            }
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "trusts"
-                ]
-            }
-        ]
+            "random_age_constraint": ["young adult", "adult", "senior adult", "senior"],
+            "relationship_constraint": ["trusts"]
     },
     {
         "id": "gen_parent_to_newborn",
-        "strings": [
+        "thoughts": [
             "Stops r_c from falling out of the nest",
             "Makes sure r_c has fed enough",
             "Hissed at a Clanmate who got too close to r_c",
             "Considers renaming r_c",
             "Is proud of r_c for sleeping through the night"
         ],
-        "involved_cats": {
-            "r_c": {
-                "age": [
-                    "newborn"
-                ]
-            }
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "parent/child"
-                ]
-            }
-        ]
+        "random_age_constraint": ["newborn"],
+        "relationship_constraint": ["parent/child"]
     }
 ]

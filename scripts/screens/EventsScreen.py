@@ -168,23 +168,24 @@ class EventsScreen(Screens):
                 self.menu_button_pressed(event)
 
         # KEYBIND CONTROLS
-        # ON PRESSING A KEY
-        if event.type == pygame.KEYDOWN:
-            # LEFT ARROW
-            if event.key == pygame.K_LEFT:
-                self.change_screen(GameScreen.PATROL)
-            # RIGHT ARROW
-            elif event.key == pygame.K_RIGHT:
-                self.change_screen(GameScreen.CAMP)
-            # DOWN AND UP ARROW
-            elif event.key == pygame.K_DOWN or event.key == pygame.K_UP:
-                self.handle_tab_select(event.key)
-            # RETURN
-            elif event.key == pygame.K_RETURN:
-                self.handle_tab_switch(self.selected_display)
-            # SPACE
-            elif event.key == pygame.K_SPACE:
-                self.save_button.save_game(current_screen=self)
+        elif game_setting_get("keybinds"):
+            # ON PRESSING A KEY
+            if event.type == pygame.KEYDOWN:
+                # LEFT ARROW
+                if event.key == pygame.K_LEFT:
+                    self.change_screen(GameScreen.PATROL)
+                # RIGHT ARROW
+                elif event.key == pygame.K_RIGHT:
+                    self.change_screen(GameScreen.CAMP)
+                # DOWN AND UP ARROW
+                elif event.key == pygame.K_DOWN or event.key == pygame.K_UP:
+                    self.handle_tab_select(event.key)
+                # RETURN
+                elif event.key == pygame.K_RETURN:
+                    self.handle_tab_switch(self.selected_display)
+                # SPACE
+                elif event.key == pygame.K_SPACE:
+                    self.save_button.save_game(current_screen=self)
 
     def save_scroll_and_page_position(self):
         """
@@ -307,7 +308,7 @@ class EventsScreen(Screens):
             starting_height=1,
             container=self.event_screen_container,
             manager=MANAGER,
-            text_kwargs={"season": i18n.t(f"general.{game.clan.current_season}")},
+            text_kwargs={"season": i18n.t(game.clan.current_season)},
         )
         self.clan_info["age"] = pygame_gui.elements.UITextBox(
             "screens.events.age",
@@ -385,7 +386,7 @@ class EventsScreen(Screens):
 
         # Draw and disable the correct menu buttons.
         self.set_disabled_menu_buttons(["events"])
-        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.name})
+        self.update_heading_text(f"{game.clan.displayname}Clan")
         self.show_menu_buttons()
 
     def reset_page_buttons(self, is_page_update=False):
@@ -708,7 +709,7 @@ class EventsScreen(Screens):
         # UPDATE CLAN INFO
         self.clan_info["season"].set_text(
             "screens.events.season",
-            text_kwargs={"season": i18n.t(f"general.{game.clan.current_season}")},
+            text_kwargs={"season": i18n.t(game.clan.current_season)},
         )
         self.clan_info["age"].set_text(
             "screens.events.age", text_kwargs={"count": game.clan.age}

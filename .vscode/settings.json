@@ -21,12 +21,6 @@
                 "events/new_cat/*.json",
                 "events/injury/*.json"
             ]
-        },
-        {
-            "url": "./schemas/poi.schema.json",
-            "fileMatch": [
-                "points_of_interest.json"
-            ]
         }
     ],
     "python.formatting.provider": "yapf",
@@ -45,10 +39,8 @@
     "cSpell.words": [
         "blit",
         "bloodlust",
-        "clanborn",
         "Clanmates",
         "cooldown",
-        "customizer",
         "freshkill",
         "greenleaf",
         "headedness",
@@ -61,7 +53,6 @@
         "parentless",
         "pygame",
         "Silverpelt",
-        "specsuffix",
         "starclan",
         "Thunderpath",
         "Twoleg",

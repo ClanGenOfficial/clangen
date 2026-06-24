@@ -1,8 +1,6 @@
 [
     {
         "id": "becoming_loner",
-        "strings": [
-            "Is better off on {PRONOUN/m_c/poss} own anyway"
-        ]
+        "thoughts": ["Is better off on {PRONOUN/m_c/poss} own anyway"]
     }
 ]

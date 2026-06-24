@@ -1,0 +1,129 @@
+# if false, a cat's nutritional status will have no effect
+activate_death = true
+
+# if false, freshkill pile events will not be triggered
+activate_events = true
+# determines when the freshkill pile amount is considered "full" or "excessive" for the purpose of events
+# the higher this number, the more freshkill is required before the pile is "full/excessive"
+base_event_trigger_factor = 4
+
+# defines the amount of prey a Clan begins with
+start_amount = 60
+
+# the amount of prey a healthy warrior will catch automatically each timeskip
+# amount will be chosen from the given range. default is 2-4 prey.
+auto_warrior_prey = [2,4]
+# the same, but for healthy apprentices
+auto_apprentice_prey = [1,3]
+
+# the baseline of prey amount caught on patrol will be a warrior's prey_requirement plus this value
+additional_prey = 1
+
+# the percentage of nutrition at which a cat is considered malnourished
+nutrition_malnourished_percentage = 45
+# the percentage of nutrition at which a cat is considered starving
+nutrition_starving_percentage = 20
+
+# the amount that a cat's prey requirement increases if the cat is sick/injured/pregnant
+condition_increase = 1
+
+# the rank order in which cats will be fed
+feeding_order = [
+        "newborn",
+        "kitten",
+        "queen/pregnant",
+        "elder",
+        "medicine cat",
+        "medicine cat apprentice",
+        "apprentice",
+        "mediator apprentice",
+        "warrior",
+        "mediator",
+        "deputy",
+        "leader"
+    ]
+
+[text_nutrition]
+    # nutrition % ranges and their corresponding text displays
+    # for example: 0-21% nutrition is considered starving
+    lower_range = [0, 21, 41, 61, 81, 91]
+    text = ["starving", "very hungry", "hungry", "satiated", "full", "stuffed"]
+
+# the prey each rank will consume on a timeskip
+# kittens and newborns with birthing parent will not consume prey (as they will drink milk)
+[prey_requirement]
+    leader = 3
+    deputy = 3
+    "medicine cat" = 2
+    "medicine cat apprentice" = 1.5
+    "mediator apprentice" = 1.5
+    mediator = 2
+    warrior = 3
+    apprentice = 1.5
+    elder = 1.5
+    "queen/pregnant" = 4
+    kitten = 0.5
+    newborn = 0.25
+
+# the bonus prey a hunter skill cat will catch according to exp rank
+[hunter_exp_bonus]
+    untrained = 0.1
+    trainee = 1
+    prepared = 2
+    competent = 3
+    proficient = 4
+    skilled = 5
+    expert = 6
+    master = 7
+
+# hunter_exp_bonus number will be multiplied by the number matching their skill tier.
+# for example, an expert tier 2 hunter will catch an extra 6 * 2 (12 total) prey
+[hunter_bonus]
+    # tier = multiplier
+    1 = 1
+    2 = 2
+    3 = 3
+
+# used to dictate how often certain sizes of prey are found in each biome/season
+[patrol_balance]
+    # season = [very_small, small, medium, large, huge]
+    # numbers indicate the weight of each prey size, larger numbers make the prey size more likely to occur
+    [patrol_balance.Forest]
+        Newleaf = [2,5,5,2,1]
+        Greenleaf = [1,3,6,4,2]
+        Leaf-fall = [2,4,5,3,1]
+        Leaf-bare = [3,6,4,2,0]
+    [patrol_balance.Mountainous]
+        Newleaf = [2,5,5,2,1]
+        Greenleaf = [1,3,6,4,2]
+        Leaf-fall = [2,6,4,2,1]
+        Leaf-bare = [3,6,4,2,0]
+    [patrol_balance.Plains]
+        Newleaf = [2,5,5,2,1]
+        Greenleaf = [1,3,6,4,2]
+        Leaf-fall = [2,4,5,3,1]
+        Leaf-bare = [3,6,4,2,0]
+    [patrol_balance.Beach]
+        Newleaf = [2,5,5,2,1]
+        Greenleaf = [2,5,5,2,1]
+        Leaf-fall = [2,5,5,2,1]
+        Leaf-bare = [2,6,4,2,1]
+    [patrol_balance.Wetlands]
+        Newleaf = [2,5,5,2,1]
+        Greenleaf = [2,5,5,2,1]
+        Leaf-fall = [2,5,5,2,1]
+        Leaf-bare = [2,6,4,2,1]
+    [patrol_balance.Desert]
+        Newleaf = [2,6,4,2,1]
+        Greenleaf = [3,6,4,2,0]
+        Leaf-fall = [2,5,5,2,1]
+        Leaf-bare = [1,3,6,4,2]
+
+# used in conjunction with patrol_balance to modify the chosen prey size by the patrol frequency
+# the less frequent the patrol, the larger the prey it can find
+[patrol_weight_adaption]
+    # prey size increase = associated frequency
+    1_prey_class_increase = 4
+    2_prey_class_increase = 3
+    3_prey_class_increase = 2
+    4_prey_class_increase = 1

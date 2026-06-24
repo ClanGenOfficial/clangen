@@ -5,13 +5,6 @@ from itertools import permutations
 
 from scripts.cat.personality import Personality
 from scripts.cat.skills import Skill, SkillPath
-from scripts.clan_resources.point_of_interest import (
-    add_poi,
-    get_poi_names_set,
-    get_poi_tags_set,
-    clear_pois,
-    generate_and_add_new_poi,
-)
 
 try:
     import tomllib
@@ -22,8 +15,7 @@ os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat, create_cat
-from scripts.cat_relations.inheritance2 import inheritance_db
-from scripts.cat.enums import CatRank, CatAge, CatSocial, CatGroup, CatStanding
+from scripts.cat.enums import CatRank, CatAge, CatSocial
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat_relations.relationship import Relationship
@@ -33,7 +25,6 @@ from scripts.events_module.event_filters import (
     event_for_season,
     event_for_tags,
     event_for_cat,
-    event_for_poi,
 )
 from scripts.game_structure import game
 
@@ -196,184 +187,6 @@ class TestEventFilters(unittest.TestCase):
         )
 
 
-class TestPointsOfInterest(unittest.TestCase):
-    def setUp(self):
-        game.clan = Clan()
-        game.clan.biome = "Forest"
-        game.clan.override_biome = False
-        game.clan.camp_bg = "camp1"
-        game.clan.starting_season = "Newleaf"
-        game.clan.game_mode = "classic"
-
-        self.test_cat = create_cat(CatRank.LEADER, moons=50)
-        game.clan.leader = self.test_cat
-
-        clear_pois()
-
-    def test_add_poi(self):
-        # add the POI
-        poi_to_add = {
-            "test_name": {
-                "category": "gathering",
-                "biome": ["any"],
-                "tags": ["water", "prey:fish"],
-            }
-        }
-
-        add_poi("test_name", poi_to_add["test_name"])
-
-        # confirm it exists
-        self.assertIn("test_name", get_poi_names_set())
-
-        # confirm tags exist appropriately
-        self.assertIn("water", get_poi_tags_set())
-        self.assertIn("prey:fish", get_poi_tags_set())
-        self.assertIn("prey", get_poi_tags_set())
-        self.assertNotIn("fish", get_poi_tags_set())
-
-    def test_clear_pois(self):
-        poi_to_add = {
-            "test_name": {
-                "category": "gathering",
-                "biome": ["any"],
-                "tags": ["water", "prey:fish"],
-            }
-        }
-
-        add_poi("test_name", poi_to_add["test_name"])
-
-        # clear POI
-        clear_pois()
-
-        # confirm it not exists
-        self.assertNotIn("test_name", get_poi_names_set())
-        # confirm tags removed exist appropriately
-        self.assertNotIn("water", get_poi_tags_set())
-        self.assertNotIn("prey:fish", get_poi_tags_set())
-        self.assertNotIn("prey", get_poi_tags_set())
-
-    def test_choose_poi(self):
-        possible_pois = {
-            "forest_poi": {
-                "category": "gathering",
-                "biome": ["forest"],
-                "tags": ["trees"],
-            },
-            "plains_poi": {
-                "category": "gathering",
-                "biome": ["plains"],
-                "tags": ["Twolegs"],
-            },
-            "terrain_poi": {
-                "category": "terrain",
-                "biome": ["forest"],
-                "tags": ["rocks"],
-            },
-            "moonplace_poi": {
-                "category": "moonplace",
-                "biome": ["forest"],
-                "tags": ["rocks"],
-            },
-        }
-
-        # combinations in the order "expected name", "not expected name", "biome", "category"
-        combinations = {
-            "biome": ["forest_poi", "plains_poi", "Forest", "gathering"],
-            "category": ["terrain_poi", "moonpool_poi", "Forest", "terrain"],
-        }
-
-        for name, (expected, unexpected, biome, category) in combinations.items():
-            with self.subTest(name=name):
-                clear_pois()
-                generate_and_add_new_poi(
-                    biome=biome, category=category, possible_pois=possible_pois
-                )
-
-                # confirm it exists
-                self.assertIn(expected, get_poi_names_set())
-                self.assertNotIn(unexpected, get_poi_names_set())
-
-        with self.subTest(title="file loaded PoIs"):
-            clear_pois()
-            generate_and_add_new_poi(biome="Forest", category="gathering")
-            self.assertEqual(len(get_poi_names_set()), 1)
-            self.assertGreater(len(get_poi_tags_set()), 0)
-
-    def test_error_forbid_duplicate_poi(self):
-        poi_to_add = {
-            "test_name": {
-                "category": "gathering",
-                "biome": ["any"],
-                "tags": ["water", "prey:fish"],
-            }
-        }
-
-        add_poi("test_name", poi_to_add["test_name"])
-        self.assertRaises(
-            Exception,
-            generate_and_add_new_poi,
-            biome="Forest",
-            category="gathering",
-            possible_pois=poi_to_add,
-        )
-
-    def test_error_no_possible_poi(self):
-        poi_to_add = {
-            "test_name": {
-                "category": "gathering",
-                "biome": ["any"],
-                "tags": ["water", "prey:fish"],
-            }
-        }
-
-        self.assertRaises(
-            Exception,
-            generate_and_add_new_poi,
-            biome="Forest",
-            category="moonplace",
-            possible_pois=poi_to_add,
-        )
-
-    def test_filter_poi(self):
-        # add the POI
-        poi_to_add = {
-            "test_name": {
-                "category": "gathering",
-                "biome": ["any"],
-                "tags": ["water", "prey:fish"],
-            }
-        }
-
-        add_poi("test_name", poi_to_add["test_name"])
-
-        # expected True combinations
-        combinations = {
-            "match name": {"name": ["test_name"]},
-            "match name multi": {"name": ["other_possibility", "test_name"]},
-            "match tag generic to generic": {"tags": ["water"]},
-            "match tag exact to exact": {"tags": ["prey:fish"]},
-            "match tag generic to exact": {"tags": ["prey"]},
-            "empty all": {"name": [], "tags": []},
-            "empty name": {"name": [], "tags": ["water"]},
-            "empty tags": {"name": ["test_name"], "tags": []},
-        }
-
-        for title, event_poi in combinations.items():
-            with self.subTest(title=title):
-                self.assertTrue(event_for_poi(event_poi))
-
-        # expected False combinations
-        bad_combinations = {
-            "no name": {"name": ["something_else", "aint_it_chief"]},
-            "no tag": {"tags": ["Twolegs", "cave"]},
-            "match generic tag but not exact": {"tags": ["prey:bird"]},
-        }
-
-        for title, event_poi in bad_combinations.items():
-            with self.subTest(title=title):
-                self.assertFalse(event_for_poi(event_poi))
-
-
 class TestInterpersonalRelationshipConstraints(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -389,8 +202,6 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
 
         cat1.relationships = {}
         cat2.relationships = {}
-
-        inheritance_db.load_inheritances(Cat)
 
         with self.subTest("are strangers, expected strangers"):
             self.assertTrue(
@@ -442,7 +253,9 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
         cat2 = Cat(parent1=parent.ID)
-        inheritance_db.load_inheritances(Cat)
+
+        cat1.create_inheritance_new_cat()
+        cat2.create_inheritance_new_cat()
 
         with self.subTest("are siblings, expected siblings"):
             self.assertTrue(
@@ -482,7 +295,8 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         cat1 = Cat(parent1=parent.ID, moons=1)
         cat2 = Cat(parent1=parent.ID, moons=1)
 
-        inheritance_db.load_inheritances(Cat)
+        cat1.create_inheritance_new_cat()
+        cat2.create_inheritance_new_cat()
 
         with self.subTest("are littermates, expected littermates"):
             self.assertTrue(
@@ -563,7 +377,7 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
 
-        inheritance_db.load_inheritances(Cat)
+        cat1.create_inheritance_new_cat()
 
         with self.subTest("are parent/child, expected parent/child"):
             self.assertTrue(
@@ -602,7 +416,7 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
 
-        inheritance_db.load_inheritances(Cat)
+        cat1.create_inheritance_new_cat()
 
         with self.subTest("are child/parent, expected child/parent"):
             self.assertTrue(
@@ -1405,209 +1219,6 @@ class TestCatConstraint(unittest.TestCase):
                 event_for_cat(cat=cat, cat_info={"age": [f"-{unmatched_age.value}"]})
             )
 
-    def test_group(self):
-        cat = Cat()
-        test_dict = {
-            CatGroup.STARCLAN: CatGroup.STARCLAN_ID,
-            CatGroup.DARK_FOREST: CatGroup.DARK_FOREST_ID,
-            CatGroup.UNKNOWN_RESIDENCE: CatGroup.UNKNOWN_RESIDENCE_ID,
-        }
-        for group, group_id in test_dict.items():
-            cat.status.add_to_group(group_id)
-            # is dead
-            with self.subTest(f"is part of afterlife"):
-                self.assertTrue(
-                    event_for_cat(cat=cat, cat_info={"group": ["afterlife"]})
-                )
-
-            # is alive
-            with self.subTest(f"isn't part of afterlife"):
-                self.assertFalse(
-                    event_for_cat(cat=cat, cat_info={"group": [f"-afterlife"]})
-                )
-
-        # no group
-        cat.status.leave_group(CatSocial.LONER)
-        with self.subTest(f"isn't part of a group"):
-            self.assertTrue(event_for_cat(cat=cat, cat_info={"group": ["no_group"]}))
-
-        # yes group
-        cat.status.add_to_group(CatGroup.PLAYER_CLAN_ID)
-        with self.subTest(f"is part of a group"):
-            self.assertTrue(event_for_cat(cat=cat, cat_info={"group": ["-no_group"]}))
-
-        # doesn't match another cat
-        other_cat = Cat()
-        other_cat.status.add_to_group(CatGroup.STARCLAN_ID)
-        with self.subTest(f"doesn't match other cat's group"):
-            self.assertTrue(
-                event_for_cat(
-                    cat=cat,
-                    cat_info={"group": ["-match:r_c"]},
-                    involved_cat_dict={"m_c": cat, "r_c": other_cat},
-                )
-            )
-
-        # matches another cat
-        cat.status.add_to_group(CatGroup.STARCLAN_ID)
-        with self.subTest(f"does match other cat's group"):
-            self.assertTrue(
-                event_for_cat(
-                    cat=cat,
-                    cat_info={"group": ["match:r_c"]},
-                    involved_cat_dict={"m_c": cat, "r_c": other_cat},
-                )
-            )
-
-        test_dict = {
-            CatGroup.PLAYER_CLAN: CatGroup.PLAYER_CLAN_ID,
-            CatGroup.STARCLAN: CatGroup.STARCLAN_ID,
-            CatGroup.DARK_FOREST: CatGroup.DARK_FOREST_ID,
-            CatGroup.UNKNOWN_RESIDENCE: CatGroup.UNKNOWN_RESIDENCE_ID,
-            CatGroup.OTHER_CLAN: "5",
-        }
-        game.used_group_IDs["5"] = CatGroup.OTHER_CLAN
-
-        for group, group_id in test_dict.items():
-            cat.status.add_to_group(group_id)
-            # is part of specific group
-            with self.subTest(f"is part of {group}"):
-                self.assertTrue(event_for_cat(cat=cat, cat_info={"group": [group]}))
-
-            # isn't part of specific group
-            with self.subTest(f"isn't part of {group}"):
-                self.assertFalse(
-                    event_for_cat(cat=cat, cat_info={"group": [f"-{group}"]})
-                )
-
-    def test_standing(self):
-        standings = [CatStanding.LEFT, CatStanding.LOST, CatStanding.EXILED]
-        test_dict = {
-            CatGroup.PLAYER_CLAN: CatGroup.PLAYER_CLAN_ID,
-            CatGroup.STARCLAN: CatGroup.STARCLAN_ID,
-            CatGroup.DARK_FOREST: CatGroup.DARK_FOREST_ID,
-            CatGroup.UNKNOWN_RESIDENCE: CatGroup.UNKNOWN_RESIDENCE_ID,
-            CatGroup.OTHER_CLAN: "5",
-            "afterlife": CatGroup.STARCLAN_ID,
-            "match:r_c": CatGroup.PLAYER_CLAN_ID,
-        }
-        game.used_group_IDs["5"] = CatGroup.OTHER_CLAN
-        cat = Cat()
-        other_cat = Cat()
-
-        # checking current standing
-        for group, ID in test_dict.items():
-            for standing in standings:
-                cat.status.change_standing(standing, ID)
-                other_cat.status.add_to_group(ID)
-                test_dict["match:r_c"] = ID
-                with self.subTest(
-                    f"has current standing: {standing} with group: {group}"
-                ):
-                    self.assertTrue(
-                        event_for_cat(
-                            cat=cat,
-                            cat_info={
-                                "standing": {"group": [group], "currently": [standing]}
-                            },
-                            other_involved_clan_id="5",
-                            involved_cat_dict={"m_c": cat, "r_c": other_cat},
-                        )
-                    )
-                with self.subTest(
-                    f"shouldn't have current standing: {standing} with group: {group}"
-                ):
-                    self.assertFalse(
-                        event_for_cat(
-                            cat=cat,
-                            cat_info={
-                                "standing": {
-                                    "group": [group],
-                                    "currently": [f"-{standing}"],
-                                }
-                            },
-                            other_involved_clan_id="5",
-                            involved_cat_dict={"m_c": cat, "r_c": other_cat},
-                        )
-                    )
-
-        # checking past standing
-        for group, ID in test_dict.items():
-            for standing in standings:
-                cat.status.change_standing(standing, ID)
-                cat.status.change_standing(CatStanding.MEMBER, ID)
-                other_cat.status.add_to_group(ID)
-                test_dict["match:r_c"] = ID
-                with self.subTest(f"has past standing: {standing} with group: {group}"):
-                    self.assertTrue(
-                        event_for_cat(
-                            cat=cat,
-                            cat_info={
-                                "standing": {"group": [group], "past": [standing]}
-                            },
-                            other_involved_clan_id="5",
-                            involved_cat_dict={"m_c": cat, "r_c": other_cat},
-                        )
-                    )
-                with self.subTest(
-                    f"shouldn't have past standing: {standing} with group: {group}"
-                ):
-                    self.assertFalse(
-                        event_for_cat(
-                            cat=cat,
-                            cat_info={
-                                "standing": {
-                                    "group": [group],
-                                    "past": [f"-{standing}"],
-                                }
-                            },
-                            other_involved_clan_id="5",
-                            involved_cat_dict={"m_c": cat, "r_c": other_cat},
-                        )
-                    )
-
-        # checking past and current
-        for group, ID in test_dict.items():
-            for standing in standings:
-                cat.status.change_standing(CatStanding.MEMBER, ID)
-                cat.status.change_standing(standing, ID)
-                other_cat.status.add_to_group(ID)
-                test_dict["match:r_c"] = ID
-                with self.subTest(
-                    f"has current standing: {standing} and is past member with group: {group}"
-                ):
-                    self.assertTrue(
-                        event_for_cat(
-                            cat=cat,
-                            cat_info={
-                                "standing": {
-                                    "group": [group],
-                                    "currently": [standing],
-                                    "past": ["member"],
-                                }
-                            },
-                            other_involved_clan_id="5",
-                            involved_cat_dict={"m_c": cat, "r_c": other_cat},
-                        )
-                    )
-                with self.subTest(
-                    f"has current standing: {standing} but can't be past member with group: {group}"
-                ):
-                    self.assertFalse(
-                        event_for_cat(
-                            cat=cat,
-                            cat_info={
-                                "standing": {
-                                    "group": [group],
-                                    "currently": [standing],
-                                    "past": ["-member"],
-                                }
-                            },
-                            other_involved_clan_id="5",
-                            involved_cat_dict={"m_c": cat, "r_c": other_cat},
-                        )
-                    )
-
     def test_statuses(self):
         statuses = [s for s in [*CatRank] if s.is_any_clancat_rank()]
         cat = Cat(disable_random=True)
@@ -1674,24 +1285,24 @@ class TestCatConstraint(unittest.TestCase):
             with self.subTest(
                 "empty", old_rank=old_rank.value, new_rank=new_rank.value
             ):
-                self.assertTrue(event_for_cat(cat=cat, cat_info={"past_status": []}))
+                self.assertTrue(event_for_cat(cat=cat, cat_info={"status_history": []}))
             with self.subTest(
                 "current rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertFalse(
-                    event_for_cat(cat=cat, cat_info={"past_status": [new_rank]})
+                    event_for_cat(cat=cat, cat_info={"status_history": [new_rank]})
                 )
             with self.subTest(
                 "former rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertTrue(
-                    event_for_cat(cat=cat, cat_info={"past_status": [old_rank]})
+                    event_for_cat(cat=cat, cat_info={"status_history": [old_rank]})
                 )
             with self.subTest(
                 '"any"', old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertTrue(
-                    event_for_cat(cat=cat, cat_info={"past_status": ["any"]})
+                    event_for_cat(cat=cat, cat_info={"status_history": ["any"]})
                 )
             with self.subTest(
                 "other rank",
@@ -1700,20 +1311,24 @@ class TestCatConstraint(unittest.TestCase):
                 other_rank=other_rank,
             ):
                 self.assertFalse(
-                    event_for_cat(cat=cat, cat_info={"past_status": [other_rank]})
+                    event_for_cat(cat=cat, cat_info={"status_history": [other_rank]})
                 )
 
             with self.subTest(
                 "not current rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertTrue(
-                    event_for_cat(cat=cat, cat_info={"past_status": [f"-{new_rank}"]})
+                    event_for_cat(
+                        cat=cat, cat_info={"status_history": [f"-{new_rank}"]}
+                    )
                 )
             with self.subTest(
                 "not former rank", old_rank=old_rank.value, new_rank=new_rank.value
             ):
                 self.assertFalse(
-                    event_for_cat(cat=cat, cat_info={"past_status": [f"-{old_rank}"]})
+                    event_for_cat(
+                        cat=cat, cat_info={"status_history": [f"-{old_rank}"]}
+                    )
                 )
             with self.subTest(
                 "not other rank",
@@ -1722,127 +1337,10 @@ class TestCatConstraint(unittest.TestCase):
                 other_rank=other_rank,
             ):
                 self.assertTrue(
-                    event_for_cat(cat=cat, cat_info={"past_status": [f"-{other_rank}"]})
+                    event_for_cat(
+                        cat=cat, cat_info={"status_history": [f"-{other_rank}"]}
+                    )
                 )
-
-    def test_stat(self):
-        """
-        Checks if the `must_have_both` works.
-        """
-        cat = Cat()
-
-        # has both
-        with self.subTest("has both"):
-            cat.personality = Personality(trait="arrogant")
-            cat.skills.primary = Skill(SkillPath.CAMP, points=0)
-            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
-
-            self.assertTrue(
-                event_for_cat(
-                    cat=cat,
-                    cat_info={
-                        "stat": {
-                            "skill": ["CAMP, 0"],
-                            "trait": ["arrogant"],
-                            "must_have_both": True,
-                        }
-                    },
-                )
-            )
-
-        # has none
-        with self.subTest("has neither"):
-            cat.personality = Personality(trait="daring")
-            cat.skills.primary = Skill(SkillPath.SENSE, points=0)
-            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
-
-            self.assertFalse(
-                event_for_cat(
-                    cat=cat,
-                    cat_info={
-                        "stat": {
-                            "skill": ["CAMP, 0"],
-                            "trait": ["arrogant"],
-                            "must_have_both": True,
-                        }
-                    },
-                )
-            )
-
-        # missing skill allowed
-        with self.subTest("missing skill allowed"):
-            cat.personality = Personality(trait="arrogant")
-            cat.skills.primary = Skill(SkillPath.SENSE, points=0)
-            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
-
-            self.assertTrue(
-                event_for_cat(
-                    cat=cat,
-                    cat_info={
-                        "stat": {
-                            "skill": ["CAMP, 0"],
-                            "trait": ["arrogant"],
-                            "must_have_both": False,
-                        }
-                    },
-                )
-            )
-
-        # missing skill not allowed
-        with self.subTest("missing skill not allowed"):
-            cat.personality = Personality(trait="arrogant")
-            cat.skills.primary = Skill(SkillPath.SENSE, points=0)
-            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
-
-            self.assertFalse(
-                event_for_cat(
-                    cat=cat,
-                    cat_info={
-                        "stat": {
-                            "skill": ["CAMP, 0"],
-                            "trait": ["arrogant"],
-                            "must_have_both": True,
-                        }
-                    },
-                )
-            )
-
-        # missing trait allowed
-        with self.subTest("missing trait allowed"):
-            cat.personality = Personality(trait="daring")
-            cat.skills.primary = Skill(SkillPath.CAMP, points=0)
-            cat.skills.secondary = Skill(SkillPath.HUNTER, points=0)
-
-            self.assertTrue(
-                event_for_cat(
-                    cat=cat,
-                    cat_info={
-                        "stat": {
-                            "skill": ["CAMP, 0"],
-                            "trait": ["arrogant"],
-                            "must_have_both": False,
-                        }
-                    },
-                )
-            )
-
-        # missing trait not allowed
-        with self.subTest("missing trait not allowed"):
-            cat.personality = Personality(trait="daring")
-            cat.skills.primary = Skill(SkillPath.CAMP, points=0)
-
-            self.assertFalse(
-                event_for_cat(
-                    cat=cat,
-                    cat_info={
-                        "stat": {
-                            "skill": ["CAMP, 0"],
-                            "trait": ["arrogant"],
-                            "must_have_both": True,
-                        }
-                    },
-                )
-            )
 
     def test_trait(self):
         """
@@ -2080,125 +1578,3 @@ class TestCatConstraint(unittest.TestCase):
 
         with self.subTest("expected male, was female"):
             self.assertFalse(event_for_cat(cat=female, cat_info={"gender": ["male"]}))
-
-    def test_health(self):
-        working_cat = Cat()
-        broken_cat = Cat()
-        Cat.disable_random = True
-        broken_cat.get_injured(name="broken bone")
-        ill_cat = Cat()
-        ill_cat.get_ill(name="greencough")
-        born_para_cat = Cat()
-        born_para_cat.get_permanent_condition(name="paralyzed", born_with=True)
-        acquired_para_cat = Cat()
-        acquired_para_cat.get_permanent_condition(name="paralyzed", born_with=False)
-
-        # cat must be working and is
-        with self.subTest("must work and is working"):
-            self.assertTrue(
-                event_for_cat(cat=working_cat, cat_info={"health": {"working": True}})
-            )
-
-        # cat must be working and isn't
-        with self.subTest("must work and isn't working"):
-            self.assertFalse(
-                event_for_cat(cat=broken_cat, cat_info={"health": {"working": True}})
-            )
-
-        # cat can't be working and is
-        with self.subTest("can't work and is working"):
-            self.assertFalse(
-                event_for_cat(cat=working_cat, cat_info={"health": {"working": False}})
-            )
-
-        # cat can't be working and isn't
-        with self.subTest("can't work and isn't working"):
-            self.assertTrue(
-                event_for_cat(cat=broken_cat, cat_info={"health": {"working": False}})
-            )
-
-        # cat should have a condition and does
-        test_dict = {
-            broken_cat: ["broken bone"],
-            ill_cat: ["greencough"],
-            born_para_cat: ["paralyzed"],
-        }
-        for cat, condition in test_dict.items():
-            with self.subTest(f"has required condition: {condition}"):
-                self.assertTrue(
-                    event_for_cat(
-                        cat=cat, cat_info={"health": {"condition": condition}}
-                    )
-                )
-
-        # cat has the wrong condition
-        test_dict = {
-            broken_cat: ["whitecough"],
-            ill_cat: ["whitecough"],
-            born_para_cat: ["whitecough"],
-        }
-        for cat, condition in test_dict.items():
-            with self.subTest(f"does not have required condition: {condition}"):
-                self.assertFalse(
-                    event_for_cat(
-                        cat=cat, cat_info={"health": {"condition": condition}}
-                    )
-                )
-
-        # cat has no condition but needs one
-        with self.subTest(f"does not have any condition"):
-            self.assertFalse(
-                event_for_cat(
-                    cat=working_cat, cat_info={"health": {"condition": ["greencough"]}}
-                )
-            )
-
-        # condition must be acquired and is
-        with self.subTest(f"condition must be acquired and is"):
-            self.assertTrue(
-                event_for_cat(
-                    cat=acquired_para_cat,
-                    cat_info={
-                        "health": {"condition": ["paralyzed"], "must_be_acquired": True}
-                    },
-                )
-            )
-
-        # condition must be acquired and isn't
-        with self.subTest(f"condition must be acquired and isn't"):
-            self.assertFalse(
-                event_for_cat(
-                    cat=born_para_cat,
-                    cat_info={
-                        "health": {"condition": ["paralyzed"], "must_be_acquired": True}
-                    },
-                )
-            )
-
-        # condition must be congenital and is
-        with self.subTest(f"condition must be congenital and is"):
-            self.assertTrue(
-                event_for_cat(
-                    cat=born_para_cat,
-                    cat_info={
-                        "health": {
-                            "condition": ["paralyzed"],
-                            "must_be_congenital": True,
-                        }
-                    },
-                )
-            )
-
-        # condition must be congenital and isn't
-        with self.subTest(f"condition must be congenital and isn't"):
-            self.assertFalse(
-                event_for_cat(
-                    cat=acquired_para_cat,
-                    cat_info={
-                        "health": {
-                            "condition": ["paralyzed"],
-                            "must_be_congenital": True,
-                        }
-                    },
-                )
-            )

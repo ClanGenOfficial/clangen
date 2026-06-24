@@ -71,7 +71,7 @@ class SwitchClanScreen(Screens):
                         # rebuild to update menu scheme differences between game modes
                         rebuild_core()
 
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
             if event.key == pygame.K_ESCAPE:
                 self.change_screen(GameScreen.START)
 
@@ -137,8 +137,8 @@ class SwitchClanScreen(Screens):
             manager=MANAGER,
             anchors={"centerx": "centerx"},
             text_kwargs={
-                "clan": game.clan.name if game.clan else "",
-                "clan_id": game.clan.save_id if game.clan else "",
+                "clan": game.clan.displayname if game.clan else "",
+                "clan_id": game.clan.name if game.clan else "",
                 "count": 1 if game.clan else 0,
             },
         )
