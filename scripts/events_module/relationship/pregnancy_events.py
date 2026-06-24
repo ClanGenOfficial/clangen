@@ -365,7 +365,9 @@ class Pregnancy_Events:
             return
 
         Pregnancy_Events.rebuild_strings()
-
+        allow_affair = get_clan_setting("affair")
+        allow_coparenting = get_clan_setting("unmated parentage")
+        
         if get_clan_setting("same sex birth"):
             # 50/50 for single cats to get pregnant or just bring a litter back
             if not other_cat and random.randint(0, 1):
@@ -395,8 +397,6 @@ class Pregnancy_Events:
                 "amount": 0,
             }
             other_cat = Cat.all_cats.get(other_cat_id)
-            allow_affair = get_clan_setting("affair")
-            allow_coparenting = get_clan_setting("unmated parentage")
             mate = [Cat.fetch_cat(mate_id) for mate_id in cat.mate]
             # if both cats are faithful to each other and aren't cheaters,
             # the pregnancy will be announced as normal
@@ -459,7 +459,7 @@ class Pregnancy_Events:
                 text += choice(
                     Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"]
                 )
-                random_cat = mate[0] if mate else None
+                random_cat = mate[0]
                 text = event_text_adjust(
                     Cat,
                     text,
@@ -480,11 +480,12 @@ class Pregnancy_Events:
                 text += choice(
                     Pregnancy_Events.PREGNANT_STRINGS[f"{severity[0]}_severity"]
                 )
+                random_cat = other_cat.ID
                 text = event_text_adjust(
                     Cat,
                     text,
                     main_cat=cat,
-                    random_cat=other_cat,
+                    random_cat=random_cat,
                     clan=game.clan,
                 )
                 involved_cats = [cat.ID]
@@ -529,10 +530,7 @@ class Pregnancy_Events:
                 "moons": 0,
                 "amount": 0,
             }
-            involved_cats = [cat.ID]
             other_cat = Cat.all_cats.get(other_cat_id)
-            allow_affair = get_clan_setting("affair")
-            allow_coparenting = get_clan_setting("unmated parentage")
             afab_mate = [
                 Cat.fetch_cat(mate_id)
                 for mate_id in pregnant_cat.mate
@@ -543,8 +541,6 @@ class Pregnancy_Events:
                 for mate_id in pregnant_cat.mate
                 if Cat.fetch_cat(mate_id) and Cat.fetch_cat(mate_id).gender == "male"
             ]
-            has_afab_mate = len(afab_mate) > 0
-            has_amab_mate = len(amab_mate) > 0
 
             # if both cats are faithful to each other and aren't cheaters,
             # the pregnancy will be announced as normal
