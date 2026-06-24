@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_dog",
+        "patrol_art": "cat_sprites/gen_bord_dog_W",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -109,7 +109,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_W",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -182,7 +182,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "cat_sprites/gen_bord_trackrogue_Wr",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -259,7 +259,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_scent_hostile",
+        "patrol_art": "cat_sprites/gen_bord_scenthostile_Wr",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -311,7 +311,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "kittybat_INTRO",
+        "patrol_art": "halloween/kittybat_INTRO",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -396,7 +396,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "pumpkineyes_INTRO",
+        "patrol_art": "halloween/pumpkineyes_INTRO",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -620,7 +620,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "scarecrow_INTRO",
+        "patrol_art": "halloween/scarecrow_INTRO",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -714,7 +714,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_train_argueWW",
+        "patrol_art": "cat_sprites/gen_train_argue_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1048,7 +1048,7 @@
         "season": ["greenleaf"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "running_two_apps",
+        "patrol_art": "cat_sprites/gen_running_ApAp",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -1322,7 +1322,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_hunt_twolegplace",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
