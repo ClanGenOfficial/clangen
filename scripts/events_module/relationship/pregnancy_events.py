@@ -424,7 +424,7 @@ class Pregnancy_Events:
             # fingers on who the second parent may be
             elif allow_coparenting is True and not mate:
                 text = choice(
-                    Pregnancy_Events.PREGNANT_STRINGS["surprising_announcement"]
+                    Pregnancy_Events.PREGNANT_STRINGS["announcement_surprise"]
                 )
                 severity = random.choices(["minor", "major"], [3, 1], k=1)
                 cat.get_injured("pregnant", severity=severity[0])
@@ -568,7 +568,7 @@ class Pregnancy_Events:
             # fingers on who the second parent may be
             elif allow_coparenting is True and not mate:
                 text = choice(
-                    Pregnancy_Events.PREGNANT_STRINGS["surprising_announcement"]
+                    Pregnancy_Events.PREGNANT_STRINGS["announcement_surprise"]
                 )
                 severity = random.choices(["minor", "major"], [3, 1], k=1)
                 pregnant_cat.get_injured("pregnant", severity=severity[0])
