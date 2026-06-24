@@ -754,5 +754,98 @@
 		"reaction_random_cat": {
 			"like": "decrease"
 		}
-	}
+	},
+	{
+		"id": "daydreamer_de_med",
+		"intensity": "medium",
+		"interactions": [
+			"m_c has to tap r_c multiple times to get {PRONOUN/r_c/object} to snap out of {PRONOUN/r_c/poss} daydream.",
+			"m_c doesn't understand why r_c won't play like the other kits."
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		],
+		"relationship_constraint": [
+			"parent/child"
+		]
+	},
+	{
+		"id": "daydreamerseasonal_de_low1",
+		"intensity": "low",
+        "season": [
+            "leaf-fall"
+        ],
+		"interactions": [
+            "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the falling leaves."
+        ],
+		"main_status_constraint": [
+			"kitten"
+        ],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		]
+    },
+  	{
+		"id": "daydreamerseasonal_de_low2",
+		"intensity": "low",
+        "season": [
+            "leaf-bare"
+        ],
+		"interactions": [
+            "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the falling snow."
+        ],
+		"main_status_constraint": [
+			"kitten"
+        ],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		]
+    },
+  	{
+		"id": "daydreamerseasonal_de_low3",
+		"intensity": "low",
+        "season": [
+            "newleaf"
+        ],
+		"interactions": [
+            "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the drifting pollen."
+        ],
+		"main_status_constraint": [
+			"kitten"
+        ],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		]
+    },
+  	{
+		"id": "daydreamerseasonal_de_low4",
+		"intensity": "low",
+        "season": [
+            "greenleaf"
+        ],
+		"interactions": [
+            "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching a beam of sunlight."
+        ],
+		"main_status_constraint": [
+			"kitten"
+        ],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		]
+    }
 ]

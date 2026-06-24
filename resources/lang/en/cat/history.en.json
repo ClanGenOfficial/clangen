@@ -40,14 +40,14 @@
         "murder_not_revealed_to_clan": "The Clan is unaware.",
         "murder_revealed_to_individual": "%{name} knows.",
         "leader_lives_left_df": {
-            "zero": "The leader has no lives left and has travelled to the Dark Forest.",
-            "one": "The leader has one life left.",
-            "many": "The leader has %{count} lives left."
+            "zero": "%{name} has no lives left and has travelled to the Dark Forest.",
+            "one": "%{name} has one life left.",
+            "many": "%{name} has %{count} lives left."
         },
         "leader_lives_left_sc": {
-            "zero": "The leader has no lives left and has travelled to StarClan.",
-            "one": "The leader has one life left.",
-            "many": "The leader has %{count} lives left."
+            "zero": "%{name} has no lives left and has travelled to StarClan.",
+            "one": "%{name} has one life left.",
+            "many": "%{name} has %{count} lives left."
         },
         "scar_from_injury": "m_c was scarred from an injury (%{injury_name})."
     }
