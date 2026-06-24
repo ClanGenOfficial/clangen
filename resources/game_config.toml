@@ -13,14 +13,14 @@ dev_tools = false
   # sets the max amount of interactions a cat with a special role (leader, deputy, medicine cat, or mediator) can have each moon
   max_interaction_special = 6
 
+  # 1/x chance for the cat to try and trigger a group event
+  chance_of_group_event = 5
+
   # sets the positive or negative effect that interactions will have on other cats based on personality compatibility
   compatibility_effect = 5
 
   # Adds a passive buff to relationship events. We divide the value change by passive_influence_div and apply it to all other relationship values.
   passive_influence_div = 3
-
-  # 1/chance an interaction is 'neutral' instead of negative or positive
-  chance_for_neutral = 10
 
   # 1/chance that a group event will be a "special group event"
   # special groups are defined in group_types.json
@@ -28,10 +28,6 @@ dev_tools = false
 
   # base 1/chance of a romance interaction with another cat, when a cat has a mate
   chance_romance_not_mate = 15
-
-  # how much an event with a condition can influence the relationship
-  # NOTE: doesn't currently do anything
-  influence_condition_events = 20
 
   [relationship.value_change_amount]
     # amount a relationship changes for "high", "medium", and "low" effects for interactions
@@ -425,10 +421,8 @@ dev_tools = false
 
 [patrol_generation]
   # modifies success rate based on game mode. higher = more difficult.
-  # the Cruel Season difficulty modifier needs to have a space rather than an underscore 
-  # due to how it's written in the save files. So don't try to 'fix' it.
+  difficulty_modifier = 2.5
   classic_difficulty_modifier = 1
-  expanded_difficulty_modifier = 2.5
 
   # amount to modify patrol success based on patrol stats
   # increasing this value increases the NUMERATOR for success (denominator is fixed at 120)
@@ -470,7 +464,7 @@ dev_tools = false
 
   # base 1/chance a cat will die
   classic_death_chance = 500
-  expanded_death_chance = 350
+  death_chance = 350
 
   # modifiers for death chance based on if a war is going badly
   # SUBTRACTS from the denominator so higher = more likely to die
@@ -494,12 +488,12 @@ dev_tools = false
 
 [condition_related]
   # 10/chance an illness will occur
-  expanded_illness_chance = 250
+  illness_chance = 250
   classic_illness_chance = 500
 
   # 5/chance (for most personalities) or 15/chance (for some personalities) an injury will occur 
   classic_injury_chance = 450
-  expanded_injury_chance = 250
+  injury_chance = 250
 
   # 1/chance a cat will get a permanent condition from an event with that possibility 
   permanent_condition_chance = 15

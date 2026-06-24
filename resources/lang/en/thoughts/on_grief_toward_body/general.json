@@ -1,7 +1,7 @@
 [
     {
         "id": "gen_death_body_present",
-        "thoughts": [
+        "strings": [
             "Helped bury r_c, leaving {PRONOUN/r_c/poss} favorite prey at the grave",
             "Slips out of camp to visit r_c's grave",
             "Clung so desperately to r_c's body that {PRONOUN/m_c/subject} had to be dragged away",
