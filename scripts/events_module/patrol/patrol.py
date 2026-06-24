@@ -246,7 +246,7 @@ class Patrol:
             game.patrolled.append(cat.ID)
 
         # PATROL LEADER AND RANDOM CAT CAN NOT CHANGE AFTER SET-UP
-
+        # if self.patrol_cats[index] == None as failsafe
         # DETERMINE PATROL LEADER
         # sets medcat as leader if they're in the patrol
         if CatRank.MEDICINE_CAT in self.patrol_status_list:
@@ -254,21 +254,24 @@ class Patrol:
             self.patrol_leader = self.patrol_cats[index]
             # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
             # This prevents warrior from being treated as medicine cats in medicine cat patrols.
-        elif CatRank.MEDICINE_APPRENTICE in self.patrol_status_list:
+        elif (
+            CatRank.MEDICINE_APPRENTICE in self.patrol_status_list
+            and self.patrol_leader == None
+        ):
             index = self.patrol_status_list.index(CatRank.MEDICINE_APPRENTICE)
             self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
             # sets leader as patrol leader
-        elif CatRank.LEADER in self.patrol_status_list:
+        elif CatRank.LEADER in self.patrol_status_list and self.patrol_leader == None:
             index = self.patrol_status_list.index(CatRank.LEADER)
             self.patrol_leader = self.patrol_cats[index]
-        elif CatRank.DEPUTY in self.patrol_status_list:
+        elif CatRank.DEPUTY in self.patrol_status_list and self.patrol_leader == None:
             index = self.patrol_status_list.index(CatRank.DEPUTY)
             self.patrol_leader = self.patrol_cats[index]
-        else:
-            # Get the oldest cat
+        elif self.patrol_leader == None:
+            # if still no patrol leader, get the oldest cat
             possible_leader = [
                 i
                 for i in self.patrol_cats
