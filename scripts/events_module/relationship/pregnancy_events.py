@@ -394,8 +394,6 @@ class Pregnancy_Events:
                 "moons": 0,
                 "amount": 0,
             }
-            involved_cats = [cat.ID]
-            other_cat_id = other_cat.ID
             other_cat = Cat.all_cats.get(other_cat_id)
             allow_affair = get_clan_setting("affair")
             allow_coparenting = get_clan_setting("unmated parentage")
@@ -424,7 +422,7 @@ class Pregnancy_Events:
             # if the pregnant cat is single and had a fling with a random cat, let them
             # announce their surprise pregnancy and leave the Clan and player pointing
             # fingers on who the second parent may be
-            elif allow_coparenting is True and len(cat.mate) == 0:
+            elif allow_coparenting is True and not mate:
                 text = choice(
                     Pregnancy_Events.PREGNANT_STRINGS["surprising_announcement"]
                 )
@@ -447,7 +445,7 @@ class Pregnancy_Events:
             elif (
                 allow_affair is True
                 and other_cat.ID not in cat.mate
-                and len(cat.mate) > 0
+                and mate
             ):
                 announcement_key = choice(["announcement_affair", "announcement"])
                 text = choice(Pregnancy_Events.PREGNANT_STRINGS[announcement_key])
@@ -532,7 +530,6 @@ class Pregnancy_Events:
                 "amount": 0,
             }
             involved_cats = [cat.ID]
-            other_cat_id = second_parent.ID if second_parent else None
             other_cat = Cat.all_cats.get(other_cat_id)
             allow_affair = get_clan_setting("affair")
             allow_coparenting = get_clan_setting("unmated parentage")
@@ -573,7 +570,7 @@ class Pregnancy_Events:
             # if the pregnant cat is single and had a fling with a random cat, let them
             # announce their surprise pregnancy and leave the Clan and player pointing
             # fingers on who the second parent may be
-            elif allow_coparenting is True and len(pregnant_cat.mate) == 0:
+            elif allow_coparenting is True and not mate:
                 text = choice(
                     Pregnancy_Events.PREGNANT_STRINGS["surprising_announcement"]
                 )
