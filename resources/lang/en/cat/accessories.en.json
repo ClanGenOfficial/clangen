@@ -170,9 +170,9 @@
             "one": "moth wing"
         },
         "CICADA WINGS": {
-            "zero": "cicada wings",
-            "many": "cicada wings",
-            "one": "cicada wing"
+            "zero": "cicadas",
+            "many": "cicadas",
+            "one": "cicada"
         },
         "ORANGE POPPY": {
             "zero": "orange poppy",

@@ -1,7 +1,7 @@
 [
     {
         "id": "lost_leader_thoughts",
-        "thoughts": [
+        "strings": [
             "Feels lost without the support of {PRONOUN/m_c/poss} Clan behind {PRONOUN/m_c/object}",
             "Wonders if {PRONOUN/m_c/poss} deputy has already become leader",
             "Hopes that the Clan is doing okay without {PRONOUN/m_c/object}",
