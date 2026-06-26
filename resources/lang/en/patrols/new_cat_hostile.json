@@ -13,7 +13,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_gen_newcat_hostile",
+        "patrol_art": "cat_sprites/gen_newcathostile_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -202,7 +202,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_gen_newcat_hostile",
+        "patrol_art": "cat_sprites/gen_newcathostile_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -624,7 +624,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatthunderpath",
+        "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -726,7 +726,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatthunderpath",
+        "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1550,7 +1550,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newkit",
+        "patrol_art": "cat_sprites/gen_newkit_Kt",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1636,7 +1636,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newkit",
+        "patrol_art": "cat_sprites/gen_newkit_Kt",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1722,7 +1722,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_newmed",
+        "patrol_art": "cat_sprites/gen_bord_newmed1_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1894,7 +1894,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_newmed",
+        "patrol_art": "cat_sprites/gen_bord_newmed1_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2066,7 +2066,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_lonerchase",
+        "patrol_art": "cat_sprites/gen_bord_dogchase_Ln",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -2497,7 +2497,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_hunt_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -2646,7 +2646,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2783,7 +2783,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2907,7 +2907,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3048,7 +3048,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
