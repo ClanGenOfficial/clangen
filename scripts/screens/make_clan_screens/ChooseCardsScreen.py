@@ -1,12 +1,12 @@
 from collections import deque
-from random import randint, choice
+from random import choice
 
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 
 from scripts.config import get_config
-from scripts.game_structure import constants, game, image_cache
+from scripts.game_structure import constants, image_cache
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
@@ -84,7 +84,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         """
         # limit hit
         if len(self.clan_info.cruel_cards) >= get_config(
-            game.clan, "cruel_season.card_limit"
+            "cruel_season.card_limit"
         ):
             CruelCardLimit()
         # card conflicts
