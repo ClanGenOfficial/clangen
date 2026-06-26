@@ -22,7 +22,6 @@ from scripts.events_module.relationship.romantic_events import RomanticEvents
 class TestPregnancySettings(unittest.TestCase):
     def setUp(self):
         load_clan_settings()
-        self.pregnancy_class = Pregnancy_Events()
         Cat.disable_random = True
 
     def test_single_parent(self):
@@ -32,7 +31,7 @@ class TestPregnancySettings(unittest.TestCase):
         # our parents are unmated, thus this would be single parenthood
         # allowed
         self.assertTrue(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=True,
                 allow_unmated=True,
@@ -41,7 +40,7 @@ class TestPregnancySettings(unittest.TestCase):
         )
         # not allowed
         self.assertFalse(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=False,
                 allow_unmated=True,
@@ -53,7 +52,7 @@ class TestPregnancySettings(unittest.TestCase):
         parent1.mate = [parent2.ID]
         # single parentage setting shouldn't prevent these cats from having kits
         self.assertTrue(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=True,
                 allow_unmated=True,
@@ -61,7 +60,7 @@ class TestPregnancySettings(unittest.TestCase):
             )
         )
         self.assertTrue(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=False,
                 allow_unmated=True,
@@ -76,7 +75,7 @@ class TestPregnancySettings(unittest.TestCase):
         # parent1 is unmated
         # allow
         self.assertTrue(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=True,
                 allow_unmated=True,
@@ -86,7 +85,7 @@ class TestPregnancySettings(unittest.TestCase):
         # don't allow
         set_clan_setting("unmated parentage", False)
         self.assertFalse(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=True,
                 allow_unmated=False,
@@ -98,7 +97,7 @@ class TestPregnancySettings(unittest.TestCase):
         parent1.mate = [parent2.ID]
         # unmated parentage setting shouldn't prevent these cats from having kits
         self.assertTrue(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=True,
                 allow_unmated=True,
@@ -106,7 +105,7 @@ class TestPregnancySettings(unittest.TestCase):
             )
         )
         self.assertTrue(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=True,
                 allow_unmated=False,
@@ -121,7 +120,7 @@ class TestPregnancySettings(unittest.TestCase):
         # our parents are unmated and so an affair isn't allowed (only mated cats have affairs)
         # allowed
         self.assertFalse(
-            self.pregnancy_class.check_if_can_have_kits(
+            Pregnancy_Events.check_if_can_have_kits(
                 parent1,
                 allow_single_parent=False,
                 allow_unmated=False,
@@ -137,14 +136,14 @@ class TestPregnancySettings(unittest.TestCase):
         # our parents ARE mated and so an affair is allowed
         # TODO: would love to test this, but the way affairs are set up does not allow it
         # self.assertEqual(
-        #    self.pregnancy_class.get_second_parent(parent1), (affair_cat, True)
+        #    Pregnancy_Events.get_second_parent(parent1), (affair_cat, True)
         # )
 
         # turn affairs off
         set_clan_setting("affair", False)
         # now an affair isn't allowed
         self.assertEqual(
-            self.pregnancy_class.get_second_parent(parent1), (parent2, False)
+            Pregnancy_Events.get_second_parent(parent1), (parent2, False)
         )
 
 
