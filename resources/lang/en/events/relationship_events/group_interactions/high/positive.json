@@ -1,0 +1,95 @@
+[
+    {
+        "id": "group_3_positive_meditate",
+        "strings": [
+            "m_c is convincing r_c1 that r_c2 isn't so bad once you get to know {PRONOUN/r_c2/object}.",
+            "m_c chats with r_c1 about how r_c2 is a nice cat."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["charismatic", "loyal", "charming"]
+                }
+            },
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["likes"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1", "r_c2"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["like", "trust"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "much_ado_about_nothing",
+        "strings": [
+            "multi_cat decide they're going to get m_c and r_c1 together. They talk about how much m_c loves r_c1 in front of r_c1, and, to their pleasure, find the two talking later."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": ["young adult", "adult", "senior adult", "senior"]
+            },
+            "r_c1": {
+                "age": ["young adult", "adult", "senior adult", "senior"]
+            },
+            "multi_cat": {
+                "age": ["young adult", "adult", "senior adult", "senior"]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c", "r_c1"],
+                "mutual": false,
+                "constraints": ["likes"]
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["fancies", "-mates"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 10
+            }
+        ]
+    }
+]

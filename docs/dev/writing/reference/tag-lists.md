@@ -316,10 +316,6 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
     > * `kittypet`
     * `loner`
     * `rogue`
-    * `former Clancat`
-    * `exiled`
-    * `lost`
-    * `outside cat`
     * `clancat`
 
 !!! important
