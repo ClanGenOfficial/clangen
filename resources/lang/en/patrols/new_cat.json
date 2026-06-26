@@ -13,7 +13,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -160,7 +160,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -699,7 +699,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1056,7 +1056,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatthunderpath",
+        "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1167,7 +1167,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatthunderpath",
+        "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1939,7 +1939,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newkit",
+        "patrol_art": "cat_sprites/gen_bord_newkit_Kt",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2017,7 +2017,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newkit",
+        "patrol_art": "cat_sprites/gen_bord_newkit_Kt",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2087,7 +2087,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_med_newmed",
+        "patrol_art": "cat_sprites/gen_newmed1_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2210,7 +2210,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_med_newmed",
+        "patrol_art": "cat_sprites/gen_newmed2_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2341,7 +2341,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_lonerchase",
+        "patrol_art": "cat_sprites/gen_bord_dogchase_Ln",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -2497,7 +2497,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2617,7 +2617,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2741,7 +2741,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2866,7 +2866,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3267,7 +3267,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -3477,7 +3477,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -3941,7 +3941,7 @@
             "new_cat",
             "disaster"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -4149,7 +4149,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -4357,7 +4357,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_hunt_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -4505,7 +4505,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_chase",
+        "patrol_art": "cat_sprites/gen_bord_dogchase_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "frequency": 1,
@@ -4816,7 +4816,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_found_scent_dangerous",
+        "patrol_art": "cat_sprites/gen_foundscent_WrRg",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -5082,7 +5082,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "running_two_warriors",
+        "patrol_art": "cat_sprites/running_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -6829,7 +6829,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_bord_rescue",
+        "patrol_art": "cat_sprites/gen_bord_rescue_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -7876,7 +7876,7 @@
     "season": [ "any" ],
     "types": [ "border" ],
     "tags": [ "new_cat" ],
-    "patrol_art": "gen_found_scent_dangerous",
+    "patrol_art": "cat_sprites/gen_foundscent_WrRg",
     "min_cats": 2,
     "max_cats": 2,
     "min_max_status": {

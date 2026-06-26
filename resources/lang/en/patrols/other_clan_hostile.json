@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan_hostile",
+        "patrol_art": "cat_sprites/gen_bord_twocathostile_OwOw",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -238,7 +238,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_gen_newcat_hostile",
+        "patrol_art": "cat_sprites/gen_newcathostile_Ln",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -839,7 +839,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_train_talkingWOCW",
+        "patrol_art": "cat_sprites/gen_train_talking_WrOw",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1742,7 +1742,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_train_argueWW",
+        "patrol_art": "cat_sprites/gen_train_argue_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2285,7 +2285,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan_hostile",
+        "patrol_art": "cat_sprites/gen_bord_twocathostile_OwOw",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2553,7 +2553,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan3",
+        "patrol_art": "cat_sprites/gen_bord_otherclanrabbit_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2946,7 +2946,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_borderherb",
+        "patrol_art": "cat_sprites/gen_med_borderherb_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3028,7 +3028,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_scent_hostile",
+        "patrol_art": "cat_sprites/gen_bord_scenthostile_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3150,7 +3150,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_scent_hostile",
+        "patrol_art": "cat_sprites/gen_bord_scenthostile_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -5387,7 +5387,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_scent_hostile_dislikelocked1",
+        "patrol_art": "cat_sprites/gen_bord_scenthostile_OwOwOw",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
