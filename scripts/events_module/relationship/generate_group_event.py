@@ -36,9 +36,7 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
     type_of_change = choice(["negative", "positive"])
 
     # pick how intense the change is
-    intensity_chances = get_config(
-        game.clan, "relationship.group_events.intensity_chances"
-    )
+    intensity_chances = get_config("relationship.group_events.intensity_chances")
     chosen_intensity = choices(
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
@@ -291,7 +289,7 @@ def _get_multi_cats(
 ) -> list[Cat]:
     # find out how many cats we'll allow
     max_cats = choice(
-        get_config(game.clan, "relationship.group_events.multi_cat_amounts")
+        get_config("relationship.group_events.multi_cat_amounts")
     )
     chosen_cats = []
 
