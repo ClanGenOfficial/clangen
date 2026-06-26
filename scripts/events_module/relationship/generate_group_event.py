@@ -288,9 +288,7 @@ def _get_multi_cats(
     cat_constraints: InvolvedCatDict,
 ) -> list[Cat]:
     # find out how many cats we'll allow
-    max_cats = choice(
-        get_config("relationship.group_events.multi_cat_amounts")
-    )
+    max_cats = choice(get_config("relationship.group_events.multi_cat_amounts"))
     chosen_cats = []
 
     # get the cats who qualify
