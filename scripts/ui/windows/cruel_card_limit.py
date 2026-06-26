@@ -22,7 +22,7 @@ class CruelCardLimit(GameWindow):
         self.limit_message = UITextBoxTweaked(
             i18n.t(
                 "windows.cruel_card_limit",
-                amount=get_config(game.clan, "cruel_season.card_limit"),
+                amount=get_config("cruel_season.card_limit"),
             ),
             ui_scale(pygame.Rect((0, 30), (220, -1))),
             line_spacing=1,
