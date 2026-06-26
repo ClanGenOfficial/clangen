@@ -2200,7 +2200,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_bord_patrolwoundedcatrescue_WrLn",
+                "art": "cat_sprites/gen_bord_woundedcatrescue_WrLn",
                 "new_cat": [
                     [
                         "loner"
@@ -2322,7 +2322,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_bord_patrolwoundedcatrescue_WrLn",
+                "art": "cat_sprites/gen_bord_woundedcatrescue_WrLn",
                 "outsider_rep": 1,
                 "frequency": 4
             }
