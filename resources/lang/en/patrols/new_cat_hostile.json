@@ -665,7 +665,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_patrolwoundedlonerrescue",
+                "art": "cat_sprites/woundedcatrescue_WrLn",
                 "frequency": 4
             }
         ],
@@ -767,7 +767,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_patrolwoundedlonerrescue",
+                "art": "cat_sprites/gen_bord_woundedcatrescue_WrLn",
                 "frequency": 4
             }
         ],
@@ -1116,7 +1116,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_warrior_loner",
+                "art": "cat_sprites/gen_bumpheads_WrLn",
                 "outsider_rep": 1,
                 "frequency": 4
             },
@@ -1168,7 +1168,7 @@
                         }
                     }
                 ],
-                "art": "gen_outsiderwar_mates_headbump",
+                "art": "cat_sprites/gen_matesheadbump_OwWr",
                 "outsider_rep": 1,
                 "frequency": 4
             },
@@ -1220,7 +1220,7 @@
                         }
                     }
                 ],
-                "art": "gen_outsiderwar_mates_headbump",
+                "art": "cat_sprites/gen_matesheadbump_OwWr",
                 "outsider_rep": 1,
                 "frequency": 4
             },
@@ -1343,7 +1343,7 @@
                         }
                     }
                 ],
-                "art": "gen_flower_date_warrior_loner",
+                "art": "cat_sprites/gen_flowerdate_WrLn",
                 "outsider_rep": 0,
                 "frequency": 4
             },
