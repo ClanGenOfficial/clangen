@@ -44,6 +44,20 @@ Within the game, all cats take a new thought each timeskip. However, there are a
     Within `while_alive` and `while_dead`, thoughts should be placed in `general.json` if they apply to multiple statuses.
 
 ## Thought Format
+!!! note "Important"
+    If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable. Check out the below "Minimum Required" to see what parameters are always required.
+
+### Minimum Required
+>The smallest amount of information you're required to include in this format. 
+
+```json
+{
+    "id": "test",
+    "strings": [
+        "Is thinking"
+    ]
+}
+```
 
 ### Full Format
 ```json
@@ -90,20 +104,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
         ]
     }
 ```
-!!! note "Important"
-    If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable. Check out the below "Minimum Required" to see what parameters are always required.
 
-### Minimum Required
->The smallest amount of information you're required to include in this format. 
-
-```json
-{
-    "id": "test",
-    "strings": [
-        "Is thinking"
-    ]
-}
-```
 
 ***
 

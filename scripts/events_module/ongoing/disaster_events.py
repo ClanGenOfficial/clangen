@@ -71,7 +71,7 @@ class DisasterEvents:
 
         # display trigger event
         event = self.disaster_text(chosen_disaster.trigger_events)
-        event.replace("c_n", i18n.t("general.clan", name=game.clan.name))
+        event.replace("c_n", game.clan.name)
         game.cur_events_list.append(Single_Event(event, "misc"))
 
     def handle_current_primary_disaster(self):
@@ -210,6 +210,6 @@ class DisasterEvents:
         text = text.replace("lead_name", str(leader.name))
         text = text.replace("dep_name", str(deputy.name))
         text = text.replace("med_name", str(random.choice(med_cats).name))
-        text = text.replace("c_n", i18n.t("general.clan", name=game.clan.name))
+        text = text.replace("c_n", game.clan.name)
 
         return text

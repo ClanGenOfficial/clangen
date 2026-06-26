@@ -3,7 +3,7 @@ from typing import Union
 from pydantic import BaseModel, ConfigDict
 from pydantic_core import MISSING
 
-from scripts.models.thought.cat_dict import CatDict
+from scripts.models.text_pool_event.cat_dict import CatDict
 
 
 class InvolvedCats(BaseModel):

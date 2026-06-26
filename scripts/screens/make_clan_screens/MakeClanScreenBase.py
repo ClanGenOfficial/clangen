@@ -1,4 +1,3 @@
-import dataclasses
 from dataclasses import dataclass, field
 from random import choice
 from re import sub
@@ -13,7 +12,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
-from scripts.game_structure import game
+from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
@@ -70,6 +69,12 @@ class ClanInfo:
         self.symbol = ""
         self.starting_season = "Newleaf"
         self.game_mode = "classic"
+
+    def clear_cats(self):
+        self.leader = None
+        self.deputy = None
+        self.medicine_cat = None
+        self.starting_members = []
 
     def update(self, saved_info: dict):
         self.display_name = saved_info["display_name"]
@@ -129,6 +134,8 @@ class ClanInfo:
 
 
 class MakeClanScreenBase(Screens):
+    rolls_left = constants.CONFIG["clan_creation"]["rerolls"]
+
     def __init__(self, name="make_clan_screen"):
         super().__init__(name)
 
@@ -182,6 +189,11 @@ class MakeClanScreenBase(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["main_menu"]:
+                self.set_mute_button_position("bottomright")
+                MakeClanScreenBase.rolls_left = constants.CONFIG["clan_creation"][
+                    "rerolls"
+                ]
+                switch_set_value(Switch.possible_cats, [])
                 self.clan_info.clear()
                 self.change_screen(GameScreen.START)
 
