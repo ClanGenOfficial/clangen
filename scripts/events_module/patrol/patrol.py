@@ -956,7 +956,7 @@ class Patrol:
             else "patrol_generation.difficulty_modifier"
         )
 
-        gm_modifier = get_config(game.clan, path)
+        gm_modifier = get_config(path)
 
         exp_adustment = (
             (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)

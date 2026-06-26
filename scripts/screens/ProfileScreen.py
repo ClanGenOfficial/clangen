@@ -914,7 +914,7 @@ class ProfileScreen(Screens):
             if not name:
                 name = game.clan.name
 
-        cat_clan = i18n.t(f"general.clan", name=f"{name}")
+        cat_clan = name
 
         if the_cat.status.is_lost():
             output += f"<font color='#FF0000'>{i18n.t('general.lost', count=1)}</font>"
@@ -1358,7 +1358,7 @@ class ProfileScreen(Screens):
             and self.the_cat != game.clan.instructor
         ):
             clan = [
-                clan
+                clan.name
                 for clan in game.clan.all_other_clans
                 if clan.group_ID == self.the_cat.status.get_last_living_group()
             ]

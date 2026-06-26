@@ -1,4 +1,3 @@
-import dataclasses
 from dataclasses import dataclass, field
 from random import choice
 from re import sub
@@ -73,6 +72,12 @@ class ClanInfo:
         self.game_mode = "classic"
         self.cruel_cards = []
 
+    def clear_cats(self):
+        self.leader = None
+        self.deputy = None
+        self.medicine_cat = None
+        self.starting_members = []
+
     def update(self, saved_info: dict):
         self.display_name = saved_info["display_name"]
         self.leader = saved_info["leader"]
@@ -133,6 +138,8 @@ class ClanInfo:
 
 
 class MakeClanScreenBase(Screens):
+    rolls_left = constants.CONFIG["clan_creation"]["rerolls"]
+
     def __init__(self, name="make_clan_screen"):
         super().__init__(name)
 
@@ -189,6 +196,11 @@ class MakeClanScreenBase(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["main_menu"]:
+                self.set_mute_button_position("bottomright")
+                MakeClanScreenBase.rolls_left = constants.CONFIG["clan_creation"][
+                    "rerolls"
+                ]
+                switch_set_value(Switch.possible_cats, [])
                 self.clan_info.clear()
                 self.change_screen(GameScreen.START)
 
