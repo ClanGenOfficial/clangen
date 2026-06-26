@@ -49,7 +49,6 @@
 		"interactions": [
 			"m_c caught r_c complaining about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back.",
 			"r_c insulted m_c's looks behind {PRONOUN/m_c/poss} back and thought m_c didn't hear it.",
-			"m_c notices how rude r_c is being to a Clanmate.",
 			"m_c is surprised by the hurtful things r_c can say in an argument.",
 			"r_c accuses m_c of lying about something m_c has no reason to lie about.",
 			"m_c is hurt by one of r_c's pranks, but r_c doesn't seem to believe {PRONOUN/m_c/object}.",
@@ -240,7 +239,6 @@
 			"r_c bumped into m_c and didn't even apologize!",
 			"r_c stepped on m_c's paw and pretended not to notice.",
 			"m_c is grossed out by something r_c did.",
-			"m_c doesn't like the way r_c interacts with a Clanmate.",
 			"r_c says something in passing that m_c keeps getting worked up about.",
 			"m_c tried to explain something to r_c, but {PRONOUN/r_c/subject} just didn't understand.",
 			"r_c hit m_c on the face with {PRONOUN/r_c/poss} tail while passing by.",

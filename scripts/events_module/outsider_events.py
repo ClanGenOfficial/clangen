@@ -63,7 +63,6 @@ class OutsiderEvents:
                 clanname = [
                     c for c in game.clan.all_other_clans if c.group_ID == group_id
                 ][0].name
-                clanname = i18n.t("general.clan", name=clanname)
                 text = text.replace("o_c_n", clanname)
                 death_history = death_history.replace("o_c_n", clanname)
             elif cat.status.is_outsider:

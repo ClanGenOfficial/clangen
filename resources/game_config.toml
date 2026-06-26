@@ -35,6 +35,18 @@ dev_tools = false
     medium = 12
     high = 16
 
+  [relationship.group_events]
+    # the possible amounts of cats that can be chosen for a multi_cat group
+    multi_cat_amounts = [2, 3, 4]
+
+    # weights for each type of intensity
+    [relationship.group_events.intensity_chances]
+      low = 2
+      medium = 3
+      high = 1
+
+
+
   [relationship.value_intervals]
     # The cut-off for each value level. This starts at -100 with each int marking the end of that level. 
     # For example, extreme_neg ends at -70, making its full range -100 to -70. mid_neg starts from -69 and continues till -25.

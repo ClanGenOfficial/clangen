@@ -31,3 +31,5 @@ class Status(Enum):
     not_loner = "-loner"
     rogue = "rogue"
     not_rogue = "-rogue"
+    clancat = "clancat"
+    not_clancat = "-clancat"

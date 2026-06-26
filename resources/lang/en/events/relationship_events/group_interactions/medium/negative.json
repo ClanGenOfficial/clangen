@@ -1,0 +1,576 @@
+[
+
+    {
+        "id": "group_multi_negative_argument",
+        "strings": [
+            "m_c started a huge argument between multi_cat."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["troublesome"]
+                }
+            },
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["multi_cat"],
+                "mutual": true,
+                "values": ["comfort"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "group_3_negative_romanticrivalsmid",
+        "strings": [
+            "m_c can't stand to see r_c1 and r_c2 together.",
+            "m_c fantasizes about r_c1 ending {PRONOUN/r_c1/poss} relationship with r_c2.",
+            "m_c feels both guilty and happy at the thought of something happening to r_c2 so r_c1 will move on.",
+            "m_c has a dream where r_c2 never existed and r_c1 became m_c's mate instead.",
+            "m_c thinks r_c1 would be happier in a relationship with {PRONOUN/m_c/object} instead of r_c2.",
+            "m_c sees r_c1 argue with r_c2 and hopes it's a sign they'll break up."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["adores", "-mates"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "constraints": ["mates"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["romance"],
+                "amount": 10
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "muddypaws_multicat_warrior",
+        "strings": [
+            "m_c tracked a trail of muddy pawprints into the warrior's den, straight through the nests of multi_cat.",
+            "m_c returned to the warrior's den dripping mud everywhere and managed to ruin multi_cat's nests.",
+            "m_c tromped into the warrior's den with muddy paws, trailing muck straight through multi_cat's nests."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior", "deputy"]
+            },
+            "multi_cat": {
+                "status": ["warrior", "deputy"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "respect"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "muddypaws_multicat_elder",
+        "strings": [
+            "m_c tracked a trail of muddy pawprints into the elder's den, straight through the nests of multi_cat.",
+            "m_c returned to the elder's den dripping mud everywhere and managed to ruin multi_cat's nests.",
+            "m_c tromped into the elder's den with muddy paws, trailing muck straight through multi_cat's nests."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["elder"]
+            },
+            "multi_cat": {
+                "status": ["elder"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "respect"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "muddypaws_multicat_app",
+        "strings": [
+            "m_c tracked a trail of muddy pawprints into the apprentice's den, straight through the nests of multi_cat.",
+            "m_c returned to the apprentice's den dripping mud everywhere and managed to ruin multi_cat's nests.",
+            "m_c tromped into the apprentice's den with muddy paws, trailing muck straight through multi_cat's nests."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["apprentice", "mediator_apprentice"]
+            },
+            "multi_cat": {
+                "status": ["apprentice", "mediator_apprentice"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "respect"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "chattygathering_multicat",
+        "strings": [
+            "m_c spends the Gathering whispering to multi_cat, making it nearly impossible for anyone nearby to hear the leaders speak.",
+            "m_c won't keep {PRONOUN/m_c/poss} mouth shut during the Gathering. multi_cat can barely hear the leader's announcements!",
+            "No matter how many warning looks multi_cat send {PRONOUN/m_c/object}, m_c keeps talking over the Gathering announcements."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior", "apprentice"]
+            },
+            "multi_cat": {
+                "status": ["warrior", "apprentice"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect", "like"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_morning_stretches",
+        "strings": [
+            "m_c, wanting to help keep {PRONOUN/m_c/poss} Clanmates in shape and ready for anything, wakes multi_cat up early for morning stretches.",
+            "Early in the morning, m_c rallies multi_cat to do stretches in hopes of keeping {PRONOUN/m_c/poss} Clanmates prepared for anything.",
+            "multi_cat can't escape from m_c waking them up to do early morning stretches.",
+            "multi_cat respect how dutiful m_c is to training, but they all wish they weren't up doing stretches at dawn.",
+            "multi_cat bemoan m_c's insistence that they get up and do stretches at <i>dawn.</i> While they do it, nobody but m_c likes it.",
+            "m_c rallies multi_cat to do early morning stretches with {PRONOUN/m_c/object}.",
+            "multi_cat wish that m_c let them sleep instead of getting them up for early morning stretches.",
+            "Stretching might be good for one's health, but multi_cat wish m_c didn't insist on stretching at the crack of dawn."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader",
+                    "warrior",
+                    "elder",
+                    "medicine cat",
+                    "mediator"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "-kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multi_cat_campcleanup",
+        "strings": [
+            "m_c, noticing the state of disarray the camp is in, gathers multi_cat to help {PRONOUN/m_c/object} clean up.",
+            "m_c recruits multi_cat to tidy up camp upon noticing how unorganized it has become.",
+            "Camp has become a disorganized mess, so m_c convinces multi_cat to help {PRONOUN/m_c/object} tidy it up.",
+            "The dens are in need of repair, so m_c drags multi_cat to help {PRONOUN/m_c/object} with repairs.",
+            "m_c pesters multi_cat into helping {PRONOUN/m_c/object} with repairs across camp.",
+            "multi_cat can respect m_c's dedication to keeping camp clean, but each cat has something else they'd rather be doing instead of cleaning.",
+            "multi_cat won't deny that camp needs to be cleaned, but they wish that m_c hadn't gathered them to do it.",
+            "Before a den comes caving in, m_c forces multi_cat to help {PRONOUN/m_c/object} with maintenance."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader",
+                    "warrior",
+                    "elder",
+                    "medicine cat",
+                    "mediator"
+                ],
+                "stat": {
+                    "skill": ["CAMP,1"]
+                }
+            },
+            "multi_cat": {
+                "status": [
+                    "-kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_negative_seniordisrespected_apprentices",
+        "strings": [
+            "m_c attempts to impart {PRONOUN/m_c/poss} knowledge onto multi_cat, but none of the apprentices pays attention.",
+            "m_c tries teaching multi_cat one of {PRONOUN/m_c/poss} skills but gives up because no apprentice listens.",
+            "m_c had an informative lecture planned for multi_cat, but gives up midway because the apprentices ignore {PRONOUN/m_c/object}.",
+            "multi_cat will not stop talking to each other during m_c's lesson, and m_c calls it off.",
+            "m_c spent an entire day planning a lesson for multi_cat, but it goes to waste as the apprentices are distracted by each other.",
+            "m_c cannot believe how disrespectful multi_cat are while {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to give a lecture."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice",
+                    "mediator apprentice"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "values": ["respect", "like"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_negative_warriordisrespected_apprentices",
+        "strings": [
+            "m_c wants this training exercise to be a success, but multi_cat refuse to listen, and m_c gives up.",
+            "It is impossible to make multi_cat understand the importance of stretching properly, so m_c calls the exercise off.",
+            "multi_cat are too busy goofing off to listen to m_c's advice.",
+            "m_c attempts to keep multi_cat focused during training, but the cats continuously talk about unrelated topics.",
+            "multi_cat pointedly ignore m_c's reminders to focus on training instead of gossiping."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "warrior"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "values": ["respect", "like"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "group_multi_cat_negative_groupargument_twohates",
+        "strings": [
+            "What begins as a petty argument between m_c and r_c1 turns into a spat involving multi_cat as well.",
+            "The argument between m_c and r_c1 spills into multi_cat's day, leading to all the cats hissing at each other.",
+            "Nobody is safe from m_c and r_c1's dispute, and multi_cat are dragged into it.",
+            "The screaming match between m_c and r_c1 soon involves multi_cat as well.",
+            "multi_cat wake up to m_c and r_c1's yowling. They give the snappy pair a piece of their minds.",
+            "Trying to eat while m_c and r_c1 scream at each other is impossible, so multi_cat decide to chip in with their opinions."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "multi_cat": {}
+        },
+        "relationship_constraints": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "constraints": ["hates"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c", "multi_cat", "r_c1"],
+                "cats_to": ["m_c", "multi_cat", "r_c1"],
+                "mutual": false,
+                "values": ["respect", "like"],
+                "amount": -5
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multi_cat_negative_kitkerfuffle",
+        "strings": [
+            "The debate over who gets to be the leader in a game explodes into a hurtful argument between m_c, multi_cat.",
+            "m_c hurls insults at multi_cat for <i>thinking</i> they deserve a chance to play as the leader.",
+            "m_c is appalled when multi_cat won't let {PRONOUN/m_c/object} play as the leader, so {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} insulting everyone.",
+            "A fight over a toy escalates into a screaming match between m_c, multi_cat.",
+            "m_c calls multi_cat a bunch of wusses after a play-fight, and it escalates into a fight between the them all.",
+            "m_c, multi_cat can't settle who gets a toy.",
+            "m_c won't stop instigating a fight between multi_cat.",
+            "m_c orders multi_cat to give {PRONOUN/m_c/object} a toy they are playing with and starts a fight when told no.",
+            "A game of make-believe turns into a real scuffle between m_c, multi_cat when they can't decide who will play what in the next round.",
+            "m_c calls everyone in the nursery is a mouse-brain. It leads to an argument between {PRONOUN/m_c/self}, multi_cat.",
+            "m_c keeps hogging being the leader during a game, causing a fight to break out between {PRONOUN/m_c/self}, multi_cat over who gets to be it next."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "attention-seeker",
+                        "bossy",
+                        "bullying",
+                        "fearless",
+                        "impulsive",
+                        "unruly"
+                    ]
+                }
+            },
+            "multi_cat": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multi_cat_negative_kitkerfuffle",
+        "strings": [
+            "m_c demands that r_c1 give up playing the leader in a game, which sparks an argument that drags multi_cat in as well.",
+            "m_c screams in r_c1 face that {PRONOUN/r_c1/subject} {VERB/r_c1/suck/sucks}, sparking an argument that snowballs and drags in both multi_cat."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "attention-seeker",
+                        "bossy",
+                        "bullying",
+                        "fearless",
+                        "impulsive",
+                        "unruly"
+                    ]
+                }
+            },
+            "r_c1": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat", "r_c"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_neg_kitsitting",
+        "strings": [
+            "m_c didn't think it would be too hard to watch the kits, but multi_cat prove that thought very, very wrong.",
+            "It hasn't been that long since m_c began kitsitting multi_cat, but chaos is already underway.",
+            "m_c wants to scream into {PRONOUN/m_c/poss} nest after kitsitting multi_cat.",
+            "m_c doesn't have a moment to rest while kitsitting with how prone to trouble multi_cat are.",
+            "While kitsitting, m_c tries — and fails — to rein in the rambunctiousness of multi_cat.",
+            "Nobody ever said kitsitting was easy, but m_c thought that multi_cat would be easier to watch than they actually are.",
+            "m_c wishes {PRONOUN/m_c/subject} could blink while kitsitting without missing a heartbeat of multi_cat's troublemaking.",
+            "After kitsitting multi_cat, m_c takes time to recover from the endless mischief."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "-KIT,1"
+                    ]
+                }
+            },
+            "multi_cat": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraints": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "constraints": ["-parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_neg_deputyvswarriors",
+        "strings": [
+            "multi_cat come to m_c with a complaint regarding patrols, but get blown off by m_c.",
+            "m_c refuses to understand multi_cat's points about patrol organization.",
+            "m_c dismisses multi_cat's arguments by reminding them who their deputy is.",
+            "When multi_cat begin an argument about hunting, m_c silences them through {PRONOUN/m_c/poss} authority.",
+            "None of multi_cat's critiques about {PRONOUN/m_c/poss} usage of authority matter to m_c."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy"
+                ],
+                "stat": {
+                    "trait": [
+                        "ambitious",
+                        "arrogant",
+                        "bloodthirsty",
+                        "bold",
+                        "cold",
+                        "fierce",
+                        "shameless",
+                        "confident",
+                        "childish",
+                        "oblivious"
+                    ]
+                }
+            },
+            "multi_cat": {
+                "status": [
+                    "warrior"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["like", "respect"],
+                "amount": -10
+            }
+        ]
+    }
+]
