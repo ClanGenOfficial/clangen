@@ -83,9 +83,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         Handles checking card limits, conflicts, marking the card as chosen, and updating the displays
         """
         # limit hit
-        if len(self.clan_info.cruel_cards) >= get_config(
-            "cruel_season.card_limit"
-        ):
+        if len(self.clan_info.cruel_cards) >= get_config("cruel_season.card_limit"):
             CruelCardLimit()
         # card conflicts
         elif self.card_has_conflicts(card_name):
