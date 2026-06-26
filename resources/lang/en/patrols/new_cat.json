@@ -5035,6 +5035,7 @@
                 "text": "p_l rushes towards the scents, intending to put up a fight — but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't spared that chance. A blow from a cat heaps larger than {PRONOUN/p_l/object} knocks p_l into the snow. Before {PRONOUN/p_l/subject} can react, a strike from another cat spills {PRONOUN/p_l/poss} blood across the sparkling white, killing {PRONOUN/p_l/object} instantly.",
                 "exp": 0,
                 "art": "cat_sprites/gen_deadghost_Wr_EXPLICIT",
+                "art_cln": "cat_sprites/gen_deadghost_Wr",
                 "dead_cats": [
                     "p_l"
                 ],
@@ -8113,6 +8114,7 @@
             ]
             ],
     "art": "cat_sprites/gen_deadghost_Wr_EXPLICIT",
+    "art_cln": "cat_sprites/gen_deadghost_Wr",
     "art_clean": "gen_dead_cat"
 }
     ],
@@ -8162,6 +8164,7 @@
             ]
         ],
     "art": "cat_sprites/gen_deadghost_LnUr_EXPLICIT",
+    "art_cln": "cat_sprites/gen_deadghost_Wr",
     "art_clean": "gen_dead_cat_outsider"
 }
 ],
