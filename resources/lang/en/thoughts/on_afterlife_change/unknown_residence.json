@@ -2,7 +2,11 @@
     {
         "id": "gen_new_ur",
         "strings": [
-            "Is surprised to find {PRONOUN/m_c/self} walking among a foreign land"
+            "Is surprised to find {PRONOUN/m_c/self} walking in a foreign land",
+            "Wonders how far {PRONOUN/m_c/subject} would have to run to reach StarClan again",
+            "Wonders how far {PRONOUN/m_c/subject} would have to run to reach the Place of No Stars again",
+            "Eyes widen as {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} the air here has no scent",
+            "Wonders if {PRONOUN/m_c/subject} can embrace this new unknown"
         ]
     }
 ]
