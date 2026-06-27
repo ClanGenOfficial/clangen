@@ -72,7 +72,7 @@ def trigger_interaction(main_cat: Cat, other_cat: Cat, is_meeting=False):
     if not chosen_event:
         return
     else:
-         _resolve_event(
+        _resolve_event(
             chosen_event,
             chosen_intensity,
             involved_cats,
@@ -209,7 +209,9 @@ def _get_event(
     return choice(final_events)
 
 
-def _get_change_amount(is_positive: bool, intensity: str, relationship: Relationship) -> int:
+def _get_change_amount(
+    is_positive: bool, intensity: str, relationship: Relationship
+) -> int:
     """Finds and returns the int amount that the relationship type will change by according to given intensity and additional modifiers
 
     Parameters
@@ -232,7 +234,9 @@ def _get_change_amount(is_positive: bool, intensity: str, relationship: Relation
     compatible_effect = get_config(f"relationship.compatibility_effect")
 
     # take compatibility into account
-    compatibility = get_personality_compatibility(relationship.cat_from, relationship.cat_to)
+    compatibility = get_personality_compatibility(
+        relationship.cat_from, relationship.cat_to
+    )
     if compatibility == CatCompatibility.NEUTRAL:
         amount = amount
     elif compatibility == CatCompatibility.POSITIVE:
@@ -272,7 +276,9 @@ def _resolve_event(
         Single_Event(event_string, ["relation", "interaction"], cat_ids)
     )
 
-    _apply_base_influence(intensity, relationship, type_of_change, type_of_interaction, event_string)
+    _apply_base_influence(
+        intensity, relationship, type_of_change, type_of_interaction, event_string
+    )
 
     _apply_extra_influence(event, involved_cats, relationship, event_string)
 
@@ -295,13 +301,20 @@ def _apply_extra_influence(event, involved_cats, relationship, chosen_string):
         # change the relationship!
         # only apply log if this is a change to r_c's feelings, cus m_c will already have the event in their log, and we don't want to double it
         change_relationship_values(
-            cats_from=cats_from, cats_to=cats_to, **value_changes, log=chosen_string if involved_cats["r_c"] in cats_from else None
+            cats_from=cats_from,
+            cats_to=cats_to,
+            **value_changes,
+            log=chosen_string if involved_cats["r_c"] in cats_from else None,
         )
 
 
-def _apply_base_influence(intensity, relationship, type_of_change, type_of_interaction, chosen_string):
+def _apply_base_influence(
+    intensity, relationship, type_of_change, type_of_interaction, chosen_string
+):
     amount = _get_change_amount(
-        is_positive=type_of_change == "positive", intensity=intensity, relationship=relationship
+        is_positive=type_of_change == "positive",
+        intensity=intensity,
+        relationship=relationship,
     )
     # only high intensity gives passive buffs
     if intensity == "high":
@@ -342,6 +355,7 @@ def _apply_base_influence(intensity, relationship, type_of_change, type_of_inter
             count=relationship.cat_from.moons,
         )
     )
+
 
 # LOAD
 def _load_file(path) -> list[TextPoolEvent]:
