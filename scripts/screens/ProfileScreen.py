@@ -1358,7 +1358,7 @@ class ProfileScreen(Screens):
             and self.the_cat != game.clan.instructor
         ):
             clan = [
-                clan
+                clan.name
                 for clan in game.clan.all_other_clans
                 if clan.group_ID == self.the_cat.status.get_last_living_group()
             ]

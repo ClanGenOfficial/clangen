@@ -289,6 +289,124 @@
       "title": "GroupEnum",
       "type": "string"
     },
+    "GroupEventCatEnum": {
+      "enum": [
+        "m_c",
+        "r_c",
+        "r_c1",
+        "r_c2",
+        "r_c3",
+        "r_c4",
+        "r_c5",
+        "multi_cat"
+      ],
+      "title": "GroupEventCatEnum",
+      "type": "string"
+    },
+    "GroupEventRelationshipChange": {
+      "additionalProperties": false,
+      "properties": {
+        "cats_from": {
+          "description": "The cat's whose relationship values are being edited. You are changing how the \"cats_from\" feels.",
+          "items": {
+            "$ref": "#/$defs/GroupEventCatEnum"
+          },
+          "title": "Cats From",
+          "type": "array"
+        },
+        "cats_to": {
+          "description": "The target of the relationship. You are changing how \"cats_from\" feels about \"cats_to\".",
+          "items": {
+            "$ref": "#/$defs/GroupEventCatEnum"
+          },
+          "title": "Cats To",
+          "type": "array"
+        },
+        "mutual": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Controls if the relation effect will be applied in both directions.",
+          "title": "Mutual"
+        },
+        "values": {
+          "description": "Controls which relationship values are affected.",
+          "items": {
+            "$ref": "#/$defs/Value"
+          },
+          "title": "Values",
+          "type": "array"
+        },
+        "amount": {
+          "description": "Exact amount the relationship value will be affected. Can be positive or negative.",
+          "title": "Amount",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "cats_from",
+        "cats_to",
+        "values",
+        "amount"
+      ],
+      "title": "GroupEventRelationshipChange",
+      "type": "object"
+    },
+    "GroupEventRelationshipConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "cats_from": {
+          "description": "The cat from whom the relationship originates.",
+          "items": {
+            "$ref": "#/$defs/GroupEventCatEnum"
+          },
+          "title": "Cats From",
+          "type": "array"
+        },
+        "cats_to": {
+          "description": "The target of the relationship.",
+          "items": {
+            "$ref": "#/$defs/GroupEventCatEnum"
+          },
+          "title": "Cats To",
+          "type": "array"
+        },
+        "mutual": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Controls if the relationship is required in both directions",
+          "title": "Mutual"
+        },
+        "constraints": {
+          "description": "Controls which relationship constraints are required",
+          "items": {
+            "$ref": "#/$defs/RelationshipStatus"
+          },
+          "title": "Constraints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats_from",
+        "cats_to",
+        "constraints"
+      ],
+      "title": "GroupEventRelationshipConstraint",
+      "type": "object"
+    },
     "HealthDict": {
       "additionalProperties": false,
       "properties": {
@@ -421,6 +539,34 @@
         "r_c": {
           "$ref": "#/$defs/CatDict",
           "title": "R C"
+        },
+        "r_c1": {
+          "$ref": "#/$defs/CatDict",
+          "title": "R C1"
+        },
+        "r_c2": {
+          "$ref": "#/$defs/CatDict",
+          "title": "R C2"
+        },
+        "r_c3": {
+          "$ref": "#/$defs/CatDict",
+          "title": "R C3"
+        },
+        "r_c4": {
+          "$ref": "#/$defs/CatDict",
+          "title": "R C4"
+        },
+        "r_c5": {
+          "$ref": "#/$defs/CatDict",
+          "title": "R C5"
+        },
+        "r_c6": {
+          "$ref": "#/$defs/CatDict",
+          "title": "R C6"
+        },
+        "multi_cat": {
+          "$ref": "#/$defs/CatDict",
+          "title": "Multi Cat"
         }
       },
       "title": "InvolvedCats",
@@ -510,6 +656,71 @@
       ],
       "title": "PermCondition",
       "type": "string"
+    },
+    "RelationshipGroupEventSchemaItem": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Separates the events into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
+          "title": "Id",
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/$defs/Location",
+          "description": "Constrains the event to only occur if a player chooses a specific biome."
+        },
+        "season": {
+          "description": "Constrains the event to only occur once the Clan is in a specific season.",
+          "items": {
+            "$ref": "#/$defs/Season"
+          },
+          "title": "Season",
+          "type": "array"
+        },
+        "tags": {
+          "description": "Used for some filtering purposes",
+          "items": {
+            "$ref": "#/$defs/Tag"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "strings": {
+          "description": "List of the text that will be displayed in-game as events.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Strings",
+          "type": "array"
+        },
+        "involved_cats": {
+          "$ref": "#/$defs/InvolvedCats",
+          "description": "Used to add constraints for the various involved cats.",
+          "title": "Involved Cats"
+        },
+        "relationship_constraint": {
+          "description": "Used to require specific relationships between the cats",
+          "items": {
+            "$ref": "#/$defs/GroupEventRelationshipConstraint"
+          },
+          "title": "Relationship Constraint",
+          "type": "array"
+        },
+        "relationship_changes": {
+          "description": "Used to change specific relationships between the cats",
+          "items": {
+            "$ref": "#/$defs/GroupEventRelationshipChange"
+          },
+          "title": "Relationship Changes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "strings"
+      ],
+      "title": "RelationshipGroupEventSchemaItem",
+      "type": "object"
     },
     "RelationshipStatus": {
       "enum": [
@@ -714,9 +925,7 @@
         "loner",
         "-loner",
         "rogue",
-        "-rogue",
-        "clancat",
-        "-clancat"
+        "-rogue"
       ],
       "title": "Status",
       "type": "string"
@@ -756,120 +965,6 @@
       ],
       "title": "TagEnum",
       "type": "string"
-    },
-    "ThoughtCatEnum": {
-      "enum": [
-        "m_c",
-        "r_c"
-      ],
-      "title": "ThoughtCatEnum",
-      "type": "string"
-    },
-    "ThoughtRelationshipConstraint": {
-      "additionalProperties": false,
-      "properties": {
-        "cats_from": {
-          "description": "The cat from whom the relationship originates.",
-          "items": {
-            "$ref": "#/$defs/ThoughtCatEnum"
-          },
-          "title": "Cats From",
-          "type": "array"
-        },
-        "cats_to": {
-          "description": "The target of the relationship.",
-          "items": {
-            "$ref": "#/$defs/ThoughtCatEnum"
-          },
-          "title": "Cats To",
-          "type": "array"
-        },
-        "mutual": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Controls if the relationship is required in both directions",
-          "title": "Mutual"
-        },
-        "constraints": {
-          "description": "Controls which relationship constraints are required",
-          "items": {
-            "$ref": "#/$defs/RelationshipStatus"
-          },
-          "title": "Constraints",
-          "type": "array"
-        }
-      },
-      "required": [
-        "cats_from",
-        "cats_to",
-        "constraints"
-      ],
-      "title": "ThoughtRelationshipConstraint",
-      "type": "object"
-    },
-    "ThoughtSchemaItem": {
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "description": "Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
-          "title": "Id",
-          "type": "string"
-        },
-        "location": {
-          "$ref": "#/$defs/Location",
-          "description": "Constrains the thought to only occur if a player chooses a specific biome."
-        },
-        "season": {
-          "description": "Constrains the thought to only occur once the Clan is in a specific season.",
-          "items": {
-            "$ref": "#/$defs/Season"
-          },
-          "title": "Season",
-          "type": "array"
-        },
-        "tags": {
-          "description": "Used for some filtering purposes",
-          "items": {
-            "$ref": "#/$defs/Tag"
-          },
-          "title": "Tags",
-          "type": "array"
-        },
-        "strings": {
-          "description": "List of the text that will be displayed in-game as thoughts.",
-          "items": {
-            "type": "string"
-          },
-          "title": "Strings",
-          "type": "array"
-        },
-        "involved_cats": {
-          "$ref": "#/$defs/InvolvedCats",
-          "description": "Used to add constraints for the various involved cats.",
-          "title": "Involved Cats"
-        },
-        "relationship_constraint": {
-          "description": "Used to require specific relationships between the cats",
-          "items": {
-            "$ref": "#/$defs/ThoughtRelationshipConstraint"
-          },
-          "title": "Relationship Constraint",
-          "type": "array"
-        }
-      },
-      "required": [
-        "id",
-        "strings"
-      ],
-      "title": "ThoughtSchemaItem",
-      "type": "object"
     },
     "Trait": {
       "enum": [
@@ -954,12 +1049,23 @@
       ],
       "title": "Trait",
       "type": "string"
+    },
+    "Value": {
+      "enum": [
+        "romance",
+        "like",
+        "comfort",
+        "trust",
+        "respect"
+      ],
+      "title": "Value",
+      "type": "string"
     }
   },
-  "description": "Thoughts in Clan Generator.",
+  "description": "Group relationship event in Clan Generator.",
   "items": {
-    "$ref": "#/$defs/ThoughtSchemaItem"
+    "$ref": "#/$defs/RelationshipGroupEventSchemaItem"
   },
-  "title": "ThoughtSchema",
+  "title": "RelationshipGroupEvent",
   "type": "array"
 }

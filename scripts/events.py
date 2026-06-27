@@ -665,7 +665,7 @@ def handle_focus():
         ]
 
         warrior_amount = len(healthy_warriors) * get_config(
-            game.clan, f"focus.hunting.{CatRank.WARRIOR}"
+            f"focus.hunting.{CatRank.WARRIOR}"
         )
 
         # handle apprentices
@@ -676,7 +676,7 @@ def handle_focus():
         ]
 
         app_amount = len(healthy_apprentices) * get_config(
-            game.clan, f"focus.hunting.{CatRank.APPRENTICE}"
+            f"focus.hunting.{CatRank.APPRENTICE}"
         )
 
         # finish
@@ -1155,7 +1155,7 @@ def check_war():
     if game.clan.war["at_war"]:
         # Grab the enemy clan object
         for other_clan in game.clan.all_other_clans:
-            if other_clan.name == game.clan.war["enemy"]:
+            if other_clan.prefix == game.clan.war["enemy"]:
                 enemy_clan = other_clan
                 break
 
@@ -1203,7 +1203,7 @@ def check_war():
             ):
                 enemy_clan = other_clan
                 game.clan.war["at_war"] = True
-                game.clan.war["enemy"] = other_clan.name
+                game.clan.war["enemy"] = other_clan.prefix
                 war_events = WAR_TXT["trigger_events"]
                 switch_set_value(Switch.war_rel_change_type, "rel_down")
 
@@ -2122,10 +2122,8 @@ def handle_injuries_or_general_death(cat):
     )
 
     # chance to kill leader: 1/50 by default
-    leader_death_chance = get_config(game.clan, "death_related.leader_death_chance") - (
-        get_config(game.clan, "death_related.war_death_modifier_leader")
-        if use_war_modifier
-        else 0
+    leader_death_chance = get_config("death_related.leader_death_chance") - (
+        get_config("death_related.war_death_modifier_leader") if use_war_modifier else 0
     )
 
     if (
@@ -2178,10 +2176,8 @@ def handle_injuries_or_general_death(cat):
         if game.clan.game_mode == "classic"
         else "death_related.death_chance"
     )
-    death_chance = get_config(game.clan, path) - (
-        get_config(game.clan, "death_related.war_death_modifier")
-        if use_war_modifier
-        else 0
+    death_chance = get_config(path) - (
+        get_config("death_related.war_death_modifier") if use_war_modifier else 0
     )
     if not int(random.random() * death_chance) and not cat.not_working():  # 1/400
         create_short_event(
