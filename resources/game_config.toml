@@ -22,10 +22,6 @@ dev_tools = false
   # Adds a passive buff to relationship events. We divide the value change by passive_influence_div and apply it to all other relationship values.
   passive_influence_div = 3
 
-  # 1/chance that a group event will be a "special group event"
-  # special groups are defined in group_types.json
-  chance_of_special_group = 9
-
   # base 1/chance of a romance interaction with another cat, when a cat has a mate
   chance_romance_not_mate = 15
 
@@ -34,6 +30,13 @@ dev_tools = false
     low = 8
     medium = 12
     high = 16
+
+  [relationship.pair_events]
+    # weights for each type of intensity
+    [relationship.pair_events.intensity_chances]
+      low = 3
+      medium = 4
+      high = 2
 
   [relationship.group_events]
     # the possible amounts of cats that can be chosen for a multi_cat group
