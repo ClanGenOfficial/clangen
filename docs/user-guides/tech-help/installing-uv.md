@@ -14,7 +14,7 @@ Here's a little QNA for things you might want to know before you proceed with UV
 
 No, it does not. Rather, it's mostly an issue with ClanGen and Thonny clashing than it is with UV refusing to work with Thonny. Thonny does not support every dependency ClanGen needs (so it requires you to install additional thonny-exclusive environments), and frankly, sometimes that's just more work than necessary.
 
-In short terms, no, we do not recommend using Thonny with ClanGen.
+In short terms, no, we do not recommend using Thonny with ClanGen, but it can be possible.
 
 ### What should I install before attempting to install UV?
 
@@ -49,7 +49,9 @@ If you are unsure of the terms I'm using and how they apply to installing the ga
 
 **Dependencies**: The requirements necessary for your game to run. 
 
-**PATH**: Path is referring to what your terminal is set to look at.
+**PATH**: Path is referring to what your terminal is set to affect.
+
+**Application**: Application is referring to the exe install that has all the core coding compressed into the application launcher. 
 
 ---
 
@@ -113,7 +115,7 @@ Before we can do any commands, we have to set the terminal to PATH.
 
 - If you're unsure of what this means: the terminal can only affect what you set it to affect. If you leave it to its default pathing, it CAN NOT find ClanGen and apply your commands.
 
-![default powershell pathing](docs-resources/assets/techhelp/WIN-powershell-default.png)
+![default powershell pathing](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-powershell-default.png?raw=true)
 
 Type `cd` into your terminal. Do not Enter yet. 
 
@@ -121,15 +123,15 @@ Go to where your unzipped ClanGen source is located on your device, and open it 
 
 - "Copy address as text" copies the entire file pathing to the folder you right clicked, which is perfect for this kind of command.
 
-![copy address as text](docs-resources/assets/techhelp/WIN-coppy-address.png)
+![copy address as text](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-copy-address.png?raw=true)
 
 Paste the text you just copied after the `cd` command. it should end up look similar to `cd C:\Users\username\Documents\clangen-stable/clangen`. Enter.
 
-![cd command](docs-resources/assets/techhelp/WIN_cd_command_example.png)
+![cd command](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN_cd_command_example.png?raw=true)
 
 Once the terminal is set to the path, like the example above, use the command `dir` to make sure you're in the correct place.
 
-![dir command](docs-resources/assets/techhelp/WIN-dir-command.png)
+![dir command](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-dir-command.png?raw=true)
 
 You should see the internal contents of the ClanGen source folder, like above.
 
@@ -218,7 +220,7 @@ Put the clangen location after cd. For example, `cd downloads/clangen/clangen`
 
 Your path in the terminal should change. Use `ls` to confirm you're in the correct area. You should get something similar to below:
 
-![dir command](docs-resources/assets/techhelp/WIN-dir-command.png)
+![dir command](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-dir-command.png?raw=true)
 
 If you don't get the internal contents, reset your terminal and try again. If it's just a folder called clangen, you can use `cd clangen` to further add to the terminal path, then confirm with `ls`.
 
