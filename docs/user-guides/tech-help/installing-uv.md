@@ -113,7 +113,7 @@ Before we can do any commands, we have to set the terminal to PATH.
 
 - If you're unsure of what this means: the terminal can only affect what you set it to affect. If you leave it to its default pathing, it CAN NOT find ClanGen and apply your commands.
 
-![default powershell pathing](docs-resources/assets/tech-help/WIN-powershell-default.png)
+![default powershell pathing](docs-resources/assets/techhelp/WIN-powershell-default.png)
 
 Type `cd` into your terminal. Do not Enter yet. 
 
@@ -121,15 +121,15 @@ Go to where your unzipped ClanGen source is located on your device, and open it 
 
 - "Copy address as text" copies the entire file pathing to the folder you right clicked, which is perfect for this kind of command.
 
-![copy address as text](docs-resources/assets/tech-help/WIN-coppy-address.png)
+![copy address as text](docs-resources/assets/techhelp/WIN-coppy-address.png)
 
 Paste the text you just copied after the `cd` command. it should end up look similar to `cd C:\Users\username\Documents\clangen-stable/clangen`. Enter.
 
-![cd command](docs-resources/assets/tech-help/WIN_cd_command_example.png)
+![cd command](docs-resources/assets/techhelp/WIN_cd_command_example.png)
 
 Once the terminal is set to the path, like the example above, use the command `dir` to make sure you're in the correct place.
 
-![dir command](docs-resources/assets/tech-help/WIN-dir-command.png)
+![dir command](docs-resources/assets/techhelp/WIN-dir-command.png)
 
 You should see the internal contents of the ClanGen source folder, like above.
 
@@ -203,6 +203,10 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 
 ### PATH: MAC
 
+!!!tip
+      (macos) On the off chance that your source is in applications, you will have to move it to somewhere else, such as downloads or documents, to set the path into your terminal. "applications" is not a directory you're able to use in the terminal.
+
+
 !!!to-do
      images of the process for mac provided by a mac player?
 
@@ -214,9 +218,9 @@ Put the clangen location after cd. For example, `cd downloads/clangen/clangen`
 
 Your path in the terminal should change. Use `ls` to confirm you're in the correct area. You should get something similar to below:
 
-![dir command](docs-resources/assets/tech-help/WIN-dir-command.png)
+![dir command](docs-resources/assets/techhelp/WIN-dir-command.png)
 
-If you don't get the internal contents, reset your terminal and try again. If it's just a folder called clangen, you can use `cd clangen` to further add to the terminal path, then confirm with `dir`.
+If you don't get the internal contents, reset your terminal and try again. If it's just a folder called clangen, you can use `cd clangen` to further add to the terminal path, then confirm with `ls`.
 
 Proceed to the Commands section below.
 
