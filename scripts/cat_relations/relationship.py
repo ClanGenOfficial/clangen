@@ -114,6 +114,7 @@ class Relationship:
             rebuild_relationship_dicts()
 
         # update relationship
+        # TODO: update this when mates are actually given? (but also do we actually need this)
         if self.cat_to.ID in self.cat_from.mate:
             self.mates = True
 
