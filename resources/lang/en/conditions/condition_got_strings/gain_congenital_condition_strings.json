@@ -73,14 +73,14 @@
         "When m_c is anxious, {PRONOUN/m_c/poss} voice freezes up, no matter how strongly {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to speak up."
     ],
     "strange lump": [
-            "m_c developed a new lump on {PRONOUN/m_c/poss} body. It doesn't look good.",
             "r_c isn't sure where this lump on {PRONOUN/m_c/poss} body came from, but m_c isn't sure it's good news.",
             "m_c complains about being unable to sleep properly, leading r_c to find a strange lump on {PRONOUN/m_c/object}. It's not good news.",
-            "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
+            "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body.",
+            "m_c developed a new lump on {PRONOUN/m_c/poss} body. It doesn't look good."
         ],
     "absent": [
-            "m_c has been getting more and more forgetful lately. {PRONOUN/m_c/subject/CAP} is starting to fade.",
             "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, quietly concerned about how long it takes {PRONOUN/m_c/object} to respond.",
-            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note — m_c has been fading fast."
+            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note — m_c has been fading fast.",
+            "m_c has been getting more and more forgetful lately. {PRONOUN/m_c/subject/CAP} is starting to fade."
         ]
 }

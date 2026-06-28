@@ -18,8 +18,8 @@
     },
     "damaged throat": {
         "sore throat": [
-            "m_c overexerted {PRONOUN/m_c/poss} voice and now can hardly speak at all, with how horribly sore {PRONOUN/m_c/poss} throat is.",
-            "m_c mimes the motions for numbing herbs to r_c, who understands and supplies them swiftly. Something must have irritated m_c's damaged throat."
+            "m_c mimes the motions for numbing herbs to r_c, who understands and supplies them swiftly. Something must have irritated m_c's damaged throat.",
+            "m_c overexerted {PRONOUN/m_c/poss} voice and now can hardly speak at all, with how horribly sore {PRONOUN/m_c/poss} throat is."
         ]
     },
     "born without a leg": {
@@ -86,8 +86,8 @@
             "m_c's weak lungs have left {PRONOUN/m_c/object} coughing and wheezing this moon, unable to resist potential sickness."
         ],
         "breathless fit": [
-            "m_c is used to being breathless, but today {PRONOUN/m_c/subject} can hardly walk a few fox-lengths before growing faint. Something in the air must have irritated {PRONOUN/m_c/poss} lungs.",
-            "m_c wheezes to r_c that it feels like a cat is sitting on {PRONOUN/m_c/poss} chest. r_c waves fragrant herbs beneath m_c's nose, praying this breathlessness will not progress to suffocation."
+            "m_c wheezes to r_c that it feels like a cat is sitting on {PRONOUN/m_c/poss} chest. r_c waves fragrant herbs beneath m_c's nose, praying this breathlessness will not progress to suffocation.",
+            "m_c is used to being breathless, but today {PRONOUN/m_c/subject} can hardly walk a few fox-lengths before growing faint. Something in the air must have irritated {PRONOUN/m_c/poss} lungs."
         ]
     },
     "wasting disease": {
@@ -185,15 +185,16 @@
     "strange lump": {
         "seizure": [
             "m_c had a seizure recently. r_c says the lump looks different.",
-            "Nobody expected m_c to have a seizure out of the blue like that. r_c worries it's due to {PRONOUN/m_c/poss} lump."
+            "Nobody expected m_c to have a seizure out of the blue like that. r_c worries it's due to {PRONOUN/m_c/poss} lump.",
+            "m_c falters during {PRONOUN/m_c/poss} tasks, collapsing into a seizure. {PRONOUN/m_c/poss/CAP} Clanmates suspect that the culprit is the lump on m_c's body."
         ],
         "paralysis": [
             "m_c woke up and realized {PRONOUN/m_c/object} can't move {PRONOUN/m_c/poss} legs anymore...",
             "m_c reports a strange buzzing and severe weakness of {PRONOUN/m_c/poss} legs."
         ],
         "redcough": [
-            "m_c has finally started coughing up blood. The Clan has seen this before — that lump was poison.",
-            "r_c braces for the inevitable when m_c finally contracts redcough. It's just a matter of moons now."
+            "r_c braces for the inevitable when m_c finally contracts redcough. It's just a matter of moons now.",
+            "m_c has finally started coughing up blood. The Clan has seen this before — that lump was poison."
         ]
     }
 }
