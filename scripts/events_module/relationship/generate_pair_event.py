@@ -98,7 +98,7 @@ def trigger_interaction(
 
 def _create_relationship(main_cat: Cat, other_cat: Cat):
     """
-    Use to create a relationship between the two cats if one did not already exist.
+    Creates a relationship between the two cats if one did not already exist.
     """
 
     main_cat.relationships[other_cat.ID] = Relationship(main_cat, other_cat)
@@ -109,6 +109,13 @@ def _create_relationship(main_cat: Cat, other_cat: Cat):
 def _get_type_of_change(
     main_cat: Cat, other_cat: Cat, relationship: Relationship
 ) -> str:
+    """
+    Returns if the change will be positive or negative
+    :param main_cat: The main cat that the event revolves around
+    :param other_cat: The other cat involved in the event
+    :param relationship: Main cat's relationship object for other_cat
+    :return: "positive" or "negative"
+    """
     # base for non-existing like
     bool_ballot = [True, False]
 
@@ -138,14 +145,17 @@ def _get_type_of_change(
 
 def _get_type_of_interaction(
     main_cat: Cat, other_cat: Cat, relationship: Relationship, change_type: str
-) -> str:
+) -> RelType:
     """
     Returns the relationship type that will be influenced by this event
-
+    :param main_cat: The main cat that the event revolves around
+    :param other_cat: The other cat involved in the event
+    :param relationship: Main cat's relationship object for other_cat
+    :return: The chosen RelType
     """
-    is_positive = True if change_type == "positive" else False
+    is_positive: bool = True if change_type == "positive" else False
 
-    value_weights = {v: 1 for v in [*RelType]}
+    value_weights: dict[RelType, int] = {v: 1 for v in [*RelType]}
 
     # change the weights according if the interaction should be positive or negative
     # existing rel values determine the weight added
@@ -192,6 +202,13 @@ def _get_type_of_interaction(
 def _get_event(
     events: list[TextPoolEvent], main_cat: Cat, other_cat: Cat
 ) -> TextPoolEvent:
+    """
+    Returns a valid event for all involved cats
+    :param events: The list of events to filter
+    :param main_cat: The main cat that the event revolves around
+    :param other_cat: The other cat involved in the event
+    :return: A TextPoolEvent valid for both cats and current game state
+    """
     final_events = []
 
     possible_events = []
@@ -236,19 +253,13 @@ def _get_event(
 def _get_change_amount(
     is_positive: bool, intensity: str, relationship: Relationship
 ) -> int:
-    """Finds and returns the int amount that the relationship type will change by according to given intensity and additional modifiers
+    """
+    Finds and returns the int amount that the relationship type will change by according to given intensity and additional modifiers
 
-    Parameters
-    ----------
-    is_positive : bool
-        True if the relationship value is positive, False if negative.
-    intensity : str
-        the intensity of the affect
-
-    Returns
-    -------
-    amount : int
-        the amount (negative or positive) for the given parameter
+    :param is_positive: Set to True if the change should be a positive number, False if it should be negative
+    :param intensity: "low", "medium", or "high" depending on how large the change should be
+    :param relationship: Main cat's relationship object for other_cat
+    :return: The int amount that the relationship type should change by
     """
     # get the normal amount
     amount = get_config(f"relationship.value_change_amount.{intensity}")
@@ -280,7 +291,17 @@ def _resolve_event(
     type_of_interaction: str,
     relationship: Relationship,
 ):
+    """
+    Handles resolving all the consequences of the event as well as formatting the string and adding it to the events list
+    :param intensity: "low", "medium", or "high" depending on how large the change should be
+    :param involved_cats: The dictionary of involved cats. Key is the string abbreviation for the cat and value is the cat object
+    :param type_of_change: "positive" or "negative" depending on how the relationship is changing
+    :param type_of_interaction: The main RelType that is being affected
+    :param relationship: Main cat's relationship object for other_cat
+    """
     event_string = choice(event.strings)
+
+    # FORMATTING
     replace_dict = {
         abbr: (str(c.name), choice(c.pronouns)) for abbr, c in involved_cats.items()
     }
@@ -292,22 +313,29 @@ def _resolve_event(
         text=event_string,
     )
 
+    # EVENT LIST
     # collect cat IDs for the involved cat buttons
     cat_ids = [c.ID for c in involved_cats.values()]
-
     # append the event to the events list!
     game.cur_events_list.append(
         Single_Event(event_string, ["relation", "interaction"], cat_ids)
     )
 
+    # APPLY INFLUENCE ON RELATIONSHIPS
     _apply_base_influence(
         intensity, relationship, type_of_change, type_of_interaction, event_string
     )
-
     _apply_extra_influence(event, involved_cats, relationship, event_string)
 
 
-def _apply_extra_influence(event, involved_cats, relationship, chosen_string):
+def _apply_extra_influence(event: TextPoolEvent, involved_cats: dict[str, Cat], relationship: Relationship, chosen_string: str):
+    """
+    Applies any additional relationship influence that was specified by the event
+    :param event: the object for the event
+    :param involved_cats: The dictionary of involved cats. Key is the string abbreviation for the cat and value is the cat object
+    :param relationship: Main cat's relationship object for other_cat
+    :param chosen_string: The string that was chosen for this event
+    """
     if relationship.opposite_relationship is None:
         relationship.link_relationship()
     for change in event.relationship_changes:
@@ -333,8 +361,16 @@ def _apply_extra_influence(event, involved_cats, relationship, chosen_string):
 
 
 def _apply_base_influence(
-    intensity, relationship, type_of_change, type_of_interaction, chosen_string
+    intensity: str, relationship: Relationship, type_of_change: str, type_of_interaction: RelType, chosen_string: str
 ):
+    """
+    Applies the base influence for this event.
+    :param intensity: "low", "medium", or "high" depending on how large the change should be
+    :param relationship: Main cat's relationship object for other_cat
+    :param type_of_change: "positive" or "negative" depending on how the relationship is changing
+    :param type_of_interaction: The main RelType that is being affected
+    :param chosen_string: The string that was chosen for this event
+    """
     amount = _get_change_amount(
         is_positive=type_of_change == "positive",
         intensity=intensity,
