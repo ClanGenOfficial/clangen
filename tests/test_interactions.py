@@ -579,33 +579,55 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         half.backstory = "halfclan1"
 
         # when
-        clan_to_all = SingleInteraction("test")
-        clan_to_all.backstory_constraint = {"m_c": ["clanborn"]}
+        clan_to_all = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(backstory=["clanborn"]),
+            },
+        )
 
-        all_to_clan = SingleInteraction("test")
-        all_to_clan.backstory_constraint = {
-            "m_c": ["halfclan1", "clanborn"],
-            "r_c": ["clanborn"],
-        }
-
+        all_to_clan = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(backstory=["clanborn", "halfclan1"]),
+                "r_c": InvolvedCatDict(backstory=["clanborn"]),
+            },
+        )
+        all_half2 = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(backstory=["halfclan2"]),
+                "r_c": InvolvedCatDict(backstory=["halfclan2"]),
+            },
+        )
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(clan, half, clan_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[clan_to_all, all_to_clan],
+            main_cat=clan,
+            other_cat=half,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(clan, half, all_to_clan)
-        )
+        self.assertEqual(chosen_event, clan_to_all)
 
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(half, clan, clan_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[clan_to_all, all_to_clan],
+            main_cat=half,
+            other_cat=clan,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(half, clan, all_to_clan)
-        )
+        self.assertEqual(chosen_event, all_to_clan)
 
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(clan, clan, clan_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[clan_to_all, all_half2],
+            main_cat=clan,
+            other_cat=clan,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(clan, clan, all_to_clan)
+        self.assertEqual(chosen_event, clan_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[all_to_clan, all_half2],
+            main_cat=clan,
+            other_cat=clan,
         )
+        self.assertEqual(chosen_event, all_to_clan)
