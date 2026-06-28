@@ -190,8 +190,8 @@ class Relation_Events:
             other_cat.contact_with_ill_cat(cat)
         if other_cat.is_ill():
             cat.contact_with_ill_cat(other_cat)
-        Relation_Events.add_event_triggers(cat)
-        Relation_Events.add_event_triggers(other_cat)
+        Relation_Events.update_events_triggered_count(cat)
+        Relation_Events.update_events_triggered_count(other_cat)
 
     @staticmethod
     def group_events(cat):
@@ -219,7 +219,7 @@ class Relation_Events:
 
         for i in interacted_cat_ids:
             inter_cat = Cat.all_cats[i]
-            Relation_Events.add_event_triggers(inter_cat)
+            Relation_Events.update_events_triggered_count(inter_cat)
 
     @staticmethod
     def family_events(cat):
@@ -325,7 +325,7 @@ class Relation_Events:
         return filtered_cat_list
 
     @staticmethod
-    def add_event_triggers(cat):
+    def update_events_triggered_count(cat):
         if cat.ID in Relation_Events.cats_triggered_events:
             Relation_Events.cats_triggered_events[cat.ID] += 1
         else:
