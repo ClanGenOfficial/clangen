@@ -7,7 +7,7 @@ from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.events_module.relationship import (
     generate_group_event,
-    generate_cat_interaction,
+    generate_pair_event,
 )
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
