@@ -1,20 +1,20 @@
 import os
 import unittest
 
+from scripts.cat.status import StatusDict
 from scripts.cat_relations.enums import rel_type_tiers, RelType
 
 from scripts.cat.enums import CatRank
 from scripts.events_module.event_filters import filter_relationship_type
+from scripts.events_module.parameter_dicts import InvolvedCatDict
+from scripts.events_module.relationship import generate_pair_event
+from scripts.events_module.text_pool_event import TextPoolEvent
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat, Relationship
 from scripts.cat.skills import SkillPath, Skill
-from scripts.cat_relations.interaction import (
-    SingleInteraction,
-    cats_fulfill_single_interaction_constraints,
-)
 
 
 class RelationshipConstraints(unittest.TestCase):
@@ -334,70 +334,100 @@ class RelationshipConstraints(unittest.TestCase):
 class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
-        warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
-        medicine = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
+        warrior = Cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
+        medicine = Cat(status_dict=StatusDict(rank=CatRank.MEDICINE_CAT))
 
         # when
-        warrior_to_all = SingleInteraction("test")
-        warrior_to_all.main_status_constraint = ["warrior"]
-        warrior_to_all.random_status_constraint = ["warrior", "medicine cat"]
+        warrior_to_all = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
+                "r_c": InvolvedCatDict(status=[CatRank.MEDICINE_CAT, CatRank.WARRIOR]),
+            },
+        )
 
-        warrior_to_warrior = SingleInteraction("test")
-        warrior_to_warrior.main_status_constraint = ["warrior"]
-        warrior_to_warrior.random_status_constraint = ["warrior"]
+        warrior_to_warrior = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
+                "r_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
+            },
+        )
 
-        medicine_to_warrior = SingleInteraction("test")
-        medicine_to_warrior.main_status_constraint = ["medicine cat"]
-        medicine_to_warrior.random_status_constraint = ["warrior"]
+        medicine_to_warrior = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(status=[CatRank.MEDICINE_CAT]),
+                "r_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
+            },
+        )
 
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                warrior, warrior, warrior_to_all
-            )
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_all, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=warrior,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                warrior, warrior, warrior_to_warrior
-            )
-        )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                warrior, warrior, medicine_to_warrior
-            )
-        )
+        self.assertEqual(chosen_event, warrior_to_all)
 
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                warrior, medicine, warrior_to_all
-            )
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=warrior,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                warrior, medicine, warrior_to_warrior
-            )
-        )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                warrior, medicine, medicine_to_warrior
-            )
-        )
+        self.assertEqual(chosen_event, warrior_to_warrior)
 
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                medicine, warrior, warrior_to_all
-            )
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=warrior,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                medicine, warrior, warrior_to_warrior
-            )
+        self.assertNotEqual(chosen_event, medicine_to_warrior)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_all, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=medicine,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                medicine, warrior, medicine_to_warrior
-            )
+        self.assertEqual(chosen_event, warrior_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, warrior_to_all],
+            main_cat=warrior,
+            other_cat=medicine,
         )
+        self.assertNotEqual(chosen_event, warrior_to_warrior)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_all, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=medicine,
+        )
+        self.assertNotEqual(chosen_event, medicine_to_warrior)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_all, medicine_to_warrior],
+            main_cat=medicine,
+            other_cat=warrior,
+        )
+        self.assertNotEqual(chosen_event, warrior_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, medicine_to_warrior],
+            main_cat=medicine,
+            other_cat=warrior,
+        )
+        self.assertNotEqual(chosen_event, warrior_to_warrior)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, medicine_to_warrior],
+            main_cat=medicine,
+            other_cat=warrior,
+        )
+        self.assertEqual(chosen_event, medicine_to_warrior)
 
     def test_trait(self):
         # given
