@@ -2050,20 +2050,7 @@ class Cat:
         # remove accessories if need be
         if "NOTAIL" in self.pelt.scars or "HALFTAIL" in self.pelt.scars:
             self.pelt.accessory = tuple(
-                acc
-                for acc in self.pelt.accessory
-                if acc
-                not in (
-                    "RED FEATHERS",
-                    "BLUE FEATHERS",
-                    "JAY FEATHERS",
-                    "GULL FEATHERS",
-                    "SPARROW FEATHERS",
-                    "CLOVER",
-                    "DAISY",
-                    "WISTERIA",
-                    "GOLDEN CREEPING JENNY",
-                )
+                acc for acc in self.pelt.accessory if acc not in Pelt.tail_accessories
             )
 
         condition = PERMANENT[name]
@@ -2225,10 +2212,8 @@ class Cat:
         condition_directory = get_save_dir() + "/" + save_id + "/conditions"
         condition_file_path = condition_directory + "/" + self.ID + "_conditions.json"
 
-        if (
-            (not self.is_ill() and not self.is_injured() and not self.is_disabled())
-            or self.dead
-            or self.status.is_outsider
+        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or (
+            (self.dead or self.status.is_outsider) and not self.is_disabled()
         ):
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)

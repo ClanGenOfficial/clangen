@@ -2,7 +2,12 @@
     {
         "id": "gen_new_df",
         "strings": [
-            "Is distraught after being sent to the Place of No Stars"
+            "Is distraught after being sent to the Place of No Stars",
+            "Stares wistfully at the murky fog that separates {PRONOUN/m_c/object} from {PRONOUN/m_c/poss} former home",
+            "Always worried that one day they would be sentenced to the Dark Forest",
+            "Gazes upward at the empty black sky of {PRONOUN/m_c/poss} new home",
+            "Doesn't know what {PRONOUN/m_c/subject} did to deserve a fate as cruel as this",
+            "Snarls after being cast into the Dark Forest"
         ]
     }
 ]

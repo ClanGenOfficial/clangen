@@ -1,0 +1,455 @@
+[
+    {
+        "id": "group_multicat_pos_hunterbrag",
+        "strings": [
+            "multi_cat are impressed by m_c's recent catch.",
+            "m_c offers multi_cat hunting tips.",
+            "m_c brags about {PRONOUN/m_c/poss} recent catches and impresses multi_cat.",
+            "m_c's latest catch is the talk of the Clan, and multi_cat compliment {PRONOUN/m_c/object}.",
+            "multi_cat congratulate m_c on {PRONOUN/m_c/poss} latest catch."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ],
+                "stat": {
+                    "skill": ["HUNTER,1"]
+                }
+            },
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_fighterbrag",
+        "strings": [
+            "multi_cat talk about m_c's combat prowess during a skirmish.",
+            "m_c regales multi_cat with stories about {PRONOUN/m_c/poss} latest fight.",
+            "m_c gives multi_cat fighting tips.",
+            "multi_cat congratulate m_c on {PRONOUN/m_c/poss} win during a border skirmish.",
+            "After hearing about m_c's combat prowess, multi_cat's respect for m_c increases."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ],
+                "stat": {
+                    "skill": ["FIGHTER,1"]
+                }
+            },
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_speakerbrag",
+        "strings": [
+            "m_c has a way with words that impresses multi_cat.",
+            "multi_cat are enthralled by m_c's eloquence.",
+            "multi_cat listen intently to m_c's well-phrased point.",
+            "multi_cat talk about how m_c effortlessly diffused a border skirmish with {PRONOUN/m_c/poss} words.",
+            "m_c slips into multi_cat's conversation seamlessly and provides a new point of view."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ],
+                "stat": {
+                    "skill": ["SPEAKER,1"]
+                }
+            },
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_medcathealerbrag",
+        "strings": [
+            "m_c's knowledge surrounding herbs impresses multi_cat.",
+            "multi_cat are amazed when m_c teaches them about the intricacies of herbs.",
+            "m_c's vast knowledge of the territory and how plants grow astounds multi_cat.",
+            "m_c warns multi_cat about a plant they were discussing and teaches them about its dangers.",
+            "multi_cat listen to m_c explain the process of storing herbs and gain a newfound respect for m_c's craft."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "stat": {
+                    "skill": ["HEALER,1"]
+                }
+            },
+            "multi_cat": {
+                "status": ["-medicine cat"],
+                "stat": {
+                    "skill": ["-HEALER,1"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_kit_kitsitting",
+        "strings": [
+            "multi_cat are on their best behavior around m_c.",
+            "After kitsitting multi_cat, m_c gushes about their perfect behavior.",
+            "m_c rewards multi_cat for being perfectly behaved for {PRONOUN/m_c/object}.",
+            "multi_cat don't fuss when m_c tells them it's time to take a nap.",
+            "multi_cat settle down when reminded to by m_c.",
+            "A fight between multi_cat over a toy is short-lived when m_c intervenes.",
+            "multi_cat are excited to hear that m_c will be kitsitting them.",
+            "m_c encourages multi_cat to stretch their imaginations while playing."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["KIT,1"]
+                }
+            },
+            "multi_cat": {
+                "status": ["kitten"]
+            }
+        },
+        "relationship_constraints": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "constraints": ["-parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect", "like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_teacherwithkits",
+        "strings": [
+            "m_c teaches multi_cat the fundamentals of stretching to help them burn off energy.",
+            "After multi_cat get in trouble, m_c helps them understand what they did wrong through a lesson.",
+            "m_c teaches multi_cat what to do during an emergency.",
+            "m_c teaches multi_cat about the seasons their territory experiences.",
+            "m_c spends the day teaching multi_cat {PRONOUN/m_c/poss} favorite facts.",
+            "m_c teaches multi_cat a few tricks {PRONOUN/m_c/subject} {VERB/m_c/know/knows}."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["TEACHER,1"]
+                }
+            },
+            "multi_cat": {
+                "status": ["kitten"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect", "like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_mediatorteachingkits",
+        "strings": [
+            "After multi_cat are caught in a lie, m_c teaches them the importance of honesty.",
+            "m_c explains the importance of being honest but tactful to multi_cat.",
+            "m_c helps multi_cat work through their challenging emotions.",
+            "m_c helps multi_cat cope with something difficult.",
+            "Being young is a challenge, so m_c provides multi_cat a judgment-free space to talk about their feelings.",
+            "m_c settles a disagreement between multi_cat before it can spark a fight.",
+            "multi_cat cannot be consoled until m_c helps them work through their emotions.",
+            "When multi_cat come to m_c after a fight, m_c teaches them how to tactfully discuss their feelings.",
+            "m_c hosts a group exercise to help multi_cat understand each other better.",
+            "m_c talks multi_cat through their grievances with each other and finds them playing together later.",
+            "m_c gives multi_cat a space to be honest with each other.",
+            "m_c makes sure multi_cat all get to have their turn during a game."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["mediator"]
+            },
+            "multi_cat": {
+                "status": ["kitten"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect", "comfort"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_notkit_kitsitting",
+        "strings": [
+            "At first, m_c wasn't certain about watching multi_cat. However, the kits surprise {PRONOUN/m_c/object} by being on their best behavior.",
+            "m_c doesn't think it's usually this easy to convince multi_cat to settle down, but it is today.",
+            "Shockingly, multi_cat listen to m_c with little fuss or complaint.",
+            "When m_c tells multi_cat it's time to take a nap, {PRONOUN/m_c/subject} {VERB/m_c/expect/expects} whining. Instead, the kits obediently listen to m_c.",
+            "m_c assumes that kitsitting multi_cat will be a nightmare, but it goes well!"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten"],
+                "stat": {
+                    "skill": ["-KIT,0"]
+                }
+            },
+            "multi_cat": {
+                "status": ["kitten"]
+            }
+        },
+        "relationship_constraints": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "constraints": ["-parent/child", "-littermates"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect", "like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_medteachingapps",
+        "strings": [
+            "m_c is proud of how productive and attentive multi_cat are during a lesson about poisonous plants.",
+            "multi_cat listen intently to m_c's lecture about basic first aid.",
+            "After giving multi_cat a lecture about the basic herbs, m_c quizzes them and is proud of the results.",
+            "m_c appreciates how multi_cat don't goof around during {PRONOUN/m_c/poss} lecture about herbs.",
+            "After conducting a lesson about basic first aid, m_c raves about multi_cat's fantastic behavior.",
+            "m_c assumed that {PRONOUN/m_c/poss} lesson about poisonous plants would go unheard, but multi_cat are diligent listeners.",
+            "m_c is impressed by multi_cat's attitudes during a short lesson about illnesses, their symptoms, and when to worry.",
+            "During a lecture about the severity of injuries, multi_cat wow m_c with their maturity."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": true,
+                "values": ["respect"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_mediatorcommunity",
+        "strings": [
+            "m_c beckons multi_cat to relax with {PRONOUN/m_c/object} and chat.",
+            "At first, multi_cat are unsure about m_c's bonding exercise, but it goes wonderfully.",
+            "m_c has noticed tensions in the Clan, so {PRONOUN/m_c/subject} {VERB/m_c/organize/organizes} time for multi_cat to relax and have others to talk to.",
+            "multi_cat attend a get-together m_c hosts and have a newfound appreciation for each other.",
+            "m_c invites multi_cat to share what's been on their minds and to have an honest talk with each other."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "mediator"
+                ]
+            },
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["multi_cat"],
+                "mutual": true,
+                "values": ["like", "comfort"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_elderstory",
+        "strings": [
+            "m_c tells multi_cat about days long past.",
+            "m_c recalls {PRONOUN/m_c/poss} kithood to multi_cat.",
+            "multi_cat fondly think about one of m_c's stories.",
+            "multi_cat think that m_c has the best stories.",
+            "m_c imparts onto multi_cat how {PRONOUN/m_c/subject} navigated the toughest moments of {PRONOUN/m_c/poss} life.",
+            "multi_cat take m_c's lesson to heart.",
+            "The way m_c weaves {PRONOUN/m_c/poss} wisdom into {PRONOUN/m_c/poss} stories astounds multi_cat."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["elder"],
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            },
+            "multi_cat": {
+                "age": [
+                    "-senior"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_leaderdecision",
+        "strings": [
+            "multi_cat approve of a recent decision m_c made.",
+            "multi_cat discuss their approval of a recent change m_c made.",
+            "multi_cat think that m_c has been leading the Clan well.",
+            "m_c's leadership impresses multi_cat.",
+            "multi_cat respect m_c for making a tough decision as the leader."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["leader"]
+            },
+            "multi_cat": {
+                "status": [
+                    "warrior",
+                    "medicine cat",
+                    "mediator",
+                    "elder"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_leaderlistens",
+        "strings": [
+            "m_c listens to multi_cat's feedback regarding a recent change.",
+            "m_c understands multi_cat's concern about a decision and explains {PRONOUN/m_c/poss} reasoning behind it.",
+            "multi_cat approach m_c about a concern and feel reassured by the end of the discussion.",
+            "While m_c doesn't change {PRONOUN/m_c/poss} mind about a decision {PRONOUN/m_c/subject} made, multi_cat appreciate m_c listening to their opinions.",
+            "m_c allows multi_cat to voice their opinions about a decision without judgment.",
+            "m_c doesn't boss multi_cat around with {PRONOUN/m_c/poss} authority during a discussion about Clan policies.",
+            "multi_cat feel comfortable talking to m_c about recent events."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["leader"],
+                "stat": {
+                    "trait": [
+                        "-ambitious",
+                        "-arrogant",
+                        "-bloodthirsty",
+                        "-bold",
+                        "-childish",
+                        "-cold",
+                        "-fierce",
+                        "-shameless",
+                        "-troublesome",
+                        "-rebellious",
+                        "-righteous",
+                        "-strict"
+                    ]
+                }
+            },
+            "multi_cat": {
+                "status": [
+                    "deputy",
+                    "warrior",
+                    "medicine cat",
+                    "mediator",
+                    "elder"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect", "trust"],
+                "amount": 10
+            }
+        ]
+    }
+]

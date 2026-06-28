@@ -3158,6 +3158,81 @@
     ],
     "Together (old_name) and (previous_mentor) have torn claws and taken names, and as (old_name) is honored for {PRONOUN/m_c/poss} r_h and named m_c, they're not planning on stopping any time soon!"
   ],
+  "warrior_83": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "loner",
+      "kittypet",
+      "rogue",
+      "all_traits",
+      "no_suffix"
+    ],
+    "m_c is proud to be a part of c_n, but {PRONOUN/m_c/poss} history remains important to {PRONOUN/m_c/object} as well. {PRONOUN/m_c/subject/CAP} politely requests that l_n lets {PRONOUN/m_c/object} keep {PRONOUN/m_c/poss} name after {PRONOUN/m_c/poss} warrior ceremony. m_c is honored for {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_84":[
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "loner",
+      "kittypet",
+      "rogue",
+      "all_traits",
+      "no_suffix"
+    ],
+    "Honoured for {PRONOUN/m_c/poss} r_h, m_c opts to keep {PRONOUN/m_c/poss} former name after becoming a warrior."
+  ],
+  "warrior_85": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "loner",
+      "kittypet",
+      "rogue",
+      "faithful",
+      "fierce",
+      "rebellious",
+      "shameless",
+      "no_suffix"
+    ],
+    "Upon becoming a warrior, m_c boldly asserts that while c_n is {PRONOUN/m_c/poss} home, {PRONOUN/m_c/poss} name was, and always will be, m_c. l_n accepts this, and honours m_c for {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_86": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "loner",
+      "rogue",
+      "all_traits",
+      "no_suffix"
+    ],
+    "When m_c is declared a warrior and honored for {PRONOUN/m_c/poss} r_h, m_c asks to keep the name {PRONOUN/m_c/poss} parents gave {PRONOUN/m_c/object} long ago."
+  ],
+  "warrior_87": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "kittypet",
+      "all_traits",
+      "no_suffix"
+    ],
+    "When m_c is declared a warrior and honoured for {PRONOUN/m_c/poss} r_h, m_c asks to keep the name {PRONOUN/m_c/poss} Twolegs gave {PRONOUN/m_c/object} long ago."
+  ],
   "mediator_0": [
     [
       "mediator",

@@ -168,7 +168,7 @@ class Condition_Events:
             if cat.status.is_leader:
                 game.clan.leader_lives -= 1
                 # kill and retrieve leader life text
-                text = get_leader_life_notice()
+                text = get_leader_life_notice(cat.name)
 
             possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS["starving"]
             event = random.choice(possible_string_list) + " " + text
@@ -278,7 +278,7 @@ class Condition_Events:
                 if game.clan.game_mode == "classic"
                 else "condition_related.illness_chance"
             )
-            random_number = int(random.random() * get_config(game.clan, path))
+            random_number = int(random.random() * get_config(path))
             if (
                 not cat.dead
                 and not cat.is_ill()
@@ -363,10 +363,8 @@ class Condition_Events:
             else "condition_related.injury_chance"
         )
 
-        injury_chance = get_config(game.clan, path) - (
-            get_config(game.clan, "condition_related.war_injury_modifier")
-            if modify_for_war
-            else 0
+        injury_chance = get_config(path) - (
+            get_config("condition_related.war_injury_modifier") if modify_for_war else 0
         )
 
         random_number = int(random.random() * injury_chance)
@@ -609,7 +607,7 @@ class Condition_Events:
                 event = event_text_adjust(Cat, event, main_cat=cat)
                 # add life loss message
                 if cat.status.is_leader:
-                    event = event + " " + get_leader_life_notice()
+                    event = event + " " + get_leader_life_notice(cat.name)
 
                 # add death to history
                 cat.history.add_death(
@@ -743,7 +741,7 @@ class Condition_Events:
                 event = event_text_adjust(Cat, event, main_cat=cat)
                 # add life loss message
                 if cat.status.is_leader:
-                    event = event + " " + get_leader_life_notice()
+                    event = event + " " + get_leader_life_notice(cat.name)
 
                 # add death to history
                 cat.history.add_death(condition=injury, death_text=history_text.strip())

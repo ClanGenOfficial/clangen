@@ -2,7 +2,11 @@
     {
         "id": "gen_new_sc",
         "strings": [
-            "Is relieved to once again hunt in StarClan"
+            "Is relieved to once again hunt in StarClan",
+            "Purrs at a phantom breeze and the thousand stars overhead",
+            "Is grateful to be home in StarClan",
+            "Is eager to share tongues with {PRONOUN/m_c/poss} loved ones after {PRONOUN/m_c/poss} absense",
+            "Sighs in relief after being welcomed into StarClan"
         ]
     }
 ]
