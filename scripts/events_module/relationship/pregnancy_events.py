@@ -107,10 +107,10 @@ class Pregnancy_Events:
                 # events.ceremony_accessory = True
                 return
 
-        if cat.status.is_outsider:
+        if not cat.status.alive_in_player_clan or cat.not_working():
             return
 
-        # Handle birth cooldown outside of the check_if_can_have_kits function, so it only happens once
+        # Handle birth cooldown outside the check_if_can_have_kits function, so it only happens once
         # for each cat.
         if cat.birth_cooldown > 0:
             cat.birth_cooldown -= 1
@@ -127,7 +127,7 @@ class Pregnancy_Events:
 
         # DETERMINE THE SECOND PARENT
         # check if there is a cat in the clan for the second parent
-        second_parent, is_affair = Pregnancy_Events.get_second_parent(cat, clan)
+        second_parent, is_affair = Pregnancy_Events.get_second_parent(cat)
 
         # check if the second_parent is not none and if they also can have kits
         can_have_kits, kits_are_adopted = Pregnancy_Events.check_second_parent(
@@ -611,7 +611,7 @@ class Pregnancy_Events:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def check_if_can_have_kits(cat, single_parentage, allow_unmated, allow_affair):
+    def check_if_can_have_kits(cat, allow_single_parent, allow_unmated, allow_affair):
         """Check if the given cat can have kits, see for age, birth-cooldown and so on."""
         if not cat:
             return False
@@ -639,14 +639,11 @@ class Pregnancy_Events:
                         f"WARNING: {cat.name}  has an invalid mate # {mate_id}. This has been unset."
                     )
                     cat.mate.remove(mate_id)
-
-        # If "single parentage", "unmated parentage" and "affair" settings are all off
-        # we should only allow cats that have mates to have kits.
-        if (
-            not (single_parentage or allow_unmated or allow_affair)
-            and len(cat.mate) < 1
-        ):
-            return False
+        else:
+            # if the cat has no mate, and we don't allow single parents, unmated parents, or affairs
+            # then they can't have kits
+            if not allow_single_parent or not allow_unmated or not allow_affair:
+                return False
 
         # if function reaches this point, having kits is possible
         return True
@@ -689,7 +686,7 @@ class Pregnancy_Events:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def get_second_parent(cat, clan):
+    def get_second_parent(cat):
         """
         Return the second parent of a cat, which will have kits.
         Also returns a bool that is true if an affair was triggered.

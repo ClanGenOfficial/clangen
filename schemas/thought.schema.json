@@ -203,18 +203,6 @@
       "title": "Biome",
       "type": "string"
     },
-    "Cat": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/CatEnum"
-        },
-        {
-          "pattern": "^n_c:[0-9]+$",
-          "type": "string"
-        }
-      ],
-      "title": "Cat"
-    },
     "CatDict": {
       "additionalProperties": false,
       "properties": {
@@ -268,14 +256,6 @@
       },
       "title": "CatDict",
       "type": "object"
-    },
-    "CatEnum": {
-      "enum": [
-        "m_c",
-        "r_c"
-      ],
-      "title": "CatEnum",
-      "type": "string"
     },
     "Group": {
       "anyOf": [
@@ -531,55 +511,6 @@
       "title": "PermCondition",
       "type": "string"
     },
-    "RelationshipConstraint": {
-      "additionalProperties": false,
-      "properties": {
-        "cats_from": {
-          "description": "The cat from whom the relationship originates.",
-          "items": {
-            "$ref": "#/$defs/Cat"
-          },
-          "title": "Cats From",
-          "type": "array"
-        },
-        "cats_to": {
-          "description": "The target of the relationship.",
-          "items": {
-            "$ref": "#/$defs/Cat"
-          },
-          "title": "Cats To",
-          "type": "array"
-        },
-        "mutual": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Controls if the relationship is required in both directions",
-          "title": "Mutual"
-        },
-        "constraints": {
-          "description": "Controls which relationship constraints are required",
-          "items": {
-            "$ref": "#/$defs/RelationshipStatus"
-          },
-          "title": "Constraints",
-          "type": "array"
-        }
-      },
-      "required": [
-        "cats_from",
-        "cats_to",
-        "constraints"
-      ],
-      "title": "RelationshipConstraint",
-      "type": "object"
-    },
     "RelationshipStatus": {
       "enum": [
         "strangers",
@@ -667,10 +598,15 @@
     },
     "Season": {
       "enum": [
-        "Greenleaf",
-        "Leaf-fall",
-        "Leaf-bare",
-        "Newleaf"
+        "greenleaf",
+        "-greenleaf",
+        "leaf-fall",
+        "-leaf-fall",
+        "leaf-bare",
+        "-leaf-bare",
+        "newleaf",
+        "-newleaf",
+        "any"
       ],
       "title": "Season",
       "type": "string"
@@ -773,22 +709,14 @@
         "elder",
         "-elder",
         "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
         "kittypet",
         "-kittypet",
         "loner",
         "-loner",
         "rogue",
         "-rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "-lost",
-        "outside cat",
-        "clancat"
+        "clancat",
+        "-clancat"
       ],
       "title": "Status",
       "type": "string"
@@ -828,6 +756,63 @@
       ],
       "title": "TagEnum",
       "type": "string"
+    },
+    "ThoughtCatEnum": {
+      "enum": [
+        "m_c",
+        "r_c"
+      ],
+      "title": "ThoughtCatEnum",
+      "type": "string"
+    },
+    "ThoughtRelationshipConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "cats_from": {
+          "description": "The cat from whom the relationship originates.",
+          "items": {
+            "$ref": "#/$defs/ThoughtCatEnum"
+          },
+          "title": "Cats From",
+          "type": "array"
+        },
+        "cats_to": {
+          "description": "The target of the relationship.",
+          "items": {
+            "$ref": "#/$defs/ThoughtCatEnum"
+          },
+          "title": "Cats To",
+          "type": "array"
+        },
+        "mutual": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Controls if the relationship is required in both directions",
+          "title": "Mutual"
+        },
+        "constraints": {
+          "description": "Controls which relationship constraints are required",
+          "items": {
+            "$ref": "#/$defs/RelationshipStatus"
+          },
+          "title": "Constraints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats_from",
+        "cats_to",
+        "constraints"
+      ],
+      "title": "ThoughtRelationshipConstraint",
+      "type": "object"
     },
     "ThoughtSchemaItem": {
       "additionalProperties": false,
@@ -873,7 +858,7 @@
         "relationship_constraint": {
           "description": "Used to require specific relationships between the cats",
           "items": {
-            "$ref": "#/$defs/RelationshipConstraint"
+            "$ref": "#/$defs/ThoughtRelationshipConstraint"
           },
           "title": "Relationship Constraint",
           "type": "array"

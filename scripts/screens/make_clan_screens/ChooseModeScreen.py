@@ -7,7 +7,7 @@ from scripts.cat.cats import create_cat, create_example_cats
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.game_structure import image_cache
-from scripts.game_structure.game import Switch
+from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.game.settings import game_setting_set
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
@@ -30,7 +30,8 @@ class ChooseModeScreen(MakeClanScreenBase):
 
     def screen_switches(self):
         # Reset variables
-        switch_set_value(Switch.possible_cats, create_example_cats())
+        if not switch_get_value(Switch.possible_cats):
+            switch_set_value(Switch.possible_cats, create_example_cats())
 
         super().screen_switches()
         self.elements["previous_step"].disable()
@@ -179,14 +180,14 @@ class ChooseModeScreen(MakeClanScreenBase):
             self.elements["cruel_season_mode_button"].enable()
 
     def random_quick_start(self):
-        self.clan_info.name = self.random_clan_name()
+        self.clan_info.display_name = self.random_clan_name()
         self.clan_info.biome = self.random_biome_selection()
         self.clan_info.camp_bg = f"camp{randrange(1, 5)}"
 
         # SYMBOL
-        if f"symbol{self.clan_info.name.upper()}0" in sprites.clan_symbols:
+        if f"symbol{self.clan_info.display_name.upper()}0" in sprites.clan_symbols:
             # Use recommended symbol if it exists
-            symbol = f"symbol{self.clan_info.name.upper()}0"
+            symbol = f"symbol{self.clan_info.display_name.upper()}0"
         else:
             symbol = choice(sprites.clan_symbols)
 

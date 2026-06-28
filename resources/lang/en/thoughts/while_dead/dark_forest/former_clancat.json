@@ -55,8 +55,8 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "former Clancat"
+                "past_status": [
+                    "clancat"
                 ]
             }
         }

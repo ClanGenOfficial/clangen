@@ -10,14 +10,7 @@
             "Is glad that elders don't get ticks in StarClan",
             "Wonders if the water ever freezes in StarClan",
             "Sneaks close to the border of the Dark Forest but dares not go in"
-        ],
-        "involved_cats": {
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
+        ]
     },
     {
         "id": "dead_app_to_dead_other",

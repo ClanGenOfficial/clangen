@@ -42,6 +42,8 @@ from scripts.events_module.text_adjust import (
     adjust_list_text,
     event_text_adjust,
 )
+from scripts.special_dates import SpecialDate, is_today
+
 
 logger = logging.getLogger(__name__)
 
@@ -954,7 +956,7 @@ class Patrol:
             else "patrol_generation.difficulty_modifier"
         )
 
-        gm_modifier = get_config(game.clan, path)
+        gm_modifier = get_config(path)
 
         exp_adustment = (
             (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)
@@ -1209,6 +1211,11 @@ class Patrol:
                 file_name = "train"
 
             file_name = f"{file_name}_general_intro"
+
+        if is_today(SpecialDate.APRIL_FOOLS):
+            april_fools_root_dir = "resources/images/patrol_art/april_fools/"
+            if path_exists(f"{april_fools_root_dir}{file_name}.png"):
+                return pygame.image.load(f"{april_fools_root_dir}{file_name}.png")
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
 
