@@ -1173,7 +1173,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 3,
+        "frequency": 2,
         "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
         "chance_of_success": 50,
@@ -2192,9 +2192,12 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like"
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed a successful hunt together near the Twolegs dens."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2216,9 +2219,13 @@
                         "mutual": true,
                         "values": [
                             "romance",
-                            "like"
+                            "comfort",
+                            "trust"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had an adventure while hunting by the Twolegs dens and tasted kittypet food."
+                        }
                     }
                 ],
                 "frequency": 1
@@ -2232,17 +2239,21 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "patrol"
                         ],
                         "mutual": true,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's knowledge of Twoleg behavior.",
+                            "cats_to": "cat_to enjoyed showing off {PRONOUN/cat_to/poss} knowledge in front of cat_from."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2273,7 +2284,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed a thrilling adventure by the Twolegs dens."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2296,7 +2310,10 @@
                             "romance",
                             "like"
                         ],
-                        "amount": -5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to rescued cat_from from a Twoleg den after an adventure went sideways."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -2315,17 +2332,20 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "patrol"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "romance",
                             "like"
                         ],
-                        "amount": -5
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's wisdom and wariness around a Twoleg object."
+                        }
                     }
                 ],
                 "prey": [
@@ -2347,12 +2367,15 @@
                         "cats_from": [
                             "r_c"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "romance",
-                            "like"
+                            "trust"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to couldn't save cat_from from being abducted by Twolegs."
+                        }
                     }
                 ],
                 "frequency": 3
@@ -2721,9 +2744,9 @@
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
-        "frequency": 4,
-        "intro_text": "It's rabbit season, hahahaha.",
-        "decline_text": "Actually no, would you believe it's duck season?",
+        "frequency": 2,
+        "intro_text": "As the hunting patrol heads out, p_l suggests that they search for rabbit. It is rabbit season after all, {PRONOUN/p_l/subject} {VERB/p_l/insist/insists}.",
+        "decline_text": "The patrol decides they might have better luck attempting to hunt duck instead.",
         "chance_of_success": 40,
         "success_outcomes": [
             {
@@ -2754,7 +2777,7 @@
                 "frequency": 4
             },
             {
-                "text": "The rabbits aren't interested in cooperating. Between every cat present, they only manage a single kill. But it's not a failure, and as they pad home, s_c tells the story of the Prince with a Thousand Enemies, digger, listener, runner, the prince with the swift warning.",
+                "text": "The rabbits aren't interested in cooperating. Between every cat present, they only manage a single kill. But it's not a failure, and as they pad home, s_c tells the story of the Prince Rabbit with a Thousand Enemies.",
                 "exp": 20,
                 "art": "gen_hunt_rabbit",
                 "can_have_stat": [
@@ -2797,7 +2820,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from listened to cat_to's story of the Prince with a Thousand Enemies after a rabbit hunt."
+                            "cats_from": "cat_from listened to cat_to's story of the Prince Rabbit with a Thousand Enemies after a rabbit hunt."
                         }
                     }
                 ],
@@ -2840,7 +2863,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Isn't <i>every</i> season rabbit season? The unnecessary confusion starts an equally unecessary argument, and no hunting gets down as the patrol talks in circles.",
+                "text": "Isn't <i>every</i> season rabbit season? The unnecessary confusion starts an equally unnecessary argument, and no hunting gets down as the patrol talks in circles.",
                 "exp": 0,
                 "art": "gen_train_argue",
                 "relationships": [
@@ -2864,7 +2887,7 @@
                 "frequency": 4
             },
             {
-                "text": "It doesn't matter how tightly the patrol locks down the entrance to this burrow — the rabbits escape elsewhere. Crafty wabbits.",
+                "text": "It doesn't matter how tightly the patrol locks down the entrance to this burrow — the rabbits escape elsewhere. Crafty rabbits.",
                 "exp": 0,
                 "art": "gen_hunt_burrow",
                 "frequency": 4
@@ -6617,5 +6640,92 @@
                 "frequency": 4
             }
         ]
+    },
+    {
+        "patrol_id": "pln_hunt_solo_pheasant",
+        "tags": [],
+        "biome": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "types": [
+            "hunting"
+        ],
+        "patrol_art": "gen_hunt_strange",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "frequency": 4,
+        "intro_text": "While hunting, p_l sees the striking copper and teal head of a pheasant through the heath. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} to a crouch and {VERB/p_l/creep/creeps} forward. This is a rare opportunity, <i>if</i> {PRONOUN/p_l/subject} can pull it off.",
+        "decline_text": "The pheasant is spooked by a sudden rustle in the heath and bursts into flight before p_l can react.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "p_l lunges from the heath onto the pheasant's back, sinking {PRONOUN/p_l/poss} claws into its wings before the bird can take flight. It isn't pretty; the pheasant squirms and squawks, desperately trying to throw p_l off before {PRONOUN/p_l/subject} {VERB/p_l/subdue/subdues} and {VERB/p_l/kill/kills} it, returning to camp with the prize in tow.",
+                "exp": 15,
+                "frequency": 4,
+                "prey": [
+                    "huge"
+                ]
+            },
+            {
+                "text": "s_c lunges from the heath onto the pheasant's back, sinking {PRONOUN/s_c/poss} teeth into the nape of its neck. <i>Crunch</i>. The pheasant doesn't even have time to cry out before it falls limp beneath s_c.",
+                "exp": 15,
+                "stat_skill": [
+                    "HUNTER,2"
+                ],
+                "prey": [
+                    "huge"
+                ],
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to drag a massive pheasant into camp."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l lunges from the heath but only manages to graze the pheasant's tail feathers before it takes to the sky in a cacophony of irate squawks.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
+                "text": "p_l lunges from the heath and onto the pheasant's back, but before {PRONOUN/p_l/subject} can find purchase, the pheasant throws {PRONOUN/p_l/object} to the ground and turns hunter into the hunted. p_l is left with a fresh wound to nurse as the pheasant flies off in a huff.",
+                "exp": 0,
+                "injury": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "injuries": [
+                            "beak bite",
+                            "claw-wound"
+                        ]
+                    }
+                ],
+                "history_text": {
+                    "death": "m_c died of {PRONOUN/m_c/poss} wounds after being attacked by a pheasant.",
+                    "scar": "m_c was scarred by a pheasant on patrol."
+                },
+                "frequency": 2
+            }
+        ]
     }
-]
+    ]

@@ -1,13 +1,14 @@
 import os
 import random
-from random import choice, randint
+from random import choice
 
 import ujson
 
-from scripts.game_structure import constants
+from scripts.config import get_config
+from scripts.game_structure import constants, game
+from scripts.events_module.relationship import generate_group_event
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
-from scripts.events_module.relationship.group_events import GroupEvents
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.event_filters import filter_relationship_type
@@ -23,13 +24,6 @@ class Relation_Events:
     had_one_event = False
     cats_triggered_events = {}
 
-    base_path = os.path.join("resources", "dicts", "relationship_events")
-
-    types_path = os.path.join(base_path, "group_interactions", "group_types.json")
-    with open(types_path, "r", encoding="utf-8") as read_file:
-        GROUP_TYPES = ujson.load(read_file)
-    del base_path
-
     @staticmethod
     def handle_relationships(cat: Cat):
         """Checks the relationships of the cat and trigger additional events if possible.
@@ -42,13 +36,12 @@ class Relation_Events:
         Returns
         -------
         """
-        if not cat.relationships:
+        if not cat.relationships or cat.age == CatAge.NEWBORN:
             return
         Relation_Events.had_one_event = False
 
-        # currently try to trigger every moon, because there are not many group events
-        # TODO: maybe change in future
-        Relation_Events.group_events(cat)
+        if not int(random.random() * get_config("relationship.chance_of_group_event")):
+            Relation_Events.group_events(cat)
 
         Relation_Events.same_age_events(cat)
 
@@ -145,9 +138,12 @@ class Relation_Events:
         if not Relation_Events.can_trigger_events(cat):
             return
 
+        # gets cats who are within an age range. range is either 40% their current moon age OR 40 moons, whichever is smaller
         same_age_cats = get_cats_same_age(
-            Cat, cat, constants.CONFIG["mates"]["age_range"]
+            Cat, cat, min(constants.CONFIG["mates"]["age_range"], int(cat.moons * 0.4))
         )
+        if [c for c in same_age_cats if c.age == CatAge.NEWBORN]:
+            pass
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
             if (
@@ -168,40 +164,22 @@ class Relation_Events:
         if not Relation_Events.can_trigger_events(cat):
             return
 
-        chosen_type = "all"
-        if len(Relation_Events.GROUP_TYPES) > 0 and randint(
-            0, constants.CONFIG["relationship"]["chance_of_special_group"]
-        ):
-            types_to_choose = []
-            for group, value in Relation_Events.GROUP_TYPES.items():
-                types_to_choose.extend([group] * value["frequency"])
-                chosen_type = choice(list(Relation_Events.GROUP_TYPES.keys()))
+        possible_interaction_cats = [
+            c
+            for c in Cat.all_cats_list
+            if c.status.alive_in_player_clan
+            and not c.status.rank == CatRank.NEWBORN
+            and c != cat
+            and Relation_Events.can_trigger_events(cat)
+        ]
 
-        if cat.status.is_leader:
-            chosen_type = "all"
-        possible_interaction_cats = list(
-            filter(
-                lambda cat: (
-                    cat.status.alive_in_player_clan and not cat.age == CatAge.NEWBORN
-                ),
-                Cat.all_cats.values(),
-            )
+        interacted_cat_ids = generate_group_event.trigger_interaction(
+            main_cat=cat,
+            interactable_cats=possible_interaction_cats,
         )
-        if cat in possible_interaction_cats:
-            possible_interaction_cats.remove(cat)
 
-        if chosen_type != "all":
-            possible_interaction_cats = (
-                Relation_Events.cats_with_relationship_constraints(
-                    cat, Relation_Events.GROUP_TYPES[chosen_type]["constraint"]
-                )
-            )
-
-        interacted_cat_ids = GroupEvents.start_interaction(
-            cat, possible_interaction_cats
-        )
-        for id in interacted_cat_ids:
-            inter_cat = Cat.all_cats[id]
+        for i in interacted_cat_ids:
+            inter_cat = Cat.all_cats[i]
             Relation_Events.trigger_event(inter_cat)
 
     @staticmethod
@@ -226,7 +204,11 @@ class Relation_Events:
             return
 
         for new_cat in new_cats:
-            same_age_cats = get_cats_same_age(Cat, new_cat)
+            same_age_cats = get_cats_same_age(
+                Cat,
+                new_cat,
+                min(constants.CONFIG["mates"]["age_range"], int(new_cat.moons * 0.4)),
+            )
             alive_cats = [
                 i for i in new_cat.all_cats.values() if i.status.alive_in_player_clan
             ]

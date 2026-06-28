@@ -1,6 +1,6 @@
 [
   {
-    "event_id": "pln_death_trainvehicle",
+    "event_id": "pln_death_trainvehicle1",
     "location": [
       "plains:camp4"
     ],
@@ -11,7 +11,7 @@
       "all_lives"
     ],
     "frequency": 1,
-    "event_text": "r_c dares m_c to leap across the Silverpath in front of a Thundersnake near camp and is horrified when {PRONOUN/m_c/subject} stumbles and is struck.",
+    "event_text": "r_c dares m_c to leap across the Silverpath in front of a Thundersnake near camp and is horrified when {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} and {VERB/m_c/are/is} struck.",
     "m_c": {
       "age": [
         "-newborn",
@@ -45,12 +45,12 @@
       ],
       "dies": false
     },
-    "history:": [
+    "history": [
       {
         "cats": [
           "m_c"
         ],
-        "death": "m_c died from being struck by a Thundersnake."
+        "death": "m_c was struck and killed by a Thundersnake."
       }
     ]
   },
@@ -77,6 +77,32 @@
           "m_c"
         ],
         "death": "m_c died after drinking poisoned water."
+      }
+    ]
+  },
+      {
+    "event_id": "pln_death_trainvehicle2",
+    "location": [
+      "plains:camp4"
+    ],
+    "season": [
+      "any"
+    ],
+    "frequency": 1,
+    "event_text": "m_c wanders to the nearby Silverpath. Before anyone can guide {PRONOUN/m_c/object} home, {PRONOUN/m_c/subject} {VERB/m_c/are/is} struck and killed by a Thundersnake.",
+    "m_c": {
+      "status": [
+        "kitten",
+        "elder"
+      ],
+      "dies": true
+    },
+    "history": [
+      {
+        "cats": [
+          "m_c"
+        ],
+        "death": "m_c was struck and killed by a Thundersnake."
       }
     ]
   }

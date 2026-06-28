@@ -729,10 +729,10 @@
     {
         "event_id": "gen_death_snake_any2",
         "location": [
-            "-leaf-bare"
+            "any"
         ],
         "season": [
-            "any"
+            "-leaf-bare"
         ],
         "frequency": 3,
         "event_text": "m_c saved r_c from a snake but was bitten in the process. The venom killed {PRONOUN/m_c/object}.",
@@ -846,41 +846,6 @@
         "other_clan": {
             "current_rep": [
                 "any"
-            ],
-            "changed": -3
-        }
-    },
-    {
-        "event_id": "gen_death_siege_any1",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "frequency": 4,
-        "event_text": "o_c_n attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
-        "m_c": {
-            "dies": true
-        },
-        "r_c": {
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c",
-                    "r_c"
-                ],
-                "death": "This cat died when o_c_n tried to break into camp."
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
             ],
             "changed": -3
         }
@@ -1426,7 +1391,7 @@
                 ],
                 "amount": 40,
                 "log": {
-                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against o_c_n."
+                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against an enemy Clan."
                 }
             }
         ],
@@ -1488,7 +1453,7 @@
                 ],
                 "amount": 40,
                 "log": {
-                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against o_c_n."
+                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against an enemy Clan."
                 }
             }
         ],
@@ -1550,7 +1515,7 @@
                 ],
                 "amount": 40,
                 "log": {
-                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against o_c_n."
+                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a battle against an enemy Clan."
                 }
             }
         ],
@@ -1613,7 +1578,7 @@
                 ],
                 "amount": 40,
                 "log": {
-                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in a o_c_n ambush."
+                    "cats_from": "cat_to sacrificed {PRONOUN/cat_to/poss} life for cat_from in an ambush during war."
                 }
             }
         ],
@@ -1714,7 +1679,7 @@
         "sub_type": [
             "war"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c fell into a pit trap set by o_c_n's warriors.",
         "m_c": {
             "age": [
@@ -1773,6 +1738,1009 @@
                 "hostile"
             ],
             "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_siege_any1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "o_c_n attempted to break into the camp. m_c and r_c are left cold on the ground in the aftermath.",
+        "m_c": {
+            "dies": true
+        },
+        "r_c": {
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
+                "death": "This cat died when o_c_n tried to break into camp."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_bury_any3",
+        "location": [
+            "plains",
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [
+            "no_body",
+            "all_lives"
+        ],
+        "frequency": 3,
+        "event_text": "m_c was buried alive in a cramped rabbit burrow by o_c_n warriors.",
+        "m_c": {
+            "age": [
+                "-kitten",
+                "-senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c suffocated underground."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_war_any9",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "Blinded by blood in the midst of battle, r_c fatally mistakes m_c for a foe.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "fierce",
+                "bloodthirsty",
+                "bold",
+                "ambitious",
+                "arrogant",
+                "competitive"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was accidentally killed by r_c in battle."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "values": [
+                    "trust",
+                    "like"
+                ],
+                "amount": -30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from was accidentally killed by cat_to in battle."
+                }
+            },
+            {
+                "cats_from": [
+                    "some_clan"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "cat_from became suspicious of cat_to when {PRONOUN/cat_to/subject} claimed to have killed m_c in battle by accident."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_death_war_any5",
+        "location": [
+            "mountainous",
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c was killed by a falling boulder that o_c_n warriors pushed from a cliff above {PRONOUN/m_c/object}.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was crushed by a falling boulder."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_ockill_anymed2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 4,
+        "event_text": "o_c_n warriors broke into the camp and killed m_c after damaging the stockpiled prey.",
+        "m_c": {
+            "age": [
+                "-kitten"
+            ],
+            "skill": [
+                "-FIGHTER,2",
+                "-OMEN,3",
+                "-PROPHET,3"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed when o_c_n warriors broke into camp."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        },
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "always"
+                ],
+                "adjust": "reduce_half"
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_stress_anywar1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 4,
+        "event_text": "m_c suffered a heart attack due to the stress of the ongoing war.",
+        "m_c": {
+            "age": [
+                "senior",
+                "adult",
+                "senior adult"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died of a heart attack due to stress."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_ockill_anylead7",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [
+            "all_lives"
+        ],
+        "frequency": 4,
+        "event_text": "m_c was brutally murdered by a warrior from o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "skill": [
+                "-FIGHTER,2"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was brutally murdered by a warrior from o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_ockill_anylead8",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [
+            "all_lives"
+        ],
+        "frequency": 4,
+        "event_text": "m_c was brutally murdered by the leader of o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "skill": [
+                "-FIGHTER,3"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was brutally murdered by the leader of o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_ockill_anylead9",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [
+            "all_lives"
+        ],
+        "frequency": 4,
+        "event_text": "m_c was brutally murdered by the deputy of o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "skill": [
+                "-FIGHTER,2"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was brutally murdered by the deputy of o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_war_onwatch",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "m_c and r_c spend the night by the o_c_n border and catch a o_c_n patrol sneaking into c_n territory. While r_c gets reinforcements, m_c tries to hold them off and is killed.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died while holding off an ambush."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_war_fearlesskitten",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "o_c_n raids c_n's camp. Despite orders to hide in the nursery, m_c is ready to prove {PRONOUN/m_c/self}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} no match for the o_c_n warriors, who leave {PRONOUN/m_c/object} cold on the ground.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "trait": ["fearless", "bullying", "attention-seeker", "unruly"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died after attacking an enemy warrior during a camp raid."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -7
+        }
+    },
+    {
+        "event_id": "gen_death_war_mentorapp",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "m_c is killed by a o_c_n warrior in front of {PRONOUN/m_c/poss} apprentice, r_c.",
+        "r_c": {
+            "status": [
+                "apprentice"
+            ],
+            "dies": false
+        },
+        "m_c": {
+            "status": [
+                "warrior", "deputy", "leader"
+            ],
+            "relationship_status": ["mentor/app"],
+            "dies": true
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["shock"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "death": "m_c could not recover from the shock of {PRONOUN/m_c/poss} mentor being killed in front of {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_war_appmentor",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "m_c is killed by a o_c_n warrior in front of {PRONOUN/m_c/poss} mentor, r_c.",
+        "r_c": {
+            "status": [
+                "warrior", "deputy", "leader"
+            ],
+            "dies": false
+        },
+        "m_c": {
+            "status": ["apprentice"],
+            "relationship_status": ["app/mentor"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_death_war_littermates",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "r_c and m_c match each other blow for blow in a fight with a o_c_n patrol. The tide of battle turns against the littermates, and m_c is killed in front of r_c.",
+        "m_c": {
+            "status": [
+                "warrior", "apprentice", "deputy", "leader"
+            ],
+            "relationship_status": ["littermates", "trusts"],
+            "dies": true
+        },
+        "r_c": {
+            "status": ["warrior", "apprentice", "deputy", "leader"],
+            "dies": false
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["shock"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            },
+            {
+                "cats": ["r_c"],
+                "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} littermate die in front of {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "gen_death_war_siblings",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "r_c tries to protect {PRONOUN/r_c/poss} little sibling in a fight with o_c_n, but m_c is killed by enemy warriors.",
+        "r_c": {
+            "status": [
+                "warrior", "deputy", "leader"
+            ],
+            "age": ["young adult", "adult", "senior adult"],
+            "dies": false
+        },
+        "m_c": {
+            "status": ["apprentice"],
+            "age": ["adolescent"],
+            "relationship_status": ["siblings"],
+            "dies": true
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["shock"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            },
+            {
+                "cats": ["r_c"],
+                "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} little sibling die in front of {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_death_war_childparent",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "In a battle with o_c_n, r_c acts too late to save m_c and watches {PRONOUN/r_c/poss} kit die.",
+        "r_c": {
+            "status": [
+                "warrior", "deputy", "leader"
+            ],
+            "dies": false
+        },
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "relationship_status": ["child/parent"],
+            "dies": true
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["shock"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            },
+            {
+                "cats": ["r_c"],
+                "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} kit die in front of {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_death_war_parentchild",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "In a battle with o_c_n, r_c sees an enemy warrior kill {PRONOUN/r_c/poss} parent, m_c.",
+        "r_c": {
+            "status": [
+                "warrior", "deputy", "leader"
+            ],
+            "dies": false
+        },
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "relationship_status": ["parent/child"],
+            "dies": true
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["shock"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            },
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "death": "m_c could not recover from the shock of seeing {PRONOUN/m_c/poss} parent be killed in front of {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_death_war_mates1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "In the haze of battle, r_c is separated from m_c. When the dust settles, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} m_c's cooling body.",
+        "r_c": {
+            "status": [
+                "warrior", "deputy", "leader"
+            ],
+            "dies": false
+        },
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "relationship_status": ["adores"],
+            "dies": true
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["shock"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            },
+            {
+                "cats": ["r_c"],
+                "death": "m_c could not recover from the shock of finding {PRONOUN/m_c/poss} mate's body after a battle with o_c_n."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_death_war_mates2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "As m_c leaves camp with the battle patrol, r_c pleads for {PRONOUN/m_c/object} to return to {PRONOUN/r_c/object} safely. m_c does not keep {PRONOUN/m_c/poss} promise.",
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "relationship_status": ["mates"],
+            "dies": true
+        },
+        "r_c": {
+            "status": ["any"],
+            "dies": false
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -5
+        }
+    },
+    {
+        "event_id": "gen_death_war_mates3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "In a battle with o_c_n, r_c's mate m_c is killed. r_c vows the war will never end until o_c_n pays.",
+        "r_c": {
+            "status": [
+                "leader"
+            ],
+            "dies": false
+        },
+        "m_c": {
+            "status": ["warrior", "deputy"],
+            "relationship_status": ["mates"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": -10
+        }
+    },
+    {
+        "event_id": "gen_death_war_mates4",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "Despite r_c's talent in battle, {PRONOUN/r_c/subject} and m_c are overwhelmed by waves of invading o_c_n warriors. Three hold r_c down as a fourth kills m_c in front of {PRONOUN/r_c/object}.",
+        "r_c": {
+            "status": [
+                "warrior", "deputy", "leader"
+            ],
+            "skill": ["FIGHTER,1"],
+            "dies": false
+        },
+        "m_c": {
+            "status": ["warrior", "deputy", "leader"],
+            "relationship_status": ["mates"],
+            "dies": true
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["battle_injury", "shock"]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            },
+            {
+                "cats": ["r_c"],
+                "scar": "m_c was scarred after a battle in which an enemy Clan's warriors killed {PRONOUN/m_c/poss} mate in front of {PRONOUN/m_c/object}.",
+                "death": "m_c died after a battle in which an enemy Clan's warriors killed {PRONOUN/m_c/poss} mate in front of {PRONOUN/m_c/object}."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -7
+        }
+    },
+    {
+        "event_id": "gen_death_war_mates5",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": ["lives_remain"],
+        "frequency": 1,
+        "event_text": "m_c loses a life in battle with o_c_n. r_c questions whether {PRONOUN/r_c/subject} can be {PRONOUN/m_c/poss} mate, knowing that {PRONOUN/r_c/subject}'ll have to lose m_c over and over again.",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "relationship_status": ["mates"],
+            "dies": true
+        },
+        "r_c": {
+            "status": ["any"],
+            "dies": false
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed in a battle with a warring Clan."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["romance"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from seriously questioned {PRONOUN/cat_from/poss} relationship with cat_to after cat_to lost a life in battle."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -7
         }
     },
     {
@@ -2537,49 +3505,6 @@
         ]
     },
     {
-        "event_id": "gen_death_bury_any3",
-        "location": [
-            "plains",
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [
-            "no_body",
-            "all_lives"
-        ],
-        "frequency": 3,
-        "event_text": "m_c was buried alive in a cramped rabbit burrow by o_c_n warriors.",
-        "m_c": {
-            "age": [
-                "-kitten",
-                "-senior"
-            ],
-            "status": [
-                "any"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c suffocated underground."
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -3
-        }
-    },
-    {
         "event_id": "gen_death_skirmish_any1",
         "location": [
             "any"
@@ -2615,94 +3540,6 @@
                 "neutral"
             ],
             "changed": -3
-        }
-    },
-    {
-        "event_id": "gen_death_war_any9",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [],
-        "frequency": 2,
-        "event_text": "Blinded by blood in the midst of battle, r_c fatally mistakes m_c for a foe.",
-        "m_c": {
-            "status": [
-                "warrior",
-                "deputy",
-                "leader"
-            ],
-            "trait": [
-                "fierce",
-                "bloodthirsty",
-                "bold",
-                "ambitious",
-                "arrogant",
-                "competitive"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "status": [
-                "apprentice",
-                "warrior",
-                "deputy",
-                "leader"
-            ]
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c was accidentally killed by r_c in battle."
-            }
-        ],
-        "relationships": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "values": [
-                    "trust",
-                    "like"
-                ],
-                "amount": -30,
-                "mutual": false,
-                "log": {
-                    "cats_from": "cat_from was accidentally killed by cat_to in battle."
-                }
-            },
-            {
-                "cats_from": [
-                    "some_clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "trust"
-                ],
-                "amount": -15,
-                "log": {
-                    "cats_from": "cat_from became suspicious of cat_to when {PRONOUN/cat_to/subject} claimed to have killed m_c in battle by accident."
-                }
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -1
         }
     },
     {
@@ -2761,7 +3598,7 @@
                 "amount": 15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from heard that cat_to died trying to save o_c_n's medicine cat."
+                    "cats_from": "cat_from heard that cat_to died trying to save an enemy Clan's medicine cat."
                 }
             }
         ]
@@ -3220,45 +4057,6 @@
         ]
     },
     {
-        "event_id": "gen_death_war_any5",
-        "location": [
-            "mountainous",
-            "forest"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [],
-        "frequency": 2,
-        "event_text": "m_c was killed by a falling boulder that o_c_n warriors pushed from a cliff above {PRONOUN/m_c/object}.",
-        "m_c": {
-            "status": [
-                "apprentice",
-                "warrior",
-                "deputy",
-                "leader"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c was crushed by a falling boulder."
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -3
-        }
-    },
-    {
         "event_id": "gen_death_hawk_any1",
         "location": [
             "forest:camp1_camp2_camp4",
@@ -3370,7 +4168,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died defending r_c from a hawk"
+                "death": "m_c died defending r_c from a hawk."
             }
         ],
         "relationships": [
@@ -4055,55 +4853,6 @@
         ]
     },
     {
-        "event_id": "gen_death_ockill_anymed2",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [],
-        "frequency": 4,
-        "event_text": "o_c_n warriors broke into the camp and killed m_c after damaging the stockpiled prey.",
-        "m_c": {
-            "age": [
-                "-kitten"
-            ],
-            "skill": [
-                "-FIGHTER,2",
-                "-OMEN,3",
-                "-PROPHET,3"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c was killed when o_c_n warriors broke into camp."
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -3
-        },
-        "supplies": [
-            {
-                "type": "freshkill",
-                "trigger": [
-                    "always"
-                ],
-                "adjust": "reduce_half"
-            }
-        ]
-    },
-    {
         "event_id": "gen_death_ockill_anymed3",
         "location": [
             "any"
@@ -4167,7 +4916,7 @@
                 "amount": 30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_to was killed by o_c_n while trying to drag cat_from out of battle, and cat_from will always remember {PRONOUN/cat_to/poss} sacrifice."
+                    "cats_from": "cat_to was killed by an enemy Clan while trying to drag cat_from out of battle, and cat_from will always remember {PRONOUN/cat_to/poss} sacrifice."
                 }
             }
         ],
@@ -4477,37 +5226,6 @@
         ]
     },
     {
-        "event_id": "gen_death_stress_anywar1",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [],
-        "frequency": 4,
-        "event_text": "m_c suffered a heart attack due to the stress of the ongoing war.",
-        "m_c": {
-            "age": [
-                "senior",
-                "adult",
-                "senior adult"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c died of a heart attack due to stress."
-            }
-        ]
-    },
-    {
         "event_id": "gen_death_lightning_multilead1",
         "location": [
             "any"
@@ -4591,11 +5309,43 @@
         ],
         "tags": [],
         "frequency": 4,
-        "event_text": "m_c fell from the top branches of a tree.",
+        "event_text": "m_c fell from the top branches of a tree. {PRONOUN/m_c/subject/CAP} never {VERB/m_c/get/gets} up again.",
         "m_c": {
             "age": [
                 "-kitten"
             ],
+            "status": [
+            "-leader"
+          ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c fell from a tall tree."
+            }
+        ]
+    },
+       {
+        "event_id": "gen_death_tree_any2",
+        "location": [
+            "beach",
+            "forest",
+            "mountainous",
+            "wetlands"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 4,
+        "event_text": "m_c fell from the top branches of a tree. The fall was too great, and {PRONOUN/m_c/subject} could not recover.",
+        "m_c": {
+            "status": [
+            "leader"
+          ],
             "dies": true
         },
         "history": [
@@ -4829,7 +5579,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died defending r_c from a dog"
+                "death": "m_c died defending r_c from a dog."
             }
         ],
         "relationships": [
@@ -5194,7 +5944,7 @@
             "any"
         ],
         "tags": [
-            "clan:kits"
+            "clan:kitten"
         ],
         "frequency": 4,
         "event_text": "m_c was killed defending the kits during a o_c_n raid.",
@@ -5226,7 +5976,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died defending the kits from o_c_n warriors"
+                "death": "m_c died defending the kits from o_c_n warriors."
             }
         ],
         "other_clan": {
@@ -5243,7 +5993,7 @@
                 "amount": 20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from will always remember that cat_to gave {PRONOUN/cat_to/poss} life to save kits from o_c_n warriors."
+                    "cats_from": "cat_from will always remember that cat_to gave {PRONOUN/cat_to/poss} life to save kits from warriors of an enemy Clan."
                 }
             }
         ]
@@ -5315,7 +6065,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "cat_to died defending cat_from from o_c_n warriors, and cat_from will always remember {PRONOUN/cat_to/poss} sacrifice."
+                    "cats_from": "cat_to died defending cat_from from warriors of an enemy Clan, and cat_from will always remember {PRONOUN/cat_to/poss} sacrifice."
                 }
             }
         ],
@@ -5440,7 +6190,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c succumbed to old age"
+                "death": "m_c succumbed to old age."
             }
         ]
     },
@@ -5474,7 +6224,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c succumbed to old age"
+                "death": "m_c succumbed to old age."
             }
         ]
     },
@@ -5596,126 +6346,6 @@
                 }
             }
         ]
-    },
-    {
-        "event_id": "gen_death_ockill_anylead7",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [
-            "all_lives"
-        ],
-        "frequency": 4,
-        "event_text": "m_c was brutally murdered by a warrior from o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
-        "m_c": {
-            "status": [
-                "leader"
-            ],
-            "skill": [
-                "-FIGHTER,2"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c was brutally murdered by a warrior from o_c_n."
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -3
-        }
-    },
-    {
-        "event_id": "gen_death_ockill_anylead8",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [
-            "all_lives"
-        ],
-        "frequency": 4,
-        "event_text": "m_c was brutally murdered by the leader of o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
-        "m_c": {
-            "status": [
-                "leader"
-            ],
-            "skill": [
-                "-FIGHTER,3"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c was brutally murdered by the leader of o_c_n."
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -3
-        }
-    },
-    {
-        "event_id": "gen_death_ockill_anylead9",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [
-            "all_lives"
-        ],
-        "frequency": 4,
-        "event_text": "m_c was brutally murdered by the deputy of o_c_n, who cruelly took all {PRONOUN/m_c/poss} lives.",
-        "m_c": {
-            "status": [
-                "leader"
-            ],
-            "skill": [
-                "-FIGHTER,2"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c was brutally murdered by the deputy of o_c_n."
-            }
-        ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -3
-        }
     },
     {
         "event_id": "gen_death_greencough_multilead2",
@@ -6300,7 +6930,7 @@
             "kit_manipulated"
         ],
         "frequency": 4,
-        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one noticed.",
+        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterward, but no one noticed.",
         "m_c": {
             "status": [
                 "leader"
@@ -7438,7 +8068,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["clan: medicine cat"],
+        "tags": ["clan:medicine cat"],
         "frequency": 1,
         "event_text": "m_c seemed hale and healthy on patrol until {PRONOUN/m_c/subject} had trouble speaking and began to limp. By the time {PRONOUN/m_c/poss} Clanmates came back with the medicine cat, m_c was dead.",
         "m_c": {
@@ -7716,7 +8346,7 @@
                 "amount": -30,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_to stood by and watched as o_c_n's deputy killed cat_from."
+                    "cats_from": "cat_to stood by and watched as an enemy Clan's deputy killed cat_from."
                 }
             }
         ],
@@ -7901,9 +8531,7 @@
         "event_text": "A warning from StarClan gave m_c enough knowledge to survive r_c's attack. r_c could not say the same.",
         "m_c": {
             "status": [
-                "leader",
-                "deputy",
-                "warrior"
+                "leader"
             ],
             "skill": [
                 "OMEN,1",
@@ -8056,7 +8684,7 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "death": "m_c died when a rogue attacked {PRONOUN/m_c/object} on r_c's orders"
+                "death": "m_c died when a rogue attacked {PRONOUN/m_c/object} on r_c's orders."
             }
         ],
         "relationships": [
@@ -8075,7 +8703,7 @@
             {
                 "event_type": "misc",
                 "pool": {
-                    "event_id": "gen_misc_murderreveal_leader"
+                    "event_id": ["gen_misc_murderreveal_leader"]
                 },
                 "moon_delay": [
                     1, 1
@@ -8459,7 +9087,7 @@
             "all_lives",
             "no_body"
         ],
-        "frequency": 2,
+        "frequency": 1,
         "event_text": "m_c mysteriously disappeared one night. r_c noticed before anyone else and went looking for {PRONOUN/m_c/object} {PRONOUN/r_c/self}. c_n never saw either of them again.",
         "m_c": {
             "age": [
@@ -8505,8 +9133,8 @@
         "event_id": "gen_death_lynx1",
         "location": [
             "forest:camp1_camp2",
-            "plains:camp1_camp3_camp_4",
-            "mountain:camp1_camp2_camp4" ],
+            "plains:camp1_camp3_camp4",
+            "mountainous:camp1_camp2_camp4" ],
         "season": [
             "any"
         ],
@@ -8532,8 +9160,8 @@
         "event_id": "gen_death_lynx2",
         "location": [
             "forest:camp1_camp2",
-            "plains:camp1_camp3_camp_4",
-            "mountain:camp1_camp2_camp4" ],
+            "plains:camp1_camp3_camp4",
+            "mountainous:camp1_camp2_camp4" ],
         "season": [
             "any"
         ],
@@ -8566,7 +9194,7 @@
     {
         "event_id": "gen_death_heron",
         "location": [
-            "forest:camp_4",
+            "forest:camp4",
             "wetlands"
         ],
         "season": [
@@ -8666,52 +9294,106 @@
         },
         "history": [
             {
-                "cats": "m_c",
+                "cats": ["m_c"],
                 "death": "m_c was killed by a rooster defending his flock."
             }
         ]
     },
+{
+  "event_id": "gen_death_guarddisappearance_any1",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "frequency": 2,
+  "event_text": "The Clan grows concerned after m_c doesn't return from guard duty. {PRONOUN/m_c/poss/CAP} body is later found out in the territory, scent reeking of o_c_n.",
+  "m_c": {
+    "skill": [
+      "-FIGHTER,2"
+    ],
+    "status": [
+      "warrior",
+      "deputy"
+    ],
+    "dies": true
+  },
+  "history": [
     {
-        "event_id": "gen_death_war_onwatch",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "frequency": 2,
-        "event_text": "m_c and r_c spend the night by the o_c_n border and catch a o_c_n patrol sneaking into c_n territory. While r_c gets reinforcements, m_c tries to hold them off and dies for it.",
-        "m_c": {
-            "status": [
-                "warrior",
-                "deputy",
-                "leader"
-            ],
-            "dies": true
-        },
-        "r_c": {
-            "status": [
-                "warrior",
-                "deputy",
-                "leader"
-            ]
-        },
-        "history": [
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c was killed by o_c_n warriors while on guard duty."
+    }
+  ],
+  "other_clan": {
+    "current_rep": [
+      "hostile", "neutral"
+    ],
+    "changed": -3
+  }
+},
+{
+  "event_id": "gen_death_guarddisappearance_any2",
+  "location": [
+    "any"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "frequency": 2,
+  "event_text": "The Clan grows concerned after m_c doesn't return from guard duty. {PRONOUN/m_c/poss/CAP} body is later found out in the territory with a rogue's scent wreathing around {PRONOUN/m_c/object}.",
+  "m_c": {
+    "skill": [
+      "-FIGHTER,2"
+    ],
+    "status": [
+      "warrior",
+      "deputy"
+    ],
+    "dies": true
+  },
+  "new_cat": [
+    [
+      "meeting",
+      "rogue",
+      "exists"
+    ]
+  ],
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c was killed by a rogue while on guard duty."
+    }
+  ],
+        "relationships": [
             {
-                "cats": [
-                    "m_c"
+                "cats_from": ["clan"],
+                "cats_to": [
+                    "n_c:0"
                 ],
-                "death": "m_c died while holding off an ambush."
+                "mutual": false,
+                "values": [
+                    "like",
+	        "comfort",
+	        "trust"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "cat_from felt outraged after hearing that cat_to killed m_c while on guard duty."
+                }
             }
         ],
-        "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": -3
-        }
-    }
+  "outsider": {
+    "current_rep": [
+      "any"
+    ],
+    "changed": -3
+  }
+}
 ]

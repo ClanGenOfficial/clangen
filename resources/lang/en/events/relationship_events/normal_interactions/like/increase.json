@@ -26,7 +26,7 @@
 			"r_c mentions that m_c looks good today.",
 			"r_c tells m_c that {PRONOUN/m_c/poss} pelt is shiny today.",
 			"m_c prevents something from falling on r_c.",
-			"m_c warns r_c about something on the ground so r_c doesn't trip.",
+			"m_c warns r_c about something on the ground so {PRONOUN/r_c/subject} {VERB/m_c/don't/doesn't} trip.",
 			"m_c asks r_c how {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing."
 		],
 		"reaction_random_cat": {
@@ -919,5 +919,38 @@
 		"also_influences": {
 			"respect": "decrease"
 		}
+	},
+	{
+		"id": "daydreamer_inc_high",
+		"intensity": "high",
+		"interactions": [
+			"m_c watches fondly as r_c explains the lore of the story in {PRONOUN/r_c/poss} head.",
+			"m_c adores r_c's active imagination."
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		],
+		"relationship_constraint": [
+			"parent/child"
+		]
+	},
+	{
+		"id": "daydreamer_inc_med",
+		"intensity": "medium",
+		"interactions": [
+			"r_c watches the clouds with m_c and tells {PRONOUN/m_c/object} a story that's been on {PRONOUN/r_c/poss} mind."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		]
 	}
 ]

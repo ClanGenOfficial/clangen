@@ -549,7 +549,7 @@ class RelationshipScreen(Screens):
             # Column One Details:
             self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(
                 self.inspect_cat.get_info_block(relationship=True),
-                ui_scale(pygame.Rect((10, 185), (100, 70))),
+                ui_scale(pygame.Rect((7, 185), (100, 70))),
                 object_id="#text_box_22_horizleft_spacing_95",
                 manager=MANAGER,
                 container=self.selected_cat_container,

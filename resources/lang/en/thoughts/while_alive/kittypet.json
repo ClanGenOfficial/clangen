@@ -1,7 +1,7 @@
 [
     {
         "id": "general_kittypet_thoughts",
-        "thoughts": [
+        "strings": [
             "Engages in loaf mode",
             "Cuddles with {PRONOUN/m_c/poss} housefolk",
             "Begs for food from {PRONOUN/m_c/poss} housefolk",
@@ -77,7 +77,7 @@
     },
     {
         "id": "kittypet_kitten_and_adolescent_thoughts",
-        "thoughts": [
+        "strings": [
             "Is currently trying to figure out how to catch a bird",
             "Plays with a crinkly ball",
             "Plays with a toy mouse",
@@ -88,40 +88,52 @@
             "Mumbles in annoyance when {PRONOUN/m_c/poss} housefolk won't let {PRONOUN/m_c/object} go outside",
             "Wonders if {PRONOUN/m_c/poss} littermates are nearby"
         ],
-        "main_age_constraint": [
-            "kitten",
-            "adolescent"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten",
+                    "adolescent"
+                ]
+            }
+        }
     },
     {
         "id": "kittypet_adolescent_thoughts",
-        "thoughts": [
+        "strings": [
             "Is hogging the bed from {PRONOUN/m_c/poss} siblings",
             "Thinks {PRONOUN/m_c/poss} new collar is uncomfortable",
             "Is playing with a new toy {PRONOUN/m_c/poss} housefolk got {PRONOUN/m_c/object}"
         ],
-        "main_age_constraint": [
-            "adolescent"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "adolescent"
+                ]
+            }
+        }
     },
     {
         "id": "kittypet_adult_thoughts",
-        "thoughts": [
+        "strings": [
             "Is meowing for food",
             "Was wandering in the backyard when a strange noise scared {PRONOUN/m_c/object} back inside",
             "Left {PRONOUN/m_c/poss} den to go scratch up that tree {PRONOUN/m_c/subject} had been eyeing",
             "Is glad {PRONOUN/m_c/poss} housefolk collar {PRONOUN/m_c/object} on a leash to walk {PRONOUN/m_c/object} outside",
             "Is wandering in {PRONOUN/m_c/poss} neighborhood"
         ],
-        "main_age_constraint": [
-            "young adult",
-            "adult",
-            "senior adult"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            }
+        }
     },
     {
         "id": "kittypet_senior_thoughts",
-        "thoughts": [
+        "strings": [
             "Is enjoying the sun on {PRONOUN/m_c/poss} back",
             "Is glad that {PRONOUN/m_c/poss} housefolk have taken care of {PRONOUN/m_c/object} for so long",
             "Wishes {PRONOUN/m_c/subject} had as much energy as the younger house cats",
@@ -133,20 +145,30 @@
             "Took {PRONOUN/m_c/poss} time climbing on {PRONOUN/m_c/poss} fence",
             "Shakes {PRONOUN/m_c/poss} head when {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} a cold queen and their kits"
         ],
-        "main_age_constraint": [
-            "senior"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "senior"
+                ]
+            }
+        }
     },
     {
         "id": "kittypet_shameless_thoughts",
-        "thoughts": [
+        "strings": [
             "Stole food the second {PRONOUN/m_c/poss} housefolk turned their head",
             "Is sleeping in the dog's bed",
             "Is inside a Twoleg den that's not {PRONOUN/m_c/inposs}",
             "Is pretending to be a hungry loner to get more food"
         ],
-        "main_trait_constraint": [
-            "shameless"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "shameless"
+                    ]
+                }
+            }
+        }
     }
 ]

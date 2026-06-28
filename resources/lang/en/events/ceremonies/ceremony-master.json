@@ -3158,6 +3158,81 @@
     ],
     "Together (old_name) and (previous_mentor) have torn claws and taken names, and as (old_name) is honored for {PRONOUN/m_c/poss} r_h and named m_c, they're not planning on stopping any time soon!"
   ],
+  "warrior_83": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "loner",
+      "kittypet",
+      "rogue",
+      "all_traits",
+      "no_suffix"
+    ],
+    "m_c is proud to be a part of c_n, but {PRONOUN/m_c/poss} history remains important to {PRONOUN/m_c/object} as well. {PRONOUN/m_c/subject/CAP} politely requests that l_n lets {PRONOUN/m_c/object} keep {PRONOUN/m_c/poss} name after {PRONOUN/m_c/poss} warrior ceremony. m_c is honored for {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_84":[
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "loner",
+      "kittypet",
+      "rogue",
+      "all_traits",
+      "no_suffix"
+    ],
+    "Honoured for {PRONOUN/m_c/poss} r_h, m_c opts to keep {PRONOUN/m_c/poss} former name after becoming a warrior."
+  ],
+  "warrior_85": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "loner",
+      "kittypet",
+      "rogue",
+      "faithful",
+      "fierce",
+      "rebellious",
+      "shameless",
+      "no_suffix"
+    ],
+    "Upon becoming a warrior, m_c boldly asserts that while c_n is {PRONOUN/m_c/poss} home, {PRONOUN/m_c/poss} name was, and always will be, m_c. l_n accepts this, and honours m_c for {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_86": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "loner",
+      "rogue",
+      "all_traits",
+      "no_suffix"
+    ],
+    "When m_c is declared a warrior and honored for {PRONOUN/m_c/poss} r_h, m_c asks to keep the name {PRONOUN/m_c/poss} parents gave {PRONOUN/m_c/object} long ago."
+  ],
+  "warrior_87": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "kittypet",
+      "all_traits",
+      "no_suffix"
+    ],
+    "When m_c is declared a warrior and honoured for {PRONOUN/m_c/poss} r_h, m_c asks to keep the name {PRONOUN/m_c/poss} Twolegs gave {PRONOUN/m_c/object} long ago."
+  ],
   "mediator_0": [
     [
       "mediator",
@@ -3168,7 +3243,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(old_name) has proven {PRONOUN/m_c/self} skilled at handling the Clan's disputes. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c, and the Clan honors {PRONOUN/m_c/poss} new mediator."
+    "(old_name) has proven {PRONOUN/m_c/self} skilled at handling the Clan's disputes. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c, and the Clan honors their new mediator."
   ],
   "mediator_0_a": [
     [
@@ -3305,7 +3380,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Time has taken its toll and m_c has noticed {PRONOUN/m_c/self} slowing down. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} worked timelessly for many moons, but it is time for {PRONOUN/m_c/object} to retire. "
+    "Time has taken its toll and m_c has noticed {PRONOUN/m_c/self} slowing down. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} worked tirelessly for many moons, but it is time for {PRONOUN/m_c/object} to retire. "
   ],
   "elder_6": [
     [

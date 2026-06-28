@@ -1130,13 +1130,13 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "history_text": {
-                            "scar": "This cat was scarred by a rattlesnake while hunting.",
-                            "death": "m_c died of a rattlesnake bite."
-                        }
+                        ]
                     }
                 ],
+                "history_text": {
+                    "scar": "This cat was scarred by a rattlesnake while hunting.",
+                    "death": "m_c died of a rattlesnake bite."
+                },
                 "frequency": 4
             },
             {
@@ -1172,13 +1172,13 @@
                             "LEFTBLIND",
                             "RIGHTBLIND",
                             "BOTHBLIND"
-                        ],
-                        "history_text": {
-                            "scar": "m_c was scarred by a rattlesnake while hunting.",
-                            "death": "m_c died of a rattlesnake bite."
-                        }
+                        ]
                     }
                 ],
+                "history_text": {
+                    "scar": "m_c was scarred by a rattlesnake while hunting.",
+                    "death": "m_c died of a rattlesnake bite."
+                },
                 "frequency": 3
             },
             {

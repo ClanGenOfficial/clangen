@@ -4,7 +4,7 @@
           "location": ["desert"],
           "season": ["any"],
           "tags": [],
-          "weight": 20,
+          "frequency": 4,
           "event_text": "m_c was killed by a rattlesnake out in the territory.",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
@@ -22,7 +22,7 @@
           "location": ["desert"],
           "season": ["any"],
           "tags": [],
-          "weight": 20,
+          "frequency": 4,
           "event_text": "m_c chased a kangaroo rat into a burrow, only to run right into the fatal fangs of a surprised rattlesnake.",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
@@ -40,7 +40,7 @@
           "location": ["desert"],
           "season": ["any"],
           "tags": [],
-          "weight": 20,
+          "frequency": 4,
           "event_text": "m_c jumped on top of a rattlesnake by mistake and was killed by the ensuing bite.",
           "m_c": {
               "status": ["apprentice"],
@@ -58,7 +58,7 @@
           "location": ["desert"],
           "season": ["greenleaf", "newleaf"],
           "tags": [],
-          "weight": 20,
+          "frequency": 4,
           "event_text": "m_c died of dehydration after mistakenly following a mirage.",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
@@ -76,7 +76,7 @@
           "location": ["desert"],
           "season": ["any"],
           "tags": [],
-          "weight": 20,
+          "frequency": 4,
           "event_text": "m_c was killed after being stung by a scorpion.",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
@@ -94,7 +94,7 @@
           "location": ["desert"],
           "season": ["any"],
           "tags": [],
-          "weight": 20,
+          "frequency": 4,
           "event_text": "m_c was mistakenly stung by a scorpion during a hunt and succumbed to the venom.",
           "m_c": {
               "status": ["apprentice", "warrior", "deputy", "leader"],
