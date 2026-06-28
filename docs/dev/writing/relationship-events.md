@@ -1,7 +1,7 @@
 # Relationship Events
 
 !!! warning "Under Development"
-    Relationship events are in the midst of being reformatted to work with the below documentation. Group events are currently the only category that matches this documentation.
+    Relationship events are in the midst of being reformatted to work with the below documentation. Group events and Normal interactions are currently the only categories that match this documentation.
 
 
 Relationship events are events that occur each timeskip that are focused entirely on influencing the relationships between certain cats. 
