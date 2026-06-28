@@ -510,39 +510,66 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         # given
         hunter = Cat(disable_random=True)
         hunter.skills.primary = Skill(SkillPath.HUNTER, points=9)
+        hunter.skills.secondary = Skill(SkillPath.CLIMBER, points=9)
         fighter = Cat(disable_random=True)
         fighter.skills.primary = Skill(SkillPath.FIGHTER, points=9)
+        fighter.skills.secondary = Skill(SkillPath.CLIMBER, points=9)
 
         # when
-        hunter_to_all = SingleInteraction("test")
-        hunter_to_all.main_skill_constraint = ["HUNTER,1"]
-        hunter_to_all.random_skill_constraint = []
+        hunter_to_all = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(skill=["HUNTER,1"])),
+            },
+        )
 
-        all_to_hunter = SingleInteraction("test")
-        all_to_hunter.main_skill_constraint = ["FIGHTER,1", "HUNTER,1"]
-        all_to_hunter.random_skill_constraint = ["HUNTER,1"]
+        all_to_hunter = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(skill=["FIGHTER,1", "HUNTER,1"])),
+                "r_c": InvolvedCatDict(stat=StatDict(skill=["HUNTER,1"])),
+            },
+        )
+
+        storytellers = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(skill=["STORY,1"])),
+                "r_c": InvolvedCatDict(stat=StatDict(skill=["STORY,1"])),
+            },
+        )
 
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(hunter, fighter, hunter_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[hunter_to_all, all_to_hunter],
+            main_cat=hunter,
+            other_cat=fighter,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(hunter, fighter, all_to_hunter)
-        )
+        self.assertEqual(chosen_event, hunter_to_all)
 
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(fighter, hunter, hunter_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[all_to_hunter, storytellers],
+            main_cat=fighter,
+            other_cat=hunter,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(fighter, hunter, all_to_hunter)
-        )
+        self.assertEqual(chosen_event, all_to_hunter)
 
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(hunter, hunter, hunter_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[hunter_to_all, storytellers],
+            main_cat=hunter,
+            other_cat=hunter,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(hunter, hunter, all_to_hunter)
+        self.assertEqual(chosen_event, hunter_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[all_to_hunter, storytellers],
+            main_cat=hunter,
+            other_cat=hunter,
         )
+        self.assertEqual(chosen_event, all_to_hunter)
 
     def test_background(self):
         # given
