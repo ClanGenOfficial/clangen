@@ -1625,31 +1625,6 @@ class Cat:
         # insert thought
         self.thought = str(chosen_thought)
 
-    def relationship_interaction(self):
-        """Randomly choose a cat of the Clan and have an interaction with them."""
-        cats_to_choose = [
-            iter_cat
-            for iter_cat in Cat.all_cats.values()
-            if iter_cat.ID != self.ID
-            and iter_cat.status.alive_in_player_clan
-            and iter_cat.age != CatAge.NEWBORN
-        ]
-        # if there are no cats to interact, stop
-        if not cats_to_choose:
-            return
-
-        chosen_cat = choice(cats_to_choose)
-        if chosen_cat.ID not in self.relationships:
-            self.create_one_relationship(chosen_cat)
-        relevant_relationship = self.relationships[chosen_cat.ID]
-        relevant_relationship.start_interaction()
-
-        # handle contact with ill cat if
-        if self.is_ill():
-            relevant_relationship.cat_to.contact_with_ill_cat(self)
-        if relevant_relationship.cat_to.is_ill():
-            self.contact_with_ill_cat(relevant_relationship.cat_to)
-
     def moon_skip_illness(self, illness):
         """handles the moon skip for illness"""
         if not self.is_ill():

@@ -1,12 +1,14 @@
-import os
 import random
 from random import choice
+from typing import Optional
 
-import ujson
-
+from scripts.cat_relations.enums import RelType
 from scripts.config import get_config
-from scripts.game_structure import constants, game
-from scripts.events_module.relationship import generate_group_event
+from scripts.game_structure import constants
+from scripts.events_module.relationship import (
+    generate_group_event,
+    generate_cat_interaction,
+)
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
 from scripts.events_module.relationship.romantic_events import RomanticEvents
@@ -21,7 +23,6 @@ from scripts.clan_package.get_clan_cats import (
 class Relation_Events:
     """All relationship events."""
 
-    had_one_event = False
     cats_triggered_events = {}
 
     @staticmethod
@@ -38,7 +39,8 @@ class Relation_Events:
         """
         if not cat.relationships or cat.age == CatAge.NEWBORN:
             return
-        Relation_Events.had_one_event = False
+
+        Relation_Events.random_cat_events(cat)
 
         if not int(random.random() * get_config("relationship.chance_of_group_event")):
             Relation_Events.group_events(cat)
@@ -54,6 +56,24 @@ class Relation_Events:
     # ---------------------------------------------------------------------------- #
     #                                new event types                               #
     # ---------------------------------------------------------------------------- #
+
+    @staticmethod
+    def random_cat_events(cat):
+        """Randomly choose a cat of the Clan and have an interaction with them."""
+
+        cats_to_choose = [
+            c
+            for c in Cat.all_cats.values()
+            if c.ID != cat.ID
+            and c.status.alive_in_player_clan
+            and c.age != CatAge.NEWBORN
+        ]
+        # if there are no cats to interact, stop
+        if not cats_to_choose:
+            return
+
+        other_cat = choice(cats_to_choose)
+        Relation_Events.trigger_pair_event(cat, other_cat)
 
     @staticmethod
     def romantic_events(cat):
@@ -125,9 +145,7 @@ class Relation_Events:
             return
 
         other_cat = choice(cat_to_choose_from)
-        if RomanticEvents.start_interaction(cat, other_cat):
-            Relation_Events.trigger_event(cat)
-            Relation_Events.trigger_event(other_cat)
+        Relation_Events.trigger_pair_event(cat, other_cat, RelType.ROMANCE)
 
     @staticmethod
     def same_age_events(cat):
@@ -145,14 +163,29 @@ class Relation_Events:
         if [c for c in same_age_cats if c.age == CatAge.NEWBORN]:
             pass
         if len(same_age_cats) > 0:
-            random_cat = choice(same_age_cats)
+            other_cat = choice(same_age_cats)
             if (
-                Relation_Events.can_trigger_events(random_cat)
-                and random_cat.ID in cat.relationships
+                Relation_Events.can_trigger_events(other_cat)
+                and other_cat.ID in cat.relationships
             ):
-                cat.relationships[random_cat.ID].start_interaction()
-                Relation_Events.trigger_event(cat)
-                Relation_Events.trigger_event(random_cat)
+                Relation_Events.trigger_pair_event(cat, other_cat)
+
+    @staticmethod
+    def trigger_pair_event(cat, other_cat, specific_type: Optional[RelType] = None):
+        successful = generate_cat_interaction.trigger_interaction(
+            main_cat=cat, other_cat=other_cat, specific_type=specific_type
+        )
+
+        if not successful:
+            return
+
+        # handle contact with ill cat if
+        if cat.is_ill():
+            other_cat.contact_with_ill_cat(cat)
+        if other_cat.is_ill():
+            cat.contact_with_ill_cat(other_cat)
+        Relation_Events.add_event_triggers(cat)
+        Relation_Events.add_event_triggers(other_cat)
 
     @staticmethod
     def group_events(cat):
@@ -180,7 +213,7 @@ class Relation_Events:
 
         for i in interacted_cat_ids:
             inter_cat = Cat.all_cats[i]
-            Relation_Events.trigger_event(inter_cat)
+            Relation_Events.add_event_triggers(inter_cat)
 
     @staticmethod
     def family_events(cat):
@@ -286,7 +319,7 @@ class Relation_Events:
         return filtered_cat_list
 
     @staticmethod
-    def trigger_event(cat):
+    def add_event_triggers(cat):
         if cat.ID in Relation_Events.cats_triggered_events:
             Relation_Events.cats_triggered_events[cat.ID] += 1
         else:

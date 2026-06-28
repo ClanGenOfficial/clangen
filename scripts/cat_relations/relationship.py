@@ -1,25 +1,8 @@
-import random
-from random import choice
 from typing import Optional
 
-import i18n
 
-from scripts.cat.enums import CatCompatibility
 from scripts.game_structure import constants
-from scripts.cat_relations.interaction import (
-    cats_fulfill_single_interaction_constraints,
-    rebuild_relationship_dicts,
-)
 from scripts.cat_relations.enums import RelTier, RelType
-from scripts.event_class import Single_Event
-from scripts.events_module.event_filters import (
-    event_for_location,
-    event_for_season,
-    get_personality_compatibility,
-)
-from scripts.game_structure import game
-from scripts.events_module.text_adjust import process_text
-import scripts.cat_relations.interaction as interactions
 
 
 # ---------------------------------------------------------------------------- #

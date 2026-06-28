@@ -1,4 +1,5 @@
 from random import choice, choices
+from typing import Optional
 
 import i18n
 
@@ -26,22 +27,29 @@ loaded_events = {}
 
 
 # TRIGGER
-def trigger_interaction(main_cat: Cat, other_cat: Cat, is_meeting=False):
+def trigger_interaction(
+    main_cat: Cat,
+    other_cat: Cat,
+    is_meeting=False,
+    specific_type: Optional[RelType] = None,
+) -> bool:
     """
     Start an interaction between two cats
     :param main_cat: The main cat that the event revolves around
     :param other_cat: The other cat that the event revolves around
     :param is_meeting: Set to True if these cats are having a "meeting" event
+    :param specific_type: Use to specify if the event must change a certain aspect of the relationship
+    :return: True if interaction occurred, False otherwise
     """
     # only interact between two player clan cats
     if (
         not main_cat.status.alive_in_player_clan
         or not other_cat.status.alive_in_player_clan
     ):
-        return
+        return False
     # no interacting with self
     if main_cat == other_cat:
-        return
+        return False
 
     # make sure a relationship exists
     if other_cat.ID not in main_cat.relationships:
@@ -51,8 +59,12 @@ def trigger_interaction(main_cat: Cat, other_cat: Cat, is_meeting=False):
 
     # get pos or negative
     type_of_change = _get_type_of_change(main_cat, other_cat, existing_relationship)
-    type_of_interaction = _get_type_of_interaction(
-        main_cat, other_cat, existing_relationship, type_of_change
+    type_of_interaction = (
+        _get_type_of_interaction(
+            main_cat, other_cat, existing_relationship, type_of_change
+        )
+        if not specific_type
+        else specific_type
     )
     # pick how intense the change is
     intensity_chances = get_config("relationship.pair_events.intensity_chances")
@@ -60,7 +72,7 @@ def trigger_interaction(main_cat: Cat, other_cat: Cat, is_meeting=False):
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
 
-    path = f"events/relationship_events/{'meeting_interactions' if is_meeting else 'normal_interactions'}/{type_of_interaction}/{chosen_intensity}/{type_of_change}"
+    path = f"events/relationship_events/{'meeting_interactions' if is_meeting else 'normal_interactions'}/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
     events = _load_file(path)
 
     # find valid event
@@ -73,7 +85,7 @@ def trigger_interaction(main_cat: Cat, other_cat: Cat, is_meeting=False):
 
     # resolve event
     if not chosen_event:
-        return
+        return False
     else:
         _resolve_event(
             chosen_event,
@@ -83,6 +95,7 @@ def trigger_interaction(main_cat: Cat, other_cat: Cat, is_meeting=False):
             type_of_interaction,
             existing_relationship,
         )
+        return True
 
 
 def _create_relationship(main_cat: Cat, other_cat: Cat):
@@ -196,14 +209,14 @@ def _get_event(
     possible_events = [
         e
         for e in possible_events
-        if event_for_cat(e.involved_cats["m_c"], main_cat, event_id=e.id)
+        if event_for_cat(e.involved_cats.get("m_c", {}), main_cat, event_id=e.id)
     ]
 
     possible_events = [
         e
         for e in possible_events
         if event_for_cat(
-            e.involved_cats["r_c"],
+            e.involved_cats.get("r_c", {}),
             other_cat,
             involved_cat_dict={"m_c": main_cat},
             event_id=e.id,

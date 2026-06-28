@@ -64,7 +64,7 @@ def event_for_location(locations: list) -> bool:
     """
     Checks if the clan is within the allowed locations.
     """
-    if "any" in locations:
+    if "any" in locations or not locations:
         return True
 
     if not game.clan:
@@ -101,7 +101,7 @@ def event_for_season(seasons: list) -> bool:
     """
     Checks if the clan is within the given seasons.
     """
-    if not seasons:
+    if not seasons or not seasons:
         return True
 
     if "any" in seasons:
