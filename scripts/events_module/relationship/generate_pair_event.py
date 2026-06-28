@@ -328,7 +328,12 @@ def _resolve_event(
     _apply_extra_influence(event, involved_cats, relationship, event_string)
 
 
-def _apply_extra_influence(event: TextPoolEvent, involved_cats: dict[str, Cat], relationship: Relationship, chosen_string: str):
+def _apply_extra_influence(
+    event: TextPoolEvent,
+    involved_cats: dict[str, Cat],
+    relationship: Relationship,
+    chosen_string: str,
+):
     """
     Applies any additional relationship influence that was specified by the event
     :param event: the object for the event
@@ -361,7 +366,11 @@ def _apply_extra_influence(event: TextPoolEvent, involved_cats: dict[str, Cat], 
 
 
 def _apply_base_influence(
-    intensity: str, relationship: Relationship, type_of_change: str, type_of_interaction: RelType, chosen_string: str
+    intensity: str,
+    relationship: Relationship,
+    type_of_change: str,
+    type_of_interaction: RelType,
+    chosen_string: str,
 ):
     """
     Applies the base influence for this event.

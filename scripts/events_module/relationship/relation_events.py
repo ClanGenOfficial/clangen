@@ -172,6 +172,12 @@ class Relation_Events:
 
     @staticmethod
     def trigger_pair_event(cat, other_cat, specific_type: Optional[RelType] = None):
+        """
+        Triggers a relationship event between two cats
+        :param cat: The main cat involved
+        :param other_cat: The other cat involved
+        :param specific_type: The main RelType to influence
+        """
         successful = generate_pair_event.trigger_interaction(
             main_cat=cat, other_cat=other_cat, specific_type=specific_type
         )
