@@ -7,6 +7,9 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.save_load import load_faded_cat_ids
+from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.cat.save_load import get_faded_ids
 from ..cat.enums import CatGroup, CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
@@ -22,12 +25,18 @@ from scripts.game_structure import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
 from ..cat.status import StatusDict
+from ..clan_resources.point_of_interest import (
+    clear_pois,
+    generate_and_add_new_poi,
+    PoiType,
+)
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
 
 
 def load_cats():
+    load_faded_cat_ids(switch_get_value(Switch.clan_save_id))
     try:
         json_load()
     except FileNotFoundError:
@@ -316,7 +325,6 @@ def json_load():
             raise
 
     # replace cat ids with cat objects and add other needed variables
-    other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
     for cat in all_cats:
         if cat.status.rank in (CatRank.LEADER, CatRank.DEPUTY, CatRank.MEDICINE_CAT):
             if cat.status.group == CatGroup.STARCLAN:
@@ -350,26 +358,11 @@ def json_load():
             )
             switch_set_value(Switch.traceback, e)
             raise
-
-        cat.inheritance = Inheritance(cat)
-
-        try:
-            # initialization of thoughts
-            cat.get_new_thought(other_clan_cats=other_clan_cats)
-        except Exception as e:
-            logger.exception(
-                f"There was an error when thoughts for cat #{cat} are created."
-            )
-            switch_set_value(
-                Switch.error_message,
-                f"There was an error when thoughts for cat #{cat} are created.",
-            )
-            switch_set_value(Switch.traceback, e)
-            raise
-
-        # Save integrety checks
         if constants.CONFIG["save_load"]["load_integrity_checks"]:
             save_check()
+
+    inheritance_db.clear_stored_data()
+    inheritance_db.load_inheritances(Cat, get_faded_ids)
 
 
 def csv_load(all_cats):
@@ -693,11 +686,12 @@ def version_convert(version_info):
                     c.permanent_condition[con].pop("moons_with")
                 c.permanent_condition[con]["moon_start"] = game.clan.age - moons_with
 
+    # freshkill start for older clans
     if version < 3 and game.clan.freshkill_pile:
-        # freshkill start for older clans
         add_prey = game.clan.freshkill_pile.amount_food_needed() * 2
         game.clan.freshkill_pile.add_freshkill(add_prey)
 
+    # death history text revision
     if version < 4:
         for c in Cat.all_cats.values():
             if not c.status.is_leader:
@@ -712,3 +706,14 @@ def version_convert(version_info):
                 # check if a period is present and append one if not
                 if death["text"][-1] != ".":
                     death["text"] += "."
+
+    # generate points of interest
+    if version < 5:
+        # remove any already loaded points of interest
+        clear_pois()
+
+        generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.GATHERING)
+        generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.MOONPLACE)
+
+        for i in range(3):
+            generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.TERRAIN)

@@ -333,7 +333,7 @@ class LeaderDenScreen(Screens):
         self.screen_elements["clan_notice_text"].show()
 
         self.screen_elements["temper_text"] = pygame_gui.elements.UITextBox(
-            relative_rect=ui_scale(pygame.Rect((68, 410), (445, -1))),
+            relative_rect=ui_scale(pygame.Rect((68, -13), (445, -1))),
             html_text="screens.leader_den.temper_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
@@ -343,8 +343,8 @@ class LeaderDenScreen(Screens):
                     first_temper=i18n.t(f"screens.leader_den.{self.clan_temper[0]}"),
                     second_temper=i18n.t(f"screens.leader_den.{self.clan_temper[1]}"),
                 ),
-                "clan": game.clan.displayname,
             },
+            anchors={"top_target": self.screen_elements["clan_notice_text"]},
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
@@ -438,7 +438,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
         )
         for i, other_clan in enumerate(game.clan.all_other_clans):
-            if other_clan.name == game.clan.displayname:
+            if other_clan.name == game.clan.name:
                 continue
             x_pos = 128
             self.other_clan_selection_elements[f"container{i}"] = UIContainer(
@@ -473,7 +473,7 @@ class LeaderDenScreen(Screens):
                 f"clan_name{i}"
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 10), (133, -1))),
-                text=f"{other_clan.name}Clan",
+                text=other_clan.name,
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
@@ -631,7 +631,7 @@ class LeaderDenScreen(Screens):
 
         self.focus_clan_elements["clan_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 15), (215, -1))),
-            text=f"{self.focus_clan.name}Clan",
+            text=self.focus_clan.name,
             object_id="#text_box_30_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,

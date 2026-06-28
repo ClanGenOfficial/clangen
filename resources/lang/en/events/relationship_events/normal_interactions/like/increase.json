@@ -919,5 +919,38 @@
 		"also_influences": {
 			"respect": "decrease"
 		}
+	},
+	{
+		"id": "daydreamer_inc_high",
+		"intensity": "high",
+		"interactions": [
+			"m_c watches fondly as r_c explains the lore of the story in {PRONOUN/r_c/poss} head.",
+			"m_c adores r_c's active imagination."
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		],
+		"relationship_constraint": [
+			"parent/child"
+		]
+	},
+	{
+		"id": "daydreamer_inc_med",
+		"intensity": "medium",
+		"interactions": [
+			"r_c watches the clouds with m_c and tells {PRONOUN/m_c/object} a story that's been on {PRONOUN/r_c/poss} mind."
+		],
+		"main_status_constraint": [
+			"kitten"
+		],
+		"random_status_constraint": [
+			"kitten"
+		],
+		"random_trait_constraint": [
+			"daydreamer"
+		]
 	}
 ]
