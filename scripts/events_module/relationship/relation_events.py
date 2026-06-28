@@ -222,21 +222,6 @@ class Relation_Events:
             Relation_Events.update_events_triggered_count(inter_cat)
 
     @staticmethod
-    def family_events(cat):
-        """
-        To have more family related events.
-        """
-        print("TODO")
-
-    @staticmethod
-    def outsider_events(cat):
-        """
-        ONLY for cat OLDER than 6 moons and not major injured.
-        This function will handle when the cat interacts with cat which are outside of the clan.
-        """
-        print("TODO")
-
-    @staticmethod
     def welcome_new_cats(new_cats=None):
         """This function will handle the welcome of new cats, if there are new cats in the clan."""
         if new_cats is None or len(new_cats) <= 0:
