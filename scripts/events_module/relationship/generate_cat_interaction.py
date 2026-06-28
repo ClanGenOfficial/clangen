@@ -12,7 +12,7 @@ from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     get_personality_compatibility,
     event_for_cat,
-    check_rel_constraint_groups,
+    check_rel_constraint_groups, event_for_location, event_for_season, event_for_tags,
 )
 from scripts.events_module.text_adjust import process_text
 from scripts.events_module.text_pool_event import TextPoolEvent
@@ -180,9 +180,19 @@ def _get_event(
 ) -> TextPoolEvent:
     final_events = []
 
+    possible_events = []
+    for e in events:
+        if not event_for_location(e.location):
+            continue
+        if not event_for_season(e.season):
+            continue
+        if not event_for_tags(e.tags, main_cat, other_cat):
+            continue
+        possible_events.append(e)
+
     possible_events = [
         e
-        for e in events
+        for e in possible_events
         if event_for_cat(e.involved_cats["m_c"], main_cat, event_id=e.id)
     ]
 
