@@ -183,12 +183,10 @@
         "involved_cats": {
             "m_c": {
                 "status": [
-                    "elder",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader"
+                    "-kitten",
+                    "-apprentice",
+                    "-mediator apprentice",
+                    "-medicine cat apprentice"
                 ]
             },
             "r_c": {
@@ -228,15 +226,7 @@
         "involved_cats": {
             "m_c": {
                 "status": [
-                    "kitten",
-                    "apprentice",
-                    "warrior",
-                    "mediator apprentice",
-                    "mediator",
-                    "medicine cat apprentice",
-                    "medicine cat",
-                    "deputy",
-                    "leader"
+                    "-elder"
                 ]
             },
             "r_c": {

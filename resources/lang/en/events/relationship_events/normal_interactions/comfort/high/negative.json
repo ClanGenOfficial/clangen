@@ -35,28 +35,12 @@
         "involved_cats": {
             "m_c": {
                 "status": [
-                    "apprentice",
-                    "medicine cat apprentice",
-                    "mediator apprentice",
-                    "warrior",
-                    "medicine cat",
-                    "mediator",
-                    "deputy",
-                    "leader",
-                    "elder"
+                    "-kitten"
                 ]
             },
             "r_c": {
                 "status": [
-                    "apprentice",
-                    "medicine cat apprentice",
-                    "mediator apprentice",
-                    "warrior",
-                    "medicine cat",
-                    "mediator",
-                    "deputy",
-                    "leader",
-                    "elder"
+                    "-kitten"
                 ]
             }
         },
@@ -94,15 +78,7 @@
         "involved_cats": {
             "r_c": {
                 "status": [
-                    "apprentice",
-                    "medicine cat apprentice",
-                    "mediator apprentice",
-                    "warrior",
-                    "medicine cat",
-                    "mediator",
-                    "deputy",
-                    "leader",
-                    "elder"
+                    "-kitten"
                 ],
                 "stat": {
                     "trait": [
@@ -127,15 +103,7 @@
         "involved_cats": {
             "m_c": {
                 "status": [
-                    "apprentice",
-                    "medicine cat apprentice",
-                    "mediator apprentice",
-                    "warrior",
-                    "medicine cat",
-                    "mediator",
-                    "deputy",
-                    "leader",
-                    "elder"
+                    "-kitten"
                 ]
             },
             "r_c": {
