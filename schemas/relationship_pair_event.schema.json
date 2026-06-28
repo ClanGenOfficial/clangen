@@ -289,124 +289,6 @@
       "title": "GroupEnum",
       "type": "string"
     },
-    "GroupEventCatEnum": {
-      "enum": [
-        "m_c",
-        "r_c",
-        "r_c1",
-        "r_c2",
-        "r_c3",
-        "r_c4",
-        "r_c5",
-        "multi_cat"
-      ],
-      "title": "GroupEventCatEnum",
-      "type": "string"
-    },
-    "GroupEventRelationshipChange": {
-      "additionalProperties": false,
-      "properties": {
-        "cats_from": {
-          "description": "The cat's whose relationship values are being edited. You are changing how the \"cats_from\" feels.",
-          "items": {
-            "$ref": "#/$defs/GroupEventCatEnum"
-          },
-          "title": "Cats From",
-          "type": "array"
-        },
-        "cats_to": {
-          "description": "The target of the relationship. You are changing how \"cats_from\" feels about \"cats_to\".",
-          "items": {
-            "$ref": "#/$defs/GroupEventCatEnum"
-          },
-          "title": "Cats To",
-          "type": "array"
-        },
-        "mutual": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Controls if the relation effect will be applied in both directions.",
-          "title": "Mutual"
-        },
-        "values": {
-          "description": "Controls which relationship values are affected.",
-          "items": {
-            "$ref": "#/$defs/Value"
-          },
-          "title": "Values",
-          "type": "array"
-        },
-        "amount": {
-          "description": "Exact amount the relationship value will be affected. Can be positive or negative.",
-          "title": "Amount",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "cats_from",
-        "cats_to",
-        "values",
-        "amount"
-      ],
-      "title": "GroupEventRelationshipChange",
-      "type": "object"
-    },
-    "GroupEventRelationshipConstraint": {
-      "additionalProperties": false,
-      "properties": {
-        "cats_from": {
-          "description": "The cat from whom the relationship originates.",
-          "items": {
-            "$ref": "#/$defs/GroupEventCatEnum"
-          },
-          "title": "Cats From",
-          "type": "array"
-        },
-        "cats_to": {
-          "description": "The target of the relationship.",
-          "items": {
-            "$ref": "#/$defs/GroupEventCatEnum"
-          },
-          "title": "Cats To",
-          "type": "array"
-        },
-        "mutual": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Controls if the relationship is required in both directions",
-          "title": "Mutual"
-        },
-        "constraints": {
-          "description": "Controls which relationship constraints are required",
-          "items": {
-            "$ref": "#/$defs/RelationshipStatus"
-          },
-          "title": "Constraints",
-          "type": "array"
-        }
-      },
-      "required": [
-        "cats_from",
-        "cats_to",
-        "constraints"
-      ],
-      "title": "GroupEventRelationshipConstraint",
-      "type": "object"
-    },
     "HealthDict": {
       "additionalProperties": false,
       "properties": {
@@ -529,7 +411,7 @@
       "title": "Injury",
       "type": "string"
     },
-    "InvolvedCatsGroupEvent": {
+    "InvolvedCatsPairEvent": {
       "additionalProperties": false,
       "properties": {
         "m_c": {
@@ -539,37 +421,9 @@
         "r_c": {
           "$ref": "#/$defs/CatDict",
           "title": "R C"
-        },
-        "r_c1": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C1"
-        },
-        "r_c2": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C2"
-        },
-        "r_c3": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C3"
-        },
-        "r_c4": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C4"
-        },
-        "r_c5": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C5"
-        },
-        "r_c6": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C6"
-        },
-        "multi_cat": {
-          "$ref": "#/$defs/CatDict",
-          "title": "Multi Cat"
         }
       },
-      "title": "InvolvedCatsGroupEvent",
+      "title": "InvolvedCatsPairEvent",
       "type": "object"
     },
     "KitTrait": {
@@ -629,6 +483,118 @@
       "title": "Location",
       "type": "array"
     },
+    "PairEventCatEnum": {
+      "enum": [
+        "m_c",
+        "r_c"
+      ],
+      "title": "PairEventCatEnum",
+      "type": "string"
+    },
+    "PairEventRelationshipChange": {
+      "additionalProperties": false,
+      "properties": {
+        "cats_from": {
+          "description": "The cat's whose relationship values are being edited. You are changing how the \"cats_from\" feels.",
+          "items": {
+            "$ref": "#/$defs/PairEventCatEnum"
+          },
+          "title": "Cats From",
+          "type": "array"
+        },
+        "cats_to": {
+          "description": "The target of the relationship. You are changing how \"cats_from\" feels about \"cats_to\".",
+          "items": {
+            "$ref": "#/$defs/PairEventCatEnum"
+          },
+          "title": "Cats To",
+          "type": "array"
+        },
+        "mutual": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Controls if the relation effect will be applied in both directions.",
+          "title": "Mutual"
+        },
+        "values": {
+          "description": "Controls which relationship values are affected.",
+          "items": {
+            "$ref": "#/$defs/Value"
+          },
+          "title": "Values",
+          "type": "array"
+        },
+        "amount": {
+          "description": "Exact amount the relationship value will be affected. Can be positive or negative.",
+          "title": "Amount",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "cats_from",
+        "cats_to",
+        "values",
+        "amount"
+      ],
+      "title": "PairEventRelationshipChange",
+      "type": "object"
+    },
+    "PairEventRelationshipConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "cats_from": {
+          "description": "The cat from whom the relationship originates.",
+          "items": {
+            "$ref": "#/$defs/PairEventCatEnum"
+          },
+          "title": "Cats From",
+          "type": "array"
+        },
+        "cats_to": {
+          "description": "The target of the relationship.",
+          "items": {
+            "$ref": "#/$defs/PairEventCatEnum"
+          },
+          "title": "Cats To",
+          "type": "array"
+        },
+        "mutual": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Controls if the relationship is required in both directions",
+          "title": "Mutual"
+        },
+        "constraints": {
+          "description": "Controls which relationship constraints are required",
+          "items": {
+            "$ref": "#/$defs/RelationshipStatus"
+          },
+          "title": "Constraints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats_from",
+        "cats_to",
+        "constraints"
+      ],
+      "title": "PairEventRelationshipConstraint",
+      "type": "object"
+    },
     "PermCondition": {
       "enum": [
         "crooked jaw",
@@ -657,7 +623,7 @@
       "title": "PermCondition",
       "type": "string"
     },
-    "RelationshipGroupEventSchemaItem": {
+    "RelationshipPairEventSchemaItem": {
       "additionalProperties": false,
       "properties": {
         "id": {
@@ -694,14 +660,14 @@
           "type": "array"
         },
         "involved_cats": {
-          "$ref": "#/$defs/InvolvedCatsGroupEvent",
+          "$ref": "#/$defs/InvolvedCatsPairEvent",
           "description": "Used to add constraints for the various involved cats.",
           "title": "Involved Cats"
         },
         "relationship_constraint": {
           "description": "Used to require specific relationships between the cats",
           "items": {
-            "$ref": "#/$defs/GroupEventRelationshipConstraint"
+            "$ref": "#/$defs/PairEventRelationshipConstraint"
           },
           "title": "Relationship Constraint",
           "type": "array"
@@ -709,7 +675,7 @@
         "relationship_changes": {
           "description": "Used to change specific relationships between the cats",
           "items": {
-            "$ref": "#/$defs/GroupEventRelationshipChange"
+            "$ref": "#/$defs/PairEventRelationshipChange"
           },
           "title": "Relationship Changes",
           "type": "array"
@@ -719,7 +685,7 @@
         "id",
         "strings"
       ],
-      "title": "RelationshipGroupEventSchemaItem",
+      "title": "RelationshipPairEventSchemaItem",
       "type": "object"
     },
     "RelationshipStatus": {
@@ -1064,10 +1030,10 @@
       "type": "string"
     }
   },
-  "description": "Group relationship event in Clan Generator.",
+  "description": "Pair relationship event in Clan Generator.",
   "items": {
-    "$ref": "#/$defs/RelationshipGroupEventSchemaItem"
+    "$ref": "#/$defs/RelationshipPairEventSchemaItem"
   },
-  "title": "RelationshipGroupEvent",
+  "title": "RelationshipPairEvent",
   "type": "array"
 }

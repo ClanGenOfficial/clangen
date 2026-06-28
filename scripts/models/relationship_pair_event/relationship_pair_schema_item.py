@@ -6,18 +6,19 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.season import Season
-from scripts.models.relationship_group_event.involved_cats import InvolvedCatsGroupEvent
-from scripts.models.relationship_group_event.relationship_change_dict import (
-    GroupEventRelationshipChange,
+
+from scripts.models.relationship_pair_event.involved_cats import InvolvedCatsPairEvent
+from scripts.models.relationship_pair_event.relationship_change_dict import (
+    PairEventRelationshipChange,
 )
-from scripts.models.relationship_group_event.relationship_constraint_dict import (
-    GroupEventRelationshipConstraint,
+from scripts.models.relationship_pair_event.relationship_constraint_dict import (
+    PairEventRelationshipConstraint,
 )
 from scripts.models.shortevent.location import Location
 from scripts.models.thought.tag import Tag
 
 
-class RelationshipGroupEventSchemaItem(BaseModel):
+class RelationshipPairEventSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: str = Field(
         ...,
@@ -38,17 +39,17 @@ class RelationshipGroupEventSchemaItem(BaseModel):
     strings: List[str] = Field(
         ..., description="List of the text that will be displayed in-game as events."
     )
-    involved_cats: Union[InvolvedCatsGroupEvent, MISSING] = Field(
+    involved_cats: Union[InvolvedCatsPairEvent, MISSING] = Field(
         MISSING,
         description="Used to add constraints for the various involved cats.",
     )
     relationship_constraint: Union[
-        List[GroupEventRelationshipConstraint], MISSING
+        List[PairEventRelationshipConstraint], MISSING
     ] = Field(
         MISSING,
         description="Used to require specific relationships between the cats",
     )
-    relationship_changes: Union[List[GroupEventRelationshipChange], MISSING] = Field(
+    relationship_changes: Union[List[PairEventRelationshipChange], MISSING] = Field(
         MISSING,
         description="Used to change specific relationships between the cats",
     )
