@@ -6,7 +6,7 @@ from scripts.cat_relations.enums import rel_type_tiers, RelType
 
 from scripts.cat.enums import CatRank
 from scripts.events_module.event_filters import filter_relationship_type
-from scripts.events_module.parameter_dicts import InvolvedCatDict
+from scripts.events_module.parameter_dicts import InvolvedCatDict, StatDict
 from scripts.events_module.relationship import generate_pair_event
 from scripts.events_module.text_pool_event import TextPoolEvent
 
@@ -437,35 +437,74 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         troublesome.personality.trait = "troublesome"
 
         # when
-        calm_to_all = SingleInteraction("test")
-        calm_to_all.main_trait_constraint = ["calm"]
-        calm_to_all.random_trait_constraint = []
+        calm_to_all = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(trait=["calm"])),
+            },
+        )
 
-        all_to_calm = SingleInteraction("test")
-        all_to_calm.main_trait_constraint = ["troublesome", "calm"]
-        all_to_calm.random_trait_constraint = ["calm"]
+        all_to_calm = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(trait=["calm", "troublesome"])),
+                "r_c": InvolvedCatDict(stat=StatDict(trait=["calm"])),
+            },
+        )
+
+        rebels = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(trait=["rebellious"])),
+                "r_c": InvolvedCatDict(stat=StatDict(trait=["rebellious"])),
+            },
+        )
 
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(calm, troublesome, calm_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, rebels],
+            main_cat=calm,
+            other_cat=troublesome,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(calm, troublesome, all_to_calm)
-        )
+        self.assertEqual(chosen_event, calm_to_all)
 
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(troublesome, calm, calm_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, all_to_calm],
+            main_cat=calm,
+            other_cat=troublesome,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(troublesome, calm, all_to_calm)
-        )
+        self.assertNotEqual(chosen_event, all_to_calm)
 
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(calm, calm, calm_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, all_to_calm],
+            main_cat=troublesome,
+            other_cat=calm,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(calm, calm, all_to_calm)
+        self.assertNotEqual(chosen_event, calm_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[all_to_calm, rebels],
+            main_cat=troublesome,
+            other_cat=calm,
         )
+        self.assertEqual(chosen_event, all_to_calm)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, rebels],
+            main_cat=calm,
+            other_cat=calm,
+        )
+        self.assertEqual(chosen_event, calm_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, rebels],
+            main_cat=calm,
+            other_cat=calm,
+        )
+        self.assertEqual(chosen_event, calm_to_all)
 
     def test_skill(self):
         # given
