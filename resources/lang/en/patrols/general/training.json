@@ -21500,7 +21500,7 @@
     "season": ["newleaf"],
     "types": ["hunting"],
     "tags": [],
-    "patrol_art": "mtn_hunt_patrolfollowsstreamtocoldbog",
+    "patrol_art": "train_general_intro",
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
@@ -21555,8 +21555,7 @@
                 "cats_from": "cat_from appreciated that cat_to made a good point about patience."
             }
         }
-    ],
-    "art": "patrol_outcome_art"
+    ]
 },
         {
     "min_max_status": {
@@ -21581,36 +21580,31 @@
                 "cats_from": "cat_from was excited by cat_to's enthusiasm about tadpoles."
             }
         }
-    ],
-    "art": "gen_train_talkingAW"
+    ]
 },
         {
     "text": "s_c stands with p_l and points out which globules have a dark or milky center. Lucky for c_n, there are plenty of healthy dark-spotted frogspawn waiting to hatch.",
     "exp": 20,
     "frequency": 3,
-    "stat_skill": ["TEACHER,1", "CLEVER,1", "SENSE,1"],
-    "art": "gen_happy_cat"
+    "stat_skill": ["TEACHER,1", "CLEVER,1", "SENSE,1"]
 },
         {
     "text": "The patrol purrs in satisfaction to see a healthy amount of clusters growing. Meanwhile, s_c wonders to {PRONOUN/s_c/self} if the jelly-like eggs would be of any use to the medicine cats. ",
     "exp": 20,
     "frequency": 2,
-    "stat_skill": ["HEALER,0"],
-    "art": "patrol_outcome_art"
+    "stat_skill": ["HEALER,0"]
 }
     ],
     "fail_outcomes": [
         {
     "text": "p_l only notices a few scattered clusters. Frogs may be scarce prey this greenleaf.",
     "exp": 5,
-    "frequency": 4,
-    "art": "patrol_outcome_art"
+    "frequency": 4
 },
         {
     "text": "r_c discovers raccoon scat nearby, and p_l finds no frogspawn. It seems like this area has been claimed already.",
     "exp": 5,
-    "frequency": 4,
-    "art": "patrol_outcome_art"
+    "frequency": 4
 },
         {
     "min_max_status": {
@@ -21635,8 +21629,7 @@
                 "cats_from": "cat_from was embarrassed that cat_to scolded {PRONOUN/cat_from/object} for a mistake on patrol."
             }
         }
-    ],
-    "art": "gen_embarrassed1_warrior_app"
+    ]
 },
                 {
     "min_max_status": {
@@ -21662,8 +21655,7 @@
                 "cats_to": "cat_to was furious that cat_from hit {PRONOUN/cat_to/object} in the face with frogspawn."
             }
         }
-    ],
-    "art": "gen_embarrassed1_warrior_app"
+    ]
 },
         {
     "text": "As r_c looks into the water, the muddy bank below {PRONOUN/r_c/object} gives way. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tumble/tumbles} in and {VERB/r_c/squash/squashes} the frogspawn below.",
@@ -21682,8 +21674,7 @@
                 "cats_from": "cat_from was exasperated when cat_to fell into the water and onto delicate frogspawn."
             }
         }
-    ],
-    "art": "gen_train_soggykitty_mad_warrior"
+    ]
 }
     ]
 }
