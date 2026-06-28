@@ -21638,7 +21638,7 @@
             6
         ]
     },
-    "text": "app1 reaches eagerly into the pool, scooping the spawn into {PRONOUN/app1/poss} paw. {PRONOUN/app1/subject/CAP} {VERB/app1/twist/twists} to show off {PRONOUN/app1/poss} catch to p_l and send the glob flying into p_l's face. p_l scolds {PRONOUN/app1/object} for wasting a valuable resource.",
+    "text": "app1 reaches eagerly into the pool, scooping the spawn into {PRONOUN/app1/poss} paw. {PRONOUN/app1/subject/CAP} {VERB/app1/twist/twists} to show off {PRONOUN/app1/poss} catch to p_l and {VERB/app1/send/sends} the glob flying into p_l's face. p_l scolds {PRONOUN/app1/object} for wasting a valuable resource.",
     "exp": 5,
     "frequency": 2,
     "relationships": [
