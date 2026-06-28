@@ -172,7 +172,7 @@ class Relation_Events:
 
     @staticmethod
     def trigger_pair_event(cat, other_cat, specific_type: Optional[RelType] = None):
-        successful = generate_cat_interaction.trigger_interaction(
+        successful = generate_pair_event.trigger_interaction(
             main_cat=cat, other_cat=other_cat, specific_type=specific_type
         )
 
