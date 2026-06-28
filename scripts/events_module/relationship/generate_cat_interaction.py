@@ -12,7 +12,10 @@ from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     get_personality_compatibility,
     event_for_cat,
-    check_rel_constraint_groups, event_for_location, event_for_season, event_for_tags,
+    check_rel_constraint_groups,
+    event_for_location,
+    event_for_season,
+    event_for_tags,
 )
 from scripts.events_module.text_adjust import process_text
 from scripts.events_module.text_pool_event import TextPoolEvent
