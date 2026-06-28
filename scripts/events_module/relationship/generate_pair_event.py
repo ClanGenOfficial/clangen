@@ -1,5 +1,5 @@
 from random import choice, choices
-from typing import Optional
+from typing import Optional, Literal
 
 import i18n
 
@@ -108,7 +108,7 @@ def _create_relationship(main_cat: Cat, other_cat: Cat):
 # GET
 def _get_type_of_change(
     main_cat: Cat, other_cat: Cat, relationship: Relationship
-) -> str:
+) -> Literal["positive", "negative"]:
     """
     Returns if the change will be positive or negative
     :param main_cat: The main cat that the event revolves around
@@ -144,7 +144,10 @@ def _get_type_of_change(
 
 
 def _get_type_of_interaction(
-    main_cat: Cat, other_cat: Cat, relationship: Relationship, type_of_change: str
+    main_cat: Cat,
+    other_cat: Cat,
+    relationship: Relationship,
+    type_of_change: Literal["positive", "negative"],
 ) -> RelType:
     """
     Returns the relationship type that will be influenced by this event
@@ -252,7 +255,9 @@ def _get_event(
 
 
 def _get_change_amount(
-    is_positive: bool, intensity: str, relationship: Relationship
+    is_positive: bool,
+    intensity: Literal["low", "medium", "high"],
+    relationship: Relationship,
 ) -> int:
     """
     Finds and returns the int amount that the relationship type will change by according to given intensity and additional modifiers
@@ -286,10 +291,10 @@ def _get_change_amount(
 # RESOLVE
 def _resolve_event(
     event: TextPoolEvent,
-    intensity: str,
+    intensity: Literal["low", "medium", "high"],
     involved_cats: dict[str, Cat],
-    type_of_change: str,
-    type_of_interaction: str,
+    type_of_change: Literal["positive", "negative"],
+    type_of_interaction: RelType,
     relationship: Relationship,
 ):
     """
@@ -367,9 +372,9 @@ def _apply_extra_influence(
 
 
 def _apply_base_influence(
-    intensity: str,
+    intensity: Literal["low", "medium", "high"],
     relationship: Relationship,
-    type_of_change: str,
+    type_of_change: Literal["positive", "negative"],
     type_of_interaction: RelType,
     chosen_string: str,
 ):
