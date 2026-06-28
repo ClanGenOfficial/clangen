@@ -18,7 +18,6 @@ class Relationship:
         self,
         cat_from,
         cat_to,
-        mates: bool = False,
         family: bool = False,
         romance: int = 0,
         like: int = 0,
@@ -30,7 +29,6 @@ class Relationship:
         self.chosen_interaction = None
         self.cat_from = cat_from
         self.cat_to = cat_to
-        self.mates = mates
         self.family = family
         self.opposite_relationship = (
             None  # link to opposite relationship will be created later
@@ -61,7 +59,6 @@ class Relationship:
         return {
             "cat_from_id": self.cat_from.ID,
             "cat_to_id": self.cat_to.ID,
-            "mates": self.mates,
             "family": self.family,
             "romance": self.romance,
             "like": self.like,

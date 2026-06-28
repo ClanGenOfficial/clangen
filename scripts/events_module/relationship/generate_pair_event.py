@@ -176,7 +176,7 @@ def _get_type_of_interaction(
                 value_weights[rel_type] += int(abs(attr / 10))
 
     # increase the chance of a romance interaction if they are already mates
-    if relationship.mates:
+    if other_cat.ID in main_cat.mate:
         value_weights[RelType.ROMANCE] += 1
     else:
         # if a romance relationship is not possible, remove this type, but only if there are no mates

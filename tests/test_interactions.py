@@ -23,7 +23,6 @@ class RelationshipConstraints(unittest.TestCase):
         parent = Cat()
         cat_from = Cat(parent1=parent.ID)
         cat_to = Cat(parent1=parent.ID)
-        rel = Relationship(cat_from, cat_to, False, True)
 
         # then
         self.assertTrue(filter_relationship_type([cat_from, cat_to], ["sibling"]))
