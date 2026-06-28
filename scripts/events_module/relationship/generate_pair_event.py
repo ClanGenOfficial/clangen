@@ -30,14 +30,12 @@ loaded_events = {}
 def trigger_interaction(
     main_cat: Cat,
     other_cat: Cat,
-    is_meeting=False,
     specific_type: Optional[RelType] = None,
 ) -> bool:
     """
     Start an interaction between two cats
     :param main_cat: The main cat that the event revolves around
     :param other_cat: The other cat that the event revolves around
-    :param is_meeting: Set to True if these cats are having a "meeting" event
     :param specific_type: Use to specify if the event must change a certain aspect of the relationship
     :return: True if interaction occurred, False otherwise
     """
@@ -72,7 +70,7 @@ def trigger_interaction(
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
 
-    path = f"events/relationship_events/{'meeting_interactions' if is_meeting else 'normal_interactions'}/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
+    path = f"events/relationship_events/normal_interactions/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
     events = _load_file(path)
 
     # find valid event
