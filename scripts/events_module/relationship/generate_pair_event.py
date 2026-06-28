@@ -144,16 +144,17 @@ def _get_type_of_change(
 
 
 def _get_type_of_interaction(
-    main_cat: Cat, other_cat: Cat, relationship: Relationship, change_type: str
+    main_cat: Cat, other_cat: Cat, relationship: Relationship, type_of_change: str
 ) -> RelType:
     """
     Returns the relationship type that will be influenced by this event
     :param main_cat: The main cat that the event revolves around
     :param other_cat: The other cat involved in the event
     :param relationship: Main cat's relationship object for other_cat
+    :param type_of_change: "positive" or "negative" depending on how the relationship is changing
     :return: The chosen RelType
     """
-    is_positive: bool = True if change_type == "positive" else False
+    is_positive: bool = True if type_of_change == "positive" else False
 
     value_weights: dict[RelType, int] = {v: 1 for v in [*RelType]}
 
