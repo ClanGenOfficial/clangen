@@ -1,0 +1,188 @@
+[
+    {
+        "id": "comfort_de_med1",
+        "strings": [
+            "m_c finds the way r_c acts increasingly uncomfortable.",
+            "m_c swears that r_c's fangs are longer than usual.",
+            "m_c's hackles raise when r_c passes by.",
+            "m_c and r_c talk about a Clanmate and realize they have very different opinions on them.",
+            "m_c had a terrible dream about r_c.",
+            "m_c worries about r_c's mental stability.",
+            "m_c can't stop thinking about the strange joke r_c told the other day.",
+            "In the middle of a conversation, m_c and r_c realize they have less in common than they thought.",
+            "r_c said something the other day that made m_c nervous.",
+            "m_c realizes that a strange smell in camp is coming from r_c.",
+            "m_c tells {PRONOUN/m_c/poss} Clanmates that something's off about r_c.",
+            "The moon casts a shadow on r_c's face in a way that makes m_c uneasy.",
+            "For a moment, m_c thought r_c sounded like someone else."
+        ]
+    },
+    {
+        "id": "comfort_kit_de_med1",
+        "strings": [
+            "m_c feels like r_c was too rough while playing.",
+            "m_c doesn't think r_c was playing fair.",
+            "m_c accuses r_c of cheating during a game of hide-n-seek!",
+            "m_c cries after r_c wins one of their games."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        }
+    },
+    {
+        "id": "comfort_de_kit_parent_inc_med_respect_inc",
+        "strings": [
+            "r_c scolds m_c for doing something dangerous.",
+            "r_c scolds m_c for being rude to a Clanmate.",
+            "r_c enforces m_c's bedtime.",
+            "r_c won't let m_c have an extra piece of prey today.",
+            "m_c thinks r_c is the strictest parent in the Clan.",
+            "m_c sulks after r_c prohibits a dangerous game."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "comfort_de_med2",
+        "strings": [
+            "m_c called r_c the wrong name.",
+            "r_c squashes a bug that m_c was watching.",
+            "m_c realizes how hard it is to hold a conversation with r_c.",
+            "m_c won't take r_c seriously.",
+            "m_c thinks r_c has a strange sense of humor.",
+            "m_c accuses r_c of stealing something.",
+            "m_c was rudely awoken by r_c.",
+            "r_c says that m_c smells weird.",
+            "m_c keeps looking behind r_c during their conversation.",
+            "r_c won't tell m_c what {PRONOUN/r_c/subject} finds so funny.",
+            "m_c doesn't think r_c's weird joke was just a joke."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "comfort_de_med3",
+        "strings": [
+            "r_c is following m_c around.",
+            "r_c tells m_c that {PRONOUN/m_c/poss} pelt looks like a different color today.",
+            "r_c keeps tilting {PRONOUN/r_c/poss} head while looking at m_c.",
+            "r_c giggles beneath {PRONOUN/r_c/poss} breath every time m_c walks by.",
+            "m_c is put off by r_c's big, toothy grin.",
+            "m_c swears that r_c hasn't blinked today.",
+            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "strange"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "comfort_de_med4",
+        "strings": [
+            "r_c talks to m_c a bit too enthusiastically about how best to kill prey.",
+            "r_c started a fight with m_c.",
+            "m_c notices that r_c hasn't groomed fresh-kill blood off {PRONOUN/r_c/poss} paw.",
+            "m_c notices that r_c is playing with {PRONOUN/r_c/poss} fresh-kill.",
+            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "bloodthirsty"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "comfort_de_med5",
+        "strings": [
+            "r_c hissed at m_c.",
+            "r_c tells m_c to leave {PRONOUN/r_c/object} alone.",
+            "r_c is glaring at m_c from across the camp.",
+            "m_c asks about r_c's day and gets no response.",
+            "r_c growls when m_c gets too close.",
+            "r_c seems amused when m_c trips.",
+            "r_c says something bitter to m_c."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "cold"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "comfort_de_med6",
+        "strings": [
+            "r_c crashes into m_c while eager for the new day.",
+            "r_c rejects m_c's advice without letting {PRONOUN/m_c/object} finish.",
+            "r_c interrupts m_c during a conversation.",
+            "r_c blurts out something. m_c wishes that r_c held {PRONOUN/r_c/poss} tongue.",
+            "r_c says something bad about m_c that's been on everyone's mind."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "bold",
+                        "oblivious"
+                    ]
+                }
+            }
+        }
+    }
+]

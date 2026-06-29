@@ -1,0 +1,272 @@
+[
+    {
+        "id": "rom_inc_high1",
+        "strings": [
+            "m_c is spending a lot of time with r_c.",
+            "m_c enjoys the time with r_c and feels secure.",
+            "m_c wants to spend the entire day with r_c.",
+            "m_c saves a piece of prey for r_c because {PRONOUN/m_c/subject} {VERB/m_c/know/knows} it's {PRONOUN/r_c/poss} favorite.",
+            "m_c brings r_c some fresh-kill, hoping that {PRONOUN/m_c/subject} remembered what r_c's favorite was.",
+            "m_c got stuck in the same tree with r_c for hours and realized how much they have in common.",
+            "m_c asks r_c to go fishing with {PRONOUN/m_c/object}, but they keep on getting distracted by each other.",
+            "m_c gives r_c a beautiful feather {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
+            "m_c gives r_c a wonderfully colored pebble {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
+            "m_c gives r_c a circular Twoleg object {PRONOUN/m_c/subject} found, and hides behind {PRONOUN/m_c/poss} whiskers when thanked.",
+            "m_c compliments r_c on how well groomed {PRONOUN/r_c/poss} pelt is today.",
+            "m_c compliments r_c on how sharp {PRONOUN/r_c/poss} claws are today."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance",
+                    "like",
+                    "comfort"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_high2",
+        "strings": [
+            "m_c gave a pretty flower {PRONOUN/m_c/subject} found to r_c.",
+            "m_c picks some fragrant flowers for r_c.",
+            "m_c decorates r_c's nest with flowers to surprise {PRONOUN/r_c/object}!",
+            "m_c rolls around in some herbs after hearing r_c likes their smell.",
+            "m_c gave r_c a sprig of catmint {PRONOUN/m_c/subject} found."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance",
+                    "like"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_high3",
+        "strings": [
+            "m_c is rolling around a little too playfully with r_c...",
+            "m_c could spend hours listening to r_c's voice.",
+            "m_c hopes to dream of r_c tonight.",
+            "m_c is the only cat who can make r_c laugh."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "adores"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance",
+                    "like"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_high4",
+        "strings": [
+            "m_c was caught enjoying a moonlit stroll with r_c last night...",
+            "m_c sneaks out at night to sleep in r_c's nest.",
+            "m_c and r_c were heard discussing kits.",
+            "m_c and r_c have been sickeningly lovey-dovey all day.",
+            "m_c and r_c snuck out of camp together.",
+            "m_c promises r_c to always be there to protect {PRONOUN/r_c/object} with {PRONOUN/m_c/poss} life."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "adores",
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance",
+                    "like",
+                    "trust"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_high5",
+        "strings": [
+            "m_c purrs for a long time at one of r_c's lame jokes.",
+            "m_c can't stop gushing over r_c."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance",
+                    "like",
+                    "comfort"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_high6",
+        "strings": [
+            "m_c takes r_c out to look at the stars, explaining the constellations to {PRONOUN/r_c/object}.",
+            "m_c tells r_c romantic stories of old."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STORY,3"
+                    ]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance",
+                    "like",
+                    "comfort"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_high_warrior7",
+        "strings": [
+            "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} {VERB/r_c/doesn't/didn't} seem to care, nuzzling into m_c's neck.",
+            "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c's favorite prey.",
+            "m_c asks r_c to help {PRONOUN/m_c/object} freshen up on some battle moves, complimenting {PRONOUN/r_c/object} constantly throughout.",
+            "m_c compliments r_c on {PRONOUN/r_c/poss} catch during a hunting patrol, which causes {PRONOUN/r_c/object} to purr."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "adores"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance",
+                    "comfort"
+                ],
+                "amount": 15
+            }
+        ]
+    }
+]
