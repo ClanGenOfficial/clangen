@@ -2,7 +2,14 @@
     {
         "id": "gen_romance_high_pos1",
         "strings": [
-			"m_c and r_c seem to be immediately enamored with each other."
-        ]
+			"m_c and r_c seem to immediately be enamored with each other."
+        ],
+        "relationship_changes": {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
+            "mutual": false,
+            "values": ["romance"],
+            "amount": 15
+        }
     }
 ]
