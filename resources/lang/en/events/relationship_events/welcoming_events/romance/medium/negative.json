@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "id": "gen_romance_med_neg1",
+        "strings": [
+			"m_c finds {PRONOUN/m_c/poss} interest in r_c isn't improved by proximity."
+        ]
+    }
+]
