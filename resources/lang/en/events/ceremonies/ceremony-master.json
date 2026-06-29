@@ -314,7 +314,7 @@
       "abandoned",
       "all_traits"
     ],
-    "m_c is so, so very excited to finally have a mentor, solidifying {PRONOUN/m_c/object} as part of the Clan. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} grateful to be here, really... but (mentor) can't replace the parent who gave {PRONOUN/m_c/object} to this Clan, the parent who should've been here chanting {PRONOUN/m_c/poss} name."
+    "m_c is so, so very excited to finally have a mentor, solidifying {PRONOUN/m_c/object} as part of the Clan. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} grateful to be here, really... but (mentor) can't replace the parent who left {PRONOUN/m_c/object}, the one who should have been there to cheer for {PRONOUN/m_c/object} and guide {PRONOUN/m_c/object}."
   ],
   "app_20": [
     [
@@ -1455,30 +1455,17 @@
     ],
     "Having finally reached the end of {PRONOUN/m_c/poss} apprenticeship, newly named medicine cat m_c feels there's still so much to learn and frets about whether or not {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready. With twitching whiskers, (previous_mentor) assures {PRONOUN/m_c/object} that StarClan will always be there to guide {PRONOUN/m_c/object}."
   ],
-    "med_7_clan": [
+    "med_7": [
     [
       "medicine cat",
       "prepared",
       "alive_mentor",
       "general_parents",
       "general_leader",
-        "clanborn",
-        "all_traits"
-    ],
-        "(previous_mentor) still remembers when (old_name) was just a kit batting around in the medicine cat den, asking endless questions about everything under the sun. (previous_mentor) chuckles with fondness as m_c asks why {PRONOUN/m_c/poss} new name was chosen with shining eyes and twitching whiskers."
-    ],
-    "med_7_abandoned": [
-        [
-            "medicine cat",
-            "prepared",
-            "alive_mentor",
-            "general_parents",
-            "general_leader",
-            "abandoned",
       "all_traits"
     ],
         "(previous_mentor) still remembers when (old_name) was just a kit batting around in the medicine cat den, asking endless questions about everything under the sun. (previous_mentor) chuckles with fondness as m_c asks why {PRONOUN/m_c/poss} new name was chosen with shining eyes and twitching whiskers."
-  ],
+    ],
   "med_8": [
     [
       "medicine cat",
