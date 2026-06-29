@@ -59,3 +59,39 @@ class EventOutcome:
     def __repr__(self):
         # represented by a short text snippet
         return f"{self.text[:30]}..."
+
+    def execute_outcome(self):
+        """
+        Executes the outcome, applying any specified consequences.
+        :returns: Outcome text, results text, list of created rel logs (might be empty)
+        """
+
+        rel_results = {}
+
+        # create new cats
+
+        # handle joining
+
+        # process text
+
+        # handle death
+
+        # handle lost
+
+        # handle injuries
+
+        # adjust text for logs
+
+        # apply rel effects (append result text)
+
+        # handle rep changes (outsider and other clan)
+
+        # handle supply changes (prey and herbs)
+
+        # handle exp
+
+        # handle mentor/app stuff
+
+        # handle future event
+
+        # return all the bullshit
