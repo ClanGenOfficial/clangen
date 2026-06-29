@@ -67,6 +67,8 @@ class Relation_Events:
         :param is_joining: Set to True if this should generate a "joining" interaction instead of "normal"
         :return: Cat object for the other_cat included in the event
         """
+        if not excluded_cats:
+            excluded_cats = []
 
         cats_to_choose = [
             c
@@ -74,7 +76,7 @@ class Relation_Events:
             if c.ID != cat.ID
             and c.status.alive_in_player_clan
             and c.age != CatAge.NEWBORN
-            and (excluded_cats and c not in excluded_cats)
+            and c not in excluded_cats
         ]
         # if there are no cats to interact, stop
         if not cats_to_choose:
@@ -254,7 +256,7 @@ class Relation_Events:
             Relation_Events.update_events_triggered_count(inter_cat)
 
     @staticmethod
-    def welcome_new_cats(new_cats=None):
+    def welcome_new_cats(new_cats: list[Cat]):
         """This function will handle the welcome of new cats, if there are new cats in the clan."""
         if new_cats is None or len(new_cats) <= 0:
             return

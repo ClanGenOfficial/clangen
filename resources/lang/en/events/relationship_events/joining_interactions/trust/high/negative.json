@@ -4,12 +4,13 @@
         "strings": [
             "It seems unsavory rumors have been spreading about m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/discover/discovers} r_c is behind it."
         ],
-        "relationship_changes": {
-            "cats_from": ["r_c"],
-            "cats_to": ["m_c"],
-            "mutual": false,
-            "values": ["trust"],
-            "amount": -10
-        }
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -10
+            }]
     }
 ]

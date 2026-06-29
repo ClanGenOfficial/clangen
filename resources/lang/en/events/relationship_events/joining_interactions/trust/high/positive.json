@@ -4,12 +4,13 @@
         "strings": [
 			"r_c shuts down rumors about m_c before they can get out of hand and m_c is grateful."
         ],
-        "relationship_changes": {
-            "cats_from": ["r_c"],
-            "cats_to": ["m_c"],
-            "mutual": false,
-            "values": ["trust"],
-            "amount": 5
-        }
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": 5
+            }]
     }
 ]

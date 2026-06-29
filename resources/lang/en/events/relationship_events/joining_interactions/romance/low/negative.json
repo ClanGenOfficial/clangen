@@ -4,12 +4,13 @@
         "strings": [
 			"m_c doesn't spare r_c a second glance."
         ],
-        "relationship_changes": {
-            "cats_from": ["r_c"],
-            "cats_to": ["m_c"],
-            "mutual": false,
-            "values": ["romance"],
-            "amount": -5
-        }
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["romance"],
+                "amount": -5
+            }]
     }
 ]
