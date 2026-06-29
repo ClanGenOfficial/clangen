@@ -21,6 +21,7 @@ from scripts.game_structure import constants
 class EventOutcome:
     # display
     outcome_art: str
+
     # constraints
     text: str
     frequency: int
@@ -36,6 +37,7 @@ class EventOutcome:
     relationship_changes: list[RelationshipChangeDict] = field(
         default_factory=list[RelationshipChangeDict]
     )
+
     # consequences
     exp_gained: int = 0
     reputation_changes: ReputationChangesDict = field(default_factory=dict)
