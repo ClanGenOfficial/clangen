@@ -1,0 +1,9 @@
+[
+    {
+        "id": "gen_like_med_dec1",
+        "strings": [
+			"r_c sees m_c arrive in the Clan and {PRONOUN/r_c/subject} {VERB/r_c/offer/offers} to show {PRONOUN/m_c/object} around.",
+			"r_c asks m_c if {PRONOUN/m_c/subject} could use some help getting introduced to the other Clan members."
+        ]
+    }
+]
