@@ -188,8 +188,8 @@ class CanHaveKits(unittest.TestCase):
 
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
-        relation1 = Relationship(cat1, cat2, mates=True, family=False, romance=100)
-        relation2 = Relationship(cat2, cat1, mates=True, family=False, romance=100)
+        relation1 = Relationship(cat1, cat2, family=False, romance=100)
+        relation2 = Relationship(cat2, cat1, family=False, romance=100)
         cat1.relationships[cat2.ID] = relation1
         cat2.relationships[cat1.ID] = relation2
 
