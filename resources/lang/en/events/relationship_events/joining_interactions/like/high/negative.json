@@ -4,12 +4,13 @@
         "strings": [
 			"r_c makes a rude comment while m_c is getting acquainted with the camp."
         ],
-        "relationship_changes": {
-            "cats_from": ["r_c"],
-            "cats_to": ["m_c"],
-            "mutual": false,
-            "values": ["like"],
-            "amount": -10
-        }
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            }]
     }
 ]
