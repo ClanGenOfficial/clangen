@@ -31,12 +31,14 @@ def trigger_interaction(
     main_cat: Cat,
     other_cat: Cat,
     specific_type: Optional[RelType] = None,
+    is_joining: bool = False,
 ) -> bool:
     """
     Start an interaction between two cats
     :param main_cat: The main cat that the event revolves around
     :param other_cat: The other cat that the event revolves around
     :param specific_type: Use to specify if the event must change a certain aspect of the relationship
+    :param is_joining: Set True if generated interaction should be "joining" instead of "normal"
     :return: True if interaction occurred, False otherwise
     """
     # only interact between two player clan cats
@@ -70,7 +72,7 @@ def trigger_interaction(
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
 
-    path = f"events/relationship_events/normal_interactions/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
+    path = f"events/relationship_events/{'joining_interactions' if is_joining else 'normal_interactions'}/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
     events = _load_file(path)
 
     # find valid event
