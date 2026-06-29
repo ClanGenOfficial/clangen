@@ -206,7 +206,7 @@
                 ]
             },
             {
-                "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious — and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
+                "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious, and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
                 "exp": 0,
                 "stat_trait": [
                     "vengeful",
@@ -575,7 +575,7 @@
             ]
         },
         "frequency": 2,
-        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. Oh! {PRONOUN/p_l/subject/CAP} can smell some raspberries nearby — but it seems that they're just over the border.",
+        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scent/scents} some raspberries nearby, but it seems that they're just over the border.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that trespassing isn't worth it in this case.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -618,7 +618,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. p_l forces {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurts out that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a medicine cat. The warriors either don't hear {PRONOUN/p_l/object} or don't care — they get in a good scratch before p_l can retreat.",
+                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. p_l forces {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurts out that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a medicine cat. The warriors either don't hear {PRONOUN/p_l/object} or don't care. They get in a good scratch before p_l can retreat.",
                 "exp": 0,
                 "injury": [
                     {
@@ -661,7 +661,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border — while p_l understands it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/lecture/lectures} the apprentice on the importance of respecting border lines.",
+                "text": "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border. While p_l understands it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/lecture/lectures} the apprentice on the importance of respecting border lines.",
                 "exp": 10,
                 "other_clan_rep": 2,
                 "frequency": 4
@@ -867,7 +867,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border — while p_l understands that it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/give/gives} the apprentice a firm lecture on the importance of respecting border lines.",
+                "text": "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border. While p_l understands that it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/give/gives} the apprentice a firm lecture on the importance of respecting border lines.",
                 "exp": 10,
                 "other_clan_rep": 2,
                 "frequency": 4
@@ -1374,8 +1374,9 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -1384,7 +1385,8 @@
                     "log": {
                         "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                }],
+                    }
+                ],
                 "exp": 0,
                 "injury": [
                     {
@@ -1408,8 +1410,9 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -1838,8 +1841,9 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [
+                {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -1872,8 +1876,9 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -1882,7 +1887,8 @@
                     "log": {
                         "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                }],
+                }
+            ],
                 "exp": 0,
                 "injury": [
                     {
@@ -2302,8 +2308,9 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -2336,8 +2343,9 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -2766,8 +2774,9 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -2800,8 +2809,9 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -3230,7 +3240,7 @@
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -3254,8 +3264,9 @@
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
@@ -3607,7 +3618,7 @@
                 "frequency": 4
             },
             {
-                "text": "Sick of app1's useless ambling, s_c orders {PRONOUN/app1/object} to steal from o_c_n's territory. app1 hesitates — surely stealing prey from other Clans is wrong? Looking anxiously across the border, app1 shakes {PRONOUN/app1/poss} head. {PRONOUN/app1/subject/CAP} won't do it. Startled by app1's refusal, s_c stalks off to continue the patrol, fuming — and maybe a tiny bit impressed.",
+                "text": "Sick of app1's useless ambling, s_c orders {PRONOUN/app1/object} to steal from o_c_n's territory. app1 hesitates — surely stealing prey from other Clans is wrong? Looking anxiously across the border, app1 shakes {PRONOUN/app1/poss} head. {PRONOUN/app1/subject/CAP} won't do it. s_c stalks off to continue the patrol, fuming but slightly impressed.",
                 "exp": 10,
                 "can_have_stat": [
                     "p_l"
@@ -4107,7 +4118,7 @@
                 "frequency": 4
             },
             {
-                "text": "app1 doesn't get the chance to meow hello to the o_c_n apprentice — s_c hisses and arches {PRONOUN/s_c/poss} back, staring down the other patrol. The o_c_n warriors respond in kind, fluffing out their pelts and slitting their eyes. Tension hangs heavy in the air, and both patrols spend more time posturing than border-marking.",
+                "text": "app1 doesn't get the chance to meow hello to the o_c_n apprentice, because s_c hisses and arches {PRONOUN/s_c/poss} back, staring down the other patrol. The o_c_n warriors respond in kind, fluffing out their pelts and slitting their eyes. Tension hangs heavy in the air, and both patrols spend more time posturing than border-marking.",
                 "exp": 15,
                 "art": "gen_bord_twocat_hostile_app_warrior",
                 "stat_trait": [
@@ -4376,7 +4387,7 @@
                 "frequency": 4
             },
             {
-                "text": "o_c_n came looking for a fight, and app1 is eager to give it to them. The rest of {PRONOUN/app1/poss} patrol has no choice but to back {PRONOUN/app1/object} up; they can't let an apprentice get shredded. The skirmish rages until most of them are bloodied and panting — neither patrol wants to admit defeat, but if things escalate any further, they might be carrying their Clanmates home for a vigil.",
+                "text": "o_c_n came looking for a fight, and app1 is eager to give it to them. The rest of {PRONOUN/app1/poss} patrol has no choice but to back {PRONOUN/app1/object} up; they can't let an apprentice get shredded. The skirmish rages until most of them are bloody and panting. Neither patrol wants to admit defeat, but if things escalate any further, they might be carrying their Clanmates home for a vigil.",
                 "exp": 0,
                 "art": "gen_battle_app_other_clan",
                 "other_clan_rep": -2,
@@ -4516,7 +4527,7 @@
                     "charismatic"
                 ],
                 "can_have_stat": [
-                    "adult"
+                    "p_l"
                 ],
                 "relationships": [
                     {
@@ -4841,12 +4852,12 @@
         "pl_skill_constraint": [
             "LORE,1"
         ],
-        "intro_text": "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale — <i>if</i> they can all sit still for it!",
+        "intro_text": "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale <i>if</i> they can all sit still for it!",
         "decline_text": "The apprentices can't sit still, but it's no great loss, the patrol just continue on with their work.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small — the savior of her Clan, marked with moth wings tucked behind her ear.",
+                "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small, and the savior of her Clan, marked with moth wings tucked behind her ear.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4,
@@ -4873,7 +4884,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up. p_l's storytelling skills are wasted — though the o_c_n cats seem to appreciate the attempt.",
+                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up. p_l's storytelling skills are wasted, though the o_c_n cats seem to appreciate the attempt.",
                 "exp": 0,
                 "other_clan_rep": 0,
                 "frequency": 4
@@ -4881,7 +4892,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage in her own eyes, she nevertheless rose to the occasion when her Clan needed her — as would <i>any</i> c_n warrior, p_l warns the o_c_n patrol.",
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage in her own eyes, she nevertheless rose to the occasion when her Clan needed her, as would <i>any</i> c_n warrior, p_l warns the o_c_n patrol.",
                 "exp": 10,
                 "other_clan_rep": -2,
                 "frequency": 4
@@ -4889,7 +4900,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she — Oh, she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border.",
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she — So she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border.",
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4
