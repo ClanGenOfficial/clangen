@@ -478,8 +478,6 @@ class PatrolOutcome:
             gm_modifier = 1
         elif game.clan.game_mode == "expanded":
             gm_modifier = 3
-        elif game.clan.game_mode == "cruel season":
-            gm_modifier = 6
         else:
             gm_modifier = 1
 
@@ -730,11 +728,17 @@ class PatrolOutcome:
 
         change_clan_relations(patrol.other_clan, self.other_clan_rep)
         if self.other_clan_rep > 0:
-            return i18n.t("screens.patrol.clan_rep_improved", clan=patrol.other_clan)
+            return i18n.t(
+                "screens.patrol.clan_rep_improved", clan=patrol.other_clan.name
+            )
         elif self.other_clan_rep == 0:
-            return i18n.t("screens.patrol.clan_rep_neutral", clan=patrol.other_clan)
+            return i18n.t(
+                "screens.patrol.clan_rep_neutral", clan=patrol.other_clan.name
+            )
         else:
-            return i18n.t("screens.patrol.clan_rep_worsened", clan=patrol.other_clan)
+            return i18n.t(
+                "screens.patrol.clan_rep_worsened", clan=patrol.other_clan.name
+            )
 
     def _handle_herbs(self, patrol: "Patrol") -> str:
         """Handle giving herbs"""
@@ -1009,7 +1013,7 @@ class PatrolOutcome:
             history_text = (
                 history_text
                 if "o_c_n" not in history_text
-                else history_text.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
+                else history_text.replace("o_c_n", patrol.other_clan.name)
             )
 
             cat.history.add_scar(history_text)
@@ -1039,16 +1043,14 @@ class PatrolOutcome:
             final_death_history = (
                 final_death_history
                 if "o_c_n" not in final_death_history
-                else final_death_history.replace(
-                    "o_c_n", f"{str(patrol.other_clan.name)}Clan"
-                )
+                else final_death_history.replace("o_c_n", patrol.other_clan.name)
             )
 
         if history_scar and isinstance(history_scar, str):
             history_scar = (
                 history_scar
                 if "o_c_n" not in history_scar
-                else history_scar.replace("o_c_n", f"{str(patrol.other_clan.name)}Clan")
+                else history_scar.replace("o_c_n", patrol.other_clan.name)
             )
 
         cat.history.add_possible_history(
@@ -1068,7 +1070,7 @@ class PatrolOutcome:
 
         if final_death_history and isinstance(final_death_history, str):
             final_death_history = final_death_history.replace(
-                "o_c_n", f"{str(patrol.other_clan.name)}Clan"
+                "o_c_n", patrol.other_clan.name
             )
 
         cat.history.add_death(death_text=final_death_history)

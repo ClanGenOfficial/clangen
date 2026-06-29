@@ -1,0 +1,151 @@
+[
+    {
+        "id": "comfort_de_high1",
+        "strings": [
+            "m_c bristles after being scolded by r_c.",
+            "r_c laughs at something m_c said that shouldn't have been laughed at.",
+            "m_c sees r_c neglect a Clanmate.",
+            "m_c doesn't think that r_c's smile is genuine.",
+            "Every muscle in m_c's body tenses when r_c walks by.",
+            "m_c keeps having bad dreams about r_c.",
+            "m_c always notices r_c lurking nearby.",
+            "m_c badly misinterprets r_c's words.",
+            "r_c keeps pacing around the clearing late at night and m_c is the only one who notices.",
+            "r_c told m_c something awful, and m_c may never look at {PRONOUN/r_c/object} quite the same.",
+            "m_c is discomforted by r_c's muttering.",
+            "m_c feels extremely unsettled when r_c looks at {PRONOUN/m_c/object}.",
+            "m_c can't stop thinking about the way r_c glared at {PRONOUN/r_c/object} Clanmate."
+        ]
+    },
+    {
+        "id": "comfort_de_high2",
+        "strings": [
+            "m_c is telling jokes about r_c.",
+            "r_c won't tell m_c what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing.",
+            "The Clan feels uneasy whenever m_c and r_c speak to each other.",
+            "m_c and r_c are joking around together, but the jokes are becoming targeted.",
+            "During a conversation with r_c, m_c says something too bluntly.",
+            "m_c scolds r_c for not telling anyone about a piece of crowfood in the pile.",
+            "r_c thinks m_c is lying when {PRONOUN/m_c/subject} {VERB/m_c/apologize/apologizes} for something.",
+            "m_c and r_c have a long discussion about goals and aspirations, and find that they don't agree on many things.",
+            "m_c tells r_c that {PRONOUN/r_c/subject} {VERB/r_c/look/looks} terrible today.",
+            "m_c was sarcastic to r_c at an inappropriate time.",
+            "m_c hisses at r_c over something small."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "id": "comfort_de_high3",
+        "strings": [
+            "m_c shivers after noticing r_c following {PRONOUN/m_c/object} around like a shadow.",
+            "m_c feels a chill after noticing r_c is nearby.",
+            "Watching r_c stalk silently around camp makes m_c feel uneasy.",
+            "m_c doesn't like the way r_c seems to overwhelm the camp with {PRONOUN/r_c/poss} presence.",
+            "Even though r_c is a respectable Clanmate, m_c can't help but think {PRONOUN/r_c/subject} might be up to no good...",
+            "m_c swore {PRONOUN/m_c/subject} saw r_c burying something.",
+            "m_c can smell blood on r_c, but there's nothing there.",
+            "m_c sees a darkness in r_c's eyes.",
+            "A heavy feeling of guilt weighs on m_c whenever {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} kind to r_c.",
+            "The bad dreams that m_c has about r_c are progressively getting worse and worse.",
+            "m_c wonders why they always see r_c out of {PRONOUN/r_c/poss} den at night."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "vengeful"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "comfort_de_high4",
+        "strings": [
+            "m_c doesn't like the way that r_c seems to enjoy {PRONOUN/r_c/poss} influence over the Clan.",
+            "Much to m_c's dismay, r_c has asked {PRONOUN/m_c/object} to do another difficult task.",
+            "m_c thinks that r_c is casting a dark shadow over the whole Clan's reputation.",
+            "m_c noticed that things have gotten more tense since r_c earned {PRONOUN/r_c/poss} rank.",
+            "When r_c addresses the Clan, m_c notices a frightening edge to {PRONOUN/r_c/poss} tone.",
+            "m_c is worried that r_c might be sending the Clan down a dark path."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "leader",
+                    "deputy"
+                ],
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "vengeful"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "comfort_de_high5",
+        "strings": [
+            "m_c notices that r_c doesn't seem to care if {PRONOUN/r_c/poss} treatments hurt.",
+            "m_c overhears r_c complaining about giving herbs to cats that don't 'deserve' them.",
+            "m_c is startled at r_c's views on sharing herbs with other Clans.",
+            "m_c noticed that there are less deathberries than usual in r_c's herb storage.",
+            "m_c feels more nauseous after being treated r_c for a stomach ache.",
+            "m_c catches r_c doing experimental treatments on a piece of fresh-kill.",
+            "m_c bristles after seeing r_c add more deathberries to {PRONOUN/r_c/poss} herb storage."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "vengeful"
+                    ]
+                }
+            }
+        }
+    }
+]

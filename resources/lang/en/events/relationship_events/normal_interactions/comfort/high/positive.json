@@ -1,0 +1,145 @@
+[
+    {
+        "id": "comfortable_kit_parent_inc_high",
+        "strings": [
+            "m_c stays snuggled up with r_c all morning.",
+            "m_c never wants to leave r_c's side.",
+            "r_c is the first cat that m_c tells anything.",
+            "m_c knows r_c will always love {PRONOUN/m_c/object}, no matter what.",
+            "m_c confides all {PRONOUN/m_c/poss} hopes and dreams in r_c."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "comfort_inc_high1",
+        "strings": [
+            "m_c appreciates how r_c always seems to ask how {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing.",
+            "r_c's words of comfort mean more to m_c than {PRONOUN/r_c/subject} {VERB/r_c/know/knows}.",
+            "m_c gets excellent advice from r_c about something {PRONOUN/m_c/subject} had been worrying about.",
+            "r_c says something very sincere and comforting to m_c.",
+            "m_c can tell r_c worries about {PRONOUN/m_c/poss} health and safety.",
+            "m_c overhears r_c saying something nice about {PRONOUN/m_c/object}.",
+            "m_c has had a lot of good dreams about r_c lately.",
+            "Whenever r_c's name is mentioned, m_c relaxes.",
+            "m_c's Clanmates notice that {PRONOUN/m_c/subject} {VERB/m_c/talk/talks} a lot about r_c.",
+            "r_c compliments m_c on something {PRONOUN/m_c/subject} {VERB/m_c/were/was} self-conscious about.",
+            "m_c associates {PRONOUN/m_c/poss} favorite smell with r_c.",
+            "m_c and r_c find out they're both bringing flowers to the same Clanmate's grave."
+        ]
+    },
+    {
+        "id": "comfort_inc_high2",
+        "strings": [
+            "m_c is sharing tongues with r_c.",
+            "m_c offers to groom a hard-to-reach place for r_c, who thanks {PRONOUN/m_c/object} earnestly.",
+            "m_c and r_c spend a few minutes complimenting one another.",
+            "m_c spends the day helping around the camp with r_c.",
+            "m_c and r_c gossip about drama nobody else knows.",
+            "m_c talks to r_c about a mutual friend they have both been worrying about.",
+            "m_c asks r_c to look at a little cut on {PRONOUN/m_c/poss} leg.",
+            "After something unsettling happens, m_c and r_c find comfort in one another's company."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "comfort_inc_high3",
+        "strings": [
+            "m_c feels most like {PRONOUN/m_c/self} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} around r_c.",
+            "m_c could recognize r_c just by the sound of {PRONOUN/r_c/poss} paw steps.",
+            "m_c finds peace in r_c's company when it can't be found anywhere else.",
+            "When m_c panics about something, {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} of r_c to feel better.",
+            "m_c wakes up r_c every morning so they're up together.",
+            "m_c and r_c share their prey with one another every day.",
+            "m_c and r_c know more about each other than anyone else.",
+            "m_c and r_c have multiple inside jokes with one another."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "relates_to"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "comfort_inc_high4",
+        "strings": [
+            "m_c helps r_c work through something difficult that happened to {PRONOUN/r_c/object}.",
+            "m_c comforts r_c after a terrible nightmare.",
+            "When r_c gets sick for a few days, m_c brings {PRONOUN/r_c/object} fresh-kill and bedding.",
+            "r_c knows secrets about m_c that {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} told anyone else.",
+            "m_c always goes to r_c first when {PRONOUN/m_c/subject} needs advice."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "relates_to"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "trust"
+                ],
+                "amount": 15
+            }
+        ]
+    }
+]

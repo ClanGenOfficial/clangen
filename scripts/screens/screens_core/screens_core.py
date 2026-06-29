@@ -180,14 +180,14 @@ def rebuild_top_menu_buttons():
     # menu_buttons["events"].change_layer(menu_buttons["dens"].get_starting_height() + 5)
 
     menu_buttons["patrols"] = UISurfaceImageButton(
-        ui_scale(pygame.Rect((-46, 60), (86, 30))),
+        ui_scale(pygame.Rect((0, 60), (86, 30))),
         "screens.core.patrol",
         get_button_dict(ButtonStyles.MENU_RIGHT, (86, 30)),
         visible=False,
         manager=MANAGER,
         object_id="#patrol_button",
         starting_height=6,
-        anchors={"left": "left", "left_target": menu_buttons["dens"]},
+        anchors={"left": "left", "left_target": menu_buttons["dens"].parent_button},
     )
     menu_buttons["main_menu"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((25, 25), (153, 30))),

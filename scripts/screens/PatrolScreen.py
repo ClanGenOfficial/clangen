@@ -96,7 +96,7 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
             self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 self.change_screen(GameScreen.LIST)
             # elif event.key == pygame.K_RIGHT:
@@ -306,10 +306,6 @@ class PatrolScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        self.set_disabled_menu_buttons(["patrols"])
-        self.update_heading_text(f"{game.clan.displayname}Clan")
-        self.show_mute_buttons()
-        self.show_menu_buttons()
 
         if (
             self.in_progress_data is not None
@@ -320,6 +316,11 @@ class PatrolScreen(Screens):
         else:
             self.in_progress_data = None
             self.open_choose_cats_screen()
+
+        self.set_disabled_menu_buttons(["patrols"])
+        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.name})
+        self.show_mute_buttons()
+        self.show_menu_buttons()
 
     def display_change_save(self) -> Dict:
         if self.start_patrol_thread is not None and self.start_patrol_thread.is_alive():
@@ -856,17 +857,20 @@ class PatrolScreen(Screens):
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
         for x in self.patrol_obj.patrol_cats:
-            if x.personality.trait not in traits:
-                traits.append(x.personality.trait)
+            if (t := i18n.t(f"cat.personality.{x.personality.trait}")) not in traits:
+                traits.append(t)
 
-            if x.skills.primary and x.skills.primary.get_short_skill() not in skills:
-                skills.append(x.skills.primary.get_short_skill())
+            if (
+                x.skills.primary
+                and (skill := x.skills.primary.get_short_skill_string()) not in skills
+            ):
+                skills.append(skill)
 
             if (
                 x.skills.secondary
-                and x.skills.secondary.get_short_skill() not in skills
+                and (skill := x.skills.secondary.get_short_skill_string()) not in skills
             ):
-                skills.append(x.skills.secondary.get_short_skill())
+                skills.append(skill)
 
         self.elements["patrol_info"] = pygame_gui.elements.UITextBox(
             "screens.patrol.label_patrol_info",
@@ -1130,18 +1134,20 @@ class PatrolScreen(Screens):
             for x in self.current_patrol:
                 if (
                     x.skills.primary
-                    and x.skills.primary.get_short_skill() not in patrol_skills
+                    and x.skills.primary.get_short_skill_string() not in patrol_skills
                 ):
-                    patrol_skills.append(x.skills.primary.get_short_skill())
+                    patrol_skills.append(x.skills.primary.get_short_skill_string())
 
                 if (
                     x.skills.secondary
-                    and x.skills.secondary.get_short_skill() not in patrol_skills
+                    and x.skills.secondary.get_short_skill_string() not in patrol_skills
                 ):
-                    patrol_skills.append(x.skills.secondary.get_short_skill())
+                    patrol_skills.append(x.skills.secondary.get_short_skill_string())
 
-                if x.personality.trait not in patrol_traits:
-                    patrol_traits.append(x.personality.trait)
+                if (
+                    t := i18n.t(f"cat.personality.{x.personality.trait}")
+                ) not in patrol_traits:
+                    patrol_traits.append(t)
 
         self.elements["skills_box"].set_text(
             "screens.patrol.current_patrol_info",

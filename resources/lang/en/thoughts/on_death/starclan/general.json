@@ -1,7 +1,7 @@
 [
     {
         "id": "general_death_starclan_thoughts",
-        "thoughts": [
+        "strings": [
             "Is surprised to find {PRONOUN/m_c/self} walking the stars of Silverpelt",
             "Is begging StarClan to send {PRONOUN/m_c/object} back",
             "Is watching {PRONOUN/m_c/poss} own vigil",
@@ -18,14 +18,33 @@
     },
     {
         "id": "parent_death_to_newborn",
-        "thoughts": [
+        "strings": [
             "Clings to the warmth of {PRONOUN/m_c/poss} litter",
             "Doesn't want to leave {PRONOUN/m_c/poss} litter behind",
             "Is happy {PRONOUN/m_c/poss} litter gets to grow up even if it is without {PRONOUN/m_c/object}",
             "Sobs knowing {PRONOUN/m_c/poss} kits won't grow up knowing {PRONOUN/m_c/object}",
             "Feels at peace knowing {PRONOUN/m_c/poss} Clanmates will care for {PRONOUN/m_c/poss} kits"
         ],
-        "random_age_constraint": ["newborn"],
-        "relationship_constraint": ["parent/child"]
+        "involved_cats": {
+            "r_c": {
+                "age": [
+                    "newborn"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
+        ]
     }
 ]

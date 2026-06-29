@@ -74,7 +74,7 @@ class ClanScreen(Screens):
             else:
                 self.menu_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 self.change_screen(GameScreen.LIST)
             elif event.key == pygame.K_LEFT:
@@ -98,7 +98,7 @@ class ClanScreen(Screens):
         self.choose_cat_positions()
 
         self.set_disabled_menu_buttons(["camp_screen"])
-        self.update_heading_text(f"{game.clan.displayname}Clan")
+        self.update_heading_text(game.clan.name)
         self.show_menu_buttons()
         Screens.menu_buttons["back_to_camp"].hide()
 
