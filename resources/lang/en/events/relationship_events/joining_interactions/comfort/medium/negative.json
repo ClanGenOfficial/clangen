@@ -2,7 +2,7 @@
     {
         "id": "gen_comfort_med_neg1",
         "strings": [
-			"r_c makes an off-putting comment after m_c introduces {PRONOUN/m_c/self}."
+			"r_c made an off-putting comment after m_c introduced {PRONOUN/m_c/self}."
         ]
     }
 ]

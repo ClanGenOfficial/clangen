@@ -2,7 +2,7 @@
     {
         "id": "gen_romance_low_neg1",
         "strings": [
-			"m_c doesn't spare r_c a second glance."
+			"m_c didn't spare r_c a second glance."
         ],
         "relationship_changes": [
             {

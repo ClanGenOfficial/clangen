@@ -2,7 +2,7 @@
     {
         "id": "gen_like_low_inc1",
         "strings": [
-            "r_c welcomes m_c into the Clan."
+            "r_c welcomed m_c into the Clan."
         ],
         "relationship_changes": [
             {
