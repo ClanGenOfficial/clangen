@@ -1,9 +1,16 @@
 [
     {
-        "id": "gen_like_med_dec1",
+        "id": "gen_like_med_inc1",
         "strings": [
 			"r_c sees m_c arrive in the Clan and {PRONOUN/r_c/subject} {VERB/r_c/offer/offers} to show {PRONOUN/m_c/object} around.",
 			"r_c asks m_c if {PRONOUN/m_c/subject} could use some help getting introduced to the other Clan members."
+        ]
+    },
+    {
+        "id": "medicine_like_med_inc1",
+        "strings": [
+            "r_c offers herbs lessons to m_c in case {PRONOUN/m_c/subject} {VERB/m_c/aren/isn}'t familiar with the more dangerous plants in the territory.",
+            "r_c introduces {PRONOUN/r_c/self} as c_n's medicine cat and asks m_c to let {PRONOUN/r_c/object} know if m_c ever feels ill."
         ]
     }
 ]
