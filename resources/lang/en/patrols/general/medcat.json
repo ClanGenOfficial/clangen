@@ -37706,5 +37706,145 @@
       "art": "gen_med_rainygathering"
     }
   ]
-}
+},
+  {
+        "patrol_id": "gen_med_gatheringwildgarlic_leaf-fall3",
+        "biome": [
+            "-desert"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "types": [
+            "herb_gathering"
+        ],
+        "tags": [],
+        "patrol_art": "med_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "healer cats": [1, 4],
+            "normal adult": [2, 5]
+        },
+        "frequency": 4,
+        "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l leads a gathering patrol to do just that.",
+        "decline_text": "They're stopped before they leave camp — these warriors are needed elsewhere. p_l's expedition will have to wait.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "The garlic won't notice leaf-bare until it actually hits — one of its good traits that make up for its stinkiness. p_l and the patrol are able to bring a good harvest of both garlic and mallow home.",
+                "exp": 10,
+                "herbs": [
+                    "mallow",
+                    "wild_garlic"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to worked together to gather wild garlic and mallow."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them literally always resulting in either their patient or their loved ones complaining about the smell. The patrol looks a little disgusted, but they're still a great help to p_l for gathering it. Thankfully, the mallow that was gathered is a lot more appreciated by members of the Clan suffering from bellyaches.",
+                "exp": 10,
+                "herbs": [
+                    "many_herbs",
+                    "mallow",
+                    "wild_garlic"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to's help and minimal complaining while gathering wild garlic."
+                        }
+                    }
+                ],
+                "frequency": 1
+            },
+            {
+                "text": "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for {PRONOUN/s_c/poss} patrol to harvest. To the medicine cat's delight, a mallow patch was growing not too far off.",
+                "exp": 10,
+                "stat_skill": [
+                    "SENSE,2"
+                ],
+                "herbs": [
+                    "many_herbs",
+                    "mallow",
+                    "wild_garlic"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "s_c"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's sharp senses while helping {PRONOUN/cat_to/object} gather wild garlic."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Try as {PRONOUN/p_l/subject} might, p_l can't quite remember the exact shape of the garlic leaves, and {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't going to harvest from plants {PRONOUN/p_l/subject} {VERB/p_l/have/has}n't confidently identified. Better safe than sorry, as they say.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from lost faith in cat_to when cat_to admitted to not being able to identify wild garlic during an herb-gathering patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            }
+        ]
+    }
 ]
