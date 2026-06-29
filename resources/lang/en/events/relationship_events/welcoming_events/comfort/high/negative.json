@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "id": "gen_comfort_high_neg1",
+        "strings": [
+			"r_c hisses when m_c tries to introduce {PRONOUN/m_c/self}.",
+            "r_c makes it clear that {PRONOUN/r_c/subject} don't agree with m_c joining the Clan."
+        ]
+    }
+]
