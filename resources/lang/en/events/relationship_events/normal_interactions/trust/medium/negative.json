@@ -1,0 +1,125 @@
+[
+    {
+        "id": "trust_de_med1",
+        "strings": [
+            "m_c knows that r_c just lied!",
+            "m_c worries about how capable r_c is.",
+            "r_c gave m_c a gift that doesn't make sense.",
+            "r_c forgot something important about m_c.",
+            "r_c keeps calling m_c by the wrong name.",
+            "m_c is disappointed when r_c doesn't uphold a promise.",
+            "r_c sides with a Clanmate instead of m_c on something.",
+            "m_c thinks that r_c spread a rumor about {PRONOUN/m_c/object}.",
+            "m_c doesn't think that r_c's intentions are all pure.",
+            "r_c tries to convince m_c that an obvious lie is real.",
+            "r_c said something about a Clanmate that concerned m_c.",
+            "m_c knows that r_c fake-laughed at {PRONOUN/m_c/poss} joke.",
+            "m_c doubts r_c would be able to protect {PRONOUN/m_c/object} if something went wrong.",
+            "m_c swears {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c sneaking around the camp at night.",
+            "r_c keeps making excuses about something m_c wants to know.",
+            "m_c can't seem to get a straight answer from r_c lately.",
+            "m_c starts to see flaws in r_c's philosophies.",
+            "r_c let m_c down when m_c was counting on {PRONOUN/r_c/object}."
+        ]
+    },
+    {
+        "id": "trust_de_med2",
+        "strings": [
+            "m_c said {PRONOUN/m_c/subject}'d cover for r_c, but when it came time, {PRONOUN/m_c/subject} got r_c in trouble.",
+            "r_c doesn't want to apologize to m_c for something.",
+            "r_c asks m_c to stop following {PRONOUN/r_c/object} around.",
+            "r_c keeps avoiding eye contact with m_c.",
+            "m_c learns that r_c has been misleading {PRONOUN/m_c/object} about something trivial.",
+            "r_c does something that badly affects m_c.",
+            "r_c volunteers m_c for something that {PRONOUN/m_c/subject} didn't want to do...",
+            "m_c and r_c can't seem to agree on the truth about something.",
+            "m_c asks r_c about a lie r_c told, but {PRONOUN/r_c/subject} {VERB/r_c/dodge/dodges} the question.",
+            "m_c realizes that r_c's been avoiding {PRONOUN/m_c/object}.",
+            "m_c knows that r_c is hiding something.",
+            "m_c was convinced that r_c was lying about something, but r_c wasn't."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "trust_de_med3",
+        "strings": [
+            "r_c is gossiping about m_c.",
+            "r_c tries to dig into one of m_c's secrets.",
+            "m_c finds r_c trying to eavesdrop into one of {PRONOUN/m_c/poss} conversations.",
+            "m_c wakes up to r_c trying to steal a piece of {PRONOUN/m_c/poss} nest.",
+            "m_c is spreading a rumor about r_c."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "sneaky",
+                        "childish",
+                        "vengeful"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "trust_kit_de_med1",
+        "strings": [
+            "m_c is constantly pulling pranks on r_c.",
+            "m_c always shifts the blame to r_c!",
+            "m_c won't stop crying whenever r_c starts winning in a game.",
+            "m_c grins while r_c is being scolded by an older Clanmate.",
+            "m_c is relentlessly pestering r_c."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    }
+]

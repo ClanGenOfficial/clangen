@@ -1,0 +1,253 @@
+[
+    {
+        "id": "respect_inc_high0",
+        "strings": [
+            "m_c thinks the Clan's ancestors smile upon r_c.",
+            "m_c is proud to be in the same Clan as r_c.",
+            "m_c can't believe how talented r_c is!",
+            "m_c believes r_c has endless potential {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} surpassing every day.",
+            "m_c is deeply touched hearing just how much r_c remembers about {PRONOUN/m_c/object}.",
+            "m_c asked r_c for {PRONOUN/r_c/poss} opinion on a topic and had a surprisingly insightful conversation."
+        ]
+    },
+    {
+        "id": "respect_inc_high1",
+        "strings": [
+            "m_c saw r_c show off a skill {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/subject} had.",
+            "m_c is impressed by r_c's competence in any situation.",
+            "m_c is amazed at how skilled r_c really is.",
+            "m_c overhears r_c educating Clanmates about their fallen ancestors."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "warrior",
+                    "medicine cat",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        }
+    },
+    {
+        "id": "respect_inc_high2",
+        "strings": [
+            "m_c is wowed by how bravely r_c fought the other day."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "warrior",
+                    "apprentice",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        }
+    },
+    {
+        "id": "respect_inc_high2",
+        "strings": [
+            "m_c had a difficult conversation with r_c and they now have a deeper understanding of each other.",
+            "m_c and r_c have a long discussion about goals and aspirations, and find that they both have a lot in common.",
+            "m_c spent a long time talking with r_c and was impressed by r_c's insight.",
+            "m_c and r_c debated something interesting for hours yesterday.",
+            "m_c asks r_c about something complicated and is amazed at how quickly r_c understands.",
+            "m_c and r_c strive to be like one another.",
+            "m_c and r_c learn a lot about each other when they're stuck in a den during a storm.",
+            "A cloud parts over m_c and r_c, shining a light on them. They interpret this as a sign that they are meant for great things soon.",
+            "When discussing the future, m_c and r_c discuss the policies they'd implement in a Clan of their own.",
+            "m_c and r_c always challenge one another.",
+            "m_c and r_c always learn something new when they're together.",
+            "An injured butterfly lands in front of m_c and r_c. They take turns nurturing it for a few days until it can fly again."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "comfort"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "respect_inc_high3",
+        "strings": [
+            "m_c defends r_c from a Clanmate's rude remarks.",
+            "r_c's name comes up in a heated conversation, and m_c is the first to stand up for {PRONOUN/r_c/object}.",
+            "In the middle of an argument, m_c tells r_c that they'll still always be friends.",
+            "m_c calls out a Clanmate for spreading a rumor about r_c.",
+            "m_c and r_c agree with each other when no one else does."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "respects"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "trust"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "respect_kit_inc_high1",
+        "strings": [
+            "m_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really going to be the leader someday."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "deputy"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "respect_incfromneg_high1",
+        "strings": [
+            "m_c is really surprised that r_c's life isn't as easy as {PRONOUN/m_c/subject} thought it was.",
+            "m_c realizes that {PRONOUN/m_c/subject} and r_c have had a lot of the same hardships.",
+            "m_c learns about r_c's struggles and is surprised how well {PRONOUN/r_c/subject} {VERB/r_c/carry/carries} {PRONOUN/r_c/self}.",
+            "m_c notices that r_c is never congratulated for {PRONOUN/r_c/poss} accomplishments as much as everyone else.",
+            "m_c hears r_c crying over something everyone downplayed the severity of.",
+            "m_c realizes that r_c would put {PRONOUN/r_c/poss} life on the line for a Clanmate.",
+            "m_c learns how much effort r_c put into learning something.",
+            "m_c can hear the truth in r_c's words when {PRONOUN/r_c/subject} {VERB/r_c/talk/talks} about protecting others.",
+            "m_c reconsiders {PRONOUN/m_c/poss} jealousy of r_c."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "envies"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "respect_incfromneg_high2",
+        "strings": [
+            "m_c and r_c learn a skill from each other that they've been envious about.",
+            "m_c and r_c realize their jealousy of each other is unfounded.",
+            "m_c and r_c have a tough conversation about their envy of each other."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "envies"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "respect_incfromneg_high3",
+        "strings": [
+            "The intensity of m_c's resentment toward r_c has waned.",
+            "m_c flinches less in r_c's presence than usual.",
+            "Though m_c isn't sure {PRONOUN/m_c/subject}'ll ever respect r_c, {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to try to lay some of {PRONOUN/m_c/poss} resentment to rest."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "resents"
+                ]
+            }
+        ]
+    }
+]

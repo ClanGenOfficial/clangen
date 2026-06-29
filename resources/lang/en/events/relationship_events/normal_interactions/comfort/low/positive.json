@@ -1,0 +1,80 @@
+[
+    {
+        "id": "comfort_inc_low1",
+        "strings": [
+            "m_c finds a bit of fluff that smells like r_c and adds it to {PRONOUN/m_c/poss} nest.",
+            "m_c has a friendly chat with r_c that leaves them both feeling happy.",
+            "r_c's laugh reminds m_c of someone {PRONOUN/m_c/subject} {VERB/m_c/miss/misses}.",
+            "m_c overhears r_c humming a comforting tune.",
+            "r_c brought m_c some dry bedding.",
+            "m_c and r_c chat about Clan news.",
+            "m_c talks with r_c about some Clan drama.",
+            "m_c is asking r_c interesting questions.",
+            "m_c learns something new about a Clanmate from r_c.",
+            "r_c lets m_c grab a piece of fresh-kill first.",
+            "m_c had a good dream about r_c.",
+            "m_c remembers something nice that r_c did.",
+            "m_c sees a pretty flower in r_c's nest.",
+            "m_c heard a story about something kind r_c did.",
+            "When m_c and r_c realize they've been grooming their pelts the same way, they laugh about it.",
+            "m_c learns some pelt-grooming techniques from r_c, and tells r_c some of {PRONOUN/m_c/poss} own."
+        ]
+    },
+    {
+        "id": "comfort_inc_low2",
+        "strings": [
+            "m_c quickly apologizes after bumping into r_c. They have a small laugh about it.",
+            "m_c has been spending time with r_c lately.",
+            "m_c shares a joke about a neighboring Clan with r_c.",
+            "m_c reassures r_c about something that was bothering {PRONOUN/r_c/object}.",
+            "m_c likes to sit near r_c during conversations.",
+            "m_c and r_c often look at each other and smile knowingly about something.",
+            "m_c and r_c enjoy the rain together.",
+            "r_c gives advice to m_c. It's not good advice, but m_c appreciates the effort.",
+            "r_c gives m_c something that {PRONOUN/m_c/subject} dropped.",
+            "m_c learns that r_c is scared of thunder, too.",
+            "m_c and r_c drink from the same puddle.",
+            "m_c and r_c make each other laugh."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "comfort_inc_low3",
+        "strings": [
+            "m_c is asking r_c to check {PRONOUN/m_c/object} for ticks.",
+            "m_c tells r_c stories about former Clanmates while being checked for ticks.",
+            "m_c appreciates r_c's diligence when checking {PRONOUN/m_c/object} for ticks.",
+            "r_c knows just the right herb to soothe m_c's aching bones.",
+            "r_c is always so patient when m_c approaches {PRONOUN/r_c/object} with pain.",
+            "m_c is happy to see r_c is the cat who is helping {PRONOUN/m_c/object} today."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "elder"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "medicine apprentice",
+                    "mediator apprentice"
+                ]
+            }
+        }
+    }
+]

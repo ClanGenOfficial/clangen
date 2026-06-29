@@ -1,6 +1,24 @@
 {
-  "card1": {
-    "card_art": "file_path",
+  "danger_placeholder0": {
+    "card_art": "danger/death.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "danger_placeholder1": {
+    "card_art": "danger/blood.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "danger_placeholder2": {
+    "card_art": "danger/hanged.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "danger_placeholder3": {
+    "card_art": "danger/tower.png",
     "modifiers": {
       "mod_name": 1
     }
