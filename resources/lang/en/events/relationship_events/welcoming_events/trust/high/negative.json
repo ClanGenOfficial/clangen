@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "id": "gen_trust_high_neg1",
+        "strings": [
+			"It seems unsavory rumors have been spreading about m_c. {PRONOUN/m_c/subject/CAP} discover r_c is behind it."
+        ]
+    }
+]
