@@ -20,15 +20,23 @@ class HealthDict(TypedDict, total=False):
     must_be_acquired: bool
 
 
-class InvolvedCatDict(TypedDict):
-    status: NotRequired[list[str]]
-    past_status: NotRequired[list[str]]
-    age: NotRequired[list[str]]
-    group: NotRequired[list[str]]
-    standing: NotRequired[StandingDict]
-    stat: NotRequired[StatDict]
-    health: NotRequired[HealthDict]
-    backstory: NotRequired[list[str]]
+class CanCreateNewCatDict(TypedDict, total=False):
+    become_litter: bool
+    assign_blood_parent: list[str]
+    assign_adoptive_parent: list[str]
+    assign_mate: list[str]
+
+
+class InvolvedCatDict(TypedDict, total=False):
+    can_create_new_cat: CanCreateNewCatDict
+    status: list[str]
+    past_status: list[str]
+    age: list[str]
+    group: list[str]
+    standing: StandingDict
+    stat: StatDict
+    health: HealthDict
+    backstory: list[str]
 
 
 class RelationshipConstraintDict(TypedDict):
@@ -71,6 +79,15 @@ class InjuryDict(TypedDict):
 
 class LostDict(TypedDict):
     cats: list[str]
+    # i know this feels unnecessary as a dict, but i'd like it to follow the structure of the other cat "consequences" (death/injury)
+    # and eventually i think we should be dictating a history snippet for when cats get lost
+
+
+class JoinDict(TypedDict):
+    cats: list[str]
+    change_name: NotRequired[bool]
+    keep_name: NotRequired[bool]
+    new_status: NotRequired[list[str]]
 
 
 class SupplyDict(TypedDict):
@@ -85,5 +102,12 @@ class SupplyDict(TypedDict):
         "increase_small",
         "increase_medium",
         "increase_large",
-        "increase_huge"
+        "increase_huge",
     ]
+
+
+class FutureEventDict(TypedDict):
+    event_type: str
+    pool: dict
+    moon_delay: tuple[int, int]
+    involved_cats: dict
