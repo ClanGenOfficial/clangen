@@ -519,6 +519,7 @@ class Status:
         self,
         new_group_ID: str,
         age: CatAge = None,
+        become_rank: CatRank = None,
         standing_with_past_group: CatStanding = CatStanding.KNOWN,
     ):
         """
@@ -530,6 +531,7 @@ class Status:
         :param new_group_ID: The group_ID for the group the cat will be joining
         :param age: The current age stage of the cat, required if cat is going into a group that will require a rank
         change
+        :param become_rank: If you'd like to require a certain rank is taken, you can specify it here. Note that this shouldn't be necessary the majority of the time.
         :param standing_with_past_group: If leaving a group to join the new one, this should be used to indicate how the
         last group views the cat (exiled, lost, ect.) Defaults to KNOWN if cat was in a group.
         """
@@ -539,7 +541,9 @@ class Status:
             standing_with_past_group = None
 
         # if we're moving an afterlife cat, they don't change rank
-        if self.group.is_afterlife():
+        if become_rank:
+            new_rank = become_rank
+        elif self.group.is_afterlife():
             new_rank = self.rank
         # adding a cat who has been in a clan in the past, they will take their old rank if possible
         elif self.is_former_clancat and not self.group.is_afterlife():

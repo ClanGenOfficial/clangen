@@ -1,0 +1,344 @@
+from random import choice, randint, getrandbits, choices, random
+
+from scripts.cat.cats import Cat
+from scripts.cat.constants import INJURIES, ILLNESSES, PERMANENT, BACKSTORIES
+from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding, CatSocial
+from scripts.cat.names import names
+from scripts.cat.personality import Personality
+from scripts.cat.skills import SkillPath, Skill
+from scripts.cat.status import StatusDict
+from scripts.events_module.parameter_dicts import InvolvedCatDict
+from scripts.game_structure import game, constants
+
+
+def updated_create_new_cat(
+    option_dict: InvolvedCatDict, involved_cats: dict[str, Cat], other_clan
+) -> list[Cat]:
+    """
+    USED WITH "involved_cat" PARAMETER ONLY
+    :param option_dict: the InvolvedCatDict for this cat(s)
+    :param involved_cats: the dict of cats already involved in this event, key is event abbr and value is Cat object
+    :param other_clan: the other clan involved in this event
+    :return: list of created cats
+    """
+    # STATUS
+    status = StatusDict()
+    if option_dict.get("status"):
+        status["rank"] = CatRank(choice(option_dict["status"]))
+    if option_dict.get("age"):
+        status["age"] = CatAge(choice(option_dict["age"]))
+    if option_dict.get("group"):
+        status["group_ID"] = _get_id_for_group(option_dict["group"], other_clan)
+
+    # handle applying an age for litters if one wasn't specified
+    is_litter = option_dict["can_create_new_cat"].get("become_litter")
+    if is_litter:
+        if not status.get("age").is_baby():
+            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
+
+    # MOONS OLD
+    moons = None
+    if status.get("age"):
+        moons = randint(
+            Cat.age_moons[status["age"]][0], Cat.age_moons[status["age"]][1]
+        )
+
+    # PARENTS
+    blood_parents = []
+    adoptive_parents = []
+
+    for p in option_dict["can_create_new_cat"].get("assign_blood_parent", []):
+        if p in involved_cats:
+            blood_parents.append(involved_cats[p].ID)
+    for p in option_dict["can_create_new_cat"].get("assign_adoptive_parent", []):
+        if p in involved_cats:
+            adoptive_parents.append(involved_cats[p].ID)
+
+    new_cats = []
+    num_of_cats = randint(1, 6) if is_litter else 1
+
+    for i in range(num_of_cats):
+        # TODO: include a "birth_possible" bool in "health" to replace the old "gender" specifications?
+        created_cat = Cat(
+            status_dict=status,
+            moons=moons,
+            parent1=blood_parents[0],
+            parent2=blood_parents[1],
+            adoptive_parents=adoptive_parents,
+        )
+
+        # MATES
+        _assign_mates(created_cat, involved_cats, option_dict)
+
+        # PAST STATUS
+        _assign_past_status_and_standing(created_cat, option_dict, other_clan)
+
+        # CURRENT STANDING
+        _assign_current_standing(created_cat, option_dict, other_clan)
+
+        # TRAIT AND SKILL
+        _assign_stats(created_cat, option_dict)
+
+        # HEALTH
+        _assign_health(created_cat, option_dict)
+
+        # BACKSTORY
+        _assign_backstory(created_cat, option_dict)
+
+        # NAME
+        _assign_name(created_cat)
+
+        created_cat.create_relationships_new_cat()
+        new_cats.append(created_cat)
+
+    # TODO: big rel changes
+    if blood_parents or adoptive_parents:
+        pass
+    if is_litter:
+        pass
+
+
+
+
+def _assign_mates(created_cat, involved_cats, option_dict):
+    if option_dict["can_create_new_cat"].get("assign_mate"):
+        for m in option_dict["can_create_new_cat"].get("assign_mate", []):
+            if m in involved_cats:
+                created_cat.mate.append(involved_cats[m].ID)
+
+
+def _assign_name(created_cat):
+    if not created_cat.status.social == CatSocial.CLANCAT:
+        # if it ain't a clancat, give it a non-clancat name
+        name_categories = [
+            "silly_names",
+            "human_names",
+            "loner_names",
+            "normal_prefixes",
+        ]
+        # defaults in case of error
+        weights = [1, 1, 1, 1]
+        # give kittypets a kittypet name
+        if created_cat.status.social == CatSocial.KITTYPET:
+            weights = constants.CONFIG["cat_name_controls"]["kittypet"]
+            # check if the kittypets come with a pretty acc
+            if bool(getrandbits(1)):
+                created_cat.pelt.accessory = (
+                    *created_cat.pelt.accessory,
+                    choice(created_cat.pelt.collar_accessories),
+                )
+        if created_cat.status.social == CatSocial.LONER:
+            weights = constants.CONFIG["cat_name_controls"]["loner"]
+
+        if created_cat.status.social == CatSocial.ROGUE:
+            weights = constants.CONFIG["cat_name_controls"]["rogue"]
+
+        selected_category = choices(name_categories, weights, k=1)[0]
+        name = choice(names.names_dict[selected_category])
+
+
+def _assign_backstory(created_cat, option_dict):
+    if option_dict.get("backstory"):
+        possible_stories = []
+        for story in option_dict["backstory"]:
+            if story in set(
+                [
+                    backstory
+                    for backstory_block in BACKSTORIES["backstory_categories"].values()
+                    for backstory in backstory_block
+                ]
+            ):
+                possible_stories.append(story)
+            elif story in BACKSTORIES["backstory_categories"]:
+                possible_stories.extend(BACKSTORIES["backstory_categories"][story])
+
+        created_cat.backstory = choice(possible_stories)
+    else:
+        # figure out an appropriate backstory for who they are
+        baby = created_cat.age.is_baby()
+        social = created_cat.status.social
+        categories = BACKSTORIES["backstory_categories"]
+
+        if social == CatSocial.LONER:
+            created_cat.backstory = (
+                choice(categories["baby_loner_backstories"])
+                if baby
+                else choice(categories["loner_backstories"])
+            )
+        elif social == CatSocial.ROGUE:
+            # there's no baby category for these for some reason...
+            created_cat.backstory = choice(categories["rogue_backstories"])
+        elif social == CatSocial.KITTYPET:
+            created_cat.backstory = (
+                choice(categories["baby_kittypet_backstories"])
+                if baby
+                else choice(categories["kittypet_backstories"])
+            )
+        elif social == CatSocial.CLANCAT:
+            created_cat.backstory = (
+                choice(categories["baby_clancat_backstories"])
+                if baby
+                else choice(categories["former_clancat_backstories"])
+            )
+
+
+def _assign_health(created_cat, option_dict):
+    if option_dict.get("health", {}).get("condition"):
+        condition = choice(option_dict["health"]["condition"])
+        if condition in INJURIES:
+            created_cat.get_injured(name=condition)
+        elif condition in ILLNESSES:
+            created_cat.get_ill(name=condition)
+        elif condition in PERMANENT:
+            created_cat.get_permanent_condition(
+                name=condition,
+                born_with=option_dict["health"].get("must_be_congenital"),
+            )
+
+    # Remove disabling scars, if they generated.
+    # these are removed bc the cat won't have the associated perm condition
+    not_allowed = [
+        "NOPAW",
+        "NOTAIL",
+        "HALFTAIL",
+        "NOEAR",
+        "BOTHBLIND",
+        "RIGHTBLIND",
+        "LEFTBLIND",
+        "BRIGHTHEART",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "MANLEG",
+    ]
+
+    created_cat.pelt.scars = tuple(
+        scar for scar in created_cat.pelt.scars if scar not in not_allowed
+    )
+
+    # RANDOM PERM CONDITION ASSIGNMENT
+    # chance to give the new cat a permanent condition, higher chance for found kits and litters
+    if created_cat.age.is_baby():
+        chance = int(
+            constants.CONFIG["cat_generation"]["base_permanent_condition"] / 11.25
+        )
+    else:
+        chance = constants.CONFIG["cat_generation"]["base_permanent_condition"] + 10
+    if not int(random() * chance):
+        possible_conditions = []
+        for condition in PERMANENT:
+            if created_cat.age.is_baby() and PERMANENT[condition]["congenital"] not in [
+                "always",
+                "sometimes",
+            ]:
+                continue
+            # next part ensures that a kit won't get a condition that takes too long to reveal
+            moons = created_cat.moons
+            leeway = 5 - (PERMANENT[condition]["moons_until"] + 1)
+            if moons > leeway:
+                continue
+            possible_conditions.append(condition)
+
+        if possible_conditions:
+            chosen_condition = choice(possible_conditions)
+            if PERMANENT[chosen_condition]["congenital"] in [
+                "always",
+                "sometimes",
+            ]:
+                created_cat.get_permanent_condition(chosen_condition, True)
+                if (
+                    created_cat.permanent_condition[chosen_condition]["moons_until"]
+                    == 0
+                ):
+                    created_cat.permanent_condition[chosen_condition][
+                        "moons_until"
+                    ] = -2
+
+            # assign scars
+            if chosen_condition in ("lost a leg", "born without a leg"):
+                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOPAW")
+            elif chosen_condition in ("lost their tail", "born without a tail"):
+                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOTAIL")
+
+
+def _assign_stats(created_cat, option_dict):
+    if option_dict.get("stat"):
+        skills = option_dict["stat"]["skill"]
+        traits = option_dict["stat"]["trait"]
+
+        # if kitty is not required to have both, then we randomly dump one of the lists
+        if not option_dict["stat"]["must_have_both"] and (skills and traits):
+            if randint(1, 2) == 1:
+                skills.clear()
+            else:
+                traits.clear()
+
+        if skills:
+            skill_info = choice(skills).split(",")
+            path = SkillPath(skill_info[0])
+            tier = max(int(skill_info[1]), 1)
+            points = randint(
+                Skill.tier_ranges[tier - 1][0],
+                Skill.tier_ranges[tier - 1][1],
+            )
+            created_cat.skills.primary = Skill(
+                path=path,
+                points=points,
+                interest_only=created_cat.age
+                in (CatAge.KITTEN, CatAge.NEWBORN, CatAge.ADOLESCENT),
+            )
+
+        if traits:
+            created_cat.personality = Personality(trait=choice(traits))
+
+
+def _assign_current_standing(created_cat, option_dict, other_clan):
+    if option_dict.get("standing", {}).get("currently"):
+        group = _get_id_for_group(option_dict["group"], other_clan)
+
+        created_cat.status.change_standing(
+            new_standing=CatStanding(choice(option_dict["standing"]["currently"])),
+            group_ID=group,
+        )
+
+
+def _assign_past_status_and_standing(created_cat, option_dict, other_clan):
+    if option_dict.get("past_status"):
+        created_cat.status.generate_new_status(
+            rank=CatRank(choice(option_dict["past_status"]))
+        )
+    if option_dict.get("standing", {}).get("past"):
+        group = _get_id_for_group(option_dict["group"], other_clan)
+
+        created_cat.status.change_standing(
+            new_standing=CatStanding(choice(option_dict["standing"]["past"])),
+            group_ID=group,
+        )
+    # now set back to current status
+    # we do this after the past standing is applied in order to avoid any overwriting of memberships
+    if option_dict.get("past_status"):
+        if option_dict.get("group"):
+            group = _get_id_for_group(option_dict["group"], other_clan)
+
+            created_cat.status.add_to_group(
+                new_group_ID=group,
+                become_rank=CatRank(choice(option_dict["status"]))
+                if option_dict.get("status")
+                else None,
+            )
+
+    # this simulates a "history" as whomever they used to be
+    created_cat.status.change_current_moons_as(created_cat.moons)
+
+
+def _get_id_for_group(group_list: list[str], other_clan):
+    # TODO: make this work for "match:cat"
+    possible_groups = []
+    for ID, group in game.used_group_IDs.items():
+        if group in group_list:
+            # only allow this event's chosen other clan
+            if group == CatGroup.OTHER_CLAN and ID != other_clan.id:
+                continue
+            possible_groups.append(ID)
+
+    group = choice(possible_groups)
+    return group

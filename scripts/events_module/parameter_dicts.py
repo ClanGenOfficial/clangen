@@ -3,8 +3,8 @@ from typing import TypedDict, NotRequired, Literal
 
 class StandingDict(TypedDict):
     group: list[str]
-    currently: list[str]
-    past: list[str]
+    currently: NotRequired[list[str]]
+    past: NotRequired[list[str]]
 
 
 class StatDict(TypedDict, total=False):
