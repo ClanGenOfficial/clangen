@@ -188,7 +188,7 @@
                 {
                     "cats_to": ["r_c"],
                     "cats_from": ["p_l"],
-                    "mutual": false,
+                    "mutual": true,
                     "values": ["comfort"],
                     "amount": 5,
                     "log": {
