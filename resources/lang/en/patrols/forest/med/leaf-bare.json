@@ -152,7 +152,7 @@
                     "cats_from": ["patrol"],
                     "mutual": false,
                     "values": ["comfort", "like"],
-                    "amount": 10,
+                    "amount": 5,
                     "log": {
                         "cats_from": "cat_from and cat_to comforted each other after failing to find herbs in leaf-bare."
                     }
