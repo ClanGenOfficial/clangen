@@ -1079,9 +1079,7 @@ class Pregnancy_Events:
                 for kit in kits:
                     second_parent_to_kit = other_cat.relationships.get(kit.ID)
                     if not second_parent_to_kit:
-                        second_parent_to_kit = Relationship(
-                            other_cat, kit, family=True
-                        )
+                        second_parent_to_kit = Relationship(other_cat, kit, family=True)
                         other_cat.relationships[kit.ID] = second_parent_to_kit
                     second_parent_to_kit.like = 0
                     second_parent_to_kit.comfort = -10
