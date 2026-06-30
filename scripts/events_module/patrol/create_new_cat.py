@@ -9,6 +9,7 @@ from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
 from scripts.events_module.parameter_dicts import InvolvedCatDict
 from scripts.game_structure import game, constants
@@ -57,6 +58,15 @@ def updated_create_new_cat(
         if p in involved_cats:
             adoptive_parents.append(involved_cats[p].ID)
 
+    # GENDER
+    gender = option_dict.get("gender", None)
+    if gender == "can_birth":
+        if not get_clan_setting("same sex birth"):
+            gender = "female"
+        else:
+            gender = None
+
+    # CREATE CATS
     new_cats = []
     num_of_cats = randint(1, 6) if is_litter else 1
 
@@ -65,6 +75,7 @@ def updated_create_new_cat(
         created_cat = Cat(
             status_dict=status,
             moons=moons,
+            gender=gender,
             parent1=blood_parents[0],
             parent2=blood_parents[1],
             adoptive_parents=adoptive_parents,
@@ -94,7 +105,6 @@ def updated_create_new_cat(
         created_cat.create_relationships_new_cat()
         new_cats.append(created_cat)
 
-    # TODO: big rel changes
     # ESTABLISH FAMILY RELATIONSHIPS
     # parent to kid
     if blood_parents or adoptive_parents:
@@ -134,7 +144,8 @@ def _assign_mates(created_cat, involved_cats, option_dict):
     if option_dict["can_create_new_cat"].get("assign_mate"):
         for m in option_dict["can_create_new_cat"].get("assign_mate", []):
             if m in involved_cats:
-                created_cat.mate.append(involved_cats[m].ID)
+                # we delay inheritance recalc because we'll handle it later on, and we don't want to do it twice
+                created_cat.set_mate(involved_cats[m].ID, recalculate_inheritance=False)
 
 
 def _assign_name(created_cat):
@@ -360,9 +371,20 @@ def _assign_past_status_and_standing(created_cat, option_dict, other_clan):
     created_cat.status.change_current_moons_as(created_cat.moons)
 
 
-def _get_id_for_group(group_list: list[str], other_clan):
-    # TODO: make this work for "match:cat"
+def _get_id_for_group(group_list: list[str], involved_cats: dict[str, Cat], other_clan):
     possible_groups = []
+
+    # handle match tags
+    match_group = None
+    for tag in group_list:
+        if "match" in tag:
+            cat_to_match = tag.replace("match:", "")
+            match_group = involved_cats[cat_to_match].status.group
+
+    if match_group:
+        group_list.append(match_group)
+
+    # now find IDs for the groups
     for ID, group in game.used_group_IDs.items():
         if group in group_list:
             # only allow this event's chosen other clan
