@@ -32,7 +32,9 @@ def updated_create_new_cat(
     if option_dict.get("age"):
         status["age"] = CatAge(choice(option_dict["age"]))
     if option_dict.get("group"):
-        status["group_ID"] = _get_id_for_group(option_dict["group"], other_clan)
+        status["group_ID"] = _get_id_for_group(
+            option_dict["group"], involved_cats, other_clan
+        )
 
     # handle applying an age for litters if one wasn't specified
     is_litter = option_dict["can_create_new_cat"].get("become_litter")
@@ -53,10 +55,10 @@ def updated_create_new_cat(
 
     for p in option_dict["can_create_new_cat"].get("assign_blood_parent", []):
         if p in involved_cats:
-            blood_parents.append(involved_cats[p].ID)
+            blood_parents.append(involved_cats[p])
     for p in option_dict["can_create_new_cat"].get("assign_adoptive_parent", []):
         if p in involved_cats:
-            adoptive_parents.append(involved_cats[p].ID)
+            adoptive_parents.append(involved_cats[p])
 
     # GENDER
     gender = option_dict.get("gender", None)
@@ -71,13 +73,12 @@ def updated_create_new_cat(
     num_of_cats = randint(1, 6) if is_litter else 1
 
     for i in range(num_of_cats):
-        # TODO: include a "birth_possible" bool in "health" to replace the old "gender" specifications?
         created_cat = Cat(
             status_dict=status,
             moons=moons,
             gender=gender,
-            parent1=blood_parents[0],
-            parent2=blood_parents[1],
+            parent1=blood_parents[0].ID,
+            parent2=blood_parents[1].ID,
             adoptive_parents=adoptive_parents,
         )
 
@@ -85,10 +86,12 @@ def updated_create_new_cat(
         _assign_mates(created_cat, involved_cats, option_dict)
 
         # PAST STATUS
-        _assign_past_status_and_standing(created_cat, option_dict, other_clan)
+        _assign_past_status_and_standing(
+            created_cat, option_dict, involved_cats, other_clan
+        )
 
         # CURRENT STANDING
-        _assign_current_standing(created_cat, option_dict, other_clan)
+        _assign_current_standing(created_cat, option_dict, involved_cats, other_clan)
 
         # TRAIT AND SKILL
         _assign_stats(created_cat, option_dict)
@@ -176,6 +179,7 @@ def _assign_name(created_cat):
 
         selected_category = choices(name_categories, weights, k=1)[0]
         name = choice(names.names_dict[selected_category])
+        created_cat.change_name(new_prefix=name, new_suffix="")
 
 
 def _assign_backstory(created_cat, option_dict):
@@ -332,9 +336,9 @@ def _assign_stats(created_cat, option_dict):
             created_cat.personality = Personality(trait=choice(traits))
 
 
-def _assign_current_standing(created_cat, option_dict, other_clan):
+def _assign_current_standing(created_cat, option_dict, involved_cats, other_clan):
     if option_dict.get("standing", {}).get("currently"):
-        group = _get_id_for_group(option_dict["group"], other_clan)
+        group = _get_id_for_group(option_dict["group"], involved_cats, other_clan)
 
         created_cat.status.change_standing(
             new_standing=CatStanding(choice(option_dict["standing"]["currently"])),
@@ -342,13 +346,15 @@ def _assign_current_standing(created_cat, option_dict, other_clan):
         )
 
 
-def _assign_past_status_and_standing(created_cat, option_dict, other_clan):
+def _assign_past_status_and_standing(
+    created_cat, option_dict, involved_cats, other_clan
+):
     if option_dict.get("past_status"):
         created_cat.status.generate_new_status(
             rank=CatRank(choice(option_dict["past_status"]))
         )
     if option_dict.get("standing", {}).get("past"):
-        group = _get_id_for_group(option_dict["group"], other_clan)
+        group = _get_id_for_group(option_dict["group"], involved_cats, other_clan)
 
         created_cat.status.change_standing(
             new_standing=CatStanding(choice(option_dict["standing"]["past"])),
@@ -358,7 +364,7 @@ def _assign_past_status_and_standing(created_cat, option_dict, other_clan):
     # we do this after the past standing is applied in order to avoid any overwriting of memberships
     if option_dict.get("past_status"):
         if option_dict.get("group"):
-            group = _get_id_for_group(option_dict["group"], other_clan)
+            group = _get_id_for_group(option_dict["group"], involved_cats, other_clan)
 
             created_cat.status.add_to_group(
                 new_group_ID=group,
