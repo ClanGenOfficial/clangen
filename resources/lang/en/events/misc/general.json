@@ -15269,7 +15269,7 @@
   "location": ["any"],
   "season": ["any"],
   "frequency": 1,
-  "event_text": "m_c trusts r_c's judgement.",
+  "event_text": "m_c trusts r_c's judgment.",
   "m_c": {
     "relationship_status": ["trusts_only"]
   },
