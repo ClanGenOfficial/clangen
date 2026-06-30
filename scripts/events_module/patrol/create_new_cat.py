@@ -70,7 +70,7 @@ def updated_create_new_cat(
 
     # CREATE CATS
     new_cats = []
-    num_of_cats = randint(1, 6) if is_litter else 1
+    num_of_cats = randint(2, 6) if is_litter else 1
 
     for i in range(num_of_cats):
         created_cat = Cat(
@@ -228,18 +228,6 @@ def _assign_backstory(created_cat, option_dict):
 
 
 def _assign_health(created_cat, option_dict):
-    if option_dict.get("health", {}).get("condition"):
-        condition = choice(option_dict["health"]["condition"])
-        if condition in INJURIES:
-            created_cat.get_injured(name=condition)
-        elif condition in ILLNESSES:
-            created_cat.get_ill(name=condition)
-        elif condition in PERMANENT:
-            created_cat.get_permanent_condition(
-                name=condition,
-                born_with=option_dict["health"].get("must_be_congenital"),
-            )
-
     # Remove disabling scars, if they generated.
     # these are removed bc the cat won't have the associated perm condition
     not_allowed = [
@@ -259,6 +247,23 @@ def _assign_health(created_cat, option_dict):
     created_cat.pelt.scars = tuple(
         scar for scar in created_cat.pelt.scars if scar not in not_allowed
     )
+
+    # now see if any new conditions should be applied
+    if option_dict.get("health", {}).get("condition"):
+        condition = choice(option_dict["health"]["condition"])
+        if condition in INJURIES:
+            created_cat.get_injured(name=condition)
+        elif condition in ILLNESSES:
+            created_cat.get_ill(name=condition)
+        elif condition in PERMANENT:
+            created_cat.get_permanent_condition(
+                name=condition,
+                born_with=option_dict["health"].get("must_be_congenital"),
+            )
+            if condition in ("lost a leg", "born without a leg"):
+                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOPAW")
+            elif condition in ("lost their tail", "born without a tail"):
+                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOTAIL")
 
     # RANDOM PERM CONDITION ASSIGNMENT
     # chance to give the new cat a permanent condition, higher chance for found kits and litters
