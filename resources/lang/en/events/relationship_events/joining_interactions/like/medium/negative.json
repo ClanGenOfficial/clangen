@@ -2,7 +2,7 @@
     {
         "id": "gen_like_med_dec1",
         "strings": [
-			"r_c scoffs while m_c is introducing {PRONOUN/m_c/self}."
+			"r_c scoffed when m_c introduced {PRONOUN/m_c/self}."
         ],
         "relationship_changes": [
             {

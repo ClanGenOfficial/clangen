@@ -3,7 +3,7 @@
         "id": "gen_comfort_low_inc1",
         "strings": [
 			"r_c offered m_c some tips for building a new nest.",
-            "m_c offered r_c some feathers as a welcome gift that {PRONOUN/r_c/subject} could use to decorate {PRONOUN/r_c/poss} new nest."
+            "r_c offered m_c some feathers as a welcome gift that {PRONOUN/m_c/subject} could use to decorate {PRONOUN/m_c/poss} new nest."
         ]
     },
     {
