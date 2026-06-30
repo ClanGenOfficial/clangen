@@ -1,3 +1,4 @@
 {
-    "placeholder_example": ["conflicting_card1", "conflicting_card2"]
+    "placeholder_example0": ["danger_placeholder0", "danger_placeholder1"],
+    "placeholder_example1": ["origin_placeholder0", "danger_placeholder0"]
 }

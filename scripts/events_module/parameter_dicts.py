@@ -36,3 +36,11 @@ class RelationshipConstraintDict(TypedDict):
     cats_to: list[str]
     mutual: bool
     constraints: list[str]
+
+
+class RelationshipChangeDict(TypedDict):
+    cats_from: list[str]
+    cats_to: list[str]
+    mutual: bool
+    values: list[str]
+    amount: int

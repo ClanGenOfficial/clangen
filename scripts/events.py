@@ -665,7 +665,7 @@ def handle_focus():
         ]
 
         warrior_amount = len(healthy_warriors) * get_config(
-            game.clan, f"focus.hunting.{CatRank.WARRIOR}"
+            f"focus.hunting.{CatRank.WARRIOR}"
         )
 
         # handle apprentices
@@ -676,7 +676,7 @@ def handle_focus():
         ]
 
         app_amount = len(healthy_apprentices) * get_config(
-            game.clan, f"focus.hunting.{CatRank.APPRENTICE}"
+            f"focus.hunting.{CatRank.APPRENTICE}"
         )
 
         # finish
@@ -1085,7 +1085,6 @@ def one_moon_cat(cat):
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:
-        cat.relationship_interaction()
         Relation_Events.handle_relationships(cat)
 
     # now we make sure ill and injured cats don't get interactions they shouldn't
@@ -2122,10 +2121,8 @@ def handle_injuries_or_general_death(cat):
     )
 
     # chance to kill leader: 1/50 by default
-    leader_death_chance = get_config(game.clan, "death_related.leader_death_chance") - (
-        get_config(game.clan, "death_related.war_death_modifier_leader")
-        if use_war_modifier
-        else 0
+    leader_death_chance = get_config("death_related.leader_death_chance") - (
+        get_config("death_related.war_death_modifier_leader") if use_war_modifier else 0
     )
 
     if (
@@ -2178,10 +2175,8 @@ def handle_injuries_or_general_death(cat):
         if game.clan.game_mode == "classic"
         else "death_related.death_chance"
     )
-    death_chance = get_config(game.clan, path) - (
-        get_config(game.clan, "death_related.war_death_modifier")
-        if use_war_modifier
-        else 0
+    death_chance = get_config(path) - (
+        get_config("death_related.war_death_modifier") if use_war_modifier else 0
     )
     if not int(random.random() * death_chance) and not cat.not_working():  # 1/400
         create_short_event(

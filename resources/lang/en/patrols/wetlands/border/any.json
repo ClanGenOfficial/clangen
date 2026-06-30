@@ -1873,7 +1873,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -2198,7 +2198,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 60,
         "success_outcomes": [

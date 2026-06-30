@@ -8144,7 +8144,7 @@
         "sub_type": [],
         "tags": ["all_lives"],
         "frequency": 1,
-        "event_text": "m_c vanished while patrolling alone. The search parties found blood and little evidence of struggle — whatever killed m_c was too big to fight.",
+        "event_text": "m_c vanished while patrolling alone. The search parties found blood and little evidence of struggle. Whatever killed m_c was too big to fight.",
         "m_c": {
             "status": [
                 "apprentice",
