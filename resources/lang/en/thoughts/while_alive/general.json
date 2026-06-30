@@ -1395,7 +1395,7 @@
     {
     "id": "gen_parent_gen",
     "strings": [
-        "Wonders if {PRONOUN/m_c/subject} {VERB/mc/are/is} a good parent",
+        "Wonders if {PRONOUN/m_c/subject} {VERB/m_c/are/is} a good parent",
         "Worries about r_c's health",
         "Worries about {PRONOUN/m_c/poss} kits' futures",
         "Wishes {PRONOUN/m_c/subject} felt like a better parent",
