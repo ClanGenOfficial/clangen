@@ -9,6 +9,7 @@ from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.clan import OtherClan
 from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
 from scripts.events_module.parameter_dicts import InvolvedCatDict
@@ -16,7 +17,7 @@ from scripts.game_structure import game, constants
 
 
 def updated_create_new_cat(
-    option_dict: InvolvedCatDict, involved_cats: dict[str, Cat], other_clan
+    option_dict: InvolvedCatDict, involved_cats: dict[str, Cat], other_clan: OtherClan
 ) -> list[Cat]:
     """
     USED WITH "involved_cat" PARAMETER ONLY
@@ -35,6 +36,21 @@ def updated_create_new_cat(
         status["group_ID"] = _get_id_for_group(
             option_dict["group"], involved_cats, other_clan
         )
+
+    if not status.get("rank") and not status.get("age"):
+        # if no group was given either, then we just pick either no group or other clan
+        if not option_dict.get("group"):
+            status["group_ID"] = _get_id_for_group(
+                ["no_group", CatGroup.OTHER_CLAN], involved_cats, other_clan
+            )
+
+        # then we find an appropriate rank for that group
+        if status["group_ID"] == "no_group":
+            status["rank"] = choice(
+                [r for r in [*CatRank] if not r.is_any_clancat_rank()]
+            )
+        else:
+            status["rank"] = choice([r for r in [*CatRank] if r.is_any_clancat_rank()])
 
     # handle applying an age for litters if one wasn't specified
     is_litter = option_dict["can_create_new_cat"].get("become_litter")
@@ -77,9 +93,9 @@ def updated_create_new_cat(
             status_dict=status,
             moons=moons,
             gender=gender,
-            parent1=blood_parents[0].ID,
-            parent2=blood_parents[1].ID,
-            adoptive_parents=adoptive_parents,
+            parent1=blood_parents[0].ID if blood_parents else None,
+            parent2=blood_parents[1].ID if len(blood_parents) > 1 else None,
+            adoptive_parents=adoptive_parents if adoptive_parents else None,
         )
 
         # MATES
@@ -341,9 +357,13 @@ def _assign_stats(created_cat, option_dict):
             created_cat.personality = Personality(trait=choice(traits))
 
 
-def _assign_current_standing(created_cat, option_dict, involved_cats, other_clan):
+def _assign_current_standing(
+    created_cat, option_dict, involved_cats, other_clan: OtherClan
+):
     if option_dict.get("standing", {}).get("currently"):
-        group = _get_id_for_group(option_dict["group"], involved_cats, other_clan)
+        group = _get_id_for_group(
+            option_dict["standing"]["group"], involved_cats, other_clan
+        )
 
         created_cat.status.change_standing(
             new_standing=CatStanding(choice(option_dict["standing"]["currently"])),
@@ -352,17 +372,24 @@ def _assign_current_standing(created_cat, option_dict, involved_cats, other_clan
 
 
 def _assign_past_status_and_standing(
-    created_cat, option_dict, involved_cats, other_clan
+    created_cat, option_dict, involved_cats, other_clan: OtherClan
 ):
+    chosen_past_status = None
     if option_dict.get("past_status"):
-        created_cat.status.generate_new_status(
-            rank=CatRank(choice(option_dict["past_status"]))
-        )
+        chosen_past_status = CatRank(choice(option_dict["past_status"]))
+        created_cat.status.generate_new_status(rank=chosen_past_status)
     if option_dict.get("standing", {}).get("past"):
-        group = _get_id_for_group(option_dict["group"], involved_cats, other_clan)
+        group = _get_id_for_group(
+            option_dict["standing"]["group"], involved_cats, other_clan
+        )
 
         created_cat.status.change_standing(
             new_standing=CatStanding(choice(option_dict["standing"]["past"])),
+            group_ID=group,
+        )
+        # then change to KNOWN so that the standing we had just assigned won't be the current one
+        created_cat.status.change_standing(
+            new_standing=CatStanding.KNOWN,
             group_ID=group,
         )
     # now set back to current status
@@ -377,12 +404,16 @@ def _assign_past_status_and_standing(
                 if option_dict.get("status")
                 else None,
             )
+        if option_dict.get("status") and created_cat.status.rank == chosen_past_status:
+            created_cat.status._change_rank(CatRank(choice(option_dict["status"])))
 
     # this simulates a "history" as whomever they used to be
     created_cat.status.change_current_moons_as(created_cat.moons)
 
 
-def _get_id_for_group(group_list: list[str], involved_cats: dict[str, Cat], other_clan):
+def _get_id_for_group(
+    group_list: list[str], involved_cats: dict[str, Cat], other_clan: OtherClan
+) -> str:
     possible_groups = []
 
     # handle match tags
@@ -391,6 +422,8 @@ def _get_id_for_group(group_list: list[str], involved_cats: dict[str, Cat], othe
         if "match" in tag:
             cat_to_match = tag.replace("match:", "")
             match_group = involved_cats[cat_to_match].status.group
+        if tag == "no_group":
+            possible_groups.append("no_group")
 
     if match_group:
         group_list.append(match_group)
@@ -399,7 +432,7 @@ def _get_id_for_group(group_list: list[str], involved_cats: dict[str, Cat], othe
     for ID, group in game.used_group_IDs.items():
         if group in group_list:
             # only allow this event's chosen other clan
-            if group == CatGroup.OTHER_CLAN and ID != other_clan.id:
+            if group == CatGroup.OTHER_CLAN and ID != other_clan.group_ID:
                 continue
             possible_groups.append(ID)
 
