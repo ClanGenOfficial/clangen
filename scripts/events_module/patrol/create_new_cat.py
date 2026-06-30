@@ -1,3 +1,4 @@
+from itertools import combinations
 from random import choice, randint, getrandbits, choices, random
 
 from scripts.cat.cats import Cat
@@ -7,6 +8,8 @@ from scripts.cat.names import names
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat.status import StatusDict
+from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.config import get_config
 from scripts.events_module.parameter_dicts import InvolvedCatDict
 from scripts.game_structure import game, constants
 
@@ -44,8 +47,8 @@ def updated_create_new_cat(
         )
 
     # PARENTS
-    blood_parents = []
-    adoptive_parents = []
+    blood_parents: list[Cat] = []
+    adoptive_parents: list[Cat] = []
 
     for p in option_dict["can_create_new_cat"].get("assign_blood_parent", []):
         if p in involved_cats:
@@ -92,12 +95,39 @@ def updated_create_new_cat(
         new_cats.append(created_cat)
 
     # TODO: big rel changes
+    # ESTABLISH FAMILY RELATIONSHIPS
+    # parent to kid
     if blood_parents or adoptive_parents:
-        pass
+        for p in blood_parents + adoptive_parents:
+            for c in new_cats:
+                p.relationships[c.ID].change_according_dictionary(
+                    get_config("new_cat.parent_buff.parent_to_kit")
+                )
+                c.relationships[p.ID].change_according_dictionary(
+                    get_config("new_cat.parent_buff.kit_to_parent")
+                )
+    # littermate to littermate
     if is_litter:
+        for pair in combinations(new_cats, 2):
+            pair[0].relationships[pair[1].ID].change_according_dictionary(
+                get_config("new_cat.sib_buff.cat1_to_cat2")
+            )
+            pair[1].relationships[pair[0].ID].change_according_dictionary(
+                get_config("new_cat.sib_buff.cat2_to_cat1")
+            )
+
         pass
 
+    # UPDATE INHERITANCE if we had any assignments that would change them
+    if (
+        blood_parents
+        or adoptive_parents
+        or is_litter
+        or option_dict["can_create_new_cat"].get("assign_mate")
+    ):
+        inheritance_db.load_inheritances(Cat)
 
+    return new_cats
 
 
 def _assign_mates(created_cat, involved_cats, option_dict):
