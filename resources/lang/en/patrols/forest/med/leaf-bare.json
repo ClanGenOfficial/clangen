@@ -36,7 +36,7 @@
             "art": "med_general_intro"
         },
         {
-            "text": "The patrol perseveres, and p_l finds some half-frozen juniper berries growing a bush in a sheltered copse.",
+            "text": "The patrol perseveres, and p_l finds some half-frozen juniper berries growing on a bush in a sheltered copse.",
             "exp": 20,
             "frequency": 4,
             "herbs": ["juniper"],
@@ -93,7 +93,8 @@
             "injury": [
                {
                 "cats": ["patrol"],
-                "injuries": ["frostbite", "shivering"]
+                "injuries": ["frostbite", "shivering"],
+                "scars": ["FROSTMITT", "FROSTSOCK"]
                }
             ],
             "history_text": {
@@ -106,7 +107,7 @@
             "text": "s_c reasons that some herbs are less affected by the cold and the patrol should take this chance to stock up on them. The cats return laden with cobwebs and burdock root.",
             "exp": 20,
             "frequency": 4,
-            "stat_skill": ["CLEVER,0", "HEALER,0"],
+            "stat_skill": ["CLEVER,0", "HEALER,0", "INSIGHTFUL,0"],
             "herbs": ["cobwebs", "burdock"],
             "relationships": [
                 {
@@ -116,7 +117,7 @@
                     "values": ["trust"],
                     "amount": 10,
                     "log": {
-                        "cats_from": "cat_from's trust in cat_to grew when cat_to was able to find herbs during leaf-bare."
+                        "cats_from": "cat_from approved of cat_to's plan to gather all-season herbs in leaf-bare."
                     }
                 }
             ],
@@ -184,6 +185,7 @@
             "exp": 0,
             "frequency": 2,
             "stat_skill": ["MEDIATOR,1"],
+            "can_have_stat": ["not_pl_rc"],
             "relationships": [
                 {
                     "cats_to": ["r_c"],
