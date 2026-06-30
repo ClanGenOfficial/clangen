@@ -7,7 +7,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_train_talkingMM",
+        "patrol_art": "cat_sprites/gen_med_talking_McMc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -24,7 +24,7 @@
             {
                 "text": "The sunlight feels great and the cats have a successful discussion, talking about what came up at the last half-moon meetings and whether it'll affect c_n.",
                 "exp": 20,
-                "art": "gen_med_sunny",
+                "art": "cat_sprites/gen_med_sunny_Mc",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -48,7 +48,7 @@
             {
                 "text": "The sunlight feels great and the cats have a lovely discussion, talking about what herbs need to be gathered and the best locations to gather them.",
                 "exp": 20,
-                "art": "gen_med_sunny",
+                "art": "cat_sprites/gen_med_sunny_Mc",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -94,7 +94,7 @@
             {
                 "text": "s_c makes sure everyone gets a good basking spot as the cats pause for a little break before resuming their herb-gathering.",
                 "exp": 20,
-                "art": "gen_med_sunny",
+                "art": "cat_sprites/gen_med_sunny_Mc",
                 "stat_trait": [
                     "compassionate",
                     "faithful",
@@ -230,7 +230,7 @@
             {
                 "text": "The patrol doesn't get much done because of that.",
                 "exp": 0,
-                "art": "gen_med_sunny",
+                "art": "cat_sprites/gen_med_sunny_Mc",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -250,7 +250,7 @@
             {
                 "text": "The patrol gets into an argument and returns home with tails lashing, shooting annoyed looks at each other.",
                 "exp": 0,
-                "art": "gen_train_argueMM",
+                "art": "cat_sprites/gen_med_argue_McMc",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -295,7 +295,7 @@
             {
                 "text": "s_c takes the best spot for {PRONOUN/s_c/self} and ignores all attempts at conversation, souring the mood of the patrol.",
                 "exp": 0,
-                "art": "gen_med_sunny",
+                "art": "cat_sprites/gen_med_sunny_Mc",
                 "stat_trait": [
                     "troublesome",
                     "lonesome",
@@ -335,7 +335,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_sunny",
+        "patrol_art": "cat_sprites/gen_med_sunny_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -408,7 +408,7 @@
             {
                 "text": "The sunlight feels great, however r_c presses on, wanting to be able to take care of {PRONOUN/r_c/poss} Clanmates.",
                 "exp": 20,
-                "art": "gen_med_gatheringcatmint_greenleaf1",
+                "art": "cat_sprites/gen_med_GL_gatheringcatmint_Mc",
                 "stat_trait": [
                     "compassionate",
                     "thoughtful",
@@ -474,7 +474,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_vision",
+        "patrol_art": "cat_sprites/gen_med_vision_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -788,7 +788,7 @@
             {
                 "text": "p_l's eyes go wide, fur puffing up, and tells r_c that {PRONOUN/r_c/poss} dream is a warning of death and destruction, thoroughly freaking r_c out and bringing unease to the patrol.",
                 "exp": 0,
-                "art": "gen_train_argueMM",
+                "art": "cat_sprites/gen_med_argue_McMc",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -941,7 +941,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_vision",
+        "patrol_art": "cat_sprites/gen_med_vision_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -960,7 +960,7 @@
             {
                 "text": "Somehow, cobweb-gathering brings p_l to an almost-meditative state. Not only {VERB/p_l/are/is} {PRONOUN/p_l/subject} fairly confident of {PRONOUN/p_l/poss} next steps, having been given this vision, but {PRONOUN/p_l/subject} also {VERB/p_l/bring/brings} back a good haul to the herb stores.",
                 "exp": 20,
-                "art": "gen_med_cat_cobwebs_success",
+                "art": "cat_sprites/gen_med_cobwebs_Mc",
                 "herbs": [
                     "cobwebs"
                 ],
@@ -1015,13 +1015,13 @@
             {
                 "text": "Despite p_l's attempts, the vision containing glimpses of clair_list/p_l remains cryptic and elusive... just like the cobwebs.",
                 "exp": 0,
-                "art": "gen_med_cat_cobwebs_fail",
+                "art": "cat_sprites/gen_med_cobwebsfail_Mc",
                 "frequency": 4
             },
             {
                 "text": "Despite deep contemplation during the cobweb-gathering, p_l struggles to decipher what clair_list/p_l could mean. The lack of clarity leaves p_l feeling uncertain, and the potential message from StarClan remains elusive. At least {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} collected cobwebs.",
                 "exp": 0,
-                "art": "gen_med_cat_cobwebs_success",
+                "art": "cat_sprites/gen_med_cobwebs_Mc",
                 "herbs": [
                     "cobwebs"
                 ],
@@ -1030,7 +1030,7 @@
             {
                 "text": "p_l decides it was just a dream, ignoring the signs from StarClan as {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} cobwebs.",
                 "exp": 0,
-                "art": "gen_med_cat_cobwebs_success",
+                "art": "cat_sprites/gen_med_cobwebs_Mc",
                 "herbs": [
                     "cobwebs"
                 ],
@@ -1076,7 +1076,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_vision",
+        "patrol_art": "cat_sprites/gen_med_vision_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1093,7 +1093,7 @@
             {
                 "text": "app1 speaks of clair_list/app1, and p_l listens carefully. After app1 finishes speaking, the two cats have an in-depth conversation about app1's vision as they walk. By the time they head back to camp, p_l has a good idea of what they should do with the information.",
                 "exp": 20,
-                "art": "gen_train_talkingMA",
+                "art": "cat_sprites/gen_med_talking_McAp",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -1129,7 +1129,7 @@
             {
                 "text": "app1 decides to inform p_l of {PRONOUN/app1/poss} dream, speaking of how {PRONOUN/app1/poss} saw flashes of clair_list/app1. p_l doesn't take {PRONOUN/p_l/poss} responsibility lightly, and both of them work together to divine the vision's meaning as p_l helps app1 to learn how to interpret visions.",
                 "exp": 20,
-                "art": "gen_train_talkingMA",
+                "art": "cat_sprites/gen_med_talking_McAp",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -1165,7 +1165,7 @@
             {
                 "text": "s_c listens intently as app1 describes the dream, involving glimpses of clair_list/app1, and tells app1 that {PRONOUN/s_c/subject} {VERB/s_c/have/has} seen the dream, too. s_c soothes the apprentice, explaining that this dream was nothing but a mild warning.",
                 "exp": 20,
-                "art": "gen_train_talkingMA",
+                "art": "cat_sprites/gen_med_talking_McAp",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -1240,7 +1240,7 @@
             {
                 "text": "s_c chooses to pad pelt-to-pelt with app1, the more experienced medicine cat guiding the conversation. app1 feels deeply privileged and far more at peace, after confiding in {PRONOUN/s_c/object}, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} that c_n is in safe paws. It also proves to be a valuable learning experience.",
                 "exp": 20,
-                "art": "gen_train_talkingMA",
+                "art": "cat_sprites/gen_med_talking_McAp",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -1286,7 +1286,7 @@
             {
                 "text": "After hearing of the dream with flashes of clair_list/app1, s_c promises app1 that {PRONOUN/s_c/subject}'ll make sure to look deeper into this matter, and that {PRONOUN/s_c/subject}'ll teach app1 how to interpret such visions.",
                 "exp": 20,
-                "art": "gen_train_talkingMA",
+                "art": "cat_sprites/gen_med_talking_McAp",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -1449,7 +1449,7 @@
             {
                 "text": "p_l's eyes go wide, fur puffing up, and tells the apprentice that {PRONOUN/app1/poss} dream is a warning of death and destruction, thoroughly freaking app1 out.",
                 "exp": 0,
-                "art": "gen_train_argueMA",
+                "art": "cat_sprites/gen_med_argue_McAp",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -1596,7 +1596,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_ghost_star",
+        "patrol_art": "cat_sprites/gen_med_ghost_McSc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1676,7 +1676,7 @@
             {
                 "text": "s_c turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/s_c/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/s_c/object}, and things must change.",
                 "exp": 0,
-                "art": "med_cat_looking_up",
+                "art": "cat_sprites/gen_med_catlookingup_Mc",
                 "stat_trait": [
                     "bloodthirsty",
                     "vengeful",
@@ -1689,7 +1689,7 @@
             {
                 "text": "The connection wavers, and as quickly as the feeling of company appears, it vanishes. p_l let out a small sigh, gaze turning upwards. Did StarClan not want to speak with {PRONOUN/p_l/object}?",
                 "exp": 0,
-                "art": "med_cat_looking_up",
+                "art": "cat_sprites/gen_med_catlookingup_Mc",
                 "frequency": 3
             }
         ],
@@ -1697,7 +1697,7 @@
             {
                 "text": "r_c feels hounded, never given a moment's peace. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. But when {PRONOUN/r_c/subject} {VERB/r_c/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/r_c/object} to camp to help with an emergency.",
                 "exp": 0,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "frequency": 4,
                 "relationships": [
                     {
@@ -1715,7 +1715,7 @@
             {
                 "text": "r_c feels hounded, never given a moment's peace. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval but vanishes.",
                 "exp": 0,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "frequency": 4
             }
         ],
@@ -1723,13 +1723,13 @@
             {
                 "text": "r_c feels hounded, never given a moment's peace. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "frequency": 4
             },
             {
                 "text": "r_c hisses at the unknown cat, fur bristling. The ghost vanishes, leaving r_c alone... for now.",
                 "exp": 30,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "frequency": 4
             }
         ]
@@ -1742,7 +1742,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_ghost_star",
+        "patrol_art": "cat_sprites/gen_med_ghost_McSc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1834,7 +1834,7 @@
             {
                 "text": "p_l turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/p_l/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/p_l/object}, and things must change.",
                 "exp": 0,
-                "art": "med_cat_looking_up",
+                "art": "cat_sprites/gen_med_catlookingup_Mc",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -1879,7 +1879,7 @@
             {
                 "text": "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/p_l/object} to camp to help with an emergency.",
                 "exp": 0,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "frequency": 4,
                 "relationships": [
                     {
@@ -1897,13 +1897,13 @@
             {
                 "text": "r_c feels hounded, never given a moment's peace. {PRONOUN/r_c/subject/CAP} {VERB/r_c/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval, but vanishes.",
                 "exp": 0,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "frequency": 4
             },
             {
                 "text": "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only the rest of the patrol staring at p_l disappointedly.",
                 "exp": 0,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1938,7 +1938,7 @@
             {
                 "text": "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "frequency": 4,
                 "relationships": [
                     {
@@ -1971,7 +1971,7 @@
             {
                 "text": "p_l hisses at the unknown cat, fur bristling. The ghost vanishes, leaving p_l alone... for now.",
                 "exp": 30,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_med_angrycat_Mc",
                 "frequency": 4,
                 "relationships": [
                     {
@@ -2011,7 +2011,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_ghost_star",
+        "patrol_art": "cat_sprites/gen_med_ghost_McSc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2062,7 +2062,7 @@
             {
                 "text": "app1 feels hounded, never given a moment's peace, and {PRONOUN/app1/subject} {VERB/app1/hiss/hisses} at the StarClan cat. But when {PRONOUN/app1/subject} {VERB/app1/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/app1/object} to camp to help with an emergency.",
                 "exp": 0,
-                "art": "gen_angry_cat_app",
+                "art": "cat_sprites/gen_angrycat_Ap",
                 "frequency": 4,
                 "relationships": [
                     {
@@ -2082,13 +2082,13 @@
             {
                 "text": "app1 feels hounded, never given a moment's peace, and {PRONOUN/app1/subject} {VERB/app1/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
-                "art": "gen_angry_cat_app",
+                "art": "cat_sprites/gen_angrycat_Ap",
                 "frequency": 4
             },
             {
                 "text": "app1 hisses at the unknown cat, fur bristling. The ghost vanishes, leaving app1 alone... for now.",
                 "exp": 30,
-                "art": "gen_angry_cat_app",
+                "art": "cat_sprites/gen_angrycat_Ap",
                 "frequency": 4
             }
         ]
@@ -2101,7 +2101,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_ghost_star",
+        "patrol_art": "cat_sprites/gen_med_ghost_McSc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2198,7 +2198,7 @@
             {
                 "text": "s_c turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/s_c/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/s_c/object}, and things must change.",
                 "exp": 0,
-                "art": "gen_cat_looking_up1",
+                "art": "cat_sprites/gen_catlookingup_Wr",
                 "stat_trait": [
                     "bloodthirsty",
                     "vengeful",
@@ -2243,7 +2243,7 @@
             {
                 "text": "app1 feels hounded, never given a moment's peace, and {PRONOUN/app1/subject} {VERB/app1/hiss/hisses} at the StarClan cat. But when {PRONOUN/app1/subject} {VERB/app1/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/app1/object} to camp to help with an emergency.",
                 "exp": 0,
-                "art": "gen_angry_cat_app",
+                "art": "cat_sprites/gen_angrycat_Ap",
                 "frequency": 4,
                 "relationships": [
                     {
@@ -2263,13 +2263,13 @@
             {
                 "text": "app1 feels hounded, never given a moment's peace, and {PRONOUN/app1/subject} {VERB/app1/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
                 "exp": 30,
-                "art": "gen_angry_cat_app",
+                "art": "cat_sprites/gen_angrycat_Ap",
                 "frequency": 4
             },
             {
                 "text": "app1 hisses at the unknown cat, fur bristling. The ghost vanishes, leaving app1 alone... for now.",
                 "exp": 30,
-                "art": "gen_angry_cat_app",
+                "art": "cat_sprites/gen_angrycat_Ap",
                 "frequency": 4
             }
         ]
@@ -2282,7 +2282,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_train_talkingMW",
+        "patrol_art": "cat_sprites/gen_med_talking_McWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2447,7 +2447,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_train_talkingMW",
+        "patrol_art": "cat_sprites/gen_med_talking_McWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2544,7 +2544,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_train_talkingMM",
+        "patrol_art": "cat_sprites/gen_med_talking_McMc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2641,7 +2641,7 @@
             {
                 "text": "It starts pouring rain while they're out, and even p_l has to admit defeat and lead them home.",
                 "exp": 0,
-                "art": "gen_med_rainygathering",
+                "art": "cat_sprites/gen_med_rainygathering_Mc",
                 "frequency": 4
             }
         ]
@@ -2654,7 +2654,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_train_talkingAA",
+        "patrol_art": "cat_sprites/gen_train_talking_ApAp",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2671,7 +2671,7 @@
             {
                 "text": "app1 flops over into a sunbeam, proclaiming that {PRONOUN/app1/subject} {VERB/app1/need/needs} to get some sunshine before hunting for herbs. app2 purrs and flops beside {PRONOUN/app1/object}, while app3 rolls {PRONOUN/app3/poss} eyes and loafs nearby. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
                 "exp": 20,
-                "art": "gen_train_sunny4",
+                "art": "cat_sprites/gen_med_sunny_Mc",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -2695,7 +2695,7 @@
             {
                 "text": "app1 is the first to find some herbs and smugly waves them in the faces of the other apprentices. After that it's a bit of a competition, with each cat trying to out-do the others. It's great for the Clan — in the end, as they come back to camp with a sizeable haul!",
                 "exp": 20,
-                "art": "gen_herbs_all_apps",
+                "art": "cat_sprites/gen_med_herbs_ApApAp",
                 "herbs": [
                     "many_herbs",
                     "random_herbs"
@@ -2722,13 +2722,13 @@
             {
                 "text": "The apprentices are too caught up in chatting with — and riling up — each other and don't collect a single leaf.",
                 "exp": 0,
-                "art": "gen_train_playbite_2apps",
+                "art": "cat_sprites/gen_train_playbite_ApAp",
                 "frequency": 4
             },
             {
                 "text": "The apprentices get easily distracted without a more experienced cat to keep them on track. They return empty-pawed, much to the disappointment of the Clan.",
                 "exp": 0,
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2755,7 +2755,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_appwarrior_bossypants",
+        "patrol_art": "cat_sprites/gen_med_bossypants_WrAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2817,7 +2817,7 @@
             {
                 "text": "p_l and r_c just can't see eye-to-eye and they end up getting nothing done, much to each cat's frustration.",
                 "exp": 0,
-                "art": "gen_train_argueWA",
+                "art": "cat_sprites/gen_train_argue_WrAp",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2846,7 +2846,7 @@
         "tags": [
             "app2_mentored"
         ],
-        "patrol_art": "gen_train_talkingAA",
+        "patrol_art": "cat_sprites/gen_train_talking_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2865,7 +2865,7 @@
             {
                 "text": "p_l and app2 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but {PRONOUN/p_l/subject} {VERB/p_l/do/does} feel secluded at times, watching app2 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
                 "exp": 20,
-                "art": "gen_app_siblings",
+                "art": "cat_sprites/gen_appsiblings_ApAp",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -2901,7 +2901,7 @@
             {
                 "text": "p_l and app2 race through the territory together, hearts alight with joy at being able to patrol together despite their different roles. So what if they take a little longer coming home than they should? They still return to camp with plenty of herbs! They deserve to have some sibling time for a change.",
                 "exp": 20,
-                "art": "running_two_apps",
+                "art": "cat_sprites/gen_running_ApAp",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -2937,7 +2937,7 @@
             {
                 "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. They burrow their noses into each other's pelts and purr, soaking in the moment and their love for each other before continuing on, promising to spend more time together. ",
                 "exp": 20,
-                "art": "gen_app_siblings",
+                "art": "cat_sprites/gen_appsiblings_ApAp",
                 "stat_trait": [
                     "loving"
                 ],
@@ -2966,7 +2966,7 @@
             {
                 "text": "p_l and app2 are far too distracted playing and catching up with one another, getting nothing useful done.",
                 "exp": 0,
-                "art": "gen_app_siblings",
+                "art": "cat_sprites/gen_appsiblings_ApAp",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2986,7 +2986,7 @@
             {
                 "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. app2 tries to comfort {PRONOUN/s_c/object}, but s_c shakes {PRONOUN/s_c/poss} head, knowing that no matter what {PRONOUN/app2/subject} {VERB/app2/say/says}, their roles are just too different. Both cats are too upset to gather herbs.",
                 "exp": 0,
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
                 "stat_trait": [
                     "lonesome",
                     "insecure"
@@ -3017,7 +3017,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_medwarrior_siblings",
+        "patrol_art": "cat_sprites/gen_med_oldersiblings_WrMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3222,7 +3222,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_medwarriorapp_curiosity",
+        "patrol_art": "cat_sprites/gen_med_curiosity_McAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3726,7 +3726,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_discussion",
+        "patrol_art": "cat_sprites/gen_med_discussion_McMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4133,7 +4133,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_train_talkingAA",
+        "patrol_art": "cat_sprites/gen_train_talking_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4168,7 +4168,7 @@
             {
                 "text": "Driven by the competition, p_l and app2 work extra hard and return to camp with a <i>lot</i> of herbs, to the surprise of their mentors.",
                 "exp": 10,
-                "art": "running_two_apps",
+                "art": "cat_sprites/gen_running_ApAp",
                 "herbs": [
                     "many_herbs",
                     "random_herbs"
@@ -4281,7 +4281,7 @@
             {
                 "text": "Try as they might, neither p_l nor app2 find any herbs. Frustrated, they start bickering about whose fault it is all the way back to camp.",
                 "exp": 0,
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4356,7 +4356,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_train_talkingMM",
+        "patrol_art": "cat_sprites/gen_med_talking_McMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4370,7 +4370,7 @@
             {
                 "text": "p_l and r_c search and harvest any herbs they can get their paws on. Later that day they reunite in front of the camp, just as the sun is setting, both their mouths stuffed full of herbs.",
                 "exp": 10,
-                "art": "gen_med_gatheringmoss",
+                "art": "cat_sprites/gen_med_gatheringmoss_Mc",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -4393,7 +4393,7 @@
             {
                 "text": "p_l and r_c decide to make a game of who can hunt the most herbs. They reunite when the sun is going down, walking into camp purring and playfully shoving each other with both their mouths full of herbs.",
                 "exp": 10,
-                "art": "running_two_meds",
+                "art": "cat_sprites/gen_med_running_McMc",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -4419,7 +4419,7 @@
             {
                 "text": "Both p_l and r_c are tense, and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other.",
                 "exp": 0,
-                "art": "gen_train_argueMM",
+                "art": "cat_sprites/gen_med_argue_McMc",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -4440,7 +4440,7 @@
             {
                 "text": "Even though there should be plenty of herbs, they fail to find anything. s_c blames r_c for distracting {PRONOUN/s_c/object} and they get into a huge argument.",
                 "exp": 0,
-                "art": "gen_train_argueMM",
+                "art": "cat_sprites/gen_med_argue_McMc",
                 "stat_trait": [
                     "strict",
                     "childish",
@@ -4478,7 +4478,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_med_gatheringcatmint_newleaf1",
+        "patrol_art": "cat_sprites/gen_med_NL_gatheringcatmint_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4496,7 +4496,7 @@
             {
                 "text": "They find absolutely no catmint together, but r_c seems strangely okay with that, just interested in chatting with p_l. So maybe {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a <i>nice</i> feather-brain.",
                 "exp": 30,
-                "art": "gen_train_talkingMW",
+                "art": "cat_sprites/gen_med_talking_McWr",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -4516,7 +4516,7 @@
             {
                 "text": "Fine. c_n does need more catmint. When they come across the bush, sheltered and thriving, p_l watches r_c carefully take the stalks off the leaves. p_l only needs the leaves, so {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} mind watching r_c getting silly with the stalks. It's even a little thrilling to be invited to join {PRONOUN/r_c/object}.",
                 "exp": 30,
-                "art": "gen_med_romanticstroll_v1",
+                "art": "cat_sprites/gen_med_romanticstroll_WrMc",
                 "herbs": [
                     "many_herbs",
                     "catmint"
@@ -4542,7 +4542,7 @@
             {
                 "text": "p_l politely declines. r_c insists. p_l <i>far less politely</i> declines.",
                 "exp": 0,
-                "art": "gen_angry_cat_med",
+                "art": "cat_sprites/gen_angrycat_Mc",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -4571,7 +4571,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "running_warrior_med",
+        "patrol_art": "cat_sprites/gen_med_running_WrMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4609,7 +4609,7 @@
             {
                 "text": "Feigning tiredness, r_c is able to convince p_l to take a break. While relaxing, r_c makes sure to tell p_l how great {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/p_l/subject} {VERB/p_l/are/is} and how the whole Clan owes {PRONOUN/p_l/object} so much. p_l's fur goes warm at the praise, and {PRONOUN/p_l/subject} {VERB/p_l/spend/spends} the rest of the patrol unable to look r_c in the eye without feeling all fluttery.",
                 "exp": 30,
-                "art": "gen_med_romanticstroll_v1",
+                "art": "cat_sprites/gen_med_romanticstroll_WrMc",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -4663,7 +4663,7 @@
             {
                 "text": "s_c asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been. By the time the two cats return to camp, p_l feels as though a huge weight has been lifted off {PRONOUN/p_l/poss} shoulders, all thanks to s_c.",
                 "exp": 20,
-                "art": "gen_med_romanticstroll_v1",
+                "art": "cat_sprites/gen_med_romanticstroll_WrMc",
                 "stat_trait": [
                     "compassionate",
                     "loving",
@@ -4733,7 +4733,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "running_two_meds",
+        "patrol_art": "cat_sprites/gen_med_running_McMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4770,7 +4770,7 @@
             {
                 "text": "Feigning tiredness, r_c is able to convince p_l to take a break. While relaxing, r_c makes sure to tell p_l how great {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} p_l is and how happy it makes {PRONOUN/r_c/object} to work with {PRONOUN/p_l/object} every day. p_l's fur goes warm at the praise, and {PRONOUN/p_l/subject} {VERB/p_l/spend/spends} the rest of the patrol unable to look r_c in the eye without feeling all fluttery.",
                 "exp": 30,
-                "art": "gen_romanticstroll_med",
+                "art": "cat_sprites/gen_med_romanticstroll_McMc",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -4824,7 +4824,7 @@
             {
                 "text": "s_c asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been. By the time the two cats return to camp, p_l feels as though a huge weight has been lifted off {PRONOUN/p_l/poss} shoulders, all thanks to s_c.",
                 "exp": 20,
-                "art": "gen_romanticstroll_med",
+                "art": "cat_sprites/gen_med_romanticstroll_McMc",
                 "stat_trait": [
                     "compassionate",
                     "loving",
@@ -4894,7 +4894,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "running_med_warrior",
+        "patrol_art": "cat_sprites/gen_med_running_McWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4932,7 +4932,7 @@
             {
                 "text": "Feigning tiredness, p_l is able to convince r_c to take a break. While relaxing, p_l makes sure to tell r_c how great {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c is and how happy r_c's company makes {PRONOUN/p_l/object}. r_c's fur goes warm at the praise, and {PRONOUN/r_c/subject} {VERB/r_c/spend/spends} the rest of the patrol unable to look p_l in the eye without feeling all fluttery.",
                 "exp": 30,
-                "art": "gen_med_romanticstroll_v1",
+                "art": "cat_sprites/gen_med_romanticstroll_WrMc",
                 "herbs": [
                     "random_herbs"
                 ],
@@ -4986,7 +4986,7 @@
             {
                 "text": "s_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been. By the time the two cats return to camp, r_c feels as though a huge weight has been lifted off {PRONOUN/r_c/poss} shoulders, all thanks to s_c.",
                 "exp": 20,
-                "art": "gen_med_romanticstroll_v1",
+                "art": "cat_sprites/gen_med_romanticstroll_WrMc",
                 "stat_trait": [
                     "compassionate",
                     "loving",
@@ -5054,7 +5054,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_and_app",
+        "patrol_art": "cat_sprites/gen_med_mentorandapp_McAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -5399,7 +5399,7 @@
                         }
                     }
                 ],
-                "art": "gen_med_collectingmullein",
+                "art": "cat_sprites/gen_med_collectingmullein_Mc",
                 "frequency": 4
             },
             {
@@ -5568,7 +5568,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "running_two_apps",
+        "patrol_art": "cat_sprites/gen_running_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -5600,7 +5600,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -5623,7 +5623,7 @@
                         }
                     }
                 ],
-                "art": "fst_med_herblocation2",
+                "art": "cat_sprites/fst_med_herblocation_Ap",
                 "frequency": 1
             },
             {
@@ -5652,7 +5652,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 4
             },
             {
@@ -5684,7 +5684,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 4
             }
         ],
@@ -5845,7 +5845,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_med_argue_ApAp",
                 "frequency": 4
             },
             {
@@ -5873,7 +5873,7 @@
                         }
                     }
                 ],
-                "art": "gen_speaking_cat_app",
+                "art": "cat_sprites/gen_speakingcat_Ap",
                 "frequency": 4
             },
             {
@@ -5903,7 +5903,7 @@
                         }
                     }
                 ],
-                "art": "gen_speaking_cat_app",
+                "art": "cat_sprites/gen_speakingcat_Ap",
                 "frequency": 4
             },
             {
@@ -5988,7 +5988,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_warrior_med_meadow",
+        "patrol_art": "cat_sprites/gen_med_meadow_WrMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -6035,7 +6035,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_warrior_med",
+                "art": "cat_sprites/gen_med_bumpheads_WrMc",
                 "frequency": 4
             },
             {
@@ -6080,7 +6080,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_warrior_med",
+                "art": "cat_sprites/gen_med_bumpheads_WrMc",
                 "frequency": 4
             },
             {
@@ -6117,7 +6117,7 @@
                         }
                     }
                 ],
-                "art": "gen_med_romanticstroll_v1",
+                "art": "cat_sprites/gen_med_romanticstroll_WrMc",
                 "frequency": 4
             },
             {
@@ -6160,7 +6160,7 @@
                         }
                     }
                 ],
-                "art": "gen_med_romanticstroll_v2",
+                "art": "cat_sprites/gen_med_romanticstroll_McWr",
                 "frequency": 4
             }
         ],
@@ -6184,7 +6184,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueWM",
+                "art": "cat_sprites/gen_med_argue_McWr",
                 "frequency": 4
             },
             {
@@ -6215,7 +6215,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueWM",
+                "art": "cat_sprites/gen_med_argue_McWr",
                 "frequency": 4
             },
             {
@@ -6280,7 +6280,7 @@
                         }
                     }
                 ],
-                "art": "running_med",
+                "art": "cat_sprites/gen_med_running_Mc",
                 "frequency": 1
             },
             {
@@ -6340,13 +6340,13 @@
                         }
                     }
                 ],
-                "art": "running_warrior",
+                "art": "cat_sprites/gen_running_Wr",
                 "frequency": 1
             },
             {
                 "text": "r_c and p_l waste no time when they see the snake — they turn tail and sprint off into the bushes, leaving the juniper ungathered.",
                 "exp": 0,
-                "art": "running_warrior_med",
+                "art": "cat_sprites/gen_med_running_WrMc",
                 "frequency": 4
             }
         ]
@@ -6359,7 +6359,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_app_meadow",
+        "patrol_art": "cat_sprites/gen_meadow_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -6392,7 +6392,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_talkingAA",
+                "art": "cat_sprites/gen_train_talking_ApAp",
                 "frequency": 1
             },
             {
@@ -6430,7 +6430,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_talkingAA",
+                "art": "cat_sprites/gen_train_talking_ApAp",
                 "frequency": 1
             },
             {
@@ -6462,7 +6462,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up",
+                "art": "cat_sprites/gen_catlookingup_Ap",
                 "frequency": 1
             },
             {
@@ -6503,7 +6503,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up",
+                "art": "cat_sprites/gen_catlookingup_Ap",
                 "frequency": 4
             },
             {
@@ -6550,7 +6550,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_apps",
+                "art": "cat_sprites/gen_bumpheads_ApAp",
                 "frequency": 4
             },
             {
@@ -6597,7 +6597,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_apps",
+                "art": "cat_sprites/gen_bumpheads_ApAp",
                 "frequency": 4
             },
             {
@@ -6641,7 +6641,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_apps",
+                "art": "cat_sprites/gen_bumpheads_ApAp",
                 "frequency": 4
             },
             {
@@ -6671,7 +6671,7 @@
                         }
                     }
                 ],
-                "art": "gen_app_crouching_perplexed",
+                "art": "cat_sprites/gen_crouchingperplexed_ApAp",
                 "frequency": 4
             },
             {
@@ -6701,7 +6701,7 @@
                         }
                     }
                 ],
-                "art": "gen_apprentice_found_scent_clanmate",
+                "art": "cat_sprites/gen_foundscent_ApWr",
                 "frequency": 4
             },
             {
@@ -6731,7 +6731,7 @@
                         }
                     }
                 ],
-                "art": "gen_speaking_cat_app",
+                "art": "cat_sprites/gen_speakingcat_Ap",
                 "frequency": 4
             },
             {
@@ -6762,7 +6762,7 @@
                         }
                     }
                 ],
-                "art": "gen_speaking_cat_app",
+                "art": "cat_sprites/gen_speakingcat_Ap",
                 "frequency": 4
             },
             {
@@ -6802,7 +6802,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up",
+                "art": "cat_sprites/gen_catlookingup_Ap",
                 "frequency": 4
             },
             {
@@ -6838,7 +6838,7 @@
                         }
                     }
                 ],
-                "art": "fst_hunt_fun4",
+                "art": "cat_sprites/gen_hunt_funrun_Ap",
                 "frequency": 4
             }
         ],
@@ -6862,7 +6862,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -6890,7 +6890,7 @@
                         }
                     }
                 ],
-                "art": "gen_happy_cat2",
+                "art": "cat_sprites/gen_happycat_Ap",
                 "frequency": 4
             },
             {
@@ -6911,7 +6911,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -6956,7 +6956,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
                 "frequency": 4
             },
             {
@@ -6977,7 +6977,7 @@
                         }
                     }
                 ],
-                "art": "gen_app_siblings",
+                "art": "cat_sprites/gen_appsiblings_ApAp",
                 "frequency": 4
             },
             {
@@ -7044,7 +7044,7 @@
                         }
                     }
                 ],
-                "art": "gen_angry_cat_app",
+                "art": "cat_sprites/gen_angrycat_Ap",
                 "frequency": 4
             },
             {
@@ -7074,7 +7074,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
                 "frequency": 1
             },
             {
@@ -7105,7 +7105,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -7137,7 +7137,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -7167,7 +7167,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             }
         ]
@@ -7180,7 +7180,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_app_meadow",
+        "patrol_art": "cat_sprites/gen_meadow_ApAp",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -7216,7 +7216,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_talkingAA",
+                "art": "cat_sprites/gen_train_talking_ApAp",
                 "frequency": 1
             },
             {
@@ -7254,7 +7254,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_talkingAA",
+                "art": "cat_sprites/gen_train_talking_ApAp",
                 "frequency": 1
             },
             {
@@ -7286,7 +7286,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up",
+                "art": "cat_sprites/gen_catlookingup_Ap",
                 "frequency": 1
             },
             {
@@ -7327,7 +7327,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up",
+                "art": "cat_sprites/gen_catlookingup_Ap",
                 "frequency": 4
             },
             {
@@ -7374,7 +7374,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_apps",
+                "art": "cat_sprites/gen_bumpheads_ApAp",
                 "frequency": 4
             },
             {
@@ -7421,7 +7421,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_apps",
+                "art": "cat_sprites/gen_bumpheads_ApAp",
                 "frequency": 4
             },
             {
@@ -7464,7 +7464,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_apps",
+                "art": "cat_sprites/gen_bumpheads_ApAp",
                 "frequency": 4
             },
             {
@@ -7494,7 +7494,7 @@
                         }
                     }
                 ],
-                "art": "gen_app_crouching_perplexed",
+                "art": "cat_sprites/gen_crouchingperplexed_ApAp",
                 "frequency": 4
             },
             {
@@ -7524,7 +7524,7 @@
                         }
                     }
                 ],
-                "art": "gen_apprentice_found_scent_clanmate",
+                "art": "cat_sprites/gen_foundscent_ApWr",
                 "frequency": 4
             },
             {
@@ -7554,7 +7554,7 @@
                         }
                     }
                 ],
-                "art": "gen_speaking_cat_app",
+                "art": "cat_sprites/gen_speakingcat_Ap",
                 "frequency": 4
             },
             {
@@ -7585,7 +7585,7 @@
                         }
                     }
                 ],
-                "art": "gen_speaking_cat_app",
+                "art": "cat_sprites/gen_speakingcat_Ap",
                 "frequency": 4
             },
             {
@@ -7625,7 +7625,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up",
+                "art": "cat_sprites/gen_catlookingup_Ap",
                 "frequency": 4
             },
             {
@@ -7661,7 +7661,7 @@
                         }
                     }
                 ],
-                "art": "fst_hunt_fun4",
+                "art": "cat_sprites/gen_hunt_funrun_ApAp",
                 "frequency": 4
             }
         ],
@@ -7685,7 +7685,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -7713,7 +7713,7 @@
                         }
                     }
                 ],
-                "art": "gen_happy_cat2",
+                "art": "cat_sprites/gen_happycat_Ap",
                 "frequency": 4
             },
             {
@@ -7734,7 +7734,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -7779,7 +7779,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
                 "frequency": 4
             },
             {
@@ -7800,7 +7800,7 @@
                         }
                     }
                 ],
-                "art": "gen_app_siblings",
+                "art": "cat_sprites/gen_appsiblings_ApAp",
                 "frequency": 4
             },
             {
@@ -7867,7 +7867,7 @@
                         }
                     }
                 ],
-                "art": "gen_angry_cat_app",
+                "art": "cat_sprites/gen_angrycat_Ap",
                 "frequency": 4
             },
             {
@@ -7897,7 +7897,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
                 "frequency": 1
             },
             {
@@ -7928,7 +7928,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -7960,7 +7960,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             },
             {
@@ -7990,7 +7990,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueAA",
+                "art": "cat_sprites/gen_train_argue_ApAp",
                 "frequency": 1
             }
         ]
@@ -8007,7 +8007,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_soloripples",
+        "patrol_art": "cat_sprites/gen_med_soloripples_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -8134,7 +8134,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -8239,7 +8239,7 @@
                 "herbs": [
                     "elder_leaves"
                 ],
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -8336,7 +8336,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -8421,7 +8421,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -8442,7 +8442,7 @@
             {
                 "text": "Lungwort doesn't help with many ailments. But it is the <i>only</i> cure for yellowcough, and Clans have wasted away and died out for want of it, plague sweeping through their ranks, breath rasping in failing lungs till none remained to witness. c_n <i>needs</i> a steady supply of lungwort.",
                 "exp": 20,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWrWr",
                 "herbs": [
                     "lungwort"
                 ],
@@ -8506,7 +8506,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -8596,7 +8596,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -8680,7 +8680,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -8766,7 +8766,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_med_medwarriorapp_curiosity",
+        "patrol_art": "cat_sprites/gen_med_curiosity_McAp",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -8877,7 +8877,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -9137,7 +9137,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -9215,7 +9215,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "deathsheadmoth_INTRO",
+        "patrol_art": "halloween/hal_deathsheadmoth",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -9280,7 +9280,7 @@
             "romance",
             "halloween"
         ],
-        "patrol_art": "gen_med_pumpkinpatch1",
+        "patrol_art": "halloween/hal_gen_med_pumpkinpatch_McMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -9334,7 +9334,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "friendlyghost_INTRO",
+        "patrol_art": "halloween/hal_friendlyghost_Ur",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -9430,7 +9430,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -9504,7 +9504,7 @@
         "tags": [
             "all_mentored"
         ],
-        "patrol_art": "gen_med_herbsdandy",
+        "patrol_art": "cat_sprites/gen_med_herbsdandy_ApMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -9554,7 +9554,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_rainygathering",
+        "patrol_art": "cat_sprites/gen_med_rainygathering_Mc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -9709,7 +9709,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_cobweblesson",
+        "patrol_art": "cat_sprites/gen_med_cobweblesson_McAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -10294,7 +10294,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringmoss",
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -10334,7 +10334,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringmoss",
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -10393,7 +10393,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringmoss",
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -10452,7 +10452,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringmoss",
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -10511,7 +10511,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringrosemary",
+        "patrol_art": "cat_sprites/gen_med_gatheringrosemary_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -10581,7 +10581,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringrosemary",
+        "patrol_art": "cat_sprites/gen_med_gatheringrosemary_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -10654,7 +10654,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "gen_med_cobwebapps",
+        "patrol_art": "cat_sprites/gen_med_cobweb_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -10781,7 +10781,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "gen_med_cobwebapps",
+        "patrol_art": "cat_sprites/gen_med_cobweb_ApAp",
         "min_cats": 3,
         "max_cats": 3,
         "min_max_status": {
@@ -10893,7 +10893,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "gen_med_cobwebapps",
+        "patrol_art": "cat_sprites/gen_med_cobweb_ApAp",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -11130,7 +11130,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_med_mossapps",
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -11244,7 +11244,7 @@
             "romance",
             "rom_two_apps"
         ],
-        "patrol_art": "gen_med_mossapps",
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_ApAp",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -11372,7 +11372,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_mossapps",
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_ApAp",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -13264,7 +13264,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_greenleaf1",
+        "patrol_art": "cat_sprites/gen_med_GL_gatheringcatmint_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -13324,7 +13324,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_greenleaf2",
+        "patrol_art": "cat_sprites/gen_med_GL_gatheringcatmint_ApMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -13463,7 +13463,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_greenleaf3",
+        "patrol_art": "cat_sprites/gen_med_GL_gatheringcatmint_WrWrMc",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -14774,7 +14774,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringgoldenrod_greenleaf1",
+        "patrol_art": "cat_sprites/gen_med_GL_gatheringgoldenrod_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -15447,7 +15447,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -15550,7 +15550,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort_app",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_McAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -15729,7 +15729,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -15947,7 +15947,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -16011,7 +16011,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_ApMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -16152,7 +16152,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_WrMc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -16969,7 +16969,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_greenleaf1",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -17033,7 +17033,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -17133,7 +17133,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_greenleaf3",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -18274,7 +18274,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_med_gatheringraspberrysoloapp",
+        "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -19707,7 +19707,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringblackberry_leaf-bare1",
+        "patrol_art": "cat_sprites/gen_med_LB_gatheringblackberry_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -19805,7 +19805,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_LB_gatheringblackberry_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -20206,7 +20206,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_LB_gatheringblackberry_Mc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -21126,7 +21126,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringdaisy_leaf-bare1",
+        "patrol_art": "cat_sprites/gen_med_LB_gatheringdaisy_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -21219,7 +21219,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_LB_gatheringdaisy_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -21506,7 +21506,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_LB_gatheringdaisy_Mc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -22356,7 +22356,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringjuniper_leaf-bare1",
+        "patrol_art": "cat_sprites/gen_med_LB_gatheringjuniper_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -23115,7 +23115,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_flower_date_med_med",
+        "patrol_art": "cat_sprites/gen_med_flowerdate_McMc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -23681,7 +23681,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringblackberry_newleaf2",
+        "patrol_art": "cat_sprites/gen_med_gatheringblackberry_McAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -24653,7 +24653,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_newleaf1",
+        "patrol_art": "cat_sprites/gen_med_NL_gatheringcatmint_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -24713,7 +24713,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_newleaf2",
+        "patrol_art": "cat_sprites/gen_med_NL_gatheringcatmint_ApMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -24853,7 +24853,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_newleaf3",
+        "patrol_art": "cat_sprites/gen_med_NL_gatheringcatmint_WrWrMc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -26453,7 +26453,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -26556,7 +26556,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort_app",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_McAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -26729,7 +26729,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -26947,7 +26947,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -27011,7 +27011,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_ApMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -27153,7 +27153,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_WrMc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -27973,7 +27973,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_greenleaf1",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -28039,7 +28039,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -28142,7 +28142,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -31651,7 +31651,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_leaf-fall1",
+        "patrol_art": "cat_sprites/gen_med_LF_gatheringcatmint_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -31723,7 +31723,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_leaf-fall2",
+        "patrol_art": "cat_sprites/gen_med_LF_gatheringcatmint_ApMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -31864,7 +31864,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringcatmint_leaf-fall3",
+        "patrol_art": "cat_sprites/gen_med_LF_gatheringcatmint_WrWrMc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -33798,7 +33798,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -33919,7 +33919,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort_app",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_McAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -34098,7 +34098,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringlungwort",
+        "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -34316,7 +34316,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -34380,7 +34380,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_ApMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -34522,7 +34522,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "med_general_intro",
+        "patrol_art": "cat_sprites/gen_med_gatheringmallow_WrMc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -35323,7 +35323,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_leaf-fall1",
+        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -35387,7 +35387,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_leaf-fall2",
+        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -35488,7 +35488,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_leaf-fall2",
+        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -36350,7 +36350,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_med_gatheringraspberrysoloapp",
+        "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -37444,7 +37444,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_borderherb",
+        "patrol_art": "cat_sprites/gen_med_borderherb_Mc",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -37523,7 +37523,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -37603,7 +37603,7 @@
   "tags": [],
   "min_cats": 2,
   "max_cats": 6,
-  "patrol_art": "gen_app_crouching_perplexed",
+  "patrol_art": "cat_sprites/gen_crouchingperplexed_ApAp",
   "intro_text": "p_l takes the apprentices out to learn to identify common herbs. Regardless of their role, it is important to be able to recognize what grows in c_n's territory.",
   "decline_text": "The apprentices get called away to other duties.",
   "min_max_status": {
@@ -37646,7 +37646,7 @@
           }
         }
       ],
-      "art": "gen_med_gatheringmallow_newleaf2"
+      "art": "cat_sprites/gen_med_gatheringmallow_ApMc"
     },
     {
       "text": "p_l leads the apprentices along common routes, pointing out herbs along the way. Wild garlic, burdock root, even raspberry bunches can be found near the best hunting grounds or by the border. One should always keep one's eye out, though p_l reminds them never to ingest anything before it is identified by a medicine cat. The apprentices remain attentive throughout the patrol, taking in the lesson p_l offers.",
@@ -37664,7 +37664,7 @@
           }
         }
       ],
-      "art": "gen_showing_herbs_med_one_app"
+      "art": "cat_sprites/gen_med_showingherbs_ApMc"
     }
   ],
   "fail_outcomes": [
@@ -37685,7 +37685,7 @@
           }
         }
       ],
-      "art": "med_cat_looking_up"
+      "art": "cat_sprites/gen_med_catlookingup_Mc"
     },
     {
       "text": "As the patrol sets out, a sudden rain pours from the sky. The apprentices whine and moan about getting their pelts wet. p_l doesn't have the patience for this and turns the patrol around.",
@@ -37703,7 +37703,7 @@
           }
         }
       ],
-      "art": "gen_med_rainygathering"
+      "art": "cat_sprites/gen_med_rainygathering_Mc"
     }
   ]
 }
