@@ -111,6 +111,12 @@
         "no_mediators": "The Clan has no mediators!",
         "leave_clan": "What should this cat become?",
         "pos_clan_rel_log": "The Clan gained %{value_list} towards %{name_list}.",
-        "neg_clan_rel_log": "The Clan lost %{value_list} towards %{name_list}."
+        "neg_clan_rel_log": "The Clan lost %{value_list} towards %{name_list}.",
+        "cruel_card_limit": "You can only choose %{amount} cards. Remove a card to choose a new one.",
+        "cruel_cards_conflict": {
+            "one": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> %{conflicting_cards_list} or you can <b>replace</b> it with %{new_card}.",
+            "many": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> the already chosen cards or you can <b>replace</b> them with %{new_card}."
+
+        }
     }
 }

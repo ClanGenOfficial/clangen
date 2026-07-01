@@ -696,7 +696,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected —  m_c was the one responsible for mur_c's death.",
+        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected:  m_c was the one responsible for mur_c's death.",
         "m_c": {
             "age": [
                 "any"
@@ -3860,7 +3860,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c is just too cute — r_c gives {PRONOUN/m_c/object} a pretty acc_singular as a gift.",
+        "event_text": "m_c is just too cute. r_c gives {PRONOUN/m_c/object} a pretty acc_singular as a gift.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -7090,6 +7090,191 @@
                 "amount": 10,
                 "log": {
                     "cats_from": "cat_from was grateful that cat_to let {PRONOUN/cat_from/object} tag along and watch {PRONOUN/cat_to/object} do {PRONOUN/cat_to/poss} duties."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_war_mediatorleader1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c is giving r_c advice on the war, though it's unclear how helpful it really is.",
+        "m_c": {
+            "status": [
+                "mediator",
+                "mediator apprentice"
+            ],
+            "relationship_status": [
+                "dislikes"
+            ],
+            "trait": [
+                "cunning"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "bold",
+                "charismatic",
+                "confident",
+                "daring",
+                "righteous",
+                "ambitious",
+                "bloodthirsty",
+                "cold",
+                "fierce",
+                "shameless",
+                "strict",
+                "troublesome",
+                "vengeful",
+                "sneaky",
+                "strange"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_to": [
+                    "m_c"
+                ],
+                "cats_from": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust"
+                ],
+                "amount": -20,
+                "log": {
+                    "cats_from": "cat_from suspected that cat_to intentionally gave {PRONOUN/cat_from/object} bad advice about an ongoing war."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_war_mediatorleader2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "m_c is conversing with r_c about ways to potentially end this war without bloodshed.",
+        "m_c": {
+            "status": [
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "calm",
+                "careful",
+                "insecure",
+                "lonesome",
+                "loyal",
+                "nervous",
+                "compassionate",
+                "faithful",
+                "loving",
+                "responsible",
+                "thoughtful",
+                "wise",
+                "childish",
+                "playful"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust"
+                ],
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_from consulted cat_to about how to end the war with o_c_n."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_war_mediatorleader3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "m_c is conversing with r_c about ways to potentially end this war, though not without bloodshed.",
+        "m_c": {
+            "status": [
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "bold",
+                "charismatic",
+                "confident",
+                "daring",
+                "righteous",
+                "ambitious",
+                "bloodthirsty",
+                "cold",
+                "fierce",
+                "shameless",
+                "strict",
+                "troublesome",
+                "vengeful",
+                "sneaky",
+                "strange"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust"
+                ],
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_from consulted cat_to about how to end the war with o_c_n."
                 }
             }
         ]
@@ -12822,7 +13007,7 @@
             "changed": -8
         }
     },
-        {
+    {
         "event_id": "gen_misc_war_gatheringgossipers",
         "location": [
             "any"
@@ -14854,5 +15039,511 @@
                 }
         }
     ]
+},
+      {
+    "event_id": "gen_rel_loathes1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c's claws unsheathe whenever r_c is near.",
+    "m_c": {
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {}
+},
+    {
+    "event_id": "gen_rel_loathes2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c hopes r_c gets horribly wounded.",
+    "m_c": {
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {}
+},
+    {
+    "event_id": "gen_rel_loathes3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c cannot stomach that fox-hearted r_c.",
+    "m_c": {
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks the praise r_c receives is a load of mouse-dung.",
+    "m_c": {
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c tastes mouse-bile every time {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} about r_c.",
+    "m_c": {
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks {PRONOUN/m_c/subject} would be a better deputy than r_c.",
+    "m_c": {
+        "status": ["-kitten", "-deputy", "-leader", "-medicine cat apprentice", "-medicine cat"],
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {
+        "status": ["deputy"]
+    }
+},
+      {
+    "event_id": "gen_rel_discredits1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c is convinced r_c is influenced by the Dark Forest.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {}
+},
+          {
+    "event_id": "gen_rel_discredits2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c knows r_c is plotting against {PRONOUN/m_c/object}.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_discredits3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks r_c lets Clanmates {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like die intentionally.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {
+        "age": [],
+        "status": ["medicine cat", "medicine cat apprentice"]
+    }
+},
+          {
+    "event_id": "gen_rel_discredits4",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c whispers to {PRONOUN/m_c/poss} friends doubts about r_c's leadership.",
+    "m_c": {
+        "relationship_status": ["discredits_only"],
+         "status": ["-deputy", "-leader"]
+    },
+    "r_c": {
+        "status": ["leader", "deputy"]
+    }
+},
+    {
+    "event_id": "gen_rel_runsfrom1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c refuses to socialize or patrol with r_c.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"],
+        "status": ["-kitten", "-elder"]
+    },
+    "r_c": {
+        "status": ["-kitten", "-elder"]
+    }
+},
+      {
+    "event_id": "gen_rel_runsfrom2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks if they were alone together r_c would hurt {PRONOUN/m_c/object}.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"]
+    },
+    "r_c": {}
+},
+          {
+    "event_id": "gen_rel_runsfrom3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c isn't sure {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} safe in c_n... not with r_c around.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"]
+    },
+    "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c always meows a morning greeting to r_c.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c frequently shares tongues with r_c.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c enjoys r_c's company.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_respects1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c rarely disagrees with r_c.",
+  "m_c": {
+    "relationship_status": ["respects_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_respects2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c follows r_c's lead on patrol.",
+  "m_c": {
+    "relationship_status": ["respects_only"],
+      "status": ["-kitten", "-elder"]
+  },
+  "r_c": {
+      "status": ["-kitten", "-elder"]
+  }
+},
+    {
+  "event_id": "gen_rel_respects3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c looks up to r_c.",
+  "m_c": {
+    "relationship_status": ["respects_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_trusts1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c trusts r_c's judgment.",
+  "m_c": {
+    "relationship_status": ["trusts_only"]
+  },
+  "r_c": {}
+},
+     {
+  "event_id": "gen_rel_trusts2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c is at ease with r_c around.",
+  "m_c": {
+    "relationship_status": ["trusts_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_trusts3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c always has r_c's back on patrol.",
+  "m_c": {
+    "relationship_status": ["trusts_only"],
+      "status": ["-kitten", "-elder"]
+  },
+  "r_c": {
+      "status": ["-kitten", "-elder"]
+  }
+},
+    {
+  "event_id": "gen_rel_understands1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c understands what drives r_c.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_understands2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can often read r_c's moods.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_understands3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can often predict r_c's course of action.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_adores1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c finds r_c charming.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_adores2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c feels flustered around r_c.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+     {
+  "event_id": "gen_rel_adores3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c likes being close with r_c.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c and r_c spend all their spare time together.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c holds r_c dear.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c cannot imagine {PRONOUN/m_c/poss} life without r_c.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c strives to be more like r_c.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "r_c always manages to impress m_c.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c considers r_c one of the finest cats in c_n.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_confides_in1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c confides in r_c after a stressful day.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_confides_in2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows c_n is safe in r_c's paws.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {
+      "status": ["leader", "deputy", "medicine cat"]
+  }
+},
+    {
+  "event_id": "gen_rel_confides_in3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c trusts r_c with {PRONOUN/m_c/poss} most vulnerable thoughts.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows r_c better than almost anyone.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can tell what r_c is thinking at a glance.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows r_c by heart.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c's heart belongs to r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c wants to share everything in life with r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c sighs and purrs and the mere thought of r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves4",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c and r_c twine tails when they pass by each other.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {
+      "relationship_status": ["loves_only"]
+  }
 }
 ]

@@ -1085,7 +1085,6 @@ def one_moon_cat(cat):
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:
-        cat.relationship_interaction()
         Relation_Events.handle_relationships(cat)
 
     # now we make sure ill and injured cats don't get interactions they shouldn't

@@ -1,6 +1,18 @@
 {
-  "card1": {
-    "card_art": "file_path",
+  "origin_placeholder0": {
+    "card_art": "origin/eaten.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "origin_placeholder1": {
+    "card_art": "origin/kitten.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "origin_placeholder2": {
+    "card_art": "origin/eaten.png",
     "modifiers": {
       "mod_name": 1
     }

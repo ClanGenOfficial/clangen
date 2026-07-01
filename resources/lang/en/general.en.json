@@ -104,6 +104,7 @@
             "one": "mate",
             "many": "mates"
         },
+        "are_mates": "mates",
         "she-cat": "she-cat",
         "tom": "tom",
         "cat": "cat",

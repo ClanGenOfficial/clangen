@@ -36,9 +36,7 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
     type_of_change = choice(["negative", "positive"])
 
     # pick how intense the change is
-    intensity_chances = get_config(
-        game.clan, "relationship.group_events.intensity_chances"
-    )
+    intensity_chances = get_config("relationship.group_events.intensity_chances")
     chosen_intensity = choices(
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
@@ -59,7 +57,7 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
 
 def _get_event(
     events: list[TextPoolEvent], interactable_cats: list[Cat], main_cat: Cat
-):
+) -> tuple[TextPoolEvent, dict[str, Union[Cat, list[Cat]]]]:
     # find events that m_c can have
     possible_events = _find_events_for_main_cat(main_cat, events)
 
@@ -290,9 +288,7 @@ def _get_multi_cats(
     cat_constraints: InvolvedCatDict,
 ) -> list[Cat]:
     # find out how many cats we'll allow
-    max_cats = choice(
-        get_config(game.clan, "relationship.group_events.multi_cat_amounts")
-    )
+    max_cats = choice(get_config("relationship.group_events.multi_cat_amounts"))
     chosen_cats = []
 
     # get the cats who qualify
@@ -353,7 +349,7 @@ def _load_file(path) -> list[TextPoolEvent]:
     """
     Loads and returns the events file
     """
-    # check if we've already loaded these thoughts and then load them if need be
+    # check if we've already loaded these events and then load them if need be
     if path not in loaded_events.keys():
         loaded_events[path] = []
         for t in load_lang_resource(path):

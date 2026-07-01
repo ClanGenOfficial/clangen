@@ -1,0 +1,98 @@
+[
+    {
+        "id": "rom_inc_low1",
+        "strings": [
+            "m_c is developing a crush on r_c.",
+            "m_c might be reading a little too far into r_c's kindness.",
+            "m_c never realized how much {PRONOUN/m_c/subject} {VERB/m_c/love/loves} spending time with r_c.",
+            "m_c just noticed how beautiful r_c's eyes are."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "-mates",
+                    "fancies_only"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_low2",
+        "strings": [
+            "m_c is admiring r_c from afar...",
+            "m_c stayed up all night thinking of ways to impress r_c.",
+            "m_c thinks r_c is really funny.",
+            "m_c had a dream about r_c.",
+            "m_c thinks r_c has very soft fur.",
+            "m_c and r_c sunbathe together.",
+            "m_c and r_c take a nap together."
+        ]
+    },
+    {
+        "id": "rom_inc_low3",
+        "strings": [
+            "m_c is prancing around in front of r_c."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_low4",
+        "strings": [
+            "m_c can't help but admire r_c's pelt.",
+            "m_c can't help but smile seeing r_c smile."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "-mates"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "rom_inc_low5",
+        "strings": [
+            "m_c thinks r_c is really charming.",
+            "m_c can't help but smile when around r_c."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "charming",
+                        "charismatic",
+                        "flamboyant"
+                    ]
+                }
+            }
+        }
+    }
+]

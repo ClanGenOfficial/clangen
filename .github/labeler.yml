@@ -1,0 +1,9 @@
+"PR:code":
+  - changed-files:
+    - any-glob-to-any-file: "**/*.py"
+"PR:writing":
+  - changed-files:
+    - any-glob-to-any-file: "**/*.json"
+"PR:art":
+  - changed-files:
+    - any-glob-to-any-file: "**/*.png"

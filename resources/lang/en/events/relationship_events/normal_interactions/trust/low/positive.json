@@ -1,0 +1,87 @@
+[
+    {
+        "id": "trust_inc_low1",
+        "strings": [
+            "m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face.",
+            "r_c follows through on a small promise made with m_c.",
+            "r_c says something vulnerable to m_c.",
+            "m_c feels a little safer when r_c joins {PRONOUN/m_c/object} in the clearing.",
+            "m_c gets some good advice from r_c about something trivial.",
+            "r_c respects m_c's opinion despite disagreeing with it.",
+            "r_c vents about something trivial to m_c.",
+            "r_c sends a Clanmate to help m_c with something {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling with.",
+            "r_c respects m_c's opinion despite disagreeing with it."
+        ]
+    },
+    {
+        "id": "trust_inc_low2",
+        "strings": [
+            "m_c includes r_c in a conversation that r_c struggled to join.",
+            "r_c helps m_c hide from a Clanmate.",
+            "r_c makes a small sacrifice that benefits m_c.",
+            "r_c lets m_c know that a Clanmate was talking badly about {PRONOUN/m_c/object}.",
+            "r_c tells m_c that {PRONOUN/r_c/subject} was worried about {PRONOUN/m_c/object}."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "trust_inc_low3",
+        "strings": [
+            "m_c bestows wisdom onto r_c."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "elder"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "trust_inc_low4",
+        "strings": [
+            "r_c tells m_c to get {PRONOUN/m_c/poss} ailment treated as soon as possible.",
+            "r_c is chiding m_c for being so reckless.",
+            "r_c apologized to m_c for possibly hurting {PRONOUN/m_c/poss} feelings."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "careful"
+                    ]
+                }
+            }
+        }
+    }
+]
