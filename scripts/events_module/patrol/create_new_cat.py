@@ -9,6 +9,7 @@ from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat.status import StatusDict
 from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.cat_relations.relationship import Relationship
 from scripts.clan import OtherClan
 from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
@@ -55,7 +56,7 @@ def updated_create_new_cat(
     # handle applying an age for litters if one wasn't specified
     is_litter = option_dict["can_create_new_cat"].get("become_litter")
     if is_litter:
-        if not status.get("age").is_baby():
+        if not status.get("age") or not status["age"].is_baby():
             status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
 
     # MOONS OLD
@@ -95,7 +96,9 @@ def updated_create_new_cat(
             gender=gender,
             parent1=blood_parents[0].ID if blood_parents else None,
             parent2=blood_parents[1].ID if len(blood_parents) > 1 else None,
-            adoptive_parents=adoptive_parents if adoptive_parents else None,
+            adoptive_parents=[p.ID for p in adoptive_parents]
+            if adoptive_parents
+            else None,
         )
 
         # MATES
@@ -129,6 +132,15 @@ def updated_create_new_cat(
     if blood_parents or adoptive_parents:
         for p in blood_parents + adoptive_parents:
             for c in new_cats:
+                if c.ID not in p.relationships:
+                    p.relationships[c.ID] = Relationship(
+                        cat_from=p, cat_to=c, family=True
+                    )
+                if p.ID not in c.relationships:
+                    c.relationships[p.ID] = Relationship(
+                        cat_from=c, cat_to=p, family=True
+                    )
+
                 p.relationships[c.ID].change_according_dictionary(
                     get_config("new_cat.parent_buff.parent_to_kit")
                 )
@@ -138,6 +150,15 @@ def updated_create_new_cat(
     # littermate to littermate
     if is_litter:
         for pair in combinations(new_cats, 2):
+            if pair[0].ID not in pair[1].relationships:
+                pair[1].relationships[pair[0].ID] = Relationship(
+                    cat_from=pair[1], cat_to=pair[0], family=True
+                )
+            if pair[1].ID not in pair[0].relationships:
+                pair[0].relationships[pair[1].ID] = Relationship(
+                    cat_from=pair[0], cat_to=pair[1], family=True
+                )
+
             pair[0].relationships[pair[1].ID].change_according_dictionary(
                 get_config("new_cat.sib_buff.cat1_to_cat2")
             )
@@ -159,15 +180,17 @@ def updated_create_new_cat(
     return new_cats
 
 
-def _assign_mates(created_cat, involved_cats, option_dict):
+def _assign_mates(
+    created_cat: Cat, involved_cats: dict[str, Cat], option_dict: InvolvedCatDict
+):
     if option_dict["can_create_new_cat"].get("assign_mate"):
         for m in option_dict["can_create_new_cat"].get("assign_mate", []):
             if m in involved_cats:
                 # we delay inheritance recalc because we'll handle it later on, and we don't want to do it twice
-                created_cat.set_mate(involved_cats[m].ID, recalculate_inheritance=False)
+                created_cat.set_mate(involved_cats[m], recalculate_inheritance=False)
 
 
-def _assign_name(created_cat):
+def _assign_name(created_cat: Cat):
     if not created_cat.status.social == CatSocial.CLANCAT:
         # if it ain't a clancat, give it a non-clancat name
         name_categories = [
@@ -328,11 +351,11 @@ def _assign_health(created_cat, option_dict):
 
 def _assign_stats(created_cat, option_dict):
     if option_dict.get("stat"):
-        skills = option_dict["stat"]["skill"]
-        traits = option_dict["stat"]["trait"]
+        skills = option_dict["stat"].get("skill", [])
+        traits = option_dict["stat"].get("trait", [])
 
         # if kitty is not required to have both, then we randomly dump one of the lists
-        if not option_dict["stat"]["must_have_both"] and (skills and traits):
+        if not option_dict["stat"].get("must_have_both") and (skills and traits):
             if randint(1, 2) == 1:
                 skills.clear()
             else:
@@ -340,7 +363,7 @@ def _assign_stats(created_cat, option_dict):
 
         if skills:
             skill_info = choice(skills).split(",")
-            path = SkillPath(skill_info[0])
+            path = SkillPath[skill_info[0]]
             tier = max(int(skill_info[1]), 1)
             points = randint(
                 Skill.tier_ranges[tier - 1][0],

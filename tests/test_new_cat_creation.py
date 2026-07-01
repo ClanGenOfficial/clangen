@@ -3,6 +3,7 @@ from itertools import combinations
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding
+from scripts.cat.skills import SkillPath
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.cat.status import StatusDict
 from scripts.clan import OtherClan, Clan
@@ -11,6 +12,7 @@ from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     StandingDict,
     CanCreateNewCatDict,
+    StatDict,
 )
 from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.game_structure import game
@@ -337,24 +339,169 @@ class TestNewCatCreation(unittest.TestCase):
             )
 
     def test_mate_assignment(self):
-        # test that a single mate can be assigned
+        mate1 = Cat(status_dict=StatusDict(rank=CatRank.LONER), disable_random=True)
+        mate2 = Cat(status_dict=StatusDict(rank=CatRank.LONER), disable_random=True)
 
-        # test that multiple can be assigned
+        with self.subTest("Testing mate assignments"):
+            # test that a single mate can be assigned
+            option_dict = InvolvedCatDict(
+                can_create_new_cat=CanCreateNewCatDict(assign_mate=["m_c"]),
+            )
 
-        # test that they have established relationships
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={"m_c": mate1}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
 
-        pass
+            self.assertIn(
+                mate1.ID,
+                test_cat.mate,
+                msg=f"Single mate was not assigned correctly.",
+            )
+
+            # test that multiple can be assigned
+            option_dict = InvolvedCatDict(
+                can_create_new_cat=CanCreateNewCatDict(assign_mate=["m_c", "r_c"]),
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict,
+                involved_cats={"m_c": mate1, "r_c": mate2},
+                other_clan=self.other_clan,
+            )
+            test_cat = cat_list[0]
+
+            self.assertEqual(
+                [mate1.ID, mate2.ID],
+                test_cat.mate,
+                msg=f"Multiple mates was not assigned correctly.",
+            )
+
+            # test that they have established relationships
+            for c in [mate1, mate2]:
+                self.assertGreater(
+                    test_cat.relationships[c.ID].total_abs_relationship_value,
+                    0,
+                    msg="Mate was added, but wasn't given a relationship!",
+                )
+                self.assertGreater(
+                    c.relationships[test_cat.ID].total_abs_relationship_value,
+                    0,
+                    msg="Mate was added, but wasn't given a relationship!",
+                )
 
     def test_stat_assignment(self):
         # test that a trait can be chosen
+        with self.subTest("Testing trait assignment"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                stat=StatDict(trait=["calm"]),
+            )
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertEqual(
+                test_cat.personality.trait,
+                "calm",
+                msg=f"Cat was assigned {test_cat.personality.trait} instead of calm.",
+            )
 
         # test that a skill can be chosen
+        with self.subTest("Testing skill assignment - tiered"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                age=[CatAge.ADULT],
+                stat=StatDict(skill=["CLIMBER,2"]),
+            )
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
+
+            self.assertEqual(
+                test_cat.skills.primary.path,
+                SkillPath.CLIMBER,
+                msg=f"Cat was assigned {test_cat.skills.primary.path} instead of CLIMBER.",
+            )
+            self.assertIn(
+                test_cat.skills.primary.tier,
+                (2, 3),
+                msg=f"Cat was assigned {test_cat.skills.primary.tier} instead of 2 or 3.",
+            )
+
+        with self.subTest("Testing skill assignment - interest only"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                age=[CatAge.ADOLESCENT],
+                stat=StatDict(skill=["CLIMBER,2"]),
+            )
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
+
+            self.assertEqual(
+                test_cat.skills.primary.path,
+                SkillPath.CLIMBER,
+                msg=f"Cat was assigned {test_cat.skills.primary.path} instead of CLIMBER.",
+            )
+            self.assertEqual(
+                test_cat.skills.primary.tier,
+                0,
+                msg=f"Cat was assigned {test_cat.skills.primary.tier} instead of 0.",
+            )
 
         # test that both can be chosen
+        with self.subTest("Testing skill AND trait assignment"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                age=[CatAge.ADULT],
+                stat=StatDict(skill=["CLIMBER,2"], trait=["calm"], must_have_both=True),
+            )
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
+
+            self.assertEqual(
+                test_cat.skills.primary.path,
+                SkillPath.CLIMBER,
+                msg=f"Cat was assigned {test_cat.skills.primary.path} instead of CLIMBER.",
+            )
+            self.assertIn(
+                test_cat.skills.primary.tier,
+                (2, 3),
+                msg=f"Cat was assigned {test_cat.skills.primary.tier} instead of 2 or 3.",
+            )
+            self.assertEqual(
+                test_cat.personality.trait,
+                "calm",
+                msg=f"Cat was assigned {test_cat.personality.trait} instead of calm.",
+            )
 
         # test that when both are given but both are not required, that only one is chosen
+        with self.subTest("Testing skill OR trait assignment"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                age=[CatAge.ADULT],
+                stat=StatDict(
+                    skill=["CLIMBER,2"], trait=["calm"], must_have_both=False
+                ),
+            )
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
 
-        pass
+            self.assertTrue(
+                (
+                    test_cat.skills.primary.path == SkillPath.CLIMBER
+                    or test_cat.personality.trait == "calm"
+                ),
+                msg=f"Cat was assigned both the skill and trait given. Cat should only have been assigned either the trait or the skill.",
+            )
 
     def test_health_assignment(self):
         # test that injury is applied
