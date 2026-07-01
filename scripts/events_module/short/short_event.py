@@ -10,7 +10,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
-from scripts.events_module.relationship.relation_events import Relation_Events
+from scripts.events_module.relationship import relation_events
 from scripts.game_structure import localization, game
 from scripts.events_module.text_adjust import (
     event_text_adjust,
@@ -455,7 +455,7 @@ class ShortEvent:
                         main_cat=first_cat,
                     )
             else:
-                Relation_Events.welcome_new_cats([first_cat])
+                relation_events.welcome_new_cats([first_cat])
             self.all_involved_cat_ids.extend([cat.ID for cat in cat_list])
 
             if extra_text:
