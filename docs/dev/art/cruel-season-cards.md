@@ -65,7 +65,7 @@ A feature of tarot card decks is the inclusion of common motifs. Look through an
 
 #### Established Motifs
 
-Motifs we already utilize in our exists cards are the following:
+Motifs we already utilize in our existing cards are the following:
 
 
 ![starburst_example.png](img/cruel-card-style-guide/starburst_example.png)
