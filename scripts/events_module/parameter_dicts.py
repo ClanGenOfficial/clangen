@@ -53,5 +53,3 @@ class RelationshipChangeDict(TypedDict):
     mutual: bool
     values: list[str]
     amount: int
-
-
